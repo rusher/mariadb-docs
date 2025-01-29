@@ -253,6 +253,12 @@ See [Account Locking](https://mariadb.com/kb/en/account-locking/) for more detai
 
 From [MariaDB 10.4.7](https://mariadb.com/kb/en/mariadb-1047-release-notes/) and [MariaDB 10.5.8](https://mariadb.com/kb/en/mariadb-1058-release-notes/), the _lock\_option_ and _password\_option_ clauses can occur in either order.
 
+{% tabs %}
+{% tab title="MariaDB < 10.4.7 / 10.5.8" %}
+From [MariaDB 10.4.7](https://mariadb.com/kb/en/mariadb-1047-release-notes/) and [MariaDB 10.5.8](https://mariadb.com/kb/en/mariadb-1058-release-notes/), the _lock\_option_ and _password\_option_ clauses can occur in either order.
+{% endtab %}
+{% endtabs %}
+
 ### See Also <a href="#see-also" id="see-also"></a>
 
 * [Authentication from MariaDB 10.4](https://mariadb.com/kb/en/authentication-from-mariadb-104/)
