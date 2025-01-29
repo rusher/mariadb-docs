@@ -19,24 +19,42 @@ If a replica is active but has yet to read from a binary log file you attempt to
 
 This statement has no effect if the server was not started with the [--log-bin](https://mariadb.com/kb/en/replication-and-binary-log-system-variables/#log_bin) option to enable binary logging.
 
-To list the binary log files on the server, use [SHOW BINARY LOGS](https://mariadb.com/kb/en/show-binary-logs/). To see which files they are reading, use [SHOW SLAVE STATUS](https://mariadb.com/kb/en/show-slave-status/) (or [SHOW REPLICA STATUS](https://mariadb.com/kb/en/show-replica-status/) from [MariaDB 10.5.1](https://mariadb.com/kb/en/mariadb-1051-release-notes/)). You can only delete the files that are older than the oldest file that is used by the slaves.
+{% tabs %}
+{% tab title="Current" %}
+To list the binary log files on the server, use [SHOW BINARY LOGS](https://mariadb.com/kb/en/show-binary-logs/). To see which files they are reading, use [SHOW REPLICA STATUS](https://mariadb.com/kb/en/show-replica-status/). You can only delete the files that are older than the oldest file that is used by the replicas.
 
 To delete all binary log files, use [RESET MASTER](https://mariadb.com/kb/en/reset-master/). To move to a new log file (for example if you want to remove the current log file), use [FLUSH LOGS](https://mariadb.com/kb/en/flush/) before you execute `PURGE LOGS`.
 
-{% tabs %}
-{% tab title="Current" %}
 If the [expire\_logs\_days](https://mariadb.com/kb/en/server-system-variables/#expire_logs_days) server system variable is not set to 0, the server automatically deletes binary log files after the given number of days. The [binlog\_expire\_logs\_seconds](https://mariadb.com/kb/en/replication-and-binary-log-system-variables/#binlog_expire_logs_seconds) variable allows more precise control over binlog deletion, and takes precedence if both are non-zero.
 
 Requires the [BINLOG ADMIN](https://mariadb.com/kb/en/grant/#binlog-admin) privilege to run.
 {% endtab %}
 
 {% tab title="MariaDB < 10.6" %}
+To list the binary log files on the server, use [SHOW BINARY LOGS](https://mariadb.com/kb/en/show-binary-logs/). To see which files they are reading, use [SHOW REPLICA STATUS](https://mariadb.com/kb/en/show-replica-status/). You can only delete the files that are older than the oldest file that is used by the replicas.
+
+To delete all binary log files, use [RESET MASTER](https://mariadb.com/kb/en/reset-master/). To move to a new log file (for example if you want to remove the current log file), use [FLUSH LOGS](https://mariadb.com/kb/en/flush/) before you execute `PURGE LOGS`.
+
 If the [expire\_logs\_days](https://mariadb.com/kb/en/server-system-variables/#expire_logs_days) server system variable is not set to 0, the server automatically deletes binary log files after the given number of days.
 
 Requires the [BINLOG ADMIN](https://mariadb.com/kb/en/grant/#binlog-admin) privilege to run.
 {% endtab %}
 
 {% tab title="MariaDB < 10.5.2" %}
+To list the binary log files on the server, use [SHOW BINARY LOGS](https://mariadb.com/kb/en/show-binary-logs/). To see which files they are reading, use [SHOW REPLICA STATUS](https://mariadb.com/kb/en/show-replica-status/). You can only delete the files that are older than the oldest file that is used by the replicas.
+
+To delete all binary log files, use [RESET MASTER](https://mariadb.com/kb/en/reset-master/). To move to a new log file (for example if you want to remove the current log file), use [FLUSH LOGS](https://mariadb.com/kb/en/flush/) before you execute `PURGE LOGS`.
+
+If the [expire\_logs\_days](https://mariadb.com/kb/en/server-system-variables/#expire_logs_days) server system variable is not set to 0, the server automatically deletes binary log files after the given number of days.
+
+Requires the [SUPER](https://mariadb.com/kb/en/purge-binary-logs/super) privilege to run.
+{% endtab %}
+
+{% tab title="MariaDB < 10.5.1" %}
+To list the binary log files on the server, use [SHOW BINARY LOGS](https://mariadb.com/kb/en/show-binary-logs/). To see which files they are reading, use [SHOW SLAVE STATUS](https://mariadb.com/kb/en/show-slave-status/). You can only delete the files that are older than the oldest file that is used by the slaves.
+
+To delete all binary log files, use [RESET MASTER](https://mariadb.com/kb/en/reset-master/). To move to a new log file (for example if you want to remove the current log file), use [FLUSH LOGS](https://mariadb.com/kb/en/flush/) before you execute `PURGE LOGS`.
+
 If the [expire\_logs\_days](https://mariadb.com/kb/en/server-system-variables/#expire_logs_days) server system variable is not set to 0, the server automatically deletes binary log files after the given number of days.
 
 Requires the [SUPER](https://mariadb.com/kb/en/purge-binary-logs/super) privilege to run.
