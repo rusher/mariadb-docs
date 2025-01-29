@@ -252,6 +252,10 @@ ALTER USER 'marijn'@'localhost' ACCOUNT LOCK;
 See [Account Locking](https://mariadb.com/kb/en/account-locking/) for more details.
 
 {% tabs %}
+{% tab title="." %}
+The _lock\_option_ and _password\_option_ clauses can occur in either order.
+{% endtab %}
+
 {% tab title="MariaDB < 10.4.7 / 10.5.8" %}
 The _lock\_option_ and _password\_option_ clauses must occur in that order.
 {% endtab %}
