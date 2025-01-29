@@ -252,7 +252,7 @@ ALTER USER 'marijn'@'localhost' ACCOUNT LOCK;
 See [Account Locking](https://mariadb.com/kb/en/account-locking/) for more details.
 
 {% tabs %}
-{% tab title="." %}
+{% tab title="Current" %}
 The _lock\_option_ and _password\_option_ clauses can occur in either order.
 {% endtab %}
 
