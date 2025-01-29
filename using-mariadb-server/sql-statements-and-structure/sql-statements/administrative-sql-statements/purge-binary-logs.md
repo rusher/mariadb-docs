@@ -23,26 +23,22 @@ To list the binary log files on the server, use [SHOW BINARY LOGS](https://maria
 
 To delete all binary log files, use [RESET MASTER](https://mariadb.com/kb/en/reset-master/). To move to a new log file (for example if you want to remove the current log file), use [FLUSH LOGS](https://mariadb.com/kb/en/flush/) before you execute `PURGE LOGS`.
 
-~~If the~~ [~~expire\_logs\_days~~](https://mariadb.com/kb/en/server-system-variables/#expire_logs_days) ~~server system variable is not set to 0, the server automatically deletes binary log files after the given number of days. From~~ [~~MariaDB 10.6~~](https://mariadb.com/kb/en/what-is-mariadb-106/)~~, the~~ [~~binlog\_expire\_logs\_seconds~~](https://mariadb.com/kb/en/replication-and-binary-log-system-variables/#binlog_expire_logs_seconds) ~~variable allows more precise control over binlog deletion, and takes precedence if both are non-zero.~~
-
 {% tabs %}
 {% tab title="Current" %}
 If the [expire\_logs\_days](https://mariadb.com/kb/en/server-system-variables/#expire_logs_days) server system variable is not set to 0, the server automatically deletes binary log files after the given number of days. The [binlog\_expire\_logs\_seconds](https://mariadb.com/kb/en/replication-and-binary-log-system-variables/#binlog_expire_logs_seconds) variable allows more precise control over binlog deletion, and takes precedence if both are non-zero.
+
+Requires the [BINLOG ADMIN](https://mariadb.com/kb/en/grant/#binlog-admin) privilege to run.
 {% endtab %}
 
 {% tab title="MariaDB < 10.6" %}
 If the [expire\_logs\_days](https://mariadb.com/kb/en/server-system-variables/#expire_logs_days) server system variable is not set to 0, the server automatically deletes binary log files after the given number of days.
-{% endtab %}
-{% endtabs %}
 
-~~Requires the~~ [~~SUPER~~](https://mariadb.com/kb/en/purge-binary-logs/super) ~~privilege or, from~~ [~~MariaDB 10.5.2~~](https://mariadb.com/kb/en/mariadb-1052-release-notes/)~~, the~~ [~~BINLOG ADMIN~~](https://mariadb.com/kb/en/grant/#binlog-admin) ~~privilege, to run.~~
-
-{% tabs %}
-{% tab title="Current" %}
 Requires the [BINLOG ADMIN](https://mariadb.com/kb/en/grant/#binlog-admin) privilege to run.
 {% endtab %}
 
 {% tab title="MariaDB < 10.5.2" %}
+If the [expire\_logs\_days](https://mariadb.com/kb/en/server-system-variables/#expire_logs_days) server system variable is not set to 0, the server automatically deletes binary log files after the given number of days.
+
 Requires the [SUPER](https://mariadb.com/kb/en/purge-binary-logs/super) privilege to run.
 {% endtab %}
 {% endtabs %}
