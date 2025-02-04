@@ -22,3 +22,7 @@
     * [Get, Build and Test Latest MariaDB the Lazy Way](mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/get-build-and-test-latest-mariadb-the-lazy-way.md)
     * [Build Environment Setup for Linux](mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/build-environment-setup-for-linux.md)
     * [Generic Build Instructions](mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md)
+
+***
+
+* [ES vs. CS](es-vs.-cs.md)
