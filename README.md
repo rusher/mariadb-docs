@@ -1,5 +1,7 @@
 ---
-description: Look at the following pages to see how tabbed navigation works.
+description: >-
+  See how tabbed navigation and other GitBook features work. This is also a
+  demonstration how the documentation structure can be (slightly) simplified.
 ---
 
 # Pages to Look at
