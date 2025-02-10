@@ -63,6 +63,7 @@
         * [EXPLAIN](using-mariadb-server/readme/sql-statements/administrative-sql-statements/server-performance/explain.md)
         * [Backup](using-mariadb-server/readme/sql-statements/administrative-sql-statements/server-performance/backup/README.md)
           * [BACKUP STAGE](using-mariadb-server/readme/sql-statements/administrative-sql-statements/server-performance/backup/backup-stage.md)
+          * [BACKUP LOCK](using-mariadb-server/readme/sql-statements/administrative-sql-statements/server-performance/backup/backup-lock.md)
         * [Reset](using-mariadb-server/readme/sql-statements/administrative-sql-statements/server-performance/reset.md)
       * [BINLOG](using-mariadb-server/sql-statements-and-structure/sql-statements/administrative-sql-statements/binlog.md)
       * [PURGE BINARY LOGS](using-mariadb-server/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md)

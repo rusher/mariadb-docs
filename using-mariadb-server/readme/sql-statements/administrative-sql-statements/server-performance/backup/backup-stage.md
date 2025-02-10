@@ -81,7 +81,7 @@ The `END` stage is designed for the following tasks:
 
 #### Using `BACKUP STAGE` Commands with Mariabackup <a href="#using-backup-stage-commands-with-mariabackup" id="using-backup-stage-commands-with-mariabackup"></a>
 
-The `BACKUP STAGE` commands are a set of commands that enable you to create an efficient external backup tool. How [Mariabackup](https://mariadb.com/kb/en/mariabackup/) uses these commands depends on which version you are using. Prior to [MariaDB 10.11.8](https://mariadb.com/kb/en/mariadb-10-11-8-release-notes/), [MariaDB 11.0.6](https://mariadb.com/kb/en/mariadb-11-0-6-release-notes/), [MariaDB 11.1.5](https://mariadb.com/kb/en/mariadb-11-1-5-release-notes/) and [MariaDB 11.2.4](https://mariadb.com/kb/en/mariadb-11-2-4-release-notes/), this depended on whether you are using the version that is bundled with MariaDB Community Server or the version that is bundled with [MariaDB Enterprise Server](https://mariadb.com/docs/products/mariadb-enterprise-server/). See [Mariabackup and BACKUP STAGE Commands](https://mariadb.com/kb/en/mariabackup-and-backup-stage-commands/) for some examples on how [Mariabackup](https://mariadb.com/kb/en/mariabackup/) uses these commands. From [MariaDB 10.11.8](https://mariadb.com/kb/en/mariadb-10-11-8-release-notes/), [MariaDB 11.0.6](https://mariadb.com/kb/en/mariadb-11-0-6-release-notes/), [MariaDB 11.1.5](https://mariadb.com/kb/en/mariadb-11-1-5-release-notes/) and [MariaDB 11.2.4](https://mariadb.com/kb/en/mariadb-11-2-4-release-notes/), these features were ported from MariaDB Enterprise Server ([MDEV-32932](https://jira.mariadb.org/browse/MDEV-32932)).
+The `BACKUP STAGE` commands are a set of commands that enable you to create an efficient external backup tool.&#x20;
 
 {% tabs %}
 {% tab title="Current" %}
@@ -104,6 +104,8 @@ BACKUP STAGE is available depending on the Mariabackup version that is bundled w
 BACKUP STAGE is available depending on the Mariabackup version that is bundled with the MariaDB Server, which can be MariaDB Enterprise Server or MariaDB Community Server.
 {% endtab %}
 {% endtabs %}
+
+See [Mariabackup and BACKUP STAGE Commands](https://mariadb.com/kb/en/mariabackup-and-backup-stage-commands/) for some examples on how [Mariabackup](https://mariadb.com/kb/en/mariabackup/) uses these commands.
 
 #### Using `BACKUP STAGE` Commands with Storage Snapshots <a href="#using-backup-stage-commands-with-storage-snapshots" id="using-backup-stage-commands-with-storage-snapshots"></a>
 
