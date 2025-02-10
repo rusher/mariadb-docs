@@ -2,7 +2,8 @@
 
 ## Using MariaDB Server
 
-* [SQL Statements & Structure](README.md)
+* [Page](README.md)
+* [SQL Statements & Structure](<README (1).md>)
   * [SQL Statements](using-mariadb-server/sql-statements-and-structure/sql-statements/README.md)
     * [Account Management SQL Commands](using-mariadb-server/sql-statements-and-structure/sql-statements/account-management-sql-commands/README.md)
       * [CREATE USER](using-mariadb-server/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md)
@@ -13,6 +14,7 @@
 * [Clients & Utilities](using-mariadb-server/clients-and-utilities/README.md)
   * [mariadb-access](using-mariadb-server/clients-and-utilities/mariadb-access.md)
   * [mariadb-admin](using-mariadb-server/clients-and-utilities/mariadb-admin.md)
+* [Page 1](using-mariadb-server/page-1.md)
 
 ## MariaDB Administration
 
