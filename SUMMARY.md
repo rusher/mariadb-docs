@@ -57,6 +57,9 @@
           * [SHOW INDEX](using-mariadb-server/readme/sql-statements/administrative-sql-statements/databases-tables-columns-etc./table-information/show-index.md)
           * [TRUNCATE TABLE](using-mariadb-server/readme/sql-statements/administrative-sql-statements/databases-tables-columns-etc./table-information/truncate-table.md)
         * [System-Versioned Tables](using-mariadb-server/readme/sql-statements/administrative-sql-statements/databases-tables-columns-etc./system-versioned-tables.md)
+      * [Server Performance](using-mariadb-server/readme/sql-statements/administrative-sql-statements/server-performance/README.md)
+        * [ANALYZE](using-mariadb-server/readme/sql-statements/administrative-sql-statements/server-performance/analyze/README.md)
+          * [Interpreting Rows](using-mariadb-server/readme/sql-statements/administrative-sql-statements/server-performance/analyze/interpreting-rows.md)
       * [BINLOG](using-mariadb-server/sql-statements-and-structure/sql-statements/administrative-sql-statements/binlog.md)
       * [PURGE BINARY LOGS](using-mariadb-server/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md)
     * [Data](using-mariadb-server/readme/sql-statements/data/README.md)
@@ -72,7 +75,6 @@
 * [Clients & Utilities](using-mariadb-server/clients-and-utilities/README.md)
   * [mariadb-access](using-mariadb-server/clients-and-utilities/mariadb-access.md)
   * [mariadb-admin](using-mariadb-server/clients-and-utilities/mariadb-admin.md)
-* [Page 1](using-mariadb-server/page-1.md)
 
 ## MariaDB Administration
 
