@@ -2,7 +2,8 @@
 
 ## Using MariaDB Server
 
-* [SQL Statements & Structure](README.md)
+* [Pages to Look at](README.md)
+* [SQL Statements & Structure](<README (1).md>)
   * [SQL Statements](using-mariadb-server/sql-statements-and-structure/sql-statements/README.md)
     * [Account Management](using-mariadb-server/sql-statements-and-structure/sql-statements/account-management-sql-commands/README.md)
       * [User Management](using-mariadb-server/readme/sql-statements/account-management-sql-commands/user-management/README.md)
@@ -61,10 +62,9 @@
         * [ANALYZE](using-mariadb-server/readme/sql-statements/administrative-sql-statements/server-performance/analyze/README.md)
           * [Interpreting Rows](using-mariadb-server/readme/sql-statements/administrative-sql-statements/server-performance/analyze/interpreting-rows.md)
         * [EXPLAIN](using-mariadb-server/readme/sql-statements/administrative-sql-statements/server-performance/explain.md)
-        * [Backup](using-mariadb-server/readme/sql-statements/administrative-sql-statements/server-performance/backup/README.md)
-          * [BACKUP STAGE](using-mariadb-server/readme/sql-statements/administrative-sql-statements/server-performance/backup/backup-stage.md)
-          * [BACKUP LOCK](using-mariadb-server/readme/sql-statements/administrative-sql-statements/server-performance/backup/backup-lock.md)
-        * [Reset](using-mariadb-server/readme/sql-statements/administrative-sql-statements/server-performance/reset.md)
+      * [Backup](using-mariadb-server/readme/sql-statements/administrative-sql-statements/backup/README.md)
+        * [BACKUP STAGE](using-mariadb-server/readme/sql-statements/administrative-sql-statements/backup/backup-stage.md)
+        * [BACKUP LOCK](using-mariadb-server/readme/sql-statements/administrative-sql-statements/backup/backup-lock.md)
       * [BINLOG](using-mariadb-server/sql-statements-and-structure/sql-statements/administrative-sql-statements/binlog.md)
       * [PURGE BINARY LOGS](using-mariadb-server/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md)
     * [Data](using-mariadb-server/readme/sql-statements/data/README.md)

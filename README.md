@@ -1,4 +1,15 @@
-# SQL Statements & Structure
+---
+description: Look at the following pages to see how tabbed navigation works.
+---
 
-The letters _SQL_ stand for Structured Query Language. As with all languages—even computer languages—there are grammar rules. This includes a certain structure to statements, acceptable punctuation (i.e., operators and delimiters), and a vocabulary (i.e., reserve words).
+# Pages to Look at
+
+
+
+| Page              | Path                                                           | Notes                                                                      |
+| ----------------- | -------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| Interpreting Rows | SQL Statements > Administration > Server Performance > ANALYZE | Example of a bigger chunk of content differing depending on Server version |
+| EXPLAIN           | SQL Statements > Administration > Server Performance           | Code highlighting                                                          |
+| BACKUP STAGE      | SQL Statements > Administration > Backup                       | A handful of Server versions                                               |
+| BACKUP LOCK       | SQL Statements > Administration > Backup                       | More than a handful of Server versions                                     |
 
