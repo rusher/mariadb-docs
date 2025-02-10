@@ -39,35 +39,35 @@ This ensures that all files are from the same generation, that is created at the
 BACKUP LOCK requires the RELOAD privilege or the LOCK TABLES privilege.
 {% endtab %}
 
-{% tab title="MariaDB < 11.4.1" %}
+{% tab title="< 11.4.1" %}
 BACKUP LOCK requires the RELOAD privilege.
 {% endtab %}
 
-{% tab title="MariaDB < 11.3.2" %}
+{% tab title="< 11.3.2" %}
 BACKUP LOCK requires the RELOAD privilege.
 {% endtab %}
 
-{% tab title="MariaDB < 11.1.4" %}
+{% tab title="< 11.1.4" %}
 BACKUP LOCK requires the RELOAD privilege.
 {% endtab %}
 
-{% tab title="MariaDB < 11.0.5" %}
+{% tab title="< 11.0.5" %}
 BACKUP LOCK requires the RELOAD privilege.
 {% endtab %}
 
-{% tab title="MariaDB < 10.11.7" %}
+{% tab title="< 10.11.7" %}
 BACKUP LOCK requires the RELOAD privilege.
 {% endtab %}
 
-{% tab title="MariaDB < 10.6.17" %}
+{% tab title="< 10.6.17" %}
 BACKUP LOCK requires the RELOAD privilege.
 {% endtab %}
 
-{% tab title="MariaDB < 10.5.24" %}
+{% tab title="< 10.5.24" %}
 BACKUP LOCK requires the RELOAD privilege.
 {% endtab %}
 
-{% tab title="MariaDB < 10.4.33" %}
+{% tab title="< 10.4.33" %}
 BACKUP LOCK requires the RELOAD privilege.
 {% endtab %}
 {% endtabs %}
