@@ -101,12 +101,18 @@
 
 ## MariaDB Server Administration
 
-* [Getting, Installing, and Upgrading MariaDB](mariadb-server-administration/getting-installing-and-upgrading-mariadb/README.md)
+* [Deployment](mariadb-server-administration/getting-installing-and-upgrading-mariadb/README.md)
   * [Downgrading between Major Versions of MariaDB](mariadb-server-administration/getting-installing-and-upgrading-mariadb/downgrading-between-major-versions-of-mariadb.md)
   * [Compiling MariaDB From Source](mariadb-server-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/README.md)
     * [Get, Build and Test Latest MariaDB the Lazy Way](mariadb-server-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/get-build-and-test-latest-mariadb-the-lazy-way.md)
     * [Build Environment Setup for Linux](mariadb-server-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/build-environment-setup-for-linux.md)
     * [Generic Build Instructions](mariadb-server-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md)
+* [Security](mariadb-server-administration/security.md)
+* [Backup and Restore](mariadb-server-administration/backup-and-restore.md)
+* [Monitoring and Logs](mariadb-server-administration/monitoring-and-logs.md)
+* [Partitioning](mariadb-server-administration/partitioning.md)
+* [Auditing](mariadb-server-administration/auditing.md)
+* [Variables and Modes](mariadb-server-administration/variables-and-modes.md)
 
 ## High Availability and Performance Tuning
 
