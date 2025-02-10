@@ -77,19 +77,58 @@
         * [NOT NULL](using-mariadb-server/readme/sql-statements/data/constraints/not-null.md)
         * [PRIMARY KEY](using-mariadb-server/readme/sql-statements/data/constraints/primary-key.md)
         * [UNIQUE](using-mariadb-server/readme/sql-statements/data/constraints/unique.md)
+  * [SQL Language Structure](using-mariadb-server/readme/sql-language-structure/README.md)
+    * [Identifiers](using-mariadb-server/readme/sql-language-structure/identifiers/README.md)
+      * [Case Sensitivity](using-mariadb-server/readme/sql-language-structure/identifiers/case-sensitivity.md)
+      * [Identifier Qualifiers](using-mariadb-server/readme/sql-language-structure/identifiers/identifier-qualifiers.md)
+      * [Identifier to File Name Mapping](using-mariadb-server/readme/sql-language-structure/identifiers/identifier-to-file-name-mapping.md)
+    * [Literals](using-mariadb-server/readme/sql-language-structure/literals/README.md)
+      * [Binary Literals](using-mariadb-server/readme/sql-language-structure/literals/binary-literals.md)
+      * [Boolean Literals](using-mariadb-server/readme/sql-language-structure/literals/boolean-literals.md)
+      * [Date and Time Literals](using-mariadb-server/readme/sql-language-structure/literals/date-and-time-literals.md)
+      * [Hexadecimal Literals](using-mariadb-server/readme/sql-language-structure/literals/hexadecimal-literals.md)
+      * [Numeric Literals](using-mariadb-server/readme/sql-language-structure/literals/numeric-literals.md)
+      * [String Literals](using-mariadb-server/readme/sql-language-structure/literals/string-literals.md)
+    * [Error Codes](using-mariadb-server/readme/sql-language-structure/error-codes.md)
+    * [Reserved Words](using-mariadb-server/readme/sql-language-structure/reserved-words.md)
+* [Built-in Functions](using-mariadb-server/built-in-functions/README.md)
+  * [Function and Operator Overview](using-mariadb-server/built-in-functions/function-and-operator-overview.md)
+  * [String Functions](using-mariadb-server/built-in-functions/string-functions.md)
+  * [Date and Time Functions](using-mariadb-server/built-in-functions/date-and-time-functions.md)
 * [Clients & Utilities](using-mariadb-server/clients-and-utilities/README.md)
   * [mariadb-access](using-mariadb-server/clients-and-utilities/mariadb-access.md)
   * [mariadb-admin](using-mariadb-server/clients-and-utilities/mariadb-admin.md)
 
-## MariaDB Administration
+## MariaDB Server Administration
 
-* [Getting, Installing, and Upgrading MariaDB](mariadb-administration/getting-installing-and-upgrading-mariadb/README.md)
-  * [Downgrading between Major Versions of MariaDB](mariadb-administration/getting-installing-and-upgrading-mariadb/downgrading-between-major-versions-of-mariadb.md)
-  * [Compiling MariaDB From Source](mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/README.md)
-    * [Get, Build and Test Latest MariaDB the Lazy Way](mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/get-build-and-test-latest-mariadb-the-lazy-way.md)
-    * [Build Environment Setup for Linux](mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/build-environment-setup-for-linux.md)
-    * [Generic Build Instructions](mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md)
+* [Getting, Installing, and Upgrading MariaDB](mariadb-server-administration/getting-installing-and-upgrading-mariadb/README.md)
+  * [Downgrading between Major Versions of MariaDB](mariadb-server-administration/getting-installing-and-upgrading-mariadb/downgrading-between-major-versions-of-mariadb.md)
+  * [Compiling MariaDB From Source](mariadb-server-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/README.md)
+    * [Get, Build and Test Latest MariaDB the Lazy Way](mariadb-server-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/get-build-and-test-latest-mariadb-the-lazy-way.md)
+    * [Build Environment Setup for Linux](mariadb-server-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/build-environment-setup-for-linux.md)
+    * [Generic Build Instructions](mariadb-server-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md)
 
-***
+## High Availability and Performance Tuning
 
-* [ES vs. CS](es-vs.-cs.md)
+* [MariaDB Replication](high-availability-and-performance-tuning/mariadb-replication.md)
+* [MariaDB Galera Cluster](high-availability-and-performance-tuning/mariadb-galera-cluster.md)
+* [Optimization and Tuning](high-availability-and-performance-tuning/optimization-and-tuning.md)
+
+## Columns, Storage Engines, Plugins
+
+* [Data Types](columns-storage-engines-plugins/data-types.md)
+* [Character Sets and Collations](columns-storage-engines-plugins/character-sets-and-collations.md)
+* [Storage Engines](columns-storage-engines-plugins/storage-engines.md)
+* [Plugins](columns-storage-engines-plugins/plugins.md)
+
+## Programming and Customizing
+
+* [Programmatic and Compound Statements](programming-and-customizing/programmatic-and-compound-statements.md)
+* [Stored Routines](programming-and-customizing/stored-routines.md)
+* [Triggers and Events](programming-and-customizing/triggers-and-events.md)
+* [Views](programming-and-customizing/views.md)
+* [User-Defined Functions](programming-and-customizing/user-defined-functions.md)
+
+## Playground
+
+* [ES vs. CS](playground/es-vs.-cs.md)

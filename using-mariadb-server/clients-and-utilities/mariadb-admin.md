@@ -1,6 +1,20 @@
 # mariadb-admin
 
-`mariadb-admin` is an administration program for the mariadbd daemon. It can be used to:
+&#x20;It can be used to:
+
+{% tabs %}
+{% tab title="Current" %}
+`mariadb-admin` is an administration program for the mariadbd daemon.
+
+The client used to be called `mysqladmin`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+{% endtab %}
+
+{% tab title="MariaDB < 10.5" %}
+`mysqladmin` is an administration program for the mariadbd daemon.
+{% endtab %}
+{% endtabs %}
+
+It can be used to:
 
 * Monitor what the MariaDB clients are doing (processlist)
 * Get usage statistics and variables from the MariaDB server
@@ -11,19 +25,33 @@
 * Start/stop replicas
 * Check if the server is alive (ping)
 
-Prior to [MariaDB 10.5](https://mariadb.com/kb/en/what-is-mariadb-105/), the client was called `mysqladmin`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+### Syntax <a href="#using-mariadb-admin" id="using-mariadb-admin"></a>
 
-### Using mariadb-admin <a href="#using-mariadb-admin" id="using-mariadb-admin"></a>
-
-The command to use `mariadb-admin` and the general syntax is:
-
+{% tabs %}
+{% tab title="Current" %}
 ```
 mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 ```
+{% endtab %}
+
+{% tab title="MariaDB < 10.5" %}
+```
+mysqladmin [options] command [command-arg] [command [command-arg]] ...
+```
+{% endtab %}
+{% endtabs %}
 
 #### Options <a href="#options" id="options"></a>
 
+{% tabs %}
+{% tab title="Current" %}
 `mariadb-admin` supports the following options:
+{% endtab %}
+
+{% tab title="MariaDB < 10.5" %}
+`mysqladmin` supports the following options:
+{% endtab %}
+{% endtabs %}
 
 | Option                                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
