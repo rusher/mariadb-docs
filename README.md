@@ -6,7 +6,11 @@ description: >-
 
 # Pages to Look at
 
-
+* The document categorizes various SQL statements and utilities into chapters and paths for easier navigation.
+* Different content chunks may vary based on the server version.
+* An example illustrates the complexity of capturing version-specific information in technical documentation.
+* A link is provided to a Knowledge Base page for further comparison.
+* An attempt is made at simplifying chapter naming conventions.
 
 | Page                          | Path                                                           | Notes                                                                                                                                                                          |
 | ----------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

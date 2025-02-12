@@ -7,6 +7,10 @@ PURGE { BINARY | MASTER } LOGS
     { TO 'log_name' | BEFORE datetime_expr }
 ```
 
+### Summary written by the GitBook AI <a href="#description" id="description"></a>
+
+The `PURGE BINARY LOGS` command removes binary log files created before a specified log or date. It updates the log index to start with the specified log. If a replica has not accessed a log being deleted, errors may occur. This command requires the server to be started with binary logging enabled.
+
 ### Description <a href="#description" id="description"></a>
 
 The `PURGE BINARY LOGS` statement deletes all the [binary log](https://mariadb.com/kb/en/binary-log/) files listed in the log index file prior to the specified log file name or date. `BINARY` and `MASTER` are synonyms. Deleted log files also are removed from the list recorded in the index file, so that the given log file becomes the first in the list.
