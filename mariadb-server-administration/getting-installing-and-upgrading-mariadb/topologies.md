@@ -1,7 +1,5 @@
 ---
 description: A page imported from the MariaDB Enterprise documentation.
-cover: ../../.gitbook/assets/Chesha mit Pointy-Haired Boss.jpeg
-coverY: 0
 ---
 
 # Topologies

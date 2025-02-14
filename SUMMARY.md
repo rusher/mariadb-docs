@@ -108,6 +108,7 @@
     * [Build Environment Setup for Linux](mariadb-server-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/build-environment-setup-for-linux.md)
     * [Generic Build Instructions](mariadb-server-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md)
   * [Topologies](mariadb-server-administration/getting-installing-and-upgrading-mariadb/topologies.md)
+  * [Markdown Test Page](mariadb-server-administration/getting-installing-and-upgrading-mariadb/markdown-test-page.md)
 * [Security](mariadb-server-administration/security.md)
 * [Backup and Restore](mariadb-server-administration/backup-and-restore.md)
 * [Monitoring and Logs](mariadb-server-administration/monitoring-and-logs.md)
