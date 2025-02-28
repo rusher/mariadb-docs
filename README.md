@@ -23,3 +23,7 @@ description: >-
 | MariaDB Server Administration | (group)                                                        | A stab at simplified naming of chapters                                                                                                                                        |
 |                               |                                                                |                                                                                                                                                                                |
 
+This is just a test to see if the GitBook-to-Slack bridge works as expected.
+
+{% @formspree/formspree %}
+
