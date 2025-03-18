@@ -2,7 +2,6 @@
 description: >-
   See how tabbed navigation and other GitBook features work. This is also a
   demonstration how the documentation structure can be (slightly) simplified.
-hidden: true
 ---
 
 # Pages to Look at
