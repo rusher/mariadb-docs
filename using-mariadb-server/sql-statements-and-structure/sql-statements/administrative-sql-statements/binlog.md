@@ -24,7 +24,13 @@ BINLOG 'str'
 
 #### Summary
 
-The `BINLOG` statement in MariaDB is used internally by the `mariadb-binlog` program to translate events from binary log files into a printable form. It outputs base 64-encoded strings that the server decodes to understand data changes. The statement requires specific privileges: `BINLOG REPLAY` in current versions, and `SUPER` for versions prior to 10.5.2. This is essential for handling data replication and recovery processes.
+The `BINLOG` statement in MariaDB is used internally by the `mariadb-binlog` program to translate events from binary log files into a printable form. It outputs base 64-encoded strings that the server decodes to understand data changes. The statement requires specific privileges :T his is essential for handling data replication and recovery processes.
+
+Another para
+
+#### Another heading
+
+Another para
 
 ### Description <a href="#description" id="description"></a>
 
