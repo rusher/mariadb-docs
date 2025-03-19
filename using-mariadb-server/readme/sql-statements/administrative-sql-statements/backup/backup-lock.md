@@ -2,6 +2,8 @@
 
 BACKUP LOCK blocks a table from DDL statements. This is mainly intended to be used by tools like [mariabackup](https://mariadb.com/kb/en/mariabackup/) that need to ensure there are no DDLs on a table while the table files are opened. For example, for an Aria table that stores data in 3 files with extensions .frm, .MAI and .MAD. Normal read/write operations can continue as normal.
 
+Here's another para.
+
 {% hint style="info" %}
 BACKUP LOCK is available from MariaDB 10.4.2.
 {% endhint %}
