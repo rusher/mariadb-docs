@@ -1,0 +1,24 @@
+# mysql.columns_priv Table
+
+The `mysql.columns_priv` table contains information about column-level privileges. The table can be queried and although it is possible to directly update it, it is best to use [GRANT](../../../account-management-sql-commands/grant.md) for setting privileges.
+
+Note that the MariaDB privileges occur at many levels. A user may be granted a privilege at the column level, but may still not have permission on a table level, for example. See [privileges](../../../account-management-sql-commands/grant.md) for a more complete view of the MariaDB privilege system.
+
+The [INFORMATION_SCHEMA.COLUMN_PRIVILEGES](../information-schema/information-schema-tables/information-schema-column_privileges-table.md) table derives its contents from `mysql.columns_priv`.
+
+This table uses the [Aria](../../../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-enabling-encryption.md) storage engine.
+
+The `mysql.columns_priv` table contains the following fields:
+
+| Field | Type | Null | Key | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| Field | Type | Null | Key | Default | Description |
+| Host | char(60) | NO | PRI | | Host (together with User, Db , Table_name andColumn_name makes up the unique identifier for this record. |
+| Db | char(64) | NO | PRI | | Database name (together with User, Host , Table_name andColumn_name makes up the unique identifier for this record. |
+| User | char(80) | NO | PRI | | User (together with Host, Db , Table_name andColumn_name makes up the unique identifier for this record. |
+| Table_name | char(64) | NO | PRI | | Table name (together with User, Db , Host andColumn_name makes up the unique identifier for this record. |
+| Column_name | char(64) | NO | PRI | | Column name (together with User, Db , Table_name andHost makes up the unique identifier for this record. |
+| Timestamp | timestamp | NO | | CURRENT_TIMESTAMP | |
+| Column_priv | set('Select', 'Insert', 'Update', 'References') | NO | | | The privilege type. See [Column Privileges](../../../account-management-sql-commands/grant.md#column-privileges) for details. |
+
+The [Acl_column_grants](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_column_grants) status variable indicates how many rows the `mysql.columns_priv` table contains.

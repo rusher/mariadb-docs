@@ -1,0 +1,57 @@
+# Performance Schema memory_summary_global_by_event_name Table
+
+#
+
+#### MariaDB starting with [10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-105-series/mariadb-1052-release-notes)
+
+The memory_summary_global_by_event_name table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-105-series/mariadb-1052-release-notes).
+
+There are five memory summary tables in the Performance Schema that share a number of fields in common. These include:
+
+* [memory_summary_by_account_by_event_name](performance-schema-memory_summary_by_account_by_event_name-table.md)
+* [memory_summary_by_host_by_event_name](performance-schema-memory_summary_by_host_by_event_name-table.md)
+* [memory_summary_by_thread_by_event_name](performance-schema-memory_summary_by_thread_by_event_name-table.md)
+* [memory_summary_by_user_by_event_name](performance-schema-memory_summary_by_user_by_event_name-table.md)
+* memory_summary_global_by_event_name
+
+The `memory_summary_global_by_event_name` table contains memory usage statistics aggregated by event and event.
+
+The table contains the following columns:
+
+| Field | Type | Null | Default | Description |
+| --- | --- | --- | --- | --- |
+| Field | Type | Null | Default | Description |
+| EVENT_NAME | varchar(128) | NO | NULL | Event name. |
+| COUNT_ALLOC | bigint(20) unsigned | NO | NULL | Total number of allocations to memory. |
+| COUNT_FREE | bigint(20) unsigned | NO | NULL | Total number of attempts to free the allocated memory. |
+| SUM_NUMBER_OF_BYTES_ALLOC | bigint(20) unsigned | NO | NULL | Total number of bytes allocated. |
+| SUM_NUMBER_OF_BYTES_FREE | bigint(20) unsigned | NO | NULL | Total number of bytes freed |
+| LOW_COUNT_USED | bigint(20) | NO | NULL | Lowest number of allocated blocks (lowest value of CURRENT_COUNT_USED). |
+| CURRENT_COUNT_USED | bigint(20) | NO | NULL | Currently allocated blocks that have not been freed (COUNT_ALLOC minus COUNT_FREE). |
+| HIGH_COUNT_USED | bigint(20) | NO | NULL | Highest number of allocated blocks (highest value of CURRENT_COUNT_USED). |
+| LOW_NUMBER_OF_BYTES_USED | bigint(20) | NO | NULL | Lowest number of bytes used. |
+| CURRENT_NUMBER_OF_BYTES_USED | bigint(20) | NO | NULL | Current number of bytes used (total allocated minus total freed). |
+| HIGH_NUMBER_OF_BYTES_USED | bigint(20) | NO | NULL | Highest number of bytes used. |
+
+#
+
+# Example
+
+Seeing what memory was most often allocated for:
+
+```
+SELECT * FROM memory_summary_global_by_event_name 
+ ORDER BY count_alloc DESC LIMIT 1\G
+*************************** 1. row ***************************
+ EVENT_NAME: memory/sql/QUICK_RANGE_SELECT::alloc
+ COUNT_ALLOC: 147976
+ COUNT_FREE: 147976
+ SUM_NUMBER_OF_BYTES_ALLOC: 600190656
+ SUM_NUMBER_OF_BYTES_FREE: 600190656
+ LOW_COUNT_USED: 0
+ CURRENT_COUNT_USED: 0
+ HIGH_COUNT_USED: 68
+ LOW_NUMBER_OF_BYTES_USED: 0
+CURRENT_NUMBER_OF_BYTES_USED: 0
+ HIGH_NUMBER_OF_BYTES_USED: 275808
+```

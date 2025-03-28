@@ -1,0 +1,18 @@
+# Information Schema TABLESPACES Table
+
+The [Information Schema](/en/information_schema/) `TABLESPACES` table contains information about active tablespaces..
+
+The table is a MariaDB and MySQL extension, and does not include information about InnoDB tablespaces.
+
+| Column | Description |
+| --- | --- |
+| Column | Description |
+| TABLESPACE_NAME | |
+| ENGINE | |
+| TABLESPACE_TYPE | |
+| LOGFILE_GROUP_NAME | |
+| EXTENT_SIZE | |
+| AUTOEXTEND_SIZE | |
+| MAXIMUM_SIZE | |
+| NODEGROUP_ID | |
+| TABLESPACE_COMMENT | |

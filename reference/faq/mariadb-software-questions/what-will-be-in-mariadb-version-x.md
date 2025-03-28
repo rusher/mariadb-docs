@@ -1,0 +1,7 @@
+# What will be in MariaDB version X?
+
+You can read about the features and improvements included in the current stable release of MariaDB on the 
+[MariaDB versus MySQL](/en/mariadb-versus-mysql/) page.
+
+The [MariaDB Development Plans](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plans-for-mariadb-10-11)
+page links to our plans for future versions of MariaDB.

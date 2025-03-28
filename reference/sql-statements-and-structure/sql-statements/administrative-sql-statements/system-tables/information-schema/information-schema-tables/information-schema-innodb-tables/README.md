@@ -1,0 +1,3 @@
+# Information Schema InnoDB Tables
+
+List of Information Schema tables specifically related to [InnoDB](../../../../../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md). Tables that are specific to XtraDB shares with InnoDB are listed in [Information Schema XtraDB Tables](/en/information-schema-xtradb-tables/).

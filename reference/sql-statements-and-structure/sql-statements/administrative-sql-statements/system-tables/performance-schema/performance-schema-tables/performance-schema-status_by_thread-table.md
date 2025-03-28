@@ -1,0 +1,20 @@
+# Performance Schema status_by_thread Table
+
+#
+
+#### MariaDB starting with [10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-105-series/mariadb-1052-release-notes)
+
+The `session_status` table was added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-105-series/mariadb-1052-release-notes).
+
+The `status_by_thread` table contains status variable information about active foreground threads. The table does not collect statistics for `Com_xxx` variables.
+
+The table contains the following columns:
+
+| Column | Description |
+| --- | --- |
+| Column | Description |
+| THREAD_ID | The thread identifier of the session in which the status variable is defined. |
+| VARIABLE_NAME | Status variable name. |
+| VARIABLE_VALUE | Aggregated status variable value. |
+
+If [TRUNCATE TABLE](../../../../table-statements/truncate-table.md) is run, will aggregate the status for all threads to the global status and account status, then reset the thread status. If account statistics are not collected but host and user status are, the session status is added to host and user status.
