@@ -1,3 +1,3 @@
-# Using MariaDB Server
+# Server Usage
 
 Documentation on using MariaDB Server.
