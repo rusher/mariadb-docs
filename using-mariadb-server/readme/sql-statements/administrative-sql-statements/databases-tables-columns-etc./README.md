@@ -1,2 +1,0 @@
-# Databases, Tables, Columns, etc.
-

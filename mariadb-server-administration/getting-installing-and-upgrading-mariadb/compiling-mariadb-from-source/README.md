@@ -1,2 +1,0 @@
-# Compiling MariaDB From Source
-

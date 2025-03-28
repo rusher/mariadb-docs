@@ -1,0 +1,96 @@
+# Unsafe Statements for Statement-based Replication
+
+A safe statement is generally deterministic; in other words the statement will always produce the same result. For example, an INSERT statement producing a random number will most likely produce a different result on the primary than on the replica, and so cannot be replicated safely.
+
+When an unsafe statement is run, the current binary logging format determines how the server responds.
+
+* If the binary logging format is [statement-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging) (the default until [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-102-series/mariadb-1023-release-notes)), unsafe statements generate a warning and are logged normally.
+* If the binary logging format is [mixed](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#mixed-logging) (the default from [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-102-series/mariadb-1024-release-notes)), unsafe statements are logged using the row-based format, while safe statements use the statement-based format.
+* If the binary logging format is [row-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based-logging), all statements are logged normally, and the distinction between safe and unsafe is not made.
+
+MariaDB tries to detect unsafe statements. When an unsafe statement is issued, a warning similar to the following is produced:
+
+```
+Note (Code 1592): Unsafe statement written to the binary log using statement format since 
+ BINLOG_FORMAT = STATEMENT. The statement is unsafe because it uses a LIMIT clause. This 
+ is unsafe because the set of rows included cannot be predicted.
+```
+
+MariaDB also issues this warning for some classes of statements that are safe.
+
+#
+
+# Unsafe Statements
+
+The following statements are regarded as unsafe:
+
+* [INSERT ... ON DUPLICATE KEY UPDATE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md) statements upon tables with multiple primary or unique keys, as the order that the keys are checked in, and which affect the rows chosen to update, is not deterministic. Before [MariaDB 5.5.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-55-series/mariadb-5524-release-notes), these statements were not regarded as unsafe. In [MariaDB 10.0](/en/what-is-mariadb-100/) this warning has been removed as we always check keys in the same order on the primary and replica if the primary and replica are using the same storage engine.
+* [INSERT-DELAYED](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md). These statements are inserted in an indeterminate order.
+* [INSERTs](../../programming-customizing-mariadb/views/inserting-and-updating-with-views.md) on tables with a composite primary key that has an [AUTO_INCREMENT](../../../reference/data-types/auto_increment.md) column that isn't the first column of the composite key.
+* When a table has an [AUTO_INCREMENT](../../../reference/data-types/auto_increment.md) column and a [trigger](../../programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) or [stored procedure](/en/stored-programs-and-views/) executes an [UPDATE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) statement against the table. Before [MariaDB 5.5](/en/what-is-mariadb-55/), all updates on tables with an AUTO_INCREMENT column were considered unsafe, as the order that the rows were updated could differ across servers.
+* [UPDATE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) statements that use [LIMIT](selectively-skipping-replication-of-binlog-events.md#limit), since the order of the returned rows is unspecified. This applies even to statements using an ORDER BY clause, which are deterministic (a known bug). However, since [MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-100-series/mariadb-10011-release-notes), `LIMIT 0` is an exception to this rule (see [MDEV-6170](https://jira.mariadb.org/browse/MDEV-6170)), and these statements are safe for replication.
+* When using a [user-defined function](../../programming-customizing-mariadb/user-defined-functions/user-defined-functions-calling-sequences.md).
+* Statements using using any of the following functions, which can return different results on the replica:
+
+ * [CURRENT_ROLE()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_role.md)
+ * [CURRENT_USER()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)
+ * [FOUND_ROWS()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/found_rows.md)
+ * [GET_LOCK()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md)
+ * [IS_FREE_LOCK()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/is_free_lock.md)
+ * [IS_USED_LOCK()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/is_used_lock.md)
+ * [JSON_TABLE()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_table.md)
+ * [LOAD_FILE()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/load_file.md)
+ * [MASTER_POS_WAIT()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_pos_wait.md)
+ * [RAND()](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/replication-protocol/rand_event.md)
+ * [RANDOM_BYTES()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/random_bytes.md)
+ * [RELEASE_ALL_LOCKS()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/release_all_locks.md)
+ * [RELEASE_LOCK()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/release_lock.md)
+ * [ROW_COUNT()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/row_count.md)
+ * [SESSION_USER()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/session_user.md)
+ * [SLEEP()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/sleep.md)
+ * [SYSDATE()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/sysdate.md)
+ * [SYSTEM_USER()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/system_user.md)
+ * [USER()](../../../security/user-account-management/user-password-expiry.md)
+ * [UUID()](../../../reference/data-types/string-data-types/uuid-data-type.md)
+ * [UUID_SHORT()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid_short.md).
+* Statements which refer to log tables, since these may differ across servers.
+* Statements which refer to self-logging tables. Statements following a read or write to a self-logging table within a transaction are also considered unsafe.
+* Statements which refer to [system variables](../optimization-and-tuning/system-variables/server-system-variables.md) (there are a few exceptions).
+* [LOAD DATA INFILE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statements (since [MariaDB 5.5](/en/what-is-mariadb-55/)).
+* Non-transactional reads or writes that execute after transactional reads within a transaction.
+* If row-based logging is used for a statement, and the session executing the statement has any temporary tables, row-based logging is used for the remaining statements until the temporary table is dropped. This is because temporary tables can't use row-based logging, so if it is used due to one of the above conditions, all subsequent statements using that table are unsafe. The server deals with this situation by treating all statements in the session as unsafe for statement-based logging until the temporary table is dropped.
+
+#
+
+# Safe Statements
+
+The following statements are not deterministic, but are considered safe for binary logging and replication:
+
+* [CONNECTION_ID()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/connection_id.md)
+* [CURDATE()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/curdate.md)
+* [CURRENT_DATE()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/current_date.md)
+* [CURRENT_TIME()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/current_time.md)
+* [CURRENT_TIMESTAMP()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/current_timestamp.md)
+* [CURTIME()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/curtime.md)
+* [LAST_INSERT_ID()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)
+* [LOCALTIME()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/localtimestamp.md)
+* [LOCALTIMESTAMP()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/localtimestamp.md)
+* [NOW()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/now.md)
+* [UNIX_TIMESTAMP()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/unix_timestamp.md)
+* [UTC_DATE()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/utc_date.md)
+* [UTC_TIME()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/utc_time.md)
+* [UTC_TIMESTAMP()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/utc_timestamp.md)
+
+#
+
+# Isolation Levels
+
+Even when using safe statements, not all [transaction isolation levels](../../../reference/sql-statements-and-structure/sql-statements/transactions/set-transaction.md#isolation-levels) are safe with statement-based or mixed binary logging. The REPEATABLE READ and SERIALIZABLE isolation levels can only be used with the row-based format.
+
+This restriction does not apply if only non-transactional storage engines are used.
+
+#
+
+# See Also
+
+* [Replication and Foreign Keys](replication-and-foreign-keys.md)

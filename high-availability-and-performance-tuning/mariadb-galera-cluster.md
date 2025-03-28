@@ -1,2 +1,0 @@
-# MariaDB Galera Cluster
-

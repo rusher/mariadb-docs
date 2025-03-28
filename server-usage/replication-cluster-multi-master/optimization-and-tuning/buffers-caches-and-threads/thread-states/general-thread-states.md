@@ -1,0 +1,89 @@
+# General Thread States
+
+This article documents the major general thread states. More specific lists related to [delayed inserts](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md), [replication](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/mariadb-releases/compatibility-differences/replication-compatibility-between-mariadb-and-mysql), the [query cache](../query-cache.md) and the [event scheduler](../../../../programming-customizing-mariadb/triggers-events/event-scheduler/events.md) are listed in:
+
+* [Event Scheduler Thread States](event-scheduler-thread-states.md)
+* [Query Cache Thread States](query-cache-thread-states.md)
+* [Master Thread States](master-thread-states.md)
+* [Slave Connection Thread States](slave-connection-thread-states.md)
+* [Slave I/O Thread States](/en/slave-io-thread-states/)
+* [Slave SQL Thread States](slave-sql-thread-states.md)
+
+These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) statement or in the [Information Schema PROCESSLIST Table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) as well as the `PROCESSLIST_STATE` value listed in the [Performance Schema threads Table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md)
+
+| Value | Description |
+| --- | --- |
+| Value | Description |
+| After create | The function that created (or tried to create) a table (temporary or non-temporary) has just ended. |
+| Analyzing | Calculating table key distributions, such as when running an [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement. |
+| checking permissions | Checking to see whether the permissions are adequate to perform the statement. |
+| Checking table | [Checking](/en/sql-commands-check-table/) the table. |
+| cleaning up | Preparing to reset state variables and free memory after executing a command. |
+| closing tables | Flushing the changes to disk and closing the table. This state will only persist if the disk is full or under extremely high load. |
+| converting HEAP to Aria | Converting an internal [MEMORY](../../../../../reference/storage-engines/memory-storage-engine.md) temporary table into an on-disk [Aria](../../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-enabling-encryption.md) temporary table. |
+| converting HEAP to MyISAM | Converting an internal [MEMORY](../../../../../reference/storage-engines/memory-storage-engine.md) temporary table into an on-disk [MyISAM](../../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) temporary table. |
+| copy to tmp table | A new table has been created as part of an [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement, and rows are about to be copied into it. |
+| Copying to group table | Sorting the rows by group and copying to a temporary table, which occurs when a statement has different [GROUP BY](../../../standard-replication/selectively-skipping-replication-of-binlog-events.md#group-by) and [ORDER BY](../../../standard-replication/selectively-skipping-replication-of-binlog-events.md#order-by) criteria. |
+| Copying to tmp table | Copying to a temporary table in memory. |
+| Copying to tmp table on disk | Copying to a temporary table on disk, as the resultset is too large to fit into memory. |
+| Creating index | Processing an [ALTER TABLE ... ENABLE KEYS](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) for an [Aria](../../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-enabling-encryption.md) or [MyISAM](../../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) table. |
+| Creating sort index | Processing a [SELECT](../../../standard-replication/selectively-skipping-replication-of-binlog-events.md) statement resolved using an internal temporary table. |
+| creating table | Creating a table (temporary or non-temporary). |
+| Creating tmp table | Creating a temporary table (in memory or on-disk). |
+| deleting from main table | Deleting from the first table in a multi-table [delete](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md), saving columns and offsets for use in deleting from the other tables. |
+| deleting from reference tables | Deleting matched rows from secondary reference tables as part of a multi-table [delete](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md). |
+| discard_or_import_tablespace | Processing an [ALTER TABLE ... IMPORT TABLESPACE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) or [ALTER TABLE ... DISCARD TABLESPACE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement. |
+| end | State before the final cleanup of an [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), [CREATE VIEW](../../../../programming-customizing-mariadb/views/create-view.md), [DELETE](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md), [INSERT](../../../../programming-customizing-mariadb/views/inserting-and-updating-with-views.md), [SELECT](../../../standard-replication/selectively-skipping-replication-of-binlog-events.md), or [UPDATE](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) statement. |
+| executing | Executing a statement. |
+| Execution of init_command | Executing statements specified by the --init_command [mariadb client](../../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) option. |
+| filling schema table | A table in the [information_schema](../../../../programming-customizing-mariadb/views/information-schema-views-table.md) database is being built. |
+| freeing items | Freeing items from the [query cache](../query-cache.md) after executing a command. Usually followed by the cleaning up state. |
+| Flushing tables | Executing a [FLUSH TABLES](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement and waiting for other threads to close their tables. |
+| FULLTEXT initialization | Preparing to run a [full-text](/en/full-text-indexes/) search. This includes running the fulltext search (MATCH ... AGAINST) and creating a list of the result in memory |
+| init | About to initialize an [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), [DELETE](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md), [INSERT](../../../../programming-customizing-mariadb/views/inserting-and-updating-with-views.md), [SELECT](../../../standard-replication/selectively-skipping-replication-of-binlog-events.md), or [UPDATE](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) statement. Could be performaing [query cache](../query-cache.md) cleanup, or flushing the [binary log](../../../../programming-customizing-mariadb/stored-routines/binary-logging-of-stored-routines.md) or InnoDB log. |
+| Killed | Thread will abort next time it checks the kill flag. Requires waiting for any locks to be released. |
+| Locked | Query has been locked by another query. |
+| logging slow query | Writing statement to the [slow query log](../../query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics.md). |
+| NULL | State used for [SHOW PROCESSLIST](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md). |
+| login | Connection thread has not yet been authenticated. |
+| manage keys | Enabling or disabling a table index. |
+| Opening table[s] | Trying to open a table. Usually very quick unless the limit set by [table_open_cache](../../system-variables/server-system-variables.md#table_open_cache) has been reached, or an [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) or [LOCK TABLE](/en/lock-tables-and-unlock-tables/) is in progress. |
+| optimizing | Server is performing initial optimizations in for a query. |
+| preparing | State occurring during query optimization. |
+| Purging old relay logs | Relay logs that are no longer needed are being removed. |
+| query end | Query has finished being processed, but items have not yet been freed (the freeing items state. |
+| Reading file | Server is reading the file (for example during [LOAD DATA INFILE](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md)). |
+| Reading from net | Server is reading a network packet. |
+| Removing duplicates | Duplicated rows being removed before sending to the client. This happens when SELECT DISTINCT is used in a way that the distinct operation could not be optimized at an earlier point. |
+| removing tmp table | Removing an internal temporary table after processing a [SELECT](../../../standard-replication/selectively-skipping-replication-of-binlog-events.md) statement. |
+| rename | Renaming a table. |
+| rename result table | Renaming a table that results from an [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement having created a new table. |
+| Reopen tables | Table is being re-opened after thread obtained a lock but the underlying table structure had changed, so the lock was released. |
+| Repair by sorting | Indexes are being created with the use of a sort. Much faster than the related Repair with keycache. |
+| Repair done | Multi-threaded repair has been completed. |
+| Repair with keycache | Indexes are being created through the key cache, one-by-one. Much slower than the related Repair by sorting. |
+| Rolling back | A transaction is being rolled back. |
+| Saving state | New table state is being saved. For example, after, analyzing a [MyISAM](../../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) table, the key distributions, rowcount etc. are saved to the .MYI file. |
+| Searching rows for update | Finding matching rows before performing an [UPDATE](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md), which is needed when the UPDATE would change the index used for the UPDATE |
+| Sending data | Sending data to the client as part of processing a [SELECT](../../../standard-replication/selectively-skipping-replication-of-binlog-events.md) statement or other statements that returns data like [INSERT ... RETURNING](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insertreturning.md) . Often the longest-occurring state as it also include all reading from tables and disk read activities. Where an aggregation or un-indexed filtering occurs there is significantly more rows read than what is sent to the client. |
+| setup | Setting up an [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operation. |
+| Sorting for group | Sorting as part of a [GROUP BY](../../../standard-replication/selectively-skipping-replication-of-binlog-events.md#group-by) |
+| Sorting for order | Sorting as part of an [ORDER BY](../../../standard-replication/selectively-skipping-replication-of-binlog-events.md#order-by) |
+| Sorting index | Sorting index pages as part of a table optimization operation. |
+| Sorting result | Processing a [SELECT](../../../standard-replication/selectively-skipping-replication-of-binlog-events.md) statement using a non-temporary table. |
+| statistics | Calculating statistics as part of deciding on a query execution plan. Usually a brief state unless the server is disk-bound. |
+| System lock | Requesting or waiting for an external lock for a specific table. The [storage engine](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/video-presentations-and-screencasts/storage-engines-and-plugins-videos) determines what kind of external lock to use. For example, the [MyISAM](/en/myisam-storage-engine/) storage engine uses file-based locks. However, MyISAM's external locks are disabled by default, due to the default value of the [skip_external_locking](../../system-variables/server-system-variables.md#skip_external_locking) system variable. Transactional storage engines such as [InnoDB](../../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md) also register the transaction or statement with MariaDB's [transaction coordinator](../../../../../server-management/server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md) while in this thread state. See [MDEV-19391](https://jira.mariadb.org/browse/MDEV-19391) for more information about that. |
+| Table lock | About to request a table's internal lock after acquiring the table's external lock. This thread state occurs after the System lock thread state. |
+| update | About to start updating table. |
+| Updating | Searching for and updating rows in a table. |
+| updating main table | Updating the first table in a multi-table update, and saving columns and offsets for use in the other tables. |
+| updating reference tables | Updating the secondary (reference) tables in a multi-table update |
+| updating status | This state occurs after a query's execution is complete. If the query's execution time exceeds [long_query_time](../../system-variables/server-system-variables.md#long_query_time), then [Slow_queries](../../system-variables/server-status-variables.md#slow_queries) is incremented, and if the [slow query log](../../query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics.md) is enabled, then the query is logged. If the [SERVER_AUDIT](../../../../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-location-and-rotation-of-logs.md) plugin is enabled, then the query is also logged into the audit log at this stage. If the [userstats](../../query-optimizations/statistics-for-optimizing-queries/user-statistics.md) plugin is enabled, then CPU statistics are also updated at this stage. |
+| User lock | About to request or waiting for an advisory lock from a [GET LOCK()](../../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md) call. For [SHOW PROFILE](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-profile.md), means requesting a lock only. |
+| User sleep | A [SLEEP()](../../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/sleep.md) call has been invoked. |
+| Waiting for commit lock | [FLUSH TABLES WITH READ LOCK](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) is waiting for a commit lock, or a statement resulting in an explicit or implicit commit is waiting for a read lock to be released. This state was called Waiting for all running commits to finish in earlier versions. |
+| Waiting for global read lock | Waiting for a global read lock. |
+| Waiting for table level lock | External lock acquired,and internal lock about to be requested. Occurs after the System lock state. In earlier versions, this was called Table lock. |
+| Waiting for xx lock | Waiting to obtain a lock of type xx. |
+| Waiting on cond | Waiting for an unspecified condition to occur. |
+| Writing to net | Writing a packet to the network. |

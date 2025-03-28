@@ -1,2 +1,0 @@
-# Date and Time Functions
-

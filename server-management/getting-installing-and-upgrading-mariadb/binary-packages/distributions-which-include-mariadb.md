@@ -1,0 +1,85 @@
+# Distributions Which Include MariaDB
+
+The following is a partial list of distributions which include MariaDB in their package repositories. For these you can use the distribution's management system to install MariaDB.
+
+The term "default" in the list below refers to the distribution's default relational or MySQL-type database.
+
+#
+
+# Linux Distributions
+
+* [AlmaLinux](https://almalinux.org/) — [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105) was included since 8.8.
+* [Alpine Linux](https://www.alpinelinux.org/) — Defaults to MariaDB. [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-106) has been available 3.12.11 and [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011) since 3.18.2.
+* [4mLinux](https://4mlinux.com) — Defaults to MariaDB. [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-106) has been available [since 37.0](http://4mlinux-releases.blogspot.com/2022/03/4mlinux-390-stable-released.html)
+* [ALT Linux](https://packages.altlinux.org/en/Sisyphus/srpms/mariadb) — [MariaDB 5.5](/kb/en/what-is-mariadb-55/) included in 7.0.0, MariaDB is default from 8.1, which includes [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011), 9.1 includes [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-104)
+* [Arch Linux](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/) — Features [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011), and replaced MySQL as a default
+* [Austrumi](http://cyti.latgola.lv/ruuni/)— Defaulted to [MariaDB 5.3](/kb/en/what-is-mariadb-53/) in 2.4.8, 3.5.8 includes [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011)
+* [BlackArch](http://blackarch.org/) — Defaulted to [MariaDB 5.5](/kb/en/what-is-mariadb-55/) in 2014.07.01, 2020.12.01 includes [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105)
+* [BlueOnyx](http://www.blueonyx.it/) — 5209 defaults to [MariaDB 5.5](/kb/en/what-is-mariadb-55/), 5210R to [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-103)
+* [BlueStar](http://bluestarlinux.sourceforge.net/) — 4.8.4 defaults to [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011), 5.4.2 to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105)
+* [CentOS](https://wiki.centos.org/About/Product/) — [MariaDB 5.5](/kb/en/what-is-mariadb-55/) replaced MySQL in CentOS 7
+* [The Chakra Project](https://chakraos.org/) — MariaDB replaced MySQL as default in 2013.05. 2016.02 includes [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011)
+* [Debian](https://www.debian.org/) — Debian 10 "Buster" includes [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-103), Debian 11 "Bullseye" [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105), Debian 12 "Bookworm" [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011) as default.
+* [Elastix](http://www.elastix.org/) —Defaulted to [MariaDB 5.5](/kb/en/what-is-mariadb-55/) in 4.0.76
+* [Exherbo](http://exherbo.org/) —Includes [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-104)
+* [Fedora](https://getfedora.org/) — [MariaDB 5.5](/kb/en/what-is-mariadb-55/) became the default relational database in Fedora 19. Fedora 30 [includes MariaDB 10.3](https://bodhi.fedoraproject.org/updates/?packages=mariadb&page=1), Fedora 34 [includes MariaDB 10.5](https://fedoraproject.org/wiki/Releases/34/ChangeSet#MariaDB_10.5).
+* [Funtoo](http://www.funtoo.org/) —Includes [MariaDB 5.5](/kb/en/what-is-mariadb-55/)
+* [Gentoo Linux](https://packages.gentoo.org/packages/dev-db/mariadb)
+* [Guix](https://www.gnu.org/software/guix/)—11.2.0 includes [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011)
+* [Hanthana](http://www.hanthana.org/)— 19.1 defaulted to [MariaDB 5.5](/kb/en/what-is-mariadb-55/), 21 includes [MariaDB 10.0](/kb/en/what-is-mariadb-100/), 28.1.2 includes [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-102), 30 includes [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-103)
+* [KaOS](http://kaosx.us/) —Defaulted to [MariaDB 5.5](/kb/en/what-is-mariadb-55/) in 2014.12, 2019.04 includes [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-103)
+* [Kali Linux](https://www.kali.org/) —2017.3 Included [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011), 2023.1 includes [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011)
+* [GNU/Linux KDu](http://www.linux-kdu.com.br/) — [MariaDB 5.5](/kb/en/what-is-mariadb-55/) replaced MySQL as a default in 2.0 Final.
+* [Korora](https://kororaproject.org/) —Defaulted to MariaDB in 19.1, 26 includes [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011)
+* [Linux from Scratch](http://www.linuxfromscratch.org/) —10.1-BLFS defaults to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105)
+* [Lunar](http://www.lunar-linux.org/) —1.7.0 includes [MariaDB 5.5](/kb/en/what-is-mariadb-55/), Moonbase includes [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105)
+* [Mageia](https://www.mageia.org/) — [MariaDB 5.5](/kb/en/what-is-mariadb-55/) replaced MySQL as default in version 3, [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-103) from version 7.1, [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105) from 8, [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011) from 9.
+* [Manjaro Linux](https://manjaro.github.io/) — Defaulted to [MariaDB 5.5](/kb/en/what-is-mariadb-55/) in 0.8.11, 16.10.3 includes [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011).
+* [NixOS](http://nixos.org/) —14.0.4.630 included [MariaDB 10.0](/kb/en/what-is-mariadb-100/), 18.09 includes [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-102), Stable includes [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105)
+* [Network Security Toolkit](http://www.networksecuritytoolkit.org/) —20-5663 defaulted to [MariaDB 5.5](/kb/en/what-is-mariadb-55/), 32-11992 includes [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-104)
+* [NuTyX](http://www.nutyx.org/) —14.11 included [MariaDB 10.0](/kb/en/what-is-mariadb-100/), defaulted to [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011) in 8.2.1, 20.12.1 includes [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105)
+* [OpenELEC](http://news.softpedia.com/news/openelec-8-0-3-embedded-linux-entertainment-os-adds-mesa-17-0-5-and-linux-4-9-25-515302.shtml)
+* [OpenEuler](https://openeuler.org/en/) —21.9 includes [10.5](https://repo.openeuler.org/openEuler-21.09/source/Packages/), 22.03 LTS [includes MariaDB 10.5](https://repo.openeuler.org/openEuler-22.03-LTS/source/Packages/)
+* [Open Mandriva](http://openmandriva.org/) —Defaulted to [MariaDB 10.0](/kb/en/what-is-mariadb-100/) in 2014.2, includes [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105) in 4.2
+* [openSUSE](https://en.opensuse.org/Portal:MySQL) — [MariaDB 5.5](/kb/en/what-is-mariadb-55/) became the default relational database in [openSUSE 12.3](https://blog.mariadb.org/opensuse-12-3-released-with-mariadb-as-default), and [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-106) the default since 15.5
+* [Oracle Linux](http://www.oracle.com/us/technologies/linux/index.html) — 7.3 includes [MariaDB 5.5](/kb/en/what-is-mariadb-55/). 8.0 includes [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-103)
+* [Paldo](http://www.paldo.org/) —Defaults to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105) in Stable
+* [Parabola GNU/Linux](https://www.parabola.nu/packages/?q=mariadb) —Includes [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011) since 3.7
+* [Parrot Security](http://www.parrotsec.org/) —Based on Debian's testing branch (stretch), Parrot Security switched from MySQL to [MariaDB 10.0](/kb/en/what-is-mariadb-100/) in 3.1, 4.7 includes [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-103)
+* [Parted Magic](http://partedmagic.com/) —Defaulted to [MariaDB 5.5](/kb/en/what-is-mariadb-55/) in 2015_11_13
+* [PCLinuxOS](http://www.pclinuxos.com/forum/index.php?topic=140029.0) —Replaced MySQL with [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011) in 2017.03
+* [Pisi Linux](http://www.pisilinux.org/) —Defaulted to [MariaDB 10.0](/kb/en/what-is-mariadb-100/) in 1.1
+* [Plamo](http://www.plamolinux.org/) —Defaulted to [MariaDB 5.5](/kb/en/what-is-mariadb-55/) in 5.3.1, 7.3 includes [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-102)
+* [PoliArch](http://www.poliarch.org/) —Defaulted to [MariaDB 5.5](/kb/en/what-is-mariadb-55/) in 13.1, 15.1 includes [MariaDB 10.0](/kb/en/what-is-mariadb-100/)
+* [Red Hat Enterprise Linux](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux) — [MariaDB 5.5](/kb/en/what-is-mariadb-55/) was included as the default "MySQL" database since RHEL 7, RHEL 9 includes [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105)
+* [Rocky Linux](https://rockylinux.org) — [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105) was included since 8.7.
+* [ROSA](http://www.rosalab.com/) —Defaulted to [MariaDB 10.0](/kb/en/what-is-mariadb-100/) in R4 and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011) in R9.
+* [Sabayon](http://www.sabayon.org/) —Included [MariaDB 10.0](/kb/en/what-is-mariadb-100/) in 14.12, includes [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-103) since 19.03
+* [Scientific Linux](https://www.scientificlinux.org/) —Defaulted to [MariaDB 5.5](/kb/en/what-is-mariadb-55/) in 7.3
+* [Slackware](https://slackbuilds.org/apps/mariadb/) — [MariaDB 5.5](/kb/en/what-is-mariadb-55/) replaced MySQL as default in 14.1. 15.0 includes [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105), current includes [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011)
+* [SliTaz GNU/Linux](http://www.slitaz.org/) —Includes [MariaDB 10.0](/kb/en/what-is-mariadb-100/) in 5.0-rolling
+* [SME Server](https://wiki.contribs.org/SME_Server:10.0)— started to use [MariaDB 5.5](/kb/en/what-is-mariadb-55/) from 10.0
+* [Springdale Linux](http://springdale.math.ias.edu/) —Defaulted to [MariaDB 5.5](/kb/en/what-is-mariadb-55/) in 7.2, 8.1 includes [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-103)
+* [SuliX](http://www.sulix.hu/) — Defaults to [MariaDB 5.5](/kb/en/what-is-mariadb-55/) in 8.
+* [SUSE Linux Enterprise](https://www.suse.com) — [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-106) is the default relational database option on 15-SP6
+* [Ubuntu](https://wiki.ubuntu.com/Releases/) —[MariaDB 5.5](/kb/en/what-is-mariadb-55/) was included in Trusty Tahr 14.04. 20.04 [includes MariaDB 10.3](http://packages.ubuntu.com/focal/mariadb-server-10.3), and 22.04 [includes 10.6](https://packages.ubuntu.com/jammy/database/).
+* [Void](http://www.voidlinux.eu/) — [Includes MariaDB 10.5 in current](https://voidlinux.org/packages/)
+* [Wifislax](http://www.wifislax.com/) — Defaulted to [MariaDB 10.0](/kb/en/what-is-mariadb-100/) in 4.11.1
+
+#
+
+# BSD Distributions
+
+* [Dragonfly BSD](https://www.dragonflybsd.org/) — 3.8 included [MariaDB 5.5](/kb/en/what-is-mariadb-55/). 5.8.0 includes [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-104).
+* [FreeBSD](https://svnweb.freebsd.org/ports/head/databases/#mariadb100-client) — MariaDB is available in the ports tree and the FreeBSD Manual has instructions on [Installing Applications: Packages and Ports](https://www.freebsd.org/doc/en/books/handbook/ports.html). [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105) is included in 12.2
+
+ * [MariaDB on FreshPorts](https://www.freshports.org/search.php?query=mariadb)
+* [NetBSD](https://www.netbsd.org/) — 6.1 and 7.0 include [MariaDB 5.5](/kb/en/what-is-mariadb-55/).
+* [OpenBSD](https://marc.info/?m=141063182731679) — [MariaDB 10.0](/kb/en/what-is-mariadb-100/) was included in 5.7, 6.8 includes [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105).
+
+#
+
+# macOS
+
+* [Homebrew](http://brew.sh/) — If you have Homebrew installed, you can install MariaDB Server by executing `brew install mariadb`. Find out more at [Installing MariaDB Server on macOS Using Homebrew](installing-mariadb-on-macos-using-homebrew.md).
+* [MacPorts](https://www.macports.org/) —This provides [mariadb and mariadb-server](https://trac.macports.org/browser/trunk/dports/databases/mariadb/Portfile). A [quick guide](http://yosun.me/2012/04/13/mariadb-via-macports-on-mac-os-x-10-6/) on how to install it.

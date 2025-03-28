@@ -1,0 +1,5 @@
+# Ansible and MariaDB
+
+General information and hints on how to automate MariaDB deployments and configuration with Ansible.
+
+Ansible is an open source tool to automate deployment, configuration and operations.
