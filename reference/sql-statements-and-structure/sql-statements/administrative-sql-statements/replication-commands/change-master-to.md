@@ -100,8 +100,6 @@ START SLAVE 'gandalf';
 
 The `MASTER_USER` option for `CHANGE MASTER` defines the user account that the [replica](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/mariadb-releases/compatibility-differences/replication-compatibility-between-mariadb-and-mysql) will use to connect to the [primary](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/mariadb-releases/compatibility-differences/replication-compatibility-between-mariadb-and-mysql).
 
-
-
 {% tabs %}
 {% tab title="Current" %}
 This user account will need the [REPLICATION REPLICA](../../account-management-sql-commands/grant.md#replication-replica) privilege on the primary.
@@ -111,8 +109,6 @@ This user account will need the [REPLICATION REPLICA](../../account-management-s
 This user account will need the [REPLICATION SLAVE](../../account-management-sql-commands/grant.md#replication-slave) privilege on the primary.
 {% endtab %}
 {% endtabs %}
-
-This user account will need the [REPLICATION SLAVE](../../account-management-sql-commands/grant.md#replication-slave) privilege (or, from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-105-series/mariadb-1051-release-notes), the [REPLICATION REPLICA](../../account-management-sql-commands/grant.md#replication-replica) on the primary.
 
 For example:
 
