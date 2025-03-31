@@ -102,11 +102,11 @@ The `MASTER_USER` option for `CHANGE MASTER` defines the user account that the [
 
 {% tabs %}
 {% tab title="Current" %}
-This user account will need the [REPLICATION REPLICA](../../account-management-sql-commands/grant.md#replication-replica) privilege on the primary.
+This user account needs the [REPLICATION REPLICA](../../account-management-sql-commands/grant.md#replication-replica) privilege on the primary.
 {% endtab %}
 
 {% tab title="MariaDB < 10.5.1" %}
-This user account will need the [REPLICATION SLAVE](../../account-management-sql-commands/grant.md#replication-slave) privilege on the primary.
+This user account needs the [REPLICATION SLAVE](../../account-management-sql-commands/grant.md#replication-slave) privilege on the primary.
 {% endtab %}
 {% endtabs %}
 
