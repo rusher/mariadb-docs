@@ -106,6 +106,8 @@ This user account needs the [REPLICATION REPLICA](../../account-management-sql-c
 {% endtab %}
 
 {% tab title="MariaDB < 10.5.1" %}
+#### Heading, for the whole purpose of being able to link to the tab <a href="#this-is-a-test-anchor" id="this-is-a-test-anchor"></a>
+
 This user account needs the [REPLICATION SLAVE](../../account-management-sql-commands/grant.md#replication-slave) privilege on the primary.
 {% endtab %}
 {% endtabs %}
