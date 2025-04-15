@@ -1,0 +1,312 @@
+
+# MariaDB MaxScale Administration Tutorial
+
+# MariaDB MaxScale Administration Tutorial
+
+
+The purpose of this tutorial is to introduce the MariaDB MaxScale Administrator
+to a few of the common administration tasks. This is intended to be an
+introduction for administrators who are new to MariaDB MaxScale and not a
+reference to all the tasks that may be performed.
+
+
+## Starting and Stopping MariaDB MaxScale
+
+
+### Systemd
+
+
+Most modern operating systems support the Systemd interface.
+
+
+**Starting MaxScale:**
+
+
+
+```
+systemctl start maxscale
+```
+
+
+
+**Stopping MaxScale:**
+
+
+
+```
+systemctl stop maxscale
+```
+
+
+
+The MaxScale service file is located in `<code>/lib/systemd/system/maxscale.service</code>`.
+
+
+### SysV
+
+
+Legacy platforms should use the service interface to start MaxScale.
+
+
+**Starting MaxScale:**
+
+
+
+```
+service maxscale start
+```
+
+
+
+**Stopping MaxScale:**
+
+
+
+```
+service maxscale stop
+```
+
+
+
+Additional command line arguments can be passed to MariaDB MaxScale with a
+configuration file placed at `<code>/etc/sysconfig/maxscale</code>` on RPM installations and
+`<code>/etc/default/maxscale</code>` file on DEB installations. Set the arguments in a
+variable called `<code>MAXSCALE_OPTIONS</code>` and remember to surround the arguments with
+quotes. The file should only contain environment variable declarations.
+
+
+
+```
+MAXSCALE_OPTIONS="--logdir=/home/maxscale/logs --piddir=/tmp --syslog=no"
+```
+
+
+
+Note that this is only supported on legacy SysV systems.
+
+
+## Checking The Status Of The MariaDB MaxScale Services
+
+
+It is possible to use the maxctrl command to obtain statistics about the
+services that are running within MaxScale. The maxctrl command `<code>list services</code>`
+will give very basic information regarding services. This command may be either
+run in interactive mode or passed on the maxctrl command line.
+
+
+
+```
+$ maxctrl list services
+┌────────────────────────┬────────────────┬─────────────┬───────────────────┬────────────────────────────────────┐
+│ Service                │ Router         │ Connections │ Total Connections │ Servers                            │
+├────────────────────────┼────────────────┼─────────────┼───────────────────┼────────────────────────────────────┤
+│ CLI                    │ cli            │ 1           │ 1                 │                                    │
+├────────────────────────┼────────────────┼─────────────┼───────────────────┼────────────────────────────────────┤
+│ RW-Split-Router        │ readwritesplit │ 1           │ 1                 │ server1, server2, server3, server4 │
+├────────────────────────┼────────────────┼─────────────┼───────────────────┼────────────────────────────────────┤
+│ RW-Split-Hint-Router   │ readwritesplit │ 1           │ 1                 │ server1, server2, server3, server4 │
+├────────────────────────┼────────────────┼─────────────┼───────────────────┼────────────────────────────────────┤
+│ SchemaRouter-Router    │ schemarouter   │ 1           │ 1                 │ server1, server2, server3, server4 │
+├────────────────────────┼────────────────┼─────────────┼───────────────────┼────────────────────────────────────┤
+│ Read-Connection-Router │ readconnroute  │ 1           │ 1                 │ server1                            │
+└────────────────────────┴────────────────┴─────────────┴───────────────────┴────────────────────────────────────┘
+```
+
+
+
+Network listeners count as a user of the service, therefore there will always be
+one user per network port in which the service listens. More details can be
+obtained by using the "show service" command.
+
+
+## Persistent Connections
+
+
+When clients who are accessing a database system through MariaDB MaxScale make
+frequent short connections, there may be a benefit in using persistent
+connections. This feature is controlled by two configuration values that are
+specified per server in the relevant server section of the configuration file.
+The configuration options are `<code>persistpoolmax</code>` and `<code>persistmaxtime</code>`.
+
+
+Normally, when a client connection is terminated, all the related back end
+database connections are also terminated. If the `<code>persistpoolmax</code>` options is set
+to a non-zero integer, then up to that number of connections will be kept in a
+pool for that server. When a new connection is requested by the system to handle
+a client session, then a connection from the pool will be used if possible.
+
+
+The connection will only be taken from the pool if it has been there for no more
+than `<code>persistmaxtime</code>` seconds. The connection will also be discarded if it has
+been disconnected by the back end server. Connections will be selected so that
+they match the user name and protocol for the new request.
+
+
+Starting with MaxScale 2.1, when a MySQL protocol connection is taken from the
+pool, the backend protocol module resets the session state. This allows
+persistent connections to be used with no functional limitations.
+
+
+The session state is reset when the first outgoing network transmission is done.
+This *lazy initialization* of the persistent connections allows MaxScale to take
+multiple new connections into use but only initialize the ones that it actually
+needs.
+
+
+**Please note** that in versions before 2.1 the persistent connections may give
+a different environment when compared to a fresh connection. For example, if the
+previous use of the connection issued a "USE mydatabase;" statement then this
+setting will be carried over into the reuse of the same connection. For many
+applications this will not be noticeable, since each request will assume that
+nothing has been set and will issue fresh requests such as "USE" to establish
+the desired configuration. In exceptional cases this feature could be a problem.
+
+
+It is possible to have pools for as many servers as you wish, with configuration
+values in each server section.
+
+
+## What Clients Are Connected To MariaDB MaxScale
+
+
+To determine what client are currently connected to MariaDB MaxScale, you can
+use the `<code>list sessions</code>` command within maxctrl. This will give you IP address
+and the ID of the session for that connection. As with any maxctrl
+command this can be passed on the command line or typed interactively in
+maxctrl.
+
+
+
+```
+$ maxctrl list sessions
+┌────┬─────────┬──────────────────┬──────────────────────────┬──────┬─────────────────┐
+│ Id │ User    │ Host             │ Connected                │ Idle │ Service         │
+├────┼─────────┼──────────────────┼──────────────────────────┼──────┼─────────────────┤
+│ 6  │ maxuser │ ::ffff:127.0.0.1 │ Thu Aug 27 10:39:16 2020 │ 4    │ RW-Split-Router │
+└────┴─────────┴──────────────────┴──────────────────────────┴──────┴─────────────────┘
+```
+
+
+
+## Rotating the Log File
+
+
+MariaDB MaxScale logs messages of different priority into a single log file.
+With the exception if error messages that are always logged, whether messages of
+a particular priority should be logged or not can be enabled via the maxctrl
+interface or in the configuration file. By default, MaxScale keeps on writing to
+the same log file. To prevent the file from growing indefinitely, the
+administrator must take action.
+
+
+The name of the log file is maxscale.log. When the log is rotated, MaxScale
+closes the current log file and opens a new one using the same name.
+
+
+Log file rotation is achieved by use of the `<code>rotate logs</code>` command
+in maxctrl.
+
+
+
+```
+maxctrl rotate logs
+```
+
+
+
+As there currently is only the maxscale log, that is the only one that will be
+rotated.
+
+
+This may be integrated into the Linux *logrotate* mechanism by adding a
+configuration file to the /etc/logrotate.d directory. If we assume we want to
+rotate the log files once per month and wish to keep 5 log files worth of
+history, the configuration file would look as follows.
+
+
+
+```
+/var/log/maxscale/maxscale.log {
+monthly
+rotate 5
+missingok
+nocompress
+sharedscripts
+postrotate
+\# run if maxscale is running
+if test -n "`ps acx|grep maxscale`"; then
+/usr/bin/maxctrl rotate logs
+fi
+endscript
+}
+```
+
+
+
+MariaDB MaxScale will also rotate all of its log files if it receives the USR1
+signal. Using this the logrotate configuration script can be rewritten as
+
+
+
+```
+/var/log/maxscale/maxscale.log {
+monthly
+rotate 5
+missingok
+nocompress
+sharedscripts
+postrotate
+kill -USR1 `cat /var/run/maxscale/maxscale.pid`
+endscript
+}
+```
+
+
+
+In older versions MaxScale renamed the log file, behavior which is not fully
+compliant with the assumptions of logrotate and may lead to issues, depending on
+the used logrotate configuration file. From version 2.1 onward, MaxScale will
+not itself rename the log file, but when the log is rotated, MaxScale will
+simply close and reopen (and truncate) the same log file. That will make the
+behavior fully compliant with logrotate.
+
+
+## Taking A Database Server Out Of Use
+
+
+MariaDB MaxScale supports the concept of maintenance mode for servers within a
+cluster, this allows for planned, temporary removal of a database from the
+cluster within the need to change the MariaDB MaxScale configuration.
+
+
+To achieve the removal of a database server you can use the `<code>set server</code>` command
+in maxctrl to set the maintenance mode flag for the server. This
+may be done interactively within maxctrl or by passing the command on the
+command line.
+
+
+
+```
+maxctrl set server dbserver3 maintenance
+```
+
+
+
+This will cause MariaDB MaxScale to stop routing any new requests to the server,
+however if there are currently requests executing on the server these will not
+be interrupted.
+
+
+To bring the server back into service use the "clear server" command to clear
+the maintenance mode bit for that server.
+
+
+
+```
+sudo maxctrl clear server dbserver3 maintenance
+```
+
+
+
+If multiple MariaDB MaxScale instances are configured to use the node
+them maintenance mode must be set within each MariaDB MaxScale instance.

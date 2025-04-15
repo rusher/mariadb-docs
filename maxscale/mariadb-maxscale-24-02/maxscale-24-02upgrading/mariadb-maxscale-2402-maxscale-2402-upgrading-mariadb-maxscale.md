@@ -1,0 +1,900 @@
+
+# MaxScale 24.02 Upgrading MariaDB MaxScale
+
+# Upgrading MariaDB MaxScale
+
+
+For more information about what has changed, please refer to the
+[ChangeLog](../mariadb-maxscale-2402-maxscale-2402-changelog.md) and to the
+[release notes](https://mariadb.com/kb/Release-Notes/).
+
+
+Before starting the upgrade, any existing configuration files should
+be backed up.
+
+
+
+
+* [Upgrading MariaDB MaxScale](#upgrading-mariadb-maxscale)
+* [Upgrading MariaDB MaxScale from 23.08 to 24.02](#upgrading-mariadb-maxscale-from-2308-to-2402)
+
+  * [Downgrading to older major versions](#downgrading-to-older-major-versions)
+* [Upgrading MariaDB MaxScale from 23.02 to 23.08](#upgrading-mariadb-maxscale-from-2302-to-2308)
+* [Upgrading MariaDB MaxScale from 22.08 to 23.02](#upgrading-mariadb-maxscale-from-2208-to-2302)
+
+  * [Removed Features](#removed-features)
+* [Upgrading MariaDB MaxScale from 21.06 to 22.08](#upgrading-mariadb-maxscale-from-2106-to-2208)
+
+  * [Removed Features](#removed-features_1)
+* [Upgrading MariaDB MaxScale from 2.5 to 21.06](#upgrading-mariadb-maxscale-from-25-to-2106)
+
+  * [Duration Type Parameters](#duration-type-parameters)
+  * [Changed Parameters](#changed-parameters)
+
+    * [threads](#threads)
+  * [Removed Parameters](#removed-parameters)
+
+    * [Core Parameters](#core-parameters)
+    * [Schemarouter](#schemarouter)
+    * [mariadbmon](#mariadbmon)
+  * [Session Command History](#session-command-history)
+* [Upgrading MariaDB MaxScale from 2.4 to 2.5](#upgrading-mariadb-maxscale-from-24-to-25)
+
+  * [MaxAdmin](#maxadmin)
+  * [Authentication](#authentication)
+  * [MariaDB-Monitor](#mariadb-monitor)
+
+    * [Password encryption](#password-encryption)
+  * [Default Server State](#default-server-state)
+  * [Columnstore Monitor](#columnstore-monitor)
+  * [New binlog router](#new-binlog-router)
+  * [Tee Filter](#tee-filter)
+* [Upgrading MariaDB MaxScale from 2.3 to 2.4](#upgrading-mariadb-maxscale-from-23-to-24)
+
+  * [Section Names](#section-names)
+
+    * [Reserved Names](#reserved-names)
+    * [Whitespace in Names](#whitespace-in-names)
+  * [Durations](#durations)
+  * [Improved Admin User Encryption](#improved-admin-user-encryption)
+  * [MariaDB-Monitor](#mariadb-monitor_1)
+  * [ReadWriteSplit](#readwritesplit)
+* [Upgrading MariaDB MaxScale from 2.2 to 2.3](#upgrading-mariadb-maxscale-from-22-to-23)
+
+  * [Increased Memory Use](#increased-memory-use)
+  * [Unknown Global Parameters](#unknown-global-parameters)
+  * [passwd is deprecated](#passwd-is-deprecated)
+  * [authenticator_options for servers is ignored](#authenticator_options-for-servers-is-ignored)
+* [Upgrading MariaDB MaxScale from 2.1 to 2.2](#upgrading-mariadb-maxscale-from-21-to-22)
+
+  * [Administrative Users](#administrative-users)
+  * [Regular Expression Parameters](#regular-expression-parameters)
+  * [Binlog Server](#binlog-server)
+  * [MaxCtrl Included in Main Package](#maxctrl-included-in-main-package)
+* [Upgrading MariaDB MaxScale from 2.0 to 2.1](#upgrading-mariadb-maxscale-from-20-to-21)
+
+  * [IPv6 Support](#ipv6-support)
+  * [Persisted Configuration Files](#persisted-configuration-files)
+  * [MaxScale Log Files](#maxscale-log-files)
+  * [ReadWriteSplit](#readwritesplit_1)
+  * [Persistent Connections](#persistent-connections)
+  * [User Data Cache](#user-data-cache)
+  * [Galeramon Monitoring Algorithm](#galeramon-monitoring-algorithm)
+  * [MaxAdmin Editing Mode](#maxadmin-editing-mode)
+* [Upgrading MariaDB MaxScale from 1.4 to 2.0](#upgrading-mariadb-maxscale-from-14-to-20)
+
+  * [MaxAdmin](#maxadmin_1)
+  * [MySQL Monitor](#mysql-monitor)
+* [Upgrading MaxScale from 1.3 to 1.4](#upgrading-maxscale-from-13-to-14)
+
+  * [Service user permissions](#service-user-permissions)
+  * [Password encryption](#password-encryption_1)
+  * [SSL](#ssl)
+* [Upgrading MaxScale from 1.2 to 1.3](#upgrading-maxscale-from-12-to-13)
+
+  * [Binlog Router](#binlog-router)
+* [Upgrading MaxScale from 1.1 to 1.2](#upgrading-maxscale-from-11-to-12)
+
+  * [Installation](#installation)
+  * [File location changes](#file-location-changes)
+  * [Running MaxScale without root permissions](#running-maxscale-without-root-permissions)
+* [Upgrading MaxScale from 1.0 to 1.1](#upgrading-maxscale-from-10-to-11)
+
+  * [Installation](#installation_1)
+  * [MaxAdmin changes](#maxadmin-changes)
+
+
+
+
+# Upgrading MariaDB MaxScale from 23.08 to 24.02
+
+
+## Downgrading to older major versions
+
+
+The MaxScale packaging has been modified in 24.02 to include all of the
+necessary files in the package itself. This removes the need for a
+post-installation script that installs them while also clearly stating what's
+included in the package.
+
+
+However, as a result of this change, downgrades from 24.02 to older
+major versions may cause the removal of necessary directories, namely
+the `<code>/var/cache/maxscale/</code>` directory.
+
+
+To downgrade from MaxScale 24.02 to an older MaxScale major release:
+
+
+* Remove MaxScale 24.02 (e.g. `<code>dnf remove maxscale</code>` or `<code>apt -y remove maxscale</code>`)
+* Install the older MaxScale version
+
+
+# Upgrading MariaDB MaxScale from 23.02 to 23.08
+
+
+MariaDB Monitor switchover requires an additional grant on MariaDB Server 10.5
+and later. See [Cluster Manipulation Grants](../maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)
+for more information.
+
+
+# Upgrading MariaDB MaxScale from 22.08 to 23.02
+
+
+## Removed Features
+
+
+* The `<code>csmon</code>` and `<code>auroramon</code>` monitors have been removed.
+* The obsolete `<code>maxctrl drain</code>` command has been removed.
+* The `<code>maxctrl cluster</code>` commands have been removed.
+
+
+# Upgrading MariaDB MaxScale from 21.06 to 22.08
+
+
+## Removed Features
+
+
+* The support for legacy encryption keys generated with `<code>maxkeys</code>` from pre-2.5
+ versions has been removed. This feature was deprecated in MaxScale 2.5 when
+ the new key storage format was introduced. To migrate to the new key storage
+ format, create a new key file with `<code>maxkeys</code>` and re-encrypt the passwords with
+ `<code>maxpasswd</code>`.
+* The deprecated Database Firewall filter has been removed.
+
+
+# Upgrading MariaDB MaxScale from 2.5 to 21.06
+
+
+**NOTE** MaxScale 6.4 was renamed to 21.06 in May 2024. Thus, what would have
+been released as 6.4.16 in June, was released as 21.06.16. The purpose of this
+change is to make the versioning scheme used by all MaxScale series
+identical. 21.06 denotes the year and month when the first 6 release was made.
+
+
+## Duration Type Parameters
+
+
+Using duration type parameters without an explicit suffix has been deprecated in
+MaxScale 2.4. In MaxScale 6 they are no longer allowed when used with the REST
+API or MaxCtrl. This means that any `<code>create</code>` or `<code>alter</code>` commands in MaxCtrl that
+use a duration type parameter must explicitly specify the suffix of the unit.
+
+
+For example, the following command:
+
+
+
+```
+maxctrl alter service My-Service connection_keepalive 30000
+```
+
+
+
+should be replaced with:
+
+
+
+```
+maxctrl alter service My-Service connection_keepalive 30000ms
+```
+
+
+
+Duration type parameters can still be defined in the configuration file without
+an explicit suffix but this behavior is deprecated. The recommended approach is
+to add explicit suffixes to all duration type parameters when upgrading to
+MaxScale 6.
+
+
+## Changed Parameters
+
+
+### `<code>threads</code>`
+
+
+The default value of `<code>threads</code>` was changed to `<code>auto</code>`.
+
+
+## Removed Parameters
+
+
+### Core Parameters
+
+
+The following deprecated core parameters have been removed:
+
+
+* `<code>thread_stack_size</code>`
+
+
+### Schemarouter
+
+
+The deprecated aliases for the schemarouter parameters `<code>ignore_databases</code>` and
+`<code>ignore_databases_regex</code>` have been removed. They can be replaced with
+`<code>ignore_tables</code>` and `<code>ignore_tables_regex</code>`.
+
+
+In addition, the `<code>preferred_server</code>` parameter that was deprecated in 2.5 has
+also been removed.
+
+
+### `<code>mariadbmon</code>`
+
+
+* MariaDBMonitor settings `<code>ignore_external_masters</code>`, `<code>detect_replication_lag</code>`
+`<code>detect_standalone_master</code>`, `<code>detect_stale_master</code>` and `<code>detect_stale_slave</code>`
+ have been removed. The first two were ineffective, the latter three are
+ replaced by `<code>master_conditions</code>` and `<code>slave_conditions</code>`.
+
+
+## Session Command History
+
+
+The `<code>prune_sescmd_history</code>`, `<code>max_sescmd_history</code>` and `<code>disable_sescmd_history</code>`
+have been made into generic service parameters that are shared between all
+routers that support it.
+
+
+The default value of `<code>prune_sescmd_history</code>` was changed from `<code>false</code>` to
+`<code>true</code>`. This was done as most MaxScale installations either benefit from it
+being enabled or are not affected by it.
+
+
+# Upgrading MariaDB MaxScale from 2.4 to 2.5
+
+
+## MaxAdmin
+
+
+The deprecated MaxAdmin interface has been removed in 2.5.0 in favor of the REST
+API and the MaxCtrl command line client. The `<code>cli</code>` and `<code>maxscaled</code>` modules can
+no longer be used.
+
+
+## Authentication
+
+
+The credentials used by services now require additional grants. For a full list
+of required grants, refer to the
+[protocol documentation](../maxscale-24-02authenticators/mariadb-maxscale-2402-maxscale-2402-authentication-modules.md).
+
+
+## MariaDB-Monitor
+
+
+The settings `<code>detect_stale_master</code>`, `<code>detect_standalone_master</code>` and
+`<code>detect_stale_slave</code>` are replaced by `<code>master_conditions</code>` and
+`<code>slave_conditions</code>`. The old settings may still be used, but will be removed in
+a later version.
+
+
+### Password encryption
+
+
+The encrypted passwords feature has been updated to be more secure. Users are
+recommended to generate a new encryption key and re-encrypt their passwords
+using the `<code>maxkeys</code>` and `<code>maxpasswd</code>` utilities. Old passwords still work.
+
+
+## Default Server State
+
+
+The default state of servers in 2.4 was `<code>Running</code>` and in 2.5 it is now
+`<code>Down</code>`. This was done to prevent newly added servers from being accidentally
+used before they were monitored.
+
+
+## Columnstore Monitor
+
+
+It is now mandatory to specify in the configuration what version the
+monitored Columnstore cluster is.
+
+
+
+```
+[CSMonitor]
+type=monitor
+module=csmon
+version=1.5
+...
+```
+
+
+
+Please see the [documentation](https://mariadb.com/kb/Monitors/ColumnStore-Monitor#master-selection)
+for details.
+
+
+## New binlog router
+
+
+The binlog router delivered with MaxScale 2.5 is completely new and
+not 100% backward compatible with the binlog router delivered with
+earlier MaxScale versions. If you use the binlog router, carefully
+assess whether the functionality provided by the new one fulfills
+your requirements, before upgrading MaxScale.
+
+
+## Tee Filter
+
+
+The tee filter parameter `<code>service</code>` has been deprecated in favor of the `<code>target</code>`
+parameter. All usages of `<code>service</code>` can be replaced with `<code>target</code>`.
+
+
+# Upgrading MariaDB MaxScale from 2.3 to 2.4
+
+
+## Section Names
+
+
+### Reserved Names
+
+
+Section and object names starting with `<code>@@</code>` are now reserved for
+internal use by MaxScale.
+
+
+In case such names have been used, they must manually be changed
+in all configuration files of MaxScale, before MaxScale 2.4 is started.
+
+
+Those files are:
+
+
+* The main configuration file; typically `<code>/etc/maxscale.cnf</code>`.
+* All nested configuration files; typically `<code>/etc/maxscale.cnf.d/*</code>`.
+* All dynamic configuration files; typically `<code>/var/lib/maxscale/maxscale.cnd.d/*</code>`.
+
+
+### Whitespace in Names
+
+
+Whitespace in section names that was deprecated in MaxScale 2.2 will now be
+rejected, which will cause the startup of MaxScale to fail.
+
+
+To prevent that, section names like
+
+
+
+```
+[My Server]
+...
+
+[My Service]
+...
+servers=My Server
+```
+
+
+
+must be changed, for instance, to
+
+
+
+```
+[MyServer]
+...
+
+[MyService]
+...
+servers=MyServer
+```
+
+
+
+## Durations
+
+
+Durations can now be specified using one of the suffixes `<code>h</code>`, `<code>m</code>`, `<code>s</code>`
+and `<code>ms</code>` for specifying durations in hours, minutes, seconds and
+milliseconds, respectively.
+
+
+*Not* providing an explicit unit has been deprecated in MaxScale 2.4,
+so it is advisable to add suffixes to durations. For instance,
+
+
+
+```
+some_param=60s
+some_param=60000ms
+```
+
+
+
+## Improved Admin User Encryption
+
+
+MaxScale 2.4 will use a SHA2-512 hash for new admin user passwords. To upgrade a
+user to use the better hashing algorithm, either recreate the user or use the
+`<code>maxctrl alter user</code>` command.
+
+
+## MariaDB-Monitor
+
+
+The following settings have been removed and cause a startup error
+if defined:
+
+
+* `<code>mysql51_replication</code>`
+* `<code>multimaster</code>`
+* `<code>allow_cluster_recovery</code>`.
+
+
+## ReadWriteSplit
+
+
+* If multiple masters are available for a readwritesplit service, the one with
+ the lowest connection count is selected.
+* If a master server is placed into maintenance mode, all open transactions are
+ allowed to gracefully finish before the session is closed. To forcefully close
+ the connections, use the `<code>--force</code>` option for `<code>maxctrl set server</code>`.
+* The `<code>lazy_connect</code>` feature can be used as a workaround to
+ [MXS-619](https://jira.mariadb.org/browse/MXS-619). It also reduces the
+ overall load on the system when connections are rapidly opened and closed.
+* Transaction replays now have a limit on how many times a replay is
+ attempted. The default values is five attempts and is controlled by the
+ `<code>transaction_replay_attempts</code>` parameter.
+* If transaction replay is enabled and a deadlock occurs (SQLSTATE 40XXX), the
+ transaction is automatically retried.
+
+
+# Upgrading MariaDB MaxScale from 2.2 to 2.3
+
+
+## Increased Memory Use
+
+
+Starting with MaxScale 2.3.0 up to 40% of the memory can be used for
+caching parsed queries. The most noticeable change is that it improves
+performance in almost all cases where queries need to be parsed. Most of
+the time this happens when the readwritesplit router or filters are used.
+
+
+The amount of memory that MaxScale uses can be controlled with the
+`<code>query_classifier_cache_size</code>` parameter. For example, to limit the total
+memory to 1GB, add `<code>query_classifier_cache_size=1G</code>` to your
+configuration. To disable it, set the value to `<code>0</code>`.
+
+
+In addition to the aforementioned query classifier caching, the
+readwritesplit session command history is enabled by default in 2.3 but is
+limited to a maximum of 50 commands after which the history is
+disabled. This is unlikely to show in any metrics but it contributes to
+the increased memory footprint of MaxScale.
+
+
+## Unknown Global Parameters
+
+
+All unknown parameters are now treated as errors. Check your configuration for
+errors if MaxScale fails to start after upgrading to 2.3.1.
+
+
+## `<code>passwd</code>` is deprecated
+
+
+In the configuration file, passwords for monitors and services should be
+specified using `<code>password</code>`; the support for the deprecated
+`<code>passwd</code>` will be removed in the future. That is, the following
+
+
+
+```
+[The-Service]
+type=service
+passwd=some-service-password
+...
+
+[The-Monitor]
+type=monitor
+passwd=some-monitor-password
+...
+```
+
+
+
+should be changed to
+
+
+
+```
+[The-Service]
+type=service
+password=some-service-password
+...
+
+[The-Monitor]
+type=monitor
+password=some-monitor-password
+...
+```
+
+
+
+## `<code>authenticator_options</code>` for servers is ignored
+
+
+Authenticator options are now only used with listeners.
+
+
+# Upgrading MariaDB MaxScale from 2.1 to 2.2
+
+
+### Administrative Users
+
+
+The file format for the administrative users used by MaxScale has been
+changed. Old style files are automatically upgraded and a backup of the old file is
+stored in `<code>/var/lib/maxscale/passwd.backup</code>`.
+
+
+### Regular Expression Parameters
+
+
+Modules may now use a built-in regular expression string parameter type instead
+of a normal string when accepting patterns. The modules that use the new regex
+parameter type are *qlafilter* and *tee*. When inputting pattern, enclose the
+string in slashes, e.g. `<code>match=/^select/</code>` defines the pattern `<code>^select</code>`.
+
+
+### Binlog Server
+
+
+Binlog server automatically accepts GTID connection from MariaDB 10 slave servers
+by saving all incoming GTIDs into a SQLite map database.
+
+
+### MaxCtrl Included in Main Package
+
+
+In the 2.2.1 beta version MaxCtrl was in its own package whereas in 2.2.2
+it is in the main `<code>maxscale</code>` package. If you have a previous installation
+of MaxCtrl, please remove it before upgrading to MaxScale 2.2.2.
+
+
+# Upgrading MariaDB MaxScale from 2.0 to 2.1
+
+
+## IPv6 Support
+
+
+MaxScale 2.1.2 added support for IPv6 addresses. The default interface that listeners bind to
+was changed from the IPv4 address `<code>0.0.0.0</code>` to the IPv6 address `<code>::</code>`. To bind to the old IPv4 address,
+add `<code>address=0.0.0.0</code>` to the listener definition.
+
+
+## Persisted Configuration Files
+
+
+Starting with MaxScale 2.1, any changes made with the newly added
+[runtime configuration change](https://mariadb.com/kb/Reference/MaxAdmin#runtime-configuration-changes)
+will be persisted in a configuration file. These files are located in `<code>/var/lib/maxscale/maxscale.cnf.d/</code>`.
+
+
+## MaxScale Log Files
+
+
+The name of the log file was changed from *maxscaleN.log* to *maxscale.log*. The
+default location for the log file is */var/log/maxscale/maxscale.log*.
+
+
+Rotating the log files will cause MaxScale to reopen the file instead of
+renaming them. This makes the MaxScale logging facility *logrotate* compatible.
+
+
+## ReadWriteSplit
+
+
+The `<code>disable_sescmd_history</code>` option is now enabled by default. This means that
+slaves will not be recovered mid-session even if a replacement slave is
+available. To enable the legacy behavior, add the `<code>disable_sescmd_history=true</code>`
+parameter to the service definition.
+
+
+## Persistent Connections
+
+
+The MariaDB session state is reset in MaxScale 2.1 for persistent
+connections. This means that any modifications to the session state (default
+database, user variable etc.) will not survive if the connection is put into the
+connection pool. For most users, this is the expected behavior.
+
+
+## User Data Cache
+
+
+The location of the MariaDB user data cache was moved from
+`<code>/var/cache/maxscale/<Service></code>` to `<code>/var/cache/maxscale/<Service>/<Listener></code>`.
+
+
+## Galeramon Monitoring Algorithm
+
+
+Galeramon will assign the master status *only* to the node which has a
+*wsrep_local_index* value of 0. This will guarantee consistent writes with
+multiple MaxScales but it also causes slower changes of the master node.
+
+
+To enable the legacy behavior, add `<code>root_node_as_master=false</code>` to the Galera
+monitor configuration.
+
+
+## MaxAdmin Editing Mode
+
+
+The default editing mode was changed from *vim* to *emacs* mode. To start
+maxadmin in the legacy mode, use the `<code>-i</code>` option.
+
+
+# Upgrading MariaDB MaxScale from 1.4 to 2.0
+
+
+## MaxAdmin
+
+
+The default way the communication between MaxAdmin and MariaDB MaxScale is
+handled has been changed from an internet socket to a Unix domain socket.
+The former alternative is still available but has been *deprecated*.
+
+
+If no arguments are given to MaxAdmin, it will attempt to connect to
+MariaDB MaxScale using a Unix domain socket. After the upgrade you will
+need to provide at least one internet socket related flag - `<code>-h</code>`, `<code>-P</code>`,
+`<code>-u</code>` or `<code>-p</code>` - to force MaxAdmin to use the internet socket approach.
+
+
+E.g.
+
+
+```
+user@host $ maxadmin -u admin
+```
+
+
+## MySQL Monitor
+
+
+The MySQL Monitor now assigns the stale state to the master server by default.
+In addition to this, the slave servers receive the stale slave state when they
+lose the connection to the master. This should not cause changes in behavior
+but the output of MaxAdmin will show new states when replication is broken.
+
+
+# Upgrading MaxScale from 1.3 to 1.4
+
+
+## Service user permissions
+
+
+The service users now also need SELECT privileges on mysql.tables_priv. This is
+required for the resolution of table level grants. To grant SELECT privileges
+for the service user, replace the user and hostname in the following example.
+
+
+
+```
+GRANT SELECT ON mysql.tables_priv TO 'username'@'maxscalehost';
+```
+
+
+
+## Password encryption
+
+
+MaxScale 1.4 upgrades the used password encryption algorithms to more secure ones.
+This requires that the password files are recreated with the `<code>maxkeys</code>` tool.
+For more information about how to do this, please read the installation guide:
+[MariaDB MaxScale Installation Guide](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-installation-guide.md)
+
+
+## SSL
+
+
+The SSL configuration parameters are now a part of the listeners. If a service
+used the old style SSL configuration parameters, the values should be moved to
+the listener which is associated with that service.
+
+
+Here is an example of an old style configuration.
+
+
+
+```
+[RW-Split-Router]
+type=service
+router=readwritesplit
+servers=server1,server2,server3,server4
+user=jdoe
+passwd=BD26E4139A15280CA882264AA1551C70
+ssl=required
+ssl_cert=/home/user/certs/server-cert.pem
+ssl_key=/home/user/certs/server-key.pem
+ssl_ca_cert=/home/user/certs/ca.pem
+ssl_version=TLSv12
+
+[RW-Split-Listener]
+type=listener
+service=RW-Split-Router
+port=3306
+```
+
+
+
+And here is the new, 1.4 compatible configuration style.
+
+
+
+```
+[RW-Split-Router]
+type=service
+router=readwritesplit
+servers=server1,server2,server3,server4
+user=jdoe
+passwd=BD26E4139A15280CA882264AA1551C70
+
+[RW-Split-Listener]
+type=listener
+service=RW-Split-Router
+port=3306
+ssl=required
+ssl_cert=/home/user/certs/server-cert.pem
+ssl_key=/home/user/certs/server-key.pem
+ssl_ca_cert=/home/user/certs/ca.pem
+ssl_version=TLSv12
+```
+
+
+
+Please also note that the `<code>enabled</code>` SSL mode is no longer supported due to
+the inherent security issues with allowing SSL and non-SSL connections on
+the same port. In addition to this, SSLv3 is no longer supported due to
+vulnerabilities found in it.
+
+
+# Upgrading MaxScale from 1.2 to 1.3
+
+
+## Binlog Router
+
+
+The master server details are now provided with a **master.ini** file located in
+the binlog directory and it can be changed using a CHANGE MASTER TO command issued
+via a MySQL connection to MaxScale.
+
+
+This file, properly filled, is now mandatory and without it the binlog router
+cannot connect to the master database.
+
+
+Before starting binlog router after MaxScale 1.3 upgrade, please add relevant
+information to *master.ini*, example:
+
+
+
+```
+[binlog_configuration]
+master_host=127.0.0.1
+master_port=3308
+master_user=repl
+master_password=somepass
+filestem=repl-bin
+```
+
+
+
+Additionally, the option `<code>servers=masterdb</code>` in the service definition is no
+longer required.
+
+
+# Upgrading MaxScale from 1.1 to 1.2
+
+
+This document describes upgrading MaxScale from version 1.1.1 to 1.2 and
+the major differences in the new version compared to the old version. The
+major changes can be found in the `<code>Changelog.txt</code>` file in the installation
+directory and the official release notes in the `<code>ReleaseNotes.txt</code>` file.
+
+
+## Installation
+
+
+Upgrading MaxScale will copy the `<code>MaxScale.cnf</code>` file in
+`<code>/usr/local/mariadb-maxscale/etc/</code>` to `<code>/etc/</code>` and renamed to `<code>maxscale.cnf</code>`.
+Binary log files are not automatically copied and should be manually moved
+from `<code>/usr/local/mariadb-maxscale</code>` to `<code>/var/lib/maxscale/</code>`.
+
+
+## File location changes
+
+
+MaxScale 1.2 follows the [FHS-standard](https://www.pathname.com/fhs/) and
+installs to `<code>/usr/</code>` and `<code>/var/</code>` subfolders. Here are the major changes and
+file locations.
+
+
+* Configuration files are located in `<code>/etc/</code>` and use lowercase letters: `<code>/etc/maxscale.cnf</code>`
+* Binary files are in `<code>/usr/bin/</code>`
+* Libraries and modules are in `<code>/usr/lib64/maxscale/</code>`. If you are using custom modules, please make sure they are in this directory before starting MaxScale.
+* Log files are in the `<code>var/log/maxscale/</code>` folder
+* MaxScale's PID file is located in `<code>/var/run/maxscale/maxscale.pid</code>`
+* Data files and other persistent files are in `<code>/var/lib/maxscale/</code>`
+
+
+## Running MaxScale without root permissions
+
+
+MaxScale can run as a non-root user with the 1.2 version. RPM and DEB
+packages install the `<code>maxscale</code>` user and `<code>maxscale</code>` group which are used
+by the init scripts and systemd configuration files. If you are installing
+from a binary tarball, you can run the `<code>postinst</code>` script included in it to
+manually create these groups.
+
+
+# Upgrading MaxScale from 1.0 to 1.1
+
+
+This document describes upgrading MaxScale from version 1.0.5 to 1.1.0 and
+the major differences in the new version compared to the old version. The
+major changes can be found in the `<code>Changelog.txt</code>` file in the installation
+directory and the official release notes in the `<code>ReleaseNotes.txt</code>` file.
+
+
+## Installation
+
+
+If you are installing MaxScale from a RPM package, we recommend you back
+up your configuration and log files and that you remove the old installation
+of MaxScale completely. If you choose to upgrade MaxScale instead of removing
+it and re-installing it afterwards, the init scripts in `<code>/etc/init.d</code>` folder
+will be missing. This is due to the RPM packaging system but the script can
+be re-installed by running the `<code>postinst</code>` script found in the
+`<code>/usr/local/mariadb-maxscale</code>` folder.
+
+
+
+```
+# Re-install init scripts
+cd /usr/local/mariadb-maxscale
+./postinst
+```
+
+
+
+The 1.1.0 version of MaxScale installs into `<code>/usr/local/mariadb-maxscale</code>`
+instead of `<code>/usr/local/skysql/maxscale</code>`. This will cause external references
+to MaxScale's home directory to stop working so remember to update all
+paths with the new version.
+
+
+## MaxAdmin changes
+
+
+The MaxAdmin client's default password in MaxScale 1.1.0 is `<code>mariadb</code>`
+instead of `<code>skysql</code>`.

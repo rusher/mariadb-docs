@@ -1,0 +1,914 @@
+
+# MaxScale 25.01 Diff - router for comparing servers
+
+# Diff - router for comparing servers
+
+
+
+
+* [Diff - router for comparing servers](#diff-router-for-comparing-servers)
+
+  * [Overview](#overview)
+
+    * [Histogram](#histogram)
+    * [Discrepancies](#discrepancies)
+    * [EXPLAIN](#explain)
+    * [QPS](#qps)
+    * [Reporting](#reporting)
+  * [Setup](#setup)
+
+    * [Prerequisites](#prerequisites)
+    * [Running Diff](#running-diff)
+
+      * [Create](#create)
+      * [Start](#start)
+      * [Status](#status)
+      * [Summary](#summary)
+      * [Stop](#stop)
+      * [Destroy](#destroy)
+  * [Visualizing](#visualizing)
+  * [Continuous Reporting](#continuous-reporting)
+  * [Mode](#mode)
+  * [Settings](#settings)
+
+    * [main](#main)
+    * [service](#service)
+    * [explain](#explain_1)
+    * [explain_entries](#explain_entries)
+    * [explain_period](#explain_period)
+    * [max_request_lag](#max_request_lag)
+    * [on_error](#on_error)
+    * [percentile](#percentile)
+    * [qps_window](#qps_window)
+    * [report](#report)
+    * [reset_replication](#reset_replication)
+    * [retain_faster_statements](#retain_faster_statements)
+    * [retain_slower_statements](#retain_slower_statements)
+    * [samples](#samples)
+  * [Limitations](#limitations)
+
+
+
+
+## Overview
+
+
+The `<code>diff</code>`-router, hereafter referred to as *Diff*, compares the
+behaviour of one MariaDB server version to that of another.
+
+
+Diff will send the workload both to the server currently being used -
+called *main* - and to another server - called *other* - whose
+behaviour needs to be assessed.
+
+
+The responses from *main* are returned to the client, without
+waiting for the responses from *other*. While running, Diff collects
+latency histogram data that later can be used for evaluating the
+behaviour of *main* and *other*.
+
+
+Although Diff is a normal MaxScale router that can be configured
+manually, typically it is created using commands provided by the
+router itself. As its only purpose is to compare the behaviour of
+different servers, it is only meaningful to start it provided certain
+conditions are fulfilled and those conditions are easily ensured using
+the router itself.
+
+
+### Histogram
+
+
+Diff collects latency information separately for each *canonical
+statement*, which simply means a statement where all literals have been
+replaced with question marks. For instance, the canonical statement of
+`<code>SELECT f FROM t WHERE f = 10</code>` and `<code>SELECT f FROM t WHERE f = 20</code>` is
+in both cases `<code>SELECT f FROM t WHERE f = ?</code>`. The latency information
+of both of those statements will be collected under the same canonical
+statement.
+
+
+Before starting to register histogram data, Diff will collect
+[samples](#samples) from *main* that will be used for defining the
+edges and the number of bins of the histogram.
+
+
+### Discrepancies
+
+
+The responses from *main* and *other* are considered to be different
+- if the checksum of the response from *main* and *other differ, or
+- if the response time of _other* is outside the boundaries of the
+ histogram edges calculated from the samples from *main*.
+
+
+A difference in the response time of individual queries is not a
+meaningful criteria, as there for varying reasons (e.g. network
+traffic) can be a significant amount of variance in the results. It
+would only always cause a large number of false positives.
+
+
+### EXPLAIN
+
+
+When a discrepancy is detected, an EXPLAIN statement will be executed
+if the query was a DELETE, SELECT, INSERT or UPDATE. The EXPLAIN will
+be executed using the same connection that was used for executing the
+original statement. In the normal case, the EXPLAIN will be executed
+immediately after the original statement, but if the client is
+streaming requests, an other statement may have been exceuted in
+between.
+
+
+EXPLAINs are not always executed, but the frequency is controlled by
+[explain_entries](#explain_entries) and
+[explain_period](#explain_period). The EXPLAIN results are included in
+the [output](#reporting) of Diff.
+
+
+### QPS
+
+
+While running, Diff will also collect QPS information over a sliding
+window whose size is defined by [qps_period](#qps_period).
+
+
+### Reporting
+
+
+Diff produces two kinds of output:
+- Output that is generated when Diff terminates or upon
+ [request](#summary). That output can be visualized as explained
+ [here](#visualizing).
+- [Optionally](#report) Diff can continuously report queries whose
+ responses from *main* and other *differ* as described
+ [here](#discrepancies).
+
+
+When Diff starts it will create a directory `<code>diff</code>` in MaxScale's
+data directory (typically `<code>/var/lib/maxscale</code>`). Under that it
+will create a directory whose name is the same as that of the
+service specified in [service](#service). The output files are created
+in that directory.
+
+
+## Setup
+
+
+The behaviour and usage of Diff is most easily explained
+using an example.
+
+
+Consider the following simple configuration that only includes
+the very essential.
+
+
+
+```
+[MyServer1]
+type=server
+address=192.168.1.2
+port=3306
+
+[MyService]
+type=service
+router=readwritesplit
+servers=MyServer1
+...
+```
+
+
+
+There is a service `<code>MyService</code>` that uses a single server `<code>MyServer1</code>`,
+which, for this example, is assumed to run MariaDB 10.5.
+
+
+Suppose that the server should be upgraded to 11.2 and we want
+to find out whether there would be some issues with that.
+
+
+### Prerequisites
+
+
+In order to use Diff for comparing the behaviour of MariaDB 10.5
+and MariaDB 11.2, the following steps must be taken.
+
+
+* Install MariaDB 11.2 on a host that performance wise is
+ similar to the host on which MariaDB 10.5 is running.
+* Configure the MariaDB 11.2 server to replicate from the
+ MariaDB 10.5 server.
+* Create a server entry for the MariaDB 11.2 server in
+ the MaxScale configuration.
+
+
+The created entry could be something like:
+
+
+
+```
+[MariaDB_112]
+type=server
+address=192.168.1.3
+port=3306
+protocol=mariadbbackend
+```
+
+
+
+Note that this server must **not** be added to the service that
+uses the original server. That is, in this example, `<code>MariaDB_112</code>`
+must not be added to the service `<code>MyService</code>`.
+
+
+The new server can be added to the monitor used for monitoring
+the servers of the service, but that is not necessary. However,
+unless it is added, `<code>maxctrl list servers</code>` will show the server
+as being down.
+
+
+With these steps Diff is ready to be used.
+
+
+### Running Diff
+
+
+Diff is controlled using a number of module commands.
+
+
+#### Create
+
+
+Syntax: `<code>create new-service existing-service used-server new-server</code>`
+
+
+Where:
+- `<code>new-service</code>`: The name of the service using the Diff router, to be
+ created.
+- `<code>existing-service</code>`: The name of an existing service in whose context
+ the the new server is to be evaluated.
+- `<code>used-server</code>`: A server used by `<code>existing-service</code>`
+- `<code>new-server</code>`: The server that should be compared to `<code>used-server</code>`.
+
+
+
+```
+maxctrl call command diff create DiffMyService MyService MyServer1 MariaDB_112
+{
+    "status": "Diff service 'DiffMyService' created. Server 'MariaDB_112' ready to be evaluated."
+}
+```
+
+
+
+With this command, preparations for comparing the server `<code>MariaDB_112</code>`
+against the server `<code>MyServer1</code>` of the service `<code>MyService</code>` will be made.
+At this point it will be checked in what kind of replication relationship
+`<code>MariaDB_112</code>` is with respect to `<code>MyServer1</code>`. If the steps in
+[prerequisites](#prerequisites) were followed, it will be detected that
+`<code>MariaDB_112</code>` replicates from `<code>MyServer1</code>`.
+
+
+If everything seems to be in order, the service `<code>DiffMyService</code>` will be
+created. Settings such as *user* and *password* that are needed by the
+service `<code>DiffMyService</code>` will be copied from `<code>MyService</code>`.
+
+
+Using maxctrl we can check that the service indeed has been created.
+
+
+
+```
+maxctrl list services
+┌───────────────┬────────────────┬─────────────┬───────────────────┬────────────────────────┐
+│ Service       │ Router         │ Connections │ Total Connections │ Targets                │
+├───────────────┼────────────────┼─────────────┼───────────────────┼────────────────────────┤
+│ MyService     │ readwritesplit │ 0           │ 0                 │ MyServer1              │
+├───────────────┼────────────────┼─────────────┼───────────────────┼────────────────────────┤
+│ DiffMyService │ diff           │ 0           │ 0                 │ MyServer1, MariaDB_112 │
+└───────────────┴────────────────┴─────────────┴───────────────────┴────────────────────────┘
+```
+
+
+
+Now the comparison can be started.
+
+
+#### Start
+
+
+Syntax: `<code>start diff-service</code>`
+
+
+Where:
+- `<code>diff-service: The name of the service created in the</code>`create` step.
+
+
+
+```
+maxctrl call command diff start DiffMyService
+{
+    "sessions": {
+        "suspended": 0,
+        "total": 0
+    },
+    "state": "synchronizing",
+    "sync_state": "suspending_sessions"
+}
+```
+
+
+
+When Diff is started, it performs the following steps:
+
+
+1. All sessions of `<code>MyService</code>` are suspended.
+1. In the `<code>MyService</code>` service, the server target `<code>MyServer1</code>`
+ is replaced with `<code>DiffMyService</code>`.
+1. The replication from `<code>MyServer1</code>` to `<code>MariaDB_112</code>` is stopped.
+1. The sessions are restarted, which will cause existing connections
+ to `<code>MyServer1</code>` to be closed and new ones to be created, via Diff,
+ to both `<code>MyServer1</code>` and `<code>MariaDB_112</code>`.
+1. The sessions are resumed, which means that the client traffic
+ will continue.
+
+
+In the first step, all sessions that are idle will immediately
+be suspended, which simply means that nothing is read from
+the client socket. Sessions that are waiting for a response
+from the server and sessions that have an active transaction
+continue to run. Immediately when a session becomes idle,
+it is suspended.
+
+
+Once all sessions have been suspended, the service is rewired.
+In the case of `<code>MyService</code>` above, it means that the target
+`<code>MyServer1</code>` is replaced with `<code>DiffMyService</code>`. That is, requests
+that earlier were sent to `<code>MyServer1</code>`, will, once the sessions
+are resumed, be sent to `<code>DiffMyService</code>`, which sends them forward
+to both `<code>MyServer1</code>` and `<code>MariaDB_112</code>`.
+
+
+Restarting the sessions means that the direct connections to
+`<code>MyServer1</code>` will be closed and equivalent ones created via the
+service `<code>DiffMyService</code>`, which will also create connections
+to `<code>MariaDB_112</code>`.
+
+
+When the sessions are resumed, client requests will again be
+processed, but they will now be routed via `<code>DiffMyService</code>`.
+
+
+With maxctrl we can can check that MyServer has been rewired.
+
+
+
+```
+maxctrl list services
+┌───────────────┬────────────────┬─────────────┬───────────────────┬────────────────────────┐
+│ Service       │ Router         │ Connections │ Total Connections │ Targets                │
+├───────────────┼────────────────┼─────────────┼───────────────────┼────────────────────────┤
+│ MyService     │ readwritesplit │ 0           │ 0                 │ DiffMyService          │
+├───────────────┼────────────────┼─────────────┼───────────────────┼────────────────────────┤
+│ DiffMyService │ diff           │ 0           │ 0                 │ MyServer1, MariaDB_112 │
+└───────────────┴────────────────┴─────────────┴───────────────────┴────────────────────────┘
+```
+
+
+
+The target of `<code>MyService</code>` is `<code>DiffMyService</code>` instead of `<code>MyServer1</code>`
+that it used to be.
+
+
+The output object returned by `<code>create</code>` tells the current state.
+
+
+
+```
+{
+    "sessions": {
+        "suspended": 0,
+        "total": 0
+    },
+    "state": "synchronizing",
+    "sync_state": "suspending_sessions"
+}
+```
+
+
+
+The `<code>sessions</code>` object shows how many sessions there are in total
+and how many that currently are suspended. Since there were no
+existing sessions in this example, they are both 0.
+
+
+The `<code>state</code>` shows what Diff is currently doing. `<code>synchronizing</code>`
+means that it is in the process of changing `<code>MyService</code>` to use
+`<code>DiffMyService</code>`. `<code>sync_state</code>` shows that it is currently in the
+process of suspending sessions.
+
+
+#### Status
+
+
+Syntax: `<code>status diff-service</code>`
+
+
+Where:
+- `<code>diff-service: The name of the service created in the</code>`create` step.
+
+
+When Diff has been started, its current status can be checked with the
+command `<code>status</code>`. The output is the same as what was returned when
+Diff was started.
+
+
+
+```
+maxctrl call command diff status DiffMyService
+{
+    "sessions": {
+        "suspended": 0,
+        "total": 0
+    },
+    "state": "comparing",
+    "sync_state": "not_applicable"
+}
+```
+
+
+
+The state is now `<code>comparing</code>`, which means that everything is ready
+and clients can connect in normal fashion.
+
+
+#### Summary
+
+
+Syntax: `<code>summary diff-service</code>`
+
+
+Where:
+- `<code>diff-service: The name of the service created in the</code>`create` step.
+
+
+While Diff is running, it is possible at any point to request
+a summary.
+
+
+
+```
+maxctrl call command diff summary DiffMyService
+OK
+```
+
+
+
+The summary consists of two files, one for the *main* server and
+one for the *other* server. The files are written to a subdirectory
+with the same name as the Diff service, which is created in the
+subdirectory `<code>diff</code>` in the data directory of MaxScale.
+
+
+Assuming the data directory is the default `<code>/var/lib/maxscale</code>`,
+the directory would in this example be
+`<code>/var/lib/maxscale/diff/DiffMyService</code>`.
+
+
+The names of the files will be the server name, concatenated with a
+timestamp. In this example, the names of the files could be:
+
+
+
+```
+MyServer1_2024-05-07_140323.json
+MariaDB_112_2024-05-07_140323.json
+```
+
+
+
+The visualization of the results is done using the
+[maxvisualize](#visualizing) program.
+
+
+#### Stop
+
+
+Syntax: `<code>stop diff-service</code>`
+
+
+Where:
+- `<code>diff-service: The name of the service created in the</code>`create` step.
+
+
+The comparison can stopped with the command `<code>stop</code>`.
+
+
+
+```
+maxctrl call command diff stop DiffMyService
+{
+    "sessions": {
+        "suspended": 0,
+        "total": 0
+    },
+    "state": "stopping",
+    "sync_state": "suspending_sessions"
+}
+```
+
+
+
+Stopping Diff reverses the effect of starting it:
+
+
+1. All sessions are suspended.
+1. In the service, 'DiffMyService' is replaced with 'MyServer1'.
+1. The sessions are restarted.
+1. The sessions are resumed.
+
+
+As the sessions have to be suspended, it may take a while
+before the operation has completed. The status can be checked with
+the 'status' command.
+
+
+#### Destroy
+
+
+Syntax: `<code>destroy diff-service</code>`
+
+
+Where:
+- `<code>diff-service: The name of the service created in the</code>`create` step.
+
+
+As the final step, the command `<code>destroy</code>` can be called to
+destroy the service.
+
+
+
+```
+maxctrl call command diff destroy DiffMyService
+OK
+```
+
+
+
+## Visualizing
+
+
+The visualization of the data is done with the `<code>maxvisualize</code>` program,
+which is part of the *Capture* functionality. The visualization will
+open up a browser window to show the visualization.
+
+
+If no browser opens up, the visualization URL is also printed into
+the command line which by default should be [](https://localhost:8866/).
+
+
+In the case of the example above, the directory where the output files
+are created would be `<code>/var/lib/maxscale/diff/MyService</code>`. And the files
+to be used when visualizing would be called something like
+`<code>MyServer1_2024-05-07_140323.json</code>` and
+`<code>MariaDB_112_2024-05-07_140323.json</code>`. The timestamp will be different
+every time [summary](#summary) is executed.
+
+
+
+```
+maxvisualize MyServer1_2024-05-07_140323.json MariaDB_112_2024-05-07_140323.json
+```
+
+
+
+The order is significant; the first argument is the baseline and the
+second argument the results compared to the baseline.
+
+
+## Continuous Reporting
+
+
+If the value of [report](#report) is something else but `<code>never</code>`, Diff
+will continously log results to a file whose name is the concatenation
+for the main and other server followed by a timestamp. In the example
+above, the name would be something like
+`<code>MyServer1_MariaDB_112_2024-02-15_152838.json</code>`.
+
+
+Each line (here expanded for readability) in the file will look like:
+
+
+
+```
+{
+  "id": 1,
+  "session": 1,
+  "command": "COM_QUERY",
+  "query": "select @@version_comment limit 1",
+  "results": [
+    {
+      "target": "MyServer1",
+      "checksum": "0f491b37",
+      "rows": 1,
+      "warnings": 0,
+      "duration": 257805,
+      "type": "resultset",
+      "explain": { ... }
+    },
+    {
+      "target": "MariaDB_112",
+      "checksum": "0f491b37",
+      "rows": 1,
+      "warnings": 0,
+      "duration": 170043,
+      "type": "resultset",
+      "explain": { ... }
+    }
+  ]
+}
+```
+
+
+
+The meaning of the fields are as follows:
+
+
+* id: Running number, increases for each query, but will not be in
+ strict increasing order if a statement needed to be EXPLAINed and
+ the following did not.
+* session: The session id.
+* command: The protocol packet type.
+* query: The SQL of the query.
+* results: Array of results.
+* target: The server the result relates to.
+* checksum: The checksum of the result.
+* rows: How many rows were returned.
+* warnings: The number of warnings.
+* duration: The execution duration in nanonseconds.
+* type: What type of result `<code>resultset</code>`, `<code>ok</code>` or `<code>error</code>`.
+* explain: The result of `<code>EXPLAIN FORMAT=JSON statement</code>`.
+
+
+Instead of an `<code>explain</code>` object, there may be an `<code>explained_by</code>` array,
+containing the ids of similar statements (i.e. their canonical
+statement is the same) that were EXPLAINed.
+
+
+## Mode
+
+
+Diff can run in a read-only or read-write mode and the mode is
+deduced from the replication relationship between *main* and
+*other*.
+
+
+If *other* replicates from *main*, it is assumed that *main* is
+the primary. In this case Diff will, when started, stop the
+replication from *main* to *other*. When the comparison ends
+Diff will, depending on the value of
+[reset_replication](#reset_replication)
+either reset the replication from *main* to *other* or leave
+the situation as it is.
+
+
+If *other* and *main* replicates from a third seriver, it is
+assumed *main* is a replica. In this case, Diff will, when
+started, leave the replication as it is and do nothing when
+the comparison ends.
+
+
+If the replication relationship between *main* and *other*
+is anything else, Diff will refuse to start.
+
+
+## Settings
+
+
+### `<code>main</code>`
+
+
+* Type: server
+* Mandatory: Yes
+* Dynamic: No
+
+
+The main target from which results are returned to the client. Must be
+a server and must be one of the servers listed in
+[targets](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+
+
+If the connection to the main target cannot be created or is lost
+mid-session, the client connection will be closed.
+
+
+### `<code>service</code>`
+
+
+* Type: service
+* Mandatory: Yes
+* Dynamic: No
+
+
+Specifies the service Diff will modify.
+
+
+### `<code>explain</code>`
+
+
+* Type: [enum](#enumerations)
+* Mandatory: No
+* Dynamic: Yes
+* Values: `<code>none</code>`, `<code>other</code>`, `both'
+* Default: `<code>both</code>`
+
+
+Specifies whether a request should be EXPLAINed on only *other*,
+both *other* and *main* or neither.
+
+
+### `<code>explain_entries</code>`
+
+
+* Type: non-negative integer
+* Mandatory: No
+* Dynamic: Yes
+* Default: 2
+
+
+Specifies how many times at most a particular canonical statement
+is EXPLAINed during the period specified by
+[explain_period](#explain_period).
+
+
+### `<code>explain_period</code>`
+
+
+* Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Mandatory: No
+* Dynamic: Yes
+* Default: 15m
+
+
+Specifies the length of the period during which at most
+[explain_entries](#explain_entries) number of EXPLAINs are executed
+for a statement.
+
+
+### `<code>max_request_lag</code>`
+
+
+* Type: non-negative integer
+* Mandatory: No
+* Dynamic: Yes
+* Default: 10
+
+
+Specifies the maximum number of requests *other* may be lagging
+behind *main* before the execution of SELECTs against *other*
+are skipped to bring it back in line with *main*.
+
+
+### `<code>on_error</code>`
+
+
+* Type: [enum](#enumerations)
+* Mandatory: No
+* Dynamic: Yes
+* Values: `<code>close</code>`, `<code>ignore</code>`
+* Default: `<code>ignore</code>`
+
+
+Specifies whether an error from *other*, will cause the session to
+be closed. By default it will not.
+
+
+### `<code>percentile</code>`
+
+
+* Type: count
+* Mandatory: No
+* Dynamic: Yes
+* Min: 1
+* Max: 100
+* Default: 99
+
+
+Specifies the percentile of sampels that will be considered when
+calculating the width and number of bins of the histogram.
+
+
+### `<code>qps_window</code>`
+
+
+* Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Mandatory: No
+* Dynamic: No
+* Default: 15m
+
+
+Specifies the size of the sliding window during which QPS is calculated
+and stored. When a [summary](#summary) is requested, the QPS information
+will also be saved.
+
+
+### `<code>report</code>`
+
+
+* Type: [enum](#enumerations)
+* Mandatory: No
+* Dynamic: Yes
+* Values: `<code>always</code>`, `<code>on_discrepancy</code>`, `<code>never</code>`
+* Default: `<code>on_discrepancy</code>`
+
+
+Specifies when the results of executing a statement on *other* and *main*
+should be logged; *always*, when there is a significant difference or
+*never*.
+
+
+### `<code>reset_replication</code>`
+
+
+* Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Mandatory: No
+* Dynamic: Yes
+* Default: `<code>true</code>`
+
+
+If Diff has started in read-write mode and the value of
+`<code>reset_replication</code>` is `<code>true</code>`, when the comparison ends
+it will execute the following on *other*:
+
+
+
+```
+RESET SLAVE
+START SLAVE
+```
+
+
+
+If Diff has started in read-only mode, the value of `<code>reset_replication</code>`
+will be ignored.
+
+
+Note that since Diff writes updates directly to both *main* and
+*other* there is no guarantee that it will be possible to simply
+start the replication. Especially not if `<code>gtid_strict_mode</code>`
+is on.
+
+
+### `<code>retain_faster_statements</code>`
+
+
+* Type: non-negative integer
+* Mandatory: No
+* Dynamic: Yes
+* Default: 5
+
+
+Specifies the number of faster statements that are retained in memory.
+The statements will be saved in the summary when the comparison ends,
+or when Diff is explicitly instructed to do so.
+
+
+### `<code>retain_slower_statements</code>`
+
+
+* Type: non-negative integer
+* Mandatory: No
+* Dynamic: Yes
+* Default: 5
+
+
+### `<code>samples</code>`
+
+
+* Type: count
+* Mandatory: No
+* Dynamic: Yes
+* Min: 100
+* Default: 1000
+
+
+Specifies the number of samples that will be collected in order to
+define the edges and number of bins of the histograms.
+
+
+## Limitations
+
+
+Diff is not capable of adapting to any changes made in
+the cluster configuration. For instance, if Diff starts up in
+read-only mode and *main* is subsequently made *primary*, Diff
+will not sever the replication from *main* to *other*. The result
+will be that *other* receives the same writes twice; once via the
+replication from the server it is replicating from and once when
+Diff executes the same writes.
+
+
+Diff is not compatible with
+[configuration synchronization](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+If *configuration synchronization* is enabled, an attempt to create a
+Diff router will fail.

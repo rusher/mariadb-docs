@@ -1,0 +1,492 @@
+
+# MariaDB MaxScale 2.3.0 Release Notes -- 2018-10-09
+
+# MariaDB MaxScale 2.3.0 Release Notes -- 2018-10-09
+
+
+Release 2.3.0 is a Beta release.
+
+
+This document describes the changes in release 2.3.0, when compared to
+release 2.2.
+
+
+For any problems you encounter, please consider submitting a bug
+report at [Jira](https://jira.mariadb.org).
+
+
+## Changed Features
+
+
+### maxadmin `<code>list threads</code>`
+
+
+Maxadmin `<code>list threads</code>` now shows the descriptor counts and load of
+the MaxScale worker threads. For details, please consult the
+maxadmin [documentation](../maxscale-23-reference/mariadb-maxscale-23-maxadmin-admin-interface.md).
+
+
+### MaxCtrl `<code>create monitor</code>`
+
+
+The `<code>create monitor</code>` command now accepts a list of key-value parameters that are
+passed to the monitor as the last argument. This allows creation and
+configuration of monitors in one command.
+
+
+### `<code>query_retries</code>`
+
+
+The default value of `<code>query_retries</code>` was changed from 0 to 1. This turns
+on failure tolerant queries for monitors and authenticators which prevents
+failures due to network problems. A single reconnection attempt is made to
+keep responsiveness high even with default values.
+
+
+### Session Command History
+
+
+The *readwritesplit* session command history is now enabled by default but it
+is limited to a total of 50 distict session commands. This default allows most
+sessions to leverage the newly improved reconnection mechanism without having to
+explicitly enable the history. When the limit of 50 commands is exceeded, the
+session command history is disabled. This makes it possible to use pooled
+connections by default without having to explicitly disable the history (this
+was the case with pre-2.1 versions of MaxScale).
+
+
+The way that the history is stored has also changed. Instead of storing all
+session commands, each session only stores the first and last execution of each
+command. This way the history is compressed into a compact representation while
+still retaining the relative order of each command.
+
+
+To keep the old functionality, add `<code>disable_sescmd_history=true</code>` to the service
+definition.
+
+
+### Cache Filter
+
+
+The rules can now be expressed using a JSON array containing rule objects,
+which makes it easier to express more complex rules. Please see the
+[Cache](../maxscale-23-filters/mariadb-maxscale-23-cache.md) documentation for details.
+
+
+### Masking Filter
+
+
+By default the masking filter rejects statements that use functions on
+conjuction with columns that should be masked. Please see the
+[Masking Filter](../maxscale-23-filters/mariadb-maxscale-23-masking.md) documentation for details.
+
+
+### `<code>router_options</code>` in Binlogrouter
+
+
+The use of `<code>router_options</code>` with the binlogrouter module is deprecated in
+MaxScale 2.3 and will be removed in a subsequent release. The
+`<code>router_options</code>` should be converted into separate parameters.
+
+
+### `<code>thread_stack_size</code>`
+
+
+The `<code>thread_stack_size</code>` configuration parameter is ignored and has been
+deprecated. If you need to explicitly set the stack size, do so using
+`<code>ulimit -s</code>` before starting MaxScale.
+
+
+### `<code>ssl</code>` for Servers and Listeners
+
+
+The `<code>ssl</code>` parameter now accepts boolean values ìn addition to the old `<code>required</code>`
+and `<code>disabled</code>` values.
+
+
+### MariaDBMonitor
+
+
+MariaDBMonitor has undergone several changes listed briefly below. Please see
+[MariaDBMonitor documentation](../maxscale-23-monitors/mariadb-maxscale-23-mariadb-monitor.md) for more details.
+
+
+#### JSON diagnostics output changed
+
+
+The data in the diagnostic output of the REST-API has changed, with some fields
+removed and others added.
+
+
+#### Master detection
+
+
+The monitor is now less likely to suddenly change the master server, even if
+another server has more slaves than the current master. The DBA can force a
+master reselection by setting the current master read-only, or by removing all
+its slaves if the master is down.
+
+
+Only one server can have the *Master* status flag at a time, even in a
+multimaster setup. Others servers in the multimaster group are given the *Relay
+Master* and *Slave* status flags.
+
+
+#### Switchover new master autoselection
+
+
+The switchover command can now be called with just the monitor instance name as
+parameter. In this case the monitor will automatically select a server for
+promotion.
+
+
+#### Replication lag detection
+
+
+The replication lag measurement now simply reads the
+*Seconds_Behind_Master*-field of the slave status output of slaves. The slave
+calculates this value by comparing the time stamp in the binlog event the slave
+is currently processing to the slave's own clock. If a slave has multiple slave
+connections, the smallest lag is used.
+
+
+#### Low disk space detection, automatic switchover
+
+
+With recent MariaDB Server versions, the monitor can check the disk space on the
+backends and detect if the server is running low. The monitor can be set to
+automatically switchover a master low on disk space. Slaves can be set to
+maintenance mode. Disk space is also considered when selecting a new master for
+promotion. See
+[switchover_on_low_disk_space](../maxscale-23-monitors/mariadb-maxscale-23-mariadb-monitor.md#switchover_on_low_disk_space)
+and
+[maintenance_on_low_disk_space](../maxscale-23-monitors/mariadb-maxscale-23-mariadb-monitor.md#maintenance_on_low_disk_space)
+for more information.
+
+
+#### Replication reset feature
+
+
+The *reset-replication* monitor command deletes all slave connections and binary
+logs, and then sets up replication. Useful when data is in sync but gtid:s are
+not.
+
+
+#### Scheduled events handling in failover/switchover/rejoin
+
+
+Server events lauched by the event scheduler thread are now handled during
+cluster modification operations. See
+[handle_events](../maxscale-23-monitors/mariadb-maxscale-23-mariadb-monitor.md#handle_events)
+for more information.
+
+
+#### Unused parameters
+
+
+The following parameters are unused and are ignored if set:
+- `<code>mysql51_replication</code>` MySQL5.1 is no longer supported.
+- `<code>multimaster</code>` The monitor now always detects multimaster setups.
+- `<code>allow_cluster_recovery</code>` Now always on.
+- `<code>detect_replication_lag</code>` Lag detection no longer writes to databases so it is
+always on.
+
+
+## Dropped Features
+
+
+### `<code>log_to_shm</code>` parameter and `<code>--log=shm</code>` option
+
+
+The following commands no longer create the log files in shared memory and will
+be ignored. MaxScale will behave as if `<code>--log=file</code>` was provided when
+`<code>--log=shm</code>` is used. The `<code>log_to_shm</code>` parameter is ignored. Both the parameter
+and the optino value are deprecated and will be removed in a later relesae.
+
+
+Logs can still be created in shared memory by pointing `<code>logdir</code>` to `<code>/dev/shm</code>`.
+
+
+### Configuration Reloading
+
+
+The deprecated `<code>maxadmin reload config</code>` command has been removed.
+
+
+### `<code>router_options</code>` in Avrorouter
+
+
+The use of `<code>router_options</code>` with avrorouter was deprecated in MaxScale 2.1. In
+MaxScale 2.3, the use of `<code>router_options</code>` is no longer supported and the options
+should be given as parameters instead.
+
+
+### `<code>router_options</code>` in readwritesplit
+
+
+The use of `<code>router_options</code>` with readwritesplit, which was deprecated in
+MaxScale 2.2.0, has been removed in MaxScale 2.3.0.
+
+
+### `<code>QUERY-LAST-TRANSACTION</code>` and `<code>QUERY-TRANSACTION</code>` CDC commands
+
+
+The CDC protocol no longer accepts the `<code>QUERY-LAST-TRANSACTION</code>` and
+`<code>QUERY-TRANSACTION</code>` commands. They were removed due to the addition of the REST
+API that provides the same information in a more easy to process format.
+
+
+## New Features
+
+
+### Binlog Router
+
+
+If the binlog router is replicating from a Galera cluster it is now
+possible to specify secondary masters that the binlog router automatically
+will switch to, in case the primary master for some reason goes down.
+Please see the binlog router
+[documentation](../maxscale-23-routers/mariadb-maxscale-23-binlogrouter.md)
+for details.
+
+
+### Hints
+
+
+There is now a new hint `<code>last</code>` that will cause a query to be routed to the
+same server the previous query was routed to.
+
+
+### Backend Connection IDs
+
+
+The backend connection IDs are now shown in the `<code>show sessions</code>` output of
+MaxCtrl.
+
+
+### Comment Filter
+
+
+With the comment filter it is possible to prepend statement received
+with a comment before it is sent further to a server. Please see the
+[comment filter documentation](../../mariadb-maxscale-21-06/README.md)
+for more details.
+
+
+### Query Classifier Cache
+
+
+The query classifier now caches the results of each classification which
+significantly improves performance of workloads that require query
+classification. The default cache size limit is 40% of total system memory.
+
+
+Read [the configuration guide](../../mariadb-maxscale-21-06/README.md)
+for more information about the details of the query classifier cache and how to
+configure it.
+
+
+### Runtime Configuration of the Cache
+
+
+With the variables `<code>@maxscale.cache.use</code>` and `<code>@maxscale.cache.populate</code>`
+it is now possible for a client to specify whether the cache should be
+used and/or populated. Please see the
+[Cache](../maxscale-23-filters/mariadb-maxscale-23-cache.md) documentation for details.
+
+
+### User Specified Syslog Facility and Level for Authentication Errors
+
+
+It is now possible for the end user to specify the syslog facility and level
+for authentication errors. Please see
+[the configuration guide](../../mariadb-maxscale-21-06/README.md)
+for details.
+
+
+### Named Server Filter
+
+
+The `<code>source</code>` parameter can now contain a list of comma separated addresses.
+
+
+### Table Family Sharding
+
+
+The SchemaRouter is now capable of table family sharding. Please see the
+SchemaRouter [documentation](../maxscale-23-routers/mariadb-maxscale-23-schemarouter-router.md) for details.
+
+
+### Throttle filter
+
+
+The [throttlefilter](../../mariadb-maxscale-21-06/README.md) replaces and extends on the limit_queries
+functionality of [the Database Firewall filter](../maxscale-23-filters/mariadb-maxscale-23-database-firewall-filter.md).
+
+
+### ReadWriteSplit
+
+
+A set of new features have been added to readwritesplit.
+
+
+#### `<code>transaction_replay</code>`
+
+
+The [transaction_replay](../maxscale-23-routers/mariadb-maxscale-23-readwritesplit.md#transaction_replay)
+parameter enables replaying of transactions if a master server is lost
+mid-transaction. This allows transparent replacement of master servers with a
+minimal amount of failed transactions.
+
+
+#### `<code>master_reconnection</code>`
+
+
+With the
+[master_reconnection](../maxscale-23-routers/mariadb-maxscale-23-readwritesplit.md#master_reconnection)
+parameter, if the connection to a master server is lost or the master server
+changes, readwritesplit can now reconnect seamlessly to the master server
+without losing the session state.
+
+
+#### `<code>delayed_retry</code>`
+
+
+The [delayed_retry](../maxscale-23-routers/mariadb-maxscale-23-readwritesplit.md#delayed_retry) parameter
+allows queries to be automatically retried if their execution is interrupted.
+
+
+#### `<code>causal_reads</code>`
+
+
+The [causal_reads](../maxscale-23-routers/mariadb-maxscale-23-readwritesplit.md#causal_reads) parameter
+enables distributed consistent reads with MariaDB version 10.2 and newer.
+
+
+#### `<code>optimistic_trx</code>`
+
+
+The [optimistic_trx](../maxscale-23-routers/mariadb-maxscale-23-readwritesplit.md#optimistic_trx) parameter
+enables optimistic transaction execution. This parameter controls whether normal
+transactions (i.e. `<code>START TRANSACTION</code>` or `<code>BEGIN</code>`) are load balanced across
+slaves. If the transaction tries to modify a row, it is migrated to the master
+and rolled back on the slave.
+
+
+#### Adaptive Routing
+
+
+A new load balancing method,
+[ADAPTIVE_ROUTING](../maxscale-23-routers/mariadb-maxscale-23-readwritesplit.md#slave_selection_criteria), was
+added. It uses the average query response time to distribute the load so that it
+is optimal on all servers.
+
+
+### MaxCtrl
+
+
+For more detailed information about the features of MaxCtrl, see the
+[documentation](../maxscale-23-reference/mariadb-maxscale-23-maxctrl.md) or the output of `<code>maxctrl help</code>`.
+
+
+#### Interactive Mode for MaxCtrl
+
+
+MaxCtrl can now be started in an interactive mode similar to MaxAdmin. This
+makes use of passwords more convenient as they have to be input only once and
+they are cached for the duration of the session.
+
+
+#### Draining Server Connections
+
+
+The new `<code>drain server</code>` drains the server of connections by first removing it
+from all services after which it waits until all connections are closed. When
+all connections are closed, the server is put into the `<code>maintenance</code>` state and
+added back to all the services where it was removed from.
+
+
+### Resultset Concatenation Router
+
+
+A new experimental router module, `<code>cat</code>`, was added to the
+`<code>maxscale-experimental</code>` package. The `<code>cat</code>` router is a special router that
+concatenates result sets. For more information and an explanation on how the
+router works, read the [cat documentation](../../../server/security/user-account-management/catalogs/catalog-specific-functions-and-variables.md).
+
+
+### REST API Additions
+
+
+#### Creation of Services and Filters at Runtime
+
+
+The REST API and MaxCtrl now support the creation and destruction of services
+and filters at runtime. This also means that the filters of a service can now be
+modified at runtime. Refer to the [REST API](../maxscale-23-rest-api/maxscale-2-3-rest-api.md) and
+[MaxCtrl](../maxscale-23-reference/mariadb-maxscale-23-maxctrl.md) documentation for more details.
+
+
+#### Alteration of Routers
+
+
+The router parameters of services can now be altered at runtime. Currently only
+the readwritesplit router implements this feature.
+
+
+### Binlog Filtering
+
+
+The `<code>binlogfilter</code>` is a filter module that allows the client side stream of
+binlogs to be filtered. It is designed to be used with the binlogrouter.
+
+
+This allows conditional replication similar to *replicate_do_table* but with
+full PCRE2 compliant match/exclude functionality. For more information, refer to
+the [binlogfilter](../../mariadb-maxscale-21-06/README.md) documentation.
+
+
+### Network Traffic Buffering
+
+
+The new
+[writeq_high_water](../../mariadb-maxscale-21-06/README.md)
+and
+[writeq_low_water](../../mariadb-maxscale-21-06/README.md)
+parameters allow network traffic to be throttled if it exceeds the highwater
+mark. This can be used to prevent MaxScale from buffering too much data in
+memory if the client is not reading results fast enough.
+
+
+## Bug fixes
+
+
+[Here is a list of bugs fixed in MaxScale 2.3.0.](https://jira.mariadb.org/issues/?jql=project%20%3D%20MXS%20AND%20issuetype%20%3D%20Bug%20AND%20status%20%3D%20Closed%20AND%20fixVersion%20%3D%202.3.0)
+
+
+## Known Issues and Limitations
+
+
+There are some limitations and known issues within this version of MaxScale.
+For more information, please refer to the [Limitations](../about-maxscale-23/mariadb-maxscale-23-limitations-and-known-issues-within-mariadb-maxscale.md) document.
+
+
+## Packaging
+
+
+RPM and Debian packages are provided for the Linux distributions supported
+by MariaDB Enterprise.
+
+
+Packages can be downloaded [here](https://mariadb.com/resources/downloads).
+
+
+## Source Code
+
+
+The source code of MaxScale is tagged at GitHub with a tag, which is identical
+with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
+is X.Y.Z. Further, *master* always refers to the latest released non-beta version.
+
+
+The source code is available [here](https://github.com/mariadb-corporation/MaxScale).

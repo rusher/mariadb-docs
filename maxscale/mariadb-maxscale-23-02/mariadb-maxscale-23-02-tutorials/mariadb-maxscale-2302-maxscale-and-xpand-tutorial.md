@@ -1,0 +1,268 @@
+
+# MaxScale and Xpand Tutorial
+
+# MaxScale and Xpand Tutorial
+
+
+Since version 2.4, MaxScale has built-in support for Xpand. This
+tutorial explains how to setup MaxScale in front of a Xpand
+cluster.
+
+
+There is no Xpand specific router, but both the
+[readconnroute](../mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readconnroute.md) and
+the [readwritesplit](../mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) routers can be
+used.
+
+
+## Xpand and Readconnroute
+
+
+With *readconnroute* you get simple connection based routing, where
+each new connection is created (by default) to the Xpand node with
+the least amount of existing connections. That is, with readconnroute
+the behaviour will be very similar to the behaviour when
+[HAProxy](https://www.haproxy.org) is used as the Xpand load
+balancer.
+
+
+### Bootstrap servers
+
+
+The Xpand monitor is capable of autonomously figuring out the cluster
+configuration, but in order to get going there must be at least one
+*server*-section referring to a node in the Xpand cluster.
+
+
+
+```
+[Bootstrap-1]
+type=server
+address=IP-OF-NODE
+port=3306
+protocol=MySQLBackend
+```
+
+
+
+That server defintion will be used by the monitor in order to connect
+to the Xpand cluster. There can be more than one such "bootstrap"
+definition to cater for the case that the node used as a bootstrap
+server is down when MaxScale starts.
+
+
+**NOTE** These bootstrap servers should *only* be referred to from the
+ Xpand monitor configuration, but *never* from a service.
+
+
+### Monitor
+
+
+In the Xpand monitor section, the bootstrap servers are referred to
+in the same way as "ordinary" servers are referred to in other monitors.
+
+
+
+```
+[Xpand]
+type=monitor
+module=xpandmon
+servers=Bootstrap-1
+user=USER
+password=PASSWORD
+```
+
+
+
+The user defined by the `<code>user</code>` parameter needs the following grants:
+
+
+
+```
+CREATE USER 'maxscale-monitor'@'maxscalehost' IDENTIFIED BY 'maxscale-monitor-password';
+GRANT SELECT ON system.membership TO 'maxscale-monitor'@'maxscalehost';
+GRANT SELECT ON system.nodeinfo TO 'maxscale-monitor'@'maxscalehost';
+GRANT SELECT ON system.softfailed_nodes TO 'maxscale-monitor'@'maxscalehost';
+```
+
+
+
+In case the same user is used both for the monitor and the service (see below),
+then the user must be given the grants required by the service as well.
+
+
+The bootstrap servers are only used for connecting to the Xpand
+cluster; thereafter the Xpand monitor will dynamically find out the
+cluster configuration.
+
+
+The discovered cluster configuration will be stored (the ips and ports
+of the Xpand nodes) and upon subsequent restarts the Xpand
+monitor will use that information if the bootstrap servers happen to
+be unavailable.
+
+
+With the configuration above `<code>maxctrl list servers</code>` might output
+the following:
+
+
+
+```
+┌───────────────────┬──────────────┬──────┬─────────────┬─────────────────┬──────┐
+│ Server            │ Address      │ Port │ Connections │ State           │ GTID │
+├───────────────────┼──────────────┼──────┼─────────────┼─────────────────┼──────┤
+│ @@Xpand:node-7    │ 10.2.224.102 │ 3306 │ 0           │ Master, Running │      │
+├───────────────────┼──────────────┼──────┼─────────────┼─────────────────┼──────┤
+│ @@Xpand:node-8    │ 10.2.224.103 │ 3306 │ 0           │ Master, Running │      │
+├───────────────────┼──────────────┼──────┼─────────────┼─────────────────┼──────┤
+│ @@Xpand:node-6    │ 10.2.224.101 │ 3306 │ 0           │ Master, Running │      │
+├───────────────────┼──────────────┼──────┼─────────────┼─────────────────┼──────┤
+│ Bootstrap-1       │ 10.2.224.101 │ 3306 │ 0           │ Master, Running │      │
+└───────────────────┴──────────────┴──────┴─────────────┴─────────────────┴──────┘
+```
+
+
+
+All servers whose name start with `<code>@@</code>` have been detected dynamically.
+
+
+Note that the address `<code>10.2.224.101</code>` appears twice; once for
+`<code>Bootstrap-1</code>` and another time for `<code>@@Xpand:node-6</code>`. The Xpand
+monitor will create a dynamic server instance for *all* nodes in the
+Xpand cluster; also for the ones used in bootstrap server sections.
+
+
+### Service
+
+
+The service is specified as follows:
+
+
+
+```
+[Xpand-Service]
+type=service
+router=readconnroute
+user=USER
+password=PASSWORD
+cluster=Xpand
+```
+
+
+
+The user defined by the `<code>user</code>` parameter needs the following grants:
+
+
+
+```
+CREATE USER 'maxscale-service'@'maxscalehost' IDENTIFIED BY 'maxscale-service-password';
+GRANT SELECT ON system.users TO 'maxscale-service'@'maxscalehost';
+GRANT SELECT ON system.user_acl TO 'maxscale-service'@'maxscalehost';
+```
+
+
+
+In case the same user is used both for the monitor (see above) and the service,
+then the user must be given the grants required by the monitor as well.
+
+
+Note that the service does *not* list any specific servers, but
+instead refers, using the argument `<code>cluster</code>`, to the Xpand monitor.
+
+
+In practice this means that the service will use the servers of the
+monitor named `<code>Xpand</code>` and in the case of a Xpand monitor those
+servers will be the ones that the monitor has detected
+dynamically. That is, when setup like this, the service will
+automatically adjust to any changes taking place in the Xpand
+cluster.
+
+
+**NOTE** There is no need to specify any `<code>router_options</code>`, but the
+default `<code>router_options=running</code>` provides the desired behaviour.
+In particular do **not** specify `<code>router_options=master</code>` as that will
+cause only a *single* node to be used.
+
+
+### Listener
+
+
+To complete the configuration, a listener must be specified.
+
+
+
+```
+[Xpand-Service-Listener]
+type=listener
+service=Xpand-Service
+protocol=MariaDBClient
+port=4008
+```
+
+
+
+## Xpand and Readwritesplit
+
+
+The primary purpose of the router *readwritesplit* is to split
+statements between one primary and multiple replicas. In the case of
+Xpand, all servers will be primaries, but *readwritesplit* may still
+be the right choise.
+
+
+Namely, as *readwritesplit* is transaction aware and capable of
+replaying transactions, it can be used for hiding certain events
+taking place in Xpand from the clients that use it.
+
+
+For instance, whenever a node is removed from or added to a Xpand
+cluster there will be a *group change*, which is visible to a client
+as a transaction rollback. However, if *readwritesplit* is used and
+transaction replay is enabled, then MaxScale may be able to hide the
+group change so that the client only detects a slight delay.
+
+
+Apart from the service section, the configuration when using
+*readwritesplit* is identical to the *readconnroute* configuration
+described above.
+
+
+### Service
+
+
+The service is specified as follows:
+
+
+
+```
+[Xpand-Service]
+type=service
+router=readwritesplit
+user=maxscale-service
+password=maxscale-service-password
+cluster=Xpand
+transaction_replay=true
+slave_selection_criteria=LEAST_GLOBAL_CONNECTIONS
+```
+
+
+
+With this configuration, subject to the boundary conditions of
+transaction replaying, a client will neither notice group change
+events nor the disappearance of the very node the client is connected
+to. In that latter case, MaxScale will simply connect to another node
+and replay the current transaction (if one is active). For detailed
+information about the transaction replay functionality, please refer
+to the *readwritesplit*
+[documentation](../mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md).
+
+
+**NOTE** It is vital to have
+`<code>slave_selection_criteria=LEAST_GLOBAL_CONNECTIONS</code>`, as otherwise
+connections will **not** be distributed evenly across all Xpand
+nodes.
+
+
+As a rule of thumb, use *readwritesplit* if it is important that
+changes taking place in the cluster configuration are hidden from the
+applications, otherwise use *readconnroute*.

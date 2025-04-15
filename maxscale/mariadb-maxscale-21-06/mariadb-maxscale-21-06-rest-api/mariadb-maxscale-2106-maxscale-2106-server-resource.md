@@ -1,0 +1,1220 @@
+
+# MaxScale 21.06 Server Resource
+
+# Server Resource
+
+
+A server resource represents a backend database server.
+
+
+
+
+* [Server Resource](#server-resource)
+
+  * [Resource Operations](#resource-operations)
+
+    * [Get a server](#get-a-server)
+
+      * [Response](#response)
+    * [Get all servers](#get-all-servers)
+
+      * [Response](#response_1)
+    * [Create a server](#create-a-server)
+
+      * [Response](#response_2)
+    * [Update a server](#update-a-server)
+    * [Modifiable Fields](#modifiable-fields)
+
+      * [Response](#response_3)
+    * [Update server relationships](#update-server-relationships)
+
+      * [Response](#response_4)
+    * [Destroy a server](#destroy-a-server)
+
+      * [Response](#response_5)
+    * [Set server state](#set-server-state)
+
+      * [Response](#response_6)
+    * [Clear server state](#clear-server-state)
+
+      * [Response](#response_7)
+
+
+
+
+## Resource Operations
+
+
+The *:name* in all of the URIs must be the name of a server in MaxScale.
+
+
+### Get a server
+
+
+
+```
+GET /v1/servers/:name
+```
+
+
+
+Get a single server.
+
+
+#### Response
+
+
+`<code>Status: 200 OK</code>`
+
+
+
+```
+{
+    "data": {
+        "attributes": {
+            "gtid_binlog_pos": "0-3000-5",
+            "gtid_current_pos": "0-3000-5",
+            "last_event": "master_up",
+            "lock_held": null,
+            "master_group": null,
+            "master_id": -1,
+            "name": "server1",
+            "node_id": 3000,
+            "parameters": {
+                "address": "127.0.0.1",
+                "disk_space_threshold": null,
+                "extra_port": 0,
+                "max_routing_connections": 0,
+                "monitorpw": null,
+                "monitoruser": null,
+                "persistmaxtime": "0ms",
+                "persistpoolmax": 0,
+                "port": 3000,
+                "priority": 0,
+                "proxy_protocol": false,
+                "rank": "primary",
+                "socket": null,
+                "ssl": false,
+                "ssl_ca_cert": null,
+                "ssl_cert": null,
+                "ssl_cert_verify_depth": 9,
+                "ssl_cipher": null,
+                "ssl_key": null,
+                "ssl_verify_peer_certificate": false,
+                "ssl_verify_peer_host": false,
+                "ssl_version": "MAX"
+            },
+            "read_only": false,
+            "replication_lag": 0,
+            "server_id": 3000,
+            "slave_connections": [],
+            "source": {
+                "file": "/etc/maxscale.cnf",
+                "type": "static"
+            },
+            "state": "Master, Running",
+            "state_details": null,
+            "statistics": {
+                "active_operations": 0,
+                "adaptive_avg_select_time": "0ns",
+                "connection_pool_empty": 0,
+                "connections": 1,
+                "failed_auths": 0,
+                "max_connections": 1,
+                "max_pool_size": 0,
+                "persistent_connections": 0,
+                "response_time_distribution": {
+                    "read": {
+                        "distribution": [
+                            {
+                                "count": 0,
+                                "time": "0.000001",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "0.000010",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "0.000100",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 1,
+                                "time": "0.001000",
+                                "total": 0.00022808
+                            },
+                            {
+                                "count": 0,
+                                "time": "0.010000",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "0.100000",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "1.000000",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "10.000000",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "100.000000",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "1000.000000",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "10000.000000",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "100000.000000",
+                                "total": 0.0
+                            }
+                        ],
+                        "operation": "read",
+                        "range_base": 10
+                    },
+                    "write": {
+                        "distribution": [
+                            {
+                                "count": 0,
+                                "time": "0.000001",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "0.000010",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "0.000100",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 1,
+                                "time": "0.001000",
+                                "total": 0.00053516399999999997
+                            },
+                            {
+                                "count": 0,
+                                "time": "0.010000",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "0.100000",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "1.000000",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "10.000000",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "100.000000",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "1000.000000",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "10000.000000",
+                                "total": 0.0
+                            },
+                            {
+                                "count": 0,
+                                "time": "100000.000000",
+                                "total": 0.0
+                            }
+                        ],
+                        "operation": "write",
+                        "range_base": 10
+                    }
+                },
+                "reused_connections": 0,
+                "routed_packets": 2,
+                "total_connections": 1
+            },
+            "triggered_at": "Thu, 20 Jul 2023 15:20:06 GMT",
+            "version_string": "10.5.19-MariaDB-1:10.5.19+maria~ubu2004-log"
+        },
+        "id": "server1",
+        "links": {
+            "self": "http://localhost:8989/v1/servers/server1/"
+        },
+        "relationships": {
+            "monitors": {
+                "data": [
+                    {
+                        "id": "MariaDB-Monitor",
+                        "type": "monitors"
+                    }
+                ],
+                "links": {
+                    "related": "http://localhost:8989/v1/monitors/",
+                    "self": "http://localhost:8989/v1/servers/server1/relationships/monitors/"
+                }
+            },
+            "services": {
+                "data": [
+                    {
+                        "id": "RW-Split-Router",
+                        "type": "services"
+                    },
+                    {
+                        "id": "Read-Connection-Router",
+                        "type": "services"
+                    }
+                ],
+                "links": {
+                    "related": "http://localhost:8989/v1/services/",
+                    "self": "http://localhost:8989/v1/servers/server1/relationships/services/"
+                }
+            }
+        },
+        "type": "servers"
+    },
+    "links": {
+        "self": "http://localhost:8989/v1/servers/server1/"
+    }
+}
+```
+
+
+
+### Get all servers
+
+
+
+```
+GET /v1/servers
+```
+
+
+
+#### Response
+
+
+Response contains a resource collection with all servers.
+
+
+`<code>Status: 200 OK</code>`
+
+
+
+```
+{
+    "data": [
+        {
+            "attributes": {
+                "gtid_binlog_pos": "0-3000-5",
+                "gtid_current_pos": "0-3000-5",
+                "last_event": "master_up",
+                "lock_held": null,
+                "master_group": null,
+                "master_id": -1,
+                "name": "server1",
+                "node_id": 3000,
+                "parameters": {
+                    "address": "127.0.0.1",
+                    "disk_space_threshold": null,
+                    "extra_port": 0,
+                    "max_routing_connections": 0,
+                    "monitorpw": null,
+                    "monitoruser": null,
+                    "persistmaxtime": "0ms",
+                    "persistpoolmax": 0,
+                    "port": 3000,
+                    "priority": 0,
+                    "proxy_protocol": false,
+                    "rank": "primary",
+                    "socket": null,
+                    "ssl": false,
+                    "ssl_ca_cert": null,
+                    "ssl_cert": null,
+                    "ssl_cert_verify_depth": 9,
+                    "ssl_cipher": null,
+                    "ssl_key": null,
+                    "ssl_verify_peer_certificate": false,
+                    "ssl_verify_peer_host": false,
+                    "ssl_version": "MAX"
+                },
+                "read_only": false,
+                "replication_lag": 0,
+                "server_id": 3000,
+                "slave_connections": [],
+                "source": {
+                    "file": "/etc/maxscale.cnf",
+                    "type": "static"
+                },
+                "state": "Master, Running",
+                "state_details": null,
+                "statistics": {
+                    "active_operations": 0,
+                    "adaptive_avg_select_time": "0ns",
+                    "connection_pool_empty": 0,
+                    "connections": 1,
+                    "failed_auths": 0,
+                    "max_connections": 1,
+                    "max_pool_size": 0,
+                    "persistent_connections": 0,
+                    "response_time_distribution": {
+                        "read": {
+                            "distribution": [
+                                {
+                                    "count": 0,
+                                    "time": "0.000001",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.000010",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.000100",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 1,
+                                    "time": "0.001000",
+                                    "total": 0.00022808
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.010000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.100000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "1.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "10.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "100.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "1000.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "10000.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "100000.000000",
+                                    "total": 0.0
+                                }
+                            ],
+                            "operation": "read",
+                            "range_base": 10
+                        },
+                        "write": {
+                            "distribution": [
+                                {
+                                    "count": 0,
+                                    "time": "0.000001",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.000010",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.000100",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 1,
+                                    "time": "0.001000",
+                                    "total": 0.00053516399999999997
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.010000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.100000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "1.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "10.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "100.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "1000.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "10000.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "100000.000000",
+                                    "total": 0.0
+                                }
+                            ],
+                            "operation": "write",
+                            "range_base": 10
+                        }
+                    },
+                    "reused_connections": 0,
+                    "routed_packets": 2,
+                    "total_connections": 1
+                },
+                "triggered_at": "Thu, 20 Jul 2023 15:20:06 GMT",
+                "version_string": "10.5.19-MariaDB-1:10.5.19+maria~ubu2004-log"
+            },
+            "id": "server1",
+            "links": {
+                "self": "http://localhost:8989/v1/servers/server1/"
+            },
+            "relationships": {
+                "monitors": {
+                    "data": [
+                        {
+                            "id": "MariaDB-Monitor",
+                            "type": "monitors"
+                        }
+                    ],
+                    "links": {
+                        "related": "http://localhost:8989/v1/monitors/",
+                        "self": "http://localhost:8989/v1/servers/server1/relationships/monitors/"
+                    }
+                },
+                "services": {
+                    "data": [
+                        {
+                            "id": "RW-Split-Router",
+                            "type": "services"
+                        },
+                        {
+                            "id": "Read-Connection-Router",
+                            "type": "services"
+                        }
+                    ],
+                    "links": {
+                        "related": "http://localhost:8989/v1/services/",
+                        "self": "http://localhost:8989/v1/servers/server1/relationships/services/"
+                    }
+                }
+            },
+            "type": "servers"
+        },
+        {
+            "attributes": {
+                "gtid_binlog_pos": "0-3000-5",
+                "gtid_current_pos": "0-3000-5",
+                "last_event": "slave_up",
+                "lock_held": null,
+                "master_group": null,
+                "master_id": 3000,
+                "name": "server2",
+                "node_id": 3001,
+                "parameters": {
+                    "address": "127.0.0.1",
+                    "disk_space_threshold": null,
+                    "extra_port": 0,
+                    "max_routing_connections": 0,
+                    "monitorpw": null,
+                    "monitoruser": null,
+                    "persistmaxtime": "0ms",
+                    "persistpoolmax": 0,
+                    "port": 3001,
+                    "priority": 0,
+                    "proxy_protocol": false,
+                    "rank": "primary",
+                    "socket": null,
+                    "ssl": false,
+                    "ssl_ca_cert": null,
+                    "ssl_cert": null,
+                    "ssl_cert_verify_depth": 9,
+                    "ssl_cipher": null,
+                    "ssl_key": null,
+                    "ssl_verify_peer_certificate": false,
+                    "ssl_verify_peer_host": false,
+                    "ssl_version": "MAX"
+                },
+                "read_only": false,
+                "replication_lag": 0,
+                "server_id": 3001,
+                "slave_connections": [
+                    {
+                        "connection_name": "",
+                        "gtid_io_pos": "",
+                        "last_io_error": "",
+                        "last_sql_error": "",
+                        "master_host": "127.0.0.1",
+                        "master_port": 3000,
+                        "master_server_id": 3000,
+                        "seconds_behind_master": 0,
+                        "slave_io_running": "Yes",
+                        "slave_sql_running": "Yes"
+                    }
+                ],
+                "source": {
+                    "file": "/etc/maxscale.cnf",
+                    "type": "static"
+                },
+                "state": "Slave, Running",
+                "state_details": null,
+                "statistics": {
+                    "active_operations": 0,
+                    "adaptive_avg_select_time": "0ns",
+                    "connection_pool_empty": 0,
+                    "connections": 1,
+                    "failed_auths": 0,
+                    "max_connections": 1,
+                    "max_pool_size": 0,
+                    "persistent_connections": 0,
+                    "response_time_distribution": {
+                        "read": {
+                            "distribution": [
+                                {
+                                    "count": 0,
+                                    "time": "0.000001",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.000010",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.000100",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 1,
+                                    "time": "0.001000",
+                                    "total": 0.00065983999999999997
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.010000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.100000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "1.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "10.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "100.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "1000.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "10000.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "100000.000000",
+                                    "total": 0.0
+                                }
+                            ],
+                            "operation": "read",
+                            "range_base": 10
+                        },
+                        "write": {
+                            "distribution": [
+                                {
+                                    "count": 0,
+                                    "time": "0.000001",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.000010",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.000100",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.001000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.010000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "0.100000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "1.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "10.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "100.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "1000.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "10000.000000",
+                                    "total": 0.0
+                                },
+                                {
+                                    "count": 0,
+                                    "time": "100000.000000",
+                                    "total": 0.0
+                                }
+                            ],
+                            "operation": "write",
+                            "range_base": 10
+                        }
+                    },
+                    "reused_connections": 0,
+                    "routed_packets": 1,
+                    "total_connections": 1
+                },
+                "triggered_at": "Thu, 20 Jul 2023 15:20:06 GMT",
+                "version_string": "10.5.19-MariaDB-1:10.5.19+maria~ubu2004-log"
+            },
+            "id": "server2",
+            "links": {
+                "self": "http://localhost:8989/v1/servers/server2/"
+            },
+            "relationships": {
+                "monitors": {
+                    "data": [
+                        {
+                            "id": "MariaDB-Monitor",
+                            "type": "monitors"
+                        }
+                    ],
+                    "links": {
+                        "related": "http://localhost:8989/v1/monitors/",
+                        "self": "http://localhost:8989/v1/servers/server2/relationships/monitors/"
+                    }
+                },
+                "services": {
+                    "data": [
+                        {
+                            "id": "RW-Split-Router",
+                            "type": "services"
+                        },
+                        {
+                            "id": "Read-Connection-Router",
+                            "type": "services"
+                        }
+                    ],
+                    "links": {
+                        "related": "http://localhost:8989/v1/services/",
+                        "self": "http://localhost:8989/v1/servers/server2/relationships/services/"
+                    }
+                }
+            },
+            "type": "servers"
+        }
+    ],
+    "links": {
+        "self": "http://localhost:8989/v1/servers/"
+    }
+}
+```
+
+
+
+### Create a server
+
+
+
+```
+POST /v1/servers
+```
+
+
+
+Create a new server by defining the resource. The posted object must define at
+least the following fields.
+
+
+* `<code>data.id</code>`
+* Name of the server
+* `<code>data.type</code>`
+* Type of the object, must be `<code>servers</code>`
+* `<code>data.attributes.parameters.address</code>` OR `<code>data.attributes.parameters.socket</code>`
+* The [address](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md) or
+ [socket](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md) to use. Only
+ one of the fields can be defined.
+* `<code>data.attributes.parameters.port</code>`
+* The [port](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md) to use. Needs
+ to be defined if the `<code>address</code>` field is defined.
+
+
+The following is the minimal required JSON object for defining a new server.
+
+
+
+```
+{
+    "data": {
+        "id": "server3",
+        "type": "servers",
+        "attributes": {
+            "parameters": {
+                "address": "127.0.0.1",
+                "port": 3003
+            }
+        }
+    }
+}
+```
+
+
+
+The relationships of a server can also be defined at creation time. This allows
+new servers to be created and immediately taken into use.
+
+
+
+```
+{
+    "data": {
+        "id": "server4",
+        "type": "servers",
+        "attributes": {
+            "parameters": {
+                "address": "127.0.0.1",
+                "port": 3002
+            }
+        },
+        "relationships": {
+            "services": {
+                "data": [
+                    {
+                        "id": "RW-Split-Router",
+                        "type": "services"
+                    },
+                    {
+                        "id": "Read-Connection-Router",
+                        "type": "services"
+                    }
+                ]
+            },
+            "monitors": {
+                "data": [
+                    {
+                        "id": "MySQL-Monitor",
+                        "type": "monitors"
+                    }
+                ]
+            }
+        }
+    }
+}
+```
+
+
+
+Refer to the [Configuration Guide](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)
+for a full list of server parameters.
+
+
+#### Response
+
+
+Server created:
+
+
+`<code>Status: 204 No Content</code>`
+
+
+Invalid JSON body:
+
+
+`<code>Status: 403 Forbidden</code>`
+
+
+### Update a server
+
+
+
+```
+PATCH /v1/servers/:name
+```
+
+
+
+The request body must be a valid JSON document representing the modified
+server.
+
+
+### Modifiable Fields
+
+
+In addition to the server
+[parameters](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md), the *services*
+and *monitors* fields of the *relationships* object can be modified. Removal,
+addition and modification of the links will change which service and monitors
+use this server.
+
+
+For example, removing the first value in the *services* list in the
+*relationships* object from the following JSON document will remove the
+*server1* from the service *RW-Split-Router*.
+
+
+Removing a service from a server is analogous to removing the server from the
+service. Both unlink the two objects from each other.
+
+
+Request for `<code>PATCH /v1/servers/server1</code>` that modifies the address of the server:
+
+
+
+```
+{
+    "data": {
+        "attributes": {
+            "parameters": {
+                "address": "192.168.0.123"
+            }
+        }
+    }
+}
+```
+
+
+
+Request for `<code>PATCH /v1/servers/server1</code>` that modifies the server relationships:
+
+
+
+```
+{
+    "data": {
+        "relationships": {
+            "services": {
+                "data": [
+                    { "id": "Read-Connection-Router", "type": "services" }
+                ]
+            },
+            "monitors": {
+                "data": [
+                    { "id": "MySQL-Monitor", "type": "monitors" }
+                ]
+            }
+        }
+    }
+}
+```
+
+
+
+If parts of the resource are not defined (e.g. the `<code>attributes</code>` field in the
+above example), those parts of the resource are not modified. All parts that are
+defined are interpreted as the new definition of those part of the resource. In
+the above example, the `<code>relationships</code>` of the resource are completely redefined.
+
+
+#### Response
+
+
+Server modified:
+
+
+`<code>Status: 204 No Content</code>`
+
+
+Invalid JSON body:
+
+
+`<code>Status: 403 Forbidden</code>`
+
+
+### Update server relationships
+
+
+
+```
+PATCH /v1/servers/:name/relationships/:type
+```
+
+
+
+The *:type* in the URI must be either *services*, for service
+relationships, or *monitors*, for monitor relationships.
+
+
+The request body must be a JSON object that defines only the *data* field. The
+value of the *data* field must be an array of relationship objects that define
+the *id* and *type* fields of the relationship. This object will replace the
+existing relationships of the particular type from the server.
+
+
+The following is an example request and request body that defines a single
+service relationship for a server.
+
+
+
+```
+PATCH /v1/servers/my-db-server/relationships/services
+
+{
+    data: [
+          { "id": "my-rwsplit-service", "type": "services" }
+    ]
+}
+```
+
+
+
+All relationships for a server can be deleted by sending an empty array as the
+*data* field value. The following example removes the server from all services.
+
+
+
+```
+PATCH /v1/servers/my-db-server/relationships/services
+
+{
+    data: []
+}
+```
+
+
+
+#### Response
+
+
+Server relationships modified:
+
+
+`<code>Status: 204 No Content</code>`
+
+
+Invalid JSON body:
+
+
+`<code>Status: 403 Forbidden</code>`
+
+
+### Destroy a server
+
+
+
+```
+DELETE /v1/servers/:name
+```
+
+
+
+A server can only be deleted if it is not used by any services or
+monitors.
+
+
+This endpoint also supports the `<code>force=yes</code>` parameter that will unconditionally
+delete the server by first unlinking it from all services and monitors that use
+it.
+
+
+#### Response
+
+
+Server is destroyed:
+
+
+`<code>Status: 204 No Content</code>`
+
+
+Server is in use:
+
+
+`<code>Status: 403 Forbidden</code>`
+
+
+### Set server state
+
+
+
+```
+PUT /v1/servers/:name/set
+```
+
+
+
+This endpoint requires that the `<code>state</code>` parameter is passed with the
+request. The value of `<code>state</code>` must be one of the following values.
+
+
+| Value | State Description |
+| --- | --- |
+| Value | State Description |
+| master | Server is a Master |
+| slave | Server is a Slave |
+| maintenance | Server is put into maintenance |
+| running | Server is up and running |
+| synced | Server is a Galera node |
+| drain | Server is drained of connections |
+
+
+For example, to set the server *db-server-1* into maintenance mode, a request to
+the following URL must be made:
+
+
+
+```
+PUT /v1/servers/db-server-1/set?state=maintenance
+```
+
+
+
+This endpoint also supports the `<code>force=yes</code>` parameter that will cause all
+connections to the server to be closed if `<code>state=maintenance</code>` is also set. By
+default setting a server into maintenance mode will cause connections to be
+closed only after the next request is sent.
+
+
+The following example forcefully closes all connections to server *db-server-1*
+and sets it into maintenance mode:
+
+
+
+```
+PUT /v1/servers/db-server-1/set?state=maintenance&force=yes
+```
+
+
+
+#### Response
+
+
+Server state modified:
+
+
+`<code>Status: 204 No Content</code>`
+
+
+Missing or invalid parameter:
+
+
+`<code>Status: 403 Forbidden</code>`
+
+
+### Clear server state
+
+
+
+```
+PUT /v1/servers/:name/clear
+```
+
+
+
+This endpoint requires that the `<code>state</code>` parameter is passed with the
+request. The value of `<code>state</code>` must be one of the values defined in the
+*set* endpoint documentation.
+
+
+#### Response
+
+
+Server state modified:
+
+
+`<code>Status: 204 No Content</code>`
+
+
+Missing or invalid parameter:
+
+
+`<code>Status: 403 Forbidden</code>`

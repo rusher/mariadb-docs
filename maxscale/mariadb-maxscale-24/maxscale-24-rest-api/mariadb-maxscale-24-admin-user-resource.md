@@ -1,0 +1,430 @@
+
+# Admin User Resource
+
+# Admin User Resource
+
+
+Admin users represent administrative users that are able to query and change
+MaxScale's configuration.
+
+
+## Resource Operations
+
+
+### Get network user
+
+
+
+```
+GET /v1/users/inet/:name
+```
+
+
+
+Get a single network user. The The *:name* in the URI must be a valid network
+user name.
+
+
+#### Response
+
+
+`<code>Status: 200 OK</code>`
+
+
+
+```
+{
+    "links": {
+        "self": "http://localhost:8989/v1/users/inet/my-user"
+    },
+    "data": {
+        "id": "my-user", // Username
+        "type": "inet", // User type
+        "attributes": {
+            "account": "admin" // Type of the user, "admin" for read-write operations, "basic" for read-only
+        },
+        "relationships": {
+            "self": "http://localhost:8989/v1/users/inet/my-user"
+        }
+    }
+}
+```
+
+
+
+### Get all network users
+
+
+
+```
+GET /v1/users/inet
+```
+
+
+
+Get all network users.
+
+
+#### Response
+
+
+`<code>Status: 200 OK</code>`
+
+
+
+```
+// See `/v1/users/inet/` for a descriptions of the fields
+{
+    "links": {
+        "self": "http://localhost:8989/v1/users/inet"
+    },
+    "data": [
+        {
+            "id": "my-user",
+            "type": "inet",
+            "attributes": {
+                "account": "admin"
+            },
+            "relationships": {
+                "self": "http://localhost:8989/v1/users/inet/my-user"
+            }
+        }
+    ]
+}
+```
+
+
+
+### Get enabled UNIX account
+
+
+
+```
+GET /v1/users/unix/:name
+```
+
+
+
+Get a single enabled UNIX account. The The *:name* in the URI must be a valid
+UNIX account name that has been enabled.
+
+
+#### Response
+
+
+`<code>Status: 200 OK</code>`
+
+
+
+```
+// See `/v1/users/inet/` for a descriptions of the fields
+{
+    "links": {
+        "self": "http://localhost:8989/v1/users/unix/maxscale"
+    },
+    "data": {
+        "id": "maxscale",
+        "type": "unix",
+        "attributes": {
+            "account": "basic"
+        },
+        "relationships": {
+            "self": "http://localhost:8989/v1/users/unix/maxscale"
+        }
+    }
+}
+```
+
+
+
+### Get all enabled UNIX accounts
+
+
+
+```
+GET /v1/users/unix
+```
+
+
+
+Get all enabled UNIX accounts.
+
+
+#### Response
+
+
+`<code>Status: 200 OK</code>`
+
+
+
+```
+// See `/v1/users/inet/` for a descriptions of the fields
+{
+    "links": {
+        "self": "http://localhost:8989/v1/users/unix"
+    },
+    "data": [
+        {
+            "id": "maxscale",
+            "type": "unix",
+            "attributes": {
+                "account": "admin"
+            },
+            "relationships": {
+                "self": "http://localhost:8989/v1/users/unix/maxscale"
+            }
+        }
+    ]
+}
+```
+
+
+
+### Get all users
+
+
+
+```
+GET /v1/users
+```
+
+
+
+Get all administrative users. This fetches both network users and local UNIX
+accounts.
+
+
+#### Response
+
+
+`<code>Status: 200 OK</code>`
+
+
+
+```
+// See `/v1/users/inet/` for a descriptions of the fields
+{
+    "links": {
+        "self": "http://localhost:8989/v1/users/"
+    },
+    "data": [ // List of all users
+        {
+            "id": "my-user",
+            "type": "inet", // A network user
+            "attributes": {
+                "account": "admin"
+            },
+            "relationships": {
+                "self": "http://localhost:8989/v1/users/inet/my-user"
+            }
+        },
+        {
+            "id": "maxscale",
+            "type": "unix", // A local UNIX account
+            "attributes": {
+                "account": "admin"
+            },
+            "relationships": {
+                "self": "http://localhost:8989/v1/users/unix/maxscale"
+            }
+        }
+    ]
+}
+```
+
+
+
+### Create a network user
+
+
+
+```
+POST /v1/users/inet
+```
+
+
+
+Create a new network user. The request body must define at least the
+following fields.
+
+
+* `<code>data.id</code>`
+* The username
+* `<code>data.type</code>`
+* Type of the object, must be `<code>inet</code>`
+* `<code>data.attributes.password</code>`
+* The password for this user
+* `<code>data.attributes.account</code>`
+* Set to `<code>admin</code>` for administrative users and `<code>basic</code>` to read-only users
+
+
+Only admin accounts can perform POST, PUT, DELETE and PATCH requests. If a basic
+account performs one of the aforementioned request, the REST API will respond
+with a `<code>401 Unauthorized</code>` error.
+
+
+Here is an example request body defining the network user *my-user* with the
+password *my-password* that is allowed to execute only read-only operations.
+
+
+
+```
+{
+    "data": {
+        "id": "my-user", // The user to create
+        "type": "inet", // The type of the user
+        "attributes": {
+            "password": "my-password", // The password to use for the user
+            "account": "basic" // The type of the account
+        }
+    }
+}
+```
+
+
+
+#### Response
+
+
+
+```
+Status: 204 No Content
+```
+
+
+
+### Enable a UNIX account
+
+
+
+```
+POST /v1/users/unix
+```
+
+
+
+This enables an existing UNIX account on the system for administrative
+operations. The request body must define at least the following fields.
+
+
+* `<code>data.id</code>`
+* The username
+* `<code>data.type</code>`
+* Type of the object, must be `<code>unix</code>`
+* `<code>data.attributes.account</code>`
+* Set to `<code>admin</code>` for administrative users and `<code>basic</code>` to read-only users
+
+
+Here is an example request body enabling the UNIX account *jdoe* for read-only operations.
+
+
+
+```
+{
+    "data": {
+        "id": "jdoe", // Account name
+        "type": "unix" // Account type
+        "attributes": {
+            "account": "basic" // Type of the user account in MaxScale
+        }
+    }
+}
+```
+
+
+
+#### Response
+
+
+
+```
+Status: 204 No Content
+```
+
+
+
+### Delete a network user
+
+
+
+```
+DELETE /v1/users/inet/:name
+```
+
+
+
+The *:name* part of the URI must be a valid user name.
+
+
+#### Response
+
+
+
+```
+Status: 204 No Content
+```
+
+
+
+### Disable a UNIX account
+
+
+
+```
+DELETE /v1/users/unix/:name
+```
+
+
+
+The *:name* part of the URI must be a valid user name.
+
+
+#### Response
+
+
+
+```
+Status: 204 No Content
+```
+
+
+
+### Update a network user
+
+
+
+```
+PATCH /v1/users/inet/:name
+```
+
+
+
+Update network user. Currently, only the password can be updated. This
+means that the request body must define the `<code>data.attributes.password</code>`
+field.
+
+
+Here is an example request body that updates the password.
+
+
+
+```
+{
+    "data": {
+        "attributes": {
+            "password": "new-password"
+        }
+    }
+}
+```
+
+
+
+#### Response
+
+
+
+```
+Status: 204 No Content
+```
+
