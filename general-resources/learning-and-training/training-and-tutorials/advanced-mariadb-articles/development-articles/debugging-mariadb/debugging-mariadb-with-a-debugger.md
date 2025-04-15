@@ -1,0 +1,185 @@
+
+# Debugging MariaDB With a Debugger
+
+If you have MariaDB [compiled for debugging](compiling-mariadb-for-debugging.md) you can both use it in a
+debugger, like ddd or gdb, and get comprehensive trace files of the execution of MariaDB. The trace files allow you to both see the flow of the code and to see the differences in execution by by comparing two trace files.
+
+
+Core dumps are also much easier to investigate if they come from a debug binary.
+
+
+Note that a binary compiled for debugging and tracing is about 10-20% slower than a normal binary. If you just compile a binary for debugging (option `<code>-g</code>` with gcc) the speed difference compared to a normal binary is negligible.
+
+
+### Checking That MariaDB is Compiled For Debugging
+
+
+Execute:
+
+
+```
+mariadbd --debug --help
+```
+
+If you are using MariaDB before 10.5, then you should use `<code>mysqld</code>` instead of `<code>mariadbd</code>`!
+
+
+If you get an error `<code>unknown option '--debug</code>`, then MariaDB is not compiled
+for debugging and tracing.
+
+
+### Building MariaDB for Debugging Starting from 5.5
+
+
+On Unix you need to pass `<code>-DCMAKE_BUILD_TYPE=Debug</code>` to cmake to compile with debug information.
+
+
+### Building [MariaDB 5.3](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) and Older
+
+
+Here is how you compile with debug on older versions:
+
+
+Use the scripts in the BUILD directory that will compile MariaDB with most common debug options and plugins, for example:
+
+
+```
+./BUILD/compile-pentium64-debug-max
+```
+
+For the most common configurations there exists a fine-tuned script in the BUILD directory.
+
+
+If you want to use [valgrind](https://valgrind.org/), a very good memory instrumentation tool and memory overrun checker, you should use
+
+
+```
+./BUILD/compile-pentium64-valgrind-max
+```
+
+Some recommended debugging scripts for Intel/AMD are:
+
+
+```
+BUILD/compile-pentium64-debug-max
+BUILD/compile-pentium64-valgrind-max
+```
+
+This is an example of how to compile MariaDB for debugging in your home directory with [MariaDB 5.2.9](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-529-release-notes.md) as an example:
+
+
+```
+cd ~
+mkdir mariadb
+cd mariadb
+tar xvf mariadb-5.2.9.tar.gz
+ln -s mariadb-5.2.9 current
+cd current
+./BUILD/compile-pentium64-debug-max
+```
+
+The last command will produce a debug version of `<code class="highlight fixed" style="white-space:pre-wrap">sql/mysqld</code>`.
+
+
+### Debugging MariaDB From the Source Directory
+
+
+#### Creating the MariaDB Database Directory
+
+
+The following example creates the MariaDB databases in `<code>/data</code>`.
+
+
+```
+./scripts/mariadb-install-db --srcdir=. --datadir=/data
+```
+
+#### Running MariaDB in a Debugger
+
+
+The following example is using `<code>ddd</code>`, an excellent graphical debugger in Linux. If you don't have `<code>ddd</code>` installed, you can use `<code>gdb</code>` instead.
+
+
+```
+cd sql
+ddd ./mariadbd &
+```
+
+In `<code>ddd</code>` or `<code>gdb</code>`
+
+
+```
+run --datadir=/data --language=./share/english --gdb
+```
+
+You can [set the options in your /.my.cnf file](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/running-mariadb-from-the-build-directory.md) so as not to have to repeat them on the `<code>run</code>` line.
+
+
+If you run `<code>mysqld</code>` with `<code>--debug</code>`, you will get a [trace file](creating-a-trace-file.md) in /tmp/mysqld.trace that shows what is happening.
+
+
+Note that you can have different options in the configuration file for each MariaDB version (like having a specific language directory).
+
+
+### Debugging MariaDB Server with mariadb-test-run
+
+
+If you get a crash while running `<code>mariadb-test-run</code>` you can debug this in a debugger by using one of the following options:
+
+
+```
+mariadb-test-run --gdb failing-test-name
+```
+
+or if you prefer the `<code>ddd</code>` debugger:
+
+
+```
+mariadb-test-run --ddd failing-test-name
+```
+
+#### Sample .my.cnf file to Make Debugging Easier
+
+
+```
+[client-server]
+socket=/tmp/mysql-dbug.sock
+port=3307
+
+[mariadb]
+datadir=/my/data
+loose-innodb_file_per_table
+server_id= 1
+log-basename=master
+loose-debug-mutex-deadlock-detector
+max-connections=20
+lc-messages=en_us
+
+[mariadb-10.0]
+lc-messages-dir=/my/maria-10.0/sql/share
+
+[mariadb-10.1]
+lc-messages-dir=/my/maria-10.1/sql/share
+
+[mariadb-10.2]
+lc-messages-dir=/my/maria-10.2/sql/share
+
+[mariadb-10.3]
+lc-messages-dir=/my/maria-10.3/sql/share
+```
+
+The above `<code>.my.cnf</code>` file:
+
+
+* Uses an explicit socket for both client and server.
+* Assumes the server source is in /my/maria-xxx. You should change this to point to where your sources are located.
+* Has a unique patch for each MariaDB version so that one doesn't have to specify [--lc-messages-dir](../../../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir) or [--language](../../../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#language) even if one switches between debugging different MariaDB versions.
+
+
+### See Also
+
+
+* [Creating a trace file](creating-a-trace-file.md)
+* [Configuring MariaDB with my.cnf](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md)
+* [Running mariadbd from the build director](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/running-mariadb-from-the-build-directory.md)
+

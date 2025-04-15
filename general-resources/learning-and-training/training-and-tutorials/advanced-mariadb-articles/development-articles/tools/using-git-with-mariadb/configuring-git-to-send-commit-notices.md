@@ -1,0 +1,32 @@
+
+# Configuring Git to Send Commit Notices
+
+Commit emails for MariaDB are sent to
+`<code>[commits@lists.mariadb.org](https://lists.mariadb.org/postorius/lists/commits.lists.mariadb.org/)</code>`.
+You can find the archive [here](https://lists.mariadb.org/hyperkitty/list/commits@lists.mariadb.org/).
+
+
+To allow others to see what you are working on in your MariaDB tree, you should:
+
+
+1. [subscribe](https://lists.askmonty.org/cgi-bin/mailman/listinfo/commits) to
+ the email list
+1. configure git to send your commits to `<code>[commits@mariab.org](https://lists.askmonty.org/cgi-bin/mailman/listinfo/commits)</code>`.
+
+
+Download the [post-commit git trigger](https://bazaar.launchpad.net/~maria-captains/mariadb-tools/trunk/view/head:/git_template/hooks/post-commit) script. Configure as
+
+
+```
+git config --global hooks.postcommitrecipients "commits@mariadb.org"
+git config --global hooks.postcommitbranches "*"
+```
+
+Also you might want to check the [README](https://bazaar.launchpad.net/~maria-captains/mariadb-tools/trunk/view/head:/git_template/README) for the post-commit trigger.
+
+
+The post-commit git trigger uses *sendmail* for sending emails. Some platforms don't have *sendmail* and then you'll need to modify to make use of something that is supported.
+
+
+Also, the post-commit trigger is just one approach. You can also use git-email on at least Debian and Fedora to send commit emails to the MariaDB commits email list.
+
