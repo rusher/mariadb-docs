@@ -1,0 +1,339 @@
+
+# ALTER USER
+
+## Syntax
+
+
+```
+ALTER USER [IF EXISTS] 
+ user_specification [,user_specification] ...
+  [REQUIRE {NONE | tls_option [[AND] tls_option] ...}]
+  [WITH resource_option [resource_option] ...]
+  [lock_option] [password_option] 
+
+user_specification:
+  username [authentication_option]
+
+authentication_option:
+  IDENTIFIED BY 'password' 
+  | IDENTIFIED BY PASSWORD 'password_hash'
+  | IDENTIFIED {VIA|WITH} authentication_rule [OR authentication_rule] ... 
+ 
+authentication_rule:
+  authentication_plugin
+  | authentication_plugin {USING|AS} 'authentication_string'
+  | authentication_plugin {USING|AS} PASSWORD('password')
+
+tls_option
+  SSL 
+  | X509
+  | CIPHER 'cipher'
+  | ISSUER 'issuer'
+  | SUBJECT 'subject'
+
+resource_option
+  MAX_QUERIES_PER_HOUR count
+  | MAX_UPDATES_PER_HOUR count
+  | MAX_CONNECTIONS_PER_HOUR count
+  | MAX_USER_CONNECTIONS count
+  | MAX_STATEMENT_TIME time
+
+password_option:
+  PASSWORD EXPIRE
+  | PASSWORD EXPIRE DEFAULT
+  | PASSWORD EXPIRE NEVER
+  | PASSWORD EXPIRE INTERVAL N DAY
+
+lock_option:
+    ACCOUNT LOCK
+  | ACCOUNT UNLOCK
+}
+```
+
+
+## Description
+
+
+The `<code>ALTER USER</code>` statement modifies existing MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#global-privileges) privilege or the [UPDATE](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. The global [SUPER](grant.md#global-privileges) privilege is also required if the [read_only](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_only) system variable is enabled.
+
+
+If any of the specified user accounts do not yet exist, an error results. If an error occurs, `<code>ALTER USER</code>` will still modify the accounts that do not result in an error. Only one error is produced for all users which have not been modified.
+
+
+For renaming an existing account (user name and/or host), see [RENAME USER](rename-user.md).
+
+
+## IF EXISTS
+
+
+When the `<code>IF EXISTS</code>` clause is used, MariaDB will return a warning instead of an error for each specified user that does not exist.
+
+
+## Account Names
+
+
+For `<code>ALTER USER</code>` statements, account names are specified as the `<code>username</code>` argument in the same way as they are for [CREATE USER](create-user.md) statements. See [account names](create-user.md#account-names) from the `<code>CREATE USER</code>` page for details on how account names are specified.
+
+
+[CURRENT_USER](../built-in-functions/secondary-functions/information-functions/current_user.md) or `<code>CURRENT_USER()</code>` can also be used to alter the account logged into the current session. For example, to change the current user's password to `<code>mariadb</code>`:
+
+
+```
+ALTER USER CURRENT_USER() IDENTIFIED BY 'mariadb';
+```
+
+## Authentication Options
+
+
+From [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), it is possible to use more than one authentication plugin for each user account. For example, this can be useful to slowly migrate users to the more secure ed25519 authentication plugin over time, while allowing the old mysql_native_password authentication plugin as an alternative for the transitional period. See [Authentication from MariaDB 10.4](../../../../security/user-account-management/authentication-from-mariadb-10-4.md) for more.
+
+
+When running `<code>ALTER USER</code>`, not specifying an authentication option in the IDENTIFIED VIA clause will remove that authentication method. (However this was not the case before [MariaDB 10.4.13](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md), see [MDEV-21928](https://jira.mariadb.org/browse/MDEV-21928))
+
+
+For example, a user is created with the ability to authenticate via both a password and unix_socket:
+
+
+```
+CREATE USER 'bob'@'localhost' 
+  IDENTIFIED VIA mysql_native_password USING PASSWORD('pwd') 
+  OR unix_socket;
+
+SHOW CREATE USER 'bob'@'localhost'\G
+*************************** 1. row ***************************
+CREATE USER for bob@localhost: CREATE USER `bob`@`localhost` 
+  IDENTIFIED VIA mysql_native_password 
+  USING '*975B2CD4FF9AE554FE8AD33168FBFC326D2021DD' 
+  OR unix_socket
+```
+
+If the user's password is updated, but unix_socket authentication is not specified in the `<code>IDENTIFIED VIA</code>` clause, unix_socket authentication will no longer be permitted.
+
+
+```
+ALTER USER 'bob'@'localhost' IDENTIFIED VIA mysql_native_password 
+  USING PASSWORD('pwd2');
+
+SHOW CREATE USER 'bob'@'localhost'\G
+*************************** 1. row ***************************
+CREATE USER for bob@localhost: CREATE USER `bob`@`localhost` 
+  IDENTIFIED BY PASSWORD '*38366FDA01695B6A5A9DD4E428D9FB8F7EB75512'
+```
+
+### IDENTIFIED BY 'password'
+
+
+The optional `<code>IDENTIFIED BY</code>` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function prior to being stored to the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table.
+
+
+For example, if our password is `<code>mariadb</code>`, then we can set the account's password with:
+
+
+```
+ALTER USER foo2@test IDENTIFIED BY 'mariadb';
+```
+
+If you do not specify a password with the `<code>IDENTIFIED BY</code>` clause, the user
+will be able to connect without a password. A blank password is not a wildcard
+to match any password. The user must connect without providing a password if no
+password is set.
+
+
+The only [authentication plugins](../../../plugins/authentication-plugins/README.md) that this clause supports are [mysql_native_password](../../../plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) and [mysql_old_password](../../../plugins/authentication-plugins/authentication-plugin-mysql_old_password.md).
+
+
+### IDENTIFIED BY PASSWORD 'password_hash'
+
+
+The optional `<code>IDENTIFIED BY PASSWORD</code>` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md)#function. It will be stored to the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table as-is.
+
+
+For example, if our password is `<code>mariadb</code>`, then we can find the hash with:
+
+
+```
+SELECT PASSWORD('mariadb');
++-------------------------------------------+
+| PASSWORD('mariadb')                       |
++-------------------------------------------+
+| *54958E764CE10E50764C2EECBB71D01F08549980 |
++-------------------------------------------+
+```
+
+And then we can set an account's password with the hash:
+
+
+```
+ALTER USER foo2@test 
+  IDENTIFIED BY PASSWORD '*54958E764CE10E50764C2EECBB71D01F08549980';
+```
+
+If you do not specify a password with the `<code>IDENTIFIED BY</code>` clause, the user
+will be able to connect without a password. A blank password is not a wildcard
+to match any password. The user must connect without providing a password if no
+password is set.
+
+
+The only [authentication plugins](../../../plugins/authentication-plugins/README.md) that this clause supports are [mysql_native_password](../../../plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) and [mysql_old_password](../../../plugins/authentication-plugins/authentication-plugin-mysql_old_password.md).
+
+
+### IDENTIFIED {VIA|WITH} authentication_plugin
+
+
+The optional `<code>IDENTIFIED VIA authentication_plugin</code>` allows you to specify that the account should be authenticated by a specific [authentication plugin](../../../plugins/authentication-plugins/README.md). The plugin name must be an active authentication plugin as per [SHOW PLUGINS](../administrative-sql-statements/show/show-plugins-soname.md). If it doesn't show up in that output, then you will need to install it with [INSTALL PLUGIN](../administrative-sql-statements/plugin-sql-statements/install-plugin.md) or [INSTALL SONAME](../administrative-sql-statements/plugin-sql-statements/install-soname.md).
+
+
+For example, this could be used with the [PAM authentication plugin](../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md):
+
+
+```
+ALTER USER foo2@test IDENTIFIED VIA pam;
+```
+
+Some authentication plugins allow additional arguments to be specified after a `<code>USING</code>` or `<code>AS</code>` keyword. For example, the [PAM authentication plugin](../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) accepts a [service name](../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#configuring-the-pam-service):
+
+
+```
+ALTER USER foo2@test IDENTIFIED VIA pam USING 'mariadb';
+```
+
+The exact meaning of the additional argument would depend on the specific authentication plugin.
+
+
+From [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), the `<code>USING</code>` or `<code>AS</code>` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. This is only valid for [authentication plugins](../../../plugins/authentication-plugins/README.md) that have implemented a hook for the [PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. For example, the [ed25519](../../../plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin supports this:
+
+
+```
+ALTER USER safe@'%' IDENTIFIED VIA ed25519 USING PASSWORD('secret');
+```
+
+## TLS Options
+
+
+By default, MariaDB transmits data between the server and clients without encrypting it. This is generally acceptable when the server and client run on the same host or in networks where security is guaranteed through other means. However, in cases where the server and client exist on separate networks or they are in a high-risk network, the lack of encryption does introduce security concerns as a malicious actor could potentially eavesdrop on the traffic as it is sent over the network between them.
+
+
+To mitigate this concern, MariaDB allows you to encrypt data in transit between the server and clients using the Transport Layer Security (TLS) protocol. TLS was formerly known as Secure Socket Layer (SSL), but strictly speaking the SSL protocol is a predecessor to TLS and, that version of the protocol is now considered insecure. The documentation still uses the term SSL often and for compatibility reasons TLS-related server system and status variables still use the prefix ssl_, but internally, MariaDB only supports its secure successors.
+
+
+See [Secure Connections Overview](../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md) for more information about how to determine whether your MariaDB server has TLS support.
+
+
+You can set certain TLS-related restrictions for specific user accounts. For instance, you might use this with user accounts that require access to sensitive data while sending it across networks that you do not control. These restrictions can be enabled for a user account with the [CREATE USER](create-user.md), [ALTER USER](alter-user.md), or [GRANT](grant.md) statements. The following options are available:
+
+
+
+| Option | Description |
+| --- | --- |
+| Option | Description |
+| REQUIRE NONE | TLS is not required for this account, but can still be used. |
+| REQUIRE SSL | The account must use TLS, but no valid X509 certificate is required. This option cannot be combined with other TLS options. |
+| REQUIRE X509 | The account must use TLS and must have a valid X509 certificate. This option implies REQUIRE SSL. This option cannot be combined with other TLS options. |
+| REQUIRE ISSUER 'issuer' | The account must use TLS and must have a valid X509 certificate. Also, the Certificate Authority must be the one specified via the string issuer. This option implies REQUIRE X509. This option can be combined with the SUBJECT, and CIPHER options in any order. |
+| REQUIRE SUBJECT 'subject' | The account must use TLS and must have a valid X509 certificate. Also, the certificate's Subject must be the one specified via the string subject. This option implies REQUIRE X509. This option can be combined with the ISSUER, and CIPHER options in any order. |
+| REQUIRE CIPHER 'cipher' | The account must use TLS, but no valid X509 certificate is required. Also, the encryption used for the connection must use a specific cipher method specified in the string cipher. This option implies REQUIRE SSL. This option can be combined with the ISSUER, and SUBJECT options in any order. |
+
+
+
+The `<code>REQUIRE</code>` keyword must be used only once for all specified options, and the `<code>AND</code>` keyword can be used to separate individual options, but it is not required.
+
+
+For example, you can alter a user account to require these TLS options with the following:
+
+
+```
+ALTER USER 'alice'@'%'
+ REQUIRE SUBJECT '/CN=alice/O=My Dom, Inc./C=US/ST=Oregon/L=Portland' AND
+ ISSUER '/C=FI/ST=Somewhere/L=City/ O=Some Company/CN=Peter Parker/emailAddress=p.parker@marvel.com'
+ AND CIPHER 'SHA-DES-CBC3-EDH-RSA';
+```
+
+If any of these options are set for a specific user account, then any client who tries to connect with that user account will have to be configured to connect with TLS.
+
+
+See [Securing Connections for Client and Server](../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/securing-connections-for-client-and-server.md) for information on how to enable TLS on the client and server.
+
+
+## Resource Limit Options
+
+
+It is possible to set per-account limits for certain server resources. The following table shows the values that can be set per account:
+
+
+
+| Limit Type | Description |
+| --- | --- |
+| Limit Type | Description |
+| MAX_QUERIES_PER_HOUR | Number of statements that the account can issue per hour (including updates) |
+| MAX_UPDATES_PER_HOUR | Number of updates (not queries) that the account can issue per hour |
+| MAX_CONNECTIONS_PER_HOUR | Number of connections that the account can start per hour |
+| MAX_USER_CONNECTIONS | Number of simultaneous connections that can be accepted from the same account; if it is 0, max_connections will be used instead; if max_connections is 0, there is no limit for this account's simultaneous connections. |
+| MAX_STATEMENT_TIME | Timeout, in seconds, for statements executed by the user. See also [Aborting Statements that Exceed a Certain Time to Execute](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/aborting-statements.md). |
+
+
+
+If any of these limits are set to `<code>0</code>`, then there is no limit for that resource for that user.
+
+
+Here is an example showing how to set an account's resource limits:
+
+
+```
+ALTER USER 'someone'@'localhost' WITH
+    MAX_USER_CONNECTIONS 10
+    MAX_QUERIES_PER_HOUR 200;
+```
+
+The resources are tracked per account, which means `<code>'user'@'server'</code>`; not per user name or per connection.
+
+
+The count can be reset for all users using [FLUSH USER_RESOURCES](../administrative-sql-statements/flush-commands/flush-tables-for-export.md), [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush-tables-for-export.md) or [mysqladmin reload](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqladmin.md).
+
+
+Per account resource limits are stored in the [user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, in the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. Columns used for resources limits are named `<code>max_questions</code>`, `<code>max_updates</code>`, `<code>max_connections</code>` (for `<code>MAX_CONNECTIONS_PER_HOUR</code>`), and `<code>max_user_connections</code>` (for `<code>MAX_USER_CONNECTIONS</code>`).
+
+
+## Password Expiry
+
+
+Besides automatic password expiry, as determined by [default_password_lifetime](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_password_lifetime), password expiry times can be set on an individual user basis, overriding the global setting, for example:
+
+
+```
+ALTER USER 'monty'@'localhost' PASSWORD EXPIRE INTERVAL 120 DAY;
+ALTER USER 'monty'@'localhost' PASSWORD EXPIRE NEVER;
+ALTER USER 'monty'@'localhost' PASSWORD EXPIRE DEFAULT;
+```
+
+See [User Password Expiry](../../../../security/user-account-management/user-password-expiry.md) for more details.
+
+
+## Account Locking
+
+
+Account locking permits privileged administrators to lock/unlock user accounts. No new client connections will be permitted if an account is locked (existing connections are not affected). For example:
+
+
+```
+ALTER USER 'marijn'@'localhost' ACCOUNT LOCK;
+```
+
+See [Account Locking](../../../../security/user-account-management/account-locking.md) for more details.
+
+
+From [MariaDB 10.4.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md) and [MariaDB 10.5.8](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1058-release-notes.md), the *lock_option* and *password_option* clauses can occur in either order.
+
+
+## See Also
+
+
+* [Authentication from MariaDB 10.4](../../../../security/user-account-management/authentication-from-mariadb-10-4.md)
+* [GRANT](grant.md)
+* [CREATE USER](create-user.md)
+* [DROP USER](drop-user.md)
+* [SET PASSWORD](set-password.md)
+* [SHOW CREATE USER](../administrative-sql-statements/show/show-create-user.md)
+* [mysql.user table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)
+* [Password Validation Plugins](../../../plugins/password-validation-plugins/README.md) - permits the setting of basic criteria for passwords
+* [Authentication Plugins](../../../plugins/authentication-plugins/README.md) - allow various authentication methods to be used, and new ones to be developed.
+

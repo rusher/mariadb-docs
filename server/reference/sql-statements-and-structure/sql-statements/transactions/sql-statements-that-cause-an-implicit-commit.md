@@ -1,0 +1,90 @@
+
+# SQL statements That Cause an Implicit Commit
+
+Some SQL statements cause an implicit commit. As a rule of thumb, such statements are DDL statements. The same statements (except for [SHUTDOWN](../administrative-sql-statements/shutdown.md)) produce a 1400 error ([SQLSTATE](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'XAE09') if a XA transaction is in effect.
+
+
+Here is the list:
+
+
+```
+ALTER DATABASE ... UPGRADE DATA DIRECTORY NAME
+ALTER EVENT
+ALTER FUNCTION
+ALTER PROCEDURE
+ALTER SEQUENCE
+ALTER SERVER
+ALTER TABLE
+ALTER VIEW
+ANALYZE TABLE
+BEGIN
+CACHE INDEX
+CHANGE MASTER TO
+CHECK TABLE
+CREATE DATABASE
+CREATE EVENT
+CREATE FUNCTION
+CREATE INDEX
+CREATE PROCEDURE
+CREATE ROLE
+CREATE SEQUENCE
+CREATE SERVER
+CREATE TABLE
+CREATE TRIGGER
+CREATE USER
+CREATE VIEW
+DROP DATABASE
+DROP EVENT
+DROP FUNCTION
+DROP INDEX
+DROP PROCEDURE
+DROP ROLE
+DROP SEQUENCE
+DROP SERVER
+DROP TABLE
+DROP TRIGGER
+DROP USER
+DROP VIEW
+FLUSH
+GRANT
+LOAD INDEX INTO CACHE
+LOCK TABLES
+OPTIMIZE TABLE
+RENAME TABLE
+RENAME USER
+REPAIR TABLE
+RESET
+REVOKE
+SET PASSWORD
+SHUTDOWN
+START SLAVE
+START TRANSACTION
+STOP SLAVE
+TRUNCATE TABLE
+```
+
+`<code>SET autocommit = 1</code>` causes an implicit commit if the value was 0.
+
+
+All these statements cause an implicit commit before execution. This means that, even if the statement fails with an error, the transaction is committed. Some of them, like `<code>CREATE TABLE ... SELECT</code>`, also cause a commit immediatly after execution. Such statements couldn't be rollbacked in any case.
+
+
+If you are not sure whether a statement has implicitly committed the current transaction, you can query the [in_transaction](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#in_transaction) server system variable.
+
+
+Note that when a transaction starts (not in autocommit mode), all locks acquired with [LOCK TABLES](lock-tables.md) are released. And acquiring such locks always commits the current transaction. To preserve the data integrity between transactional and non-transactional tables, the [GET_LOCK()](../built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md) function can be used.
+
+
+## Exceptions
+
+
+These statements do not cause an implicit commit in the following cases:
+
+
+* [CREATE TABLE](../../vectors/create-table-with-vectors.md) and [DROP TABLE](../data-definition/drop/drop-tablespace.md), when the `<code>TEMPORARY</code>` keyword is used.
+
+  * However, [TRUNCATE TABLE](../table-statements/truncate-table.md) causes an implicit commit even when used on a temporary table.
+* [CREATE FUNCTION](../data-definition/create/create-function.md) and [DROP FUNCTION](../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/drop-function.md), when used to create a UDF (instead of a stored function). However, [CREATE INDEX](../data-definition/create/create-index.md) and [DROP INDEX](../data-definition/drop/drop-index.md) cause commits even when used with temporary tables.
+* [UNLOCK TABLES](lock-tables.md) causes a commit only if a [LOCK TABLES](lock-tables.md) was used on non-transactional tables.
+* [START SLAVE](../administrative-sql-statements/replication-statements/start-replica.md), [STOP SLAVE](../administrative-sql-statements/replication-statements/stop-replica.md), [RESET SLAVE](../administrative-sql-statements/replication-statements/reset-replica.md) and [CHANGE MASTER TO](../administrative-sql-statements/replication-statements/change-master-to.md) did not cause implicit commits prior to [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md).
+

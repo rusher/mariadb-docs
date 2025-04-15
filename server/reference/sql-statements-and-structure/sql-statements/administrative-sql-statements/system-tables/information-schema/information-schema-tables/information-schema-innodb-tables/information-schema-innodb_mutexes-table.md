@@ -1,0 +1,41 @@
+
+# Information Schema INNODB_MUTEXES Table
+
+The `<code>INNODB_MUTEXES</code>` table monitors mutex and rw locks waits. It has the following columns:
+
+
+
+| Column | Description |
+| --- | --- |
+| Column | Description |
+| NAME | Name of the lock, as it appears in the source code. |
+| CREATE_FILE | File name of the mutex implementation. |
+| CREATE_LINE | Line number of the mutex implementation. |
+| OS_WAITS | How many times the mutex occurred. |
+
+
+
+The `<code>CREATE_FILE</code>` and `<code>CREATE_LINE</code>` columns depend on the InnoDB/XtraDB version.
+
+
+Note that since [MariaDB 10.2.2](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md), the table has only been providing information about
+rw_lock_t, not any mutexes. From [MariaDB 10.2.2](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md) until [MariaDB 10.2.32](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10232-release-notes.md), [MariaDB 10.3.23](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10323-release-notes.md), [MariaDB 10.4.13](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md) and [MariaDB 10.5.1](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md), the `<code>NAME</code>` column was not populated ([MDEV-21636](https://jira.mariadb.org/browse/MDEV-21636)).
+
+
+The [SHOW ENGINE INNODB STATUS](../../../../show/show-engine-innodb-status.md#show-engine-innodb-mutex) statement provides similar information.
+
+
+## Examples
+
+
+```
+SELECT * FROM INNODB_MUTEXES;
++------------------------------+---------------------+-------------+----------+
+| NAME                         | CREATE_FILE         | CREATE_LINE | OS_WAITS |
++------------------------------+---------------------+-------------+----------+
+| &dict_sys->mutex             | dict0dict.cc        |         989 |        2 |
+| &buf_pool->flush_state_mutex | buf0buf.cc          |        1388 |        1 |
+| &log_sys->checkpoint_lock    | log0log.cc          |        1014 |        2 |
+| &block->lock                 | combined buf0buf.cc |        1120 |        1 |
++------------------------------+---------------------+-------------+----------+
+```

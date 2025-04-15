@@ -1,0 +1,143 @@
+
+# GROUP_CONCAT
+
+## Syntax
+
+
+```
+GROUP_CONCAT(expr)
+```
+
+
+## Description
+
+
+This function returns a string result with the concatenated non-NULL values from a group. If any expr in GROUP_CONCAT evaluates to NULL, that tuple is not present in the list returned by GROUP_CONCAT.
+
+
+It returns NULL if all arguments are NULL, or there are no matching rows.
+
+
+The maximum returned length in bytes is determined by the [group_concat_max_len](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#group_concat_max_len) server system variable, which defaults to 1M.
+
+
+If group_concat_max_len <= 512, the return type is [VARBINARY](../../../../data-types/string-data-types/varbinary.md) or [VARCHAR](../../../../data-types/string-data-types/varchar.md); otherwise, the return type is [BLOB](../../../../data-types/string-data-types/blob.md) or [TEXT](../../../../data-types/string-data-types/text.md). The choice between binary or non-binary types depends from the input.
+
+
+The full syntax is as follows:
+
+
+```
+GROUP_CONCAT([DISTINCT] expr [,expr ...]
+             [ORDER BY {unsigned_integer | col_name | expr}
+                 [ASC | DESC] [,col_name ...]]
+             [SEPARATOR str_val]
+             [LIMIT {[offset,] row_count | row_count OFFSET offset}])
+```
+
+`<code>DISTINCT</code>` eliminates duplicate values from the output string.
+
+
+[ORDER BY](../../data-manipulation/selecting-data/order-by.md) determines the order of returned values.
+
+
+`<code>SEPARATOR</code>` specifies a separator between the values. The default separator is a comma (`<code>,</code>`). It is possible to avoid using a separator by specifying an empty string.
+
+
+### LIMIT
+
+
+The [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clause can be used with `<code>GROUP_CONCAT</code>`. This was not possible prior to [MariaDB 10.3.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md).
+
+
+## Examples
+
+
+```
+SELECT student_name,
+       GROUP_CONCAT(test_score)
+       FROM student
+       GROUP BY student_name;
+```
+
+Get a readable list of MariaDB users from the [mysql.user](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table:
+
+
+```
+SELECT GROUP_CONCAT(DISTINCT User ORDER BY User SEPARATOR '\n')
+   FROM mysql.user;
+```
+
+In the former example, `<code>DISTINCT</code>` is used because the same user may occur more than once. The new line (`<code>\n</code>`) used as a `<code>SEPARATOR</code>` makes the results easier to read.
+
+
+Get a readable list of hosts from which each user can connect:
+
+
+```
+SELECT User, GROUP_CONCAT(Host ORDER BY Host SEPARATOR ', ') 
+   FROM mysql.user GROUP BY User ORDER BY User;
+```
+
+The former example shows the difference between the `<code>GROUP_CONCAT</code>`'s [ORDER BY](../../data-manipulation/selecting-data/order-by.md) (which sorts the concatenated hosts), and the `<code>SELECT</code>`'s [ORDER BY](../../data-manipulation/selecting-data/order-by.md) (which sorts the rows).
+
+
+From [MariaDB 10.3.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md), [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) can be used with `<code>GROUP_CONCAT</code>`, so, for example, given the following table:
+
+
+```
+CREATE TABLE d (dd DATE, cc INT);
+
+INSERT INTO d VALUES ('2017-01-01',1);
+INSERT INTO d VALUES ('2017-01-02',2);
+INSERT INTO d VALUES ('2017-01-04',3);
+```
+
+the following query:
+
+
+```
+SELECT SUBSTRING_INDEX(GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC),",",1) FROM d;
++----------------------------------------------------------------------------+
+| SUBSTRING_INDEX(GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC),",",1) |
++----------------------------------------------------------------------------+
+| 2017-01-04:3                                                               |
++----------------------------------------------------------------------------+
+```
+
+can be more simply rewritten as:
+
+
+```
+SELECT GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC LIMIT 1) FROM d;
++-------------------------------------------------------------+
+| GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC LIMIT 1) |
++-------------------------------------------------------------+
+| 2017-01-04:3                                                |
++-------------------------------------------------------------+
+```
+
+NULLS:
+
+
+```
+CREATE OR REPLACE TABLE t1 (a int, b char);
+
+INSERT INTO t1 VALUES (1, 'a'), (2, NULL);
+
+SELECT GROUP_CONCAT(a, b) FROM t1;
++--------------------+
+| GROUP_CONCAT(a, b) |
++--------------------+
+| 1a                 |
++--------------------+
+```
+
+## See Also
+
+
+* [CONCAT()](../string-functions/concat_ws.md)
+* [CONCAT_WS()](../string-functions/concat_ws.md)
+* [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
+* [ORDER BY](../../data-manipulation/selecting-data/order-by.md)
+

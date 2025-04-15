@@ -1,0 +1,142 @@
+
+# PREVIOUS VALUE FOR sequence_name
+
+## Syntax
+
+
+```
+PREVIOUS VALUE FOR sequence_name
+```
+
+or
+
+
+```
+LASTVAL(sequence_name)
+```
+
+or in Oracle mode ([SQL_MODE=ORACLE](../../../../server-management/variables-and-modes/sql-mode.md))
+
+
+```
+sequence_name.currval
+```
+
+
+`<code>PREVIOUS VALUE FOR</code>` is IBM DB2 syntax while `<code>LASTVAL()</code>` is PostgreSQL syntax.
+
+
+## Description
+
+
+Gets the most recent value in the current connection generated from a sequence.
+
+
+* If the sequence has not yet been used by the connection, `<code>PREVIOUS VALUE FOR</code>` returns `<code>NULL</code>` (the same thing applies with a new connection which doesn't see a last value for an existing sequence).
+* If a `<code>SEQUENCE</code>` has been dropped and re-created then it's treated as a new `<code>SEQUENCE</code>` and `<code>PREVIOUS VALUE FOR</code>` will return `<code>NULL</code>`.
+* Returns `<code>NULL</code>` if the sequence is complete
+* [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) has no effect on `<code>PREVIOUS VALUE FOR</code>`.
+* Previous values for all used sequences are stored per connection until connection ends.
+* `<code>PREVIOUS VALUE FOR</code>` requires the [SELECT privilege](../../sql-statements/account-management-sql-commands/grant.md).
+
+
+## Examples
+
+
+```
+CREATE SEQUENCE s START WITH 100 INCREMENT BY 10;
+
+SELECT PREVIOUS VALUE FOR s;
++----------------------+
+| PREVIOUS VALUE FOR s |
++----------------------+
+|                 NULL |
++----------------------+
+
+# The function works for sequences only, if the table is used an error is generated
+SELECT PREVIOUS VALUE FOR t;
+ERROR 4089 (42S02): 'test.t' is not a SEQUENCE
+
+# Call the NEXT VALUE FOR s:
+SELECT NEXT VALUE FOR s;
++------------------+
+| NEXT VALUE FOR s |
++------------------+
+|              100 |
++------------------+
+
+SELECT PREVIOUS VALUE FOR s;
++----------------------+
+| PREVIOUS VALUE FOR s |
++----------------------+
+|                  100 |
++----------------------+
+```
+
+Now try to start the new connection and check that the last value is still NULL, before updating the value in the new connection after the output of the new connection gets current value (110 in the example below). Note that first connection cannot see this change and the result of last value still remains the same (100 in the example above).
+
+
+
+```
+$ .mysql -uroot test -e"SELECT PREVIOUS VALUE FOR s; SELECT NEXT VALUE FOR s; SELECT PREVIOUS VALUE FOR s;"
++----------------------+
+| PREVIOUS VALUE FOR s |
++----------------------+
+|                 NULL |
++----------------------+
++------------------+
+| NEXT VALUE FOR s |
++------------------+
+|              110 |
++------------------+
++----------------------+
+| PREVIOUS VALUE FOR s |
++----------------------+
+|                  110 |
++----------------------+
+```
+
+
+Returns NULL if the sequence has run out:
+
+
+```
+CREATE OR REPLACE SEQUENCE s MAXVALUE=2;
+
+SELECT NEXTVAL(s), LASTVAL(s);
++------------+------------+
+| NEXTVAL(s) | LASTVAL(s) |
++------------+------------+
+|          1 |          1 |
++------------+------------+
+
+SELECT NEXTVAL(s), LASTVAL(s);
++------------+------------+
+| NEXTVAL(s) | LASTVAL(s) |
++------------+------------+
+|          2 |          2 |
++------------+------------+
+
+SELECT NEXTVAL(s), LASTVAL(s);
+ERROR 4084 (HY000): Sequence 'test.s' has run out
+
+SELECT LASTVAL(s);
++------------+
+| LASTVAL(s) |
++------------+
+|       NULL |
++------------+
+```
+
+## See Also
+
+
+* [Sequence Overview](../sequence-overview.md)
+* [CREATE SEQUENCE](../create-sequence.md)
+* [ALTER SEQUENCE](../alter-sequence.md)
+* [NEXT VALUE FOR](next-value-for-sequence_name.md)
+* [SETVAL()](setval.md). Set next value for the sequence.
+* [AUTO_INCREMENT](../../../storage-engines/innodb/auto_increment-handling-in-innodb.md)
+* [Information Schema SEQUENCES Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
+* [Error 4084: Sequence has run out](../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/e4084.md)
+

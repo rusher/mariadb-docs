@@ -1,0 +1,203 @@
+
+# EXCEPT
+
+The result of `<code>EXCEPT</code>` is all records of the left `<code>SELECT</code>` result set except records which are in right `<code>SELECT</code>` result set, i.e. it is subtraction of two result sets. From [MariaDB 10.6.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), `<code>MINUS</code>` is a synonym when [SQL_MODE=ORACLE](../../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set.
+
+
+# Syntax
+
+
+```
+SELECT ...
+(INTERSECT [ALL | DISTINCT] | EXCEPT [ALL | DISTINCT] | UNION [ALL | DISTINCT]) 
+  SELECT ...
+[(INTERSECT [ALL | DISTINCT] | EXCEPT [ALL | DISTINCT] | UNION [ALL | DISTINCT]) 
+  SELECT ...]
+[ORDER BY [{col_name | expr | position} [ASC | DESC] 
+  [, {col_name | expr | position} [ASC | DESC] ...]]]
+[LIMIT {[offset,] row_count | row_count OFFSET offset}
+| OFFSET start { ROW | ROWS }
+| FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } { ONLY | WITH TIES } ]
+```
+
+
+Please note:
+
+
+* Brackets for explicit operation precedence are not supported; use a subquery in the `<code class="fixed" style="white-space:pre-wrap">FROM</code>` clause as a workaround).
+
+
+## Description
+
+
+MariaDB supports `<code>EXCEPT</code>` and [INTERSECT](../../../../geographic-geometric-features/geometry-relations/intersects.md) in addition to [UNION](union.md).
+
+
+The queries before and after `<code>EXCEPT</code>` must be [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) or [VALUES](../../../../sql-language-structure/table-value-constructors.md) statements.
+
+
+All behavior for naming columns, `<code class="fixed" style="white-space:pre-wrap">ORDER BY</code>` and `<code class="fixed" style="white-space:pre-wrap">LIMIT</code>` is the same as for [UNION](union.md). Note that the alternative [SELECT ... OFFSET ... FETCH](../select-offset-fetch.md) syntax is only supported. This allows us to use the `<code>WITH TIES</code>` clause.
+
+
+`<code>EXCEPT</code>` implicitly supposes a `<code>DISTINCT</code>` operation.
+
+
+The result of `<code>EXCEPT</code>` is all records of the left `<code>SELECT</code>` result except records which are in right `<code>SELECT</code>` result set, i.e. it is subtraction of two result sets.
+
+
+`<code>EXCEPT</code>` and `<code>UNION</code>` have the same operation precedence and `<code>INTERSECT</code>` has a higher precedence, unless [running in Oracle mode](../../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), in which case all three have the same precedence.
+
+
+### Parentheses
+
+
+Parentheses can be used to specify precedence. Before this, a syntax error would be returned.
+
+
+
+##### MariaDB starting with [10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+
+### ALL/DISTINCT
+
+`<code>EXCEPT ALL</code>` and `<code>EXCEPT DISTINCT</code>` were introduced in [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md). The `<code>ALL</code>` operator leaves duplicates intact, while the `<code>DISTINCT</code>` operator removes duplicates. `<code>DISTINCT</code>` is the default behavior if neither operator is supplied, and the only behavior prior to [MariaDB 10.5](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md).  
+
+
+## Examples
+
+
+Show customers which are not employees:
+
+
+```
+(SELECT e_name AS name, email FROM customers)
+EXCEPT
+(SELECT c_name AS name, email FROM employees);
+```
+
+Difference between [UNION](union.md), EXCEPT and [INTERSECT](../../../../geographic-geometric-features/geometry-relations/intersects.md). `<code>INTERSECT ALL</code>` and `<code>EXCEPT ALL</code>` are available from [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md).
+
+
+```
+CREATE TABLE seqs (i INT);
+INSERT INTO seqs VALUES (1),(2),(2),(3),(3),(4),(5),(6);
+
+SELECT i FROM seqs WHERE i <= 3 UNION SELECT i FROM seqs WHERE i>=3;
++------+
+| i    |
++------+
+|    1 |
+|    2 |
+|    3 |
+|    4 |
+|    5 |
+|    6 |
++------+
+
+SELECT i FROM seqs WHERE i <= 3 UNION ALL SELECT i FROM seqs WHERE i>=3;
++------+
+| i    |
++------+
+|    1 |
+|    2 |
+|    2 |
+|    3 |
+|    3 |
+|    3 |
+|    3 |
+|    4 |
+|    5 |
+|    6 |
++------+
+
+SELECT i FROM seqs WHERE i <= 3 EXCEPT SELECT i FROM seqs WHERE i>=3;
++------+
+| i    |
++------+
+|    1 |
+|    2 |
++------+
+
+SELECT i FROM seqs WHERE i <= 3 EXCEPT ALL SELECT i FROM seqs WHERE i>=3;
++------+
+| i    |
++------+
+|    1 |
+|    2 |
+|    2 |
++------+
+
+SELECT i FROM seqs WHERE i <= 3 INTERSECT SELECT i FROM seqs WHERE i>=3;
++------+
+| i    |
++------+
+|    3 |
++------+
+
+SELECT i FROM seqs WHERE i <= 3 INTERSECT ALL SELECT i FROM seqs WHERE i>=3;
++------+
+| i    |
++------+
+|    3 |
+|    3 |
++------+
+```
+
+Parentheses for specifying precedence
+
+
+```
+CREATE OR REPLACE TABLE t1 (a INT);
+CREATE OR REPLACE TABLE t2 (b INT);
+CREATE OR REPLACE TABLE t3 (c INT);
+
+INSERT INTO t1 VALUES (1),(2),(3),(4);
+INSERT INTO t2 VALUES (5),(6);
+INSERT INTO t3 VALUES (1),(6);
+
+((SELECT a FROM t1) UNION (SELECT b FROM t2)) EXCEPT (SELECT c FROM t3);
++------+
+| a    |
++------+
+|    2 |
+|    3 |
+|    4 |
+|    5 |
++------+
+
+(SELECT a FROM t1) UNION ((SELECT b FROM t2) EXCEPT (SELECT c FROM t3));
++------+
+| a    |
++------+
+|    1 |
+|    2 |
+|    3 |
+|    4 |
+|    5 |
++------+
+```
+
+Here is an example that makes use of the [SEQUENCE](../../../../../storage-engines/sequence-storage-engine.md) storage engine and the [VALUES](../../../../sql-language-structure/table-value-constructors.md) statement, to generate a numeric sequence and remove some arbitrary numbers from it:
+
+
+```
+(SELECT seq FROM seq_1_to_10) EXCEPT VALUES (2), (3), (4);
++-----+
+| seq |
++-----+
+|   1 |
+|   5 |
+|   6 |
+|   7 |
+|   8 |
+|   9 |
+|  10 |
++-----+
+```
+
+## See Also
+
+
+* [UNION](union.md)
+* [INTERSECT](../../../../geographic-geometric-features/geometry-relations/intersects.md)
+* [Get Set for Set Theory: UNION, INTERSECT and EXCEPT in SQL](https://www.youtube.com/watch?v=UNi-fVSpRm0) (video tutorial)
+

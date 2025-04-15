@@ -1,0 +1,262 @@
+
+# REPLACE
+
+## Syntax
+
+
+```
+REPLACE [LOW_PRIORITY | DELAYED]
+ [INTO] tbl_name [PARTITION (partition_list)] [(col,...)]
+ {VALUES | VALUE} ({expr | DEFAULT},...),(...),...
+[RETURNING select_expr 
+      [, select_expr ...]]
+```
+
+Or:
+
+
+```
+REPLACE [LOW_PRIORITY | DELAYED]
+    [INTO] tbl_name [PARTITION (partition_list)]
+    SET col={expr | DEFAULT}, ...
+[RETURNING select_expr 
+      [, select_expr ...]]
+```
+
+Or:
+
+
+```
+REPLACE [LOW_PRIORITY | DELAYED]
+    [INTO] tbl_name [PARTITION (partition_list)] [(col,...)]
+    SELECT ...
+[RETURNING select_expr 
+      [, select_expr ...]]
+```
+
+
+## Description
+
+
+`<code class="highlight fixed" style="white-space:pre-wrap">REPLACE</code>` works exactly like
+ `<code class="highlight fixed" style="white-space:pre-wrap">[INSERT](../../built-in-functions/string-functions/insert-function.md)</code>`, except that if an old row in the table
+ has the same value as a new row for a `<code class="highlight fixed" style="white-space:pre-wrap">PRIMARY KEY</code>` or a
+ `<code class="highlight fixed" style="white-space:pre-wrap">UNIQUE</code>` index, the old row is deleted before the new row is
+ inserted. If the table has more than one `<code>UNIQUE</code>` keys, it is possible that the new row conflicts with more than one row. In this case, all conflicting rows will be deleted.
+
+
+The table name can be specified in the form `<code>db_name</code>`.`<code>tbl_name</code>` or, if a default database is selected, in the form `<code>tbl_name</code>` (see [Identifier Qualifiers](../../../sql-language-structure/identifier-qualifiers.md)). This allows to use `<code>[REPLACE ... SELECT](../inserting-loading-data/insert-select.md)</code>` to copy rows between different databases.
+
+
+
+##### MariaDB starting with [10.5.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+The RETURNING clause was introduced in [MariaDB 10.5.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+
+
+Basically it works like this:
+
+
+```
+BEGIN;
+SELECT 1 FROM t1 WHERE key=# FOR UPDATE;
+IF found-row
+  DELETE FROM t1 WHERE key=# ;
+ENDIF
+INSERT INTO t1 VALUES (...);
+END;
+```
+
+The above can be replaced with:
+
+
+```
+REPLACE INTO t1 VALUES (...)
+```
+
+`<code class="highlight fixed" style="white-space:pre-wrap">REPLACE</code>` is a MariaDB/MySQL extension to the SQL standard. It
+ either inserts, or deletes and inserts. For other MariaDB/MySQL extensions to
+ standard SQL --- that also handle duplicate values --- see [IGNORE](../inserting-loading-data/ignore.md) and [INSERT ON DUPLICATE KEY UPDATE](../inserting-loading-data/insert-on-duplicate-key-update.md).
+
+
+Note that unless the table has a `<code class="highlight fixed" style="white-space:pre-wrap">PRIMARY KEY</code>` or
+ `<code class="highlight fixed" style="white-space:pre-wrap">UNIQUE</code>` index, using a `<code class="highlight fixed" style="white-space:pre-wrap">REPLACE</code>` statement
+makes no sense. It becomes equivalent to `<code class="highlight fixed" style="white-space:pre-wrap">INSERT</code>`, because
+there is no index to be used to determine whether a new row duplicates another.
+
+
+Values for all columns are taken from the values sSee [Partition Pruning and Selection](../../../../../server-management/partitioning-tables/partition-pruning-and-selection.md) for details.pecified in the
+ `<code class="highlight fixed" style="white-space:pre-wrap">REPLACE</code>` statement. Any missing columns are set to their
+default values, just as happens for `<code class="highlight fixed" style="white-space:pre-wrap">INSERT</code>`. You cannot refer
+to values from the current row and use them in the new row. If you use an
+assignment such as `<code class="highlight fixed" style="white-space:pre-wrap">'SET col = col + 1'</code>`, the
+reference to the column name on the right hand side is treated as
+ `<code class="highlight fixed" style="white-space:pre-wrap">DEFAULT(col)</code>`, so the assignment is equivalent to
+ `<code class="highlight fixed" style="white-space:pre-wrap">'SET col = DEFAULT(col) + 1'</code>`.
+
+
+To use `<code class="highlight fixed" style="white-space:pre-wrap">REPLACE</code>`, you must have both the
+ `<code class="highlight fixed" style="white-space:pre-wrap">INSERT</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">DELETE</code>` [privileges](../../account-management-sql-commands/grant.md)
+for the table.
+
+
+There are some gotchas you should be aware of, before using `<code>REPLACE</code>`:
+
+
+* If there is an `<code>[AUTO_INCREMENT](../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md)</code>` field, a new value will be generated.
+* If there are foreign keys, `<code>ON DELETE</code>` action will be activated by `<code>REPLACE</code>`.
+* [Triggers](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) on `<code>DELETE</code>` and `<code>INSERT</code>` will be activated by `<code>REPLACE</code>`.
+
+
+To avoid some of these behaviors, you can use `<code>INSERT ... ON DUPLICATE KEY UPDATE</code>`.
+
+
+This statement activates INSERT and DELETE triggers. See [Trigger Overview](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/trigger-overview.md) for details.
+
+
+### PARTITION
+
+
+See [Partition Pruning and Selection](../../../../../server-management/partitioning-tables/partition-pruning-and-selection.md) for details.
+
+
+### REPLACE RETURNING
+
+
+`<code>REPLACE ... RETURNING</code>` returns a resultset of the replaced rows.
+This returns the listed columns for all the rows that are replaced, or alternatively, the specified SELECT expression. Any SQL expressions which can be calculated can be used in the select expression for the RETURNING clause, including virtual columns and aliases, expressions which use various operators such as bitwise, logical and arithmetic operators, string functions, date-time functions, numeric functions, control flow functions, secondary functions and stored functions. Along with this, statements which have subqueries and prepared statements can also be used.
+
+
+#### Examples
+
+
+Simple REPLACE statement
+
+
+```
+REPLACE INTO t2 VALUES (1,'Leopard'),(2,'Dog') RETURNING id2, id2+id2 
+as Total ,id2|id2, id2&&id2;
++-----+-------+---------+----------+
+| id2 | Total | id2|id2 | id2&&id2 |
++-----+-------+---------+----------+
+|   1 |     2 |       1 |        1 |
+|   2 |     4 |       2 |        1 |
++-----+-------+---------+----------+
+```
+
+Using stored functions in RETURNING
+
+
+```
+DELIMITER |
+CREATE FUNCTION f(arg INT) RETURNS INT
+    BEGIN
+      RETURN (SELECT arg+arg);
+    END|
+
+DELIMITER ;
+PREPARE stmt FROM "REPLACE INTO t2 SET id2=3, animal2='Fox' RETURNING f2(id2),
+UPPER(animal2)";
+
+EXECUTE stmt;
++---------+----------------+
+| f2(id2) | UPPER(animal2) |
++---------+----------------+
+|       6 | FOX            |
++---------+----------------+
+```
+
+Subqueries in the statement
+
+
+```
+REPLACE INTO t1 SELECT * FROM t2 RETURNING (SELECT id2 FROM t2 WHERE 
+id2 IN (SELECT id2 FROM t2 WHERE id2=1)) AS new_id;
++--------+
+| new_id |
++--------+
+|      1 |
+|      1 |
+|      1 |
+|      1 |
++--------+
+```
+
+Subqueries in the RETURNING clause that return more than one row or column cannot be used..
+
+
+Aggregate functions cannot be used in the RETURNING clause. Since aggregate functions work on a set of values and if the purpose is to get the row count, ROW_COUNT() with SELECT can be used, or it can be used in REPLACE...SEL== Description
+
+
+`<code>REPLACE ... RETURNING</code>` returns a resultset of the replaced rows.
+This returns the listed columns for all the rows that are replaced, or alternatively, the specified SELECT expression. Any SQL expressions which can be calculated can be used in the select expression for the RETURNING clause, including virtual columns and aliases, expressions which use various operators such as bitwise, logical and arithmetic operators, string functions, date-time functions, numeric functions, control flow functions, secondary functions and stored functions. Along with this, statements which have subqueries and prepared statements can also be used.
+
+
+## Examples
+
+
+Simple REPLACE statement
+
+
+```
+REPLACE INTO t2 VALUES (1,'Leopard'),(2,'Dog') RETURNING id2, id2+id2 
+as Total ,id2|id2, id2&&id2;
++-----+-------+---------+----------+
+| id2 | Total | id2|id2 | id2&&id2 |
++-----+-------+---------+----------+
+|   1 |     2 |       1 |        1 |
+|   2 |     4 |       2 |        1 |
++-----+-------+---------+----------+
+```
+
+Using stored functions in RETURNING
+
+
+```
+DELIMITER |
+CREATE FUNCTION f(arg INT) RETURNS INT
+    BEGIN
+      RETURN (SELECT arg+arg);
+    END|
+
+DELIMITER ;
+PREPARE stmt FROM "REPLACE INTO t2 SET id2=3, animal2='Fox' RETURNING f2(id2),
+UPPER(animal2)";
+
+EXECUTE stmt;
++---------+----------------+
+| f2(id2) | UPPER(animal2) |
++---------+----------------+
+|       6 | FOX            |
++---------+----------------+
+```
+
+Subqueries in the statement
+
+
+```
+REPLACE INTO t1 SELECT * FROM t2 RETURNING (SELECT id2 FROM t2 WHERE 
+id2 IN (SELECT id2 FROM t2 WHERE id2=1)) AS new_id;
++--------+
+| new_id |
++--------+
+|      1 |
+|      1 |
+|      1 |
+|      1 |
++--------+
+```
+
+Subqueries in the RETURNING clause that return more than one row or column cannot be used..
+
+
+Aggregate functions cannot be used in the RETURNING clause. Since aggregate functions work on a set of values and if the purpose is to get the row count, ROW_COUNT() with SELECT can be used, or it can be used in REPLACE...SELECT...RETURNING if the table in the RETURNING clause is not the same as the REPLACE table.
+ECT...RETURNING if the table in the RETURNING clause is not the same as the REPLACE table.
+
+
+## See Also
+
+
+* [INSERT](../../built-in-functions/string-functions/insert-function.md)
+* [HIGH_PRIORITY and LOW_PRIORITY clauses](high_priority-and-low_priority.md)
+* [INSERT DELAYED](../inserting-loading-data/insert-delayed.md) for details on the `<code>DELAYED</code>` clause
+

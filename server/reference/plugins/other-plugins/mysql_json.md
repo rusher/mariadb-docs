@@ -1,0 +1,31 @@
+
+# MYSQL_JSON
+
+
+##### MariaDB starting with [10.5.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes.md)
+The `<code>TYPE_MYSQL_JSON</code>` plugin was first released in [MariaDB 10.5.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes.md).
+
+
+The JSON type in MySQL stores the JSON object in its own native form, while in MariaDB the [JSON type](../../storage-engines/connect/json-sample-files.md) is a [LONGTEXT](../../data-types/string-data-types/longtext.md). Opening a table with a JSON type created in MySQL would result in an error:
+
+
+```
+select * from mysql_json_table;
+ERROR 4161 (HY000): Unknown data type: 'MYSQL_JSON'
+```
+
+The mysql_json plugin is used to make it easier to upgrade to MariaDB.
+
+
+## Installing
+
+
+Installing can be done in a [number of ways](../plugin-overview.md#installing-a-plugin), for example:
+
+
+```
+install soname 'type_mysql_json';
+```
+
+See [Making MariaDB understand MySQL JSON](https://mariadb.org/making-mariadb-understand-mysql-json/) for a full description.
+

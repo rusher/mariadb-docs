@@ -1,0 +1,41 @@
+
+# Information Schema INNODB_FT_CONFIG Table
+
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>INNODB_FT_CONFIG</code>` table contains InnoDB [fulltext index](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) metadata.
+
+
+The `<code>SUPER</code>` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table, and it also requires the [innodb_ft_aux_table](../../../../../../../storage-engines/innodb/innodb-system-variables.md) system variable to be set.
+
+
+It has the following columns:
+
+
+
+| Column | Description |
+| --- | --- |
+| Column | Description |
+| KEY | Metadata item name. |
+| VALUE | Associated value. |
+
+
+
+## Example
+
+
+```
+SELECT * FROM INNODB_FT_CONFIG;
++---------------------------+-------+
+| KEY                       | VALUE |
++---------------------------+-------+
+| optimize_checkpoint_limit | 180   |
+| synced_doc_id             | 6     |
+| last_optimized_word       |       |
+| deleted_doc_count         | 0     |
+| total_word_count          |       |
+| optimize_start_time       |       |
+| optimize_end_time         |       |
+| stopword_table_name       |       |
+| use_stopword              | 1     |
+| table_state               | 0     |
++---------------------------+-------+
+```

@@ -1,0 +1,52 @@
+
+# SHOW PACKAGE STATUS
+
+## Syntax
+
+
+```
+SHOW PACKAGE STATUS
+    [LIKE 'pattern' | WHERE expr]
+```
+
+
+## Description
+
+
+The `<code>SHOW PACKAGE STATUS</code>` statement returns characteristics of stored package specifications, such as the database, name, type, creator, creation and modification dates, and character set information. A similar statement, `<code class="highlight fixed" style="white-space:pre-wrap">[SHOW PACKAGE BODY STATUS](show-package-body-status.md)</code>`, displays information about stored package bodies (i.e. implementations).
+
+
+The `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clause, if present, indicates which package names to match. The `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+
+
+The [ROUTINES table](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION_SCHEMA database contains more detailed information.
+
+
+## Examples
+
+
+```
+SHOW PACKAGE STATUS LIKE 'pkg1'\G
+*************************** 1. row ***************************
+                  Db: test
+                Name: pkg1
+                Type: PACKAGE
+             Definer: root@localhost
+            Modified: 2018-02-27 14:38:15
+             Created: 2018-02-27 14:38:15
+       Security_type: DEFINER
+             Comment: This is my first package
+character_set_client: utf8
+collation_connection: utf8_general_ci
+  Database Collation: latin1_swedish_ci
+```
+
+## See Also
+
+
+* [SHOW PACKAGE BODY](show-package-body-status.md)
+* [SHOW CREATE PACKAGE](show-create-package.md)
+* [CREATE PACKAGE](../../data-definition/create/create-package-body.md)
+* [DROP PACKAGE](../../data-definition/drop/drop-package-body.md)
+* [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+

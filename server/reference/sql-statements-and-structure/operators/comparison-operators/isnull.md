@@ -1,0 +1,37 @@
+
+# ISNULL
+
+## Syntax
+
+
+```
+ISNULL(expr)
+```
+
+## Description
+
+
+If *`<code>expr</code>`* is NULL, ISNULL() returns 1, otherwise it returns 0.
+
+
+See also [NULL Values in MariaDB](../../../data-types/null-values.md).
+
+
+## Examples
+
+
+```
+SELECT ISNULL(1+1);
++-------------+
+| ISNULL(1+1) |
++-------------+
+|           0 |
++-------------+
+
+SELECT ISNULL(1/0);
++-------------+
+| ISNULL(1/0) |
++-------------+
+|           1 |
++-------------+
+```

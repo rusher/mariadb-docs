@@ -1,0 +1,49 @@
+
+# CURRENT_USER
+
+## Syntax
+
+
+```
+CURRENT_USER, CURRENT_USER()
+```
+
+## Description
+
+
+Returns the user name and host name combination for the MariaDB account
+that the server used to authenticate the current client. This account
+determines your access privileges. The return value is a string in the
+utf8 [character set](../../../../../data-types/string-data-types/character-sets/README.md).
+
+
+The value of `<code>CURRENT_USER()</code>` can differ from the value of [USER()](../../../../../plugins/other-plugins/user-variables-plugin.md). [CURRENT_ROLE()](current_role.md) returns the current active role.
+
+
+Statements using the `<code>CURRENT_USER</code>` function are not [safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
+
+
+## Examples
+
+
+```
+shell> mysql --user="anonymous"
+
+select user(),current_user();
++---------------------+----------------+
+| user()              | current_user() |
++---------------------+----------------+
+| anonymous@localhost | @localhost     |
++---------------------+----------------+
+```
+
+When calling `<code>CURRENT_USER()</code>` in a stored procedure, it returns the owner of the stored procedure, as defined with `<code>DEFINER</code>`.
+
+
+## See Also
+
+
+* [USER()](../../../../../plugins/other-plugins/user-variables-plugin.md)
+* [SESSION_USER()](session_user.md)
+* [CREATE PROCEDURE](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure.md)
+

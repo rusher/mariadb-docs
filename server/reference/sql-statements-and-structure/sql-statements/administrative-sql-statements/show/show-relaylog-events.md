@@ -1,0 +1,48 @@
+
+# SHOW RELAYLOG EVENTS
+
+The terms *master* and *slave* have historically been used in replication, and MariaDB has begun the process of adding *primary* and *replica* synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
+
+
+
+## Syntax
+
+
+```
+SHOW RELAYLOG ['connection_name'] EVENTS
+    [IN 'log_name'] [FROM pos] [LIMIT [offset,] row_count]
+    [ FOR CHANNEL 'channel_name']
+```
+
+## Description
+
+
+On [replicas](../../../../../server-usage/replication-cluster-multi-master/standard-replication/README.md), this command shows the events in the [relay log](../../../../../server-management/server-monitoring-logs/binary-log/relay-log.md). If `<code>'log_name'</code>` is not specified, the first relay log is shown.
+
+
+Syntax for the `<code>LIMIT</code>` clause is the same as for [SELECT ... LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#limit).
+
+
+Using the `<code>LIMIT</code>` clause is highly recommended because the `<code>SHOW RELAYLOG EVENTS</code>` command returns the complete contents of the relay log, which can be quite large.
+
+
+This command does not return events related to setting user and system variables. If you need those, use [mariadb-binlog](../../../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md).
+
+
+On the primary, this command does nothing.
+
+
+Requires the [REPLICA MONITOR](../../account-management-sql-commands/grant.md#replica-monitor) privilege (>= [MariaDB 10.5.9](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes.md)), the [REPLICATION SLAVE ADMIN](../../account-management-sql-commands/grant.md#replication-slave-admin) privilege (>= [MariaDB 10.5.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)) or the [REPLICATION SLAVE](../../account-management-sql-commands/grant.md#replication-slave) privilege (<= [MariaDB 10.5.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md)).
+
+
+#### connection_name
+
+
+If there is only one nameless primary, or the default primary (as specified by the [default_master_connection](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) system variable) is intended, `<code>connection_name</code>` can be omitted. If provided, the `<code>SHOW RELAYLOG</code>` statement will apply to the specified primary. `<code>connection_name</code>` is case-insensitive.
+
+
+
+##### MariaDB starting with [10.7.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md)
+The `<code>FOR CHANNEL</code>` keyword was added for MySQL compatibility. This is identical as
+using the channel_name directly after `<code>SHOW RELAYLOG</code>`.
+

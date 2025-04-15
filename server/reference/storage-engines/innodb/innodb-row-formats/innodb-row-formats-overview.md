@@ -1,0 +1,272 @@
+
+# InnoDB Row Formats Overview
+
+
+The [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) storage engine supports four different row formats:
+
+
+* [REDUNDANT](#redundant-row-format)
+* [COMPACT](#compact-row-format)
+* [DYNAMIC](#dynamic-row-format)
+* [COMPRESSED](#compressed-row-format)
+
+
+In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and before, the latter two row formats are only supported if the [InnoDB file format](../innodb-file-format.md) is `<code>Barracuda</code>`. Therefore, the [innodb_file_format](../innodb-system-variables.md#innodb_file_format) system variable must be set to `<code>Barracuda</code>` to use these row formats in those versions.
+In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and before, the latter two row formats are also only supported if the table is in a [file per-table](../innodb-tablespaces/innodb-file-per-table-tablespaces.md) tablespace. Therefore, the [innodb_file_per_table](../innodb-system-variables.md#innodb_file_per_table) system variable must be set to `<code>ON</code>` to use these row formats in those versions.
+
+
+## Default Row Format
+
+
+The [innodb_default_row_format](../innodb-system-variables.md#innodb_default_row_format) system variable can be used to set the default row format for InnoDB tables. The possible values are:
+
+
+* `<code>redundant</code>`
+* `<code>compact</code>`
+* `<code>dynamic</code>`
+
+
+This system variable's default value is `<code>dynamic</code>`, which means that the default row format is `<code>DYNAMIC</code>`.
+
+
+This system variable cannot be set to `<code>compressed</code>`, which means that the default row format cannot be `<code>COMPRESSED</code>`.
+
+
+For example, the following statements would create a table with the `<code>DYNAMIC</code>` row format:
+
+
+```
+SET SESSION innodb_strict_mode=ON;
+
+SET GLOBAL innodb_default_row_format='dynamic';
+
+CREATE TABLE tab (
+   id int,
+   str varchar(50)
+) ENGINE=InnoDB;
+```
+
+## Setting a Table's Row Format
+
+
+One way to specify an InnoDB table's row format is by setting the [ROW_FORMAT](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format) table option to the relevant row format in a [CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md) or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement. For example:
+
+
+```
+SET SESSION innodb_strict_mode=ON;
+
+SET GLOBAL innodb_file_per_table=ON;
+
+SET GLOBAL innodb_file_format='Barracuda';
+
+CREATE TABLE tab (
+   id int,
+   str varchar(50)
+) ENGINE=InnoDB ROW_FORMAT=DYNAMIC;
+```
+
+In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and before, InnoDB can silently ignore and override some row format choices if you do not  have the [innodb_file_format](../innodb-system-variables.md#innodb_file_format) system variable set to `<code>Barracuda</code>` and the [innodb_file_per_table](../innodb-system-variables.md#innodb_file_per_table) system variable set to `<code>ON</code>`.
+
+
+## Checking a Table's Row Format
+
+
+The [SHOW TABLE STATUS](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the row format used by a table. For example:
+
+
+```
+SHOW TABLE STATUS FROM db1 WHERE Name='tab'\G
+*************************** 1. row ***************************
+           Name: tab
+         Engine: InnoDB
+        Version: 10
+     Row_format: Dynamic
+           Rows: 0
+ Avg_row_length: 0
+    Data_length: 16384
+Max_data_length: 0
+   Index_length: 0
+      Data_free: 0
+ Auto_increment: NULL
+    Create_time: 2019-04-18 20:24:04
+    Update_time: NULL
+     Check_time: NULL
+      Collation: latin1_swedish_ci
+       Checksum: NULL
+ Create_options: row_format=DYNAMIC
+        Comment:
+```
+
+The [information_schema.INNODB_SYS_TABLES](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table can also be queried to see the row format used by a table. For example:
+
+
+```
+SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name='db1/tab'\G
+*************************** 1. row ***************************
+     TABLE_ID: 42
+         NAME: db1/tab
+         FLAG: 33
+       N_COLS: 4
+        SPACE: 27
+  FILE_FORMAT: Barracuda
+   ROW_FORMAT: Dynamic
+ZIP_PAGE_SIZE: 0
+   SPACE_TYPE: Single
+```
+
+A table's tablespace is tagged with the lowest InnoDB file format that supports the table's row format. So, even if the `<code>Barracuda</code>` file format is enabled, tables that use the `<code>COMPACT</code>` or `<code>REDUNDANT</code>` row formats will be tagged with the `<code>Antelope</code>` file format in the [information_schema.INNODB_SYS_TABLES](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table.
+
+
+## Row Formats
+
+
+### REDUNDANT Row Format
+
+
+The `<code>REDUNDANT</code>` row format is the original non-compacted row format.
+
+
+The `<code>REDUNDANT</code>` row format was the only available row format before MySQL 5.0.3. In that release, this row format was retroactively named the `<code>REDUNDANT</code>` row format. In the same release, the `<code>COMPACT</code>` row format was introduced as the new default row format.
+
+
+See [InnoDB REDUNDANT Row Format](innodb-redundant-row-format.md) for more information.
+
+
+### COMPACT Row Format
+
+
+Default row format in [MariaDB 10.2.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md) and earlier `<code>COMPACT</code>`.
+
+
+The `<code>COMPACT</code>` row format is similar to the `<code>REDUNDANT</code>` row format, but it stores data in a more compact manner that requires about 20% less storage.
+
+
+See [InnoDB COMPACT Row Format](innodb-compact-row-format.md) for more information.
+
+
+### DYNAMIC Row Format
+
+
+`<code>DYNAMIC</code>` is the default row format.
+
+
+The `<code>DYNAMIC</code>` row format is similar to the `<code>COMPACT</code>` row format, but tables using the `<code>DYNAMIC</code>` row format can store even more data on overflow pages than tables using the `<code>COMPACT</code>` row format. This results in more efficient data storage than tables using the `<code>COMPACT</code>` row format, especially for tables containing columns using the [VARBINARY](../../../data-types/string-data-types/varbinary.md), [VARCHAR](../../../data-types/string-data-types/varchar.md), [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) data types. However, InnoDB tables using the `<code>COMPRESSED</code>` row format are more efficient.
+
+
+See [InnoDB DYNAMIC Row Format](innodb-dynamic-row-format.md) for more information.
+
+
+### COMPRESSED Row Format
+
+
+An alternative way to compress InnoDB tables is by using [InnoDB Page Compression](../innodb-page-compression.md).
+
+
+The `<code>COMPRESSED</code>` row format is similar to the `<code>COMPACT</code>` row format, but tables using the `<code>COMPRESSED</code>` row format can store even more data on overflow pages than tables using the `<code>COMPACT</code>` row format. This results in more efficient data storage than tables using the `<code>COMPACT</code>` row format, especially for tables containing columns using the [VARBINARY](../../../data-types/string-data-types/varbinary.md), [VARCHAR](../../../data-types/string-data-types/varchar.md), [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) data types.
+
+
+The `<code>COMPRESSED</code>` row format also supports compression of all data and index pages.
+
+
+See [InnoDB COMPRESSED Row Format](innodb-compressed-row-format.md) for more information.
+
+
+## Maximum Row Size
+
+
+Several factors help determine the maximum row size of an InnoDB table.
+
+
+First, MariaDB enforces a 65,535 byte limit on a table's maximum row size. The total size of a table's [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) columns do not count towards this limit. Only the pointers for a table's [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) columns count towards this limit. MariaDB enforces this limit for all storage engines, so this limit also applies to InnoDB tables. Therefore, this limit is the absolute maximum row size for an InnoDB table.
+
+
+If you try to create a table that exceeds MariaDB's global limit on a table's maximum row size, then you will see an error like this:
+
+
+```
+ERROR 1118 (42000): Row size too large. The maximum row size for the used table type, 
+not counting BLOBs, is 65535. This includes storage overhead, check the manual. You 
+have to change some columns to TEXT or BLOBs
+```
+
+However, InnoDB also has its own limits on the maximum row size, so an InnoDB table's maximum row size could be smaller than MariaDB's global limit.
+
+
+Second, the maximum amount of data that an InnoDB table can store in a row's main data page depends on the value of the [innodb_page_size](../innodb-system-variables.md#innodb_page_size) system variable. At most, the data that a single row can consume on the row's main data page is half of the value of the [innodb_page_size](../innodb-system-variables.md#innodb_page_size) system variable. With the default value of `<code>16k</code>`, that would mean that a single row can consume at most around 8 KB on the row's main data page. However, the limit on the row's main data page is not the absolute limit on the row's size.
+
+
+Third, all InnoDB row formats can store certain kinds of data in overflow pages, so the maximum row size of an InnoDB table can be larger than the maximum amount of data that can be stored in the row's main data page.
+
+
+Some row formats can store more data in overflow pages than others. For example, the `<code>DYNAMIC</code>` and `<code>COMPRESSED</code>` row formats can store the most data in overflow pages. To see how to determine the how the various InnoDB row formats can use overflow pages, see the following sections:
+
+
+* [InnoDB REDUNDANT Row Format: Overflow Pages with the REDUNDANT Row Format](innodb-redundant-row-format.md#overflow-pages-with-the-redundant-row-format)
+* [InnoDB COMPACT Row Format: Overflow Pages with the COMPACT Row Format](innodb-compact-row-format.md#overflow-pages-with-the-compact-row-format)
+* [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](innodb-dynamic-row-format.md#overflow-pages-with-the-dynamic-row-format)
+* [InnoDB COMPRESSED Row Format: Overflow Pages with the COMPRESSED Row Format](innodb-compressed-row-format.md#overflow-pages-with-the-compressed-row-format)
+
+
+If a table's definition can allow rows that the table's InnoDB row format can't actually store, then InnoDB will raise errors or warnings in certain scenarios.
+
+
+If the table were using the `<code>REDUNDANT</code>` or `<code>COMPACT</code>` row formats, then the error or warning would be the following:
+
+
+```
+ERROR 1118 (42000): Row size too large (> 8126). Changing some columns to 
+TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED 
+may help. In current row format, BLOB prefix of 768 bytes is stored inline.
+```
+
+And if the table were using the `<code>DYNAMIC</code>` or `<code>COMPRESSED</code>` row formats, then the error or warning would be the following:
+
+
+```
+ERROR 1118 (42000): Row size too large (> 8126). Changing some columns to 
+TEXT or BLOB may help. In current row format, BLOB prefix of 0 bytes is stored inline.
+```
+
+These messages are raised in the following cases:
+
+
+* If [InnoDB strict mode](../innodb-strict-mode.md) is enabled and if a [DDL](../../../sql-statements-and-structure/sql-statements/data-definition/README.md) statement is executed that touches the table, such as [CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md) or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), then InnoDB will raise an error with this message
+* If [InnoDB strict mode](../innodb-strict-mode.md) is disabled and if a [DDL](../../../sql-statements-and-structure/sql-statements/data-definition/README.md) statement is executed that touches the table, such as [CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md)`<code> or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)</code>`, then InnoDB will raise a warning with this message.
+* Regardless of whether [InnoDB strict mode](../innodb-strict-mode.md) is enabled, if a [DML](../../../sql-statements-and-structure/sql-statements/data-manipulation/README.md) statement is executed that attempts to write a row that the table's InnoDB row format can't store, then InnoDB will raise an error with this message.
+
+
+For information on how to solve the problem, see [Troubleshooting Row Size Too Large Errors with InnoDB](troubleshooting-row-size-too-large-errors-with-innodb.md).
+
+
+## Known Issues
+
+
+### Upgrading Causes Row Size Too Large Errors
+
+
+Prior to [MariaDB 10.2.26](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10226-release-notes.md), [MariaDB 10.3.17](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10317-release-notes.md), and [MariaDB 10.4.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md), MariaDB doesn't properly calculate the row sizes while executing DDL. In these versions, *unsafe* tables can be created, even if [InnoDB strict mode](../innodb-strict-mode.md) is enabled. The calculations were fixed by [MDEV-19292](https://jira.mariadb.org/browse/MDEV-19292) in [MariaDB 10.2.26](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10226-release-notes.md), [MariaDB 10.3.17](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10317-release-notes.md), and [MariaDB 10.4.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md).
+
+
+As a side effect, some tables that could be created or altered in previous versions may get rejected with the following error in these releases and any later releases.
+
+
+```
+ERROR 1118 (42000): Row size too large (> 8126). Changing some columns to 
+TEXT or BLOB may help. In current row format, BLOB prefix of 0 bytes is stored inline.
+```
+
+And users could also see the following message as an error or warning in the [error log](../../../../server-management/server-monitoring-logs/error-log.md):
+
+
+```
+[Warning] InnoDB: Cannot add field col in table db1.tab because after adding it, the row size is 8478 which is greater than maximum allowed size (8126) for a record on index leaf page.
+```
+
+InnoDB used the wrong calculations to determine row sizes for quite a long time, so a lot of users may unknowingly have *unsafe* tables that the InnoDB row format can't actually store.
+
+
+InnoDB does not currently have an easy way to check which existing tables have this problem. See [MDEV-20400](https://jira.mariadb.org/browse/MDEV-20400) for more information.
+
+
+For information on how to solve the problem, see [Troubleshooting Row Size Too Large Errors with InnoDB](troubleshooting-row-size-too-large-errors-with-innodb.md).
+

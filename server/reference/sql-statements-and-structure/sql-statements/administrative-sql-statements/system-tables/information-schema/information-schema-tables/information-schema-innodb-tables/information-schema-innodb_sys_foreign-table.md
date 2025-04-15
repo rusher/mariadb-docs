@@ -1,0 +1,53 @@
+
+# Information Schema INNODB_SYS_FOREIGN Table
+
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>INNODB_SYS_FOREIGN</code>` table contains information about InnoDB [foreign keys](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/foreign-keys.md).
+
+
+The `<code>PROCESS</code>` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+
+
+It has the following columns:
+
+
+
+| Column | Description |
+| --- | --- |
+| Column | Description |
+| ID | Database name and foreign key name. |
+| FOR_NAME | Database and table name of the foreign key child. |
+| REF_NAME | Database and table name of the foreign key parent. |
+| N_COLS | Number of foreign key index columns. |
+| TYPE | Bit flag providing information about the foreign key. |
+
+
+
+The `<code>TYPE</code>` column provides a bit flag with information about the foreign key. This information is `<code>OR</code>`'ed together to read:
+
+
+
+| Bit Flag | Description |
+| --- | --- |
+| Bit Flag | Description |
+| 1 | ON DELETE CASCADE |
+| 2 | ON UPDATE SET NULL |
+| 4 | ON UPDATE CASCADE |
+| 8 | ON UPDATE SET NULL |
+| 16 | ON DELETE NO ACTION |
+| 32 | ON UPDATE NO ACTION |
+
+
+
+## Example
+
+
+```
+SELECT * FROM INNODB_SYS_FOREIGN\G
+*************************** 1. row ***************************
+      ID: mysql/innodb_index_stats_ibfk_1
+FOR_NAME: mysql/innodb_index_stats
+REF_NAME: mysql/innodb_table_stats
+  N_COLS: 2
+    TYPE: 0
+...
+```

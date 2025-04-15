@@ -1,0 +1,42 @@
+
+# MAKEDATE
+
+## Syntax
+
+
+```
+MAKEDATE(year,dayofyear)
+```
+
+## Description
+
+
+Returns a date, given `<code>year</code>` and `<code>day-of-year values</code>`. `<code>dayofyear</code>` must be
+greater than 0 or the result is NULL.
+
+
+## Examples
+
+
+```
+SELECT MAKEDATE(2011,31), MAKEDATE(2011,32);
++-------------------+-------------------+
+| MAKEDATE(2011,31) | MAKEDATE(2011,32) |
++-------------------+-------------------+
+| 2011-01-31        | 2011-02-01        |
++-------------------+-------------------+
+
+SELECT MAKEDATE(2011,365), MAKEDATE(2014,365);
++--------------------+--------------------+
+| MAKEDATE(2011,365) | MAKEDATE(2014,365) |
++--------------------+--------------------+
+| 2011-12-31         | 2014-12-31         |
++--------------------+--------------------+
+
+SELECT MAKEDATE(2011,0);
++------------------+
+| MAKEDATE(2011,0) |
++------------------+
+| NULL             |
++------------------+
+```

@@ -1,0 +1,100 @@
+
+# SHUTDOWN
+
+
+## Syntax
+
+
+```
+SHUTDOWN [WAIT FOR ALL { SLAVES | REPLICAS } ]
+```
+
+## Description
+
+
+The `<code>SHUTDOWN</code>` command shuts the server down.
+
+
+## WAIT FOR ALL REPLICAS / SLAVES
+
+
+The `<code>WAIT FOR ALL SLAVES</code>` option was first added in [MariaDB 10.4.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1044-release-notes.md). `<code>WAIT FOR ALL REPLICAS</code>` has been a synonym since [MariaDB 10.5.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md).
+
+
+When a primary server is shutdown and it goes through the normal shutdown process, the primary kills client threads in random order. By default, the primary also considers its binary log dump threads to be regular client threads. As a consequence, the binary log dump threads can be killed while client threads still exist, and this means that data can be written on the primary during a normal shutdown that won't be replicated. This is true even if [semi-synchronous replication](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md) is being used.
+
+
+This problem can be solved by shutting down the server with the [SHUTDOWN](shutdown.md) command and by providing the `<code>WAIT FOR ALL REPLICAS</code>`/`<code>WAIT FOR ALL SLAVES</code>` option to the command. For example:
+
+
+```
+SHUTDOWN WAIT FOR ALL REPLICAS;
+```
+
+When the `<code>WAIT FOR ALL REPLICAS</code>` option is provided, the server only kills its binary log dump threads after all client threads have been killed, and it only completes the shutdown after the last [binary log](../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) has been sent to all connected replicas.
+
+
+See [Replication Threads: Binary Log Dump Threads and the Shutdown Process](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#binary-log-dump-threads-and-the-shutdown-process) for more information.
+
+
+## Required Permissions
+
+
+One must have a `<code>SHUTDOWN</code>` privilege (see [GRANT](../account-management-sql-commands/grant.md)) to use this command. It is the same privilege one needs to use the [mariadb-admin shutdown](../../../../clients-and-utilities/mariadb-admin.md#mariadb-admin-commands) command.
+
+
+## Shutdown for Upgrades
+
+
+If you are doing a shutdown to [migrate to another major version of MariaDB](../../../../server-management/getting-installing-and-upgrading-mariadb/upgrading/upgrading-between-major-mariadb-versions.md), please ensure that the [innodb_fast_shutdown](../../../storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) variable is not 2 (fast crash shutdown). The default of this variable is 1.
+
+
+## Example
+
+
+The following example shows how to create an [event](../../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/README.md) which turns off the server at a certain time:
+
+
+```
+CREATE EVENT `test`.`shutd`
+    ON SCHEDULE
+        EVERY 1 DAY
+        STARTS '2014-01-01 20:00:00'
+    COMMENT 'Shutdown Maria when the office is closed'
+DO BEGIN
+    SHUTDOWN;
+END;
+```
+
+## Other Ways to Stop mariadbd
+
+
+You can use the [mariadb-admin shutdown](../../../../clients-and-utilities/mariadb-admin.md) command to take down mariadbd cleanly.
+
+
+You can also use the system kill command on Unix with signal SIGTERM (15)
+
+
+```
+kill -SIGTERM pid-of-mariadbd-process
+```
+
+You can find the process number of the server process in the file that ends with `<code class="highlight fixed" style="white-space:pre-wrap">.pid</code>` in your data directory.
+
+
+The above is identical to `<code class="highlight fixed" style="white-space:pre-wrap">mariadb-admin shutdown</code>`.
+
+
+On windows you should use:
+
+
+```
+NET STOP MariaDB
+```
+
+## See Also
+
+
+* [mariadb-admin shutdown](../../../../clients-and-utilities/mariadb-admin.md).
+* [InnoDB fast shutdown option](../../../storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
+

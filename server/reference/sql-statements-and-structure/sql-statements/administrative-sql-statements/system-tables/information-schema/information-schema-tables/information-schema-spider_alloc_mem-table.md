@@ -1,0 +1,23 @@
+
+# Information Schema SPIDER_ALLOC_MEM Table
+
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>SPIDER_ALLOC_MEM</code>` table is installed along with the [Spider](../../../../../../storage-engines/spider/spider-functions/spider_copy_tables.md) storage engine. It shows information about Spider's memory usage.
+
+
+It contains the following columns:
+
+
+
+| Column | Description |
+| --- | --- |
+| Column | Description |
+| ID |  |
+| FUNC_NAME |  |
+| FILE_NAME |  |
+| LINE_NO |  |
+| TOTAL_ALLOC_MEM |  |
+| CURRENT_ALLOC_MEM |  |
+| ALLOC_MEM_COUNT |  |
+| FREE_MEM_COUNT |  |
+
+

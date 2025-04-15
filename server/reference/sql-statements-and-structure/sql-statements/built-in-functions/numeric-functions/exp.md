@@ -1,0 +1,53 @@
+
+# EXP
+
+## Syntax
+
+
+```
+EXP(X)
+```
+
+## Description
+
+
+Returns the value of e (the base of natural logarithms) raised to the
+power of X. The inverse of this function is [LOG()](../../../../../../general-resources/company-and-community/contributing-participating/log-of-mariadb-contributions.md) (using a single
+argument only) or [LN()](ln.md).
+
+
+If `<code>X</code>` is `<code>NULL</code>`, this function returns `<code>NULL</code>`.
+
+
+## Examples
+
+
+```
+SELECT EXP(2);
++------------------+
+| EXP(2)           |
++------------------+
+| 7.38905609893065 |
++------------------+
+
+SELECT EXP(-2);
++--------------------+
+| EXP(-2)            |
++--------------------+
+| 0.1353352832366127 |
++--------------------+
+
+SELECT EXP(0);
++--------+
+| EXP(0) |
++--------+
+|      1 |
++--------+
+
+SELECT EXP(NULL);
++-----------+
+| EXP(NULL) |
++-----------+
+|      NULL |
++-----------+
+```

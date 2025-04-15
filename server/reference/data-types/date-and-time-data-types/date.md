@@ -1,0 +1,213 @@
+
+# DATE
+
+
+## Syntax
+
+
+```
+DATE
+```
+
+## Description
+
+
+A date. The supported range is '`<code>1000-01-01</code>`' to '`<code>9999-12-31</code>`'. MariaDB
+displays `<code>DATE</code>` values in '`<code>YYYY-MM-DD</code>`' format, but can be assigned dates in looser formats, including strings or numbers, as long as they make sense. These include a short year, `<code>YY-MM-DD</code>`, no delimiters, `<code>YYMMDD</code>`, or any other acceptable delimiter, for example `<code>YYYY/MM/DD</code>`. For details, see [date and time literals](../../sql-statements-and-structure/sql-language-structure/date-and-time-literals.md).
+
+
+'`<code>0000-00-00</code>`' is a permitted special value (zero-date), unless the [NO_ZERO_DATE](../../../server-management/variables-and-modes/sql-mode.md#no_zero_date) [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md) is used. Also, individual components of a date can be set to 0 (for example: '`<code>2015-00-12</code>`'), unless the [NO_ZERO_IN_DATE](../../../server-management/variables-and-modes/sql-mode.md#no_zero_in_date) [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md) is used. In many cases, the result of en expression involving a zero-date, or a date with zero-parts, is `<code>NULL</code>`. If the [ALLOW_INVALID_DATES](../../../server-management/variables-and-modes/sql-mode.md#allow_invalid_dates) SQL_MODE is enabled, if the day part is in the range between 1 and 31, the date does not produce any error, even for months that have less than 31 days.
+
+
+### Oracle Mode
+
+
+In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `<code>DATE</code>` with a time portion is a synonym for [DATETIME](datetime.md). See also [mariadb_schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md).
+
+
+## Examples
+
+
+```
+CREATE TABLE t1 (d DATE);
+
+INSERT INTO t1 VALUES ("2010-01-12"), ("2011-2-28"), ('120314'),('13*04*21');
+
+SELECT * FROM t1;
++------------+
+| d          |
++------------+
+| 2010-01-12 |
+| 2011-02-28 |
+| 2012-03-14 |
+| 2013-04-21 |
++------------+
+```
+
+### DATE Format
+
+
+```
+CREATE TABLE date_formats_example (
+   description VARCHAR(30),
+   example DATE
+);
+```
+
+```
+INSERT INTO date_formats_example VALUES
+   ('Full year', '2022-12-30'),
+   ('Short year', '22-12-30'),
+   ('Short year no delimiters', '221230'),
+   ('No delimiters', '20221230'),
+   ('Pipe delimiters', '22|2|3'),
+   ('Forward slash delimiter', '22/12/30'),
+   ('Backward slash delimiter', '22\12\30'),
+   ('Asterisk delimiter', '22*12*30'),
+   ('Comma delimiter', '22,2,3');
+```
+
+The resulting data would look like this:
+
+
+```
+SELECT * FROM date_formats_example;
+```
+
+```
++--------------------------+------------+
+| description              | example    |
++--------------------------+------------+
+| Full year                | 2022-12-30 |
+| Short year               | 2022-12-30 |
+| Short year no delimiters | 2022-12-30 |
+| No delimiters            | 2022-12-30 |
+| Pipe delimiters          | 2022-02-03 |
+| Forward slash delimiter  | 2022-12-30 |
+| Backward slash delimiter | 2022-12-30 |
+| Asterisk delimiter       | 2022-12-30 |
+| Comma delimiter          | 2022-02-03 |
++--------------------------+------------+
+```
+
+### DATE Range
+
+
+```
+CREATE TABLE date_range_example (
+   description VARCHAR(30),
+   example DATE
+);
+```
+
+```
+INSERT INTO date_range_example VALUES
+   ('Minimum date', '0001-01-01'),
+   ('Maximum date', '9999-12-31'),
+   ('Below minimum range', '0000*1*1'),
+   ('Above maximum range', '10000,12,31');
+```
+
+If SQL_MODE is strict (the default), the example above generates the following error and no values are inserted:
+
+
+```
+ERROR 1292 (22007): Incorrect date value: '10000,12,31' for column `test`.`date_range_example`.`example` at row 4
+```
+
+If SQL_MODE is not strict, the example above generates a warning and (possibly modified) values are inserted. The Below minimum range value is accepted because it contains a zero component. The Above maximum range value is truncated since it is an unacceptable date.
+
+
+```
+Warning (Code 1265): Data truncated for column 'example' at row 4
+```
+
+The resulting data would look like this:
+
+
+```
+SELECT * FROM date_range_example;
+```
+
+```
++---------------------+------------+
+| description         | example    |
++---------------------+------------+
+| Minimum date        | 0001-01-01 |
+| Maximum date        | 9999-12-31 |
+| Below minimum range | 0000-01-01 |
+| Above maximum range | 0000-00-00 |
++---------------------+------------+
+```
+
+### Date Expressions
+
+
+When using a date value in an expression, such as DATE_ADD(), the following illustrates that a NULL is generated when a date value is not a real date and when a real date overflows:
+
+
+```
+SELECT example, DATE_ADD(example, INTERVAL 1 DAY)
+   FROM date_range_example;
+```
+
+```
++------------+-----------------------------------+
+| example    | DATE_ADD(example, INTERVAL 1 DAY) |
++------------+-----------------------------------+
+| 0001-01-01 | 0001-01-02                        |
+| 9999-12-31 | NULL                              |
+| 0000-01-01 | NULL                              |
+| 0000-00-00 | NULL                              |
++------------+-----------------------------------+
+```
+
+```
+Warning (Code 1441): Datetime function: datetime field overflow
+Warning (Code 1441): Datetime function: datetime field overflow
+Warning (Code 1292): Incorrect datetime value: '0000-00-00'
+```
+
+### Invalid Dates
+
+
+The following example enhances the SQL_MODE to ensure that ALLOW_INVALID_DATES is set and illustrates the difference between a day that is outside the range of 1 to 31 and one that is just too large for its month:
+
+
+```
+-- Disable STRICT_TRANS_TABLES and enable ALLOW_INVALID_DATES
+SET sql_mode=(SELECT REPLACE(@@sql_mode, 'STRICT_TRANS_TABLES', ''));
+SET sql_mode=(SELECT CONCAT(@@sql_mode, ',ALLOW_INVALID_DATES'));
+<</code>>
+
+<<sql>>
+INSERT INTO date_range_example VALUES
+  ('day is invalid for all months', '2019-12-32'),
+  ('day is just large for February', '2019-02-31');
+```
+
+```
+Warning (Code 1265): Data truncated for column 'example' at row 1
+```
+
+The resulting data would look like this:
+
+
+```
+SELECT * FROM date_range_example;
+```
+
+```
++--------------------------------+------------+
+| description                    | example    |
++--------------------------------+------------+
+| day is invalid for all months  | 0000-00-00 |
+| day is just large for February | 2019-02-31 |
++--------------------------------+------------+
+```
+
+## See Also
+
+
+* [mariadb_schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md) data type qualifier
+

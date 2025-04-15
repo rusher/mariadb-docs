@@ -1,0 +1,155 @@
+
+# Performance Schema session_connect_attrs Table
+
+
+## Description
+
+
+`<code>session_connect_attrs</code>` is a [Performance Schema](performance-schema-table_handles-table.md) table that shows connection attributes for all sessions. The Performance Schema needs to be enabled for the table to be populated.
+
+
+Applications can pass key/value connection attributes to the server when a connection is made. The `<code>session_connect_attrs</code>` and [session_account_connect_attrs](performance-schema-session_account_connect_attrs-table.md) tables provide access to this information, for all sessions and the current session respectively.
+
+
+The C API functions [mysql_options()](../../../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_options.md) and [mysql_optionsv()](../../../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv.md) are used for passing connection attributes to the server.
+
+
+`<code>session_connect_attrs</code>` contains the following columns:
+
+
+
+| Column | Description |
+| --- | --- |
+| Column | Description |
+| PROCESSLIST_ID | Session connection identifier. |
+| ATTR_NAME | Attribute name. |
+| ATTR_VALUE | Attribute value. |
+| ORDINAL_POSITION | Order in which attribute was added to the connection attributes. |
+
+
+
+## Example
+
+
+Returning the current connection's attributes:
+
+
+```
+SELECT * FROM performance_schema.session_connect_attrs WHERE processlist_id=CONNECTION_ID();
++----------------+-----------------+------------------+------------------+
+| PROCESSLIST_ID | ATTR_NAME       | ATTR_VALUE       | ORDINAL_POSITION |
++----------------+-----------------+------------------+------------------+
+|             45 | _os             | debian-linux-gnu |                0 |
+|             45 | _client_name    | libmysql         |                1 |
+|             45 | _pid            | 7711             |                2 |
+|             45 | _client_version | 10.0.5           |                3 |
+|             45 | _platform       | x86_64           |                4 |
+|             45 | program_name    | mysql            |                5 |
++----------------+-----------------+------------------+------------------+
+```
+
+## Using Other Connectors
+
+
+### JDBC
+
+
+Connection attributes values are set using the option [connectionAttributes](../../../../../../../../connectors/mariadb-connector-j/about-mariadb-connector-j.md#infrequently-used-parameters).
+
+
+Example using connection string `<code class="fixed" style="white-space:pre-wrap">jdbc:mariadb://localhost/?connectionAttributes=test:test1,test2:test2Val,test3</code>`
+
+
+```
+SELECT * FROM performance_schema.session_connect_attrs WHERE processlist_id=17;
++----------------+-----------------+---------------------+------------------+
+| PROCESSLIST_ID | ATTR_NAME       | ATTR_VALUE          | ORDINAL_POSITION |
++----------------+-----------------+---------------------+------------------+
+|             17 | _client_name    | MariaDB Connector/J |                0 |
+|             17 | _client_version | 3.1.3               |                1 |
+|             17 | _server_host    | localhost           |                2 |
+|             17 | _os             | Windows 11          |                3 |
+|             17 | _thread         | 1                   |                4 |
+|             17 | _java_vendor    | Oracle Corporation  |                5 |
+|             17 | _java_version   | 19.0.2              |                6 |
+|             17 | test            | test1               |                7 |
+|             17 | test2           | test2Val            |                8 |
+|             17 | test3           | NULL                |                9 |
++----------------+-----------------+---------------------+------------------+
+```
+
+### Node.js
+
+
+Connection attributes values are set using the option [connectAttributes](../../../../../../../../connectors/mariadb-connector-nodejs/node-js-connection-options.md)
+
+
+Example using connection
+
+
+```
+const conn = await mariadb.createConnection({
+  host: 'localhost',
+  user: 'root',
+  connectAttributes: { test: 'test1', test2: 'test2Val', test3: 'f' }
+ });
+```
+
+```
+SELECT * FROM performance_schema.session_connect_attrs WHERE processlist_id=30;
++----------------+-----------------+------------------------+------------------+
+| PROCESSLIST_ID | ATTR_NAME       | ATTR_VALUE             | ORDINAL_POSITION |
++----------------+-----------------+------------------------+------------------+
+|             30 | _client_name    | MariaDB connector/Node |                0 |
+|             30 | _client_version | 3.1.1                  |                1 |
+|             30 | _server_host    | ::1                    |                2 |
+|             30 | _os             | win32                  |                3 |
+|             30 | _client_host    | NOSTROMO               |                4 |
+|             30 | _node_version   | 18.15.0                |                5 |
+|             30 | test            | test1                  |                6 |
+|             30 | test2           | test2Val               |                7 |
+|             30 | test3           | f                      |                8 |
++----------------+-----------------+------------------------+------------------+
+```
+
+### R2DBC
+
+
+Connection attributes values are set using the option [connectionAttributes](https://github.com/mariadb-corporation/mariadb-connector-r2dbc#connection-options).
+
+
+Example using connection string `<code class="fixed" style="white-space:pre-wrap">jdbc:mariadb://localhost/?connectionAttributes=test:test1,test2:test2Val,test3</code>`
+
+
+```
+TreeMap<String, String> connectionAttributes = new TreeMap<>();
+    connectionAttributes.put("entry1", "val1");
+    connectionAttributes.put("entry2", "val2");
+
+     MariadbConnectionConfiguration conf = MariadbConnectionConfiguration.builder()
+             .host("localhost")
+             .port(3306) 
+             .username("root")
+             .connectionAttributes(connectionAttributes)
+             .database("test")
+             .build();
+     MariadbConnectionFactory connFactory = new MariadbConnectionFactory(conf);
+     MariadbConnection connection = connFactory.create().block();
+```
+
+```
+SELECT * FROM performance_schema.session_connect_attrs WHERE processlist_id=34;
++----------------+-----------------+--------------------+------------------+
+| PROCESSLIST_ID | ATTR_NAME       | ATTR_VALUE         | ORDINAL_POSITION |
++----------------+-----------------+--------------------+------------------+
+|             34 | _client_name    | mariadb            |                0 |
+|             34 | _client_version | 1.1.4              |                1 |
+|             34 | _server_host    | localhost          |                2 |
+|             34 | _os             | Windows 11         |                3 |
+|             34 | _thread         | 49                 |                4 |
+|             34 | _java_vendor    | Oracle Corporation |                5 |
+|             34 | _java_version   | 19.0.2             |                6 |
+|             34 | entry1          | val1               |                7 |
+|             34 | entry2          | val2               |                8 |
++----------------+-----------------+--------------------+------------------+
+```

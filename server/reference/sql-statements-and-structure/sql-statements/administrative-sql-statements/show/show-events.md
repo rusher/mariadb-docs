@@ -1,0 +1,59 @@
+
+# SHOW EVENTS
+
+## Syntax
+
+
+```
+SHOW EVENTS [{FROM | IN} schema_name]
+    [LIKE 'pattern' | WHERE expr]
+```
+
+## Description
+
+
+Shows information about Event Manager [events](../../../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/events.md) (created with `<code>[CREATE EVENT](../../data-definition/create/create-event.md)</code>`). Requires the `<code>[EVENT](../../account-management-sql-commands/grant.md#database-privileges)</code>` privilege. Without any arguments, `<code class="highlight fixed" style="white-space:pre-wrap">SHOW EVENTS</code>` lists all of the events in the current schema:
+
+
+```
+SELECT CURRENT_USER(), SCHEMA();
++----------------+----------+
+| CURRENT_USER() | SCHEMA() |
++----------------+----------+
+| jon@ghidora    | myschema |
++----------------+----------+
+
+SHOW EVENTS\G
+*************************** 1. row ***************************
+                  Db: myschema
+                Name: e_daily
+             Definer: jon@ghidora
+           Time zone: SYSTEM
+                Type: RECURRING
+          Execute at: NULL
+      Interval value: 10
+      Interval field: SECOND
+              Starts: 2006-02-09 10:41:23
+                Ends: NULL
+              Status: ENABLED
+          Originator: 0
+character_set_client: latin1
+collation_connection: latin1_swedish_ci
+  Database Collation: latin1_swedish_ci
+```
+
+To see the event action, use `<code>[SHOW CREATE EVENT](show-create-event.md)</code>` instead, or look at the `<code>[information_schema.EVENTS](../system-tables/information-schema/information-schema-tables/information-schema-events-table.md)</code>` table.
+
+
+To see events for a specific schema, use the `<code class="highlight fixed" style="white-space:pre-wrap">FROM</code>` clause.
+For example, to see events for the test schema, use the following statement:
+
+
+```
+SHOW EVENTS FROM test;
+```
+
+The `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clause, if present, indicates which event names to
+match. The `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` clause can be given to select rows using
+more general conditions, as discussed in [Extended Show](extended-show.md).
+

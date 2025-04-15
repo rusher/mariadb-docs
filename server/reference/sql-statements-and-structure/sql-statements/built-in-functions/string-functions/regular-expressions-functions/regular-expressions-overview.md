@@ -1,0 +1,667 @@
+
+# Regular Expressions Overview
+
+Regular Expressions allow MariaDB to perform complex pattern matching on a string. In many cases, the simple pattern matching provided by [LIKE](../like.md) is sufficient. `<code>LIKE</code>` performs two kinds of matches:
+
+
+* `<code>_</code>` - the underscore, matching a single character
+* `<code>%</code>` - the percentage sign, matching any number of characters.
+
+
+In other cases you may need more control over the returned matches, and will need to use regular expressions.
+
+
+Until [MariaDB 10.0.5](../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes.md), MariaDB used the POSIX 1003.2 compliant regular expression library. The current PCRE library is mostly backwards compatible with what is described below - see the [PCRE Regular Expressions](pcre.md) article for the enhancements made in 10.0.5.
+
+
+Regular expression matches are performed with the [REGEXP](regexp.md) function. `<code>RLIKE</code>` is a synonym for `<code>REGEXP</code>`.
+
+
+Comparisons are performed on the byte value, so characters that are treated as equivalent by a collation, but do not have the same byte-value, such as accented characters, could evaluate as unequal.
+
+
+Without any special characters, a regular expression match is true if the characters match. The match is case-insensitive, except in the case of BINARY strings.
+
+
+```
+SELECT 'Maria' REGEXP 'Maria';
++------------------------+
+| 'Maria' REGEXP 'Maria' |
++------------------------+
+|                      1 |
++------------------------+
+
+SELECT 'Maria' REGEXP 'maria';
++------------------------+
+| 'Maria' REGEXP 'maria' |
++------------------------+
+|                      1 |
++------------------------+
+
+SELECT BINARY 'Maria' REGEXP 'maria';
++-------------------------------+
+| BINARY 'Maria' REGEXP 'maria' |
++-------------------------------+
+|                             0 |
++-------------------------------+
+```
+
+Note that the word being matched must match the whole pattern:
+
+
+```
+SELECT 'Maria' REGEXP 'Mari';
++-----------------------+
+| 'Maria' REGEXP 'Mari' |
++-----------------------+
+|                     1 |
++-----------------------+
+
+SELECT 'Mari' REGEXP 'Maria';
++-----------------------+
+| 'Mari' REGEXP 'Maria' |
++-----------------------+
+|                     0 |
++-----------------------+
+```
+
+The first returns true because the pattern "Mari" exists in the expression "Maria". When the order is reversed, the result is false, as the pattern "Maria" does not exist in the expression "Mari"
+
+
+A match can be performed against more than one word with the `<code>|</code>` character. For example:
+
+
+```
+SELECT 'Maria' REGEXP 'Monty|Maria';
++------------------------------+
+| 'Maria' REGEXP 'Monty|Maria' |
++------------------------------+
+|                            1 |
++------------------------------+
+```
+
+## Special Characters
+
+
+The above examples introduce the syntax, but are not very useful on their own. It's the special characters that give regular expressions their power.
+
+
+#### ^
+
+
+`<code>^</code>` matches the beginning of a string (inside square brackets it can also mean NOT - see below):
+
+
+```
+SELECT 'Maria' REGEXP '^Ma';
++----------------------+
+| 'Maria' REGEXP '^Ma' |
++----------------------+
+|                    1 |
++----------------------+
+```
+
+#### $
+
+
+`<code>$</code>` matches the end of a string:
+
+
+```
+SELECT 'Maria' REGEXP 'ia$';
++----------------------+
+| 'Maria' REGEXP 'ia$' |
++----------------------+
+|                    1 |
++----------------------+
+```
+
+#### .
+
+
+`<code>.</code>` matches any single character:
+
+
+```
+SELECT 'Maria' REGEXP 'Ma.ia';
++------------------------+
+| 'Maria' REGEXP 'Ma.ia' |
++------------------------+
+|                      1 |
++------------------------+
+
+SELECT 'Maria' REGEXP 'Ma..ia';
++-------------------------+
+| 'Maria' REGEXP 'Ma..ia' |
++-------------------------+
+|                       0 |
++-------------------------+
+```
+
+#### *
+
+
+`<code>x*</code>` matches zero or more of a character `<code>x</code>`. In the examples below, it's the `<code>r</code>` character.
+
+
+```
+SELECT 'Maria' REGEXP 'Mar*ia';
++-------------------------+
+| 'Maria' REGEXP 'Mar*ia' |
++-------------------------+
+|                       1 |
++-------------------------+
+
+SELECT 'Maia' REGEXP 'Mar*ia';
++------------------------+
+| 'Maia' REGEXP 'Mar*ia' |
++------------------------+
+|                      1 |
++------------------------+
+
+SELECT 'Marrria' REGEXP 'Mar*ia';
++---------------------------+
+| 'Marrria' REGEXP 'Mar*ia' |
++---------------------------+
+|                         1 |
++---------------------------+
+```
+
+#### +
+
+
+`<code>x+</code>` matches one or more of a character `<code>x</code>`. In the examples below, it's the `<code>r</code>` character.
+
+
+```
+SELECT 'Maria' REGEXP 'Mar+ia';
++-------------------------+
+| 'Maria' REGEXP 'Mar+ia' |
++-------------------------+
+|                       1 |
++-------------------------+
+
+SELECT 'Maia' REGEXP 'Mar+ia';
++------------------------+
+| 'Maia' REGEXP 'Mar+ia' |
++------------------------+
+|                      0 |
++------------------------+
+
+SELECT 'Marrria' REGEXP 'Mar+ia';
++---------------------------+
+| 'Marrria' REGEXP 'Mar+ia' |
++---------------------------+
+|                         1 |
++---------------------------+
+```
+
+#### ?
+
+
+`<code>x?</code>` matches zero or one of a character `<code>x</code>`. In the examples below, it's the `<code>r</code>` character.
+
+
+```
+SELECT 'Maria' REGEXP 'Mar?ia';
++-------------------------+
+| 'Maria' REGEXP 'Mar?ia' |
++-------------------------+
+|                       1 |
++-------------------------+
+
+SELECT 'Maia' REGEXP 'Mar?ia';
++------------------------+
+| 'Maia' REGEXP 'Mar?ia' |
++------------------------+
+|                      1 |
++------------------------+
+
+SELECT 'Marrria' REGEXP 'Mar?ia';
++---------------------------+
+| 'Marrria' REGEXP 'Mar?ia' |
++---------------------------+
+|                         0 |
++---------------------------+
+```
+
+#### ()
+
+
+`<code>(xyz)</code>` - combine a sequence, for example `<code>(xyz)+</code>` or `<code>(xyz)*</code>`
+
+
+```
+SELECT 'Maria' REGEXP '(ari)+';
++-------------------------+
+| 'Maria' REGEXP '(ari)+' |
++-------------------------+
+|                       1 |
++-------------------------+
+```
+
+#### {}
+
+
+`<code>x{n}</code>` and `<code>x{m,n}</code>`
+This notation is used to match many instances of the `<code>x</code>`. In the case of `<code>x{n}</code>` the match must be exactly that many times. In the case of `<code>x{m,n}</code>`, the match can occur from `<code>m</code>` to `<code>n</code>` times. For example, to match zero or one instance of the string `<code>ari</code>` (which is identical to `<code>(ari)?</code>`), the following can be used:
+
+
+```
+SELECT 'Maria' REGEXP '(ari){0,1}';
++-----------------------------+
+| 'Maria' REGEXP '(ari){0,1}' |
++-----------------------------+
+|                           1 |
++-----------------------------+
+```
+
+#### []
+
+
+`<code>[xy]</code>` groups characters for matching purposes. For example, to match either the `<code>p</code>` or the `<code>r</code>` character:
+
+
+```
+SELECT 'Maria' REGEXP 'Ma[pr]ia';
++---------------------------+
+| 'Maria' REGEXP 'Ma[pr]ia' |
++---------------------------+
+|                         1 |
++---------------------------+
+```
+
+The square brackets also permit a range match, for example, to match any character from a-z, `<code>[a-z]</code>` is used. Numeric ranges are also permitted.
+
+
+```
+SELECT 'Maria' REGEXP 'Ma[a-z]ia';
++----------------------------+
+| 'Maria' REGEXP 'Ma[a-z]ia' |
++----------------------------+
+|                          1 |
++----------------------------+
+```
+
+The following does not match, as `<code>r</code>` falls outside of the range `<code>a-p</code>`.
+
+
+```
+SELECT 'Maria' REGEXP 'Ma[a-p]ia';
++----------------------------+
+| 'Maria' REGEXP 'Ma[a-p]ia' |
++----------------------------+
+|                          0 |
++----------------------------+
+```
+
+##### ^
+
+
+The `<code>^</code>` character means does `<code>NOT</code>` match, for example:
+
+
+```
+SELECT 'Maria' REGEXP 'Ma[^p]ia';
++---------------------------+
+| 'Maria' REGEXP 'Ma[^p]ia' |
++---------------------------+
+|                         1 |
++---------------------------+
+
+SELECT 'Maria' REGEXP 'Ma[^r]ia';
++---------------------------+
+| 'Maria' REGEXP 'Ma[^r]ia' |
++---------------------------+
+|                         0 |
++---------------------------+
+```
+
+The `<code>[</code>` and `<code>]</code>` characters on their own can be literally matched inside a `<code>[]</code>` block, without escaping, as long as they immediately match the opening bracket:
+
+
+```
+SELECT '[Maria' REGEXP '[[]';
++-----------------------+
+| '[Maria' REGEXP '[[]' |
++-----------------------+
+|                     1 |
++-----------------------+
+
+SELECT '[Maria' REGEXP '[]]';
++-----------------------+
+| '[Maria' REGEXP '[]]' |
++-----------------------+
+|                     0 |
++-----------------------+
+
+SELECT ']Maria' REGEXP '[]]';
++-----------------------+
+| ']Maria' REGEXP '[]]' |
++-----------------------+
+|                     1 |
++-----------------------+
+
+SELECT ']Maria' REGEXP '[]a]';
++------------------------+
+| ']Maria' REGEXP '[]a]' |
++------------------------+
+|                      1 |
++------------------------+
+```
+
+Incorrect order, so no match:
+
+
+```
+SELECT ']Maria' REGEXP '[a]]';
++------------------------+
+| ']Maria' REGEXP '[a]]' |
++------------------------+
+|                      0 |
++------------------------+
+```
+
+The `<code>-</code>` character can also be matched in the same way:
+
+
+```
+SELECT '-Maria' REGEXP '[1-10]';
++--------------------------+
+| '-Maria' REGEXP '[1-10]' |
++--------------------------+
+|                        0 |
++--------------------------+
+
+SELECT '-Maria' REGEXP '[-1-10]';
++---------------------------+
+| '-Maria' REGEXP '[-1-10]' |
++---------------------------+
+|                         1 |
++---------------------------+
+```
+
+#### Word boundaries
+
+
+The `<code>[:<:](https://mariadb.com/kb/en/%3C%3A)</code>` and `<code>[:>:](https://mariadb.com/kb/en/%3E%3A)</code>` patterns match the beginning and the end of a word respectively. For example:
+
+
+```
+SELECT 'How do I upgrade MariaDB?' REGEXP '[[:<:]]MariaDB[[:>:]]';
++------------------------------------------------------------+
+| 'How do I upgrade MariaDB?' REGEXP '[[:<:]]MariaDB[[:>:]]' |
++------------------------------------------------------------+
+|                                                          1 |
++------------------------------------------------------------+
+
+SELECT 'How do I upgrade MariaDB?' REGEXP '[[:<:]]Maria[[:>:]]';
++----------------------------------------------------------+
+| 'How do I upgrade MariaDB?' REGEXP '[[:<:]]Maria[[:>:]]' |
++----------------------------------------------------------+
+|                                                        0 |
++----------------------------------------------------------+
+```
+
+#### Character Classes
+
+
+There are a number of shortcuts to match particular preset character classes. These are matched with the `<code>[:character_class:]</code>` pattern (inside a `<code>[]</code>` set). The following character classes exist:
+
+
+
+| Character Class | Description |
+| --- | --- |
+| Character Class | Description |
+| alnum | Alphanumeric |
+| alpha | Alphabetic |
+| blank | Whitespace |
+| cntrl | Control characters |
+| digit | Digits |
+| graph | Graphic characters |
+| lower | Lowercase alphabetic |
+| print | Graphic or space characters |
+| punct | Punctuation |
+| space | Space, tab, newline, and carriage return |
+| upper | Uppercase alphabetic |
+| xdigit | Hexadecimal digit |
+
+
+
+For example:
+
+
+```
+SELECT 'Maria' REGEXP 'Mar[[:alnum:]]*';
++--------------------------------+
+| 'Maria' REGEXP 'Mar[:alnum:]*' |
++--------------------------------+
+|                              1 |
++--------------------------------+
+```
+
+Remember that matches are by default case-insensitive, unless a binary string is used, so the following example, specifically looking for an uppercase, counter-intuitively matches a lowercase character:
+
+
+```
+SELECT 'Mari' REGEXP 'Mar[[:upper:]]+';
++---------------------------------+
+| 'Mari' REGEXP 'Mar[[:upper:]]+' |
++---------------------------------+
+|                               1 |
++---------------------------------+
+
+SELECT BINARY 'Mari' REGEXP 'Mar[[:upper:]]+';
++----------------------------------------+
+| BINARY 'Mari' REGEXP 'Mar[[:upper:]]+' |
++----------------------------------------+
+|                                      0 |
++----------------------------------------+
+```
+
+#### Character Names
+
+
+There are also number of shortcuts to match particular preset character names. These are matched with the `<code>[.character.]</code>` pattern (inside a `<code>[]</code>` set). The following character classes exist:
+
+
+
+| Name | Character |
+| --- | --- |
+| Name | Character |
+| NUL | 0 |
+| SOH | 001 |
+| STX | 002 |
+| ETX | 003 |
+| EOT | 004 |
+| ENQ | 005 |
+| ACK | 006 |
+| BEL | 007 |
+| alert | 007 |
+| BS | 010 |
+| backspace | '\b' |
+| HT | 011 |
+| tab | '\t' |
+| LF | 012 |
+| newline | '\n' |
+| VT | 013 |
+| vertical-tab | '\v' |
+| FF | 014 |
+| form-feed | '\f' |
+| CR | 015 |
+| carriage-return | '\r' |
+| SO | 016 |
+| SI | 017 |
+| DLE | 020 |
+| DC1 | 021 |
+| DC2 | 022 |
+| DC3 | 023 |
+| DC4 | 024 |
+| NAK | 025 |
+| SYN | 026 |
+| ETB | 027 |
+| CAN | 030 |
+| EM | 031 |
+| SUB | 032 |
+| ESC | 033 |
+| IS4 | 034 |
+| FS | 034 |
+| IS3 | 035 |
+| GS | 035 |
+| IS2 | 036 |
+| RS | 036 |
+| IS1 | 037 |
+| US | 037 |
+| space | ' ' |
+| exclamation-mark | '!' |
+| quotation-mark | '"' |
+| number-sign | '#' |
+| dollar-sign | '$' |
+| percent-sign | '%' |
+| ampersand | '&' |
+| apostrophe | '\'' |
+| left-parenthesis | '(' |
+| right-parenthesis | ')' |
+| asterisk | '*' |
+| plus-sign | '+' |
+| comma | ',' |
+| hyphen | '-' |
+| hyphen-minus | '-' |
+| period | '.' |
+| full-stop | '.' |
+| slash | '/' |
+| solidus | '/' |
+| zero | '0' |
+| one | '1' |
+| two | '2' |
+| three | '3' |
+| four | '4' |
+| five | '5' |
+| six | '6' |
+| seven | '7' |
+| eight | '8' |
+| nine | '9' |
+| colon | ':' |
+| semicolon | ';' |
+| less-than-sign | '<' |
+| equals-sign | '=' |
+| greater-than-sign | '>' |
+| question-mark | '?' |
+| commercial-at | '@' |
+| left-square-bracket | '[' |
+| backslash | '' |
+| reverse-solidus | '' |
+| right-square-bracket | ']' |
+| circumflex | '^' |
+| circumflex-accent | '^' |
+| underscore | '_' |
+| low-line | '_' |
+| grave-accent | '`' |
+| left-brace | '{' |
+| left-curly-bracket | '{' |
+| vertical-line | '|' |
+| right-brace | '}' |
+| right-curly-bracket | '}' |
+| tilde | '' |
+| DEL | 177 |
+
+
+
+For example:
+
+
+```
+SELECT '|' REGEXP '[[.vertical-line.]]';
++----------------------------------+
+| '|' REGEXP '[[.vertical-line.]]' |
++----------------------------------+
+|                                1 |
++----------------------------------+
+```
+
+### Combining
+
+
+The true power of regular expressions is unleashed when the above is combined, to form more complex examples. Regular expression's reputation for complexity stems from the seeming complexity of multiple combined regular expressions, when in reality, it's simply a matter of understanding the characters and how they apply:
+
+
+The first example fails to match, as while the `<code>Ma</code>` matches, either `<code>i</code>` or `<code>r</code>` only matches once before the `<code>ia</code>` characters at the end.
+
+
+```
+SELECT 'Maria' REGEXP 'Ma[ir]{2}ia';
++------------------------------+
+| 'Maria' REGEXP 'Ma[ir]{2}ia' |
++------------------------------+
+|                            0 |
++------------------------------+
+```
+
+This example matches, as either `<code>i</code>` or `<code>r</code>` match exactly twice after the `<code>Ma</code>`, in this case one `<code>r</code>` and one `<code>i</code>`.
+
+
+```
+SELECT 'Maria' REGEXP 'Ma[ir]{2}';
++----------------------------+
+| 'Maria' REGEXP 'Ma[ir]{2}' |
++----------------------------+
+|                          1 |
++----------------------------+
+```
+
+### Escaping
+
+
+With the large number of special characters, care needs to be taken to properly escape characters. Two backslash characters, `<code><br/></code>` (one for the MariaDB parser, one for the regex library), are required to properly escape a character. For example:
+
+
+To match the literal `<code>(Ma</code>`:
+
+
+```
+SELECT '(Maria)' REGEXP '(Ma';
+ERROR 1139 (42000): Got error 'parentheses not balanced' from regexp
+
+SELECT '(Maria)' REGEXP '\(Ma';
+ERROR 1139 (42000): Got error 'parentheses not balanced' from regexp
+
+SELECT '(Maria)' REGEXP '\\(Ma';
++--------------------------+
+| '(Maria)' REGEXP '\\(Ma' |
++--------------------------+
+|                        1 |
++--------------------------+
+```
+
+To match `<code>r+</code>`: The first two examples are incorrect, as they match `<code>r</code>` one or more times, not `<code>r+</code>`:
+
+
+```
+SELECT 'Mar+ia' REGEXP 'r+';
++----------------------+
+| 'Mar+ia' REGEXP 'r+' |
++----------------------+
+|                    1 |
++----------------------+
+
+SELECT 'Maria' REGEXP 'r+';
++---------------------+
+| 'Maria' REGEXP 'r+' |
++---------------------+
+|                   1 |
++---------------------+
+
+SELECT 'Maria' REGEXP 'r\\+';
++-----------------------+
+| 'Maria' REGEXP 'r\\+' |
++-----------------------+
+|                     0 |
++-----------------------+
+
+SELECT 'Maria' REGEXP 'r+';
++---------------------+
+| 'Maria' REGEXP 'r+' |
++---------------------+
+|                   1 |
++---------------------+
+```

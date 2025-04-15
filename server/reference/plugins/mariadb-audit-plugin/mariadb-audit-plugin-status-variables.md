@@ -1,0 +1,58 @@
+
+# MariaDB Audit Plugin - Status Variables
+
+
+There are a few status variables related to the [MariaDB Audit Plugin](release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md), once it has been [installed](mariadb-audit-plugin-installation.md). These variables can be displayed using the [SHOW STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md) statement like so:
+
+
+```
+SHOW STATUS LIKE 'server_audit%';
+
++----------------------------+------------------+
+| Variable_name              | Value            |
++----------------------------+------------------+
+| Server_audit_active        | ON               |
+| Server_audit_current_log   | server_audit.log |
+| Server_audit_last_error    |                  |
+| Server_audit_writes_failed | 0                |
++----------------------------+------------------+
+```
+
+### Status Variables
+
+
+Below is a list of all status variables related to the Audit Plugin. These cannot be set: These are not to be confused with system variables, which can be set. See [Server Status Variables](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md) for a complete list of status variables that can be viewed with the [SHOW STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md) statement. See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+
+
+#### `<code>Server_audit_active</code>`
+
+
+* Description: If the auditing is actually working. It gets the ON value when the logging is successfully started. Then it can get the OFF value if the logging was stopped or log records can't be properly stored due to file or syslog errors.
+* Data Type: `<code>boolean</code>`
+
+
+
+#### `<code>Server_audit_current_log</code>`
+
+
+* Description: The name of the logfile or the SYSLOG parameters that are in current use.
+* Data Type: `<code>string</code>`
+
+
+
+#### `<code>Server_audit_last_error</code>`
+
+
+* Description: If something went wrong with the logging here you can see the message.
+* Data Type: `<code>string</code>`
+
+
+
+#### `<code>Server_audit_writes_failed</code>`
+
+
+* Description: The number of log records since last logging-start that weren't properly stored because of errors of any kind. The global value can be flushed by `<code>[FLUSH STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)</code>`.
+* Data Type: `<code>numeric</code>`
+* Default Value: `<code>0</code>`
+
+

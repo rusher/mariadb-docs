@@ -1,0 +1,33 @@
+
+# DROP PACKAGE
+
+## Syntax
+
+
+```
+DROP PACKAGE [IF EXISTS]  [ db_name . ] package_name
+```
+
+
+## Description
+
+
+The `<code>DROP PACKAGE</code>` statement can be used when [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set.
+
+
+The `<code>DROP PACKAGE</code>` statement drops a stored package entirely:
+
+
+* Drops the package specification (earlier created using the [CREATE PACKAGE](../create/create-package-body.md) statement).
+* Drops the package implementation, if the implementation was already created using the [CREATE PACKAGE BODY](../create/create-package-body.md) statement.
+
+
+## See Also
+
+
+* [SHOW CREATE PACKAGE](../../administrative-sql-statements/show/show-create-package.md)
+* [CREATE PACKAGE](../create/create-package-body.md)
+* [CREATE PACKAGE BODY](../create/create-package-body.md)
+* [DROP PACKAGE BODY](drop-package-body.md)
+* [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+

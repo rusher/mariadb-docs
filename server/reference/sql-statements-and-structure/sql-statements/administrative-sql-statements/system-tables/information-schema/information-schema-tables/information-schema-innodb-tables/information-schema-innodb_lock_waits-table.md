@@ -1,0 +1,22 @@
+
+# Information Schema INNODB_LOCK_WAITS Table
+
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>INNODB_LOCK_WAITS</code>` table contains information about blocked InnoDB transactions. The `<code>PROCESS</code>` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+
+
+It contains the following columns:
+
+
+
+| Column | Description |
+| --- | --- |
+| Column | Description |
+| REQUESTING_TRX_ID | Requesting transaction ID from the [INNODB_TRX](information-schema-innodb_trx-table.md) table. |
+| REQUESTED_LOCK_ID | Lock ID from the [INNODB.LOCKS](information-schema-innodb_locks-table.md) table for the waiting transaction. |
+| BLOCKING_TRX_ID | Blocking transaction ID from the [INNODB_TRX](information-schema-innodb_trx-table.md) table. |
+| BLOCKING_LOCK_ID | Lock ID from the [INNODB.LOCKS](information-schema-innodb_locks-table.md) table of a lock held by a transaction that is blocking another transaction. |
+
+
+
+The table is often used in conjunction with the [INNODB_LOCKS](information-schema-innodb_locks-table.md) and [INNODB_TRX](information-schema-innodb_trx-table.md) tables to diagnose problematic locks and transactions.
+

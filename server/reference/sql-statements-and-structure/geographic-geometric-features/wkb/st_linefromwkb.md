@@ -1,0 +1,35 @@
+
+# ST_LineFromWKB
+
+## Syntax
+
+
+```
+ST_LineFromWKB(wkb[,srid])
+LineFromWKB(wkb[,srid])
+ST_LineStringFromWKB(wkb[,srid])
+LineStringFromWKB(wkb[,srid])
+```
+
+## Description
+
+
+Constructs a LINESTRING value using its [WKB](well-known-binary-wkb-format.md) representation and SRID.
+
+
+`<code>ST_LineFromWKB()</code>`, `<code>LineFromWKB()</code>`, `<code>ST_LineStringFromWKB()</code>`, and `<code>LineStringFromWKB()</code>` are synonyms.
+
+
+## Examples
+
+
+```
+SET @g = ST_AsBinary(ST_LineFromText('LineString(0 4,4 6)'));
+
+SELECT ST_AsText(ST_LineFromWKB(@g)) AS l;
++---------------------+
+| l                   |
++---------------------+
+| LINESTRING(0 4,4 6) |
++---------------------+
+```

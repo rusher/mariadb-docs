@@ -1,0 +1,40 @@
+
+# ST_ISCLOSED
+
+## Syntax
+
+
+```
+ST_IsClosed(g)
+IsClosed(g)
+```
+
+## Description
+
+
+Returns 1 if a given [LINESTRING's](../geometry-constructors/linestring.md) start and end points are the same, or 0 if they are not the same. Before [MariaDB 10.1.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes.md), returns NULL if not given a LINESTRING. After [MariaDB 10.1.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes.md), returns -1.
+
+
+`<code>ST_IsClosed()</code>` and `<code>IsClosed()</code>` are synonyms.
+
+
+## Examples
+
+
+```
+SET @ls = 'LineString(0 0, 0 4, 4 4, 0 0)';
+SELECT ST_ISCLOSED(GEOMFROMTEXT(@ls));
++--------------------------------+
+| ST_ISCLOSED(GEOMFROMTEXT(@ls)) |
++--------------------------------+
+|                              1 |
++--------------------------------+
+
+SET @ls = 'LineString(0 0, 0 4, 4 4, 0 1)';
+SELECT ST_ISCLOSED(GEOMFROMTEXT(@ls));
++--------------------------------+
+| ST_ISCLOSED(GEOMFROMTEXT(@ls)) |
++--------------------------------+
+|                              0 |
++--------------------------------+
+```

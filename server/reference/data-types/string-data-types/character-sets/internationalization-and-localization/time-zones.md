@@ -1,0 +1,185 @@
+
+# Time Zones
+
+
+MariaDB keeps track of several time zone settings.
+
+
+## Setting the Time Zone
+
+
+The [time_zone](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) system variable is the primary way to set the time zone. It can be specified in one of the following formats:
+
+
+* The default value is `<code>SYSTEM</code>`, which indicates that the system time zone defined in the [system_time_zone](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#system_time_zone) system variable will be used. Note that if you are using `<code>SYSTEM</code>` with replication in either statement or mixed mode, you MUST use the same value for `<code>system_time_zone</code>` on all replicas (otherwise `<code>TIMESTAMP</code>` columns will not replicate correctly). See [System Time Zone](#system-time-zone) below for more information.
+* An offset from [Coordinated Universal Time (UTC)](coordinated-universal-time.md), such as `<code>+5:00</code>` or `<code>-9:00</code>`, can also be used.
+* If the time zone tables in the [mysql](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database were loaded, then a named time zone, such as `<code>America/New_York</code>`, `<code>Africa/Johannesburg</code>`, or `<code>Europe/Helsinki</code>`, is also permissible. See [mysql Time Zone Tables](#mysql-time-zone-tables) below for more information.
+
+
+There are two time zone settings that can be set within MariaDB--the global server time zone, and the time zone for your current session. There is also a third time zone setting which may be relevant--the system time zone.
+
+
+### Global Server Time Zone
+
+
+The global server time zone can be changed at server startup by setting the `<code>--default-time-zone</code>` option either on the command-line or in a server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+
+
+```
+[mariadb]
+...
+default_time_zone = 'America/New_York'
+```
+
+The global server time zone can also be changed dynamically by setting the [time_zone](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) system variable as a user account that has the [SUPER](../../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#super) privilege. For example:
+
+
+```
+SET GLOBAL time_zone = 'America/New_York';
+```
+
+The current global server time zone can be viewed by looking at the global value of the [time_zone](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) system variable. For example:
+
+
+```
+SHOW GLOBAL VARIABLES LIKE 'time_zone';
++---------------+--------+
+| Variable_name | Value  |
++---------------+--------+
+| time_zone     | SYSTEM |
++---------------+--------+
+```
+
+### Session Time Zone
+
+
+Each session that connects to the server will also have its own time zone. This time zone is initially inherited from the global value of the [time_zone](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) system variable, which sets the session value of the same variable.
+
+
+A session's time zone can be changed dynamically by setting the [time_zone](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) system variable. For example:
+
+
+```
+SET time_zone = 'America/New_York';
+```
+
+The current session time zone can be viewed by looking at the session value of the [time_zone](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) system variable. For example:
+
+
+```
+SHOW SESSION VARIABLES LIKE 'time_zone';
++---------------+--------+
+| Variable_name | Value  |
++---------------+--------+
+| time_zone     | SYSTEM |
++---------------+--------+
+```
+
+### System Time Zone
+
+
+The system time zone is determined when the server starts, and it sets the value of the [system_time_zone](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#system_time_zone) system variable. The system time zone is usually read from the operating system's environment. You can change the system time zone in several different ways, such as:
+
+
+* If you are starting the server with [mariadbd-safe](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-safe.md), then you can set the system time zone with the `<code>--timezone</code>` option either on the command-line or in the [mariadbd-safe] [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+
+
+```
+[mariadbd-safe]
+timezone='America/New_York'
+```
+
+* If you are using a Unix-like operating system, then you can set the system time zone by setting the `<code>TZ</code>` [environment variable](../../../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-environment-variables.md) in your shell before starting the server. For example:
+
+
+```
+$ export TZ='America/New_York'
+$ service mariadb start
+```
+
+* On some Linux operating systems, you can change the default time zone for the whole system by making the [/etc/localtime](https://www.freedesktop.org/software/systemd/man/localtime.html) symbolic link point to the desired time zone. For example:
+
+
+```
+$ sudo rm /etc/localtime
+$ sudo ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
+```
+
+* On some Debian-based Linux operating systems, you can change the default time zone for the whole system by executing the following:
+
+
+```
+sudo dpkg-reconfigure tzdata
+```
+
+* On Linux operating systems that use [systemd](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md), you can change the default time zone for the whole system by using the [timedatectl](https://www.freedesktop.org/software/systemd/man/timedatectl.html) utility. For example:
+
+
+```
+sudo timedatectl set-timezone America/New_York
+```
+
+## Time Zone Effects
+
+
+### Time Zone Effects on Functions
+
+
+Some functions are affected by the time zone settings. These include:
+
+
+* [NOW()](../../../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/now.md)
+* [SYSDATE()](../../../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/sysdate.md)
+* [CURDATE()](../../../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/curdate.md)
+* [CURTIME()](../../../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/curtime.md)
+* [UNIX_TIMESTAMP()](../../../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/unix_timestamp.md)
+
+
+Some functions are not affected. These include:
+
+
+* [UTC_DATE()](../../../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/utc_date.md)
+* [UTC_TIME()](../../../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/utc_time.md)
+* [UTC_TIMESTAMP()](../../../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/utc_timestamp.md)
+
+
+### Time Zone Effects on Data Types
+
+
+Some data types are affected by the time zone settings.
+
+
+* [TIMESTAMP](../../../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) - See [TIMESTAMP: Time Zones](../../../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md#time-zones) for information on how this data type is affected by time zones.
+* [DATETIME](../../../date-and-time-data-types/datetime.md) - See [DATETIME: Time Zones](../../../date-and-time-data-types/datetime.md#time-zones) for information on how this data type is affected by time zones.
+
+
+## mysql Time Zone Tables
+
+
+The [mysql](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database contains a number of time zone tables:
+
+
+* [time_zone](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone-table.md)
+* [time_zone_leap_second](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_leap_second-table.md)
+* [time_zone_name](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_name-table.md)
+* [time_zone_transition](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_transition-table.md)
+* [time_zone_transition_type](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_transition_type-table.md)
+
+
+By default, these time zone tables in the [mysql](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database are created, but not populated.
+
+
+If you are using a Unix-like operating system, then you can populate these tables using the [mariadb-tzinfo-to-sql](../../../../../clients-and-utilities/mariadb-tzinfo-to-sql.md) utility, which uses the [zoneinfo](https://linux.die.net/man/5/tzfile) data available on Linux, Mac OS X, FreeBSD and Solaris.
+
+
+If you are using Windows, then you will need to import pre-populated time zone tables. These are available at [MariaDB mirrors](https://mirror.mariadb.org/zoneinfo/).
+
+
+Time zone data needs to be updated on occasion. When that happens, the time zone tables may need to be reloaded.
+
+
+## See Also
+
+
+* [LinuxJedi in Spacetime: Properly Handling Time and Date](https://www.youtube.com/watch?v=IV8q_mbZzEo) (video)
+

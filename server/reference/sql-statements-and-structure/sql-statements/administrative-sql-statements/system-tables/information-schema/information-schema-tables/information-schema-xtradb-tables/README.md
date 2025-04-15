@@ -1,0 +1,5 @@
+
+# Information Schema XtraDB Tables
+
+List of Information Schema tables specifically related to [XtraDB](../../../../../../../../server-usage/replication-cluster-multi-master/standard-replication/obsolete-replication-information/xtradb-option-innodb-release-locks-early.md). Tables that XtraDB shares with InnoDB are listed in [Information Schema InnoDB Tables](../information-schema-innodb-tables/information-schema-innodb-tables-information-schema-innodb_cmp_per_index-an.md).
+

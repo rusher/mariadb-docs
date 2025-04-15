@@ -1,0 +1,43 @@
+
+# Binary Log Group Commit and InnoDB Flushing Performance
+
+
+[MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) introduced a performance improvement related to [group commit](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) that affects the performance of flushing [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) transactions when the [binary log](binary-log-group-commit-and-innodb-flushing-performance.md) is enabled.
+
+
+## Overview
+
+
+In [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) and above, when both [innodb_flush_log_at_trx_commit=1](innodb-system-variables.md#innodb_flush_log_at_trx_commit) (the default) is set and the [binary log](binary-log-group-commit-and-innodb-flushing-performance.md) is enabled, there is now one less sync to disk inside InnoDB during commit (2 syncs shared between a group of transactions instead of 3).
+
+
+Durability of commits is not decreased — this is because even if the server crashes before the commit is written to disk by InnoDB, it will be recovered from the binary log at next server startup (and it is guaranteed that sufficient information is synced to disk so that such a recovery is always possible).
+
+
+## Switching to Old Flushing Behavior
+
+
+The old behavior, with 3 syncs to disk per (group) commit (and consequently lower performance), can be selected with the new [innodb_flush_log_at_trx_commit=3](innodb-system-variables.md#innodb_flush_log_at_trx_commit) option. There is normally no
+benefit to doing this, however there are a couple of edge cases to be aware of.
+
+
+### Non-durable Binary Log Settings
+
+
+If [innodb_flush_log_at_trx_commit=1](innodb-system-variables.md#innodb_flush_log_at_trx_commit) is set and the [binary log](binary-log-group-commit-and-innodb-flushing-performance.md) is enabled, but [sync_binlog=0](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) is set, then commits are not guaranteed durable inside InnoDB after commit. This is because if [sync_binlog=0](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) is set and if the server crashes, then transactions that were not flushed to the binary log prior to the crash will be missing from the binary log.
+
+
+In this specific scenario, [innodb_flush_log_at_trx_commit=3](innodb-system-variables.md#innodb_flush_log_at_trx_commit) can be set to ensure that transactions will be durable in InnoDB, even if they are not necessarily durable from the perspective of the binary log.
+
+
+One should be aware that if [sync_binlog=0](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) is set, then a crash is nevertheless likely to cause transactions to be missing from the binary log. This will cause the binary log and InnoDB to be inconsistent with each other. This is also likely to cause any [replication slaves](../../../server-usage/replication-cluster-multi-master/standard-replication/README.md) to become inconsistent, since transactions are replicated through the [binary log](binary-log-group-commit-and-innodb-flushing-performance.md). Thus it is recommended to set [sync_binlog=1](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md). With the [group commit](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) improvements introduced in [MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md), this setting has much less penalty in recent versions compared to older versions of MariaDB and MySQL.
+
+
+### Recent Transactions Missing from Backups
+
+
+[Mariabackup](../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) and [Percona XtraBackup](../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) only see transactions that have been flushed to the [redo log](innodb-redo-log.md). With the [group commit](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) improvements, there may be a small delay (defined by the [binlog_commit_wait_usec](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_commit_wait_usec) system variable) between when a commit happens and when the commit will be included in a backup.
+
+
+Note that the backup will still be fully consistent with itself and the [binary log](binary-log-group-commit-and-innodb-flushing-performance.md). This problem is normally not an issue in practice. A backup usually takes a long time to complete (relative to the 1 second or so that [binlog_commit_wait_usec](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_commit_wait_usec) is normally set to), and a backup usually includes a lot of transactions that were committed during the backup. With this in mind, it is not generally noticeable if the backup does not include transactions that were committed during the last 1 second or so of the backup process. It is just mentioned here for completeness.
+

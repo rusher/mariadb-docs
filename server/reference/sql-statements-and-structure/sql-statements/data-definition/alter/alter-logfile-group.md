@@ -1,0 +1,16 @@
+
+# ALTER LOGFILE GROUP
+
+## Syntax
+
+
+```
+ALTER LOGFILE GROUP logfile_group
+    ADD UNDOFILE 'file_name'
+    [INITIAL_SIZE [=] size]
+    [WAIT]
+    ENGINE [=] engine_name
+```
+
+The `<code>ALTER LOGFILE GROUP</code>` statement is not supported by MariaDB. It was originally inherited from MySQL NDB Cluster. See [MDEV-19295](https://jira.mariadb.org/browse/MDEV-19295) for more information.
+
