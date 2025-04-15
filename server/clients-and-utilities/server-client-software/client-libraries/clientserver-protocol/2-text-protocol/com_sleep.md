@@ -1,21 +1,25 @@
+
 # COM_SLEEP
 
 This command is used inside the server only.
 
-#
 
-### Direction
+#### Direction
+
 
 used inside server only
 
-#
 
-### Fields
+#### Fields
+
+
 
 * [int<1>](../protocol-data-types.md#fixed-length-integers) 0x00 : COM_SLEEP header
 
-#
 
-### Response
+
+#### Response
+
 
 [ERR_Packet](../4-server-response-packets/err_packet.md)
+

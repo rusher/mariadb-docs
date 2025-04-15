@@ -1,119 +1,146 @@
+
 # MariaDB Backups Overview for SQL Server Users
 
+
 MariaDB has the following types of backups:
+
 
 * Logical backups (dumps).
 * Hot backups with Mariabackup.
 * Snapshots.
 * Incremental backups.
 
-#
 
-# Logical Backups (Dumps)
+## Logical Backups (Dumps)
+
 
 A *dump*, also called a *logical backup*, consists of the SQL statements needed to recreate MariaDB databases and their data into another server. A dump is the slowest form of backup to restore, because it implies executing all the SQL statements needed to recreate data. However it is also the most flexible, because restoring will work on any MariaDB version, because the SQL syntax is usually compatible. It is even possible to restore a dump into an older version, though the incompatible syntax (new features) will be ignored. Under certain conditions, MariaDB dumps may also be restored on other DBMSs, including SQL Server.
 
-The compatibility between different versions and technologies is achieved by using [executable comments](../../../../reference/sql-statements-and-structure/sql-statements/comment-syntax.md), but we should be aware of how they work. If we use a feature introduced in version 11.1, for example, it will be included in the dump inside an executable comment. If we restore that backup on a server with [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011), the 11.1 feature will be ignored. This is the only way to restore backups in older MariaDB versions.
 
-#
+The compatibility between different versions and technologies is achieved by using [executable comments](../../../../reference/sql-statements-and-structure/sql-statements/comment-syntax.md), but we should be aware of how they work. If we use a feature introduced in version 11.1, for example, it will be included in the dump inside an executable comment. If we restore that backup on a server with [MariaDB 10.11](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), the 11.1 feature will be ignored. This is the only way to restore backups in older MariaDB versions.
 
-## mariadb-dump
 
-Logical backups are usually taken with [mariadb-dump](../../../../clients-and-utilities/mariadb-dumpslow.md) (previously called mysqldump).
+### mariadb-dump
 
-mariadb-dump allows one to dump all databases, a single database, or a set of tables from a database. It is even possible to specify a `WHERE` clause, which under certain circumstances allows to obtain incremental dumps.
 
-For consistency reasons, when using the default storage engine [InnoDB](understanding-mariadb-architecture.md#innodb), it is important to use the `--single-transaction` option. This will read all data in a single transaction. It's important however to understand that long transactions may have a big impact on performance.
+Logical backups are usually taken with [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (previously called mysqldump).
 
-The `--master-data` option adds the statements to setup a slave to the dump.
 
-MariaDB also supports statements which make easy to write applications to obtain custom types of dumps. For most `CREATE <object_type>` statement, a corresponding `SHOW CREATE <object_type>` exists. For example, [SHOW CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) returns the `CREATE TABLE` statement that can be used to recreate a certain table, without data.
+mariadb-dump allows one to dump all databases, a single database, or a set of tables from a database. It is even possible to specify a `<code>WHERE</code>` clause, which under certain circumstances allows to obtain incremental dumps.
 
-#
 
-## mydumper
+For consistency reasons, when using the default storage engine [InnoDB](understanding-mariadb-architecture.md#innodb), it is important to use the `<code>--single-transaction</code>` option. This will read all data in a single transaction. It's important however to understand that long transactions may have a big impact on performance.
+
+
+The `<code>--master-data</code>` option adds the statements to setup a slave to the dump.
+
+
+MariaDB also supports statements which make easy to write applications to obtain custom types of dumps. For most `<code>CREATE <object_type></code>` statement, a corresponding `<code>SHOW CREATE <object_type></code>` exists. For example, [SHOW CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) returns the `<code>CREATE TABLE</code>` statement that can be used to recreate a certain table, without data.
+
+
+### mydumper
+
 
 [mydumper](https://github.com/maxbube/mydumper) is a 3rd party tools to take dumps from MariaDB and MySQL databases. It is much faster than mariadb-dump because it takes backups with several parallel threads, usually one thread for each available CPU core. It produces several files, that can be used to restore a database using the related tool myloader.
 
+
 Since is it a 3rd party tool, it could be incompatible with some present or future MariaDB features.
 
-#
 
-# Hot Backups (mariabackup)
+## Hot Backups (mariabackup)
 
-Mariabackup is a tool for taking a backup of MariaDB files while MariaDB is working. A lock is only held for a small amount of time, so it is suitable to backup a server without causing disruptions. It works by taking corrupted backups and then bringing them to a consistent state by using the [InnoDB undo log](../../../../reference/storage-engines/innodb/innodb-undo-log.md). Mariabackup also properly backups [MyRocks](../../../../reference/storage-engines/myrocks/myrocks-and-replication.md) tables and non-transactional storage engines.
 
-#
+Mariabackup is a tool for taking a backup of MariaDB files while MariaDB is working. A lock is only held for a small amount of time, so it is suitable to backup a server without causing disruptions. It works by taking corrupted backups and then bringing them to a consistent state by using the [InnoDB undo log](../../../../reference/storage-engines/innodb/innodb-undo-log.md). Mariabackup also properly backups [MyRocks](../../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) tables and non-transactional storage engines.
 
-# Cold Backups and Snapshots
+
+## Cold Backups and Snapshots
+
 
 A copy of all MariaDB files is a working backup. Therefore, the easiest way to backup a dataset is to shutdown the server and copy all its files. It will be entirely possible to start another server with a copy of those files. This is often referred to as a *cold backup*. However, in most cases we don't want to do this, because it implies downtime for the server: it will not be working at least for the time necessary to copy the files.
 
+
 Snapshots are usually a better idea, as they are a consistent copy of the files at a given moment in time, taken without stopping the normal operations.
+
 
 A snapshot of the files can be taken at several levels: filesystem level, if the filesystem supports snapshots, for example zfs; Linux Logical Volume Manager (LVM) also supports snapshots; and virtual machines also allow one to take snapshots. Windows shadow copies are also snapshots, with a benefit: it is possible to restore a single file from a shadow copy. A snapshot is not an expensive operation, because it does not imply a copy of the files. The current files will not be modified anymore, and changes to them will be written in separate places.
 
+
 The problem with snapshots is that they behave like a logical copy of the files as they are in a given point in time. But database files are not guaranteed to be consistent in every moment, because contents can be buffered before being flushed to the disk. You can think a database snapshot like a database after an operating system crash.
+
 
 With non-transactional tables, some data is typically lost. Data changes that are present in a buffer before the snapshot, but not written on a disk, cannot be recovered in any way. Data changes in transactional tables, like InnoDB tables, can always be recovered after restoring a snapshot (or after a crash), as long as a commit was done. Tables will still need to be repaired, just like it happens after an SQL Server crash.
 
+
 Snapshots can be taken while MariaDB is running. To restore them, stop MariaDB first - or kill the process, because you don't really care of the consequences in this case. Then restore a snapshot and start MariaDB again.
+
 
 For more information about snapshots, check your filesystem, LVM or virtual machine documentation.
 
-#
 
-# Incremental Backups
+## Incremental Backups
+
 
 The term incremental backup in MariaDB indicates what SQL Server calls a *[differential backup](https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/differential-backups-sql-server)*. An important difference is that in SQL Server such backups are based on the [transaction log](https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/transaction-log-backups-sql-server), which wouldn't be possible in MariaDB because transaction logs are handled at storage engine level.
 
-As mentioned [here](understanding-mariadb-architecture.md#the-binary-log), MariaDB can use the [binary log](../../../../server-usage/programming-customizing-mariadb/stored-routines/binary-logging-of-stored-routines.md) instead for backup purposes. Such incremental backups can be done manually. This means that:
+
+As mentioned [here](understanding-mariadb-architecture.md#the-binary-log), MariaDB can use the [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) instead for backup purposes. Such incremental backups can be done manually. This means that:
+
 
 * The binary log files are copied just like any other regular file.
 * To copy those files it is necessary to have the proper permissions at filesystem level, not in MariaDB.
 * Backups do not expire until we delete the last needed complete backup.
 
-#
 
-## Replaying the Binary Log
+### Replaying the Binary Log
+
 
 The page [Using mariadb-binlog](../../../../clients-and-utilities/mariadb-binlog/using-mariadb-binlog.md) shows how to use the mariadb-binlog utility to replay a binary log file.
 
-The page also shows how to edit the binary log before replaying it. This allows one to undo an SQL statement that was executed by mistake, for example a `DROP TABLE` against a wrong table. The high level procedure is the following:
+
+The page also shows how to edit the binary log before replaying it. This allows one to undo an SQL statement that was executed by mistake, for example a `<code>DROP TABLE</code>` against a wrong table. The high level procedure is the following:
+
 
 * Restore a backup that is older than the SQL statement to undo.
-* Use `mariadb-binlog` to generate a file with the SQL statements that were executed after the backup.
+* Use `<code>mariadb-binlog</code>` to generate a file with the SQL statements that were executed after the backup.
 * Edit the SQL file, erasing the unwanted statement.
 * Run the SQL file.
 
-#
 
-## Incremental Backups with mariabackup
+### Incremental Backups with mariabackup
+
 
 The simplest way to take an incremental backup is to use Mariabackup. This tool is able to take and restore incremental backups. For the complete procedure to use, see [Incremental Backup and Restore with Mariabackup](../../../backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup.md).
 
+
 Mariabackup can run on both Linux and Windows systems.
 
-#
 
-## Flashback
+### Flashback
+
 
 [Flashback](../../../server-monitoring-logs/binary-log/flashback.md) is a feature that allows one to bring all databases, some databases or some tables back to a certain point in time. This can only be done if the binary log is enabled. Flashback is not a proper backup, but it can be used to restore a certain set of data.
 
-#
 
-## Copying Individual Tables
+### Copying Individual Tables
+
 
 It is entirely possible to restore a single table from a physical backup, or to copy the table to another server.
 
-With the [MyISAM](../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) storage engine it was very easy to move tables between different servers, as long as the MySQL or MariaDB version was the same.
 
-[InnoDB](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md) is nowadays the default storage engine, and it is more complex, as it supports transactions for example. It still supports restoring a table from a physical file, this feature is called *transportable tablespaces*. There is a particular procedure to follow, and some limitations. This is basically the MariaDB equivalent of detaching and re-attaching tables in SQL Server.
+With the [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) storage engine it was very easy to move tables between different servers, as long as the MySQL or MariaDB version was the same.
+
+
+[InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) is nowadays the default storage engine, and it is more complex, as it supports transactions for example. It still supports restoring a table from a physical file, this feature is called *transportable tablespaces*. There is a particular procedure to follow, and some limitations. This is basically the MariaDB equivalent of detaching and re-attaching tables in SQL Server.
+
 
 For more information, see [InnoDB File-Per-Table Tablespaces](../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md).
 
-By default. all table files are located in the *data directory*, which is defined by the system variable [datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir). There may be exceptions, because a table's files can be located elsewhere using the [DATA DIRECTORY and INDEX DIRECTORY](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-tablespace.md#data-directoryindex-directory) options in `CREATE TABLE`.
 
-Regardless of the storage engine used, each table's structure is generally stored in a file with the `.frm` extension.
+By default. all table files are located in the *data directory*, which is defined by the system variable [datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir). There may be exceptions, because a table's files can be located elsewhere using the [DATA DIRECTORY and INDEX DIRECTORY](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#data-directoryindex-directory) options in `<code>CREATE TABLE</code>`.
 
-The files used for [partitioned tables](/kb/en/partitioning-tables/) are different from the files used for non-partitioned tables. See [Partitions Files](../../../partitioning-tables/partitions-files.md) for details.
+
+Regardless of the storage engine used, each table's structure is generally stored in a file with the `<code>.frm</code>` extension.
+
+
+The files used for [partitioned tables](../../../partitioning-tables/README.md) are different from the files used for non-partitioned tables. See [Partitions Files](../../../partitioning-tables/partitions-files.md) for details.
+

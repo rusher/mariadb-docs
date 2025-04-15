@@ -1,21 +1,26 @@
+
 # System Variables Added in MariaDB 11.7
 
-This is a list of [system variables](../server-system-variables.md) that have been added in the [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-117) series.
+This is a list of [system variables](../server-system-variables.md) that have been added in the [MariaDB 11.7](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md) series.
+
+
 
 | Variable | Added |
 | --- | --- |
 | Variable | Added |
-| [binlog_large_commit_threshold](../../../standard-replication/replication-and-binary-log-system-variables.md#binlog_large_commit_threshold) | [MariaDB 11.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-0-release-notes) |
-| [innodb_log_file_mmap](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_mmap) | [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes) |
-| [log_slow_always_query_time](../../../../../server-management/server-monitoring-logs/slow-query-log/log_slow_always_query_time-system-variable.md) | [MariaDB 11.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-0-release-notes) |
-| [mhnsw_default_distance](../../../../../reference/sql-statements-and-structure/vectors/vector-system-variables.md#mhnsw_default_distance) | [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes) |
-| [mhnsw_default_m](../../../../../reference/sql-statements-and-structure/vectors/vector-system-variables.md#mhnsw_default_m) | [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes) |
-| [mhnsw_ef_search](../../../../../reference/sql-statements-and-structure/vectors/vector-system-variables.md#mhnsw_ef_search) | [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes) |
-| [mhnsw_max_cache_size](../../../../../reference/sql-statements-and-structure/vectors/vector-system-variables.md#mhnsw_max_cache_size) | [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes) |
-| [slave_abort_blocking_timeout](../../../standard-replication/replication-and-binary-log-system-variables.md#slave_abort_blocking_timeout) | [MariaDB 11.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-0-release-notes) |
+| [binlog_large_commit_threshold](../../../standard-replication/replication-and-binary-log-system-variables.md#binlog_large_commit_threshold) | [MariaDB 11.7.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-0-release-notes.md) |
+| [innodb_log_file_mmap](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_mmap) | [MariaDB 11.7.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes.md) |
+| [log_slow_always_query_time](../../../../../server-management/server-monitoring-logs/slow-query-log/log_slow_always_query_time-system-variable.md) | [MariaDB 11.7.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-0-release-notes.md) |
+| [mhnsw_default_distance](../../../../../reference/sql-statements-and-structure/vectors/vector-system-variables.md#mhnsw_default_distance) | [MariaDB 11.7.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes.md) |
+| [mhnsw_default_m](../../../../../reference/sql-statements-and-structure/vectors/vector-system-variables.md#mhnsw_default_m) | [MariaDB 11.7.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes.md) |
+| [mhnsw_ef_search](../../../../../reference/sql-statements-and-structure/vectors/vector-system-variables.md#mhnsw_ef_search) | [MariaDB 11.7.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes.md) |
+| [mhnsw_max_cache_size](../../../../../reference/sql-statements-and-structure/vectors/vector-system-variables.md#mhnsw_max_cache_size) | [MariaDB 11.7.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes.md) |
+| [slave_abort_blocking_timeout](../../../standard-replication/replication-and-binary-log-system-variables.md#slave_abort_blocking_timeout) | [MariaDB 11.7.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-0-release-notes.md) |
 
-#
 
-# See Also
+
+## See Also
+
 
 * [System Variables Added in MariaDB 11.6](system-variables-added-in-mariadb-11-6.md)
+

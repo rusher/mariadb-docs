@@ -1,43 +1,55 @@
+
 # MariaDB Authorization and Permissions for SQL Server Users
 
-#
 
-# Understanding Accounts and Users
+## Understanding Accounts and Users
+
 
 MariaDB authorizes access and check permissions on accounts, rather than users. Even if MariaDB supports standard SQL commands like [CREATE USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) and [DROP USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/drop-user.md), it is important to remember that it actually works with accounts.
 
-An account is specified in the format `'user'@'host'`. The quotes are optional and allow one to include special characters, like dots. The host part can actually be a pattern, which follows the same syntax used in `LIKE` comparisons. Patterns are often convenient because they can match several hostnames.
+
+An account is specified in the format `<code>'user'@'host'</code>`. The quotes are optional and allow one to include special characters, like dots. The host part can actually be a pattern, which follows the same syntax used in `<code>LIKE</code>` comparisons. Patterns are often convenient because they can match several hostnames.
+
 
 Here are some examples.
 
+
 Omitting the host part indicates an account that can access from any host. So the following statements are equivalent:
+
 
 ```
 CREATE USER viviana;
 CREATE USER viviana@'%';
 ```
 
-However, such accounts may be unable to connect from localhost if an anonymous user `''@'%'` is present. See [localhost and %](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues#localhost-and) for the details.
+However, such accounts may be unable to connect from localhost if an anonymous user `<code>''@'%'</code>` is present. See [localhost and %](../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues.md#localhost-and) for the details.
+
 
 Accounts are not bound to a specific database. They are global. Once an account is created, it is possible to assign it permissions on any existing or non existing database.
 
+
 The [sql_mode](../../../variables-and-modes/sql-mode.md) system variable has a [NO_AUTO_CREATE_USER](../../../variables-and-modes/sql-mode.md#no_auto_create_user) flag. In recent MariaDB versions it is enabled by default. If it is not enabled, a [GRANT](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) statement specifying privileges for a non-existent account will automatically create that account.
 
-For more information: [Account Management SQL Commands](/kb/en/account-management-sql-commands/).
 
-#
+For more information: [Account Management SQL Commands](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/README.md).
 
-## Setting or Changing Passwords
+
+### Setting or Changing Passwords
+
 
 Accounts with the same username can have different passwords.
 
+
 By default, an account has no password. A password can be set, or changed, in the following way:
+
 
 * By specifying it in [CREATE USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md).
 * By the user, with [SET PASSWORD](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md).
-* By root, with `SET PASSWORD` or [ALTER USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md).
+* By root, with `<code>SET PASSWORD</code>` or [ALTER USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md).
 
-With all these statements (`CREATE USER`, `ALTER USER`, `SET PASSWORD`) it is possible to specify the password in plain or as a hash:
+
+With all these statements (`<code>CREATE USER</code>`, `<code>ALTER USER</code>`, `<code>SET PASSWORD</code>`) it is possible to specify the password in plain or as a hash:
+
 
 ```
 -- specifying plain passwords:
@@ -50,9 +62,11 @@ ALTER USER tom@'%.example.com' IDENTIFIED BY PASSWORD 'secret hash';
 SET PASSWORD = PASSWORD('secret hash');
 ```
 
-The [PASSWORD()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function uses the same algorithm used internally by MariaDB to generate hashes. Therefore it can be used to get a hash from a plain password. Note that this function should not be used by applications, as its output may depend on MariaDB version and configuration.
+The [PASSWORD()](../../../../reference/plugins/password-validation-plugins/password-reuse-check-plugin.md) function uses the same algorithm used internally by MariaDB to generate hashes. Therefore it can be used to get a hash from a plain password. Note that this function should not be used by applications, as its output may depend on MariaDB version and configuration.
 
-`SET PASSWORD` applies to the current account, by default. Superusers can change other accounts passwords in this way:
+
+`<code>SET PASSWORD</code>` applies to the current account, by default. Superusers can change other accounts passwords in this way:
+
 
 ```
 SET PASSWORD FOR tom@'%.example.com' = PASSWORD 'secret hash';
@@ -60,11 +74,13 @@ SET PASSWORD FOR tom@'%.example.com' = PASSWORD 'secret hash';
 
 Passwords can have an expiry date, set by [default_password_lifetime](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_password_lifetime). To set a different date for a particular user:
 
+
 ```
 CREATE USER 'tom'@'%.example.com' PASSWORD EXPIRE INTERVAL 365 DAY;
 ```
 
 To set no expiry date for a particular user:
+
 
 ```
 CREATE USER 'tom'@'%.example.com' PASSWORD EXPIRE NEVER;
@@ -72,7 +88,9 @@ CREATE USER 'tom'@'%.example.com' PASSWORD EXPIRE NEVER;
 
 For more details, see [User Password Expiry](../../../../security/user-account-management/user-password-expiry.md).
 
+
 It is also possible to lock an account with immediate effect:
+
 
 ```
 CREATE USER 'tom'@'%.example.com' ACCOUNT LOCK;
@@ -80,47 +98,56 @@ CREATE USER 'tom'@'%.example.com' ACCOUNT LOCK;
 
 See [Account Locking](../../../../security/user-account-management/account-locking.md) for more details.
 
-#
 
-# Authentication Plugins
+## Authentication Plugins
 
-MariaDB supports [authentication plugins](/kb/en/authentication-plugins/). These plugins implement user's login and authorization before they can use MariaDB.
+
+MariaDB supports [authentication plugins](../../../../reference/plugins/authentication-plugins/README.md). These plugins implement user's login and authorization before they can use MariaDB.
+
 
 Each user has one or more authentication plugins assigned. The default one is [mysql_native_password](../../../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md). It is the traditional login using the username and password set in MariaDB, as described above.
 
+
 On UNIX systems, root is also assigned the [unix_socket](../../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) plugin, which allows a user logged in the operating system to be recognized by MariaDB.
+
 
 Windows users may be interested in the [named pipe](../../../../reference/plugins/authentication-plugins/authentication-plugin-named-pipe.md) and [GSSAPI](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md) plugins. GSSAPI also requires the use of a plugin on the [client side](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#support-in-client-libraries).
 
-A plugin can be assigned to a user with `CREATE USER`, `ALTER USER` or `GRANT`, using the `IDENTIFIED VIA` syntax. For example:
+
+A plugin can be assigned to a user with `<code>CREATE USER</code>`, `<code>ALTER USER</code>` or `<code>GRANT</code>`, using the `<code>IDENTIFIED VIA</code>` syntax. For example:
+
 
 ```
 CREATE USER username@hostname IDENTIFIED VIA gssapi;
 GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA named_pipe;
 ```
 
-#
+## TLS connections
 
-# TLS connections
 
 A particular user can be required to use TLS connections. Additional requirements can be set:
+
 
 * Having a valid X509 certificate.
 * The certificate may be required to be issued by a particular authority.
 * A particular certificate subject can be required.
 * A particular certificate cipher suite can be required.
 
-These requirements can be set with `CREATE USER`, `ALTER USER` or `GRANT`. For the syntax, see [CREATE USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#tls-options).
+
+These requirements can be set with `<code>CREATE USER</code>`, `<code>ALTER USER</code>` or `<code>GRANT</code>`. For the syntax, see [CREATE USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#tls-options).
+
 
 MariaDB can be bundled with several cryptography libraries, depending on its version. For more information about the libraries, see [TLS and Cryptography Libraries Used by MariaDB](../../../../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md).
 
+
 For more information about secure connections, see [Secure Connections Overview](../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md).
 
-#
 
-# Permissions
+## Permissions
+
 
 Permissions can be granted to accounts. As mentioned before, the specified accounts can actually be patterns, and multiple accounts may match a pattern. For example, in this example we are creating three accounts, and we are assigning permissions to all of them:
+
 
 ```
 CREATE USER 'tom'@'example.com';
@@ -131,39 +158,49 @@ GRANT USAGE ON *.* TO tom@'%';
 
 The following permission levels exist in MariaDB:
 
+
 * [Global privileges](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges);
 * [Database privileges](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#database-privileges);
 * [Table privileges](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#table-privileges);
 * [Column privileges](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#column-privileges);
 * [Function](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#function-privileges) and [procedure privileges](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#procedure-privileges).
 
+
 Note that database and schema are synonymous in MariaDB.
+
 
 Permissions can be granted for non-existent objects that could exist in the future.
 
+
 The list of supported privileges can be found in the [GRANT](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) page. Some highlights can be useful for SQL Server users:
 
-* `USAGE` privilege has no effect. The `GRANT` command fails if we don't grant at least one privilege; but sometimes we want to run it for other purposes, for example to require a user to use TLS connections. In such cases, it is useful to grant `USAGE`.
-* Normally we can obtain a list of all databases for which we have at least one permission. The `SHOW DATABASES` permission allows getting a list of all databases.
-* There is no `SHOWPLAN` privilege in MariaDB. Instead, [EXPLAIN](../../../../clients-and-utilities/explain-analyzer.md) requires the `SELECT` privilege for each accessed table and the `SHOW VIEW` privilege for each accessed view.
-* The same permissions are needed to see a table structure (`SELECT`) or a view definition (`SHOW VIEW`).
-* `REFERENCES` has no effect.
 
-MariaDB does not support negative permissions (the `DENY` command).
+* `<code>USAGE</code>` privilege has no effect. The `<code>GRANT</code>` command fails if we don't grant at least one privilege; but sometimes we want to run it for other purposes, for example to require a user to use TLS connections. In such cases, it is useful to grant `<code>USAGE</code>`.
+* Normally we can obtain a list of all databases for which we have at least one permission. The `<code>SHOW DATABASES</code>` permission allows getting a list of all databases.
+* There is no `<code>SHOWPLAN</code>` privilege in MariaDB. Instead, [EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) requires the `<code>SELECT</code>` privilege for each accessed table and the `<code>SHOW VIEW</code>` privilege for each accessed view.
+* The same permissions are needed to see a table structure (`<code>SELECT</code>`) or a view definition (`<code>SHOW VIEW</code>`).
+* `<code>REFERENCES</code>` has no effect.
+
+
+MariaDB does not support negative permissions (the `<code>DENY</code>` command).
+
 
 Some differences concerning the SQL commands:
 
-* In MariaDB `GRANT` and `REVOKE` statements can only assign/revoke permissions to one user at a time.
-* While we can assign/revoke privileges at column level, we have to run a `GRANT` or `REVOKE` statement for each column. The `table (column_list)` syntax is not recognized by MariaDB.
+
+* In MariaDB `<code>GRANT</code>` and `<code>REVOKE</code>` statements can only assign/revoke permissions to one user at a time.
+* While we can assign/revoke privileges at column level, we have to run a `<code>GRANT</code>` or `<code>REVOKE</code>` statement for each column. The `<code>table (column_list)</code>` syntax is not recognized by MariaDB.
 * In MariaDB it is not needed (or possible) to specify a class type.
 
-#
 
-# Roles
+## Roles
+
 
 MariaDB supports [roles](../../../../security/user-account-management/roles/roles_overview.md). Permissions can be assigned to roles, and roles can be assigned to accounts.
 
+
 An account may have zero or one default roles. A default role is a role that is automatically active for a user when they connect. To assign an account or remove a default role, these SQL statements can be used:
+
 
 ```
 SET DEFAULT ROLE some_role FOR username@hostname;
@@ -172,11 +209,13 @@ SET DEFAULT ROLE NONE FOR username@hostname;
 
 Normally a role is not a default role. If we assign a role in this way:
 
+
 ```
 GRANT some_role TO username@hostname;
 ```
 
 ...the user will not have that role automatically enabled. They will have to enable it explicitly:
+
 
 ```
 SET ROLE some_role;
@@ -184,4 +223,6 @@ SET ROLE some_role;
 
 MariaDB does not have predefined roles, like public.
 
+
 For an introduction to roles, see [Roles Overview](../../../../security/user-account-management/roles/roles_overview.md).
+

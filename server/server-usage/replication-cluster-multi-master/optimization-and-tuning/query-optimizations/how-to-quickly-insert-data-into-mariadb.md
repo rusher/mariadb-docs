@@ -1,13 +1,16 @@
+
 # How to Quickly Insert Data Into MariaDB
+
 
 This article describes different techniques for inserting data quickly into MariaDB.
 
-#
 
-# Background
+## Background
+
 
 When inserting new data into MariaDB, the things that take time are:
 (in order of importance):
+
 
 * Syncing data to disk (as part of the end of transactions)
 * Adding new keys. The larger the index, the more time it takes to keep keys
@@ -16,16 +19,18 @@ When inserting new data into MariaDB, the things that take time are:
 * Adding rows to the storage engine.
 * Sending data to the server.
 
+
 The following describes the different techniques (again, in order of
 importance) you can use to quickly insert data into a table.
 
-#
 
-# Disabling Keys
+## Disabling Keys
+
 
 You can temporarily disable updating of non unique indexes. This is mostly
 useful when there are zero (or very few) rows in the table into which you are
 inserting data.
+
 
 ```
 ALTER TABLE table_name DISABLE KEYS;
@@ -36,17 +41,20 @@ ALTER TABLE table_name ENABLE KEYS;
 ```
 
 In many storage engines (at least MyISAM and Aria),
-`ENABLE KEYS` works by scanning through the row data and collecting keys,
+`<code>ENABLE KEYS</code>` works by scanning through the row data and collecting keys,
 sorting them, and then creating the index blocks. This is an order of magnitude
 faster than creating the index one row at a time and it also uses less key
 buffer memory.
 
-**Note:** When you insert into an **empty table** with [INSERT](../../../programming-customizing-mariadb/views/inserting-and-updating-with-views.md) or
+
+**Note:** When you insert into an **empty table** with [INSERT](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) or
 [LOAD DATA](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), MariaDB **automatically** does a
-[DISABLE KEYS](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) before and an [ENABLE KEYS](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)
+[DISABLE KEYS](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) before and an [ENABLE KEYS](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)
 afterwards.
 
-When inserting big amounts of data, integrity checks are sensibly time-consuming. It is possible to disable the `UNIQUE` indexes and the [foreign keys](../optimization-and-indexes/foreign-keys.md) checks using the [unique_checks](../system-variables/server-system-variables.md#unique_checks) and the [foreign_key_checks](../system-variables/server-system-variables.md#foreign_key_checks) system variables:
+
+When inserting big amounts of data, integrity checks are sensibly time-consuming. It is possible to disable the `<code>UNIQUE</code>` indexes and the [foreign keys](../optimization-and-indexes/foreign-keys.md) checks using the [unique_checks](../system-variables/server-system-variables.md#unique_checks) and the [foreign_key_checks](../system-variables/server-system-variables.md#foreign_key_checks) system variables:
+
 
 ```
 SET @@session.unique_checks = 0;
@@ -55,20 +63,23 @@ SET @@session.foreign_key_checks = 0;
 
 For InnoDB tables, the [AUTO_INCREMENT lock mode](../../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) can be temporarily set to 2, which is the fastest setting:
 
+
 ```
 SET @@global.innodb_autoinc_lock_mode = 2;
 ```
 
-Also, if the table has [INSERT triggers](../../../programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) or [PERSISTENT](/en/virtual-columns/) columns, you may want to drop them, insert all data, and recreate them.
+Also, if the table has [INSERT triggers](../../../programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) or [PERSISTENT](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) columns, you may want to drop them, insert all data, and recreate them.
 
-#
 
-# Loading Text Files
+## Loading Text Files
+
 
 The **fastest way** to insert data into MariaDB is through the
 [LOAD DATA INFILE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) command.
 
+
 The simplest form of the command is:
+
 
 ```
 LOAD DATA INFILE 'file_name' INTO TABLE table_name;
@@ -77,6 +88,7 @@ LOAD DATA INFILE 'file_name' INTO TABLE table_name;
 You can also read a file locally on the machine where the client is running by
 using:
 
+
 ```
 LOAD DATA LOCAL INFILE 'file_name' INTO TABLE table_name;
 ```
@@ -84,7 +96,10 @@ LOAD DATA LOCAL INFILE 'file_name' INTO TABLE table_name;
 This is not as fast as reading the file on the server side, but the difference
 is not that big.
 
-`LOAD DATA INFILE` is very fast because:
+
+`<code>LOAD DATA INFILE</code>` is very fast because:
+
+
 1. there is no parsing of SQL.
 1. data is read in big blocks.
 1. if the table is empty at the beginning of the operation, all non unique
@@ -95,19 +110,22 @@ is not that big.
  inserted data in the transaction log because one can rollback the operation
  by just doing a [TRUNCATE](../../../../reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md) on the table.
 
+
 Because of the above speed advantages there are many cases, when you need to
 insert **many** rows at a time, where it may be faster to create a file
-locally, add the rows there, and then use `LOAD DATA INFILE` to load them;
-compared to using `INSERT` to insert the rows.
+locally, add the rows there, and then use `<code>LOAD DATA INFILE</code>` to load them;
+compared to using `<code>INSERT</code>` to insert the rows.
 
-You will also get [progress reporting](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/mariadb-internals-documentation/using-mariadb-with-your-programs-api/progress-reporting) for
-`LOAD DATA INFILE`.
 
-#
+You will also get [progress reporting](../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for
+`<code>LOAD DATA INFILE</code>`.
 
-## mariadb-import
 
-You can import many files in parallel with [mariadb-import](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (`mysqlimport` before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105)). For example:
+### mariadb-import
+
+
+You can import many files in parallel with [mariadb-import](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (`<code>mysqlimport</code>` before [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)). For example:
+
 
 ```
 mariadb-import --use-threads=10 database text-file-name [text-file-name...]
@@ -116,18 +134,18 @@ mariadb-import --use-threads=10 database text-file-name [text-file-name...]
 Internally [mariadb-import](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) uses [LOAD DATA INFILE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) to read
 in the data.
 
-#
 
-# Inserting Data with INSERT Statements
+## Inserting Data with INSERT Statements
 
-#
 
-## Using Big Transactions
+### Using Big Transactions
 
-When doing many inserts in a row, you should wrap them with `BEGIN / END` to
+
+When doing many inserts in a row, you should wrap them with `<code>BEGIN / END</code>` to
 avoid doing a full transaction (which includes a disk sync) for every row. For
 example, doing a begin/end every 1000 inserts will speed up your inserts by
 almost 1000 times.
+
 
 ```
 BEGIN;
@@ -141,14 +159,15 @@ END;
 ...
 ```
 
-The reason why you may want to have many `BEGIN/END` statements instead of
+The reason why you may want to have many `<code>BEGIN/END</code>` statements instead of
 just one is that the former will use up less transaction log space.
 
-#
 
-## Multi-Value Inserts
+### Multi-Value Inserts
+
 
 You can insert many rows at once with multi-value row inserts:
+
 
 ```
 INSERT INTO table_name values(1,"row 1"),(2, "row 2"),...;
@@ -157,12 +176,13 @@ INSERT INTO table_name values(1,"row 1"),(2, "row 2"),...;
 The limit for how much data you can have in one statement is controlled by the
 [max_allowed_packet](../system-variables/server-system-variables.md#max_allowed_packet) server variable.
 
-#
 
-# Inserting Data Into Several Tables at Once
+## Inserting Data Into Several Tables at Once
+
 
 If you need to insert data into several tables at once, the best way to do so
 is to enable multi-row statements and send many inserts to the server at once:
+
 
 ```
 INSERT INTO table_name_1 (auto_increment_key, data) VALUES (NULL,"row 1");
@@ -170,12 +190,15 @@ INSERT INTO table_name_2 (auto_increment, reference, data) values (NULL, LAST_IN
 ```
 
 [LAST_INSERT_ID()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md) is a function that returns the last
-`auto_increment` value inserted.
+`<code>auto_increment</code>` value inserted.
 
-By default, the command line `mariadb` client will send the above as
+
+By default, the command line `<code>mariadb</code>` client will send the above as
 multiple statements.
 
-To test this in the `mariadb` client you have to do:
+
+To test this in the `<code>mariadb</code>` client you have to do:
+
 
 ```
 delimiter ;;
@@ -184,11 +207,12 @@ delimiter ;
 ```
 
 **Note:** for multi-query statements to work, your client must specify the
-`CLIENT_MULTI_STATEMENTS` flag to `mysql_real_connect()`.
+`<code>CLIENT_MULTI_STATEMENTS</code>` flag to `<code>mysql_real_connect()</code>`.
 
-#
 
-# Server Variables That Can be Used to Tune Insert Speed
+## Server Variables That Can be Used to Tune Insert Speed
+
+
 
 | Option | Description |
 | --- | --- |
@@ -198,5 +222,8 @@ delimiter ;
 | [max_allowed_packet](../system-variables/server-system-variables.md#max_allowed_packet) | Increase this to allow bigger multi-insert statements |
 | [read_buffer_size](../system-variables/server-system-variables.md#read_buffer_size) | Read block size when reading a file with LOAD DATA |
 
+
+
 See [Server System Variables](../system-variables/server-system-variables.md) for the full list of server
 variables.
+

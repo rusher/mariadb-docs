@@ -1,20 +1,22 @@
+
 # my_print_defaults
 
-`my_print_defaults` displays the options from option groups of option files. It is useful to see which options a particular tool will use.
+`<code>my_print_defaults</code>` displays the options from option groups of option files. It is useful to see which options a particular tool will use.
+
 
 Output is one option per line, displayed in the form in which they would be specified on the command line.
 
-#
 
-# Usage
+## Usage
+
 
 ```
 my_print_defaults [OPTIONS] [groups]
 ```
 
-#
+## Options
 
-# Options
+
 
 | Option | Description |
 | --- | --- |
@@ -23,27 +25,28 @@ my_print_defaults [OPTIONS] [groups]
 | -
 
 # ,--debug[=#] | In debug versions, write a debugging log. A typical debug_options string is d:t:o,file_name. The default is d:t:o,/tmp/my_print_defaults.trace. |
-
-| -c, --defaults-file=name | Like --config-file, except: if first option, then read this file only, do not read global or per-user config files; should be the first option. Removed in [MariaDB 10.8.0](/en/mariadb-1080-release-notes/). |
-| -e, --defaults-extra-file=name | Read this file after the global config file and before the config file in the users home directory; should be the first option. Removed in [MariaDB 10.8.0](/en/mariadb-1080-release-notes/). |
-| -g, --defaults-group-suffix=name | In addition to the given groups, read also groups with this suffix. Removed in [MariaDB 10.8.0](/en/mariadb-1080-release-notes/). |
+| -c, --defaults-file=name | Like --config-file, except: if first option, then read this file only, do not read global or per-user config files; should be the first option. Removed in [MariaDB 10.8.0](../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes.md). |
+| -e, --defaults-extra-file=name | Read this file after the global config file and before the config file in the users home directory; should be the first option. Removed in [MariaDB 10.8.0](../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes.md). |
+| -g, --defaults-group-suffix=name | In addition to the given groups, read also groups with this suffix. Removed in [MariaDB 10.8.0](../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes.md). |
 | -e, --extra-file=name | Deprecated. Synonym for --defaults-extra-file. |
-| --mariadbd | Read the same set of groups that the [mariadbd](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) binary does. From [MariaDB 10.11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-1011-series/mariadb-10-11-3-release-notes). |
+| --mariadbd | Read the same set of groups that the [mariadbd](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) binary does. From [MariaDB 10.11.3](../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-3-release-notes.md). |
 | --mysqld | Read the same set of groups that the [mysqld](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) binary does. |
 | -n, --no-defaults | Return an empty string (useful for scripts). |
 | ?, --help | Display this help message and exit. |
 | -v, --verbose | Increase the output level. |
 | -V, --version | Output version information and exit. |
 
-#
 
-# Examples
+
+## Examples
+
 
 ```
 my_print_defaults --defaults-file=example.cnf client client-server mysql
 ```
 
 [mariadb-check](mariadb-check.md) reads from the [mariadb-check] and [client] sections, so the following would display the mariadb-check options.
+
 
 ```
 my_print_defaults mariadb-check client

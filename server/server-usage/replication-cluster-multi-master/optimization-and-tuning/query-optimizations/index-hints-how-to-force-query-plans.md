@@ -1,3 +1,4 @@
+
 # Index Hints: How to Force Query Plans
 
 The optimizer is largely cost-based and will try to choose the optimal plan for
@@ -5,19 +6,23 @@ any query. However in some cases it does not have enough information to choose
 a perfect plan and in these cases you may have to provide hints to force the
 optimizer to use another plan.
 
-You can examine the query plan for a [SELECT](../../standard-replication/selectively-skipping-replication-of-binlog-events.md) by writing
-[EXPLAIN](../../../../clients-and-utilities/explain-analyzer.md) before the statement. [SHOW EXPLAIN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-explain.md) shows the output of a running query. In some cases, its output can be closer to reality than `EXPLAIN`.
+
+You can examine the query plan for a [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) by writing
+[EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) before the statement. [SHOW EXPLAIN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-explain.md) shows the output of a running query. In some cases, its output can be closer to reality than `<code>EXPLAIN</code>`.
+
 
 For the following queries, we will use the world database for
 the examples.
 
-#
 
-# Setting up the World Example Database
+## Setting up the World Example Database
 
-Download it from [ftp://ftp.askmonty.org/public/world.sql.gz](ftp://ftp.askmonty.org/public/world.sql.gz)
+
+Download it from [world.sql.gz](https://mariadb.com/kb/en/ftp://ftp.askmonty.org/public/world.sql.gz)
+
 
 Install it with:
+
 
 ```
 mariadb-admin create world
@@ -26,21 +31,23 @@ zcat world.sql.gz | ../client/mysql world
 
 or
 
+
 ```
 mariadb-admin create world
 gunzip world.sql.gz
 ../client/mysql world < world.sql
 ```
 
-#
+## Forcing Join Order
 
-# Forcing Join Order
 
-You can force the join order by using [STRAIGHT_JOIN](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) either in
-the [SELECT](../../standard-replication/selectively-skipping-replication-of-binlog-events.md) or [JOIN](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) part.
+You can force the join order by using [STRAIGHT_JOIN](../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/joining-tables-with-join-clauses.md) either in
+the [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) or [JOIN](../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/joining-tables-with-join-clauses.md) part.
+
 
 The simplest way to force the join order is to put the tables in the correct
-order in the `FROM` clause and use `SELECT STRAIGHT_JOIN` like so:
+order in the `<code>FROM</code>` clause and use `<code>SELECT STRAIGHT_JOIN</code>` like so:
+
 
 ```
 SELECT STRAIGHT_JOIN SUM(City.Population) FROM Country,City WHERE
@@ -48,20 +55,24 @@ City.CountryCode=Country.Code AND Country.HeadOfState="Volodymyr Zelenskyy";
 ```
 
 If you only want to force the join order for a few tables, use
-`STRAIGHT_JOIN` in the `FROM` clause. When this is done, only tables
-connected with `STRAIGHT_JOIN` will have their order forced. For example:
+`<code>STRAIGHT_JOIN</code>` in the `<code>FROM</code>` clause. When this is done, only tables
+connected with `<code>STRAIGHT_JOIN</code>` will have their order forced. For example:
+
 
 ```
 SELECT SUM(City.Population) FROM Country STRAIGHT_JOIN City WHERE
 City.CountryCode=Country.Code AND Country.HeadOfState="Volodymyr Zelenskyy";
 ```
 
-In both of the above cases `Country` will be scanned first and for each
-matching country (one in this case) all rows in `City` will be checked for a
+In both of the above cases `<code>Country</code>` will be scanned first and for each
+matching country (one in this case) all rows in `<code>City</code>` will be checked for a
 match. As there is only one matching country this will be faster than the
 original query.
 
-The output of [EXPLAIN](../../../../clients-and-utilities/explain-analyzer.md) for the above cases is:
+
+The output of [EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) for the above cases is:
+
+
 
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -69,37 +80,44 @@ The output of [EXPLAIN](../../../../clients-and-utilities/explain-analyzer.md) f
 | 1 | SIMPLE | Country | ALL | PRIMARY | NULL | NULL | NULL | 239 | Using where |
 | 1 | SIMPLE | City | ALL | NULL | NULL | NULL | NULL | 4079 | Using where; Using join buffer (flat, BNL join) |
 
-This is one of the few cases where `ALL` is ok, as the scan of the
-`Country` table will only find one matching row.
 
-#
 
-# Forcing Usage of a Specific Index for the WHERE Clause
+This is one of the few cases where `<code>ALL</code>` is ok, as the scan of the
+`<code>Country</code>` table will only find one matching row.
+
+
+## Forcing Usage of a Specific Index for the WHERE Clause
+
 
 In some cases the optimizer may choose a non-optimal index or it may choose to
 not use an index at all, even if some index could theoretically be used.
+
 
 In these cases you have the option to either tell the optimizer to only use a
 limited set of indexes, ignore one or more indexes, or force the usage of some
 particular index.
 
-#
 
-## USE INDEX: Use a Limited Set of Indexes
+### USE INDEX: Use a Limited Set of Indexes
+
 
 You can limit which indexes are considered with the [USE INDEX](use-index.md)
 option.
+
 
 ```
 USE INDEX [{FOR {JOIN|ORDER BY|GROUP BY}] ([index_list])
 ```
 
-The default is '`FOR JOIN`', which means that the hint only affects how the
-`WHERE` clause is optimized.
+The default is '`<code>FOR JOIN</code>`', which means that the hint only affects how the
+`<code>WHERE</code>` clause is optimized.
 
-`USE INDEX` is used after the table name in the `FROM` clause.
+
+`<code>USE INDEX</code>` is used after the table name in the `<code>FROM</code>` clause.
+
 
 Example:
+
 
 ```
 CREATE INDEX Name ON City (Name);
@@ -110,26 +128,32 @@ WHERE name="Helsingborg" AND countrycode="SWE";
 
 This produces:
 
+
+
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
 | 1 | SIMPLE | City | ref | CountryCode | CountryCode | 3 | const | 14 | Using where |
 
-If we had not used [USE INDEX](use-index.md), the `Name` index would have been in
-`possible keys`.
 
-#
 
-## IGNORE INDEX: Don't Use a Particular Index
+If we had not used [USE INDEX](use-index.md), the `<code>Name</code>` index would have been in
+`<code>possible keys</code>`.
+
+
+### IGNORE INDEX: Don't Use a Particular Index
+
 
 You can tell the optimizer to not consider some particular index with the
 [IGNORE INDEX](ignore-index.md) option.
+
 
 ```
 IGNORE INDEX [{FOR {JOIN|ORDER BY|GROUP BY}] ([index_list])
 ```
 
-This is used after the table name in the `FROM` clause:
+This is used after the table name in the `<code>FROM</code>` clause:
+
 
 ```
 CREATE INDEX Name ON City (Name);
@@ -140,25 +164,31 @@ WHERE name="Helsingborg" AND countrycode="SWE";
 
 This produces:
 
+
+
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
 | 1 | SIMPLE | City | ref | CountryCode | CountryCode | 3 | const | 14 | Using where |
 
-The benefit of using `IGNORE_INDEX` instead of `USE_INDEX` is that it will
+
+
+The benefit of using `<code>IGNORE_INDEX</code>` instead of `<code>USE_INDEX</code>` is that it will
 not disable a new index which you may add later.
+
 
 Also see [Ignored Indexes](../optimization-and-indexes/ignored-indexes.md) for an option to specify in the index definition that indexes should be ignored.
 
-#
 
-## FORCE INDEX: Forcing an Index
+### FORCE INDEX: Forcing an Index
+
 
 [Forcing an index](force-index.md) to be used is mostly useful when the optimizer
 decides to do a table scan even if you know that using an index would
 be better. (The optimizer could decide to do a table scan even if there is
 an available index when it believes that most or all rows will match and
 it can avoid the overhead of using the index).
+
 
 ```
 CREATE INDEX Name ON City (Name);
@@ -168,39 +198,47 @@ WHERE name>="A" and CountryCode >="A";
 
 This produces:
 
+
+
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
 | 1 | SIMPLE | City | range | Name | Name | 35 | NULL | 4079 | Using where |
 
-`FORCE_INDEX` works by only considering the given indexes (like with
-`USE_INDEX`) but in addition it tells the optimizer to regard a table scan as
+
+
+`<code>FORCE_INDEX</code>` works by only considering the given indexes (like with
+`<code>USE_INDEX</code>`) but in addition it tells the optimizer to regard a table scan as
 something very expensive. However if none of the 'forced' indexes can be used,
 then a table scan will be used anyway.
 
-#
 
-## Index Prefixes
+### Index Prefixes
+
 
 When using index hints (USE, FORCE or [IGNORE INDEX](ignore-index.md)), the index name value can also be an unambiguous prefix of an index name.
 
-#
 
-# Forcing an Index to be Used for ORDER BY or GROUP BY
+## Forcing an Index to be Used for ORDER BY or GROUP BY
+
 
 The optimizer will try to use indexes to resolve [ORDER BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) and [GROUP BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md).
 
+
 You can use [USE INDEX](use-index.md), [IGNORE INDEX](ignore-index.md) and
-[FORCE INDEX](force-index.md) as in the `WHERE` clause above
+[FORCE INDEX](force-index.md) as in the `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` clause above
 to ensure that some specific index used:
+
 
 ```
 USE INDEX [{FOR {JOIN|ORDER BY|GROUP BY}] ([index_list])
 ```
 
-This is used after the table name in the `FROM` clause.
+This is used after the table name in the `<code class="highlight fixed" style="white-space:pre-wrap">FROM</code>` clause.
+
 
 Example:
+
 
 ```
 CREATE INDEX Name ON City (Name);
@@ -211,67 +249,78 @@ WHERE population >= 10000000 GROUP BY Name;
 
 This produces:
 
+
+
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
 | 1 | SIMPLE | City | index | NULL | Name | 35 | NULL | 4079 | Using where |
 
+
+
 Without the [FORCE INDEX](force-index.md) option we would have
-'`Using where; Using temporary; Using filesort`' in the
+'`<code class="highlight fixed" style="white-space:pre-wrap">Using where; Using temporary; Using filesort</code>`' in the
 'Extra' column, which means that the optimizer would created a temporary
 table and sort it.
 
-#
 
-## Help the Optimizer Optimize GROUP BY and ORDER BY
+### Help the Optimizer Optimize GROUP BY and ORDER BY
+
 
 The optimizer uses several strategies to optimize [GROUP BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md)
 and [ORDER BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md):
 
+
 * Resolve with an index:
 
- * Scan the table in index order and output data as we go. (This only works if
+  * Scan the table in index order and output data as we go. (This only works if
  the [ORDER BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) / [GROUP BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) can be
  resolved by an index after constant propagation is done).
 
+
 * Filesort:
 
- * Scan the table to be sorted and collect the sort keys in a temporary file.
- * Sort the keys + reference to row (with filesort)
- * Scan the table in sorted order
+  * Scan the table to be sorted and collect the sort keys in a temporary file.
+  * Sort the keys + reference to row (with filesort)
+  * Scan the table in sorted order
+
 
 * Use a temporary table for [ORDER BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md):
 
- * Create a temporary (in memory) table for the 'to-be-sorted' data. (If this
- gets bigger than `max_heap_table_size` or contains blobs
- then an [Aria](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-enabling-encryption.md) or [MyISAM](../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) disk based table will be used)
- * Sort the keys + reference to row (with filesort)
- * Scan the table in sorted order
+  * Create a temporary (in memory) table for the 'to-be-sorted' data. (If this
+ gets bigger than `<code class="highlight fixed" style="white-space:pre-wrap">max_heap_table_size</code>` or contains blobs
+ then an [Aria](../../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) or [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) disk based table will be used)
+  * Sort the keys + reference to row (with filesort)
+  * Scan the table in sorted order
+
 
 A temporary table will always be used if the fields which will be sorted are
-not from the first table in the [JOIN](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) order.
+not from the first table in the [JOIN](../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/joining-tables-with-join-clauses.md) order.
+
 
 * Use a temporary table for [GROUP BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md):
 
- * Create a temporary table to hold the [GROUP BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) result with
+  * Create a temporary table to hold the [GROUP BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) result with
  an index that matches the [GROUP BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) fields.
- * Produce a result row
- * If a row with the [GROUP BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) key exists in the temporary
+  * Produce a result row
+  * If a row with the [GROUP BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) key exists in the temporary
  table, add the new result row to it. If not, create a new row.
- * Before sending the results to the user, sort the rows with filesort to get
+  * Before sending the results to the user, sort the rows with filesort to get
  the results in the [GROUP BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) order.
 
-#
 
-## Forcing/Disallowing TemporaryTables to be Used for GROUP BY:
+### Forcing/Disallowing TemporaryTables to be Used for GROUP BY:
+
 
 Using an in-memory table (as described above) is usually the fastest option for
 [GROUP BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) if the result set is small. It is not optimal if
 the result set is very big. You can tell the optimizer this by using
-`SELECT SQL_SMALL_RESULT`
-or `SELECT SQL_BIG_RESULT`.
+`<code class="highlight fixed" style="white-space:pre-wrap">SELECT SQL_SMALL_RESULT</code>`
+or `<code class="highlight fixed" style="white-space:pre-wrap">SELECT SQL_BIG_RESULT</code>`.
+
 
 For example:
+
 
 ```
 EXPLAIN SELECT SQL_SMALL_RESULT Name,Count(*) AS Cities FROM City GROUP BY Name HAVING Cities > 2;
@@ -279,12 +328,17 @@ EXPLAIN SELECT SQL_SMALL_RESULT Name,Count(*) AS Cities FROM City GROUP BY Name 
 
 produces:
 
+
+
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
 | 1 | SIMPLE | City | ALL | NULL | NULL | NULL | NULL | 4079 | Using temporary; Using filesort |
 
+
+
 while:
+
 
 ```
 EXPLAIN SELECT SQL_BIG_RESULT Name,Count(*) AS Cities FROM City
@@ -293,22 +347,28 @@ GROUP BY Name HAVING Cities > 2;
 
 produces:
 
+
+
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
 | 1 | SIMPLE | City | ALL | NULL | NULL | NULL | NULL | 4079 | Using filesort |
 
-The difference is that with `SQL_SMALL_RESULT` a
+
+
+The difference is that with `<code class="highlight fixed" style="white-space:pre-wrap">SQL_SMALL_RESULT</code>` a
 temporary table is used.
 
-#
 
-# Forcing Usage of Temporary Tables
+## Forcing Usage of Temporary Tables
+
 
 In some cases you may want to force the use of a temporary table for the result
 to free up the table/row locks for the used tables as quickly as possible.
 
-You can do this with the `SQL_BUFFER_RESULT` option:
+
+You can do this with the `<code class="highlight fixed" style="white-space:pre-wrap">SQL_BUFFER_RESULT</code>` option:
+
 
 ```
 CREATE INDEX Name ON City (Name);
@@ -318,31 +378,37 @@ GROUP BY Name HAVING Cities > 2;
 
 This produces:
 
+
+
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
 | 1 | SIMPLE | City | index | NULL | Name | 35 | NULL | 4079 | Using index; Using temporary |
 
-Without `SQL_BUFFER_RESULT`, the above query would not use a
+
+
+Without `<code class="highlight fixed" style="white-space:pre-wrap">SQL_BUFFER_RESULT</code>`, the above query would not use a
 temporary table for the result set.
 
-#
 
-# Optimizer Switch
+## Optimizer Switch
 
-In [MariaDB 5.3](/en/what-is-mariadb-53/) we added an [optimizer switch](../system-variables/server-system-variables.md#optimizer_switch)
+
+In [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) we added an [optimizer switch](../system-variables/server-system-variables.md#optimizer_switch)
 which allows you to specify which algorithms will be considered when optimizing
 a query.
 
-See the [optimizer](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/mariadb-releases/compatibility-differences/optimizer-feature-comparison-matrix) section for more information about the different
+
+See the [optimizer](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/optimizer-and-performance-tuning-videos.md) section for more information about the different
 algorithms which are used.
 
-#
 
-# See Also
+## See Also
+
 
 * [FORCE INDEX](force-index.md)
 * [USE INDEX](use-index.md)
 * [IGNORE INDEX](ignore-index.md)
 * [GROUP BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md)
 * [Ignored Indexes](../optimization-and-indexes/ignored-indexes.md)
+

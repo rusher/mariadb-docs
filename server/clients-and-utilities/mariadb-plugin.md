@@ -1,35 +1,44 @@
+
 # mariadb-plugin
 
-`mariadb-plugin` is a tool for enabling or disabling [plugins](/en/mariadb-plugins/).
+`<code>mariadb-plugin</code>` is a tool for enabling or disabling [plugins](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md).
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105), the client was called `mysql_plugin`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
-It is a commandline alternative to the [INSTALL PLUGIN](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) and [UNINSTALL PLUGIN](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) statements, and the `--plugin-load option` to [mariadbd](/en/mariadbd-options-full-list/).
+Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysql_plugin</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
-`mariadb-plugin` must be run while the server is offline, and works by adding or removing rows from the [mysql.plugin](/en/mysqlplugin-table/) table.
 
-`mariadb-plugin` basically has two use cases:
+It is a commandline alternative to the [INSTALL PLUGIN](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) and [UNINSTALL PLUGIN](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) statements, and the `<code>--plugin-load option</code>` to [mariadbd](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
+
+
+`<code>mariadb-plugin</code>` must be run while the server is offline, and works by adding or removing rows from the [mysql.plugin](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+
+
+`<code>mariadb-plugin</code>` basically has two use cases:
+
 
 * adding a plugin even before the first real server startup
 * removing a plugin that crashes the server on startup
 
-For the install use case, adding a [plugin-load-add](../reference/plugins/plugin-overview.md#installing-a-plugin-with-plugin-load-add) entry to `my.cnf` or in a separate include option file, is probably a better alternative. In case of a plugin loaded via a `mysql.plugin` crashing the server, uninstalling the plugin with the help of `mariadb-plugin` can be the only viable action though.
 
-#
+For the install use case, adding a [plugin-load-add](../reference/plugins/plugin-overview.md#installing-a-plugin-with-plugin-load-add) entry to `<code>my.cnf</code>` or in a separate include option file, is probably a better alternative. In case of a plugin loaded via a `<code>mysql.plugin</code>` crashing the server, uninstalling the plugin with the help of `<code>mariadb-plugin</code>` can be the only viable action though.
 
-# Usage
+
+## Usage
+
 
 ```
 mariadb-plugin [options] <plugin> ENABLE|DISABLE
 ```
 
-`mariadb-plugin` expects to find a configuration file that indicates how to configure the plugins. The configuration file is by default the same name as the plugin, with a `.ini` extension. For example:
+`<code>mariadb-plugin</code>` expects to find a configuration file that indicates how to configure the plugins. The configuration file is by default the same name as the plugin, with a `<code>.ini</code>` extension. For example:
+
 
 ```
 mariadb-plugin crazyplugins ENABLE
 ```
 
-Here, `mariadb-plugin` will look for a file called `crazyplugins.ini`
+Here, `<code>mariadb-plugin</code>` will look for a file called `<code>crazyplugins.ini</code>`
+
 
 ```
 crazyplugins
@@ -38,13 +47,15 @@ crazyplugin2
 crazyplugin3
 ```
 
-The first line should contain the name of the library object file, with no extension. The other lines list the names of the components. Each value should be on a separate line, and the `#` character at the start of the line indicates a comment.
+The first line should contain the name of the library object file, with no extension. The other lines list the names of the components. Each value should be on a separate line, and the `<code>#</code>` character at the start of the line indicates a comment.
 
-#
 
-# Options
+## Options
 
-The following options can be specified on the command line, while some can be specified in the `[mysqld]` group of any option file. For options specified in a `[mysqld]` group, only the `--basedir`, `--datadir`, and `--plugin-dir` options can be used - the rest are ignored.
+
+The following options can be specified on the command line, while some can be specified in the `<code>[mysqld]</code>` group of any option file. For options specified in a `<code>[mysqld]</code>` group, only the `<code>--basedir</code>`, `<code>--datadir</code>`, and `<code>--plugin-dir</code>` options can be used - the rest are ignored.
+
+
 
 | Option | Description |
 | --- | --- |
@@ -61,9 +72,10 @@ The following options can be specified on the command line, while some can be sp
 | -v, --verbose | More verbose output; you can use this multiple times to get even more verbose output. |
 | -V, --version | Output version information and exit. |
 
-#
 
-# See Also
+
+## See Also
+
 
 * [List of Plugins](../reference/plugins/information-on-plugins/list-of-plugins.md)
 * [Plugin Overview](../reference/plugins/plugin-overview.md)
@@ -72,3 +84,4 @@ The following options can be specified on the command line, while some can be sp
 * [INSTALL SONAME](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)
 * [UNINSTALL PLUGIN](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)
 * [UNINSTALL SONAME](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)
+

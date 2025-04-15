@@ -1,10 +1,11 @@
+
 # FOR
 
-#
+## Syntax
 
-# Syntax
 
 Integer range FOR loop:
+
 
 ```
 [begin_label:]
@@ -15,6 +16,7 @@ END FOR [ end_label ]
 
 Explicit cursor FOR loop
 
+
 ```
 [begin_label:]
 FOR record_name IN cursor_name [ ( cursor_actual_parameter_list)]
@@ -22,17 +24,19 @@ DO statement_list
 END FOR [ end_label ]
 ```
 
-Explicit cursor FOR loop ([Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/mariadb-releases/compatibility-differences/sql_modeoracle))
+Explicit cursor FOR loop ([Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md))
+
 
 ```
 [begin_label:]
 FOR record_name IN cursor_name [ ( cursor_actual_parameter_list)]
 LOOP
- statement_list
+  statement_list
 END LOOP [ end_label ]
 ```
 
 Implicit cursor FOR loop
+
 
 ```
 [begin_label:]
@@ -41,21 +45,24 @@ DO statement_list
 END FOR [ end_label ]
 ```
 
-#
 
-# Description
+## Description
+
 
 FOR loops allow code to be executed a fixed number of times.
 
+
 In an integer range FOR loop, MariaDB will compare the lower bound and upper bound values, and assign the lower bound value to a counter. If REVERSE is not specified, and the upper bound value is greater than or equal to the counter, the counter will be incremented and the statement will continue, after which the loop is entered again. If the upper bound value is greater than the counter, the loop will be exited.
+
 
 If REVERSE is specified, the counter is decremented, and the upper bound value needs to be less than or equal for the loop to continue.
 
-#
 
-# Examples
+## Examples
+
 
 Intger range FOR loop:
+
 
 ```
 CREATE TABLE t1 (a INT);
@@ -64,7 +71,7 @@ DELIMITER //
 
 FOR i IN 1..3
 DO
- INSERT INTO t1 VALUES (i);
+  INSERT INTO t1 VALUES (i);
 END FOR;
 //
 
@@ -72,46 +79,49 @@ DELIMITER ;
 
 SELECT * FROM t1;
 +------+
-| a |
+| a    |
 +------+
-| 1 |
-| 2 |
-| 3 |
+|    1 |
+|    2 |
+|    3 |
 +------+
 ```
 
 REVERSE integer range FOR loop:
+
 
 ```
 CREATE OR REPLACE TABLE t1 (a INT);
 
 DELIMITER //
 FOR i IN REVERSE 4..12
- DO
- INSERT INTO t1 VALUES (i);
+    DO
+    INSERT INTO t1 VALUES (i);
 END FOR;
 //
 Query OK, 9 rows affected (0.422 sec)
+
 
 DELIMITER ;
 
 SELECT * FROM t1;
 +------+
-| a |
+| a    |
 +------+
-| 12 |
-| 11 |
-| 10 |
-| 9 |
-| 8 |
-| 7 |
-| 6 |
-| 5 |
-| 4 |
+|   12 |
+|   11 |
+|   10 |
+|    9 |
+|    8 |
+|    7 |
+|    6 |
+|    5 |
+|    4 |
 +------+
 ```
 
-Explicit cursor in [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/mariadb-releases/compatibility-differences/sql_modeoracle):
+Explicit cursor in [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md):
+
 
 ```
 SET sql_mode=ORACLE;
@@ -125,13 +135,13 @@ INSERT INTO t1 VALUES (12,'b2');
 DELIMITER //
 
 CREATE OR REPLACE PROCEDURE p1(pa INT) AS 
- CURSOR cur(va INT) IS
- SELECT a, b FROM t1 WHERE a=va;
+  CURSOR cur(va INT) IS
+    SELECT a, b FROM t1 WHERE a=va;
 BEGIN
- FOR rec IN cur(pa)
- LOOP
- SELECT rec.a, rec.b;
- END LOOP;
+  FOR rec IN cur(pa)
+  LOOP
+    SELECT rec.a, rec.b;
+  END LOOP;
 END;
 //
 
@@ -141,29 +151,29 @@ CALL p1(10);
 +-------+-------+
 | rec.a | rec.b |
 +-------+-------+
-| 10 | b0 |
+|    10 | b0    |
 +-------+-------+
 
 CALL p1(11);
 +-------+-------+
 | rec.a | rec.b |
 +-------+-------+
-| 11 | b1 |
+|    11 | b1    |
 +-------+-------+
 
 CALL p1(12);
 +-------+-------+
 | rec.a | rec.b |
 +-------+-------+
-| 12 | b2 |
+|    12 | b2    |
 +-------+-------+
 
 CALL p1(13);
 Query OK, 0 rows affected (0.000 sec)
 ```
 
-#
+## See Also
 
-# See Also
 
 * [LOOP](loop.md)
+

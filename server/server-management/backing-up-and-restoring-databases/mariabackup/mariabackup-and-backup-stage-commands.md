@@ -1,184 +1,196 @@
+
 # Mariabackup and BACKUP STAGE Commands
 
-The `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands are a set of commands to make it possible to make an efficient external backup tool. How Mariabackup uses these commands depends on whether you are using the version that is bundled with MariaDB Community Server or the version that is bundled with [MariaDB Enterprise Server](/kb/en/mariadb-enterprise-server/).
 
-#
+The `<code>[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)</code>` commands are a set of commands to make it possible to make an efficient external backup tool. How Mariabackup uses these commands depends on whether you are using the version that is bundled with MariaDB Community Server or the version that is bundled with [MariaDB Enterprise Server](../../../../release-notes/mariadb-enterprise-server/mariadb-enterprise-server-10-6/README.md).
 
-# Mariabackup and `BACKUP STAGE` Commands in MariaDB Community Server
 
-The `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands are supported. However, the version of Mariabackup that is bundled with MariaDB Community Server does not yet use the `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands in the most efficient way. Mariabackup simply executes the following `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands to lock the database:
+## Mariabackup and `<code>BACKUP STAGE</code>` Commands in MariaDB Community Server
+
+
+The `<code>[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)</code>` commands are supported. However, the version of Mariabackup that is bundled with MariaDB Community Server does not yet use the `<code>[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)</code>` commands in the most efficient way. Mariabackup simply executes the following `<code>[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)</code>` commands to lock the database:
+
 
 ```
 BACKUP STAGE START;
 BACKUP STAGE BLOCK_COMMIT;
 ```
 
-When the backup is complete, it executes the following `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` command to unlock the database:
+When the backup is complete, it executes the following `<code>[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)</code>` command to unlock the database:
+
 
 ```
 BACKUP STAGE END;
 ```
 
-If you would like to use a version of Mariabackup that uses the `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands in the most efficient way, then your best option is to use [MariaDB Backup](../../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method.md) that is bundled with [MariaDB Enterprise Server](/kb/en/mariadb-enterprise-server/).
+If you would like to use a version of Mariabackup that uses the `<code>[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)</code>` commands in the most efficient way, then your best option is to use [MariaDB Backup](mariabackup-and-backup-stage-commands.md) that is bundled with [MariaDB Enterprise Server](../../../../release-notes/mariadb-enterprise-server/mariadb-enterprise-server-10-6/README.md).
 
-#
 
-## Tasks Performed Prior to `BACKUP STAGE` in MariaDB Community Server
+### Tasks Performed Prior to `<code>BACKUP STAGE</code>` in MariaDB Community Server
+
 
 * Copy some transactional tables.
 
- * [InnoDB](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md) (i.e. `ibdataN` and file extensions `.ibd` and `.isl`)
+  * [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) (i.e. `<code>ibdataN</code>` and file extensions `<code>.ibd</code>` and `<code>.isl</code>`)
 * Copy the tail of some transaction logs.
 
- * The tail of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) (i.e. `ib_logfileN` files) will be copied for [InnoDB](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md) tables.
+  * The tail of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) (i.e. `<code>ib_logfileN</code>` files) will be copied for [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables.
 
-#
 
-## `BACKUP STAGE START` in MariaDB Community Server
+### `<code>BACKUP STAGE START</code>` in MariaDB Community Server
 
-Mariabackup from MariaDB Community Server does not currently perform any tasks in the `START` stage.
 
-#
+Mariabackup from MariaDB Community Server does not currently perform any tasks in the `<code>START</code>` stage.
 
-## `BACKUP STAGE FLUSH` in MariaDB Community Server
 
-Mariabackup from MariaDB Community Server does not currently perform any tasks in the `FLUSH` stage.
+### `<code>BACKUP STAGE FLUSH</code>` in MariaDB Community Server
 
-#
 
-## `BACKUP STAGE BLOCK_DDL` in MariaDB Community Server
+Mariabackup from MariaDB Community Server does not currently perform any tasks in the `<code>FLUSH</code>` stage.
 
-Mariabackup from MariaDB Community Server does not currently perform any tasks in the `BLOCK_DDL` stage.
 
-#
+### `<code>BACKUP STAGE BLOCK_DDL</code>` in MariaDB Community Server
 
-## `BACKUP STAGE BLOCK_COMMIT` in MariaDB Community Server
 
-Mariabackup from MariaDB Community Server performs the following tasks in the `BLOCK_COMMIT` stage:
+Mariabackup from MariaDB Community Server does not currently perform any tasks in the `<code>BLOCK_DDL</code>` stage.
+
+
+### `<code>BACKUP STAGE BLOCK_COMMIT</code>` in MariaDB Community Server
+
+
+Mariabackup from MariaDB Community Server performs the following tasks in the `<code>BLOCK_COMMIT</code>` stage:
+
 
 * Copy other files.
 
- * i.e. file extensions `.frm`, `.isl`, `.TRG`, `.TRN`, `.opt`, `.par`
+  * i.e. file extensions `<code>.frm</code>`, `<code>.isl</code>`, `<code>.TRG</code>`, `<code>.TRN</code>`, `<code>.opt</code>`, `<code>.par</code>`
 * Copy some transactional tables.
 
- * [Aria](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-enabling-encryption.md) (i.e. `aria_log_control` and file extensions `.MAD` and `.MAI`)
+  * [Aria](../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) (i.e. `<code>aria_log_control</code>` and file extensions `<code>.MAD</code>` and `<code>.MAI</code>`)
 * Copy the non-transactional tables.
 
- * [MyISAM](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) (i.e. file extensions `.MYD` and `.MYI`)
- * [MERGE](../../../reference/storage-engines/merge.md) (i.e. file extensions `.MRG`)
- * [ARCHIVE](/kb/en/archive/) (i.e. file extensions `.ARM` and `.ARZ`)
- * [CSV](../../../reference/storage-engines/csv/csv-overview.md) (i.e. file extensions `.CSM` and `.CSV`)
-* Create a [MyRocks](../../../reference/storage-engines/myrocks/myrocks-and-replication.md) checkpoint using the `[rocksdb_create_checkpoint](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint)` system variable.
+  * [MyISAM](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) (i.e. file extensions `<code>.MYD</code>` and `<code>.MYI</code>`)
+  * [MERGE](../../../reference/storage-engines/merge.md) (i.e. file extensions `<code>.MRG</code>`)
+  * [ARCHIVE](../../../reference/storage-engines/archive/README.md) (i.e. file extensions `<code>.ARM</code>` and `<code>.ARZ</code>`)
+  * [CSV](../../../reference/storage-engines/csv/csv-overview.md) (i.e. file extensions `<code>.CSM</code>` and `<code>.CSV</code>`)
+* Create a [MyRocks](../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) checkpoint using the `<code>[rocksdb_create_checkpoint](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint)</code>` system variable.
 * Copy the tail of some transaction logs.
 
- * The tail of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) (i.e. `ib_logfileN` files) will be copied for [InnoDB](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md) tables.
-* Save the [binary log](../../../server-usage/programming-customizing-mariadb/stored-routines/binary-logging-of-stored-routines.md) position to `[xtrabackup_binlog_info](files-created-by-mariabackup.md#xtrabackup_binlog_info)`.
-* Save the [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-use-cases.md) state information to `[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)`.
+  * The tail of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) (i.e. `<code>ib_logfileN</code>` files) will be copied for [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables.
+* Save the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position to `<code>[xtrabackup_binlog_info](files-created-by-mariabackup.md#xtrabackup_binlog_info)</code>`.
+* Save the [Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) state information to `<code>[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)</code>`.
 
-#
 
-## `BACKUP STAGE END` in MariaDB Community Server
+### `<code>BACKUP STAGE END</code>` in MariaDB Community Server
 
-Mariabackup from MariaDB Community Server performs the following tasks in the `END` stage:
 
-* Copy the [MyRocks](../../../reference/storage-engines/myrocks/myrocks-and-replication.md) checkpoint into the backup.
+Mariabackup from MariaDB Community Server performs the following tasks in the `<code>END</code>` stage:
 
-#
 
-# Mariabackup and `BACKUP STAGE` Commands in MariaDB Enterprise Server
+* Copy the [MyRocks](../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) checkpoint into the backup.
 
-The following sections describe how the [MariaDB Backup](../../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method.md) version of Mariabackup that is bundled with [MariaDB Enterprise Server](/kb/en/mariadb-enterprise-server/) uses each `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` command in an efficient way.
 
-#
+## Mariabackup and `<code>BACKUP STAGE</code>` Commands in MariaDB Enterprise Server
 
-## `BACKUP STAGE START` in MariaDB Enterprise Server
 
-Mariabackup from MariaDB Enterprise Server performs the following tasks in the `START` stage:
+The following sections describe how the [MariaDB Backup](mariabackup-and-backup-stage-commands.md) version of Mariabackup that is bundled with [MariaDB Enterprise Server](../../../../release-notes/mariadb-enterprise-server/mariadb-enterprise-server-10-6/README.md) uses each `<code>[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)</code>` command in an efficient way.
+
+
+### `<code>BACKUP STAGE START</code>` in MariaDB Enterprise Server
+
+
+Mariabackup from MariaDB Enterprise Server performs the following tasks in the `<code>START</code>` stage:
+
 
 * Copy all transactional tables.
 
- * [InnoDB](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md) (i.e. `ibdataN` and file extensions `.ibd` and `.isl`)
- * [Aria](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-enabling-encryption.md) (i.e. `aria_log_control` and file extensions `.MAD` and `.MAI`)
+  * [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) (i.e. `<code>ibdataN</code>` and file extensions `<code>.ibd</code>` and `<code>.isl</code>`)
+  * [Aria](../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) (i.e. `<code>aria_log_control</code>` and file extensions `<code>.MAD</code>` and `<code>.MAI</code>`)
 * Copy the tail of all transaction logs.
 
- * The tail of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) (i.e. `ib_logfileN` files) will be copied for [InnoDB](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md) tables.
- * The tail of the Aria redo log (i.e. `aria_log.N` files) will be copied for [Aria](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-enabling-encryption.md) tables.
+  * The tail of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) (i.e. `<code>ib_logfileN</code>` files) will be copied for [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables.
+  * The tail of the Aria redo log (i.e. `<code>aria_log.N</code>` files) will be copied for [Aria](../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables.
 
-#
 
-## `BACKUP STAGE FLUSH` in MariaDB Enterprise Server
+### `<code>BACKUP STAGE FLUSH</code>` in MariaDB Enterprise Server
 
-Mariabackup from MariaDB Enterprise Server performs the following tasks in the `FLUSH` stage:
 
-* Copy all non-transactional tables that are not in use. This list of used tables is found with `[SHOW OPEN TABLES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-open-tables.md)`.
+Mariabackup from MariaDB Enterprise Server performs the following tasks in the `<code>FLUSH</code>` stage:
 
- * [MyISAM](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) (i.e. file extensions `.MYD` and `.MYI`)
- * [MERGE](../../../reference/storage-engines/merge.md) (i.e. file extensions `.MRG`)
- * [ARCHIVE](/kb/en/archive/) (i.e. file extensions `.ARM` and `.ARZ`)
- * [CSV](../../../reference/storage-engines/csv/csv-overview.md) (i.e. file extensions `.CSM` and `.CSV`)
+
+* Copy all non-transactional tables that are not in use. This list of used tables is found with `<code>[SHOW OPEN TABLES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-open-tables.md)</code>`.
+
+  * [MyISAM](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) (i.e. file extensions `<code>.MYD</code>` and `<code>.MYI</code>`)
+  * [MERGE](../../../reference/storage-engines/merge.md) (i.e. file extensions `<code>.MRG</code>`)
+  * [ARCHIVE](../../../reference/storage-engines/archive/README.md) (i.e. file extensions `<code>.ARM</code>` and `<code>.ARZ</code>`)
+  * [CSV](../../../reference/storage-engines/csv/csv-overview.md) (i.e. file extensions `<code>.CSM</code>` and `<code>.CSV</code>`)
 * Copy the tail of all transaction logs.
 
- * The tail of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) (i.e. `ib_logfileN` files) will be copied for [InnoDB](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md) tables.
- * The tail of the Aria redo log (i.e. `aria_log.N` files) will be copied for [Aria](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-enabling-encryption.md) tables.
+  * The tail of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) (i.e. `<code>ib_logfileN</code>` files) will be copied for [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables.
+  * The tail of the Aria redo log (i.e. `<code>aria_log.N</code>` files) will be copied for [Aria](../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables.
 
-#
 
-## `BACKUP STAGE BLOCK_DDL` in MariaDB Enterprise Server
+### `<code>BACKUP STAGE BLOCK_DDL</code>` in MariaDB Enterprise Server
 
-Mariabackup from MariaDB Enterprise Server performs the following tasks in the `BLOCK_DDL` stage:
+
+Mariabackup from MariaDB Enterprise Server performs the following tasks in the `<code>BLOCK_DDL</code>` stage:
+
 
 * Copy other files.
 
- * i.e. file extensions `.frm`, `.isl`, `.TRG`, `.TRN`, `.opt`, `.par`
-* Copy the non-transactional tables that were in use during `BACKUP STAGE FLUSH`.
+  * i.e. file extensions `<code>.frm</code>`, `<code>.isl</code>`, `<code>.TRG</code>`, `<code>.TRN</code>`, `<code>.opt</code>`, `<code>.par</code>`
+* Copy the non-transactional tables that were in use during `<code>BACKUP STAGE FLUSH</code>`.
 
- * [MyISAM](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) (i.e. file extensions `.MYD` and `.MYI`)
- * [MERGE](../../../reference/storage-engines/merge.md) (i.e. file extensions `.MRG`)
- * [ARCHIVE](/kb/en/archive/) (i.e. file extensions `.ARM` and `.ARZ`)
- * [CSV](../../../reference/storage-engines/csv/csv-overview.md) (i.e. file extensions `.CSM` and `.CSV`)
-* Check `ddl.log` for DDL executed before the `BLOCK DDL` stage.
+  * [MyISAM](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) (i.e. file extensions `<code>.MYD</code>` and `<code>.MYI</code>`)
+  * [MERGE](../../../reference/storage-engines/merge.md) (i.e. file extensions `<code>.MRG</code>`)
+  * [ARCHIVE](../../../reference/storage-engines/archive/README.md) (i.e. file extensions `<code>.ARM</code>` and `<code>.ARZ</code>`)
+  * [CSV](../../../reference/storage-engines/csv/csv-overview.md) (i.e. file extensions `<code>.CSM</code>` and `<code>.CSV</code>`)
+* Check `<code>ddl.log</code>` for DDL executed before the `<code>BLOCK DDL</code>` stage.
 
- * The file names of newly created tables can be read from `ddl.log`.
- * The file names of dropped tables can also be read from `ddl.log`.
- * The file names of renamed tables can also be read from `ddl.log`, so the files can be renamed instead of re-copying them.
+  * The file names of newly created tables can be read from `<code>ddl.log</code>`.
+  * The file names of dropped tables can also be read from `<code>ddl.log</code>`.
+  * The file names of renamed tables can also be read from `<code>ddl.log</code>`, so the files can be renamed instead of re-copying them.
 * Copy changes to system log tables.
 
- * `[mysql.general_log](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md)`
- * `[mysql.slow_log](/kb/en/mysqlslow_log-table/)`
- * This is easy as these are append only.
+  * `<code>[mysql.general_log](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md)</code>`
+  * `<code>[mysql.slow_log](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md)</code>`
+  * This is easy as these are append only.
 * Copy the tail of all transaction logs.
 
- * The tail of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) (i.e. `ib_logfileN` files) will be copied for [InnoDB](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md) tables.
- * The tail of the Aria redo log (i.e. `aria_log.N` files) will be copied for [Aria](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-enabling-encryption.md) tables.
+  * The tail of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) (i.e. `<code>ib_logfileN</code>` files) will be copied for [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables.
+  * The tail of the Aria redo log (i.e. `<code>aria_log.N</code>` files) will be copied for [Aria](../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables.
 
-#
 
-## `BACKUP STAGE BLOCK_COMMIT` in MariaDB Enterprise Server
+### `<code>BACKUP STAGE BLOCK_COMMIT</code>` in MariaDB Enterprise Server
 
-Mariabackup from MariaDB Enterprise Server performs the following tasks in the `BLOCK_COMMIT` stage:
 
-* Create a [MyRocks](../../../reference/storage-engines/myrocks/myrocks-and-replication.md) checkpoint using the `[rocksdb_create_checkpoint](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint)` system variable.
+Mariabackup from MariaDB Enterprise Server performs the following tasks in the `<code>BLOCK_COMMIT</code>` stage:
+
+
+* Create a [MyRocks](../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) checkpoint using the `<code>[rocksdb_create_checkpoint](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint)</code>` system variable.
 * Copy changes to system log tables.
 
- * `[mysql.general_log](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md)`
- * `[mysql.slow_log](/kb/en/mysqlslow_log-table/)`
- * This is easy as these are append only.
+  * `<code>[mysql.general_log](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md)</code>`
+  * `<code>[mysql.slow_log](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md)</code>`
+  * This is easy as these are append only.
 * Copy changes to statistics tables.
 
- * `[mysql.table_stats](/kb/en/mysqltable_stats-table/)`
- * `[mysql.column_stats](/kb/en/mysqlcolumn_stats-table/)`
- * `[mysql.index_stats](/kb/en/mysqlindex_stats-table/)`
+  * `<code>[mysql.table_stats](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-table_stats-table.md)</code>`
+  * `<code>[mysql.column_stats](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-column_stats-table.md)</code>`
+  * `<code>[mysql.index_stats](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-index_stats-table.md)</code>`
 * Copy the tail of all transaction logs.
 
- * The tail of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) (i.e. `ib_logfileN` files) will be copied for [InnoDB](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md) tables.
- * The tail of the Aria redo log (i.e. `aria_log.N` files) will be copied for [Aria](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-enabling-encryption.md) tables.
-* Save the [binary log](../../../server-usage/programming-customizing-mariadb/stored-routines/binary-logging-of-stored-routines.md) position to `[xtrabackup_binlog_info](files-created-by-mariabackup.md#xtrabackup_binlog_info)`.
-* Save the [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-use-cases.md) state information to `[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)`.
+  * The tail of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) (i.e. `<code>ib_logfileN</code>` files) will be copied for [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables.
+  * The tail of the Aria redo log (i.e. `<code>aria_log.N</code>` files) will be copied for [Aria](../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables.
+* Save the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position to `<code>[xtrabackup_binlog_info](files-created-by-mariabackup.md#xtrabackup_binlog_info)</code>`.
+* Save the [Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) state information to `<code>[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)</code>`.
 
-#
 
-## `BACKUP STAGE END` in MariaDB Enterprise Server
+### `<code>BACKUP STAGE END</code>` in MariaDB Enterprise Server
 
-Mariabackup from MariaDB Enterprise Server performs the following tasks in the `END` stage:
 
-* Copy the [MyRocks](../../../reference/storage-engines/myrocks/myrocks-and-replication.md) checkpoint into the backup.
+Mariabackup from MariaDB Enterprise Server performs the following tasks in the `<code>END</code>` stage:
+
+
+* Copy the [MyRocks](../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) checkpoint into the backup.
+

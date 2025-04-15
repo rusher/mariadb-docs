@@ -1,35 +1,41 @@
+
 # DROP VIEW
 
-#
+## Syntax
 
-# Syntax
 
 ```
 DROP VIEW [IF EXISTS]
- view_name [, view_name] ...
- [RESTRICT | CASCADE]
+    view_name [, view_name] ...
+    [RESTRICT | CASCADE]
 ```
 
-#
 
-# Description
+## Description
 
-`DROP VIEW` removes one or more [views](/kb/en/views/). You must have the DROP privilege for
+
+`<code>DROP VIEW</code>` removes one or more [views](README.md). You must have the DROP privilege for
 each view. If any of the views named in the argument list do not exist, MariaDB
 returns an error indicating by name which non-existing views it was unable to
 drop, but it also drops all of the views in the list that do exist.
 
-The `IF EXISTS` clause prevents an error from occurring for views that don't
-exist. When this clause is given, a `NOTE` is generated for each non-existent
+
+The `<code>IF EXISTS</code>` clause prevents an error from occurring for views that don't
+exist. When this clause is given, a `<code>NOTE</code>` is generated for each non-existent
 view. See [SHOW WARNINGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md).
 
-`RESTRICT` and `CASCADE`, if given, are parsed and ignored.
 
-It is possible to specify view names as `db_name`.`view_name`. This is useful to delete views from multiple databases with one statement. See [Identifier Qualifiers](../../../reference/sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md) for details.
+`<code>RESTRICT</code>` and `<code>CASCADE</code>`, if given, are parsed and ignored.
 
-The [DROP privilege](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#table-privileges) is required to use `DROP TABLE` on non-temporary tables. For temporary tables, no privilege is required, because such tables are only visible for the current session.
+
+It is possible to specify view names as `<code>db_name</code>`.`<code>view_name</code>`. This is useful to delete views from multiple databases with one statement. See [Identifier Qualifiers](../../../reference/sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md) for details.
+
+
+The [DROP privilege](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#table-privileges) is required to use `<code>DROP TABLE</code>` on non-temporary tables. For temporary tables, no privilege is required, because such tables are only visible for the current session.
+
 
 If a view references another view, it will be possible to drop the referenced view. However, the other view will reference a view which does not exist any more. Thus, querying it will produce an error similar to the following:
+
 
 ```
 ERROR 1356 (HY000): View 'db_name.view_name' references invalid table(s) or 
@@ -38,27 +44,27 @@ column(s) or function(s) or definer/invoker of view lack rights to use them
 
 This problem is reported in the output of [CHECK TABLE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md).
 
-Note that it is not necessary to use `DROP VIEW` to replace an existing view, because `[CREATE VIEW](create-view.md)` has an `OR REPLACE` clause.
 
-#
+Note that it is not necessary to use `<code>DROP VIEW</code>` to replace an existing view, because `<code>[CREATE VIEW](create-view.md)</code>` has an `<code>OR REPLACE</code>` clause.
 
-## Atomic DDL
 
-#
+### Atomic DDL
 
-#### MariaDB starting with [10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-106-series/mariadb-1061-release-notes)
 
-[MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-106-series/mariadb-1061-release-notes) supports [Atomic DDL](../../../reference/sql-statements-and-structure/sql-statements/data-definition/atomic-ddl.md) and `DROP VIEW` for a singular view is atomic. Dropping multiple views is crash-safe.
 
-#
+##### MariaDB starting with [10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md)
+[MariaDB 10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) supports [Atomic DDL](../../../reference/sql-statements-and-structure/sql-statements/data-definition/atomic-ddl.md) and `<code>DROP VIEW</code>` for a singular view is atomic. Dropping multiple views is crash-safe.
 
-# Examples
+
+## Examples
+
 
 ```
 DROP VIEW v,v2;
 ```
 
-Given views `v` and `v2`, but no view `v3`
+Given views `<code>v</code>` and `<code>v2</code>`, but no view `<code>v3</code>`
+
 
 ```
 DROP VIEW v,v2,v3;
@@ -71,17 +77,17 @@ Query OK, 0 rows affected, 1 warning (0.01 sec)
 
 SHOW WARNINGS;
 +-------+------+-------------------------+
-| Level | Code | Message |
+| Level | Code | Message                 |
 +-------+------+-------------------------+
-| Note | 1051 | Unknown table 'test.v3' |
+| Note  | 1051 | Unknown table 'test.v3' |
 +-------+------+-------------------------+
 ```
 
-#
+## See Also
 
-# See Also
 
 * [CREATE VIEW](create-view.md)
 * [ALTER VIEW](alter-view.md)
-* [SHOW CREATE VIEWS](show-create-views)
+* [SHOW CREATE VIEWS](https://mariadb.com/kb/en/show-create-views)
 * [INFORMATION SCHEMA VIEWS Table](information-schema-views-table.md)
+

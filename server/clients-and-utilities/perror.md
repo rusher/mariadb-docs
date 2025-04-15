@@ -1,22 +1,25 @@
+
 # perror
 
 *perror* is a utility that displays descriptions for system or storage engine error codes.
 
-See [MariaDB Error Codes](/en/mariadb-error-codes/) for a full list of MariaDB error codes, and [Operating System Error Codes](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/mariadb-internals-documentation/using-mariadb-with-your-programs-api/error-codes/operating-system-error-codes) for a list of Linux and Windows error codes.
 
-#
+See [MariaDB Error Codes](../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md) for a full list of MariaDB error codes, and [Operating System Error Codes](../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/operating-system-error-codes.md) for a list of Linux and Windows error codes.
 
-# Usage
+
+## Usage
+
 
 ```
 perror [OPTIONS] [ERRORCODE [ERRORCODE...]]
 ```
 
-If you need to describe a negative error code, use `--` before the first error code to end the options.
+If you need to describe a negative error code, use `<code>--</code>` before the first error code to end the options.
 
-#
 
-# Options
+## Options
+
+
 
 | Option | Description |
 | --- | --- |
@@ -27,18 +30,21 @@ If you need to describe a negative error code, use `--` before the first error c
 | -v, --verbose | Print error code and message (default). (Defaults to on; use --skip-verbose to disable.) |
 | -V, --version | Displays version information and exits. |
 
-#
 
-# Examples
+
+## Examples
+
 
 System error code:
 
+
 ```
 shell> perror 96
-OS error code 96: Protocol family not supported
+OS error code  96:  Protocol family not supported
 ```
 
-MariaDB/MySQL [error code](/en/mariadb-error-codes/):
+MariaDB/MySQL [error code](../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md):
+
 
 ```
 shell> perror 1005 1006

@@ -1,60 +1,69 @@
+
 # Backup and Restore Overview
 
 This article briefly discusses the main ways to backup MariaDB. For detailed descriptions and syntax, see the individual pages. More detail is in the process of being added.
 
-#
 
-# Logical vs Physical Backups
+## Logical vs Physical Backups
 
-Logical backups consist of the SQL statements necessary to restore the data, such as [CREATE DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md), [CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-tablespace.md) and [INSERT](../../server-usage/programming-customizing-mariadb/views/inserting-and-updating-with-views.md).
+
+Logical backups consist of the SQL statements necessary to restore the data, such as [CREATE DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md), [CREATE TABLE](../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) and [INSERT](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md).
+
 
 Physical backups are performed by copying the individual data files or directories.
 
+
 The main differences are as follows:
 
+
 * logical backups are more flexible, as the data can be restored on other hardware configurations, MariaDB versions or even on another DBMS, while physical backups cannot be imported on significantly different hardware, a different DBMS, or potentially even a different MariaDB version.
-* logical backups can be performed at the level of database and table, while physical databases are the level of directories and files. In the [MyISAM](../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) and [InnoDB](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md) storage engines, each table has an equivalent set of files. (In versions prior to [MariaDB 5.5](/kb/en/what-is-mariadb-55/), by default a number of InnoDB tables are stored in the same file, in which case it is not possible to backup by table. See [innodb_file_per_table](/kb/en/xtradbinnodb-server-system-variables/#innodb_file_per_table).)
+* logical backups can be performed at the level of database and table, while physical databases are the level of directories and files. In the [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [InnoDB](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) storage engines, each table has an equivalent set of files. (In versions prior to [MariaDB 5.5](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), by default a number of InnoDB tables are stored in the same file, in which case it is not possible to backup by table. See [innodb_file_per_table](../../reference/storage-engines/innodb/innodb-system-variables.md).)
 * logical backups are larger in size than the equivalent physical backup.
 * logical backups takes more time to both backup and restore than the equivalent physical backup.
 * log files and configuration files are not part of a logical backup
 
-#
 
-# Backup Tools
+## Backup Tools
 
-#
 
-## Mariadb-backup
+### Mariadb-backup
 
-[Mariadb-backup](../getting-installing-and-upgrading-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/mariadb-backups-overview-for-sql-server-users.md) is a fork of [Percona XtraBackup](/kb/en/backup-restore-and-import-xtrabackup/) with added support for [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011) [compression](InnoDB_compression) and [data-at-rest encryption](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md). It is included with [MariaDB 10.1.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-101-series/mariadb-10123-release-notes) and later.
 
-#
+[Mariadb-backup](../getting-installing-and-upgrading-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/mariadb-backups-overview-for-sql-server-users.md) is a fork of [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) with added support for [MariaDB 10.1](../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) [compression](https://mariadb.com/kb/en/InnoDB_compression) and [data-at-rest encryption](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md). It is included with [MariaDB 10.1.23](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10123-release-notes.md) and later.
 
-## mariadb-dump
 
-[mariadb-dump](../../clients-and-utilities/mariadb-dumpslow.md) (previously mysqldump) performs a logical backup. It is the most flexible way to perform a backup and restore, and a good choice when the data size is relatively small.
+### mariadb-dump
+
+
+[mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (previously mysqldump) performs a logical backup. It is the most flexible way to perform a backup and restore, and a good choice when the data size is relatively small.
+
 
 For large datasets, the backup file can be large, and the restore time lengthy.
 
+
 mariadb-dump dumps the data into SQL format (it can also dump into other formats, such as CSV or XML) which can then easily be imported into another database. The data can be imported into other versions of MariaDB, MySQL, or even another DBMS entirely, assuming there are no version or DBMS-specific statements in the dump.
 
-mariadb-dump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](/kb/en/stored-procedures/), [views](/kb/en/views/), and [events](../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/events.md) are not, and need extra parameters to be recreated explicitly (for example, `--routines` and `--events`). [Procedures](/kb/en/stored-procedures/) and [functions](functions) are however also part of the system tables (for example [mysql.proc](/kb/en/mysqlproc-table/)).
 
-#
+mariadb-dump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md), [views](../../server-usage/programming-customizing-mariadb/views/README.md), and [events](../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/events.md) are not, and need extra parameters to be recreated explicitly (for example, `<code>--routines</code>` and `<code>--events</code>`). [Procedures](../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [functions](functions) are however also part of the system tables (for example [mysql.proc](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table.md)).
 
-### InnoDB Logical Backups
 
-InnoDB uses the [buffer pool](/kb/en/xtradbinnodb-buffer-pool/), which stores data and indexes from its tables in memory. This buffer is very important for performance. If InnoDB data doesn't fit the memory, it is important that the buffer contains the most frequently accessed data. However, last accessed data is candidate for insertion into the buffer pool. If not properly configured, when a table scan happens, InnoDB may copy the whole contents of a table into the buffer pool. The problem with logical backups is that they always imply full table scans.
+#### InnoDB Logical Backups
 
-An easy way to avoid this is by increasing the value of the [innodb_old_blocks_time](/kb/en/xtradbinnodb-server-system-variables/#innodb_old_blocks_time) system variable. It represents the number of milliseconds that must pass before a recently accessed page can be put into the "new" sublist in the buffer pool. Data which is accessed only once should remain in the "old" sublist. This means that they will soon be evicted from the buffer pool. Since during the backup process the "old" sublist is likely to store data that is not useful, one could also consider resizing it by changing the value of the [innodb_old_blocks_pct](/kb/en/xtradbinnodb-server-system-variables/#innodb_old_blocks_pct) system variable.
+
+InnoDB uses the [buffer pool](../../reference/storage-engines/innodb/innodb-buffer-pool.md), which stores data and indexes from its tables in memory. This buffer is very important for performance. If InnoDB data doesn't fit the memory, it is important that the buffer contains the most frequently accessed data. However, last accessed data is candidate for insertion into the buffer pool. If not properly configured, when a table scan happens, InnoDB may copy the whole contents of a table into the buffer pool. The problem with logical backups is that they always imply full table scans.
+
+
+An easy way to avoid this is by increasing the value of the [innodb_old_blocks_time](../../reference/storage-engines/innodb/innodb-system-variables.md) system variable. It represents the number of milliseconds that must pass before a recently accessed page can be put into the "new" sublist in the buffer pool. Data which is accessed only once should remain in the "old" sublist. This means that they will soon be evicted from the buffer pool. Since during the backup process the "old" sublist is likely to store data that is not useful, one could also consider resizing it by changing the value of the [innodb_old_blocks_pct](../../reference/storage-engines/innodb/innodb-system-variables.md) system variable.
+
 
 It is also possible to explicitly dump the buffer pool on disk before starting a logical backup, and restore it after the process. This will undo any negative change to the buffer pool which happens during the backup. To dump the buffer pool, the [innodb_buffer_pool_dump_now](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_now) system variable can be set to ON. To restore it, the [innodb_buffer_pool_load_now](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_now) system variable can be set to ON.
 
-#
 
-### Examples
+#### Examples
+
 
 Backing up a single database
+
 
 ```
 shell> mariadb-dump db_name > backup-file.sql
@@ -62,75 +71,81 @@ shell> mariadb-dump db_name > backup-file.sql
 
 Restoring or loading the database
 
+
 ```
 shell> mariadb db_name < backup-file.sql
 ```
 
-See the [mariadb-dump](../../clients-and-utilities/mariadb-dumpslow.md) page for detailed syntax and examples.
+See the [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) page for detailed syntax and examples.
 
-#
 
-## mariadb-hotcopy
+### mariadb-hotcopy
 
-[mariadb-hotcopy](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-hotcopy.md) performs a physical backup, and works only for backing up [MyISAM](../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) and [ARCHIVE](/kb/en/archive/) tables. It can only be run on the same machine as the location of the database directories.
 
-#
+[mariadb-hotcopy](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-hotcopy.md) performs a physical backup, and works only for backing up [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [ARCHIVE](../../reference/storage-engines/archive/README.md) tables. It can only be run on the same machine as the location of the database directories.
 
-### Examples
+
+#### Examples
+
 
 ```
 shell> mariadb-hotcopy db_name [/path/to/new_directory]
 shell> mariadb-hotcopy db_name_1 ... db_name_n /path/to/new_directory
 ```
 
-#
+### Percona XtraBackup
 
-## Percona XtraBackup
 
-Percona XtraBackup is **not supported** in MariaDB. [Mariabackup](../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method.md) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md#compatibility-with-mariadb) for more information.
+Percona XtraBackup is **not supported** in MariaDB. [Mariabackup](mariabackup/mariabackup-and-backup-stage-commands.md) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md#compatibility-with-mariadb) for more information.
 
-[Percona XtraBackup](/kb/en/backup-restore-and-import-xtrabackup/) is a tool for performing fast, hot backups. It was designed specifically for [XtraDB/InnoDB](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md) databases, but can be used with any storage engine (although not with [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011) [encryption](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md) and [compression](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md)). It is not included by default with MariaDB.
 
-#
+[Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) is a tool for performing fast, hot backups. It was designed specifically for [XtraDB/InnoDB](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) databases, but can be used with any storage engine (although not with [MariaDB 10.1](../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) [encryption](../../reference/mariadb-internals/encryption-plugin-api.md) and [compression](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md)). It is not included by default with MariaDB.
 
-## Filesystem Snapshots
+
+### Filesystem Snapshots
+
 
 Some filesystems, like Veritas, support snapshots. During the snapshot, the table must be locked. The proper steps to obtain a snapshot are:
 
+
 * From the mariadb client, execute [FLUSH TABLES WITH READ LOCK](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md). The client must remain open.
-* From a shell, execute `mount vxfs snapshot`
-* The client can execute [UNLOCK TABLES](/kb/en/transactions-lock/).
+* From a shell, execute `<code>mount vxfs snapshot</code>`
+* The client can execute [UNLOCK TABLES](../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md).
 * Copy the snapshot files.
-* From a shell, unmount the snapshot with `umount snapshot`.
+* From a shell, unmount the snapshot with `<code>umount snapshot</code>`.
 
-#
 
-## LVM
+### LVM
 
-Widely-used physical backup method, using a Perl script as a wrapper. See [http://www.lenzg.net/mylvmbackup/](http://www.lenzg.net/mylvmbackup/).
 
-#
+Widely-used physical backup method, using a Perl script as a wrapper. See [](https://www.lenzg.net/mylvmbackup/).
 
-## Percona TokuBackup
+
+### Percona TokuBackup
+
 
 For details, see:
+
 
 * [TokuDB Hot Backup – Part 1](https://www.percona.com/blog/2013/09/12/tokudb-hot-backup-part-1/)
 * [TokuDB Hot Backup – Part 2](https://www.percona.com/blog/2013/09/19/tokudb-hot-backup-part-2/)
 * [TokuDB Hot Backup Now a MySQL Plugin](https://www.percona.com/blog/2015/02/05/tokudb-hot-backup-now-mysql-plugin/)
 
-#
 
-## dbForge Studio for MySQL
+### dbForge Studio for MySQL
+
 
 Besides the system utilities, it is possible to use third-party GUI tools to perform backup and restore operations. In this context, it is worth mentioning dbForge Studio for MySQL, a feature-rich database IDE that is fully compatible with MariaDB and delivers extensive backup functionality.
 
-The backup and restore module of the Studio allows precise [configuration and management of full and partial backups](https://mariadb.com/kb/en/backup-and-restore-via-dbforge-studio/) up to particular database objects. The feature of scheduling regular backups offers specific settings to handle errors and keep a log of them. Additionally, settings and configurations can be saved for later reuse.
+
+The backup and restore module of the Studio allows precise [configuration and management of full and partial backups](backup-and-restore-via-dbforge-studio.md) up to particular database objects. The feature of scheduling regular backups offers specific settings to handle errors and keep a log of them. Additionally, settings and configurations can be saved for later reuse.
+
 
 These operations are wizard-aided allowing users to set up all tasks in a visual mode.
 
-#
 
-# See Also
+## See Also
+
 
 * [Streaming MariaDB backups in the cloud](https://mariadb.com/blog/streaming-mariadb-backups-cloud) (mariadb.com blog)
+

@@ -1,56 +1,64 @@
+
 # Mirror Sites for MariaDB
 
 We rely on mirrors to distribute MariaDB to the world through the official
-download site at [https://mariadb.org/download](https://mariadb.org/download). If you would like to
+download site at [download](https://mariadb.org/download). If you would like to
 volunteer to become a mirror, thank you! Getting you set up is easy.
 
-The state of MariaDB mirrors is monitored at [https://mirmon.mariadb.org/](https://mirmon.mariadb.org/)
 
-#
+The state of MariaDB mirrors is monitored at [](https://mirmon.mariadb.org/)
 
-# How to Become a MariaDB Mirror
+
+## How to Become a MariaDB Mirror
+
 
 The only requirements for becoming a mirror are:
+
+
 1. A willingness to mirror MariaDB
 1. Mirroring is done using rsync
 1. An https mirror should be utilised (http mirrors are not accepted any more)
 1. Available bandwidth and disk space
 
- * Each release of MariaDB takes about between 110-140GB of disk space for all of the
+  * Each release of MariaDB takes about between 110-140GB of disk space for all of the
  various packages we create. There are several MariaDB releases per year, but
  only the most recent two from each main MariaDB series (as of March 2025 this is 10.5, 10.6, 10.11, 11.2, 11.4, 11.7 and 11.8) are kept on the mirrors
- * We recommend our mirrors have at least a 100Mbit/sec connection to the
+  * We recommend our mirrors have at least a 100Mbit/sec connection to the
  Internet
 1. The ability to do directory listings on mirrored sub-directories on your
  mirror host (for some platforms the
  [download](https://mariadb.org/download) page links directly to mirrored
  sub-directories)
 1. The mirror should update itself, preferably every 6 hours, but at the very least, twice a day. (See
- [Updating Notes](/kb/en/mirroring-mariadb/#updating-notes)
+ [Updating Notes](mirror-sites-for-mariadb.md)
  for more information)
 
-#
 
-## Updating Notes
+### Updating Notes
+
 
 MariaDB will normally have no more than one release per
 series (10.4, 10.5, etc...) per month. There may be times when this is not the
 case (such as if a major bug is found), but those times are few.
 
+
 Timing for release announcements is generally oriented to the U.S. Eastern time
 zone. So if your mirror only updates less frequently than every 6 hours, have it update after
 midnight, but before 06:00, U.S. Eastern Time.
 
+
 With rsync, it is no problem to update several times per day, and doing so is
 encouraged.
 
-#
 
-# rsync Information
+## rsync Information
+
 
 The two primary rsync URLs for mirrors to use are:
 
+
 USA:
+
 
 ```
 rsync.osuosl.org::mariadb
@@ -58,11 +66,13 @@ rsync.osuosl.org::mariadb
 
 Europe:
 
+
 ```
 mirror.netcologne.de::mariadb
 ```
 
 Here are suggested rsync commands for a mirror to use:
+
 
 ```
 rsync -a --partial --delete-after --delay-updates mirror.netcologne.de::mariadb /path/to/local/download/directory/rsync_test
@@ -77,24 +87,29 @@ not** be created. Instead, the contents of the mariadb module will be rsynced
 into whatever local folder you specify. We suggest creating a "mariadb" folder
 for this.
 
+
 It is also a good idea to test your rsync command before adding it to a cron
-job by adding the `-v --dry-run` flags to the command temporarily so you can
+job by adding the `<code>-v --dry-run</code>` flags to the command temporarily so you can
 see what it will do (without actually doing anything).
+
 
 As of February 2024, running the above command will use around 900GB of disk
 space in total.
 
+
 See the
-[rsync documentation](http://www.samba.org/ftp/rsync/rsync.html) for details
+[rsync documentation](https://www.samba.org/ftp/rsync/rsync.html) for details
 on what each of the arguments in the command above does.
 
-#
 
-## Secondary rsync mirrors
+### Secondary rsync mirrors
+
 
 We also have several secondary rsync mirrors you can pull from. In many instances pulling from the secondary mirror is faster than pulling from the primary rsync mirrors. Here they are, with the country they are located in. Simply replace the rsync URI in the example above with one from this list to use it.
 
-| Canada | China | Denmark | Kenya | Netherlands | Poland | Russia | | Taiwan | Thailand | USA | Uruguay |
+
+
+| Canada | China | Denmark | Kenya | Netherlands | Poland | Russia |  | Taiwan | Thailand | USA | Uruguay |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Canada | mariadb.mirror.globo.tech::mariadb |
 | China | mirrors.tuna.tsinghua.edu.cn::mariadb |
@@ -103,18 +118,21 @@ We also have several secondary rsync mirrors you can pull from. In many instance
 | Netherlands | ftp.nluug.nl::mariadb |
 | Poland | ftp.icm.edu.pl::pub/unix/database/mariadb/ |
 | Russia | mirror.mephi.ru::mariadb |
-| | mirror.truenetwork.ru::MariaDB |
+|  | mirror.truenetwork.ru::MariaDB |
 | Taiwan | ftp.ubuntu-tw.org::mariadb |
 | Thailand | mirror.kku.ac.th::mariadb |
 | USA | mirror.nodesdirect.com::mariadb |
 | Uruguay | espejito.fder.edu.uy::mariadb |
 
-#
 
-# Getting Added to the Mirror List
+
+## Getting Added to the Mirror List
+
 
 Once you have initially mirrored the MariaDB release tree, please send an email
 to (mirror (at) mariadb [dot] org) with the following information:
+
+
 1. The name of the company or organization sponsoring the mirror (so we can
  give credit where credit is due).
 1. Contact name (and email address) for your mirror (so we know who to contact
@@ -123,83 +141,112 @@ to (mirror (at) mariadb [dot] org) with the following information:
  Texas, USA") of the mirror (we use geolocation to try and send people to a
  mirror close to them).
 1. The base public URL for the mirror
- (e.g. `'http://mirror.example.net/pub/mariadb'`).
+ (e.g. `<code>'<code>http://mirror.example.net/pub/mariadb</code>'</code>`).
 1. The mirror you are using to rsync from
+
 
 Once we receive your email and verify your mirror is working we'll add you to the list of mirrors. Apologies in advance in case of slow responses - mirror updates are usually batched around release time.
 
+
 Thank you for volunteering to mirror MariaDB!
 
-#
 
-# Credits
+## Credits
+
 
 The primary MariaDB mirrors have been generously provided by the
-[Oregon State University Open Source Lab](http://osuosl.org) (at
+[Oregon State University Open Source Lab](https://osuosl.org) (at
 rsync.osuosl.org) and NetCologne (at mirror.netcologne.de)
+
 
 Other mirrors (list not necessarily complete) are listed below and can be selected on the [mariadb.org/download/](https://mariadb.org/download/) site:
 
+
 **Global (CDN)**
+
 
 * CICKU (Global - CloudFlare)
 
+
 **Australia**
+
 
 * AARNet (Brisbane)
 * Digital Pacific (Sydney)
 * Real World Group (Sydney)
 * Starburst Services (Sydney)
 
+
 **Austria**
+
 
 * Digital Nova (Graz)
 * Kumi Systems e.U (Vienna)
 * next layer GmbH (Vienna)
 
+
 **Azerbaijan**
 
 * YER Hosting
 
+
+
 **Bulgaria**
+
 
 * Neterra Telecommunications
 
+
 **Canada**
+
 
 * ACORN-NS (Halifax)
 
+
 **Chile**
+
 
 * Insacom (Valparaíso)
 
+
 **China - 中国**
+
 
 * Dalian Neusoft University of Information / 大连东软信息学院 (Dalian)
 * 清华大学 TUNA 协会 - Tsinghua University TUNA Association (Beijing)
 * 中国科学技术大学, 合肥 - USTC (Hefei)
 * eScience Center, Nanjing University (南京大学)
 
+
 **Czech Republic**
+
 
 * HOSTING90 systems (Prague)
 * vpsFree.cz
 
+
 **Denmark**
+
 
 * dotsrc.org - Aalborg University (Aalborg)
 * Group.one (Copenhagen)
 
+
 **Estonia**
+
 
 * xTom GmbH (Tallinn)
 
+
 **France**
+
 
 * IRCAM, Institut de recherche et coordination acoustique/musique (Paris)
 * OVH (Roubaix)
 
+
 **Germany**
+
 
 * 23media (Frankfurt)
 * AG DSN (Dresden)
@@ -212,71 +259,101 @@ Other mirrors (list not necessarily complete) are listed below and can be select
 * www.n-ix.net (Nuremberg)
 * xTom GmbH (Düsseldorf)
 
+
 **Greece**
+
 
 * University of Crete / Computer Center (Crete, Heraklion)
 
+
 **Hong Kong**
+
 
 * 網匯在線有限公司 - Nethub Online Limited
 * xTom GmbH (Hong Kong)
 
+
 **Hungary**
+
 
 * Budapest University of Technology and Economics (Budapest)
 
+
 **India**
+
 
 * Bharat Datacenter (New Delhi)
 * Starburst Services (Mumbai)
 * Indian Institute Of Technology Delhi (New Delhi)
 
+
 **Indonesia**
+
 
 * Universitas Surabaya (Surabaya)
 * Citrahost By Citranet (Jakarta)
 * Heru Nugroho (Jakarta)
 
+
 **Iran**
+
 
 * Mobinhost (Tehran)
 * Parsvds (Tehran)
 
+
 **Ireland**
+
 
 * HEAnet Ltd. (Dublin)
 
+
 **Israel**
+
 
 * SPD Hosting LTD (Rosh Haayin)
 
+
 **Italy**
+
 
 * EvoWise (Milan)
 
+
 **Japan**
+
 
 * 山形大学, 米沢市 - Yamagata University (Yonezawa)
 * xTom GmbH (Osaka)
 
+
 **Kenya**
+
 
 * Liquid Telecom (Nairobi)
 
+
 **Lithuania**
+
 
 * UAB "Interneto Vizija" (Vilnius)
 
+
 **Moldova**
+
 
 * ihost.md (Chisinau)
 * MangoHost.NET (Chisinau)
 
+
 **Morocco**
+
 
 * Marwan
 
+
 **The Netherlands**
+
 
 * bouwhuis.network (Amsterdam)
 * NLUUG (Amsterdam)
@@ -285,74 +362,106 @@ Other mirrors (list not necessarily complete) are listed below and can be select
 * xTom GmbH (Amsterdam)
 * Mirhosting (Dronten)
 
+
 **Norway**
+
 
 * FjordOS (Oslo)
 
+
 **Philippines**
+
 
 * RISE
 
+
 **Poland**
+
 
 * ICM UW (Interdisciplinary Centre for Modelling, Warsaw University)
 
+
 **Portugal**
+
 
 * PTISP (Lisbon)
 * Universidade do Porto
 
+
 **Romania**
+
 
 * Chroot Network (Bucharest)
 * nxtHost.com (Bucharest)
 
+
 **Russia**
+
 
 * docker.ru (Moscow)
 * МИФИ - National Research Nuclear University "MEPhI" (Moscow)
 * Truenetwork (Novosibirsk)
 
+
 **Singapore**
+
 
 * Daan van Gorkum
 * National University of Singapore
 * Starburst Services (Singapore)
 * vHost (Singapore)
 
+
 **South Korea**
+
+
 
 * Harukasan (부산시, Busan)
 * Yongbok.net
 
+
+
 **Spain**
+
 
 * Raiola Networks (Madrid)
 
+
 **Switzerland**
+
 
 * MvA Internet Services GmbH (Zurich)
 
+
 **Taiwan**
+
 
 * OSSPlanet + Ubuntu-TW - Ubuntu 台灣在地推廣組
 * Blendbyte (Taipei)
 
+
 **Thailand**
+
 
 * Khon Kaen University (Khon Kaen)
 * THZHost.com (Bangkok)
 
+
 **Ukraine**
+
 
 * Distrohub (Kyiv)
 * mirohost.net (Kyiv)
 
+
 **United Kingdom**
+
 
 * Starburst Hosting (Portsmouth)
 
+
 **The United States of America (USA)**
+
 
 * Accretive Networks (Washington, Seattle)
 * EvoWise (California, Los Angeles)
@@ -365,41 +474,48 @@ Other mirrors (list not necessarily complete) are listed below and can be select
 * xTom GmbH (San Jose, California)
 * Mirhosting (New York, New York)
 
+
 **Uruguay**
+
 
 * Universidad de la República - Facultad de Derecho (Montevideo)
 
+
 **Vietnam**
+
 
 * BKNS.VN (Hanoi)
 * vHost (Hanoi)
 
-#
 
-# The MariaDB Archive
+## The MariaDB Archive
+
 
 The distributed mirrors above only hold the most recent 3-4 releases of each
 MariaDB series (10.5, 10.4, etc...). If you need to access older MariaDB
 releases, there is an archive server that contains every MariaDB release. This
-server is available via the web at [https://archive.mariadb.org](https://archive.mariadb.org) and via rsync at:
+server is available via the web at [archive.mariadb.org](https://archive.mariadb.org) and via rsync at:
+
 
 ```
 archive.mariadb.org::mariadb
 ```
 
-#
+### Mirroring the MariaDB Archive with rsync
 
-## Mirroring the MariaDB Archive with rsync
 
 If you want to mirror the archive mirror, please contact us at mirror@mariadb.org in advance.
 
+
 To mirror the archive with rsync, something like the following will get you everything:
+
 
 ```
 rsync -avP archive.mariadb.org::mariadb/ /path/to/local/dir/
 ```
 
 ...or you can specify a specific release such as:
+
 
 ```
 rsync -avP archive.mariadb.org::mariadb/mariadb-10.4.13/ /path/to/local/dir/
@@ -408,7 +524,9 @@ rsync -avP archive.mariadb.org::mariadb/mariadb-10.4.13/ /path/to/local/dir/
 **Warning**, as of January 2023, the entire archive will use around 10 TB of disk space in
 total, and if you want to keep your mirror up to date (via cron routine for instance), please **first compare** the STATUS file **before** doing the rsync. This file will be updated anytime a new content is added in the archive tree.
 
+
 You can use something like the following:
+
 
 ```
 rsync archive.mariadb.org::mariadb/STATUS /tmp/STATUS
@@ -417,7 +535,9 @@ diff -q /tmp/STATUS /path/to/local/dir/STATUS || rsync -avP archive.mariadb.org:
 
 We reserve the right to block IPs that continually rsync the archive mirror when no new content was added, since it uselessly overloads the archive server, which uses a slow remote storage system.
 
+
 To get a listing of the top level items in the archive including a list of every MariaDB release, just do:
+
 
 ```
 rsync archive.mariadb.org::mariadb
@@ -425,3 +545,4 @@ rsync archive.mariadb.org::mariadb
 
 If you would like to become a full archive mirror of MariaDB and be listed
 here, just let us know via the [contact information above](#getting-added-to-the-mirror-list). Thanks!
+

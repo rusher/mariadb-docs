@@ -1,35 +1,39 @@
+
 # COM_STMT_CLOSE
 
 Closes a previously prepared statement.
 
-#
 
-## Direction
+### Direction
+
 
 Client to server.
 
-#
 
-## Implemented by
+### Implemented by
 
-* [mysql_stmt_close()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_close)
-* [mysql_stmt_prepare()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_prepare)
 
-#
+* [mysql_stmt_close()](../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_close.md)
+* [mysql_stmt_prepare()](../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_prepare.md)
 
-## Fields
+
+### Fields
+
+
 
 * [int<1>](../protocol-data-types.md#fixed-length-integers) 0x19 COM_STMT_CLOSE header
 * [int<4>](../protocol-data-types.md#fixed-length-integers) Statement id
 
-#
 
-### Example
 
-05 00 00 00 19 04 00 00 00
+#### Example
 
-#
 
-### Response
+05 00 00 00 19 04 00 00 00 
+
+
+#### Response
+
 
 No response from server.
+

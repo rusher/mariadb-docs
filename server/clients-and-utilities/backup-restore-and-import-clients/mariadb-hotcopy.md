@@ -1,16 +1,21 @@
+
 # mariadb-hotcopy
 
-`mariadb-hotcopy` is a Perl script that was originally written and contributed by Tim Bunce. It uses [FLUSH TABLES](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md), [LOCK TABLES](../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md), and cp or scp to make a database backup.
+`<code>mariadb-hotcopy</code>` is a Perl script that was originally written and contributed by Tim Bunce. It uses [FLUSH TABLES](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md), [LOCK TABLES](../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md), and cp or scp to make a database backup.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105), the client was called `mysqlhotcopy`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+
+Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysqlhotcopy</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+
 
 It is a fast way to make a backup of the database or single tables, but it can be run only on the same machine where the database
-directories are located. `mariadb-hotcopy`> works only for backing up [MyISAM](../myisam-clients-and-utilities/myisamchk-table-information.md) and [ARCHIVE](/en/archive/) tables. It runs on Unix and NetWare.
+directories are located. `<code>mariadb-hotcopy</code>`> works only for backing up [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [ARCHIVE](../../reference/storage-engines/archive/README.md) tables. It runs on Unix and NetWare.
 
-To use `mariadb-hotcopy`, you must have read access to the files
+
+To use `<code class="highlight fixed" style="white-space:pre-wrap">mariadb-hotcopy</code>`, you must have read access to the files
 for the tables that you are backing up, the SELECT [privilege](../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) for
 those tables, the RELOAD privilege (to be able to execute FLUSH TABLES), and
 the LOCK TABLES privilege (to be able to lock the tables).
+
 
 ```
 shell> mariadb-hotcopy db_name [/path/to/new_directory]
@@ -19,20 +24,24 @@ shell> mariadb-hotcopy db_name_1 ... db_name_n /path/to/new_directory
 
 Back up tables in the given database that match a regular expression:
 
+
 ```
 shell> mariadb-hotcopy db_name./regex/
 ```
 
 The regular expression for the table name can be negated by prefixing it with a
-tilde (“`~`”):
+tilde (“`<code>~</code>`”):
+
 
 ```
 shell> mariadb-hotcopy db_name./~regex/
 ```
 
-`mariadb-hotcopy` supports the following options, which can be
-specified on the command line or in the [`mariadb-hotcopy`] and
-[`client`] option file groups.
+`<code class="highlight fixed" style="white-space:pre-wrap">mariadb-hotcopy</code>` supports the following options, which can be
+specified on the command line or in the [`<code class="highlight fixed" style="white-space:pre-wrap">mariadb-hotcopy</code>`] and
+[`<code class="highlight fixed" style="white-space:pre-wrap">client</code>`] option file groups.
+
+
 
 | Option | Description |
 | --- | --- |
@@ -62,17 +71,20 @@ specified on the command line or in the [`mariadb-hotcopy`] and
 | --tmpdir=path | The temporary directory. The default is /tmp. |
 | --user=username, -u username | The MariaDB username to use when connecting to the server. |
 
-Use perldoc for additional `mariadb-hotcopy` documentation,
+
+
+Use perldoc for additional `<code class="highlight fixed" style="white-space:pre-wrap">mariadb-hotcopy</code>` documentation,
 including information about the structure of the tables needed for the
-`--checkpoint` and `--record_log_pos` options:
+`<code class="highlight fixed" style="white-space:pre-wrap">--checkpoint</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">--record_log_pos</code>` options:
+
 
 ```
 shell> perldoc mariadb-hotcopy
 ```
 
-#
+## See Also
 
-# See Also
 
 * [mariadb-ldump](mariadb-ldump)
-* [Mariabackup](../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method.md)
+* [Mariabackup](../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md)
+

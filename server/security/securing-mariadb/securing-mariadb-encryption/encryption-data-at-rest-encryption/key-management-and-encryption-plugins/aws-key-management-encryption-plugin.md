@@ -1,109 +1,122 @@
+
 # AWS Key Management Encryption Plugin
+
 
 Due to license incompatibilities between the MariaDB server source code and the Amazon AWS C++ SDK we can only distribute the plugin in source code form, and not as ready-to-use binaries. See [Installing the Plugin's Package](#installing-the-plugins-package) for details.
 
+
 MariaDB's [data-at-rest encryption](../data-at-rest-encryption-overview.md) requires the use of a [key management and encryption plugin](encryption-key-management.md). These plugins are responsible both for the management of encryption keys and for the actual encryption and decryption of data.
+
 
 MariaDB supports the use of [multiple encryption keys](encryption-key-management.md#using-multiple-encryption-keys). Each encryption key uses a 32-bit integer as a key identifier. If the specific plugin supports [key rotation](encryption-key-management.md#key-rotation), then encryption keys can also be rotated, which creates a new version of the encryption key.
 
+
 The AWS Key Management plugin is a [key management and encryption plugin](encryption-key-management.md) that uses the [Amazon Web Services (AWS) Key Management Service (KMS)](https://aws.amazon.com/kms/).
 
-#
 
-# Overview
+## Overview
+
 
 The AWS Key Management plugin uses the [Amazon Web Services (AWS) Key Management Service (KMS)](https://aws.amazon.com/kms/) to generate and store AES keys on disk, in encrypted form, using the Customer Master Key (CMK) kept in AWS KMS. When MariaDB Server starts, the plugin will decrypt the encrypted keys, using the AWS KMS "Decrypt" API function. MariaDB data will then be encrypted and decrypted using the AES key. It supports multiple encryption keys. It supports key rotation.
 
-#
 
-# Tutorials
+## Tutorials
+
 
 Tutorials related to the AWS Key Management plugin can be found at the following pages:
+
 
 * [Amazon Web Services (AWS) Key Management Service (KMS) Encryption Plugin Setup Guide](aws-key-management-encryption-plugin-setup-guide.md)
 * [Amazon Web Services (AWS) Key Management Service (KMS) Encryption Plugin Advanced Usage](aws-key-management-encryption-plugin-advanced-usage.md)
 
-#
 
-# Preparation
+## Preparation
 
-* Before you use the plugin, you need to create a Customer Master Key (CMK). Create a key using the AWS Console as described in the [AMS KMS developer guide](http://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html).
+
+* Before you use the plugin, you need to create a Customer Master Key (CMK). Create a key using the AWS Console as described in the [AMS KMS developer guide](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html).
 * The easiest way to give the AWS key management plugin access to the key is to create an IAM Role with access to the key, and to apply that IAM Role to an EC2 instance where MariaDB Server runs.
-* Make sure that MariaDB Server runs under the correct AWS identity that has access to the above key. For example, you can store the AWS credentials in a AWS credentials file for the user who runs `mysqld`. More information about the credentials file can be found in [the AWS CLI Getting Started Guide](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-config-file).
+* Make sure that MariaDB Server runs under the correct AWS identity that has access to the above key. For example, you can store the AWS credentials in a AWS credentials file for the user who runs `<code>mysqld</code>`. More information about the credentials file can be found in [the AWS CLI Getting Started Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-config-file).
 
-#
 
-# Installing the Plugin's Package
+## Installing the Plugin's Package
+
 
 The AWS Key Management plugin depends on the [AWS SDK for C++](https://github.com/aws/aws-sdk-cpp), which uses the [Apache License, Version 2.0](https://github.com/aws/aws-sdk-cpp/blob/master/LICENSE). This license is not compatible with MariaDB Server's [GPL 2.0 license](../../../../../reference/faq/licensing-questions/mariadb-licenses.md), so we are not able to distribute packages that contain the AWS Key Management plugin. Therefore, the only way to currently obtain the plugin is to install it from source.
 
-#
 
-## Installing from Source
+### Installing from Source
 
-When [compiling MariaDB from source](../../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options.md), the AWS Key Management plugin is not built by default in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-1011), but it is built by default in [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-102) and later, on systems that support it.
 
-Compilation is controlled by the following `[cmake](../../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)` arguments:
+When [compiling MariaDB from source](../../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options.md), the AWS Key Management plugin is not built by default in [MariaDB 10.1](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), but it is built by default in [MariaDB 10.2](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, on systems that support it.
 
-* `-DPLUGIN_AWS_KEY_MANAGEMENT=DYNAMIC` to build a loadable plugin library
-* `-DAWS_SDK_EXTERNAL_PROJECT=ON` to download the AWS C++ SDK code
-* `-DNOT_FOR_DISTRIBUTION=ON` to confirm that you know to not distribute the resulting binaries
+
+Compilation is controlled by the following `<code>[cmake](../../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)</code>` arguments:
+
+
+* `<code>-DPLUGIN_AWS_KEY_MANAGEMENT=DYNAMIC</code>` to build a loadable plugin library
+* `<code>-DAWS_SDK_EXTERNAL_PROJECT=ON</code>` to download the AWS C++ SDK code
+* `<code>-DNOT_FOR_DISTRIBUTION=ON</code>` to confirm that you know to not distribute the resulting binaries
+
 
 The plugin uses [AWS C++ SDK](https://github.com/awslabs/aws-sdk-cpp), which introduces the following restrictions:
 
+
 * The plugin can only be built on Windows, Linux and macOS.
-* The plugin requires that one of the following compilers is used: `gcc` 4.8 or later, `clang` 3.3 or later, Visual Studio 2013 or later.
-* On Unix, the `libcurl` development package (e.g. `libcurl3-dev` on Debian Jessie), `uuid` development package and `openssl` need to be installed.
-* You may need to use a newer version of `[cmake](../../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)` than is provided by default in your OS.
+* The plugin requires that one of the following compilers is used: `<code>gcc</code>` 4.8 or later, `<code>clang</code>` 3.3 or later, Visual Studio 2013 or later.
+* On Unix, the `<code>libcurl</code>` development package (e.g. `<code>libcurl3-dev</code>` on Debian Jessie), `<code>uuid</code>` development package and `<code>openssl</code>` need to be installed.
+* You may need to use a newer version of `<code>[cmake](../../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)</code>` than is provided by default in your OS.
+
 
 You do not need to download / install the AWS C++ SDK yourself, the correct version of the SDK github repository will be cloned into the build directory at build time, and only the libraries for AWS components actually needed by the key management plugin will be built, which takes much less time than building the full AWS C++ SDK.
 
-#
 
-### Building on Linux
+#### Building on Linux
+
 
 With all prerequisites installed the actual build process pretty much comes down to:
 
+
 ```
 # clone the MariaDB Server source code repository
-
 git clone https://github.com/MariaDB/server.git
 cd server
 
 # prepare the build
-
 mkdir _build
 cd _build
 cmake .. -DNOT_FOR_DISTRIBUTION=ON \
- -DPLUGIN_AWS_KEY_MANAGEMENT=DYNAMIC \
- -DAWS_SDK_EXTERNAL_PROJECT=1
+  -DPLUGIN_AWS_KEY_MANAGEMENT=DYNAMIC \
+  -DAWS_SDK_EXTERNAL_PROJECT=1
 
 # build the plugin only
-
 cd plugin/aws_key_management
 make
 ```
 
-Cmake will print the following warning as part of its output, please take it serious and do not distribute the `aws_key_management.so` file to any third parties:
+Cmake will print the following warning as part of its output, please take it serious and do not distribute the `<code>aws_key_management.so</code>` file to any third parties:
 **You have linked MariaDB with Apache 2.0 libraries! You may not distribute
 the resulting binary. If you do, you will put yourself into a legal
 problem with the Free Software Foundation.**
 
-After `make` succeeded you can copy the created `aws_key_management.so` plugin library file to the plugin directory of your actual MariaDB Server machines installation, e.g. `/usr/lib64/mysql/plugin` on RedHat/Fedora based systems or `/usr/lib/mysql/plugin` on Debian based systems.
 
-#
+After `<code>make</code>` succeeded you can copy the created `<code>aws_key_management.so</code>` plugin library file to the plugin directory of your actual MariaDB Server machines installation, e.g. `<code>/usr/lib64/mysql/plugin</code>` on RedHat/Fedora based systems or `<code>/usr/lib/mysql/plugin</code>` on Debian based systems.
 
-# Installing the Plugin
+
+## Installing the Plugin
+
 
 Even after the package that contains the plugin's shared library is installed on the operating system, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing `[INSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)` or `[INSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)`. For example:
+
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing `<code>[INSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)</code>` or `<code>[INSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)</code>`. For example:
+
 
 ```
 INSTALL SONAME 'aws_key_management';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the `[--plugin-load](/en/mysqld-options/#-plugin-load)` or the `[--plugin-load-add](/en/mysqld-options/#-plugin-load-add)` options. This can be specified as a command-line argument to `[mysqld](/en/mysqld-options/)` or it can be specified in a relevant server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the `<code>[--plugin-load](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` or the `<code>[--plugin-load-add](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` options. This can be specified as a command-line argument to `<code>[mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` or it can be specified in a relevant server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+
 
 ```
 [mariadb]
@@ -111,25 +124,27 @@ The second method can be used to tell the server to load the plugin when it star
 plugin_load_add = aws_key_management
 ```
 
-#
+## Uninstalling the Plugin
 
-# Uninstalling the Plugin
 
 Before you uninstall the plugin, you should ensure that [data-at-rest encryption](../data-at-rest-encryption-overview.md) is completely disabled, and that MariaDB no longer needs the plugin to decrypt tables or other files.
 
-You can uninstall the plugin dynamically by executing `[UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)`. For example:
+
+You can uninstall the plugin dynamically by executing `<code>[UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)</code>` or `<code>[UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)</code>`. For example:
+
 
 ```
 UNINSTALL SONAME 'aws_key_management';
 ```
 
-If you installed the plugin by providing the `[--plugin-load](/en/mysqld-options/#-plugin-load)` or the `[--plugin-load-add](/en/mysqld-options/#-plugin-load-add)` options in a relevant server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the `<code>[--plugin-load](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` or the `<code>[--plugin-load-add](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` options in a relevant server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
-#
 
-# Configuring the AWS Key Management Plugin
+## Configuring the AWS Key Management Plugin
 
-To enable the AWS Key Management plugin, you also need to set the plugin's system variables. The `[aws_key_management_master_key_id](#aws_key_management_master_key_id)` system variable is the primary one to set. These system variables can be specified as command-line arguments to `[mysqld](/en/mysqld-options/)` or they can be specified in a relevant server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+
+To enable the AWS Key Management plugin, you also need to set the plugin's system variables. The `<code>[aws_key_management_master_key_id](#aws_key_management_master_key_id)</code>` system variable is the primary one to set. These system variables can be specified as command-line arguments to `<code>[mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` or they can be specified in a relevant server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+
 
 ```
 [mariadb]
@@ -137,37 +152,42 @@ To enable the AWS Key Management plugin, you also need to set the plugin's syste
 aws_key_management_master_key_id=alias/<your key's alias>
 ```
 
-Once you've updated the configuration file, [restart](/en/starting-and-stopping-mariadb-starting-and-stopping-mariadb/) the MariaDB server to apply the changes and make the key management and encryption plugin available for use.
+Once you've updated the configuration file, [restart](https://mariadb.com/kb/en/) the MariaDB server to apply the changes and make the key management and encryption plugin available for use.
 
-#
 
-# Using the AWS Key Management Plugin
+## Using the AWS Key Management Plugin
+
 
 Once the AWS Key Management Plugin is enabled, you can use it by creating an encrypted table:
+
 
 ```
 CREATE TABLE t (i int) ENGINE=InnoDB ENCRYPTED=YES
 ```
 
-Now, table `t` will be encrypted using the encryption key generated by AWS.
+Now, table `<code>t</code>` will be encrypted using the encryption key generated by AWS.
+
 
 For more information on how to use encryption, see [Data at Rest Encryption](../data-at-rest-encryption-overview.md).
 
-#
 
-# Using Multiple Encryption Keys
+## Using Multiple Encryption Keys
+
 
 The AWS Key Management Plugin supports [using multiple encryption keys](encryption-key-management.md#using-multiple-encryption-keys). Each encryption key can be defined with a different 32-bit integer as a key identifier. If a previously unused identifier is used, then the plugin will automatically generate a new key.
 
-When [encrypting InnoDB tables](../innodb-encryption/innodb-encryption-troubleshooting.md), the key that is used to encrypt tables [can be changed](/en/innodb-xtradb-encryption-keys/).
+
+When [encrypting InnoDB tables](../innodb-encryption/innodb-encryption-troubleshooting.md), the key that is used to encrypt tables [can be changed](../innodb-encryption/innodb-encryption-keys.md).
+
 
 When [encrypting Aria tables](../aria-encryption/aria-encryption-overview.md), the key that is used to encrypt tables [cannot currently be changed](../aria-encryption/aria-encryption-keys.md).
 
-#
 
-# Key Rotation
+## Key Rotation
 
-The AWS Key Management plugin does support [key rotation](encryption-key-management.md#key-rotation). To rotate a key, set the `[aws_key_management_rotate_key](#aws_key_management_rotate_key)` system variable. For example, to rotate key with ID 2:
+
+The AWS Key Management plugin does support [key rotation](encryption-key-management.md#key-rotation). To rotate a key, set the `<code>[aws_key_management_rotate_key](#aws_key_management_rotate_key)</code>` system variable. For example, to rotate key with ID 2:
+
 
 ```
 SET GLOBAL aws_key_management_rotate_key=2;
@@ -175,123 +195,132 @@ SET GLOBAL aws_key_management_rotate_key=2;
 
 Or to rotate all keys, set the value to -1:
 
+
 ```
 SET GLOBAL aws_key_management_rotate_key=-1;
 ```
 
-#
+## Versions
 
-# Versions
+
 
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.0 | Stable | [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-102-series/mariadb-1026-release-notes), [MariaDB 10.1.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-101-series/mariadb-10124-release-notes) |
-| 1.0 | Beta | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-101-series/mariadb-10118-release-notes) |
-| 1.0 | Experimental | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-101-series/mariadb-10113-release-notes) |
+| 1.0 | Stable | [MariaDB 10.2.6](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md), [MariaDB 10.1.24](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes.md) |
+| 1.0 | Beta | [MariaDB 10.1.18](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes.md) |
+| 1.0 | Experimental | [MariaDB 10.1.13](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes.md) |
 
-#
 
-# System Variables
 
-#
+## System Variables
 
-## `aws_key_management_key_spec`
+
+### `<code>aws_key_management_key_spec</code>`
+
 
 * Description: Encryption algorithm used to create new keys
-* Commandline: `--aws-key-management-key-spec=value`
+* Commandline: `<code class="fixed" style="white-space:pre-wrap">--aws-key-management-key-spec=value</code>`
 * Scope: Global
 * Dynamic: No
-* Data Type: `enumerated`
-* Default Value: `AES_128`
-* Valid Values: `AES_128`, `AES_256`
+* Data Type: `<code>enumerated</code>`
+* Default Value: `<code>AES_128</code>`
+* Valid Values: `<code>AES_128</code>`, `<code>AES_256</code>`
 
-#
 
-## `aws_key_management_log_level`
+
+### `<code>aws_key_management_log_level</code>`
+
 
 * Description: Dump log of the AWS SDK to MariaDB error log. Permitted values, in increasing verbosity, are Off (default), Fatal, Error, Warn, Info, Debug, and Trace.
-* Commandline: `--aws-key-management-log-level=value`
+* Commandline: `<code class="fixed" style="white-space:pre-wrap">--aws-key-management-log-level=value</code>`
 * Scope: Global
 * Dynamic: No
-* Data Type: `enumerated`
-* Default Value: `Off`
-* Valid Values: `Off`, `Fatal`, `Warn`, `Info`, `Debug` and `Trace`
+* Data Type: `<code>enumerated</code>`
+* Default Value: `<code>Off</code>`
+* Valid Values: `<code>Off</code>`, `<code>Fatal</code>`, `<code>Warn</code>`, `<code>Info</code>`, `<code>Debug</code>` and `<code>Trace</code>`
 
-#
 
-## `aws_key_management_master_key_id`
+
+### `<code>aws_key_management_master_key_id</code>`
+
 
 * Description: AWS KMS Customer Master Key ID (ARN or alias prefixed by alias/) for the master encryption key. Used to create new data keys. If not set, no new data keys will be created.
-* Commandline: `--aws-key-management-master-key-id=value`
+* Commandline: `<code class="fixed" style="white-space:pre-wrap">--aws-key-management-master-key-id=value</code>`
 * Scope: Global
 * Dynamic: No
-* Data Type: `string`
+* Data Type: `<code>string</code>`
 * Default Value:
 
-#
 
-## `aws_key_management_mock`
+
+### `<code>aws_key_management_mock</code>`
+
 
 * Description: Mock AWS KMS calls (for testing). Must be enabled at compile-time.
-* Commandline: `--aws-key-management-mock`
+* Commandline: `<code class="fixed" style="white-space:pre-wrap">--aws-key-management-mock</code>`
 * Scope: Global
 * Dynamic: No
-* Data Type: `boolean`
-* Default Value: `OFF`
-* Valid Values: `OFF`, `ON`
+* Data Type: `<code>boolean</code>`
+* Default Value: `<code>OFF</code>`
+* Valid Values: `<code>OFF</code>`, `<code>ON</code>`
 
-#
 
-## `aws_key_management_region`
+
+### `<code>aws_key_management_region</code>`
+
 
 * Description: AWS region name, e.g us-east-1 . Default is SDK default, which is us-east-1.
-* Commandline: `--aws-key-management-region=value`
+* Commandline: `<code class="fixed" style="white-space:pre-wrap">--aws-key-management-region=value</code>`
 * Scope: Global
 * Dynamic: No
-* Data Type: `string`
-* Default Value: `'us-east-1'`
+* Data Type: `<code>string</code>`
+* Default Value: `<code>'us-east-1'</code>`
 
-#
 
-## `aws_key_management_request_timeout`
+
+### `<code>aws_key_management_request_timeout</code>`
+
 
 * Description: Timeout in milliseconds for create HTTPS connection or execute AWS request. Specify 0 to use SDK default.
-* Commandline: `--aws-key-management-request-timeout=value`
+* Commandline: `<code class="fixed" style="white-space:pre-wrap">--aws-key-management-request-timeout=value</code>`
 * Scope: Global
 * Dynamic: No
-* Data Type: `integer`
+* Data Type: `<code>integer</code>`
 * Default Value: 0
 
-#
 
-## `aws_key_management_rotate_key`
 
-* Description: Set this variable to a data key ID to perform rotation of the key to the master key given in `aws_key_management_master_key_id`. Specify -1 to rotate all keys.
-* Commandline: `--aws-key-management-rotate-key=value`
+### `<code>aws_key_management_rotate_key</code>`
+
+
+* Description: Set this variable to a data key ID to perform rotation of the key to the master key given in `<code>aws_key_management_master_key_id</code>`. Specify -1 to rotate all keys.
+* Commandline: `<code class="fixed" style="white-space:pre-wrap">--aws-key-management-rotate-key=value</code>`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `integer`
+* Data Type: `<code>integer</code>`
 * Default Value:
 
-#
 
-# Options
 
-#
+## Options
 
-## `aws_key_management`
+
+### `<code>aws_key_management</code>`
+
 
 * Description: Controls how the server should treat the plugin when the server starts up.
 
- * Valid values are:
+  * Valid values are:
 
- * `OFF` - Disables the plugin without removing it from the `[mysql.plugins](/en/mysqlplugin-table/)` table.
- * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
- * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
- * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with `[UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)` while the server is running.
- * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../../../../reference/plugins/plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
-* Commandline: `--aws-key-management=value`
-* Data Type: `enumerated`
-* Default Value: `ON`
-* Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
+    * `<code>OFF</code>` - Disables the plugin without removing it from the `<code>[mysql.plugins](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md)</code>` table.
+    * `<code>ON</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
+    * `<code>FORCE</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
+    * `<code>FORCE_PLUS_PERMANENT</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with `<code>[UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)</code>` or `<code>[UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)</code>` while the server is running.
+  * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../../../../reference/plugins/plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
+* Commandline: `<code class="fixed" style="white-space:pre-wrap">--aws-key-management=value</code>`
+* Data Type: `<code>enumerated</code>`
+* Default Value: `<code>ON</code>`
+* Valid Values: `<code>OFF</code>`, `<code>ON</code>`, `<code>FORCE</code>`, `<code>FORCE_PLUS_PERMANENT</code>`
+
+

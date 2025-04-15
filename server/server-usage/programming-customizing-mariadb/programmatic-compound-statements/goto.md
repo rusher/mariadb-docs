@@ -1,22 +1,22 @@
+
 # GOTO
 
-#
+## Syntax
 
-# Syntax
 
 ```
 GOTO label
 ```
 
-#
 
-# Description
+## Description
 
-The `GOTO` statement causes the code to jump to the specified label, and continue operating from there. It is only accepted when in [Oracle mode](/en/sql_modeoracle-from-mariadb-103/).
 
-#
+The `<code>GOTO</code>` statement causes the code to jump to the specified label, and continue operating from there. It is only accepted when in [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md).
 
-# Example
+
+## Example
+
 
 ```
 SET sql_mode=ORACLE;
@@ -27,11 +27,11 @@ CREATE OR REPLACE PROCEDURE p1 AS
 
 BEGIN
 
- SELECT 1;
- GOTO label;
- SELECT 2;
- <<label>>
- SELECT 3;
+  SELECT 1;
+  GOTO label;
+  SELECT 2;
+  <<label>>
+  SELECT 3;
 
 END;
 

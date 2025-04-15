@@ -1,41 +1,41 @@
+
 # SHOW CREATE CATALOG
 
-#
 
-#### MariaDB starting with [12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-120)
-
+##### MariaDB starting with [12.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-120.md)
 Catalog support is planned for 12.0.
 
-#
 
-# Syntax
+
+## Syntax
+
 
 ```
 SHOW CREATE CATALOG catalog_name
 ```
 
-#
 
-# Description
+## Description
+
 
 Shows the [CREATE CATALOG](create-catalog.md) statement that creates the given [catalog](catalogs-overview.md).
 
-#
 
-# Examples
+## Examples
+
 
 ```
 SHOW CREATE CATALOG def;
 +---------+-------------------------------------------------------------------------------------------------------+
-| Catalog | Create Catalog |
+| Catalog | Create Catalog                                                                                        |
 +---------+-------------------------------------------------------------------------------------------------------+
-| def | CREATE CATALOG `def` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci COMMENT 'default catalog' |
+| def     | CREATE CATALOG `def` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci COMMENT 'default catalog' |
 +---------+-------------------------------------------------------------------------------------------------------+
 ```
 
-#
+## See Also
 
-# See Also
 
 * [CREATE CATALOG](create-catalog.md)
-* [Character Sets and Collations](/en/character-sets-and-collations/)
+* [Character Sets and Collations](../../../reference/data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
+

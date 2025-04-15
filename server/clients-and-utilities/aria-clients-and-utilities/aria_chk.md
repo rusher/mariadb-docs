@@ -1,56 +1,61 @@
+
 # aria_chk
 
-`aria_chk` is used to check, repair, optimize, sort and get information about [Aria](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-enabling-encryption.md) tables.
+`<code>aria_chk</code>` is used to check, repair, optimize, sort and get information about [Aria](../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables.
 
-With the MariaDB server you can use [CHECK TABLE](/en/sql-commands-check-table/),
+
+With the MariaDB server you can use [CHECK TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md),
 [REPAIR TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md) and [OPTIMIZE TABLE](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) to do
 similar things.
 
-Note: `aria_chk` should not be used when MariaDB is running. MariaDB
+
+Note: `<code>aria_chk</code>` should not be used when MariaDB is running. MariaDB
 assumes that no one is changing the tables it's using!
 
+
 Usage:
+
 
 ```
 aria_chk [OPTIONS] aria_tables[.MAI]
 ```
 
-Aria table information is stored in 2 files: the `.MAI` file contains base
-table information and the index and the `.MAD` file contains the data.
-`aria_chk` takes one or more `.MAI` files as arguments.
+Aria table information is stored in 2 files: the `<code>.MAI</code>` file contains base
+table information and the index and the `<code>.MAD</code>` file contains the data.
+`<code>aria_chk</code>` takes one or more `<code>.MAI</code>` files as arguments.
+
 
 The following groups are read from the my.cnf files:
 
-* `[maria_chk]`
-* `[aria_chk]`
 
-#
+* `<code>[maria_chk]</code>`
+* `<code>[aria_chk]</code>`
 
-# Options and Variables
 
-#
+## Options and Variables
 
-## Global Options
+
+### Global Options
+
 
 The following options to handle option files may be given as the first
 argument:
+
+
 
 | Option | Description |
 | --- | --- |
 | Option | Description |
 | --print-defaults | Print the program argument list and exit. |
 | --no-defaults | Don't read default options from any option file. |
-| --defaults-file=
+| --defaults-file=# | Only read default options from the given file #. |
+| --defaults-extra-file=# | Read this file after the global files are read. |
 
-# | Only read default options from the given file #. |
 
-| --defaults-extra-file=
 
-# | Read this file after the global files are read. |
+### Main Arguments
 
-#
 
-## Main Arguments
 
 | Option | Description |
 | --- | --- |
@@ -68,9 +73,11 @@ argument:
 | -V, --version | Print version and exit. |
 | -w, --wait | Wait if table is locked. |
 
-#
 
-## Check Options (--check is the Default Action for aria_chk):
+
+### Check Options (--check is the Default Action for aria_chk):
+
+
 
 | Option | Description |
 | --- | --- |
@@ -85,31 +92,24 @@ argument:
 | -U, --update-state | Mark tables as crashed if any errors were found and clean if check didn't find any errors but table was marked as 'not clean' before. This allows one to get rid of warnings like 'table not properly closed'. If table was updated, update also the timestamp for when the check was made. This option is on by default! Use --skip-update-state to disable. |
 | -T, --read-only | Don't mark table as checked. |
 
-#
 
-## Recover (Repair) Options (When Using '--recover' or '--safe-recover'):
+
+### Recover (Repair) Options (When Using '--recover' or '--safe-recover'):
+
+
 
 | Option | Description |
 | --- | --- |
 | Option | Description |
 | -B, --backup | Make a backup of the .MAD file as 'filename-time.BAK'. |
 | --correct-checksum | Correct checksum information for table. |
-| -D, --data-file-length=
-
-# | Max length of data file (when recreating data file when it's full). |
-
+| -D, --data-file-length=# | Max length of data file (when recreating data file when it's full). |
 | -e, --extend-check | Try to recover every possible row from the data file Normally this will also find a lot of garbage rows; Don't use this option if you are not totally desperate. |
 | -f, --force | Overwrite old temporary files. |
-| -k, --keys-used=
-
-# | Tell MARIA to update only some specific keys. 
+| -k, --keys-used=# | Tell MARIA to update only some specific keys. 
 
 # is a bit mask of which keys to use. This can be used to get faster inserts. |
-
-| --max-record-length=
-
-# | Skip rows bigger than this if aria_chk can't allocate memory to hold it. |
-
+| --max-record-length=# | Skip rows bigger than this if aria_chk can't allocate memory to hold it. |
 | -r, --recover | Can fix almost anything except unique keys that aren't unique. |
 | -n, --sort-recover | Forces recovering with sorting even if the temporary file would be very big. |
 | -p, --parallel-recover | Uses the same technique as '-r' and '-n', but creates all the keys in parallel, in different threads. |
@@ -120,9 +120,11 @@ argument:
 | -q, --quick | Faster repair by not modifying the data file. One can give a second '-q' to force aria_chk to modify the original datafile in case of duplicate keys. NOTE: Tables where the data file is currupted can't be fixed with this option. |
 | -u, --unpack | Unpack file packed with [aria_pack](aria_pack.md). |
 
-#
 
-## Other Options
+
+### Other Options
+
+
 
 | Option | Description |
 | --- | --- |
@@ -132,20 +134,16 @@ argument:
 | -d, --description | Prints some information about table. |
 | -A, --set-auto-increment[=value] | Force auto_increment to start at this or higher value If no value is given, then sets the next auto_increment value to the highest used value for the auto key + 1. |
 | -S, --sort-index | Sort index blocks. This speeds up 'read-next' in applications. |
-| -R, --sort-records=
-
-# | Sort records according to an index. This makes your data much more localized and may speed up things (It may be VERY slow to do a sort the first time!). |
-
-| -b, --block-search=
-
-# | Find a record, a block at given offset belongs to. |
-
+| -R, --sort-records=# | Sort records according to an index. This makes your data much more localized and may speed up things (It may be VERY slow to do a sort the first time!). |
+| -b, --block-search=# | Find a record, a block at given offset belongs to. |
 | -z, --zerofill | Remove transaction id's from the data and index files and fills empty space in the data and index files with zeroes. Zerofilling makes it possible to move the table from one system to another without the server having to do an automatic zerofill. It also allows one to compress the tables better if one want to archive them. |
 | --zerofill-keep-lsn | Like --zerofill but does not zero out LSN of data/index pages. |
 
-#
 
-## Variables
+
+### Variables
+
+
 
 | Option | Description |
 | --- | --- |
@@ -156,31 +154,37 @@ argument:
 | sort_buffer_size | Size of sort buffer. Used by --recover |
 | sort_key_blocks | Internal buffer for sorting keys; Don't touch :) |
 
-#
 
-# Usage
 
-One main usage of `aria_chk` is when you want to do a fast check of all Aria
+## Usage
+
+
+One main usage of `<code>aria_chk</code>` is when you want to do a fast check of all Aria
 tables in your system. This is faster than doing it in MariaDB as you can
 allocate all free memory to the buffers.
 
+
 Assuming you have a bit more than 2G free memory.
+
 
 The following commands, run in the MariaDB data directory, check all
 your tables and repairs only those that have an error:
+
 
 ```
 aria_chk --check --sort_order --force --sort_buffer_size=1G */*.MAI
 ```
 
-If you want to optimize all your tables: (The `--zerofill` is
-used here to fill up empty space with `\0` which can speed up compressed backups).
+If you want to optimize all your tables: (The `<code class="fixed" style="white-space:pre-wrap">--zerofill</code>` is
+used here to fill up empty space with `<code>\0</code>` which can speed up compressed backups).
+
 
 ```
 aria_chk --analyze --sort-index --page_buffer_size=1G --zerofill */*.MAI
 ```
 
-In case you have a serious problem and have to use `--safe-recover`:
+In case you have a serious problem and have to use `<code class="fixed" style="white-space:pre-wrap">--safe-recover</code>`:
+
 
 ```
 aria_chk --safe-recover --zerofill --page_buffer_size=2G */*.MAI

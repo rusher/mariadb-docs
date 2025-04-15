@@ -1,8 +1,11 @@
+
 # Database Workbench
 
-[Database Workbench](http://www.upscene.com/database_workbench/) is a Windows application (*which works fine under Wine on Linux*) for database design, development, maintenance and testing for several database systems: MySQL, MariaDB, Oracle, Firebird, InterBase, Microsoft SQL Server, SQL Anywhere and NexusDB.
+[Database Workbench](https://www.upscene.com/database_workbench/) is a Windows application (*which works fine under Wine on Linux*) for database design, development, maintenance and testing for several database systems: MySQL, MariaDB, Oracle, Firebird, InterBase, Microsoft SQL Server, SQL Anywhere and NexusDB.
+
 
 With Database Workbench you can:
+
 
 * design a database
 * connect to multiple databases
@@ -17,8 +20,12 @@ With Database Workbench you can:
 * debug stored procedure
 * print meta data or data
 
-It includes numerous other tools, [more screen shots are available](http://www.upscene.com/database_workbench/learnmore).
+
+It includes numerous other tools, [more screen shots are available](https://www.upscene.com/database_workbench/learnmore).
+
 
 Database Workbench comes in multiple editions and is licensed on a per module basis, so there's always a version that suits you.
 
-![dbwoverview](/kb/en/database-workbench/+image/dbwoverview "dbwoverview")
+
+![dbwoverview](../../../.gitbook/assets/database-workbench/+image/dbwoverview.jpg "dbwoverview")
+

@@ -1,6 +1,9 @@
+
 # Slave SQL Thread States
 
-This article documents thread states that are related to [replication](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/mariadb-releases/compatibility-differences/replication-compatibility-between-mariadb-and-mysql) slave SQL threads. These correspond to the `Slave_SQL_State` shown by [SHOW SLAVE STATUS](/kb/en/show-slave-status/) as well as the `STATE` values listed by the [SHOW PROCESSLIST](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) statement and the [Information Schema PROCESSLIST](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) as well as the `PROCESSLIST_STATE` value listed in the [Performance Schema threads Table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md).
+This article documents thread states that are related to [replication](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) slave SQL threads. These correspond to the `<code>Slave_SQL_State</code>` shown by [SHOW SLAVE STATUS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) as well as the `<code>STATE</code>` values listed by the [SHOW PROCESSLIST](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) statement and the [Information Schema PROCESSLIST](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) as well as the `<code>PROCESSLIST_STATE</code>` value listed in the [Performance Schema threads Table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md).
+
+
 
 | Value | Description |
 | --- | --- |
@@ -18,3 +21,5 @@ This article documents thread states that are related to [replication](https://a
 | Waiting for other master connection to process GTID received on multiple master connections | A worker thread noticed that there is already another thread executing the same GTID from another connection and it's waiting for the other to complete. |
 | Waiting for slave mutex on exit | Thread is stopping. Only occurs very briefly. |
 | Waiting for the next event in relay log | State before reading next event from the [relay log](../../../../../server-management/server-monitoring-logs/binary-log/relay-log.md). |
+
+

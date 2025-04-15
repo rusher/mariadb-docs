@@ -1,8 +1,11 @@
+
 # aria_pack
 
-aria_pack is a tool for compressing [Aria](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-enabling-encryption.md) tables. The resulting table are read-only, and usually about 40% to 70% smaller.
+aria_pack is a tool for compressing [Aria](../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables. The resulting table are read-only, and usually about 40% to 70% smaller.
+
 
 aria_pack is run as follows
+
 
 ```
 aria_pack [options] file_name [file_name2...]
@@ -10,34 +13,39 @@ aria_pack [options] file_name [file_name2...]
 
 The file name is the .MAI index file. The extension can be omitted, although keeping it permits wildcards, such as
 
+
 ```
 aria_pack *.MAI
 ```
 
 to compress all the files.
 
+
 aria_pack compresses each column separately, and, when the resulting data is read, only the individual rows and columns required need to be decompressed, allowing for quicker reading.
+
 
 Once a table has been packed, use [aria_chk -rq](aria_chk.md) (the quick and recover options) to rebuild its indexes.
 
-#
 
-# Options
+## Options
 
-The following variables can be set while passed as commandline options to aria_pack, or set in the [ariapack] section in your [my.cnf](/en/configuring-mariadb-with-mycnf/) file.
+
+The following variables can be set while passed as commandline options to aria_pack, or set in the [ariapack] section in your [my.cnf](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) file.
+
+
 
 | Option | Description |
 | --- | --- |
 | Option | Description |
 | -b, --backup | Make a backup of the table as table_name.OLD. |
 | --character-sets-dir=name | Directory where character sets are. |
-| -h, --datadir | Path for control file (and logs if --logdir not used). From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-105-series/mariadb-1053-release-notes) |
+| -h, --datadir | Path for control file (and logs if --logdir not used). From [MariaDB 10.5.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes.md) |
 | -#, --debug[=name] | Output debug log. Often this is 'd:t:o,filename'. |
 | -?, --help | Display help and exit. |
 | -f, --force | Force packing of table even if it gets bigger or if tempfile exists. |
-| --ignore-control-file | Ignore the control file. From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-105-series/mariadb-1053-release-notes). |
+| --ignore-control-file | Ignore the control file. From [MariaDB 10.5.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes.md). |
 | -j, --join=name | Join all given tables into 'new_table_name'. All tables MUST have identical layouts. |
-| --require-control-file | Abort if cannot find control file. From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-105-series/mariadb-1053-release-notes). |
+| --require-control-file | Abort if cannot find control file. From [MariaDB 10.5.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes.md). |
 | -s, --silent | Only write output when an error occurs. |
 | -t, --test | Don't pack table, only test packing it. |
 | -T, --tmpdir=name | Use temporary directory to store temporary table. |
@@ -45,22 +53,23 @@ The following variables can be set while passed as commandline options to aria_p
 | -V, --version | Output version information and exit. |
 | -w, --wait | Wait and retry if table is in use. |
 
-#
 
-# Unpacking
+
+## Unpacking
+
 
 To unpack a table compressed with aria_pack, use the [aria_chk -u](aria_chk.md) option.
 
-#
 
-# Example
+## Example
+
 
 ```
 > aria_pack /my/data/test/posts
 Compressing /my/data/test/posts.MAD: (1690 records)
 - Calculating statistics
 - Compressing file
-37.71% 
+37.71%     
 > aria_chk -rq --ignore-control-file /my/data/test/posts
 - check record delete-chain
 - recovering (with keycache) Aria-table '/my/data/test/posts'
@@ -68,9 +77,9 @@ Data records: 1690
 State updated
 ```
 
-#
+## See Also
 
-# See Also
 
 * [FLUSH TABLES FOR EXPORT](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
 * [myisamchk](../myisam-clients-and-utilities/myisamchk-table-information.md)
+

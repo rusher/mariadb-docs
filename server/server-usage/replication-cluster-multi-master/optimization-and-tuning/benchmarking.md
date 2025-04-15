@@ -1,13 +1,14 @@
+
 # Benchmarking
 
-#
+## Published Results
 
-# Published Results
 
-* [Benchmark Results](/en/benchmark-results/)
+* [Benchmark Results](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/README.md)
 
-#
 
-# Systemtap
+## Systemtap
 
-* Useful scripts: [http://sourceware.org/systemtap/examples/keyword-index.html#DISK](http://sourceware.org/systemtap/examples/keyword-index.html#DISK)
+
+* Useful scripts: [keyword-index.html#DISK](https://sourceware.org/systemtap/examples/keyword-index.html#DISK)
+

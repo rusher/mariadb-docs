@@ -1,8 +1,11 @@
+
 # myisamchk Table Information
 
 [myisamchk](myisamchk-table-information.md) can be used to obtain information about MyISAM tables, particularly with the *-d*, *-e*, *-i* and *-v* options.
 
+
 Common options for gathering information include:
+
 
 * myisamchk -d
 * myisamchk -dv
@@ -10,25 +13,28 @@ Common options for gathering information include:
 * myisamchk -ei
 * myisamchk -eiv
 
+
 The *-d* option returns a short description of the table and its keys. Running the option while the table is being updated, and with external locking disabled, may result in an error, but no damage will be done to the table. Each extra *v* adds more output. *-e* checks the table thoroughly (but slowly), and the *-i* options adds statistical information,
 
-#
 
-# -dvv output
+## -dvv output
+
 
 The following table describes the output from the running myisamchk with the *-dvv* option:
+
+
 
 | Heading | Description |
 | --- | --- |
 | Heading | Description |
 | MyISAM file | Name and path of the MyISAM index file (without the extension) |
 | Record format | [Storage format](../../reference/storage-engines/myisam-storage-engine/myisam-storage-formats.md). One of packed (dynamic), fixed or compressed. |
-| Chararacter set | Default [character set](/en/data-types-character-sets-and-collations/) for the table. |
+| Chararacter set | Default [character set](../../reference/data-types/string-data-types/character-sets/README.md) for the table. |
 | File-version | Always 1. |
 | Creation time | Time the data file was created |
 | Recover time | Most recent time the file was reconstructed. |
 | Status | Table status. One or more of analyzed, changed, crashed, open, optimized keys and sorted index pages. |
-| Auto increment key | Index number of the table's [auto-increment](auto-increment) column. Not shown if no auto-increment column exists. |
+| Auto increment key | Index number of the table's [auto-increment](https://mariadb.com/kb/en/auto-increment) column. Not shown if no auto-increment column exists. |
 | Last value | Most recently generated auto-increment value. Not shown if no auto-increment column exists. |
 | Data records | Number of records in the table. |
 | Deleted blocks | Number of deleted blocks that are still reserving space. Use [OPTIMIZE TABLE](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) to defragment. |
@@ -57,6 +63,9 @@ The following table describes the output from the running myisamchk with the *-d
 | Huff tree | Only present for packed tables, contains the Huffman tree number associated with the column. |
 | Bits | Only present for packed tables, contains the number of bits used in the Huffman tree. |
 
+
+
+
 | Data type | Description |
 | --- | --- |
 | Data type | Description |
@@ -69,11 +78,14 @@ The following table describes the output from the running myisamchk with the *-d
 | no zeros | Zeros are not stored. |
 | always zero | Zero values are stored with one bit. |
 
-#
 
-# -eiv output
+
+## -eiv output
+
 
 The following table describes the output from the running myisamchk with the *-eiv* option:
+
+
 
 | Heading | Description |
 | --- | --- |
@@ -97,94 +109,95 @@ The following table describes the output from the running myisamchk with the *-e
 | Lost space | Total bytes lost, such as when a row is updated to a shorter length. |
 | Linkdata | Sum of the bytes used for pointers linking disconnected blocks. Each is four to seven bytes in size. |
 
-#
 
-# Examples
+
+## Examples
+
 
 ```
 myisamchk -d /var/lib/mysql/test/posts
 
-MyISAM file: /var/lib/mysql/test/posts
-Record format: Compressed
-Character set: utf8mb4_unicode_ci (224)
-Data records: 1680 Deleted blocks: 0
-Recordlength: 2758
+MyISAM file:         /var/lib/mysql/test/posts
+Record format:       Compressed
+Character set:       utf8mb4_unicode_ci (224)
+Data records:                 1680  Deleted blocks:                 0
+Recordlength:                 2758
 Using only keys '0' of 5 possibly keys
 
 table description:
-Key Start Len Index Type
-1 1 8 unique ulonglong 
-2 2265 80 multip. varchar prefix 
- 63 80 varchar 
- 17 5 binary 
- 1 8 ulonglong 
-3 1231 8 multip. ulonglong 
-4 9 8 multip. ulonglong 
-5 387 764 multip. ? prefix
+Key Start Len Index   Type
+1   1     8   unique  ulonglong            
+2   2265  80  multip. varchar prefix       
+    63    80          varchar              
+    17    5           binary               
+    1     8           ulonglong            
+3   1231  8   multip. ulonglong            
+4   9     8   multip. ulonglong            
+5   387   764 multip. ? prefix
 ```
 
 ```
 myisamchk -dvv /var/lib/mysql/test/posts
 
-MyISAM file: /var/lib/mysql/test/posts
-Record format: Compressed
-Character set: utf8mb4_unicode_ci (224)
-File-version: 1
-Creation time: 2015-08-10 16:26:54
-Recover time: 2015-08-10 16:26:54
-Status: checked,analyzed,optimized keys
-Auto increment key: 1 Last value: 1811
-Checksum: 2299272165
-Data records: 1680 Deleted blocks: 0
-Datafile parts: 1680 Deleted data: 0
-Datafile pointer (bytes): 6 Keyfile pointer (bytes): 6
-Datafile length: 4298092 Keyfile length: 156672
-Max datafile length: 281474976710654 Max keyfile length: 288230376151710719
-Recordlength: 2758
+MyISAM file:         /var/lib/mysql/test/posts
+Record format:       Compressed
+Character set:       utf8mb4_unicode_ci (224)
+File-version:        1
+Creation time:       2015-08-10 16:26:54
+Recover time:        2015-08-10 16:26:54
+Status:              checked,analyzed,optimized keys
+Auto increment key:              1  Last value:                  1811
+Checksum:               2299272165
+Data records:                 1680  Deleted blocks:                 0
+Datafile parts:               1680  Deleted data:                   0
+Datafile pointer (bytes):        6  Keyfile pointer (bytes):        6
+Datafile length:           4298092  Keyfile length:            156672
+Max datafile length: 281474976710654  Max keyfile length: 288230376151710719
+Recordlength:                 2758
 Using only keys '0' of 5 possibly keys
 
 table description:
-Key Start Len Index Type Rec/key Root Blocksize
-1 1 8 unique ulonglong 1 1024
-2 2265 80 multip. varchar prefix 336 1024
- 63 80 varchar 187
- 17 5 binary 1
- 1 8 ulonglong 1
-3 1231 8 multip. ulonglong 10 1024
-4 9 8 multip. ulonglong 840 1024
-5 387 764 multip. ? prefix 1 4096
+Key Start Len Index   Type                     Rec/key         Root  Blocksize
+1   1     8   unique  ulonglong                      1                    1024
+2   2265  80  multip. varchar prefix               336                    1024
+    63    80          varchar                      187
+    17    5           binary                         1
+    1     8           ulonglong                      1
+3   1231  8   multip. ulonglong                     10                    1024
+4   9     8   multip. ulonglong                    840                    1024
+5   387   764 multip. ? prefix                       1                    4096
 
-Field Start Length Nullpos Nullbit Type Huff tree Bits
-1 1 8 zerofill(6) 1 9
-2 9 8 zerofill(7) 1 9
-3 17 5 1 9
-4 22 5 1 9
-5 27 12 blob 2 9
-6 39 10 blob 3 9
-7 49 4 always zero 1 9
-8 53 10 blob 1 9
-9 63 81 varchar 4 9
-10 144 81 varchar 5 5
-11 225 81 varchar 5 5
-12 306 81 varchar 1 9
-13 387 802 varchar 6 9
-14 1189 10 blob 1 9
-15 1199 10 blob 7 9
-16 1209 5 1 9
-17 1214 5 1 9
-18 1219 12 blob 1 9
-19 1231 8 no zeros, zerofill(6) 1 9
-20 1239 1022 varchar 7 9
-21 2261 4 always zero 1 9
-22 2265 81 varchar 8 8
-23 2346 402 varchar 2 9
-24 2748 8 no zeros, zerofill(7) 1 9
+Field Start Length Nullpos Nullbit Type                         Huff tree  Bits
+1     1     8                      zerofill(6)                          1     9
+2     9     8                      zerofill(7)                          1     9
+3     17    5                                                           1     9
+4     22    5                                                           1     9
+5     27    12                     blob                                 2     9
+6     39    10                     blob                                 3     9
+7     49    4                      always zero                          1     9
+8     53    10                     blob                                 1     9
+9     63    81                     varchar                              4     9
+10    144   81                     varchar                              5     5
+11    225   81                     varchar                              5     5
+12    306   81                     varchar                              1     9
+13    387   802                    varchar                              6     9
+14    1189  10                     blob                                 1     9
+15    1199  10                     blob                                 7     9
+16    1209  5                                                           1     9
+17    1214  5                                                           1     9
+18    1219  12                     blob                                 1     9
+19    1231  8                      no zeros, zerofill(6)                1     9
+20    1239  1022                   varchar                              7     9
+21    2261  4                      always zero                          1     9
+22    2265  81                     varchar                              8     8
+23    2346  402                    varchar                              2     9
+24    2748  8                      no zeros, zerofill(7)                1     9
 ```
 
 ```
 myisamchk -eiv /var/lib/mysql/test/posts
 Checking MyISAM file: /var/lib/mysql/test/posts
-Data records: 1680 Deleted blocks: 0
+Data records:    1680   Deleted blocks:       0
 - check file-size
 - check record delete-chain
 No recordlinks
@@ -195,23 +208,23 @@ block_size 3072:
 block_size 4096:
 - check index reference
 - check data record references index: 1
-Key: 1: Keyblocks used: 92% Packed: 0% Max levels: 2
+Key:  1:  Keyblocks used:  92%  Packed:    0%  Max levels:  2
 - check data record references index: 2
-Key: 2: Keyblocks used: 93% Packed: 90% Max levels: 2
+Key:  2:  Keyblocks used:  93%  Packed:   90%  Max levels:  2
 - check data record references index: 3
-Key: 3: Keyblocks used: 92% Packed: 0% Max levels: 2
+Key:  3:  Keyblocks used:  92%  Packed:    0%  Max levels:  2
 - check data record references index: 4
-Key: 4: Keyblocks used: 92% Packed: 0% Max levels: 2
+Key:  4:  Keyblocks used:  92%  Packed:    0%  Max levels:  2
 - check data record references index: 5
-Key: 5: Keyblocks used: 88% Packed: 97% Max levels: 2
-Total: Keyblocks used: 91% Packed: 91%
+Key:  5:  Keyblocks used:  88%  Packed:   97%  Max levels:  2
+Total:    Keyblocks used:  91%  Packed:   91%
 
 - check records and index references
-Records: 1680 M.recordlength: 4102 Packed: 0%
-Recordspace used: 100% Empty space: 0% Blocks/Record: 1.00
-Record blocks: 1680 Delete blocks: 0
-Record data: 6892064 Deleted data: 0
-Lost space: 1284 Linkdata: 6264
+Records:              1680    M.recordlength:     4102   Packed:             0%
+Recordspace used:      100%   Empty space:           0%  Blocks/Record:   1.00
+Record blocks:        1680    Delete blocks:         0
+Record data:       6892064    Deleted data:          0
+Lost space:           1284    Linkdata:           6264
 
 User time 0.11, System time 0.00
 Maximum resident set size 3036, Integral resident set size 0

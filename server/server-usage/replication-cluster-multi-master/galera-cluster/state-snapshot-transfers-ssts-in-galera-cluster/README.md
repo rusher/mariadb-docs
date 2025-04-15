@@ -1,1 +1,2 @@
+
 # State Snapshot Transfers (SSTs) in Galera Cluster

@@ -1,13 +1,16 @@
+
 # 2-Binlog Event Header
 
-All the [binlog events](/en/binlog-events/) stored in a [binary log file](../../../../../server-usage/programming-customizing-mariadb/stored-routines/binary-logging-of-stored-routines.md) have a common structure:
+All the [binlog events](1-binlog-events.md) stored in a [binary log file](../../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) have a common structure:
+
 
 * an event header
 * event data
 
-#
 
-## Event Header Structure, 19 Bytes
+### Event Header Structure, 19 Bytes
+
+
 
 * [uint<4>](../protocol-data-types.md#fixed-length-bytes) Timestamp (creation time)
 * [uint<1>](../protocol-data-types.md#fixed-length-bytes) [Event Type](#event-type) (type_code)
@@ -16,16 +19,20 @@ All the [binlog events](/en/binlog-events/) stored in a [binary log file](../../
 * [uint<4>](../protocol-data-types.md#fixed-length-bytes) Next Event position
 * [uint<2>](../protocol-data-types.md#fixed-length-bytes) [Event flags](#event-flag)
 
+
+
 **Note**: if CRC32 is in use, the Event Length is 4 bytes bigger in size.
 The 4 bytes CRC32 are written at the end of the event (just after the last 'data' byte).
 
-#
 
-### Encrypted Binlog Events
+#### Encrypted Binlog Events
+
 
 For encrypted binlog events, only the event length is in plaintext and everything else is encrypted.
 
+
 To decrypt the binlog event:
+
 
 * Store the event length in memory
 * Move the timestamp into the event length position
@@ -33,14 +40,17 @@ To decrypt the binlog event:
 * Move the timestamp back to its original position
 * Copy the original event length back to its position
 
+
 Regardless of the cipher used to encrypt the binlogs, the encrypted data will be the same size as the original unencrypted event. For events that are encrypted in CBC mode and whose length is not a multiple of the cipher block size, the final partial block is encrypted using a form of [residual block termination](https://en.wikipedia.org/wiki/Residual_block_termination):
+
 
 * Encrypt the current IV of the binlog file in ECB mode
 * XOR the remaining bytes with the encrypted IV
 
-#
 
-## Event Type
+### Event Type
+
+
 
 | Hex | Event type description |
 | --- | --- |
@@ -67,18 +77,25 @@ Regardless of the cipher used to encrypt the binlogs, the encrypted data will be
 | 0xaa | [UPDATE_ROWS_V1](rows_event_v1v2-rows_compressed_event_v1.md) |
 | 0xab | [DELETE_ROWS_V1](rows_event_v1v2-rows_compressed_event_v1.md) |
 
-#
 
-## Fake Events
+
+### Fake Events
+
 
 These are generated on the fly, never written.
 
+
+
+|   |   |
+| --- | --- |
 | 0x04 | [FAKE_ROTATE_EVENT](fake-rotate_event.md) |
 | 0xa3 | [FAKE_GTID_LIST_EVENT](fake-gtid_list-event.md) |
 
-#
 
-## Event Flag
+
+### Event Flag
+
+
 
 | Hex | Event flag description |
 | --- | --- |
@@ -95,23 +112,25 @@ These are generated on the fly, never written.
 | 0x0200 | LOG_EVENT_MTS_ISOLATE_F (no description yet) |
 | 0x8000 | LOG_EVENT_SKIP_REPLICATION_F Flag set by application creating the event (with @@skip_replication);the slave will skip replication of such eventsif --replicate-events-marked-for-skip is not set to REPLICATE.This is a MariaDB flag; we allocate it from the end of the available values to reduce risk of conflict with new MySQL flags. |
 
-#
 
-### Event Header example of [FORMAT_DESCRIPTION_EVENT](format_description_event.md)
+
+#### Event Header example of [FORMAT_DESCRIPTION_EVENT](format_description_event.md)
+
 
 This is the first event in the binlog file at pos 4
 
+
 ```
-a4 85 9e 59 0f 8c 27 00 00 f5 00 00 00 f9 00 00 ...Y..'.........
-00 00 00 04 00 31 30 2e 31 2e 32 34 2d 4d 61 72 .....10.1.24-Mar
-69 61 44 42 00 6c 6f 67 00 00 00 00 00 00 00 00 iaDB.log....
+a4 85 9e 59 0f 8c 27 00  00 f5 00 00 00 f9 00 00  ...Y..'.........
+00 00 00 04 00 31 30 2e  31 2e 32 34 2d 4d 61 72  .....10.1.24-Mar
+69 61 44 42 00 6c 6f 67  00 00 00 00 00 00 00 00  iaDB.log....
 ...
 ...
 ```
 
-#
 
-### Interpretation of First 19 Bytes of the Event (the Event Header)
+#### Interpretation of First 19 Bytes of the Event (the Event Header)
+
 
 * a4 85 9e 59 [4] Timestamp => 59 9e 85 a4 => 1503561124 = 2017-08-24 09:52:04
 * 0f [1] Event Type = 0x0f = FORMAT_DESCRIPTION_EVENT
@@ -119,3 +138,4 @@ a4 85 9e 59 0f 8c 27 00 00 f5 00 00 00 f9 00 00 ...Y..'.........
 * f5 00 00 00 [4] Event length => 00 00 00 f5 => 245
 * f9 00 00 00 [4] Next Event pos => 00 00 00 f9 => 249 (pos 4 + event size)
 * 00 00 [2] Event flags = 0
+

@@ -1,49 +1,49 @@
+
 # Catalog-Specific Functions and Variables
 
-#
 
-#### MariaDB starting with [12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-120)
-
+##### MariaDB starting with [12.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-120.md)
 Catalog support is planned for 12.0.
 
-#
 
-# Catalog Functions
 
-#
+## Catalog Functions
 
-## catalog()
 
-`catalog()
+### catalog()
 
-# returns the name of the current catalog.`
+
+`<code>catalog()
+
+# returns the name of the current catalog.</code>`
+
 
 ```
 MariaDB [def.test]> select catalog();
 +-----------+
 | catalog() |
 +-----------+
-| def |
+| def       |
 +-----------+
 ```
 
-#
+## Catalog Variables
 
-# Catalog Variables
 
-#
+### @@catalogs
 
-## @@catalogs
 
 One can check if a server supports catalogs with:
+
 
 ```
 select @@catalogs;
 +------------+
 | @@catalogs |
 +------------+
-| 1 |
+|          1 |
 +------------+
 ```
 
 1 means that the server is configured for catalogs.
+

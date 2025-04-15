@@ -1,6 +1,8 @@
+
 # systemd
 
-`systemd` is a `[sysVinit](sysvinit.md)` replacement that is the default service manager on the following Linux distributions:
+`<code>systemd</code>` is a `<code>[sysVinit](sysvinit.md)</code>` replacement that is the default service manager on the following Linux distributions:
+
 
 * RHEL 7 and above
 * CentOS 7 and above
@@ -10,111 +12,124 @@
 * SLES 12 and above
 * OpenSUSE 12.2 and above
 
-MariaDB's `systemd` unit file is included in the server packages for [RPMs](/kb/en/rpm/) and [DEBs](../binary-packages/installing-mariadb-deb-files.md). It is also included in certain [binary tarballs](../binary-packages/installing-mariadb-binary-tarballs.md).
 
-The service name is `mariadb.service`.
+MariaDB's `<code>systemd</code>` unit file is included in the server packages for [RPMs](../binary-packages/rpm/README.md) and [DEBs](../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md). It is also included in certain [binary tarballs](../binary-packages/installing-mariadb-binary-tarballs.md).
 
-#
 
-# Installing & Starting MariaDB
+The service name is `<code>mariadb.service</code>`.
 
-When installing MariaDB server rpm / dep package, it will automatically run the [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) script, that creates the initial databases and users.
 
-When MariaDB is started with the `systemd` unit file, it directly starts the `[mariadbd](mariadbd-options.md)` process as the `mysql` user. Unlike with `[sysVinit](sysvinit.md)`, the `[mariadbd](mariadbd-options.md)` process is not started with `[mariadbd-safe](mariadbd-safe.md)`. As a consequence, options will not be read from the `[mariadbd-safe]` [option group](../configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb-with-option-files.md).
+## Installing & Starting MariaDB
 
-#
 
-# Contents of the MariaDB Service's Unit File
+When installing MariaDB server rpm / dep package, it will automatically run the [mariadb-install-db](../mariadb-install-db-exe.md) script, that creates the initial databases and users.
 
-The contents of the `mariadb.service` file can be examined with `systemctl show mariadb.service`.
 
-#
+When MariaDB is started with the `<code>systemd</code>` unit file, it directly starts the `<code>[mariadbd](mariadbd-options.md)</code>` process as the `<code>mysql</code>` user. Unlike with `<code>[sysVinit](sysvinit.md)</code>`, the `<code>[mariadbd](mariadbd-options.md)</code>` process is not started with `<code>[mariadbd-safe](mariadbd-safe.md)</code>`. As a consequence, options will not be read from the `<code>[mariadbd-safe]</code>` [option group](../configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb-with-option-files.md).
 
-# Interacting with the MariaDB Server Process
 
-The service can be interacted with by using the `[systemctl](https://www.freedesktop.org/software/systemd/man/systemctl.html)` command.
 
-#
+## Contents of the MariaDB Service's Unit File
 
-## Starting the MariaDB Server Process on Boot
 
-MariaDB's `systemd` service can be configured to start at boot by executing the following:
+The contents of the `<code>mariadb.service</code>` file can be examined with `<code>systemctl show mariadb.service</code>`.
+
+
+## Interacting with the MariaDB Server Process
+
+
+The service can be interacted with by using the `<code>[systemctl](https://www.freedesktop.org/software/systemd/man/systemctl.html)</code>` command.
+
+
+### Starting the MariaDB Server Process on Boot
+
+
+MariaDB's `<code>systemd</code>` service can be configured to start at boot by executing the following:
+
 
 ```
 sudo systemctl enable mariadb.service
 ```
 
-#
+### Starting the MariaDB Server Process
 
-## Starting the MariaDB Server Process
 
-MariaDB's `systemd` service can be started by executing the following:
+MariaDB's `<code>systemd</code>` service can be started by executing the following:
+
 
 ```
 sudo systemctl start mariadb.service
 ```
 
-MariaDB's `systemd` unit file has a default startup timeout of about 90 seconds on most systems. If certain startup tasks, such as crash recovery, take longer than this default startup timeout, then `systemd` will assume that `mariadbd` has failed to startup, which causes `systemd` to kill the `mariadbd` process. To work around this, you can reconfigure the MariaDB `systemd` unit to have an [infinite timeout](#configuring-the-systemd-service-timeout).
+MariaDB's `<code>systemd</code>` unit file has a default startup timeout of about 90 seconds on most systems. If certain startup tasks, such as crash recovery, take longer than this default startup timeout, then `<code>systemd</code>` will assume that `<code>mariadbd</code>` has failed to startup, which causes `<code>systemd</code>` to kill the `<code>mariadbd</code>` process. To work around this, you can reconfigure the MariaDB `<code>systemd</code>` unit to have an [infinite timeout](#configuring-the-systemd-service-timeout).
 
-Note that [systemd 236 added the EXTEND_TIMEOUT_USEC environment variable](https://lists.freedesktop.org/archives/systemd-devel/2017-December/039996.html) that allows services to extend the startup timeout during long-running processes. Starting with [MariaDB 10.1.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-101-series/mariadb-10133-release-notes), [MariaDB 10.2.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-102-series/mariadb-10215-release-notes), and [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1036-release-notes), on systems with systemd versions that support it, MariaDB uses this feature to extend the startup timeout during certain startup processes that can run long. Therefore, if you are using `systemd` 236 or later, then you should not need to manually override `TimeoutStartSec`, even if your startup tasks, such as crash recovery, run for longer than the configured value. See [MDEV-14705](https://jira.mariadb.org/browse/MDEV-14705) for more information.
 
-#
+Note that [systemd 236 added the EXTEND_TIMEOUT_USEC environment variable](https://lists.freedesktop.org/archives/systemd-devel/2017-December/039996.html) that allows services to extend the startup timeout during long-running processes. Starting with [MariaDB 10.1.33](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10133-release-notes.md), [MariaDB 10.2.15](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10215-release-notes.md), and [MariaDB 10.3.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1036-release-notes.md), on systems with systemd versions that support it, MariaDB uses this feature to extend the startup timeout during certain startup processes that can run long. Therefore, if you are using `<code>systemd</code>` 236 or later, then you should not need to manually override `<code>TimeoutStartSec</code>`, even if your startup tasks, such as crash recovery, run for longer than the configured value. See [MDEV-14705](https://jira.mariadb.org/browse/MDEV-14705) for more information.
 
-## Stopping the MariaDB Server Process
 
-MariaDB's `systemd` service can be stopped by executing the following:
+### Stopping the MariaDB Server Process
+
+
+MariaDB's `<code>systemd</code>` service can be stopped by executing the following:
+
 
 ```
 sudo systemctl stop mariadb.service
 ```
 
-#
+### Restarting the MariaDB Server Process
 
-## Restarting the MariaDB Server Process
 
-MariaDB's `systemd` service can be restarted by executing the following:
+MariaDB's `<code>systemd</code>` service can be restarted by executing the following:
+
 
 ```
 sudo systemctl restart mariadb.service
 ```
 
-#
+### Checking the Status of the MariaDB Server Process
 
-## Checking the Status of the MariaDB Server Process
 
-The status of MariaDB's `systemd` service can be obtained by executing the following:
+The status of MariaDB's `<code>systemd</code>` service can be obtained by executing the following:
+
 
 ```
 sudo systemctl status mariadb.service
 ```
 
-#
+### Interacting with Multiple MariaDB Server Processes
 
-## Interacting with Multiple MariaDB Server Processes
 
-A `systemd` [template unit file](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) with the name `mariadb@.service` is installed in `INSTALL_SYSTEMD_UNITDIR` on some systems. See [Locating the MariaDB Service's Unit File](#locating-the-mariadb-services-unit-file) to see what directory that refers to on each distribution.
+A `<code>systemd</code>` [template unit file](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) with the name `<code>mariadb@.service</code>` is installed in `<code>INSTALL_SYSTEMD_UNITDIR</code>` on some systems. See [Locating the MariaDB Service's Unit File](#locating-the-mariadb-services-unit-file) to see what directory that refers to on each distribution.
 
-This template unit file allows you to interact with multiple MariaDB instances on the same system using the same template unit file. When you interact with a MariaDB instance using this template unit file, you have to provide an instance name as a suffix. For example, the following command tries to start a MariaDB instance with the name `node1`:
+
+This template unit file allows you to interact with multiple MariaDB instances on the same system using the same template unit file. When you interact with a MariaDB instance using this template unit file, you have to provide an instance name as a suffix. For example, the following command tries to start a MariaDB instance with the name `<code>node1</code>`:
+
 
 ```
 sudo systemctl start mariadb@node1.service
 ```
 
-MariaDB's build system cannot include the `mariadb@.service` template unit file in [RPM](/kb/en/rpm/) packages on platforms that have `[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)` versions older than 3.3.0, because these `[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)` versions have a [bug](https://public.kitware.com/Bug/view.php?id=14782) that causes it to encounter errors when packaging a file in RPMs if the file name contains the `@` character. MariaDB's RHEL 7 and CentOS 7 RPM build hosts only got a new enough `[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)` version starting with [MariaDB 10.1.39](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-101-series/mariadb-10139-release-notes), [MariaDB 10.2.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-102-series/mariadb-10223-release-notes), and [MariaDB 10.3.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10314-release-notes). To use this functionality on a MariaDB version that does not have the file, you can copy the file from a package that does have the file.
+MariaDB's build system cannot include the `<code>mariadb@.service</code>` template unit file in [RPM](../binary-packages/rpm/README.md) packages on platforms that have `<code>[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)</code>` versions older than 3.3.0, because these `<code>[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)</code>` versions have a [bug](https://public.kitware.com/Bug/view.php?id=14782) that causes it to encounter errors when packaging a file in RPMs if the file name contains the `<code>@</code>` character. MariaDB's RHEL 7 and CentOS 7 RPM build hosts only got a new enough `<code>[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)</code>` version starting with [MariaDB 10.1.39](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes.md), [MariaDB 10.2.23](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10223-release-notes.md), and [MariaDB 10.3.14](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10314-release-notes.md). To use this functionality on a MariaDB version that does not have the file, you can copy the file from a package that does have the file.
 
-#
 
-### Default configuration of Multiple Instances in 10.4 and Later
+#### Default configuration of Multiple Instances in 10.4 and Later
 
-`systemd` will also look for an [option file](../configuring-mariadb-with-option-files.md) for a specific MariaDB instance based on the instance name.
 
-It will use the `.%I` as the [custom option group suffix](../configuring-mariadb-with-option-files.md#custom-option-group-suffixes) that is appended to any [server option group](../configuring-mariadb-with-option-files.md#server-option-groups), in any configuration file included by default.
+`<code>systemd</code>` will also look for an [option file](../configuring-mariadb-with-option-files.md) for a specific MariaDB instance based on the instance name.
 
-In all distributions, the `%I` is the MariaDB instance name. In the above `node1` case, it would use the [option file](../configuring-mariadb-with-option-files.md) at the path`/etc/mynode1.cnf`.
 
-When using multiple instances, each instance will of course also need their own `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`, `[socket](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#socket)` and , `[port](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#port)` (unless `[skip_networking](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#skip_networking) is specified). As [mariadb-install-db#option-groups](../../../clients-and-utilities/mariadb-install-db.md#option-groups) reads the same sections as the server, and `ExecStartPre=` run [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) within the service, the instances are autocreated if there is sufficient priviledges.`
+It will use the `<code>.%I</code>` as the [custom option group suffix](../configuring-mariadb-with-option-files.md#custom-option-group-suffixes) that is appended to any [server option group](../configuring-mariadb-with-option-files.md#server-option-groups), in any configuration file included by default.
 
-To use a 10.3 configuration in 10.4 or later and the following customisation in the editor after running `sudo systemctl edit mariadb@.service`:
+
+In all distributions, the `<code>%I</code>` is the MariaDB instance name. In the above `<code>node1</code>` case, it would use the [option file](../configuring-mariadb-with-option-files.md) at the path`<code>/etc/mynode1.cnf</code>`.
+
+
+When using multiple instances, each instance will of course also need their own `<code>[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)</code>`, `<code>[socket](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#socket)</code>` and , `<code>[port](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#port)</code>` (unless `<code>[skip_networking](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#skip_networking) is specified). As [mariadb-install-db#option-groups](../mariadb-install-db-exe.md#option-groups) reads the same sections as the server, and </code>`ExecStartPre=`<code> run [mariadb-install-db](../mariadb-install-db-exe.md) within the service, the instances are autocreated if there is sufficient priviledges.</code>`
+
+
+To use a 10.3 configuration in 10.4 or later and the following customisation in the editor after running `<code>sudo systemctl edit mariadb@.service</code>`:
+
 
 ```
 [Unit]
@@ -124,104 +139,115 @@ ConditionPathExists=
 Environment='MYSQLD_MULTI_INSTANCE=--defaults-file=/etc/my%I.cnf'
 ```
 
-#
+#### Custom configuration of Multiple Instances in 10.4 and Later
 
-### Custom configuration of Multiple Instances in 10.4 and Later
 
-Because users may want to do many various things with their multiple instances, we've provided a way to let the user define how they wish their multiple instances to run. The systemd environment variable `MYSQLD_MULTI_INSTANCE` can be set to anything that [mariadbd](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) and [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) will recognise.
+Because users may want to do many various things with their multiple instances, we've provided a way to let the user define how they wish their multiple instances to run. The systemd environment variable `<code>MYSQLD_MULTI_INSTANCE</code>` can be set to anything that [mariadbd](mariadbd.md) and [mariadb-install-db](../mariadb-install-db-exe.md) will recognise.
+
 
 A hosting environment where each user has their own instance may look like 
-(with `sudo systemctl edit mariadb@.service`):
+(with `<code>sudo systemctl edit mariadb@.service</code>`):
+
 
 ```
 [Service]
 ProtectHome=false
 Environment='MYSQLD_MULTI_INSTANCE=--defaults-file=/home/%I/my.cnf \
- --user=%I \
- --socket=/home/%I.sock \ 
- --datadir=/home/%I/mariadb_data \
- --skip-networking'
+                        --user=%I \
+                        --socket=/home/%I.sock \ 
+                        --datadir=/home/%I/mariadb_data \
+                        --skip-networking'
 ```
 
 Here the instance name is the unix user of the service.
 
-#
 
-### Configuring Multiple Instances in 10.3 and Earlier
+#### Configuring Multiple Instances in 10.3 and Earlier
 
-`systemd` will also look for an [option file](../configuring-mariadb-with-option-files.md) for a specific MariaDB instance based on the instance name. By default, it will look for the option file in a directory defined at build time by the `INSTALL_SYSCONF2DIR` option provided to `[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)`.
 
-For example, on RHEL, CentOS, Fedora, and other similar Linux distributions, `INSTALL_SYSCONF2DIR` is defined as `/etc/my.cnf.d/`, so it will look for an option file that matches the format:
+`<code>systemd</code>` will also look for an [option file](../configuring-mariadb-with-option-files.md) for a specific MariaDB instance based on the instance name. By default, it will look for the option file in a directory defined at build time by the `<code>INSTALL_SYSCONF2DIR</code>` option provided to `<code>[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)</code>`.
 
-* `/etc/my.cnf.d/my%I.cnf`
 
-And on Debian, Ubuntu, and other similar Linux distributions, `INSTALL_SYSCONF2DIR` is defined as `/etc/mysql/conf.d//`, so it will look for an option file that matches the format:
+For example, on RHEL, CentOS, Fedora, and other similar Linux distributions, `<code>INSTALL_SYSCONF2DIR</code>` is defined as `<code>/etc/my.cnf.d/</code>`, so it will look for an option file that matches the format:
 
-* `/etc/mysql/conf.d/my%I.cnf`
 
-In all distributions, the `%I` is the MariaDB instance name. In the above `node1` case, it would use the [option file](../configuring-mariadb-with-option-files.md) at the path`/etc/my.cnf.d/mynode1.cnf` for RHEL-like distributions and `/etc/mysql/conf.d/mynode1.cnf` for Debian-like distributions.
+* `<code>/etc/my.cnf.d/my%I.cnf</code>`
 
-When using multiple instances, each instance will of course also need their own `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`. See [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) for information on how to initialize the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` for additional MariaDB instances.
 
-#
+And on Debian, Ubuntu, and other similar Linux distributions, `<code>INSTALL_SYSCONF2DIR</code>` is defined as `<code>/etc/mysql/conf.d//</code>`, so it will look for an option file that matches the format:
 
-# Systemd and Galera Cluster
 
-#
+* `<code>/etc/mysql/conf.d/my%I.cnf</code>`
 
-## Bootstrapping a New Cluster
 
-When using [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-use-cases.md) with systemd, the first node in a cluster has to be started with `galera_new_cluster`. See [Getting Started with MariaDB Galera Cluster: Bootstrapping a New Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster) for more information.
+In all distributions, the `<code>%I</code>` is the MariaDB instance name. In the above `<code>node1</code>` case, it would use the [option file](../configuring-mariadb-with-option-files.md) at the path`<code>/etc/my.cnf.d/mynode1.cnf</code>` for RHEL-like distributions and `<code>/etc/mysql/conf.d/mynode1.cnf</code>` for Debian-like distributions.
 
-#
 
-## Recovering a Node's Cluster Position
+When using multiple instances, each instance will of course also need their own `<code>[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)</code>`. See [mariadb-install-db](../mariadb-install-db-exe.md) for information on how to initialize the `<code>[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)</code>` for additional MariaDB instances.
 
-When using [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-use-cases.md) with systemd, a node's position in the cluster can be recovered with `galera_recovery`. See [Getting Started with MariaDB Galera Cluster: Determining the Most Advanced Node](../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#determining-the-most-advanced-node) for more information.
 
-#
+## Systemd and Galera Cluster
 
-## SSTs and Systemd
 
-MariaDB's `systemd` unit file has a default startup timeout of about 90 seconds on most systems. If an SST takes longer than this default startup timeout on a joiner node, then `systemd` will assume that `mariadbd` has failed to startup, which causes `systemd` to kill the `mariadbd` process on the joiner node. To work around this, you can reconfigure the MariaDB `systemd` unit to have an [infinite timeout](#configuring-the-systemd-service-timeout). See [Introduction to State Snapshot Transfers (SSTs): SSTs and Systemd](../../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md#ssts-and-systemd) for more information.
+### Bootstrapping a New Cluster
 
-Note that [systemd 236 added the EXTEND_TIMEOUT_USEC environment variable](https://lists.freedesktop.org/archives/systemd-devel/2017-December/039996.html) that allows services to extend the startup timeout during long-running processes. Starting with [MariaDB 10.1.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-101-series/mariadb-10135-release-notes), [MariaDB 10.2.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-102-series/mariadb-10217-release-notes), and [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1038-release-notes), on systems with systemd versions that support it, MariaDB uses this feature to extend the startup timeout during long SSTs. Therefore, if you are using `systemd` 236 or later, then you should not need to manually override `TimeoutStartSec`, even if your SSTs run for longer than the configured value. See [MDEV-15607](https://jira.mariadb.org/browse/MDEV-15607) for more information.
 
-#
+When using [Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) with systemd, the first node in a cluster has to be started with `<code>galera_new_cluster</code>`. See [Getting Started with MariaDB Galera Cluster: Bootstrapping a New Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster) for more information.
 
-# Configuring the Systemd Service
 
-You can configure MariaDB's `systemd` service by creating a "drop-in" configuration file for the `systemd` service. On most systems, the `systemd` service's directory for "drop-in" configuration files is `/etc/systemd/system/mariadb.service.d/`. You can confirm the directory and see what "drop-in" configuration files are currently loaded by executing:
+### Recovering a Node's Cluster Position
+
+
+When using [Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) with systemd, a node's position in the cluster can be recovered with `<code>galera_recovery</code>`. See [Getting Started with MariaDB Galera Cluster: Determining the Most Advanced Node](../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#determining-the-most-advanced-node) for more information.
+
+
+### SSTs and Systemd
+
+
+MariaDB's `<code>systemd</code>` unit file has a default startup timeout of about 90 seconds on most systems. If an SST takes longer than this default startup timeout on a joiner node, then `<code>systemd</code>` will assume that `<code>mariadbd</code>` has failed to startup, which causes `<code>systemd</code>` to kill the `<code>mariadbd</code>` process on the joiner node. To work around this, you can reconfigure the MariaDB `<code>systemd</code>` unit to have an [infinite timeout](#configuring-the-systemd-service-timeout). See [Introduction to State Snapshot Transfers (SSTs): SSTs and Systemd](../../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md#ssts-and-systemd) for more information.
+
+
+Note that [systemd 236 added the EXTEND_TIMEOUT_USEC environment variable](https://lists.freedesktop.org/archives/systemd-devel/2017-December/039996.html) that allows services to extend the startup timeout during long-running processes. Starting with [MariaDB 10.1.35](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10135-release-notes.md), [MariaDB 10.2.17](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10217-release-notes.md), and [MariaDB 10.3.8](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1038-release-notes.md), on systems with systemd versions that support it, MariaDB uses this feature to extend the startup timeout during long SSTs. Therefore, if you are using `<code>systemd</code>` 236 or later, then you should not need to manually override `<code>TimeoutStartSec</code>`, even if your SSTs run for longer than the configured value. See [MDEV-15607](https://jira.mariadb.org/browse/MDEV-15607) for more information.
+
+
+## Configuring the Systemd Service
+
+
+You can configure MariaDB's `<code>systemd</code>` service by creating a "drop-in" configuration file for the `<code>systemd</code>` service. On most systems, the `<code>systemd</code>` service's directory for "drop-in" configuration files is `<code>/etc/systemd/system/mariadb.service.d/</code>`. You can confirm the directory and see what "drop-in" configuration files are currently loaded by executing:
+
 
 ```
 $ sudo systemctl status mariadb.service
 ● mariadb.service - MariaDB 10.1.37 database server
- Loaded: loaded (/usr/lib/systemd/system/mariadb.service; enabled; vendor preset: disabled)
- Drop-In: /etc/systemd/system/mariadb.service.d
- └─migrated-from-my.cnf-settings.conf, timeoutstartsec.conf
+   Loaded: loaded (/usr/lib/systemd/system/mariadb.service; enabled; vendor preset: disabled)
+  Drop-In: /etc/systemd/system/mariadb.service.d
+           └─migrated-from-my.cnf-settings.conf, timeoutstartsec.conf
 ...
 ```
 
-If you want to configure the `systemd` service, then you can create a file with the `.conf` extension in that directory. The configuration option(s) that you would like to change would need to be placed in an appropriate section within the file, usually `[Service]`. If a `systemd` option is a list, then you may need to set the option to empty before you set the replacement values. For example:
+If you want to configure the `<code>systemd</code>` service, then you can create a file with the `<code>.conf</code>` extension in that directory. The configuration option(s) that you would like to change would need to be placed in an appropriate section within the file, usually `<code>[Service]</code>`. If a `<code>systemd</code>` option is a list, then you may need to set the option to empty before you set the replacement values. For example:
+
 
 ```
 [Service]
 
 ExecStart=
-ExecStart=/usr/bin/numactl --interleave=all /usr/sbin/mariadbd $MYSQLD_OPTS $_WSREP_NEW_CLUSTER $_WSREP_START_POSITION
+ExecStart=/usr/bin/numactl --interleave=all  /usr/sbin/mariadbd $MYSQLD_OPTS $_WSREP_NEW_CLUSTER $_WSREP_START_POSITION
 ```
 
 After any configuration change, you will need to execute the following for the change to go into effect:
+
 
 ```
 sudo systemctl daemon-reload
 ```
 
-#
+### Useful Systemd Options
 
-## Useful Systemd Options
 
-Useful `systemd` options are listed below. If an option is equivalent to a common `[mariadbd-safe](mariadbd-safe.md)` option, then that is also listed. Use `systemctl edit mariadb.service` to create the systemd option under a `[Service]` section header.
+Useful `<code>systemd</code>` options are listed below. If an option is equivalent to a common `<code>[mariadbd-safe](mariadbd-safe.md)</code>` option, then that is also listed. Use `<code>systemctl edit mariadb.service</code>` to create the systemd option under a `<code>[Service]</code>` section header.
+
+
 
 | mariadbd-safe option | systemd option | Comments |
 | --- | --- | --- |
@@ -232,36 +258,43 @@ Useful `systemd` options are listed below. If an option is equivalent to a commo
 | no option | [TimeoutStartSec={time}](https://www.freedesktop.org/software/systemd/man/systemd.service.html#TimeoutStartSec=) | Service startup timeout. See [Configuring the Systemd Service Timeout](#configuring-the-systemd-service-timeout). |
 | no option (see [MDEV-9264](https://jira.mariadb.org/browse/MDEV-9264)) | [OOMScoreAdjust={priority}](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#OOMScoreAdjust=) | e.g. -600 to lower priority of OOM killer for mariadbd |
 | [open-files-limit](mariadbd-safe.md#options) | [LimitNOFILE={limit}](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#LimitCPU=) | Limit on number of open files. See [Configuring the Open Files Limit](#configuring-the-open-files-limit). |
-| [core-file-size](mariadbd-safe.md#options) | [LimitCORE={size}](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#LimitCPU=) | Limit on core file size. Useful when [enabling core dumps](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/enabling-core-dumps). See [Configuring the Core File Size](#configuring-the-core-file-size). |
-| | [LimitMEMLOCK={size}](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#LimitCPU=) or infinity | Limit on how much can be locked in memory. Useful when [large-pages](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#large_pages) or [memlock](mariadbd-options.md#-memlock) is used |
-| [nice](mariadbd-safe.md#options) | [Nice={nice value}](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Nice=) | |
+| [core-file-size](mariadbd-safe.md#options) | [LimitCORE={size}](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#LimitCPU=) | Limit on core file size. Useful when [enabling core dumps](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/enabling-core-dumps.md). See [Configuring the Core File Size](#configuring-the-core-file-size). |
+|  | [LimitMEMLOCK={size}](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#LimitCPU=) or infinity | Limit on how much can be locked in memory. Useful when [large-pages](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#large_pages) or [memlock](mariadbd-options.md#-memlock) is used |
+| [nice](mariadbd-safe.md#options) | [Nice={nice value}](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Nice=) |  |
 | [syslog](mariadbd-safe.md#options) | [StandardOutput=syslog](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#StandardOutput=) | See [Configuring MariaDB to Write the Error Log to Syslog](#configuring-mariadb-to-write-the-error-log-to-syslog). |
-| | [StandardError=syslog](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#StandardError=) | |
-| | [SyslogFacility=daemon](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#SyslogFacility=) | |
-| | [SyslogLevel=err](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#SyslogLevel=) | |
-| [syslog-tag](mariadbd-safe.md#options) | [SyslogIdentifier](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#SyslogIdentifier=) | |
-| [flush-caches](mariadbd-safe.md#options) | ExecStartPre=/usr/bin/sync | |
-| | ExecStartPre=/usr/sbin/sysctl -q -w vm.drop_caches=3 | |
-| [malloc-lib](mariadbd-safe.md#options) | [Environment=LD_PRELOAD=/path/to/library](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Environment=) | |
+|  | [StandardError=syslog](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#StandardError=) |  |
+|  | [SyslogFacility=daemon](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#SyslogFacility=) |  |
+|  | [SyslogLevel=err](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#SyslogLevel=) |  |
+| [syslog-tag](mariadbd-safe.md#options) | [SyslogIdentifier](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#SyslogIdentifier=) |  |
+| [flush-caches](mariadbd-safe.md#options) | ExecStartPre=/usr/bin/sync |  |
+|  | ExecStartPre=/usr/sbin/sysctl -q -w vm.drop_caches=3 |  |
+| [malloc-lib](mariadbd-safe.md#options) | [Environment=LD_PRELOAD=/path/to/library](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Environment=) |  |
 | [numa-interleave](mariadbd-safe.md#options) | [NUMAPolicy=interleave](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#NUMAPolicy=) | from systemd v243 onwards |
-| | or: ExecStart=/usr/bin/numactl --interleave=all /usr/sbin/mariadbd $MYSQLD_OPTS $_WSREP_NEW_CLUSTER $_WSREP_START_POSITION | prepending ExecStart=/usr/bin/numactl --interleave=all to existing ExecStart setting |
-| [no-auto-restart](mariadbd-safe.md#options) | Restart={exit-status} | |
+|  | or: ExecStart=/usr/bin/numactl --interleave=all /usr/sbin/mariadbd $MYSQLD_OPTS $_WSREP_NEW_CLUSTER $_WSREP_START_POSITION | prepending ExecStart=/usr/bin/numactl --interleave=all to existing ExecStart setting |
+| [no-auto-restart](mariadbd-safe.md#options) | Restart={exit-status} |  |
 
-Note: the `[systemd](http://www.freedesktop.org/software/systemd/man/systemd.service.html)` manual contains the official meanings for these options. The manual also lists considerably more options than the ones listed above.
 
-There are other options and the `mariadb-service-convert` script will attempt to convert these as accurately as possible.
 
-#
+Note: the `<code>[systemd](https://www.freedesktop.org/software/systemd/man/systemd.service.html)</code>` manual contains the official meanings for these options. The manual also lists considerably more options than the ones listed above.
 
-## Configuring the Systemd Service Timeout
 
-MariaDB's `[systemd](systemd.md)` unit file has a default startup timeout of about 90 seconds on most systems. If a service startup takes longer than this default startup timeout, then `systemd` will assume that `mariadbd` has failed to startup, which causes `systemd` to kill the `mariadbd` process. To work around this, it can be changed by configuring the `[TimeoutStartSec](https://www.freedesktop.org/software/systemd/man/systemd.service.html#TimeoutStartSec=)` option for the `systemd` service.
+There are other options and the `<code>mariadb-service-convert</code>` script will attempt to convert these as accurately as possible.
 
-A similar problem can happen when stopping the MariaDB service. Therefore, it may also be a good idea to set `[TimeoutStopSec](https://www.freedesktop.org/software/systemd/man/systemd.service.html#TimeoutStopSec=)`.
 
-For example, you can reconfigure the MariaDB `systemd` service to have an infinite timeout by executing one of the following commands:
+### Configuring the Systemd Service Timeout
 
-If you are using `systemd` 228 or older, then you can execute the following to set an infinite timeout:
+
+MariaDB's `<code>[systemd](systemd.md)</code>` unit file has a default startup timeout of about 90 seconds on most systems. If a service startup takes longer than this default startup timeout, then `<code>systemd</code>` will assume that `<code>mariadbd</code>` has failed to startup, which causes `<code>systemd</code>` to kill the `<code>mariadbd</code>` process. To work around this, it can be changed by configuring the `<code>[TimeoutStartSec](https://www.freedesktop.org/software/systemd/man/systemd.service.html#TimeoutStartSec=)</code>` option for the `<code>systemd</code>` service.
+
+
+A similar problem can happen when stopping the MariaDB service. Therefore, it may also be a good idea to set `<code>[TimeoutStopSec](https://www.freedesktop.org/software/systemd/man/systemd.service.html#TimeoutStopSec=)</code>`.
+
+
+For example, you can reconfigure the MariaDB `<code>systemd</code>` service to have an infinite timeout by executing one of the following commands:
+
+
+If you are using `<code>systemd</code>` 228 or older, then you can execute the following to set an infinite timeout:
+
 
 ```
 sudo systemctl edit mariadb.service
@@ -272,7 +305,8 @@ TimeoutStartSec=0
 TimeoutStopSec=0
 ```
 
-[Systemd 229 added the infinity option](https://lists.freedesktop.org/archives/systemd-devel/2016-February/035748.html), so if you are using `systemd` 229 or later, then you can execute the following to set an infinite timeout:
+[Systemd 229 added the infinity option](https://lists.freedesktop.org/archives/systemd-devel/2016-February/035748.html), so if you are using `<code>systemd</code>` 229 or later, then you can execute the following to set an infinite timeout:
+
 
 ```
 sudo systemctl edit mariadb.service
@@ -285,13 +319,15 @@ TimeoutStopSec=infinity
 
 Note that [systemd 236 added the EXTEND_TIMEOUT_USEC environment variable](https://lists.freedesktop.org/archives/systemd-devel/2017-December/039996.html) that allows services to extend the startup timeout during long-running processes. On systems with systemd versions that support it, MariaDB uses this feature to extend the startup timeout during certain startup processes that can run long.
 
-#
 
-## Configuring the Open Files Limit
+### Configuring the Open Files Limit
 
-When using `systemd`, rather than setting the open files limit by setting the `[open-files-limit](mariadbd-safe.md#mariadbd-safe-options)` option for `mariadbd-safe` or the `[open_files_limit](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#open_files_limit)` system variable, the limit can be changed by configuring the `[LimitNOFILE](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#LimitCPU=)` option for the MariaDB `systemd` service. The default is set to `LimitNOFILE=16364` in `mariadb.service`.
 
-For example, you can reconfigure the MariaDB `systemd` service to have a larger limit for open files by executing the following commands:
+When using `<code>systemd</code>`, rather than setting the open files limit by setting the `<code>[open-files-limit](mariadbd-safe.md#mariadbd-safe-options)</code>` option for `<code>mariadbd-safe</code>` or the `<code>[open_files_limit](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#open_files_limit)</code>` system variable, the limit can be changed by configuring the `<code>[LimitNOFILE](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#LimitCPU=)</code>` option for the MariaDB `<code>systemd</code>` service. The default is set to `<code>LimitNOFILE=16364</code>` in `<code>mariadb.service</code>`.
+
+
+For example, you can reconfigure the MariaDB `<code>systemd</code>` service to have a larger limit for open files by executing the following commands:
+
 
 ```
 sudo systemctl edit mariadb.service
@@ -301,19 +337,24 @@ sudo systemctl edit mariadb.service
 LimitNOFILE=infinity
 ```
 
-An important note is that setting `LimitNOFILE=infinity` doesn't actually set the open file limit to *infinite*.
+An important note is that setting `<code>LimitNOFILE=infinity</code>` doesn't actually set the open file limit to *infinite*.
 
-In `systemd` 234 and later, setting `LimitNOFILE=infinity` actually sets the open file limit to the value of the kernel's `fs.nr_open` parameter. Therefore, in these `systemd` versions, you may have to change this parameter's value.
 
-The value of the `fs.nr_open` parameter can be changed permanently by setting the value in `[/etc/sysctl.conf](https://linux.die.net/man/5/sysctl.conf)` and restarting the server.
+In `<code>systemd</code>` 234 and later, setting `<code>LimitNOFILE=infinity</code>` actually sets the open file limit to the value of the kernel's `<code>fs.nr_open</code>` parameter. Therefore, in these `<code>systemd</code>` versions, you may have to change this parameter's value.
 
-The value of the `fs.nr_open` parameter can be changed temporarily by executing the `[sysctl](https://linux.die.net/man/8/sysctl)` utility. For example:
+
+The value of the `<code>fs.nr_open</code>` parameter can be changed permanently by setting the value in `<code>[/etc/sysctl.conf](https://linux.die.net/man/5/sysctl.conf)</code>` and restarting the server.
+
+
+The value of the `<code>fs.nr_open</code>` parameter can be changed temporarily by executing the `<code>[sysctl](https://linux.die.net/man/8/sysctl)</code>` utility. For example:
+
 
 ```
 sudo sysctl -w fs.nr_open=1048576‬
 ```
 
-In `systemd` 233 and before, setting `LimitNOFILE=infinity` actually sets the open file limit to `65536`. See [systemd issue #6559](https://github.com/systemd/systemd/issues/6559) for more information. Therefore, in these `systemd` versions, it is not generally recommended to set `LimitNOFILE=infinity`. Instead, it is generally better to set `LimitNOFILE` to a very large integer. For example:
+In `<code>systemd</code>` 233 and before, setting `<code>LimitNOFILE=infinity</code>` actually sets the open file limit to `<code>65536</code>`. See [systemd issue #6559](https://github.com/systemd/systemd/issues/6559) for more information. Therefore, in these `<code>systemd</code>` versions, it is not generally recommended to set `<code>LimitNOFILE=infinity</code>`. Instead, it is generally better to set `<code>LimitNOFILE</code>` to a very large integer. For example:
+
 
 ```
 sudo systemctl edit mariadb.service
@@ -322,11 +363,11 @@ sudo systemctl edit mariadb.service
 LimitNOFILE=1048576
 ```
 
-#
+### Configuring the Core File Size
 
-## Configuring the Core File Size
 
-When using `systemd`, if you would like to [enable core dumps](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/enabling-core-dumps), rather than setting the core file size by setting the `[core-file-size](mariadbd-safe.md#mariadbd-safe-options)` option for `mariadbd-safe`, the limit can be changed by configuring the `[LimitCORE](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#LimitCPU=)` option for the MariaDB `systemd` service. For example, you can reconfigure the MariaDB `systemd` service to have an infinite size for core files by executing the following commands:
+When using `<code>systemd</code>`, if you would like to [enable core dumps](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/enabling-core-dumps.md), rather than setting the core file size by setting the `<code>[core-file-size](mariadbd-safe.md#mariadbd-safe-options)</code>` option for `<code>mariadbd-safe</code>`, the limit can be changed by configuring the `<code>[LimitCORE](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#LimitCPU=)</code>` option for the MariaDB `<code>systemd</code>` service. For example, you can reconfigure the MariaDB `<code>systemd</code>` service to have an infinite size for core files by executing the following commands:
+
 
 ```
 sudo systemctl edit mariadb.service
@@ -335,19 +376,21 @@ sudo systemctl edit mariadb.service
 LimitCORE=infinity
 ```
 
-#
+### Configuring MariaDB to Write the Error Log to Syslog
 
-## Configuring MariaDB to Write the Error Log to Syslog
 
-When using `systemd`, if you would like to redirect the [error log](../../server-monitoring-logs/error-log.md) to the [syslog](https://linux.die.net/man/8/rsyslogd), then that can easily be done by doing the following:
+When using `<code>systemd</code>`, if you would like to redirect the [error log](../../server-monitoring-logs/error-log.md) to the [syslog](https://linux.die.net/man/8/rsyslogd), then that can easily be done by doing the following:
 
-* Ensure that `[log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error)` system variable is not set.
-* Set `[StandardOutput=syslog](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#StandardOutput=)`.
-* Set `[StandardError=syslog](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#StandardError=)`.
-* Set `[SyslogFacility=daemon](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#SyslogFacility=)`.
-* Set `[SysLogLevel=err](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#SyslogLevel=)`.
+
+* Ensure that `<code>[log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error)</code>` system variable is not set.
+* Set `<code>[StandardOutput=syslog](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#StandardOutput=)</code>`.
+* Set `<code>[StandardError=syslog](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#StandardError=)</code>`.
+* Set `<code>[SyslogFacility=daemon](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#SyslogFacility=)</code>`.
+* Set `<code>[SysLogLevel=err](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#SyslogLevel=)</code>`.
+
 
 For example:
+
 
 ```
 sudo systemctl edit mariadb.service
@@ -360,13 +403,14 @@ SyslogFacility=daemon
 SysLogLevel=err
 ```
 
-If you have multiple instances of MariaDB, then you may also want to set `[SyslogIdentifier](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#SyslogIdentifier=)` with a different tag for each instance.
+If you have multiple instances of MariaDB, then you may also want to set `<code>[SyslogIdentifier](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#SyslogIdentifier=)</code>` with a different tag for each instance.
 
-#
 
-## Configuring LimitMEMLOCK
+### Configuring LimitMEMLOCK
 
-If using [--memlock](mariadbd-options.md#-memlock), or the io_uring asyncronious IO in InnoDB in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-106) or above, with a Linux Kernel version < 5.12, you will need to raise the LimitMEMLOCK limit.
+
+If using [--memlock](mariadbd-options.md#-memlock), or the io_uring asyncronious IO in InnoDB in [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) or above, with a Linux Kernel version < 5.12, you will need to raise the LimitMEMLOCK limit.
+
 
 ```
 sudo systemctl edit mariadb.service
@@ -376,15 +420,17 @@ sudo systemctl edit mariadb.service
 LimitMEMLOCK=2M
 ```
 
-Note: Prior to [MariaDB 10.1.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-101-series/mariadb-10110-release-notes), the [--memlock](mariadbd-options.md#-memlock) option could not be used with the MariaDB `systemd` service.
+Note: Prior to [MariaDB 10.1.10](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10110-release-notes.md), the [--memlock](mariadbd-options.md#-memlock) option could not be used with the MariaDB `<code>systemd</code>` service.
 
-#
 
-## Configuring Access to Home Directories
+### Configuring Access to Home Directories
 
-MariaDB's [systemd](systemd.md) unit file restricts access to `/home`, `/root`, and `/run/user` by default. This restriction can be overridden by setting the [ProtectHome](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#ProtectHome=) option to `false` for the MariaDB `systemd` service. This is done by creating a "drop-in" directory `/etc/systemd/system/mariadb.service.d/` and in it a file with a `.conf` suffix that contains the `ProtectHome=false` directive.
 
-You can reconfigure the MariaDB `systemd` service to allow access to `/home` by executing the following commands:
+MariaDB's [systemd](systemd.md) unit file restricts access to `<code>/home</code>`, `<code>/root</code>`, and `<code>/run/user</code>` by default. This restriction can be overridden by setting the [ProtectHome](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#ProtectHome=) option to `<code>false</code>` for the MariaDB `<code>systemd</code>` service. This is done by creating a "drop-in" directory `<code>/etc/systemd/system/mariadb.service.d/</code>` and in it a file with a `<code>.conf</code>` suffix that contains the `<code>ProtectHome=false</code>` directive.
+
+
+You can reconfigure the MariaDB `<code>systemd</code>` service to allow access to `<code>/home</code>` by executing the following commands:
+
 
 ```
 sudo systemctl edit mariadb.service
@@ -394,11 +440,11 @@ sudo systemctl edit mariadb.service
 ProtectHome=false
 ```
 
-#
+### Configuring the umask
 
-## Configuring the umask
 
-When using `systemd`, the default file permissions of `mariadbd` can be set by setting the `UMASK` and `UMASK_DIR` environment variables for the `systemd` service. For example, you can configure the MariaDB `systemd` service's umask by executing the following commands:
+When using `<code>systemd</code>`, the default file permissions of `<code>mariadbd</code>` can be set by setting the `<code>UMASK</code>` and `<code>UMASK_DIR</code>` environment variables for the `<code>systemd</code>` service. For example, you can configure the MariaDB `<code>systemd</code>` service's umask by executing the following commands:
+
 
 ```
 sudo systemctl edit mariadb.service
@@ -411,17 +457,21 @@ Environment="UMASK_DIR=0750"
 
 These environment variables do not set the umask. They set the default file system permissions. See [MDEV-23058](https://jira.mariadb.org/browse/MDEV-23058) for more information.
 
-Keep in mind that configuring the umask this way will only affect the permissions of files created by the `mariadbd` process that is managed by `systemd`. The permissions of files created by components that are not managed by `systemd`, such as [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md), will not be affected.
+
+Keep in mind that configuring the umask this way will only affect the permissions of files created by the `<code>mariadbd</code>` process that is managed by `<code>systemd</code>`. The permissions of files created by components that are not managed by `<code>systemd</code>`, such as [mariadb-install-db](../mariadb-install-db-exe.md), will not be affected.
+
 
 See [Specifying Permissions for Schema (Data) Directories and Tables](specifying-permissions-for-schema-data-directories-and-tables.md) for more information.
 
-#
 
-## Configuring the data directory
+### Configuring the data directory
+
 
 When doing a standard binary tarball install the datadir will be under /usr/local/data. The default systemd service file makes the whole /usr directory tree write protected however.
 
+
 So when just copying the distributed service file a tarball install will not start up, complaining e.g. about
+
 
 ```
 [Warning] Can't create test file /usr/local/.../data/ubuntu-focal.lower-test
@@ -431,6 +481,7 @@ So when just copying the distributed service file a tarball install will not sta
 
 So when using a data directory under /usr/local that specific directory needs to be made writable for the service using the ReadWritePaths setting:
 
+
 ```
 sudo systemctl edit mariadb.service
 
@@ -438,119 +489,134 @@ sudo systemctl edit mariadb.service
 ReadWritePaths=/usr/local/mysql/data
 ```
 
-#
+## Systemd Socket Activation
 
-# Systemd Socket Activation
 
-#
 
-#### MariaDB starting with [10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-106-series/mariadb-1060-release-notes)
-
+##### MariaDB starting with [10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
 MariaDB can use systemd's socket activation.
+
 
 This is an on-demand service for MariaDB that will activate when required.
 
-Systemd socket activation uses a `mariadb.socket` definition file to define a set of UNIX and TCP sockets. Systemd will listen on these sockets, and when they are connected to, systemd will start the `mariadb.service` and hand over the socket file descriptors for MariaDB to process the connection.
+
+Systemd socket activation uses a `<code>mariadb.socket</code>` definition file to define a set of UNIX and TCP sockets. Systemd will listen on these sockets, and when they are connected to, systemd will start the `<code>mariadb.service</code>` and hand over the socket file descriptors for MariaDB to process the connection.
+
 
 MariaDB remains running at this point and will have all sockets available and process connections exactly like it did before 10.6.
 
-When MariaDB is shut down, the systemd `mariadb.socket` remains active, and a new connection will restart the `mariadb.service`.
 
-#
+When MariaDB is shut down, the systemd `<code>mariadb.socket</code>` remains active, and a new connection will restart the `<code>mariadb.service</code>`.
 
-## Using Systemd Socket Activation
 
-To use MariaDB systemd socket activation, instead of enabling/starting `mariadb.service`, `mariadb.socket` is used instead.
+### Using Systemd Socket Activation
 
-So the following commands work exactly like the `mariadb.service` equivalents.
+
+To use MariaDB systemd socket activation, instead of enabling/starting `<code>mariadb.service</code>`, `<code>mariadb.socket</code>` is used instead.
+
+
+So the following commands work exactly like the `<code>mariadb.service</code>` equivalents.
+
 
 ```
 systemctl start mariadb.socket
 systemctl enable mariadb.socket
 ```
 
-These files alone only contain the UNIX and TCP sockets and basic network connection information to which will be listening for connections. `@mariadb` is a UNIX abstract socket, which means it doesn't appear on the filesystem. Connectors based on MariaDB Connector/C will be able to connect with these by using the socket name directly, provided the higher level implementation doesn't try to test for the file's existence first. Some connectors like PHP use mysqlnd that is a pure PHP implementation and as such will only be able to connect to on filesystem UNIX sockets.
+These files alone only contain the UNIX and TCP sockets and basic network connection information to which will be listening for connections. `<code>@mariadb</code>` is a UNIX abstract socket, which means it doesn't appear on the filesystem. Connectors based on MariaDB Connector/C will be able to connect with these by using the socket name directly, provided the higher level implementation doesn't try to test for the file's existence first. Some connectors like PHP use mysqlnd that is a pure PHP implementation and as such will only be able to connect to on filesystem UNIX sockets.
+
 
 With systemd activated sockets there is only a file descriptor limit on the number of listening sockets that can be created.
 
-#
 
-## When to Use Systemd Socket Activation
+### When to Use Systemd Socket Activation
+
 
 A common use case for systemd socket activated MariaDB is when there needs to be a quick boot up time. MariaDB needs to be ready to run, but it doesn't need to be running.
 
+
 The ideal use case for systemd socket activation for MariaDB is for infrastructure providers running many multiple instances of MariaDB, where each instance is dedicated for a user.
 
-#
 
-## Downsides to Using Systemd Socket Activiation
+### Downsides to Using Systemd Socket Activiation
+
 
 From the time the connection occurs, the client is going to be waiting until MariaDB has fully initialized before MariaDB can process the awaiting connection. If MariaDB was previously hard shutdown and needs to perform an extensive InnoDB rollback, then the activation time may be larger than the desired wait time of the client connection.
 
-#
 
-## Configuring Systemd Socket Activation
+### Configuring Systemd Socket Activation
+
 
 When MariaDB is run under systemd socket activation, the usual [socket](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#socket) , [port](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#port), and [backlog](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#backlog) system variables are ignored, as these settings are contained within the systemd socket definition file.
 
+
 There is no configuration required in MariaDB to use MariaDB under socket activation.
 
-The systemd options available are from the `[systemd documentation](https://www.freedesktop.org/software/systemd/man/systemd.socket.html)`, however `[ListenStream](https://www.freedesktop.org/software/systemd/man/systemd.socket.html#ListenStream=)` and `[BackLog](https://www.freedesktop.org/software/systemd/man/systemd.socket.html#Backlog=)` would be the most common configuration options.
 
-As MariaDB isn't creating these sockets, the sockets don't need to be created with a `mysql` user. The sockets MariaDB may end up listening to under systemd socket activation, it may have not had the privileges to create itself.
+The systemd options available are from the `<code>[systemd documentation](https://www.freedesktop.org/software/systemd/man/systemd.socket.html)</code>`, however `<code>[ListenStream](https://www.freedesktop.org/software/systemd/man/systemd.socket.html#ListenStream=)</code>` and `<code>[BackLog](https://www.freedesktop.org/software/systemd/man/systemd.socket.html#Backlog=)</code>` would be the most common configuration options.
 
-Changes to the default `mariadb.socket` can be made in the same way as services, `systemctl edit mariadb.socket`, or using `/etc/systemd/system/mariadb.socket.d/someconfig.conf` files.
 
-#
+As MariaDB isn't creating these sockets, the sockets don't need to be created with a `<code>mysql</code>` user. The sockets MariaDB may end up listening to under systemd socket activation, it may have not had the privileges to create itself.
 
-## Extra Port
 
-A systemd socket can be configured as an `[extra_port](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_port), by using the `[FileDescriptorName=extra](https://www.freedesktop.org/software/systemd/man/systemd.socket.html#FileDescriptorName=)` in the `.socket` file.`
+Changes to the default `<code>mariadb.socket</code>` can be made in the same way as services, `<code>systemctl edit mariadb.socket</code>`, or using `<code>/etc/systemd/system/mariadb.socket.d/someconfig.conf</code>` files.
 
-The `mariadb-extra.socket` is already packaged and ready for use.
 
-#
+### Extra Port
 
-## Multi-instance socket activation
 
-`mariadb@.socket` is MariaDB's packaged multi-instance defination. It creates multiple UNIX sockets based on the socket file started.
+A systemd socket can be configured as an `<code>[extra_port](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_port), by using the </code>`[FileDescriptorName=extra](https://www.freedesktop.org/software/systemd/man/systemd.socket.html#FileDescriptorName=)`<code> in the </code>`.socket`<code> file.</code>`
 
-Starting `mariadb@bob.socket` will use the `mariadb@.socket` defination with `%I` within the defination replaced with "bob".
 
-When something connects to a socket defined there, the `mariadb@bob.service` will be started.
+The `<code>mariadb-extra.socket</code>` is already packaged and ready for use.
 
-#
 
-# Systemd Socket Activation for Hosting Service Providers
+### Multi-instance socket activation
+
+
+`<code>mariadb@.socket</code>` is MariaDB's packaged multi-instance defination. It creates multiple UNIX sockets based on the socket file started.
+
+
+Starting `<code>mariadb@bob.socket</code>` will use the `<code>mariadb@.socket</code>` defination with `<code>%I</code>` within the defination replaced with "bob".
+
+
+When something connects to a socket defined there, the `<code>mariadb@bob.service</code>` will be started.
+
+
+## Systemd Socket Activation for Hosting Service Providers
+
 
 A systemd socket activation service with multi-instance can provide an on-demand per user access to a hosting service provider's dedicated database.
 
+
 "User", in this case, refers to the customer of the hosting service provider.
 
-#
 
-## End User Benefits
+### End User Benefits
+
 
 This provides the following benefits for the user:
 
+
 * Each user has their own dedicated instance with the following benefits:
 
- * The instance is free from the database contention of neighbors on MariaDB shared resources (table cache, connections, etc)
- * The user is free to change their own configuration of MariaDB, within the limits and permissions of the service provider.
- * Database service level backups, like mariabackup, are now directly available.
- * A user can install their own plugins.
- * The user can run a different database version to their neighbors.
- * If a user's neighbor triggers a fault in the server, the uder's instance isn't affected.
+  * The instance is free from the database contention of neighbors on MariaDB shared resources (table cache, connections, etc)
+  * The user is free to change their own configuration of MariaDB, within the limits and permissions of the service provider.
+  * Database service level backups, like mariabackup, are now directly available.
+  * A user can install their own plugins.
+  * The user can run a different database version to their neighbors.
+  * If a user's neighbor triggers a fault in the server, the uder's instance isn't affected.
 * The database runs as their unix user in the server facilitating:
 
- * User can directly migrate their MariaDB data directory to a different provider.
- * The user's data is protected from other users on a kernel level.
+  * User can directly migrate their MariaDB data directory to a different provider.
+  * The user's data is protected from other users on a kernel level.
 
-#
 
-## Hosting Service Provider Benefits
+### Hosting Service Provider Benefits
+
 
 In addition to providing user benefits as a sales item, the following are additional benefits for the hosting service provider compared to a monolith service:
+
 
 * Without passwords for the database, while still having security, support may be easier.
 * When a user's database isn't active, there is no resource usage, only listening file descriptors by systemd.
@@ -558,52 +624,53 @@ In addition to providing user benefits as a sales item, the following are additi
 * When the user's database hasn't had any activity after a time, it will deactivate ([MDEV-25282](https://jira.mariadb.org/browse/MDEV-25282)).
 * Planned enhancements in InnoDB provide:
 
- * an on-demand consumption of memory ([MDEV-25340](https://jira.mariadb.org/browse/MDEV-25340) .
- * a proactive reduction in memory ([MDEV-25341](https://jira.mariadb.org/browse/MDEV-25341)).
- * a memory resource pressure reduction in memory use ([MDEV-24670](https://jira.mariadb.org/browse/MDEV-24670)).
+  * an on-demand consumption of memory ([MDEV-25340](https://jira.mariadb.org/browse/MDEV-25340) .
+  * a proactive reduction in memory ([MDEV-25341](https://jira.mariadb.org/browse/MDEV-25341)).
+  * a memory resource pressure reduction in memory use ([MDEV-24670](https://jira.mariadb.org/browse/MDEV-24670)).
 * The service provider can still cap the user's database memory usage in a ulimit way that a user cannot override in settings.
-* The service provider may choose a CPU/memory/IO based billing to the user on Linux cgroup accounting rather than the available comprared to the rather limited options in `[CREATE USER](https://mariadb.com/kb/en/create-user/#resource-limit-options)`.
+* The service provider may choose a CPU/memory/IO based billing to the user on Linux cgroup accounting rather than the available comprared to the rather limited options in `<code>[CREATE USER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#resource-limit-options)</code>`.
 * Because a user's database will shutdown when inactive, a database upgrade on the server will not take effect for the user until it passively shuts down, restarts, and then gets reactivated hence reducing user downtime..
 
-#
 
-## Downsides to the Hosting Service Provider
+### Downsides to the Hosting Service Provider
+
 
 The extra memory used by more instances. This is mitigated by the on-demand activation. The deactivation when idle, and improved InnoDB memory management.
 
+
 With plenty of medium size database servers running, the Linux OOM kill has the opportunity to kill off only a small number of database servers running rather than everyones.
 
-#
 
-## Example on configuration Items for a per user, systemd socket activitated multi-instance service
+### Example on configuration Items for a per user, systemd socket activitated multi-instance service
+
 
 From a server pespective the operation would be as follows;
 
+
 To make the socket ready to connect and systemd will be listening to the socket:
+
 
 ```
 # systemctl start mariadb@username.socket
-
 # systemctl start mariadb-extra@username.socket
 ```
 
 To enable this on reboot (the same way as a systemd service):
 
+
 ```
 # systemctl enable mariadb@username.socket
-
 # systemctl enable mariadb-extra@username.socket
 ```
 
-#
+#### A MariaDB Template File
 
-### A MariaDB Template File
 
-A global template file. Once installed as a user's `$HOME/.my.cnf` file, it will becomes the default for many applications, and the MariaDB server itself.
+A global template file. Once installed as a user's `<code>$HOME/.my.cnf</code>` file, it will becomes the default for many applications, and the MariaDB server itself.
+
 
 ```
 # cat /etc/my.cnf.templ
-
 [client]
 socket=/home/USER/mariadb.sock
 
@@ -614,24 +681,25 @@ user=USER
 datadir=/home/USER/mariadb-datadir
 ```
 
-#
+#### Custom Configuration for the Multi-instance Service
 
-### Custom Configuration for the Multi-instance Service
 
 This extends/modifies the MariaDB multi-instance service.
 
+
 The feature of this extension are:
+
 
 * that it will autocreate configuration file for user applications
 * It will install the database on first service start
-* `auth-root-*` in [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) means that the user is their own privileged user with unix socket authentication active. This means non-that user cannot access another users service, even with
+* `<code>auth-root-*</code>` in [mariadb-install-db](../mariadb-install-db-exe.md) means that the user is their own privileged user with unix socket authentication active. This means non-that user cannot access another users service, even with
 access to the unix socket(s). For more information see [unix socket authentication security](../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md#security).
 * If the MariaDB version was upgrade, the upgrade changes are made automatically
-* `LimitData` places a hard upper limit so the user doesn't exceed a portion of the server resources
+* `<code>LimitData</code>` places a hard upper limit so the user doesn't exceed a portion of the server resources
+
 
 ```
 # cat /etc/systemd/system/mariadb@.service.d/user.conf
-
 [Service]
 User=%I
 ProtectHome=false
@@ -642,28 +710,26 @@ ExecStartPre=
 ExecStartPre=/bin/sh -c "[ -f /home/%I/.my.cnf ] || sed -e \"s/USER/%I/g\" /etc/my.cnf.templ > /home/%I/.my.cnf"
 ExecStartPre=mkdir -p /home/%I/mariadb-datadir
 ExecStartPre=/usr/bin/mariadb-install-db $MYSQLD_MULTI_INSTANCE --rpm \
- --auth-root-authentication-method=socket --auth-root-socket-user=%I
+   --auth-root-authentication-method=socket --auth-root-socket-user=%I
 ExecStartPost=/usr/bin/mariadb-upgrade $MYSQLD_MULTI_INSTANCE
 
 # To limit user based tuning
-
 LimitData=768M
 # For io_uring use by innodb on < 5.12 kernels
-
 LimitMEMLOCK=1M
 ```
 
-#
+#### Custom Configuration for the Multi-instance Socket
 
-### Custom Configuration for the Multi-instance Socket
 
 This extends/modifies the MariaDB socket defination to be per user.
 
-Create sockets based on the user of the istance (`%I`). Permissions are only necessary in the sense that the user can connect to them. It won't matter to the server. Access control is enforced within the server, however if the user web services are run as the user, `Mode=777` can be reduced. `@mariadb-%I` is a abstract unix socket not on the filesystem. It may help if a user is in a chroot. Not all applications can connect to abstract sockets.
+
+Create sockets based on the user of the istance (`<code>%I</code>`). Permissions are only necessary in the sense that the user can connect to them. It won't matter to the server. Access control is enforced within the server, however if the user web services are run as the user, `<code>Mode=777</code>` can be reduced. `<code>@mariadb-%I</code>` is a abstract unix socket not on the filesystem. It may help if a user is in a chroot. Not all applications can connect to abstract sockets.
+
 
 ```
 # cat /etc/systemd/system/mariadb@.socket.d/user.conf
-
 [Socket]
 SocketUser=%I
 SocketMode=777
@@ -674,9 +740,9 @@ ListenStream=/home/%I/mariadb.sock
 
 The extra socket provides the user the ability to access the server when all max-connections are used:
 
+
 ```
 # cat /etc/systemd/system/mariadb-extra@.socket.d/user.conf
-
 [Socket]
 SocketUser=%I
 SocketMode=777
@@ -685,13 +751,14 @@ ListenStream=@mariadb-extra-%I
 ListenStream=/home/%I/mariadb-extra.sock
 ```
 
-#
+## Systemd Journal
 
-# Systemd Journal
 
-`systemd` has its own logging system called the `systemd` journal. The `systemd` journal contains information about the service startup process. It is a good place to look when a failure has occurred.
+`<code>systemd</code>` has its own logging system called the `<code>systemd</code>` journal. The `<code>systemd</code>` journal contains information about the service startup process. It is a good place to look when a failure has occurred.
 
-The MariaDB `systemd` service's journal can be queried by using the `[journalctl](https://www.freedesktop.org/software/systemd/man/journalctl.html)` command. For example:
+
+The MariaDB `<code>systemd</code>` service's journal can be queried by using the `<code>[journalctl](https://www.freedesktop.org/software/systemd/man/journalctl.html)</code>` command. For example:
+
 
 ```
 $ sudo journalctl n 20 -u mariadb.service
@@ -708,10 +775,11 @@ Jan 25 18:08:32 ip-172-30-0-249.us-west-2.compute.internal systemd[1]: Unit mari
 Jan 25 18:08:32 ip-172-30-0-249.us-west-2.compute.internal systemd[1]: mariadb.service failed.
 ```
 
-#
+## Converting mariadbd-safe Options to Systemd Options
 
-# Converting mariadbd-safe Options to Systemd Options
 
-`mariadb-service-convert` is a script included in many MariaDB packages that is used by the package manager to convert `[mariadbd-safe](mariadbd-safe.md#mariadbd-safe-options)` options to `systemd` options. It reads any explicit settings in the `[mariadbd-safe]` [option group](../configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb-with-option-files.md), and its output is directed to `/etc/systemd/system/mariadb.service.d/migrated-from-my.cnf-settings.conf`. This helps to keep the configuration the same when upgrading from a version of MariaDB that does not use `systemd` to one that does.
+`<code>mariadb-service-convert</code>` is a script included in many MariaDB packages that is used by the package manager to convert `<code>[mariadbd-safe](mariadbd-safe.md#mariadbd-safe-options)</code>` options to `<code>systemd</code>` options. It reads any explicit settings in the `<code>[mariadbd-safe]</code>` [option group](../configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb-with-option-files.md), and its output is directed to `<code>/etc/systemd/system/mariadb.service.d/migrated-from-my.cnf-settings.conf</code>`. This helps to keep the configuration the same when upgrading from a version of MariaDB that does not use `<code>systemd</code>` to one that does.
 
-Implicitly high defaults of `[open-files-limit](mariadbd-safe.md#mariadbd-safe-options)` may be missed by the conversion script and require explicit configuration. See [Configuring the Open Files Limit](#configuring-the-open-files-limit).
+
+Implicitly high defaults of `<code>[open-files-limit](mariadbd-safe.md#mariadbd-safe-options)</code>` may be missed by the conversion script and require explicit configuration. See [Configuring the Open Files Limit](#configuring-the-open-files-limit).
+

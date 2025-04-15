@@ -1,40 +1,41 @@
+
 # mariadb-test-run.pl Options
 
-#
 
-# Syntax
+## Syntax
+
 
 ```
 ./mariadb-test-run.pl [ OPTIONS ] [ TESTCASE ]
 ```
 
 Where the test case can be specified as:
-`testcase[.test]` Runs the test case named 'testcase' from all suits
+`<code>testcase[.test]</code>` Runs the test case named 'testcase' from all suits
+
 
 ```
 path-to-testcase
 [suite.]testcase[,combination]
 ```
 
-#
+### Examples
 
-## Examples
 
-`alias`
-`main.alias` 'main' is the name of the suite for the 't' directory.
+`<code>alias</code>`
+`<code>main.alias</code>` 'main' is the name of the suite for the 't' directory.
 
 ```
 rpl.rpl_invoked_features,mix,xtradb_plugin
 suite/rpl/t/rpl.rpl_invoked_features
 ```
 
-#
 
-# Options
+## Options
 
-#
 
-## Options to Control What Engine/Variation to Run
+### Options to Control What Engine/Variation to Run
+
+
 
 | Option | Description |
 | --- | --- |
@@ -54,9 +55,11 @@ suite/rpl/t/rpl.rpl_invoked_features
 | --combination=<opt> | Extra options to pass to mysqld. The value should consist of one or more comma-separated mysqld options. This option is similar to --mysqld but should be given two or more times. mariadb-test-run.pl executes multiple test runs, using the options for each instance of --combination in successive runs. If --combination is given only once, it has no effect. For test runs specific to a given test suite, an alternative to the use of --combination is to create a combinations file in the suite directory. The file should contain a section of options for each test run. |
 | --dry-run | Don't run any tests, print the list of tests that were selected for execution. |
 
-#
 
-## Options to Control Directories to Use
+
+### Options to Control Directories to Use
+
+
 
 | Option | Description |
 | --- | --- |
@@ -67,9 +70,11 @@ suite/rpl/t/rpl.rpl_invoked_features
 | --client-bindir=PATH | Path to the directory where client binaries are located. |
 | --client-libdir=PATH | Path to the directory where client libraries are located. |
 
-#
 
-## Options to Control What Test Suites or Cases to Run
+
+### Options to Control What Test Suites or Cases to Run
+
+
 
 | Option | Description |
 | --- | --- |
@@ -80,7 +85,7 @@ suite/rpl/t/rpl.rpl_invoked_features
 | --do-test=PREFIX or REGEX | Run test cases with names prefixed with PREFIX or which fulfil the REGEX. For example, --do-test=testa matches tests that begin with testa, --do-test=main.testa matches tests in the main test suite that begin with testa, and --do-test=main.*testa matches test names that contain main followed by testa with anything in between. In the latter case, the pattern match is not anchored to the beginning of the test name, so it also matches names such as xmainytestz. |
 | --skip-test=PREFIX or REGEX | Skip test cases with names prefixed with PREFIX or which fulfil the REGEX. See -do-test for examples. |
 | --start-from=PREFIX | Sorts the list of names of the test cases to be run, and then starts with the test prefixed with PREFIX, where the prefix may be suite.testname or just testname. |
-| --suite[s]=NAME1,..,NAMEN | Comma separated list of suite names to run. The default, as of [MariaDB 10.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-104-series/mariadb-1045-release-notes), is:"main-, archive-, binlog-, binlog_encryption-, csv-, compat/oracle-, encryption-, federated-, funcs_1-, funcs_2-, gcol-, handler-, heap-, innodb-, innodb_fts-, innodb_gis-, innodb_zip-, json-, maria-, mariabackup-, multi_source-, optimizer_unfixed_bugs-, parts-, perfschema-, plugins-, roles-, rpl-, sys_vars-, sql_sequence-, unit-, vcol-, versioning-,period-". |
+| --suite[s]=NAME1,..,NAMEN | Comma separated list of suite names to run. The default, as of [MariaDB 10.4.5](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1045-release-notes.md), is:"main-, archive-, binlog-, binlog_encryption-, csv-, compat/oracle-, encryption-, federated-, funcs_1-, funcs_2-, gcol-, handler-, heap-, innodb-, innodb_fts-, innodb_gis-, innodb_zip-, json-, maria-, mariabackup-, multi_source-, optimizer_unfixed_bugs-, parts-, perfschema-, plugins-, roles-, rpl-, sys_vars-, sql_sequence-, unit-, vcol-, versioning-,period-". |
 | --skip-rpl | Skip the replication test cases. |
 | --big-test | Allow tests marked as "big" to run. Tests can be thus marked by including the line --source include/big_test.inc, and they will only be run if this option is given, or if the environment variable BIG_TEST is set to 1. Repeat this option twice to run only "big" tests. This is typically used for tests that take a very long to run, or that use many resources, so that they are not suitable for running as part of a normal test suite run |
 | --staging-run | Run a limited number of tests (no slow tests). Used for running staging trees with valgrind. |
@@ -88,9 +93,11 @@ suite/rpl/t/rpl.rpl_invoked_features
 | --print-testcases | Don't run the tests but print details about all the selected tests, in the order they would be run. |
 | --skip-test-list=FILE | Skip the tests listed in FILE. Each line in the file is an entry and should be formatted as: <TESTNAME> : <COMMENT> |
 
-#
 
-## Options That Specify Ports
+
+### Options That Specify Ports
+
+
 
 | Option | Description |
 | --- | --- |
@@ -98,9 +105,11 @@ suite/rpl/t/rpl.rpl_invoked_features
 | --[mtr-]port-base=num | Base for port numbers. Ports from this number to number+9 are reserved. Should be divisible by 10; if not it will be rounded down. May be set with environment variable MTR_PORT_BASE. If this value is set and is not "auto", it overrides build-thread. |
 | --[mtr-]build-thread=num | Specify unique number to calculate port number(s) from. Can be set in environment variable MTR_BUILD_THREAD. Set MTR_BUILD_THREAD="auto" to automatically acquire a build thread id that is unique to current host. The more logical --port-base is supported as an alternative. |
 
-#
 
-## Options For Test Case Authoring
+
+### Options For Test Case Authoring
+
+
 
 | Option | Description |
 | --- | --- |
@@ -109,9 +118,11 @@ suite/rpl/t/rpl.rpl_invoked_features
 | --check-testcases | Check testcases for side-effects. This is done by checking system state before and after each test case; if there is any difference, a warning to that effect will be written, but the test case will not be marked as failed because of it. This check is enabled by default. Use --nocheck-testcases to disable. |
 | mark-progress | Log line number and elapsed time to <testname>.progress |
 
-#
 
-## Options That Pass On Options
+
+### Options That Pass On Options
+
+
 
 | Option | Description |
 | --- | --- |
@@ -119,35 +130,44 @@ suite/rpl/t/rpl.rpl_invoked_features
 | --mysqld=ARGS | Specify additional arguments to "mysqld" |
 | --mysqltest=ARGS | Specify additional arguments to "mariadb-test". Use additional --mysqld-env options to set more than one variable. |
 
-#
 
-## Options to Run Test On Running Server
+
+### Options to Run Test On Running Server
+
+
 
 | Option | Description |
 | --- | --- |
 | Option | Description |
 | extern option=value | Use an already running server. The option/value pair is what is needed by the mariadb client to connect to the server. Each --extern option can only take one option/value pair as an argument, so you need to repeat --extern for each pair needed. Example: ./mariadb-test-run.pl --extern socket=var/tmp/mysqld.1.sock alias. Note: If a test case has an .opt file that requires the server to be restarted with specific options, the file will not be used. The test case likely will fail as a result. |
 
-#
 
-## Options For Debugging the Product
 
-In `mariadb-test-run.pl` there is a concept of a "debugger". A "debugger" is a tool that `mariadb-test-run.pl` will execute instead of `mariadbd`. This tool will then start `mariadbd` and can control its execution as it wants. The following "debuggers" are supported:
+### Options For Debugging the Product
+
+
+In `<code>mariadb-test-run.pl</code>` there is a concept of a "debugger". A "debugger" is a tool that `<code>mariadb-test-run.pl</code>` will execute instead of `<code>mariadbd</code>`. This tool will then start `<code>mariadbd</code>` and can control its execution as it wants. The following "debuggers" are supported:
+
+
 
 | name | Description |
 | --- | --- |
 | name | Description |
 | gdb | [GNU debugger](https://www.gnu.org/software/gdb/) |
 | ddd | [GUI frontend for gdb](https://www.gnu.org/software/ddd/) |
-| dbx | [https://en.wikipedia.org/wiki/Dbx_(debugger)](https://en.wikipedia.org/wiki/Dbx_(debugger)) |
+| dbx | [Dbx_(debugger)](https://en.wikipedia.org/wiki/Dbx_(debugger)) |
 | devenv | [Visual Studio debugger](https://docs.microsoft.com/en-us/visualstudio/debugger/?view=vs-2019) |
-| windbg | [https://en.wikipedia.org/wiki/WinDbg](https://en.wikipedia.org/wiki/WinDbg) |
+| windbg | [WinDbg](https://en.wikipedia.org/wiki/WinDbg) |
 | lldb | [Debugger from LLVM project](https://lldb.llvm.org/) |
 | valgrind | [Detects memory management problems and more](https://www.valgrind.org/) |
 | strace | [syscall tracer](https://strace.io/) |
 | rr | ["record and replay" — record the program execution and then replay it forward, backward, or in any other direction](https://rr-project.org/) |
 
+
+
 Every "debugger" from the list above supports the following set of options (replace XXX below with a debugger name)
+
+
 
 | Option | Description |
 | --- | --- |
@@ -157,7 +177,10 @@ Every "debugger" from the list above supports the following set of options (repl
 | --boot-XXX | Before running tests mariadb-test-run executes mariadbd to bootstrap, prepare the datadir. This options causes this bootstrapping mariadbd process to be run under a debugger. |
 | --manual-XXX | Don't start anything, instead print the command that the user needs to run to start mariadbd under a debugger. Then wait. |
 
+
+
 Every option from the above accepts an optional argument. It can be used to specify additional command line options to pass to the tool. Or additional commands that the tool will run on startup. Or both. Commands are separated from each other and from options with a semicolon. For example:
+
 
 ```
 ./mtr 1st --strace
@@ -166,9 +189,9 @@ Every option from the above accepts an optional argument. It can be used to spec
 ./mtr 1st --boot-gdb='--quiet --tui;b mysql_parse;r'
 ```
 
-#
+### Misc Debugging Related Options
 
-## Misc Debugging Related Options
+
 
 | Option | Description |
 | --- | --- |
@@ -180,9 +203,11 @@ Every option from the above accepts an optional argument. It can be used to spec
 | --max-save-datadir | Limit the number of datadir saved (to avoid filling up disks for heavily crashing server). Defaults to 20, set to 0 for no limit. Set its default with MTR_MAX_SAVE_DATDIR. |
 | --max-test-fail | Limit the number of test failurs before aborting the current test run. Defaults to 10, set to 0 for no limit. Set its default with MTR_MAX_TEST_FAIL. |
 
-#
 
-## Misc Options
+
+### Misc Options
+
+
 
 | Option | Description |
 | --- | --- |
@@ -209,19 +234,21 @@ Every option from the above accepts an optional argument. It can be used to spec
 | --suite-timeout=MINUTES | Max test suite run time in minutes (default 360). |
 | --shutdown-timeout=SECONDS | Max number of seconds to wait for server shutdown before killing servers (default 10). |
 | --warnings | Scan the log files for warnings and report any suspicious ones; if any are found, the test will be marked as failed. Use --nowarnings to turn off. |
-| --stop-file=file | If this file is detected, [mariadb-test](mariadb-test-overview.md) will not start new tests until the file is removed (also MTR_STOP_FILE environment variable). |
+| --stop-file=file | If this file is detected, [mariadb-test](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) will not start new tests until the file is removed (also MTR_STOP_FILE environment variable). |
 | --stop-keep-alive=sec | Works with --stop-file, print messages every sec seconds when mariadb-test is waiting to remove the file (for buildbot) (also MTR_STOP_KEEP_ALIVE environment variable). |
-| --sleep=SECONDS | Passed to [mariadb-test](mariadb-test-overview.md); will be used as fixed sleep time. |
+| --sleep=SECONDS | Passed to [mariadb-test](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md); will be used as fixed sleep time. |
 | --debug-sync-timeout=NUM | Set default timeout for WAIT_FOR debug sync actions. Disable facility with NUM=0. |
-| --gcov | Collect coverage information after the test. The result is a [dgcov](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/dgcov) file per source and header file and a last_changes.dgcov file in the vardir with the coverage for the uncommitted changes if any (or the last commit). |
+| --gcov | Collect coverage information after the test. The result is a [dgcov](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/dgcov.md) file per source and header file and a last_changes.dgcov file in the vardir with the coverage for the uncommitted changes if any (or the last commit). |
 | --gprof | Collect profiling information using the gprof profiling tool. |
 | --experimental=<file> | Specify a file that contains a list of test cases that should be displayed with the [ exp-fail ] code rather than [ fail ] if they fail. For an example of a file that might be specified via this option, see mariadb-test/collections/default.experimental. |
 | --report-features | First run a "test" that reports MariaDB features, displaying the output of [SHOW ENGINES](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engines.md) and [SHOW VARIABLES](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md). This can be used to verify that binaries are built with all required features. |
 | --timestamp | Print timestamp before each test report line, showing when the test ended. |
 | --timediff | Used with --timestamp, also print time passed since the previous test started. |
-| --max-connections=N | Maximum number of simultaneous server connections that may be used per test. Default is 128. Minimum is 8, maximum is 5120. Corresponds to the same option for [mariadb-test](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/mariadb-internals-documentation/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded). |
-| --default-myisam | Set default storage engine to [MyISAM](../myisam-clients-and-utilities/myisamchk-table-information.md) for non-innodb tests. This is needed after switching default storage engine to [InnoDB](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md). |
+| --max-connections=N | Maximum number of simultaneous server connections that may be used per test. Default is 128. Minimum is 8, maximum is 5120. Corresponds to the same option for [mariadb-test](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md). |
+| --default-myisam | Set default storage engine to [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) for non-innodb tests. This is needed after switching default storage engine to [InnoDB](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md). |
 | --report-times | Report how much time has been spent on different phases of test execution. |
-| --stress=ARGS | Run stress test, providing options to [mysql-stress-test.pl](/en/mysql-stress-test/). Options are separated by comma. |
-| xml-report=<file> | Output jUnit xml file of the results. From [MariaDB 10.1.45](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-101-series/mariadb-10145-release-notes), [MariaDB 10.2.32](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-102-series/mariadb-10232-release-notes), [MariaDB 10.3.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10323-release-notes), [MariaDB 10.4.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-104-series/mariadb-10413-release-notes), [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-105-series/mariadb-1053-release-notes) |
-| tail-lines=N | Number of lines of the result to include in a failure report. From [MariaDB 10.3.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1034-release-notes). |
+| --stress=ARGS | Run stress test, providing options to [mysql-stress-test.pl](../mariadb-stress-test.md). Options are separated by comma. |
+| xml-report=<file> | Output jUnit xml file of the results. From [MariaDB 10.1.45](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10145-release-notes.md), [MariaDB 10.2.32](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10232-release-notes.md), [MariaDB 10.3.23](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10323-release-notes.md), [MariaDB 10.4.13](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md), [MariaDB 10.5.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes.md) |
+| tail-lines=N | Number of lines of the result to include in a failure report. From [MariaDB 10.3.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1034-release-notes.md). |
+
+

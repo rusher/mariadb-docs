@@ -1,3 +1,0 @@
-# Polygon Properties
-
-Polygon properties

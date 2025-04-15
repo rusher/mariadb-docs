@@ -1,33 +1,35 @@
+
 # XID_EVENT
 
 An XID event is generated for a COMMIT of a transaction that modifies one or more tables of an XA-capable storage engine.
 
-#
 
-### Header
+#### Header
+
 
 * Event Type is XID_EVENT (0x10)
 
-#
 
-### Fields
+#### Fields
+
 
 [uint<8>](../protocol-data-types.md#fixed-length-integers) The XID transaction number.
 
-#
 
-## Complete Example With CRC32
+### Complete Example With CRC32
+
 
 ```
-ee b7 15 5a 10 01 00 00 00 1f 00 00 00 f2 0b 00 ...Z............
-00 00 00 66 00 00 00 00 00 00 00 09 30 45 a8 ...f.........0E.
+ee b7 15 5a 10 01 00 00  00 1f 00 00 00 f2 0b 00  ...Z............
+00 00 00 66 00 00 00 00  00 00 00 09 30 45 a8     ...f.........0E.
 ```
 
-#
 
-### Header, 19 Bytes
+#### Header, 19 Bytes
+
 
 Event size is: header[19] + XID[8] + CRC32[4] of (header + xid)
+
 
 * Event Time ee b7 15 5a => 5a 15 b7 ee => 1511372782 [2017-11-22 18:46:22]
 * Event Type = 10
@@ -36,14 +38,15 @@ Event size is: header[19] + XID[8] + CRC32[4] of (header + xid)
 * Next Pos f2 0b 00 00 => 00 00 0b f2 => 3058
 * Flags 00 00 = 0
 
-#
 
-### Content, 8 Bytes
+#### Content, 8 Bytes
+
 
 * XID 66 00 00 00 00 00 00 00 => 102
 
-#
 
-### CRC32, 4 Bytes
+#### CRC32, 4 Bytes
+
 
 * 09 30 45 a8 => a8 45 30 09 => 2823106569
+

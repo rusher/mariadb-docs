@@ -1,8 +1,11 @@
+
 # Checking MariaDB RPM Package Signatures
 
-MariaDB RPM packages since [MariaDB 5.1.55](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-51-series/mariadb-5155-release-notes) are signed.
+MariaDB RPM packages since [MariaDB 5.1.55](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/mariadb-5155-release-notes.md) are signed.
 
-The key we use has an id of `1BB943DB` and the key fingerprint is:
+
+The key we use has an id of `<code>1BB943DB</code>` and the key fingerprint is:
+
 
 ```
 1993 69E5 404B D5FC 7D2F E43B CBCB 082A 1BB9 43DB
@@ -10,11 +13,13 @@ The key we use has an id of `1BB943DB` and the key fingerprint is:
 
 To check the signature you first need to import the public part of the key like so:
 
+
 ```
 gpg --keyserver hkp://pgp.mit.edu --recv-keys 1BB943DB
 ```
 
 Next you need to let pgp know about the key like so:
+
 
 ```
 gpg --export --armour 1BB943DB > mariadb-signing-key.asc
@@ -23,17 +28,20 @@ sudo rpm --import mariadb-signing-key.asc
 
 You can check to see if the key was imported with:
 
+
 ```
 rpm -qa gpg-pubkey*
 ```
 
 Once the key is imported, you can check the signature of the MariaDB RPM files by running the something like the following in your download directory:
 
+
 ```
 rpm --checksig $(find . -name '*.rpm')
 ```
 
 The output of the above will look something like this (make sure gpg shows up on each OK line):
+
 
 ```
 me@desktop:~$ rpm --checksig $(find . -name '*.rpm')
@@ -46,9 +54,9 @@ me@desktop:~$ rpm --checksig $(find . -name '*.rpm')
 ./kvm-rpm-centos5-amd64/srpms/MariaDB-5.1.55-98.el5.src.rpm: (sha1) dsa sha1 md5 gpg OK
 ```
 
-#
+## See Also
 
-# See Also
 
-* [Installing MariaDB RPM Files](/en/installing-mariadb-rpm-files/)
-* [Troubleshooting MariaDB Installs on RedHat/CentOS](/en/troubleshooting-mariadb-installs-on-redhatcentos/)
+* [Installing MariaDB RPM Files](README.md)
+* [Troubleshooting MariaDB Installs on RedHat/CentOS](troubleshooting-mariadb-installs-on-rhel-centos.md)
+

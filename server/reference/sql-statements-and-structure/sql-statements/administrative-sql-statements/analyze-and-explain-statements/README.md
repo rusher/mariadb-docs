@@ -1,1 +1,0 @@
-# ANALYZE and EXPLAIN Statements

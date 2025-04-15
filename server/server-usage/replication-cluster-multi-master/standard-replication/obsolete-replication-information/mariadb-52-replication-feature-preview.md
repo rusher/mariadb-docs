@@ -1,60 +1,70 @@
+
 # MariaDB 5.2 Replication Feature Preview
 
 **Note:** This page is obsolete. The information is old, outdated, or otherwise currently incorrect. We are keeping the page for historical reasons only. **Do not** rely on the information in this article.
 
-This page describes a *"feature preview release"* which previewed some replication-related features which are included in [MariaDB 5.3](/en/what-is-mariadb-53/). If you would like to try out the features mentioned here, it is recommended that you use [MariaDB 5.3](/en/what-is-mariadb-53/) ([download MariaDB 5.3 here](http://downloads.askmonty.org/mariadb/5.3/)) instead of the actual release described below. Likewise, the code is available in the [MariaDB 5.3 tree on Launchpad](https://launchpad.net/maria/5.3).
 
-#
 
-# About this release
+This page describes a *"feature preview release"* which previewed some replication-related features which are included in [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md). If you would like to try out the features mentioned here, it is recommended that you use [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) ([download MariaDB 5.3 here](https://downloads.askmonty.org/mariadb/5.3/)) instead of the actual release described below. Likewise, the code is available in the [MariaDB 5.3 tree on Launchpad](https://launchpad.net/maria/5.3).
+
+
+
+## About this release
+
 
 There has been
 quite a lot of interest in these features, and providing this feature preview
 release allows the developers to get more and earlier feedback, as well as
 allowing more users an early opportunity to evaluate the new features.
 
-This feature preview release is based on [MariaDB 5.2](/en/what-is-mariadb-52/), adding a number of fairly
+
+This feature preview release is based on [MariaDB 5.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md), adding a number of fairly
 isolated features that are considered complete and fairly well-tested. It is
 however not a stable or GA release, nor is it planned to be so.
 
+
 The stable
-release including these features will be **[MariaDB 5.3](/en/what-is-mariadb-53/)**. That being said, we
+release including these features will be **[MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)**. That being said, we
 greatly welcome any feedback / bug reports, and will strive to fix any issues
-found and we will update the feature preview until [MariaDB 5.3](/en/what-is-mariadb-53/) stable is ready.
+found and we will update the feature preview until [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) stable is ready.
 
-#
 
-# Download/Installation
+## Download/Installation
+
 
 These packages are generated the same way as "official" MariaDB
-releases. Please see the [main download pages](/en/downloads/) for more detailed
+releases. Please see the [main download pages](../../../../clients-and-utilities/server-client-software/download/README.md) for more detailed
 instructions on installation etc.
 
+
 The instructions below use the mirror
-[ftp.osuosl.org](http://ftp.osuosl.org/), but any of the MariaDB
+[ftp.osuosl.org](https://ftp.osuosl.org/), but any of the MariaDB
 mirrors can be used by replacing the appropriate part of the URLs. See the
-[main download page](http://downloads.askmonty.org) for what
+[main download page](https://downloads.askmonty.org) for what
 mirrors are available.
 
-#
 
-## Debian/Ubuntu
+### Debian/Ubuntu
+
 
 For Debian and Ubuntu, it is highly recommended to install from the
-repositories, using `apt-get`, `aptitude`, or other favorite package
+repositories, using `<code>apt-get</code>`, `<code>aptitude</code>`, or other favorite package
 managers.
 
-First import the [public key](http://ftp.osuosl.org/pub/mariadb/PublicKey) with
-which the repositories are signed, so that `apt` can verify the integrity of
+
+First import the [public key](https://ftp.osuosl.org/pub/mariadb/PublicKey) with
+which the repositories are signed, so that `<code>apt</code>` can verify the integrity of
 the packages it downloads. For example like this:
+
 
 ```
 wget -O- http://ftp.osuosl.org/pub/mariadb/PublicKey | sudo apt-key add -
 ```
 
 Now add the appropriate repository. An easy way is to create a file called
-`mariadb-5.2-rpl.list` in `/etc/apt/sources.list.d/` with contents like
+`<code>mariadb-5.2-rpl.list</code>` in `<code>/etc/apt/sources.list.d/</code>` with contents like
 this for Debian:
+
 
 ```
 deb http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/debian squeeze main
@@ -62,6 +72,7 @@ deb-src http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/debian squeeze main
 ```
 
 Or this for Ubuntu:
+
 
 ```
 deb http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/ubuntu maverick main
@@ -72,7 +83,9 @@ Replace "squeeze" or "maverick" in the examples above with the appropriate
 distribution name. Supported are "lenny" and "squeeze" for Debian, and
 "hardy", "jaunty", "karmic", "lucid", and "maverick" for Ubuntu.
 
+
 Now run
+
 
 ```
 sudo apt-get update
@@ -81,81 +94,84 @@ sudo apt-get update
 The packages can now be installed with your package manager of choice, for
 example:
 
+
 ```
 sudo apt-get install mariadb-server-5.2
 ```
 
 (To manually download and install packages, browse the directories below
-[http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/](http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/) - the .debs are in
-`debian/pool/` and `ubuntu/pool/`, respectively.)
+[](https://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/) - the .debs are in
+`<code>debian/pool/</code>` and `<code>ubuntu/pool/</code>`, respectively.)
 
-#
 
-## Generic Linux binary tarball
+### Generic Linux binary tarball
+
 
 Generic linux binary tarballs can be downloaded here:
 
-* i386 (32-bit): [http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-bintar-hardy-x86/](http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-bintar-hardy-x86/)
-* amd64 (64-bit): [http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-bintar-hardy-amd64/](http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-bintar-hardy-amd64/)
 
-#
+* i386 (32-bit): [](https://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-bintar-hardy-x86/)
+* amd64 (64-bit): [](https://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-bintar-hardy-amd64/)
 
-## Centos 5 RPMs
 
-* i386 (32-bit): [http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-rpm-centos5-x86/](http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-rpm-centos5-x86/)
-* amd64 (64-bit): [http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-rpm-centos5-amd64/](http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-rpm-centos5-amd64/)
+### Centos 5 RPMs
 
-#
 
-## Windows (32-bit)
+* i386 (32-bit): [](https://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-rpm-centos5-x86/)
+* amd64 (64-bit): [](https://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-rpm-centos5-amd64/)
 
-* [http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-zip-winxp-x86/](http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-zip-winxp-x86/)
 
-#
+### Windows (32-bit)
 
-## Source tarball
 
-* [http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-tarbake-jaunty-x86/](http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-tarbake-jaunty-x86/)
+* [](https://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-zip-winxp-x86/)
 
-#
 
-## Launchpad bzr branch:
+### Source tarball
+
+
+* [](https://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/misc/kvm-tarbake-jaunty-x86/)
+
+
+### Launchpad bzr branch:
+
 
 * [lp:~maria-captains/maria/mariadb-5.2-rpl](https://code.launchpad.net/~maria-captains/maria/mariadb-5.2-rpl)
 
-#
 
-# New Features in the [MariaDB 5.2](/en/what-is-mariadb-52/) replication feature preview
+## New Features in the [MariaDB 5.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md) replication feature preview
+
 
 Here is a summary of the new features included in this preview release. The
 headings link to more detailed information.
 
-#
 
-## [Group commit for the binary log](../../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md)
+### [Group commit for the binary log](../../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md)
+
 
 This preview release implements group commit which works when using XtraDB with
 the binary log enabled. (In previous MariaDB releases, and all MySQL releases at
 the time of writing, group commit works in InnoDB/XtraDB when the binary log
 is disabled, but stops working when the binary log is enabled).
 
-#
 
-## [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](../enhancements-for-start-transaction-with-consistent-snapshot.md)
+### [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](../enhancements-for-start-transaction-with-consistent-snapshot.md)
 
-`START TRANSACTION WITH CONSISTENT SNAPSHOT` now also works with the binary
+
+`<code>START TRANSACTION WITH CONSISTENT SNAPSHOT</code>` now also works with the binary
 log. This means it is possible to obtain the binlog position corresponding
 to a transactional snapshot of the database without blocking any other
-queries. This is used by `mysqldump --single-transaction --master-data` to do
+queries. This is used by `<code>mysqldump --single-transaction --master-data</code>` to do
 a fully non-blocking backup which can be used to provision a new slave.
 
-`START TRANSACTION WITH CONSISTENT SNAPSHOT` now also works consistently
+
+`<code>START TRANSACTION WITH CONSISTENT SNAPSHOT</code>` now also works consistently
 between transactions involving more than one storage engine (currently XTraDB
 and PBXT support this).
 
-#
 
-## [Annotation of row-based replication events with the original SQL statement](../../../../clients-and-utilities/mariadb-binlog/annotate_rows_log_event.md)
+### [Annotation of row-based replication events with the original SQL statement](../../../../clients-and-utilities/mariadb-binlog/annotate_rows_log_event.md)
+
 
 When using row-based replication, the binary log does not contain SQL
 statements, only discrete single-row insert/update/delete *events*. This can
@@ -163,42 +179,44 @@ make it harder to read mysqlbinlog output and understand where in an
 application a given event may have originated, complicating analysis and
 debugging.
 
+
 This feature adds an option to include the original SQL statement as a
 comment in the binary log (and shown in mysqlbinlog output) for row-based
 replication events.
 
-#
 
-## [Row-based replication for tables with no primary key](../row-based-replication-with-no-primary-key.md)
+### [Row-based replication for tables with no primary key](../row-based-replication-with-no-primary-key.md)
+
 
 This feature can improve the performance of row-based replication on tables
 that do not have a primary key (or other unique key), but which do have another
 index that can help locate rows to update or delete. With this feature, index
-cardinality information from `ANALYZE TABLE` is considered when selecting the
+cardinality information from `<code>ANALYZE TABLE</code>` is considered when selecting the
 index to use (before this feature is implemented, the first index was selected
 unconditionally).
 
-#
 
-## [PBXT consistent commit ordering](../enhancements-for-start-transaction-with-consistent-snapshot.md)
+### [PBXT consistent commit ordering](../enhancements-for-start-transaction-with-consistent-snapshot.md)
+
 
 This feature implements the new commit ordering storage engine API in
-PBXT. With this feature, it is possible to use `START TRANSACTION WITH
-CONSISTENT SNAPSHOT` and get consistency among transactions which involve both
+PBXT. With this feature, it is possible to use `<code>START TRANSACTION WITH
+CONSISTENT SNAPSHOT</code>` and get consistency among transactions which involve both
 XtraDB and InnoDB. (Without this feature, there is no such consistency
-guarantee. For example, even after running `START TRANSACTION WITH CONSISTENT
-SNAPSHOT` it was still possible for the InnoDB/XtraDB part of some
+guarantee. For example, even after running `<code>START TRANSACTION WITH CONSISTENT
+SNAPSHOT</code>` it was still possible for the InnoDB/XtraDB part of some
 transaction *T* to be visible and the PBXT part of the same transaction *T*
 to not be visible.)
 
-#
 
-## Miscellaneous
+### Miscellaneous
+
 
 * This preview also includes a small change to make mysqlbinlog omit
- redundant `use` statements around `BEGIN`, `SAVEPOINT`, `COMMIT`,
- and `ROLLBACK` events when reading MySQL 5.0 binlogs.
+ redundant `<code>use</code>` statements around `<code>BEGIN</code>`, `<code>SAVEPOINT</code>`, `<code>COMMIT</code>`,
+ and `<code>ROLLBACK</code>` events when reading MySQL 5.0 binlogs.
 * The preview included a feature
- [--innodb-release-locks-early](/en/innodb-release-locks-early/). However we
+ [--innodb-release-locks-early](xtradb-option-innodb-release-locks-early.md). However we
  decided to omit this feature from future MariaDB releases because of a
  fundamental design bug, [lp:798213](https://bugs.launchpad.net/maria/+bug/798213).
+

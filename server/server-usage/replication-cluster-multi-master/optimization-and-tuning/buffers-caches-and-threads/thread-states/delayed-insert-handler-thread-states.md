@@ -1,8 +1,12 @@
+
 # Delayed Insert Handler Thread States
 
 This article documents thread states that are related to the handler thread that inserts the results of [INSERT DELAYED](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) statements.
 
-These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) statement or in the [Information Schema PROCESSLIST Table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) as well as the `PROCESSLIST_STATE` value listed in the [Performance Schema threads Table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md).
+
+These correspond to the `<code>STATE</code>` values listed by the [SHOW PROCESSLIST](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) statement or in the [Information Schema PROCESSLIST Table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) as well as the `<code>PROCESSLIST_STATE</code>` value listed in the [Performance Schema threads Table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md).
+
+
 
 | Value | Description |
 | --- | --- |
@@ -11,3 +15,5 @@ These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](../../..
 | reschedule | Sleeping in order to let other threads function, after inserting a number of rows into the table. |
 | upgrading lock | Attempting to get lock on the table in order to insert rows. |
 | Waiting for INSERT | Waiting for the delayed-insert connection thread to add rows to the queue. |
+
+

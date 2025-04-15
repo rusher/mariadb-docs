@@ -1,55 +1,55 @@
+
 # mariadb-upgrade
 
-`mariadb-upgrade` is a tool that checks and updates your tables to the latest version.
+`<code>mariadb-upgrade</code>` is a tool that checks and updates your tables to the latest version.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105), the client was called `mysql_upgrade`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
-You should run `mariadb-upgrade` after upgrading from one major MySQL/MariaDB release to another, such as [from MySQL 5.0 to MariaDB 10.4](../server-management/getting-installing-and-upgrading-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-to-mariadb-from-mysql-50-or-older.md) or [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-104) to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105). You also have to use `mariadb-upgrade` after a direct "horizontal" migration, for example from MySQL 5.5.40 to [MariaDB 5.5.40](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-55-series/mariadb-5540-release-notes). It's also safe to run `mariadb-upgrade` for minor upgrades, as if there are no incompatibilities nothing is changed.
+Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysql_upgrade</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+
+
+
+You should run `<code>mariadb-upgrade</code>` after upgrading from one major MySQL/MariaDB release to another, such as [from MySQL 5.0 to MariaDB 10.4](../server-management/getting-installing-and-upgrading-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-to-mariadb-from-mysql-50-or-older.md) or [MariaDB 10.4](../../release-notes/mariadb-community-server/what-is-mariadb-104.md) to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md). You also have to use `<code>mariadb-upgrade</code>` after a direct "horizontal" migration, for example from MySQL 5.5.40 to [MariaDB 5.5.40](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5540-release-notes.md). It's also safe to run `<code>mariadb-upgrade</code>` for minor upgrades, as if there are no incompatibilities nothing is changed.
+
 
 It needs to be run as a user with write access to the data directory.
 
-#
 
-#### MariaDB starting with [10.5.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-105-series/mariadb-10514-release-notes)
 
-Starting from `mariadb-upgrade` 2.0, the user running the upgrade tool must have write access to `datadir/mysql_upgrade_info`, so that the tool can write the current MariaDB version into the file. `mariadb-upgrade` (or `mysql_upgrade`) was updated in [MariaDB 10.2.42](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-102-series/mariadb-10242-release-notes), [MariaDB 10.3.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10333-release-notes), [MariaDB 10.4.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-104-series/mariadb-10423-release-notes), [MariaDB 10.5.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-105-series/mariadb-10514-release-notes), [MariaDB 10.6.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-106-series/mariadb-1066-release-notes), [MariaDB 10.7.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1072-release-notes) and newer.
+##### MariaDB starting with [10.5.14](../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10514-release-notes.md)
+Starting from `<code>mariadb-upgrade</code>` 2.0, the user running the upgrade tool must have write access to `<code>datadir/mysql_upgrade_info</code>`, so that the tool can write the current MariaDB version into the file. `<code>mariadb-upgrade</code>` (or `<code>mysql_upgrade</code>`) was updated in [MariaDB 10.2.42](../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10242-release-notes.md), [MariaDB 10.3.33](../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10333-release-notes.md), [MariaDB 10.4.23](../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10423-release-notes.md), [MariaDB 10.5.14](../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10514-release-notes.md), [MariaDB 10.6.6](../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes.md), [MariaDB 10.7.2](../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1072-release-notes.md) and newer.
 
-`mariadb-upgrade` is run after starting the new MariaDB server. Running it before you shut down the old version will not hurt anything and will allow you to make sure it works and figure out authentication for it ahead of time.
 
-It is recommended to make a [backup](/kb/en/backing-up-and-restoring/) of all the databases before running `mariadb-upgrade`.
+`<code>mariadb-upgrade</code>` is run after starting the new MariaDB server. Running it before you shut down the old version will not hurt anything and will allow you to make sure it works and figure out authentication for it ahead of time.
 
-In most cases, `mariadb-upgrade` should just take a few seconds. The main work of `mariadb-upgrade` is to:
 
-* Update the system tables in the `mysql` database to the latest version (normally just add new fields to a few tables).
-* Check that all tables are up to date (runs [CHECK TABLE table_name FOR UPGRADE](/kb/en/sql-commands-check-table/)). For tables that are not up to date, runs [ALTER TABLE table_name FORCE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) on the table to update it. A table is not up to date if:
+It is recommended to make a [backup](../server-management/backing-up-and-restoring-databases/README.md) of all the databases before running `<code>mariadb-upgrade</code>`.
 
- * The table uses an index for which there has been a [collation](/kb/en/character-sets/) change (rare)
- * A format change in the storage engine requires an update (very rare)
 
-#
+In most cases, `<code>mariadb-upgrade</code>` should just take a few seconds. The main work of `<code>mariadb-upgrade</code>` is to:
 
-# Using mariadb-upgrade
+
+* Update the system tables in the `<code>mysql</code>` database to the latest version (normally just add new fields to a few tables).
+* Check that all tables are up to date (runs [CHECK TABLE table_name FOR UPGRADE](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md)). For tables that are not up to date, runs [ALTER TABLE table_name FORCE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) on the table to update it. A table is not up to date if:
+
+  * The table uses an index for which there has been a [collation](../reference/data-types/string-data-types/character-sets/README.md) change (rare)
+  * A format change in the storage engine requires an update (very rare)
+
+
+## Using mariadb-upgrade
+
 
 ```
-mariadb-upgrade [--force] [--user=
-
-# --password=
-
-# 
-
- --host=hostname --port=
-
-# --socket=#
-
- --protocol=tcp|socket|pipe|memory 
- --verbose] [OTHER_OPTIONS]
+mariadb-upgrade [--force] [--user=# --password=# 
+  --host=hostname --port=# --socket=#
+  --protocol=tcp|socket|pipe|memory 
+  --verbose] [OTHER_OPTIONS]
 ```
 
-`mariadb-upgrade` is mainly a framework to call [mariadb-check](mariadb-check.md). `mariadb-upgrade` works by doing the following operations:
+`<code>mariadb-upgrade</code>` is mainly a framework to call [mariadb-check](mariadb-check.md). `<code>mariadb-upgrade</code>` works by doing the following operations:
+
 
 ```
 # Find out path to datadir
-
 echo "show variables like 'datadir'" | mysql
 mariadb-check --no-defaults --check-upgrade --auto-repair --databases mysql
 mysql_fix_privilege_tables
@@ -57,24 +57,29 @@ mariadb-check --no-defaults --all-databases --fix-db-names --fix-table-names
 mariadb-check --no-defaults --check-upgrade --all-databases --auto-repair
 ```
 
-The connect options given to `mariadb-upgrade` are passed along to [mariadb-check](mariadb-check.md) and [mysql](mariadb-client/mysql-command-line-client.md).
+The connect options given to `<code>mariadb-upgrade</code>` are passed along to [mariadb-check](mariadb-check.md) and [mysql](mariadb-client/mysql-command-line-client.md).
 
-The `mysql_fix_privilege_tables` script is not actually called; it's included as part of `mariadb-upgrade`
 
-If you have a problem with `mariadb-upgrade` try run it in very verbose mode:
+The `<code>mysql_fix_privilege_tables</code>` script is not actually called; it's included as part of `<code>mariadb-upgrade</code>`
+
+
+If you have a problem with `<code>mariadb-upgrade</code>` try run it in very verbose mode:
+
 
 ```
 mariadb-upgrade --verbose --verbose other-options
 ```
 
-`mariadb-upgrade` also saves the MariaDB version number in a file named `mysql_upgrade_info` in the [data directory](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir). This is used to quickly check whether all tables have been checked for this release so that table-checking can be skipped. For this reason, 
-`mariadb-upgrade` needs to be run as a user with write access to the data directory. To ignore this file and perform the check regardless, use the `--force` option.
+`<code>mariadb-upgrade</code>` also saves the MariaDB version number in a file named `<code>mysql_upgrade_info</code>` in the [data directory](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir). This is used to quickly check whether all tables have been checked for this release so that table-checking can be skipped. For this reason, 
+`<code>mariadb-upgrade</code>` needs to be run as a user with write access to the data directory. To ignore this file and perform the check regardless, use the `<code>--force</code>` option.
 
-#
 
-## Options
+### Options
 
-`mariadb-upgrade` supports the following options:
+
+`<code>mariadb-upgrade</code>` supports the following options:
+
+
 
 | Option | Description |
 | --- | --- |
@@ -88,7 +93,6 @@ mariadb-upgrade --verbose --verbose other-options
 | -
 
 # [name], --debug[=name] | For debug builds, output debug log. |
-
 | --debug-check | Check memory and open file usage at exit. |
 | -T, --debug-info | Print some debug info at exit. |
 | --default-character-set=name | Old option accepted for backward compatibility but ignored. |
@@ -99,135 +103,145 @@ mariadb-upgrade --verbose --verbose other-options
 | --protocol=name | The protocol to use for connection (tcp, socket, pipe, memory). |
 | --silent | Print less information. |
 | -S, --socket=name | For connections to localhost, the Unix socket file to use, or, on Windows, the name of the named pipe to use. |
-| --ssl | Enables [TLS](/kb/en/data-in-transit-encryption/). TLS is also enabled even without setting this option when certain other TLS options are set. Starting with [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-102), the --ssl option will not enable [verifying the server certificate](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification) by default. In order to verify the server certificate, the user must specify the --ssl-verify-server-cert option. |
-| --ssl-ca=name | Defines a path to a PEM file that should contain one or more X509 certificates for trusted Certificate Authorities (CAs) to use for [TLS](/kb/en/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. See [Secure Connections Overview: Certificate Authorities (CAs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-authorities-cas) for more information. This option implies the --ssl option. |
-| --ssl-capath=name | Defines a path to a directory that contains one or more PEM files that should each contain one X509 certificate for a trusted Certificate Authority (CA) to use for [TLS](/kb/en/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the [openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html) command. See [Secure Connections Overview: Certificate Authorities (CAs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-authorities-cas) for more information. This option is only supported if the client was built with OpenSSL or yaSSL. If the client was built with GnuTLS or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms. This option implies the --ssl option. |
-| --ssl-cert=name | Defines a path to the X509 certificate file to use for [TLS](/kb/en/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. This option implies the --ssl option. |
-| --ssl-cipher=name | List of permitted ciphers or cipher suites to use for [TLS](/kb/en/data-in-transit-encryption/). This option implies the --ssl option. |
-| --ssl-crl=name | Defines a path to a PEM file that should contain one or more revoked X509 certificates to use for [TLS](/kb/en/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-revocation-lists-crls) for more information. This option is only supported if the client was built with OpenSSL or Schannel. If the client was built with yaSSL or GnuTLS, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms. |
-| --ssl-crlpath=name | Defines a path to a directory that contains one or more PEM files that should each contain one revoked X509 certificate to use for [TLS](/kb/en/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the [openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html) command. See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-revocation-lists-crls) for more information. This option is only supported if the client was built with OpenSSL. If the client was built with yaSSL, GnuTLS, or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms. |
-| --ssl-key=name | Defines a path to a private key file to use for [TLS](/kb/en/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. This option implies the --ssl option. |
+| --ssl | Enables [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). TLS is also enabled even without setting this option when certain other TLS options are set. Starting with [MariaDB 10.2](../../release-notes/mariadb-community-server/what-is-mariadb-102.md), the --ssl option will not enable [verifying the server certificate](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification) by default. In order to verify the server certificate, the user must specify the --ssl-verify-server-cert option. |
+| --ssl-ca=name | Defines a path to a PEM file that should contain one or more X509 certificates for trusted Certificate Authorities (CAs) to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. See [Secure Connections Overview: Certificate Authorities (CAs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-authorities-cas) for more information. This option implies the --ssl option. |
+| --ssl-capath=name | Defines a path to a directory that contains one or more PEM files that should each contain one X509 certificate for a trusted Certificate Authority (CA) to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the [openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html) command. See [Secure Connections Overview: Certificate Authorities (CAs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-authorities-cas) for more information. This option is only supported if the client was built with OpenSSL or yaSSL. If the client was built with GnuTLS or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms. This option implies the --ssl option. |
+| --ssl-cert=name | Defines a path to the X509 certificate file to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. This option implies the --ssl option. |
+| --ssl-cipher=name | List of permitted ciphers or cipher suites to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option implies the --ssl option. |
+| --ssl-crl=name | Defines a path to a PEM file that should contain one or more revoked X509 certificates to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-revocation-lists-crls) for more information. This option is only supported if the client was built with OpenSSL or Schannel. If the client was built with yaSSL or GnuTLS, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms. |
+| --ssl-crlpath=name | Defines a path to a directory that contains one or more PEM files that should each contain one revoked X509 certificate to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the [openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html) command. See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-revocation-lists-crls) for more information. This option is only supported if the client was built with OpenSSL. If the client was built with yaSSL, GnuTLS, or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms. |
+| --ssl-key=name | Defines a path to a private key file to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. This option implies the --ssl option. |
 | --ssl-verify-server-cert | Enables [server certificate verification](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification). This option is disabled by default. |
 | -t, --tmpdir=name | Directory for temporary files. |
 | -s, --upgrade-system-tables | Only upgrade the system tables in the mysql database. Tables in other databases are not checked or touched. |
 | -u, --user=name | User for login if not current user. |
-| -v, --verbose | Display more output about the process, using it twice will print connection arguments; using it 3 times will print out all [CHECK](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md), [RENAME](../reference/sql-statements-and-structure/sql-statements/data-definition/rename-table.md) and [ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) commands used during the check phase; using it 4 times will also write out all [mariadb-check](mariadb-check.md) commands used. |
+| -v, --verbose | Display more output about the process, using it twice will print connection arguments; using it 3 times will print out all [CHECK](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md), [RENAME](../reference/sql-statements-and-structure/sql-statements/data-definition/rename-table.md) and [ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) commands used during the check phase; using it 4 times will also write out all [mariadb-check](mariadb-check.md) commands used. |
 | -V, --version | Output version information and exit. |
 | -k, --version-check | Run this program only if its 'server version' matches the version of the server to which it's connecting check. Note: the 'server version' of the program is the version of the MariaDB server with which it was built/distributed. (Defaults to on; use --skip-version-check to disable.) |
-| --write-binlog | All commands including those run by [mariadb-check](mariadb-check.md) are written to the [binary log](../server-usage/programming-customizing-mariadb/stored-routines/binary-logging-of-stored-routines.md). Disabled by default. Before [MariaDB 10.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-100-series/mariadb-1006-release-notes) and [MariaDB 5.5.34](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-55-series/mariadb-5534-release-notes), this was enabled by default, and --skip-write-binlog should be used when commands should not be sent to replication slaves. |
+| --write-binlog | All commands including those run by [mariadb-check](mariadb-check.md) are written to the [binary log](../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Disabled by default. Before [MariaDB 10.0.6](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1006-release-notes.md) and [MariaDB 5.5.34](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5534-release-notes.md), this was enabled by default, and --skip-write-binlog should be used when commands should not be sent to replication slaves. |
 
-#
 
-# mariadb-upgrade 2.0
 
-`mariadb-upgrate/mysql_upgrade 2.0` was introduced in [MariaDB 10.2.42](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-102-series/mariadb-10242-release-notes), [MariaDB 10.3.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10333-release-notes), [MariaDB 10.4.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-104-series/mariadb-10423-release-notes), [MariaDB 10.5.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-105-series/mariadb-10514-release-notes), [MariaDB 10.6.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-106-series/mariadb-1066-release-notes), [MariaDB 10.7.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1072-release-notes).
+## mariadb-upgrade 2.0
 
-Previously the tool first ran the upgrade process and then created the `datadir/mysql_upgrade_info` file. If the file could not be created because of permissions (`mariadb-upgrade` did not have rights to create the file), `mariadb-upgrad` gave an error, but this was often ignored.
-One effect of not being able to create the `mysql_upgrade_info` file was that every new `mariadb-upgrade` run would have to do a full upgrade check, which can take a while if there are a lot of tables.
 
-`mariadb-upgrade` 2.0 fixes the following issues:
+`<code>mariadb-upgrate/mysql_upgrade 2.0</code>` was introduced in [MariaDB 10.2.42](../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10242-release-notes.md), [MariaDB 10.3.33](../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10333-release-notes.md), [MariaDB 10.4.23](../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10423-release-notes.md), [MariaDB 10.5.14](../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10514-release-notes.md), [MariaDB 10.6.6](../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes.md), [MariaDB 10.7.2](../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1072-release-notes.md).
 
-* The `datadir/mysql_upgrade_info` is now created at the start of the upgrade process and locked. This ensures that two `mariadb-upgrade` processes cannot be run in parallel, which can cause deadlocks ([MDEV-27068](https://jira.mariadb.org/browse/MDEV-27068)). One side-effect of this is that `mariadb-upgrade` has to have write access to `datadir`, which means it has to be run as as the user that installed MariaDB, normally 'mysql' or 'root' .
-* One can use `mariadb-upgrade --force --force` to force the upgrade to be run, even if there was no version change or if one doesn't have write access to `datadir`. Note that if this option is used, the next `mariadb-upgrade` run will assume that there is a major version change and the upgrade must be done (again).
+
+Previously the tool first ran the upgrade process and then created the `<code>datadir/mysql_upgrade_info</code>` file. If the file could not be created because of permissions (`<code>mariadb-upgrade</code>` did not have rights to create the file), `<code>mariadb-upgrad</code>` gave an error, but this was often ignored.
+One effect of not being able to create the `<code>mysql_upgrade_info</code>` file was that every new `<code>mariadb-upgrade</code>` run would have to do a full upgrade check, which can take a while if there are a lot of tables.
+
+
+`<code>mariadb-upgrade</code>` 2.0 fixes the following issues:
+
+
+* The `<code>datadir/mysql_upgrade_info</code>` is now created at the start of the upgrade process and locked. This ensures that two `<code>mariadb-upgrade</code>` processes cannot be run in parallel, which can cause deadlocks ([MDEV-27068](https://jira.mariadb.org/browse/MDEV-27068)). One side-effect of this is that `<code>mariadb-upgrade</code>` has to have write access to `<code>datadir</code>`, which means it has to be run as as the user that installed MariaDB, normally 'mysql' or 'root' .
+* One can use `<code>mariadb-upgrade --force --force</code>` to force the upgrade to be run, even if there was no version change or if one doesn't have write access to `<code>datadir</code>`. Note that if this option is used, the next `<code>mariadb-upgrade</code>` run will assume that there is a major version change and the upgrade must be done (again).
 * The upgrade will only be done if there is a major server version change (10.4.X -> 10.5.X). This will avoid unnecessary upgrades.
-* New option added: `--check-if-upgrade-is-needed`. If this is used, `mariadb-upgrade` will return 0 if there has been a major version change and one should run `mariadb-upgrade`. If not upgrade is need, 1 will be returned.
-* `--verbose` writes more information, including from which version to which version the upgrade will be done.
-* Better messages when there is no need to run `mariadb-upgrade`.
+* New option added: `<code>--check-if-upgrade-is-needed</code>`. If this is used, `<code>mariadb-upgrade</code>` will return 0 if there has been a major version change and one should run `<code>mariadb-upgrade</code>`. If not upgrade is need, 1 will be returned.
+* `<code>--verbose</code>` writes more information, including from which version to which version the upgrade will be done.
+* Better messages when there is no need to run `<code>mariadb-upgrade</code>`.
 
-#
 
-## Option Files
+### Option Files
 
-In addition to reading options from the command-line, `mariadb-upgrade` can also read options from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-upgrade` in an option file, then it is ignored.
+
+In addition to reading options from the command-line, `<code>mariadb-upgrade</code>` can also read options from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `<code>mariadb-upgrade</code>` in an option file, then it is ignored.
+
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
+
+
 
 | Option | Description |
 | --- | --- |
 | Option | Description |
 | --print-defaults | Print the program argument list and exit. |
 | --no-defaults | Don't read default options from any option file. |
-| --defaults-file=
+| --defaults-file=# | Only read default options from the given file #. |
+| --defaults-extra-file=# | Read this file after the global files are read. |
+| --defaults-group-suffix=# | In addition to the default option groups, also read option groups with this suffix. |
 
-# | Only read default options from the given file #. |
 
-| --defaults-extra-file=
 
-# | Read this file after the global files are read. |
+In [MariaDB 10.2](../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, `<code>mariadb-upgrade</code>` is linked with [MariaDB Connector/C](../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
-| --defaults-group-suffix=
 
-# | In addition to the default option groups, also read option groups with this suffix. |
+#### Option Groups
 
-In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-102) and later, `mariadb-upgrade` is linked with [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-cpp/about-mariadb-connector-cpp). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
-#
+`<code>mariadb-upgrade</code>` reads options from the following [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
 
-### Option Groups
 
-`mariadb-upgrade` reads options from the following [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
 
 | Group | Description |
 | --- | --- |
 | Group | Description |
 | [mysql_upgrade] | Options read by mariadb-upgrade, which includes both MariaDB Server and MySQL Server. |
-| [mariadb-upgrade] | Options read by mariadb-upgrade. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-104-series/mariadb-1046-release-notes). |
+| [mariadb-upgrade] | Options read by mariadb-upgrade. Available starting with [MariaDB 10.4.6](../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
 | [client] | Options read by all MariaDB and MySQL [client programs](/kb/en/clients-utilities/), which includes both MariaDB and MySQL clients. For example, mysqldump. |
 | [client-server] | Options read by all MariaDB [client programs](/kb/en/clients-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
 | [client-mariadb] | Options read by all MariaDB [client programs](/kb/en/clients-utilities/). |
 
-#
 
-# Differences Between mysql_upgrade in MariaDB and MySQL
 
-This is as of [MariaDB 5.1.50](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-51-series/mariadb-5150-release-notes):
+## Differences Between mysql_upgrade in MariaDB and MySQL
+
+
+This is as of [MariaDB 5.1.50](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/mariadb-5150-release-notes.md):
+
 
 * MariaDB will convert long [table names](../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md) properly.
-* MariaDB will convert [InnoDB](/kb/en/xtradb-and-innodb/) tables (no need to do a dump/restore or `[ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)`).
+* MariaDB will convert [InnoDB](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables (no need to do a dump/restore or `<code>[ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)</code>`).
 * MariaDB will convert old archive tables to the new 5.1 format.
-* "mysql_upgrade --verbose" will run "mariadb-check --verbose" so that you get more information of what is happening. Running with 3 times --verbose will in [MariaDB 10.0](/kb/en/what-is-mariadb-100/) print out all CHECK, RENAME and ALTER TABLE commands executed.
-* The [mysql.event table](/kb/en/mysqlevent-table/) is upgraded live; no need to restart the server to use events if the event table has changed ([MariaDB 10.0.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-100-series/mariadb-10022-release-notes) and [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/)).
+* "mysql_upgrade --verbose" will run "mariadb-check --verbose" so that you get more information of what is happening. Running with 3 times --verbose will in [MariaDB 10.0](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) print out all CHECK, RENAME and ALTER TABLE commands executed.
+* The [mysql.event table](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-event-table.md) is upgraded live; no need to restart the server to use events if the event table has changed ([MariaDB 10.0.22](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes.md) and [MariaDB 10.1.9](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-9-release-notes.md)).
 * More descriptive output.
 
-#
 
-# Speeding Up mariadb-upgrade
+## Speeding Up mariadb-upgrade
 
-- If you are sure that all your tables are up to date with the current version, then you can run `mariadb-upgrade ---upgrade-system-tables`, which will only fix your system tables in the mysql database to be compatible with the latest version.
 
-The main reason to run `mariadb-upgrade` on all your tables is to allow it to check that:
+- If you are sure that all your tables are up to date with the current version, then you can run `<code>mariadb-upgrade ---upgrade-system-tables</code>`, which will only fix your system tables in the mysql database to be compatible with the latest version.
+
+
+The main reason to run `<code>mariadb-upgrade</code>` on all your tables is to allow it to check that:
+
 
 * There has not been any change in table formats between versions.
 
- * This has not happened since [MariaDB 5.1](/kb/en/what-is-mariadb-51/).
+  * This has not happened since [MariaDB 5.1](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md).
 * If some of the tables are using an index for which we have changed sort order.
 
- * This has not happened since [MariaDB 5.5](/kb/en/what-is-mariadb-55/).
+  * This has not happened since [MariaDB 5.5](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).
 
-If you are 100% sure this applies to you, you can just run `mariadb-upgrade` with the `---upgrade-system-tables` option.
 
-#
+If you are 100% sure this applies to you, you can just run `<code>mariadb-upgrade</code>` with the `<code>---upgrade-system-tables</code>` option.
 
-# Symptoms of Not Having Run mariadb-upgrade When It Was Needed
+
+## Symptoms of Not Having Run mariadb-upgrade When It Was Needed
+
 
 * Errors in the [error log](../server-management/server-monitoring-logs/error-log.md) that some system tables don't have all needed columns.
 * Updates or searches may not find the record they are attempting to update or search for.
-* [CHECKSUM TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/checksum-table.md) may report the wrong checksum for [MyISAM](myisam-clients-and-utilities/myisamchk-table-information.md) or [Aria](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-enabling-encryption.md) tables.
+* [CHECKSUM TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/checksum-table.md) may report the wrong checksum for [MyISAM](../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) or [Aria](../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables.
 * The error message "Cannot load from mysql.proc. The table is probably corrupted."
 
-To fix issues like this, run `mariadb-upgrade`, [mariadb-check](mariadb-check.md), [CHECK TABLE](/kb/en/sql-commands-check-table/) and if needed [REPAIR TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md) on the wrong table.
 
-#
+To fix issues like this, run `<code>mariadb-upgrade</code>`, [mariadb-check](mariadb-check.md), [CHECK TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md) and if needed [REPAIR TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md) on the wrong table.
 
-# Other Uses
 
-* `mariadb-upgrade` will re-create any missing tables in the [mysql database](/kb/en/the-mysql-database-tables/). It will not touch any data in existing tables.
+## Other Uses
 
-#
 
-# See Also
+* `<code>mariadb-upgrade</code>` will re-create any missing tables in the [mysql database](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md). It will not touch any data in existing tables.
+
+
+## See Also
+
 
 * [mariadb-check](mariadb-check.md)
-* [CHECK TABLE](/kb/en/sql-commands-check-table/)
+* [CHECK TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md)
 * [REPAIR TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md)
 * [Downgrading between Major Versions of MariaDB](../server-management/getting-installing-and-upgrading-mariadb/downgrading-between-major-versions-of-mariadb.md)
+

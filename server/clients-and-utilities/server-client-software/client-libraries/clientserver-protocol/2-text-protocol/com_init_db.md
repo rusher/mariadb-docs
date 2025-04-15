@@ -1,24 +1,30 @@
+
 # COM_INIT_DB
 
 COM_INIT_DB is used to specify the default schema for the connection.
 
-#
 
-## Fields
+### Fields
+
+
 
 * [int<1>](../protocol-data-types.md#fixed-length-integers) 0x02 : COM_INIT_DB Header
 * [string<NUL>](../protocol-data-types.md#null-terminated-strings) schema name
 
-#
 
-## Response
+
+### Response
+
 
 [ERR_Packet](../4-server-response-packets/err_packet.md) or [OK_Packet](../4-server-response-packets/ok_packet.md)
 
-#
 
-## Example
+### Example
+
+
 
 ```
-06 00 00 00 02 74 65 73 74 63 .....testc
+06 00 00 00 02 74 65 73 74 63                    .....testc
 ```
+
+

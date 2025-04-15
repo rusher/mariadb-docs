@@ -1,8 +1,11 @@
+
 # OmniDB
 
 OmniDB is a browser-based tool that simplifies MariaDB database management focusing on interactivity, designed to be powerful and lightweight.
 
+
 Characteristics:
+
 
 * Browser-based Tool: Accessible from any platform, using a browser as a medium.
 * Responsive Interface: All available functions in a single page.
@@ -14,4 +17,6 @@ Characteristics:
 * Beautiful SQL Editor: You can choose between many available color themes.
 * Tabbed SQL Editor: Easily add, rename or delete editor tabs.
 
-OmniDB Web Page: [https://omnidb.org/en/](https://omnidb.org/en/)
+
+OmniDB Web Page: [](https://omnidb.org/en/)
+

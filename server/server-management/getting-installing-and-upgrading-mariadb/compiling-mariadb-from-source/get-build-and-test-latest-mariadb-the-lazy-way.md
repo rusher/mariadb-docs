@@ -1,33 +1,32 @@
+
 # Get, Build and Test Latest MariaDB the Lazy Way
 
 The intention of this documentation is show all the steps of getting, building and testing the latest MariaDB server (10.5 at time of writing) from GitHub. Each stage links to the full documentation for that step if you need to find out more.
 
-#
 
-# [Install all tools needed to build MariaDB](/en/Build_Environment_Setup_for_Linux/)
+## [Install all tools needed to build MariaDB](https://mariadb.com/kb/en/Build_Environment_Setup_for_Linux/)
 
-#
 
-## OpenSuse
+### OpenSuse
+
 
 ```
 sudo zypper install git gcc gcc-c++ make bison ncurses ncurses-devel zlib-devel libevent-devel cmake openssl
 ```
 
-#
+### Debian
 
-## Debian
 
 ```
 apt install -y build-essential bison libgnutls28-dev
 apt build-dep mariadb-server
 ```
 
-#
+## [Set Up git](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/using-git-with-mariadb/using-git.md)
 
-# [Set Up git](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/using-git-with-mariadb/using-git)
 
 Fetch and checkout the MariaDB source to a subdirectory of the current directory
+
 
 ```
 git clone https://github.com/MariaDB/server.git mariadb
@@ -35,27 +34,25 @@ cd mariadb
 git checkout 11.4
 ```
 
-#
+## [Build It](generic-build-instructions.md)
 
-# [Build It](generic-build-instructions.md)
 
-The following command builds a server the same way that is used for building releases. Use `cmake . -DCMAKE_BUILD_TYPE=Debug` to build for debugging.
+The following command builds a server the same way that is used for building releases. Use `<code>cmake . -DCMAKE_BUILD_TYPE=Debug</code>` to build for debugging.
+
 
 ```
 cmake . -DBUILD_CONFIG=mysql_release && cmake --build . --parallel=8
 ```
 
-#
+## [Check the Server (If You Want To)](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md)
 
-# [Check the Server (If You Want To)](/en/mysql-test/)
 
 ```
 mysql-test/mtr --parallel=8 --force
 ```
 
-#
+## [Install the Default Databases](../mariadb-install-db-exe.md)
 
-# [Install the Default Databases](../../../clients-and-utilities/mariadb-install-db.md)
 
 ```
 ./scripts/mariadb-install-db --srcdir=.
@@ -63,21 +60,22 @@ mysql-test/mtr --parallel=8 --force
 
 (Older MariaDB version use [mysql_install_db](../../../clients-and-utilities/legacy-clients-and-utilities/mysql_install_db.md))
 
-#
 
-# Install the Server (If needed)
+## Install the Server (If needed)
+
 
 You can also [run and test mariadb directly from the build directory](../starting-and-stopping-mariadb/running-mariadb-from-the-build-directory.md), in which case you can skip the rest of the steps below.
+
 
 ```
 cmake --install .
 ```
 
-#
+### [Start the Server](../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md)
 
-## [Start the Server](../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md)
 
 Start the server in it's own terminal window for testing. Note that the directory depends on your system!
+
 
 ```
 /usr/sbin/mariadbd

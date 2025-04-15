@@ -1,35 +1,38 @@
+
 # DROP CATALOG
 
-#
 
-#### MariaDB starting with [12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-120)
-
+##### MariaDB starting with [12.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-120.md)
 Catalog support is planned for 12.0.
 
-#
 
-# Syntax
+
+## Syntax
+
 
 ```
 DROP CATALOG catalog_name
 ```
 
-#
+## Description
 
-# Description
 
 Deletes a [catalog](catalogs-overview.md).
 
+
 Limitations:
 
-* `DROP CATALOG` can only be performed by a super user in the 'def' catalog.
+
+* `<code>DROP CATALOG</code>` can only be performed by a super user in the 'def' catalog.
 * The current catalog cannot be dropped.
 * The 'def' catalog cannot be dropped.
 
+
 When dropping a catalog, all databases and files within that catalog will be deleted.
 
-#
 
-# See Also
+## See Also
+
 
 * [CREATE CATALOG](create-catalog.md)
+

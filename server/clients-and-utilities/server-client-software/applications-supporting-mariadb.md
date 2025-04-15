@@ -1,28 +1,30 @@
+
 # Applications Supporting MariaDB
 
 This page lists projects which officially implement MariaDB's enhanced features, or state that they work with MariaDB. If you know of a project which officially supports MariaDB and it isn't listed here, please let us know in the comments.
 
+
 Note: Every project we know of which works with MySQL also works with MariaDB. This page is just to point out projects which officially support MariaDB (e.g. by mentioning MariaDB in their documentation or setup instructions).
 
-#
 
-# Supports Enhanced MariaDB Features
+## Supports Enhanced MariaDB Features
+
 
 * [dbForge Studio](https://www.devart.com/dbforge/mysql/studio/mariadb-gui-client.html) is a versatile and feature-rich IDE designed for MySQL and MariaDB professionals. It fully supports all individual features of MariaDB, such as support for Packages and Sequences, and other specificities.
 * [Dynamic Active Record](https://github.com/tom--/yii2-dynamic-ar) - The yii2-dynamic-ar extension uses MariaDB dynamic columns to add NoSQL-like documents to Yii 2 Framework's Active Record ORM.
-* [ocelotgui](http://ocelot.ca/) - supports [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-102) [window functions](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/window-functions-overview.md).
-* [Shard-query](/kb/en/shard-query/) has special support for [MariaDB 10.0](/kb/en/what-is-mariadb-100/) features
-* [SQL Maestro for MySQL](https://www.sqlmaestro.com/products/mysql/maestro/) is a database management tool that provides direct support for a number of MariaDB features like [roles](../../security/user-account-management/roles/roles_overview.md), [check constraints](../../reference/sql-statements-and-structure/sql-statements/data-definition/constraint.md#check-constraint-expressions), and [virtual columns](/kb/en/virtual-computed-columns/).
+* [ocelotgui](https://ocelot.ca/) - supports [MariaDB 10.2](../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) [window functions](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/window-functions-overview.md).
+* [Shard-query](https://mariadb.com/kb/en/) has special support for [MariaDB 10.0](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) features
+* [SQL Maestro for MySQL](https://www.sqlmaestro.com/products/mysql/maestro/) is a database management tool that provides direct support for a number of MariaDB features like [roles](../../security/user-account-management/roles/roles_overview.md), [check constraints](../../reference/sql-statements-and-structure/sql-statements/data-definition/constraint.md#check-constraint-expressions), and [virtual columns](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md).
 
-#
 
-# Officially Supports MariaDB
+## Officially Supports MariaDB
 
-* [Alfresco](http://docs.alfresco.com/5.0/concepts/mariadb-config.html) - Alfresco is for Enterprise Content Management and Business Process Management and it supports running with MariaDB Server.
+
+* [Alfresco](https://docs.alfresco.com/5.0/concepts/mariadb-config.html) - Alfresco is for Enterprise Content Management and Business Process Management and it supports running with MariaDB Server.
 * [Bitbucket by Atlassian](https://confluence.atlassian.com/bitbucketserver/supported-platforms-776640981.html)
 * [Codeship](https://documentation.codeship.com/pro/getting-started/services-and-databases/)
 * [Dataedo](https://dataedo.com) - Database documentation tool with rich-text fields and ERD creator.
-* [DBeaver](http://dbeaver.jkiss.org/) - free convenient cross-platform and cross-database Java GUI client which supports special MySQL/MariaDB features.
+* [DBeaver](https://dbeaver.jkiss.org/) - free convenient cross-platform and cross-database Java GUI client which supports special MySQL/MariaDB features.
 * [dbForge Compare Bundle](https://www.devart.com/dbforge/mysql/compare-bundle/) - contains two separate tools, dbForge Schema Compare and dbForge Data Compare.
 * [dbForge Data Compare](https://www.devart.com/dbforge/mysql/datacompare/) - data comparison and synchronization tool.
 * [dbForge Data Generator](https://www.devart.com/dbforge/mysql/data-generator/) - a visual tool for generation of large volumes of meaningful test table data.
@@ -33,54 +35,55 @@ Note: Every project we know of which works with MySQL also works with MariaDB. T
 * [dotConnect for MySQL](https://www.devart.com/dotconnect/mysql/) - data provider for MariaDB and MySQL built over ADO.NET with support for .NET Core 1.x and 2.0
 * [Devart ODBC Driver for MySQL](https://www.devart.com/odbc/mysql/) - ODBC driver for direct access to MariaDB or MySQL database via TCP/IP without database client
 * [Devart Excel Add-ins for MySQL](https://www.devart.com/excel-addins/mysql.html) - connect Microsoft Excel to MariaDB and MySQL and work with data like with usual Excel worksheets
-* [Drupal](http://drupal.org/requirements)
+* [Drupal](https://drupal.org/requirements)
 * [ERBuilder Data Modeler](https://soft-builder.com/erbuilder-data-modeler) - Data modeling tool for multiple databases platforms including MariaDB, MySQL, and more. Free and commercial versions available.
 * [eZ](https://doc.ez.no/pages/viewpage.action?pageId=31429536)
-* [Flyway](http://flywaydb.org/)
+* [Flyway](https://flywaydb.org/)
 * [Friendica](https://github.com/friendica/friendica/wiki/Using-MariaDB-With-Friendica)
-* [Geeklog](http://www.geeklog.net/) ([installation requirements](http://www.geeklog.net/docs/english/install.html#installation_requirements))
-* [ImpressCMS,a community-developed content-management system](http://impresscms.org)
-* [Jelastic - Java in the cloud](http://jelastic.com/docs/connection-to-mariadb)
-* [Kajona³ - Open Source Content Management Framework](http://www.kajona.de/) ([support announcement](http://www.kajona.de/newsdetails.Kajona-running-with-MariaDB.newsDetail.20ba9f14ce4227452730.en.html))
-* [MediaWiki](http://www.mediawiki.org/) ([installation guide](http://www.mediawiki.org/wiki/Manual:Installation_guide))
+* [Geeklog](https://www.geeklog.net/) ([installation requirements](https://www.geeklog.net/docs/english/install.html#installation_requirements))
+* [ImpressCMS,a community-developed content-management system](https://impresscms.org)
+* [Jelastic - Java in the cloud](https://jelastic.com/docs/connection-to-mariadb)
+* [Kajona³ - Open Source Content Management Framework](https://www.kajona.de/) ([support announcement](https://www.kajona.de/newsdetails.Kajona-running-with-MariaDB.newsDetail.20ba9f14ce4227452730.en.html))
+* [MediaWiki](https://www.mediawiki.org/) ([installation guide](https://www.mediawiki.org/wiki/Manual:Installation_guide))
 * [MicroStrategy](https://microstrategyhelp.atlassian.net/wiki/display/README102/MicroStrategy+10.2+Certified+and+Supported+Configurations)
 * [Moodle](https://docs.moodle.org/dev/Moodle_architecture#Requirements)
 * [Moon Modeler](https://www.datensen.com) - database design tool for MariaDB
-* [Mroonga](http://mroonga.org/en/blog/2016/10/29/mroonga-6.10.html)
-* [mycli](http://mycli.net) - command line interface for MariaDB with auto-completion and syntax highlighting.
-* [MySQL Data Access Components](http://www.devart.com/mydac/) - the library of components for direct access to MariaDB and MySQL from Delphi
-* [Neor Profile SQL](http://www.profilesql.com/)
-* [ownCloud](http://owncloud.org/) ([documentation](http://doc.owncloud.org/server/5.0/admin_manual/configuration/configuration_database.html))
-* [phpMyAdmin](http://www.phpmyadmin.net/documentation/)
-* [Plone](http://plone.org/) ([documentation](http://plone.org/documentation/kb/plone-and-mariadb))
-* [Querious](http://www.araelium.com/querious) - Mac OS X database administration tool
+* [Mroonga](https://mroonga.org/en/blog/2016/10/29/mroonga-6.10.html)
+* [mycli](https://mycli.net) - command line interface for MariaDB with auto-completion and syntax highlighting.
+* [MySQL Data Access Components](https://www.devart.com/mydac/) - the library of components for direct access to MariaDB and MySQL from Delphi
+* [Neor Profile SQL](https://www.profilesql.com/)
+* [ownCloud](https://owncloud.org/) ([documentation](https://doc.owncloud.org/server/5.0/admin_manual/configuration/configuration_database.html))
+* [phpMyAdmin](https://www.phpmyadmin.net/documentation/)
+* [Plone](https://plone.org/) ([documentation](https://plone.org/documentation/kb/plone-and-mariadb))
+* [Querious](https://www.araelium.com/querious) - Mac OS X database administration tool
 * [RAD Studio (Embarcadero)](https://www.embarcadero.com/products/rad-studio/whats-new-in-10-2-tokyo) supports MariaDB from RAD Studio 10.2 Tokyo
 * [Replication Manager for MariaDB and MySQL](https://github.com/tanji/replication-manager) - High Availability solution to manage MariaDB Server 10.0+ GTID-based replication topologies
-* [SafeNet ProtectFile rom Gemalto](http://data-protection-updates.gemalto.com/2015/05/01/customer-release-notes-available-for-safenet-protectfile-windows-and-linux-v8-1/)
-* [SaltOS](http://www.saltos.net/)
+* [SafeNet ProtectFile rom Gemalto](https://data-protection-updates.gemalto.com/2015/05/01/customer-release-notes-available-for-safenet-protectfile-windows-and-linux-v8-1/)
+* [SaltOS](https://www.saltos.net/)
 * [sequelize](https://github.com/sequelize/sequelize) - Dialect object-relationship-mapper for node.js.
 * [Skyvia](https://skyvia.com) - Cloud service for data integration, management and backup
-* [SQLTool Pro](http://www.sqltoolpro.com/)
+* [SQLTool Pro](https://www.sqltoolpro.com/)
 * [SSIS Data Flow Components for MySQL](https://www.devart.com/ssis/) - set of components for SQL Server Integration Services packages that allow loading data from MariaDB and MySQL in SSIS Data Flows
 * [Talend](https://www.talend.com/products/specifications-data-integration/)
-* [TransProCloud](http://wiki.tonybaldwin.info/doku.php?id=hax:transprocloud:start)
+* [TransProCloud](https://wiki.tonybaldwin.info/doku.php?id=hax:transprocloud:start)
 * [12PRESS](https://tonybaldwin.github.io/12press/) - an online FLOSS meeting and events schedule presentation platform for 12-Step recovery fellowships (AA, NA, Alanon, etc.), their regions and area service committees, etc.
 * [Travis CI](https://docs.travis-ci.com/user/database-setup/#MariaDB)
 * [UI Bakery](https://uibakery.io) - Low-code development platform for building web applications on top of MariaDB data ([integration page](https://uibakery.io/integrations/mariadb), [documentation](https://docs.uibakery.io/data-sources/data-sources/mariadb))
-* [Universal Data Access Components](http://www.devart.com/unidac/) - the library of non-visual cross-database data access components for Delphi that includes support for MariaDB and MySQL
+* [Universal Data Access Components](https://www.devart.com/unidac/) - the library of non-visual cross-database data access components for Delphi that includes support for MariaDB and MySQL
 * [Valentina Reports & Reports Server](https://valentina-db.com/en/reports-for-mariadb) - Reports Server on macOS, Windows and Linux and deployable app solution using MariaDB as data source
 * [Valentina Studio](https://valentina-db.com/en/studio-for-mariadb) - Database GUI on macOS, Windows and Linux. Free & Pro versions.
-* [WordPress](http://wordpress.org/) ([glossary](http://codex.wordpress.org/Glossary#MariaDB) from [install](http://codex.wordpress.org/Installing_WordPress) documentation)
-* [WPИ-XM](http://wpn-xm.org/)
+* [WordPress](https://wordpress.org/) ([glossary](https://codex.wordpress.org/Glossary#MariaDB) from [install](https://codex.wordpress.org/Installing_WordPress) documentation)
+* [WPИ-XM](https://wpn-xm.org/)
 * [XAMPP](https://www.apachefriends.org/) ([announcement](https://www.apachefriends.org/blog/new_xampp_20151113.html))
-* [Wercker](http://devcenter.wercker.com/docs/services/mariadb)
-* [Yii](http://www.yiiframework.com/) ([Yii 1.1 guide](http://www.yiiframework.com/doc/guide/1.1/en/database.ar#establishing-db-connection) and [Yii 2.0 guide](http://www.yiiframework.com/doc-2.0/guide-db-dao.html))
+* [Wercker](https://devcenter.wercker.com/docs/services/mariadb)
+* [Yii](https://www.yiiframework.com/) ([Yii 1.1 guide](https://www.yiiframework.com/doc/guide/1.1/en/database.ar#establishing-db-connection) and [Yii 2.0 guide](https://www.yiiframework.com/doc-2.0/guide-db-dao.html))
 * [Zarafa](https://community.zarafa.com/) 7.2 onwards comes with MariaDB support [release notes](https://community.zarafa.com/pg/blog/read/28061/720-final-has-arrived)
-* [Zend Framework](http://framework.zend.com/) ([Zend_Db_Adapter](http://framework.zend.com/manual/1.11/en/zend.db.adapter.html))
+* [Zend Framework](https://framework.zend.com/) ([Zend_Db_Adapter](https://framework.zend.com/manual/1.11/en/zend.db.adapter.html))
 
-#
 
-# See Also
+## See Also
 
-* [Graphical clients](/kb/en/graphical-clients/)
+
+* [Graphical clients](../graphical-and-enhanced-clients/graphical-and-enhanced-clients-omnidb.md)
 * [Distributions which include MariaDB](../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/distributions-which-include-mariadb.md)
+

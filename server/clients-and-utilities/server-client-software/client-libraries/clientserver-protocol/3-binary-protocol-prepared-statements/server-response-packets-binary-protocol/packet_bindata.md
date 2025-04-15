@@ -1,6 +1,9 @@
+
 # PACKET_BINDATA
 
 In contrast to the text protocol, the binary protocol transfers the data according to the format of the field types returned in PACKET_METADATA.
+
+
 
 | Field type | Representation |
 | --- | --- |
@@ -30,16 +33,18 @@ In contrast to the text protocol, the binary protocol transfers the data accordi
 | MYSQL_TYPE_VAR_STRING | str_LEC |
 | MYSQL_TYPE_YEAR | int_4 |
 
-#
 
-### Fields
+
+#### Fields
+
 
 ```
-(column_count + 7)/8 null bitmap
+(column_count + 7)/8   null bitmap
 while (!eof) {
- for (i=0; i < column_count; i++)
- {
- data (length depends on the data type)
- }
+  for (i=0; i < column_count; i++)
+  {
+    data (length depends on the data type)
+  }
 }
 ```
+

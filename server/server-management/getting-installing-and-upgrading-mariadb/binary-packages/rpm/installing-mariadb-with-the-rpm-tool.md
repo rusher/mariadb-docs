@@ -1,15 +1,20 @@
+
 # Installing MariaDB With the rpm Tool
 
 This article describes how to download the RPM files and install them using the
-`rpm` command.
+`<code>rpm</code>` command.
+
 
 It is highly recommended to [Install MariaDB with yum](yum.md) where possible.
 
-Navigate to [https://mariadb.org/download/](https://mariadb.org/download/) and choose
+
+Navigate to [](https://mariadb.org/download/) and choose
 the desired database version and then select the RPMs that match your Linux distribution and architecture.
+
 
 Clicking those links takes you to a local mirror. Choose the rpms
 link and download the desired packages. The packages will be similar to the following:
+
 
 ```
 MariaDB-client-5.2.5-99.el5.x86_64.rpm
@@ -23,7 +28,9 @@ MariaDB-test-5.2.5-99.el5.x86_64.rpm
 For a standard server installation you will need to download at least
 the *client*, *shared*, and *server* RPM files. See [About the MariaDB RPM Files](about-the-mariadb-rpm-files.md) for more information about what is included in each RPM package.
 
+
 After downloading the MariaDB RPM files, you might want to check their signatures. See [Checking MariaDB RPM Package Signatures](checking-mariadb-rpm-package-signatures.md) for more information about checking signatures.
+
 
 ```
 rpm --checksig $(find . -name '*.rpm')
@@ -33,13 +40,16 @@ Prior to installing MariaDB, be aware that it will conflict with an existing
 installation of MySQL. To check whether MySQL is already installed, issue the
 command:
 
+
 ```
 rpm -qa 'mysql*'
 ```
 
 If necessary, you can remove found MySQL packages before installing MariaDB.
 
+
 To install MariaDB, use the command:
+
 
 ```
 rpm -ivh MariaDB-*
@@ -47,34 +57,15 @@ rpm -ivh MariaDB-*
 
 You should see output such as the following:
 
+
 ```
-Preparing... 
-
-########################################### [100%]
-
- 1:MariaDB-shared 
-
-########################################### [ 14%]
-
- 2:MariaDB-client 
-
-########################################### [ 29%]
-
- 3:MariaDB-client 
-
-########################################### [ 43%]
-
- 4:MariaDB-debuginfo 
-
-########################################### [ 57%]
-
- 5:MariaDB-devel 
-
-########################################### [ 71%]
-
- 6:MariaDB-server 
-
-########################################### [ 86%]
+Preparing...                ########################################### [100%]
+   1:MariaDB-shared         ########################################### [ 14%]
+   2:MariaDB-client         ########################################### [ 29%]
+   3:MariaDB-client         ########################################### [ 43%]
+   4:MariaDB-debuginfo      ########################################### [ 57%]
+   5:MariaDB-devel          ########################################### [ 71%]
+   6:MariaDB-server         ########################################### [ 86%]
 
 PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
 To do so, start the server, then issue the following commands:
@@ -86,7 +77,7 @@ Alternatively you can run:
 /usr/bin/mysql_secure_installation
 
 which will also give you the option of removing the test
-databases and anonymous user created by default. This is
+databases and anonymous user created by default.  This is
 strongly recommended for production servers.
 
 See the MySQL manual for more instructions.
@@ -101,27 +92,26 @@ Monty Program Ab. You can contact us about this at sales@askmonty.org.
 Alternatively consider joining our community based development effort:
 http://askmonty.org/wiki/index.php/MariaDB#How_can_I_participate_in_the_development_of_MariaDB
 
-Starting MySQL....[ OK ]
+Starting MySQL....[  OK  ]
 Giving mysqld 2 seconds to start
- 7:MariaDB-test 
-
-########################################### [100%]
-
+   7:MariaDB-test           ########################################### [100%]
 ```
 
 Be sure to follow the instructions given in the preceding output and create a
 password for the root user either by using [mariadb-admin](../../../../clients-and-utilities/mariadb-admin.md) or by running the
 /usr/bin/mysql_secure_installation script.
 
-Installing the MariaDB RPM files installs the MySQL tools in the `/usr/bin`
-directory. You can confirm that MariaDB has been installed by using the [mariadb](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/c/mariadb-client-library-for-c-200-release-notes)
-client program. Issuing the command `mariadb` should give you the MariaDB
+
+Installing the MariaDB RPM files installs the MySQL tools in the `<code>/usr/bin</code>`
+directory. You can confirm that MariaDB has been installed by using the [mariadb](../../../../clients-and-utilities/mariadb-client/README.md)
+client program. Issuing the command `<code>mariadb</code>` should give you the MariaDB
 cursor.
 
-#
 
-# See Also
+## See Also
 
-* [Installing MariaDB with yum](/en/installing-mariadb-with-yum/)
-* [Troubleshooting MariaDB Installs on RedHat/CentOS](/en/troubleshooting-mariadb-installs-on-redhatcentos/)
+
+* [Installing MariaDB with yum](yum.md)
+* [Troubleshooting MariaDB Installs on RedHat/CentOS](troubleshooting-mariadb-installs-on-rhel-centos.md)
 * [Checking MariaDB RPM Package Signatures](checking-mariadb-rpm-package-signatures.md)
+

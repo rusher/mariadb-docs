@@ -1,8 +1,11 @@
+
 # DeZign for Databases
 
 [DeZign for Databases](https://www.datanamic.com/dezign/) is an intuitive data modeling tool for developers and DBA's that can help you model, create and maintain MariaDB databases.
 
+
 **Supported platforms include:**
+
 
 * MariaDB
 * MySQL
@@ -11,7 +14,9 @@
 * PostgreSQL
 * SQLite
 
+
 **Key features:**
+
 
 * Visual database modeling (Entity relationship diagrams).
 * Generate database schemas directly from the data model.
@@ -22,12 +27,18 @@
 * Create clear and visually appealing ER diagrams, including sub-diagrams for complex systems.
 * Support version control to manage different iterations of your model.
 
-![mariadb-dezign-for-databases](/en/dezign-for-databases/+image/mariadb-dezign-for-databases "mariadb-dezign-for-databases")
+
+![mariadb-dezign-for-databases](../../../.gitbook/assets/dezign-for-databases/+image/mariadb-dezign-for-databases.png "mariadb-dezign-for-databases")
+
 
 **Supported OS**
 
+
 DeZign for Databases is available for Windows OS.
+
 
 **More information**
 
-See [https://www.datanamic.com](https://www.datanamic.com) for more information.
+
+See [www.datanamic.com](https://www.datanamic.com) for more information.
+

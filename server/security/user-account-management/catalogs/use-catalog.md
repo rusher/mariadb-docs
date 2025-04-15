@@ -1,33 +1,34 @@
+
 # USE CATALOG
 
-#
 
-#### MariaDB starting with [12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-120)
-
+##### MariaDB starting with [12.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-120.md)
 Catalog support is planned for 12.0.
 
-#
 
-# Syntax
+
+## Syntax
+
 
 ```
 USE CATALOG catalog_name
 ```
 
-#
+## Description
 
-# Description
 
 Changes to another [catalog](catalogs-overview.md).
 Can only be done by a super user in the 'def' catalog.
 Changing catalog will update catalog status and reset all session status.
 
+
 A tenant (a user in any other catalog than 'def') cannot change to another catalog.
-However tenants can execute `USE CATALOG current_catalog`. This is to allow the
-user to import SQL scripts that use `USE CATALOG...`.
+However tenants can execute `<code>USE CATALOG current_catalog</code>`. This is to allow the
+user to import SQL scripts that use `<code>USE CATALOG...</code>`.
 
-#
 
-# See Also
+## See Also
 
-* [USE database](../user-password-expiry.md). Changing database.
+
+* [USE database](../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md). Changing database.
+

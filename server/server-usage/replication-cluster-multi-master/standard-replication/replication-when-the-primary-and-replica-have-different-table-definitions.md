@@ -1,66 +1,80 @@
+
 # Replication When the Primary and Replica Have Different Table Definitions
 
 The terms *master* and *slave* have historically been used in replication, and MariaDB has begun the process of adding *primary* and *replica* synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 
+
+
+
 While replication is usually meant to take place between primaries and replicas with the same table definitions and this is recommended, in certain cases replication can still take place even if the definitions are identical.
 
-Tables on the replica and the primary do not need to have the same definition in order for [replication](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/mariadb-releases/compatibility-differences/replication-compatibility-between-mariadb-and-mysql) to take place. There can be differing numbers of columns, or differing data definitions and, in certain cases, replication can still proceed.
 
-#
+Tables on the replica and the primary do not need to have the same definition in order for [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to take place. There can be differing numbers of columns, or differing data definitions and, in certain cases, replication can still proceed.
 
-# Different Column Definitions - Attribute Promotion and Demotion
+
+## Different Column Definitions - Attribute Promotion and Demotion
+
 
 It is possible in some cases to replicate to a replica that has a column of a different type on the replica and the primary. This process is called attribute promotion (to a larger type) or attribute demotion (to a smaller type).
 
+
 The conditions differ depending on whether [statement-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based) or [row-based replication](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based) is used.
 
-#
 
-## Statement-Based Replication
+### Statement-Based Replication
 
-When using [statement-based replication](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based), generally, if a statement can run successfully on the replica, it will be replicated. If a column definition is the same or a larger type on the replica than on the primary, it can replicate successfully. For example a column defined as `[VARCHAR(10)](../../../reference/data-types/string-data-types/varchar.md)` will successfully be replicated on a replica with a definition of `VARCHAR(12)`.
+
+When using [statement-based replication](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based), generally, if a statement can run successfully on the replica, it will be replicated. If a column definition is the same or a larger type on the replica than on the primary, it can replicate successfully. For example a column defined as `<code>[VARCHAR(10)](../../../reference/data-types/string-data-types/varchar.md)</code>` will successfully be replicated on a replica with a definition of `<code>VARCHAR(12)</code>`.
+
 
 Replicating to a replica where the column is defined as smaller than on the primary can also work. For example, given the following table definitions:
 
+
 Master:
+
 
 ```
 DESC r;
 +-------+-------------+------+-----+---------+-------+
-| Field | Type | Null | Key | Default | Extra |
+| Field | Type        | Null | Key | Default | Extra |
 +-------+-------------+------+-----+---------+-------+
-| id | tinyint(4) | YES | | NULL | |
-| v | varchar(10) | YES | | NULL | |
+| id    | tinyint(4)  | YES  |     | NULL    |       |
+| v     | varchar(10) | YES  |     | NULL    |       |
 +-------+-------------+------+-----+---------+-------+
 ```
 
 Slave
 
+
 ```
 DESC r;
 +-------+-------------+------+-----+---------+-------+
-| Field | Type | Null | Key | Default | Extra |
+| Field | Type        | Null | Key | Default | Extra |
 +-------+-------------+------+-----+---------+-------+
-| id | tinyint(4) | YES | | NULL | |
-| v | varchar(8) | YES | | NULL | |
+| id    | tinyint(4)  | YES  |     | NULL    |       |
+| v     | varchar(8) | YES  |     | NULL    |       |
 +-------+-------------+------+-----+---------+-------+
 ```
 
 the statement
 
+
 ```
 INSERT INTO r VALUES (6,'hi');
 ```
 
-would successfully replicate because the value inserted into the `v` field can successfully be inserted on both the primary and the smaller replica equivalent.
+would successfully replicate because the value inserted into the `<code>v</code>` field can successfully be inserted on both the primary and the smaller replica equivalent.
+
 
 However, the following statement would fail:
+
 
 ```
 INSERT INTO r VALUES (7,'abcdefghi')
 ```
 
 In this case, the value fits in the primary definition, but is too long for the replica field, and so replication will fail.
+
 
 ```
 SHOW SLAVE STATUS\G
@@ -71,50 +85,54 @@ Slave_SQL_Running: No
 ...
 Last_Errno: 1406
 Last_Error: Error 'Data too long for column 'v' at row 1' on query. 
- Default database: 'test'. Query: 'INSERT INTO r VALUES (7,'abcdefghi')'
+   Default database: 'test'. Query: 'INSERT INTO r VALUES (7,'abcdefghi')'
 ...
 ```
 
-#
+### Row-Based Replication
 
-## Row-Based Replication
 
-When using [row-based replication](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based), the value of the [slave_type_conversions](/en/replication-and-binary-log-server-system-variables/#slave_type_conversions) variable is important. The default value of this variable is empty, in which case MariaDB will not perform attribute promotion or demotion. If the column definitions do not match, replication will stop. If set to `ALL_NON_LOSSY`, safe replication is permitted. If set to `ALL_LOSSY` as well, replication will be permitted even if data loss takes place.
+When using [row-based replication](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based), the value of the [slave_type_conversions](replication-and-binary-log-system-variables.md) variable is important. The default value of this variable is empty, in which case MariaDB will not perform attribute promotion or demotion. If the column definitions do not match, replication will stop. If set to `<code>ALL_NON_LOSSY</code>`, safe replication is permitted. If set to `<code>ALL_LOSSY</code>` as well, replication will be permitted even if data loss takes place.
+
 
 For example:
 
+
 Master:
+
 
 ```
 DESC r;
 +-------+-------------+------+-----+---------+-------+
-| Field | Type | Null | Key | Default | Extra |
+| Field | Type        | Null | Key | Default | Extra |
 +-------+-------------+------+-----+---------+-------+
-| id | smallint(6) | YES | | NULL | |
-| v | varchar(10) | YES | | NULL | |
+| id    | smallint(6) | YES  |     | NULL    |       |
+| v     | varchar(10) | YES  |     | NULL    |       |
 +-------+-------------+------+-----+---------+-------+
 ```
 
 Slave:
 
+
 ```
 SHOW VARIABLES LIKE 'slave_ty%';
 +------------------------+-------+
-| Variable_name | Value |
+| Variable_name          | Value |
 +------------------------+-------+
-| slave_type_conversions | |
+| slave_type_conversions |       |
 +------------------------+-------+
 
  DESC r;
 +-------+------------+------+-----+---------+-------+
-| Field | Type | Null | Key | Default | Extra |
+| Field | Type       | Null | Key | Default | Extra |
 +-------+------------+------+-----+---------+-------+
-| id | tinyint(4) | YES | | NULL | |
-| v | varchar(1) | YES | | NULL | |
+| id    | tinyint(4) | YES  |     | NULL    |       |
+| v     | varchar(1) | YES  |     | NULL    |       |
 +-------+------------+------+-----+---------+-------+
 ```
 
 The following query will fail:
+
 
 ```
 INSERT INTO r VALUES (3,'c');
@@ -128,11 +146,12 @@ Slave_SQL_Running: No
 ...
 Last_Errno: 1677
 Last_Error: Column 0 of table 'test.r' cannot be converted from 
- type 'smallint' to type 'tinyint(4)'
+  type 'smallint' to type 'tinyint(4)'
 ...
 ```
 
-By changing the value of the [slave_type_conversions](/en/replication-and-binary-log-server-system-variables/#slave_type_conversions), replication can proceed:
+By changing the value of the [slave_type_conversions](replication-and-binary-log-system-variables.md), replication can proceed:
+
 
 ```
 SET GLOBAL slave_type_conversions='ALL_NON_LOSSY,ALL_LOSSY';
@@ -144,34 +163,36 @@ START SLAVE;
 SHOW SLAVE STATUS\G;
 *************************** 1. row ***************************
 ...
- Slave_IO_Running: Yes
- Slave_SQL_Running: Yes
+             Slave_IO_Running: Yes
+            Slave_SQL_Running: Yes
 ...
 ```
 
-#
+#### Supported Conversions
 
-### Supported Conversions
 
-* Between [TINYINT](../../../reference/data-types/data-types-numeric-data-types/tinyint.md), [SMALLINT](../../../reference/data-types/data-types-numeric-data-types/smallint.md), [MEDIUMINT](../../../reference/data-types/data-types-numeric-data-types/mediumint.md), [INT](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/replication-protocol/intvar_event.md) and [BIGINT](../../../reference/data-types/data-types-numeric-data-types/bigint.md). If lossy conversion is supported, the value from the primary will be converted to the maximum or minimum permitted on the replica, which non-lossy conversions require the replica column to be large enough. For example, SMALLINT UNSIGNED can be converted to MEDIUMINT, but not SMALLINT SIGNED.
+* Between [TINYINT](../../../reference/data-types/data-types-numeric-data-types/tinyint.md), [SMALLINT](../../../reference/data-types/data-types-numeric-data-types/smallint.md), [MEDIUMINT](../../../reference/data-types/data-types-numeric-data-types/mediumint.md), [INT](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) and [BIGINT](../../../reference/data-types/data-types-numeric-data-types/bigint.md). If lossy conversion is supported, the value from the primary will be converted to the maximum or minimum permitted on the replica, which non-lossy conversions require the replica column to be large enough. For example, SMALLINT UNSIGNED can be converted to MEDIUMINT, but not SMALLINT SIGNED.
 
-#
 
-# Different Number or Order of Columns
+## Different Number or Order of Columns
+
 
 Replication can also take place when the primary and replica have a different number of columns if the following criteria are met:
+
 
 * columns must be in the same order on the primary and replica
 * common columns must be defined with the same data type
 * extra columns must be defined after the common columns
 
-#
 
-## Row-Based
+### Row-Based
+
 
 The following example replicates incorrectly (replication proceeds, but the data is corrupted), as the columns are not in the same order.
 
+
 Master:
+
 
 ```
 CREATE OR REPLACE TABLE r (i1 INT, i2 INT);
@@ -179,41 +200,45 @@ CREATE OR REPLACE TABLE r (i1 INT, i2 INT);
 
 Slave:
 
+
 ```
 ALTER TABLE r ADD i3 INT AFTER i1;
 ```
 
 Master:
 
+
 ```
 INSERT INTO r (i1,i2) VALUES (1,1);
 
 SELECT * FROM r;
 +------+------+
-| i1 | i2 |
+| i1   | i2   |
 +------+------+
-| 1 | 1 |
+|    1 |    1 |
 +------+------+
 ```
 
 Slave:
 
+
 ```
 SELECT * FROM r;
 +------+------+------+
-| i1 | i3 | i2 |
+| i1   | i3   | i2   |
 +------+------+------+
-| 1 | 1 | NULL |
+|    1 |    1 | NULL |
 +------+------+------+
 ```
 
-#
+### Statement-Based
 
-## Statement-Based
 
 Using statement-based replication, the same example may work, even though the columns are not in the same order.
 
+
 Master:
+
 
 ```
 CREATE OR REPLACE TABLE r (i1 INT, i2 INT);
@@ -221,30 +246,33 @@ CREATE OR REPLACE TABLE r (i1 INT, i2 INT);
 
 Slave:
 
+
 ```
 ALTER TABLE r ADD i3 INT AFTER i1;
 ```
 
 Master:
 
+
 ```
 INSERT INTO r (i1,i2) VALUES (1,1);
 
 SELECT * FROM r;
 +------+------+
-| i1 | i2 |
+| i1   | i2   |
 +------+------+
-| 1 | 1 |
+|    1 |    1 |
 +------+------+
 ```
 
 Slave:
 
+
 ```
 SELECT * FROM r;
 +------+------+------+
-| i1 | i3 | i2 |
+| i1   | i3   | i2   |
 +------+------+------+
-| 1 | NULL | 1 |
+|    1 | NULL |    1 |
 +------+------+------+
 ```

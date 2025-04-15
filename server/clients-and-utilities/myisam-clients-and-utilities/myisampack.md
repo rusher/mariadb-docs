@@ -1,14 +1,17 @@
+
 # myisampack
 
-`myisampack` is a tool for compressing [MyISAM](myisamchk-table-information.md) tables. The resulting tables
+`<code>myisampack</code>` is a tool for compressing [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables. The resulting tables
 are read-only, and usually about 40% to 70% smaller. It is run as follows:
+
 
 ```
 myisampack [options] file_name [file_name2...]
 ```
 
-The `file_name` is the `.MYI` index file. The extension can be omitted,
+The `<code>file_name</code>` is the `<code>.MYI</code>` index file. The extension can be omitted,
 although keeping it permits wildcards, such as:
+
 
 ```
 myisampack *.MYI
@@ -16,26 +19,32 @@ myisampack *.MYI
 
 ...to compress all the files.
 
-`myisampack` compresses each column separately, and, when the resulting data
+
+`<code>myisampack</code>` compresses each column separately, and, when the resulting data
 is read, only the individual rows and columns required need to be decompressed,
 allowing for quicker reading.
 
-Once a table has been packed, use `[myisamchk -rq](myisamchk-table-information.md)` (the quick
+
+Once a table has been packed, use `<code>[myisamchk -rq](myisamchk-table-information.md)</code>` (the quick
 and recover options) to rebuild its indexes.
 
-`myisampack` does not support partitioned tables.
+
+`<code>myisampack</code>` does not support partitioned tables.
+
 
 Do not run myisampack if the tables could be updated during the operation, and
 [skip_external_locking](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#skip_external_locking) has
 been set.
 
-#
 
-# Options
+## Options
+
 
 The following variables can be set while passed as commandline options to
-`myisampack`, or set with a `[myisampack]` section in your
-[my.cnf](/en/configuring-mariadb-with-mycnf/) file.
+`<code>myisampack</code>`, or set with a `<code>[myisampack]</code>` section in your
+[my.cnf](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) file.
+
+
 
 | Option | Description |
 | --- | --- |
@@ -45,7 +54,6 @@ The following variables can be set while passed as commandline options to
 | -
 
 # , --debug[=name] | Output debug log. Often this is 'd:t:o,filename'. |
-
 | -f, --force | Force packing of table even if it gets bigger or if tempfile exists. |
 | -j, --join=name | Join all given tables into 'new_table_name'. All tables must have identical layouts. |
 | -?, --help | Display help and exit. |
@@ -56,16 +64,17 @@ The following variables can be set while passed as commandline options to
 | -V, --version | Output version information and exit. |
 | -w, --wait | Wait and retry if table is in use. |
 
-#
 
-# Uncompressing
 
-To uncompress a table compressed with `myisampack`, use the
-`[myisamchk -u](myisamchk-table-information.md)` option.
+## Uncompressing
 
-#
 
-# Examples
+To uncompress a table compressed with `<code>myisampack</code>`, use the
+`<code>[myisamchk -u](myisamchk-table-information.md)</code>` option.
+
+
+## Examples
+
 
 ```
 > myisampack /var/lib/mysql/test/posts
@@ -81,9 +90,9 @@ Data records: 1680
 - Fixing index 2
 ```
 
-#
+## See Also
 
-# See Also
 
 * [FLUSH TABLES FOR EXPORT](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
 * [myisamchk](myisamchk-table-information.md)
+

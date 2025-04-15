@@ -1,58 +1,69 @@
+
 # START_ENCRYPTION_EVENT
 
-The `START_ENCRYPTION` event is written to every [binary log](../../../../../server-usage/programming-customizing-mariadb/stored-routines/binary-logging-of-stored-routines.md) file if [encrypt_binlog](/en/replication-and-binary-log-server-system-variables/#encrypt_binlog) is set to ON.
+The `<code>START_ENCRYPTION</code>` event is written to every [binary log](../../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file if [encrypt_binlog](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) is set to ON.
+
 
 This event is written just once, after the Format Description event (which is the first event of a binlog file at pos 4).
 
+
 The event has the 19 bytes event header with EventType set to value 164 (0xa4) + 17 bytes data.
 
-#
 
-### Header
+#### Header
+
 
 * Event type is 164 (0xa4)
 
-#
 
-### Fields
+#### Fields
+
+
 
 * [uint<1>](../protocol-data-types.md#fixed-length-integers) The Encryption scheme, always set to 1 for system files.
 * [uint<4>](../protocol-data-types.md#fixed-length-integers) The Encryption key version.
 * [byte<12>](../protocol-data-types.md#fixed-length-bytes) Nonce (12 random bytes) of current binlog file.
 
-#
 
-### Decryption of following events
+
+#### Decryption of following events
+
 
 All data of following events in the binlog file are encrypted, except for the event_length field
+
 
 The 16 byte encryption IV is generated from the 12 byte nonce ([uint<12>](../protocol-data-types.md#fixed-length-integers)) in the binlog plus the current position 
  of the event being encrypted ([uint<4>](../protocol-data-types.md#fixed-length-integers)). This means the last four bytes of the IV change for every event and the first 12 bytes change for every binlog file.
 
+
 Since the event_length is always unencrypted, the encrypted data block has to be modified before it can be decrypted:
+
 
 * store event_length
 * copy the first four bytes (encrypted timestamp) to event_length position (offset=9)
 * decrypt starting from offset 4 and store result at offset 4 of decrypted buffer
 
+
 The unencrypted block now also needs to be modified
+
 
 * move unencrypted timestamp value from offset 9 to the beginning (offset=0)
 * store event_length at position 9
 
-#
 
-## Complete example with CRC32 from a binary log.
+### Complete example with CRC32 from a binary log.
+
 
 ```
-b8 5f 5a 59 a4 5d 00 00 00 28 00 00 00 21 01 00 ._ZY.]...(...!..
-00 00 00 01 01 00 00 00 65 57 50 26 63 59 37 46 ........eWP&cY7F
-2f 3b 33 23 06 bb da 62 /;3#...b
+b8 5f 5a 59 a4 5d 00 00  00 28 00 00 00 21 01 00 ._ZY.]...(...!..
+00 00 00 01 01 00 00 00  65 57 50 26 63 59 37 46 ........eWP&cY7F
+2f 3b 33 23 06 bb da 62                          /;3#...b
 ```
 
-#
 
-### header, 19 bytes:
+#### header, 19 bytes:
+
+
 
 * timestamp [4] = b8 5f 5a 59 => 59 5a 5f b8 => 1499094968 [2017-07-03 17:16:08]
 * type [1} = a4 => 164
@@ -61,16 +72,20 @@ b8 5f 5a 59 a4 5d 00 00 00 28 00 00 00 21 01 00 ._ZY.]...(...!..
 * next_pos [4] = 21 01 00 00 => 00 00 01 21 => 289
 * flags [2] = 00 00 => 0
 
-#
 
-### content,17 bytes
+
+#### content,17 bytes
+
+
 
 * Enc scheme [1] = 01 => 1
 * Enc key ver [4] = 01 00 00 00 => 00 00 00 01 => 1
 * Nonce [12] = eWP&cY7F/;3#
 
-#
 
-### crc32, 4 bytes, of the whole event (header[19] + content[17])
+
+#### crc32, 4 bytes, of the whole event (header[19] + content[17])
+
 
 * 06 bb da 62 => 62 da bb 06 => 1658501894
+

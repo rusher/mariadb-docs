@@ -1,6 +1,9 @@
+
 # mariadb-admin
 
-`mariadb-admin` is an administration program for the mariadbd daemon. It can be used to:
+
+`<code>mariadb-admin</code>` is an administration program for the mariadbd daemon. It can be used to:
+
 
 * Monitor what the MariaDB clients are doing (processlist)
 * Get usage statistics and variables from the MariaDB server
@@ -11,35 +14,37 @@
 * Start/stop replicas
 * Check if the server is alive (ping)
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105), the client was called `mysqladmin`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
-#
+Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysqladmin</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
-# Using mariadb-admin
 
-The command to use `mariadb-admin` and the general syntax is:
+## Using mariadb-admin
+
+
+The command to use `<code>mariadb-admin</code>` and the general syntax is:
+
 
 ```
 mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 ```
 
-#
+### Options
 
-## Options
 
-`mariadb-admin` supports the following options:
+`<code>mariadb-admin</code>` supports the following options:
+
+
 
 | Option | Description |
 | --- | --- |
 | Option | Description |
-| --character-sets-dir=name | Directory where the [character set](/en/data-types-character-sets-and-collations/) files are located. |
+| --character-sets-dir=name | Directory where the [character set](../reference/data-types/string-data-types/character-sets/README.md) files are located. |
 | -C, --compress | Compress all information sent between the client and the server if both support compression. |
 | --connect_timeout=val | Maximum time in seconds before connection timeout. The default value is 43200 (12 hours). |
 | -c val, --count=val | Number of iterations to make. This works with -i (--sleep) only. |
 | --debug[=debug_options], -
 
 # [debug_options] | Write a debugging log. A typical debug_options string is d:t:o,file_name. The default is d:t:o,/tmp/mysqladmin.trace. |
-
 | --debug-check | Check memory and open file usage at exit. |
 | --debug-info | Print debugging information and memory and CPU usage statistics when the program exits. |
 | --default-auth=plugin | Default authentication client-side plugin to use. |
@@ -47,7 +52,7 @@ mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 | -f, --force | Don't ask for confirmation on drop database; with multiple commands, continue even if an error occurs. |
 | -?, --help | Display this help and exit. |
 | -h name, --host=name | Hostname to connect to. |
-| -l, --local | Suppress the SQL command(s) from being written to the [binary log](../server-usage/programming-customizing-mariadb/stored-routines/binary-logging-of-stored-routines.md) by enabling [sql_log_bin=0](/en/replication-and-binary-log-server-system-variables/#sql_log_bin) for the session, or, from [MariaDB 10.2.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-102-series/mariadb-1027-release-notes) and [MariaDB 10.1.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-101-series/mariadb-10124-release-notes), for flush commands only, using FLUSH LOCAL rather than SET sql_log_bin=0, so the privilege requirement is RELOAD rather than SUPER. |
+| -l, --local | Suppress the SQL command(s) from being written to the [binary log](../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) by enabling [sql_log_bin=0](../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) for the session, or, from [MariaDB 10.2.7](../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1027-release-notes.md) and [MariaDB 10.1.24](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes.md), for flush commands only, using FLUSH LOCAL rather than SET sql_log_bin=0, so the privilege requirement is RELOAD rather than SUPER. |
 | -b, --no-beep | Turn off beep on error. |
 | -p[password], --password[=password] | Password to use when connecting to server. If password is not given it's asked from the terminal. |
 | --pipe, -W | On Windows, connect to the server via a named pipe. This option applies only if the server supports named-pipe connections. |
@@ -59,14 +64,14 @@ mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 | -s, --silent | Silently exit if one can't connect to server. |
 | -i delay, --sleep=delay | Execute commands repeatedly, sleeping for delay seconds in between. The --count option determines the number of iterations. If --count is not given, mariadb-admin executes commands indefinitely until interrupted. |
 | -S name, --socket=name | For connections to localhost, the Unix socket file to use, or, on Windows, the name of the named pipe to use. |
-| --ssl | Enables [TLS](/en/data-in-transit-encryption/). TLS is also enabled even without setting this option when certain other TLS options are set. The --ssl option will not enable [verifying the server certificate](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification) by default. In order to verify the server certificate, the user must specify the --ssl-verify-server-cert option. |
-| --ssl-ca=name | Defines a path to a PEM file that should contain one or more X509 certificates for trusted Certificate Authorities (CAs) to use for [TLS](/en/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. See [Secure Connections Overview: Certificate Authorities (CAs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-authorities-cas) for more information. This option implies the --ssl option. |
-| --ssl-capath=name | Defines a path to a directory that contains one or more PEM files that should each contain one X509 certificate for a trusted Certificate Authority (CA) to use for [TLS](/en/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the [openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html) command. See [Secure Connections Overview: Certificate Authorities (CAs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-authorities-cas) for more information. This option is only supported if the client was built with OpenSSL or yaSSL. If the client was built with GnuTLS or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms. This option implies the --ssl option. |
-| --ssl-cert=name | Defines a path to the X509 certificate file to use for [TLS](/en/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. This option implies the --ssl option. |
-| --ssl-cipher=name | List of permitted ciphers or cipher suites to use for [TLS](/en/data-in-transit-encryption/). This option implies the --ssl option. |
-| --ssl-crl=name | Defines a path to a PEM file that should contain one or more revoked X509 certificates to use for [TLS](/en/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-revocation-lists-crls) for more information. This option is only supported if the client was built with OpenSSL or Schannel. If the client was built with yaSSL or GnuTLS, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms. |
-| --ssl-crlpath=name | Defines a path to a directory that contains one or more PEM files that should each contain one revoked X509 certificate to use for [TLS](/en/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the [openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html) command. See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-revocation-lists-crls) for more information. This option is only supported if the client was built with OpenSSL. If the client was built with yaSSL, GnuTLS, or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms. |
-| --ssl-key=name | Defines a path to a private key file to use for [TLS](/en/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. This option implies the --ssl option. |
+| --ssl | Enables [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). TLS is also enabled even without setting this option when certain other TLS options are set. The --ssl option will not enable [verifying the server certificate](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification) by default. In order to verify the server certificate, the user must specify the --ssl-verify-server-cert option. |
+| --ssl-ca=name | Defines a path to a PEM file that should contain one or more X509 certificates for trusted Certificate Authorities (CAs) to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. See [Secure Connections Overview: Certificate Authorities (CAs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-authorities-cas) for more information. This option implies the --ssl option. |
+| --ssl-capath=name | Defines a path to a directory that contains one or more PEM files that should each contain one X509 certificate for a trusted Certificate Authority (CA) to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the [openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html) command. See [Secure Connections Overview: Certificate Authorities (CAs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-authorities-cas) for more information. This option is only supported if the client was built with OpenSSL or yaSSL. If the client was built with GnuTLS or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms. This option implies the --ssl option. |
+| --ssl-cert=name | Defines a path to the X509 certificate file to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. This option implies the --ssl option. |
+| --ssl-cipher=name | List of permitted ciphers or cipher suites to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option implies the --ssl option. |
+| --ssl-crl=name | Defines a path to a PEM file that should contain one or more revoked X509 certificates to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-revocation-lists-crls) for more information. This option is only supported if the client was built with OpenSSL or Schannel. If the client was built with yaSSL or GnuTLS, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms. |
+| --ssl-crlpath=name | Defines a path to a directory that contains one or more PEM files that should each contain one revoked X509 certificate to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the [openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html) command. See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-revocation-lists-crls) for more information. This option is only supported if the client was built with OpenSSL. If the client was built with yaSSL, GnuTLS, or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms. |
+| --ssl-key=name | Defines a path to a private key file to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. This option implies the --ssl option. |
 | --ssl-verify-server-cert | Enables [server certificate verification](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification). This option is disabled by default. |
 | --tls-version=name | This option accepts a comma-separated list of TLS protocol versions. A TLS protocol version will only be enabled if it is present in this list. All other TLS protocol versions will not be permitted. See [Secure Connections Overview: TLS Protocol Versions](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#tls-protocol-versions) for more information. |
 | -u, --user=name | User for login if not current user. |
@@ -76,53 +81,56 @@ mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 | -w[count], --wait[=count] | If the connection cannot be established, wait and retry instead of aborting. If a count value is given, it indicates the number of times to retry. The default is one time. |
 | --wait-for-all-slaves | Wait for the last binlog event to be sent to all connected replicas before shutting down. This option is off by default. |
 
-#
 
-## Option Files
 
-In addition to reading options from the command-line, `mariadb-admin` can also read options from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-admin` in an option file, then it is ignored.
+### Option Files
+
+
+In addition to reading options from the command-line, `<code>mariadb-admin</code>` can also read options from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `<code>mariadb-admin</code>` in an option file, then it is ignored.
+
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
+
+
 
 | Option | Description |
 | --- | --- |
 | Option | Description |
 | --print-defaults | Print the program argument list and exit. |
 | --no-defaults | Don't read default options from any option file. |
-| --defaults-file=
+| --defaults-file=# | Only read default options from the given file #. |
+| --defaults-extra-file=# | Read this file after the global files are read. |
+| --defaults-group-suffix=# | In addition to the default option groups, also read option groups with this suffix. |
 
-# | Only read default options from the given file #. |
 
-| --defaults-extra-file=
 
-# | Read this file after the global files are read. |
+`<code>mariadb-admin</code>` is linked with [MariaDB Connector/C](../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
-| --defaults-group-suffix=
 
-# | In addition to the default option groups, also read option groups with this suffix. |
+#### Option Groups
 
-`mariadb-admin` is linked with [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-cpp/about-mariadb-connector-cpp). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
-#
+`<code>mariadb-admin</code>` reads options from the following [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
 
-### Option Groups
 
-`mariadb-admin` reads options from the following [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
 
 | Group | Description |
 | --- | --- |
 | Group | Description |
 | [mysqladmin] | Options read by mysqladmin, which includes both MariaDB Server and MySQL Server. |
-| [mariadb-admin] | Options read by mariadb-admin. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-104-series/mariadb-1046-release-notes). |
-| [client] | Options read by all MariaDB and MySQL [client programs](/en/clients-utilities/), which includes both MariaDB and MySQL clients. For example, mysqldump. |
-| [client-server] | Options read by all MariaDB [client programs](/en/clients-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
-| [client-mariadb] | Options read by all MariaDB [client programs](/en/clients-utilities/). |
+| [mariadb-admin] | Options read by mariadb-admin. Available starting with [MariaDB 10.4.6](../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
+| [client] | Options read by all MariaDB and MySQL [client programs](/kb/en/clients-utilities/), which includes both MariaDB and MySQL clients. For example, mysqldump. |
+| [client-server] | Options read by all MariaDB [client programs](/kb/en/clients-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
+| [client-mariadb] | Options read by all MariaDB [client programs](/kb/en/clients-utilities/). |
 
-#
 
-# mariadb-admin Variables
 
-Variables can be set with `--variable-name=value`.
+## mariadb-admin Variables
+
+
+Variables can be set with `<code>--variable-name=value</code>`.
+
+
 
 | Variables and boolean options | Value |
 | --- | --- |
@@ -153,15 +161,18 @@ Variables can be set with `--variable-name=value`.
 | connect_timeout | 43200 |
 | shutdown_timeout | 3600 |
 
-#
 
-# mariadb-admin Commands
+
+## mariadb-admin Commands
+
 
 ```
 mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 ```
 
 *Command* is one or more of the following. Commands may be shortened to a unique prefix.
+
+
 
 | Command | Description |
 | --- | --- |
@@ -172,7 +183,7 @@ mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 | extended-status | Return all [status variables](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md) and their values. |
 | flush-all-statistics | Flush all statistics tables |
 | flush-all-status | Flush status and statistics. |
-| flush-binary-log | Flush [binary log](../server-usage/programming-customizing-mariadb/stored-routines/binary-logging-of-stored-routines.md). |
+| flush-binary-log | Flush [binary log](../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). |
 | flush-client-statistics | Flush client statistics. |
 | flush-engine-log | Flush engine log. |
 | flush-error-log | Flush [error log](../server-management/server-monitoring-logs/error-log.md). |
@@ -183,7 +194,7 @@ mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 | flush-privileges | Reload grant tables (same as reload). |
 | flush-relay-log | Flush [relay log](../server-management/server-monitoring-logs/binary-log/relay-log.md). |
 | flush-slow-log | Flush slow query log. |
-| flush-ssl | Flush SSL certificates. Added in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-106-series/mariadb-1060-release-notes). |
+| flush-ssl | Flush SSL certificates. Added in [MariaDB 10.6.0](../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md). |
 | flush-status | Clear [status variables](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md). |
 | flush-table-statistics | Clear table statistics. |
 | flush-tables | Flush all tables. |
@@ -206,27 +217,32 @@ mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 | variables | Prints variables available. |
 | version | Returns version as well as status info from the server. |
 
-#
 
-# The shutdown Command and the --wait-for-all-slaves Option
 
-The `--wait-for-all-slaves` option was first added in [MariaDB 10.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-104-series/mariadb-1044-release-notes). When a primary server is shutdown and it goes through the normal shutdown process, the primary kills client threads in random order. By default, the primary also considers its binary log dump threads to be regular client threads. As a consequence, the binary log dump threads can be killed while client threads still exist, and this means that data can be written on the primary during a normal shutdown that won't be replicated. This is true even if [semi-synchronous replication](../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) is being used.
+## The shutdown Command and the --wait-for-all-slaves Option
 
-In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-104) and later, this problem can be solved by shutting down the server with the mariadb-admin utility and by providing the `--wait-for-all-slaves` option to the utility and by executing the `shutdown` command with the utility. For example:
+
+The `<code>--wait-for-all-slaves</code>` option was first added in [MariaDB 10.4.4](../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1044-release-notes.md). When a primary server is shutdown and it goes through the normal shutdown process, the primary kills client threads in random order. By default, the primary also considers its binary log dump threads to be regular client threads. As a consequence, the binary log dump threads can be killed while client threads still exist, and this means that data can be written on the primary during a normal shutdown that won't be replicated. This is true even if [semi-synchronous replication](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md) is being used.
+
+
+In [MariaDB 10.4](../../release-notes/mariadb-community-server/what-is-mariadb-104.md) and later, this problem can be solved by shutting down the server with the mariadb-admin utility and by providing the `<code>--wait-for-all-slaves</code>` option to the utility and by executing the `<code>shutdown</code>` command with the utility. For example:
+
 
 ```
 mariadb-admin --wait-for-all-slaves shutdown
 ```
 
-When the `--wait-for-all-slaves` option is provided, the server only kills its binary log dump threads after all client threads have been killed, and it only completes the shutdown after the last [binary log](../server-usage/programming-customizing-mariadb/stored-routines/binary-logging-of-stored-routines.md) has been sent to all connected replicas.
+When the `<code>--wait-for-all-slaves</code>` option is provided, the server only kills its binary log dump threads after all client threads have been killed, and it only completes the shutdown after the last [binary log](../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) has been sent to all connected replicas.
+
 
 See [Replication Threads: Binary Log Dump Threads and the Shutdown Process](../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#binary-log-dump-threads-and-the-shutdown-process) for more information.
 
-#
 
-# Examples
+## Examples
+
 
 Quick check of what the server is doing:
+
 
 ```
 shell> mariadb-admin status
@@ -242,18 +258,21 @@ shell> mariadb-admin processlist
 More extensive information of what is happening 'just now' changing
 (great for troubleshooting a slow server):
 
+
 ```
 shell> mariadb-admin --relative --sleep=1 extended-status | grep -v " 0 "
 ```
 
 Check the variables for a running server:
 
+
 ```
 shell> mariadb-admin variables | grep datadir
 | datadir | /my/data/ |
 ```
 
-Using a shortened prefix for the `version` command:
+Using a shortened prefix for the `<code>version</code>` command:
+
 
 ```
 shell> mariadb-admin ver
@@ -266,30 +285,34 @@ Connection		localhost via TCP/IP
 TCP port		11100
 Uptime:			3 min 21 sec
 
-Threads: 1 Questions: 1 Slow queries: 0 Opens: 17 Open tables: 10 Queries per second avg: 0.004
+Threads: 1  Questions: 1  Slow queries: 0  Opens: 17  Open tables: 10  Queries per second avg: 0.004
 ```
 
-#
+### Other Ways To Stop mariadbd (Unix)
 
-## Other Ways To Stop mariadbd (Unix)
 
 If you get the error:
+
 
 ```
 mariadb-admin: shutdown failed; error: 'Access denied; you need (at least one of) the SHUTDOWN privilege(s) for this operation'
 ```
 
-It means that you didn't use `mariadb-admin` with a user that has the SUPER or SHUTDOWN privilege.
+It means that you didn't use `<code class="fixed" style="white-space:pre-wrap">mariadb-admin</code>` with a user that has the SUPER or SHUTDOWN privilege.
 
-If you don't know the user password, you can still take the mariadbd process down with a system `kill` command:
+
+If you don't know the user password, you can still take the mariadbd process down with a system `<code class="highlight fixed" style="white-space:pre-wrap">kill</code>` command:
+
 
 ```
 kill -SIGTERM pid-of-mariadbd-process
 ```
 
-The above is identical to `mariadb-admin shutdown`.
+The above is identical to `<code class="highlight fixed" style="white-space:pre-wrap">mariadb-admin shutdown</code>`.
+
 
 On windows you should use:
+
 
 ```
 NET STOP MySQL
@@ -297,11 +320,12 @@ NET STOP MySQL
 
 You can use the [SHUTDOWN](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md) command from any client.
 
-#
 
-# See Also
+## See Also
+
 
 * [SHUTDOWN command](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md)
-* [mytop](http://www.mysqlfanboy.com/mytop-3/), a 'top' like program for
+* [mytop](https://www.mysqlfanboy.com/mytop-3/), a 'top' like program for
  MariaDB/MySQL that allows you to see what the server is doing. A mytop
- optimized for MariaDB is included in [MariaDB 5.3](/en/what-is-mariadb-53/)
+ optimized for MariaDB is included in [MariaDB 5.3](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)
+

@@ -1,22 +1,25 @@
+
 # mariadb-dumpslow
 
-`mariadb-dumpslow` is a tool to examine the [slow query log](../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics.md).
+`<code>mariadb-dumpslow</code>` is a tool to examine the [slow query log](../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md).
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-105), the client was called `mysqldumpslow`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
-It parses the slow query log files, printing a summary result. Normally, mariadb-dumpslow groups queries that are similar except for the particular values of number and string data values. It “abstracts” these values to N and ´S´ when displaying summary output. The `-a` and `-n` options can be used to modify value abstracting behavior.
+Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysqldumpslow</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
-#
 
-# Usage
+It parses the slow query log files, printing a summary result. Normally, mariadb-dumpslow groups queries that are similar except for the particular values of number and string data values. It “abstracts” these values to N and ´S´ when displaying summary output. The `<code>-a</code>` and `<code>-n</code>` options can be used to modify value abstracting behavior.
+
+
+## Usage
+
 
 ```
 mariadb-dumpslow [ options... ] [ logs... ]
 ```
 
-#
+## Options
 
-# Options
+
 
 | Option | Description |
 | --- | --- |
@@ -33,3 +36,5 @@ mariadb-dumpslow [ options... ] [ logs... ]
 | -s ORDER | What to sort by (aa, ae, al, ar, at, a, c, e, l, r, t). at is default. aa average rows affected ae aggregated number of rows examined al average lock time ar average rows sent at average query time a rows affected c count e rows examined l lock time r rows sent t query time |
 | -t NUM | Just show the top NUM queries. |
 | -v, --verbose | Verbose mode. |
+
+

@@ -1,16 +1,20 @@
+
 # xtstat
 
-`xtstat` can be used to monitor all internal activity of [PBXT](PBXT).
+`<code>xtstat</code>` can be used to monitor all internal activity of [PBXT](https://mariadb.com/kb/en/PBXT).
 
-`xtstat` polls the `INFORMATION_SCHEMA.PBXT_STATISTICS` table. The poll interval can be set using the `--delay` option, and is 1 second by default.
 
-For most statistics, `xtstat` will display the difference in values between the current and previous polls. For example, if bytes written current value is 1000, and on the previous call it was 800, then `xtstat` will display 200. This means that 200 bytes were written to disk in the intervening period.
+`<code>xtstat</code>` polls the `<code>INFORMATION_SCHEMA.PBXT_STATISTICS</code>` table. The poll interval can be set using the `<code class="fixed" style="white-space:pre-wrap">--delay</code>` option, and is 1 second by default.
 
-#
 
-# Using `xtstat`
+For most statistics, `<code>xtstat</code>` will display the difference in values between the current and previous polls. For example, if bytes written current value is 1000, and on the previous call it was 800, then `<code>xtstat</code>` will display 200. This means that 200 bytes were written to disk in the intervening period.
+
+
+## Using `<code>xtstat</code>`
+
 
 Invoke xtstat as follows:
+
 
 ```
 $ xtstat [ options ]
@@ -18,22 +22,26 @@ $ xtstat [ options ]
 
 For example, to poll every 10 seconds:
 
+
 ```
 xtstat -D10
 ```
 
-Note that statistic counters are never reset, even if a rollback occurs. For example, if an `UPDATE
-` statement is rolled back, `xtstat` will still indicate that one write statement (see stat-write below) was executed.
+Note that statistic counters are never reset, even if a rollback occurs. For example, if an `<code class="fixed" style="white-space:pre-wrap"><span class="k">UPDATE</span>
+</code>` statement is rolled back, `<code>xtstat</code>` will still indicate that one write statement (see stat-write below) was executed.
 
-If MariaDB shuts down or crashes, `xtstat` will attempt to reconnect. `xtstat` can be terminated any time using the `CTRL-C` key cimbination.
 
-Before [PBXT](PBXT) has recovered, not all statistics are available. In particular, the statistics relating to PBXT background threads are not available (including the `sweep` and `chkpnt` statistics).
+If MariaDB shuts down or crashes, `<code>xtstat</code>` will attempt to reconnect. `<code>xtstat</code>` can be terminated any time using the `<code>CTRL-C</code>` key cimbination.
 
-#
 
-## Command line options
+Before [PBXT](PBXT) has recovered, not all statistics are available. In particular, the statistics relating to PBXT background threads are not available (including the `<code>sweep</code>` and `<code>chkpnt</code>` statistics).
 
-`xtstat` options are as follows:
+
+### Command line options
+
+
+`<code>xtstat</code>` options are as follows:
+
 
 | Option | Description |
 | --- | --- |
@@ -49,16 +57,21 @@ Before [PBXT](PBXT) has recovered, not all statistics are available. In particul
 | --protocol=value | Connection protocol to use: default/tcp/socket/pipe/memory |
 | --display=value | Columns to display: use short names separated by | (the pipe character), partial match allowed. Use --display=all to display all columns available. |
 
+
 Connection options will also be taken from the MySQL config file if available.
 
-#
 
-### Size indicators
+#### Size indicators
 
-Values displayed by `xtstat` are either a time in milliseconds, a value in bytes, or a counter. If these values are too large to be displayed then the value is rounded and a size indicator is added.
+
+Values displayed by `<code>xtstat</code>` are either a time in milliseconds, a value in bytes, or a counter. If these values are too large to be displayed then the value is rounded and a size indicator is added.
+
 
 The following size indicators are used:
 
+
+|   |   |   |
+| --- | --- | --- |
 | K | : | Kilobytes (1,024 bytes) |
 | M | : | Megabytes (1,048,576 bytes) |
 | G | : | Gigabytes (1,073,741,024 bytes) |
@@ -67,15 +80,18 @@ The following size indicators are used:
 | m | : | millions (1,000,000s) |
 | b | : | billions (1,000,000,000s) |
 
-#
 
-## Statistics
+### Statistics
 
-The following is a list of the statistics displayed by `xtstat`. Each statistic as a two-part display name. The first part is the category and the second part is the type.
 
-You can select categories and types for display, as you require. For example `--display=read` will display all read activity, `--display=xact|stat` will display transaction and statement activity.
+The following is a list of the statistics displayed by `<code>xtstat</code>`. Each statistic as a two-part display name. The first part is the category and the second part is the type.
+
+
+You can select categories and types for display, as you require. For example `<code class="fixed" style="white-space:pre-wrap">--display=read</code>` will display all read activity, `<code class="fixed" style="white-space:pre-wrap">--display=xact|stat</code>` will display transaction and statement activity.
+
 
 Note, for diagnostics it is best to capture all statistics. The reason is because you never now where a problem might turn up, so without certain statistics you may not be able to identify the problem.
+
 
 | Display name | Name | Description |
 | --- | --- | --- |
@@ -126,10 +142,12 @@ Note, for diagnostics it is best to capture all statistics. The reason is becaus
 | row-upd | Update Row Count | Number of rows updated |
 | row-del | Delete Row Count | Number of rows deleted |
 
-#
 
-# More Information
+## More Information
 
-Documentation on this page is based on the [xtstat documentation](http://primebase.org/documentation/index.php#xtstat) on the PrimeBase website.
 
-Paul McCullagh's presentation from the 2010 User's Conference has some usage examples: [http://www.primebase.org/download/pbxt-uc-2010.pdf](http://www.primebase.org/download/pbxt-uc-2010.pdf)
+Documentation on this page is based on the [xtstat documentation](https://primebase.org/documentation/index.php#xtstat) on the PrimeBase website.
+
+
+Paul McCullagh's presentation from the 2010 User's Conference has some usage examples: [pbxt-uc-2010.pdf](https://www.primebase.org/download/pbxt-uc-2010.pdf)
+

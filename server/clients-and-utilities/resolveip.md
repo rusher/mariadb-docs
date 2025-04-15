@@ -1,33 +1,32 @@
+
 # resolveip
 
 resolveip is a utility for resolving IP addresses to host names and vice versa.
 
-#
 
-# Usage
+## Usage
+
 
 ```
 resolveip [OPTIONS] hostname or IP-address
 ```
 
-#
+## Options
 
-# Options
+
 
 | Option | Description |
 | --- | --- |
 | Option | Description |
 | -?, --help | Display help and exit. |
 | -I, --info | Synonym for --help. |
-| -s, --silent
-
-# | Be more silent. |
-
+| -s, --silent# | Be more silent. |
 | -V, --version | Display version information and exit. |
 
-#
 
-# Examples
+
+## Examples
+
 
 ```
 shell> resolveip mariadb.org

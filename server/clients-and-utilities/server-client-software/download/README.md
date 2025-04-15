@@ -1,55 +1,66 @@
+
 # Downloads
 
-#
+#### Latest Packages
 
-### Latest Packages
 
 Tarballs, source and binaries (Linux and Windows), and packages for some Linux distributions are available at [mariadb.org/download](https://mariadb.org/download/).
 
-We hope that interested [community](/en/community/) package maintainers will step forward, as others already have, to build packages for their distributions. We ask for strict adherence to your packaging system's best practices and invite you to create a [bug report](http://mariadb.org/jira) if our project impedes this in any way.
 
-Instructions how to install the packages can be found [here](/en/installing-mariadb-binary-packages/). See the [Includes MariaDB](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/distributions-which-include-mariadb.md) documentation page for a list of which Linux distributions that include MariaDB.
+We hope that interested [community](../../../reference/faq/community-questions/README.md) package maintainers will step forward, as others already have, to build packages for their distributions. We ask for strict adherence to your packaging system's best practices and invite you to create a [bug report](https://mariadb.org/jira) if our project impedes this in any way.
 
-#
 
-### Pre-Release Binaries
+Instructions how to install the packages can be found [here](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/README.md). See the [Includes MariaDB](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/distributions-which-include-mariadb.md) documentation page for a list of which Linux distributions that include MariaDB.
 
-Binaries from our [Buildbot](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-buildbot-database-schema) system at [http://buildbot.mariadb.org](http://buildbot.mariadb.org) are available as containers on quay.io/mariadb-foundation/mariadb-devel:{major version}. Tags available are listed [here](https://quay.io/repository/mariadb-foundation/mariadb-devel?tab=tags).
+
+#### Pre-Release Binaries
+
+
+Binaries from our [Buildbot](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-debian/buildbot-setup-for-virtual-machines-debian-4-i386.md) system at [buildbot.mariadb.org](https://buildbot.mariadb.org) are available as containers on quay.io/mariadb-foundation/mariadb-devel:{major version}. Tags available are listed [here](https://quay.io/repository/mariadb-foundation/mariadb-devel?tab=tags).
+
 
 These haven't passed through a full release process; however changes there have been reviewed and are considered complete by the server developers. Its recommend to use these for testing.
 
-#
 
-### Getting the Source
+#### Getting the Source
 
-The [mariadb.org/download](https://mariadb.org/download/) download page contains the source for all released binaries. You can find the latest source code at [https://github.com/MariaDB/server](https://github.com/MariaDB/server)
 
-To retrieve the code, the [Git](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/using-git-with-mariadb/using-git) source control software offers
+The [mariadb.org/download](https://mariadb.org/download/) download page contains the source for all released binaries. You can find the latest source code at [server](https://github.com/MariaDB/server)
+
+
+To retrieve the code, the [Git](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/using-git-with-mariadb/using-git.md) source control software offers
 the path of least resistance. If you are unfamiliar with git, please refer to
 the [git documentation](https://git-scm.com/doc) for an understanding
 of version control with git.
 
+
 For instructions on creating a local branch of MariaDB, see the 
 [Getting the MariaDB Source Code](getting-the-mariadb-source-code.md) page.
+
 
 See the [Generic Build Instructions](../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md) page for
 general instructions on compiling MariaDB from the source.
 The [source](../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/source-building-mariadb-on-centos.md) page has links to platform and distribution-specific
 information, including information on how we build the release packages.
 
-#
 
-### Old Versions
+#### Old Versions
 
-Running the [most recent MariaDB version](/en/new-and-old-releases/) is generally the best choice. Note that there are long-term releases, maintained for five years, short-term releases, maintained for one year, and rolling releases. However, some organizations still use old or very old versions of MariaDB. An
+
+Running the [most recent MariaDB version](https://mariadb.com/kb/en/new-and-old-releases/) is generally the best choice. Note that there are long-term releases, maintained for five years, short-term releases, maintained for one year, and rolling releases. However, some organizations still use old or very old versions of MariaDB. An
 upgrade would probably require important changes in their applications, and
 sometimes they don't even have the sources of those applications.
 
+
 [mariadb.org/download/](https://mariadb.org/download?t=mariadb&o=true) contains all historical releases.
+
 
 There are source and repositories there. To use repositories see the following link:
 
-* [RHEL and RPM distros](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md#pinning-the-mariadb-repository-to-a-specific-minor-release)
-* [Debian/Ubuntu based distos](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files.md#pinning-the-mariadb-repository-to-a-specific-minor-release)
 
-It is also possible to access Docker Official Images of MariaDB back to 5.5.40 when it became an official image ([available tags](http://soaphub.org/imagehub/?q=mariadb&n=library&p=1)).
+* [RHEL and RPM distros](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md#pinning-the-mariadb-repository-to-a-specific-minor-release)
+* [Debian/Ubuntu based distos](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#pinning-the-mariadb-repository-to-a-specific-minor-release)
+
+
+It is also possible to access Docker Official Images of MariaDB back to 5.5.40 when it became an official image ([available tags](https://soaphub.org/imagehub/?q=mariadb&n=library&p=1)).
+

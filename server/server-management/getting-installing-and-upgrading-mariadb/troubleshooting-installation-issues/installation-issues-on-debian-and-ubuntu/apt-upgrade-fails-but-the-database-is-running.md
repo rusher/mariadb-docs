@@ -1,12 +1,14 @@
+
 # apt-upgrade Fails, But the Database is Running
 
-After running `apt-upgrade mariadb`, it's possible that apt shows a fail in trying to start the server, but in fact the database is up and running, which then provokes apt to remain in a non finished state.
+After running `<code>apt-upgrade mariadb</code>`, it's possible that apt shows a fail in trying to start the server, but in fact the database is up and running, which then provokes apt to remain in a non finished state.
+
 
 For example:
 
+
 ```
 # apt-get upgrade
-
 Reading package lists... Done
 Building dependency tree
 Reading state information... Done
@@ -17,16 +19,16 @@ After this operation, 0 B of additional disk space will be used.
 Do you want to continue? [Y/n]
 Setting up mariadb-server-10.1 (10.1.10+maria-1~trusty) ...
  * Stopping MariaDB database server mysqld
- ...done.
+   ...done.
  * Starting MariaDB database server mysqld
- ...fail!
+   ...fail!
 invoke-rc.d: initscript mysql, action "start" failed.
 dpkg: error processing package mariadb-server-10.1 (--configure):
  subprocess installed post-installation script returned error exit status 1
 dpkg: dependency problems prevent configuration of mariadb-server:
  mariadb-server depends on mariadb-server-10.1 (= 10.1.10+maria-1~trusty); however:
- Package mariadb-server-10.1 is not configured yet.
-
+  Package mariadb-server-10.1 is not configured yet.
+ 
 dpkg: error processing package mariadb-server (--configure):
  dependency problems - leaving unconfigured
 No apport report written because the error message indicates its a followup error from a previous failure.
@@ -38,8 +40,12 @@ E: Sub-process /usr/bin/dpkg returned an error code (1)
 
 This situation could occur if the timeout for the init script was too short. For example, see [MDEV-9382](https://jira.mariadb.org/browse/MDEV-9382), a situation where the timeout was 30 seconds, but the server was taking 48 seconds to start.
 
+
 To overcome this, the timeout needs to be increased. This can be achieved as follows:
 
-* On systems where systemd is not enabled/supported: The timeout can be increased by setting MYSQLD_STARTUP_TIMEOUT either directly in the script or via the command line. In [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-101-series/mariadb-10113-release-notes) and later versions, the init script also sources /etc/default/mariadb, so it can also be used to set MYSQLD_STARTUP_TIMEOUT to persistently change the startup timeout. The default timeout has been increased from 30s to 60s in [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-101-series/mariadb-10113-release-notes).
+
+* On systems where systemd is not enabled/supported: The timeout can be increased by setting MYSQLD_STARTUP_TIMEOUT either directly in the script or via the command line. In [MariaDB 10.1.13](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes.md) and later versions, the init script also sources /etc/default/mariadb, so it can also be used to set MYSQLD_STARTUP_TIMEOUT to persistently change the startup timeout. The default timeout has been increased from 30s to 60s in [MariaDB 10.1.13](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes.md).
+
 
 * On systems that support systemd: The startup timeout can be increased by setting [TimeoutStartSec systemd](../../starting-and-stopping-mariadb/systemd.md) option.
+

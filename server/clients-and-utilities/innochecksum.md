@@ -1,83 +1,76 @@
+
 # innochecksum
 
 innochecksum is a tool for printing checksums for InnoDB files.
 
-#
 
-# Usage
+## Usage
+
 
 ```
 innochecksum [options] file_name
 ```
 
-#
+## Description
 
-# Description
 
-It reads an [InnoDB](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md) tablespace file, calculates the checksum for each page, compares the calculated checksum to the stored checksum, and reports mismatches, which indicate damaged pages. It was originally developed to speed up verifying the integrity of tablespace files after power outages but can also be used after file copies. Because checksum mismatches will cause InnoDB to deliberately shut down a running server, it can be preferable to use innochecksum rather than waiting for a server in production usage to encounter the damaged pages.
+It reads an [InnoDB](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tablespace file, calculates the checksum for each page, compares the calculated checksum to the stored checksum, and reports mismatches, which indicate damaged pages. It was originally developed to speed up verifying the integrity of tablespace files after power outages but can also be used after file copies. Because checksum mismatches will cause InnoDB to deliberately shut down a running server, it can be preferable to use innochecksum rather than waiting for a server in production usage to encounter the damaged pages.
+
 
 Multiple filenames can be specified by a wildcard on non-Windows systems only.
 
+
 innochecksum works with compressed pages, and also includes options to analyze leaf pages to estimate how fragmented an index is and how much benefit can be gained from defragmentation.
 
-innochecksum cannot be used on tablespace files that the server already has open. For such files, you should use [CHECK TABLE](/kb/en/sql-commands-check-table/) to check tables within the tablespace. If checksum mismatches are found, you would normally restore the tablespace from backup or start the server and attempt to use [mariadb-dump](mariadb-dumpslow.md) to make a backup of the tables within the tablespace.
 
-#
+innochecksum cannot be used on tablespace files that the server already has open. For such files, you should use [CHECK TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md) to check tables within the tablespace. If checksum mismatches are found, you would normally restore the tablespace from backup or start the server and attempt to use [mariadb-dump](backup-restore-and-import-clients/mariadb-dump.md) to make a backup of the tables within the tablespace.
 
-# Options
+
+## Options
+
 
 innochecksum supports the following options. For options that refer to page numbers, the numbers are zero-based.
+
+
 
 | Option | Description |
 | --- | --- |
 | Option | Description |
-| -a, --allow-mismatches=
-
-# | Maximum checksum mismatch allowed before innochecksum terminates. Defaults to 0, which terminates on the first mismatch. |
-
+| -a, --allow-mismatches=# | Maximum checksum mismatch allowed before innochecksum terminates. Defaults to 0, which terminates on the first mismatch. |
 | -c, --count | Print a count of the number of pages in the file. |
-| -e num, --end-page=
-
-# | End at this page number (0-based). |
-
+| -e num, --end-page=# | End at this page number (0-based). |
 | -?, --help | Displays help and exits. |
 | -I, --info | Synonym for --help. |
 | -f, --leaf | Examine leaf index pages. |
 | -l fn, --log=fn | Log output to the specified filename fn. |
-| -m num, --merge=
-
-# | Leaf page count if merge given number of consecutive pages. |
-
-| -n, --no-check | Ignore the checksum verification. Until [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-106), must be used with the --write option. |
-| -p num, --page=
-
-# | Check only this page number (0-based). |
-
+| -m num, --merge=# | Leaf page count if merge given number of consecutive pages. |
+| -n, --no-check | Ignore the checksum verification. Until [MariaDB 10.6](../../release-notes/mariadb-community-server/what-is-mariadb-106.md), must be used with the --write option. |
+| -p num, --page=# | Check only this page number (0-based). |
 | -D, --page-type-dump=name | Dump the page type info for each page in a tablespace. |
 | -S, --page-type-summary | Display a count of each page type in a tablespace |
 | -i, --per-page-details | Print out per-page detail information. |
 | -u, --skip-corrupt | Skip corrupt pages. |
-| -r, --skip-freed-pages | innochecksum misinterprets freed pages as active, leading to confusion that too many valid pages exist. To avoid this, this option was introduced to avoid freed pages while dumping or printing the summary of the tablespace. From [MariaDB 10.6.21](/kb/en/mariadb-10621-release-notes/), [MariaDB 10.11.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-1011-series/mariadb-10-11-11-release-notes), [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-5-release-notes), [MariaDB 11.7.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-2-release-notes). |
-| -s num, --start-page=
-
-# | Start at this page number (0-based). |
-
-| -C, --strict-check=name | Specify the strict checksum algorithm. One of: crc32, innodb, none. If not specified, validates against innodb, crc32 and none. full_crc32 is not supported. See also [innodb_checksum_algorithm](../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm). Removed in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-106-series/mariadb-1060-release-notes) |
+| -r, --skip-freed-pages | innochecksum misinterprets freed pages as active, leading to confusion that too many valid pages exist. To avoid this, this option was introduced to avoid freed pages while dumping or printing the summary of the tablespace. From [MariaDB 10.6.21](../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-21-release-notes.md), [MariaDB 10.11.11](../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-11-release-notes.md), [MariaDB 11.4.5](../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-5-release-notes.md), [MariaDB 11.7.2](../../release-notes/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-2-release-notes.md). |
+| -s num, --start-page=# | Start at this page number (0-based). |
+| -C, --strict-check=name | Specify the strict checksum algorithm. One of: crc32, innodb, none. If not specified, validates against innodb, crc32 and none. full_crc32 is not supported. See also [innodb_checksum_algorithm](../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm). Removed in [MariaDB 10.6.0](../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md) |
 | -v, --verbose | Verbose mode; print a progress indicator every five seconds. |
 | -V, --version | Displays version information and exits. |
-| -w, --write=name | Rewrite the checksum algorithm. One of crc32, innodb, none. An exclusive lock is obtained during use. Use in conjunction with the -no-check option to rewrite an invalid checksum. Removed in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-106-series/mariadb-1060-release-notes) |
+| -w, --write=name | Rewrite the checksum algorithm. One of crc32, innodb, none. An exclusive lock is obtained during use. Use in conjunction with the -no-check option to rewrite an invalid checksum. Removed in [MariaDB 10.6.0](../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md) |
 
-#
 
-# Examples
+
+## Examples
+
 
 Rewriting a crc32 checksum to replace an invalid checksum:
+
 
 ```
 innochecksum --no-check --write crc32 tablename.ibd
 ```
 
 A count of each page type:
+
 
 ```
 innochecksum --page-type-summary data/mysql/gtid_slave_pos.ibd
@@ -86,21 +79,21 @@ File::data/mysql/gtid_slave_pos.ibd
 ================PAGE TYPE SUMMARY==============
 #PAGE_COUNT	PAGE_TYPE
 ===============================================
- 1	Index page
- 0	Undo log page
- 1	Inode page
- 0	Insert buffer free list page
- 2	Freshly allocated page
- 1	Insert buffer bitmap
- 0	System page
- 0	Transaction system page
- 1	File Space Header
- 0	Extent descriptor page
- 0	BLOB page
- 0	Compressed BLOB page
- 0	Page compressed page
- 0	Page compressed encrypted page
- 0	Other type of page
+       1	Index page
+       0	Undo log page
+       1	Inode page
+       0	Insert buffer free list page
+       2	Freshly allocated page
+       1	Insert buffer bitmap
+       0	System page
+       0	Transaction system page
+       1	File Space Header
+       0	Extent descriptor page
+       0	BLOB page
+       0	Compressed BLOB page
+       0	Page compressed page
+       0	Page compressed encrypted page
+       0	Other type of page
 
 ===============================================
 Additional information:

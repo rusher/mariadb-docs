@@ -1,3 +1,0 @@
-# Geometry Relations
-
-Geometry relations

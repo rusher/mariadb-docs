@@ -1,157 +1,171 @@
+
 # SSL/TLS System Variables
+
 
 The system variables listed on this page relate to encrypting data during transfer between servers and clients using the Transport Layer Security (TLS) protocol. Often, the term Secure Sockets Layer (SSL) is used interchangeably with TLS, although strictly speaking the SSL protocol is the predecessor of TLS and is no longer considered secure.
 
-For compatibility reasons, the TLS system variables in MariaDB still use the `ssl_` prefix, but MariaDB only supports its more secure successors. For more information on SSL/TLS in MariaDB, see [Secure Connections Overview](secure-connections-overview.md).
 
-#
+For compatibility reasons, the TLS system variables in MariaDB still use the `<code>ssl_</code>` prefix, but MariaDB only supports its more secure successors. For more information on SSL/TLS in MariaDB, see [Secure Connections Overview](secure-connections-overview.md).
 
-# Variables
 
-#
+## Variables
 
-### `have_openssl`
+
+#### `<code>have_openssl</code>`
+
 
 * Description: This variable shows whether the server is linked with [OpenSSL](https://www.openssl.org/) rather than MariaDB's bundled TLS library, which might be [wolfSSL](https://www.wolfssl.com/products/wolfssl/) or [yaSSL](https://www.wolfssl.com/products/yassl/).
 
- * In [MariaDB 10.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-100-series/mariadb-1001-release-notes) and later, if this system variable shows `YES`, then the server is linked with OpenSSL.
- * In [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-100-series/mariadb-1000-release-notes) and before, this system variable was an alias for the `[have_ssl](#have_ssl)` system variable.
- * See [TLS and Cryptography Libraries Used by MariaDB](../tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms.
+  * In [MariaDB 10.0.1](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1001-release-notes.md) and later, if this system variable shows `<code>YES</code>`, then the server is linked with OpenSSL.
+  * In [MariaDB 10.0.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes.md) and before, this system variable was an alias for the `<code>[have_ssl](#have_ssl)</code>` system variable.
+  * See [TLS and Cryptography Libraries Used by MariaDB](../tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms.
 * Scope: Global
 * Dynamic: No
 
-#
 
-### `have_ssl`
 
-* Description: This variable shows whether the server supports using [TLS](/kb/en/data-in-transit-encryption/) to secure connections.
+#### `<code>have_ssl</code>`
 
- * If the value is `YES`, then the server supports TLS, and TLS is enabled.
- * If the value is `DISABLED`, then the server supports TLS, but TLS is not enabled.
- * If the value is `NO`, then the server was not compiled with TLS support, so TLS cannot be enabled.
- * When TLS is supported, check the `[have_openssl](#have_openssl)` system variable to determine whether the server is using OpenSSL or MariaDB's bundled TLS library. See [TLS and Cryptography Libraries Used by MariaDB](../tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms.
+
+* Description: This variable shows whether the server supports using [TLS](README.md) to secure connections.
+
+  * If the value is `<code>YES</code>`, then the server supports TLS, and TLS is enabled.
+  * If the value is `<code>DISABLED</code>`, then the server supports TLS, but TLS is not enabled.
+  * If the value is `<code>NO</code>`, then the server was not compiled with TLS support, so TLS cannot be enabled.
+  * When TLS is supported, check the `<code>[have_openssl](#have_openssl)</code>` system variable to determine whether the server is using OpenSSL or MariaDB's bundled TLS library. See [TLS and Cryptography Libraries Used by MariaDB](../tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms.
 * Scope: Global
 * Dynamic: No
 
-#
 
-### `ssl_ca`
 
-* Description: Defines a path to a PEM file that should contain one or more X509 certificates for trusted Certificate Authorities (CAs) to use for [TLS](/kb/en/data-in-transit-encryption/). This system variable requires that you use the absolute path, not a relative path. This system variable implies the `[ssl](/kb/en/mysqld-options/#-ssl)` option.
+#### `<code>ssl_ca</code>`
 
- * See [Secure Connections Overview: Certificate Authorities (CAs)](secure-connections-overview.md#certificate-authorities-cas) for more information.
-* Commandline: `--ssl-ca=file_name`
+
+* Description: Defines a path to a PEM file that should contain one or more X509 certificates for trusted Certificate Authorities (CAs) to use for [TLS](README.md). This system variable requires that you use the absolute path, not a relative path. This system variable implies the `<code>[ssl](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` option.
+
+  * See [Secure Connections Overview: Certificate Authorities (CAs)](secure-connections-overview.md#certificate-authorities-cas) for more information.
+* Commandline: `<code>--ssl-ca=file_name</code>`
 * Scope: Global
 * Dynamic: No
-* Data Type: `file name`
+* Data Type: `<code>file name</code>`
 
-#
 
-### `ssl_capath`
 
-* Description: Defines a path to a directory that contains one or more PEM files that should each contain one X509 certificate for a trusted Certificate Authority (CA) to use for [TLS](/kb/en/data-in-transit-encryption/). This system variable requires that you use the absolute path, not a relative path. The directory specified by this variable needs to be run through the `[openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html)` command. This system variable implies the `[ssl](/kb/en/mysqld-options/#-ssl)` option.
+#### `<code>ssl_capath</code>`
 
- * See [Secure Connections Overview: Certificate Authorities (CAs)](secure-connections-overview.md#certificate-authorities-cas) for more information.
-* Commandline: `--ssl-capath=directory_name`
+
+* Description: Defines a path to a directory that contains one or more PEM files that should each contain one X509 certificate for a trusted Certificate Authority (CA) to use for [TLS](README.md). This system variable requires that you use the absolute path, not a relative path. The directory specified by this variable needs to be run through the `<code>[openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html)</code>` command. This system variable implies the `<code>[ssl](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` option.
+
+  * See [Secure Connections Overview: Certificate Authorities (CAs)](secure-connections-overview.md#certificate-authorities-cas) for more information.
+* Commandline: `<code>--ssl-capath=directory_name</code>`
 * Scope: Global
 * Dynamic: No
-* Data Type: `directory name`
+* Data Type: `<code>directory name</code>`
 
-#
 
-### `ssl_cert`
 
-* Description: Defines a path to the X509 certificate file to use for [TLS](/kb/en/data-in-transit-encryption/). This system variable requires that you use the absolute path, not a relative path. This system variable implies the `[ssl](/kb/en/mysqld-options/#-ssl)` option.
-* Commandline: `--ssl-cert=name`
+#### `<code>ssl_cert</code>`
+
+
+* Description: Defines a path to the X509 certificate file to use for [TLS](README.md). This system variable requires that you use the absolute path, not a relative path. This system variable implies the `<code>[ssl](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` option.
+* Commandline: `<code>--ssl-cert=name</code>`
 * Scope: Global
 * Dynamic: No
-* Data Type: `file name`
+* Data Type: `<code>file name</code>`
 * Default Value: None
 
-#
 
-### `ssl_cipher`
 
-* Description: List of permitted ciphers or cipher suites to use for [TLS](/kb/en/data-in-transit-encryption/). Besides cipher names, if MariaDB was compiled with OpenSSL, this variable could be set to "SSLv3" or "TLSv1.2" to allow all SSLv3 or all TLSv1.2 ciphers. Note that the TLSv1.3 ciphers cannot be excluded when using OpenSSL, even by using this system variable. See [Using TLSv1.3](using-tlsv13.md) for details. This system variable implies the `[ssl](/kb/en/mysqld-options/#-ssl)` option.
-* Commandline: `--ssl-cipher=name`
+#### `<code>ssl_cipher</code>`
+
+
+* Description: List of permitted ciphers or cipher suites to use for [TLS](README.md). Besides cipher names, if MariaDB was compiled with OpenSSL, this variable could be set to "SSLv3" or "TLSv1.2" to allow all SSLv3 or all TLSv1.2 ciphers. Note that the TLSv1.3 ciphers cannot be excluded when using OpenSSL, even by using this system variable. See [Using TLSv1.3](using-tlsv13.md) for details. This system variable implies the `<code>[ssl](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` option.
+* Commandline: `<code>--ssl-cipher=name</code>`
 * Scope: Global
 * Dynamic: No
-* Data Type: `string`
+* Data Type: `<code>string</code>`
 * Default Value: None
 
-#
 
-### `ssl_crl`
 
-* Description: Defines a path to a PEM file that should contain one or more revoked X509 certificates to use for [TLS](/kb/en/data-in-transit-encryption/). This system variable requires that you use the absolute path, not a relative path.
+#### `<code>ssl_crl</code>`
 
- * See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](secure-connections-overview.md#certificate-revocation-lists-crls) for more information.
- * This variable is only valid if the server was built with OpenSSL. If the server was built with [wolfSSL](https://www.wolfssl.com/products/wolfssl/) or [yaSSL](https://www.wolfssl.com/products/yassl/), then this variable is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms.
-* Commandline: `--ssl-crl=name`
+
+* Description: Defines a path to a PEM file that should contain one or more revoked X509 certificates to use for [TLS](README.md). This system variable requires that you use the absolute path, not a relative path.
+
+  * See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](secure-connections-overview.md#certificate-revocation-lists-crls) for more information.
+  * This variable is only valid if the server was built with OpenSSL. If the server was built with [wolfSSL](https://www.wolfssl.com/products/wolfssl/) or [yaSSL](https://www.wolfssl.com/products/yassl/), then this variable is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms.
+* Commandline: `<code>--ssl-crl=name</code>`
 * Scope: Global
 * Dynamic: No
-* Data Type: `file name`
+* Data Type: `<code>file name</code>`
 * Default Value: None
 
-#
 
-### `ssl_crlpath`
 
-* Description: Defines a path to a directory that contains one or more PEM files that should each contain one revoked X509 certificate to use for [TLS](/kb/en/data-in-transit-encryption/). This system variable requires that you use the absolute path, not a relative path. The directory specified by this variable needs to be run through the `[openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html)` command.
+#### `<code>ssl_crlpath</code>`
 
- * See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](secure-connections-overview.md#certificate-revocation-lists-crls) for more information.
- * This variable is only supported if the server was built with OpenSSL. If the server was built with [wolfSSL](https://www.wolfssl.com/products/wolfssl/) or [yaSSL](https://www.wolfssl.com/products/yassl/), then this variable is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms.
-* Commandline: `--ssl-crlpath=name`
+
+* Description: Defines a path to a directory that contains one or more PEM files that should each contain one revoked X509 certificate to use for [TLS](README.md). This system variable requires that you use the absolute path, not a relative path. The directory specified by this variable needs to be run through the `<code>[openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html)</code>` command.
+
+  * See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](secure-connections-overview.md#certificate-revocation-lists-crls) for more information.
+  * This variable is only supported if the server was built with OpenSSL. If the server was built with [wolfSSL](https://www.wolfssl.com/products/wolfssl/) or [yaSSL](https://www.wolfssl.com/products/yassl/), then this variable is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms.
+* Commandline: `<code>--ssl-crlpath=name</code>`
 * Scope: Global
 * Dynamic: No
-* Data Type: `directory name`
+* Data Type: `<code>directory name</code>`
 * Default Value: None
 
-#
 
-### `ssl_key`
 
-* Description: Defines a path to a private key file to use for [TLS](/kb/en/data-in-transit-encryption/). This system variable requires that you use the absolute path, not a relative path. This system variable implies the [ssl](/kb/en/mysqld-options/#-ssl) option.
-* Commandline: `--ssl-key=name`
+#### `<code>ssl_key</code>`
+
+
+* Description: Defines a path to a private key file to use for [TLS](README.md). This system variable requires that you use the absolute path, not a relative path. This system variable implies the [ssl](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option.
+* Commandline: `<code>--ssl-key=name</code>`
 * Scope: Global
 * Dynamic: No
-* Data Type: `string`
+* Data Type: `<code>string</code>`
 * Default Value: None
 
-#
 
-### `tls_version`
+
+#### `<code>tls_version</code>`
+
 
 * Description: This system variable accepts a comma-separated list (with no whitespaces) of TLS protocol versions. A TLS protocol version will only be enabled if it is present in this list. All other TLS protocol versions will not be permitted.
 
- * See [Secure Connections Overview: TLS Protocol Versions](secure-connections-overview.md#tls-protocol-versions) for more information.
-* Commandline: `--tls-version=value`
+  * See [Secure Connections Overview: TLS Protocol Versions](secure-connections-overview.md#tls-protocol-versions) for more information.
+* Commandline: `<code>--tls-version=value</code>`
 * Scope: Global
 * Dynamic: No
-* Data Type: `enumerated`
+* Data Type: `<code>enumerated</code>`
 * Default Value:
 
- * TLSv1.1,TLSv1.2,TLSv1.3 (<= [MariaDB 10.4.31](/kb/en/mariadb-10431-release-notes/), [MariaDB 10.5.22](/kb/en/mariadb-10522-release-notes/), [MariaDB 10.6.15](/kb/en/mariadb-10615-release-notes/), [MariaDB 10.11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-1011-series/mariadb-10-11-5-release-notes), [MariaDB 11.0.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-3-release-notes))
- * TLSv1.2,TLSv1.3 (>= [MariaDB 10.4.32](/kb/en/mariadb-10432-release-notes/), [MariaDB 10.5.23](/kb/en/mariadb-10523-release-notes/), [MariaDB 10.6.16](/kb/en/mariadb-10616-release-notes/), [MariaDB 10.11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-1011-series/mariadb-10-11-6-release-notes), [MariaDB 11.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-4-release-notes) and all later versions)
+  * TLSv1.1,TLSv1.2,TLSv1.3 (<= [MariaDB 10.4.31](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10-4-31-release-notes.md), [MariaDB 10.5.22](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10-5-22-release-notes.md), [MariaDB 10.6.15](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-15-release-notes.md), [MariaDB 10.11.5](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-5-release-notes.md), [MariaDB 11.0.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-3-release-notes.md))
+  * TLSv1.2,TLSv1.3 (>= [MariaDB 10.4.32](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10-4-32-release-notes.md), [MariaDB 10.5.23](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10-5-23-release-notes.md), [MariaDB 10.6.16](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes.md), [MariaDB 10.11.6](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-6-release-notes.md), [MariaDB 11.0.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-4-release-notes.md) and all later versions)
 * Valid Values: TLSv1.0,TLSv1.1,TLSv1.2,TLSv1.3
-* Introduced: [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-104-series/mariadb-1046-release-notes)
+* Introduced: [MariaDB 10.4.6](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md)
 
-#
 
-### `version_ssl_library`
 
-* Description: The version of the [TLS](/kb/en/data-in-transit-encryption/) library that is being used. Note that the version returned by this system variable does not always necessarily correspond to the exact version of the OpenSSL package installed on the system. OpenSSL shared libraries tend to contain interfaces for multiple versions at once to allow for backward compatibility. Therefore, if the OpenSSL package installed on the system is newer than the OpenSSL version that the MariaDB server binary was built with, then the MariaDB server binary might use one of the interfaces for an older version.
+#### `<code>version_ssl_library</code>`
 
- * See [TLS and Cryptography Libraries Used by MariaDB: Checking the Server's OpenSSL Version](../tls-and-cryptography-libraries-used-by-mariadb.md#checking-the-servers-openssl-version) for more information.
+
+* Description: The version of the [TLS](README.md) library that is being used. Note that the version returned by this system variable does not always necessarily correspond to the exact version of the OpenSSL package installed on the system. OpenSSL shared libraries tend to contain interfaces for multiple versions at once to allow for backward compatibility. Therefore, if the OpenSSL package installed on the system is newer than the OpenSSL version that the MariaDB server binary was built with, then the MariaDB server binary might use one of the interfaces for an older version.
+
+  * See [TLS and Cryptography Libraries Used by MariaDB: Checking the Server's OpenSSL Version](../tls-and-cryptography-libraries-used-by-mariadb.md#checking-the-servers-openssl-version) for more information.
 * Scope: Global
 * Dynamic: No
-* Data Type: `string`
+* Data Type: `<code>string</code>`
 * Default Value: None
 
-#
 
-# See Also
+
+## See Also
+
 
 * [Secure Connections Overview](secure-connections-overview.md)
 * [System Variables](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
 * [Full list of MariaDB options, system and status variables](../../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md)
+

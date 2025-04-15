@@ -1,15 +1,18 @@
+
 # Full-Text Index Overview
 
 MariaDB has support for full-text indexing and searching:
 
+
 * A full-text index in MariaDB is an index of type FULLTEXT, and it allows more options when searching for portions of text from a field.
-* Full-text indexes can be used only with [MyISAM](../../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md), [Aria](../../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-enabling-encryption.md), [InnoDB](../../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md) and [Mroonga](../../../../../reference/storage-engines/mroonga/mroonga-status-variables.md) tables, and can be created only for [CHAR](../../query-optimizations/charset-narrowing-optimization.md), [VARCHAR](../../../../../reference/data-types/string-data-types/varchar.md), or [TEXT](../../../../../reference/data-types/string-data-types/text.md) columns.
-* [Partitioned tables](/kb/en/managing-mariadb-partitioning/) cannot contain fulltext indexes, even if the storage engine supports them.
-* A FULLTEXT index definition can be given in the [CREATE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-tablespace.md) statement when a
- table is created, or added later using [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) or [CREATE INDEX](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md).
+* Full-text indexes can be used only with [MyISAM](../../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [Aria](../../../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md), [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) and [Mroonga](../../../../../reference/storage-engines/mroonga/mroonga-user-defined-functions/mroonga_snippet_html.md) tables, and can be created only for [CHAR](../../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md), [VARCHAR](../../../../../reference/data-types/string-data-types/varchar.md), or [TEXT](../../../../../reference/data-types/string-data-types/text.md) columns.
+* [Partitioned tables](../../../../../server-management/partitioning-tables/README.md) cannot contain fulltext indexes, even if the storage engine supports them.
+* A FULLTEXT index definition can be given in the [CREATE TABLE](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statement when a
+ table is created, or added later using [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) or [CREATE INDEX](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md).
 * For large data sets, it is much faster to load your data into a table that
  has no FULLTEXT index and then create the index after that, than to load data
  into a table that has an existing FULLTEXT index.
+
 
 Full-text searching is performed using [MATCH() ... AGAINST](../../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/match-against.md) syntax.
 MATCH() takes a comma-separated list that names the columns to be
@@ -17,44 +20,46 @@ searched. AGAINST takes a string to search for, and an optional
 modifier that indicates what type of search to perform. The search
 string must be a literal string, not a variable or a column name.
 
+
 ```
 MATCH (col1,col2,...) AGAINST (expr [search_modifier])
 ```
 
-#
+## Excluded Results
 
-# Excluded Results
 
 * Partial words are excluded.
-* Words less than 4 (MyISAM) or 3 (InnoDB) characters in length will not be stored in the fulltext index. This value can be adjusted by changing the [ft_min_word_length](../../system-variables/server-system-variables.md#ft_min_word_len) system variable (or, for [InnoDB](../../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md), [innodb_ft_min_token_size](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_min_token_size)).
-* Words longer than 84 characters in length will also not be stored in the fulltext index. This values can be adjusted by changing the [ft_max_word_length](../../system-variables/server-system-variables.md#ft_max_word_len) system variable (or, for [InnoDB](../../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting.md), [innodb_ft_max_token_size](/kb/en/xtradbinnodb-server-system-variables/#innodb_ft_max_token_size)).
-* Stopwords are a list of common words such as "once" or "then" that do not reflect in the search results unless IN BOOLEAN MODE is used. The stopword list for MyISAM/Aria tables and InnoDB tables can differ. See [stopwords](/kb/en/stopwords/) for details and a full list, as well as for details on how to change the default list.
+* Words less than 4 (MyISAM) or 3 (InnoDB) characters in length will not be stored in the fulltext index. This value can be adjusted by changing the [ft_min_word_length](../../system-variables/server-system-variables.md#ft_min_word_len) system variable (or, for [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), [innodb_ft_min_token_size](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_min_token_size)).
+* Words longer than 84 characters in length will also not be stored in the fulltext index. This values can be adjusted by changing the [ft_max_word_length](../../system-variables/server-system-variables.md#ft_max_word_len) system variable (or, for [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), [innodb_ft_max_token_size](../../../../../reference/storage-engines/innodb/innodb-system-variables.md)).
+* Stopwords are a list of common words such as "once" or "then" that do not reflect in the search results unless IN BOOLEAN MODE is used. The stopword list for MyISAM/Aria tables and InnoDB tables can differ. See [stopwords](full-text-index-stopwords.md) for details and a full list, as well as for details on how to change the default list.
 * For MyISAM/Aria fulltext indexes only, if a word appears in more than half the rows, it is also excluded from the results of a fulltext search.
 * For InnoDB indexes, only committed rows appear - modifications from the current transaction do not apply.
 
-#
 
-# Relevance
+## Relevance
+
 
 MariaDB calculates a relevance for each result, based on a number of factors, including the number of words in the index, the number of unique words in a row, the total number of words in both the index and the result, and the weight of the word. In English, 'cool' will be weighted less than 'dandy', at least at present! The relevance can be returned as part of a query simply by using the MATCH function in the field list.
 
-#
 
-# Types of Full-Text search
+## Types of Full-Text search
 
-#
 
-## IN NATURAL LANGUAGE MODE
+### IN NATURAL LANGUAGE MODE
+
 
 IN NATURAL LANGUAGE MODE is the default type of full-text search, and the keywords can be omitted. There are no special operators, and searches consist of one or more comma-separated keywords.
 
+
 Searches are returned in descending order of relevance.
 
-#
 
-## IN BOOLEAN MODE
+### IN BOOLEAN MODE
+
 
 Boolean search permits the use of a number of special operators:
+
+
 
 | Operator | Description |
 | --- | --- |
@@ -68,29 +73,32 @@ Boolean search permits the use of a number of special operators:
 | * | The wildcard, indicating zero or more characters. It can only appear at the end of a word. |
 | " | Anything enclosed in the double quotes is taken as a whole (so you can match phrases, for example). |
 
+
+
 Searches are not returned in order of relevance, and nor does the 50% limit apply. Stopwords and word minimum and maximum lengths still apply as usual.
 
-#
 
-## WITH QUERY EXPANSION
+### WITH QUERY EXPANSION
+
 
 A query expansion search is a modification of a natural language search. The search string is used to perform a regular natural language search. Then, words from the most relevant rows returned by the search are added to the search string and the search is done again. The query returns the rows from the second search. The IN NATURAL LANGUAGE MODE WITH QUERY EXPANSION or WITH QUERY EXPANSION modifier specifies a query expansion search. It can be useful when relying on implied knowledge within the data, for example that MariaDB is a database.
 
-#
 
-# Examples
+## Examples
+
 
 Creating a table, and performing a basic search:
+
 
 ```
 CREATE TABLE ft_myisam(copy TEXT,FULLTEXT(copy)) ENGINE=MyISAM;
 
 INSERT INTO ft_myisam(copy) VALUES ('Once upon a time'),
- ('There was a wicked witch'), ('Who ate everybody up');
+  ('There was a wicked witch'), ('Who ate everybody up');
 
 SELECT * FROM ft_myisam WHERE MATCH(copy) AGAINST('wicked');
 +--------------------------+
-| copy |
+| copy                     |
 +--------------------------+
 | There was a wicked witch |
 +--------------------------+
@@ -98,16 +106,18 @@ SELECT * FROM ft_myisam WHERE MATCH(copy) AGAINST('wicked');
 
 Multiple words:
 
+
 ```
 SELECT * FROM ft_myisam WHERE MATCH(copy) AGAINST('wicked,witch');
 +---------------------------------+
-| copy |
+| copy                            |
 +---------------------------------+
-| There was a wicked witch |
+| There was a wicked witch        |
 +---------------------------------+
 ```
 
-Since 'Once' is a [stopword](/kb/en/stopwords/), no result is returned:
+Since 'Once' is a [stopword](full-text-index-stopwords.md), no result is returned:
+
 
 ```
 SELECT * FROM ft_myisam WHERE MATCH(copy) AGAINST('Once');
@@ -116,9 +126,10 @@ Empty set (0.00 sec)
 
 Inserting the word 'wicked' into more than half the rows excludes it from the results:
 
+
 ```
 INSERT INTO ft_myisam(copy) VALUES ('Once upon a wicked time'),
- ('There was a wicked wicked witch'), ('Who ate everybody wicked up');
+  ('There was a wicked wicked witch'), ('Who ate everybody wicked up');
 
 SELECT * FROM ft_myisam WHERE MATCH(copy) AGAINST('wicked');
 Empty set (0.00 sec)
@@ -126,32 +137,35 @@ Empty set (0.00 sec)
 
 Using IN BOOLEAN MODE to overcome the 50% limitation:
 
+
 ```
 SELECT * FROM ft_myisam WHERE MATCH(copy) AGAINST('wicked' IN BOOLEAN MODE);
 +---------------------------------+
-| copy |
+| copy                            |
 +---------------------------------+
-| There was a wicked witch |
-| Once upon a wicked time |
+| There was a wicked witch        |
+| Once upon a wicked time         |
 | There was a wicked wicked witch |
-| Who ate everybody wicked up |
+| Who ate everybody wicked up     |
 +---------------------------------+
 ```
 
 Returning the relevance:
 
+
 ```
 SELECT copy,MATCH(copy) AGAINST('witch') AS relevance 
- FROM ft_myisam WHERE MATCH(copy) AGAINST('witch');
+  FROM ft_myisam WHERE MATCH(copy) AGAINST('witch');
 +---------------------------------+--------------------+
-| copy | relevance |
+| copy                            | relevance          |
 +---------------------------------+--------------------+
-| There was a wicked witch | 0.6775632500648499 |
+| There was a wicked witch        | 0.6775632500648499 |
 | There was a wicked wicked witch | 0.5031757950782776 |
 +---------------------------------+--------------------+
 ```
 
 WITH QUERY EXPANSION. In the following example, 'MariaDB' is always associated with the word 'database', so it is returned when query expansion is used, even though not explicitly requested.
+
 
 ```
 CREATE TABLE ft2(copy TEXT,FULLTEXT(copy)) ENGINE=MyISAM;
@@ -169,54 +183,56 @@ INSERT INTO ft2(copy) VALUES
 
 SELECT * FROM ft2 WHERE MATCH(copy) AGAINST('database');
 +--------------------------------+
-| copy |
+| copy                           |
 +--------------------------------+
-| MySQL vs MariaDB database |
-| Oracle vs MariaDB database |
+| MySQL vs MariaDB database      |
+| Oracle vs MariaDB database     |
 | PostgreSQL vs MariaDB database |
 +--------------------------------+
 3 rows in set (0.00 sec)
 
 SELECT * FROM ft2 WHERE MATCH(copy) AGAINST('database' WITH QUERY EXPANSION);
 +--------------------------------+
-| copy |
+| copy                           |
 +--------------------------------+
-| MySQL vs MariaDB database |
-| Oracle vs MariaDB database |
+| MySQL vs MariaDB database      |
+| Oracle vs MariaDB database     |
 | PostgreSQL vs MariaDB database |
-| MariaDB overview |
+| MariaDB overview               |
 +--------------------------------+
 4 rows in set (0.00 sec)
 ```
 
 Partial word matching with IN BOOLEAN MODE:
 
+
 ```
 SELECT * FROM ft2 WHERE MATCH(copy) AGAINST('Maria*' IN BOOLEAN MODE);
 +--------------------------------+
-| copy |
+| copy                           |
 +--------------------------------+
-| MySQL vs MariaDB database |
-| Oracle vs MariaDB database |
+| MySQL vs MariaDB database      |
+| Oracle vs MariaDB database     |
 | PostgreSQL vs MariaDB database |
-| MariaDB overview |
+| MariaDB overview               |
 +--------------------------------+
 ```
 
 Using boolean operators
 
+
 ```
 SELECT * FROM ft2 WHERE MATCH(copy) AGAINST('+MariaDB -database' 
- IN BOOLEAN MODE);
+  IN BOOLEAN MODE);
 +------------------+
-| copy |
+| copy             |
 +------------------+
 | MariaDB overview |
 +------------------+
 ```
 
-#
+## See Also
 
-# See Also
 
 * For simpler searches of a substring in text columns, see the [LIKE](../../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md) operator.
+
