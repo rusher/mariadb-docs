@@ -29,7 +29,7 @@ Nagios core executes a plugin whenever there is a need to check the status of a 
 
 
 While MariaDB MaxScale resources and status can be monitored via CLI using maxadmin commands, Nagios Plugin provides an automated way for system administration and database administrators to monitor MariaDB MaxScale. The diagram below provides view of how Nagios and MariaDB MaxScale interact.
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/2.0.6/Documentation/Tutorials/images/HowMaxScaleWorksWithNagios.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/2.0.6/Documentation/Tutorials/images/HowMaxScaleWorksWithNagios.png.png)
 
 
 There are three Nagios plugin scripts that MariaDB MaxScale provides.

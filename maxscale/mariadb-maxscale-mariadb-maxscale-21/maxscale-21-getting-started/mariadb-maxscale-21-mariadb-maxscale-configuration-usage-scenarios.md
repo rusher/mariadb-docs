@@ -1725,7 +1725,7 @@ which sets the status of each server via MaxAdmin is needed.
 ## Filter Modules
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/2.1.17/Documentation/Getting-Started/images/image_10.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/2.1.17/Documentation/Getting-Started/images/image_10.png.png)
 
 
 Filters provide a means to manipulate or process requests as they pass through

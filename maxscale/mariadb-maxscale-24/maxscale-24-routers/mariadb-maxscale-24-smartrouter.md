@@ -75,7 +75,7 @@ is known as *Service as a Server*.
 #### Example
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/2.4.19/Documentation/Routers/images/sr-config.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/2.4.19/Documentation/Routers/images/sr-config.png.png)
 
 
 Suppose we have a service like

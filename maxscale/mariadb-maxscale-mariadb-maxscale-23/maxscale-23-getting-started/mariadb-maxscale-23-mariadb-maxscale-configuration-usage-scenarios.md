@@ -2840,7 +2840,7 @@ API. **Only do this if you know what you are doing.**
 ## Filter Modules
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/2.3.20/Documentation/Getting-Started/images/image_10.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/2.3.20/Documentation/Getting-Started/images/image_10.png.png)
 
 
 Filters provide a means to manipulate or process requests as they pass through

@@ -1266,7 +1266,7 @@ The use of monitors is highly recommended but it is also possible to run MariaDB
 ## Filter Modules
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/2.0.6/Documentation/Getting-Started/images/image_10.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/2.0.6/Documentation/Getting-Started/images/image_10.png.png)
 
 
 Filters provide a means to manipulate or process requests as they pass through MariaDB MaxScale between the client side protocol and the query router. A full explanation of each filter's functionality can be found in its documentation.

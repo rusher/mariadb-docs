@@ -13,7 +13,7 @@ For testing purposes some of these can locate on the same server but for actual
 use, an HA solution is recommended.
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/2.1.17/Documentation/Tutorials/images/rabbit-and-tee.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/2.1.17/Documentation/Tutorials/images/rabbit-and-tee.png.png)
 
 
 The use case for this tutorial is a production system with one main server where all

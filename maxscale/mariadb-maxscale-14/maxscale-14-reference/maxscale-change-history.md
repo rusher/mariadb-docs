@@ -313,7 +313,7 @@ readconnroute | Router | V1.0.0
 The Descriptor Control Block (DCB) is an important concept within MaxScale since it is this block that is passed to the polling system, when an event occurs it is that structure that is available and from this structure it must be possible to navigate to all other structures that contain state regarding the session and protocol in use.
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/1.4.5/Documentation/Reference/images/image_0.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/1.4.5/Documentation/Reference/images/image_0.png.png)
 
 
 Similar print routines exist for the DCB

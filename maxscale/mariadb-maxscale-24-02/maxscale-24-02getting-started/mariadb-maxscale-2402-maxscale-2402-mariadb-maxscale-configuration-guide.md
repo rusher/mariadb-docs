@@ -5750,7 +5750,7 @@ API. **Only do this if you know what you are doing.**
 ## Filter Modules
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.02.5/Documentation/Getting-Started/images/filter_example.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/24.02.5/Documentation/Getting-Started/images/filter_example.png.png)
 
 
 Filters provide a means to manipulate or process requests as they pass through

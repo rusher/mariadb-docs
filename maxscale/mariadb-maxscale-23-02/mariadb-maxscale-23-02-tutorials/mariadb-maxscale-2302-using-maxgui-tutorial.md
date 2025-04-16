@@ -72,7 +72,7 @@ solution to [MaxCtrl](../mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-
 # Dashboard
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-dashboard.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-dashboard.png.png)
 
 
 ## Annotation
@@ -118,7 +118,7 @@ A session can be killed easily on the "Current Sessions" list which can be
 found on the [Dashboard](#dashboard), Server detail, and Service detail page.
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-kill-session.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-kill-session.png.png)
 
 
 ### Annotation
@@ -138,7 +138,7 @@ Monitor Detail page, other Detail pages also have a similar layout structure so
 this is used for illustration purpose.
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-detail.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-detail.png.png)
 
 
 ## Annotation
@@ -177,7 +177,7 @@ This page visualizes MaxScale configuration and clusters.
 This page visualizes MaxScale configuration as shown in the figure below.
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-config-visualization.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-config-visualization.png.png)
 
 
 ### Annotation
@@ -204,7 +204,7 @@ Clicking on the card will visualize the cluster into a tree graph as shown in
 the figure below.
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-cluster-visualization.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-cluster-visualization.png.png)
 
 
 ### Annotation
@@ -249,7 +249,7 @@ the figure below.
 This page shows and allows editing of MaxScale parameters.
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-settings.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-settings.png.png)
 
 
 ## Annotation
@@ -269,7 +269,7 @@ This page shows and allows editing of MaxScale parameters.
 This page show real-time MaxScale logs with filter options.
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-logs-archive.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-logs-archive.png.png)
 
 
 ## Annotation
@@ -285,7 +285,7 @@ This page show real-time MaxScale logs with filter options.
 On this page, you may add numerous worksheets, each of which can be used for either "Run queries" or "Data migration".
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-workspace.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-workspace.png.png)
 
 
 ## Run Queries
@@ -305,7 +305,7 @@ The Query Editor worksheet will be rendered in the active worksheet after correc
 There are various features in the Query Editor worksheet, the most notable ones are listed below.
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-workspace-query-editor.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-workspace-query-editor.png.png)
 
 
 #### Create a new connection
@@ -419,7 +419,7 @@ and limitations [here](../mariadb-maxscale-23-02-about/mariadb-maxscale-2302-lim
 #### Connections
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-workspace-data-migration-set-up-connections.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-workspace-data-migration-set-up-connections.png.png)
 
 
 Source connection shows the most common parameter inputs for creating
@@ -434,7 +434,7 @@ click on the `<code>Select objects to migrate</code>` to navigate to the next st
 #### Objects Selection
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-workspace-data-migration-objects-selection.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-workspace-data-migration-objects-selection.png.png)
 
 
 Select the objects you wish to migrate to the MariaDB server.
@@ -449,7 +449,7 @@ the question icon for additional information on the modes.
 #### Migration
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-workspace-data-migration-migration-script.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-workspace-data-migration-migration-script.png.png)
 
 
 As shown in the screenshot, you can quickly modify the script for each object
@@ -464,7 +464,7 @@ executed in parallel.
 #### Migration report
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-workspace-data-migration-migration-report.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Tutorials/images/MaxGUI-workspace-data-migration-migration-report.png.png)
 
 
 If errors are reported for certain objects, review the output messages and

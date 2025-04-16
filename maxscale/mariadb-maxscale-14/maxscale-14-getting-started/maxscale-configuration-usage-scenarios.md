@@ -1108,7 +1108,7 @@ The use of monitors is highly recommended but it is also possible to run MaxScal
 ## Filter Modules
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/1.4.5/Documentation/Getting-Started/images/image_10.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/1.4.5/Documentation/Getting-Started/images/image_10.png.png)
 
 
 Filters provide a means to manipulate or process requests as they pass through MaxScale between the client side protocol and the query router. A full explanation of each filter's functionality can be found in its documentation.

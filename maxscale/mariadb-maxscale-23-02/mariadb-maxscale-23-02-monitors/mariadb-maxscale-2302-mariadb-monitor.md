@@ -1629,7 +1629,7 @@ running servers, neither is certain they have majority and the cluster stays in
 read-only mode. If the primary server is down, no failover is performed either.
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Monitors/images/coop_lock_no_majority.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Monitors/images/coop_lock_no_majority.png.png)
 
 
 Setting `<code>cooperative_monitoring_locks=majority_of_running</code>` changes the way
@@ -1647,7 +1647,7 @@ lock majority. Both MaxScales may then promote their own primaries and route
 writes to different servers.
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Monitors/images/coop_lock_split_brain.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Monitors/images/coop_lock_split_brain.png.png)
 
 
 The recommended strategy depends on which failure scenario is more likely and/or
@@ -1677,7 +1677,7 @@ can be further decreased by configuring each monitor with a different
 The flowchart below illustrates the lock handling logic.
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Monitors/images/coop_lock_flowchart.svg.svg)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/23.02.13/Documentation/Monitors/images/coop_lock_flowchart.svg.svg)
 
 
 ### Releasing locks

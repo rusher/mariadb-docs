@@ -15,7 +15,7 @@ interface for the avrorouter and shows how to communicate with the the service
 over the network.
 
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/2.3.20/Documentation/Routers/images/Binlog-Avro.png.png)
+![](../../.gitbook/assets/mariadb-corporation/MaxScale/2.3.20/Documentation/Routers/images/Binlog-Avro.png.png)
 
 
 # Configuration
