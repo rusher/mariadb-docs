@@ -133,3 +133,4 @@ For an example, see `sql/udf_example.cc` in the source tree. For a collection of
 * [User-defined Functions Calling Sequences](user-defined-functions-calling-sequences.md)
 * [allow-suspicious-udfs](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-allow-suspicious-udfs)
 
+<span></span>

@@ -16,3 +16,4 @@ This article documents thread states that are related to the [Query Cache](../..
 | Waiting for query cache lock | Waiting to take a query cache lock. |
 
 
+<span></span>

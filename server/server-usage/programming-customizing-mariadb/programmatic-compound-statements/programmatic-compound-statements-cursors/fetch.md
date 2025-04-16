@@ -36,3 +36,4 @@ See [Cursor Overview](cursor-overview.md) for an example.
 * [CLOSE cursor_name](close.md)
 * [Cursors in Oracle mode](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
 
+<span></span>

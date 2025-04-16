@@ -144,3 +144,4 @@ To change the characteristics of a stored procedure, use [ALTER PROCEDURE](alter
 
 See the article [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md).
 
+<span></span>

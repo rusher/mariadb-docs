@@ -43,3 +43,4 @@ Prior to [MariaDB 10.11.12](../../../../../../release-notes/mariadb-community-se
 * [Engine-independent Statistics](engine-independent-table-statistics.md)
 * [Histogram-based Statistics](histogram-based-statistics.md)
 
+<span></span>

@@ -131,3 +131,4 @@ A few scenarios where one might need to update statistics tables manually:
 * [JSON histograms](https://mariadb.org/10-7-preview-feature-json-histograms/) (mariadb.org blog)
 * [Improving MariaDB’s optimizer with better selectivity estimates - Sergey Petrunia - Server Fest 2021](https://www.youtube.com/watch?v=bsl7Fis0onE) (video)
 
+<span></span>

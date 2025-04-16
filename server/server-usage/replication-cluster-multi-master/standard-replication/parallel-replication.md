@@ -403,3 +403,4 @@ The implementation is described in [MDEV-4506](https://jira.mariadb.org/browse/M
 * [Better Parallel Replication for MariaDB and MySQL](https://mariadb.com/blog/better-parallel-replication-mariadb-and-mysql) (MariaDB.com blog)
 * [Evaluating MariaDB & MySQL Parallel Replication Part 2: Slave Group Commit](https://mariadb.com/blog/evaluating-mariadb-mysql-parallel-replication-part-2-slave-group-commit) (MariaDB.com blog)
 
+<span></span>

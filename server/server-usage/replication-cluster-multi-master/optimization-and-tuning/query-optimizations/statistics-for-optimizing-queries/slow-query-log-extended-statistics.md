@@ -163,3 +163,4 @@ patch from [Percona](https://www.percona.com/).
 
 * [Notes when an index cannot be used because of type conversions](../../../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used.md)
 
+<span></span>

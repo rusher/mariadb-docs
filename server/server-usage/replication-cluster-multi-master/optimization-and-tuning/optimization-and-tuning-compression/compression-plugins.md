@@ -79,3 +79,4 @@ In this case, the appropriate compression plugin should be installed, and the se
 * [10.7 preview feature: Compression Provider Plugins](https://mariadb.org/10-7-preview-feature-provider-plugins/) (mariadb.org blog)
 * Add zstd as a compression plugin - [MDEV-34290](https://jira.mariadb.org/browse/MDEV-34290)
 
+<span></span>

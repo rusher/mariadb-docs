@@ -37,3 +37,4 @@ See [Delimiters](../../../clients-and-utilities/mariadb-client/delimiters.md) in
 * [LEAVE](leave.md)
 * [FOR Loops](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_statement.md)
 
+<span></span>

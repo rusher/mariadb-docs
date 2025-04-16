@@ -53,3 +53,4 @@ BEGIN
    DO something();
 END `my_label`;
 ```
+<span></span>

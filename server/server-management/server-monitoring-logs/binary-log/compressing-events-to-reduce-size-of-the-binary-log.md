@@ -18,3 +18,4 @@ Compression will have the most impact when events are of a non-negligible size, 
 
 The [log_bin_compress](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) option is used to enable compression of events. Only events with data (query text or row data) above a certain size are compressed; the limit is set with the [log_bin_compress_min_len](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) option.
 
+<span></span>

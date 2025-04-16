@@ -90,3 +90,4 @@ shell> mariadb -u root -p -e "source /tmp/mariadb-bin.sql"
 * [mariadb-binlog](../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md)
 * [mariadb-binlog Options](mariadb-binlog-options.md)
 
+<span></span>

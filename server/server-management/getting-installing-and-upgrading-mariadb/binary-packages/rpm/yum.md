@@ -356,3 +356,4 @@ After the installation is complete, you can [start MariaDB](../../starting-and-s
 
 If you are using [MariaDB Galera Cluster](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), then keep in mind that the first node will have to be [bootstrapped](../../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster).
 
+<span></span>

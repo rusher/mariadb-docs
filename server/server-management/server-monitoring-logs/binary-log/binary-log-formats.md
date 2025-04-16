@@ -195,3 +195,4 @@ CREATE TABLE ... SELECT can use a combination of logging formats. The [CREATE TA
 * [Setting up replication](../../../server-usage/replication-cluster-multi-master/standard-replication/setting-up-replication.md)
 * [Compressing the binary log](compressing-events-to-reduce-size-of-the-binary-log.md)
 
+<span></span>

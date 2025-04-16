@@ -95,3 +95,4 @@ Start a dedicated thread in Mariabackup to copy InnoDB redo log (`ib_logfile*`).
 
 * If [FLUSH TABLE WITH READ LOCK](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) is not used, then only InnoDB tables will be consistent (not the privilege tables in the mysql database or the binary log). The backup point depends on the content of the redo log within the backup itself.
 
+<span></span>

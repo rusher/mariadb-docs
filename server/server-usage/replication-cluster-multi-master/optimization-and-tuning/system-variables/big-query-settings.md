@@ -45,3 +45,4 @@ If your queries examine big fraction of the tables (somewhere more than ~ 30%), 
 # Turn on both Hash Join and Batched Key Access
 join_cache_level = 8
 ```
+<span></span>

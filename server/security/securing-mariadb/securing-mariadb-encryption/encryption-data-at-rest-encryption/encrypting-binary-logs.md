@@ -108,3 +108,4 @@ If you want to ensure that binary log events are encrypted as they are transmitt
 
 Note, using the `--read-from-remote-server` option on versions of the `mariadb-binlog` utility that do not have the [MDEV-20574](https://jira.mariadb.org/browse/MDEV-20574) fix (<=[MariaDB 10.4.9](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1049-release-notes.md), [MariaDB 10.3.19](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10319-release-notes.md), [MariaDB 10.2.28](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10228-release-notes.md)) can corrupt binlog positions when the binary log is encrypted.
 
+<span></span>

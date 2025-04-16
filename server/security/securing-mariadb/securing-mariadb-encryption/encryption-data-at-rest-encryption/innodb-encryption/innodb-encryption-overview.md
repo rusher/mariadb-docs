@@ -155,3 +155,4 @@ Beginning in [MariaDB 10.4](../../../../../../release-notes/mariadb-community-se
 * [Encryption Key Management](../key-management-and-encryption-plugins/encryption-key-management.md)
 * [Information Schema INNODB_TABLESPACES_ENCRYPTION table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md)
 
+<span></span>

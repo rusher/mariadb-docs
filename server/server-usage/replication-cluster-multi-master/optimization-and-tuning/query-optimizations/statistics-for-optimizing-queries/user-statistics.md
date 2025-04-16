@@ -235,3 +235,4 @@ User Statistics introduced a number of new status variables:
 * [rows_read](../../system-variables/server-status-variables.md#rows_read)
 * [rows_sent](../../system-variables/server-status-variables.md#rows_sent)
 
+<span></span>

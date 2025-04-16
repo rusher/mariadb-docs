@@ -50,3 +50,4 @@ This is a list of [system variables](../../server-system-variables.md) that have
 * [System Variables Added in MariaDB 10.1](system-variables-added-in-mariadb-101.md)
 * [System Variables Added in MariaDB 10.0](system-variables-added-in-mariadb-100.md)
 
+<span></span>

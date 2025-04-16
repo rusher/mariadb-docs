@@ -130,3 +130,4 @@ This insert fails, as `view_check3` checks the insert against both `view_check3`
 INSERT INTO view_check3 VALUES (150);
 ERROR 1369 (HY000): CHECK OPTION failed 'test.view_check3'
 ```
+<span></span>

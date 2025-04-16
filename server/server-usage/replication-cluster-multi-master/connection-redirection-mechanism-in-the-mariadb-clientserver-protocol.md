@@ -61,3 +61,4 @@ Invalid formats are not permitted:
 set global redirect_url="mysql://mariadb.org:"; 
 ERROR 1231 (42000): Variable 'redirect_url' can't be set to the value of 'mysql://mariadb.org:'
 ```
+<span></span>

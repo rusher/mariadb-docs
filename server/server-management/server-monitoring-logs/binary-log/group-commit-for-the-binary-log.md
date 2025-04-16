@@ -167,3 +167,4 @@ SHOW GLOBAL STATUS LIKE 'Binlog_%commit%';
 * [Binary Log Group Commit and InnoDB Flushing Performance](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)
 * [Group commit benchmark](https://www.facebook.com/note.php?note_id=10150211546215933)
 
+<span></span>

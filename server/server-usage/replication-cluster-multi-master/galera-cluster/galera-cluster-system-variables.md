@@ -807,3 +807,4 @@ DATABASE statements are also allowed as they do not have an affected table. Depr
 * Introduced: [MariaDB 10.4.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1042-release-notes.md)
 
 
+<span></span>

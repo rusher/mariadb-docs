@@ -12,3 +12,4 @@ Several balancing policies are supported. Each node can be assigned a different 
 
 A lightweight daemon called glbd receives the connections from clients and it redirects them to nodes. No specific client exists for this demo: a generic TCP client, like nc, can be used to send administrative commands and read the usage statistics.
 
+<span></span>

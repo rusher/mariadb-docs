@@ -138,3 +138,4 @@ However, if MariaDB encounters a full disk error while trying to open a new bina
 
 * [PURGE LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md)
 
+<span></span>

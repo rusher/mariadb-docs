@@ -137,3 +137,4 @@ In [MariaDB 10.4.3](../../../../release-notes/mariadb-community-server/release-n
 
 See [MDEV-16442](https://jira.mariadb.org/browse/MDEV-16442) for more information.
 
+<span></span>

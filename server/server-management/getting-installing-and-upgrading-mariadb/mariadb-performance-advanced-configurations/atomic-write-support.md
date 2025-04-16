@@ -88,3 +88,4 @@ MariaDB currently supports atomic writes on the following devices:
 * [Fusion-io devices with the NVMFS file system](fusion-io/fusion-io-introduction.md#atomic-writes) . [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and above.
 * [Shannon SSD](https://www.shannon-sys.com). [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and above.
 
+<span></span>

@@ -139,3 +139,4 @@ It adds more efficient support of aggregate UDFs as [window functions](../../../
 
 If *x_remove()* supported (defined) detected automatically.
 
+<span></span>

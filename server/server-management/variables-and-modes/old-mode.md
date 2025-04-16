@@ -175,3 +175,4 @@ SHOW WARNINGS;
 | Warning | 1287 | 'NO_PROGRESS_INFO' is deprecated and will be removed in a future release |
 +---------+------+--------------------------------------------------------------------------+
 ```
+<span></span>

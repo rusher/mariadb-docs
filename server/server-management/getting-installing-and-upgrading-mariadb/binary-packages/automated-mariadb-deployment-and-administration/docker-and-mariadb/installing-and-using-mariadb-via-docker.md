@@ -382,3 +382,4 @@ Now we are ready to [install MariaDB](../../../README.md) in the way we prefer.
 * [Docker Hub](https://hub.docker.com/).
 * [Docker documentation](https://docs.docker.com/).
 
+<span></span>

@@ -54,3 +54,4 @@ Hash indexes do not permit leftmost prefixing - only the whole index can be used
 
 See [SPATIAL](../../../../reference/sql-statements-and-structure/geographic-geometric-features/spatial-index.md) for more information.
 
+<span></span>

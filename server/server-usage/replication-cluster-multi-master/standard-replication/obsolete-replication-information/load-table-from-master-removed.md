@@ -46,3 +46,4 @@ For example, `LOAD TABLE FROM MASTER` works only for MyISAM
 tables. The timeout notes for `LOAD DATA FROM MASTER` apply as
 well.
 
+<span></span>

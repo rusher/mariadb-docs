@@ -299,3 +299,4 @@ Multi Range Read will make separate calls for steps #1 and #2, causing TWO incre
 * [What is MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)
 * [Multi-Range Read Optimization](https://dev.mysql.com/doc/refman/5.6/en/mrr-optimization.html) page in MySQL manual
 
+<span></span>

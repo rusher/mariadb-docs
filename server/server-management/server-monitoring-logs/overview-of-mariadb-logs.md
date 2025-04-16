@@ -79,3 +79,4 @@ SET LOCAL SQL_LOG_OFF=1, LOCAL SLOW_QUERY_LOG=0;
 
 * [MariaDB audit plugin](../../reference/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)
 
+<span></span>

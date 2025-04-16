@@ -121,3 +121,4 @@ The following table lists each version of the [Galera](../../../reference/sql-st
 * [Getting Started with MariaDB Galera Cluster](getting-started-with-mariadb-galera-cluster.md)
 * [MariaDB Galera Cluster - Known Limitations](mariadb-galera-cluster-known-limitations.md)
 
+<span></span>

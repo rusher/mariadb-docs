@@ -279,3 +279,4 @@ You should be done setting up the circular replication on the node in the first 
 ```
 SHOW SLAVE STATUS\G
 ```
+<span></span>

@@ -23,3 +23,4 @@ This article documents thread states that are related to [replica](../../../../.
 | Waiting to reconnect after a failed master event read | Sleeping while waiting to reconnect after a disconnection error. The time in seconds is determined by the MASTER_CONNECT_RETRY clause of the [CHANGE MASTER TO](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement. |
 
 
+<span></span>

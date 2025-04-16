@@ -393,3 +393,4 @@ Slow query logs written to table can be viewed by querying the [slow_log](../../
 
 Unix and Linux distributions offer the [logrotate](https://linux.die.net/man/8/logrotate) utility, which makes it very easy to rotate log files. See [Rotating Logs on Unix and Linux](../rotating-logs-on-unix-and-linux.md) for more information on how to use this utility to rotate the slow query log.
 
+<span></span>

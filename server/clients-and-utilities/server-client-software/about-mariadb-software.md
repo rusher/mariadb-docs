@@ -81,3 +81,4 @@ It's highly likely that, for any job to which you apply or take as a database de
 * [What is in the different MariaDB releases](/kb/en/what-is-in-the-different-mariadb-releases/)
 * [MariaDB Release Notes](../../reference/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/README.md)
 
+<span></span>

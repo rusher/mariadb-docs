@@ -71,3 +71,4 @@ When the `MariaDB-server` RPM package is installed, it will create a user and gr
 
 * [Installing MariaDB with yum](yum.md)
 
+<span></span>

@@ -36,3 +36,4 @@ Here is a list of environment variables used by MariaDB.
 | USER | On Windows, up to [MariaDB 5.5](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), the default user name when connecting to the mysqld server. API GetUserName() is used in later versions. |
 
 
+<span></span>

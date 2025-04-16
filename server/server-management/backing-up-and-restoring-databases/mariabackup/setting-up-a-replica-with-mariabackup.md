@@ -167,3 +167,4 @@ We should be done setting up the replica now, so we should check its status with
 ```
 SHOW SLAVE STATUS\G
 ```
+<span></span>

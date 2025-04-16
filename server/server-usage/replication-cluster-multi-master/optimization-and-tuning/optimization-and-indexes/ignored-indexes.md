@@ -171,3 +171,4 @@ EXPLAIN SELECT * FROM t1 ORDER BY b;
 |    1 | SIMPLE      | t1    | index | NULL          | k1   | 5       | NULL | 1    | Using index |
 +------+-------------+-------+-------+---------------+------+---------+------+------+-------------+
 ```
+<span></span>

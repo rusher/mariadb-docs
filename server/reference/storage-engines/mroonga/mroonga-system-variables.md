@@ -300,3 +300,4 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `string`
 
 
+<span></span>

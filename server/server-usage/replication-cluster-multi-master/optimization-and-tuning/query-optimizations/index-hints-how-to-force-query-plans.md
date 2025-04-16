@@ -412,3 +412,4 @@ algorithms which are used.
 * [GROUP BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md)
 * [Ignored Indexes](../optimization-and-indexes/ignored-indexes.md)
 
+<span></span>

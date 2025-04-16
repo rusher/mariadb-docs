@@ -18,3 +18,4 @@ The effective maximum size might be lower than what is set, depending on the ser
 
 If you don't make use of MyISAM tables at all, you can set this to a very low value, such as 64K.
 
+<span></span>

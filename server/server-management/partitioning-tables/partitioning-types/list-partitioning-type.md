@@ -57,3 +57,4 @@ CREATE OR REPLACE TABLE t1 (
     PARTITION p2 DEFAULT
   );
 ```
+<span></span>

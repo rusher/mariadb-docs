@@ -28,3 +28,4 @@ Note that, if a stored program calls another stored program, the latter will inh
 * [Trigger Limitations](../triggers-events/triggers/trigger-limitations.md)
 * [Event Limitations](../triggers-events/event-scheduler/event-limitations.md)
 
+<span></span>

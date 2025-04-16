@@ -109,3 +109,4 @@ You might consider using the following major new features in [MariaDB 10.4](../.
 * [Upgrading from MariaDB 10.1 to MariaDB 10.2](upgrading-from-mariadb-101-to-mariadb-102.md)
 * [Upgrading from MariaDB 10.0 to MariaDB 10.1](upgrading-from-mariadb-100-to-mariadb-101.md)
 
+<span></span>

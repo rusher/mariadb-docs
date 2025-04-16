@@ -9,3 +9,4 @@ From [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mari
 
 See [mariadb-binlog](../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) for details.
 
+<span></span>

@@ -42,3 +42,4 @@ In general, partition pruning is applied to statements contained in [triggers](.
 
 However, note that if a `BEFORE INSERT` or `BEFORE UPDATE` trigger is defined on a table, MariaDB doesn't know in advance if the columns used in the partitioning expression will be changed. For this reason, it is forced to lock all partitions.
 
+<span></span>

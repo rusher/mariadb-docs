@@ -65,3 +65,4 @@ One benefit of using `mariadb_install_db` is that it's possible to create many c
 * [DROP CATALOG](drop-catalog.md)
 * [mariadb-install-db](../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md)
 
+<span></span>

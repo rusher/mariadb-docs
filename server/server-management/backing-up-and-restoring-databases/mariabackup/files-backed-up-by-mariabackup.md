@@ -60,3 +60,4 @@ Mariabackup does **not** back up the files listed below.
 * [Binary logs](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)
 * [Relay logs](../../server-monitoring-logs/binary-log/relay-log.md)
 
+<span></span>

@@ -55,3 +55,4 @@ However, the optimizer can take the condition `customer_id=1` and push it down i
 * Condition Pushdown through Window Functions (since [MariaDB 10.3](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md))
 * [Condition Pushdown into IN Subqueries](../subquery-optimizations/condition-pushdown-into-in-subqueries.md) (since [MariaDB 10.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md))
 
+<span></span>

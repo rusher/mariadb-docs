@@ -12,3 +12,4 @@ is used to view these events in plain text.
 
 Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqlbinlog`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
+<span></span>

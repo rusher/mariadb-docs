@@ -9,3 +9,4 @@ From [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mari
 
 See [mariadb-tzinfo-to-sql](../mariadb-tzinfo-to-sql.md) for details.
 
+<span></span>

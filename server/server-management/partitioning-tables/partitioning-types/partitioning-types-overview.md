@@ -25,3 +25,4 @@ MariaDB supports the following partitioning types:
 
 * [Partitioning Overview](../partitioning-overview.md)
 
+<span></span>

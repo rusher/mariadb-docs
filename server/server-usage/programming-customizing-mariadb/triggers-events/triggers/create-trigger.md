@@ -157,3 +157,4 @@ SHOW WARNINGS;
 * [SHOW CREATE TRIGGER](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-trigger.md)
 * [Trigger Limitations](trigger-limitations.md)
 
+<span></span>

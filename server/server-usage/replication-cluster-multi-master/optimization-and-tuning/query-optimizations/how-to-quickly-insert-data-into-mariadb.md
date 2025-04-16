@@ -227,3 +227,4 @@ delimiter ;
 See [Server System Variables](../system-variables/server-system-variables.md) for the full list of server
 variables.
 
+<span></span>

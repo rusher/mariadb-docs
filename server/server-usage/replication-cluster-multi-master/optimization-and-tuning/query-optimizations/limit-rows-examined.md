@@ -101,3 +101,4 @@ LIMIT ROWS EXAMINED 11;
 
 The limit that is taken into account is 11, not 0.
 
+<span></span>

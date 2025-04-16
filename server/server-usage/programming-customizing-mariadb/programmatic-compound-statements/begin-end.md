@@ -85,3 +85,4 @@ In this example, a [TINYINT](../../../reference/data-types/data-types-numeric-da
 * [Using compound statements outside of stored programs](using-compound-statements-outside-of-stored-programs.md)
 * [Changes in Oracle mode from MariaDB 10.3](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
 
+<span></span>

@@ -54,3 +54,4 @@ mariadb-stress-test.pl [options]
 | --verbose | Verbose mode. Print more information about what the program does |
 
 
+<span></span>

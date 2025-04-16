@@ -111,3 +111,4 @@ set @@optimizer_switch='derived_merge=OFF'
 
 * FAQ entry: [Why is ORDER BY in a FROM subquery ignored?](../../../../../reference/faq/developer-questions/why-is-order-by-in-a-from-subquery-ignored.md)
 
+<span></span>

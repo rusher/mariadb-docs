@@ -70,3 +70,4 @@ If you can find the plain text of the string, then you know that the table is no
 
 Only Aria tables are currently encrypted. The [Aria log](../../../../../reference/storage-engines/aria/aria-faq.md#differences-between-aria-and-myisam) is not yet encrypted. See [MDEV-8587](https://jira.mariadb.org/browse/MDEV-8587) about that.
 
+<span></span>

@@ -122,3 +122,4 @@ This article contains information on known problems and limitations of MariaDB G
 
 * Nodes may have different table definitions, especially temporarily during [rolling schema upgrade](galera-cluster-system-variables.md#wsrep_osu_method) operations, but the same [schema compatibility restrictions](../standard-replication/replication-when-the-primary-and-replica-have-different-table-definitions.md) apply as they do for ROW based replication
 
+<span></span>

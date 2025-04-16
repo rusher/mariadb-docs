@@ -21,3 +21,4 @@ It is important to protect the binary log, as it may contain sensitive informati
 
 Binary logs are stored in a binary, not plain text, format, and so are not viewable with a regular editor. However, MariaDB includes [mariadb-binlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md), a commandline tool for plain text processing of binary logs.
 
+<span></span>

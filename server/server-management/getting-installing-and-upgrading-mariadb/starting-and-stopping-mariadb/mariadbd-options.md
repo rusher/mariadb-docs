@@ -2325,3 +2325,4 @@ You can verify the default values for an option by doing:
 ```
 mariadbd --no-defaults --help --verbose
 ```
+<span></span>

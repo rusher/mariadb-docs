@@ -26,3 +26,4 @@ BEGIN
    RETURN (SELECT COUNT(DISTINCT User) FROM mysql.user);
 END;
 ```
+<span></span>

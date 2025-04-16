@@ -67,3 +67,4 @@ SELECT  * INTO @x FROM (SELECT t1.a FROM t1 UNION SELECT t2.a FROM t2) dt;
 * [SELECT INTO OUTFILE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile.md) - formatting and writing the result to an external file.
 * [SELECT INTO DUMPFILE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile.md) - binary-safe writing of the unformatted results to an external file.
 
+<span></span>

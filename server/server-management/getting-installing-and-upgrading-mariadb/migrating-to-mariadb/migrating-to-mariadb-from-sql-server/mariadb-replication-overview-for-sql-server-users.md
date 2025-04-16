@@ -398,3 +398,4 @@ Galera is not suitable for all databases and workloads.
 * Long transactions will damage performance.
 * Some applications use an integer [AUTO_INCREMENT](../../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) primary key. In case of failover from a crashed node to another, Galera does not guarantee that `AUTO_INCREMENT` follows a chronological order. Therere, applications should use [TIMESTAMP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) columns for chronological order instead.
 
+<span></span>

@@ -61,3 +61,4 @@ A common use case for Flashback is the following scenario:
 * Invoke [mariadb-binlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) to find the exact log position of the first offending operation after the state you want to revert to.
 * Run `mariadb-binlog --flashback --start-position=xyz | mariadb` to pipe the output of `mariadb-binlog` directly to the `mariadb` client, or save the output to a file and then direct the file to the command-line client.
 
+<span></span>

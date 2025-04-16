@@ -194,3 +194,4 @@ Mariabackup from MariaDB Enterprise Server performs the following tasks in the `
 
 * Copy the [MyRocks](../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) checkpoint into the backup.
 
+<span></span>

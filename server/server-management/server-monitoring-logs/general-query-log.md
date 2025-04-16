@@ -187,3 +187,4 @@ Unix and Linux distributions offer the [logrotate](https://linux.die.net/man/8/l
 
 * [MariaDB audit plugin](../../reference/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)
 
+<span></span>

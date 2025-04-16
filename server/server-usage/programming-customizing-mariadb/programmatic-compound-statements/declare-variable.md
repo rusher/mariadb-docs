@@ -76,3 +76,4 @@ DECLARE rec2 ROW TYPE OF cur1; -- Get the row data type from the cursor {{cur1}}
 
 * [User-Defined variables](../../../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md)
 
+<span></span>

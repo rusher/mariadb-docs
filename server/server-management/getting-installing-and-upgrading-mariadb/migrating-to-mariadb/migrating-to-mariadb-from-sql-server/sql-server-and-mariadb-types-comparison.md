@@ -314,3 +314,4 @@ The following types are supported by MariaDB and don't have a direct equivalent 
 * [INET6](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton.md) - IPv6 addresses.
 * [INET4](../../../../reference/data-types/string-data-types/inet4.md) - IPv4 addresses.
 
+<span></span>

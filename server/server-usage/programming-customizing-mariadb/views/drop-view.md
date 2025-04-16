@@ -91,3 +91,4 @@ SHOW WARNINGS;
 * [SHOW CREATE VIEWS](https://mariadb.com/kb/en/show-create-views)
 * [INFORMATION SCHEMA VIEWS Table](information-schema-views-table.md)
 
+<span></span>

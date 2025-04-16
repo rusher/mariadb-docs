@@ -9,3 +9,4 @@ From [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mari
 
 See [mariadb-secure-installation](../mariadb-secure-installation.md) for details.
 
+<span></span>

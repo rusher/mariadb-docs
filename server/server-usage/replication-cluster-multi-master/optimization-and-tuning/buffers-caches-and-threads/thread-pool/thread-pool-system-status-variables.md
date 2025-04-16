@@ -251,3 +251,4 @@ If set to 'auto' (the default), the actual priority (low or high) is determined 
 
 * [Thread Pool in MariaDB](thread-pool-in-mariadb-51-53.md)
 
+<span></span>

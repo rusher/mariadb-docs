@@ -84,3 +84,4 @@ FROM tablespace_ids
 LEFT JOIN information_schema.INNODB_TABLESPACES_ENCRYPTION ite
    ON tablespace_ids.SPACE = ite.SPACE
 ```
+<span></span>

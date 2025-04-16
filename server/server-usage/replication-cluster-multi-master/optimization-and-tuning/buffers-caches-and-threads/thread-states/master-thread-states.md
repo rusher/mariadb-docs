@@ -14,3 +14,4 @@ This article documents thread states that are related to [replication](../../../
 | Waiting to finalize termination | State that only occurs very briefly while the thread is terminating. |
 
 
+<span></span>

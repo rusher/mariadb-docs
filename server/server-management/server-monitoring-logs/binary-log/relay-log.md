@@ -67,3 +67,4 @@ If the relay logs are taking up too much space on the replica, the [relay_log_sp
 
 * [FLUSH RELAY LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
 
+<span></span>

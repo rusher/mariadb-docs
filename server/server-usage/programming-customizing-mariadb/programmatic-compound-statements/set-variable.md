@@ -47,3 +47,4 @@ SET @x = 1;
 * [SET STATEMENT](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-statement.md)
 * [DECLARE Variable](declare-variable.md)
 
+<span></span>

@@ -23,3 +23,4 @@ This is a list of [system variables](../../server-system-variables.md) that have
 * [Status Variables Added in MariaDB 11.5](status-variables-added-in-mariadb-11-5.md)
 * [System Variables Added in MariaDB 11.4](../system-variables-added-in-mariadb-11-4.md)
 
+<span></span>

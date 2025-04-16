@@ -414,3 +414,4 @@ optimizations, and debugging tips.
 
 Original source: [groupwise_max](https://mysql.rjweb.org/doc.php/groupwise_max)
 
+<span></span>

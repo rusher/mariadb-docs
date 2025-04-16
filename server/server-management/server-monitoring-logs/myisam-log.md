@@ -13,3 +13,4 @@ The *isam* instead of *myisam* above is not a typo - it's a legacy from when the
 
 To process the contents of the log file, use the [myisamlog](../../clients-and-utilities/myisam-clients-and-utilities/myisamlog.md) utility.
 
+<span></span>

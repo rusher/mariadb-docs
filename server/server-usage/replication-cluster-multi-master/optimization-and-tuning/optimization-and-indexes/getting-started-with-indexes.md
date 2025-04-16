@@ -324,3 +324,4 @@ If the [slow query log](../../../../server-management/server-monitoring-logs/slo
 * [AUTO_INCREMENT](../../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md)
 * [The Essentials of an Index](../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/the-essentials-of-an-index.md)
 
+<span></span>

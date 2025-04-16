@@ -594,3 +594,4 @@ stored using the InnoDB storage engine.
 * [MariaDB Enterprise Backup](../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md)
 * [Upgrading to a newer major version of MariaDB](https://www.youtube.com/watch?v=1kLIXN2DoEo) (video)
 
+<span></span>

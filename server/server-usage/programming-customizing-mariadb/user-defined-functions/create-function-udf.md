@@ -137,3 +137,4 @@ SHOW WARNINGS;
 * [DROP FUNCTION](../stored-routines/stored-functions/drop-function.md)
 * [CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)
 
+<span></span>

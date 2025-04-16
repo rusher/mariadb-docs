@@ -101,3 +101,4 @@ produced by either MySQL or MariaDB just fine.
 
 * [Binlog Event Checksums](binlog-event-checksums.md)
 
+<span></span>

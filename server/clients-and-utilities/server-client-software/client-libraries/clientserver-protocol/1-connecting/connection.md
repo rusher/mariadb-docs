@@ -485,3 +485,4 @@ The 20 byte string 'seed' is calculated by concatenating scramble first part (8 
 
 SHA1( passwd) ^ SHA1( seed + SHA1( SHA1( passwd ) ) )
 
+<span></span>

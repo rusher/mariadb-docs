@@ -139,3 +139,4 @@ Query OK, 0 rows affected (0.00 sec)
 * [Event Limitations](event-limitations.md)
 * [Automating MariaDB Tasks with Events](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/automating-mariadb-tasks-with-events.md)
 
+<span></span>

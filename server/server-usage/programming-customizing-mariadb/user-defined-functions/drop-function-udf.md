@@ -51,3 +51,4 @@ SHOW WARNINGS;
 | Note  | 1305 | FUNCTION test.jsoncontains_path does not exist |
 +-------+------+------------------------------------------------+
 ```
+<span></span>

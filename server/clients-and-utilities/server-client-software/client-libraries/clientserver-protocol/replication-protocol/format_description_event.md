@@ -121,3 +121,4 @@ n = event_size - header length - offset (2 + 50 + 4 + 1) - checksum_algo - check
 * checksum_algo = 0 => 0 (NONE)
 * CRC32 bytes = 2b 91 c2 91 (useless)
 
+<span></span>

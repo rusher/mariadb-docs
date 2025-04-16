@@ -246,3 +246,4 @@ The Eperi Key Management plugin supports [key rotation](encryption-key-managemen
 * [eperi Gateway for Databases version 3.4 offers native MariaDB support](https://eperi.com/eperi-gateway-for-databases-version-3-4-offers-native-mariadb-support/)
 * [eperi Customer Portal](https://customer.eperi.de/index.jsp)
 
+<span></span>

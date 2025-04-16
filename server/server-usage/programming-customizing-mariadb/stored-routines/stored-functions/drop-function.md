@@ -60,3 +60,4 @@ SHOW WARNINGS;
 * [Stored Routine Privileges](stored-routine-privileges.md)
 * [INFORMATION_SCHEMA ROUTINES Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
+<span></span>

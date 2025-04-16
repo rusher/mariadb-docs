@@ -105,3 +105,4 @@ to enable the optimization.
 * [MDEV-32113](https://jira.mariadb.org/browse/MDEV-32113): utf8mb3_key_col=utf8mb4_value cannot be used for ref access
 * Blog post: [Making “tbl.utf8mb3_key_column=utf8mb4_expr” sargable](https://petrunia.net/2023/10/11/making-tbl-utf8mb3_key_columnutf8mb4_expr-sargable/)
 
+<span></span>

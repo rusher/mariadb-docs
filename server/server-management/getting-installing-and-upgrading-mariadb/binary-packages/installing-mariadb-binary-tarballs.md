@@ -211,3 +211,4 @@ instead.
 For details on the exact steps used to build the binaries, see the
 [compiling MariaDB section](../compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options.md) of the KB.
 
+<span></span>

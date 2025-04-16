@@ -181,3 +181,4 @@ to the new primary.
 * [MaxScale Blog about using Switchover to swap a primary and replica](https://mariadb.com/resources/blog/mariadb-maxscale-2-2-introducing-failover-switchover-and-automatic-rejoin)
 * [Percona blog about how to upgrade replica to primary](https://www.percona.com/blog/2015/12/01/upgrade-master-server-minimal-downtime)
 
+<span></span>

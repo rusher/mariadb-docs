@@ -42,3 +42,4 @@ SHOW STATUS LIKE 'Innodb_buffer_pool_resize_status';
 
 Progress is also logged in the [error log](../../../../server-management/server-monitoring-logs/error-log.md).
 
+<span></span>

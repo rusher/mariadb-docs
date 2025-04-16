@@ -140,3 +140,4 @@ The [mariadb client](../../clients-and-utilities/mariadb-client/mariadb-command-
 
 * [Account Locking and Password Expiry](https://www.youtube.com/watch?v=AWM_fWZ3XIw) video tutorial
 
+<span></span>

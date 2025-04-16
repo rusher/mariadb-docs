@@ -320,3 +320,4 @@ If the `[ROW_FORMAT](../../../reference/sql-statements-and-structure/vectors/cre
 
 This field contains the value of the table's `space_id`.
 
+<span></span>

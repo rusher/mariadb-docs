@@ -27,3 +27,4 @@ is executed. Each statement_list consists of one or more statements.
 * [Changes in Oracle mode from MariaDB 10.3](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
 * The [CASE statement](case-statement.md).
 
+<span></span>

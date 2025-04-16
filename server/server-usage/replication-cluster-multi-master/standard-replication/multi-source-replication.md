@@ -255,3 +255,4 @@ One can also use this syntax to set `replicate-rewrite-db` for a given connectio
 * The work in MariaDB is based on the project description at [MDEV-253](https://jira.mariadb.org/browse/MDEV-253).
 * The original code base comes from [Taobao, developed by Peng Lixun](https://mysql.taobao.org/index.php/Patch_source_code#Multi-master_replication). A big thanks to them for this important feature!
 
+<span></span>

@@ -501,3 +501,4 @@ SELECT SQL_CACHE .... FROM (SELECT SQL_NO_CACHE ...) AS temp_table
 
 The second query will be checked. The query cache only checks if SQL_NO_CACHE/SQL_CACHE exists after the first SELECT. (More info at [MDEV-6631](https://jira.mariadb.org/browse/MDEV-6631))
 
+<span></span>

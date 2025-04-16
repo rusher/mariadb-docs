@@ -26,3 +26,4 @@ The following restrictions apply to [triggers](triggers-and-implicit-locks.md).
 * [SHOW TRIGGERS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-triggers.md)
 * [SHOW CREATE TRIGGER](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-trigger.md)
 
+<span></span>

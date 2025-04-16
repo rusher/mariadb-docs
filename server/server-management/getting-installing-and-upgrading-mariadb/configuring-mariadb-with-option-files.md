@@ -594,3 +594,4 @@ loose-abort-source-on-error
 * [Configuring MariaDB for Remote Client Access](../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/configuring-mariadb-for-remote-client-access.md)
 * [MySQL 5.6: Security through Complacency?](https://mariadb.com/resources/blog/mysql-5-6-security-through-complacency)
 
+<span></span>

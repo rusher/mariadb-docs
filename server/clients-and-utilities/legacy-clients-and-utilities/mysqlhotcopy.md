@@ -12,3 +12,4 @@ From [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mari
 
 See [mariadb-hotcopy](../backup-restore-and-import-clients/mariadb-hotcopy.md) for details.
 
+<span></span>

@@ -49,3 +49,4 @@ SET GLOBAL general_log = @old_log_state;
 
 Contents of log tables are not logged in the [binary log](../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), thus cannot be replicated.
 
+<span></span>

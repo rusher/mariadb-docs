@@ -414,3 +414,4 @@ Query OK, 1 row affected, 2 warnings (0.15 sec)
 * [SQL_MODE=MSSQL](../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md)
 * [SQL_MODE=ORACLE](../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
 
+<span></span>

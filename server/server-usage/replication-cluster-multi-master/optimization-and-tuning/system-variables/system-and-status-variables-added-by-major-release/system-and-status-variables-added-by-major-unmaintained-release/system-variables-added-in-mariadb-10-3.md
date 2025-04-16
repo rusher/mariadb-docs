@@ -51,3 +51,4 @@ For system variables that have been removed or deprecated, see [Upgrading from M
 * [System Variables Added in MariaDB 10.2](system-variables-added-in-mariadb-102.md)
 * [System Variables Added in MariaDB 10.1](system-variables-added-in-mariadb-101.md)
 
+<span></span>

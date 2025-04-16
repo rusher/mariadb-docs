@@ -70,3 +70,4 @@ mysqltest in MariaDB can helps in this situation. In the example below, the outp
 exec $XTRABACKUP  --param1 --param2  # Note, do not use output redirection here
 --enable_result_log
 ```
+<span></span>

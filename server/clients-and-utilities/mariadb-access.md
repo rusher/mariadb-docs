@@ -62,3 +62,4 @@ Change the path to reflect the location where *mariadb* actually is stored on yo
 
 At least the user (`-u`) and the database (`-d`) must be given, even with wildcards. If no host is provided, `localhost' is assumed. Wildcards (*,?,%,_) are allowed for *host*, *user* and *db*, but be sure to escape them from your shell!! (ie type \* or '*')
 
+<span></span>

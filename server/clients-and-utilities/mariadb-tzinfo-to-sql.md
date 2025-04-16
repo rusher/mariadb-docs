@@ -68,3 +68,4 @@ shell> mariadb-tzinfo-to-sql --leap timezone_file | mariadb -u root mysql
 
 After populating the time zone tables, you should usually restart the server so that the new time zone data is correctly loaded.
 
+<span></span>

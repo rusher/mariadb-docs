@@ -9,3 +9,4 @@ The [SHOW TABLE STATUS](../../reference/sql-statements-and-structure/sql-stateme
 
 The [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) statement returns the [CREATE TABLE](../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statement that can be used to re-create a table, including the partitions definition.
 
+<span></span>

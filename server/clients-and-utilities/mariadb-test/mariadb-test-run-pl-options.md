@@ -252,3 +252,4 @@ Every option from the above accepts an optional argument. It can be used to spec
 | tail-lines=N | Number of lines of the result to include in a failure report. From [MariaDB 10.3.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1034-release-notes.md). |
 
 
+<span></span>
