@@ -73,7 +73,7 @@ On the **server** side, users can enable specific TLS protocol versions by setti
 tls_version = TLSv1.2,TLSv1.3
 ```
 
-You can check which TLS protocol versions are enabled on a server by executing [SHOW GLOBAL VARIABLES](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md). For example:
+You can check which TLS protocol versions are enabled on a server by executing [SHOW GLOBAL VARIABLES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md). For example:
 
 
 ```

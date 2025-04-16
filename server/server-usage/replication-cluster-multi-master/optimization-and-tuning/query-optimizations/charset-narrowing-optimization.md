@@ -17,7 +17,7 @@ The optimization was introduced in [MariaDB 10.6.16](../../../../../release-note
 ## Description
 
 
-MariaDB supports both the UTF8MB3 and UTF8MB4 [character sets](../../../../ref/data-types/string-data-types/character-sets/README.md). It is possible to construct join queries that compare values in UTF8MB3 to UTF8MB4.
+MariaDB supports both the UTF8MB3 and UTF8MB4 [character sets](../../../../reference/data-types/string-data-types/character-sets/README.md). It is possible to construct join queries that compare values in UTF8MB3 to UTF8MB4.
 
 
 Suppose, we have the table *'users* that uses UTF8MB4:

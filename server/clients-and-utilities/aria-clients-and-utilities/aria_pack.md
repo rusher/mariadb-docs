@@ -1,11 +1,9 @@
 
 # aria_pack
 
-aria_pack is a tool for compressing [Aria](../../ref/storage-engines/s3-storage-engine/aria_s3_copy.md) tables. The resulting table are read-only, and usually about 40% to 70% smaller.
-
+aria_pack is a tool for compressing [Aria](../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables. The resulting table are read-only, and usually about 40% to 70% smaller.
 
 aria_pack is run as follows
-
 
 ```
 aria_pack [options] file_name [file_name2...]
@@ -13,26 +11,20 @@ aria_pack [options] file_name [file_name2...]
 
 The file name is the .MAI index file. The extension can be omitted, although keeping it permits wildcards, such as
 
-
 ```
 aria_pack *.MAI
 ```
 
 to compress all the files.
 
-
-aria_pack compresses each column separately, and, when the resulting data is read, only the individual rows and columns required need to be decompressed, allowing for quicker reading.
-
+`aria_pack` compresses each column separately, and, when the resulting data is read, only the individual rows and columns required need to be decompressed, allowing for quicker reading.
 
 Once a table has been packed, use [aria_chk -rq](aria_chk.md) (the quick and recover options) to rebuild its indexes.
 
 
 ## Options
 
-
 The following variables can be set while passed as commandline options to aria_pack, or set in the [ariapack] section in your [my.cnf](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) file.
-
-
 
 | Option | Description |
 | --- | --- |
@@ -80,6 +72,6 @@ State updated
 ## See Also
 
 
-* [FLUSH TABLES FOR EXPORT](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
+* [FLUSH TABLES FOR EXPORT](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
 * [myisamchk](../myisam-clients-and-utilities/myisamchk-table-information.md)
 

@@ -7,7 +7,7 @@
 Tarballs, source and binaries (Linux and Windows), and packages for some Linux distributions are available at [mariadb.org/download](https://mariadb.org/download/).
 
 
-We hope that interested [community](../../../ref/faq/community-questions/README.md) package maintainers will step forward, as others already have, to build packages for their distributions. We ask for strict adherence to your packaging system's best practices and invite you to create a [bug report](https://mariadb.org/jira) if our project impedes this in any way.
+We hope that interested [community](../../../reference/faq/community-questions/README.md) package maintainers will step forward, as others already have, to build packages for their distributions. We ask for strict adherence to your packaging system's best practices and invite you to create a [bug report](https://mariadb.org/jira) if our project impedes this in any way.
 
 
 Instructions how to install the packages can be found [here](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/README.md). See the [Includes MariaDB](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/distributions-which-include-mariadb.md) documentation page for a list of which Linux distributions that include MariaDB.

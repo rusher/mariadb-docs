@@ -2,7 +2,7 @@
 # Creating User-Defined Functions
 
 
-[User-defined functions](user-defined-functions-security.md) allow MariaDB to be extended with a new function that works like a native (built-in) MariaDB function such as [ABS()](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/abs.md) or [CONCAT()](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat_ws.md). It was introduced in 1998 and is generally limited to supporting features that existed at that time. There are alternative ways to add a new function: a native function, which requires modifying and compiling the server source code; a [function plugin](../../../ref/mariadb-internals/development-writing-plugins-for-mariadb.md#function-plugins); or a [stored function](../stored-routines/stored-functions/README.md).
+[User-defined functions](user-defined-functions-security.md) allow MariaDB to be extended with a new function that works like a native (built-in) MariaDB function such as [ABS()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/abs.md) or [CONCAT()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat_ws.md). It was introduced in 1998 and is generally limited to supporting features that existed at that time. There are alternative ways to add a new function: a native function, which requires modifying and compiling the server source code; a [function plugin](../../../reference/mariadb-internals/development-writing-plugins-for-mariadb.md#function-plugins); or a [stored function](../stored-routines/stored-functions/README.md).
 
 
 Statements making use of user-defined functions are not [safe for replication](../../replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
@@ -32,9 +32,9 @@ Required for all UDFs; this is where the results are calculated.
 | C/C++ type | SQL type |
 | --- | --- |
 | C/C++ type | SQL type |
-| char * | [STRING](../../../ref/data-types/string-data-types/README.md) |
-| long long | [INTEGER](../../../ref/data-types/data-types-numeric-data-types/integer.md) |
-| double | [REAL](../../../ref/data-types/data-types-numeric-data-types/README.md) |
+| char * | [STRING](../../../reference/data-types/string-data-types/README.md) |
+| long long | [INTEGER](../../../reference/data-types/data-types-numeric-data-types/integer.md) |
+| double | [REAL](../../../reference/data-types/data-types-numeric-data-types/README.md) |
 
 
 
@@ -78,7 +78,7 @@ Each time the SQL function *X()* is called:
 ## Aggregate Functions
 
 
-The following functions are required for aggregate functions, such as [AVG()](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/avg.md) and [SUM()](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum.md). When using [CREATE FUNCTION](create-function-udf.md), the [AGGREGATE](create-function-udf.md#aggregate) keyword is required.
+The following functions are required for aggregate functions, such as [AVG()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/avg.md) and [SUM()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum.md). When using [CREATE FUNCTION](create-function-udf.md), the [AGGREGATE](create-function-udf.md#aggregate) keyword is required.
 
 
 ### x_clear()
@@ -96,7 +96,7 @@ Used to add the argument to the current aggregate.
 ### x_remove()
 
 
-Starting from [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), improves the support of [window functions](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/window-functions-overview.md) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
+Starting from [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), improves the support of [window functions](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/window-functions-overview.md) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
 
 
 ### Description
@@ -111,7 +111,7 @@ Each time the aggregate SQL function *X()* is called:
 
 
 * MariaDB will first call the C/C++ initialization function, x_init(), assuming it exists. All setup will be performed, and if it returns an error, the SQL statement is aborted and no further functions are called.
-* The table is sorted according to the [GROUP BY](../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) expression.
+* The table is sorted according to the [GROUP BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) expression.
 * x_clear() is called for the first row of each new group.
 * x_add() is called once per row for each row in the same group.
 * x() is called when the group changes, or after the last row, to get the aggregate result.

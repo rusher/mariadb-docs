@@ -192,13 +192,13 @@ When using multiple instances, each instance will of course also need their own 
 ### Bootstrapping a New Cluster
 
 
-When using [Galera Cluster](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) with systemd, the first node in a cluster has to be started with `galera_new_cluster`. See [Getting Started with MariaDB Galera Cluster: Bootstrapping a New Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster) for more information.
+When using [Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) with systemd, the first node in a cluster has to be started with `galera_new_cluster`. See [Getting Started with MariaDB Galera Cluster: Bootstrapping a New Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster) for more information.
 
 
 ### Recovering a Node's Cluster Position
 
 
-When using [Galera Cluster](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) with systemd, a node's position in the cluster can be recovered with `galera_recovery`. See [Getting Started with MariaDB Galera Cluster: Determining the Most Advanced Node](../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#determining-the-most-advanced-node) for more information.
+When using [Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) with systemd, a node's position in the cluster can be recovered with `galera_recovery`. See [Getting Started with MariaDB Galera Cluster: Determining the Most Advanced Node](../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#determining-the-most-advanced-node) for more information.
 
 
 ### SSTs and Systemd
@@ -628,7 +628,7 @@ In addition to providing user benefits as a sales item, the following are additi
   * a proactive reduction in memory ([MDEV-25341](https://jira.mariadb.org/browse/MDEV-25341)).
   * a memory resource pressure reduction in memory use ([MDEV-24670](https://jira.mariadb.org/browse/MDEV-24670)).
 * The service provider can still cap the user's database memory usage in a ulimit way that a user cannot override in settings.
-* The service provider may choose a CPU/memory/IO based billing to the user on Linux cgroup accounting rather than the available comprared to the rather limited options in `[CREATE USER](../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#resource-limit-options)`.
+* The service provider may choose a CPU/memory/IO based billing to the user on Linux cgroup accounting rather than the available comprared to the rather limited options in `[CREATE USER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#resource-limit-options)`.
 * Because a user's database will shutdown when inactive, a database upgrade on the server will not take effect for the user until it passively shuts down, restarts, and then gets reactivated hence reducing user downtime..
 
 
@@ -693,7 +693,7 @@ The feature of this extension are:
 * that it will autocreate configuration file for user applications
 * It will install the database on first service start
 * `auth-root-*` in [mariadb-install-db](../mariadb-install-db-exe.md) means that the user is their own privileged user with unix socket authentication active. This means non-that user cannot access another users service, even with
-access to the unix socket(s). For more information see [unix socket authentication security](../../../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md#security).
+access to the unix socket(s). For more information see [unix socket authentication security](../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md#security).
 * If the MariaDB version was upgrade, the upgrade changes are made automatically
 * `LimitData` places a hard upper limit so the user doesn't exceed a portion of the server resources
 

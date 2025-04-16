@@ -38,7 +38,7 @@ mariadb-slap [options]
 | --- | --- |
 | Option | Description |
 | -a, --auto-generate-sql | Generate SQL statements automatically when they are not supplied in files or via command options. |
-| --auto-generate-sql-add-autoincrement | Add an [AUTO_INCREMENT](../ref/storage-engines/innodb/auto_increment-handling-in-innodb.md) column to auto-generated tables. |
+| --auto-generate-sql-add-autoincrement | Add an [AUTO_INCREMENT](../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) column to auto-generated tables. |
 | --auto-generate-sql-execute-number=num | Specify how many queries to generate automatically. |
 | --auto-generate-sql-guid-primary | Add GUID based primary keys to auto-generated tables. |
 | --auto-generate-sql-load-type=name | Specify the test load type. The allowable values are read (scan tables), write (insert into tables), key (read primary keys), update (update primary keys), or mixed (half inserts, half scanning selects). The default is mixed. |
@@ -69,7 +69,7 @@ mariadb-slap [options]
 | -i num, --iterations=num | Number of times to run the tests. |
 | --no-defaults | Don't read default options from any option file. Must be given as the first option. |
 | --no-drop | Do not drop any schema created during the test after the test is complete. |
-| -x name, --number-char-cols=name | Number of [VARCHAR](../ref/data-types/string-data-types/varchar.md) columns to create in table if specifying --auto-generate-sql. |
+| -x name, --number-char-cols=name | Number of [VARCHAR](../reference/data-types/string-data-types/varchar.md) columns to create in table if specifying --auto-generate-sql. |
 | -y name, --number-int-cols=name | Number of [INT](../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) columns to create in table if specifying --auto-generate-sql. |
 | --number-of-queries=num | Limit each client to approximately this number of queries. Query counting takes into account the statement delimiter. For example, if you invoke as follows, mariadb-slap --delimiter=";" --number-of-queries=10 --query="use test;insert into t values(null)", the #;
 

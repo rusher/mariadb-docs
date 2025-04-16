@@ -4,19 +4,19 @@
 See [Overview of the Binary Log](overview-of-the-binary-log.md) for a general overview of what the binary log is, and [Activating the Binary Log](activating-the-binary-log.md) for how to make sure it's running on your system.
 
 
-For details on using the binary log for replication, see the [Replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) section.
+For details on using the binary log for replication, see the [Replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) section.
 
 
 ## Purging Log Files
 
 
-To delete all binary log files on the server, run the [RESET MASTER](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master.md) command. To delete all binary logs before a certain datetime, or up to a certain number, use [PURGE BINARY LOGS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md).
+To delete all binary log files on the server, run the [RESET MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master.md) command. To delete all binary logs before a certain datetime, or up to a certain number, use [PURGE BINARY LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md).
 
 
 If a replica is active but has yet to read from a binary log file you attempt to delete, the statement will fail with an error. However, if the replica is not connected and has yet to read from a log file you delete, the file will be deleted, but the replica will be unable to continue replicating once it connects again.
 
 
-Log files can also be removed automatically with the [expire_logs_days](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#expire_logs_days) system variable. This is set to 0 by default (no removal), but can be set to a time, in days, after which a binary log file will be automatically removed. Log files will only be checked for being older than [expire_logs_days](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#expire_logs_days) upon log rotation, so if your binary log only fills up slowly and does not reach [max_binlog_size](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#max_binlog_size) on a daily basis, you may see older log files still being kept. You can also force log rotation, and so expiry deletes, by running [FLUSH BINARY LOGS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) on a regular basis.
+Log files can also be removed automatically with the [expire_logs_days](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#expire_logs_days) system variable. This is set to 0 by default (no removal), but can be set to a time, in days, after which a binary log file will be automatically removed. Log files will only be checked for being older than [expire_logs_days](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#expire_logs_days) upon log rotation, so if your binary log only fills up slowly and does not reach [max_binlog_size](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#max_binlog_size) on a daily basis, you may see older log files still being kept. You can also force log rotation, and so expiry deletes, by running [FLUSH BINARY LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) on a regular basis.
 Always set [expire_logs_days](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#expire_logs_days) higher than any possible replica lag.
 
 
@@ -43,8 +43,8 @@ PURGE BINARY LOGS BEFORE '2013-04-22 09:55:22';
 To be sure replication is not broken while deleting log files, perform the following steps:
 
 
-* Get a listing of binary log files on the primary by running [SHOW BINARY LOGS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binary-logs.md).
-* Go to each replica server and run [SHOW SLAVE STATUS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) to check which binary log file each replica is currently reading.
+* Get a listing of binary log files on the primary by running [SHOW BINARY LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binary-logs.md).
+* Go to each replica server and run [SHOW SLAVE STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) to check which binary log file each replica is currently reading.
 * Find the earliest log file still being read by a replica. No log files before this one will be needed.
 * If you wish, make a backup of the log files to be deleted
 * Purge all log files before (not including) the file identified above.
@@ -136,5 +136,5 @@ However, if MariaDB encounters a full disk error while trying to open a new bina
 ## See Also
 
 
-* [PURGE LOGS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md)
+* [PURGE LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md)
 

@@ -32,13 +32,13 @@ However, averages can be skewed by extremes, and the usual culprit is NULL value
 There are three main approaches to the problem of NULLs. NULL index values can be treated as a single group (nulls_equal). This is usually fine, but if you have large numbers of NULLs the average group size is slanted higher, and the optimizer may miss using the index for ref accesses when it would be useful. This is the default used by XtraDB/InnoDB and MyISAM. Nulls_unequal is the opposite approach, with each NULL forming its own group of one. Conversely, the average group size is slanted lower, and the optimizer may use the index for ref accesses when not suitable. This is the default used by the Aria storage engine. A third options sees NULL's ignored altogether from index group calculations.
 
 
-The default approaches can be changed by setting the [aria_stats_method](../../../../ref/storage-engines/aria/aria-system-variables.md), [myisam_stats_method](../../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [innodb_stats_method](../../../../ref/storage-engines/innodb/innodb-system-variables.md) server variables.
+The default approaches can be changed by setting the [aria_stats_method](../../../../reference/storage-engines/aria/aria-system-variables.md), [myisam_stats_method](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [innodb_stats_method](../../../../reference/storage-engines/innodb/innodb-system-variables.md) server variables.
 
 
 ## Null-Safe and Regular Comparisons
 
 
-The comparison operator used plays an important role. If two values are compared with <=> (see the [null-safe-equal](../../../../ref/sql-statements-and-structure/operators/comparison-operators/null-safe-equal.md) comparison operator), and both are null, 1 is returned. If the same values are compared with = (see the [equal](../../../../ref/sql-statements-and-structure/geographic-geometric-features/geometry-relations/equals.md) comparison operator) null is returned. For example:
+The comparison operator used plays an important role. If two values are compared with <=> (see the [null-safe-equal](../../../../reference/sql-statements-and-structure/operators/comparison-operators/null-safe-equal.md) comparison operator), and both are null, 1 is returned. If the same values are compared with = (see the [equal](../../../../reference/sql-statements-and-structure/geographic-geometric-features/geometry-relations/equals.md) comparison operator) null is returned. For example:
 
 
 ```

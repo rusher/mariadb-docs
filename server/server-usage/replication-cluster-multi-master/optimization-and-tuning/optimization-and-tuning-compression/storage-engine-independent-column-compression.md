@@ -2,10 +2,10 @@
 # Storage-Engine Independent Column Compression
 
 
-Storage-engine independent column compression enables [TINYBLOB](../../../../ref/data-types/string-data-types/tinyblob.md), [BLOB](../../../../ref/data-types/string-data-types/blob.md), [MEDIUMBLOB](../../../../ref/data-types/string-data-types/mediumblob.md), [LONGBLOB](../../../../ref/data-types/string-data-types/longblob.md), [TINYTEXT](../../../../ref/data-types/string-data-types/tinytext.md), [TEXT](../../../../ref/data-types/string-data-types/text.md), [MEDIUMTEXT](../../../../ref/data-types/string-data-types/mediumtext.md), [LONGTEXT](../../../../ref/data-types/string-data-types/longtext.md), [VARCHAR](../../../../ref/data-types/string-data-types/varchar.md) and [VARBINARY](../../../../ref/data-types/string-data-types/varbinary.md) columns to be compressed.
+Storage-engine independent column compression enables [TINYBLOB](../../../../reference/data-types/string-data-types/tinyblob.md), [BLOB](../../../../reference/data-types/string-data-types/blob.md), [MEDIUMBLOB](../../../../reference/data-types/string-data-types/mediumblob.md), [LONGBLOB](../../../../reference/data-types/string-data-types/longblob.md), [TINYTEXT](../../../../reference/data-types/string-data-types/tinytext.md), [TEXT](../../../../reference/data-types/string-data-types/text.md), [MEDIUMTEXT](../../../../reference/data-types/string-data-types/mediumtext.md), [LONGTEXT](../../../../reference/data-types/string-data-types/longtext.md), [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md) and [VARBINARY](../../../../reference/data-types/string-data-types/varbinary.md) columns to be compressed.
 
 
-This is performed by means of a new COMPRESSED [column attribute](../../../../ref/sql-statements-and-structure/vectors/create-table-with-vectors.md#column-and-index-definitions):
+This is performed by means of a new COMPRESSED [column attribute](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#column-and-index-definitions):
 `COMPRESSED[=<compression_method>]`
 
 
@@ -97,14 +97,14 @@ When using the `COMPRESSED` attribute, note that FIELD LENGTH is reduced by 1; f
 
 
 * The only supported method currently is zlib.
-* The [CSV](../../../../ref/storage-engines/csv/csv-overview.md) storage engine stores data uncompressed on-disk even if the COMPRESSED attribute is present.
+* The [CSV](../../../../reference/storage-engines/csv/csv-overview.md) storage engine stores data uncompressed on-disk even if the COMPRESSED attribute is present.
 * It is not possible to create indexes over compressed columns.
 
 
 ### Comparison with InnoDB Page Compression
 
 
-Storage-independent column compression is different to [InnoDB Page Compression](../../../../ref/storage-engines/innodb/innodb-page-compression.md) in a number of ways.
+Storage-independent column compression is different to [InnoDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md) in a number of ways.
 
 
 * It is storage engine independent, while InnoDB page compression applies to InnoDB only.
@@ -127,6 +127,6 @@ CREATE TABLE cmp2 (i TEXT COMPRESSED=zlib);
 ### See Also
 
 
-* [InnoDB Page Compression](../../../../ref/storage-engines/innodb/innodb-page-compression.md)
-* [InnoDB Compressed Row Format](../../../../ref/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format.md)
+* [InnoDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md)
+* [InnoDB Compressed Row Format](../../../../reference/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format.md)
 

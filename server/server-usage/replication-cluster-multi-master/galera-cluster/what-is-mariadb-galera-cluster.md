@@ -16,7 +16,7 @@ The most recent release of [MariaDB 11.4](../../../../release-notes/mariadb-comm
 
 MariaDB Galera Cluster is a [virtually synchronous](about-galera-replication.md) multi-primary cluster for MariaDB. It is available on Linux only, and only supports the
 [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) storage engine (although there is
-experimental support for [MyISAM](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) and, from [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), [Aria](../../../ref/storage-engines/s3-storage-engine/aria_s3_copy.md). See the
+experimental support for [MyISAM](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) and, from [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), [Aria](../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md). See the
 [wsrep_replicate_myisam](galera-cluster-system-variables.md#wsrep_replicate_myisam) system variable, or, from [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), the [wsrep_mode](galera-cluster-system-variables.md#wsrep_mode) system variable).
 
 
@@ -62,11 +62,11 @@ MariaDB Galera Cluster is powered by:
 * The [Galera wsrep provider library](https://github.com/codership/galera/).
 
 
-The functionality of MariaDB Galera Cluster can be obtained by installing the standard MariaDB Server packages and the [Galera wsrep provider library](https://github.com/codership/galera/) package. The following [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) version corresponds to each MariaDB Server version:
+The functionality of MariaDB Galera Cluster can be obtained by installing the standard MariaDB Server packages and the [Galera wsrep provider library](https://github.com/codership/galera/) package. The following [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) version corresponds to each MariaDB Server version:
 
 
-* In [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) and later, MariaDB Galera Cluster uses [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4. This means that the wsrep API version is 26 and the [Galera wsrep provider library](https://github.com/codership/galera/) is version 4.X.
-* In [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and before, MariaDB Galera Cluster uses [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 3. This means that the wsrep API is version 25 and the [Galera wsrep provider library](https://github.com/codership/galera/) is version 3.X.
+* In [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) and later, MariaDB Galera Cluster uses [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4. This means that the wsrep API version is 26 and the [Galera wsrep provider library](https://github.com/codership/galera/) is version 4.X.
+* In [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and before, MariaDB Galera Cluster uses [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 3. This means that the wsrep API is version 25 and the [Galera wsrep provider library](https://github.com/codership/galera/) is version 3.X.
 
 
 See [Deciphering Galera Version Numbers](https://galeracluster.com/library/documentation/versioning-information.html/) for more information about how to interpret these version numbers.
@@ -75,7 +75,7 @@ See [Deciphering Galera Version Numbers](https://galeracluster.com/library/docum
 ### Galera 4 Versions
 
 
-The following table lists each version of the [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 using [yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md), [apt](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-with-apt), or [zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md), then the package is called `galera-4`.
+The following table lists each version of the [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 using [yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md), [apt](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-with-apt), or [zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md), then the package is called `galera-4`.
 
 
 

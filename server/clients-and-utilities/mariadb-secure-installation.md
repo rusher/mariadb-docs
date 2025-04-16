@@ -1,7 +1,7 @@
 
 # mariadb-secure-installation
 
-Note that many of the reasons for the existence of this script no longer apply (and therefore the guidelines in many online tutorials. In particular, from [MariaDB 10.4](../../release-notes/mariadb-community-server/what-is-mariadb-104.md), [Unix socket authentication](../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is applied by default, and there is usually no need to create a root password. See [Authentication from MariaDB 10.4](../security/user-account-management/authentication-from-mariadb-10-4.md).
+Note that many of the reasons for the existence of this script no longer apply (and therefore the guidelines in many online tutorials. In particular, from [MariaDB 10.4](../../release-notes/mariadb-community-server/what-is-mariadb-104.md), [Unix socket authentication](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is applied by default, and there is usually no need to create a root password. See [Authentication from MariaDB 10.4](../security/user-account-management/authentication-from-mariadb-10-4.md).
 
 
 Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysql_secure_installation`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
@@ -134,7 +134,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 ### Use With Galera Cluster
 
 
-This script is not 100% safe for use with [Galera Cluster](../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) as it directly manipulates the [mysql.user](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global_priv](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, which is not transported by Galera to the other nodes.
+This script is not 100% safe for use with [Galera Cluster](../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) as it directly manipulates the [mysql.user](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global_priv](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, which is not transported by Galera to the other nodes.
 
 
 You should run this script on the first node in the cluster before adding more nodes.

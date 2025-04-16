@@ -72,7 +72,7 @@ provide good performance out-of-the box. However, the system variable values can
 as you see fit.
 
 
-If you find any issues with any of the default behavior, then we encourage you to [submit a bug report](../../../../../ref/bug-tracking/reporting-bugs.md).
+If you find any issues with any of the default behavior, then we encourage you to [submit a bug report](../../../../../reference/bug-tracking/reporting-bugs.md).
 
 
 See [Thread Pool System and Status Variables](thread-pool-system-status-variables.md) for the full list of the thread pool's system variables.
@@ -225,7 +225,7 @@ On Unix, the thread pool implementation uses objects called thread groups to div
 When using global locks, even with a high value on the [thread_pool_max_threads](thread-pool-system-status-variables.md#thread_pool_max_threads) system variable, it is still possible to block the entire pool.
 
 
-Imagine the case where a client performs [FLUSH TABLES WITH READ LOCK](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) then pauses. If then the number of other clients connecting to the server to start write operations exceeds the maximum number of threads allowed in the pool, it can block the Server. This makes it impossible to issue the [UNLOCK TABLES](https://mariadb.com/kb/en/lock-and-unlock-tables) statement. It can also block MaxScale from monitoring the Server.
+Imagine the case where a client performs [FLUSH TABLES WITH READ LOCK](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) then pauses. If then the number of other clients connecting to the server to start write operations exceeds the maximum number of threads allowed in the pool, it can block the Server. This makes it impossible to issue the [UNLOCK TABLES](https://mariadb.com/kb/en/lock-and-unlock-tables) statement. It can also block MaxScale from monitoring the Server.
 
 
 To mitigate the issue, MariaDB allows you to configure an extra port for administrative connections. See [Configuring the Extra Port](#configuring-the-extra-port) for information on how to configure this.
@@ -250,10 +250,10 @@ Once you are connected to the extra port, you can solve the issue by increasing 
 The following Information Schema tables relate to the thread pool:
 
 
-* [Information Schema THREAD_POOL_GROUPS Table](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_groups-table.md)
-* [Information Schema THREAD_POOL_QUEUES Table](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_queues-table.md)
-* [Information Schema THREAD_POOL_STATS Table](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_stats-table.md)
-* [Information Schema THREAD_POOL_WAITS Table](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_waits-table.md)
+* [Information Schema THREAD_POOL_GROUPS Table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_groups-table.md)
+* [Information Schema THREAD_POOL_QUEUES Table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_queues-table.md)
+* [Information Schema THREAD_POOL_STATS Table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_stats-table.md)
+* [Information Schema THREAD_POOL_WAITS Table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_waits-table.md)
 
 
 ## MariaDB Thread Pool vs Oracle MySQL Enterprise Thread Pool

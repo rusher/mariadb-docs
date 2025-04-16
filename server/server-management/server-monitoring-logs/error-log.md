@@ -50,7 +50,7 @@ However, the [log_error](../../server-usage/replication-cluster-multi-master/opt
 log_error=/var/log/mysql/mariadb.err
 ```
 
-Another way to configure the error log file name is to set the [log-basename](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option, which configures MariaDB to use a common prefix for all log files (e.g. [general query log](general-query-log.md), [slow query log](slow-query-log/slow-query-log-overview.md), error log, [binary logs](../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), etc.). The error log file name will be built by adding a `.err` extension to this prefix. For example, if you configured the following, then the error log would still be written to `mariadb.err` in the [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory:
+Another way to configure the error log file name is to set the [log-basename](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option, which configures MariaDB to use a common prefix for all log files (e.g. [general query log](general-query-log.md), [slow query log](slow-query-log/slow-query-log-overview.md), error log, [binary logs](../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), etc.). The error log file name will be built by adding a `.err` extension to this prefix. For example, if you configured the following, then the error log would still be written to `mariadb.err` in the [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory:
 
 
 ```
@@ -169,7 +169,7 @@ The [log_warnings](../../server-usage/replication-cluster-multi-master/optimizat
 If [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `0`, then many optional warnings will not be logged. However, this does not prevent all warnings from being logged, because there are certain core warnings that will always be written to the error log. For example:
 
 
-* If [InnoDB strict mode](../../ref/storage-engines/innodb/innodb-strict-mode.md) is disabled, and if DDL is performed on a table that triggers a ["Row size too large" error](../../ref/storage-engines/innodb/innodb-row-formats/troubleshooting-row-size-too-large-errors-with-innodb.md), then InnoDB will log a warning:
+* If [InnoDB strict mode](../../reference/storage-engines/innodb/innodb-strict-mode.md) is disabled, and if DDL is performed on a table that triggers a ["Row size too large" error](../../reference/storage-engines/innodb/innodb-row-formats/troubleshooting-row-size-too-large-errors-with-innodb.md), then InnoDB will log a warning:
 
 
 ```
@@ -178,7 +178,7 @@ If [log_warnings](../../server-usage/replication-cluster-multi-master/optimizati
   size (8126) for a record on index leaf page.
 ```
 
-However, if [InnoDB strict mode](../../ref/storage-engines/innodb/innodb-strict-mode.md) is enabled, then the same message will be logged as an error.
+However, if [InnoDB strict mode](../../reference/storage-engines/innodb/innodb-strict-mode.md) is enabled, then the same message will be logged as an error.
 
 
 ### Verbosity Level 1
@@ -268,7 +268,7 @@ Default from [MariaDB 10.2.4](../../../release-notes/mariadb-community-server/re
 [Warning] Update locks cannot be acquired during a READ UNCOMMITTED transaction.
 ```
 
-* Messages related to the files used to [persist replication state](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence):
+* Messages related to the files used to [persist replication state](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence):
 
   * Either the default `master.info` file or the file that is configured by the [master_info_file](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option.
   * Either the default `relay-log.info` file or the file that is configured by the [relay_log_info_file](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#relay_log_info_file) system variable.
@@ -476,7 +476,7 @@ lc_messages_dir=/usr/share/mysql/
 lc_messages=en_US
 ```
 
-See [Setting the Language for Error Messages](../../ref/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages.md) for more 
+See [Setting the Language for Error Messages](../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages.md) for more 
 information.
 
 

@@ -25,7 +25,7 @@ For MariaDB and MySQL 5.1 and earlier, the recommended alternative solution to
 using `LOAD DATA FROM MASTER` or
  `LOAD TABLE FROM MASTER` is using [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) or [mysqlhotcopy](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqlhotcopy.md).
 The latter requires Perl and two Perl modules (DBI and DBD:mysql) and works for
-[MyISAM](../../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [ARCHIVE](../../../../ref/storage-engines/archive/README.md) tables only. With mysqldump, you can create SQL dumps on the
+[MyISAM](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [ARCHIVE](../../../../reference/storage-engines/archive/README.md) tables only. With mysqldump, you can create SQL dumps on the
 master and pipe (or copy) these to a mysql client on the slave. This has the
 advantage of working for all storage engines, but can be quite slow, since it
 works using `SELECT`.
@@ -35,7 +35,7 @@ Transfers a copy of the table from the master to the slave. This statement is
 implemented mainly debugging `LOAD DATA FROM MASTER`
 operations. To use `LOAD TABLE`, the account used for
 connecting to the master server must have the `RELOAD` and
- `[SUPER](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges)` privileges on the master and the
+ `[SUPER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges)` privileges on the master and the
  `SELECT` privilege for the master table to load. On the slave
 side, the user that issues `LOAD TABLE FROM MASTER` must have
 privileges for dropping and creating the table.

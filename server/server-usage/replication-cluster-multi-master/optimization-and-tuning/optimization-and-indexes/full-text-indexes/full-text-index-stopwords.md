@@ -4,7 +4,7 @@
 Stopwords are used to provide a list of commonly-used words that can be ignored for the purposes of [Full-text-indexes](README.md).
 
 
-Full-text indexes built in [MyISAM](../../../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) have different stopword lists by default.
+Full-text indexes built in [MyISAM](../../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) have different stopword lists by default.
 
 
 ## MyISAM Stopwords
@@ -164,18 +164,18 @@ The following table shows the default list of stopwords, although you should alw
 ## InnoDB Stopwords
 
 
-Stopwords on full-text indexes are only enabled if the [innodb_ft_enable_stopword](../../../../../ref/storage-engines/innodb/innodb-system-variables.md) system variable is set (by default it is) at the time the index was created.
+Stopwords on full-text indexes are only enabled if the [innodb_ft_enable_stopword](../../../../../reference/storage-engines/innodb/innodb-system-variables.md) system variable is set (by default it is) at the time the index was created.
 
 
 The stopword list is determined as follows:
 
 
-* If the [innodb_ft_user_stopword_table](../../../../../ref/storage-engines/innodb/innodb-system-variables.md) system variable is set, that table is used as a stopword list.
-* If `innodb_ft_user_stopword_table` is not set, the table set by [innodb_ft_server_stopword_table](../../../../../ref/storage-engines/innodb/innodb-system-variables.md) is used.
-* If neither variable is set, the built-in list is used, which can be viewed by querying the [INNODB_FT_DEFAULT_STOPWORD table](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_ft_default_stopword-table.md) in the [Information Schema](../../../../../ref/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
+* If the [innodb_ft_user_stopword_table](../../../../../reference/storage-engines/innodb/innodb-system-variables.md) system variable is set, that table is used as a stopword list.
+* If `innodb_ft_user_stopword_table` is not set, the table set by [innodb_ft_server_stopword_table](../../../../../reference/storage-engines/innodb/innodb-system-variables.md) is used.
+* If neither variable is set, the built-in list is used, which can be viewed by querying the [INNODB_FT_DEFAULT_STOPWORD table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_ft_default_stopword-table.md) in the [Information Schema](../../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
 
 
-In the first two cases, the specified table must exist at the time the system variable is set and the full-text index created. It must be an InnoDB table with a single column, a [VARCHAR](../../../../../ref/data-types/string-data-types/varchar.md) named VALUE.
+In the first two cases, the specified table must exist at the time the system variable is set and the full-text index created. It must be an InnoDB table with a single column, a [VARCHAR](../../../../../reference/data-types/string-data-types/varchar.md) named VALUE.
 
 
 The default InnoDB stopword list differs from the default MyISAM list, being much shorter, and contains the following words:

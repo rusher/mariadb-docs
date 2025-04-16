@@ -29,37 +29,37 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [alter_algorithm](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) |
 | [analyze_sample_percentage](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#analyze_sample_percentage) |
 | --[ansii](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-a-ansi) |
-| [aria_block_size](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_checkpoint_interval](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_checkpoint_log_activity](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_encrypt_tables](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_force_start_after_recovery_failures](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_group_commit](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_group_commit_interval](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_log_dir_path](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_log_file_size](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_log_purge_type](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_max_sort_file_size](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_page_checksum](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_pagecache_age_threshold](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [Aria_pagecache_blocks_not_flushed](../../ref/storage-engines/aria/aria-status-variables.md) |
-| [Aria_pagecache_blocks_unused](../../ref/storage-engines/aria/aria-status-variables.md) |
-| [Aria_pagecache_blocks_used](../../ref/storage-engines/aria/aria-status-variables.md) |
-| [aria_pagecache_buffer_size](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_pagecache_division_limit](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_pagecache_file_hash_size](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [Aria_pagecache_read_requests](../../ref/storage-engines/aria/aria-status-variables.md) |
-| [Aria_pagecache_reads](../../ref/storage-engines/aria/aria-status-variables.md) |
-| [Aria_pagecache_write_requests](../../ref/storage-engines/aria/aria-status-variables.md) |
-| [Aria_pagecache_writes](../../ref/storage-engines/aria/aria-status-variables.md) |
-| [aria_recover](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_recover_options](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_repair_threads](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_sort_buffer_size](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_stats_method](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [aria_sync_log_dir](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [Aria_transaction_log_syncs](../../ref/storage-engines/aria/aria-status-variables.md) |
-| [aria_used_for_temp_tables](../../ref/storage-engines/aria/aria-system-variables.md) |
+| [aria_block_size](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_checkpoint_interval](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_checkpoint_log_activity](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_encrypt_tables](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_force_start_after_recovery_failures](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_group_commit](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_group_commit_interval](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_log_dir_path](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_log_file_size](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_log_purge_type](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_max_sort_file_size](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_page_checksum](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_pagecache_age_threshold](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [Aria_pagecache_blocks_not_flushed](../../reference/storage-engines/aria/aria-status-variables.md) |
+| [Aria_pagecache_blocks_unused](../../reference/storage-engines/aria/aria-status-variables.md) |
+| [Aria_pagecache_blocks_used](../../reference/storage-engines/aria/aria-status-variables.md) |
+| [aria_pagecache_buffer_size](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_pagecache_division_limit](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_pagecache_file_hash_size](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [Aria_pagecache_read_requests](../../reference/storage-engines/aria/aria-status-variables.md) |
+| [Aria_pagecache_reads](../../reference/storage-engines/aria/aria-status-variables.md) |
+| [Aria_pagecache_write_requests](../../reference/storage-engines/aria/aria-status-variables.md) |
+| [Aria_pagecache_writes](../../reference/storage-engines/aria/aria-status-variables.md) |
+| [aria_recover](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_recover_options](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_repair_threads](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_sort_buffer_size](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_stats_method](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [aria_sync_log_dir](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [Aria_transaction_log_syncs](../../reference/storage-engines/aria/aria-status-variables.md) |
+| [aria_used_for_temp_tables](../../reference/storage-engines/aria/aria-system-variables.md) |
 | [autocommit](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) |
 | [auto_increment_increment](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) |
 | [auto_increment_offset](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) |
@@ -119,21 +119,21 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Busy_time](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#busy_time) |
 | [Bytes_received](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#bytes_received) |
 | [Bytes_sent](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#bytes_sent) |
-| [cassandra_default_thrift_host](../../ref/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_default_thrift_host) |
-| [cassandra_failure_retries](../../ref/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_failure_retries) |
-| [cassandra_insert_batch_size](../../ref/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_insert_batch_size) |
-| [cassandra_multiget_batch_size](../../ref/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_multiget_batch_size) |
-| [Cassandra_multiget_keys_scanned](../../ref/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_multiget_keys_scanned) |
-| [Cassandra_multiget_reads](../../ref/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_multiget_reads) |
-| [Cassandra_multiget_rows_read](../../ref/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_multiget_rows_read) |
-| [Cassandra_network_exceptions](../../ref/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_network_exceptions) |
-| [cassandra_read_consistency](../../ref/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_read_consistency) |
-| [cassandra_rnd_batch_size](../../ref/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_rnd_batch_size) |
-| [Cassandra_row_inserts](../../ref/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_row_inserts) |
-| [Cassandra_row_insert_batches](../../ref/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_row_insert_batches) |
-| [Cassandra_timeout_exceptions](../../ref/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_timeout_exceptions) |
-| [Cassandra_unavailable_exceptions](../../ref/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_unavailable_exceptions) |
-| [cassandra_write_consistency](../../ref/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_write_consistency) |
+| [cassandra_default_thrift_host](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_default_thrift_host) |
+| [cassandra_failure_retries](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_failure_retries) |
+| [cassandra_insert_batch_size](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_insert_batch_size) |
+| [cassandra_multiget_batch_size](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_multiget_batch_size) |
+| [Cassandra_multiget_keys_scanned](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_multiget_keys_scanned) |
+| [Cassandra_multiget_reads](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_multiget_reads) |
+| [Cassandra_multiget_rows_read](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_multiget_rows_read) |
+| [Cassandra_network_exceptions](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_network_exceptions) |
+| [cassandra_read_consistency](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_read_consistency) |
+| [cassandra_rnd_batch_size](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_rnd_batch_size) |
+| [Cassandra_row_inserts](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_row_inserts) |
+| [Cassandra_row_insert_batches](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_row_insert_batches) |
+| [Cassandra_timeout_exceptions](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_timeout_exceptions) |
+| [Cassandra_unavailable_exceptions](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_unavailable_exceptions) |
+| [cassandra_write_consistency](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_write_consistency) |
 | [character_set_client](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_client) |
 | --[character-set-client-handshake](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-character-set-client-handshake) |
 | [character_set_collations](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_collations) |
@@ -341,25 +341,25 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [completion_type](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#completion_type) |
 | [Compression](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#compression) |
 | [concurrent_insert](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#concurrent_insert) |
-| [connect_class_path](../../ref/storage-engines/connect/connect-system-variables.md#connect_class_path) |
-| [connect_cond_push](../../ref/storage-engines/connect/connect-system-variables.md#connect_cond_push) |
-| [connect_conv_size](../../ref/storage-engines/connect/connect-system-variables.md#connect_conv_size) |
-| [connect_default_depth](../../ref/storage-engines/connect/connect-system-variables.md#connect_default_depth) |
-| [connect_default_prec](../../ref/storage-engines/connect/connect-system-variables.md#connect_default_prec) |
-| [connect_enable_mongo](../../ref/storage-engines/connect/connect-system-variables.md#connect_enable_mongo) |
-| [connect_exact_info](../../ref/storage-engines/connect/connect-system-variables.md#connect_exact_info) |
-| [connect_force_bson](../../ref/storage-engines/connect/connect-system-variables.md#connect_force_bson) |
-| [connect_indx_map](../../ref/storage-engines/connect/connect-system-variables.md#connect_indx_map) |
-| [connect_java_wrapper](../../ref/storage-engines/connect/connect-system-variables.md#connect_java_wrapper) |
-| [connect_json_all_path](../../ref/storage-engines/connect/connect-system-variables.md#connect_json_all_path) |
-| [connect_json_grp_size](../../ref/storage-engines/connect/connect-system-variables.md#connect_json_grp_size) |
-| [connect_json_null](../../ref/storage-engines/connect/connect-system-variables.md#connect_json_null) |
-| [connect_jvm_path](../../ref/storage-engines/connect/connect-system-variables.md#connect_jvm_path) |
+| [connect_class_path](../../reference/storage-engines/connect/connect-system-variables.md#connect_class_path) |
+| [connect_cond_push](../../reference/storage-engines/connect/connect-system-variables.md#connect_cond_push) |
+| [connect_conv_size](../../reference/storage-engines/connect/connect-system-variables.md#connect_conv_size) |
+| [connect_default_depth](../../reference/storage-engines/connect/connect-system-variables.md#connect_default_depth) |
+| [connect_default_prec](../../reference/storage-engines/connect/connect-system-variables.md#connect_default_prec) |
+| [connect_enable_mongo](../../reference/storage-engines/connect/connect-system-variables.md#connect_enable_mongo) |
+| [connect_exact_info](../../reference/storage-engines/connect/connect-system-variables.md#connect_exact_info) |
+| [connect_force_bson](../../reference/storage-engines/connect/connect-system-variables.md#connect_force_bson) |
+| [connect_indx_map](../../reference/storage-engines/connect/connect-system-variables.md#connect_indx_map) |
+| [connect_java_wrapper](../../reference/storage-engines/connect/connect-system-variables.md#connect_java_wrapper) |
+| [connect_json_all_path](../../reference/storage-engines/connect/connect-system-variables.md#connect_json_all_path) |
+| [connect_json_grp_size](../../reference/storage-engines/connect/connect-system-variables.md#connect_json_grp_size) |
+| [connect_json_null](../../reference/storage-engines/connect/connect-system-variables.md#connect_json_null) |
+| [connect_jvm_path](../../reference/storage-engines/connect/connect-system-variables.md#connect_jvm_path) |
 | [connect_timeout](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#connect_timeout) |
-| [connect_type_conv](../../ref/storage-engines/connect/connect-system-variables.md#connect_type_conv) |
-| [connect_use_tempfile](../../ref/storage-engines/connect/connect-system-variables.md#connect_use_tempfile) |
-| [connect_work_size](../../ref/storage-engines/connect/connect-system-variables.md#connect_work_size) |
-| [connect_xtrace](../../ref/storage-engines/connect/connect-system-variables.md#connect_xtrace) |
+| [connect_type_conv](../../reference/storage-engines/connect/connect-system-variables.md#connect_type_conv) |
+| [connect_use_tempfile](../../reference/storage-engines/connect/connect-system-variables.md#connect_use_tempfile) |
+| [connect_work_size](../../reference/storage-engines/connect/connect-system-variables.md#connect_work_size) |
+| [connect_xtrace](../../reference/storage-engines/connect/connect-system-variables.md#connect_xtrace) |
 | [Connection_errors_accept](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_accept) |
 | [Connection_errors_internal](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_internal) |
 | [Connection_errors_max_connections](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_max_connections) |
@@ -370,18 +370,18 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [--console](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-console) |
 | [core_file](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#core_file) |
 | [Cpu_time](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#cpu_time) |
-| --[cracklib-password-check](../../ref/plugins/password-validation-plugins/cracklib-password-check-plugin.md) |
-| [cracklib_password_check-dictionary](../../ref/plugins/password-validation-plugins/cracklib-password-check-plugin.md) |
+| --[cracklib-password-check](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) |
+| [cracklib_password_check-dictionary](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) |
 | [Created_tmp_disk_tables](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#created_tmp_disk_tables) |
 | [Created_tmp_files](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#created_tmp_files) |
 | [Created_tmp_tables](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#created_tmp_tables) |
 | -h, [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) |
 | [date_format](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#date_format) |
 | [datetime_format](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datetime_format) |
-| [deadlock_search_depth_long](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [deadlock_search_depth_short](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [deadlock_timeout_long](../../ref/storage-engines/aria/aria-system-variables.md) |
-| [deadlock_timeout_short](../../ref/storage-engines/aria/aria-system-variables.md) |
+| [deadlock_search_depth_long](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [deadlock_search_depth_short](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [deadlock_timeout_long](../../reference/storage-engines/aria/aria-system-variables.md) |
+| [deadlock_timeout_short](../../reference/storage-engines/aria/aria-system-variables.md) |
 | -#, [debug](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#debug) |
 | [--debug-assert-if-crashed-table](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [--debug-binlog-fsync-sleep](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
@@ -413,7 +413,7 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | --[des-key-file](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [disconnect_on_expired_password](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#disconnect_on_expired_password) |
 | --[disconnect-slave-event-count](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
-| --[disks](../../ref/plugins/other-plugins/disks-plugin.md#disks) |
+| --[disks](../../reference/plugins/other-plugins/disks-plugin.md#disks) |
 | [div_precision_increment](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#div_precision_increment) |
 | [Empty_queries](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#empty_queries) |
 | [encrypt_binlog](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_binlog) |
@@ -451,13 +451,13 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Feature_trigger](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#feature_trigger) |
 | [Feature_window_functions](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#feature_window_functions) |
 | [Feature_xml](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#feature_xml) |
-| --[feedback](../../ref/plugins/other-plugins/feedback-plugin.md#feedback) |
-| [feedback_http_proxy](../../ref/plugins/other-plugins/feedback-plugin.md#feedback_http_proxy) |
-| [feedback_send_retry_wait](../../ref/plugins/other-plugins/feedback-plugin.md#feedback_send_retry_wait) |
-| [feedback_send_timeout](../../ref/plugins/other-plugins/feedback-plugin.md#feedback_send_timeout) |
-| [feedback_server_uid](../../ref/plugins/other-plugins/feedback-plugin.md#feedback_server_uid) |
-| [feedback_url](../../ref/plugins/other-plugins/feedback-plugin.md#feedback_url) |
-| [feedback_user_info](../../ref/plugins/other-plugins/feedback-plugin.md#feedback_user_info) |
+| --[feedback](../../reference/plugins/other-plugins/feedback-plugin.md#feedback) |
+| [feedback_http_proxy](../../reference/plugins/other-plugins/feedback-plugin.md#feedback_http_proxy) |
+| [feedback_send_retry_wait](../../reference/plugins/other-plugins/feedback-plugin.md#feedback_send_retry_wait) |
+| [feedback_send_timeout](../../reference/plugins/other-plugins/feedback-plugin.md#feedback_send_timeout) |
+| [feedback_server_uid](../../reference/plugins/other-plugins/feedback-plugin.md#feedback_server_uid) |
+| [feedback_url](../../reference/plugins/other-plugins/feedback-plugin.md#feedback_url) |
+| [feedback_user_info](../../reference/plugins/other-plugins/feedback-plugin.md#feedback_user_info) |
 | [file_key_management_encryption_algorithm](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#file_key_management_encryption_algorithm) |
 | [file_key_management_filekey](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#file_key_management_filekey) |
 | [file_key_management_filename](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#file_key_management_filename) |
@@ -476,9 +476,9 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [general_log_file](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file) |
 | --[getopt-prefix-matching](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [group_concat_max_len](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#group_concat_max_len) |
-| [gssapi_keytab_path](../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md#gssapi_keytab_path) |
-| [gssapi_principal_name](../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md#gssapi_principal_name) |
-| [gssapi_mech_name](../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md#gssapi_mech_name) |
+| [gssapi_keytab_path](../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#gssapi_keytab_path) |
+| [gssapi_principal_name](../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#gssapi_principal_name) |
+| [gssapi_mech_name](../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#gssapi_mech_name) |
 | [gtid_binlog_pos](../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) |
 | [gtid_binlog_state](../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) |
 | --[gtid-cleanup-batch-size](../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md), [gtid_cleanup_batch_size](../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_cleanup_batch_size) |
@@ -517,22 +517,22 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Handler_tmp_write](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#handler_tmp_write) |
 | [Handler_update](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#handler_update) |
 | [Handler_write](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#handler_write) |
-| [handlersocket_accept_balance](../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_accept_balance) |
-| [handlersocket_address](../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_address) |
-| [handlersocket_backlog](../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_backlog) |
-| [handlersocket_epoll](../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_epoll) |
-| [handlersocket_plain_secret](../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_plain_secret) |
-| [handlersocket_plain_secret_wr](../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_plain_secret_wr) |
-| [handlersocket_port](../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_port) |
-| [handlersocket_port_wr](../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_port_wr) |
-| [handlersocket_rcvbuf](../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_rcvbuf) |
-| [handlersocket_readsize](../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_readsize) |
-| [handlersocket_sndbuf](../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_sndbuf) |
-| [handlersocket_threads](../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_threads) |
-| [handlersocket_threads_wr](../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_threads_wr) |
-| [handlersocket_timeout](../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_timeout) |
-| [handlersocket_verbose](../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_verbose) |
-| [handlersocket_wrlock_timeout](../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_wrlock_timeout) |
+| [handlersocket_accept_balance](../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_accept_balance) |
+| [handlersocket_address](../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_address) |
+| [handlersocket_backlog](../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_backlog) |
+| [handlersocket_epoll](../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_epoll) |
+| [handlersocket_plain_secret](../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_plain_secret) |
+| [handlersocket_plain_secret_wr](../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_plain_secret_wr) |
+| [handlersocket_port](../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_port) |
+| [handlersocket_port_wr](../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_port_wr) |
+| [handlersocket_rcvbuf](../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_rcvbuf) |
+| [handlersocket_readsize](../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_readsize) |
+| [handlersocket_sndbuf](../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_sndbuf) |
+| [handlersocket_threads](../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_threads) |
+| [handlersocket_threads_wr](../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_threads_wr) |
+| [handlersocket_timeout](../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_timeout) |
+| [handlersocket_verbose](../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_verbose) |
+| [handlersocket_wrlock_timeout](../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_wrlock_timeout) |
 | [hashicorp-key-management-cache-timeout](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-cache-timeout) |
 | [hashicorp-key-management-cache-version-timeout](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-cache-version-timeout) |
 | [hashicorp-key-management-caching-enabled](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-caching-enabled) |
@@ -548,7 +548,7 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [have_csv](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#have_csv) |
 | [have_dynamic_loading](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#have_dynamic_loading) |
 | [have_geometry](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#have_geometry) |
-| [have_innodb](../../ref/storage-engines/innodb/innodb-system-variables.md#have_innodb) |
+| [have_innodb](../../reference/storage-engines/innodb/innodb-system-variables.md#have_innodb) |
 | [have_ndbcluster](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#have_ndbcluster) |
 | [have_openssl](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md) |
 | [have_partitioning](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#have_partitioning) |
@@ -567,7 +567,7 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [idle_transaction_timeout](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#idle_transaction_timeout) |
 | [idle_write_transaction_timeout](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#idle_write_transaction_timeout) |
 | [ignore_db_dirs](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#ignore_db_dirs) |
-| [ignore_builtin_innodb](../../ref/storage-engines/innodb/innodb-system-variables.md#ignore_builtin_innodb) |
+| [ignore_builtin_innodb](../../reference/storage-engines/innodb/innodb-system-variables.md#ignore_builtin_innodb) |
 | [in_predicate_conversion_threshold](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#in_predicate_conversion_threshold) |
 | [in_transaction](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#in_transaction) |
 | [init_connect](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#init_connect) |
@@ -575,25 +575,25 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | --[init-rpl-role](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [init_slave](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) |
 | --[innodb](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [innodb_adaptive_checkpoint](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_checkpoint) |
-| [innodb_adaptive_flushing](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing) |
-| [innodb_adaptive_flushing_lwm](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_lwm) |
-| [innodb_adaptive_flushing_method](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_method) |
+| [innodb_adaptive_checkpoint](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_checkpoint) |
+| [innodb_adaptive_flushing](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing) |
+| [innodb_adaptive_flushing_lwm](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_lwm) |
+| [innodb_adaptive_flushing_method](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_method) |
 | [Innodb_adaptive_hash_cells](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_adaptive_hash_cells) |
 | [Innodb_adaptive_hash_hash_searches](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_adaptive_hash_hash_searches) |
 | [Innodb_adaptive_hash_heap_buffers](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_adaptive_hash_heap_buffers) |
-| [innodb_adaptive_hash_index](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) |
-| [innodb_adaptive_hash_index_partitions](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_partitions) |
-| [innodb_adaptive_hash_index_parts](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_parts) |
+| [innodb_adaptive_hash_index](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) |
+| [innodb_adaptive_hash_index_partitions](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_partitions) |
+| [innodb_adaptive_hash_index_parts](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_parts) |
 | [Innodb_adaptive_hash_non_hash_searches](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_adaptive_hash_non_hash_searches) |
-| [innodb_adaptive_max_sleep_delay](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay) |
-| [innodb_additional_mem_pool_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_additional_mem_pool_size) |
-| [innodb_alter_copy_bulk](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_alter_copy_bulk) |
-| [innodb_api_bk_commit_interval](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_api_bk_commit_interval) |
-| [innodb_api_disable_rowlock](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_api_disable_rowlock) |
-| [innodb_api_enable_binlog](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_binlog) |
-| [innodb_api_enable_mdl](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_mdl) |
-| [innodb_api_trx_level](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_api_trx_level) |
+| [innodb_adaptive_max_sleep_delay](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay) |
+| [innodb_additional_mem_pool_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_additional_mem_pool_size) |
+| [innodb_alter_copy_bulk](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_alter_copy_bulk) |
+| [innodb_api_bk_commit_interval](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_bk_commit_interval) |
+| [innodb_api_disable_rowlock](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_disable_rowlock) |
+| [innodb_api_enable_binlog](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_binlog) |
+| [innodb_api_enable_mdl](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_mdl) |
+| [innodb_api_trx_level](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_trx_level) |
 | [Innodb_async_reads_pending](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_pending) |
 | [Innodb_async_reads_queue_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_queue_size) |
 | [Innodb_async_reads_tasks_running](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_tasks_running) |
@@ -606,32 +606,32 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Innodb_async_writes_total_enqueues](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_total_enqueues) |
 | [Innodb_async_writes_total_count](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_total_count) |
 | [Innodb_async_writes_wait_slot_sec](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_wait_slot_sec) |
-| [innodb-auto-lru-dump](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_auto_lru_dump) |
-| [innodb_autoextend_increment](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_autoextend_increment) |
-| [innodb_autoinc_lock_mode](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_autoinc_lock_mode) |
+| [innodb-auto-lru-dump](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_auto_lru_dump) |
+| [innodb_autoextend_increment](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_autoextend_increment) |
+| [innodb_autoinc_lock_mode](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_autoinc_lock_mode) |
 | [Innodb_available_undo_logs](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_available_undo_logs) |
 | [Innodb_background_log_sync](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_background_log_sync) |
-| [innodb_background_scrub_data_check_interval](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_check_interval) |
-| [innodb_background_scrub_data_compressed](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_compressed) |
-| [innodb_background_scrub_data_interval](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_interval) |
-| [innodb_background_scrub_data_uncompressed](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_uncompressed) |
-| [innodb_blocking_buffer_pool_restore](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_blocking_buffer_pool_restore) |
-| [innodb_buf_dump_status_frequency](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buf_dump_status_frequency) |
+| [innodb_background_scrub_data_check_interval](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_check_interval) |
+| [innodb_background_scrub_data_compressed](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_compressed) |
+| [innodb_background_scrub_data_interval](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_interval) |
+| [innodb_background_scrub_data_uncompressed](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_uncompressed) |
+| [innodb_blocking_buffer_pool_restore](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_blocking_buffer_pool_restore) |
+| [innodb_buf_dump_status_frequency](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buf_dump_status_frequency) |
 | [Innodb_buffer_pool_bytes_data](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_bytes_data) |
 | [Innodb_buffer_pool_bytes_dirty](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_bytes_dirty) |
-| [innodb_buffer_pool_chunk_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_chunk_size) |
-| [innodb_buffer_pool_dump_at_shutdown](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_at_shutdown) |
-| [innodb_buffer_pool_dump_now](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_now) |
-| [innodb_buffer_pool_dump_pct](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_pct) |
+| [innodb_buffer_pool_chunk_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_chunk_size) |
+| [innodb_buffer_pool_dump_at_shutdown](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_at_shutdown) |
+| [innodb_buffer_pool_dump_now](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_now) |
+| [innodb_buffer_pool_dump_pct](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_pct) |
 | [Innodb_buffer_pool_dump_status](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_dump_status) |
-| [innodb_buffer_pool_evict](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_evict) |
-| [innodb_buffer_pool_filename](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_filename) |
-| [innodb_buffer_pool_instances](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances) |
-| [innodb_buffer_pool_load_abort](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_abort) |
-| [innodb_buffer_pool_load_at_startup](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_at_startup) |
-| [innodb_buffer_pool_load_now](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_now) |
+| [innodb_buffer_pool_evict](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_evict) |
+| [innodb_buffer_pool_filename](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_filename) |
+| [innodb_buffer_pool_instances](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances) |
+| [innodb_buffer_pool_load_abort](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_abort) |
+| [innodb_buffer_pool_load_at_startup](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_at_startup) |
+| [innodb_buffer_pool_load_now](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_now) |
 | [Innodb_buffer_pool_load_incomplete](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_load_pagesincomplete) |
-| [innodb_buffer_pool_load_pages_abort](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_pages_abort) |
+| [innodb_buffer_pool_load_pages_abort](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_pages_abort) |
 | [Innodb_buffer_pool_load_status](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_load_status) |
 | [Innodb_buffer_pool_pages_data](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_data) |
 | [Innodb_buffer_pool_pages_dirty](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_dirty) |
@@ -644,50 +644,50 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Innodb_buffer_pool_pages_misc](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_misc) |
 | [Innodb_buffer_pool_pages_old](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_old) |
 | [Innodb_buffer_pool_pages_total](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_total) |
-| [innodb_buffer_pool_populate](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_populate) |
+| [innodb_buffer_pool_populate](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_populate) |
 | [Innodb_buffer_pool_read_ahead](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_read_ahead) |
 | [Innodb_buffer_pool_read_ahead_evicted](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_read_ahead_evicted) |
 | [Innodb_buffer_pool_read_ahead_rnd](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_read_ahead_rnd) |
 | [Innodb_buffer_pool_read_requests](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_read_requests) |
 | [Innodb_buffer_pool_reads](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_reads) |
 | [Innodb_buffer_pool_resize_status](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_resize_status) |
-| [innodb_buffer_pool_restore_at_startup](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_restore_at_startup) |
-| [innodb_buffer_pool_shm_checksum](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_shm_checksum) |
-| [innodb_buffer_pool_shm_key](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_shm_key) |
-| [innodb_buffer_pool_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) |
+| [innodb_buffer_pool_restore_at_startup](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_restore_at_startup) |
+| [innodb_buffer_pool_shm_checksum](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_shm_checksum) |
+| [innodb_buffer_pool_shm_key](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_shm_key) |
+| [innodb_buffer_pool_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) |
 | [Innodb_buffer_pool_wait_free](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_wait_free) |
 | [Innodb_buffer_pool_write_requests](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_write_requests) |
 | [Innodb_buffered_aio_submitted](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffered_aio_submitted) |
-| [innodb_change_buffer_dump](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffer_dump) |
-| [innodb_change_buffer_max_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffer_max_size) |
-| [innodb_change_buffering](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering) |
-| [innodb_change_buffering_debug](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering_debug) |
+| [innodb_change_buffer_dump](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffer_dump) |
+| [innodb_change_buffer_max_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffer_max_size) |
+| [innodb_change_buffering](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering) |
+| [innodb_change_buffering_debug](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering_debug) |
 | [Innodb_checkpoint_age](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_checkpoint_age) |
-| --[innodb-checkpoint-age-target](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_checkpoint_age_target), [innodb_checkpoint_age_target](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_checkpoint_age_target) |
+| --[innodb-checkpoint-age-target](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checkpoint_age_target), [innodb_checkpoint_age_target](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checkpoint_age_target) |
 | [Innodb_checkpoint_max_age](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_checkpoint_max_age) |
 | [Innodb_checkpoint_target_age](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_checkpoint_target_age) |
-| --[innodb-checksum-algorithm](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm), [innodb_checksum_algorithm](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) |
-| --[innodb-checksums](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_checksums), [innodb_checksums](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_checksums) |
-| --[innodb-cleaner-lsn-age-factor](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_cleaner_lsn_age_factor), [innodb_cleaner_lsn_age_factor](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_cleaner_lsn_age_factor) |
+| --[innodb-checksum-algorithm](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm), [innodb_checksum_algorithm](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) |
+| --[innodb-checksums](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksums), [innodb_checksums](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksums) |
+| --[innodb-cleaner-lsn-age-factor](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_cleaner_lsn_age_factor), [innodb_cleaner_lsn_age_factor](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_cleaner_lsn_age_factor) |
 | --[innodb-cmp](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
-| --[innodb-cmp-per-index-enabled](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_cmp_per_index_enabled), [innodb_cmp_per_index_enabled](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_cmp_per_index_enabled) |
+| --[innodb-cmp-per-index-enabled](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_cmp_per_index_enabled), [innodb_cmp_per_index_enabled](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_cmp_per_index_enabled) |
 | --[innodb-cmp-reset](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[innodb-cmpmem](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[innodb-cmpmem-reset](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
-| --[innodb-commit-concurrency](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_commit_concurrency), [innodb_commit_concurrency](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_commit_concurrency) |
-| --[innodb-compression-algorithm](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_compression_algorithm), [innodb_compression_algorithm](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_compression_algorithm) |
-| --[innodb-compression-default](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_compression_default), [innodb_compression_default](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_compression_default) |
-| --[innodb-compression-failure-threshold-pct](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_compression_failure_threshold_pct), [innodb_compression_failure_threshold_pct](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_compression_failure_threshold_pct) |
-| --[innodb-compression-level](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_compression_level), [innodb_compression_level](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_compression_level) |
-| --[innodb-compression-pad-pct-max](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_compression_pad_pct_max), [innodb_compression_pad_pct_max](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_compression_pad_pct_max) |
-| --[innodb-concurrency-tickets](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_concurrency_tickets), [innodb_concurrency_tickets](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_concurrency_tickets) |
-| --[innodb-corrupt-table-action](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_corrupt_table_action), [innodb_corrupt_table_action](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_corrupt_table_action) |
+| --[innodb-commit-concurrency](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_commit_concurrency), [innodb_commit_concurrency](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_commit_concurrency) |
+| --[innodb-compression-algorithm](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_algorithm), [innodb_compression_algorithm](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_algorithm) |
+| --[innodb-compression-default](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_default), [innodb_compression_default](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_default) |
+| --[innodb-compression-failure-threshold-pct](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_failure_threshold_pct), [innodb_compression_failure_threshold_pct](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_failure_threshold_pct) |
+| --[innodb-compression-level](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_level), [innodb_compression_level](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_level) |
+| --[innodb-compression-pad-pct-max](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_pad_pct_max), [innodb_compression_pad_pct_max](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_pad_pct_max) |
+| --[innodb-concurrency-tickets](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_concurrency_tickets), [innodb_concurrency_tickets](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_concurrency_tickets) |
+| --[innodb-corrupt-table-action](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_corrupt_table_action), [innodb_corrupt_table_action](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_corrupt_table_action) |
 | [Innodb_current_row_locks](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_current_row_locks) |
-| --[innodb-data-file-buffering](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_buffering), [innodb_data_file_buffering](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_buffering) |
-| --[innodb-data-file-path](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_path), [innodb_data_file_path](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_path) |
-| --[innodb-data-file-write_through](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_write_through), [innodb_data_file_write_through](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_write_through) |
+| --[innodb-data-file-buffering](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_buffering), [innodb_data_file_buffering](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_buffering) |
+| --[innodb-data-file-path](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_path), [innodb_data_file_path](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_path) |
+| --[innodb-data-file-write_through](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_write_through), [innodb_data_file_write_through](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_write_through) |
 | [Innodb_data_fsyncs](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_fsyncs) |
-| --[innodb-data-home-dir](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_data_home_dir), [innodb_data_home_dir](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_data_home_dir) |
+| --[innodb-data-home-dir](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_home_dir), [innodb_data_home_dir](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_home_dir) |
 | [Innodb_data_pending_fsyncs](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_pending_fsyncs) |
 | [Innodb_data_pending_reads](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_pending_reads) |
 | [Innodb_data_pending_writes](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_pending_writes) |
@@ -697,32 +697,32 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Innodb_data_written](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_written) |
 | [Innodb_dblwr_pages_written](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_dblwr_pages_written) |
 | [Innodb_dblwr_writes](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_dblwr_writes) |
-| --[innodb-deadlock-detect](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_detect), [innodb_deadlock_detect](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_detect) |
-| --[innodb-deadlock-report](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_report), [innodb_deadlock_report](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_report) |
+| --[innodb-deadlock-detect](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_detect), [innodb_deadlock_detect](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_detect) |
+| --[innodb-deadlock-report](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_report), [innodb_deadlock_report](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_report) |
 | [Innodb_deadlocks](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_deadlocks) |
-| --[innodb-default-encryption-key-id](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id), [innodb_default_encryption_key_id](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id) |
-| --[innodb-default-page-encryption-key](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_default_page_encryption_key), [innodb_default_page_encryption_key](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_default_page_encryption_key) |
-| --[innodb-default-row-format](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_default_row_format), [innodb_default_row_format](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_default_row_format) |
-| --[innodb-defragment](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment), [innodb_defragment](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment) |
+| --[innodb-default-encryption-key-id](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id), [innodb_default_encryption_key_id](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id) |
+| --[innodb-default-page-encryption-key](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_page_encryption_key), [innodb_default_page_encryption_key](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_page_encryption_key) |
+| --[innodb-default-row-format](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_row_format), [innodb_default_row_format](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_row_format) |
+| --[innodb-defragment](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment), [innodb_defragment](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment) |
 | [Innodb_defragment_compression_failures](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_defragment_compression_failures) |
 | [Innodb_defragment_count](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_defragment_count) |
 | [Innodb_defragment_failures](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_defragment_failures) |
-| --[innodb-defragment-fill-factor](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor), [innodb_defragment_fill_factor](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor) |
-| --[innodb-defragment-fill-factor-n-recs](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor_n_recs), [innodb_defragment_fill_factor_n_recs](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor_n_recs) |
-| --[innodb-defragment-frequency](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_frequency), [innodb_defragment_frequency](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_frequency) |
-| --[innodb-defragment-n-pages](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages), [innodb_defragment_n_pages](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages) |
-| --[innodb-defragment-stats-accuracy](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_stats_accuracy), [innodb_defragment_stats_accuracy](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_stats_accuracy) |
-| --[innodb-dict-size-limit](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_dict_size_limit), [innodb_dict_size_limit](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_dict_size_limit) |
+| --[innodb-defragment-fill-factor](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor), [innodb_defragment_fill_factor](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor) |
+| --[innodb-defragment-fill-factor-n-recs](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor_n_recs), [innodb_defragment_fill_factor_n_recs](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor_n_recs) |
+| --[innodb-defragment-frequency](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_frequency), [innodb_defragment_frequency](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_frequency) |
+| --[innodb-defragment-n-pages](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages), [innodb_defragment_n_pages](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages) |
+| --[innodb-defragment-stats-accuracy](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_stats_accuracy), [innodb_defragment_stats_accuracy](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_stats_accuracy) |
+| --[innodb-dict-size-limit](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_dict_size_limit), [innodb_dict_size_limit](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_dict_size_limit) |
 | [Innodb_dict_tables](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_dict_tables) |
-| --[innodb-disable-sort-file-cache](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_disable_sort_file_cache), [innodb_disable_sort_file_cache](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_disable_sort_file_cache) |
-| [innodb_disallow_writes](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_disallow_writes) |
-| --[innodb-doublewrite](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite), [innodb_doublewrite](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite) |
-| --[innodb-doublewrite-file](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite_file), [innodb_doublewrite_file](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite_file) |
-| --[innodb_empty-free-list-algorithm](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_empty_free_list_algorithm), [innodb_empty_free_list_algorithm](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_empty_free_list_algorithm) |
-| --[innodb-enable-unsafe-group-commit](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_enable_unsafe_group_commit), [innodb_enable_unsafe_group_commit](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_enable_unsafe_group_commit) |
-| --[innodb-encrypt-log](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log), [innodb_encrypt_log](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) |
-| --[innodb-encrypt-tables](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables), [innodb_encrypt_tables](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) |
-| --[innodb-encrypt-temporary-tables](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables), [innodb_encrypt_temporary_tables](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables) |
+| --[innodb-disable-sort-file-cache](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_disable_sort_file_cache), [innodb_disable_sort_file_cache](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_disable_sort_file_cache) |
+| [innodb_disallow_writes](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_disallow_writes) |
+| --[innodb-doublewrite](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite), [innodb_doublewrite](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite) |
+| --[innodb-doublewrite-file](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite_file), [innodb_doublewrite_file](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite_file) |
+| --[innodb_empty-free-list-algorithm](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_empty_free_list_algorithm), [innodb_empty_free_list_algorithm](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_empty_free_list_algorithm) |
+| --[innodb-enable-unsafe-group-commit](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_enable_unsafe_group_commit), [innodb_enable_unsafe_group_commit](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_enable_unsafe_group_commit) |
+| --[innodb-encrypt-log](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log), [innodb_encrypt_log](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) |
+| --[innodb-encrypt-tables](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables), [innodb_encrypt_tables](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) |
+| --[innodb-encrypt-temporary-tables](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables), [innodb_encrypt_temporary_tables](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables) |
 | [Innodb_encryption_n_merge_blocks_decrypted](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_merge_blocks_decrypted) |
 | [Innodb_encryption_n_merge_blocks_encrypted](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_merge_blocks_encrypted) |
 | [Innodb_encryption_n_rowlog_blocks_decrypted](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_rowlog_blocks_decrypted) |
@@ -730,49 +730,49 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Innodb_encryption_n_temp_blocks_decrypted](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_temp_blocks_decrypted) |
 | [Innodb_encryption_n_temp_blocks_encrypted](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_temp_blocks_encrypted) |
 | [Innodb_encryption_num_key_requests](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_num_key_requests) |
-| --[innodb-encryption-rotate-key-age](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age), [innodb_encryption_rotate_key_age](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age) |
+| --[innodb-encryption-rotate-key-age](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age), [innodb_encryption_rotate_key_age](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age) |
 | [Innodb_encryption_rotation_estimated_iops](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_rotation_estimated_iops) |
-| --[innodb-encryption-rotation-iops](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotation_iops), [innodb_encryption_rotation_iops](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotation_iops) |
+| --[innodb-encryption-rotation-iops](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotation_iops), [innodb_encryption_rotation_iops](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotation_iops) |
 | [Innodb_encryption_rotation_pages_flushed](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_rotation_pages_flushed) |
 | [Innodb_encryption_rotation_pages_modified](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_rotation_pages_modified) |
 | [Innodb_encryption_rotation_pages_read_from_cache](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_rotation_pages_read_from_cache) |
 | [Innodb_encryption_rotation_pages_read_from_disk](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_rotation_pages_read_from_disk) |
-| --[innodb-encryption-threads](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads), [innodb_encryption_threads](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads) |
-| --[innodb-extra-rsegments](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_extra_rsegments), [innodb_extra_rsegments](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_extra_rsegments) |
-| --[innodb-extra-undoslots](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_extra_undoslots), [innodb_extra_undoslots](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_extra_undoslots) |
-| --[innodb-fake-changes](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fake_changes), [innodb_fake_changes](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fake_changes) |
-| --[innodb-fast-checksum](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fast_checksum), [innodb_fast_checksum](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fast_checksum) |
-| --[innodb-fast-shutdown](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown), [innodb_fast_shutdown](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) |
-| --[innodb-fatal-semaphore-wait-threshold](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fatal_semaphore_wait_threshold), [innodb_fatal_semaphore_wait_threshold](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fatal_semaphore_wait_threshold) |
-| --[innodb-file-format](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_file_format), [innodb_file_format](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_file_format) |
-| --[innodb-file-format-check](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_file_format_check), [innodb_file_format_check](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_file_format_check) |
-| --[innodb-file-format-max](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_file_format_max), [innodb_file_format_max](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_file_format_max) |
+| --[innodb-encryption-threads](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads), [innodb_encryption_threads](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads) |
+| --[innodb-extra-rsegments](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_extra_rsegments), [innodb_extra_rsegments](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_extra_rsegments) |
+| --[innodb-extra-undoslots](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_extra_undoslots), [innodb_extra_undoslots](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_extra_undoslots) |
+| --[innodb-fake-changes](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fake_changes), [innodb_fake_changes](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fake_changes) |
+| --[innodb-fast-checksum](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_checksum), [innodb_fast_checksum](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_checksum) |
+| --[innodb-fast-shutdown](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown), [innodb_fast_shutdown](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) |
+| --[innodb-fatal-semaphore-wait-threshold](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fatal_semaphore_wait_threshold), [innodb_fatal_semaphore_wait_threshold](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fatal_semaphore_wait_threshold) |
+| --[innodb-file-format](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_format), [innodb_file_format](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_format) |
+| --[innodb-file-format-check](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_format_check), [innodb_file_format_check](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_format_check) |
+| --[innodb-file-format-max](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_format_max), [innodb_file_format_max](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_format_max) |
 | --[innodb-file-io-threads](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
-| --[innodb-file-per-table](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table), [innodb_file_per_table](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) |
-| --[innodb-fill-factor](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fill_factor), [innodb_fill_factor](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fill_factor) |
-| --[innodb-flush-log-at-timeout](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_log_at_timeout), [innodb_flush_log_at_timeout](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_log_at_timeout) |
-| --[innodb-flush-log-at-trx-commit](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_log_at_trx_commit), [innodb_flush_log_at_trx_commit](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_log_at_trx_commit) |
-| --[innodb-flush-method](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_method), [innodb_flush_method](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_method) |
-| --[innodb-flush-neighbor-pages](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbor_pages), [innodb_flush_neighbor_pages](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbor_pages) |
-| --[innodb-flush-neighbors](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbors), [innodb_flush_neighbors](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbors) |
-| --[innodb-flush-sync](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_sync), [innodb_flush_sync](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_sync) |
-| --[innodb-flushing-avg-loops](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flushing_avg_loops), [innodb_flushing_avg_loops](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flushing_avg_loops) |
-| --[innodb-force-load-corrupted](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_force_load_corrupted), [innodb_force_load_corrupted](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_force_load_corrupted) |
-| --[innodb-force-primary-key](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_force_primary_key), [innodb_force_primary_key](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_force_primary_key) |
-| --[innodb-force-recovery](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery), [innodb_force_recovery](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery) |
-| --[innodb-foreground-preflush](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_foreground_preflush), [innodb_foreground_preflush](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_foreground_preflush) |
-| --[innodb-ft-aux-table](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table), [innodb_ft_aux_table](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table) |
-| --[innodb-ft-cache-size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_cache_size), [innodb_ft_cache_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_cache_size) |
-| --[innodb-ft-enable-diag-print](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_enable_diag_print), [innodb_ft_enable_diag_print](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_enable_diag_print) |
-| --[innodb-ft-enable-stopword](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_enable_stopword), [innodb_ft_enable_stopword](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_enable_stopword) |
-| --[innodb-ft-max-token-size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_max_token_size), [innodb_ft_max_token_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_max_token_size) |
-| --[innodb-ft-min-token-size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_min_token_size), [innodb_ft_min_token_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_min_token_size) |
-| --[innodb-ft-num-word-optimize](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_num_word_optimize), [innodb_ft_num_word_optimize](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_num_word_optimize) |
-| --[innodb-ft-result-cache-limit](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_result_cache_limit), [innodb_ft_result_cache_limit](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_result_cache_limit) |
-| --[innodb-ft-server-stopword-table](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_server_stopword_table), [innodb_ft_server_stopword_table](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_server_stopword_table) |
-| --[innodb-ft-sort-pll-degree](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_sort_pll_degree), [innodb_ft_sort_pll_degree](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_sort_pll_degree) |
-| --[innodb-ft-total-cache-size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_total_cache_size), [innodb_ft_total_cache_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_total_cache_size) |
-| [innodb_ft_user_stopword_table](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_user_stopword_table) |
+| --[innodb-file-per-table](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table), [innodb_file_per_table](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) |
+| --[innodb-fill-factor](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fill_factor), [innodb_fill_factor](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fill_factor) |
+| --[innodb-flush-log-at-timeout](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_log_at_timeout), [innodb_flush_log_at_timeout](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_log_at_timeout) |
+| --[innodb-flush-log-at-trx-commit](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_log_at_trx_commit), [innodb_flush_log_at_trx_commit](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_log_at_trx_commit) |
+| --[innodb-flush-method](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_method), [innodb_flush_method](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_method) |
+| --[innodb-flush-neighbor-pages](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbor_pages), [innodb_flush_neighbor_pages](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbor_pages) |
+| --[innodb-flush-neighbors](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbors), [innodb_flush_neighbors](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbors) |
+| --[innodb-flush-sync](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_sync), [innodb_flush_sync](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_sync) |
+| --[innodb-flushing-avg-loops](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flushing_avg_loops), [innodb_flushing_avg_loops](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flushing_avg_loops) |
+| --[innodb-force-load-corrupted](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_load_corrupted), [innodb_force_load_corrupted](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_load_corrupted) |
+| --[innodb-force-primary-key](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_primary_key), [innodb_force_primary_key](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_primary_key) |
+| --[innodb-force-recovery](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery), [innodb_force_recovery](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery) |
+| --[innodb-foreground-preflush](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_foreground_preflush), [innodb_foreground_preflush](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_foreground_preflush) |
+| --[innodb-ft-aux-table](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table), [innodb_ft_aux_table](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table) |
+| --[innodb-ft-cache-size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_cache_size), [innodb_ft_cache_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_cache_size) |
+| --[innodb-ft-enable-diag-print](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_enable_diag_print), [innodb_ft_enable_diag_print](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_enable_diag_print) |
+| --[innodb-ft-enable-stopword](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_enable_stopword), [innodb_ft_enable_stopword](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_enable_stopword) |
+| --[innodb-ft-max-token-size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_max_token_size), [innodb_ft_max_token_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_max_token_size) |
+| --[innodb-ft-min-token-size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_min_token_size), [innodb_ft_min_token_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_min_token_size) |
+| --[innodb-ft-num-word-optimize](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_num_word_optimize), [innodb_ft_num_word_optimize](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_num_word_optimize) |
+| --[innodb-ft-result-cache-limit](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_result_cache_limit), [innodb_ft_result_cache_limit](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_result_cache_limit) |
+| --[innodb-ft-server-stopword-table](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_server_stopword_table), [innodb_ft_server_stopword_table](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_server_stopword_table) |
+| --[innodb-ft-sort-pll-degree](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_sort_pll_degree), [innodb_ft_sort_pll_degree](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_sort_pll_degree) |
+| --[innodb-ft-total-cache-size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_total_cache_size), [innodb_ft_total_cache_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_total_cache_size) |
+| [innodb_ft_user_stopword_table](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_user_stopword_table) |
 | [Innodb_have_atomic_builtins](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_atomic_builtins) |
 | [Innodb_have_bzip2](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_bzip2) |
 | [Innodb_have_lz4](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_lz4) |
@@ -781,59 +781,59 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Innodb_have_punch_hole](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_punch_hole) |
 | [Innodb_have_snappy](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_snappy) |
 | [Innodb_history_list_length](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_history_list_length) |
-| --[innodb-ibuf-accel-rate](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_accel_rate), [innodb_ibuf_accel_rate](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_accel_rate) |
-| --[innodb-ibuf-active-contract](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_active_contract), [innodb_ibuf_active_contract](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_active_contract) |
+| --[innodb-ibuf-accel-rate](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_accel_rate), [innodb_ibuf_accel_rate](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_accel_rate) |
+| --[innodb-ibuf-active-contract](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_active_contract), [innodb_ibuf_active_contract](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_active_contract) |
 | [Innodb_ibuf_discarded_delete_marks](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_discarded_delete_marks) |
 | [Innodb_ibuf_discarded_deletes](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_discarded_deletes) |
 | [Innodb_ibuf_discarded_inserts](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_discarded_inserts) |
 | [Innodb_ibuf_free_list](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_free_list) |
-| --[innodb-ibuf-max-size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_max_size), [innodb_ibuf_max_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_max_size) |
+| --[innodb-ibuf-max-size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_max_size), [innodb_ibuf_max_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_max_size) |
 | [Innodb_ibuf_merged_delete_marks](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_merged_delete_marks) |
 | [Innodb_ibuf_merged_deletes](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_merged_deletes) |
 | [Innodb_ibuf_merged_inserts](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_merged_inserts) |
 | [Innodb_ibuf_merges](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_merges) |
 | [Innodb_ibuf_segment_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_segment_size) |
 | [Innodb_ibuf_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_size) |
-| [innodb_idle_flush_pct](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_idle_flush_pct) |
-| [innodb_immediate_scrub_data_uncompressed](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_immediate_scrub_data_uncompressed) |
-| [innodb_import_table_from_xtrabackup](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_import_table_from_xtrabackup) |
+| [innodb_idle_flush_pct](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_idle_flush_pct) |
+| [innodb_immediate_scrub_data_uncompressed](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_immediate_scrub_data_uncompressed) |
+| [innodb_import_table_from_xtrabackup](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_import_table_from_xtrabackup) |
 | --[innodb-index-stats](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [Innodb_instant_alter_column](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_instant_alter_column) |
-| [innodb_instant_alter_column_allowed](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_instant_alter_column_allowed) |
-| [innodb_instrument_semaphores](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_instrument_semaphores) |
-| [innodb_io_capacity](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_io_capacity) |
-| [innodb_io_capacity_max](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_io_capacity_max) |
-| [innodb_kill_idle_transaction](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_kill_idle_transaction) |
-| [innodb_large_prefix](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_large_prefix) |
-| [innodb_lazy_drop_table](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_lazy_drop_table) |
-| [innodb_lock_schedule_algorithm](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_lock_schedule_algorithm) |
-| [innodb_lock_wait_timeout](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_lock_wait_timeout) |
+| [innodb_instant_alter_column_allowed](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_instant_alter_column_allowed) |
+| [innodb_instrument_semaphores](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_instrument_semaphores) |
+| [innodb_io_capacity](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_io_capacity) |
+| [innodb_io_capacity_max](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_io_capacity_max) |
+| [innodb_kill_idle_transaction](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_kill_idle_transaction) |
+| [innodb_large_prefix](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_large_prefix) |
+| [innodb_lazy_drop_table](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_lazy_drop_table) |
+| [innodb_lock_schedule_algorithm](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_lock_schedule_algorithm) |
+| [innodb_lock_wait_timeout](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_lock_wait_timeout) |
 | --[innodb-lock-waits](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [innodb_locking_fake_changes](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_locking_fake_changes) |
+| [innodb_locking_fake_changes](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_locking_fake_changes) |
 | --[innodb-locks](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [innodb_locks_unsafe_for_binlog](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_locks_unsafe_for_binlog) |
-| [innodb_log_arch_dir](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_arch_dir) |
-| [innodb_log_arch_expire_sec](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_arch_expire_sec) |
-| [innodb_log_archive](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_archive) |
-| [innodb_log_block_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_block_size) |
-| [innodb_log_buffer_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_buffer_size) |
-| [innodb_log_checksum_algorithm](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_checksum_algorithm) |
-| [innodb_log_checksums](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_checksums) |
-| [innodb_log_compressed_pages](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_compressed_pages) |
-| [innodb_log_file_buffering](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_buffering) |
-| [innodb_log_file_mmap](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_mmap) |
-| [innodb_log_file_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_size) |
-| [innodb_log_file_write_through](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_write_through) |
-| [innodb_log_files_in_group](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_files_in_group) |
-| [innodb_log_group_home_dir](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_group_home_dir) |
-| [innodb_log_optimize_ddl](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl) |
-| [innodb_log_spin_wait_delay](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_spin_wait_delay) |
+| [innodb_locks_unsafe_for_binlog](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_locks_unsafe_for_binlog) |
+| [innodb_log_arch_dir](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_arch_dir) |
+| [innodb_log_arch_expire_sec](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_arch_expire_sec) |
+| [innodb_log_archive](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_archive) |
+| [innodb_log_block_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_block_size) |
+| [innodb_log_buffer_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_buffer_size) |
+| [innodb_log_checksum_algorithm](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_checksum_algorithm) |
+| [innodb_log_checksums](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_checksums) |
+| [innodb_log_compressed_pages](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_compressed_pages) |
+| [innodb_log_file_buffering](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_buffering) |
+| [innodb_log_file_mmap](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_mmap) |
+| [innodb_log_file_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_size) |
+| [innodb_log_file_write_through](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_write_through) |
+| [innodb_log_files_in_group](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_files_in_group) |
+| [innodb_log_group_home_dir](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_group_home_dir) |
+| [innodb_log_optimize_ddl](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl) |
+| [innodb_log_spin_wait_delay](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_spin_wait_delay) |
 | [Innodb_log_waits](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_log_waits) |
-| [innodb_log_write_ahead_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_write_ahead_size) |
+| [innodb_log_write_ahead_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_write_ahead_size) |
 | [Innodb_log_write_requests](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_log_write_requests) |
 | [Innodb_log_writes](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_log_writes) |
-| [innodb_lru_flush_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_lru_flush_size) |
-| [innodb_lru_scan_depth](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_lru_scan_depth) |
+| [innodb_lru_flush_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_lru_flush_size) |
+| [innodb_lru_scan_depth](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_lru_scan_depth) |
 | [Innodb_lsn_current](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_lsn_current) |
 | [Innodb_lsn_flushed](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_lsn_flushed) |
 | [Innodb_lsn_last_checkpoint](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_lsn_last_checkpoint) |
@@ -844,25 +844,25 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Innodb_master_thread_idle_loops](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_idle_loops) |
 | [Innodb_master_thread_main_flush_loops](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_main_flush_loops) |
 | [Innodb_master_thread_sleeps](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_sleeps) |
-| --[innodb-max-bitmap-file-size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_bitmap_file_size), [innodb_max_bitmap_file_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_bitmap_file_size) |
-| --[innodb-max-changed-pages](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_changed_pages), [innodb_max_changed_pages](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_changed_pages) |
-| --[innodb-max-dirty-pages-pct](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct), [innodb_max_dirty_pages_pct](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct) |
-| --[innodb-max-dirty-pages-pct-lwm](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct_lwm), [innodb_max_dirty_pages_pct_lwm](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct_lwm) |
-| --[innodb-max-purge-lag](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag), [innodb_max_purge_lag](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag) |
-| --[innodb-max-purge-lag-delay](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_delay), [innodb_max_purge_lag_delay](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_delay) |
-| --[innodb-max-purge-lag-wait](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_wait), [innodb_max_purge_lag_wait](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_wait) |
+| --[innodb-max-bitmap-file-size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_bitmap_file_size), [innodb_max_bitmap_file_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_bitmap_file_size) |
+| --[innodb-max-changed-pages](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_changed_pages), [innodb_max_changed_pages](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_changed_pages) |
+| --[innodb-max-dirty-pages-pct](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct), [innodb_max_dirty_pages_pct](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct) |
+| --[innodb-max-dirty-pages-pct-lwm](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct_lwm), [innodb_max_dirty_pages_pct_lwm](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct_lwm) |
+| --[innodb-max-purge-lag](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag), [innodb_max_purge_lag](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag) |
+| --[innodb-max-purge-lag-delay](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_delay), [innodb_max_purge_lag_delay](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_delay) |
+| --[innodb-max-purge-lag-wait](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_wait), [innodb_max_purge_lag_wait](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_wait) |
 | [Innodb_max_trx_id](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_max_trx_id) |
-| --[innodb-max-undo-log-size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_undo_log_size), [innodb_max_undo_log_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_undo_log_size) |
+| --[innodb-max-undo-log-size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_undo_log_size), [innodb_max_undo_log_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_undo_log_size) |
 | [Innodb_mem_adaptive_hash](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mem_adaptive_hash) |
 | [Innodb_mem_dictionary](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mem_dictionary) |
 | [Innodb_mem_total](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mem_total) |
-| --[innodb-merge-sort-block-size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_merge_sort_block_size), [innodb_merge_sort_block_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_merge_sort_block_size) |
-| --[innodb-mirrored-log-groups](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_mirrored_log_groups), [innodb_mirrored_log_groups](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_mirrored_log_groups) |
-| --[innodb-monitor-disable](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_disable), [innodb_monitor_disable](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_disable) |
-| --[innodb-monitor-enable](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_enable), [innodb_monitor_enable](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_enable) |
-| --[innodb-monitor-reset](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset), [innodb_monitor_reset](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset) |
-| --[innodb-monitor-reset-all](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset_all), [innodb_monitor_reset_all](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset_all) |
-| --[innodb-mtflush-threads](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_mtflush_threads), [innodb_mtflush_threads](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_mtflush_threads) |
+| --[innodb-merge-sort-block-size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_merge_sort_block_size), [innodb_merge_sort_block_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_merge_sort_block_size) |
+| --[innodb-mirrored-log-groups](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_mirrored_log_groups), [innodb_mirrored_log_groups](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_mirrored_log_groups) |
+| --[innodb-monitor-disable](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_disable), [innodb_monitor_disable](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_disable) |
+| --[innodb-monitor-enable](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_enable), [innodb_monitor_enable](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_enable) |
+| --[innodb-monitor-reset](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset), [innodb_monitor_reset](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset) |
+| --[innodb-monitor-reset-all](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset_all), [innodb_monitor_reset_all](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset_all) |
+| --[innodb-mtflush-threads](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_mtflush_threads), [innodb_mtflush_threads](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_mtflush_threads) |
 | [Innodb_mutex_os_waits](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mutex_os_waits) |
 | [Innodb_mutex_spin_rounds](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mutex_spin_rounds) |
 | [Innodb_mutex_spin_waits](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mutex_spin_waits) |
@@ -877,21 +877,21 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Innodb_num_pages_page_decompressed](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_decompressed) |
 | [Innodb_num_pages_page_decrypted](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_decrypted) |
 | [Innodb_num_pages_page_encryption_error](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_encryption_error) |
-| --[innodb-numa-interleave](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_numa_interleave), [innodb_numa_interleave](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_numa_interleave) |
-| --[innodb-old-blocks-pct](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_pct), [innodb_old_blocks_pct](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_pct) |
-| --[innodb-old-blocks-time](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_time), [innodb_old_blocks_time](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_time) |
+| --[innodb-numa-interleave](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_numa_interleave), [innodb_numa_interleave](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_numa_interleave) |
+| --[innodb-old-blocks-pct](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_pct), [innodb_old_blocks_pct](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_pct) |
+| --[innodb-old-blocks-time](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_time), [innodb_old_blocks_time](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_time) |
 | [Innodb_oldest_view_low_limit_trx_id](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_oldest_view_low_limit_trx_id) |
-| --[innodb-online-alter-log-max-size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_online_alter_log_max_size), [innodb_online_alter_log_max_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_online_alter_log_max_size) |
+| --[innodb-online-alter-log-max-size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_online_alter_log_max_size), [innodb_online_alter_log_max_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_online_alter_log_max_size) |
 | [Innodb_onlineddl_pct_progress](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_onlineddl_pct_progress) |
 | [Innodb_onlineddl_rowlog_pct_used](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_onlineddl_rowlog_pct_used) |
 | [Innodb_onlineddl_rowlog_rows](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_onlineddl_rowlog_rows) |
-| --[innodb-open-files](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_open_files), [innodb_open_files](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_open_files) |
-| --[innodb-optimize-fulltext-only](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_optimize_fulltext_only), [innodb_optimize_fulltext_only](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_optimize_fulltext_only) |
+| --[innodb-open-files](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_open_files), [innodb_open_files](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_open_files) |
+| --[innodb-optimize-fulltext-only](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_optimize_fulltext_only), [innodb_optimize_fulltext_only](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_optimize_fulltext_only) |
 | [Innodb_os_log_fsyncs](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_os_log_fsyncs) |
 | [Innodb_os_log_pending_fsyncs](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_os_log_pending_fsyncs) |
 | [Innodb_os_log_pending_writes](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_os_log_pending_writes) |
 | [Innodb_os_log_written](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_os_log_written) |
-| --[innodb-page-cleaners](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_page_cleaners), [innodb_page_cleaners](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_page_cleaners) |
+| --[innodb-page-cleaners](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_cleaners), [innodb_page_cleaners](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_cleaners) |
 | [Innodb_page_compression_saved](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_saved) |
 | [Innodb_page_compression_trim_sect512](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect512) |
 | [Innodb_page_compression_trim_sect1024](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect1024) |
@@ -900,31 +900,31 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Innodb_page_compression_trim_sect8192](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect8192) |
 | [Innodb_page_compression_trim_sect16384](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect16384) |
 | [Innodb_page_compression_trim_sect32768](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect32768) |
-| [innodb_page_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_page_size) |
+| [innodb_page_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_size) |
 | [Innodb_page_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_size) |
 | [Innodb_pages_created](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_pages_created) |
 | [Innodb_pages_read](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_pages_read) |
 | [Innodb_pages0_read](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_pages0_read) |
 | [Innodb_pages_written](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_pages_written) |
-| [innodb-pass-corrupt-table](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_pass_corrupt_table) |
-| [innodb_prefix_index_cluster_optimization](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_prefix_index_cluster_optimization) |
-| [innodb_print_all_deadlocks](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_print_all_deadlocks) |
-| [innodb_purge_batch_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_purge_batch_size) |
-| [innodb_purge_rseg_truncate_frequency](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_purge_rseg_truncate_frequency) |
-| [innodb_purge_threads](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_purge_threads) |
+| [innodb-pass-corrupt-table](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_pass_corrupt_table) |
+| [innodb_prefix_index_cluster_optimization](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_prefix_index_cluster_optimization) |
+| [innodb_print_all_deadlocks](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_print_all_deadlocks) |
+| [innodb_purge_batch_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_purge_batch_size) |
+| [innodb_purge_rseg_truncate_frequency](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_purge_rseg_truncate_frequency) |
+| [innodb_purge_threads](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_purge_threads) |
 | [Innodb_purge_trx_id](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_purge_trx_id) |
 | [Innodb_purge_undo_no](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_purge_undo_no) |
-| [innodb_random_read_ahead](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_random_read_ahead) |
-| [innodb_read_ahead](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead) |
-| [innodb_read_ahead_threshold](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead_threshold) |
-| [innodb_read_io_threads](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_read_io_threads) |
-| [innodb_read_only](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_read_only) |
+| [innodb_random_read_ahead](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_random_read_ahead) |
+| [innodb_read_ahead](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead) |
+| [innodb_read_ahead_threshold](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead_threshold) |
+| [innodb_read_io_threads](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_io_threads) |
+| [innodb_read_only](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_only) |
 | [Innodb_read_views_memory](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_read_views_memory) |
-| [innodb_recovery_stats](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_recovery_stats) |
-| [innodb-recovery-update-relay-log](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_recovery_update_relay_log) |
-| [innodb_replication_delay](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_replication_delay) |
-| [innodb_rollback_on_timeout](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_on_timeout) |
-| [innodb_rollback_segments](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_segments) |
+| [innodb_recovery_stats](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_recovery_stats) |
+| [innodb-recovery-update-relay-log](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_recovery_update_relay_log) |
+| [innodb_replication_delay](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_replication_delay) |
+| [innodb_rollback_on_timeout](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_on_timeout) |
+| [innodb_rollback_segments](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_segments) |
 | [Innodb_row_lock_current_waits](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_row_lock_current_waits) |
 | [Innodb_row_lock_numbers](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_row_lock_numbers) |
 | [Innodb_row_lock_time](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_row_lock_time) |
@@ -939,45 +939,45 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Innodb_s_lock_os_waits](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_s_lock_os_waits) |
 | [Innodb_s_lock_spin_rounds](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_s_lock_spin_rounds) |
 | [Innodb_s_lock_spin_waits](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_s_lock_spin_waits) |
-| [innodb_safe_truncate](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate) |
-| [innodb_sched_priority_cleaner](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_sched_priority_cleaner) |
+| [innodb_safe_truncate](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate) |
+| [innodb_sched_priority_cleaner](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_sched_priority_cleaner) |
 | [Innodb_scrub_background_page_reorganizations](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_reorganizations) |
 | [Innodb_scrub_background_page_split_failures_missing_index](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_split_failures_missing_index) |
 | [Innodb_scrub_background_page_split_failures_out_of_filespace](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_split_failures_out_of_filespace) |
 | [Innodb_scrub_background_page_split_failures_underflow](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_split_failures_underflow) |
 | [Innodb_scrub_background_page_split_failures_unknown](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_split_failures_unknown) |
 | [Innodb_scrub_background_page_splits](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_splits) |
-| [innodb_scrub_log](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log) |
+| [innodb_scrub_log](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log) |
 | [Innodb_scrub_log](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_log) |
-| [innodb_scrub_log_interval](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_interval) |
-| [innodb_scrub_log_speed](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_speed) |
+| [innodb_scrub_log_interval](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_interval) |
+| [innodb_scrub_log_speed](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_speed) |
 | [Innodb_secondary_index_triggered_cluster_reads](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_secondary_index_triggered_cluster_reads) |
 | [Innodb_secondary_index_triggered_cluster_reads_avoided](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_secondary_index_triggered_cluster_reads_avoided) |
-| [innodb-show-locks-held](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_show_locks_held) |
-| [innodb_show_verbose_locks](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_show_verbose_locks) |
-| [innodb_simulate_comp_failures](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_simulate_comp_failures) |
-| [innodb_snapshot_isolation](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation) |
-| [innodb_sort_buffer_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_sort_buffer_size) |
-| [innodb_spin_wait_delay](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_spin_wait_delay) |
-| [innodb_stats_auto_recalc](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_recalc) |
-| [innodb_stats_auto_update](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_update) |
-| [innodb_stats_include_delete_marked](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_include_delete_marked) |
-| [innodb_stats_method](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_method) |
-| [innodb_stats_modified_counter](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_modified_counter) |
-| [innodb-stats-on-metadata](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_on_metadata) |
-| [innodb_stats_persistent](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent) |
-| [innodb_stats_persistent_sample_pages](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent_sample_pages) |
-| [innodb_stats_sample_pages](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_sample_pages) |
-| [innodb_stats_traditional](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_traditional) |
-| [innodb_stats_transient_sample_pages](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_transient_sample_pages) |
-| [innodb_stats_update_need_lock](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_update_need_lock) |
+| [innodb-show-locks-held](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_show_locks_held) |
+| [innodb_show_verbose_locks](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_show_verbose_locks) |
+| [innodb_simulate_comp_failures](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_simulate_comp_failures) |
+| [innodb_snapshot_isolation](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation) |
+| [innodb_sort_buffer_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_sort_buffer_size) |
+| [innodb_spin_wait_delay](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_spin_wait_delay) |
+| [innodb_stats_auto_recalc](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_recalc) |
+| [innodb_stats_auto_update](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_update) |
+| [innodb_stats_include_delete_marked](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_include_delete_marked) |
+| [innodb_stats_method](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_method) |
+| [innodb_stats_modified_counter](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_modified_counter) |
+| [innodb-stats-on-metadata](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_on_metadata) |
+| [innodb_stats_persistent](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent) |
+| [innodb_stats_persistent_sample_pages](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent_sample_pages) |
+| [innodb_stats_sample_pages](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_sample_pages) |
+| [innodb_stats_traditional](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_traditional) |
+| [innodb_stats_transient_sample_pages](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_transient_sample_pages) |
+| [innodb_stats_update_need_lock](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_update_need_lock) |
 | --[innodb-status-file](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [innodb_status_output](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_status_output) |
-| [innodb_status_output_locks](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_status_output_locks) |
-| [innodb_strict_mode](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode) |
-| [innodb_support_xa](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_support_xa) |
-| [innodb_sync_array_size](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_sync_array_size) |
-| [innodb_sync_spin_loops](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_support_xa) |
+| [innodb_status_output](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_status_output) |
+| [innodb_status_output_locks](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_status_output_locks) |
+| [innodb_strict_mode](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode) |
+| [innodb_support_xa](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_support_xa) |
+| [innodb_sync_array_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_sync_array_size) |
+| [innodb_sync_spin_loops](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_support_xa) |
 | --[innodb-sys-indexes](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[innodb-sys-stats](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[innodb-sys-tables](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
@@ -985,35 +985,35 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Innodb_system_rows_inserted](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_system_rows_inserted) |
 | [Innodb_system_rows_read](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_system_rows_read) |
 | [Innodb_system_rows_updated](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_system_rows_updated) |
-| [innodb_table_locks](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_table_locks) |
+| [innodb_table_locks](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_table_locks) |
 | --[innodb-table-stats](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [innodb_temp_data_file_path](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_temp_data_file_path) |
-| [innodb_thread_concurrency](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency) |
-| [innodb_thread_concurrency_timer_based](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency_timer_based) |
-| [innodb_thread_sleep_delay](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_thread_sleep_delay) |
-| [innodb_tmpdir](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_tmpdir) |
-| [innodb_track_changed_pages](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_track_changed_pages) |
-| [innodb_track_redo_log_now](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_track_redo_log_now) |
+| [innodb_temp_data_file_path](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_temp_data_file_path) |
+| [innodb_thread_concurrency](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency) |
+| [innodb_thread_concurrency_timer_based](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency_timer_based) |
+| [innodb_thread_sleep_delay](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_thread_sleep_delay) |
+| [innodb_tmpdir](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_tmpdir) |
+| [innodb_track_changed_pages](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_track_changed_pages) |
+| [innodb_track_redo_log_now](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_track_redo_log_now) |
 | --[innodb-trx](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [innodb_truncate_temporary_tablespace_now](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_truncate_temporary_tablespace_now) |
+| [innodb_truncate_temporary_tablespace_now](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_truncate_temporary_tablespace_now) |
 | [Innodb_truncated_status_writes](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_truncated_status_writes) |
-| [innodb_undo_directory](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_undo_directory) |
-| [innodb_undo_log_truncate](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_undo_log_truncate) |
-| [innodb_undo_logs](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs) |
-| [innodb_undo_tablespaces](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_undo_tablespaces) |
+| [innodb_undo_directory](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_directory) |
+| [innodb_undo_log_truncate](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_log_truncate) |
+| [innodb_undo_logs](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs) |
+| [innodb_undo_tablespaces](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_tablespaces) |
 | [Innodb_undo_truncations](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_undo_truncations) |
-| [innodb_use_atomic_writes](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_atomic_writes) |
-| [innodb_use_fallocate](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_fallocate) |
-| [innodb_use_global_flush_log_at_trx_commit](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_global_flush_log_at_trx_commit) |
-| [innodb_use_mtflush](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_mtflush) |
-| [innodb_use_native_aio](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_native_aio) |
-| [innodb_use_purge_thread](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_purge_thread) |
-| [innodb_use_stacktrace](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_stacktrace) |
-| [innodb_use_sys_malloc](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_sys_malloc) |
-| [innodb_use_sys_stats_table](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_sys_stats_table) |
-| [innodb_use_trim](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_trim) |
-| [innodb_version](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_version) |
-| [innodb_write_io_threads](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_write_io_threads) |
+| [innodb_use_atomic_writes](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_atomic_writes) |
+| [innodb_use_fallocate](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_fallocate) |
+| [innodb_use_global_flush_log_at_trx_commit](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_global_flush_log_at_trx_commit) |
+| [innodb_use_mtflush](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_mtflush) |
+| [innodb_use_native_aio](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_native_aio) |
+| [innodb_use_purge_thread](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_purge_thread) |
+| [innodb_use_stacktrace](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_stacktrace) |
+| [innodb_use_sys_malloc](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_sys_malloc) |
+| [innodb_use_sys_stats_table](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_sys_stats_table) |
+| [innodb_use_trim](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_trim) |
+| [innodb_version](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_version) |
+| [innodb_write_io_threads](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_write_io_threads) |
 | [Innodb_x_lock_os_waits](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_x_lock_os_waits) |
 | [Innodb_x_lock_spin_rounds](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_x_lock_spin_rounds) |
 | [Innodb_x_lock_spin_waits](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_x_lock_spin_waits) |
@@ -1029,12 +1029,12 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Key_blocks_unused](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#key_blocks_unused) |
 | [Key_blocks_used](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#key_blocks_used) |
 | [Key_blocks_warm](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#key_blocks_warm) |
-| [key_buffer_size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) |
-| [key_cache_age_threshold](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_age_threshold) |
-| [key_cache_block_size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_block_size) |
-| [key_cache_division_limit](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_division_limit) |
-| [key_cache_file_hash_size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_file_hash_size) |
-| [key_cache_segments](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_segments) |
+| [key_buffer_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) |
+| [key_cache_age_threshold](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_age_threshold) |
+| [key_cache_block_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_block_size) |
+| [key_cache_division_limit](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_division_limit) |
+| [key_cache_file_hash_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_file_hash_size) |
+| [key_cache_segments](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_segments) |
 | [Key_read_requests](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#key_read_requests) |
 | [Key_reads](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#key_reads) |
 | [Key_write_requests](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#key_write_requests) |
@@ -1150,45 +1150,45 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Memory_used_initial](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#memory_used_initial) |
 | [metadata_locks_cache_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#metadata_locks_cache_size) |
 | [metadata_locks_hash_instances](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#metadata_locks_hash_instances) |
-| [mhnsw_default_distance](../../ref/sql-statements-and-structure/vectors/vector-system-variables.md#mhnsw_default_distance) |
-| [mhnsw_default_m](../../ref/sql-statements-and-structure/vectors/vector-system-variables.md#mhnsw_default_m) |
-| [mhnsw_ef_search](../../ref/sql-statements-and-structure/vectors/vector-system-variables.md#mhnsw_ef_search) |
-| [mhnsw_max_cache_size](../../ref/sql-statements-and-structure/vectors/vector-system-variables.md#mhnsw_max_cache_size) |
+| [mhnsw_default_distance](../../reference/sql-statements-and-structure/vectors/vector-system-variables.md#mhnsw_default_distance) |
+| [mhnsw_default_m](../../reference/sql-statements-and-structure/vectors/vector-system-variables.md#mhnsw_default_m) |
+| [mhnsw_ef_search](../../reference/sql-statements-and-structure/vectors/vector-system-variables.md#mhnsw_ef_search) |
+| [mhnsw_max_cache_size](../../reference/sql-statements-and-structure/vectors/vector-system-variables.md#mhnsw_max_cache_size) |
 | [min-examined-row-limit](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#min_examined_row_limit) |
-| [mroonga_action_on_fulltext_query_error](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_action_on_fulltext_query_error) |
-| [mroonga_boolean_mode_syntax_flags](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_boolean_mode_syntax_flags) |
-| [Mroonga_count_skip](../../ref/storage-engines/mroonga/mroonga-status-variables.md#mroonga_count_skip) |
-| [mroonga_database_path_prefix](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_database_path_prefix) |
-| [mroonga_default_parser](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_default_parser) |
-| [mroonga_default_tokenizer](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_default_tokenizer) |
-| [mroonga_default_wrapper_engine](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_default_wrapper_engine) |
-| [mroonga_dry_write](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_dry_write) |
-| [mroonga_enable_operations_recording](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_enable_operations_recording) |
-| [mroonga_enable_optimization](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_enable_optimization) |
-| [Mroonga_fast_order_limit](../../ref/storage-engines/mroonga/mroonga-status-variables.md#mroonga_fast_order_limit) |
-| [mroonga_libgroonga_embedded](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_libgroonga_embedded) |
-| [mroonga_libgroonga_support_zlib](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_libgroonga_support_zlib) |
-| [mroonga_libgroonga_support_zstd](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_libgroonga_support_zstd) |
-| [mroonga_libgroonga_version](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_libgroonga_version) |
-| [mroonga_log_file](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_log_file) |
-| [mroonga_log_level](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_log_level) |
-| [mroonga_match_escalation_threshold](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_match_escalation_threshold) |
-| [mroonga_max_n_records_for_estimate](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_max_n_records_for_estimate) |
-| [mroonga_query_log_file](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_query_log_file) |
-| [mroonga_vector_column_delimiter](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_vector_column_delimiter) |
-| [mroonga_version](../../ref/storage-engines/mroonga/mroonga-system-variables.md#mroonga_version) |
+| [mroonga_action_on_fulltext_query_error](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_action_on_fulltext_query_error) |
+| [mroonga_boolean_mode_syntax_flags](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_boolean_mode_syntax_flags) |
+| [Mroonga_count_skip](../../reference/storage-engines/mroonga/mroonga-status-variables.md#mroonga_count_skip) |
+| [mroonga_database_path_prefix](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_database_path_prefix) |
+| [mroonga_default_parser](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_default_parser) |
+| [mroonga_default_tokenizer](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_default_tokenizer) |
+| [mroonga_default_wrapper_engine](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_default_wrapper_engine) |
+| [mroonga_dry_write](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_dry_write) |
+| [mroonga_enable_operations_recording](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_enable_operations_recording) |
+| [mroonga_enable_optimization](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_enable_optimization) |
+| [Mroonga_fast_order_limit](../../reference/storage-engines/mroonga/mroonga-status-variables.md#mroonga_fast_order_limit) |
+| [mroonga_libgroonga_embedded](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_libgroonga_embedded) |
+| [mroonga_libgroonga_support_zlib](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_libgroonga_support_zlib) |
+| [mroonga_libgroonga_support_zstd](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_libgroonga_support_zstd) |
+| [mroonga_libgroonga_version](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_libgroonga_version) |
+| [mroonga_log_file](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_log_file) |
+| [mroonga_log_level](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_log_level) |
+| [mroonga_match_escalation_threshold](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_match_escalation_threshold) |
+| [mroonga_max_n_records_for_estimate](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_max_n_records_for_estimate) |
+| [mroonga_query_log_file](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_query_log_file) |
+| [mroonga_vector_column_delimiter](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_vector_column_delimiter) |
+| [mroonga_version](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_version) |
 | --[mrr-buffer-size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mrr_buffer_size), [mrr_buffer_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mrr_buffer_size) |
 | --[multi-range-count](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#multi_range_count), [multi_range_count](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#multi_range_count) |
-| --[myisam-block-size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_block_size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
-| --[myisam-data-pointer-size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_data_pointer_size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
-| --[myisam-max-extra-sort-file-size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_max_extra_sort_file_size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
-| --[myisam-max-sort-file-size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_max_sort_file_size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
-| --[myisam-mmap-size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_mmap_size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
-| --[myisam-recover-options](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_recover_options](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
-| --[myisam-repair-threads](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_repair_threads](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
-| --[myisam-sort-buffer-size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_sort_buffer_size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
-| --[myisam-stats-method](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_stats_method](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
-| --[myisam-use-mmap](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_use_mmap](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
+| --[myisam-block-size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_block_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
+| --[myisam-data-pointer-size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_data_pointer_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
+| --[myisam-max-extra-sort-file-size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_max_extra_sort_file_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
+| --[myisam-max-sort-file-size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_max_sort_file_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
+| --[myisam-mmap-size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_mmap_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
+| --[myisam-recover-options](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_recover_options](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
+| --[myisam-repair-threads](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_repair_threads](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
+| --[myisam-sort-buffer-size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_sort_buffer_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
+| --[myisam-stats-method](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_stats_method](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
+| --[myisam-use-mmap](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam_use_mmap](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
 | --[mysql56-temporal-format](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format), [mysql56_temporal_format](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) |
 | --[named-pipe](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#named_pipe), [named_pipe](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#named_pipe) |
 | --[ndb-use-copying-alter-table](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
@@ -1230,11 +1230,11 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Oqgraph_boost_version](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md) |
 | [Oqgraph_compat_mode](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md) |
 | [Oqgraph_verbose_debug](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md) |
-| [pam_debug](../../ref/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_debug) |
+| [pam_debug](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_debug) |
 | -P, --[port](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#port), [port](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#port) |
-| --[pam-use-cleartext-plugin](../../ref/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_use_cleartext_plugin), [pam_use_cleartext_plugin](../../ref/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_use_cleartext_plugin) |
-| --[pam-windbind-workaround](../../ref/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_winbind_workaround), [pam_windbind_workaround](../../ref/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_winbind_workaround) |
-| --[password-reuse-check-interval](../../ref/plugins/password-validation-plugins/password_reuse_check_interval.md), [password_reuse_check_interval](../../ref/plugins/password-validation-plugins/password_reuse_check_interval.md) |
+| --[pam-use-cleartext-plugin](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_use_cleartext_plugin), [pam_use_cleartext_plugin](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_use_cleartext_plugin) |
+| --[pam-windbind-workaround](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_winbind_workaround), [pam_windbind_workaround](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_winbind_workaround) |
+| --[password-reuse-check-interval](../../reference/plugins/password-validation-plugins/password_reuse_check_interval.md), [password_reuse_check_interval](../../reference/plugins/password-validation-plugins/password_reuse_check_interval.md) |
 | --pbxt |
 | --[pbxt-auto-increment-mode](https://mariadb.com/kb/en/pbxt-system-variables/#pbxt_auto_increment_mode) |
 | --[pbxt-checkpoint-frequency](https://mariadb.com/kb/en/pbxt-system-variables/#pbxt_checkpoint_frequency) |
@@ -1255,11 +1255,11 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | --[pbxt-sweeper-priority](https://mariadb.com/kb/en/pbxt-system-variables/#pbxt_sweeper_priority) |
 | --[pbxt-support-xa](https://mariadb.com/kb/en/pbxt-system-variables/#pbxt_support_xa) |
 | --[pbxt-transaction-buffer-size](https://mariadb.com/kb/en/pbxt-system-variables/#pbxt_transaction_buffer_size) |
-| --[performance-schema](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema), [performance_schema](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) |
-| [Performance_schema_accounts_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_accounts_lost) |
-| --[performance-schema-accounts-size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_accounts_size), [performance_schema_accounts_size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_accounts_size) |
-| [Performance_schema_cond_classes_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_cond_classes_lost) |
-| [Performance_schema_cond_instances_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_cond_instances_lost) |
+| --[performance-schema](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema), [performance_schema](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) |
+| [Performance_schema_accounts_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_accounts_lost) |
+| --[performance-schema-accounts-size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_accounts_size), [performance_schema_accounts_size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_accounts_size) |
+| [Performance_schema_cond_classes_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_cond_classes_lost) |
+| [Performance_schema_cond_instances_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_cond_instances_lost) |
 | [--performance-schema-consumer-events-stages-current](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [--performance-schema-consumer-events-stages-history](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [--performance-schema-consumer-events-stages-history-long](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
@@ -1272,74 +1272,74 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [--performance-schema-consumer-global-instrumentation](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [--performance-schema-consumer-statements-digest](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [--performance-schema-consumer-thread-instrumentation](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [Performance_schema_digest_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_digest_lost) |
-| --[performance-schema-digests-size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_digests_size), [performance_schema_digests_size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_digests_size) |
-| --[performance-schema-events-stages-history-long-size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_stages_history_long_size), [performance_schema_events_stages_history_long_size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_stages_history_long_size) |
-| --[performance-schema-events-stages-history-size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_stages_history_size), [performance_schema_events_stages_history_size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_stages_history_size) |
-| --[performance-schema-events-statements-history-long-size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_statements_history_long_size), [performance_schema_events_statements_history_long_size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_statements_history_long_size) |
-| --[performance-schema-events-statements-history-size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_statements_history_size), [performance_schema_events_statements_history_size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_statements_history_size) |
-| --[performance-schema-events-transactions-history-long-size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_transactions_history_long_size), [performance_schema_events_transactions_history_long_size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_transactions_history_long_size) |
-| --[performance-schema-events-transactions-history-size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_transactions_history_size), [performance_schema_events_transactions_history_size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_transactions_history_size) |
-| --[performance-schema-events-waits-history-long-size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_waits_history_long_size), [performance_schema_events_waits_history_long_size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_waits_history_long_size) |
-| --[performance-schema-events-waits-history-size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_waits_history_size), [performance_schema_events_waits_history_size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_waits_history_size) |
-| [Performance_schema_file_classes_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_file_classes_lost) |
-| [Performance_schema_file_handles_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_file_handles_lost) |
-| [Performance_schema_file_instances_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_file_instances_lost) |
-| [Performance_schema_hosts_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_accounts_lost) |
-| --[performance-schema-hosts-size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_hosts_size), [performance_schema_hosts_size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_hosts_size) |
-| [Performance_schema_locker_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_locker_lost) |
-| [Performance_schema_index_stat_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_index_stat_lost) |
-| --[performance-schema-max-cond-classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_classes), [performance_schema_max_cond_classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_classes) |
-| --[performance-schema-max-cond-instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_instances), [performance_schema_max_cond_instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_instances) |
-| --[performance-schema-max-digest-length](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_digest_length), [performance_schema_max_digest_length](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_digest_length) |
-| --[performance-schema-max-file-classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_classes), [performance_schema_max_file_classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_classes) |
-| --[performance-schema-max-file-handles](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_handles), [performance_schema_max_file_handles](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_handles) |
-| --[performance-schema-max-file-instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_instances), [performance_schema_max_file_instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_instances) |
-| --[performance-schema-max-index-stat](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_index_stat), [performance_schema_max_index_stat](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_index_stat) |
-| --[performance-schema-max-memory-classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_memory_classes), [performance_schema_max_memory_classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_memory_classes) |
-| --[performance-schema-max-metadata-locks](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_metadata_locks), [performance_schema_max_metadata_locks](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_metadata_locks) |
-| --[performance-schema-max-mutex-classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_classes), [performance_schema_max_mutex_classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_classes) |
-| --[performance-schema-max-mutex-instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_instances), [performance_schema_max_mutex_instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_instances) |
-| --[performance-schema-max-prepared-statement-instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_prepared_statement_instances), [performance_schema_max_prepared_statement_instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_prepared_statement_instances) |
-| --[performance-schema-max-program-instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_program_instances), [performance_schema_max_program_instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_program_instances) |
-| --[performance-schema-max-sql-text-length](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_sql_text_length), [performance_schema_max_sql_text_length](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_sql_text_length) |
-| --[performance-schema-max-rwlock-classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_classes), [performance_schema_max_rwlock_classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_classes) |
-| --[performance-schema-max-rwlock-instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_instances), [performance_schema_max_rwlock_instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_instances) |
-| --[performance-schema-max-socket-classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_socket_classes), [performance_schema_max_socket_classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_socket_classes) |
-| --[performance-schema-max-socket-instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_socket_instances), [performance_schema_max_socket_instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_socket_instances) |
-| --[performance-schema-max-stage-classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_stage_classes), [performance_schema_max_stage_classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_stage_classes) |
-| --[performance-schema-max-statement-classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_statement_classes), [performance_schema_max_statement_classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_statement_classes) |
-| --[performance-schema-max-statement-stack](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_statement_stack), [performance_schema_max_statement_stack](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_statement_stack) |
-| --[performance-schema-max-table-handles](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_handles), [performance_schema_max_table_handles](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_handles) |
-| --[performance-schema-max-table-instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_instances), [performance_schema_max_table_instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_instances) |
-| --[performance-schema-max-table-lock-stat](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_lock_stat), [performance_schema_max_table_lock_stat](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_lock_stat) |
-| --[performance-schema-max-thread-classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_thread_classes), [performance_schema_max_thread_classes](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_thread_classes) |
-| --[performance-schema-max-thread-instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_thread_instances), [performance_schema_max_thread_instances](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_thread_instances) |
-| [Performance_schema_memory_classes_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_memory_classes_lost) |
-| [Performance_schema_metadata_lock_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_metadata_lock_lost) |
-| [Performance_schema_mutex_classes_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_mutex_classes_lost) |
-| [Performance_schema_mutex_instances_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_mutex_instances_lost) |
-| [Performance_schema_nested_statement_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_nested_statement_lost) |
-| [Performance_schema_prepared_statements_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_prepared_statements_lost) |
-| [Performance_schema_program_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_program_lost) |
-| [Performance_schema_rwlock_classes_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_rwlock_classes_lost) |
-| [Performance_schema_rwlock_instances_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_rwlock_instances_lost) |
-| [Performance_schema_session_connect_attrs_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_session_connect_attrs_lost) |
-| [Performance_schema_socket_classes_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_socket_classes_lost) |
-| [Performance_schema_socket_instances_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_socket_instances_lost) |
-| [Performance_schema_stage_classes_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_stage_classes_lost) |
-| [Performance_schema_stage_classes_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_stage_classes_lost) |
-| [Performance_schema_statement_classes_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_statement_classes_lost) |
-| --[performance-schema-session-connect-attrs-size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_session_connect_attrs_size), [performance_schema_session_connect_attrs_size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_session_connect_attrs_size) |
-| --[performance-schema-setup-actors-size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_actors_size), [performance_schema_setup_actors_size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_actors_size) |
-| --[performance-schema-setup-objects-size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_objects_size), [performance_schema_setup_objects_size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_objects_size) |
-| [Performance_schema_table_handles_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_table_handles_lost) |
-| [Performance_schema_table_instances_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_table_instances_lost) |
-| [Performance_schema_table_lock_stat_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_table_lock_stat_lost) |
-| [Performance_schema_thread_classes_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_thread_classes_lost) |
-| [Performance_schema_thread_instances_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_thread_instances_lost) |
-| [Performance_schema_schema_users_lost](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_schema_users_lost) |
-| --[performance_schema_users_size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_users_size), [performance_schema_users_size](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance-schema-users-size) |
+| [Performance_schema_digest_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_digest_lost) |
+| --[performance-schema-digests-size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_digests_size), [performance_schema_digests_size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_digests_size) |
+| --[performance-schema-events-stages-history-long-size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_stages_history_long_size), [performance_schema_events_stages_history_long_size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_stages_history_long_size) |
+| --[performance-schema-events-stages-history-size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_stages_history_size), [performance_schema_events_stages_history_size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_stages_history_size) |
+| --[performance-schema-events-statements-history-long-size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_statements_history_long_size), [performance_schema_events_statements_history_long_size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_statements_history_long_size) |
+| --[performance-schema-events-statements-history-size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_statements_history_size), [performance_schema_events_statements_history_size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_statements_history_size) |
+| --[performance-schema-events-transactions-history-long-size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_transactions_history_long_size), [performance_schema_events_transactions_history_long_size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_transactions_history_long_size) |
+| --[performance-schema-events-transactions-history-size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_transactions_history_size), [performance_schema_events_transactions_history_size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_transactions_history_size) |
+| --[performance-schema-events-waits-history-long-size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_waits_history_long_size), [performance_schema_events_waits_history_long_size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_waits_history_long_size) |
+| --[performance-schema-events-waits-history-size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_waits_history_size), [performance_schema_events_waits_history_size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_waits_history_size) |
+| [Performance_schema_file_classes_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_file_classes_lost) |
+| [Performance_schema_file_handles_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_file_handles_lost) |
+| [Performance_schema_file_instances_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_file_instances_lost) |
+| [Performance_schema_hosts_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_accounts_lost) |
+| --[performance-schema-hosts-size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_hosts_size), [performance_schema_hosts_size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_hosts_size) |
+| [Performance_schema_locker_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_locker_lost) |
+| [Performance_schema_index_stat_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_index_stat_lost) |
+| --[performance-schema-max-cond-classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_classes), [performance_schema_max_cond_classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_classes) |
+| --[performance-schema-max-cond-instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_instances), [performance_schema_max_cond_instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_instances) |
+| --[performance-schema-max-digest-length](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_digest_length), [performance_schema_max_digest_length](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_digest_length) |
+| --[performance-schema-max-file-classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_classes), [performance_schema_max_file_classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_classes) |
+| --[performance-schema-max-file-handles](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_handles), [performance_schema_max_file_handles](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_handles) |
+| --[performance-schema-max-file-instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_instances), [performance_schema_max_file_instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_instances) |
+| --[performance-schema-max-index-stat](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_index_stat), [performance_schema_max_index_stat](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_index_stat) |
+| --[performance-schema-max-memory-classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_memory_classes), [performance_schema_max_memory_classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_memory_classes) |
+| --[performance-schema-max-metadata-locks](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_metadata_locks), [performance_schema_max_metadata_locks](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_metadata_locks) |
+| --[performance-schema-max-mutex-classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_classes), [performance_schema_max_mutex_classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_classes) |
+| --[performance-schema-max-mutex-instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_instances), [performance_schema_max_mutex_instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_instances) |
+| --[performance-schema-max-prepared-statement-instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_prepared_statement_instances), [performance_schema_max_prepared_statement_instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_prepared_statement_instances) |
+| --[performance-schema-max-program-instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_program_instances), [performance_schema_max_program_instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_program_instances) |
+| --[performance-schema-max-sql-text-length](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_sql_text_length), [performance_schema_max_sql_text_length](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_sql_text_length) |
+| --[performance-schema-max-rwlock-classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_classes), [performance_schema_max_rwlock_classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_classes) |
+| --[performance-schema-max-rwlock-instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_instances), [performance_schema_max_rwlock_instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_instances) |
+| --[performance-schema-max-socket-classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_socket_classes), [performance_schema_max_socket_classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_socket_classes) |
+| --[performance-schema-max-socket-instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_socket_instances), [performance_schema_max_socket_instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_socket_instances) |
+| --[performance-schema-max-stage-classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_stage_classes), [performance_schema_max_stage_classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_stage_classes) |
+| --[performance-schema-max-statement-classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_statement_classes), [performance_schema_max_statement_classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_statement_classes) |
+| --[performance-schema-max-statement-stack](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_statement_stack), [performance_schema_max_statement_stack](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_statement_stack) |
+| --[performance-schema-max-table-handles](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_handles), [performance_schema_max_table_handles](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_handles) |
+| --[performance-schema-max-table-instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_instances), [performance_schema_max_table_instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_instances) |
+| --[performance-schema-max-table-lock-stat](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_lock_stat), [performance_schema_max_table_lock_stat](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_lock_stat) |
+| --[performance-schema-max-thread-classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_thread_classes), [performance_schema_max_thread_classes](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_thread_classes) |
+| --[performance-schema-max-thread-instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_thread_instances), [performance_schema_max_thread_instances](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_thread_instances) |
+| [Performance_schema_memory_classes_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_memory_classes_lost) |
+| [Performance_schema_metadata_lock_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_metadata_lock_lost) |
+| [Performance_schema_mutex_classes_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_mutex_classes_lost) |
+| [Performance_schema_mutex_instances_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_mutex_instances_lost) |
+| [Performance_schema_nested_statement_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_nested_statement_lost) |
+| [Performance_schema_prepared_statements_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_prepared_statements_lost) |
+| [Performance_schema_program_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_program_lost) |
+| [Performance_schema_rwlock_classes_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_rwlock_classes_lost) |
+| [Performance_schema_rwlock_instances_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_rwlock_instances_lost) |
+| [Performance_schema_session_connect_attrs_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_session_connect_attrs_lost) |
+| [Performance_schema_socket_classes_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_socket_classes_lost) |
+| [Performance_schema_socket_instances_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_socket_instances_lost) |
+| [Performance_schema_stage_classes_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_stage_classes_lost) |
+| [Performance_schema_stage_classes_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_stage_classes_lost) |
+| [Performance_schema_statement_classes_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_statement_classes_lost) |
+| --[performance-schema-session-connect-attrs-size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_session_connect_attrs_size), [performance_schema_session_connect_attrs_size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_session_connect_attrs_size) |
+| --[performance-schema-setup-actors-size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_actors_size), [performance_schema_setup_actors_size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_actors_size) |
+| --[performance-schema-setup-objects-size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_objects_size), [performance_schema_setup_objects_size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_objects_size) |
+| [Performance_schema_table_handles_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_table_handles_lost) |
+| [Performance_schema_table_instances_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_table_instances_lost) |
+| [Performance_schema_table_lock_stat_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_table_lock_stat_lost) |
+| [Performance_schema_thread_classes_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_thread_classes_lost) |
+| [Performance_schema_thread_instances_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_thread_instances_lost) |
+| [Performance_schema_schema_users_lost](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_schema_users_lost) |
+| --[performance_schema_users_size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_users_size), [performance_schema_users_size](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance-schema-users-size) |
 | --[pid-file](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#pid_file), [pid_file](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#pid_file) |
 | --[plugin-load](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[plugin-load-add](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
@@ -1367,7 +1367,7 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Qcache_total_blocks](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#qcache_total_blocks) |
 | [Queries](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#queries) |
 | [query_alloc_block_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#query_alloc_block_size) |
-| --[query-cache-info](../../ref/plugins/other-plugins/query-cache-information-plugin.md#query_cache_info) |
+| --[query-cache-info](../../reference/plugins/other-plugins/query-cache-information-plugin.md#query_cache_info) |
 | [query_cache_limit](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_limit) |
 | [query_cache_min_res_unit](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_min_res_unit) |
 | [query_cache_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_size) |
@@ -1375,13 +1375,13 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [query_cache_type](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_type) |
 | [query_cache_wlock_invalidate](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_wlock_invalidate) |
 | [query_prealloc_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#query_prealloc_size) |
-| --[query-response-time](../../ref/plugins/other-plugins/query-response-time-plugin.md#query_response_time) |
-| --[query-response-time-audit](../../ref/plugins/other-plugins/query-response-time-plugin.md#query_response_time_audit) |
-| [query_response_time_flush](../../ref/plugins/other-plugins/query-response-time-plugin.md) |
-| [query_response_time_range_base](../../ref/plugins/other-plugins/query-response-time-plugin.md) |
-| [query_response_time_exec_time_debug](../../ref/plugins/other-plugins/query-response-time-plugin.md) |
-| [query_response_time_session_stats](../../ref/plugins/other-plugins/query-response-time-plugin.md) |
-| [query_response_time_stats](../../ref/plugins/other-plugins/query-response-time-plugin.md) |
+| --[query-response-time](../../reference/plugins/other-plugins/query-response-time-plugin.md#query_response_time) |
+| --[query-response-time-audit](../../reference/plugins/other-plugins/query-response-time-plugin.md#query_response_time_audit) |
+| [query_response_time_flush](../../reference/plugins/other-plugins/query-response-time-plugin.md) |
+| [query_response_time_range_base](../../reference/plugins/other-plugins/query-response-time-plugin.md) |
+| [query_response_time_exec_time_debug](../../reference/plugins/other-plugins/query-response-time-plugin.md) |
+| [query_response_time_session_stats](../../reference/plugins/other-plugins/query-response-time-plugin.md) |
+| [query_response_time_stats](../../reference/plugins/other-plugins/query-response-time-plugin.md) |
 | [Questions](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#questions) |
 | -r, --[chroot](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [rand_seed1](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#rand_seed1) |
@@ -1416,269 +1416,269 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | --[report-port](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md), [report_port](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) |
 | --[report-user](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md), [report_user](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) |
 | --[require-secure-transport](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#require_secure_transport), [require_secure_transport](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#require_secure_transport) |
-| --[rocksdb-access-hint-on-compaction-start](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_access_hint_on_compaction_start), [rocksdb_access_hint_on_compaction_start](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_access_hint_on_compaction_start) |
-| --[rocksdb-advise-random-on-open](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_advise_random_on_open), [rocksdb_advise_random_on_open](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_advise_random_on_open) |
-| --[rocksdb-allow-concurrent-memtable-write](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_concurrent_memtable_write), [rocksdb_allow_concurrent_memtable_write](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_concurrent_memtable_write) |
-| --[rocksdb-allow-mmap-reads](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_mmap_reads), [rocksdb_allow_mmap_reads](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_mmap_reads) |
-| --[rocksdb-allow-mmap-writes](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_mmap_writes), [rocksdb_allow_mmap_writes](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_mmap_writes) |
-| --[rocksdb-allow-to-start-after-corruption](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_to_start_after_corruption), [rocksdb_allow_to_start_after_corruption](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_to_start_after_corruption) |
-| --[rocksdb-background-sync](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_background_sync), [rocksdb_background_sync](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_background_sync) |
-| --[rocksdb_base-background-compactions](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_base_background_compactions), [rocksdb_base_background_compactions](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_base_background_compactions) |
-| --[rocksdb-blind-delete-primary-key](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_blind_delete_primary_key), [rocksdb_blind_delete_primary_key](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_blind_delete_primary_key) |
-| --[rocksdb-block-cache-size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_block_cache_size), [rocksdb_block_cache_size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_block_cache_size) |
-| --[rocksdb_block_restart_interval](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb-block-restart-interval), [rocksdb_block_restart_interval](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_block_restart_interval) |
-| [Rocksdb_block_cache_add](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_add) |
-| [Rocksdb_block_cache_add_failures](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_add_failures) |
-| [Rocksdb_block_bytes_read](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_bytes_read) |
-| [Rocksdb_block_bytes_write](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_bytes_write) |
-| [Rocksdb_block_cache_data_add](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_data_add) |
-| [Rocksdb_block_cache_data_bytes_insert](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_data_bytes_insert) |
-| [Rocksdb_block_cache_data_hit](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_data_hit) |
-| [Rocksdb_block_cache_data_miss](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_data_miss) |
-| [Rocksdb_block_cache_filter_add](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_filter_add) |
-| [Rocksdb_block_cache_filter_bytes_evict](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_filter_bytes_evict) |
-| [Rocksdb_block_cache_filter_bytes_insert](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_filter_bytes_insert) |
-| [Rocksdb_block_cache_filter_hit](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_filter_hit) |
-| [Rocksdb_block_cache_filter_miss](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_filter_miss) |
-| [Rocksdb_block_cache_hit](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_hit) |
-| [Rocksdb_block_cache_index_add](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_index_add) |
-| [Rocksdb_block_cache_index_bytes_evict](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_index_bytes_evict) |
-| [Rocksdb_block_cache_index_bytes_insert](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_index_bytes_insert) |
-| [Rocksdb_block_cache_index_hit](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_index_hit) |
-| [Rocksdb_block_cache_index_miss](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_index_miss) |
-| [Rocksdb_block_cache_miss](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_miss) |
-| [Rocksdb_block_cachecompressed_hit](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cachecompressed_hit) |
-| [Rocksdb_block_cachecompressed_miss](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cachecompressed_miss) |
-| --[rocksdb-block-size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_block_size), [rocksdb_block_size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_block_size) |
-| --[rocksdb-block-size-deviation](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_block_size_deviation), [rocksdb_block_size_deviation](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_block_size_deviation) |
-| [Rocksdb_bloom_filter_full_positive](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_bloom_filter_full_positive) |
-| [Rocksdb_bloom_filter_full_true_positive](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_bloom_filter_full_true_positive) |
-| [Rocksdb_bloom_filter_prefix_checked](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_bloom_filter_prefix_checked) |
-| [Rocksdb_bloom_filter_prefix_useful](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_bloom_filter_prefix_useful) |
-| [Rocksdb_bloom_filter_useful](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_bloom_filter_useful) |
-| --[rocksdb-bulk-load](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bulk_load), [rocksdb_bulk_load](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bulk_load) |
-| --[rocksdb-bulk-load_allow_sk](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bulk_load_allow_sk), [rocksdb_bulk_load_allow_sk](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bulk_load_allow_sk) |
-| --[rocksdb-bulk-load_allow_unsorted](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bulk_load_allow_unsorted), [rocksdb_bulk_load_allow_unsorted](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bulk_load_allow_unsorted) |
-| --[rocksdb-bulk-load-size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bulk_load_size), [rocksdb_bulk_load_size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bulk_load_size) |
-| --[rocksdb-bytes-per-sync](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bytes_per_sync), [rocksdb_bytes_per_sync](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bytes_per_sync) |
-| [Rocksdb_bytes_read](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_bytes_read) |
-| [Rocksdb_bytes_written](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_bytes_written) |
-| --[rocksdb-cache-dump](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_cache_dump), [rocksdb_cache_dump](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_cache_dump) |
-| --[rocksdb-cache-high-pri-pool-ratio](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_cache_high_pri_pool_ratio), [rocksdb_cache_high_pri_pool_ratio](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_cache_high_pri_pool_ratio) |
-| --[rocksdb-cache-index-and-filter-blocks](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_cache_index_and_filter_blocks), [rocksdb_cache_index_and_filter_blocks](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_cache_index_and_filter_blocks) |
-| --[rocksdb-cache-index-and-filter-with-high-priority](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_cache_index_and_filter_with_high_priority), [rocksdb_cache_index_and_filter_with_high_priority](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_cache_index_and_filter_with_high_priority) |
-| --[rocksdb-checksums-pct](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_checksums_pct), [rocksdb_checksums_pct](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_checksums_pct) |
-| --[rocksdb-collect-sst-properties](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_collect_sst_properties), [rocksdb_collect_sst_properties](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_collect_sst_properties) |
-| --[rocksdb-commit-in-the-middle](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_commit_in_the_middle), [rocksdb_commit_in_the_middle](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_commit_in_the_middle) |
-| --[rocksdb-commit-time-batch-for-recovery](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_commit_time_batch_for_recovery), [rocksdb_commit_time_batch_for_recovery](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_commit_time_batch_for_recovery) |
-| --[rocksdb-compact-cf](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compact_cf), [rocksdb_compact_cf](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compact_cf) |
-| [Rocksdb_compact_read_bytes](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_compact_read_bytes) |
-| [Rocksdb_compact_write_bytes](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_compact_write_bytes) |
-| [Rocksdb_compaction_key_drop_new](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_compaction_key_drop_new) |
-| [Rocksdb_compaction_key_drop_obsolete](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_compaction_key_drop_obsolete) |
-| [Rocksdb_compaction_key_drop_user](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_compaction_key_drop_user) |
-| --[rocksdb-compaction-readahead-size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_readahead_size), [rocksdb_compaction_readahead_size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_readahead_size) |
-| --[rocksdb-compaction-sequential-deletes](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_sequential_deletes), [rocksdb_compaction_sequential_deletes](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_sequential_deletes) |
-| --[rocksdb-compaction-sequential-deletes-count-sd](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_sequential_deletes_count_sd), [rocksdb_compaction_sequential_deletes_count_sd](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_sequential_deletes_count_sd) |
-| --[rocksdb-concurrent-prepare](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_concurrent_prepare), [rocksdb_concurrent_prepare](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_concurrent_prepare) |
-| --[rocksdb-compaction-sequential-deletes-file-size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_sequential_deletes_file_size), [rocksdb_compaction_sequential_deletes_file_size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_sequential_deletes_file_size) |
-| --[rocksdb-compaction-sequential-deletes-window](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_sequential_deletes_window), [rocksdb_compaction_sequential_deletes_window](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_sequential_deletes_window) |
-| [Rocksdb_covered_secondary_key_lookups](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_covered_secondary_key_lookups) |
-| --[rocksdb-create-checkpoint](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint), [rocksdb_create_checkpoint](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint) |
-| --[rocksdb-create-if-missing](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_if_missing), [rocksdb_create_if_missing](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_if_missing) |
-| --[rocksdb-create-missing-column-families](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_missing_column_families), [rocksdb_create_missing_column_families](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_missing_column_families) |
-| --[rocksdb-datadir](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_datadir), [rocksdb_datadir](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_datadir) |
-| --[rocksdb-db-write-buffer-size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_db_write_buffer_size), [rocksdb_db_write_buffer_size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_db_write_buffer_size) |
-| --[rocksdb-deadlock-detect](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_deadlock_detect), [rocksdb_deadlock_detect](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_deadlock_detect) |
-| --[rocksdb-deadlock-detect-depth](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_deadlock_detect_depth), [rocksdb_deadlock_detect_depth](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_deadlock_detect_depth) |
-| --[rocksdb-debug-manual-compaction-delay](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_manual_compaction_delay), [rocksdb_debug_manual_compaction_delay](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_manual_compaction_delay) |
-| --[rocksdb-debug-optimizer-no-zero-cardinality](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_optimizer_no_zero_cardinality), [rocksdb_debug_optimizer_no_zero_cardinality](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_optimizer_no_zero_cardinality) |
-| --[rocksdb-debug-ttl-ignore-pk](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_ttl_ignore_pk), [rocksdb_debug_ttl_ignore_pk](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_ttl_ignore_pk) |
-| --[rocksdb-debug-ttl-read-filter-ts](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_ttl_read_filter_ts), [rocksdb_debug_ttl_read_filter_ts](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_ttl_read_filter_ts) |
-| --[rocksdb-debug-ttl-rec-ts](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_ttl_rec_ts), [rocksdb_debug_ttl_rec_ts](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_ttl_rec_ts) |
-| --[rocksdb-debug-ttl-snapshot-ts](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_ttl_snapshot_ts), [rocksdb_debug_ttl_snapshot_ts](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_ttl_snapshot_ts) |
-| --[rocksdb-default-cf-options](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_default_cf_options), [rocksdb_default_cf_options](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_default_cf_options) |
-| --[rocksdb-delayed-write-rate](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_delayed_write_rate), [rocksdb_delayed_write_rate](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_delayed_write_rate) |
-| --[rocksdb-delete-cf](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_delete_cf), [rocksdb_delete_cf](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_delete_cf) |
-| --[rocksdb-delete-obsolete-files-period-micros](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_delete_obsolete_files_period_micros), [rocksdb_delete_obsolete_files_period_micros](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_delete_obsolete_files_period_micros) |
-| --[rocksdb-enable-2pc](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_2pc), [rocksdb_enable_2pc](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_2pc) |
-| --[rocksdb-enable-bulk-load-api](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_bulk_load_api), [rocksdb_enable_bulk_load_api](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_bulk_load_api) |
-| --[rocksdb-enable-insert-with-update-caching](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_insert_with_update_caching), [rocksdb_enable_insert_with_update_caching](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_insert_with_update_caching) |
-| --[rocksdb-enable-thread-tracking](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_thread_tracking), [rocksdb_enable_thread_tracking](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_thread_tracking) |
-| --[rocksdb-enable-ttl](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_ttl), [rocksdb_enable_ttl](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_ttl) |
-| --[rocksdb-enable-ttl-read-filtering](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_ttl_read_filtering), [rocksdb_enable_ttl_read_filtering](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_ttl_read_filtering) |
-| --[rocksdb-enable-write-thread-adaptive-yield](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_write_thread_adaptive_yield), [rocksdb_enable_write_thread_adaptive_yield](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_write_thread_adaptive_yield) |
-| --[rocksdb-error-if-exists](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_error_if_exists), [rocksdb_error_if_exists](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_error_if_exists) |
-| --[rocksdb-error-on-suboptimal-collation](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_error_on_suboptimal_collation), [rocksdb_on_suboptimal_collation](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_error_on_suboptimal_collation) |
-| --[rocksdb-flush-log-at-trx-commit](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_flush_log_at_trx_commit), [rocksdb_flush_log_at_trx_commit](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_flush_log_at_trx_commit) |
-| --[rocksdb-flush-memtable-on-analyze](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_flush_memtable_on_analyze), [rocksdb_flush_memtable_on_analyze](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_flush_memtable_on_analyze) |
-| [Rocksdb_flush_write_bytes](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_flush_write_bytes) |
-| --[rocksdb-force-compute-memtable-stats](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_compute_memtable_stats), [rocksdb_force_compute_memtable_stats](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_compute_memtable_stats) |
-| --[rocksdb-force-compute-memtable-stats-cachetime](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_compute_memtable_stats_cachetime), [rocksdb_force_compute_memtable_stats_cachetime](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_compute_memtable_stats_cachetime) |
-| --[rocksdb-force-flush-memtable-and-lzero-now](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_flush_memtable_and_lzero_now), [rocksdb_force_flush_memtable_and_lzero_now](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_flush_memtable_and_lzero_now) |
-| --[rocksdb-force-flush-memtable-now](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_flush_memtable_now), [rocksdb_force_flush_memtable_now](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_flush_memtable_now) |
-| --[rocksdb-force-index-records-in-range](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_index_records_in_range), [rocksdb_force_index_records_in_range](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_index_records_in_range) |
-| [Rocksdb_get_hit_l0](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_get_hit_l0) |
-| [Rocksdb_get_hit_l1](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_get_hit_l1) |
-| [Rocksdb_get_hit_l2_and_up](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_get_hit_l2_and_up) |
-| [Rocksdb_getupdatessince_calls](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_getupdatessince_calls) |
-| --[rocksdb-git-hash](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_git_hash), [rocksdb_git_hash](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_git_hash) |
-| --[rocksdb-hash-index-allow-collision](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_hash_index_allow_collision), [rocksdb_hash_index_allow_collision](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_hash_index_allow_collision) |
-| --[rocksdb-ignore-unknown-options](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_ignore_unknown_options), [rocksdb_ignore_unknown_options](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_ignore_unknown_options) |
-| --[rocksdb-index-type](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_index_type), [rocksdb_index_type](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_index_type) |
-| --[rocksdb-info-log-level](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_info_log_level), [rocksdb_info_log_level](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_info_log_level) |
-| --[rocksdb-io-write-timeout](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_io_write_timeout), [rocksdb_io_write_timeout](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_io_write_timeout) |
-| --[rocksdb-is-fd-close-on-exec](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_is_fd_close_on_exec), [rocksdb_is_fd_close_on_exec](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_is_fd_close_on_exec) |
-| [Rocksdb_iter_bytes_read](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_iter_bytes_read) |
-| --[rocksdb-keep-log-file-num](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_keep_log_file_num), [rocksdb_keep_log_file_num](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_keep_log_file_num) |
-| [Rocksdb_l0_num_files_stall_micros](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_l0_num_files_stall_micros) |
-| [Rocksdb_l0_slowdown_micros](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_l0_slowdown_micros) |
-| --[rocksdb-large-prefix](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_large_prefix), [rocksdb_large_prefix](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_large_prefix) |
-| --[rocksdb-lock-scanned-rows](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_lock_scanned_rows), [rocksdb_lock_scanned_rows](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_lock_scanned_rows) |
-| --[rocksdb-lock-wait-timeout](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_lock_wait_timeout), [rocksdb_lock_wait_timeout](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_lock_wait_timeout) |
-| --[rocksdb-log-dir](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_log_dir), [rocksdb_log_dir](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_log_dir) |
-| --[rocksdb-log-file-time-to-roll](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_log_file_time_to_roll), [rocksdb_log_file_time_to_roll](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_log_file_time_to_roll) |
-| --[rocksdb-manifest-preallocation-size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_manifest_preallocation_size), [rocksdb_manifest_preallocation_size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_manifest_preallocation_size) |
-| --[rocksdb-manual-compaction-threads](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_manual_compaction_threads), [rocksdb_manual_compaction_threads](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_manual_compaction_threads) |
-| [Rocksdb_manual_compactions_processed](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_manual_compactions_processed) |
-| [Rocksdb_manual_compactions_running](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_manual_compactions_running) |
-| --[rocksdb-manual-wal-flush](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_manual_wal_flush), [rocksdb_manual_wal_flush](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_manual_wal_flush) |
-| --[rocksdb-master-skip-tx-api](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_master_skip_tx_api), [rocksdb_master_skip_tx_api](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_master_skip_tx_api) |
-| --[rocksdb-max-background-compactions](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_background_compactions), [rocksdb_max_background_compactions](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_background_compactions) |
-| --[rocksdb-max-latest-deadlocks](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_latest_deadlocks), [rocksdb_max_latest_deadlocks](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_latest_deadlocks) |
-| --[rocksdb-max-background-flushes](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_background_flushes), [rocksdb_max_background_flushes](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_background_flushes) |
-| --[rocksdb-max-background-jobs](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_background_jobs), [rocksdb_max_background_jobs](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_background_jobs) |
-| --[rocksdb-max-log-file-size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_log_file_size), [rocksdb_max_log_file_size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_log_file_size) |
-| --[rocksdb-max-manifest-file-size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_manifest_file_size), [rocksdb_max_manifest_file_size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_manifest_file_size) |
-| --[rocksdb-max-manual-compactions](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_manual_compactions), [rocksdb_max_manual_compactions](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_manual_compactions) |
-| --[rocksdb-max-open-files](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_open_files), [rocksdb_max_open_files](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_open_files) |
-| --[rocksdb-max-row-locks](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_row_locks), [rocksdb_max_row_locks](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_row_locks) |
-| --[rocksdb-max-subcompactions](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_subcompactions), [rocksdb_max_subcompactions](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_subcompactions) |
-| --[rocksdb-max-total-wal-size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_total_wal_size), [rocksdb_max_total_wal_size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_total_wal_size) |
-| [Rocksdb_memtable_compaction_micros](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_memtable_compaction_micros) |
-| [Rocksdb_memtable_hit](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_memtable_hit) |
-| [Rocksdb_memtable_miss](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_memtable_miss) |
-| [Rocksdb_memtable_total](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_memtable_total) |
-| [Rocksdb_memtable_unflushed](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_memtable_unflushed) |
-| --[rocksdb-merge-buf-size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_merge_buf_size), [rocksdb_merge_buf_size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_merge_buf_size) |
-| --[rocksdb-merge-combine-read-size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_merge_combine_read_size), [rocksdb_merge_combine_read_size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_merge_combine_read_size) |
-| --[rocksdb-merge-tmp-file-removal-delay-ms](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_merge_tmp_file_removal_delay_ms), [rocksdb_merge_tmp_file_removal_delay_ms](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_merge_tmp_file_removal_delay_ms) |
-| --[rocksdb-new-table-reader-for-compaction-inputs](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_new_table_reader_for_compaction_inputs), [rocksdb_new_table_reader_for_compaction_inputs](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_new_table_reader_for_compaction_inputs) |
-| --[rocksdb-no-block-cache](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_no_block_cache), [rocksdb_no_block_cache](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_no_block_cache) |
-| [Rocksdb_no_file_closes](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_no_file_closes) |
-| [Rocksdb_no_file_errors](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_no_file_errors) |
-| [Rocksdb_no_file_opens](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_no_file_opens) |
-| [Rocksdb_num_iterators](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_num_iterators) |
-| [Rocksdb_number_block_not_compressed](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_block_not_compressed) |
-| [Rocksdb_db_next](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_db_next) |
-| [Rocksdb_db_next_found](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_db_next_found) |
-| [Rocksdb_db_prev](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_db_prev) |
-| [Rocksdb_db_prev_found](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_db_prev_found) |
-| [Rocksdb_db_seek](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_db_seek) |
-| [Rocksdb_db_seek_found](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_db_seek_found) |
-| [Rocksdb_number_deletes_filtered](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_deletes_filtered) |
-| [Rocksdb_number_keys_read](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_keys_read) |
-| [Rocksdb_number_keys_updated](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_keys_updated) |
-| [Rocksdb_number_keys_written](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_keys_written) |
-| [Rocksdb_number_merge_failures](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_merge_failures) |
-| [Rocksdb_number_multiget_bytes_read](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_multiget_bytes_read) |
-| [Rocksdb_number_multiget_get](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_multiget_get) |
-| [Rocksdb_number_multiget_keys_read](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_multiget_keys_read) |
-| [Rocksdb_number_reseeks_iteration](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_reseeks_iteration) |
-| [Rocksdb_number_sst_entry_delete](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_sst_entry_delete) |
-| [Rocksdb_number_sst_entry_merge](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_sst_entry_merge) |
-| [Rocksdb_number_sst_entry_other](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_sst_entry_other) |
-| [Rocksdb_number_sst_entry_put](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_sst_entry_put) |
-| [Rocksdb_number_sst_entry_singledelete](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_sst_entry_singledelete) |
-| [Rocksdb_number_superversion_acquires](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_superversion_acquires) |
-| [Rocksdb_number_superversion_cleanups](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_superversion_cleanups) |
-| [Rocksdb_number_superversion_releases](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_superversion_releases) |
-| --[rocksdb-override-cf-options](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_override_cf_options), [rocksdb_override_cf_options](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_override_cf_options) |
-| --[rocksdb-paranoid-checks](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_paranoid_checks), [rocksdb_paranoid_checks](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_paranoid_checks) |
-| --[rocksdb-pause-background-work](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_pause_background_work), [rocksdb_pause_background_work](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_pause_background_work) |
-| --[rocksdb-perf-context-level](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_perf_context_level), [rocksdb_perf_context_level](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_perf_context_level) |
-| --[rocksdb-persistent-cache-path](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_persistent_cache_path), [rocksdb_persistent_cache_path](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_persistent_cache_path) |
-| --[rocksdb-persistent-cache-size-mb](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_persistent_cache_size_mb), [rocksdb_persistent_cache_size_mb](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_persistent_cache_size_mb) |
-| --[rocksdb-pin-l0-filter-and-index-blocks-in-cache](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_pin_l0_filter_and_index_blocks_in_cache), [rocksdb_pin_l0_filter_and_index_blocks_in_cache](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_pin_l0_filter_and_index_blocks_in_cache) |
-| --[rocksdb-print-snapshot-conflict-queries](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_print_snapshot_conflict_queries), [rocksdb_print_snapshot_conflict_queries](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_print_snapshot_conflict_queries) |
-| [Rocksdb_queries_point](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_queries_point) |
-| [Rocksdb_queries_range](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_queries_range) |
-| --[rocksdb-rate-limiter-bytes-per-sec](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_rate_limiter_bytes_per_sec), [rocksdb_rate_limiter_bytes_per_sec](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_rate_limiter_bytes_per_sec) |
-| --[rocksdb-read-free-rpl-tables](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_read_free_rpl_tables), [rocksdb_read_free_rpl_tables](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_read_free_rpl_tables) |
-| --[rocksdb-records-in-range](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_records_in_range), [rocksdb_records_in_range](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_records_in_range) |
-| --[rocksdb-remove-mariabackup-checkpoint](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_remove_mariabackup_checkpoint), [rocksdb_remove_mariabackup_checkpoint](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_remove_mariabackup_checkpoint) |
-| --[rocksdb-reset-stats](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_reset_stats), [rocksdb_reset_stats](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_reset_stats) |
-| --[rocksdb-rollback-on-timeout](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_rollback_on_timeout), [rocksdb_rollback_on_timeout](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_rollback_on_timeout) |
-| [Rocksdb_row_lock_deadlocks](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_row_lock_deadlocks) |
-| [Rocksdb_row_lock_wait_timeouts](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_row_lock_wait_timeouts) |
-| [Rocksdb_rows_deleted](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_rows_deleted) |
-| [Rocksdb_rows_deleted_blind](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_rows_deleted_blind) |
-| [Rocksdb_rows_expired](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_rows_expired) |
-| [Rocksdb_rows_filtered](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_rows_filtered) |
-| [Rocksdb_rows_inserted](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_rows_inserted) |
-| [Rocksdb_rows_read](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_rows_read) |
-| [Rocksdb_rows_updated](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_rows_updated) |
-| --[rocksdb-seconds-between-stat-computes](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_seconds_between_stat_computes), [rocksdb_seconds_between_stat_computes](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_seconds_between_stat_computes) |
-| --[rocksdb-signal-drop-index-thread](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_signal_drop_index_thread), [rocksdb_signal_drop_index_thread](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_signal_drop_index_thread) |
-| --[rocksdb-sim-cache-size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_sim_cache_size), [rocksdb_sim_cache_size](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_sim_cache_size) |
-| --[rocksdb-skip-bloom-filter-on-read](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_skip_bloom_filter_on_read), [rocksdb_skip_bloom_filter_on_read](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_skip_bloom_filter_on_read) |
-| --[rocksdb-skip-fill-cache](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_skip_fill_cache), [rocksdb_skip_fill_cache](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_skip_fill_cache) |
-| --[rocksdb-skip-unique-check-tables](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_skip_unique_check_tables), [rocksdb_skip_unique_check_tables](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_skip_unique_check_tables) |
-| [Rocksdb_snapshot_conflict_errors](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_snapshot_conflict_errors) |
-| --[rocksdb-sst-mgr-rate-bytes-per-sec](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_sst_mgr_rate_bytes_per_sec), [rocksdb_sst_mgr_rate_bytes_per_sec](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_sst_mgr_rate_bytes_per_sec) |
-| [Rocksdb_stall_l0_file_count_limit_slowdowns](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_l0_file_count_limit_slowdowns) |
-| [Rocksdb_stall_l0_file_count_limit_stops](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_l0_file_count_limit_stops) |
-| [Rocksdb_stall_locked_l0_file_count_limit_slowdowns](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_locked_l0_file_count_limit_slowdowns) |
-| [Rocksdb_stall_locked_l0_file_count_limit_stops](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_locked_l0_file_count_limit_stops) |
-| [Rocksdb_stall_memtable_limit_slowdowns](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_memtable_limit_slowdowns) |
-| [Rocksdb_stall_memtable_limit_stops](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_memtable_limit_stops) |
-| [Rocksdb_stall_micros](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_micros) |
-| [Rocksdb_stall_pending_compaction_limit_slowdowns](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_pending_compaction_limit_slowdowns) |
-| [Rocksdb_stall_pending_compaction_limit_stops](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_pending_compaction_limit_stops) |
-| [Rocksdb_stall_total_slowdowns](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_total_slowdowns) |
-| [Rocksdb_stall_total_stops](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_total_stops) |
-| --[rocksdb-stats-dump-period-sec](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_stats_dump_period_sec), [rocksdb_stats_dump_period_sec](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_stats_dump_period_sec) |
-| --[rocksdb-stats-level](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_stats_level), [rocksdb_stats_level](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_stats_level) |
-| --[rocksdb-stats-recalc-rate](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_stats_recalc_rate), [rocksdb_stats_recalc_rate](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_stats_recalc_rate) |
-| --[rocksdb-store-row-debug-checksums](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_store_row_debug_checksums), [rocksdb_store_row_debug_checksums](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_store_row_debug_checksums) |
-| --[rocksdb-strict-collation-check](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_strict_collation_check), [rocksdb_strict_collation_check](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_strict_collation_check) |
-| --[rocksdb-strict-collation-exceptions](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_strict_collation_exceptions), [rocksdb_strict_collation_exceptions](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_strict_collation_exceptions) |
-| --[rocksdb-supported-compression-types](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_supported_compression_types), [rocksdb_supported_compression_types](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_supported_compression_types) |
-| [Rocksdb_system_rows_deleted](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_system_rows_deleted) |
-| [Rocksdb_system_rows_inserted](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_system_rows_inserted) |
-| [Rocksdb_system_rows_read](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_system_rows_read) |
-| [Rocksdb_system_rows_updated](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_system_rows_updated) |
-| --[rocksdb-table-cache-numshardbits](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_table_cache_numshardbits), [rocksdb_table_cache_numshardbits](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_table_cache_numshardbits) |
-| --[rocksdb-table-stats-sampling-pct](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_table_stats_sampling_pct), [rocksdb_table_stats_sampling_pct](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_table_stats_sampling_pct) |
-| --[rocksdb-tmpdir](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_tmpdir), [rocksdb_tmpdir](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_tmpdir) |
-| --[rocksdb-trace-sst-api](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_trace_sst_api), [rocksdb_trace_sst_api](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_trace_sst_api) |
-| --[rocksdb-two-write-queues](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_two_write_queues), [rocksdb_two_write_queues](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_two_write_queues) |
-| --[rocksdb-unsafe-for-binlog](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_unsafe_for_binlog), [rocksdb_unsafe_for_binlog](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_unsafe_for_binlog) |
-| --[rocksdb-update-cf-options](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_update_cf_options), [rocksdb_update_cf_options](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_update_cf_options) |
-| --[rocksdb-use-adaptive-mutex](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_adaptive_mutex), [rocksdb_use_adaptive_mutex](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_adaptive_mutex) |
-| --[rocksdb-use-clock-cache](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_clock_cache), [rocksdb_use_clock_cache](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_clock_cache) |
-| --[rocksdb-use-direct-io-for-flush-and-compaction](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_direct_io_for_flush_and_compaction), [rocksdb_use_direct_io_for_flush_and_compaction](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_direct_io_for_flush_and_compaction) |
-| --[rocksdb-use-direct-reads](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_direct_reads), [rocksdb_use_direct_reads](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_direct_reads) |
-| --[rocksdb-use-fsync](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_fsync), [rocksdb_use_fsync](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_fsync) |
-| --[rocksdb-validate-tables](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_validate_tables), [rocksdb_validate_tables](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_validate_tables) |
-| --[rocksdb-verify-row-debug-checksums](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_verify_row_debug_checksums), [rocksdb_verify_row_debug_checksums](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_verify_row_debug_checksums) |
-| [Rocksdb_wal_bytes](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_wal_bytes) |
-| --[rocksdb-wal-bytes-per-sync](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_bytes_per_sync), [rocksdb_wal_bytes_per_sync](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_bytes_per_sync) |
-| --[rocksdb-wal-dir](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_dir), [rocksdb_wal_dir](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_dir) |
-| [Rocksdb_wal_group_syncs](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_wal_group_syncs) |
-| --[rocksdb-wal-recovery-mode](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_recovery_mode), [rocksdb_wal_recovery_mode](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_recovery_mode) |
-| --[rocksdb-wal-size-limit-mb](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_size_limit_mb), [rocksdb_wal_size_limit_mb](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_size_limit_mb) |
-| [Rocksdb_wal_synced](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_wal_synced) |
-| --[rocksdb-wal-ttl-seconds](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_ttl_seconds), [rocksdb_wal_ttl_seconds](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_ttl_seconds) |
-| --[rocksdb-whole-key-filtering](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_whole_key_filtering), [rocksdb_whole_key_filtering](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_whole_key_filtering) |
-| --[rocksdb-write-batch-max-bytes](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_write_batch_max_bytes), [rocksdb_write_batch_max_bytes](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_write_batch_max_bytes) |
-| --[rocksdb-write-disable-wal](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_write_disable_wal), [rocksdb_write_disable_wal](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_write_disable_wal) |
-| --[rocksdb-write-ignore-missing-column-families](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_write_ignore_missing_column_families), [rocksdb_write_ignore_missing_column_families](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_write_ignore_missing_column_families) |
-| --[rocksdb-write-policy](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_write_policy), [rocksdb_write_policy](../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_write_policy) |
-| [Rocksdb_write_other](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_write_other) |
-| [Rocksdb_write_self](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_write_self) |
-| [Rocksdb_write_timedout](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_write_timedout) |
-| [Rocksdb_write_wal](../../ref/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_write_wal) |
+| --[rocksdb-access-hint-on-compaction-start](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_access_hint_on_compaction_start), [rocksdb_access_hint_on_compaction_start](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_access_hint_on_compaction_start) |
+| --[rocksdb-advise-random-on-open](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_advise_random_on_open), [rocksdb_advise_random_on_open](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_advise_random_on_open) |
+| --[rocksdb-allow-concurrent-memtable-write](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_concurrent_memtable_write), [rocksdb_allow_concurrent_memtable_write](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_concurrent_memtable_write) |
+| --[rocksdb-allow-mmap-reads](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_mmap_reads), [rocksdb_allow_mmap_reads](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_mmap_reads) |
+| --[rocksdb-allow-mmap-writes](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_mmap_writes), [rocksdb_allow_mmap_writes](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_mmap_writes) |
+| --[rocksdb-allow-to-start-after-corruption](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_to_start_after_corruption), [rocksdb_allow_to_start_after_corruption](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_to_start_after_corruption) |
+| --[rocksdb-background-sync](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_background_sync), [rocksdb_background_sync](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_background_sync) |
+| --[rocksdb_base-background-compactions](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_base_background_compactions), [rocksdb_base_background_compactions](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_base_background_compactions) |
+| --[rocksdb-blind-delete-primary-key](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_blind_delete_primary_key), [rocksdb_blind_delete_primary_key](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_blind_delete_primary_key) |
+| --[rocksdb-block-cache-size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_block_cache_size), [rocksdb_block_cache_size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_block_cache_size) |
+| --[rocksdb_block_restart_interval](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb-block-restart-interval), [rocksdb_block_restart_interval](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_block_restart_interval) |
+| [Rocksdb_block_cache_add](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_add) |
+| [Rocksdb_block_cache_add_failures](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_add_failures) |
+| [Rocksdb_block_bytes_read](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_bytes_read) |
+| [Rocksdb_block_bytes_write](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_bytes_write) |
+| [Rocksdb_block_cache_data_add](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_data_add) |
+| [Rocksdb_block_cache_data_bytes_insert](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_data_bytes_insert) |
+| [Rocksdb_block_cache_data_hit](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_data_hit) |
+| [Rocksdb_block_cache_data_miss](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_data_miss) |
+| [Rocksdb_block_cache_filter_add](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_filter_add) |
+| [Rocksdb_block_cache_filter_bytes_evict](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_filter_bytes_evict) |
+| [Rocksdb_block_cache_filter_bytes_insert](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_filter_bytes_insert) |
+| [Rocksdb_block_cache_filter_hit](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_filter_hit) |
+| [Rocksdb_block_cache_filter_miss](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_filter_miss) |
+| [Rocksdb_block_cache_hit](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_hit) |
+| [Rocksdb_block_cache_index_add](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_index_add) |
+| [Rocksdb_block_cache_index_bytes_evict](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_index_bytes_evict) |
+| [Rocksdb_block_cache_index_bytes_insert](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_index_bytes_insert) |
+| [Rocksdb_block_cache_index_hit](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_index_hit) |
+| [Rocksdb_block_cache_index_miss](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_index_miss) |
+| [Rocksdb_block_cache_miss](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cache_miss) |
+| [Rocksdb_block_cachecompressed_hit](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cachecompressed_hit) |
+| [Rocksdb_block_cachecompressed_miss](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_block_cachecompressed_miss) |
+| --[rocksdb-block-size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_block_size), [rocksdb_block_size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_block_size) |
+| --[rocksdb-block-size-deviation](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_block_size_deviation), [rocksdb_block_size_deviation](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_block_size_deviation) |
+| [Rocksdb_bloom_filter_full_positive](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_bloom_filter_full_positive) |
+| [Rocksdb_bloom_filter_full_true_positive](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_bloom_filter_full_true_positive) |
+| [Rocksdb_bloom_filter_prefix_checked](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_bloom_filter_prefix_checked) |
+| [Rocksdb_bloom_filter_prefix_useful](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_bloom_filter_prefix_useful) |
+| [Rocksdb_bloom_filter_useful](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_bloom_filter_useful) |
+| --[rocksdb-bulk-load](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bulk_load), [rocksdb_bulk_load](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bulk_load) |
+| --[rocksdb-bulk-load_allow_sk](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bulk_load_allow_sk), [rocksdb_bulk_load_allow_sk](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bulk_load_allow_sk) |
+| --[rocksdb-bulk-load_allow_unsorted](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bulk_load_allow_unsorted), [rocksdb_bulk_load_allow_unsorted](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bulk_load_allow_unsorted) |
+| --[rocksdb-bulk-load-size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bulk_load_size), [rocksdb_bulk_load_size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bulk_load_size) |
+| --[rocksdb-bytes-per-sync](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bytes_per_sync), [rocksdb_bytes_per_sync](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_bytes_per_sync) |
+| [Rocksdb_bytes_read](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_bytes_read) |
+| [Rocksdb_bytes_written](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_bytes_written) |
+| --[rocksdb-cache-dump](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_cache_dump), [rocksdb_cache_dump](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_cache_dump) |
+| --[rocksdb-cache-high-pri-pool-ratio](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_cache_high_pri_pool_ratio), [rocksdb_cache_high_pri_pool_ratio](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_cache_high_pri_pool_ratio) |
+| --[rocksdb-cache-index-and-filter-blocks](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_cache_index_and_filter_blocks), [rocksdb_cache_index_and_filter_blocks](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_cache_index_and_filter_blocks) |
+| --[rocksdb-cache-index-and-filter-with-high-priority](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_cache_index_and_filter_with_high_priority), [rocksdb_cache_index_and_filter_with_high_priority](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_cache_index_and_filter_with_high_priority) |
+| --[rocksdb-checksums-pct](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_checksums_pct), [rocksdb_checksums_pct](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_checksums_pct) |
+| --[rocksdb-collect-sst-properties](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_collect_sst_properties), [rocksdb_collect_sst_properties](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_collect_sst_properties) |
+| --[rocksdb-commit-in-the-middle](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_commit_in_the_middle), [rocksdb_commit_in_the_middle](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_commit_in_the_middle) |
+| --[rocksdb-commit-time-batch-for-recovery](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_commit_time_batch_for_recovery), [rocksdb_commit_time_batch_for_recovery](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_commit_time_batch_for_recovery) |
+| --[rocksdb-compact-cf](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compact_cf), [rocksdb_compact_cf](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compact_cf) |
+| [Rocksdb_compact_read_bytes](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_compact_read_bytes) |
+| [Rocksdb_compact_write_bytes](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_compact_write_bytes) |
+| [Rocksdb_compaction_key_drop_new](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_compaction_key_drop_new) |
+| [Rocksdb_compaction_key_drop_obsolete](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_compaction_key_drop_obsolete) |
+| [Rocksdb_compaction_key_drop_user](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_compaction_key_drop_user) |
+| --[rocksdb-compaction-readahead-size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_readahead_size), [rocksdb_compaction_readahead_size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_readahead_size) |
+| --[rocksdb-compaction-sequential-deletes](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_sequential_deletes), [rocksdb_compaction_sequential_deletes](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_sequential_deletes) |
+| --[rocksdb-compaction-sequential-deletes-count-sd](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_sequential_deletes_count_sd), [rocksdb_compaction_sequential_deletes_count_sd](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_sequential_deletes_count_sd) |
+| --[rocksdb-concurrent-prepare](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_concurrent_prepare), [rocksdb_concurrent_prepare](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_concurrent_prepare) |
+| --[rocksdb-compaction-sequential-deletes-file-size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_sequential_deletes_file_size), [rocksdb_compaction_sequential_deletes_file_size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_sequential_deletes_file_size) |
+| --[rocksdb-compaction-sequential-deletes-window](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_sequential_deletes_window), [rocksdb_compaction_sequential_deletes_window](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_compaction_sequential_deletes_window) |
+| [Rocksdb_covered_secondary_key_lookups](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_covered_secondary_key_lookups) |
+| --[rocksdb-create-checkpoint](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint), [rocksdb_create_checkpoint](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint) |
+| --[rocksdb-create-if-missing](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_if_missing), [rocksdb_create_if_missing](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_if_missing) |
+| --[rocksdb-create-missing-column-families](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_missing_column_families), [rocksdb_create_missing_column_families](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_missing_column_families) |
+| --[rocksdb-datadir](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_datadir), [rocksdb_datadir](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_datadir) |
+| --[rocksdb-db-write-buffer-size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_db_write_buffer_size), [rocksdb_db_write_buffer_size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_db_write_buffer_size) |
+| --[rocksdb-deadlock-detect](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_deadlock_detect), [rocksdb_deadlock_detect](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_deadlock_detect) |
+| --[rocksdb-deadlock-detect-depth](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_deadlock_detect_depth), [rocksdb_deadlock_detect_depth](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_deadlock_detect_depth) |
+| --[rocksdb-debug-manual-compaction-delay](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_manual_compaction_delay), [rocksdb_debug_manual_compaction_delay](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_manual_compaction_delay) |
+| --[rocksdb-debug-optimizer-no-zero-cardinality](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_optimizer_no_zero_cardinality), [rocksdb_debug_optimizer_no_zero_cardinality](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_optimizer_no_zero_cardinality) |
+| --[rocksdb-debug-ttl-ignore-pk](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_ttl_ignore_pk), [rocksdb_debug_ttl_ignore_pk](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_ttl_ignore_pk) |
+| --[rocksdb-debug-ttl-read-filter-ts](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_ttl_read_filter_ts), [rocksdb_debug_ttl_read_filter_ts](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_ttl_read_filter_ts) |
+| --[rocksdb-debug-ttl-rec-ts](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_ttl_rec_ts), [rocksdb_debug_ttl_rec_ts](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_ttl_rec_ts) |
+| --[rocksdb-debug-ttl-snapshot-ts](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_ttl_snapshot_ts), [rocksdb_debug_ttl_snapshot_ts](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_debug_ttl_snapshot_ts) |
+| --[rocksdb-default-cf-options](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_default_cf_options), [rocksdb_default_cf_options](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_default_cf_options) |
+| --[rocksdb-delayed-write-rate](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_delayed_write_rate), [rocksdb_delayed_write_rate](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_delayed_write_rate) |
+| --[rocksdb-delete-cf](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_delete_cf), [rocksdb_delete_cf](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_delete_cf) |
+| --[rocksdb-delete-obsolete-files-period-micros](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_delete_obsolete_files_period_micros), [rocksdb_delete_obsolete_files_period_micros](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_delete_obsolete_files_period_micros) |
+| --[rocksdb-enable-2pc](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_2pc), [rocksdb_enable_2pc](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_2pc) |
+| --[rocksdb-enable-bulk-load-api](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_bulk_load_api), [rocksdb_enable_bulk_load_api](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_bulk_load_api) |
+| --[rocksdb-enable-insert-with-update-caching](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_insert_with_update_caching), [rocksdb_enable_insert_with_update_caching](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_insert_with_update_caching) |
+| --[rocksdb-enable-thread-tracking](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_thread_tracking), [rocksdb_enable_thread_tracking](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_thread_tracking) |
+| --[rocksdb-enable-ttl](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_ttl), [rocksdb_enable_ttl](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_ttl) |
+| --[rocksdb-enable-ttl-read-filtering](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_ttl_read_filtering), [rocksdb_enable_ttl_read_filtering](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_ttl_read_filtering) |
+| --[rocksdb-enable-write-thread-adaptive-yield](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_write_thread_adaptive_yield), [rocksdb_enable_write_thread_adaptive_yield](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_enable_write_thread_adaptive_yield) |
+| --[rocksdb-error-if-exists](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_error_if_exists), [rocksdb_error_if_exists](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_error_if_exists) |
+| --[rocksdb-error-on-suboptimal-collation](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_error_on_suboptimal_collation), [rocksdb_on_suboptimal_collation](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_error_on_suboptimal_collation) |
+| --[rocksdb-flush-log-at-trx-commit](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_flush_log_at_trx_commit), [rocksdb_flush_log_at_trx_commit](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_flush_log_at_trx_commit) |
+| --[rocksdb-flush-memtable-on-analyze](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_flush_memtable_on_analyze), [rocksdb_flush_memtable_on_analyze](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_flush_memtable_on_analyze) |
+| [Rocksdb_flush_write_bytes](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_flush_write_bytes) |
+| --[rocksdb-force-compute-memtable-stats](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_compute_memtable_stats), [rocksdb_force_compute_memtable_stats](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_compute_memtable_stats) |
+| --[rocksdb-force-compute-memtable-stats-cachetime](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_compute_memtable_stats_cachetime), [rocksdb_force_compute_memtable_stats_cachetime](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_compute_memtable_stats_cachetime) |
+| --[rocksdb-force-flush-memtable-and-lzero-now](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_flush_memtable_and_lzero_now), [rocksdb_force_flush_memtable_and_lzero_now](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_flush_memtable_and_lzero_now) |
+| --[rocksdb-force-flush-memtable-now](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_flush_memtable_now), [rocksdb_force_flush_memtable_now](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_flush_memtable_now) |
+| --[rocksdb-force-index-records-in-range](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_index_records_in_range), [rocksdb_force_index_records_in_range](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_force_index_records_in_range) |
+| [Rocksdb_get_hit_l0](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_get_hit_l0) |
+| [Rocksdb_get_hit_l1](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_get_hit_l1) |
+| [Rocksdb_get_hit_l2_and_up](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_get_hit_l2_and_up) |
+| [Rocksdb_getupdatessince_calls](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_getupdatessince_calls) |
+| --[rocksdb-git-hash](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_git_hash), [rocksdb_git_hash](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_git_hash) |
+| --[rocksdb-hash-index-allow-collision](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_hash_index_allow_collision), [rocksdb_hash_index_allow_collision](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_hash_index_allow_collision) |
+| --[rocksdb-ignore-unknown-options](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_ignore_unknown_options), [rocksdb_ignore_unknown_options](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_ignore_unknown_options) |
+| --[rocksdb-index-type](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_index_type), [rocksdb_index_type](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_index_type) |
+| --[rocksdb-info-log-level](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_info_log_level), [rocksdb_info_log_level](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_info_log_level) |
+| --[rocksdb-io-write-timeout](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_io_write_timeout), [rocksdb_io_write_timeout](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_io_write_timeout) |
+| --[rocksdb-is-fd-close-on-exec](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_is_fd_close_on_exec), [rocksdb_is_fd_close_on_exec](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_is_fd_close_on_exec) |
+| [Rocksdb_iter_bytes_read](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_iter_bytes_read) |
+| --[rocksdb-keep-log-file-num](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_keep_log_file_num), [rocksdb_keep_log_file_num](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_keep_log_file_num) |
+| [Rocksdb_l0_num_files_stall_micros](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_l0_num_files_stall_micros) |
+| [Rocksdb_l0_slowdown_micros](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_l0_slowdown_micros) |
+| --[rocksdb-large-prefix](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_large_prefix), [rocksdb_large_prefix](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_large_prefix) |
+| --[rocksdb-lock-scanned-rows](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_lock_scanned_rows), [rocksdb_lock_scanned_rows](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_lock_scanned_rows) |
+| --[rocksdb-lock-wait-timeout](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_lock_wait_timeout), [rocksdb_lock_wait_timeout](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_lock_wait_timeout) |
+| --[rocksdb-log-dir](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_log_dir), [rocksdb_log_dir](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_log_dir) |
+| --[rocksdb-log-file-time-to-roll](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_log_file_time_to_roll), [rocksdb_log_file_time_to_roll](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_log_file_time_to_roll) |
+| --[rocksdb-manifest-preallocation-size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_manifest_preallocation_size), [rocksdb_manifest_preallocation_size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_manifest_preallocation_size) |
+| --[rocksdb-manual-compaction-threads](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_manual_compaction_threads), [rocksdb_manual_compaction_threads](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_manual_compaction_threads) |
+| [Rocksdb_manual_compactions_processed](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_manual_compactions_processed) |
+| [Rocksdb_manual_compactions_running](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_manual_compactions_running) |
+| --[rocksdb-manual-wal-flush](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_manual_wal_flush), [rocksdb_manual_wal_flush](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_manual_wal_flush) |
+| --[rocksdb-master-skip-tx-api](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_master_skip_tx_api), [rocksdb_master_skip_tx_api](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_master_skip_tx_api) |
+| --[rocksdb-max-background-compactions](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_background_compactions), [rocksdb_max_background_compactions](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_background_compactions) |
+| --[rocksdb-max-latest-deadlocks](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_latest_deadlocks), [rocksdb_max_latest_deadlocks](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_latest_deadlocks) |
+| --[rocksdb-max-background-flushes](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_background_flushes), [rocksdb_max_background_flushes](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_background_flushes) |
+| --[rocksdb-max-background-jobs](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_background_jobs), [rocksdb_max_background_jobs](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_background_jobs) |
+| --[rocksdb-max-log-file-size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_log_file_size), [rocksdb_max_log_file_size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_log_file_size) |
+| --[rocksdb-max-manifest-file-size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_manifest_file_size), [rocksdb_max_manifest_file_size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_manifest_file_size) |
+| --[rocksdb-max-manual-compactions](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_manual_compactions), [rocksdb_max_manual_compactions](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_manual_compactions) |
+| --[rocksdb-max-open-files](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_open_files), [rocksdb_max_open_files](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_open_files) |
+| --[rocksdb-max-row-locks](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_row_locks), [rocksdb_max_row_locks](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_row_locks) |
+| --[rocksdb-max-subcompactions](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_subcompactions), [rocksdb_max_subcompactions](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_subcompactions) |
+| --[rocksdb-max-total-wal-size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_total_wal_size), [rocksdb_max_total_wal_size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_max_total_wal_size) |
+| [Rocksdb_memtable_compaction_micros](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_memtable_compaction_micros) |
+| [Rocksdb_memtable_hit](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_memtable_hit) |
+| [Rocksdb_memtable_miss](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_memtable_miss) |
+| [Rocksdb_memtable_total](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_memtable_total) |
+| [Rocksdb_memtable_unflushed](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_memtable_unflushed) |
+| --[rocksdb-merge-buf-size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_merge_buf_size), [rocksdb_merge_buf_size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_merge_buf_size) |
+| --[rocksdb-merge-combine-read-size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_merge_combine_read_size), [rocksdb_merge_combine_read_size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_merge_combine_read_size) |
+| --[rocksdb-merge-tmp-file-removal-delay-ms](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_merge_tmp_file_removal_delay_ms), [rocksdb_merge_tmp_file_removal_delay_ms](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_merge_tmp_file_removal_delay_ms) |
+| --[rocksdb-new-table-reader-for-compaction-inputs](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_new_table_reader_for_compaction_inputs), [rocksdb_new_table_reader_for_compaction_inputs](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_new_table_reader_for_compaction_inputs) |
+| --[rocksdb-no-block-cache](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_no_block_cache), [rocksdb_no_block_cache](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_no_block_cache) |
+| [Rocksdb_no_file_closes](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_no_file_closes) |
+| [Rocksdb_no_file_errors](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_no_file_errors) |
+| [Rocksdb_no_file_opens](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_no_file_opens) |
+| [Rocksdb_num_iterators](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_num_iterators) |
+| [Rocksdb_number_block_not_compressed](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_block_not_compressed) |
+| [Rocksdb_db_next](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_db_next) |
+| [Rocksdb_db_next_found](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_db_next_found) |
+| [Rocksdb_db_prev](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_db_prev) |
+| [Rocksdb_db_prev_found](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_db_prev_found) |
+| [Rocksdb_db_seek](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_db_seek) |
+| [Rocksdb_db_seek_found](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_db_seek_found) |
+| [Rocksdb_number_deletes_filtered](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_deletes_filtered) |
+| [Rocksdb_number_keys_read](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_keys_read) |
+| [Rocksdb_number_keys_updated](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_keys_updated) |
+| [Rocksdb_number_keys_written](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_keys_written) |
+| [Rocksdb_number_merge_failures](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_merge_failures) |
+| [Rocksdb_number_multiget_bytes_read](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_multiget_bytes_read) |
+| [Rocksdb_number_multiget_get](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_multiget_get) |
+| [Rocksdb_number_multiget_keys_read](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_multiget_keys_read) |
+| [Rocksdb_number_reseeks_iteration](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_reseeks_iteration) |
+| [Rocksdb_number_sst_entry_delete](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_sst_entry_delete) |
+| [Rocksdb_number_sst_entry_merge](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_sst_entry_merge) |
+| [Rocksdb_number_sst_entry_other](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_sst_entry_other) |
+| [Rocksdb_number_sst_entry_put](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_sst_entry_put) |
+| [Rocksdb_number_sst_entry_singledelete](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_sst_entry_singledelete) |
+| [Rocksdb_number_superversion_acquires](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_superversion_acquires) |
+| [Rocksdb_number_superversion_cleanups](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_superversion_cleanups) |
+| [Rocksdb_number_superversion_releases](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_number_superversion_releases) |
+| --[rocksdb-override-cf-options](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_override_cf_options), [rocksdb_override_cf_options](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_override_cf_options) |
+| --[rocksdb-paranoid-checks](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_paranoid_checks), [rocksdb_paranoid_checks](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_paranoid_checks) |
+| --[rocksdb-pause-background-work](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_pause_background_work), [rocksdb_pause_background_work](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_pause_background_work) |
+| --[rocksdb-perf-context-level](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_perf_context_level), [rocksdb_perf_context_level](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_perf_context_level) |
+| --[rocksdb-persistent-cache-path](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_persistent_cache_path), [rocksdb_persistent_cache_path](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_persistent_cache_path) |
+| --[rocksdb-persistent-cache-size-mb](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_persistent_cache_size_mb), [rocksdb_persistent_cache_size_mb](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_persistent_cache_size_mb) |
+| --[rocksdb-pin-l0-filter-and-index-blocks-in-cache](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_pin_l0_filter_and_index_blocks_in_cache), [rocksdb_pin_l0_filter_and_index_blocks_in_cache](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_pin_l0_filter_and_index_blocks_in_cache) |
+| --[rocksdb-print-snapshot-conflict-queries](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_print_snapshot_conflict_queries), [rocksdb_print_snapshot_conflict_queries](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_print_snapshot_conflict_queries) |
+| [Rocksdb_queries_point](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_queries_point) |
+| [Rocksdb_queries_range](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_queries_range) |
+| --[rocksdb-rate-limiter-bytes-per-sec](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_rate_limiter_bytes_per_sec), [rocksdb_rate_limiter_bytes_per_sec](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_rate_limiter_bytes_per_sec) |
+| --[rocksdb-read-free-rpl-tables](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_read_free_rpl_tables), [rocksdb_read_free_rpl_tables](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_read_free_rpl_tables) |
+| --[rocksdb-records-in-range](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_records_in_range), [rocksdb_records_in_range](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_records_in_range) |
+| --[rocksdb-remove-mariabackup-checkpoint](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_remove_mariabackup_checkpoint), [rocksdb_remove_mariabackup_checkpoint](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_remove_mariabackup_checkpoint) |
+| --[rocksdb-reset-stats](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_reset_stats), [rocksdb_reset_stats](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_reset_stats) |
+| --[rocksdb-rollback-on-timeout](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_rollback_on_timeout), [rocksdb_rollback_on_timeout](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_rollback_on_timeout) |
+| [Rocksdb_row_lock_deadlocks](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_row_lock_deadlocks) |
+| [Rocksdb_row_lock_wait_timeouts](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_row_lock_wait_timeouts) |
+| [Rocksdb_rows_deleted](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_rows_deleted) |
+| [Rocksdb_rows_deleted_blind](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_rows_deleted_blind) |
+| [Rocksdb_rows_expired](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_rows_expired) |
+| [Rocksdb_rows_filtered](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_rows_filtered) |
+| [Rocksdb_rows_inserted](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_rows_inserted) |
+| [Rocksdb_rows_read](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_rows_read) |
+| [Rocksdb_rows_updated](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_rows_updated) |
+| --[rocksdb-seconds-between-stat-computes](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_seconds_between_stat_computes), [rocksdb_seconds_between_stat_computes](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_seconds_between_stat_computes) |
+| --[rocksdb-signal-drop-index-thread](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_signal_drop_index_thread), [rocksdb_signal_drop_index_thread](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_signal_drop_index_thread) |
+| --[rocksdb-sim-cache-size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_sim_cache_size), [rocksdb_sim_cache_size](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_sim_cache_size) |
+| --[rocksdb-skip-bloom-filter-on-read](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_skip_bloom_filter_on_read), [rocksdb_skip_bloom_filter_on_read](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_skip_bloom_filter_on_read) |
+| --[rocksdb-skip-fill-cache](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_skip_fill_cache), [rocksdb_skip_fill_cache](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_skip_fill_cache) |
+| --[rocksdb-skip-unique-check-tables](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_skip_unique_check_tables), [rocksdb_skip_unique_check_tables](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_skip_unique_check_tables) |
+| [Rocksdb_snapshot_conflict_errors](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_snapshot_conflict_errors) |
+| --[rocksdb-sst-mgr-rate-bytes-per-sec](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_sst_mgr_rate_bytes_per_sec), [rocksdb_sst_mgr_rate_bytes_per_sec](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_sst_mgr_rate_bytes_per_sec) |
+| [Rocksdb_stall_l0_file_count_limit_slowdowns](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_l0_file_count_limit_slowdowns) |
+| [Rocksdb_stall_l0_file_count_limit_stops](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_l0_file_count_limit_stops) |
+| [Rocksdb_stall_locked_l0_file_count_limit_slowdowns](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_locked_l0_file_count_limit_slowdowns) |
+| [Rocksdb_stall_locked_l0_file_count_limit_stops](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_locked_l0_file_count_limit_stops) |
+| [Rocksdb_stall_memtable_limit_slowdowns](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_memtable_limit_slowdowns) |
+| [Rocksdb_stall_memtable_limit_stops](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_memtable_limit_stops) |
+| [Rocksdb_stall_micros](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_micros) |
+| [Rocksdb_stall_pending_compaction_limit_slowdowns](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_pending_compaction_limit_slowdowns) |
+| [Rocksdb_stall_pending_compaction_limit_stops](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_pending_compaction_limit_stops) |
+| [Rocksdb_stall_total_slowdowns](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_total_slowdowns) |
+| [Rocksdb_stall_total_stops](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_stall_total_stops) |
+| --[rocksdb-stats-dump-period-sec](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_stats_dump_period_sec), [rocksdb_stats_dump_period_sec](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_stats_dump_period_sec) |
+| --[rocksdb-stats-level](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_stats_level), [rocksdb_stats_level](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_stats_level) |
+| --[rocksdb-stats-recalc-rate](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_stats_recalc_rate), [rocksdb_stats_recalc_rate](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_stats_recalc_rate) |
+| --[rocksdb-store-row-debug-checksums](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_store_row_debug_checksums), [rocksdb_store_row_debug_checksums](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_store_row_debug_checksums) |
+| --[rocksdb-strict-collation-check](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_strict_collation_check), [rocksdb_strict_collation_check](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_strict_collation_check) |
+| --[rocksdb-strict-collation-exceptions](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_strict_collation_exceptions), [rocksdb_strict_collation_exceptions](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_strict_collation_exceptions) |
+| --[rocksdb-supported-compression-types](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_supported_compression_types), [rocksdb_supported_compression_types](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_supported_compression_types) |
+| [Rocksdb_system_rows_deleted](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_system_rows_deleted) |
+| [Rocksdb_system_rows_inserted](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_system_rows_inserted) |
+| [Rocksdb_system_rows_read](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_system_rows_read) |
+| [Rocksdb_system_rows_updated](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_system_rows_updated) |
+| --[rocksdb-table-cache-numshardbits](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_table_cache_numshardbits), [rocksdb_table_cache_numshardbits](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_table_cache_numshardbits) |
+| --[rocksdb-table-stats-sampling-pct](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_table_stats_sampling_pct), [rocksdb_table_stats_sampling_pct](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_table_stats_sampling_pct) |
+| --[rocksdb-tmpdir](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_tmpdir), [rocksdb_tmpdir](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_tmpdir) |
+| --[rocksdb-trace-sst-api](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_trace_sst_api), [rocksdb_trace_sst_api](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_trace_sst_api) |
+| --[rocksdb-two-write-queues](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_two_write_queues), [rocksdb_two_write_queues](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_two_write_queues) |
+| --[rocksdb-unsafe-for-binlog](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_unsafe_for_binlog), [rocksdb_unsafe_for_binlog](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_unsafe_for_binlog) |
+| --[rocksdb-update-cf-options](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_update_cf_options), [rocksdb_update_cf_options](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_update_cf_options) |
+| --[rocksdb-use-adaptive-mutex](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_adaptive_mutex), [rocksdb_use_adaptive_mutex](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_adaptive_mutex) |
+| --[rocksdb-use-clock-cache](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_clock_cache), [rocksdb_use_clock_cache](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_clock_cache) |
+| --[rocksdb-use-direct-io-for-flush-and-compaction](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_direct_io_for_flush_and_compaction), [rocksdb_use_direct_io_for_flush_and_compaction](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_direct_io_for_flush_and_compaction) |
+| --[rocksdb-use-direct-reads](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_direct_reads), [rocksdb_use_direct_reads](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_direct_reads) |
+| --[rocksdb-use-fsync](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_fsync), [rocksdb_use_fsync](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_use_fsync) |
+| --[rocksdb-validate-tables](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_validate_tables), [rocksdb_validate_tables](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_validate_tables) |
+| --[rocksdb-verify-row-debug-checksums](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_verify_row_debug_checksums), [rocksdb_verify_row_debug_checksums](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_verify_row_debug_checksums) |
+| [Rocksdb_wal_bytes](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_wal_bytes) |
+| --[rocksdb-wal-bytes-per-sync](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_bytes_per_sync), [rocksdb_wal_bytes_per_sync](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_bytes_per_sync) |
+| --[rocksdb-wal-dir](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_dir), [rocksdb_wal_dir](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_dir) |
+| [Rocksdb_wal_group_syncs](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_wal_group_syncs) |
+| --[rocksdb-wal-recovery-mode](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_recovery_mode), [rocksdb_wal_recovery_mode](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_recovery_mode) |
+| --[rocksdb-wal-size-limit-mb](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_size_limit_mb), [rocksdb_wal_size_limit_mb](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_size_limit_mb) |
+| [Rocksdb_wal_synced](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_wal_synced) |
+| --[rocksdb-wal-ttl-seconds](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_ttl_seconds), [rocksdb_wal_ttl_seconds](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_wal_ttl_seconds) |
+| --[rocksdb-whole-key-filtering](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_whole_key_filtering), [rocksdb_whole_key_filtering](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_whole_key_filtering) |
+| --[rocksdb-write-batch-max-bytes](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_write_batch_max_bytes), [rocksdb_write_batch_max_bytes](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_write_batch_max_bytes) |
+| --[rocksdb-write-disable-wal](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_write_disable_wal), [rocksdb_write_disable_wal](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_write_disable_wal) |
+| --[rocksdb-write-ignore-missing-column-families](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_write_ignore_missing_column_families), [rocksdb_write_ignore_missing_column_families](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_write_ignore_missing_column_families) |
+| --[rocksdb-write-policy](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_write_policy), [rocksdb_write_policy](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_write_policy) |
+| [Rocksdb_write_other](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_write_other) |
+| [Rocksdb_write_self](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_write_self) |
+| [Rocksdb_write_timedout](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_write_timedout) |
+| [Rocksdb_write_wal](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_write_wal) |
 | --[rowid-merge-buff-size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#rowid_merge_buff_size), [rowid_merge_buff_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#rowid_merge_buff_size) |
 | [Resultset_metadata_skipped](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#resultset_metadata_skipped) |
 | [Rows_read](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#rows_read) |
@@ -1712,25 +1712,25 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Rpl_status](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-status-variables.md) |
 | [Rpl_transactions_multi_engine](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-status-variables.md#rpl_transactions_multi_engine) |
 | -s, --[symbolic-links](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [s3_access_key](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_access_key) |
-| [s3_block_size](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_block_size) |
-| [s3_bucket](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_bucket) |
-| [s3_debug](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_debug) |
-| [s3_host_name](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_host_name) |
-| [s3_no_content_type](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_no_content_type) |
-| [s3_pagecache_age_threshold](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_pagecache_age_threshold) |
-| [s3_pagecache_buffer_size](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_pagecache_buffer_size) |
-| [s3_pagecache_division_limit](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_pagecache_division_limit) |
-| [s3_pagecache_file_hash_size](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_pagecache_file_hash_size) |
-| [s3_port](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_port) |
-| [s3_protocol_version](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_protocol_version) |
-| [s3_provider](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_provider) |
-| [s3_region](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_region) |
-| [s3_replicate_alter_as_create_select](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_replicate_alter_as_create_select) |
-| [s3_secret_key](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_secret_key) |
-| [s3_slave_ignore_updates](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_slave_ignore_updates) |
-| [s3_ssl_no_verify](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_ssl_no_verify) |
-| [s3_use_http](../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_use_http) |
+| [s3_access_key](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_access_key) |
+| [s3_block_size](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_block_size) |
+| [s3_bucket](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_bucket) |
+| [s3_debug](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_debug) |
+| [s3_host_name](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_host_name) |
+| [s3_no_content_type](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_no_content_type) |
+| [s3_pagecache_age_threshold](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_pagecache_age_threshold) |
+| [s3_pagecache_buffer_size](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_pagecache_buffer_size) |
+| [s3_pagecache_division_limit](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_pagecache_division_limit) |
+| [s3_pagecache_file_hash_size](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_pagecache_file_hash_size) |
+| [s3_port](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_port) |
+| [s3_protocol_version](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_protocol_version) |
+| [s3_provider](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_provider) |
+| [s3_region](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_region) |
+| [s3_replicate_alter_as_create_select](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_replicate_alter_as_create_select) |
+| [s3_secret_key](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_secret_key) |
+| [s3_slave_ignore_updates](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_slave_ignore_updates) |
+| [s3_ssl_no_verify](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_ssl_no_verify) |
+| [s3_use_http](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_use_http) |
 | --[safe-mode](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [safe_show_database](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#safe_show_database) |
 | --[safe-user-create](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
@@ -1743,27 +1743,27 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Select_range](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#select_range) |
 | [Select_range_check](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#select_range_check) |
 | [Select_scan](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#select_scan) |
-| --[server-audit](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit) |
-| [Server_audit_active](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md) |
-| [Server_audit_current_log](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md) |
-| [server_audit_events](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
-| [server_audit_excl_users](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
-| [server_audit_file_path](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
-| [Server_audit_last_error](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md) |
-| [server_audit_file_rotate_now](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
-| [server_audit_file_rotate_size](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
-| [server_audit_file_rotations](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
-| [server_audit_incl_users](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
-| [server_audit_loc_info](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
-| [server_audit_logging](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
-| [server_audit_mode](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
-| [server_audit_output_type](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
-| [server_audit_query_limit](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
-| [server_audit_syslog_facility](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
-| [server_audit_syslog_ident](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
-| [server_audit_syslog_info](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
-| [server_audit_syslog_priority](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
-| [Server_audit_writes_failed](../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md) |
+| --[server-audit](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit) |
+| [Server_audit_active](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md) |
+| [Server_audit_current_log](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md) |
+| [server_audit_events](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
+| [server_audit_excl_users](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
+| [server_audit_file_path](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
+| [Server_audit_last_error](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md) |
+| [server_audit_file_rotate_now](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
+| [server_audit_file_rotate_size](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
+| [server_audit_file_rotations](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
+| [server_audit_incl_users](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
+| [server_audit_loc_info](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
+| [server_audit_logging](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
+| [server_audit_mode](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
+| [server_audit_output_type](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
+| [server_audit_query_limit](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
+| [server_audit_syslog_facility](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
+| [server_audit_syslog_ident](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
+| [server_audit_syslog_info](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
+| [server_audit_syslog_priority](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
+| [Server_audit_writes_failed](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md) |
 | [server_id](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) |
 | [server_uid](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#server_uid) |
 | [session_track_schema](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#session_track_schema) |
@@ -1776,18 +1776,18 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | --[show_old_temporals](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#show_old_temporals), [show_old_temporals](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#show_old_temporals) |
 | --[show-slave-auth-info](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[silent-startup](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [simple_password_check_digits](../../ref/plugins/password-validation-plugins/simple-password-check-plugin.md) |
-| [simple_password_check_letters_same_case](../../ref/plugins/password-validation-plugins/simple-password-check-plugin.md) |
-| [simple_password_check_minimal_length](../../ref/plugins/password-validation-plugins/simple-password-check-plugin.md) |
-| [simple_password_check_other_characters](../../ref/plugins/password-validation-plugins/simple-password-check-plugin.md) |
+| [simple_password_check_digits](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md) |
+| [simple_password_check_letters_same_case](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md) |
+| [simple_password_check_minimal_length](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md) |
+| [simple_password_check_other_characters](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md) |
 | --[skip-automatic-sp-privileges](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges) |
 | --[skip-bdb](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [skip_external_locking](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#skip_external_locking) |
 | --[skip-grant-tables](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md), [skip_grant_tables](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#skip_grant_tables) |
 | --[skip-host-cache](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[skip-innodb](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
-| --[skip-innodb-checksums](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_checksums) |
-| --[skip-innodb-doublewrite](../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite) |
+| --[skip-innodb-checksums](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksums) |
+| --[skip-innodb-doublewrite](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite) |
 | --[skip-large-pages](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#large_pages) |
 | --[skip-log-error](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) |
 | --[skip-name-resolve](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#skip_name_resolve), [skip_name_resolve](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#skip_name_resolve) |
@@ -1852,132 +1852,132 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Sphinx_total_found](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sphinx-status-variables.md#sphinx_total_found) |
 | [Sphinx_word_count](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sphinx-status-variables.md#sphinx_word_count) |
 | [Sphinx_words](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sphinx-status-variables.md#sphinx_words) |
-| [spider_auto_increment_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_bgs_first_read](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_bgs_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_bgs_second_read](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_bka_engine](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_bka_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_block_size](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_buffer_size](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_bulk_size](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_bulk_update_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_bulk_update_size](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_casual_read](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_conn_recycle_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_conn_recycle_strict](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_conn_wait_timeout](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_connect_error_interval](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_connect_mutex](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_connect_retry_count](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_connect_retry_interval](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_connect_timeout](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_crd_bg_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_crd_interval](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_crd_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_crd_sync](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_crd_type](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_crd_weight](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_delete_all_rows_type](../../ref/storage-engines/spider/spider-system-variables.md) |
+| [spider_auto_increment_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_bgs_first_read](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_bgs_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_bgs_second_read](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_bka_engine](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_bka_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_block_size](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_buffer_size](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_bulk_size](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_bulk_update_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_bulk_update_size](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_casual_read](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_conn_recycle_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_conn_recycle_strict](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_conn_wait_timeout](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_connect_error_interval](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_connect_mutex](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_connect_retry_count](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_connect_retry_interval](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_connect_timeout](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_crd_bg_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_crd_interval](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_crd_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_crd_sync](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_crd_type](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_crd_weight](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_delete_all_rows_type](../../reference/storage-engines/spider/spider-system-variables.md) |
 | [Spider_direct_aggregate](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/spider-status-variables.md) |
 | [Spider_direct_delete](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/spider-status-variables.md) |
-| [spider_direct_dup_insert](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_direct_order_limit](../../ref/storage-engines/spider/spider-system-variables.md) |
+| [spider_direct_dup_insert](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_direct_order_limit](../../reference/storage-engines/spider/spider-system-variables.md) |
 | [Spider_direct_order_limit](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/spider-status-variables.md) |
 | [Spider_direct_update](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/spider-status-variables.md) |
-| [spider_dry_access](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_error_read_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_error_write_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_first_read](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_force_commit](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_general_log](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_ignore_comments](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_index_hint_pushdown](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_init_sql_alloc_size](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_internal_limit](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_internal_offset](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_internal_optimize](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_internal_optimize_local](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_internal_sql_log_off](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_internal_unlock](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_internal_xa](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_internal_xa_id_type](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_internal_xa_snapshot](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_load_crd_at_startup](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_load_sts_at_startup](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_local_lock_table](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_lock_exchange](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_log_result_error_with_sql](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_log_result_errors](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_low_mem_read](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_max_connections](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_max_order](../../ref/storage-engines/spider/spider-system-variables.md) |
+| [spider_dry_access](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_error_read_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_error_write_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_first_read](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_force_commit](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_general_log](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_ignore_comments](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_index_hint_pushdown](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_init_sql_alloc_size](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_internal_limit](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_internal_offset](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_internal_optimize](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_internal_optimize_local](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_internal_sql_log_off](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_internal_unlock](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_internal_xa](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_internal_xa_id_type](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_internal_xa_snapshot](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_load_crd_at_startup](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_load_sts_at_startup](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_local_lock_table](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_lock_exchange](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_log_result_error_with_sql](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_log_result_errors](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_low_mem_read](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_max_connections](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_max_order](../../reference/storage-engines/spider/spider-system-variables.md) |
 | [Spider_mon_table_cache_version](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/spider-status-variables.md) |
 | [Spider_mon_table_cache_version_req](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/spider-status-variables.md) |
-| [spider_multi_split_read](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_net_read_timeout](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_net_write_timeout](../../ref/storage-engines/spider/spider-system-variables.md) |
+| [spider_multi_split_read](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_net_read_timeout](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_net_write_timeout](../../reference/storage-engines/spider/spider-system-variables.md) |
 | [Spider_parallel_search](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/spider-status-variables.md) |
-| [spider_ping_interval_at_trx_start](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_quick_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_quick_page_byte](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_quick_page_size](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_read_only_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_remote_access_charset](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_remote_autocommit](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_remote_default_database](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_remote_sql_log_off](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_remote_time_zone](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_remote_trx_isolation](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_remote_wait_timeout](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_reset_sql_alloc](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_same_server_link](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_second_read](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_select_column_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_selupd_lock_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_semi_split_read](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_semi_split_read_limit](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_semi_table_lock](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_semi_table_lock_connection](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_semi_trx](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_semi_trx_isolation](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_skip_default_condition](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_skip_parallel_search](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_slave_trx_isolation](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_split_read](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_store_last_crd](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_store_last_sts](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_strict_group_by](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_sts_bg_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_sts_interval](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_sts_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_sts_sync](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_support_xa](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_sync_autocommit](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_sync_sql_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_sync_time_zone](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_sync_trx_isolation](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_table_crd_thread_count](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_table_init_error_interval](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_table_sts_thread_count](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_udf_ct_bulk_insert_interval](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_udf_ct_bulk_insert_rows](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_udf_ds_bulk_insert_rows](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_udf_ds_table_loop_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_udf_ds_use_real_table](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_udf_table_lock_mutex_count](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_udf_table_mon_mutex_count](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_use_all_conns_snapshot](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_use_cond_other_than_pk_for_update](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_use_consistent_snapshot](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_use_default_database](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_use_flash_logs](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_use_handler](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_use_pushdown_udf](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_use_table_charset](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_version](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_wait_timeout](../../ref/storage-engines/spider/spider-system-variables.md) |
-| [spider_xa_register_mode](../../ref/storage-engines/spider/spider-system-variables.md) |
+| [spider_ping_interval_at_trx_start](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_quick_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_quick_page_byte](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_quick_page_size](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_read_only_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_remote_access_charset](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_remote_autocommit](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_remote_default_database](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_remote_sql_log_off](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_remote_time_zone](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_remote_trx_isolation](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_remote_wait_timeout](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_reset_sql_alloc](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_same_server_link](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_second_read](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_select_column_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_selupd_lock_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_semi_split_read](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_semi_split_read_limit](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_semi_table_lock](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_semi_table_lock_connection](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_semi_trx](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_semi_trx_isolation](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_skip_default_condition](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_skip_parallel_search](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_slave_trx_isolation](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_split_read](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_store_last_crd](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_store_last_sts](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_strict_group_by](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_sts_bg_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_sts_interval](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_sts_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_sts_sync](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_support_xa](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_sync_autocommit](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_sync_sql_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_sync_time_zone](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_sync_trx_isolation](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_table_crd_thread_count](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_table_init_error_interval](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_table_sts_thread_count](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_udf_ct_bulk_insert_interval](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_udf_ct_bulk_insert_rows](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_udf_ds_bulk_insert_rows](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_udf_ds_table_loop_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_udf_ds_use_real_table](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_udf_table_lock_mutex_count](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_udf_table_mon_mutex_count](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_use_all_conns_snapshot](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_use_cond_other_than_pk_for_update](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_use_consistent_snapshot](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_use_default_database](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_use_flash_logs](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_use_handler](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_use_pushdown_udf](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_use_table_charset](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_version](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_wait_timeout](../../reference/storage-engines/spider/spider-system-variables.md) |
+| [spider_xa_register_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
 | --[sporadic-binlog-dump-fail](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [sql_auto_is_null](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_auto_is_null) |
 | [sql_big_selects](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_big_selects) |
@@ -2054,10 +2054,10 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | --[sysdate-is-now](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | -T, --[exit-info](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [system_time_zone](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#system_time_zone) |
-| [system_versioning_alter_history](../../ref/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_alter_history) |
-| [system_versioning_asof](../../ref/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_asof) |
-| [system_versioning_innodb_algorithm_simple](../../ref/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_innodb_algorithm_simple) |
-| [system_versioning_insert_history](../../ref/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_insert_history) |
+| [system_versioning_alter_history](../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_alter_history) |
+| [system_versioning_asof](../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_asof) |
+| [system_versioning_innodb_algorithm_simple](../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_innodb_algorithm_simple) |
+| [system_versioning_insert_history](../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_insert_history) |
 | --[table-cache](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [table_definition_cache](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#table_definition_cache) |
 | [table_lock_wait_timeout](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#table_lock_wait_timeout) |
@@ -2112,230 +2112,230 @@ Alphabetical list of all [mariadbd Options](../getting-installing-and-upgrading-
 | [Tmp_space_used](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#tmp_space_used) |
 | [tmp_table_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#tmp_table_size) |
 | -t, [tmpdir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#tmpdir) |
-| [tokudb_alter_print_error](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_analyze_time](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_basement_deserialization_fixed_key](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basement_deserialization_fixed_key) |
-| [Tokudb_basement_deserialization_variable_key](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basement_deserialization_variable_key) |
-| [Tokudb_basements_decompressed_for_write](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_decompressed_for_write) |
-| [Tokudb_basements_decompressed_prefetch](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_decompressed_prefetch) |
-| [Tokudb_basements_decompressed_prelocked_range](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_decompressed_prelocked_range) |
-| [Tokudb_basements_decompressed_target_query](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_decompressed_target_query) |
-| [Tokudb_basements_fetched_for_write](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_for_write) |
-| [Tokudb_basements_fetched_for_write_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_for_write_bytes) |
-| [Tokudb_basements_fetched_for_write_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_for_write_seconds) |
-| [Tokudb_basements_fetched_prefetch](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_prefetch) |
-| [Tokudb_basements_fetched_prefetch_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_prefetch_bytes) |
-| [Tokudb_basements_fetched_prefetch_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_prefetch_seconds) |
-| [Tokudb_basements_fetched_prelocked_range](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_prelocked_range) |
-| [Tokudb_basements_fetched_prelocked_range_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_prelocked_range_bytes) |
-| [Tokudb_basements_fetched_prelocked_range_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_prelocked_range_seconds) |
-| [Tokudb_basements_fetched_target_query](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_target_query) |
-| [Tokudb_basements_fetched_target_query_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_target_query_bytes) |
-| [Tokudb_basements_fetched_target_query_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_target_query_seconds) |
-| [Tokudb_broadcase_messages_injected_at_root](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_broadcase_messages_injected_at_root) |
-| [Tokudb_buffers_decompressed_prefetch](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_decompressed_prefetch) |
-| [Tokudb_buffers_decompressed_for_write](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_decompressed_for_write) |
-| [Tokudb_buffers_decompressed_prelocked_range](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_decompressed_prelocked_range) |
-| [Tokudb_buffers_decompressed_target_query](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_decompressed_target_query) |
-| [Tokudb_buffers_fetched_for_write](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_for_write) |
-| [Tokudb_buffers_fetched_for_write_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_for_write_bytes) |
-| [Tokudb_buffers_fetched_for_write_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_for_write_seconds) |
-| [Tokudb_buffers_fetched_prefetch](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_prefetch) |
-| [Tokudb_buffers_fetched_prefetch_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_prefetch_bytes) |
-| [Tokudb_buffers_fetched_prefetch_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_prefetch_seconds) |
-| [Tokudb_buffers_fetched_prelocked_range](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_prelocked_range) |
-| [Tokudb_buffers_fetched_prelocked_range_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_prelocked_range_bytes) |
-| [Tokudb_buffers_fetched_prelocked_range_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_prelocked_range_seconds) |
-| [Tokudb_buffers_fetched_target_query](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_target_query) |
-| [Tokudb_buffers_fetched_target_query_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_target_query_bytes) |
-| [Tokudb_buffers_fetched_target_query_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_target_query_seconds) |
-| [tokudb_bulk_fetch](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_cache_size](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_cachetable_cleaner_executions](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_cleaner_executions) |
-| [Tokudb_cachetable_cleaner_iterations](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_cleaner_iterations) |
-| [Tokudb_cachetable_cleaner_period](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_cleaner_period) |
-| [Tokudb_cachetable_evictions](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_evictions) |
-| [Tokudb_cachetable_long_wait_pressure_count](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_long_wait_pressure_count) |
-| [Tokudb_cachetable_long_wait_pressure_time](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_long_wait_pressure_time) |
-| [Tokudb_cachetable_miss](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_miss) |
-| [Tokudb_cachetable_miss_time](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_miss_time) |
-| [Tokudb_cachetable_prefetches](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_prefetches) |
-| [Tokudb_cachetable_size_cachepressure](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_size_cachepressure) |
-| [Tokudb_cachetable_size_cloned](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_size_cloned) |
-| [Tokudb_cachetable_size_current](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_size_current) |
-| [Tokudb_cachetable_size_leaf](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_size_leaf) |
-| [Tokudb_cachetable_size_limit](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_size_limit) |
-| [Tokudb_cachetable_size_nonleaf](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_size_nonleaf) |
-| [Tokudb_cachetable_size_rollback](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_size_rollback) |
-| [Tokudb_cachetable_size_writing](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_size_writing) |
-| [Tokudb_cachetable_wait_pressure_count](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_wait_pressure_count) |
-| [Tokudb_cachetable_wait_pressure_time](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_wait_pressure_time) |
-| [tokudb_check_jemalloc](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_checkpoint_begin_time](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_begin_time) |
-| [Tokudb_checkpoint_duration](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_duration) |
-| [Tokudb_checkpoint_duration_last](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_duration_last) |
-| [Tokudb_checkpoint_failed](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_failed) |
-| [Tokudb_checkpoint_last_began](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_last_began) |
-| [Tokudb_checkpoint_last_complete_began](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_last_complete_began) |
-| [Tokudb_checkpoint_last_complete_ended](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_last_complete_ended) |
-| [tokudb_checkpoint_lock](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_checkpoint_long_begin_count](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_long_begin_count) |
-| [Tokudb_checkpoint_long_begin_time](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_long_begin_time) |
-| [tokudb_checkpoint_on_flush_logs](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_checkpoint_period](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_period) |
-| [Tokudb_checkpoint_taken](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_taken) |
-| [tokudb_checkpointing_period](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_cleaner_iterations](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_cleaner_period](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_commit_sync](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_create_index_online](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_cursor_skip_deleted_leaf_entry](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cursor_skip_deleted_leaf_entry) |
-| [tokudb_data_dir](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_db_closes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_db_closes) |
-| [Tokudb_db_open_current](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_db_open_current) |
-| [Tokudb_db_open_max](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_db_open_max) |
-| [Tokudb_db_opens](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_db_opens) |
-| [tokudb_debug](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_descriptor_set](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_descriptor_set) |
-| [Tokudb_dictionary_broadcast_updates](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_dictionary_broadcast_updates) |
-| [Tokudb_dictionary_updates](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_dictionary_updates) |
-| [tokudb_directio](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_disable_hot_alter](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_disable_prefetching](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_disable_slow_alter](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_empty_scan](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_filesystem_fsync_num](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_filesystem_fsync_num) |
-| [Tokudb_filesystem_fsync_time](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_filesystem_fsync_time) |
-| [Tokudb_filesystem_long_fsync_num](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_filesystem_long_fsync_num) |
-| [Tokudb_filesystem_long_fsync_time](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_filesystem_long_fsync_time) |
-| [Tokudb_filesystem_threads_blocked_by_full_disk](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_filesystem_threads_blocked_by_full_disk) |
-| [tokudb_fs_reserve_percent](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_fsync_log_period](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_hide_default_row_format](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_killed_time](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_last_lock_timeout](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_leaf_compression_to_memory_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_compression_to_memory_seconds) |
-| [Tokudb_leaf_decompression_to_memory_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_decompression_to_memory_seconds) |
-| [Tokudb_leaf_deserialization_to_memory_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_deserialization_to_memory_seconds) |
-| [Tokudb_leaf_node_compression_ratio](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_node_compression_ratio) |
-| [Tokudb_leaf_node_full_evictions](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_node_full_evictions) |
-| [Tokudb_leaf_node_full_evictions_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_node_full_evictions_bytes) |
-| [Tokudb_leaf_node_partial_evictions](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_node_partial_evictions) |
-| [Tokudb_leaf_node_partial_evictions_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_node_partial_evictions_bytes) |
-| [Tokudb_leaf_nodes_created](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_created) |
-| [Tokudb_leaf_nodes_destroyed](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_destroyed) |
-| [Tokudb_leaf_nodes_flushed_checkpoint](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_flushed_checkpoint) |
-| [Tokudb_leaf_nodes_flushed_checkpoint_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_flushed_checkpoint_bytes) |
-| [Tokudb_leaf_nodes_flushed_checkpoint_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_flushed_checkpoint_seconds) |
-| [Tokudb_leaf_nodes_flushed_checkpoint_uncompressed_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_flushed_checkpoint_uncompressed_bytes) |
-| [Tokudb_leaf_nodes_flushed_not_checkpoint](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_flushed_not_checkpoint) |
-| [Tokudb_leaf_nodes_flushed_not_checkpoint_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_flushed_not_checkpoint_bytes) |
-| [Tokudb_leaf_nodes_flushed_not_checkpoint_secondss](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_flushed_not_checkpoint_seconds) |
-| [Tokudb_leaf_nodes_flushed_not_checkpoint_uncompressed_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_flushed_not_checkpoint_uncompressed_bytes) |
-| [Tokudb_leaf_serialization_to_memory_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_serialization_to_memory_seconds) |
-| [tokudb_load_save_space](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_loader_memory_size](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_loader_num_created](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_loader_num_created) |
-| [Tokudb_loader_num_current](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_loader_num_current) |
-| [Tokudb_loader_num_max](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_loader_num_max) |
-| [tokudb_lock_timeout](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_lock_timeout_debug](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_locktree_escalation_num](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_escalation_num) |
-| [Tokudb_locktree_escalation_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_escalation_seconds) |
-| [Tokudb_locktree_latest_post_escalation_memory_size](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_latest_post_escalation_memory_size) |
-| [Tokudb_locktree_long_wait_count](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_long_wait_count) |
-| [Tokudb_locktree_long_wait_escalation_count](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_long_wait_escalation_count) |
-| [Tokudb_locktree_long_wait_escalation_time](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_long_wait_escalation_time) |
-| [Tokudb_locktree_long_wait_time](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_long_wait_time) |
-| [Tokudb_locktree_memory_size](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_memory_size) |
-| [Tokudb_locktree_memory_size_limit](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_memory_size_limit) |
-| [Tokudb_locktree_open_current](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_open_current) |
-| [Tokudb_locktree_pending_lock_requests](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_pending_lock_requests) |
-| [Tokudb_locktree_sto_eligible_num](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_sto_eligible_num) |
-| [Tokudb_locktree_sto_ended_num](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_sto_ended_num) |
-| [Tokudb_locktree_sto_ended_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_sto_ended_seconds) |
-| [Tokudb_locktree_timeout_count](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_timeout_count) |
-| [Tokudb_locktree_wait_count](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_wait_count) |
-| [Tokudb_locktree_wait_escalation_count](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_wait_escalation_count) |
-| [Tokudb_locktree_wait_escalation_time](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_wait_escalation_time) |
-| [Tokudb_locktree_wait_time](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_wait_time) |
-| [tokudb_log_dir](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_logger_wait_long](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_logger_wait_long) |
-| [Tokudb_logger_writes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_logger_writes) |
-| [Tokudb_logger_writes_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_logger_writes_bytes) |
-| [Tokudb_logger_writes_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_logger_writes_seconds) |
-| [Tokudb_logger_writes_uncompressed_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_logger_writes_uncompressed_bytes) |
-| [tokudb_max_lock_memory](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_mem_estimated_maximum_memory_footprint](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_mem_estimated_maximum_memory_footprint) |
-| [Tokudb_messages_flushed_from_h1_to_leaves_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_messages_flushed_from_h1_to_leaves_bytes) |
-| [Tokudb_messages_ignored_by_leaf_due_to_msn](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_messages_ignored_by_leaf_due_to_msn) |
-| [Tokudb_messages_in_trees_estimate_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_messages_in_trees_estimate_bytes) |
-| [Tokudb_messages_injected_at_root](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_messages_injected_at_root) |
-| [Tokudb_messages_injected_at_root_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_messages_injected_at_root_bytes) |
-| [Tokudb_nonleaf_compression_to_memory_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_compression_to_memory_seconds) |
-| [Tokudb_nonleaf_decompression_to_memory_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_decompression_to_memory_seconds) |
-| [Tokudb_nonleaf_deserialization_to_memory_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_deserialization_to_memory_seconds) |
-| [Tokudb_nonleaf_node_compression_ratio](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_node_compression_ratio) |
-| [Tokudb_nonleaf_node_full_evictions](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_node_full_evictions) |
-| [Tokudb_nonleaf_node_full_evictions_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_node_full_evictions_bytes) |
-| [Tokudb_nonleaf_node_partial_evictions](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_node_partial_evictions) |
-| [Tokudb_nonleaf_node_partial_evictions_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_node_partial_evictions_bytes) |
-| [Tokudb_nonleaf_nodes_created](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_created) |
-| [Tokudb_nonleaf_nodes_destroyed](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_destroyed) |
-| [Tokudb_nonleaf_nodes_flushed_to_disk_checkpoint](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_flushed_to_disk_checkpoint) |
-| [Tokudb_nonleaf_nodes_flushed_to_disk_checkpoint_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_flushed_to_disk_checkpoint_bytes) |
-| [Tokudb_nonleaf_nodes_flushed_to_disk_checkpoint_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_flushed_to_disk_checkpoint_seconds) |
-| [Tokudb_nonleaf_nodes_flushed_to_disk_checkpoint_uncompressed_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_flushed_to_disk_checkpoint_uncompressed_bytes) |
-| [Tokudb_nonleaf_nodes_flushed_to_disk_not_checkpoint](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_flushed_to_disk_not_checkpoint) |
-| [Tokudb_nonleaf_nodes_flushed_to_disk_not_checkpoint_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_flushed_to_disk_not_checkpoint_bytes) |
-| [Tokudb_nonleaf_nodes_flushed_to_disk_not_checkpoint_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_flushed_to_disk_not_checkpoint_seconds) |
-| [Tokudb_nonleaf_nodes_flushed_to_disk_not_checkpoint_uncompressed_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_flushed_to_disk_not_checkpoint_uncompressed_bytes) |
-| [Tokudb_nonleaf_serialization_to_memory_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_serialization_to_memory_seconds) |
-| [tokudb_optimize_index_fraction](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_optimize_index_name](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_optimize_throttle](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_overall_node_compression_ratio](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_overall_node_compression_ratio) |
-| [Tokudb_pivots_fetched_for_query](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_query) |
-| [Tokudb_pivots_fetched_for_query_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_query_bytes) |
-| [Tokudb_pivots_fetched_for_query_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_query_seconds) |
-| [Tokudb_pivots_fetched_for_prefetch](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_prefetch) |
-| [Tokudb_pivots_fetched_for_prefetch_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_prefetch_bytes) |
-| [Tokudb_pivots_fetched_for_prefetch_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_prefetch_seconds) |
-| [Tokudb_pivots_fetched_for_write](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_write) |
-| [Tokudb_pivots_fetched_for_write_bytes](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_write_bytes) |
-| [Tokudb_pivots_fetched_for_write_seconds](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_write_seconds) |
-| [tokudb_pk_insert_mode](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_prelock_empty](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_promotion_h1_roots_injected_into](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_h1_roots_injected_into) |
-| [Tokudb_promotion_injections_at_depth_0](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_injections_at_depth_0) |
-| [Tokudb_promotion_injections_at_depth_1](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_injections_at_depth_1) |
-| [Tokudb_promotion_injections_at_depth_2](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_injections_at_depth_2) |
-| [Tokudb_promotion_injections_at_depth_3](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_injections_at_depth_3) |
-| [Tokudb_promotion_injections_lower_than_depth_3](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_injections_lower_than_depth_3) |
-| [Tokudb_promotion_leaf_roots_injected_into](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_leaf_roots_injected_into) |
-| [Tokudb_promotion_roots_split](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_roots_split) |
-| [Tokudb_promotion_stopped_after_locking_child](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_stopped_after_locking_child) |
-| [Tokudb_promotion_stopped_at_height_1](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_stopped_at_height_1) |
-| [Tokudb_promotion_stopped_child_locked_or_not_in_memory](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_stopped_child_locked_or_not_in_memory) |
-| [Tokudb_promotion_stopped_child_not_fully_in_memory](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_stopped_child_not_fully_in_memory) |
-| [Tokudb_promotion_stopped_nonempty_buffer](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_stopped_nonempty_buffer) |
-| [tokudb_read_block_size](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_read_buf_size](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_read_status_frequency](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_row_format](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_rpl_check_readonly](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_rpl_lookup_rows](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_rpl_lookup_rows_delay](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_rpl_unique_checks](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_rpl_unique_checks_delay](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_support_xa](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_tmp_dir](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [Tokudb_txn_aborts](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_txn_aborts) |
-| [Tokudb_txn_begin](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_txn_begin) |
-| [Tokudb_txn_begin_read_only](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_txn_begin_read_only) |
-| [Tokudb_txn_commits](../../ref/storage-engines/tokudb/tokudb-status-variables.md#tokudb_txn_commits) |
-| [tokudb_version](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
-| [tokudb_write_status_frequency](../../ref/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_alter_print_error](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_analyze_time](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_basement_deserialization_fixed_key](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basement_deserialization_fixed_key) |
+| [Tokudb_basement_deserialization_variable_key](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basement_deserialization_variable_key) |
+| [Tokudb_basements_decompressed_for_write](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_decompressed_for_write) |
+| [Tokudb_basements_decompressed_prefetch](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_decompressed_prefetch) |
+| [Tokudb_basements_decompressed_prelocked_range](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_decompressed_prelocked_range) |
+| [Tokudb_basements_decompressed_target_query](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_decompressed_target_query) |
+| [Tokudb_basements_fetched_for_write](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_for_write) |
+| [Tokudb_basements_fetched_for_write_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_for_write_bytes) |
+| [Tokudb_basements_fetched_for_write_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_for_write_seconds) |
+| [Tokudb_basements_fetched_prefetch](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_prefetch) |
+| [Tokudb_basements_fetched_prefetch_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_prefetch_bytes) |
+| [Tokudb_basements_fetched_prefetch_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_prefetch_seconds) |
+| [Tokudb_basements_fetched_prelocked_range](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_prelocked_range) |
+| [Tokudb_basements_fetched_prelocked_range_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_prelocked_range_bytes) |
+| [Tokudb_basements_fetched_prelocked_range_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_prelocked_range_seconds) |
+| [Tokudb_basements_fetched_target_query](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_target_query) |
+| [Tokudb_basements_fetched_target_query_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_target_query_bytes) |
+| [Tokudb_basements_fetched_target_query_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basements_fetched_target_query_seconds) |
+| [Tokudb_broadcase_messages_injected_at_root](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_broadcase_messages_injected_at_root) |
+| [Tokudb_buffers_decompressed_prefetch](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_decompressed_prefetch) |
+| [Tokudb_buffers_decompressed_for_write](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_decompressed_for_write) |
+| [Tokudb_buffers_decompressed_prelocked_range](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_decompressed_prelocked_range) |
+| [Tokudb_buffers_decompressed_target_query](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_decompressed_target_query) |
+| [Tokudb_buffers_fetched_for_write](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_for_write) |
+| [Tokudb_buffers_fetched_for_write_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_for_write_bytes) |
+| [Tokudb_buffers_fetched_for_write_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_for_write_seconds) |
+| [Tokudb_buffers_fetched_prefetch](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_prefetch) |
+| [Tokudb_buffers_fetched_prefetch_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_prefetch_bytes) |
+| [Tokudb_buffers_fetched_prefetch_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_prefetch_seconds) |
+| [Tokudb_buffers_fetched_prelocked_range](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_prelocked_range) |
+| [Tokudb_buffers_fetched_prelocked_range_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_prelocked_range_bytes) |
+| [Tokudb_buffers_fetched_prelocked_range_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_prelocked_range_seconds) |
+| [Tokudb_buffers_fetched_target_query](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_target_query) |
+| [Tokudb_buffers_fetched_target_query_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_target_query_bytes) |
+| [Tokudb_buffers_fetched_target_query_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_buffers_fetched_target_query_seconds) |
+| [tokudb_bulk_fetch](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_cache_size](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_cachetable_cleaner_executions](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_cleaner_executions) |
+| [Tokudb_cachetable_cleaner_iterations](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_cleaner_iterations) |
+| [Tokudb_cachetable_cleaner_period](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_cleaner_period) |
+| [Tokudb_cachetable_evictions](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_evictions) |
+| [Tokudb_cachetable_long_wait_pressure_count](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_long_wait_pressure_count) |
+| [Tokudb_cachetable_long_wait_pressure_time](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_long_wait_pressure_time) |
+| [Tokudb_cachetable_miss](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_miss) |
+| [Tokudb_cachetable_miss_time](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_miss_time) |
+| [Tokudb_cachetable_prefetches](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_prefetches) |
+| [Tokudb_cachetable_size_cachepressure](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_size_cachepressure) |
+| [Tokudb_cachetable_size_cloned](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_size_cloned) |
+| [Tokudb_cachetable_size_current](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_size_current) |
+| [Tokudb_cachetable_size_leaf](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_size_leaf) |
+| [Tokudb_cachetable_size_limit](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_size_limit) |
+| [Tokudb_cachetable_size_nonleaf](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_size_nonleaf) |
+| [Tokudb_cachetable_size_rollback](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_size_rollback) |
+| [Tokudb_cachetable_size_writing](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_size_writing) |
+| [Tokudb_cachetable_wait_pressure_count](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_wait_pressure_count) |
+| [Tokudb_cachetable_wait_pressure_time](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cachetable_wait_pressure_time) |
+| [tokudb_check_jemalloc](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_checkpoint_begin_time](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_begin_time) |
+| [Tokudb_checkpoint_duration](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_duration) |
+| [Tokudb_checkpoint_duration_last](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_duration_last) |
+| [Tokudb_checkpoint_failed](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_failed) |
+| [Tokudb_checkpoint_last_began](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_last_began) |
+| [Tokudb_checkpoint_last_complete_began](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_last_complete_began) |
+| [Tokudb_checkpoint_last_complete_ended](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_last_complete_ended) |
+| [tokudb_checkpoint_lock](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_checkpoint_long_begin_count](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_long_begin_count) |
+| [Tokudb_checkpoint_long_begin_time](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_long_begin_time) |
+| [tokudb_checkpoint_on_flush_logs](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_checkpoint_period](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_period) |
+| [Tokudb_checkpoint_taken](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_checkpoint_taken) |
+| [tokudb_checkpointing_period](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_cleaner_iterations](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_cleaner_period](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_commit_sync](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_create_index_online](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_cursor_skip_deleted_leaf_entry](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_cursor_skip_deleted_leaf_entry) |
+| [tokudb_data_dir](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_db_closes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_db_closes) |
+| [Tokudb_db_open_current](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_db_open_current) |
+| [Tokudb_db_open_max](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_db_open_max) |
+| [Tokudb_db_opens](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_db_opens) |
+| [tokudb_debug](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_descriptor_set](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_descriptor_set) |
+| [Tokudb_dictionary_broadcast_updates](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_dictionary_broadcast_updates) |
+| [Tokudb_dictionary_updates](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_dictionary_updates) |
+| [tokudb_directio](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_disable_hot_alter](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_disable_prefetching](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_disable_slow_alter](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_empty_scan](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_filesystem_fsync_num](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_filesystem_fsync_num) |
+| [Tokudb_filesystem_fsync_time](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_filesystem_fsync_time) |
+| [Tokudb_filesystem_long_fsync_num](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_filesystem_long_fsync_num) |
+| [Tokudb_filesystem_long_fsync_time](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_filesystem_long_fsync_time) |
+| [Tokudb_filesystem_threads_blocked_by_full_disk](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_filesystem_threads_blocked_by_full_disk) |
+| [tokudb_fs_reserve_percent](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_fsync_log_period](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_hide_default_row_format](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_killed_time](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_last_lock_timeout](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_leaf_compression_to_memory_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_compression_to_memory_seconds) |
+| [Tokudb_leaf_decompression_to_memory_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_decompression_to_memory_seconds) |
+| [Tokudb_leaf_deserialization_to_memory_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_deserialization_to_memory_seconds) |
+| [Tokudb_leaf_node_compression_ratio](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_node_compression_ratio) |
+| [Tokudb_leaf_node_full_evictions](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_node_full_evictions) |
+| [Tokudb_leaf_node_full_evictions_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_node_full_evictions_bytes) |
+| [Tokudb_leaf_node_partial_evictions](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_node_partial_evictions) |
+| [Tokudb_leaf_node_partial_evictions_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_node_partial_evictions_bytes) |
+| [Tokudb_leaf_nodes_created](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_created) |
+| [Tokudb_leaf_nodes_destroyed](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_destroyed) |
+| [Tokudb_leaf_nodes_flushed_checkpoint](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_flushed_checkpoint) |
+| [Tokudb_leaf_nodes_flushed_checkpoint_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_flushed_checkpoint_bytes) |
+| [Tokudb_leaf_nodes_flushed_checkpoint_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_flushed_checkpoint_seconds) |
+| [Tokudb_leaf_nodes_flushed_checkpoint_uncompressed_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_flushed_checkpoint_uncompressed_bytes) |
+| [Tokudb_leaf_nodes_flushed_not_checkpoint](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_flushed_not_checkpoint) |
+| [Tokudb_leaf_nodes_flushed_not_checkpoint_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_flushed_not_checkpoint_bytes) |
+| [Tokudb_leaf_nodes_flushed_not_checkpoint_secondss](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_flushed_not_checkpoint_seconds) |
+| [Tokudb_leaf_nodes_flushed_not_checkpoint_uncompressed_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_nodes_flushed_not_checkpoint_uncompressed_bytes) |
+| [Tokudb_leaf_serialization_to_memory_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_leaf_serialization_to_memory_seconds) |
+| [tokudb_load_save_space](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_loader_memory_size](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_loader_num_created](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_loader_num_created) |
+| [Tokudb_loader_num_current](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_loader_num_current) |
+| [Tokudb_loader_num_max](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_loader_num_max) |
+| [tokudb_lock_timeout](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_lock_timeout_debug](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_locktree_escalation_num](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_escalation_num) |
+| [Tokudb_locktree_escalation_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_escalation_seconds) |
+| [Tokudb_locktree_latest_post_escalation_memory_size](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_latest_post_escalation_memory_size) |
+| [Tokudb_locktree_long_wait_count](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_long_wait_count) |
+| [Tokudb_locktree_long_wait_escalation_count](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_long_wait_escalation_count) |
+| [Tokudb_locktree_long_wait_escalation_time](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_long_wait_escalation_time) |
+| [Tokudb_locktree_long_wait_time](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_long_wait_time) |
+| [Tokudb_locktree_memory_size](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_memory_size) |
+| [Tokudb_locktree_memory_size_limit](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_memory_size_limit) |
+| [Tokudb_locktree_open_current](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_open_current) |
+| [Tokudb_locktree_pending_lock_requests](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_pending_lock_requests) |
+| [Tokudb_locktree_sto_eligible_num](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_sto_eligible_num) |
+| [Tokudb_locktree_sto_ended_num](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_sto_ended_num) |
+| [Tokudb_locktree_sto_ended_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_sto_ended_seconds) |
+| [Tokudb_locktree_timeout_count](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_timeout_count) |
+| [Tokudb_locktree_wait_count](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_wait_count) |
+| [Tokudb_locktree_wait_escalation_count](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_wait_escalation_count) |
+| [Tokudb_locktree_wait_escalation_time](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_wait_escalation_time) |
+| [Tokudb_locktree_wait_time](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_locktree_wait_time) |
+| [tokudb_log_dir](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_logger_wait_long](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_logger_wait_long) |
+| [Tokudb_logger_writes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_logger_writes) |
+| [Tokudb_logger_writes_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_logger_writes_bytes) |
+| [Tokudb_logger_writes_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_logger_writes_seconds) |
+| [Tokudb_logger_writes_uncompressed_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_logger_writes_uncompressed_bytes) |
+| [tokudb_max_lock_memory](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_mem_estimated_maximum_memory_footprint](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_mem_estimated_maximum_memory_footprint) |
+| [Tokudb_messages_flushed_from_h1_to_leaves_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_messages_flushed_from_h1_to_leaves_bytes) |
+| [Tokudb_messages_ignored_by_leaf_due_to_msn](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_messages_ignored_by_leaf_due_to_msn) |
+| [Tokudb_messages_in_trees_estimate_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_messages_in_trees_estimate_bytes) |
+| [Tokudb_messages_injected_at_root](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_messages_injected_at_root) |
+| [Tokudb_messages_injected_at_root_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_messages_injected_at_root_bytes) |
+| [Tokudb_nonleaf_compression_to_memory_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_compression_to_memory_seconds) |
+| [Tokudb_nonleaf_decompression_to_memory_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_decompression_to_memory_seconds) |
+| [Tokudb_nonleaf_deserialization_to_memory_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_deserialization_to_memory_seconds) |
+| [Tokudb_nonleaf_node_compression_ratio](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_node_compression_ratio) |
+| [Tokudb_nonleaf_node_full_evictions](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_node_full_evictions) |
+| [Tokudb_nonleaf_node_full_evictions_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_node_full_evictions_bytes) |
+| [Tokudb_nonleaf_node_partial_evictions](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_node_partial_evictions) |
+| [Tokudb_nonleaf_node_partial_evictions_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_node_partial_evictions_bytes) |
+| [Tokudb_nonleaf_nodes_created](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_created) |
+| [Tokudb_nonleaf_nodes_destroyed](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_destroyed) |
+| [Tokudb_nonleaf_nodes_flushed_to_disk_checkpoint](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_flushed_to_disk_checkpoint) |
+| [Tokudb_nonleaf_nodes_flushed_to_disk_checkpoint_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_flushed_to_disk_checkpoint_bytes) |
+| [Tokudb_nonleaf_nodes_flushed_to_disk_checkpoint_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_flushed_to_disk_checkpoint_seconds) |
+| [Tokudb_nonleaf_nodes_flushed_to_disk_checkpoint_uncompressed_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_flushed_to_disk_checkpoint_uncompressed_bytes) |
+| [Tokudb_nonleaf_nodes_flushed_to_disk_not_checkpoint](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_flushed_to_disk_not_checkpoint) |
+| [Tokudb_nonleaf_nodes_flushed_to_disk_not_checkpoint_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_flushed_to_disk_not_checkpoint_bytes) |
+| [Tokudb_nonleaf_nodes_flushed_to_disk_not_checkpoint_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_flushed_to_disk_not_checkpoint_seconds) |
+| [Tokudb_nonleaf_nodes_flushed_to_disk_not_checkpoint_uncompressed_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_nodes_flushed_to_disk_not_checkpoint_uncompressed_bytes) |
+| [Tokudb_nonleaf_serialization_to_memory_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_nonleaf_serialization_to_memory_seconds) |
+| [tokudb_optimize_index_fraction](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_optimize_index_name](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_optimize_throttle](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_overall_node_compression_ratio](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_overall_node_compression_ratio) |
+| [Tokudb_pivots_fetched_for_query](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_query) |
+| [Tokudb_pivots_fetched_for_query_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_query_bytes) |
+| [Tokudb_pivots_fetched_for_query_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_query_seconds) |
+| [Tokudb_pivots_fetched_for_prefetch](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_prefetch) |
+| [Tokudb_pivots_fetched_for_prefetch_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_prefetch_bytes) |
+| [Tokudb_pivots_fetched_for_prefetch_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_prefetch_seconds) |
+| [Tokudb_pivots_fetched_for_write](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_write) |
+| [Tokudb_pivots_fetched_for_write_bytes](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_write_bytes) |
+| [Tokudb_pivots_fetched_for_write_seconds](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_pivots_fetched_for_write_seconds) |
+| [tokudb_pk_insert_mode](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_prelock_empty](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_promotion_h1_roots_injected_into](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_h1_roots_injected_into) |
+| [Tokudb_promotion_injections_at_depth_0](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_injections_at_depth_0) |
+| [Tokudb_promotion_injections_at_depth_1](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_injections_at_depth_1) |
+| [Tokudb_promotion_injections_at_depth_2](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_injections_at_depth_2) |
+| [Tokudb_promotion_injections_at_depth_3](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_injections_at_depth_3) |
+| [Tokudb_promotion_injections_lower_than_depth_3](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_injections_lower_than_depth_3) |
+| [Tokudb_promotion_leaf_roots_injected_into](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_leaf_roots_injected_into) |
+| [Tokudb_promotion_roots_split](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_roots_split) |
+| [Tokudb_promotion_stopped_after_locking_child](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_stopped_after_locking_child) |
+| [Tokudb_promotion_stopped_at_height_1](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_stopped_at_height_1) |
+| [Tokudb_promotion_stopped_child_locked_or_not_in_memory](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_stopped_child_locked_or_not_in_memory) |
+| [Tokudb_promotion_stopped_child_not_fully_in_memory](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_stopped_child_not_fully_in_memory) |
+| [Tokudb_promotion_stopped_nonempty_buffer](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_promotion_stopped_nonempty_buffer) |
+| [tokudb_read_block_size](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_read_buf_size](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_read_status_frequency](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_row_format](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_rpl_check_readonly](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_rpl_lookup_rows](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_rpl_lookup_rows_delay](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_rpl_unique_checks](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_rpl_unique_checks_delay](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_support_xa](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_tmp_dir](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [Tokudb_txn_aborts](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_txn_aborts) |
+| [Tokudb_txn_begin](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_txn_begin) |
+| [Tokudb_txn_begin_read_only](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_txn_begin_read_only) |
+| [Tokudb_txn_commits](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_txn_commits) |
+| [tokudb_version](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
+| [tokudb_write_status_frequency](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
 | [transaction_alloc_block_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#transaction_alloc_block_size) |
 | [transaction_isolation](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#transaction_isolation) |
 | [transaction_prealloc_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#transaction_prealloc_size) |

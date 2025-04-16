@@ -61,7 +61,7 @@ show global status like 'open_tables';
 +---------------+-------+
 ```
 
-The open table cache can be emptied with [FLUSH TABLES](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) or with the `flush-tables` or `refresh` [mariadb-admin](../../../../clients-and-utilities/mariadb-admin.md) commands.
+The open table cache can be emptied with [FLUSH TABLES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) or with the `flush-tables` or `refresh` [mariadb-admin](../../../../clients-and-utilities/mariadb-admin.md) commands.
 
 
 ## Automatic Creation of New Table Open Cache Instances

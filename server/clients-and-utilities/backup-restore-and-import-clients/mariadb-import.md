@@ -11,7 +11,7 @@ Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-
 of the text file must be the name of the table that should be used. If one
 uses sockets to connect to the MariaDB server, the server will open and read the
 text file directly. In other cases the client will open the text file. The SQL
-command [LOAD DATA INFILE](../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) is used to import the rows.
+command [LOAD DATA INFILE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) is used to import the rows.
 
 
 ## Using mariadb-import
@@ -35,7 +35,7 @@ mariadb-import [OPTIONS] database textfile1 [textfile2 ...]
 | --- | --- |
 | variable | Description |
 | --character-sets-dir=name | Directory for character set files. |
-| -c cols, --columns=cols | Use only these columns to import the data to. Give the column names in a comma separated list. This is same as giving columns to [LOAD DATA INFILE](../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md). |
+| -c cols, --columns=cols | Use only these columns to import the data to. Give the column names in a comma separated list. This is same as giving columns to [LOAD DATA INFILE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md). |
 | -C, --compress | Use compression in server/client protocol. |
 | --database=name | Restore the specified database, ignoring others.To specify more than one database to include, use the directive multiple times, once for each database. Only takes effect when used together with the --dir option. From [MariaDB 11.6](../../../release-notes/mariadb-community-server/what-is-mariadb-116.md). |
 | -
@@ -44,7 +44,7 @@ mariadb-import [OPTIONS] database textfile1 [textfile2 ...]
 | --debug-check | Check memory and open file usage at exit. |
 | --debug-info | Print some debug info at exit. |
 | --default-auth=plugin | Default authentication client-side plugin to use. |
-| --default-character-set=name | Set the default [character set](../../ref/data-types/string-data-types/character-sets/README.md). |
+| --default-character-set=name | Set the default [character set](../../reference/data-types/string-data-types/character-sets/README.md). |
 | --defaults-extra-file=name | Read this file after the global files are read. Must be given as the first option. |
 | --defaults-file=name | Only read default options from the given file name Must be given as the first option. |
 | --defaults-group-suffix=name | In addition to the given groups, also read groups with this suffix. |

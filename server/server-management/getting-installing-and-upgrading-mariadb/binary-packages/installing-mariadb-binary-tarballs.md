@@ -193,7 +193,7 @@ After this, remember to set proper passwords for all accounts accessible from
 untrusted sources, to avoid exposing the host to security risks!
 
 
-Also consider using the [mysql.server](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) to
+Also consider using the [mysql.server](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) to
 [start MariaDB automatically](../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md)
 when your system boots.
 

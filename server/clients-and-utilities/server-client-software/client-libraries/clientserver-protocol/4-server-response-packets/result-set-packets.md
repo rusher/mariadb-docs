@@ -157,7 +157,7 @@ It is a bitmask with the following flags:
 
 
 
-The `BLOB` flag cannot be used to determine if a column has binary data, because `[BINARY](../../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)` and `[VARBINARY](../../../../../ref/data-types/string-data-types/varbinary.md)` columns are treated as strings, instead of blobs.
+The `BLOB` flag cannot be used to determine if a column has binary data, because `[BINARY](../../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)` and `[VARBINARY](../../../../../reference/data-types/string-data-types/varbinary.md)` columns are treated as strings, instead of blobs.
 The `BINARY_COLLATION` flag can be used to determine if a string column has binary data.
 
 
@@ -170,8 +170,8 @@ This extended column type information can be used to find out more specific deta
 For example:
 
 
-* For a `[POINT](../../../../../ref/sql-statements-and-structure/geographic-geometric-features/geometry-constructors/point.md)` column, the column type field will be `MYSQL_TYPE_GEOMETRY`, but the extended type will indicate 'point'.
-* For a `[JSON](../../../../../ref/storage-engines/connect/json-sample-files.md)` column, the column type field will be `MYSQL_TYPE_STRING`, but the extended type will indicate 'json'.
+* For a `[POINT](../../../../../reference/sql-statements-and-structure/geographic-geometric-features/geometry-constructors/point.md)` column, the column type field will be `MYSQL_TYPE_GEOMETRY`, but the extended type will indicate 'point'.
+* For a `[JSON](../../../../../reference/storage-engines/connect/json-sample-files.md)` column, the column type field will be `MYSQL_TYPE_STRING`, but the extended type will indicate 'json'.
 
 
 

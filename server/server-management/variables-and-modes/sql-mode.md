@@ -67,10 +67,10 @@ Changes the SQL syntax to be closer to ANSI SQL.
 Sets: [REAL_AS_FLOAT](#real_as_float), [PIPES_AS_CONCAT](#pipes_as_concat), [ANSI_QUOTES](#ansi_quotes), [IGNORE_SPACE](#ignore_space).
 
 
-It also adds a restriction: an error will be returned if a subquery uses an [aggregating function](../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions.md) with a reference to a column from an outer query in a way that cannot be resolved.
+It also adds a restriction: an error will be returned if a subquery uses an [aggregating function](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions.md) with a reference to a column from an outer query in a way that cannot be resolved.
 
 
-If set, [SHOW CREATE TABLE](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
+If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
 
 
 #### ANSI_QUOTES
@@ -85,7 +85,7 @@ Changes `"` to be treated as ```, the identifier quote character. This may break
 Same as: [PIPES_AS_CONCAT](#pipes_as_concat), [ANSI_QUOTES](#ansi_quotes) , [IGNORE_SPACE](#ignore_space), [DB2](#db2), [NO_KEY_OPTIONS](#no_key_options), [NO_TABLE_OPTIONS](#no_table_options), [NO_FIELD_OPTIONS](#no_field_options)
 
 
-If set, [SHOW CREATE TABLE](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
+If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
 
 
 #### EMPTY_STRING_IS_NULL
@@ -109,13 +109,13 @@ Compatibility option for MySQL 5.0.1 and before; This changes `NOT a BETWEEN b A
 #### IGNORE_BAD_TABLE_OPTIONS
 
 
-If this is set generate a warning (not an error) for wrong table option in CREATE TABLE. Also, since 10.0.13, do not comment out these wrong table options in [SHOW CREATE TABLE](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md).
+If this is set generate a warning (not an error) for wrong table option in CREATE TABLE. Also, since 10.0.13, do not comment out these wrong table options in [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md).
 
 
 #### IGNORE_SPACE
 
 
-Allow one to have spaces (including tab characters and new line characters) between function name and '('. The drawback is that this causes built in functions to become [reserved words](../../ref/sql-statements-and-structure/sql-language-structure/reserved-words.md).
+Allow one to have spaces (including tab characters and new line characters) between function name and '('. The drawback is that this causes built in functions to become [reserved words](../../reference/sql-statements-and-structure/sql-language-structure/reserved-words.md).
 
 
 #### MAXDB
@@ -124,10 +124,10 @@ Allow one to have spaces (including tab characters and new line characters) betw
 Same as: [PIPES_AS_CONCAT](#pipes_as_concat), [ANSI_QUOTES](#ansi_quotes), [IGNORE_SPACE](#ignore_space), [MAXDB](#maxdb), [NO_KEY_OPTIONS](#no_key_options), [NO_TABLE_OPTIONS](#no_table_options), [NO_FIELD_OPTIONS](#no_field_options), [NO_AUTO_CREATE_USER](#no_auto_create_user).
 
 
-Also has the effect of silently converting [TIMESTAMP](../../ref/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) fields into [DATETIME](../../ref/data-types/date-and-time-data-types/datetime.md) fields when created or modified.
+Also has the effect of silently converting [TIMESTAMP](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) fields into [DATETIME](../../reference/data-types/date-and-time-data-types/datetime.md) fields when created or modified.
 
 
-If set, [SHOW CREATE TABLE](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
+If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
 
 
 #### MSSQL
@@ -139,7 +139,7 @@ Additionally implies the following: [PIPES_AS_CONCAT](#pipes_as_concat), [ANSI_Q
 Additionally from [MariaDB 10.4.5](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1045-release-notes.md), implements a limited subset of Microsoft SQL Server's language. See [SQL_MODE=MSSQL](../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) for more.
 
 
-If set, [SHOW CREATE TABLE](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
+If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
 
 
 #### MYSQL323
@@ -163,7 +163,7 @@ Don't automatically create users with `GRANT` unless authentication information 
 #### NO_AUTO_VALUE_ON_ZERO
 
 
-If set, don't generate an [AUTO_INCREMENT](../../ref/storage-engines/innodb/auto_increment-handling-in-innodb.md) on [INSERT](../../ref/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) of zero in an `AUTO_INCREMENT` column, or when adding an [AUTO_INCREMENT](../../ref/storage-engines/innodb/auto_increment-handling-in-innodb.md) attribute with the [ALTER TABLE](../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement. Normally both `zero` and `NULL` generate new `AUTO_INCREMENT` values.
+If set, don't generate an [AUTO_INCREMENT](../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) on [INSERT](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) of zero in an `AUTO_INCREMENT` column, or when adding an [AUTO_INCREMENT](../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) attribute with the [ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement. Normally both `zero` and `NULL` generate new `AUTO_INCREMENT` values.
 
 
 #### NO_BACKSLASH_ESCAPES
@@ -175,7 +175,7 @@ Disables using the backslash character `\` as an escape character within strings
 #### NO_DIR_IN_CREATE
 
 
-Ignore all INDEX DIRECTORY and DATA DIRECTORY directives when creating a table. Can be useful on slave [replication](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) servers.
+Ignore all INDEX DIRECTORY and DATA DIRECTORY directives when creating a table. Can be useful on slave [replication](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) servers.
 
 
 #### NO_ENGINE_SUBSTITUTION
@@ -187,19 +187,19 @@ If not set, if the available storage engine specified by a CREATE TABLE or ALTER
 #### NO_FIELD_OPTIONS
 
 
-Remove MariaDB-specific column options from the output of [SHOW CREATE TABLE](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md). This is also used by the portability mode of [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md).
+Remove MariaDB-specific column options from the output of [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md). This is also used by the portability mode of [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md).
 
 
 #### NO_KEY_OPTIONS
 
 
-Remove MariaDB-specific index options from the output of [SHOW CREATE TABLE](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md). This is also used by the portability mode of [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md).
+Remove MariaDB-specific index options from the output of [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md). This is also used by the portability mode of [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md).
 
 
 #### NO_TABLE_OPTIONS
 
 
-Remove MariaDB-specific table options from the output of [SHOW CREATE TABLE](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md). This is also used by the portability mode of [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md).
+Remove MariaDB-specific table options from the output of [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md). This is also used by the portability mode of [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md).
 
 
 #### NO_UNSIGNED_SUBTRACTION
@@ -211,7 +211,7 @@ When enabled, subtraction results are signed even if the operands are unsigned.
 #### NO_ZERO_DATE
 
 
-Don't allow '0000-00-00' as a valid date in strict mode (produce a 1525 error). Zero dates can be inserted with [IGNORE](../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/ignore.md). If not in strict mode, a warning is generated.
+Don't allow '0000-00-00' as a valid date in strict mode (produce a 1525 error). Zero dates can be inserted with [IGNORE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/ignore.md). If not in strict mode, a warning is generated.
 
 
 #### NO_ZERO_IN_DATE
@@ -223,7 +223,7 @@ Don't allow dates where the year is not zero but the month or day parts of the d
 #### ONLY_FULL_GROUP_BY
 
 
-For [SELECT ... GROUP BY](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#group-by) queries, disallow [SELECTing](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) columns which are not referred to in the GROUP BY clause, unless they are passed to an aggregate function like [COUNT()](../../ref/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count.md) or [MAX()](../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md). Produce a 1055 error.
+For [SELECT ... GROUP BY](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#group-by) queries, disallow [SELECTing](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) columns which are not referred to in the GROUP BY clause, unless they are passed to an aggregate function like [COUNT()](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count.md) or [MAX()](../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md). Produce a 1055 error.
 
 
 #### ORACLE
@@ -235,13 +235,13 @@ In all versions of MariaDB up to [MariaDB 10.2](../../../release-notes/mariadb-c
 From [MariaDB 10.3](../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), this mode also sets [SIMULTANEOUS_ASSIGNMENT](#simultaneous_assignment) and configures the server to understand a large subset of Oracle's PL/SQL language instead of MariaDB's traditional syntax for stored routines. See [SQL_MODE=ORACLE From MariaDB 10.3](../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md).
 
 
-If set, [SHOW CREATE TABLE](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
+If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
 
 
 #### PAD_CHAR_TO_FULL_LENGTH
 
 
-Trailing spaces in [CHAR](../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) columns are by default trimmed upon retrieval. With PAD_CHAR_TO_FULL_LENGTH enabled, no trimming occurs. Does not apply to [VARCHARs](../../ref/data-types/string-data-types/varchar.md).
+Trailing spaces in [CHAR](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) columns are by default trimmed upon retrieval. With PAD_CHAR_TO_FULL_LENGTH enabled, no trimming occurs. Does not apply to [VARCHARs](../../reference/data-types/string-data-types/varchar.md).
 
 
 #### PIPES_AS_CONCAT
@@ -256,13 +256,13 @@ Allows using the pipe character (ASCII 124) as string concatenation operator. Th
 Same as: [PIPES_AS_CONCAT](#pipes_as_concat), [ANSI_QUOTES](#ansi_quotes), [IGNORE_SPACE](#ignore_space), [POSTGRESQL](#postgresql), [NO_KEY_OPTIONS](#no_key_options), [NO_TABLE_OPTIONS](#no_table_options), [NO_FIELD_OPTIONS](#no_field_options).
 
 
-If set, [SHOW CREATE TABLE](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
+If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
 
 
 #### REAL_AS_FLOAT
 
 
-`REAL` is a synonym for [FLOAT](../../ref/data-types/data-types-numeric-data-types/float.md) rather than [DOUBLE](../../ref/data-types/data-types-numeric-data-types/double.md).
+`REAL` is a synonym for [FLOAT](../../reference/data-types/data-types-numeric-data-types/float.md) rather than [DOUBLE](../../reference/data-types/data-types-numeric-data-types/double.md).
 
 
 #### SIMULTANEOUS_ASSIGNMENT
@@ -319,7 +319,7 @@ Statements that don't modify data will return a warning when adjusted regardless
 It is possible to change session SQL_MODE within a stored program. In this case, the new SQL_MODE will be in effect only in the body of the current stored program. If it calls some stored procedures, they will not be affected by the change.
 
 
-Some Information Schema tables (such as [ROUTINES](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)) and SHOW CREATE statements such as [SHOW CREATE PROCEDURE](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-procedure.md) show the SQL_MODE used by the stored programs.
+Some Information Schema tables (such as [ROUTINES](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)) and SHOW CREATE statements such as [SHOW CREATE PROCEDURE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-procedure.md) show the SQL_MODE used by the stored programs.
 
 
 ## Examples

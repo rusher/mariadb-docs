@@ -9,24 +9,24 @@ This article contains information on known problems and limitations of MariaDB G
 
 * Currently replication works only with the [InnoDB storage engine](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md). Any writes
  to tables of other types, including system (mysql.*) tables are not
- replicated (this limitation excludes DDL statements such as [CREATE USER](../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md), which implicitly modify the mysql.* tables — those are replicated). There is however experimental support for [MyISAM](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) - see the [wsrep_replicate_myisam](galera-cluster-system-variables.md#wsrep_replicate_myisam) system variable)
+ replicated (this limitation excludes DDL statements such as [CREATE USER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md), which implicitly modify the mysql.* tables — those are replicated). There is however experimental support for [MyISAM](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) - see the [wsrep_replicate_myisam](galera-cluster-system-variables.md#wsrep_replicate_myisam) system variable)
 
 
-* Unsupported explicit locking include [LOCK TABLES](../../../ref/sql-statements-and-structure/sql-statements/transactions/lock-tables.md), [FLUSH TABLES {explicit table list} WITH READ LOCK](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md), ([GET_LOCK()](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md), [RELEASE_LOCK()](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/release_lock.md),…). Using transactions properly should be able to overcome these limitations. Global locking operators like [FLUSH TABLES WITH READ LOCK](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) are supported.
+* Unsupported explicit locking include [LOCK TABLES](../../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md), [FLUSH TABLES {explicit table list} WITH READ LOCK](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md), ([GET_LOCK()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md), [RELEASE_LOCK()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/release_lock.md),…). Using transactions properly should be able to overcome these limitations. Global locking operators like [FLUSH TABLES WITH READ LOCK](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) are supported.
 
 
-* All tables should have a primary key (multi-column primary keys are supported). [DELETE](../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) operations are unsupported on tables without a primary key. Also, rows in tables without a primary key may appear in a different order on different nodes.
+* All tables should have a primary key (multi-column primary keys are supported). [DELETE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) operations are unsupported on tables without a primary key. Also, rows in tables without a primary key may appear in a different order on different nodes.
 
 
 * The [general query log](../../../server-management/server-monitoring-logs/general-query-log.md) and the [slow query log](../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md) cannot be directed to a table. If you enable these logs, then you must forward the log to a file by setting `[log_output=FILE](../optimization-and-tuning/system-variables/server-system-variables.md#log_output)`.
 
 
-* [XA transactions](../../../ref/sql-statements-and-structure/sql-statements/transactions/xa-transactions.md) are not supported.
+* [XA transactions](../../../reference/sql-statements-and-structure/sql-statements/transactions/xa-transactions.md) are not supported.
 
 
 * Transaction size. While Galera does not explicitly limit the transaction
  size, a writeset is processed as a single memory-resident buffer and as a
- result, extremely large transactions (e.g. [LOAD DATA](../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md)) may adversely affect
+ result, extremely large transactions (e.g. [LOAD DATA](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md)) may adversely affect
  node performance. To avoid that, the [wsrep_max_ws_rows](galera-cluster-system-variables.md#wsrep_max_ws_rows) and [wsrep_max_ws_size](galera-cluster-system-variables.md#wsrep_max_ws_size) system
  variables limit transaction rows to 128K and the transaction size to 2Gb by
  default. If necessary, users may want to increase those limits. Future versions
@@ -111,7 +111,7 @@ This article contains information on known problems and limitations of MariaDB G
 * `FLUSH PRIVILEGES` is not replicated.
 
 
-* The [query cache](../../../ref/plugins/other-plugins/query-cache-information-plugin.md) needed to be disabled by setting `[query_cache_size=0](../optimization-and-tuning/system-variables/server-system-variables.md#query_cache_size)` prior to MariaDB Galera Cluster 5.5.40, MariaDB Galera Cluster 10.0.14, and [MariaDB 10.1.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md)..
+* The [query cache](../../../reference/plugins/other-plugins/query-cache-information-plugin.md) needed to be disabled by setting `[query_cache_size=0](../optimization-and-tuning/system-variables/server-system-variables.md#query_cache_size)` prior to MariaDB Galera Cluster 5.5.40, MariaDB Galera Cluster 10.0.14, and [MariaDB 10.1.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md)..
 
 
 * In an asynchronous replication setup where a master replicates to a galera node acting as slave, parallel replication (slave-parallel-threads > 1) on slave is currently not supported (see [MDEV-6860](https://jira.mariadb.org/browse/MDEV-6860)).

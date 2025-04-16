@@ -179,7 +179,7 @@ The process to install MariaDB Galera Cluster with the MariaDB `zypper` reposito
 Galera Cluster support has been included in the standard MariaDB Server packages, so you will need to install the `MariaDB-server` package, as you normally would.
 
 
-You also need to install the `galera-4` package to obtain the [Galera](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 wsrep provider library.
+You also need to install the `galera-4` package to obtain the [Galera](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 wsrep provider library.
 
 
 To install MariaDB Galera Cluster, you could execute the following command:
@@ -193,7 +193,7 @@ If you haven't yet imported the MariaDB GPG public key, then `zypper` will promp
 import it after it downloads the packages, but before it prompts you to install them.
 
 
-See [MariaDB Galera Cluster](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) for more information on MariaDB Galera Cluster.
+See [MariaDB Galera Cluster](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) for more information on MariaDB Galera Cluster.
 
 
 ### Installing MariaDB Clients and Client Libraries with ZYpp
@@ -225,7 +225,7 @@ sudo zypper install MariaDB-backup
 Some [plugins](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md) may also need to be installed.
 
 
-For example, to install the `[cracklib_password_check](../../../../ref/plugins/password-validation-plugins/cracklib-password-check-plugin.md)` password validation plugin, execute the following command:
+For example, to install the `[cracklib_password_check](../../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md)` password validation plugin, execute the following command:
 
 
 ```
@@ -287,7 +287,7 @@ sudo zypper install MariaDB-backup-debuginfo
 For some [plugins](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md), `[debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo)` may also need to be installed.
 
 
-For example, to install `[debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo)` for the `[cracklib_password_check](../../../../ref/plugins/password-validation-plugins/cracklib-password-check-plugin.md)` password validation plugin, execute the following command:
+For example, to install `[debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo)` for the `[cracklib_password_check](../../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md)` password validation plugin, execute the following command:
 
 
 ```
@@ -334,5 +334,5 @@ The rest of the install and setup process is as normal.
 After the installation is complete, you can [start MariaDB](https://mariadb.com/kb/en/).
 
 
-If you are using [MariaDB Galera Cluster](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), then keep in mind that the first node will have to be [bootstrapped](../../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster).
+If you are using [MariaDB Galera Cluster](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), then keep in mind that the first node will have to be [bootstrapped](../../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster).
 

@@ -16,7 +16,7 @@ Several options are mandatory, which means that they *must* be set in order for 
 * `[binlog_format=ROW](../standard-replication/replication-and-binary-log-system-variables.md)` — See [Binary Log Formats](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md)
 * `[wsrep_on=ON](galera-cluster-system-variables.md#wsrep_on)` — Enable wsrep replication
 * `[default_storage_engine=InnoDB](../optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine)` — This is the default value, or alternately `[wsrep_replicate_myisam=1](galera-cluster-system-variables.md#wsrep_replicate_myisam)` (before [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)) or `[galera-cluster-system-variables/#wsrep_mode=REPLICATE_ARIA,REPLICATE_MYISAM](galera-cluster-system-variables.md#wsrep_mode%3DREPLICATE_ARIA%2CREPLICATE_MYISAM)` ([MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) and later)
-* `[innodb_doublewrite=1](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite)` — This is the default value, and should not be changed.
+* `[innodb_doublewrite=1](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite)` — This is the default value, and should not be changed.
 
 
 ## Performance-related Options
@@ -25,10 +25,10 @@ Several options are mandatory, which means that they *must* be set in order for 
 These are optional optimizations that can be made to improve performance.
 
 
-* `[innodb_flush_log_at_trx_commit=0](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_log_at_trx_commit)` — This is not usually recommended in the case of standard MariaDB. However, it is a safer, recommended option with Galera Cluster, since inconsistencies can always be fixed by recovering from another node.
+* `[innodb_flush_log_at_trx_commit=0](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_log_at_trx_commit)` — This is not usually recommended in the case of standard MariaDB. However, it is a safer, recommended option with Galera Cluster, since inconsistencies can always be fixed by recovering from another node.
 
 
-* `[innodb_autoinc_lock_mode=2](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_autoinc_lock_mode)` — This tells InnoDB to use interleaved method. Interleaved is the fastest and most scalable lock mode, and should be used when BINLOG_FORMAT is set to ROW.
+* `[innodb_autoinc_lock_mode=2](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_autoinc_lock_mode)` — This tells InnoDB to use interleaved method. Interleaved is the fastest and most scalable lock mode, and should be used when BINLOG_FORMAT is set to ROW.
 Setting the auto-increment lock mode for InnoDB to interleaved, you’re allowing slaves threads to operate in parallel.
 
 
@@ -40,7 +40,7 @@ The logic here is that, in a balanced system, four slave threads can typically s
 ## Writing Replicated Write Sets to the Binary Log
 
 
-Like with [MariaDB replication](../standard-replication/README.md), write sets that are received by a node with [Galera Cluster's certification-based replication](about-galera-replication.md) are not written to the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) by default. If you would like a node to write its replicated write sets to the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), then you will have to set `[log_slave_updates=ON](../standard-replication/replication-and-binary-log-system-variables.md#log_slave_updates)`. This is especially helpful if the node is a replication master. See [Using MariaDB Replication with MariaDB Galera Cluster: Configuring a Cluster Node as a Replication Master](using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica.md).
+Like with [MariaDB replication](../standard-replication/README.md), write sets that are received by a node with [Galera Cluster's certification-based replication](about-galera-replication.md) are not written to the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) by default. If you would like a node to write its replicated write sets to the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), then you will have to set `[log_slave_updates=ON](../standard-replication/replication-and-binary-log-system-variables.md#log_slave_updates)`. This is especially helpful if the node is a replication master. See [Using MariaDB Replication with MariaDB Galera Cluster: Configuring a Cluster Node as a Replication Master](using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica.md).
 
 
 ## Replication Filters
@@ -58,7 +58,7 @@ The following replication filters are honored for [InnoDB](../../../../general-r
 * `[replicate_wild_ignore_table](../standard-replication/replication-and-binary-log-system-variables.md)`
 
 
-The following replication filters are honored for DML and DDL for tables that use both the [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) and [MyISAM](../../../ref/storage-engines/myisam-storage-engine/README.md) storage engines:
+The following replication filters are honored for DML and DDL for tables that use both the [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) and [MyISAM](../../../reference/storage-engines/myisam-storage-engine/README.md) storage engines:
 
 
 * `[replicate_do_table](../standard-replication/replication-and-binary-log-system-variables.md)`

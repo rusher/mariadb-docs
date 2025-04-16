@@ -2,13 +2,13 @@
 # Encrypting Binary Logs
 
 
-MariaDB Server can encrypt the server's [binary logs](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and [relay logs](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md). This ensures that your binary logs are only accessible through MariaDB.
+MariaDB Server can encrypt the server's [binary logs](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and [relay logs](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md). This ensures that your binary logs are only accessible through MariaDB.
 
 
 ## Basic Configuration
 
 
-Since [MariaDB 10.1.7](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes.md), MariaDB can also encrypt [binary logs](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) (including [relay logs](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md)). Encryption of binary logs is configured by the [encrypt_binlog](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#encrypt_binlog) system variable.
+Since [MariaDB 10.1.7](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes.md), MariaDB can also encrypt [binary logs](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) (including [relay logs](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md)). Encryption of binary logs is configured by the [encrypt_binlog](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#encrypt_binlog) system variable.
 
 
 Users of data-at-rest encryption will also need to have a [key management and encryption plugin](key-management-and-encryption-plugins/encryption-key-management.md) configured. Some examples are [File Key Management Plugin](key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) and [AWS Key Management Plugin](key-management-and-encryption-plugins/aws-key-management-encryption-plugin-setup-guide.md).
@@ -34,7 +34,7 @@ encrypt_binlog=ON
 [Key management and encryption plugins](key-management-and-encryption-plugins/encryption-key-management.md) support [using multiple encryption keys](key-management-and-encryption-plugins/encryption-key-management.md#using-multiple-encryption-keys). Each encryption key can be defined with a different 32-bit integer as a key identifier.
 
 
-MariaDB uses the encryption key with ID 1 to encrypt [binary logs](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md).
+MariaDB uses the encryption key with ID 1 to encrypt [binary logs](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md).
 
 
 ### Key Rotation
@@ -61,13 +61,13 @@ Encryption of binary logs can be enabled by doing the following process.
 * Then, start the server.
 
 
-From that point forward, any new [binary logs](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) will be encrypted. To delete old unencrypted [binary logs](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), you can use [RESET MASTER](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master.md) or [PURGE BINARY LOGS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md).
+From that point forward, any new [binary logs](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) will be encrypted. To delete old unencrypted [binary logs](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), you can use [RESET MASTER](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master.md) or [PURGE BINARY LOGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md).
 
 
 ## Disabling Encryption
 
 
-Encryption of [binary logs](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) can be disabled by doing the following process.
+Encryption of [binary logs](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) can be disabled by doing the following process.
 
 
 * First, stop the server.
@@ -79,7 +79,7 @@ Encryption of [binary logs](../../../../ref/storage-engines/innodb/binary-log-gr
 * Then, start the server.
 
 
-From that point forward, any new [binary logs](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) will be unencrypted. If you would like the server to continue to have access to old encrypted [binary logs](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), then make sure to keep your [key management and encryption plugin](key-management-and-encryption-plugins/encryption-key-management.md) loaded.
+From that point forward, any new [binary logs](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) will be unencrypted. If you would like the server to continue to have access to old encrypted [binary logs](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), then make sure to keep your [key management and encryption plugin](key-management-and-encryption-plugins/encryption-key-management.md) loaded.
 
 
 ## Understanding Binlog Encryption
@@ -94,7 +94,7 @@ Each event's header and footer are created and processed to produce encrypted bl
 ### Effects of Data-at-Rest Encryption on Replication
 
 
-When using encrypted binary logs with [replication](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md), it is completely supported to have different encryption keys on the master and slave. The master decrypts encrypted binary log events as it reads them from disk, and before its [binary log dump thread](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#binary-log-dump-thread) sends them to the slave, so the slave actually receives the unencrypted binary log events.
+When using encrypted binary logs with [replication](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md), it is completely supported to have different encryption keys on the master and slave. The master decrypts encrypted binary log events as it reads them from disk, and before its [binary log dump thread](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#binary-log-dump-thread) sends them to the slave, so the slave actually receives the unencrypted binary log events.
 
 
 If you want to ensure that binary log events are encrypted as they are transmitted between the master and slave, then you will have to use [TLS with the replication connection](../data-in-transit-encryption/replication-with-secure-connections.md).
@@ -103,7 +103,7 @@ If you want to ensure that binary log events are encrypted as they are transmitt
 ### Effects of Data-at-Rest Encryption on mariadb-binlog
 
 
-[mariadb-binlog](../../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) does not currently have the ability to decrypt encrypted [binary logs](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) on its own (see [MDEV-8813](https://jira.mariadb.org/browse/MDEV-8813) about that). In order to use mariadb-binlog with encrypted [binary logs](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), you have to use the [--read-from-remote-server](../../../../clients-and-utilities/mariadb-binlog/mariadb-binlog-options.md) command-line option, so that the server can decrypt the [binary logs](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) for mariadb-binlog.
+[mariadb-binlog](../../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) does not currently have the ability to decrypt encrypted [binary logs](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) on its own (see [MDEV-8813](https://jira.mariadb.org/browse/MDEV-8813) about that). In order to use mariadb-binlog with encrypted [binary logs](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), you have to use the [--read-from-remote-server](../../../../clients-and-utilities/mariadb-binlog/mariadb-binlog-options.md) command-line option, so that the server can decrypt the [binary logs](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) for mariadb-binlog.
 
 
 Note, using the `--read-from-remote-server` option on versions of the `mariadb-binlog` utility that do not have the [MDEV-20574](https://jira.mariadb.org/browse/MDEV-20574) fix (<=[MariaDB 10.4.9](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1049-release-notes.md), [MariaDB 10.3.19](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10319-release-notes.md), [MariaDB 10.2.28](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10228-release-notes.md)) can corrupt binlog positions when the binary log is encrypted.

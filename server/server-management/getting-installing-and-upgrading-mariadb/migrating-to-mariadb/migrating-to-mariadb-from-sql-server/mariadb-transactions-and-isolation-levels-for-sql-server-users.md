@@ -5,7 +5,7 @@
 This page explains how transactions work in MariaDB, and highlights the main differences between MariaDB and SQL Server transactions.
 
 
-Note that XA transactions are handled in a completely different way and are not covered in this page. See [XA Transactions](../../../../ref/sql-statements-and-structure/sql-statements/transactions/xa-transactions.md).
+Note that XA transactions are handled in a completely different way and are not covered in this page. See [XA Transactions](../../../../reference/sql-statements-and-structure/sql-statements/transactions/xa-transactions.md).
 
 
 ## Missing Features
@@ -21,13 +21,13 @@ These SQL Server features are not available in MariaDB:
 ## Transactions, Storage Engines and the Binary Log
 
 
-In MariaDB, transactions are optionally implemented by [storage engines](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/storage-engines-and-plugins-videos.md). The default storage engine, [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), fully supports transactions. Other transactional storage engines include [MyRocks](../../../../ref/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) and [TokuDB](../../../../ref/storage-engines/tokudb/tokudb-resources.md). Most storage engines are not transactional, therefore they should not considered general purpose engines.
+In MariaDB, transactions are optionally implemented by [storage engines](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/storage-engines-and-plugins-videos.md). The default storage engine, [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), fully supports transactions. Other transactional storage engines include [MyRocks](../../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) and [TokuDB](../../../../reference/storage-engines/tokudb/tokudb-resources.md). Most storage engines are not transactional, therefore they should not considered general purpose engines.
 
 
-Most of the information in this page refers to generic MariaDB server behaviors or InnoDB. For [MyRocks](../../../../ref/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) and [TokuDB](../../../../ref/storage-engines/tokudb/tokudb-resources.md) please check the proper KnowledgeBase sections.
+Most of the information in this page refers to generic MariaDB server behaviors or InnoDB. For [MyRocks](../../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) and [TokuDB](../../../../reference/storage-engines/tokudb/tokudb-resources.md) please check the proper KnowledgeBase sections.
 
 
-Writing into a non-transactional table in a transaction can still be useful. The reason is that a [metadata lock](../../../../ref/sql-statements-and-structure/sql-statements/transactions/metadata-locking.md) is acquired on the table for the duration of the transaction, so that [ALTER TABLEs](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) are queued.
+Writing into a non-transactional table in a transaction can still be useful. The reason is that a [metadata lock](../../../../reference/sql-statements-and-structure/sql-statements/transactions/metadata-locking.md) is acquired on the table for the duration of the transaction, so that [ALTER TABLEs](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) are queued.
 
 
 It is possible to write into transactional and non-transactional tables within a single transaction. It is important to remember that non-transactional engines will have the following limitations:
@@ -38,7 +38,7 @@ It is possible to write into transactional and non-transactional tables within a
 * In case of a crash, committed data written into a transactional table can always be recovered, but this is not necessarily true for non-transactional tables.
 
 
-If the [binary log](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is enabled, writing into different transactional storage engines in a single transaction, or writing into transactional and non-transactional engines inside the same transaction, implies some extra work for MariaDB. It needs to perform a two-phase commit to be sure that changes to different tables are logged in the correct order. This affects the performance.
+If the [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is enabled, writing into different transactional storage engines in a single transaction, or writing into transactional and non-transactional engines inside the same transaction, implies some extra work for MariaDB. It needs to perform a two-phase commit to be sure that changes to different tables are logged in the correct order. This affects the performance.
 
 
 ## Transaction Syntax
@@ -76,7 +76,7 @@ Read-only transactions are also available using `START TRANSACTION READ ONLY`. T
 Only DML statements are transactional and can be rolled back. This may change in a future version, see [MDEV-17567](https://jira.mariadb.org/browse/MDEV-17567) - Atomic DDL and [MDEV-4259](https://jira.mariadb.org/browse/MDEV-4259) - transactional DDL.
 
 
-Changing autocommit and explicitly starting a transaction will implicitly commit the active transaction, if any. DDL statements, and several other statements, implicitly commit the active transaction. See [SQL statements That Cause an Implicit Commit](../../../../ref/sql-statements-and-structure/sql-statements/transactions/sql-statements-that-cause-an-implicit-commit.md) for the complete list of these statements.
+Changing autocommit and explicitly starting a transaction will implicitly commit the active transaction, if any. DDL statements, and several other statements, implicitly commit the active transaction. See [SQL statements That Cause an Implicit Commit](../../../../reference/sql-statements-and-structure/sql-statements/transactions/sql-statements-that-cause-an-implicit-commit.md) for the complete list of these statements.
 
 
 A rollback can also be triggered implicitly, when certain errors occur.
@@ -91,12 +91,12 @@ This section only covers the basic syntax for transactions. Much more options ar
 ## Constraint Checking
 
 
-MariaDB supports the following [constraints](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/constraint.md):
+MariaDB supports the following [constraints](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/constraint.md):
 
 
 * [Primary keys](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#primary-key)
 * [UNIQUE](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#unique-index)
-* [CHECK](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/constraint.md#check-constraints)
+* [CHECK](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/constraint.md#check-constraints)
 * [Foreign keys](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/foreign-keys.md)
 
 
@@ -168,7 +168,7 @@ See [check_constraint_checks](../../../../server-usage/replication-cluster-multi
 ## Isolation Levels and Locks
 
 
-For more information about MariaDB isolation levels see [SET TRANSACTION](../../../../ref/sql-statements-and-structure/sql-statements/transactions/set-transaction.md).
+For more information about MariaDB isolation levels see [SET TRANSACTION](../../../../reference/sql-statements-and-structure/sql-statements/transactions/set-transaction.md).
 
 
 ### Locking Reads
@@ -181,8 +181,8 @@ As a general rule:
 
 
 * Plain [SELECTs](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) are not locking, they acquire snapshots instead.
-* To force a read to acquire a shared lock, use [SELECT ... LOCK IN SHARED MODE](../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/lock-in-share-mode.md).
-* To force a read to acquire an exclusive lock, use [SELECT ... FOR UPDATE](../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/for-update.md).
+* To force a read to acquire a shared lock, use [SELECT ... LOCK IN SHARED MODE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/lock-in-share-mode.md).
+* To force a read to acquire an exclusive lock, use [SELECT ... FOR UPDATE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/for-update.md).
 
 
 ### Changing the Isolation Level
@@ -285,7 +285,7 @@ As you can see, session 1 uses `WITH CONSISTENT SNAPSHOT`, thus it sees all tabl
 When we try to read or modify a row that is exclusive-locked by another transaction, our transaction is queued until that lock is released. There could be more queued transactions waiting to acquire the same lock, in which case we will wait even more.
 
 
-There is a timeout for such waits, defined by the [innodb_lock_wait_timeout](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_lock_wait_timeout) variable. If it is set to 0, statements that encounter a row lock will fail immediately. When the timeout is exceeded, MariaDB produces the following error:
+There is a timeout for such waits, defined by the [innodb_lock_wait_timeout](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_lock_wait_timeout) variable. If it is set to 0, statements that encounter a row lock will fail immediately. When the timeout is exceeded, MariaDB produces the following error:
 
 
 ```
@@ -296,13 +296,13 @@ It is important to note that this variable has two limitations (by design):
 
 
 * It only affects transactional statements, not statements like `ALTER TABLE` or `TRUNCATE TABLE`.
-* It only concerns row locks. It does not put a timeout on metadata locks, or table locks acquired - for example - with the [LOCK TABLES](../../../../ref/sql-statements-and-structure/sql-statements/transactions/lock-tables.md) statement.
+* It only concerns row locks. It does not put a timeout on metadata locks, or table locks acquired - for example - with the [LOCK TABLES](../../../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md) statement.
 
 
 Note however that [lock_wait_timeout](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lock_wait_timeout) can be used for metadata locks.
 
 
-There is a special syntax that can be used with `SELECT` and some non-transactional statements including `ALTER TABLE`: the [WAIT and NOWAIT](../../../../ref/sql-statements-and-structure/sql-statements/transactions/wait-and-nowait.md) clauses. This syntax puts a timeout in seconds for all lock types, including row locks, table locks, and metadata locks. For example:
+There is a special syntax that can be used with `SELECT` and some non-transactional statements including `ALTER TABLE`: the [WAIT and NOWAIT](../../../../reference/sql-statements-and-structure/sql-statements/transactions/wait-and-nowait.md) clauses. This syntax puts a timeout in seconds for all lock types, including row locks, table locks, and metadata locks. For example:
 
 
 ```
@@ -342,21 +342,21 @@ Lock modes are the following:
 * Intention locks (IS, XS) are acquired when it is not possible to acquire an exclusive lock or a shared lock. When a lock on a row or gap is released, the oldest intention lock on that resource (if any) is converted to an X or S lock.
 
 
-For more information see [InnoDB Lock Modes](../../../../ref/storage-engines/innodb/innodb-lock-modes.md).
+For more information see [InnoDB Lock Modes](../../../../reference/storage-engines/innodb/innodb-lock-modes.md).
 
 
 ### Information Schema
 
 
-Querying the [information_schema](../../../../ref/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) is the best way to see which transactions have acquired some locks and which transactions are waiting for some locks to be released.
+Querying the [information_schema](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) is the best way to see which transactions have acquired some locks and which transactions are waiting for some locks to be released.
 
 
 In particular, check the following tables:
 
 
-* [INNODB_LOCKS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_locks-table.md): requests for locks not yet fulfilled, or that are blocking another transaction.
-* [INNODB_LOCK_WAITS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_lock_waits-table.md): queued requests to acquire a lock.
-* [INNODB_TRX](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_trx-table.md): information about all currently executing InnoDB transactions, including SQL queries that are running.
+* [INNODB_LOCKS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_locks-table.md): requests for locks not yet fulfilled, or that are blocking another transaction.
+* [INNODB_LOCK_WAITS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_lock_waits-table.md): queued requests to acquire a lock.
+* [INNODB_TRX](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_trx-table.md): information about all currently executing InnoDB transactions, including SQL queries that are running.
 
 
 Here is an example of their usage.
@@ -415,7 +415,7 @@ trx_autocommit_non_locking: 0
 ### Deadlocks
 
 
-InnoDB detects deadlocks automatically. Since this consumes CPU time, some users prefer to disable this feature by setting the [innodb_deadlock_detect](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_detect) variable to 0. If this is done, locked transactions will wait until the they exceed the [innodb_lock_wait_timeout](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_lock_wait_timeout). Therefore it is important to set innodb_lock_wait_timeout to a very low value, like 1.
+InnoDB detects deadlocks automatically. Since this consumes CPU time, some users prefer to disable this feature by setting the [innodb_deadlock_detect](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_detect) variable to 0. If this is done, locked transactions will wait until the they exceed the [innodb_lock_wait_timeout](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_lock_wait_timeout). Therefore it is important to set innodb_lock_wait_timeout to a very low value, like 1.
 
 
 When InnoDB detects a deadlock, it kills the transaction that modified the least amount of data. The client will receive the following error:
@@ -425,7 +425,7 @@ When InnoDB detects a deadlock, it kills the transaction that modified the least
 ERROR 1213 (40001): Deadlock found when trying to get lock; try restarting transaction
 ```
 
-The latest detected deadlock, and the killed transaction, can be viewed in the output of [SHOW ENGINE InnoDB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md). Here's an example:
+The latest detected deadlock, and the killed transaction, can be viewed in the output of [SHOW ENGINE InnoDB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md). Here's an example:
 
 
 ```
@@ -472,5 +472,5 @@ Record lock, heap no 3 PHYSICAL RECORD: n_fields 3; compact format; info bits 32
 The latest detected deadlock never disappears from the output of `SHOW ENGINE InnoDB STATUS`. If you cannot see any, MariaDB hasn't detected any InnoDB deadlocks since the last restart.
 
 
-Another way to monitor deadlocks is to set [innodb_print_all_deadlocks](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_print_all_deadlocks) to 1 (0 is the default). InnoDB will log all detected deadlocks into the [error log](../../../server-monitoring-logs/error-log.md).
+Another way to monitor deadlocks is to set [innodb_print_all_deadlocks](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_print_all_deadlocks) to 1 (0 is the default). InnoDB will log all detected deadlocks into the [error log](../../../server-monitoring-logs/error-log.md).
 

@@ -5,7 +5,7 @@
 The general query log is a log of every SQL query received from a client, as well as each client connect and disconnect. Since it's a record of every query received by the server, it can grow large quite quickly.
 
 
-However, if you only want a record of queries that change data, it might be better to use the [binary log](../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) instead. One important difference is that the [binary log](../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) only logs a query when the transaction is committed by the server, but the general query log logs a query immediately when it is received by the server.
+However, if you only want a record of queries that change data, it might be better to use the [binary log](../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) instead. One important difference is that the [binary log](../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) only logs a query when the transaction is committed by the server, but the general query log logs a query immediately when it is received by the server.
 
 
 ## Enabling the General Query Log
@@ -66,7 +66,7 @@ general_log
 general_log_file=/var/log/mysql/mariadb.log
 ```
 
-Another way to configure the general query log filename is to set the `[log-basename](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` option, which configures MariaDB to use a common prefix for all log files (e.g. general query log, [slow query log](slow-query-log/slow-query-log-overview.md), [error log](error-log.md), [binary logs](../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), etc.). The general query log filename will be built by adding a `.log` extension to this prefix. This option cannot be set dynamically. It can be set in a server [option group](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+Another way to configure the general query log filename is to set the `[log-basename](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` option, which configures MariaDB to use a common prefix for all log files (e.g. general query log, [slow query log](slow-query-log/slow-query-log-overview.md), [error log](error-log.md), [binary logs](../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), etc.). The general query log filename will be built by adding a `.log` extension to this prefix. This option cannot be set dynamically. It can be set in a server [option group](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 
 ```
@@ -82,7 +82,7 @@ The `[log-basename](../getting-installing-and-upgrading-mariadb/starting-and-sto
 ## Choosing the General Query Log Output Destination
 
 
-The general query log can either be written to a file on disk, or it can be written to the `[general_log](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md)` table in the `[mysql](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)` database. To choose the general query log output destination, set the `[log_output](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_output)` system variable.
+The general query log can either be written to a file on disk, or it can be written to the `[general_log](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md)` table in the `[mysql](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)` database. To choose the general query log output destination, set the `[log_output](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_output)` system variable.
 
 
 ### Writing the General Query Log to a File
@@ -109,7 +109,7 @@ general_log_file=queries.log
 ### Writing the General Query Log to a Table
 
 
-The general query log can either be written to the `[general_log](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md)` table in the `[mysql](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)` database by setting the `[log_output](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_output)` system variable to `TABLE`. It can be changed dynamically with `[SET GLOBAL](../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)`. For example:
+The general query log can either be written to the `[general_log](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md)` table in the `[mysql](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)` database by setting the `[log_output](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_output)` system variable to `TABLE`. It can be changed dynamically with `[SET GLOBAL](../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)`. For example:
 
 
 ```
@@ -154,7 +154,7 @@ See [Writing logs into tables](writing-logs-into-tables.md) for more information
 ## Disabling the General Query Log for a Session
 
 
-A user with the [SUPER](../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege can disable logging to the general query log for a connection by setting the [SQL_LOG_OFF](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_log_off) system variable to `1`. For example:
+A user with the [SUPER](../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege can disable logging to the general query log for a connection by setting the [SQL_LOG_OFF](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_log_off) system variable to `1`. For example:
 
 
 ```
@@ -185,5 +185,5 @@ Unix and Linux distributions offer the [logrotate](https://linux.die.net/man/8/l
 ## See Also
 
 
-* [MariaDB audit plugin](../../ref/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)
+* [MariaDB audit plugin](../../reference/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)
 

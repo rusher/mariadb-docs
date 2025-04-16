@@ -11,14 +11,14 @@ For more information on general types of indexes, such as primary keys, unique i
 | Storage Engine | Permitted Indexes |
 | --- | --- |
 | Storage Engine | Permitted Indexes |
-| [Aria](../../../../ref/storage-engines/s3-storage-engine/aria_s3_copy.md) | BTREE, RTREE |
-| [MyISAM](../../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) | BTREE, RTREE |
+| [Aria](../../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) | BTREE, RTREE |
+| [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) | BTREE, RTREE |
 | [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) | BTREE |
-| [MEMORY/HEAP](../../../../ref/storage-engines/memory-storage-engine.md) | HASH, BTREE |
+| [MEMORY/HEAP](../../../../reference/storage-engines/memory-storage-engine.md) | HASH, BTREE |
 
 
 
-BTREE is generally the default index type. For [MEMORY](../../../../ref/storage-engines/memory-storage-engine.md) tables, HASH is the default. [TokuDB](../../../../ref/storage-engines/tokudb/tokudb-resources.md) uses a particular data structure called *fractal trees*, which is optimized for data that do not entirely fit memory.
+BTREE is generally the default index type. For [MEMORY](../../../../reference/storage-engines/memory-storage-engine.md) tables, HASH is the default. [TokuDB](../../../../reference/storage-engines/tokudb/tokudb-resources.md) uses a particular data structure called *fractal trees*, which is optimized for data that do not entirely fit memory.
 
 
 Understanding the B-tree and hash data structures can help predict how different queries perform on different storage engines that use these data structures in their indexes, particularly for the MEMORY storage engine that lets you choose B-tree or hash indexes.
@@ -52,5 +52,5 @@ Hash indexes do not permit leftmost prefixing - only the whole index can be used
 ## R-tree Indexes
 
 
-See [SPATIAL](../../../../ref/sql-statements-and-structure/geographic-geometric-features/spatial-index.md) for more information.
+See [SPATIAL](../../../../reference/sql-statements-and-structure/geographic-geometric-features/spatial-index.md) for more information.
 

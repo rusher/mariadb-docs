@@ -14,9 +14,9 @@ A view cannot be used for updating if it uses any of the following:
 * [HAVING](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
 * [GROUP BY](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#group-by)
 * [DISTINCT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#distinct)
-* [UNION](../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md)
-* [UNION ALL](../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md)
-* An aggregate function, such as [MAX()](../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md), [MIN()](../../../ref/mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md), [SUM()](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum.md) or [COUNT()](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count.md)
+* [UNION](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md)
+* [UNION ALL](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md)
+* An aggregate function, such as [MAX()](../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md), [MIN()](../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md), [SUM()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum.md) or [COUNT()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count.md)
 * subquery in the SELECT list
 * subquery in the WHERE clause referring to a table in the FROM clause
 * if it has no underlying table because it refers only to literal values
@@ -66,7 +66,7 @@ If a row is rejected because of the CHECK OPTION, an error similar to the follow
 ERROR 1369 (HY000): CHECK OPTION failed 'db_name.view_name'
 ```
 
-A view with a WHERE which is always false (like `WHERE 0`) and WITH CHECK OPTION is similar to a [BLACKHOLE](../../../ref/storage-engines/blackhole.md) table: no row is ever inserted and no row is ever returned. An insertable view with a WHERE which is always false but no CHECK OPTION is a view that accepts data but does not show them.
+A view with a WHERE which is always false (like `WHERE 0`) and WITH CHECK OPTION is similar to a [BLACKHOLE](../../../reference/storage-engines/blackhole.md) table: no row is ever inserted and no row is ever returned. An insertable view with a WHERE which is always false but no CHECK OPTION is a view that accepts data but does not show them.
 
 
 ## Examples

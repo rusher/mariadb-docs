@@ -25,31 +25,31 @@ MariaDB is normally configured by editing the [my.cnf](../mariadbd-configuration
 InnoDB is normally the default storage engine with MariaDB.
 
 
-* You should set [innodb_buffer_pool_size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) to about 80% of your memory. The goal is to ensure that 80 % of your working set is in memory.
+* You should set [innodb_buffer_pool_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) to about 80% of your memory. The goal is to ensure that 80 % of your working set is in memory.
 
 
 The other most important InnoDB variables are:
 
 
-* [innodb_log_file_size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_size)
-* [innodb_flush_method](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_method)
-* [innodb_thread_sleep_delay](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_thread_sleep_delay)
+* [innodb_log_file_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_size)
+* [innodb_flush_method](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_method)
+* [innodb_thread_sleep_delay](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_thread_sleep_delay)
 
 
 Some other important InnoDB variables:
 
 
-* [innodb_max_dirty_pages_pct_lwm](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct_lwm)
-* [innodb_read_ahead_threshold](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead_threshold)
-* [innodb_buffer_pool_instances](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances). Deprecated and ignored from [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md).
-* [innodb_adaptive_max_sleep_delay](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay). Deprecated and ignored from [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md).
-* [innodb_thread_concurrency](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency). Deprecated and ignored from [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md).
+* [innodb_max_dirty_pages_pct_lwm](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct_lwm)
+* [innodb_read_ahead_threshold](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead_threshold)
+* [innodb_buffer_pool_instances](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances). Deprecated and ignored from [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md).
+* [innodb_adaptive_max_sleep_delay](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay). Deprecated and ignored from [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md).
+* [innodb_thread_concurrency](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency). Deprecated and ignored from [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md).
 
 
-## [Aria](../../../ref/storage-engines/aria/aria-storage-engine.md) Storage Engine
+## [Aria](../../../reference/storage-engines/aria/aria-storage-engine.md) Storage Engine
 
 
-* MariaDB uses by default the Aria storage engine for internal temporary files. If you have many temporary files, you should set [aria_pagecache_buffer_size](../../../ref/storage-engines/aria/aria-system-variables.md) to a reasonably large value so that temporary overflow data is not flushed to disk. The default is 128M.
+* MariaDB uses by default the Aria storage engine for internal temporary files. If you have many temporary files, you should set [aria_pagecache_buffer_size](../../../reference/storage-engines/aria/aria-system-variables.md) to a reasonably large value so that temporary overflow data is not flushed to disk. The default is 128M.
 
 
 You can check if Aria is configured properly by executing:
@@ -72,13 +72,13 @@ MariaDB [test]> show global status like "Aria%";
 ```
 
 If `Aria_pagecache_reads` is much smaller than `Aria_pagecache_read_request` and
- `Aria_pagecache_writes` is much smaller than Aria_pagecache_write_request#, then your setup is good. If the [aria_pagecache_buffer_size](../../../ref/storage-engines/aria/aria-system-variables.md) is big enough, the two variables should be 0, like above.
+ `Aria_pagecache_writes` is much smaller than Aria_pagecache_write_request#, then your setup is good. If the [aria_pagecache_buffer_size](../../../reference/storage-engines/aria/aria-system-variables.md) is big enough, the two variables should be 0, like above.
 
 
-## [MyISAM](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md)
+## [MyISAM](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
 
 
-* If you don't use MyISAM tables explicitly (true for most [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md)+ users), you can set [key_buffer_size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) to a very low value, like 64K.
+* If you don't use MyISAM tables explicitly (true for most [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md)+ users), you can set [key_buffer_size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) to a very low value, like 64K.
 
 
 ## Using in memory temporary tables
@@ -132,7 +132,7 @@ You can increase the storage for internal temporary tables by setting [max_heap_
 * [Full List of MariaDB Options, System and Status Variables](../../variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md)
 * [Server system variables](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md)
 * [mysqld options](../starting-and-stopping-mariadb/mariadbd-options.md)
-* [Performance schema](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md) helps you understand what is taking time and resources.
+* [Performance schema](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md) helps you understand what is taking time and resources.
 * [Slow query log](../../server-monitoring-logs/slow-query-log/slow-query-log-overview.md) is used to find queries that are running slow.
 * [OPTIMIZE TABLE](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) helps you defragment tables.
 

@@ -29,9 +29,9 @@ In most cases, `mariadb-upgrade` should just take a few seconds. The main work o
 
 
 * Update the system tables in the `mysql` database to the latest version (normally just add new fields to a few tables).
-* Check that all tables are up to date (runs [CHECK TABLE table_name FOR UPGRADE](../ref/sql-statements-and-structure/sql-statements/table-statements/check-table.md)). For tables that are not up to date, runs [ALTER TABLE table_name FORCE](../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) on the table to update it. A table is not up to date if:
+* Check that all tables are up to date (runs [CHECK TABLE table_name FOR UPGRADE](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md)). For tables that are not up to date, runs [ALTER TABLE table_name FORCE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) on the table to update it. A table is not up to date if:
 
-  * The table uses an index for which there has been a [collation](../ref/data-types/string-data-types/character-sets/README.md) change (rare)
+  * The table uses an index for which there has been a [collation](../reference/data-types/string-data-types/character-sets/README.md) change (rare)
   * A format change in the storage engine requires an update (very rare)
 
 
@@ -115,10 +115,10 @@ mariadb-upgrade --verbose --verbose other-options
 | -t, --tmpdir=name | Directory for temporary files. |
 | -s, --upgrade-system-tables | Only upgrade the system tables in the mysql database. Tables in other databases are not checked or touched. |
 | -u, --user=name | User for login if not current user. |
-| -v, --verbose | Display more output about the process, using it twice will print connection arguments; using it 3 times will print out all [CHECK](../ref/sql-statements-and-structure/sql-statements/table-statements/check-table.md), [RENAME](../ref/sql-statements-and-structure/sql-statements/data-definition/rename-table.md) and [ALTER TABLE](../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) commands used during the check phase; using it 4 times will also write out all [mariadb-check](mariadb-check.md) commands used. |
+| -v, --verbose | Display more output about the process, using it twice will print connection arguments; using it 3 times will print out all [CHECK](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md), [RENAME](../reference/sql-statements-and-structure/sql-statements/data-definition/rename-table.md) and [ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) commands used during the check phase; using it 4 times will also write out all [mariadb-check](mariadb-check.md) commands used. |
 | -V, --version | Output version information and exit. |
 | -k, --version-check | Run this program only if its 'server version' matches the version of the server to which it's connecting check. Note: the 'server version' of the program is the version of the MariaDB server with which it was built/distributed. (Defaults to on; use --skip-version-check to disable.) |
-| --write-binlog | All commands including those run by [mariadb-check](mariadb-check.md) are written to the [binary log](../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Disabled by default. Before [MariaDB 10.0.6](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1006-release-notes.md) and [MariaDB 5.5.34](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5534-release-notes.md), this was enabled by default, and --skip-write-binlog should be used when commands should not be sent to replication slaves. |
+| --write-binlog | All commands including those run by [mariadb-check](mariadb-check.md) are written to the [binary log](../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Disabled by default. Before [MariaDB 10.0.6](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1006-release-notes.md) and [MariaDB 5.5.34](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5534-release-notes.md), this was enabled by default, and --skip-write-binlog should be used when commands should not be sent to replication slaves. |
 
 
 
@@ -191,11 +191,11 @@ In [MariaDB 10.2](../../release-notes/mariadb-community-server/what-is-mariadb-1
 This is as of [MariaDB 5.1.50](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/mariadb-5150-release-notes.md):
 
 
-* MariaDB will convert long [table names](../ref/sql-statements-and-structure/sql-language-structure/identifier-names.md) properly.
-* MariaDB will convert [InnoDB](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables (no need to do a dump/restore or `[ALTER TABLE](../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)`).
+* MariaDB will convert long [table names](../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md) properly.
+* MariaDB will convert [InnoDB](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables (no need to do a dump/restore or `[ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)`).
 * MariaDB will convert old archive tables to the new 5.1 format.
 * "mysql_upgrade --verbose" will run "mariadb-check --verbose" so that you get more information of what is happening. Running with 3 times --verbose will in [MariaDB 10.0](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) print out all CHECK, RENAME and ALTER TABLE commands executed.
-* The [mysql.event table](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-event-table.md) is upgraded live; no need to restart the server to use events if the event table has changed ([MariaDB 10.0.22](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes.md) and [MariaDB 10.1.9](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-9-release-notes.md)).
+* The [mysql.event table](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-event-table.md) is upgraded live; no need to restart the server to use events if the event table has changed ([MariaDB 10.0.22](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes.md) and [MariaDB 10.1.9](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-9-release-notes.md)).
 * More descriptive output.
 
 
@@ -224,24 +224,24 @@ If you are 100% sure this applies to you, you can just run `mariadb-upgrade` wit
 
 * Errors in the [error log](../server-management/server-monitoring-logs/error-log.md) that some system tables don't have all needed columns.
 * Updates or searches may not find the record they are attempting to update or search for.
-* [CHECKSUM TABLE](../ref/sql-statements-and-structure/sql-statements/table-statements/checksum-table.md) may report the wrong checksum for [MyISAM](../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) or [Aria](../ref/storage-engines/s3-storage-engine/aria_s3_copy.md) tables.
+* [CHECKSUM TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/checksum-table.md) may report the wrong checksum for [MyISAM](../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) or [Aria](../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables.
 * The error message "Cannot load from mysql.proc. The table is probably corrupted."
 
 
-To fix issues like this, run `mariadb-upgrade`, [mariadb-check](mariadb-check.md), [CHECK TABLE](../ref/sql-statements-and-structure/sql-statements/table-statements/check-table.md) and if needed [REPAIR TABLE](../ref/sql-statements-and-structure/sql-statements/table-statements/repair-table.md) on the wrong table.
+To fix issues like this, run `mariadb-upgrade`, [mariadb-check](mariadb-check.md), [CHECK TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md) and if needed [REPAIR TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md) on the wrong table.
 
 
 ## Other Uses
 
 
-* `mariadb-upgrade` will re-create any missing tables in the [mysql database](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md). It will not touch any data in existing tables.
+* `mariadb-upgrade` will re-create any missing tables in the [mysql database](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md). It will not touch any data in existing tables.
 
 
 ## See Also
 
 
 * [mariadb-check](mariadb-check.md)
-* [CHECK TABLE](../ref/sql-statements-and-structure/sql-statements/table-statements/check-table.md)
-* [REPAIR TABLE](../ref/sql-statements-and-structure/sql-statements/table-statements/repair-table.md)
+* [CHECK TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md)
+* [REPAIR TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md)
 * [Downgrading between Major Versions of MariaDB](../server-management/getting-installing-and-upgrading-mariadb/downgrading-between-major-versions-of-mariadb.md)
 

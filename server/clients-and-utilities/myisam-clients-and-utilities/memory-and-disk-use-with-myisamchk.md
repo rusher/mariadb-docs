@@ -19,7 +19,7 @@ There are a number of [system variables](../../server-usage/replication-cluster-
 
 
 * [sort_buffer_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sort_buffer_size). By default this is 4M, but it's very useful to increase to make myisamchk sorting much faster. Since the server won't be running when you run myisamchk, you can increase substantially. 16M is usually a minimum, but values such as 256M are not uncommon if memory is available.
-* [key_buffer_size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) (which particularly helps with the --extend-check and --safe-recover options.
+* [key_buffer_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) (which particularly helps with the --extend-check and --safe-recover options.
 * [read_buffer_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_buffer_size)
 * [write_buffer_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#write_buffer_size)
 

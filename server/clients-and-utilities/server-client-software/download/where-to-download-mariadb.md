@@ -10,7 +10,7 @@ distributions are available at [mariadb.com/downloads/](https://mariadb.com/down
 [mariadb.org/download/](https://mariadb.org/download/) (which also contains a PDF version of the MariaDB Server documentation).
 
 
-We hope that interested [community](../../../ref/faq/community-questions/README.md) package maintainers will step forward, as
+We hope that interested [community](../../../reference/faq/community-questions/README.md) package maintainers will step forward, as
 others already have, to build packages for their distributions. We ask for
 strict adherence to your packaging system's best practices and invite you to
 create a [bug report](https://mariadb.org/jira) if our project impedes this in

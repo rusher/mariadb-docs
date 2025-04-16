@@ -4,7 +4,7 @@
 The terms *master* and *slave* have historically been used in replication, and MariaDB has begun the process of adding *primary* and *replica* synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 
 
-MariaDB includes a feature to include a checksum in [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) events.
+MariaDB includes a feature to include a checksum in [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) events.
 
 
 Checksums are enabled with the [binlog_checksum option](replication-and-binary-log-system-variables.md). Until [MariaDB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md), this was disabled by default. From [MariaDB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md), the option is set to `CRC32`.
@@ -12,7 +12,7 @@ Checksums are enabled with the [binlog_checksum option](replication-and-binary-l
 
 The variable can be changed dynamically without restarting the server. Setting
 the variable in any way (even to the existing value) forces a rotation of the
-[binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) (the intention is to avoid having a single binlog where some events
+[binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) (the intention is to avoid having a single binlog where some events
 are checksummed and others are not).
 
 

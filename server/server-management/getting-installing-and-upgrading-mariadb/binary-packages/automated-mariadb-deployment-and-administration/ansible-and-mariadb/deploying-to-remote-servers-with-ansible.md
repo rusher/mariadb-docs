@@ -92,7 +92,7 @@ ansible-playbook -i production-mariadb -l mariadb-main-01 production-mariadb.yml
 ansible-playbook -i production-mariadb -l mariadb-main-* production-mariadb.yml
 ```
 
-We can also apply tasks from roles selectively. Tasks may optionally have tags, and each tag corresponds to an operation that we may want to run on our remote hosts. For example, a "mariadb" role could have the "timezone-update" tag, to update the contents of the [timezone tables](../../../../../ref/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md#mysql-time-zone-tables). To only apply the tasks with the "timezone-update" tag, we can use this command:
+We can also apply tasks from roles selectively. Tasks may optionally have tags, and each tag corresponds to an operation that we may want to run on our remote hosts. For example, a "mariadb" role could have the "timezone-update" tag, to update the contents of the [timezone tables](../../../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md#mysql-time-zone-tables). To only apply the tasks with the "timezone-update" tag, we can use this command:
 
 
 ```

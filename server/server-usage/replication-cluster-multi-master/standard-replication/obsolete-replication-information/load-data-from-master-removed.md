@@ -24,7 +24,7 @@ For MySQL 5.1 and earlier, the recommended alternative solution to
 using `LOAD DATA FROM MASTER` or
  `LOAD TABLE FROM MASTER` is using [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) or [mysqlhotcopy](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqlhotcopy.md).
 The latter requires Perl and two Perl modules (DBI and DBD:mysql) and works for
-[MyISAM](../../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [ARCHIVE](../../../../ref/storage-engines/archive/README.md) tables only. With mysqldump, you can create SQL dumps on the
+[MyISAM](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [ARCHIVE](../../../../reference/storage-engines/archive/README.md) tables only. With mysqldump, you can create SQL dumps on the
 master and pipe (or copy) these to a mysql client on the slave. This has the
 advantage of working for all storage engines, but can be quite slow, since it
 works using `SELECT`.
@@ -66,14 +66,14 @@ privileges on the master and the slave.
 
 To use `LOAD DATA FROM MASTER`, the replication account that
 is used to connect to the master must have the `RELOAD` and
- `[SUPER](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges)` privileges on the master and the
+ `[SUPER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges)` privileges on the master and the
  `SELECT` privilege for all master tables you want to load.
 All master tables for which the user does not have the
  `SELECT` privilege are ignored by
  `LOAD DATA FROM MASTER`. This is because the master hides
 them from the user: `LOAD DATA FROM MASTER` calls
  `SHOW DATABASES` to know the master databases to load, but
- `[SHOW DATABASES](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-databases.md)` returns only databases
+ `[SHOW DATABASES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-databases.md)` returns only databases
 for which the user has some privilege. On the slave side, the user that
 issues `LOAD DATA FROM MASTER` must have privileges for
 dropping and creating the databases and tables that are copied.

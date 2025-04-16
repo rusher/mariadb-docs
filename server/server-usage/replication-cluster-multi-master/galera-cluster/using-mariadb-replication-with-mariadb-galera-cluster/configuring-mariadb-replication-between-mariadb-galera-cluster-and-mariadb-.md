@@ -128,7 +128,7 @@ Now that the backup has been restored to the MariaDB Server replica, you can [st
 ### Create a Replication User on the Cluster's Primary
 
 
-Before the MariaDB Server replica can begin replicating from the cluster's primary, you need to [create a user account](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) on the primary that the replica can use to connect, and you need to [grant](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) the user account the [REPLICATION SLAVE](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege. For example:
+Before the MariaDB Server replica can begin replicating from the cluster's primary, you need to [create a user account](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) on the primary that the replica can use to connect, and you need to [grant](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) the user account the [REPLICATION SLAVE](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege. For example:
 
 
 ```
@@ -145,7 +145,7 @@ At this point, you need to get the replication coordinates of the primary from t
 The coordinates will be in the [xtrabackup_binlog_info](../../../../server-management/backing-up-and-restoring-databases/mariabackup/files-created-by-mariabackup.md#xtrabackup_binlog_info) file.
 
 
-Mariabackup dumps replication coordinates in two forms: [GTID strings](../../standard-replication/gtid.md) and [binary log](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position coordinates, like the ones you would normally see from [SHOW MASTER STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md) output. In this case, it is probably better to use the [GTID](../../standard-replication/gtid.md) coordinates.
+Mariabackup dumps replication coordinates in two forms: [GTID strings](../../standard-replication/gtid.md) and [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position coordinates, like the ones you would normally see from [SHOW MASTER STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md) output. In this case, it is probably better to use the [GTID](../../standard-replication/gtid.md) coordinates.
 
 
 For example:
@@ -155,13 +155,13 @@ For example:
 mariadb-bin.000096 568 0-1-2
 ```
 
-Regardless of the coordinates you use, you will have to set up the primary connection using [CHANGE MASTER TO](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) and then start the replication threads with [START SLAVE](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md).
+Regardless of the coordinates you use, you will have to set up the primary connection using [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) and then start the replication threads with [START SLAVE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md).
 
 
 #### GTIDs
 
 
-If you want to use GTIDs, then you will have to first set [gtid_slave_pos](../../standard-replication/gtid.md#gtid_slave_pos) to the [GTID](../../standard-replication/gtid.md) coordinates that we pulled from the [xtrabackup_binlog_info](../../../../server-management/backing-up-and-restoring-databases/mariabackup/files-created-by-mariabackup.md#xtrabackup_binlog_info) file, and we would set `MASTER_USE_GTID=slave_pos` in the [CHANGE MASTER TO](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command. For example:
+If you want to use GTIDs, then you will have to first set [gtid_slave_pos](../../standard-replication/gtid.md#gtid_slave_pos) to the [GTID](../../standard-replication/gtid.md) coordinates that we pulled from the [xtrabackup_binlog_info](../../../../server-management/backing-up-and-restoring-databases/mariabackup/files-created-by-mariabackup.md#xtrabackup_binlog_info) file, and we would set `MASTER_USE_GTID=slave_pos` in the [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command. For example:
 
 
 ```
@@ -178,7 +178,7 @@ START SLAVE;
 #### File and Position
 
 
-If you want to use the [binary log](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position coordinates, then you would set `MASTER_LOG_FILE` and `MASTER_LOG_POS` in the [CHANGE MASTER TO](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command to the file and position coordinates that we pulled the [xtrabackup_binlog_info](../../../../server-management/backing-up-and-restoring-databases/mariabackup/files-created-by-mariabackup.md#xtrabackup_binlog_info) file. For example:
+If you want to use the [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position coordinates, then you would set `MASTER_LOG_FILE` and `MASTER_LOG_POS` in the [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command to the file and position coordinates that we pulled the [xtrabackup_binlog_info](../../../../server-management/backing-up-and-restoring-databases/mariabackup/files-created-by-mariabackup.md#xtrabackup_binlog_info) file. For example:
 
 
 ```
@@ -195,7 +195,7 @@ START SLAVE;
 ### Check the Status of the New Replica
 
 
-You should be done setting up the replica now, so you should check its status with [SHOW SLAVE STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md). For example:
+You should be done setting up the replica now, so you should check its status with [SHOW SLAVE STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md). For example:
 
 
 ```
@@ -214,7 +214,7 @@ You can also set up [circular replication](../../standard-replication/replicatio
 ### Create a Replication User on the MariaDB Server Primary
 
 
-Before circular replication can begin, you also need to [create a user account](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) on the MariaDB Server, since it will be acting as replication primary to the cluster's replica, and you need to [grant](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) the user account the [REPLICATION SLAVE](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege. For example:
+Before circular replication can begin, you also need to [create a user account](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) on the MariaDB Server, since it will be acting as replication primary to the cluster's replica, and you need to [grant](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) the user account the [REPLICATION SLAVE](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege. For example:
 
 
 ```
@@ -225,7 +225,7 @@ GRANT REPLICATION SLAVE ON *.*  TO 'repl'@'c1dbserver1';
 ### Start Circular Replication on the Cluster
 
 
-How this is done would depend on whether you want to use the [GTID](../../standard-replication/gtid.md) coordinates or the [binary log](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position coordinates.
+How this is done would depend on whether you want to use the [GTID](../../standard-replication/gtid.md) coordinates or the [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position coordinates.
 
 
 Regardless, you need to ensure that the second cluster is not accepting any writes other than those that it replicates from the cluster at this stage.
@@ -241,7 +241,7 @@ To get the GTID coordinates on the MariaDB Server you can check `[gtid_current_p
 SHOW GLOBAL VARIABLES LIKE 'gtid_current_pos';
 ```
 
-Then on the node acting as replica in the cluster, you can set up replication by setting [gtid_slave_pos](../../standard-replication/gtid.md#gtid_slave_pos) to the GTID that was returned and then executing [CHANGE MASTER TO](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md):
+Then on the node acting as replica in the cluster, you can set up replication by setting [gtid_slave_pos](../../standard-replication/gtid.md#gtid_slave_pos) to the GTID that was returned and then executing [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md):
 
 
 ```
@@ -258,14 +258,14 @@ START SLAVE;
 #### File and Position
 
 
-To get the [binary log](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position coordinates on the MariaDB Server, you can execute [SHOW MASTER STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md):
+To get the [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position coordinates on the MariaDB Server, you can execute [SHOW MASTER STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md):
 
 
 ```
 SHOW MASTER STATUS
 ```
 
-Then on the node acting as replica in the cluster, you would set `master_log_file` and `master_log_pos` in the [CHANGE MASTER TO](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command. For example:
+Then on the node acting as replica in the cluster, you would set `master_log_file` and `master_log_pos` in the [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command. For example:
 
 
 ```
@@ -282,7 +282,7 @@ START SLAVE;
 ### Check the Status of the Circular Replication
 
 
-You should be done setting up the circular replication on the node in the first cluster now, so you should check its status with [SHOW SLAVE STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md). For example:
+You should be done setting up the circular replication on the node in the first cluster now, so you should check its status with [SHOW SLAVE STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md). For example:
 
 
 ```

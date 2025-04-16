@@ -8,7 +8,7 @@
 Account locking is available for all current versions of MariaDB. Account locking permits privileged administrators to lock/unlock user accounts. No new client connections will be permitted if an account is locked (existing connections are not affected).
 
 
-User accounts can be locked at creation, with the [CREATE USER](../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) statement, or modified after creation with the [ALTER USER](../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md) statement. For example:
+User accounts can be locked at creation, with the [CREATE USER](../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) statement, or modified after creation with the [ALTER USER](../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md) statement. For example:
 
 
 ```
@@ -30,14 +30,14 @@ mariadb -ulorin
   ERROR 4151 (HY000): Access denied, this account is locked
 ```
 
-The [ALTER USER](../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md) statement is also used to unlock a user:
+The [ALTER USER](../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md) statement is also used to unlock a user:
 
 
 ```
 ALTER USER 'lorin'@'localhost' ACCOUNT UNLOCK;
 ```
 
-The [SHOW CREATE USER](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-user.md) statement will show whether the account is locked:
+The [SHOW CREATE USER](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-user.md) statement will show whether the account is locked:
 
 
 ```
@@ -49,7 +49,7 @@ SHOW CREATE USER 'marijn'@'localhost';
 +-----------------------------------------------+
 ```
 
-as well as querying the [mysql.global_priv table](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md):
+as well as querying the [mysql.global_priv table](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md):
 
 
 ```

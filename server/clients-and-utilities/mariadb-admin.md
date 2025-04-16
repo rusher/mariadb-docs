@@ -38,7 +38,7 @@ mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 | Option | Description |
 | --- | --- |
 | Option | Description |
-| --character-sets-dir=name | Directory where the [character set](../ref/data-types/string-data-types/character-sets/README.md) files are located. |
+| --character-sets-dir=name | Directory where the [character set](../reference/data-types/string-data-types/character-sets/README.md) files are located. |
 | -C, --compress | Compress all information sent between the client and the server if both support compression. |
 | --connect_timeout=val | Maximum time in seconds before connection timeout. The default value is 43200 (12 hours). |
 | -c val, --count=val | Number of iterations to make. This works with -i (--sleep) only. |
@@ -52,7 +52,7 @@ mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 | -f, --force | Don't ask for confirmation on drop database; with multiple commands, continue even if an error occurs. |
 | -?, --help | Display this help and exit. |
 | -h name, --host=name | Hostname to connect to. |
-| -l, --local | Suppress the SQL command(s) from being written to the [binary log](../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) by enabling [sql_log_bin=0](../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) for the session, or, from [MariaDB 10.2.7](../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1027-release-notes.md) and [MariaDB 10.1.24](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes.md), for flush commands only, using FLUSH LOCAL rather than SET sql_log_bin=0, so the privilege requirement is RELOAD rather than SUPER. |
+| -l, --local | Suppress the SQL command(s) from being written to the [binary log](../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) by enabling [sql_log_bin=0](../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) for the session, or, from [MariaDB 10.2.7](../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1027-release-notes.md) and [MariaDB 10.1.24](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes.md), for flush commands only, using FLUSH LOCAL rather than SET sql_log_bin=0, so the privilege requirement is RELOAD rather than SUPER. |
 | -b, --no-beep | Turn off beep on error. |
 | -p[password], --password[=password] | Password to use when connecting to server. If password is not given it's asked from the terminal. |
 | --pipe, -W | On Windows, connect to the server via a named pipe. This option applies only if the server supports named-pipe connections. |
@@ -183,7 +183,7 @@ mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 | extended-status | Return all [status variables](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md) and their values. |
 | flush-all-statistics | Flush all statistics tables |
 | flush-all-status | Flush status and statistics. |
-| flush-binary-log | Flush [binary log](../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). |
+| flush-binary-log | Flush [binary log](../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). |
 | flush-client-statistics | Flush client statistics. |
 | flush-engine-log | Flush engine log. |
 | flush-error-log | Flush [error log](../server-management/server-monitoring-logs/error-log.md). |
@@ -205,10 +205,10 @@ mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 | password new-password | Change old password to new-password. The new password can be passed on the commandline as the next argument (for example, mariadb-admin password "new_password", or can be omitted (as long as no other command follows), in which case the user will be prompted for a password. If the password contains special characters, it needs to be enclosed in quotation marks. In Windows, the quotes can only be double quotes, as single quotes are assumed to be part of the password. If the server was started with the [--skip-grant-tables](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables) option, changing the password in this way will have no effect. |
 | old-password new-password | Change old password to new-password using the old pre-MySQL 4.1 format. |
 | ping | Check if mariadbd is alive. Return status is 0 if the server is running (even in the case of an error such as access denied), 1 if it is not. |
-| processlist | Show list of active threads in server, equivalent to [SHOW PROCESSLIST](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md). With --verbose, equivalent to [SHOW FULL PROCESSLIST](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md). |
+| processlist | Show list of active threads in server, equivalent to [SHOW PROCESSLIST](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md). With --verbose, equivalent to [SHOW FULL PROCESSLIST](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md). |
 | reload | Reload grant tables. |
 | refresh | Flush all tables and close and open log files. |
-| shutdown | Take server down by executing the [SHUTDOWN](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md) command on the server. If connected to a local server using a Unix socket file, mariadb-admin waits until the server's process ID file has been removed to ensure that the server has stopped properly. See also the --wait-for-all-slaves option. |
+| shutdown | Take server down by executing the [SHUTDOWN](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md) command on the server. If connected to a local server using a Unix socket file, mariadb-admin waits until the server's process ID file has been removed to ensure that the server has stopped properly. See also the --wait-for-all-slaves option. |
 | status | Gives a short status message from the server. |
 | start-all-slaves | Start all replicas. |
 | start-slave | Start replication on a replica server. |
@@ -232,7 +232,7 @@ In [MariaDB 10.4](../../release-notes/mariadb-community-server/what-is-mariadb-1
 mariadb-admin --wait-for-all-slaves shutdown
 ```
 
-When the `--wait-for-all-slaves` option is provided, the server only kills its binary log dump threads after all client threads have been killed, and it only completes the shutdown after the last [binary log](../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) has been sent to all connected replicas.
+When the `--wait-for-all-slaves` option is provided, the server only kills its binary log dump threads after all client threads have been killed, and it only completes the shutdown after the last [binary log](../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) has been sent to all connected replicas.
 
 
 See [Replication Threads: Binary Log Dump Threads and the Shutdown Process](../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#binary-log-dump-threads-and-the-shutdown-process) for more information.
@@ -318,13 +318,13 @@ On windows you should use:
 NET STOP MySQL
 ```
 
-You can use the [SHUTDOWN](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md) command from any client.
+You can use the [SHUTDOWN](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md) command from any client.
 
 
 ## See Also
 
 
-* [SHUTDOWN command](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md)
+* [SHUTDOWN command](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md)
 * [mytop](https://www.mysqlfanboy.com/mytop-3/), a 'top' like program for
  MariaDB/MySQL that allows you to see what the server is doing. A mytop
  optimized for MariaDB is included in [MariaDB 5.3](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)

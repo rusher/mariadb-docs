@@ -31,7 +31,7 @@ Stops the query after 'rows_limit' number of rows have been examined.
 ## sql_safe_updates
 
 
-If the [sql_safe_updates](../system-variables/server-system-variables.md#sql_safe_updates) variable is set, one can't execute an [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [DELETE](../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)
+If the [sql_safe_updates](../system-variables/server-system-variables.md#sql_safe_updates) variable is set, one can't execute an [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)
 statement unless one specifies a key constraint in the `WHERE` clause or provide a `LIMIT` clause (or both).
 
 
@@ -84,7 +84,7 @@ If the [max_statement_time](../system-variables/server-system-variables.md#max_s
 ## See Also
 
 
-* [WAIT and NOWAIT](../../../../ref/sql-statements-and-structure/sql-statements/transactions/wait-and-nowait.md)
+* [WAIT and NOWAIT](../../../../reference/sql-statements-and-structure/sql-statements/transactions/wait-and-nowait.md)
 * [Aborting statements that take longer than a certain time to execute](aborting-statements.md)
 * [lock_wait_timeout](../system-variables/server-system-variables.md#lock_wait_timeout) variable
 

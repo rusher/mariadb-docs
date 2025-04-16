@@ -1,7 +1,7 @@
 
 # myisampack
 
-`myisampack` is a tool for compressing [MyISAM](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables. The resulting tables
+`myisampack` is a tool for compressing [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables. The resulting tables
 are read-only, and usually about 40% to 70% smaller. It is run as follows:
 
 
@@ -93,6 +93,6 @@ Data records: 1680
 ## See Also
 
 
-* [FLUSH TABLES FOR EXPORT](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
+* [FLUSH TABLES FOR EXPORT](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
 * [myisamchk](myisamchk-table-information.md)
 

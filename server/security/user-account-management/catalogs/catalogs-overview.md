@@ -58,23 +58,23 @@ For the end user, the MariaDB server will act as a normal a standalone server, w
 
 
 * When connecting to the server, a normal user must specify the catalog. If the connector software does not support catalogs, then the catalog should be specified in the database string. If the catalog is not specified, the 'def' catalog is assumed.
-* [LOAD DATA INFILE](../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) and [SELECT … INTO OUTFILE](../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile.md) can be configured to only be used with the catalog directory or a directory in it.
-* [SHUTDOWN](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md) command is only for the 'catalog root users'
+* [LOAD DATA INFILE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) and [SELECT … INTO OUTFILE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile.md) can be configured to only be used with the catalog directory or a directory in it.
+* [SHUTDOWN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md) command is only for the 'catalog root users'
 * Replication (MASTER and SLAVE commands) are only for 'catalog root users'
 * Errors from background task (like write error) will be logged into the system error log, not the catalog error log.
-* [SHOW STATUS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md) will show status data for the whole server, not only for the active catalog.
+* [SHOW STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md) will show status data for the whole server, not only for the active catalog.
 * The server will handle legacy applications by extending the default database in the connection to contain the catalog in the form “catalog/database”. See Appendix for details.
 * Tables that are only read from the ‘def.mysql’ schema:
 
-  * [plugin](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md)
-  * [help_*](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-help_category-table.md) tables
-  * [time_zone*](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_name-table.md) tables
-  * [gtid_slave_pos](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) (replication state)
-  * [innodb_index_stats](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-innodb_index_stats.md) (innodb internal)
-  * [servers](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) (federated)
-  * [transaction_registry](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md) (innodb internal)
-  * [func](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-func-table.md) (udf)
-  * [performance_schema](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md)
+  * [plugin](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md)
+  * [help_*](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-help_category-table.md) tables
+  * [time_zone*](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_name-table.md) tables
+  * [gtid_slave_pos](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) (replication state)
+  * [innodb_index_stats](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-innodb_index_stats.md) (innodb internal)
+  * [servers](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) (federated)
+  * [transaction_registry](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md) (innodb internal)
+  * [func](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-func-table.md) (udf)
+  * [performance_schema](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md)
 
 
 ## New 'catalog root user'
@@ -361,10 +361,10 @@ This is needed as InnoDB needs to know where the new files are located.
 Create a migration tool set / procedure that does the following
 
 
-* Execute [FLUSH TABLES FOR EXPORT](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) for all tables in a catalog.
+* Execute [FLUSH TABLES FOR EXPORT](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) for all tables in a catalog.
 * Take a copy of the catalog directory
 * Copy the data to a new catalog directory to the new server
-* Run [ALTER TABLE ... IMPORT TABLESPACE](../../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#import-tablespace) on each InnoDB table
+* Run [ALTER TABLE ... IMPORT TABLESPACE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#import-tablespace) on each InnoDB table
 
 
 Note that for partitioned tables the process will be a bit more complex, see above link.

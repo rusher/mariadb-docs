@@ -1,7 +1,7 @@
 
 # Information Schema VIEWS Table
 
-The [Information Schema](../../../ref/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `VIEWS` table contains information about [views](README.md). The `SHOW VIEW` [privilege](../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) is required to view the table.
+The [Information Schema](../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `VIEWS` table contains information about [views](README.md). The `SHOW VIEW` [privilege](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) is required to view the table.
 
 
 It has the following columns:
@@ -19,8 +19,8 @@ It has the following columns:
 | IS_UPDATABLE | Whether the view is updatable or not. |
 | DEFINER | Account specified in the DEFINER clause (or the default when created). |
 | SECURITY_TYPE | SQL SECURITY characteristic, either DEFINER or INVOKER. |
-| CHARACTER_SET_CLIENT | The client [character set](../../../ref/data-types/string-data-types/character-sets/README.md) when the view was created, from the session value of the [character_set_client](../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_client) system variable. |
-| COLLATION_CONNECTION | The client [collation](../../../ref/data-types/string-data-types/character-sets/README.md) when the view was created, from the session value of the [collation_connection](../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) system variable. |
+| CHARACTER_SET_CLIENT | The client [character set](../../../reference/data-types/string-data-types/character-sets/README.md) when the view was created, from the session value of the [character_set_client](../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_client) system variable. |
+| COLLATION_CONNECTION | The client [collation](../../../reference/data-types/string-data-types/character-sets/README.md) when the view was created, from the session value of the [collation_connection](../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) system variable. |
 | ALGORITHM | The algorithm used in the view. See [View Algorithms](view-algorithms.md). |
 
 

@@ -38,10 +38,10 @@ ALTER PROCEDURE simpleproc SQL SECURITY INVOKER;
 
 * [Stored Procedure Overview](stored-procedure-overview.md)
 * [CREATE PROCEDURE](create-procedure.md)
-* [SHOW CREATE PROCEDURE](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-procedure.md)
+* [SHOW CREATE PROCEDURE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-procedure.md)
 * [DROP PROCEDURE](drop-procedure.md)
-* [SHOW CREATE PROCEDURE](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-procedure.md)
-* [SHOW PROCEDURE STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-procedure-status.md)
+* [SHOW CREATE PROCEDURE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-procedure.md)
+* [SHOW PROCEDURE STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-procedure-status.md)
 * [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md)
-* [Information Schema ROUTINES Table](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
+* [Information Schema ROUTINES Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 

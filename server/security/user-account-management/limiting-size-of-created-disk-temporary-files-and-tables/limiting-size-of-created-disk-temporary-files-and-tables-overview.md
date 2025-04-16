@@ -43,13 +43,13 @@ There are two system variables used for controlling this feature:
 ## Information Schema
 
 
-* New field in [information_schema.process_list](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md): TMP_SPACE_USED
+* New field in [information_schema.process_list](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md): TMP_SPACE_USED
 
 
 ## Noteworthy issue
 
 
-* One has to be careful when using small values for max_tmp_space limit together with [binary logging](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and with non transactional tables.
+* One has to be careful when using small values for max_tmp_space limit together with [binary logging](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and with non transactional tables.
 * If a binary log entry for the query is larger than [binlog_stmt_cache_size](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_stmt_cache_size) and one hits the limit of max_tmp_space when flushing the entry to disk, the query will abort and the binary log will not contain the last changes to the table. This will also stop the replica!
 * This is also true for all Aria tables as Aria cannot do rollback (except in case of crashes)!
 * One way to avoid it is to use [@@binlog_format=statement](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_format) for queries that update many lot of rows.

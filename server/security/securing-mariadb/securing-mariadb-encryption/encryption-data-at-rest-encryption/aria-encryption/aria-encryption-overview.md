@@ -2,7 +2,7 @@
 # Aria Encryption Overview
 
 
-MariaDB can encrypt data in tables that use the [Aria storage engine](../../../../../ref/storage-engines/s3-storage-engine/aria_s3_copy.md). This includes both user-created tables and internal on-disk temporary tables that use the Aria storage engine. This ensures that your Aria data is only accessible through MariaDB.
+MariaDB can encrypt data in tables that use the [Aria storage engine](../../../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md). This includes both user-created tables and internal on-disk temporary tables that use the Aria storage engine. This ensures that your Aria data is only accessible through MariaDB.
 
 
 For encryption with the InnoDB and XtraDB storage engines, see [Encrypting Data for InnoDB/XtraDB](../innodb-encryption/innodb-encryption-overview.md).
@@ -11,7 +11,7 @@ For encryption with the InnoDB and XtraDB storage engines, see [Encrypting Data 
 ## Basic Configuration
 
 
-In order to enable encryption for tables using the [Aria storage engine](../../../../../ref/storage-engines/s3-storage-engine/aria_s3_copy.md), there are a couple server system variables that you need to set and configure. Most users will want to set `[aria_encrypt_tables](../../../../../ref/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)` and `[encrypt_tmp_disk_tables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_disk_tables)`.
+In order to enable encryption for tables using the [Aria storage engine](../../../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md), there are a couple server system variables that you need to set and configure. Most users will want to set `[aria_encrypt_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)` and `[encrypt_tmp_disk_tables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_disk_tables)`.
 
 
 Users of data-at-rest encryption will also need to have a [key management and encryption plugin](../key-management-and-encryption-plugins/encryption-key-management.md) configured. Some examples are [File Key Management Plugin](../key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) and [AWS Key Management Plugin](../key-management-and-encryption-plugins/aws-key-management-encryption-plugin-setup-guide.md).
@@ -35,7 +35,7 @@ encrypt_tmp_disk_tables=ON
 ## Determining Whether a Table is Encrypted
 
 
-The [InnoDB storage engine](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) has the [information_schema.INNODB_TABLESPACES_ENCRYPTION table](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md) that can be used to get information about which tables are encrypted. Aria does not currently have anything like that (see [MDEV-17324](https://jira.mariadb.org/browse/MDEV-17324) about that).
+The [InnoDB storage engine](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) has the [information_schema.INNODB_TABLESPACES_ENCRYPTION table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md) that can be used to get information about which tables are encrypted. Aria does not currently have anything like that (see [MDEV-17324](https://jira.mariadb.org/browse/MDEV-17324) about that).
 
 
 To determine whether an Aria table is encrypted, you currently have to search the data file for some plain text that you know is in the data.
@@ -68,5 +68,5 @@ If you can find the plain text of the string, then you know that the table is no
 ## Encryption and the Aria Log
 
 
-Only Aria tables are currently encrypted. The [Aria log](../../../../../ref/storage-engines/aria/aria-faq.md#differences-between-aria-and-myisam) is not yet encrypted. See [MDEV-8587](https://jira.mariadb.org/browse/MDEV-8587) about that.
+Only Aria tables are currently encrypted. The [Aria log](../../../../../reference/storage-engines/aria/aria-faq.md#differences-between-aria-and-myisam) is not yet encrypted. See [MDEV-8587](https://jira.mariadb.org/browse/MDEV-8587) about that.
 

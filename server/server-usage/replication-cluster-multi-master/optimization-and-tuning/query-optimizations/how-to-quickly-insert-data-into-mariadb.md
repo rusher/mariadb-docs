@@ -47,9 +47,9 @@ faster than creating the index one row at a time and it also uses less key
 buffer memory.
 
 
-**Note:** When you insert into an **empty table** with [INSERT](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) or
-[LOAD DATA](../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), MariaDB **automatically** does a
-[DISABLE KEYS](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) before and an [ENABLE KEYS](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)
+**Note:** When you insert into an **empty table** with [INSERT](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) or
+[LOAD DATA](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), MariaDB **automatically** does a
+[DISABLE KEYS](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) before and an [ENABLE KEYS](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)
 afterwards.
 
 
@@ -61,21 +61,21 @@ SET @@session.unique_checks = 0;
 SET @@session.foreign_key_checks = 0;
 ```
 
-For InnoDB tables, the [AUTO_INCREMENT lock mode](../../../../ref/storage-engines/innodb/auto_increment-handling-in-innodb.md) can be temporarily set to 2, which is the fastest setting:
+For InnoDB tables, the [AUTO_INCREMENT lock mode](../../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) can be temporarily set to 2, which is the fastest setting:
 
 
 ```
 SET @@global.innodb_autoinc_lock_mode = 2;
 ```
 
-Also, if the table has [INSERT triggers](../../../programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) or [PERSISTENT](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) columns, you may want to drop them, insert all data, and recreate them.
+Also, if the table has [INSERT triggers](../../../programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) or [PERSISTENT](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) columns, you may want to drop them, insert all data, and recreate them.
 
 
 ## Loading Text Files
 
 
 The **fastest way** to insert data into MariaDB is through the
-[LOAD DATA INFILE](../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) command.
+[LOAD DATA INFILE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) command.
 
 
 The simplest form of the command is:
@@ -108,7 +108,7 @@ is not that big.
  least MyISAM and Aria support this).
 1. for empty tables, some transactional engines (like Aria) do not log the
  inserted data in the transaction log because one can rollback the operation
- by just doing a [TRUNCATE](../../../../ref/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md) on the table.
+ by just doing a [TRUNCATE](../../../../reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md) on the table.
 
 
 Because of the above speed advantages there are many cases, when you need to
@@ -117,7 +117,7 @@ locally, add the rows there, and then use `LOAD DATA INFILE` to load them;
 compared to using `INSERT` to insert the rows.
 
 
-You will also get [progress reporting](../../../../ref/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for
+You will also get [progress reporting](../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for
 `LOAD DATA INFILE`.
 
 
@@ -131,7 +131,7 @@ You can import many files in parallel with [mariadb-import](../../../../clients-
 mariadb-import --use-threads=10 database text-file-name [text-file-name...]
 ```
 
-Internally [mariadb-import](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) uses [LOAD DATA INFILE](../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) to read
+Internally [mariadb-import](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) uses [LOAD DATA INFILE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) to read
 in the data.
 
 
@@ -189,7 +189,7 @@ INSERT INTO table_name_1 (auto_increment_key, data) VALUES (NULL,"row 1");
 INSERT INTO table_name_2 (auto_increment, reference, data) values (NULL, LAST_INSERT_ID(), "row 2");
 ```
 
-[LAST_INSERT_ID()](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md) is a function that returns the last
+[LAST_INSERT_ID()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md) is a function that returns the last
 `auto_increment` value inserted.
 
 
@@ -217,8 +217,8 @@ delimiter ;
 | Option | Description |
 | --- | --- |
 | Option | Description |
-| [innodb_buffer_pool_size](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) | Increase this if you have many indexes in InnoDB/XtraDB tables |
-| [key_buffer_size](../../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) | Increase this if you have many indexes in MyISAM tables |
+| [innodb_buffer_pool_size](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) | Increase this if you have many indexes in InnoDB/XtraDB tables |
+| [key_buffer_size](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) | Increase this if you have many indexes in MyISAM tables |
 | [max_allowed_packet](../system-variables/server-system-variables.md#max_allowed_packet) | Increase this to allow bigger multi-insert statements |
 | [read_buffer_size](../system-variables/server-system-variables.md#read_buffer_size) | Read block size when reading a file with LOAD DATA |
 

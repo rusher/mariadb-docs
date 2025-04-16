@@ -1,7 +1,7 @@
 
 # mariadb-fix-extensions
 
-`mariadb-fix-extensions` converts the extensions for [MyISAM](../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) (or ISAM) table files to their canonical forms.
+`mariadb-fix-extensions` converts the extensions for [MyISAM](../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) (or ISAM) table files to their canonical forms.
 
 
 Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysql_fix_extensions`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.

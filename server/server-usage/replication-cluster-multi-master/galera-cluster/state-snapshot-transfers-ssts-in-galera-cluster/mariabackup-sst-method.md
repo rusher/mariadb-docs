@@ -58,7 +58,7 @@ It can also be set in a server [option group](../../../../server-management/gett
 wsrep_sst_auth = mariabackup:mypassword
 ```
 
-Some [authentication plugins](../../../../ref/plugins/authentication-plugins/README.md) do not require a password. For example, the `[unix_socket](../../../../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md)` and `[gssapi](../../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugins do not require a password. If you are using a user account that does not require a password in order to log in, then you can just leave the password component of `[wsrep_sst_auth](../galera-cluster-system-variables.md#wsrep_sst_auth)` empty. For example:
+Some [authentication plugins](../../../../reference/plugins/authentication-plugins/README.md) do not require a password. For example, the `[unix_socket](../../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md)` and `[gssapi](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugins do not require a password. If you are using a user account that does not require a password in order to log in, then you can just leave the password component of `[wsrep_sst_auth](../galera-cluster-system-variables.md#wsrep_sst_auth)` empty. For example:
 
 
 ```
@@ -67,7 +67,7 @@ Some [authentication plugins](../../../../ref/plugins/authentication-plugins/REA
 wsrep_sst_auth = mariabackup:
 ```
 
-The user account that performs the backup for the SST needs to have [the same privileges as Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-overview.md#authentication-and-privileges), which are the `RELOAD` , `PROCESS`, `LOCK TABLES` and `BINLOG MONITOR`, `REPLICA MONITOR` [global privileges](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges). To be safe, you should ensure that these privileges are set on each node in your cluster. [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) connects locally on the donor node to perform the backup, so the following user should be sufficient:
+The user account that performs the backup for the SST needs to have [the same privileges as Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-overview.md#authentication-and-privileges), which are the `RELOAD` , `PROCESS`, `LOCK TABLES` and `BINLOG MONITOR`, `REPLICA MONITOR` [global privileges](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges). To be safe, you should ensure that these privileges are set on each node in your cluster. [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) connects locally on the donor node to perform the backup, so the following user should be sufficient:
 
 
 ```
@@ -78,13 +78,13 @@ GRANT RELOAD, PROCESS, LOCK TABLES, BINLOG MONITOR ON *.* TO 'mariabackup'@'loca
 ### Passwordless Authentication - Unix Socket
 
 
-It is possible to use the `[unix_socket](../../../../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md)` authentication plugin for the user account that performs SSTs. This would provide the benefit of not needing to configure a plain-text password in `[wsrep_sst_auth](../galera-cluster-system-variables.md#wsrep_sst_auth)`.
+It is possible to use the `[unix_socket](../../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md)` authentication plugin for the user account that performs SSTs. This would provide the benefit of not needing to configure a plain-text password in `[wsrep_sst_auth](../galera-cluster-system-variables.md#wsrep_sst_auth)`.
 
 
 The user account would have to have the same name as the operating system user account that is running the `mysqld` process. On many systems, this is the user account configured as the `[user](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` option, and it tends to default to `mysql`.
 
 
-For example, if the `[unix_socket](../../../../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md)` authentication plugin is already installed, then you could execute the following to create the user account:
+For example, if the `[unix_socket](../../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md)` authentication plugin is already installed, then you could execute the following to create the user account:
 
 
 ```
@@ -104,18 +104,18 @@ wsrep_sst_auth = mysql:
 ### Passwordless Authentication - GSSAPI
 
 
-It is possible to use the `[gssapi](../../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugin for the user account that performs SSTs. This would provide the benefit of not needing to configure a plain-text password in `[wsrep_sst_auth](../galera-cluster-system-variables.md#wsrep_sst_auth)`.
+It is possible to use the `[gssapi](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugin for the user account that performs SSTs. This would provide the benefit of not needing to configure a plain-text password in `[wsrep_sst_auth](../galera-cluster-system-variables.md#wsrep_sst_auth)`.
 
 
 The following steps would need to be done beforehand:
 
 
 * You need a KDC running [MIT Kerberos](https://web.mit.edu/Kerberos/krb5-1.12/doc/index.html) or [Microsoft Active Directory](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview).
-* You will need to [create a keytab file](../../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md#creating-a-keytab-file-on-a-unix-server) for the MariaDB server.
-* You will need to [install the package](../../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md#installing-the-plugins-package) containing the `[gssapi](../../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugin.
-* You will need to [install the plugin](../../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md#installing-the-plugin) in MariaDB, so that the `[gssapi](../../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugin is available to use.
-* You will need to [configure the plugin](../../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md#configuring-the-plugin).
-* You will need to [create a user account](../../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md#creating-users) that authenticates with the `[gssapi](../../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugin, so that the user account can be used for SSTs. This user account will need to correspond with a user account that exists on the backend KDC.
+* You will need to [create a keytab file](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#creating-a-keytab-file-on-a-unix-server) for the MariaDB server.
+* You will need to [install the package](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#installing-the-plugins-package) containing the `[gssapi](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugin.
+* You will need to [install the plugin](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#installing-the-plugin) in MariaDB, so that the `[gssapi](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugin is available to use.
+* You will need to [configure the plugin](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#configuring-the-plugin).
+* You will need to [create a user account](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#creating-users) that authenticates with the `[gssapi](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugin, so that the user account can be used for SSTs. This user account will need to correspond with a user account that exists on the backend KDC.
 
 
 For example, you could execute the following to create the user account in MariaDB:
@@ -138,7 +138,7 @@ wsrep_sst_auth = mariabackup:
 ## Choosing a Donor Node
 
 
-When Mariabackup is used to create the backup for the SST on the donor node, Mariabackup briefly requires a system-wide lock at the end of the backup. This is done with `[BACKUP STAGE BLOCK_COMMIT](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)`.
+When Mariabackup is used to create the backup for the SST on the donor node, Mariabackup briefly requires a system-wide lock at the end of the backup. This is done with `[BACKUP STAGE BLOCK_COMMIT](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)`.
 
 
 If a specific node in your cluster is acting as the *primary* node by receiving all of the application's write traffic, then this node should not usually be used as the donor node, because the system-wide lock could interfere with the application. In this case, you can define one or more preferred donor nodes by setting the `[wsrep_sst_donor](../galera-cluster-system-variables.md#wsrep_sst_donor)` system variable.

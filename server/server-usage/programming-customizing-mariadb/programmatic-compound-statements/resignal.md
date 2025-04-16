@@ -35,29 +35,29 @@ error_property_name:
 ## Description
 
 
-The syntax of `RESIGNAL` and its semantics are very similar to [SIGNAL](signal.md). This statement can only be used within an error [HANDLER](declare-handler.md). It produces an error, like [SIGNAL](signal.md). `RESIGNAL` clauses are the same as SIGNAL, except that they all are optional, even [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md). All the properties which are not specified in `RESIGNAL`, will be identical to the properties of the error that was received by the error [HANDLER](../../../ref/sql-statements-and-structure/nosql/handler/handler-commands.md). For a description of the clauses, see [diagnostics area](programmatic-compound-statements-diagnostics/diagnostics-area.md).
+The syntax of `RESIGNAL` and its semantics are very similar to [SIGNAL](signal.md). This statement can only be used within an error [HANDLER](declare-handler.md). It produces an error, like [SIGNAL](signal.md). `RESIGNAL` clauses are the same as SIGNAL, except that they all are optional, even [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md). All the properties which are not specified in `RESIGNAL`, will be identical to the properties of the error that was received by the error [HANDLER](../../../reference/sql-statements-and-structure/nosql/handler/handler-commands.md). For a description of the clauses, see [diagnostics area](programmatic-compound-statements-diagnostics/diagnostics-area.md).
 
 
 Note that `RESIGNAL` does not empty the diagnostics area: it just appends another error condition.
 
 
-`RESIGNAL`, without any clauses, produces an error which is identical to the error that was received by [HANDLER](../../../ref/sql-statements-and-structure/nosql/handler/handler-commands.md).
+`RESIGNAL`, without any clauses, produces an error which is identical to the error that was received by [HANDLER](../../../reference/sql-statements-and-structure/nosql/handler/handler-commands.md).
 
 
-If used out of a [HANDLER](../../../ref/sql-statements-and-structure/nosql/handler/handler-commands.md) construct, RESIGNAL produces the following error:
+If used out of a [HANDLER](../../../reference/sql-statements-and-structure/nosql/handler/handler-commands.md) construct, RESIGNAL produces the following error:
 
 
 ```
 ERROR 1645 (0K000): RESIGNAL when handler not active
 ```
 
-In [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), if a [HANDLER](../../../ref/sql-statements-and-structure/nosql/handler/handler-commands.md) contained a [CALL](../../../ref/sql-statements-and-structure/sql-statements/stored-routine-statements/call.md) to another procedure, that procedure could use `RESIGNAL`. Since [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), trying to do this raises the above error.
+In [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), if a [HANDLER](../../../reference/sql-statements-and-structure/nosql/handler/handler-commands.md) contained a [CALL](../../../reference/sql-statements-and-structure/sql-statements/stored-routine-statements/call.md) to another procedure, that procedure could use `RESIGNAL`. Since [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), trying to do this raises the above error.
 
 
-For a list of `SQLSTATE` values and MariaDB error codes, see [MariaDB Error Codes](../../../ref/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md).
+For a list of `SQLSTATE` values and MariaDB error codes, see [MariaDB Error Codes](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md).
 
 
-The following procedure tries to query two tables which don't exist, producing a 1146 error in both cases. Those errors will trigger the [HANDLER](../../../ref/sql-statements-and-structure/nosql/handler/handler-commands.md). The first time the error will be ignored and the client will not receive it, but the second time, the error is re-signaled, so the client will receive it.
+The following procedure tries to query two tables which don't exist, producing a 1146 error in both cases. Those errors will trigger the [HANDLER](../../../reference/sql-statements-and-structure/nosql/handler/handler-commands.md). The first time the error will be ignored and the client will not receive it, but the second time, the error is re-signaled, so the client will receive it.
 
 
 ```
@@ -134,7 +134,7 @@ END;
 
 * [Diagnostics Area](programmatic-compound-statements-diagnostics/diagnostics-area.md)
 * [SIGNAL](signal.md)
-* [HANDLER](../../../ref/sql-statements-and-structure/nosql/handler/handler-commands.md)
+* [HANDLER](../../../reference/sql-statements-and-structure/nosql/handler/handler-commands.md)
 * [Stored Routines](../stored-routines/README.md)
-* [MariaDB Error Codes](../../../ref/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md)
+* [MariaDB Error Codes](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md)
 

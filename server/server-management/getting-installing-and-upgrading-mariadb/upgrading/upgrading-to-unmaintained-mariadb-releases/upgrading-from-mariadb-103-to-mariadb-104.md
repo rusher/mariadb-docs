@@ -43,7 +43,7 @@ The suggested upgrade procedure is:
 
   * `mysql_upgrade` does two things:
 
-    1. Ensures that the system tables in the `[mysq](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)l` database are fully compatible with the new version.
+    1. Ensures that the system tables in the `[mysq](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)l` database are fully compatible with the new version.
     1. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 
 
@@ -83,7 +83,7 @@ The following options should be removed or renamed if you use them in your [opti
 
 
 * See [Authentication from MariaDB 10.4](../../../../security/user-account-management/authentication-from-mariadb-10-4.md) for an overview of the changes.
-* The [unix_socket authentication plugin](../../../../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is now default on Unix-like systems.
+* The [unix_socket authentication plugin](../../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is now default on Unix-like systems.
 * TLSv1.0 is disabled by default in [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md). See [tls_version](../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md#tls_version) and [TLS Protocol Versions](../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#tls-protocol-versions).
 
 
@@ -94,7 +94,7 @@ You might consider using the following major new features in [MariaDB 10.4](../.
 
 
 * [Galera](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md) has been upgraded from [Galera](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md) 3 to [Galera](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md) 4.
-* [System-versioning](../../../../ref/sql-statements-and-structure/temporal-tables/system-versioned-tables.md) extended with support for [application-time periods](../../../../ref/sql-statements-and-structure/temporal-tables/system-versioned-tables.md).
+* [System-versioning](../../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md) extended with support for [application-time periods](../../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md).
 * [User password expiry](../../../../security/user-account-management/user-password-expiry.md)
 * [Account Locking](../../../../security/user-account-management/account-locking.md)
 * See also [System Variables Added in MariaDB 10.4](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-10-4.md).

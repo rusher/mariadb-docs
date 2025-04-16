@@ -184,7 +184,7 @@ ASAN_OPTIONS=help=1 extra/perror 0
 ### Using Valgrind
 
 
-The [MariaDB test system](../../../ref/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) can use [Valgrind](https://www.valgrind.org) for finding memory leaks and wrong memory accesses. Valgrind is an instrumentation framework for building dynamic analysis tools. If Valgrind is installed on your system, you can simply use [mysql-test-run --valgrind](../../../clients-and-utilities/mariadb-test/mariadb-test-run-pl-options.md) to run the test under Valgrind.
+The [MariaDB test system](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) can use [Valgrind](https://www.valgrind.org) for finding memory leaks and wrong memory accesses. Valgrind is an instrumentation framework for building dynamic analysis tools. If Valgrind is installed on your system, you can simply use [mysql-test-run --valgrind](../../../clients-and-utilities/mariadb-test/mariadb-test-run-pl-options.md) to run the test under Valgrind.
 
 
 ## See Also

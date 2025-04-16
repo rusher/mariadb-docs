@@ -2,10 +2,10 @@
 # InnoDB Server Status Variables
 
 
-See [Server Status Variables](server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md).
+See [Server Status Variables](server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md).
 
 
-Much of the [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) information here can also be seen with a [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) statement.
+Much of the [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) information here can also be seen with a [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) statement.
 
 
 See also the [Full list of MariaDB options, system and status variables](../../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
@@ -14,7 +14,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_adaptive_hash_cells`
 
 
-* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), this status variable is present in XtraDB.
   * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and later, this status variable is not present.
@@ -28,9 +28,9 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_adaptive_hash_hash_searches`
 
 
-* Description: Hash searches as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: Hash searches as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * Before the variable was introduced in [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md), use the `adaptive_hash_searches` counter in the [information_schema.INNODB_METRICS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table instead.
+  * Before the variable was introduced in [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md), use the `adaptive_hash_searches` counter in the [information_schema.INNODB_METRICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table instead.
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
@@ -40,7 +40,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_adaptive_hash_heap_buffers`
 
 
-* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), this status variable is present in XtraDB.
   * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and later, this status variable is not present.
@@ -54,9 +54,9 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_adaptive_hash_non_hash_searches`
 
 
-* Description: Non-hash searches as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. From [MariaDB 10.6.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1062-release-notes.md), not updated if [innodb_adaptive_hash_index](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) is not enabled (the default).
+* Description: Non-hash searches as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. From [MariaDB 10.6.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1062-release-notes.md), not updated if [innodb_adaptive_hash_index](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) is not enabled (the default).
 
-  * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present. Use the `adaptive_hash_searches_btree` counter in the [information_schema.INNODB_METRICS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table instead.
+  * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present. Use the `adaptive_hash_searches_btree` counter in the [information_schema.INNODB_METRICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table instead.
   * From [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable is present.
 * Scope: Global
 * Data Type: `numeric`
@@ -68,7 +68,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_async_reads_pending`
 
 
-* Description: Number of async read I/O operations currently in progress (from SUBMITTED to COMPLETED). See [InnoDB Asynchronous I/O](../../../../ref/storage-engines/innodb/innodb-asynchronous-io.md).
+* Description: Number of async read I/O operations currently in progress (from SUBMITTED to COMPLETED). See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
@@ -88,7 +88,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_async_reads_tasks_running`
 
 
-* Description: Number of async read I/O operations currently in the EXECUTING_COMPLETION_TASK state. See [InnoDB Asynchronous I/O](../../../../ref/storage-engines/innodb/innodb-asynchronous-io.md).
+* Description: Number of async read I/O operations currently in the EXECUTING_COMPLETION_TASK state. See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
@@ -98,7 +98,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_async_reads_total_count`
 
 
-* Description: Total number of async read completion tasks that have finished execution. See [InnoDB Asynchronous I/O](../../../../ref/storage-engines/innodb/innodb-asynchronous-io.md).
+* Description: Total number of async read completion tasks that have finished execution. See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
@@ -108,7 +108,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_async_reads_total_enqueues`
 
 
-* Description: Total number of async read operations that were queued. Includes those still waiting and making up [innodb_async_reads_queue_size](#innodb_async_reads_queue_size). See [InnoDB Asynchronous I/O](../../../../ref/storage-engines/innodb/innodb-asynchronous-io.md).
+* Description: Total number of async read operations that were queued. Includes those still waiting and making up [innodb_async_reads_queue_size](#innodb_async_reads_queue_size). See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
@@ -118,7 +118,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_async_reads_wait_slot_sec`
 
 
-* Description: Total wait time for a free I/O slot (see Waiting for IO Slots). See [InnoDB Asynchronous I/O Waiting for IO Slots](../../../../ref/storage-engines/innodb/innodb-asynchronous-io.md#waiting-for-io-slots).
+* Description: Total wait time for a free I/O slot (see Waiting for IO Slots). See [InnoDB Asynchronous I/O Waiting for IO Slots](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md#waiting-for-io-slots).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
@@ -128,7 +128,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_async_writes_pending`
 
 
-* Description: Number of async write I/O operations currently in progress (from SUBMITTED to COMPLETED). See [InnoDB Asynchronous I/O](../../../../ref/storage-engines/innodb/innodb-asynchronous-io.md).
+* Description: Number of async write I/O operations currently in progress (from SUBMITTED to COMPLETED). See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
@@ -138,7 +138,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_async_writes_queue_size`
 
 
-* Description: Current size of the async I/O write queue. See [InnoDB Asynchronous I/O Queuing Mechanism](../../../../ref/storage-engines/innodb/innodb-asynchronous-io.md#queuing-mechanism).
+* Description: Current size of the async I/O write queue. See [InnoDB Asynchronous I/O Queuing Mechanism](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md#queuing-mechanism).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
@@ -148,7 +148,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_async_writes_tasks_running`
 
 
-* Description: Number of async write I/O operations currently in the EXECUTING_COMPLETION_TASK state. See [InnoDB Asynchronous I/O](../../../../ref/storage-engines/innodb/innodb-asynchronous-io.md).
+* Description: Number of async write I/O operations currently in the EXECUTING_COMPLETION_TASK state. See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
@@ -158,7 +158,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_async_writes_total_count`
 
 
-* Description: Total number of async write completion tasks that have finished execution. See [InnoDB Asynchronous I/O](../../../../ref/storage-engines/innodb/innodb-asynchronous-io.md).
+* Description: Total number of async write completion tasks that have finished execution. See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
@@ -168,7 +168,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_async_writes_total_enqueues`
 
 
-* Description: Total number of async write operations that were queued. Includes those still waiting and making up [innodb_async_writes_queue_size](#innodb_async_writes_queue_size). See [InnoDB Asynchronous I/O](../../../../ref/storage-engines/innodb/innodb-asynchronous-io.md).
+* Description: Total number of async write operations that were queued. Includes those still waiting and making up [innodb_async_writes_queue_size](#innodb_async_writes_queue_size). See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
@@ -178,7 +178,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_async_writes_wait_slot_sec`
 
 
-* Description: See [InnoDB Asynchronous I/O](../../../../ref/storage-engines/innodb/innodb-asynchronous-io.md).
+* Description: See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
@@ -188,7 +188,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_available_undo_logs`
 
 
-* Description: Total number available InnoDB [undo logs](../../../../ref/storage-engines/innodb/innodb-undo-log.md). Differs from the [innodb_undo_logs](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs) system variable, which specifies the number of active undo logs.
+* Description: Total number available InnoDB [undo logs](../../../../reference/storage-engines/innodb/innodb-undo-log.md). Differs from the [innodb_undo_logs](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs) system variable, which specifies the number of active undo logs.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -197,7 +197,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_background_log_sync`
 
 
-* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), this status variable is present in XtraDB.
   * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -211,7 +211,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_bytes_data`
 
 
-* Description: Number of bytes contained in the [InnoDB buffer pool](../../../../ref/storage-engines/innodb/innodb-buffer-pool.md), both dirty (modified) and clean (unmodified). See also [Innodb_buffer_pool_pages_data](#innodb_buffer_pool_pages_data), which can contain pages of different sizes in the case of compression.
+* Description: Number of bytes contained in the [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md), both dirty (modified) and clean (unmodified). See also [Innodb_buffer_pool_pages_data](#innodb_buffer_pool_pages_data), which can contain pages of different sizes in the case of compression.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -220,7 +220,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_bytes_dirty`
 
 
-* Description: Number of dirty (modified) bytes contained in the [InnoDB buffer pool](../../../../ref/storage-engines/innodb/innodb-buffer-pool.md). See also [Innodb_buffer_pool_pages_dirty](#innodb_buffer_pool_pages_dirty), which can contain pages of different sizes in the case of compression.
+* Description: Number of dirty (modified) bytes contained in the [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md). See also [Innodb_buffer_pool_pages_dirty](#innodb_buffer_pool_pages_dirty), which can contain pages of different sizes in the case of compression.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -259,7 +259,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_pages_data`
 
 
-* Description: Number of [InnoDB buffer pool](../../../../ref/storage-engines/innodb/innodb-buffer-pool.md) pages which contain data, both dirty (modified) and clean (unmodified). See also [Innodb_buffer_pool_bytes_data](#innodb_buffer_pool_bytes_data).
+* Description: Number of [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) pages which contain data, both dirty (modified) and clean (unmodified). See also [Innodb_buffer_pool_bytes_data](#innodb_buffer_pool_bytes_data).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -268,7 +268,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_pages_dirty`
 
 
-* Description: Number of [InnoDB buffer pool](../../../../ref/storage-engines/innodb/innodb-buffer-pool.md) pages which contain dirty (modified) data. See also [innodb_buffer_pool_bytes_dirty](https://mariadb.com/kb/en/innodb_buffer_pool_bytes_dirty).
+* Description: Number of [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) pages which contain dirty (modified) data. See also [innodb_buffer_pool_bytes_dirty](https://mariadb.com/kb/en/innodb_buffer_pool_bytes_dirty).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -277,7 +277,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_pages_flushed`
 
 
-* Description: Number of [InnoDB buffer pool](../../../../ref/storage-engines/innodb/innodb-buffer-pool.md) pages which have been flushed.
+* Description: Number of [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) pages which have been flushed.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -286,7 +286,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_pages_LRU_flushed`
 
 
-* Description: Flush list as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: Flush list as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -310,7 +310,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_pages_free`
 
 
-* Description: Number of free [InnoDB buffer pool](../../../../ref/storage-engines/innodb/innodb-buffer-pool.md) pages.
+* Description: Number of free [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) pages.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -319,7 +319,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_pages_made_not_young`
 
 
-* Description: Pages not young as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: Pages not young as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -333,7 +333,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_pages_made_young`
 
 
-* Description: Pages made young as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: Pages made young as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -347,7 +347,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_pages_misc`
 
 
-* Description: Number of [InnoDB buffer pool](../../../../ref/storage-engines/innodb/innodb-buffer-pool.md) pages set aside for internal use.
+* Description: Number of [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) pages set aside for internal use.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -356,7 +356,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_pages_old`
 
 
-* Description: Old database page, as shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: Old database page, as shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present for XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -370,7 +370,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_pages_total`
 
 
-* Description: Total number of [InnoDB buffer pool](../../../../ref/storage-engines/innodb/innodb-buffer-pool.md) pages.
+* Description: Total number of [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) pages.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -379,7 +379,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_read_ahead`
 
 
-* Description: Number of pages read into the [InnoDB buffer pool](../../../../ref/storage-engines/innodb/innodb-buffer-pool.md) by the read-ahead background thread.
+* Description: Number of pages read into the [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) by the read-ahead background thread.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -388,7 +388,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_read_ahead_evicted`
 
 
-* Description: Number of pages read into the [InnoDB buffer pool](../../../../ref/storage-engines/innodb/innodb-buffer-pool.md) by the read-ahead background thread that were evicted without having been accessed by queries.
+* Description: Number of pages read into the [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) by the read-ahead background thread that were evicted without having been accessed by queries.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -406,7 +406,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_read_requests`
 
 
-* Description: Number of requests to read from the [InnoDB buffer pool](../../../../ref/storage-engines/innodb/innodb-buffer-pool.md).
+* Description: Number of requests to read from the [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -415,7 +415,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_reads`
 
 
-* Description: Number of reads that could not be satisfied by the [InnoDB buffer pool](../../../../ref/storage-engines/innodb/innodb-buffer-pool.md) and had to be read from disk.
+* Description: Number of reads that could not be satisfied by the [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) and had to be read from disk.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -424,7 +424,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_resize_status`
 
 
-* Description: Progress of the dynamic [InnoDB buffer pool](../../../../ref/storage-engines/innodb/innodb-buffer-pool.md) resizing operation. See [Setting Innodb Buffer Pool Size Dynamically](setting-innodb-buffer-pool-size-dynamically.md).
+* Description: Progress of the dynamic [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) resizing operation. See [Setting Innodb Buffer Pool Size Dynamically](setting-innodb-buffer-pool-size-dynamically.md).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 10.2.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md)
@@ -434,7 +434,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_wait_free`
 
 
-* Description: Number of times InnoDB waited for a free page before reading or creating a page. Normally, writes to the [InnoDB buffer pool](../../../../ref/storage-engines/innodb/innodb-buffer-pool.md) happen in the background. When no clean pages are available, dirty pages are flushed first in order to free some up. This counts the numbers of wait for this operation to finish. If this value is not small, look at increasing [innodb_buffer_pool_size](../../../../ref/storage-engines/innodb/innodb-system-variables.md).
+* Description: Number of times InnoDB waited for a free page before reading or creating a page. Normally, writes to the [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) happen in the background. When no clean pages are available, dirty pages are flushed first in order to free some up. This counts the numbers of wait for this operation to finish. If this value is not small, look at increasing [innodb_buffer_pool_size](../../../../reference/storage-engines/innodb/innodb-system-variables.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -443,7 +443,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_buffer_pool_write_requests`
 
 
-* Description: Number of requests to write to the [InnoDB buffer pool](../../../../ref/storage-engines/innodb/innodb-buffer-pool.md).
+* Description: Number of requests to write to the [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -472,7 +472,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_checkpoint_age`
 
 
-* Description: The amount of data written to the InnoDB redo log since the last checkpoint, as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. (This is equivalent to subtracting "Last checkpoint at" from "Log sequence number", cf the [RedoLog details](../../../../ref/storage-engines/innodb/innodb-redo-log.md#determining-the-checkpoint-age)). Despite the name ("age"), the value is not a duration, but really an amount of data (in bytes) !
+* Description: The amount of data written to the InnoDB redo log since the last checkpoint, as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. (This is equivalent to subtracting "Last checkpoint at" from "Log sequence number", cf the [RedoLog details](../../../../reference/storage-engines/innodb/innodb-redo-log.md#determining-the-checkpoint-age)). Despite the name ("age"), the value is not a duration, but really an amount of data (in bytes) !
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -486,7 +486,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_checkpoint_max_age`
 
 
-* Description: Max checkpoint age, as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: Max checkpoint age, as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -500,7 +500,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_checkpoint_target_age`
 
 
-* Description: Checkpoint age target, as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. XtraDB only. Removed in [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) and replaced with MySQL 5.6's flushing implementation.
+* Description: Checkpoint age target, as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. XtraDB only. Removed in [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) and replaced with MySQL 5.6's flushing implementation.
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
@@ -511,7 +511,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_current_row_locks`
 
 
-* Description: Number of current row locks on InnoDB tables as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. Renamed from [InnoDB_row_lock_numbers](#innodb_row_lock_numbers) in XtraDB 5.5.8-20.1.
+* Description: Number of current row locks on InnoDB tables as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. Renamed from [InnoDB_row_lock_numbers](#innodb_row_lock_numbers) in XtraDB 5.5.8-20.1.
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
@@ -521,7 +521,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_data_fsyncs`
 
 
-* Description: Number of InnoDB fsync (sync-to-disk) calls. fsync call frequency can be influenced by the [innodb_flush_method](../../../../ref/storage-engines/innodb/innodb-system-variables.md) configuration option.
+* Description: Number of InnoDB fsync (sync-to-disk) calls. fsync call frequency can be influenced by the [innodb_flush_method](../../../../reference/storage-engines/innodb/innodb-system-variables.md) configuration option.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -530,7 +530,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_data_pending_fsyncs`
 
 
-* Description: Number of pending InnoDB fsync (sync-to-disk) calls. fsync call frequency can be influenced by the [innodb_flush_method](../../../../ref/storage-engines/innodb/innodb-system-variables.md) configuration option.
+* Description: Number of pending InnoDB fsync (sync-to-disk) calls. fsync call frequency can be influenced by the [innodb_flush_method](../../../../reference/storage-engines/innodb/innodb-system-variables.md) configuration option.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -593,7 +593,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_dblwr_pages_written`
 
 
-* Description: Number of pages written to the [InnoDB doublewrite buffer](../../../../ref/storage-engines/innodb/innodb-doublewrite-buffer.md).
+* Description: Number of pages written to the [InnoDB doublewrite buffer](../../../../reference/storage-engines/innodb/innodb-doublewrite-buffer.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -602,7 +602,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_dblwr_writes`
 
 
-* Description: Number of writes to the [InnoDB doublewrite buffer](../../../../ref/storage-engines/innodb/innodb-doublewrite-buffer.md).
+* Description: Number of writes to the [InnoDB doublewrite buffer](../../../../reference/storage-engines/innodb/innodb-doublewrite-buffer.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -795,7 +795,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_have_bzip2`
 
 
-* Description: Whether the server has the bzip2 compression method available. See [InnoDB/XtraDB Page Compression](../../../../ref/storage-engines/innodb/innodb-page-compression.md).
+* Description: Whether the server has the bzip2 compression method available. See [InnoDB/XtraDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md).
 * Scope: Global
 * Data Type: `boolean`
 * Introduced: [MariaDB 10.1.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes.md)
@@ -805,7 +805,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_have_lz4`
 
 
-* Description: Whether the server has the lz4 compression method available. See [InnoDB/XtraDB Page Compression](../../../../ref/storage-engines/innodb/innodb-page-compression.md).
+* Description: Whether the server has the lz4 compression method available. See [InnoDB/XtraDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md).
 * Scope: Global
 * Data Type: `boolean`
 * Introduced: [MariaDB 10.1.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes.md)
@@ -815,7 +815,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_have_lzma`
 
 
-* Description: Whether the server has the lzma compression method available. See [InnoDB/XtraDB Page Compression](../../../../ref/storage-engines/innodb/innodb-page-compression.md).
+* Description: Whether the server has the lzma compression method available. See [InnoDB/XtraDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md).
 * Scope: Global
 * Data Type: `boolean`
 * Introduced: [MariaDB 10.1.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes.md)
@@ -825,7 +825,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_have_lzo`
 
 
-* Description: Whether the server has the lzo compression method available. See [InnoDB/XtraDB Page Compression](../../../../ref/storage-engines/innodb/innodb-page-compression.md).
+* Description: Whether the server has the lzo compression method available. See [InnoDB/XtraDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md).
 * Scope: Global
 * Data Type: `boolean`
 * Introduced: [MariaDB 10.1.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes.md)
@@ -845,7 +845,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_have_snappy`
 
 
-* Description: Whether the server has the snappy compression method available. See [InnoDB/XtraDB Page Compression](../../../../ref/storage-engines/innodb/innodb-page-compression.md).
+* Description: Whether the server has the snappy compression method available. See [InnoDB/XtraDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md).
 * Scope: Global
 * Data Type: `boolean`
 * Introduced: [MariaDB 10.1.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md)
@@ -855,7 +855,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_history_list_length`
 
 
-* Description: History list length as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. XtraDB only until introduced in [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md).
+* Description: History list length as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. XtraDB only until introduced in [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
@@ -865,7 +865,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_ibuf_discarded_delete_marks`
 
 
-* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -879,7 +879,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_ibuf_discarded_deletes`
 
 
-* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -893,7 +893,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_ibuf_discarded_inserts`
 
 
-* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -907,7 +907,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_ibuf_free_list`
 
 
-* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -921,7 +921,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_ibuf_merged_delete_marks`
 
 
-* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -935,7 +935,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_ibuf_merged_deletes`
 
 
-* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -949,7 +949,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_ibuf_merged_inserts`
 
 
-* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -963,7 +963,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_ibuf_merges`
 
 
-* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -977,7 +977,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_ibuf_segment_size`
 
 
-* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -991,7 +991,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_ibuf_size`
 
 
-* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -1005,7 +1005,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_instant_alter_column`
 
 
-* Description: See [Instant ADD COLUMN for InnoDB](../../../../ref/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb.md).
+* Description: See [Instant ADD COLUMN for InnoDB](../../../../reference/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb.md).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 10.3.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md)
@@ -1042,7 +1042,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_lsn_current`
 
 
-* Description: Log sequence number as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: Log sequence number as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -1056,7 +1056,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_lsn_flushed`
 
 
-* Description: Flushed up to log sequence number as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: Flushed up to log sequence number as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -1070,7 +1070,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_lsn_last_checkpoint`
 
 
-* Description: Log sequence number last checkpoint as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: Log sequence number last checkpoint as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -1084,7 +1084,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_master_thread_1_second_loops`
 
 
-* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. 
+* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. 
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), this status variable is present in XtraDB.
   * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and later, this status variable is not present.
@@ -1098,7 +1098,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_master_thread_10_second_loops`
 
 
-* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), this status variable is present in XtraDB.
   * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and later, this status variable is not present
@@ -1112,7 +1112,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_master_thread_active_loops`
 
 
-* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -1126,7 +1126,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_master_thread_background_loops`
 
 
-* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), this status variable is present in XtraDB.
   * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and later, this status variable is not present
@@ -1140,7 +1140,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_master_thread_idle_loops`
 
 
-* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -1154,7 +1154,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_master_thread_main_flush_loops`
 
 
-* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), this status variable is present in XtraDB.
   * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and later, this status variable is not present
@@ -1168,10 +1168,10 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_master_thread_sleeps`
 
 
-* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. XtraDB only.
+* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. XtraDB only.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present. Use the `innodb_master_thread_sleeps` counter in the `[information_schema.INNODB_METRICS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md)` table instead.
+  * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present. Use the `innodb_master_thread_sleeps` counter in the `[information_schema.INNODB_METRICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md)` table instead.
   * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
@@ -1183,7 +1183,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_max_trx_id`
 
 
-* Description: As shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -1197,7 +1197,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_mem_adaptive_hash`
 
 
-* Description: As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -1211,7 +1211,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_mem_dictionary`
 
 
-* Description: As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
@@ -1225,7 +1225,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_mem_total`
 
 
-* Description: As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
@@ -1238,7 +1238,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_mutex_os_waits`
 
 
-* Description: Mutex OS waits as shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: Mutex OS waits as shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
@@ -1251,7 +1251,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_mutex_spin_rounds`
 
 
-* Description: Mutex spin rounds as shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: Mutex spin rounds as shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
@@ -1264,7 +1264,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_mutex_spin_waits`
 
 
-* Description: Mutex spin waits as shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: Mutex spin waits as shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
@@ -1380,7 +1380,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_oldest_view_low_limit_trx_id`
 
 
-* Description: As shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
@@ -1593,7 +1593,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_purge_trx_id`
 
 
-* Description: Purge transaction id as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: Purge transaction id as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
@@ -1607,7 +1607,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_purge_undo_no`
 
 
-* Description: As shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
@@ -1621,7 +1621,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_read_views_memory`
 
 
-* Description: As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. Shows the total of memory in bytes allocated for the InnoDB read view.
+* Description: As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. Shows the total of memory in bytes allocated for the InnoDB read view.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
@@ -1644,7 +1644,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_row_lock_numbers`
 
 
-* Description: Number of current row locks on InnoDB tables as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. Renamed to [InnoDB_current_row_locks](#innodb_current_row_locks) in XtraDB 5.5.10-20.1.
+* Description: Number of current row locks on InnoDB tables as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. Renamed to [InnoDB_current_row_locks](#innodb_current_row_locks) in XtraDB 5.5.10-20.1.
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) / XtraDB 5.5.8-20
@@ -1731,7 +1731,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_s_lock_os_waits`
 
 
-* Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
@@ -1745,7 +1745,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_s_lock_spin_rounds`
 
 
-* Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
@@ -1759,7 +1759,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_s_lock_spin_waits`
 
 
-* Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
@@ -1907,7 +1907,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_truncated_status_writes`
 
 
-* Description: Number of times output from [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) has been truncated.
+* Description: Number of times output from [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) has been truncated.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1926,7 +1926,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_x_lock_os_waits`
 
 
-* Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
@@ -1940,7 +1940,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_x_lock_spin_rounds`
 
 
-* Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
@@ -1954,7 +1954,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_x_lock_spin_waits`
 
 
-* Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
+* Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
   * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
   * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.

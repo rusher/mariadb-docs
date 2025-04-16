@@ -8,16 +8,16 @@ The Windows version shares the common theme (creating system tables), yet has a 
 
 
 `mariadb-install-db` initializes the MariaDB data directory and creates the
-[system tables](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) in the [mysql](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database, if they do not exist.
+[system tables](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) in the [mysql](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database, if they do not exist.
 
 
 Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysql_install_db`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
-MariaDB uses these tables to manage [privileges](../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#privilege-levels), [roles](../security/user-account-management/roles/roles_overview.md), and [plugins](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md). It also uses them to provide the data for the [help](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/help-command.md) command in the [mariadb](mariadb-client/mariadb-command-line-client.md) client.
+MariaDB uses these tables to manage [privileges](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#privilege-levels), [roles](../security/user-account-management/roles/roles_overview.md), and [plugins](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md). It also uses them to provide the data for the [help](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/help-command.md) command in the [mariadb](mariadb-client/mariadb-command-line-client.md) client.
 
 
-`mariadb-install-db` works by starting MariaDB Server's `mariadbd` process in [--bootstrap](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-bootstrap) mode and sending commands to create the [system tables](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) and their content.
+`mariadb-install-db` works by starting MariaDB Server's `mariadbd` process in [--bootstrap](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-bootstrap) mode and sending commands to create the [system tables](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) and their content.
 
 
 ## Using mariadb-install-db
@@ -56,8 +56,8 @@ $ scripts/mariadb-install-db --user=mysql \
 | Option | Description |
 | --- | --- |
 | Option | Description |
-| --auth-root-authentication-method={normal | socket} | If set to normal, it creates a root@localhost account that authenticates with the [mysql_native_password](../ref/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication plugin and that has no initial password set, which can be insecure. If set to socket, it creates a root@localhost account that authenticates with the [unix_socket](../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin. Set to socket by default (see [Authentication from MariaDB 10.4](../security/user-account-management/authentication-from-mariadb-10-4.md)), or normal by default in earlier versions. |
-| --auth-root-socket-user=USER | Used with --auth-root-authentication-method=socket. It specifies the name of the second account to create with [SUPER](../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privileges in addition to root, as well as of the system account allowed to access it. Defaults to the value of --user. |
+| --auth-root-authentication-method={normal | socket} | If set to normal, it creates a root@localhost account that authenticates with the [mysql_native_password](../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication plugin and that has no initial password set, which can be insecure. If set to socket, it creates a root@localhost account that authenticates with the [unix_socket](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin. Set to socket by default (see [Authentication from MariaDB 10.4](../security/user-account-management/authentication-from-mariadb-10-4.md)), or normal by default in earlier versions. |
+| --auth-root-socket-user=USER | Used with --auth-root-authentication-method=socket. It specifies the name of the second account to create with [SUPER](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privileges in addition to root, as well as of the system account allowed to access it. Defaults to the value of --user. |
 | --basedir=path | The path to the MariaDB installation directory. |
 | --builddir=path | If using --srcdir with out-of-directory builds, you will need to set this to the location of the build directory where built files reside. |
 | --catalogs=["list"] | Initialize MariaDB for [catalogs](../security/user-account-management/catalogs/catalogs-overview.md). Argument is a list, separated with space or ',', of the catalogs to create. The def catalog is created automatically. Likely added in [MariaDB 11.7](../../release-notes/mariadb-community-server/what-is-mariadb-117.md). |
@@ -177,11 +177,11 @@ Another possible solution is to use the `defaults-file` option, so that you can 
 ## User Accounts Created by Default
 
 
-`mariadb-install-db` sets `--auth-root-authentication-method=socket` by default. When this is set, the default `root@localhost` user account is created with the ability to use two [authentication plugins](../ref/plugins/authentication-plugins/README.md):
+`mariadb-install-db` sets `--auth-root-authentication-method=socket` by default. When this is set, the default `root@localhost` user account is created with the ability to use two [authentication plugins](../reference/plugins/authentication-plugins/README.md):
 
 
-* First, it is configured to try to use the [unix_socket](../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin. This allows the the `root@localhost` user to login without a password via the local Unix socket file defined by the [socket](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#socket) system variable, as long as the login is attempted from a process owned by the operating system `root` user account.
-* Second, if authentication fails with the [unix_socket](../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin, then it is configured to try to use the [mysql_native_password](../ref/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication plugin.
+* First, it is configured to try to use the [unix_socket](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin. This allows the the `root@localhost` user to login without a password via the local Unix socket file defined by the [socket](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#socket) system variable, as long as the login is attempted from a process owned by the operating system `root` user account.
+* Second, if authentication fails with the [unix_socket](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin, then it is configured to try to use the [mysql_native_password](../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication plugin.
 
 
 The definition of the default `root@localhost` user account is:
@@ -214,7 +214,7 @@ CREATE USER 'mysql'@'localhost' IDENTIFIED VIA unix_socket
 GRANT ALL PRIVILEGES ON *.* TO 'mysql'@'localhost' WITH GRANT OPTION;
 ```
 
-An invalid password is initially set for both of these user accounts. This means that before a password can be used to authenticate as either of these user accounts, the accounts must first be given a valid password by executing the `[SET PASSWORD](../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md)` statement.
+An invalid password is initially set for both of these user accounts. This means that before a password can be used to authenticate as either of these user accounts, the accounts must first be given a valid password by executing the `[SET PASSWORD](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md)` statement.
 
 
 For example, here is an example of setting the password for the `root@localhost` user account immediately after installation:
@@ -228,7 +228,7 @@ $ sudo mariadb
 MariaDB> SET PASSWORD = PASSWORD('XH4VmT3_jt');
 ```
 
-You may notice in the above example that the [mariadb](mariadb-client/mariadb-command-line-client.md) command-line client is executed via [sudo](https://linux.die.net/man/8/sudo). This allows the `root@localhost` user account to successfully authenticate via the [unix_socket](../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin.
+You may notice in the above example that the [mariadb](mariadb-client/mariadb-command-line-client.md) command-line client is executed via [sudo](https://linux.die.net/man/8/sudo). This allows the `root@localhost` user account to successfully authenticate via the [unix_socket](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin.
 <</product>>
 
 
@@ -245,14 +245,14 @@ data directory, which is the directory specified with `--datadir` option. This s
 ### Testing With mariadbd
 
 
-You can also test that this is not a general fault of MariaDB Server by trying to start the `mariadbd` process. The [-skip-grant-tables](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables) option will tell it to ignore the [system tables](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md). Enabling the [general query log](../server-management/server-monitoring-logs/general-query-log.md) can help you determine what queries are being run on the server. For example:
+You can also test that this is not a general fault of MariaDB Server by trying to start the `mariadbd` process. The [-skip-grant-tables](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables) option will tell it to ignore the [system tables](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md). Enabling the [general query log](../server-management/server-monitoring-logs/general-query-log.md) can help you determine what queries are being run on the server. For example:
 
 
 ```
 mariadbd --skip-grant-tables --general-log
 ```
 
-At this point, you can use the [mariadb](mariadb-client/mariadb-command-line-client.md) client to connect to the [mysql](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database and look at the [system tables](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md). For example:
+At this point, you can use the [mariadb](mariadb-client/mariadb-command-line-client.md) client to connect to the [mysql](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database and look at the [system tables](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md). For example:
 
 
 ```
@@ -309,7 +309,7 @@ SHOW DATABASES;
 ```
 
 Shown are the `information_schema` as well as `test` databases that are built in databases.
-But looking from [SHOW GRANTS](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-grants.md) appears to be a paradox; how can the current user see something if they don't have privileges for that?
+But looking from [SHOW GRANTS](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-grants.md) appears to be a paradox; how can the current user see something if they don't have privileges for that?
 
 
 Let's go a step further.
@@ -321,7 +321,7 @@ CREATE DATABASE test_electricity;
 ```
 
 With the above change, a new directory will be created in the data directory.
-Now login again with the anonymous user and run [SHOW DATABASES](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-databases.md):
+Now login again with the anonymous user and run [SHOW DATABASES](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-databases.md):
 
 
 ```
@@ -396,11 +396,11 @@ Create_tablespace_priv: N
     max_statement_time: 0.000000
 ```
 
-As seen above from the [mysql.user](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, the anonymous user doesn't have any global privileges.
+As seen above from the [mysql.user](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, the anonymous user doesn't have any global privileges.
 Still, the anonymous user can see databases, so there must be a way so that anonymous user can see the `test` and `test_electricity` databases.
 
 
-Let's check for grants on the database level. That information can be found in the [mysql.db](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table.
+Let's check for grants on the database level. That information can be found in the [mysql.db](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table.
 Looking at the `mysql.db` table, it already contains 2 rows created when the `mariadb-install-db` script was invoked.
 
 

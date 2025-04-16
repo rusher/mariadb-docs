@@ -11,7 +11,7 @@ The statement information area contains the following data:
 
 
 * NUMBER is the number of conditions which are present in the diagnostics area.
-* ROW_COUNT has the same value as the [ROW_COUNT()](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/row_count.md) function for the statement that produced the conditions.
+* ROW_COUNT has the same value as the [ROW_COUNT()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/row_count.md) function for the statement that produced the conditions.
 
 
 ## Condition Information
@@ -58,7 +58,7 @@ The most common ones have a value for all built-in errors, and can be read both 
 RETURNED_SQLSTATE is the SQLSTATE of the condition. It is a five characters code, composed by a class (first two characters) and a subclass (last three characters). For more information about this property, refer to the [SQLSTATE](sqlstate.md) page.
 
 
-MYSQL_ERRNO is the error code. Each built-in condition has a unique numeric code. 0 indicates success, but it cannot be explicitly set or read via SQL. For a list of built-in error codes, refer to [MariaDB Error Codes](../../../../ref/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md). The API function to read it is mysql_errno().
+MYSQL_ERRNO is the error code. Each built-in condition has a unique numeric code. 0 indicates success, but it cannot be explicitly set or read via SQL. For a list of built-in error codes, refer to [MariaDB Error Codes](../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md). The API function to read it is mysql_errno().
 
 
 MESSAGE_TEXT is a descriptive, human-readable message. For built-in errors, parsing this string is the only way to get more information about the error. For example, parsing a message like "Table 'tab1' already exists", a program can find out that the missing table is tab1. The API function to read it is mysql_error().
@@ -138,8 +138,8 @@ The following statements read contents from the diagnostics area:
 
 
 * [GET DIAGNOSTICS](get-diagnostics.md) is the only way to read all information
-* [SHOW WARNINGS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md) shows a summary of errors, warnings and notes
-* [SHOW ERRORS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-errors.md) shows a summary of errors
+* [SHOW WARNINGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md) shows a summary of errors, warnings and notes
+* [SHOW ERRORS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-errors.md) shows a summary of errors
 
 
 [DECLARE HANDLER](../declare-handler.md) can be used to handle error conditions within stored programs.
@@ -148,7 +148,7 @@ The following statements read contents from the diagnostics area:
 [DECLARE CONDITION](../declare-condition.md) can be used to associate an SQLSTATE or an error code to a name. That name can be referenced in DECLARE HANDLER, SIGNAL and RESIGNAL statements.
 
 
-All these statements can also be executed inside a stored routine. However, only SHOW WARNINGS and SHOW ERRORS can be executed as a prepared statement. After an [EXECUTE](../../../../ref/sql-statements-and-structure/sql-statements/prepared-statements/execute-statement.md) statement, the diagnostics area contains information about the prepared statement, if it produces error conditions.
+All these statements can also be executed inside a stored routine. However, only SHOW WARNINGS and SHOW ERRORS can be executed as a prepared statement. After an [EXECUTE](../../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/execute-statement.md) statement, the diagnostics area contains information about the prepared statement, if it produces error conditions.
 
 
 ## See Also
@@ -156,10 +156,10 @@ All these statements can also be executed inside a stored routine. However, only
 
 * [RESIGNAL](../resignal.md)
 * [SIGNAL](../signal.md)
-* [HANDLER](../../../../ref/sql-statements-and-structure/nosql/handler/handler-commands.md)
+* [HANDLER](../../../../reference/sql-statements-and-structure/nosql/handler/handler-commands.md)
 * [GET DIAGNOSTICS](get-diagnostics.md)
-* [SHOW WARNINGS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md)
-* [SHOW ERRORS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-errors.md)
+* [SHOW WARNINGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md)
+* [SHOW ERRORS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-errors.md)
 * [DECLARE HANDLER](../declare-handler.md)
-* [MariaDB Error Codes](../../../../ref/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md)
+* [MariaDB Error Codes](../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md)
 

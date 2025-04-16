@@ -1,18 +1,18 @@
 
 # mariadb-hotcopy
 
-`mariadb-hotcopy` is a Perl script that was originally written and contributed by Tim Bunce. It uses [FLUSH TABLES](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md), [LOCK TABLES](../../ref/sql-statements-and-structure/sql-statements/transactions/lock-tables.md), and cp or scp to make a database backup.
+`mariadb-hotcopy` is a Perl script that was originally written and contributed by Tim Bunce. It uses [FLUSH TABLES](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md), [LOCK TABLES](../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md), and cp or scp to make a database backup.
 
 
 Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqlhotcopy`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 It is a fast way to make a backup of the database or single tables, but it can be run only on the same machine where the database
-directories are located. `mariadb-hotcopy`> works only for backing up [MyISAM](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [ARCHIVE](../../ref/storage-engines/archive/README.md) tables. It runs on Unix and NetWare.
+directories are located. `mariadb-hotcopy`> works only for backing up [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [ARCHIVE](../../reference/storage-engines/archive/README.md) tables. It runs on Unix and NetWare.
 
 
 To use `mariadb-hotcopy`, you must have read access to the files
-for the tables that you are backing up, the SELECT [privilege](../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) for
+for the tables that you are backing up, the SELECT [privilege](../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) for
 those tables, the RELOAD privilege (to be able to execute FLUSH TABLES), and
 the LOCK TABLES privilege (to be able to lock the tables).
 
@@ -58,7 +58,7 @@ specified on the command line or in the [`mariadb-hotcopy`] and
 | --keepold | Do not delete previous (renamed) target when done. |
 | --method=command | The method for copying files (cp or scp). The default is cp. |
 | --noindices | Do not include full index files for MyISAM tables in the backup. This makes the backup smaller and faster. The indexes for reloaded tables can be reconstructed later with [myisamchk -rq](../myisam-clients-and-utilities/myisamchk-table-information.md). |
-| --old-server | Connect to old MySQL-server (before v5.5) which doesn't have [FLUSH TABLES WITH READ LOCK](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) fully implemented. |
+| --old-server | Connect to old MySQL-server (before v5.5) which doesn't have [FLUSH TABLES WITH READ LOCK](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) fully implemented. |
 | --password=password, -ppassword | The password to use when connecting to the server. The password value is not optional for this option, unlike for other MariaDB programs. Specifying a password on the command line should be considered insecure. You can use an option file to avoid giving the password on the command line. |
 | --port=port_num, -P port_num | The TCP/IP port number to use when connecting to the local server. |
 | --quiet, -q | Be silent except for errors. |

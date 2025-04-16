@@ -1,7 +1,7 @@
 
 # mariadb-binlog
 
-`mariadb-binlog` is a utility included with MariaDB for processing [binary log](../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and [relay log](../../server-management/server-monitoring-logs/binary-log/relay-log.md) files.
+`mariadb-binlog` is a utility included with MariaDB for processing [binary log](../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and [relay log](../../server-management/server-monitoring-logs/binary-log/relay-log.md) files.
 
 
 The MariaDB server's binary log is a set of files containing "events" which

@@ -36,7 +36,7 @@ SELECT 1 from <table> LIMIT 0
 Start a dedicated thread in Mariabackup to copy InnoDB redo log (`ib_logfile*`).
 
 
-* This is needed to record all changes done while the backup is running. (The redo log logically is a single circular file, split into [innodb_log_files_in_group](../../../ref/storage-engines/innodb/innodb-system-variables.md) files.)
+* This is needed to record all changes done while the backup is running. (The redo log logically is a single circular file, split into [innodb_log_files_in_group](../../../reference/storage-engines/innodb/innodb-system-variables.md) files.)
 * The log is also used to see detect if any truncate or online alter tables are used.
 * The assumption is that the copy thread will be able to keep up with server. It should always be able keep up, if the redo log is big enough.
 
@@ -54,7 +54,7 @@ Start a dedicated thread in Mariabackup to copy InnoDB redo log (`ib_logfile*`).
 ### Create a Consistent Backup Point
 
 
-* Execute [FLUSH TABLE WITH READ LOCK](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md). This is default, but may be omitted with the `-–no-lock` parameter. The reason why `FLUSH` is needed is to ensure that all tables are in a consistent state at the exact same point in time, independent of storage engine.
+* Execute [FLUSH TABLE WITH READ LOCK](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md). This is default, but may be omitted with the `-–no-lock` parameter. The reason why `FLUSH` is needed is to ensure that all tables are in a consistent state at the exact same point in time, independent of storage engine.
 * If `--lock-ddl-per-table` is used and there is a user query waiting for MDL, the user query will be killed to resolve a deadlock. Note that these are only queries of type ALTER, DROP, TRUNCATE or RENAME TABLE. ([MDEV-15636](https://jira.mariadb.org/browse/MDEV-15636))
 
 
@@ -72,7 +72,7 @@ Start a dedicated thread in Mariabackup to copy InnoDB redo log (`ib_logfile*`).
 ### Release Locks
 
 
-* If [FLUSH TABLE WITH READ LOCK](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) was done:
+* If [FLUSH TABLE WITH READ LOCK](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) was done:
 
   * execute: `UNLOCK TABLES`
 * If `--lock-ddl-per-table` was done:
@@ -93,5 +93,5 @@ Start a dedicated thread in Mariabackup to copy InnoDB redo log (`ib_logfile*`).
 ## Notes
 
 
-* If [FLUSH TABLE WITH READ LOCK](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) is not used, then only InnoDB tables will be consistent (not the privilege tables in the mysql database or the binary log). The backup point depends on the content of the redo log within the backup itself.
+* If [FLUSH TABLE WITH READ LOCK](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) is not used, then only InnoDB tables will be consistent (not the privilege tables in the mysql database or the binary log). The backup point depends on the content of the redo log within the backup itself.
 

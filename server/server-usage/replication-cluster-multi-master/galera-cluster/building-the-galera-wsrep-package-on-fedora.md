@@ -1,10 +1,10 @@
 
 # Building the Galera wsrep Package on Fedora
 
-The instructions on this page were used to create the *galera* package on the Fedora Linux distribution. This package contains the wsrep provider for [MariaDB Galera Cluster](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md).
+The instructions on this page were used to create the *galera* package on the Fedora Linux distribution. This package contains the wsrep provider for [MariaDB Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md).
 
 
-The following table lists each version of the [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 using [yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md), [apt](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-with-apt), or [zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md), then the package is called `galera-4`.
+The following table lists each version of the [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 using [yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md), [apt](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-with-apt), or [zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md), then the package is called `galera-4`.
 
 
 
@@ -34,7 +34,7 @@ The following table lists each version of the [Galera](../../../ref/sql-statemen
 
 
 
-The following table lists each version of the [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 3 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 3 using [yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md), [apt](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-with-apt), or [zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md), then the package is called `galera`.
+The following table lists each version of the [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 3 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 3 using [yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md), [apt](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-with-apt), or [zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md), then the package is called `galera`.
 
 
 
@@ -79,7 +79,7 @@ The following table lists each version of the [Galera](../../../ref/sql-statemen
 
 
 
-The following table lists each version of the [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 2 wsrep provider, and it lists which version of MariaDB each one was first released in.
+The following table lists each version of the [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 2 wsrep provider, and it lists which version of MariaDB each one was first released in.
 
 
 

@@ -63,7 +63,7 @@ To read information from a condition, the CONDITION keyword must be specified an
 The condition properties that can be read with GET DIAGNOSTICS are the same that can be set with SIGNAL and RESIGNAL statements. They are explained in the [diagnostics area](diagnostics-area.md) page. However, there is one more property: RETURNED_SQLSTATE, which indicates the condition's [SQLSTATE](sqlstate.md).
 
 
-For a list of SQLSTATE values and MariaDB error codes, see [MariaDB Error Codes](../../../../ref/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md).
+For a list of SQLSTATE values and MariaDB error codes, see [MariaDB Error Codes](../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md).
 
 
 The type for all the condition properties is VARCHAR(64), except for MYSQL_ERRNO, whose valid range is 1 to 65534.
@@ -77,7 +77,7 @@ The type for all the condition properties is VARCHAR(64), except for MYSQL_ERRNO
 
 ## ROW_NUMBER
 
-Until [MariaDB 10.7](../../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md),  there was no way, short of parsing the error text, to know in what row an error had happened. From 10.7, one can use the ROW_NUMBER property to retrieve the row number too, even if the error text does not mention it. Note that this property was named ERROR_INDEX in the [MariaDB 10.7.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md) preview release. As a result, ROW_NUMBER is a [reserved word](../../../../ref/sql-statements-and-structure/sql-language-structure/reserved-words.md) from [MariaDB 10.7](../../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md).
+Until [MariaDB 10.7](../../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md),  there was no way, short of parsing the error text, to know in what row an error had happened. From 10.7, one can use the ROW_NUMBER property to retrieve the row number too, even if the error text does not mention it. Note that this property was named ERROR_INDEX in the [MariaDB 10.7.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md) preview release. As a result, ROW_NUMBER is a [reserved word](../../../../reference/sql-statements-and-structure/sql-language-structure/reserved-words.md) from [MariaDB 10.7](../../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md).
 
 
 ## Examples

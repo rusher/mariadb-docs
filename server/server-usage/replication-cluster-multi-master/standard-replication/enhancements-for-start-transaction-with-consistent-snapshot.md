@@ -1,7 +1,7 @@
 
 # Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT
 
-With the introduction of [group commit](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md), MariaDB also introduced an enhanced storage engine API for COMMIT that allows engines to coordinate commit ordering and visibility with each other and with the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md).
+With the introduction of [group commit](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md), MariaDB also introduced an enhanced storage engine API for COMMIT that allows engines to coordinate commit ordering and visibility with each other and with the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md).
 
 
 With these improvements, the `START TRANSACTION WITH CONSISTENT SNAPSHOT` statement was enhanced to ensure consistency between storage engines that support the new
@@ -11,7 +11,7 @@ the new API and can provide a binlog position consistent with storage engine
 transaction snapshots.
 
 
-This means that with transaction isolation level at least [REPEATABLE READ](../../../ref/sql-statements-and-structure/sql-statements/transactions/set-transaction.md#repeatable-read), the
+This means that with transaction isolation level at least [REPEATABLE READ](../../../reference/sql-statements-and-structure/sql-statements/transactions/set-transaction.md#repeatable-read), the
 `START TRANSACTION WITH CONSISTENT SNAPSHOT` statement can be used to ensure
 that queries will see a transaction-consistent view of the database also
 between storage engines. It is then not possible for a query to see the
@@ -116,7 +116,7 @@ For more information on the design and implementation of this feature, see [MWL#
 ## See Also
 
 
-* [START TRANSACTION](../../../ref/sql-statements-and-structure/sql-statements/transactions/start-transaction.md)
+* [START TRANSACTION](../../../reference/sql-statements-and-structure/sql-statements/transactions/start-transaction.md)
 * [What is MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)
-* [MyRocks and START TRANSACTION WITH CONSISTENT SNAPSHOT](../../../ref/storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot.md)
+* [MyRocks and START TRANSACTION WITH CONSISTENT SNAPSHOT](../../../reference/storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot.md)
 

@@ -30,7 +30,7 @@ Here is a list of environment variables used by MariaDB.
 | MYSQL_UNIX_PORT | On Unix, default socket file used for localhost connections. |
 | PATH | Path to directories that hold executable programs (such as the [mariadb client](../../clients-and-utilities/mariadb-client/README.md), [mariadb-admin](../../clients-and-utilities/mariadb-admin.md)), so that these can be run from any location. |
 | TMPDIR | Directory where temporary files are created. |
-| TZ | Local [time zone](../../ref/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md). |
+| TZ | Local [time zone](../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md). |
 | UMASK | Creation mode when creating files. See [Specifying Permissions for Schema (Data) Directories and Tables](starting-and-stopping-mariadb/specifying-permissions-for-schema-data-directories-and-tables.md). |
 | UMASK_DIR | Creation mode when creating directories. See [Specifying Permissions for Schema (Data) Directories and Tables](starting-and-stopping-mariadb/specifying-permissions-for-schema-data-directories-and-tables.md). |
 | USER | On Windows, up to [MariaDB 5.5](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), the default user name when connecting to the mysqld server. API GetUserName() is used in later versions. |

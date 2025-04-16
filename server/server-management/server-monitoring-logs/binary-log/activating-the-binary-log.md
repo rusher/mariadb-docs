@@ -10,7 +10,7 @@ If you specify a filename with an extension (for example `.log`), the extension 
 If you don't provide a name (which can, optionally, include an absolute path), the default will be `datadir/log-basename-bin`, `datadir/mysql-bin` or `datadir/mariadb-bin` (the latter two if [--log-basename](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) is not specified, and dependent on server version). Datadir is determined by the value of the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable.
 
 
-We strongly recommend you use either [--log-basename](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or specify a filename to ensure that [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) doesn't stop if the hostname of the computer changes.
+We strongly recommend you use either [--log-basename](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or specify a filename to ensure that [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) doesn't stop if the hostname of the computer changes.
 
 
 The directory storing the binary logs will contain a binary log index, as well as the individual binary log files.
@@ -46,7 +46,7 @@ total 100
 The binary log index file will by default have the same name as the individual binary logs, with the extension .index. You can specify an alternative name with the `--log-bin-index[=filename]` [option](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#log_bin_index).
 
 
-Clients with the [SUPER](../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#super) privilege (or, from [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), the [BINLOG ADMIN](../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#binlog-admin) privilege, can disable and re-enable the binary log for the current session by setting the [sql_log_bin](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) variable.
+Clients with the [SUPER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#super) privilege (or, from [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), the [BINLOG ADMIN](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#binlog-admin) privilege, can disable and re-enable the binary log for the current session by setting the [sql_log_bin](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) variable.
 
 
 ```
@@ -64,8 +64,8 @@ There are three formats for the binary log. The default is [mixed logging](binar
 ## See Also
 
 
-* [Setting sql_log_bin](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md)
-* [PURGE LOGS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md) - Delete logs
-* [FLUSH LOGS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) - Close and rotate logs
+* [Setting sql_log_bin](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md)
+* [PURGE LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md) - Delete logs
+* [FLUSH LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) - Close and rotate logs
 * [GTID binlog indexing](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#binlog-indexing)
 

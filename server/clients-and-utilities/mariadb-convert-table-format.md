@@ -1,7 +1,7 @@
 
 # mariadb-convert-table-format
 
-`mariadb-convert-table-format` converts the tables in a database to use a particular storage engine ([MyISAM](../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) by default).
+`mariadb-convert-table-format` converts the tables in a database to use a particular storage engine ([MyISAM](../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) by default).
 
 
 Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysql_convert_table_format`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
@@ -42,7 +42,7 @@ The `db_name` argument indicates the database containing the tables to be conver
 | --- | --- |
 | Option | Description |
 | -?, --help | Display help and exit. |
-| -e, --engine=ENGINE | Specify the storage engine that the tables should be converted to use. The default is [MyISAM](../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) if this option is not given. |
+| -e, --engine=ENGINE | Specify the storage engine that the tables should be converted to use. The default is [MyISAM](../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) if this option is not given. |
 | -f, --force | Continue even if errors occur. |
 | -h, --host=host_name | Connect to the MariaDB server on the given host. Default localhost. |
 | -p, --password=password | The password to use when connecting to the server. Note that the password value is not optional for this option, unlike for other client programs. Specifying the password on the command-line is generally considered insecure. |

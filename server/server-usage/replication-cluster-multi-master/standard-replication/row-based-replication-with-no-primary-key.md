@@ -10,7 +10,7 @@ patch "row_based_replication_without_primary_key.patch", with some additional
 fixes and enhancements.
 
 
-When row-based replication is used with [UPDATE](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [DELETE](../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md),
+When row-based replication is used with [UPDATE](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [DELETE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md),
 the slave needs to locate each replicated row based on the value in columns. If
 the table contains at least one index, an index lookup will be used (otherwise
 a table scan is needed for each row, which is extremely inefficient for all but
@@ -32,7 +32,7 @@ The choice of which of several non-unique indexes to use is based on the
 cardinality of indexes; the one that is most selective (has the smallest
 average number of rows per distinct tuple of column values) is preferred. Note
 that for this choice to be effective, for most storage engines (like
-MyISAM, InnoDB) it is necessary to make sure [ANALYZE TABLE](../../../ref/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md)
+MyISAM, InnoDB) it is necessary to make sure [ANALYZE TABLE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md)
 has been run on the slave, otherwise statistics about index cardinality will
 not be available. In the absence of index cardinality, the first unique index
 will be chosen, if any, else the first non-unique index.

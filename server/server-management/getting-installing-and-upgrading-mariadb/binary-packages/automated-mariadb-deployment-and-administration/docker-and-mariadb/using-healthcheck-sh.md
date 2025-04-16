@@ -68,7 +68,7 @@ This is active when a external user can connect to the TCP port of MariaDB Serve
 This test is true when InnoDB has completed initializing. This includes any rollback or crash recovery that may be occurring in the background as MariaDB is starting.
 
 
-The connecting user must have [USAGE](../../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#the-usage-privilege) privileges to perform this test.
+The connecting user must have [USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#the-usage-privilege) privileges to perform this test.
 
 
 ## --innodb_buffer_pool_loaded
@@ -77,10 +77,10 @@ The connecting user must have [USAGE](../../../../../ref/sql-statements-and-stru
 This indicates that the buffer pool dump previously saved has been completed loaded into the InnoDB Buffer Pool and as such the server has a hot cache ready for use. This checks the [innodb_buffer_pool_load_status](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_load_status) for a "complete" indicator.
 
 
-This test doesn't check if [innodb-system-variables/#innodb_buffer_pool_load_at_startupinnodb_buffer_pool_load_at_startup](../../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_at_startupinnodb_buffer_pool_load_at_startup) is set at startup.
+This test doesn't check if [innodb-system-variables/#innodb_buffer_pool_load_at_startupinnodb_buffer_pool_load_at_startup](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_at_startupinnodb_buffer_pool_load_at_startup) is set at startup.
 
 
-The connecting user must have [USAGE](../../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#the-usage-privilege) privileges to perform this test.
+The connecting user must have [USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#the-usage-privilege) privileges to perform this test.
 
 
 ## --galera_online
@@ -89,7 +89,7 @@ The connecting user must have [USAGE](../../../../../ref/sql-statements-and-stru
 This indicates that the galera node is online by the [wsrep_local_state](https://galeracluster.com/library/documentation/node-states.html#node-state-changes) variable. This includes states like "joining" and "donor" where it cannot serve SQL queries.
 
 
-The connecting user must have [USAGE](../../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#the-usage-privilege) privileges to perform this test.
+The connecting user must have [USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#the-usage-privilege) privileges to perform this test.
 
 
 ## --replication
@@ -107,7 +107,7 @@ This tests a replica based on the `--replication_*` parameters. The replica test
 These are tested for all connections, if `--replication_all` is set (default), or `--replication_name`.
 
 
-The connecting user must have [REPLICATION_CLIENT](../../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replication-client) if using a version less than [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), or [REPLICA MONITOR](../../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replica-monitor) for [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) or later.
+The connecting user must have [REPLICATION_CLIENT](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replication-client) if using a version less than [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), or [REPLICA MONITOR](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replica-monitor) for [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) or later.
 
 
 ## --mariadbupgrade

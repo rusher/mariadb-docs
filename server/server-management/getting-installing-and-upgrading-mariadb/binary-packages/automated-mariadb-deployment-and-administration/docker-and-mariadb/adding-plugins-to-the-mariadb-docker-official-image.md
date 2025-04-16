@@ -33,7 +33,7 @@ $ docker run --name some-%%REPO%% -e MARIADB_ROOT_PASSWORD=my-secret-pw --networ
 ### Enabling a Plugin in the Configuration Files
 
 
-plugin-load-add` can be used as a configuration option to load plugins. The example below loads the [FederatedX Storage Engine](../../../../../ref/storage-engines/federatedx-storage-engine/README.md).
+plugin-load-add` can be used as a configuration option to load plugins. The example below loads the [FederatedX Storage Engine](../../../../../reference/storage-engines/federatedx-storage-engine/README.md).
 
 
 ```
@@ -44,7 +44,7 @@ $ docker run --name some-mariadb -v /my/custom:/etc/mysql/conf.d -e MARIADB_ROOT
 ### Install a Plugin Using SQL in /docker-entrypoint-initdb.d
 
 
-[INSTALL SONAME](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) can be used to install a plugin as part of the database initialization.
+[INSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) can be used to install a plugin as part of the database initialization.
 
 
 Create the SQL file used in initialization:

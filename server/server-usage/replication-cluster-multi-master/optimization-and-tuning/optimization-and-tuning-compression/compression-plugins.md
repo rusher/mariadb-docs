@@ -6,7 +6,7 @@
 Compressions plugins were added in a [MariaDB 10.7.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md) preview release. 
 
 
-The various MariaDB storage engines, such as [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), [RocksDB](../../../../ref/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md), [Mroonga](../../../../ref/storage-engines/mroonga/mroonga-user-defined-functions/mroonga_snippet_html.md), can use different compression libraries.
+The various MariaDB storage engines, such as [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), [RocksDB](../../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md), [Mroonga](../../../../reference/storage-engines/mroonga/mroonga-user-defined-functions/mroonga_snippet_html.md), can use different compression libraries.
 
 
 Before [MariaDB 10.7.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md), each separate library would have to be compiled in in order to be available for use, resulting in numerous runtime/rpm/deb dependencies, most of which would never be used by users.
@@ -32,14 +32,14 @@ Depending on how MariaDB was installed, the libraries may already be available f
 apt-get install mariadb-plugin-provider-lz4
 ```
 
-Once available, [install as a plugin](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md), for example:
+Once available, [install as a plugin](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md), for example:
 
 
 ```
 INSTALL SONAME 'provider_lz4';
 ```
 
-The compression algorithm can then be used, for example, in [InnoDB compression](../../../../ref/storage-engines/innodb/innodb-page-compression.md):
+The compression algorithm can then be used, for example, in [InnoDB compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md):
 
 
 ```

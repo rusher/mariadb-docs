@@ -24,15 +24,15 @@ MariaDB encryption is fully supported for the [InnoDB](../../../../../general-re
 MariaDB allows the user to configure flexibly what to encrypt. In or InnoDB, one can choose to encrypt:
 
 
-* everything — all tablespaces (with all tables) (with [innodb_encrypt_tables=1](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables))
+* everything — all tablespaces (with all tables) (with [innodb_encrypt_tables=1](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables))
 * individual tables
 * everything, excluding individual tables
 
 
-Additionally, one can choose to encrypt InnoDB log files (recommended, with [innodb_encrypt_log=1](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log)) and InnoDB Temporary Tables (with [innodb_encrypt_temporary_tables=1](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables)).
+Additionally, one can choose to encrypt InnoDB log files (recommended, with [innodb_encrypt_log=1](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log)) and InnoDB Temporary Tables (with [innodb_encrypt_temporary_tables=1](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables)).
 
 
-When [innodb_encrypt_log=1](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) or [innodb_encrypt_temporary_tables=1](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables) an encryption key of 1 must be defined. See [Enabling InnoDB Encryption](innodb-encryption/innodb-enabling-encryption.md).
+When [innodb_encrypt_log=1](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) or [innodb_encrypt_temporary_tables=1](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables) an encryption key of 1 must be defined. See [Enabling InnoDB Encryption](innodb-encryption/innodb-enabling-encryption.md).
 
 
 ## Limitations
@@ -47,7 +47,7 @@ These limitations exist in the data-at-rest encryption implementation:
   * [mariadb-binlog](../../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) can read encrypted binary logs only when --read-from-remote-server is used ([MDEV-8813](https://jira.mariadb.org/browse/MDEV-8813)).
   * [Percona XtraBackup](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) cannot back up instances that use encrypted InnoDB. However, MariaDB's fork, [MariaDB Backup](../../../../server-management/getting-installing-and-upgrading-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/mariadb-backups-overview-for-sql-server-users.md), can back up encrypted instances.
 * The disk-based [Galera gcache](https://galeracluster.com/library/documentation/state-transfer.html#write-set-cache-gcache) is not encrypted in the community version of MariaDB Server ([MDEV-9639](https://jira.mariadb.org/browse/MDEV-9639)). However, this file is encrypted in [MariaDB Enterprise Server 10.4](https://mariadb.com/docs/features/mariadb-enterprise-server/).
-* The [Audit plugin](../../../../ref/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md) cannot create encrypted output. Send it to syslog and configure the protection there instead.
+* The [Audit plugin](../../../../reference/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md) cannot create encrypted output. Send it to syslog and configure the protection there instead.
 * File-based [general query log](../../../../server-management/server-monitoring-logs/general-query-log.md) and [slow query log](../../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md) cannot be encrypted ([MDEV-9639](https://jira.mariadb.org/browse/MDEV-9639)).
 * The Aria log is not encrypted ([MDEV-8587](https://jira.mariadb.org/browse/MDEV-8587)). This affects only non-temporary Aria tables though.
 * The MariaDB [error log](../../../../server-management/server-monitoring-logs/error-log.md) is not encrypted. The error log can contain query text and data in some cases, including crashes, assertion failures, and cases where InnoDB write monitor output to the log to aid in debugging. It can be sent to syslog too, if needed.
@@ -83,7 +83,7 @@ Encryption occurs whenever MariaDB writes pages to disk. Encrypting table data r
 ### Encrypting Table Data
 
 
-MariaDB supports data-at-rest encryption for InnoDB and Aria storage engines. Additionally, it supports encrypting the [InnoDB redo log](../../../../ref/storage-engines/innodb/innodb-redo-log.md) and internal on-disk temporary tables that use the Aria storage engine..
+MariaDB supports data-at-rest encryption for InnoDB and Aria storage engines. Additionally, it supports encrypting the [InnoDB redo log](../../../../reference/storage-engines/innodb/innodb-redo-log.md) and internal on-disk temporary tables that use the Aria storage engine..
 
 
 * [Encrypting Data for InnoDB](innodb-encryption/innodb-encryption-overview.md)
@@ -96,13 +96,13 @@ MariaDB supports data-at-rest encryption for InnoDB and Aria storage engines. Ad
 MariaDB also creates temporary files on disk. For example, a binary log cache will be written to a temporary file if the binary log cache exceeds `[binlog_cache_size](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_cache_size)` or `[binlog_stmt_cache_size](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_stmt_cache_size)`, and temporary files are also often used for filesorts during query execution. Since [MariaDB 10.1.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes.md), these temporary files can also be encrypted if [encrypt_tmp_files=ON](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_files) is set.
 
 
-Since [MariaDB 10.1.27](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10127-release-notes.md), [MariaDB 10.2.9](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1029-release-notes.md) and [MariaDB 10.3.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md), temporary files created internally by InnoDB, such as those used for merge sorts and row logs can also be encrypted if [innodb_encrypt_log=ON](../../../../ref/storage-engines/innodb/innodb-system-variables.md) is set. These files are encrypted regardless of whether the tables involved are encrypted or not, and regardless of whether [encrypt_tmp_files](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_files) is set or not.
+Since [MariaDB 10.1.27](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10127-release-notes.md), [MariaDB 10.2.9](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1029-release-notes.md) and [MariaDB 10.3.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md), temporary files created internally by InnoDB, such as those used for merge sorts and row logs can also be encrypted if [innodb_encrypt_log=ON](../../../../reference/storage-engines/innodb/innodb-system-variables.md) is set. These files are encrypted regardless of whether the tables involved are encrypted or not, and regardless of whether [encrypt_tmp_files](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_files) is set or not.
 
 
 ### Encrypting Binary Logs
 
 
-MariaDB can also encrypt [binary logs](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) (including [relay logs](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md)).
+MariaDB can also encrypt [binary logs](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) (including [relay logs](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md)).
 
 
 * [Encrypting Binary Logs](encrypting-binary-logs.md)
@@ -129,8 +129,8 @@ We are grateful to these companies for their support of MariaDB!
 ## See Also
 
 
-* [Encryption functions](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/README.md)
-* [DES_DECRYPT()](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_decrypt.md)
-* [DES_ENCRYPT()](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt.md)
+* [Encryption functions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/README.md)
+* [DES_DECRYPT()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_decrypt.md)
+* [DES_ENCRYPT()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt.md)
 * A [blog post about table encryption](https://mariadb.com/blog/table-and-tablespace-encryption-mariadb-101/) with benchmark results
 

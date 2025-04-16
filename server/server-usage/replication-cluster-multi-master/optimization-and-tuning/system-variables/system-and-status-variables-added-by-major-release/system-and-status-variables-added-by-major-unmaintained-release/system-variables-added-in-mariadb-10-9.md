@@ -8,7 +8,7 @@ This is a list of [system variables](../../server-system-variables.md) that have
 | Variable | Added |
 | --- | --- |
 | Variable | Added |
-| [rocksdb_log_dir](../../../../../../ref/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_log_dir) | [MariaDB 10.9.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-1091-release-notes.md) |
+| [rocksdb_log_dir](../../../../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_log_dir) | [MariaDB 10.9.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-1091-release-notes.md) |
 | [wsrep_status_file](../../../../galera-cluster/galera-cluster-system-variables.md#wsrep_status_file) | [MariaDB 10.9.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-1091-release-notes.md) |
 
 

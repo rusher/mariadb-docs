@@ -5,7 +5,7 @@ Prepares a statement on the server.
 
 
 **Not all statements can be prepared**.
-See [PREPARE](../../../../../ref/sql-statements-and-structure/sql-statements/prepared-statements/prepare-statement.md#permitted-statements) for a list of statements that can be prepared.
+See [PREPARE](../../../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/prepare-statement.md#permitted-statements) for a list of statements that can be prepared.
 
 
 ### Implemented by

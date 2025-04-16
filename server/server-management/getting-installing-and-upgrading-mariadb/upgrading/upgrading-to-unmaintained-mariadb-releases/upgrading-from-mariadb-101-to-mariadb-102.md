@@ -23,7 +23,7 @@ The suggested upgrade procedure is:
   * On Debian, Ubuntu, and other similar Linux distributions, see [Updating the MariaDB APT repository to a New Major Release](../../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#updating-the-mariadb-apt-repository-to-a-new-major-release) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Updating the MariaDB YUM repository to a New Major Release](../../binary-packages/rpm/yum.md#updating-the-mariadb-yum-repository-to-a-new-major-release) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Updating the MariaDB ZYpp repository to a New Major Release](../../binary-packages/rpm/installing-mariadb-with-zypper.md#updating-the-mariadb-zypp-repository-to-a-new-major-release) for more information.
-1. Set `[innodb_fast_shutdown](../../../../ref/storage-engines/innodb/innodb-system-variables.md)` to `0`. It can be changed dynamically with `[SET GLOBAL](../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)`. For example: 
+1. Set `[innodb_fast_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md)` to `0`. It can be changed dynamically with `[SET GLOBAL](../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)`. For example: 
 `SET GLOBAL innodb_fast_shutdown=0;`
 
   * This step is not necessary when upgrading to [MariaDB 10.2.5](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1025-release-notes.md) or later. Omitting it can make the upgrade process far faster. See [MDEV-12289](https://jira.mariadb.org/browse/MDEV-12289) for more information.
@@ -47,7 +47,7 @@ The suggested upgrade procedure is:
 
   * `mysql_upgrade` does two things:
 
-    1. Ensures that the system tables in the `[mysq](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)l` database are fully compatible with the new version.
+    1. Ensures that the system tables in the `[mysq](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)l` database are fully compatible with the new version.
     1. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 
 
@@ -60,49 +60,49 @@ On most servers upgrading from 10.1 should be painless. However, there are some 
 #### InnoDB Instead of XtraDB
 
 
-[MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) uses [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) as the default storage engine, rather than XtraDB, used in [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and before. See [Why does MariaDB 10.2 use InnoDB instead of XtraDB?](/kb/en/why-does-mariadb-102-use-innodb-instead-of-xtradb/) In most cases this should have minimal effect as the latest InnoDB has incorporated most of the improvements made in earlier versions of XtraDB. Note that certain [XtraDB system variables](../../../../ref/storage-engines/innodb/innodb-system-variables.md) are now ignored (although they still exist so as to permit easy upgrading).
+[MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) uses [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) as the default storage engine, rather than XtraDB, used in [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and before. See [Why does MariaDB 10.2 use InnoDB instead of XtraDB?](/kb/en/why-does-mariadb-102-use-innodb-instead-of-xtradb/) In most cases this should have minimal effect as the latest InnoDB has incorporated most of the improvements made in earlier versions of XtraDB. Note that certain [XtraDB system variables](../../../../reference/storage-engines/innodb/innodb-system-variables.md) are now ignored (although they still exist so as to permit easy upgrading).
 
 
 #### Options That Have Changed Default Values
 
 
-In particular, take note of the changes to [innodb_strict_mode](../../../../ref/storage-engines/innodb/innodb-system-variables.md), [sql_mode](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode), [binlog_format](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md), [binlog_checksum](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) and [innodb_checksum_algorithm](../../../../ref/storage-engines/innodb/innodb-system-variables.md).
+In particular, take note of the changes to [innodb_strict_mode](../../../../reference/storage-engines/innodb/innodb-system-variables.md), [sql_mode](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode), [binlog_format](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md), [binlog_checksum](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) and [innodb_checksum_algorithm](../../../../reference/storage-engines/innodb/innodb-system-variables.md).
 
 
 
 | Option | Old default value | New default value |
 | --- | --- | --- |
 | Option | Old default value | New default value |
-| [aria_recover(_options)](../../../../ref/storage-engines/aria/aria-system-variables.md#aria_recover_options) | NORMAL | BACKUP, QUICK |
+| [aria_recover(_options)](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_recover_options) | NORMAL | BACKUP, QUICK |
 | [binlog_annotate_row_events](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) | OFF | ON |
 | [binlog_checksum](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) | NONE | CRC32 |
 | [binlog_format](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) | STATEMENT | MIXED |
 | [group_concat_max_len](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#group_concat_max_len) | 1024 | 1048576 |
-| [innodb_autoinc_lock_mode](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | 1 | 2 |
-| [innodb_buffer_pool_dump_at_shutdown](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | OFF | ON |
-| [innodb_buffer_pool_dump_pct](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | 100 | 25 |
-| [innodb_buffer_pool_instances](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | 8 | Varies |
-| [innodb_buffer_pool_load_at_startup](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | OFF | ON |
-| [innodb_checksum_algorithm](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | innodb | crc32 |
-| [innodb_file_format](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | Antelope | Barracuda |
-| [innodb_large_prefix](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | OFF | ON |
-| [innodb_lock_schedule_algorithm](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | VATS | FCFS |
-| [innodb_log_compressed_pages](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | OFF | ON |
-| [innodb_max_dirty_pages_pct_lwm](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | 0.001000 | 0 |
-| [innodb_max_undo_log_size](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | 1073741824 | 10485760 |
-| [innodb_purge_threads](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | 1 | 4 |
-| [innodb_strict_mode](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | OFF | ON |
-| [innodb_undo_directory](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | . | NULL |
-| [innodb_use_atomic_writes](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | OFF | ON |
-| [innodb_use_trim](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | OFF | ON |
+| [innodb_autoinc_lock_mode](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | 1 | 2 |
+| [innodb_buffer_pool_dump_at_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | OFF | ON |
+| [innodb_buffer_pool_dump_pct](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | 100 | 25 |
+| [innodb_buffer_pool_instances](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | 8 | Varies |
+| [innodb_buffer_pool_load_at_startup](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | OFF | ON |
+| [innodb_checksum_algorithm](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | innodb | crc32 |
+| [innodb_file_format](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Antelope | Barracuda |
+| [innodb_large_prefix](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | OFF | ON |
+| [innodb_lock_schedule_algorithm](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | VATS | FCFS |
+| [innodb_log_compressed_pages](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | OFF | ON |
+| [innodb_max_dirty_pages_pct_lwm](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | 0.001000 | 0 |
+| [innodb_max_undo_log_size](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | 1073741824 | 10485760 |
+| [innodb_purge_threads](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | 1 | 4 |
+| [innodb_strict_mode](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | OFF | ON |
+| [innodb_undo_directory](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | . | NULL |
+| [innodb_use_atomic_writes](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | OFF | ON |
+| [innodb_use_trim](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | OFF | ON |
 | [lock_wait_timeout](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lock_wait_timeout) | 31536000 | 86400 |
 | [log_slow_admin_statements](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_admin_statements) | OFF | ON |
 | [log_slow_slave_statements](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) | OFF | ON |
 | [log_warnings](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) | 1 | 2 |
 | [max_allowed_packet](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_allowed_packet) | 4M | 16M |
 | [max_long_data_size](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_long_data_size) | 4M | 16M |
-| [myisam_recover_options](../../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options) | NORMAL | BACKUP, QUICK |
-| [optimizer_switch](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_switch) | See [Optimizer Switch](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-procedures/optimizer_switch-helper-functions.md) for details. |
+| [myisam_recover_options](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options) | NORMAL | BACKUP, QUICK |
+| [optimizer_switch](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_switch) | See [Optimizer Switch](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-procedures/optimizer_switch-helper-functions.md) for details. |
 | [replicate_annotate_row_events](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) | OFF | ON |
 | [server_id](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) | 0 | 1 |
 | [slave_net_timeout](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) | 3600 | 60 |
@@ -123,27 +123,27 @@ The following options should be removed or renamed if you use them in your [opti
 | Option | Reason |
 | --- | --- |
 | Option | Reason |
-| aria_recover | Renamed to [aria_recover_options](../../../../ref/storage-engines/aria/aria-system-variables.md#aria_recover_options) to match [myisam_recover_options](../../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options). |
-| [innodb_additional_mem_pool_size](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | Deprecated in [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). |
-| [innodb_api_bk_commit_interval](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | Memcache never implemented in MariaDB. |
-| [innodb_api_disable_rowlock](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | Memcache never implemented in MariaDB. |
-| [innodb_api_enable_binlog](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | Memcache never implemented in MariaDB. |
-| [innodb_api_enable_mdl](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | Memcache never implemented in MariaDB. |
-| [|innodb_api_trx_level](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | Memcache never implemented in MariaDB. |
-| [innodb_use_sys_malloc](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | Deprecated in [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). |
+| aria_recover | Renamed to [aria_recover_options](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_recover_options) to match [myisam_recover_options](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options). |
+| [innodb_additional_mem_pool_size](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Deprecated in [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). |
+| [innodb_api_bk_commit_interval](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Memcache never implemented in MariaDB. |
+| [innodb_api_disable_rowlock](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Memcache never implemented in MariaDB. |
+| [innodb_api_enable_binlog](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Memcache never implemented in MariaDB. |
+| [innodb_api_enable_mdl](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Memcache never implemented in MariaDB. |
+| [|innodb_api_trx_level](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Memcache never implemented in MariaDB. |
+| [innodb_use_sys_malloc](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Deprecated in [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). |
 
 
 
 #### Reserved Words
 
 
-New [reserved words](../../../../ref/sql-statements-and-structure/sql-language-structure/reserved-words.md): OVER, RECURSIVE and ROWS. These can no longer be used as [identifiers](../../../../ref/sql-statements-and-structure/sql-language-structure/identifier-names.md) without being quoted.
+New [reserved words](../../../../reference/sql-statements-and-structure/sql-language-structure/reserved-words.md): OVER, RECURSIVE and ROWS. These can no longer be used as [identifiers](../../../../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md) without being quoted.
 
 
 #### TokuDB
 
 
-[TokuDB](../../../../ref/storage-engines/tokudb/tokudb-resources.md) has been split into a separate package, mariadb-plugin-tokudb.
+[TokuDB](../../../../reference/storage-engines/tokudb/tokudb-resources.md) has been split into a separate package, mariadb-plugin-tokudb.
 
 
 #### Replication
@@ -161,7 +161,7 @@ New [reserved words](../../../../ref/sql-statements-and-structure/sql-language-s
 #### Auto_increment
 
 
-[Auto_increment](../../../../ref/storage-engines/innodb/auto_increment-handling-in-innodb.md) columns are no longer permitted in [CHECK constraints](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/constraint.md), [DEFAULT value expressions](../../../../ref/sql-statements-and-structure/vectors/create-table-with-vectors.md#default) and [virtual columns](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md). They were permitted in earlier versions, but did not work correctly.
+[Auto_increment](../../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) columns are no longer permitted in [CHECK constraints](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/constraint.md), [DEFAULT value expressions](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#default) and [virtual columns](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md). They were permitted in earlier versions, but did not work correctly.
 
 
 #### TLS
@@ -176,10 +176,10 @@ Starting with [MariaDB 10.2](../../../../../release-notes/mariadb-community-serv
 You might consider using the following major new features in [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md):
 
 
-* [Window Functions](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/window-functions-overview.md)
+* [Window Functions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/window-functions-overview.md)
 * [mysqlbinlog](../../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) now supports continuous binary log backups
-* [Recursive Common Table Expressions](../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions/recursive-common-table-expressions-overview.md)
-* [JSON functions](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/README.md)
+* [Recursive Common Table Expressions](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions/recursive-common-table-expressions-overview.md)
+* [JSON functions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/README.md)
 * See also [System Variables Added in MariaDB 10.2](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-102.md).
 
 

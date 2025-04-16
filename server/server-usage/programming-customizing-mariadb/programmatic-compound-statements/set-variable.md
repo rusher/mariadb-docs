@@ -24,13 +24,13 @@ options that make sense only for system variables; in that case, the
 options are recognized but ignored.
 
 
-`SET` can be used with both [local variables](declare-variable.md) and [user-defined variables](../../../ref/sql-statements-and-structure/sql-language-structure/user-defined-variables.md).
+`SET` can be used with both [local variables](declare-variable.md) and [user-defined variables](../../../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md).
 
 
-When setting several variables using the columns returned by a query, `[SELECT INTO](../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile.md)` should be preferred.
+When setting several variables using the columns returned by a query, `[SELECT INTO](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile.md)` should be preferred.
 
 
-To set many variables to the same value, the `[LAST_VALUE( )](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_value.md)` function can be used.
+To set many variables to the same value, the `[LAST_VALUE( )](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_value.md)` function can be used.
 
 
 Below is an example of how a user-defined variable may be set:
@@ -44,6 +44,6 @@ SET @x = 1;
 
 
 * [SET](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md)
-* [SET STATEMENT](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-statement.md)
+* [SET STATEMENT](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-statement.md)
 * [DECLARE Variable](declare-variable.md)
 

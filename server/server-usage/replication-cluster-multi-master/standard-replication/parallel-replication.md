@@ -203,7 +203,7 @@ replication, since the actual commit steps of different transactions can run
 in parallel. This can be particularly effective on a replica with binlog enabled
 ([log_slave_updates=1](replication-and-binary-log-system-variables.md)), and more so if replica is configured
 to be crash-safe ([sync_binlog=1](replication-and-binary-log-system-variables.md) and
-[innodb_flush_log_at_trx_commit=1](../../../ref/storage-engines/innodb/innodb-system-variables.md)), as this makes [group commit](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) possible on the replica.
+[innodb_flush_log_at_trx_commit=1](../../../reference/storage-engines/innodb/innodb-system-variables.md)), as this makes [group commit](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) possible on the replica.
 
 
 #### Minimal Mode of In-Order Parallel Replication
@@ -294,7 +294,7 @@ Out-of-order parallel replication is disabled when
 ## Checking Worker Thread Status in SHOW PROCESSLIST
 
 
-The worker threads will be listed as "system user" in [SHOW PROCESSLIST](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md). Their
+The worker threads will be listed as "system user" in [SHOW PROCESSLIST](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md). Their
 state will show the query they are currently working on, or it can show one of
 these:
 
@@ -356,10 +356,10 @@ On the other hand, if set too low, the [SQL thread](replication-threads.md#slave
 +----+-------------+-----------+------+---------+--------+-----------------------------------------------+------------------+----------+
 ```
 
-The [slave_parallel_max_queued](replication-and-binary-log-system-variables.md) system variable does not define a hard limit, since the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) events that are currently executing always need to be held in-memory. This means that at least two events per [worker thread](replication-threads.md#worker-threads) can always be queued in-memory, regardless of the value of [slave_parallel_threads](replication-and-binary-log-system-variables.md).
+The [slave_parallel_max_queued](replication-and-binary-log-system-variables.md) system variable does not define a hard limit, since the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) events that are currently executing always need to be held in-memory. This means that at least two events per [worker thread](replication-threads.md#worker-threads) can always be queued in-memory, regardless of the value of [slave_parallel_threads](replication-and-binary-log-system-variables.md).
 
 
-Usually, the [slave_parallel_threads](replication-and-binary-log-system-variables.md) system variable should be set large enough that the [SQL thread](replication-threads.md#slave-sql-thread) is able to read far enough ahead in the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to exploit all possible parallelism. In normal operation, the replica will hopefully not be too far
+Usually, the [slave_parallel_threads](replication-and-binary-log-system-variables.md) system variable should be set large enough that the [SQL thread](replication-threads.md#slave-sql-thread) is able to read far enough ahead in the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to exploit all possible parallelism. In normal operation, the replica will hopefully not be too far
 behind, so there will not be a need to queue much data in-memory. The [slave_parallel_max_queued](replication-and-binary-log-system-variables.md) system variable could be set fairly high (eg. a few hundred kilobytes) to not limit throughtput. It should just be set low enough that total allocation of the parallel replica queue will not cause the server to run out of memory.
 
 

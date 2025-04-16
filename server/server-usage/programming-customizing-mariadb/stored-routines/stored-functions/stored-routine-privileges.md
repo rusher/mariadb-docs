@@ -7,23 +7,23 @@ It's important to give careful thought to the privileges associated with [stored
 ## Creating Stored Routines
 
 
-* To create a stored routine, the `[CREATE ROUTINE](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#database-privileges)` privilege is needed. The `[SUPER](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges)` privilege is required if a `DEFINER` is declared that's not the creator's account (see [DEFINER clause](#definer-clause) below). The `SUPER` privilege is also required if statement-based binary logging is used. See [Binary Logging of Stored Routines](../binary-logging-of-stored-routines.md) for more details.
+* To create a stored routine, the `[CREATE ROUTINE](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#database-privileges)` privilege is needed. The `[SUPER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges)` privilege is required if a `DEFINER` is declared that's not the creator's account (see [DEFINER clause](#definer-clause) below). The `SUPER` privilege is also required if statement-based binary logging is used. See [Binary Logging of Stored Routines](../binary-logging-of-stored-routines.md) for more details.
 
 
 ## Altering Stored Routines
 
 
-* To make changes to, or drop, a stored routine, the `[ALTER ROUTINE](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#function-privileges)` privilege is needed. The creator of a routine is temporarily granted this privilege if they attempt to change or drop a routine they created, unless the [automatic_sp_privileges](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges) variable is set to `0` (it defaults to 1).
+* To make changes to, or drop, a stored routine, the `[ALTER ROUTINE](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#function-privileges)` privilege is needed. The creator of a routine is temporarily granted this privilege if they attempt to change or drop a routine they created, unless the [automatic_sp_privileges](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges) variable is set to `0` (it defaults to 1).
 * The `SUPER` privilege is also required if statement-based binary logging is used. See [Binary Logging of Stored Routines](../binary-logging-of-stored-routines.md) for more details.
 
 
 ## Running Stored Routines
 
 
-* To run a stored routine, the `[EXECUTE](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#procedure-privileges)` privilege is needed. This is also temporarily granted to the creator if they attempt to run their routine unless the [automatic_sp_privileges](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges) variable is set to `0`.
+* To run a stored routine, the `[EXECUTE](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#procedure-privileges)` privilege is needed. This is also temporarily granted to the creator if they attempt to run their routine unless the [automatic_sp_privileges](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges) variable is set to `0`.
 * The `[SQL SECURITY clause](#sql-security-clause)` (by default `DEFINER`) specifies what privileges are used when a routine is called. If `SQL SECURITY` is `INVOKER`, the function body will be evaluated using the privileges of the user calling the function. If `SQL SECURITY` is `DEFINER`, the function body is always evaluated using the privileges of the definer account. `DEFINER` is the default. Thus, by default, users who can access the database associated with the stored routine can also run the routine, and potentially perform operations they wouldn't normally have permissions for.
-* The creator of a routine is the account that ran the `[CREATE FUNCTION](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)` or `[CREATE PROCEDURE](../stored-procedures/create-procedure.md)` statement, regardless of whether a `DEFINER` is provided. The definer is by default the creator unless otherwise specified.
-* The server automatically changes the privileges in the [mysql.proc](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table.md) table as required, but will not look out for manual changes.
+* The creator of a routine is the account that ran the `[CREATE FUNCTION](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)` or `[CREATE PROCEDURE](../stored-procedures/create-procedure.md)` statement, regardless of whether a `DEFINER` is provided. The definer is by default the creator unless otherwise specified.
+* The server automatically changes the privileges in the [mysql.proc](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table.md) table as required, but will not look out for manual changes.
 
 
 ### DEFINER Clause
@@ -47,7 +47,7 @@ As an example, let's assume a routine, created by a superuser who's specified as
 ## Dropping Stored Routines
 
 
-All privileges that are specific to a stored routine will be dropped when a [DROP FUNCTION](drop-function.md) or [DROP ROUTINE](https://mariadb.com/kb/en/drop-routine) is run. However, if a [CREATE OR REPLACE FUNCTION](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) or [CREATE OR REPLACE PROCEDURE](../stored-procedures/create-procedure.md) is used to drop and replace and the routine, any privileges specific to that routine will not be dropped.
+All privileges that are specific to a stored routine will be dropped when a [DROP FUNCTION](drop-function.md) or [DROP ROUTINE](https://mariadb.com/kb/en/drop-routine) is run. However, if a [CREATE OR REPLACE FUNCTION](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) or [CREATE OR REPLACE PROCEDURE](../stored-procedures/create-procedure.md) is used to drop and replace and the routine, any privileges specific to that routine will not be dropped.
 
 
 ## See Also

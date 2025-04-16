@@ -16,7 +16,7 @@ This statement fetches the next row (if a row exists) using the
 specified [open](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/qa-datasets/openstreetmap-dataset.md) [cursor](README.md), and advances the cursor pointer.
 
 
-`var_name` can be a [local variable](../declare-variable.md), but *not* a [user-defined variable](../../../../ref/sql-statements-and-structure/sql-language-structure/user-defined-variables.md).
+`var_name` can be a [local variable](../declare-variable.md), but *not* a [user-defined variable](../../../../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md).
 
 
 If no more rows are available, a No Data condition occurs with

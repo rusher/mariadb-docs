@@ -46,7 +46,7 @@ The suggested upgrade procedure is:
 
   * `mariadb-upgrade` does two things:
 
-    1. Ensures that the system tables in the [mysql](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database are fully compatible with the new version.
+    1. Ensures that the system tables in the [mysql](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database are fully compatible with the new version.
     1. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 
 
@@ -67,12 +67,12 @@ The following options should be removed or renamed if you use them in your [opti
 | --- | --- |
 | Option | Reason |
 | [debug_no_thread_alarm](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#debug_no_thread_alarm) | Unused code. |
-| [innodb_defragment](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment) | [Defragmenting InnoDB Tablespaces](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md) in this manner no longer supported. |
-| [innodb_defragment_fill_factor](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor) | [Defragmenting InnoDB Tablespaces](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md) in this manner no longer supported. |
-| [innodb_defragment_fill_factor_n_recs](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor_n_recs) | [Defragmenting InnoDB Tablespaces](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md) in this manner no longer supported. |
-| [innodb_defragment_frequency](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_frequency) | [Defragmenting InnoDB Tablespaces](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md) in this manner no longer supported. |
-| [innodb_defragment_n_pages](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages) | [Defragmenting InnoDB Tablespaces](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md) in this manner no longer supported. |
-| [innodb_defragment_stats_accuracy](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_stats_accuracy) | [Defragmenting InnoDB Tablespaces](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md) in this manner no longer supported. |
+| [innodb_defragment](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment) | [Defragmenting InnoDB Tablespaces](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md) in this manner no longer supported. |
+| [innodb_defragment_fill_factor](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor) | [Defragmenting InnoDB Tablespaces](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md) in this manner no longer supported. |
+| [innodb_defragment_fill_factor_n_recs](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor_n_recs) | [Defragmenting InnoDB Tablespaces](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md) in this manner no longer supported. |
+| [innodb_defragment_frequency](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_frequency) | [Defragmenting InnoDB Tablespaces](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md) in this manner no longer supported. |
+| [innodb_defragment_n_pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages) | [Defragmenting InnoDB Tablespaces](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md) in this manner no longer supported. |
+| [innodb_defragment_stats_accuracy](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_stats_accuracy) | [Defragmenting InnoDB Tablespaces](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md) in this manner no longer supported. |
 
 
 
@@ -84,7 +84,7 @@ The following options should be removed or renamed if you use them in your [opti
 | --- | --- | --- |
 | Option | Old default | New default |
 | [optimizer_switch](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_switch) |  | See [optimizer-switch](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/optimizer-switch.md). |
-| [innodb_purge_batch_size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_purge_batch_size) | 300 | 1000 |
+| [innodb_purge_batch_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_purge_batch_size) | 300 | 1000 |
 
 
 
@@ -112,7 +112,7 @@ The following options have been deprecated. They have not yet been removed, but 
 | Option | Reason |
 | --- | --- |
 | Option | Reason |
-| [innodb_purge_rseg_truncate_frequency](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_purge_rseg_truncate_frequency) | The motivation for introducing this in MySQL seems to have been to avoid stalls due to freeing undo log pages or truncating undo log tablespaces. In MariaDB, [innodb_undo_log_truncate=ON](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_undo_log_truncate) should be a much lighter operation because it will not involve any log checkpoint, hence this is deprecated and ignored |
+| [innodb_purge_rseg_truncate_frequency](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_purge_rseg_truncate_frequency) | The motivation for introducing this in MySQL seems to have been to avoid stalls due to freeing undo log pages or truncating undo log tablespaces. In MariaDB, [innodb_undo_log_truncate=ON](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_log_truncate) should be a much lighter operation because it will not involve any log checkpoint, hence this is deprecated and ignored |
 | [tx_isolation](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#tx_isolation) | Replaced with [transaction_isolation](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#transaction_isolation) to align the option and system variable. |
 | [tx_read_only](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#tx_read_only) | Replaced with [transaction_read_only](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#transaction_read_only) to align the option and system variable. |
 

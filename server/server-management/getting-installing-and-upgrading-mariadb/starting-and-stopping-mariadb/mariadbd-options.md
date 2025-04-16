@@ -118,7 +118,7 @@ other MariaDB and MySQL versions. Options that are also system variables are lis
 #### `-a, --ansi`
 
 
-* Description: Use ANSI SQL syntax instead of MariaDB syntax. This mode will also set [transaction isolation level](../../../ref/sql-statements-and-structure/sql-statements/transactions/set-transaction.md) [serializable](../../../ref/sql-statements-and-structure/sql-statements/transactions/set-transaction.md).
+* Description: Use ANSI SQL syntax instead of MariaDB syntax. This mode will also set [transaction isolation level](../../../reference/sql-statements-and-structure/sql-statements/transactions/set-transaction.md) [serializable](../../../reference/sql-statements-and-structure/sql-statements/transactions/set-transaction.md).
 
 
 
@@ -139,7 +139,7 @@ other MariaDB and MySQL versions. Options that are also system variables are lis
 #### `--safe-mode`
 
 
-* Description: Disable some potential unsafe optimizations. For 5.2, [INSERT DELAYED](../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) is disabled, [myisam_recover_options](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options) is set to DEFAULT (automatically recover crashed MyISAM files) and the [query cache](../../../ref/plugins/other-plugins/query-cache-information-plugin.md) is disabled. For [Aria](../../../ref/storage-engines/s3-storage-engine/aria_s3_copy.md) tables, disable bulk insert optimization to enable one to use [aria_read_log](../../../clients-and-utilities/aria-clients-and-utilities/aria_read_log.md) to recover tables even if tables are deleted (good for testing recovery).
+* Description: Disable some potential unsafe optimizations. For 5.2, [INSERT DELAYED](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) is disabled, [myisam_recover_options](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options) is set to DEFAULT (automatically recover crashed MyISAM files) and the [query cache](../../../reference/plugins/other-plugins/query-cache-information-plugin.md) is disabled. For [Aria](../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables, disable bulk insert optimization to enable one to use [aria_read_log](../../../clients-and-utilities/aria-clients-and-utilities/aria_read_log.md) to recover tables even if tables are deleted (good for testing recovery).
 
 
 
@@ -185,10 +185,10 @@ Options that are also system variables are listed after:
 #### `--language`
 
 
-* Description: This option can be used to set the server's language for error messages. This option can be specified either as a language name or as the path to the directory storing the language's [error message file](../../server-monitoring-logs/error-log.md#error-messages-file). See [Server Locales](../../../ref/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) for a list of supported locales and their associated languages.
+* Description: This option can be used to set the server's language for error messages. This option can be specified either as a language name or as the path to the directory storing the language's [error message file](../../server-monitoring-logs/error-log.md#error-messages-file). See [Server Locales](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) for a list of supported locales and their associated languages.
 
   * This option is deprecated. Use the `[lc_messages](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages)` and `[lc_messages_dir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir)` system variables instead.
-  * See [Setting the Language for Error Messages](../../../ref/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages.md) for more information.
+  * See [Setting the Language for Error Messages](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages.md) for more information.
 
 
 
@@ -285,7 +285,7 @@ The following options and system variables are related to using MariaDB on Windo
 ## Replication and Binary Logging Options
 
 
-The following options are related to [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) and the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Options that are also system variables are listed after:
+The following options are related to [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) and the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Options that are also system variables are listed after:
 
 
 #### `--abort-slave-event-count`
@@ -300,7 +300,7 @@ The following options are related to [replication](../../../ref/sql-statements-a
 
 
 * Commandline: `--binlog-do-db=name`
-* Description: This option allows you to configure a [replication master](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to write statements and transactions affecting databases that match a specified name into its [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Since the filtered statements or transactions will not be present in the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), its replicas will not be able to replicate them.
+* Description: This option allows you to configure a [replication master](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to write statements and transactions affecting databases that match a specified name into its [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Since the filtered statements or transactions will not be present in the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), its replicas will not be able to replicate them.
 
   * This option will not work with cross-database updates with [statement-based logging](../../server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-filters.md#statement-based-logging) section for more information.
   * This option can not be set dynamically. Available as a [system variable](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_do_db) from [MariaDB 11.2.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md).
@@ -313,7 +313,7 @@ The following options are related to [replication](../../../ref/sql-statements-a
 
 
 * Commandline: `--binlog-ignore-db=name`
-* Description: This option allows you to configure a [replication master](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to not write statements and transactions affecting databases that match a specified name into its [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Since the filtered statements or transactions will not be present in the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), its replicas will not be able to replicate them.
+* Description: This option allows you to configure a [replication master](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to not write statements and transactions affecting databases that match a specified name into its [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Since the filtered statements or transactions will not be present in the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), its replicas will not be able to replicate them.
 
   * This option will not work with cross-database updates with [statement-based logging](../../server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-filters.md#statement-based-logging) section for more information.
   * This option can not be set dynamically. Available as a [system variable](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_ignore_db) from [MariaDB 11.2.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md).
@@ -326,7 +326,7 @@ The following options are related to [replication](../../../ref/sql-statements-a
 
 
 * Commandline: `--binlog-row-event-max-size=#`
-* Description: The maximum size of a row-based [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) event in bytes. Rows will be grouped into events smaller than this size if possible. The value has to be a multiple of 256. Available as a [system variable](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_row_event_max_size) from [MariaDB 11.2.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md).
+* Description: The maximum size of a row-based [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) event in bytes. Rows will be grouped into events smaller than this size if possible. The value has to be a multiple of 256. Available as a [system variable](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_row_event_max_size) from [MariaDB 11.2.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md).
 * Default value `8192`
 
 
@@ -343,7 +343,7 @@ The following options are related to [replication](../../../ref/sql-statements-a
 
 
 * Commandline: `--flashback`
-* Description: Setup the server to use flashback. This enables the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and sets `binlog_format=ROW`.
+* Description: Setup the server to use flashback. This enables the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and sets `binlog_format=ROW`.
 
 
 
@@ -351,7 +351,7 @@ The following options are related to [replication](../../../ref/sql-statements-a
 
 
 * Commandline: `--init-rpl-role=name`
-* Description: Set the replication role. From [MariaDB 10.6.19](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-19-release-notes.md), [MariaDB 10.11.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes.md), [MariaDB 11.1.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes.md), [MariaDB 11.2.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes.md), [MariaDB 11.4.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-3-release-notes.md) and [MariaDB 11.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes.md), changes the condition for [semi-sync recovery](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md) to truncate the [binlog](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to instead use this option, when set to SLAVE. This allows for both [rpl_semi_sync_master_enabled](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_enabled) and [rpl_semi_sync_slave_enabled](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_slave_enabled) to be set for a primary that is restarted, and no transactions will be lost, so long as `--init-rpl-role` is not set to SLAVE. In earlier versions, for servers configured with both [rpl_semi_sync_master_enabled=1](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_enabled) and [rpl_semi_sync_slave_enabled=1](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_slave_enabled), if a primary is just re-started (i.e. retaining its role as primary), it can truncate its binlog to drop transactions which its replica(s) have already received and executed. If this happens, when the replica reconnects, its [gtid_slave_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) can be ahead of the recovered primary’s [gtid_binlog_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md), resulting in an error state where the replica’s state is ahead of the primary’s. See [-init-rpl-role](mariadbd-options.md#-init-rpl-role).
+* Description: Set the replication role. From [MariaDB 10.6.19](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-19-release-notes.md), [MariaDB 10.11.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes.md), [MariaDB 11.1.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes.md), [MariaDB 11.2.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes.md), [MariaDB 11.4.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-3-release-notes.md) and [MariaDB 11.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes.md), changes the condition for [semi-sync recovery](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md) to truncate the [binlog](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to instead use this option, when set to SLAVE. This allows for both [rpl_semi_sync_master_enabled](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_enabled) and [rpl_semi_sync_slave_enabled](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_slave_enabled) to be set for a primary that is restarted, and no transactions will be lost, so long as `--init-rpl-role` is not set to SLAVE. In earlier versions, for servers configured with both [rpl_semi_sync_master_enabled=1](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_enabled) and [rpl_semi_sync_slave_enabled=1](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_slave_enabled), if a primary is just re-started (i.e. retaining its role as primary), it can truncate its binlog to drop transactions which its replica(s) have already received and executed. If this happens, when the replica reconnects, its [gtid_slave_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) can be ahead of the recovered primary’s [gtid_binlog_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md), resulting in an error state where the replica’s state is ahead of the primary’s. See [-init-rpl-role](mariadbd-options.md#-init-rpl-role).
 * Valid values: Empty, `MASTER` or `SLAVE`
 
 
@@ -360,7 +360,7 @@ The following options are related to [replication](../../../ref/sql-statements-a
 
 
 * Commandline: `--log-basename=name`
-* Description: Basename for all log files and the .pid file. This sets all log file names at once (in 'datadir') and is normally the only option you need for specifying log files. This is especially recommended to be set if you are using [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) as it ensures that your log file names are not dependent on your host name. Sets names for the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), [relay log](../../server-monitoring-logs/binary-log/relay-log.md), [general query log](../../server-monitoring-logs/general-query-log.md), [slow query log](../../server-monitoring-logs/slow-query-log/slow-query-log-overview.md) and [error log](../../server-monitoring-logs/error-log.md). Note that if you explicity set log file names with any of these other options; [log-bin-index](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md), [relay-log](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md), [relay-log-index](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md), [general-log-file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file), [log_slow_query_file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query_file) ([slow_query_log_file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file)), [log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error), and [pid-file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#pid_file), these should be placed after `--log-basename` in the config files. Later settings override earlier settings, so `log-basename` will override any earlier log file name settings.
+* Description: Basename for all log files and the .pid file. This sets all log file names at once (in 'datadir') and is normally the only option you need for specifying log files. This is especially recommended to be set if you are using [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) as it ensures that your log file names are not dependent on your host name. Sets names for the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), [relay log](../../server-monitoring-logs/binary-log/relay-log.md), [general query log](../../server-monitoring-logs/general-query-log.md), [slow query log](../../server-monitoring-logs/slow-query-log/slow-query-log-overview.md) and [error log](../../server-monitoring-logs/error-log.md). Note that if you explicity set log file names with any of these other options; [log-bin-index](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md), [relay-log](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md), [relay-log-index](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md), [general-log-file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file), [log_slow_query_file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query_file) ([slow_query_log_file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file)), [log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error), and [pid-file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#pid_file), these should be placed after `--log-basename` in the config files. Later settings override earlier settings, so `log-basename` will override any earlier log file name settings.
 
 
 
@@ -384,9 +384,9 @@ The following options are related to [replication](../../../ref/sql-statements-a
 
 
 * Commandline: `--master-info-file=name`
-* Description: Name and location of the file on the replica where the `MASTER_LOG_FILE` and `MASTER_LOG_POS` options (i.e. the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position on the primary) and most other [CHANGE MASTER](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) options are written. The [replica's I/O thread](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#replica-io-thread) keeps this [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position updated as it downloads events.
+* Description: Name and location of the file on the replica where the `MASTER_LOG_FILE` and `MASTER_LOG_POS` options (i.e. the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position on the primary) and most other [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) options are written. The [replica's I/O thread](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#replica-io-thread) keeps this [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position updated as it downloads events.
 
-  * See [CHANGE MASTER TO: Option Persistence](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence) for more information.
+  * See [CHANGE MASTER TO: Option Persistence](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence) for more information.
 
 
 
@@ -501,14 +501,14 @@ The following options are related to [replication](../../../ref/sql-statements-a
 
 
 * Commandline: `--sysdate-is-now`
-* Description: Non-default option to alias [SYSDATE()](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/sysdate.md) to [NOW()](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/now.md) to make it safe for [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md). Since 5.0, SYSDATE() has returned a `dynamic' value different for different invocations, even within the same statement.
+* Description: Non-default option to alias [SYSDATE()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/sysdate.md) to [NOW()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/now.md) to make it safe for [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md). Since 5.0, SYSDATE() has returned a `dynamic' value different for different invocations, even within the same statement.
 
 
 
 ### Replication and Binary Logging Options and System Variables
 
 
-The following options and system variables are related to [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) and the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md):
+The following options and system variables are related to [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) and the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md):
 
 
 * [auto-increment-increment](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md)
@@ -693,7 +693,7 @@ Options that are also system variables are listed after:
 ### MyISAM Storage Engine Options
 
 
-The options related to the [MyISAM](../../../ref/storage-engines/myisam-storage-engine/README.md) storage engine are described below. Options that are also system variables are listed after:
+The options related to the [MyISAM](../../../reference/storage-engines/myisam-storage-engine/README.md) storage engine are described below. Options that are also system variables are listed after:
 
 
 #### `--log-isam`
@@ -707,7 +707,7 @@ The options related to the [MyISAM](../../../ref/storage-engines/myisam-storage-
 #### MyISAM Storage Engine Options and System Variables
 
 
-Some options and system variables related to the [MyISAM](../../../ref/storage-engines/myisam-storage-engine/README.md) storage engine can be found [here](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md). Direct links to many of them can be found below.
+Some options and system variables related to the [MyISAM](../../../reference/storage-engines/myisam-storage-engine/README.md) storage engine can be found [here](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md). Direct links to many of them can be found below.
 
 
 * [concurrent-insert](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#concurrent_insert)
@@ -715,21 +715,21 @@ Some options and system variables related to the [MyISAM](../../../ref/storage-e
 * [delayed-insert-timeout](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#delayed_insert_timeout)
 * [delayed-queue-size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#delayed_queue_size)
 * [keep-files-on-create](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#keep_files_on_create)
-* [key-buffer-size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)
-* [key-cache-age-threshold](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_age_threshold)
-* [key-cache-block-size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_block_size)
-* [key-cache-division-limit](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_division_limit)
-* [key-cache-file-hash-size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_file_hash_size)
-* [key-cache-segments](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_segments)
-* [myisam-block-size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-data-pointer-size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-max-sort-file-size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-mmap-size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-recover-options](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-repair-threads](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-sort-buffer-size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-stats-method](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-use-mmap](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md)
+* [key-buffer-size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)
+* [key-cache-age-threshold](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_age_threshold)
+* [key-cache-block-size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_block_size)
+* [key-cache-division-limit](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_division_limit)
+* [key-cache-file-hash-size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_file_hash_size)
+* [key-cache-segments](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_segments)
+* [myisam-block-size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
+* [myisam-data-pointer-size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
+* [myisam-max-sort-file-size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
+* [myisam-mmap-size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
+* [myisam-recover-options](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
+* [myisam-repair-threads](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
+* [myisam-sort-buffer-size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
+* [myisam-stats-method](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
+* [myisam-use-mmap](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
 
 
 ### InnoDB Storage Engine Options
@@ -889,305 +889,305 @@ The options related to the [InnoDB](../../../../general-resources/learning-and-t
 #### InnoDB Storage Engine Options and System Variables
 
 
-Some options and system variables related to the [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) storage engine can be found [here](../../../ref/storage-engines/innodb/innodb-system-variables.md). Direct links to many of them can be found below.
+Some options and system variables related to the [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) storage engine can be found [here](../../../reference/storage-engines/innodb/innodb-system-variables.md). Direct links to many of them can be found below.
 
 
-* [ignore-builtin-innodb](../../../ref/storage-engines/innodb/innodb-system-variables.md#ignore_builtin_innodb)
-* [innodb-adaptive-checkpoint](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_checkpoint)
-* [innodb-adaptive-flushing](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing)
-* [innodb-adaptive-flushing-lwm](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_lwm)
-* [innodb-adaptive-flushing-method](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_method)
-* [innodb-adaptive-hash-index](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index)
-* [innodb-adaptive-hash-index-partitions](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_partitions)
-* [innodb-adaptive-hash-index-parts](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_parts)
-* [innodb-adaptive-max-sleep-delay](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay)
-* [innodb-additional-mem-pool-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_additional_mem_pool_size)
-* [innodb-alter-copy-bulk](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_alter_copy_bulk)
-* [innodb-api-bk-commit-interval](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_api_bk_commit_interval)
-* [innodb-api-disable-rowlock](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_api_disable_rowlock)
-* [innodb-api-enable-binlog](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_binlog)
-* [innodb-api-enable-mdl](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_mdl)
-* [innodb-api-trx-level](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_api_trx_level)
-* [innodb-auto-lru-dump](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_auto_lru_dump)
-* [innodb-autoextend-increment](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_autoextend_increment)
-* [innodb-autoinc-lock-mode](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_autoinc_lock_mode)
-* [innodb-background-scrub-data-check-interval](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_check_interval)
-* [innodb-background-scrub-data-compressed](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_compressed)
-* [innodb-background-scrub-data-interval](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_interval)
-* [innodb-background-scrub-data-uncompressed](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_uncompressed)
-* [innodb-blocking-buffer-pool-restore](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_blocking_buffer_pool_restore)
-* [innodb-buf-dump-status-frequency](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buf_dump_status_frequency)
-* [innodb-buffer-pool-chunk-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_chunk_size)
-* [innodb-buffer-pool-dump-at-shutdown](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_at_shutdown)
-* [innodb-buffer-pool-dump-now](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_now)
-* [innodb-buffer-pool-dump-pct](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_pct)
-* [innodb-buffer-pool-evict](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_evict)
-* [innodb-buffer-pool-filename](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_filename)
-* [innodb-buffer-pool-instances](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances)
-* [innodb-buffer-pool-load-abort](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_abort)
-* [innodb-buffer-pool-load-at-startup](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_at_startup)
-* [innodb-buffer-pool-load-now](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_now)
-* [innodb-buffer-pool-load-pages-abort](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_pages_abort)
-* [innodb-buffer-pool-populate](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_populate)
-* [innodb-buffer-pool-restore-at-startup](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_restore_at_startup)
-* [innodb-buffer-pool-shm-checksum](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_shm_checksum)
-* [innodb-buffer-pool-shm-key](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_shm_key)
-* [innodb-buffer-pool-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size)
-* [innodb-change-buffer-max-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffer_max_size)
-* [innodb-change-buffering](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering)
-* [innodb-change-buffering-debug](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering_debug)
-* [innodb-checkpoint-age-target](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_checkpoint_age_target)
-* [innodb-checksum-algorithm](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm)
-* [innodb-checksums](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_checksums)
-* [innodb-cleaner-lsn-age-factor](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_cleaner_lsn_age_factor)
-* [innodb-cmp-per-index-enabled](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_cmp_per_index_enabled)
-* [innodb-commit-concurrency](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_commit_concurrency)
-* [innodb-compression-algorithm](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_compression_algorithm)
-* [innodb-compression-failure-threshold-pct](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_compression_failure_threshold_pct)
-* [innodb-compression-level](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_compression_level)
-* [innodb-compression-pad-pct-max](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_compression_pad_pct_max)
-* [innodb-concurrency-tickets](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_concurrency_tickets)
-* [innodb-corrupt-table-action](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_corrupt_table_action)
-* [innodb-data-file-buffering](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_buffering)
-* [innodb-data-file-path](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_path)
-* [innodb-data-file-write-through](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_write_through)
-* [innodb-data-home-dir](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_data_home_dir)
-* [innodb-deadlock-detect](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_detect)
-* [innodb-deadlock-report](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_report)
-* [innodb-default-encryption-key-id](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id)
-* [innodb-default-page-encryption-key](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_default_page_encryption_key)
-* [innodb-default-row-format](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_default_row_format)
-* [innodb-defragment](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment)
-* [innodb-defragment-fill-factor](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor)
-* [innodb-defragment-fill-factor-n-recs](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor_n_recs)
-* [innodb-defragment-frequency](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_frequency)
-* [innodb-defragment-n-pages](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages)
-* [innodb-defragment-stats-accuracy](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_stats_accuracy)
-* [innodb-dict-size-limit](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_dict_size_limit)
-* [innodb_disable_sort_file_cache](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_disable_sort_file_cache)
-* [innodb-doublewrite](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite)
-* [innodb-doublewrite-file](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite_file)
-* [innodb-empty-free-list-algorithm](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_empty_free_list_algorithm)
-* [innodb-enable-unsafe-group-commit](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_enable_unsafe_group_commit)
-* [innodb-encrypt-log](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log)
-* [innodb-encrypt-tables](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables)
-* [innodb-encrypt-temporary-tables](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables)
-* [innodb-encryption-rotate-key-age](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age)
-* [innodb-encryption-rotation_iops](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotation_iops)
-* [innodb-encryption-threads](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads)
-* [innodb-extra-rsegments](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_extra_rsegments)
-* [innodb-extra-undoslots](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_extra_undoslots)
-* [innodb-fake-changes](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fake_changes)
-* [innodb-fast-checksum](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fast_checksum)
-* [innodb-fast-shutdown](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
-* [innodb-fatal-semaphore-wait-threshold](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fatal_semaphore_wait_threshold)
-* [innodb-file-format](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_file_format)
-* [innodb-file-format-check](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_file_format_check)
-* [innodb-file-format-max](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_file_format_max)
-* [innodb-file-per-table](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table)
-* [innodb-fill-factor](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fill_factor)
-* [innodb-flush-log-at-trx-commit](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_log_at_trx_commit)
-* [innodb-flush-method](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_method)
-* [innodb-flush-neighbor-pages](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbor_pages)
-* [innodb-flush-neighbors](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbors)
-* [innodb-flush-sync](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_sync)
-* [innodb-flushing-avg-loops](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flushing_avg_loops)
-* [innodb-force-load-corrupted](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_force_load_corrupted)
-* [innodb-force-primary-key](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_force_primary_key)
-* [innodb-force-recovery](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery)
-* [innodb-foreground-preflush](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_foreground_preflush)
-* [innodb-ft-aux-table](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table)
-* [innodb-ft-cache-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_cache_size)
-* [innodb-ft-enable-diag-print](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_enable_diag_print)
-* [innodb-ft-enable-stopword](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_enable_stopword)
-* [innodb-ft-max-token-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_max_token_size)
-* [innodb-ft-min-token-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_min_token_size)
-* [innodb-ft-num-word-optimize](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_num_word_optimize)
-* [innodb-ft-result-cache-limit](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_result_cache_limit)
-* [innodb-ft-server-stopword-table](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_server_stopword_table)
-* [innodb-ft-sort-pll-degree](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_sort_pll_degree)
-* [innodb-ft-total-cache-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_total_cache_size)
-* [innodb-ft-user-stopword-table](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ft_user_stopword_table)
-* [innodb-ibuf-accel-rate](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_accel_rate)
-* [innodb-ibuf-active-contract](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_active_contract)
-* [innodb-ibuf-max-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_max_size)
-* [innodb-idle-flush-pct](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_idle_flush_pct)
-* [innodb-immediate-scrub-data-uncompressed](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_immediate_scrub_data_uncompressed)
-* [innodb-import-table-from-xtrabackup](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_import_table_from_xtrabackup)
-* [innodb-instant-alter-column-allowed](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_instant_alter_column_allowed)
-* [innodb-instrument-semaphores](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_instrument_semaphores)
-* [innodb-io-capacity](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_io_capacity)
-* [innodb-io-capacity-max](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_io_capacity_max)
-* [innodb-large-prefix](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_large_prefix)
-* [innodb-lazy-drop-table](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_lazy_drop_table)
-* [innodb-lock-schedule-algorithm](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_lock_schedule_algorithmt)
-* [innodb-locking-fake-changes](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_locking_fake_changes)
-* [innodb-locks-unsafe-for-binlog](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_locks_unsafe_for_binlog)
-* [innodb-log-arch-dir](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_arch_dir)
-* [innodb-log-arch-expire-sec](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_arch_expire_sec)
-* [innodb-log-archive](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_archive)
-* [innodb-log-block-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_block_size)
-* [innodb-log-buffer-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_buffer_size)
-* [innodb-log-checksum-algorithm](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_checksum_algorithm)
-* [innodb-log-checksums](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_checksums)
-* [innodb-log-compressed-pages](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_compressed_pages)
-* [innodb-log-file-buffering](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_buffering)
-* [innodb-log-file-mmap](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_mmap)
-* [innodb-log-file-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_size)
-* [innodb-log-file-write-through](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_write_through)
-* [innodb-log-files-in-group](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_files_in_group)
-* [innodb-log-group-home-dir](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_group_home_dir)
-* [innodb-log-optimize-ddl](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl)
-* [innodb-log-spin-wait-delay](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb-log_spin_wait_delay)
-* [innodb-log-write-ahead-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_write_ahead_size)
-* [innodb-lru-flush-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_lru_flush_size)
-* [innodb-lru-scan-depth](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_lru_scan_depth)
-* [innodb-max-bitmap-file-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_bitmap_file_size)
-* [innodb-max-changed-pages](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_changed_pages)
-* [innodb-max-dirty-pages-pct](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct)
-* [innodb-max-dirty-pages-pct-lwm](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct_lwm)
-* [innodb-max-purge-lag](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag)
-* [innodb-max-purge-lag-delay](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_delay)
-* [innodb-max-purge-lag-wait](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_wait)
-* [innodb-max-undo-log-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_max_undo_log_size)
-* [innodb-merge-sort-block-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_merge_sort_block_size)
-* [innodb-mirrored-log-groups](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_mirrored_log_groups)
-* [innodb-monitor-disable](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_disable)
-* [innodb-monitor-enable](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_enable)
-* [innodb-monitor-reset](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset)
-* [innodb-monitor-reset-all](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset_all)
-* [innodb-mtflush-threads](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_mtflush_threads)
-* [innodb-numa-interleave](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_numa_interleave)
-* [innodb-old-blocks-pct](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_pct)
-* [innodb-old-blocks-time](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_time)
-* [innodb-online-alter-log-max-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_online_alter_log_max_size)
-* [innodb-open-files](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_open_files)
-* [innodb-optimize-fulltext-only](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_optimize_fulltext_only)
-* [innodb-page-cleaners](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_page_cleaners)
-* [innodb-page-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_page_size)
-* [innodb-pass-corrupt-table](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_pass_corrupt_table)
-* [innodb-prefix-index-cluster-optimization](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_prefix_index_cluster_optimization)
-* [innodb-print-all-deadlocks](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_print_all_deadlocks)
-* [innodb-purge-batch-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_purge_batch_size)
-* [innodb-purge-rseg-truncate-frequency](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_purge_rseg_truncate_frequency)
-* [innodb-purge-threads](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_purge_threads)
-* [innodb-random-read-ahead](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_random_read_ahead)
-* [innodb-read-ahead](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead)
-* [innodb-read-ahead-threshold](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead_threshold)
-* [innodb-read-io-threads](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_read_io_threads)
-* [innodb-read-only](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_read_only)
-* [innodb-recovery-update-relay-log](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_recovery_update_relay_log)
-* [innodb-replication-delay](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_replication_delay)
-* [innodb-rollback-on-timeout](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_on_timeout)
-* [innodb-rollback-segments](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_segments)
-* [innodb-safe-truncate](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate)
-* [innodb-sched-priority-cleaner](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_sched_priority_cleaner)
-* [innodb-scrub-log](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log)
-* [innodb-scrub-log-interval](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_interval)
-* [innodb-scrub-log-speed](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_speed)
-* [innodb-show-locks-held](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_show_locks_held)
-* [innodb-show-verbose-locks](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_show_verbose_locks)
-* [innodb-snapshot-isolation](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation)
-* [innodb-sort-buffer-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_sort_buffer_size)
-* [innodb-spin-wait-delay](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_spin_wait_delay)
-* [innodb-stats-auto-recalc](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_recalc)
-* [innodb-stats-auto-update](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_update)
-* [innodb-stats-include-delete-marked](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_include_delete_marked)
-* [innodb-stats-method](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_method)
-* [innodb-stats-modified-counter](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_modified_counter)
-* [innodb-stats-on-metadata](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_on_metadata)
-* [innodb-stats-persistent](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent)
-* [innodb-stats-persistent-sample-pages](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent_sample_pages)
-* [innodb-stats-sample-pages](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_sample_pages)
-* [innodb-stats-transient-sample-pages](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_transient_sample_pages)
-* [innodb-stats-traditional](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_traditional)
-* [innodb-stats-update-need-lock](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_update_need_lock)
-* [innodb-status-output](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_status_output)
-* [innodb-status-output-locks](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_status_output_locks)
-* [innodb-strict-mode](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode)
-* [innodb-support-xa](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_support_xa)
-* [innodb-sync-array-size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_sync_array_size)
-* [innodb-sync-spin-loops](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_sync_spin_loops)
-* [innodb-table-locks](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_table_locks)
-* [innodb-temp-data-file-path](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_temp_data_file_path)
-* [innodb-thread-concurrency](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency)
-* [innodb-thread-concurrency-timer-based](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency_timer_based)
-* [innodb-thread-sleep-delay](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_thread_sleep_delay)
-* [innodb-tmpdir](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_tmpdir)
-* [innodb-track-changed-pages](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_track_changed_pages)
-* [innodb-track-redo-log-now](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_track_redo_log_now)
-* [innodb-truncate-temporary-tablespace-now](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_truncate_temporary_tablespace_now)
-* [innodb-undo-directory](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_undo_directory)
-* [innodb-undo-log-truncate](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_undo_log_truncate)
-* [innodb-undo-logs](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs)
-* [innodb-undo-tablespaces](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_undo_tablespaces)
-* [innodb-use-atomic-writes](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_atomic_writes)
-* [innodb-use-fallocate](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_fallocate)
-* [innodb-use-global-flush-log-at-trx-commit](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_global_flush_log_at_trx_commit)
-* [innodb-use-mtflush](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_mtflush)
-* [innodb-use-native_aio](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_native_aio)
-* [innodb-use-purge-thread](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_purge_thread)
-* [innodb-use-stacktrace](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_stacktrace)
-* [innodb-use-sys-malloc](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_sys_malloc)
-* [innodb-use-sys-stats-table](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_sys_stats_table)
-* [innodb-use-trim](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_trim)
-* [innodb-write-io-threads](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_write_io_threads)
+* [ignore-builtin-innodb](../../../reference/storage-engines/innodb/innodb-system-variables.md#ignore_builtin_innodb)
+* [innodb-adaptive-checkpoint](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_checkpoint)
+* [innodb-adaptive-flushing](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing)
+* [innodb-adaptive-flushing-lwm](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_lwm)
+* [innodb-adaptive-flushing-method](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_method)
+* [innodb-adaptive-hash-index](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index)
+* [innodb-adaptive-hash-index-partitions](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_partitions)
+* [innodb-adaptive-hash-index-parts](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_parts)
+* [innodb-adaptive-max-sleep-delay](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay)
+* [innodb-additional-mem-pool-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_additional_mem_pool_size)
+* [innodb-alter-copy-bulk](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_alter_copy_bulk)
+* [innodb-api-bk-commit-interval](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_bk_commit_interval)
+* [innodb-api-disable-rowlock](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_disable_rowlock)
+* [innodb-api-enable-binlog](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_binlog)
+* [innodb-api-enable-mdl](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_mdl)
+* [innodb-api-trx-level](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_trx_level)
+* [innodb-auto-lru-dump](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_auto_lru_dump)
+* [innodb-autoextend-increment](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_autoextend_increment)
+* [innodb-autoinc-lock-mode](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_autoinc_lock_mode)
+* [innodb-background-scrub-data-check-interval](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_check_interval)
+* [innodb-background-scrub-data-compressed](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_compressed)
+* [innodb-background-scrub-data-interval](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_interval)
+* [innodb-background-scrub-data-uncompressed](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_uncompressed)
+* [innodb-blocking-buffer-pool-restore](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_blocking_buffer_pool_restore)
+* [innodb-buf-dump-status-frequency](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buf_dump_status_frequency)
+* [innodb-buffer-pool-chunk-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_chunk_size)
+* [innodb-buffer-pool-dump-at-shutdown](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_at_shutdown)
+* [innodb-buffer-pool-dump-now](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_now)
+* [innodb-buffer-pool-dump-pct](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_pct)
+* [innodb-buffer-pool-evict](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_evict)
+* [innodb-buffer-pool-filename](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_filename)
+* [innodb-buffer-pool-instances](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances)
+* [innodb-buffer-pool-load-abort](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_abort)
+* [innodb-buffer-pool-load-at-startup](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_at_startup)
+* [innodb-buffer-pool-load-now](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_now)
+* [innodb-buffer-pool-load-pages-abort](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_pages_abort)
+* [innodb-buffer-pool-populate](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_populate)
+* [innodb-buffer-pool-restore-at-startup](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_restore_at_startup)
+* [innodb-buffer-pool-shm-checksum](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_shm_checksum)
+* [innodb-buffer-pool-shm-key](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_shm_key)
+* [innodb-buffer-pool-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size)
+* [innodb-change-buffer-max-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffer_max_size)
+* [innodb-change-buffering](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering)
+* [innodb-change-buffering-debug](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering_debug)
+* [innodb-checkpoint-age-target](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checkpoint_age_target)
+* [innodb-checksum-algorithm](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm)
+* [innodb-checksums](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksums)
+* [innodb-cleaner-lsn-age-factor](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_cleaner_lsn_age_factor)
+* [innodb-cmp-per-index-enabled](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_cmp_per_index_enabled)
+* [innodb-commit-concurrency](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_commit_concurrency)
+* [innodb-compression-algorithm](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_algorithm)
+* [innodb-compression-failure-threshold-pct](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_failure_threshold_pct)
+* [innodb-compression-level](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_level)
+* [innodb-compression-pad-pct-max](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_pad_pct_max)
+* [innodb-concurrency-tickets](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_concurrency_tickets)
+* [innodb-corrupt-table-action](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_corrupt_table_action)
+* [innodb-data-file-buffering](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_buffering)
+* [innodb-data-file-path](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_path)
+* [innodb-data-file-write-through](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_write_through)
+* [innodb-data-home-dir](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_home_dir)
+* [innodb-deadlock-detect](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_detect)
+* [innodb-deadlock-report](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_report)
+* [innodb-default-encryption-key-id](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id)
+* [innodb-default-page-encryption-key](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_page_encryption_key)
+* [innodb-default-row-format](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_row_format)
+* [innodb-defragment](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment)
+* [innodb-defragment-fill-factor](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor)
+* [innodb-defragment-fill-factor-n-recs](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor_n_recs)
+* [innodb-defragment-frequency](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_frequency)
+* [innodb-defragment-n-pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages)
+* [innodb-defragment-stats-accuracy](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_stats_accuracy)
+* [innodb-dict-size-limit](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_dict_size_limit)
+* [innodb_disable_sort_file_cache](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_disable_sort_file_cache)
+* [innodb-doublewrite](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite)
+* [innodb-doublewrite-file](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite_file)
+* [innodb-empty-free-list-algorithm](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_empty_free_list_algorithm)
+* [innodb-enable-unsafe-group-commit](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_enable_unsafe_group_commit)
+* [innodb-encrypt-log](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log)
+* [innodb-encrypt-tables](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables)
+* [innodb-encrypt-temporary-tables](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables)
+* [innodb-encryption-rotate-key-age](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age)
+* [innodb-encryption-rotation_iops](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotation_iops)
+* [innodb-encryption-threads](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads)
+* [innodb-extra-rsegments](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_extra_rsegments)
+* [innodb-extra-undoslots](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_extra_undoslots)
+* [innodb-fake-changes](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fake_changes)
+* [innodb-fast-checksum](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_checksum)
+* [innodb-fast-shutdown](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
+* [innodb-fatal-semaphore-wait-threshold](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fatal_semaphore_wait_threshold)
+* [innodb-file-format](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_format)
+* [innodb-file-format-check](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_format_check)
+* [innodb-file-format-max](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_format_max)
+* [innodb-file-per-table](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table)
+* [innodb-fill-factor](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fill_factor)
+* [innodb-flush-log-at-trx-commit](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_log_at_trx_commit)
+* [innodb-flush-method](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_method)
+* [innodb-flush-neighbor-pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbor_pages)
+* [innodb-flush-neighbors](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbors)
+* [innodb-flush-sync](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_sync)
+* [innodb-flushing-avg-loops](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flushing_avg_loops)
+* [innodb-force-load-corrupted](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_load_corrupted)
+* [innodb-force-primary-key](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_primary_key)
+* [innodb-force-recovery](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery)
+* [innodb-foreground-preflush](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_foreground_preflush)
+* [innodb-ft-aux-table](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table)
+* [innodb-ft-cache-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_cache_size)
+* [innodb-ft-enable-diag-print](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_enable_diag_print)
+* [innodb-ft-enable-stopword](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_enable_stopword)
+* [innodb-ft-max-token-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_max_token_size)
+* [innodb-ft-min-token-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_min_token_size)
+* [innodb-ft-num-word-optimize](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_num_word_optimize)
+* [innodb-ft-result-cache-limit](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_result_cache_limit)
+* [innodb-ft-server-stopword-table](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_server_stopword_table)
+* [innodb-ft-sort-pll-degree](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_sort_pll_degree)
+* [innodb-ft-total-cache-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_total_cache_size)
+* [innodb-ft-user-stopword-table](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_user_stopword_table)
+* [innodb-ibuf-accel-rate](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_accel_rate)
+* [innodb-ibuf-active-contract](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_active_contract)
+* [innodb-ibuf-max-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_max_size)
+* [innodb-idle-flush-pct](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_idle_flush_pct)
+* [innodb-immediate-scrub-data-uncompressed](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_immediate_scrub_data_uncompressed)
+* [innodb-import-table-from-xtrabackup](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_import_table_from_xtrabackup)
+* [innodb-instant-alter-column-allowed](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_instant_alter_column_allowed)
+* [innodb-instrument-semaphores](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_instrument_semaphores)
+* [innodb-io-capacity](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_io_capacity)
+* [innodb-io-capacity-max](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_io_capacity_max)
+* [innodb-large-prefix](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_large_prefix)
+* [innodb-lazy-drop-table](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_lazy_drop_table)
+* [innodb-lock-schedule-algorithm](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_lock_schedule_algorithmt)
+* [innodb-locking-fake-changes](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_locking_fake_changes)
+* [innodb-locks-unsafe-for-binlog](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_locks_unsafe_for_binlog)
+* [innodb-log-arch-dir](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_arch_dir)
+* [innodb-log-arch-expire-sec](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_arch_expire_sec)
+* [innodb-log-archive](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_archive)
+* [innodb-log-block-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_block_size)
+* [innodb-log-buffer-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_buffer_size)
+* [innodb-log-checksum-algorithm](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_checksum_algorithm)
+* [innodb-log-checksums](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_checksums)
+* [innodb-log-compressed-pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_compressed_pages)
+* [innodb-log-file-buffering](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_buffering)
+* [innodb-log-file-mmap](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_mmap)
+* [innodb-log-file-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_size)
+* [innodb-log-file-write-through](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_write_through)
+* [innodb-log-files-in-group](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_files_in_group)
+* [innodb-log-group-home-dir](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_group_home_dir)
+* [innodb-log-optimize-ddl](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl)
+* [innodb-log-spin-wait-delay](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb-log_spin_wait_delay)
+* [innodb-log-write-ahead-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_write_ahead_size)
+* [innodb-lru-flush-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_lru_flush_size)
+* [innodb-lru-scan-depth](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_lru_scan_depth)
+* [innodb-max-bitmap-file-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_bitmap_file_size)
+* [innodb-max-changed-pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_changed_pages)
+* [innodb-max-dirty-pages-pct](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct)
+* [innodb-max-dirty-pages-pct-lwm](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct_lwm)
+* [innodb-max-purge-lag](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag)
+* [innodb-max-purge-lag-delay](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_delay)
+* [innodb-max-purge-lag-wait](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_wait)
+* [innodb-max-undo-log-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_undo_log_size)
+* [innodb-merge-sort-block-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_merge_sort_block_size)
+* [innodb-mirrored-log-groups](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_mirrored_log_groups)
+* [innodb-monitor-disable](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_disable)
+* [innodb-monitor-enable](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_enable)
+* [innodb-monitor-reset](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset)
+* [innodb-monitor-reset-all](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset_all)
+* [innodb-mtflush-threads](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_mtflush_threads)
+* [innodb-numa-interleave](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_numa_interleave)
+* [innodb-old-blocks-pct](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_pct)
+* [innodb-old-blocks-time](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_time)
+* [innodb-online-alter-log-max-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_online_alter_log_max_size)
+* [innodb-open-files](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_open_files)
+* [innodb-optimize-fulltext-only](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_optimize_fulltext_only)
+* [innodb-page-cleaners](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_cleaners)
+* [innodb-page-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_size)
+* [innodb-pass-corrupt-table](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_pass_corrupt_table)
+* [innodb-prefix-index-cluster-optimization](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_prefix_index_cluster_optimization)
+* [innodb-print-all-deadlocks](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_print_all_deadlocks)
+* [innodb-purge-batch-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_purge_batch_size)
+* [innodb-purge-rseg-truncate-frequency](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_purge_rseg_truncate_frequency)
+* [innodb-purge-threads](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_purge_threads)
+* [innodb-random-read-ahead](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_random_read_ahead)
+* [innodb-read-ahead](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead)
+* [innodb-read-ahead-threshold](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead_threshold)
+* [innodb-read-io-threads](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_io_threads)
+* [innodb-read-only](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_only)
+* [innodb-recovery-update-relay-log](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_recovery_update_relay_log)
+* [innodb-replication-delay](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_replication_delay)
+* [innodb-rollback-on-timeout](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_on_timeout)
+* [innodb-rollback-segments](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_segments)
+* [innodb-safe-truncate](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate)
+* [innodb-sched-priority-cleaner](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_sched_priority_cleaner)
+* [innodb-scrub-log](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log)
+* [innodb-scrub-log-interval](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_interval)
+* [innodb-scrub-log-speed](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_speed)
+* [innodb-show-locks-held](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_show_locks_held)
+* [innodb-show-verbose-locks](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_show_verbose_locks)
+* [innodb-snapshot-isolation](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation)
+* [innodb-sort-buffer-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_sort_buffer_size)
+* [innodb-spin-wait-delay](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_spin_wait_delay)
+* [innodb-stats-auto-recalc](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_recalc)
+* [innodb-stats-auto-update](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_update)
+* [innodb-stats-include-delete-marked](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_include_delete_marked)
+* [innodb-stats-method](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_method)
+* [innodb-stats-modified-counter](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_modified_counter)
+* [innodb-stats-on-metadata](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_on_metadata)
+* [innodb-stats-persistent](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent)
+* [innodb-stats-persistent-sample-pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent_sample_pages)
+* [innodb-stats-sample-pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_sample_pages)
+* [innodb-stats-transient-sample-pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_transient_sample_pages)
+* [innodb-stats-traditional](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_traditional)
+* [innodb-stats-update-need-lock](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_update_need_lock)
+* [innodb-status-output](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_status_output)
+* [innodb-status-output-locks](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_status_output_locks)
+* [innodb-strict-mode](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode)
+* [innodb-support-xa](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_support_xa)
+* [innodb-sync-array-size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_sync_array_size)
+* [innodb-sync-spin-loops](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_sync_spin_loops)
+* [innodb-table-locks](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_table_locks)
+* [innodb-temp-data-file-path](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_temp_data_file_path)
+* [innodb-thread-concurrency](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency)
+* [innodb-thread-concurrency-timer-based](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency_timer_based)
+* [innodb-thread-sleep-delay](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_thread_sleep_delay)
+* [innodb-tmpdir](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_tmpdir)
+* [innodb-track-changed-pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_track_changed_pages)
+* [innodb-track-redo-log-now](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_track_redo_log_now)
+* [innodb-truncate-temporary-tablespace-now](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_truncate_temporary_tablespace_now)
+* [innodb-undo-directory](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_directory)
+* [innodb-undo-log-truncate](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_log_truncate)
+* [innodb-undo-logs](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs)
+* [innodb-undo-tablespaces](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_tablespaces)
+* [innodb-use-atomic-writes](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_atomic_writes)
+* [innodb-use-fallocate](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_fallocate)
+* [innodb-use-global-flush-log-at-trx-commit](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_global_flush_log_at_trx_commit)
+* [innodb-use-mtflush](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_mtflush)
+* [innodb-use-native_aio](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_native_aio)
+* [innodb-use-purge-thread](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_purge_thread)
+* [innodb-use-stacktrace](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_stacktrace)
+* [innodb-use-sys-malloc](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_sys_malloc)
+* [innodb-use-sys-stats-table](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_sys_stats_table)
+* [innodb-use-trim](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_trim)
+* [innodb-write-io-threads](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_write_io_threads)
 * [skip-innodb](#-innodb)
-* [skip-innodb-checksums](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_checksums)
-* [skip-innodb-doublewrite](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite)
+* [skip-innodb-checksums](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksums)
+* [skip-innodb-doublewrite](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite)
 
 
 ### Aria Storage Engine Options
 
 
-Options related to the [Aria](../../../ref/storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine are listed below:
+Options related to the [Aria](../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine are listed below:
 
 
 #### Aria Storage Engine Options and System Variables
 
 
-Some options and system variables related to the [Aria](../../../ref/storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine can be found [here](../../../ref/storage-engines/aria/aria-system-variables.md). Direct links to many of them can be found below.
+Some options and system variables related to the [Aria](../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine can be found [here](../../../reference/storage-engines/aria/aria-system-variables.md). Direct links to many of them can be found below.
 
 
-* [aria-block-size](../../../ref/storage-engines/aria/aria-system-variables.md#aria_block_size)
-* [aria-checkpoint-interval](../../../ref/storage-engines/aria/aria-system-variables.md#aria_checkpoint_interval)
-* [aria-checkpoint-log-activity](../../../ref/storage-engines/aria/aria-system-variables.md#aria_checkpoint_log_activity)
-* [aria-encrypt-tables](../../../ref/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)
-* [aria-force-start-after-recovery-failures](../../../ref/storage-engines/aria/aria-system-variables.md#aria_force_start_after_recovery_failures)
-* [aria-group-commit](../../../ref/storage-engines/aria/aria-system-variables.md#aria_group_commit)
-* [aria-group-commit-interval](../../../ref/storage-engines/aria/aria-system-variables.md#aria_group_commit_interval)
-* [aria-log-dir-path](../../../ref/storage-engines/aria/aria-system-variables.md#aria_log_dir_path)
-* [aria-log-file-size](../../../ref/storage-engines/aria/aria-system-variables.md#aria_log_file_size)
-* [aria-log-purge-type](../../../ref/storage-engines/aria/aria-system-variables.md#aria_log_purge_type)
-* [aria-max-sort-file-size](../../../ref/storage-engines/aria/aria-system-variables.md#aria_max_sort_file_size)
-* [aria-page-checksum](../../../ref/storage-engines/aria/aria-system-variables.md#aria_page_checksum)
-* [aria-pagecache-age-threshold](../../../ref/storage-engines/aria/aria-system-variables.md#aria_pagecache_age_threshold)
-* [aria-pagecache-buffer-size](../../../ref/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size)
-* [aria-pagecache-division-limit](../../../ref/storage-engines/aria/aria-system-variables.md#aria_pagecache_division_limit)
-* [aria-pagecache-file-hash-size](../../../ref/storage-engines/aria/aria-system-variables.md#aria_pagecache_file_hash_size)
-* [aria-recover](../../../ref/storage-engines/aria/aria-system-variables.md#aria_recover)
-* [aria-recover-options](../../../ref/storage-engines/aria/aria-system-variables.md#aria_recover_options)
-* [aria-repair-threads](../../../ref/storage-engines/aria/aria-system-variables.md#aria_repair_threads)
-* [aria-sort-buffer-size](../../../ref/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size)
-* [aria-stats-method](../../../ref/storage-engines/aria/aria-system-variables.md#aria_stats_method)
-* [aria-sync-log-dir](../../../ref/storage-engines/aria/aria-system-variables.md#aria_sync_log_dir)
-* [aria-used-for-temp-tables](../../../ref/storage-engines/aria/aria-system-variables.md#aria_used_for_temp_tables)
-* [deadlock-search-depth-long](../../../ref/storage-engines/aria/aria-system-variables.md#deadlock_search_depth_long)
-* [deadlock-search-depth-short](../../../ref/storage-engines/aria/aria-system-variables.md#deadlock_search_depth_short)
-* [deadlock-timeout-long](../../../ref/storage-engines/aria/aria-system-variables.md#deadlock_timeout_long)
-* [deadlock-timeout-short](../../../ref/storage-engines/aria/aria-system-variables.md#deadlock_timeout_short)
+* [aria-block-size](../../../reference/storage-engines/aria/aria-system-variables.md#aria_block_size)
+* [aria-checkpoint-interval](../../../reference/storage-engines/aria/aria-system-variables.md#aria_checkpoint_interval)
+* [aria-checkpoint-log-activity](../../../reference/storage-engines/aria/aria-system-variables.md#aria_checkpoint_log_activity)
+* [aria-encrypt-tables](../../../reference/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)
+* [aria-force-start-after-recovery-failures](../../../reference/storage-engines/aria/aria-system-variables.md#aria_force_start_after_recovery_failures)
+* [aria-group-commit](../../../reference/storage-engines/aria/aria-system-variables.md#aria_group_commit)
+* [aria-group-commit-interval](../../../reference/storage-engines/aria/aria-system-variables.md#aria_group_commit_interval)
+* [aria-log-dir-path](../../../reference/storage-engines/aria/aria-system-variables.md#aria_log_dir_path)
+* [aria-log-file-size](../../../reference/storage-engines/aria/aria-system-variables.md#aria_log_file_size)
+* [aria-log-purge-type](../../../reference/storage-engines/aria/aria-system-variables.md#aria_log_purge_type)
+* [aria-max-sort-file-size](../../../reference/storage-engines/aria/aria-system-variables.md#aria_max_sort_file_size)
+* [aria-page-checksum](../../../reference/storage-engines/aria/aria-system-variables.md#aria_page_checksum)
+* [aria-pagecache-age-threshold](../../../reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_age_threshold)
+* [aria-pagecache-buffer-size](../../../reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size)
+* [aria-pagecache-division-limit](../../../reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_division_limit)
+* [aria-pagecache-file-hash-size](../../../reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_file_hash_size)
+* [aria-recover](../../../reference/storage-engines/aria/aria-system-variables.md#aria_recover)
+* [aria-recover-options](../../../reference/storage-engines/aria/aria-system-variables.md#aria_recover_options)
+* [aria-repair-threads](../../../reference/storage-engines/aria/aria-system-variables.md#aria_repair_threads)
+* [aria-sort-buffer-size](../../../reference/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size)
+* [aria-stats-method](../../../reference/storage-engines/aria/aria-system-variables.md#aria_stats_method)
+* [aria-sync-log-dir](../../../reference/storage-engines/aria/aria-system-variables.md#aria_sync_log_dir)
+* [aria-used-for-temp-tables](../../../reference/storage-engines/aria/aria-system-variables.md#aria_used_for_temp_tables)
+* [deadlock-search-depth-long](../../../reference/storage-engines/aria/aria-system-variables.md#deadlock_search_depth_long)
+* [deadlock-search-depth-short](../../../reference/storage-engines/aria/aria-system-variables.md#deadlock_search_depth_short)
+* [deadlock-timeout-long](../../../reference/storage-engines/aria/aria-system-variables.md#deadlock_timeout_long)
+* [deadlock-timeout-short](../../../reference/storage-engines/aria/aria-system-variables.md#deadlock_timeout_short)
 
 
 ### MyRocks Storage Engine Options
 
 
-The options and system variables related to the [MyRocks](../../../ref/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) storage engine can be found [here](../../../ref/storage-engines/myrocks/myrocks-system-variables.md).
+The options and system variables related to the [MyRocks](../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) storage engine can be found [here](../../../reference/storage-engines/myrocks/myrocks-system-variables.md).
 
 
 ### S3 Storage Engine Options
 
 
-The options and system variables related to the [S3](../../../ref/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md) storage engine can be found [here](../../../ref/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md).
+The options and system variables related to the [S3](../../../reference/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md) storage engine can be found [here](../../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md).
 
 
 ### CONNECT Storage Engine Options
@@ -1199,57 +1199,57 @@ The options related to the [CONNECT](../../../../connectors/mariadb-connector-no
 #### CONNECT Storage Engine Options and System Variables
 
 
-Some options and system variables related to the [CONNECT](../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) storage engine can be found [here](../../../ref/storage-engines/connect/connect-system-variables.md). Direct links to many of them can be found below.
+Some options and system variables related to the [CONNECT](../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) storage engine can be found [here](../../../reference/storage-engines/connect/connect-system-variables.md). Direct links to many of them can be found below.
 
 
-* [connect-class-path](../../../ref/storage-engines/connect/connect-system-variables.md#connect_class_path)
-* [connect-cond-push](../../../ref/storage-engines/connect/connect-system-variables.md#connect_cond_push)
-* [connect-conv-size](../../../ref/storage-engines/connect/connect-system-variables.md#connect_conv_size)
-* [connect-default-depth](../../../ref/storage-engines/connect/connect-system-variables.md#connect_default_depth)
-* [connect-default-prec](../../../ref/storage-engines/connect/connect-system-variables.md#connect_default_prec)
-* [connect-enable-mongo](../../../ref/storage-engines/connect/connect-system-variables.md#connect_enable_mongo)
-* [connect-exact-info](../../../ref/storage-engines/connect/connect-system-variables.md#connect_exact_info)
-* [connect-force_bson](../../../ref/storage-engines/connect/connect-system-variables.md#connect_force_bson)
-* [connect-indx-map](../../../ref/storage-engines/connect/connect-system-variables.md#connect_indx_map)
-* [connect-java-wrapper](../../../ref/storage-engines/connect/connect-system-variables.md#connect_java_wrapper)
-* [connect-json-all-path](../../../ref/storage-engines/connect/connect-system-variables.md#connect_json_all_path)
-* [connect-json-grp-size](../../../ref/storage-engines/connect/connect-system-variables.md#connect_json_grp_size)
-* [connect-json-null](../../../ref/storage-engines/connect/connect-system-variables.md#connect_json_null)
-* [connect-jvm-path](../../../ref/storage-engines/connect/connect-system-variables.md#connect_jvm_path)
-* [connect-type-conv](../../../ref/storage-engines/connect/connect-system-variables.md#connect_type_conv)
-* [connect-use-tempfile](../../../ref/storage-engines/connect/connect-system-variables.md#connect_use_tempfile)
-* [connect-work-size](../../../ref/storage-engines/connect/connect-system-variables.md#connect_work_size)
-* [connect-xtrace](../../../ref/storage-engines/connect/connect-system-variables.md#connect_xtrace)
+* [connect-class-path](../../../reference/storage-engines/connect/connect-system-variables.md#connect_class_path)
+* [connect-cond-push](../../../reference/storage-engines/connect/connect-system-variables.md#connect_cond_push)
+* [connect-conv-size](../../../reference/storage-engines/connect/connect-system-variables.md#connect_conv_size)
+* [connect-default-depth](../../../reference/storage-engines/connect/connect-system-variables.md#connect_default_depth)
+* [connect-default-prec](../../../reference/storage-engines/connect/connect-system-variables.md#connect_default_prec)
+* [connect-enable-mongo](../../../reference/storage-engines/connect/connect-system-variables.md#connect_enable_mongo)
+* [connect-exact-info](../../../reference/storage-engines/connect/connect-system-variables.md#connect_exact_info)
+* [connect-force_bson](../../../reference/storage-engines/connect/connect-system-variables.md#connect_force_bson)
+* [connect-indx-map](../../../reference/storage-engines/connect/connect-system-variables.md#connect_indx_map)
+* [connect-java-wrapper](../../../reference/storage-engines/connect/connect-system-variables.md#connect_java_wrapper)
+* [connect-json-all-path](../../../reference/storage-engines/connect/connect-system-variables.md#connect_json_all_path)
+* [connect-json-grp-size](../../../reference/storage-engines/connect/connect-system-variables.md#connect_json_grp_size)
+* [connect-json-null](../../../reference/storage-engines/connect/connect-system-variables.md#connect_json_null)
+* [connect-jvm-path](../../../reference/storage-engines/connect/connect-system-variables.md#connect_jvm_path)
+* [connect-type-conv](../../../reference/storage-engines/connect/connect-system-variables.md#connect_type_conv)
+* [connect-use-tempfile](../../../reference/storage-engines/connect/connect-system-variables.md#connect_use_tempfile)
+* [connect-work-size](../../../reference/storage-engines/connect/connect-system-variables.md#connect_work_size)
+* [connect-xtrace](../../../reference/storage-engines/connect/connect-system-variables.md#connect_xtrace)
 
 
 ### Spider Storage Engine Options
 
 
-The options and system variables related to the [Spider](../../../ref/storage-engines/spider/spider-functions/spider_copy_tables.md) storage engine can be found [here](../../../ref/storage-engines/spider/spider-system-variables.md).
+The options and system variables related to the [Spider](../../../reference/storage-engines/spider/spider-functions/spider_copy_tables.md) storage engine can be found [here](../../../reference/storage-engines/spider/spider-system-variables.md).
 
 
 ### Mroonga Storage Engine Options
 
 
-The options and system variables related to the [Mroonga](../../../ref/storage-engines/mroonga/mroonga-user-defined-functions/mroonga_snippet_html.md) storage engine can be found [here](../../../ref/storage-engines/mroonga/mroonga-system-variables.md).
+The options and system variables related to the [Mroonga](../../../reference/storage-engines/mroonga/mroonga-user-defined-functions/mroonga_snippet_html.md) storage engine can be found [here](../../../reference/storage-engines/mroonga/mroonga-system-variables.md).
 
 
 ### TokuDB Storage Engine Options
 
 
-The options and system variables related to the [TokuDB](../../../ref/storage-engines/tokudb/tokudb-resources.md) storage engine can be found [here](../../../ref/storage-engines/tokudb/tokudb-system-variables.md).
+The options and system variables related to the [TokuDB](../../../reference/storage-engines/tokudb/tokudb-resources.md) storage engine can be found [here](../../../reference/storage-engines/tokudb/tokudb-system-variables.md).
 
 
 ### Vector Options
 
 
-The options and system variables related to [Vectors](../../../ref/sql-statements-and-structure/vectors/README.md) storage engine (beginning with `mhnsw`) can be found [here](../../../ref/sql-statements-and-structure/vectors/vector-system-variables.md).
+The options and system variables related to [Vectors](../../../reference/sql-statements-and-structure/vectors/README.md) storage engine (beginning with `mhnsw`) can be found [here](../../../reference/sql-statements-and-structure/vectors/vector-system-variables.md).
 
 
 ## Performance Schema Options
 
 
-The options related to the [Performance Schema](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md) are described below. Options that are also system variables are listed after:
+The options related to the [Performance Schema](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md) are described below. Options that are also system variables are listed after:
 
 
 
@@ -1259,7 +1259,7 @@ The options related to the [Performance Schema](../../../ref/sql-statements-and-
 
 
 * Commandline: `--performance-schema-consumer-events-stages-current`
-* Description: Enable the [events-stages-current](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_current-table.md) consumer.
+* Description: Enable the [events-stages-current](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_current-table.md) consumer.
 * Default: `OFF`
 
 
@@ -1268,7 +1268,7 @@ The options related to the [Performance Schema](../../../ref/sql-statements-and-
 
 
 * Commandline: `--performance-schema-consumer-events-stages-history`
-* Description: Enable the [events-stages-history](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history-table.md) consumer.
+* Description: Enable the [events-stages-history](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history-table.md) consumer.
 * Default: `OFF`
 
 
@@ -1277,7 +1277,7 @@ The options related to the [Performance Schema](../../../ref/sql-statements-and-
 
 
 * Commandline: `--performance-schema-consumer-events-stages-history-long`
-* Description: Enable the [events-stages-history-long](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history_long-table.md) consumer.
+* Description: Enable the [events-stages-history-long](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history_long-table.md) consumer.
 * Default: `OFF`
 
 
@@ -1286,7 +1286,7 @@ The options related to the [Performance Schema](../../../ref/sql-statements-and-
 
 
 * Commandline: `--performance-schema-consumer-events-statements-current`
-* Description: Enable the [events-statements-current](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_current-table.md) consumer. Use `--skip-performance-schema-consumer-events-statements-current` to disable.
+* Description: Enable the [events-statements-current](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_current-table.md) consumer. Use `--skip-performance-schema-consumer-events-statements-current` to disable.
 * Default: `ON`
 
 
@@ -1295,7 +1295,7 @@ The options related to the [Performance Schema](../../../ref/sql-statements-and-
 
 
 * Commandline: `--performance-schema-consumer-events-statements-history`
-* Description: Enable the [events-statements-history](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history-table.md) consumer.
+* Description: Enable the [events-statements-history](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history-table.md) consumer.
 * Default: `OFF`
 
 
@@ -1304,7 +1304,7 @@ The options related to the [Performance Schema](../../../ref/sql-statements-and-
 
 
 * Commandline: `--performance-schema-consumer-events-statements-history-long`
-* Description: Enable the [events-statements-history-long](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history_long-table.md) consumer.
+* Description: Enable the [events-statements-history-long](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history_long-table.md) consumer.
 * Default: `OFF`
 
 
@@ -1313,7 +1313,7 @@ The options related to the [Performance Schema](../../../ref/sql-statements-and-
 
 
 * Commandline: `--performance-schema-consumer-events-waits-current`
-* Description: Enable the [events-waits-current](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_current-table.md) consumer.
+* Description: Enable the [events-waits-current](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_current-table.md) consumer.
 * Default: `OFF`
 
 
@@ -1322,7 +1322,7 @@ The options related to the [Performance Schema](../../../ref/sql-statements-and-
 
 
 * Commandline: `--performance-schema-consumer-events-waits-history`
-* Description: Enable the [events-waits-history](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history-table.md) consumer.
+* Description: Enable the [events-waits-history](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history-table.md) consumer.
 * Default: `OFF`
 
 
@@ -1331,7 +1331,7 @@ The options related to the [Performance Schema](../../../ref/sql-statements-and-
 
 
 * Commandline: `--performance-schema-consumer-events-waits-history-long`
-* Description: Enable the [events-waits-history-long](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history_long-table.md) consumer.
+* Description: Enable the [events-waits-history-long](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history_long-table.md) consumer.
 * Default: `OFF`
 
 
@@ -1386,47 +1386,47 @@ The options related to the [Performance Schema](../../../ref/sql-statements-and-
 ### Performance Schema Options and System Variables
 
 
-Some options and system variables related to the [Performance Schema](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md) can be found [here](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md). Direct links to many of them can be found below.
+Some options and system variables related to the [Performance Schema](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md) can be found [here](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md). Direct links to many of them can be found below.
 
 
-* [performance-schema](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema)
-* [performance-schema-accounts-size](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_accounts_size)
-* [performance-schema-digests-size](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_digests_size)
-* [performance-schema-events-stages-history-long-size](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_stages_history_long_size)
-* [performance-schema-events-stages-history-size](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_stages_history_size)
-* [performance-schema-events-statements-history-long-size](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_statements_history_long_size)
-* [performance-schema-events-statements-history-size](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_statements_history_size)
-* [performance-schema-events-waits-history-long-size](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_waits_history_long_size)
-* [performance-schema-events-waits-history-size](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_waits_history_size)
-* [performance-schema-hosts-size](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_hosts_size)
-* [performance-schema-max-cond-classes](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_classes)
-* [performance-schema-max-cond-instances](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_instances)
-* [performance-schema-max-digest-length](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_digest_length)
-* [performance-schema-max-file-classes](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_classes)
-* [performance-schema-max-file-handles](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_handles)
-* [performance-schema-max-file-instances](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_instances)
-* [performance-schema-max-mutex-classes](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_classes)
-* [performance-schema-max-mutex-instances](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_instances)
-* [performance-schema-max-rwlock-classes](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_classes)
-* [performance-schema-max-rwlock-instances](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_instances)
-* [performance-schema-max-socket-classes](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_socket_classes)
-* [performance-schema-max-socket-instances](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_socket_instances)
-* [performance-schema-max-stage-classes](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_stage_classes)
-* [performance-schema-max-statement-classes](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_statement_classes)
-* [performance-schema-max-table-handles](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_handles)
-* [performance-schema-max-table-instances](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_instances)
-* [performance-schema-max-thread-classes](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_thread_classes)
-* [performance-schema-max-thread-instances](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_thread_instances)
-* [performance-schema-session-connect-attrs-size](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_session_connect_attrs_size)
-* [performance-schema-setup-actors-size](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_actors_size)
-* [performance-schema-setup-objects-size](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_objects_size)
-* [performance-schema-users-size](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_users_size)
+* [performance-schema](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema)
+* [performance-schema-accounts-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_accounts_size)
+* [performance-schema-digests-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_digests_size)
+* [performance-schema-events-stages-history-long-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_stages_history_long_size)
+* [performance-schema-events-stages-history-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_stages_history_size)
+* [performance-schema-events-statements-history-long-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_statements_history_long_size)
+* [performance-schema-events-statements-history-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_statements_history_size)
+* [performance-schema-events-waits-history-long-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_waits_history_long_size)
+* [performance-schema-events-waits-history-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_waits_history_size)
+* [performance-schema-hosts-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_hosts_size)
+* [performance-schema-max-cond-classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_classes)
+* [performance-schema-max-cond-instances](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_instances)
+* [performance-schema-max-digest-length](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_digest_length)
+* [performance-schema-max-file-classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_classes)
+* [performance-schema-max-file-handles](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_handles)
+* [performance-schema-max-file-instances](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_instances)
+* [performance-schema-max-mutex-classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_classes)
+* [performance-schema-max-mutex-instances](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_instances)
+* [performance-schema-max-rwlock-classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_classes)
+* [performance-schema-max-rwlock-instances](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_instances)
+* [performance-schema-max-socket-classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_socket_classes)
+* [performance-schema-max-socket-instances](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_socket_instances)
+* [performance-schema-max-stage-classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_stage_classes)
+* [performance-schema-max-statement-classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_statement_classes)
+* [performance-schema-max-table-handles](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_handles)
+* [performance-schema-max-table-instances](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_instances)
+* [performance-schema-max-thread-classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_thread_classes)
+* [performance-schema-max-thread-instances](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_thread_instances)
+* [performance-schema-session-connect-attrs-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_session_connect_attrs_size)
+* [performance-schema-setup-actors-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_actors_size)
+* [performance-schema-setup-objects-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_objects_size)
+* [performance-schema-users-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_users_size)
 
 
 ## Galera Cluster Options
 
 
-The options related to [Galera Cluster](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) are described below. Options that are also system variables are listed after:
+The options related to [Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) are described below. Options that are also system variables are listed after:
 
 
 #### `--wsrep-new-cluster`
@@ -1440,7 +1440,7 @@ The options related to [Galera Cluster](../../../ref/sql-statements-and-structur
 ### Galera Cluster Options and System Variables
 
 
-Some options and system variables related to [Galera Cluster](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) can be found [here](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md). Direct links to many of them can be found below.
+Some options and system variables related to [Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) can be found [here](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md). Direct links to many of them can be found below.
 
 
 * [wsrep-allowlist](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_allowlist)
@@ -1507,7 +1507,7 @@ Some options and system variables related to [Galera Cluster](../../../ref/sql-s
 #### `--debug-binlog-fsync-sleep`
 
 
-* Description: `--debug-binlog-fsync-sleep=#`If not set to zero, sets the number of micro-seconds to sleep after running fsync() on the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to flush transactions to disk. This can thus be used to artificially increase the perceived cost of such an fsync().
+* Description: `--debug-binlog-fsync-sleep=#`If not set to zero, sets the number of micro-seconds to sleep after running fsync() on the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to flush transactions to disk. This can thus be used to artificially increase the perceived cost of such an fsync().
 
 
 
@@ -1610,7 +1610,7 @@ Options that are also system variables are listed after:
 
 
 * Commandline: `--des-key-file=name`
-* Description: Load keys for [des_encrypt()](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt.md) and des_encrypt from given file.
+* Description: Load keys for [des_encrypt()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt.md) and des_encrypt from given file.
 
 
 
@@ -1677,7 +1677,7 @@ Options that are also system variables are listed after:
 
 
 * Commandline: `--log-tc=name`
-* Description: Defines the path to the memory-mapped file-based transaction coordinator log, which is only used if the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is disabled. If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available. See [Transaction Coordinator Log](../../server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md) for more information. Also see the the `[log_tc_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_tc_size)` system variable and the `[--tc-heuristic-recover](#-tc-heuristic-recover)` option.
+* Description: Defines the path to the memory-mapped file-based transaction coordinator log, which is only used if the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is disabled. If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available. See [Transaction Coordinator Log](../../server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md) for more information. Also see the the `[log_tc_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_tc_size)` system variable and the `[--tc-heuristic-recover](#-tc-heuristic-recover)` option.
 * Default Value: `tc.log`
 
 
@@ -1724,8 +1724,8 @@ Options that are also system variables are listed after:
   * Plugins can be specified in the format `name=library`, where `name` is the plugin name and `library` is the plugin library. This format installs a single plugin from the given plugin library.
   * Plugins can also be specified in the format `library`, where `library` is the plugin library. This format installs all plugins from the given plugin library.
   * Multiple plugins can be specified by separating them with semicolons.
-* Special care must be taken when specifying the `[--plugin-load](mariadbd-options.md#-plugin-load)` option multiple times, or when specifying both the `[--plugin-load](mariadbd-options.md#-plugin-load)` option and the `[--plugin-load-add](mariadbd-options.md#-plugin-load-add)` option together. The `[--plugin-load](mariadbd-options.md#-plugin-load)` option resets the plugin load list, and this can cause unexpected problems if you are not aware. The `[--plugin-load-add](mariadbd-options.md#-plugin-load-add)` option does not reset the plugin load list, so it is much safer to use. See [Plugin Overview: Specifying Multiple Plugin Load Options](../../../ref/plugins/plugin-overview.md#specifying-multiple-plugin-load-options) for more information.
-* See [Plugin Overview: Installing a Plugin with Plugin Load Options](../../../ref/plugins/plugin-overview.md#installing-a-plugin-with-plugin-load-options) for more information.
+* Special care must be taken when specifying the `[--plugin-load](mariadbd-options.md#-plugin-load)` option multiple times, or when specifying both the `[--plugin-load](mariadbd-options.md#-plugin-load)` option and the `[--plugin-load-add](mariadbd-options.md#-plugin-load-add)` option together. The `[--plugin-load](mariadbd-options.md#-plugin-load)` option resets the plugin load list, and this can cause unexpected problems if you are not aware. The `[--plugin-load-add](mariadbd-options.md#-plugin-load-add)` option does not reset the plugin load list, so it is much safer to use. See [Plugin Overview: Specifying Multiple Plugin Load Options](../../../reference/plugins/plugin-overview.md#specifying-multiple-plugin-load-options) for more information.
+* See [Plugin Overview: Installing a Plugin with Plugin Load Options](../../../reference/plugins/plugin-overview.md#installing-a-plugin-with-plugin-load-options) for more information.
 
 
 
@@ -1738,8 +1738,8 @@ Options that are also system variables are listed after:
   * Plugins can be specified in the format `name=library`, where `name` is the plugin name and `library` is the plugin library. This format installs a single plugin from the given plugin library.
   * Plugins can also be specified in the format `library`, where `library` is the plugin library. This format installs all plugins from the given plugin library.
   * Multiple plugins can be specified by separating them with semicolons.
-* Special care must be taken when specifying both the `[--plugin-load](mariadbd-options.md#-plugin-load)` option and the `[--plugin-load-add](mariadbd-options.md#-plugin-load-add)` option together. The `[--plugin-load](mariadbd-options.md#-plugin-load)` option resets the plugin load list, and this can cause unexpected problems if you are not aware. The `[--plugin-load-add](mariadbd-options.md#-plugin-load-add)` option does not reset the plugin load list, so it is much safer to use. See [Plugin Overview: Specifying Multiple Plugin Load Options](../../../ref/plugins/plugin-overview.md#specifying-multiple-plugin-load-options) for more information.
-* See [Plugin Overview: Installing a Plugin with Plugin Load Options](../../../ref/plugins/plugin-overview.md#installing-a-plugin-with-plugin-load-options) for more information.
+* Special care must be taken when specifying both the `[--plugin-load](mariadbd-options.md#-plugin-load)` option and the `[--plugin-load-add](mariadbd-options.md#-plugin-load-add)` option together. The `[--plugin-load](mariadbd-options.md#-plugin-load)` option resets the plugin load list, and this can cause unexpected problems if you are not aware. The `[--plugin-load-add](mariadbd-options.md#-plugin-load-add)` option does not reset the plugin load list, so it is much safer to use. See [Plugin Overview: Specifying Multiple Plugin Load Options](../../../reference/plugins/plugin-overview.md#specifying-multiple-plugin-load-options) for more information.
+* See [Plugin Overview: Installing a Plugin with Plugin Load Options](../../../reference/plugins/plugin-overview.md#installing-a-plugin-with-plugin-load-options) for more information.
 
 
 
@@ -1755,7 +1755,7 @@ Options that are also system variables are listed after:
 
 
 * Commandline: `--safe-user-create`
-* Description: Don't allow new user creation by the user who has no write privileges to the [mysql.user](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table.
+* Description: Don't allow new user creation by the user who has no write privileges to the [mysql.user](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table.
 
 
 
@@ -1779,7 +1779,7 @@ Options that are also system variables are listed after:
 
 
 * Commandline: `--skip-grant-tables`
-* Description: Start without grant tables. This gives all users FULL ACCESS to all tables, which is useful in case of a lost root password. Use [mariadb-admin flush-privileges](../../../clients-and-utilities/mariadb-admin.md), [mariadb-admin reload](../../../clients-and-utilities/mariadb-admin.md) or [FLUSH PRIVILEGES](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) to resume using the grant tables. From [MariaDB 10.10](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), available as a [system variable](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#skip_grant_tables) as well.
+* Description: Start without grant tables. This gives all users FULL ACCESS to all tables, which is useful in case of a lost root password. Use [mariadb-admin flush-privileges](../../../clients-and-utilities/mariadb-admin.md), [mariadb-admin reload](../../../clients-and-utilities/mariadb-admin.md) or [FLUSH PRIVILEGES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) to resume using the grant tables. From [MariaDB 10.10](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), available as a [system variable](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#skip_grant_tables) as well.
 
 
 Because the [Event Scheduler](../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/README.md) also depends on the grant tables for its functionality, it is automatically disabled when running with `--skip-grant-tables`.
@@ -1798,7 +1798,7 @@ Because the [Event Scheduler](../../../server-usage/programming-customizing-mari
 
 
 * Commandline: `--skip-partition`, `--disable-partition`
-* Description: Disables user-defined [partitioning](../../partitioning-tables/README.md). Previously partitioned tables cannot be accessed or modifed. Tables can still be seen with [SHOW TABLES](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-tables.md) or by viewing the [INFORMATION_SCHEMA.TABLES table](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md). Tables can be dropped with [DROP TABLE](../../../ref/sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md), but this only removes .frm files, not the associated .par files, which will need to be removed manually.
+* Description: Disables user-defined [partitioning](../../partitioning-tables/README.md). Previously partitioned tables cannot be accessed or modifed. Tables can still be seen with [SHOW TABLES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-tables.md) or by viewing the [INFORMATION_SCHEMA.TABLES table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md). Tables can be dropped with [DROP TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md), but this only removes .frm files, not the associated .par files, which will need to be removed manually.
 
 
 
@@ -1840,7 +1840,7 @@ Because the [Event Scheduler](../../../server-usage/programming-customizing-mari
 
 
 * Commandline: `--sql-bin-update-same=#`
-* Description: The update log was deprecated in version 5.0 and replaced by the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), so this option did nothing since then. Deprecated and removed in [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).
+* Description: The update log was deprecated in version 5.0 and replaced by the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), so this option did nothing since then. Deprecated and removed in [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).
 * Removed: [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
 
 
@@ -1935,10 +1935,10 @@ Defaults to `1` until [MariaDB 10.5.6](../../../../release-notes/mariadb-communi
 * [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)
 * [date-format](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#date_format)
 * [datetime-format](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datetime_format)
-* [deadlock-search-depth-long](../../../ref/storage-engines/aria/aria-system-variables.md)
-* [deadlock-search-depth-short](../../../ref/storage-engines/aria/aria-system-variables.md)
-* [deadlock-timeout-long](../../../ref/storage-engines/aria/aria-system-variables.md)
-* [deadlock-timeout-short](../../../ref/storage-engines/aria/aria-system-variables.md)
+* [deadlock-search-depth-long](../../../reference/storage-engines/aria/aria-system-variables.md)
+* [deadlock-search-depth-short](../../../reference/storage-engines/aria/aria-system-variables.md)
+* [deadlock-timeout-long](../../../reference/storage-engines/aria/aria-system-variables.md)
+* [deadlock-timeout-short](../../../reference/storage-engines/aria/aria-system-variables.md)
 * [default-password-lifetime](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_password_lifetime)
 * [default-regex-flags](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_regex_flags)
 * [default-storage-engine](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine)
@@ -2084,10 +2084,10 @@ Defaults to `1` until [MariaDB 10.5.6](../../../../release-notes/mariadb-communi
 * [stored-program-cache](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#stored_program_cache)
 * [strict_password_validation](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation)
 * [sync-frm](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sync_frm)
-* [system-versioning-alter-history](../../../ref/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_alter_history)
-* [system-versioning-asof](../../../ref/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_asof)
-* [system-versioning-innodb-algorithm-simple](../../../ref/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_innodb_algorithm_simple)
-* [system-versioning-insert-history](../../../ref/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_insert_history)
+* [system-versioning-alter-history](../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_alter_history)
+* [system-versioning-asof](../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_asof)
+* [system-versioning-innodb-algorithm-simple](../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_innodb_algorithm_simple)
+* [system-versioning-insert-history](../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_insert_history)
 * [table-lock-wait-timeout](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#table_lock_wait_timeout)
 * [tcp-keepalive-interval](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#tcp_keepalive_interval)
 * [tcp-keepalive-probes](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#tcp_keepalive_probes)
@@ -2127,37 +2127,37 @@ Defaults to `1` until [MariaDB 10.5.6](../../../../release-notes/mariadb-communi
 ### Authentication Plugin - `ed25519`
 
 
-The options related to the `[ed25519](../../../ref/plugins/authentication-plugins/authentication-plugin-ed25519.md)` authentication plugin can be found [here](../../../ref/plugins/authentication-plugins/authentication-plugin-ed25519.md#options).
+The options related to the `[ed25519](../../../reference/plugins/authentication-plugins/authentication-plugin-ed25519.md)` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-plugin-ed25519.md#options).
 
 
 ### Authentication Plugin - `gssapi`
 
 
-The system variables related to the `[gssapi](../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugin can be found [here](../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md#system-variables).
+The system variables related to the `[gssapi](../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#system-variables).
 
 
-The options related to the `[gssapi](../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugin can be found [here](../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md#options).
+The options related to the `[gssapi](../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#options).
 
 
 ### Authentication Plugin - `named_pipe`
 
 
-The options related to the `[named_pipe](../../../ref/plugins/authentication-plugins/authentication-plugin-named-pipe.md)` authentication plugin can be found [here](../../../ref/plugins/authentication-plugins/authentication-plugin-named-pipe.md#options).
+The options related to the `[named_pipe](../../../reference/plugins/authentication-plugins/authentication-plugin-named-pipe.md)` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-plugin-named-pipe.md#options).
 
 
 ### Authentication Plugin - `pam`
 
 
-The system variables related to the `[pam](../../../ref/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md)` authentication plugin can be found [here](../../../ref/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#system-variables).
+The system variables related to the `[pam](../../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md)` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#system-variables).
 
 
-The options related to the `[pam](../../../ref/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md)` authentication plugin can be found [here](../../../ref/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#options).
+The options related to the `[pam](../../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md)` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#options).
 
 
 ### Authentication Plugin - `unix_socket`
 
 
-The options related to the `[unix_socket](../../../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md)` authentication plugin can be found [here](../../../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md#options).
+The options related to the `[unix_socket](../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md)` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md#options).
 
 
 ## Encryption Plugins - Options and System Variables
@@ -2187,19 +2187,19 @@ The options related to the `[file_key_management](../../../security/securing-mar
 ### Password Validation Plugin - `simple_password_check`
 
 
-The system variables related to the `[simple_password_check](../../../ref/plugins/password-validation-plugins/simple-password-check-plugin.md)` password validation plugin can be found [here](../../../ref/plugins/password-validation-plugins/simple-password-check-plugin.md).
+The system variables related to the `[simple_password_check](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md)` password validation plugin can be found [here](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md).
 
 
-The options related to the `[simple_password_check](../../../ref/plugins/password-validation-plugins/simple-password-check-plugin.md)` password validation plugin can be found [here](../../../ref/plugins/password-validation-plugins/simple-password-check-plugin.md).
+The options related to the `[simple_password_check](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md)` password validation plugin can be found [here](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md).
 
 
 ### Password Validation Plugin - `cracklib_password_check`
 
 
-The system variables related to the `[cracklib_password_check](../../../ref/plugins/password-validation-plugins/cracklib-password-check-plugin.md)` password validation plugin can be found [here](../../../ref/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
+The system variables related to the `[cracklib_password_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md)` password validation plugin can be found [here](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
 
 
-The options related to the `[cracklib_password_check](../../../ref/plugins/password-validation-plugins/cracklib-password-check-plugin.md)` password validation plugin can be found [here](../../../ref/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
+The options related to the `[cracklib_password_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md)` password validation plugin can be found [here](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
 
 
 ## Audit Plugins - Options and System Variables
@@ -2208,7 +2208,7 @@ The options related to the `[cracklib_password_check](../../../ref/plugins/passw
 ### Audit Plugin - `server_audit`
 
 
-Options and system variables related to the `[server_audit](../../../ref/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)` audit plugin can be found [here](../../../ref/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md).
+Options and system variables related to the `[server_audit](../../../reference/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)` audit plugin can be found [here](../../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md).
 
 
 ### Audit Plugin - `SQL_ERROR_LOG`
@@ -2220,7 +2220,7 @@ The options and system variables related to the [SQL_ERROR_LOG](../../server-mon
 ### Audit Plugin - QUERY_RESPONSE_TIME_AUDIT
 
 
-The options related to the `[QUERY_RESPONSE_TIME_AUDIT](../../../ref/plugins/other-plugins/query-response-time-plugin.md)` audit plugin can be found [here](../../../ref/plugins/other-plugins/query-response-time-plugin.md#options).
+The options related to the `[QUERY_RESPONSE_TIME_AUDIT](../../../reference/plugins/other-plugins/query-response-time-plugin.md)` audit plugin can be found [here](../../../reference/plugins/other-plugins/query-response-time-plugin.md#options).
 
 
 ## Daemon Plugins - Options and System Variables
@@ -2229,7 +2229,7 @@ The options related to the `[QUERY_RESPONSE_TIME_AUDIT](../../../ref/plugins/oth
 ### Daemon Plugin - `handlersocket`
 
 
-The options for the HandlerSocket plugin are all described on the [HandlerSocket Configuration Option](../../../ref/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md) page.
+The options for the HandlerSocket plugin are all described on the [HandlerSocket Configuration Option](../../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md) page.
 
 
 ## Information Schema Plugins - Options and System Variables
@@ -2238,61 +2238,61 @@ The options for the HandlerSocket plugin are all described on the [HandlerSocket
 ### Information Schema Plugin - `DISKS`
 
 
-The options related to the `[DISKS](../../../ref/plugins/other-plugins/disks-plugin.md)` information schema plugin can be found [here](../../../ref/plugins/other-plugins/disks-plugin.md#options).
+The options related to the `[DISKS](../../../reference/plugins/other-plugins/disks-plugin.md)` information schema plugin can be found [here](../../../reference/plugins/other-plugins/disks-plugin.md#options).
 
 
 ### Information Schema Plugin - `feedback`
 
 
-The system variables related to the `[feedback](../../../ref/plugins/other-plugins/feedback-plugin.md)` plugin can be found [here](../../../ref/plugins/other-plugins/feedback-plugin.md#system-variables).
+The system variables related to the `[feedback](../../../reference/plugins/other-plugins/feedback-plugin.md)` plugin can be found [here](../../../reference/plugins/other-plugins/feedback-plugin.md#system-variables).
 
 
-The options related to the `[feedback](../../../ref/plugins/other-plugins/feedback-plugin.md)` plugin can be found [here](../../../ref/plugins/other-plugins/feedback-plugin.md#options).
+The options related to the `[feedback](../../../reference/plugins/other-plugins/feedback-plugin.md)` plugin can be found [here](../../../reference/plugins/other-plugins/feedback-plugin.md#options).
 
 
 ### Information Schema Plugin - `LOCALES`
 
 
-The options related to the `[LOCALES](../../../ref/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md)` information schema plugin can be found [here](../../../ref/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md#options).
+The options related to the `[LOCALES](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md)` information schema plugin can be found [here](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md#options).
 
 
 ### Information Schema Plugin - `METADATA_LOCK_INFO`
 
 
-The options related to the `[METADATA_LOCK_INFO](../../../ref/plugins/other-plugins/metadata-lock-info-plugin.md)` information schema plugin can be found [here](../../../ref/plugins/other-plugins/metadata-lock-info-plugin.md).
+The options related to the `[METADATA_LOCK_INFO](../../../reference/plugins/other-plugins/metadata-lock-info-plugin.md)` information schema plugin can be found [here](../../../reference/plugins/other-plugins/metadata-lock-info-plugin.md).
 
 
 ### Information Schema Plugin - `QUERY_CACHE_INFO`
 
 
-The options related to the `[QUERY_CACHE_INFO](../../../ref/plugins/other-plugins/query-cache-information-plugin.md)` information schema plugin can be found [here](../../../ref/plugins/other-plugins/query-cache-information-plugin.md#options).
+The options related to the `[QUERY_CACHE_INFO](../../../reference/plugins/other-plugins/query-cache-information-plugin.md)` information schema plugin can be found [here](../../../reference/plugins/other-plugins/query-cache-information-plugin.md#options).
 
 
 ### Information Schema Plugin - `QUERY_RESPONSE_TIME`
 
 
-The system variables related to the `[QUERY_RESPONSE_TIME](../../../ref/plugins/other-plugins/query-response-time-plugin.md)` information schema plugin can be found [here](../../../ref/plugins/other-plugins/query-response-time-plugin.md#system-variables).
+The system variables related to the `[QUERY_RESPONSE_TIME](../../../reference/plugins/other-plugins/query-response-time-plugin.md)` information schema plugin can be found [here](../../../reference/plugins/other-plugins/query-response-time-plugin.md#system-variables).
 
 
-The options related to the `[QUERY_RESPONSE_TIME](../../../ref/plugins/other-plugins/query-response-time-plugin.md)` information schema plugin can be found [here](../../../ref/plugins/other-plugins/query-response-time-plugin.md#options).
+The options related to the `[QUERY_RESPONSE_TIME](../../../reference/plugins/other-plugins/query-response-time-plugin.md)` information schema plugin can be found [here](../../../reference/plugins/other-plugins/query-response-time-plugin.md#options).
 
 
 ### Information Schema Plugin - `user_variables`
 
 
-The options related to the `[user_variables](../../../ref/plugins/other-plugins/user-variables-plugin.md)` information schema plugin can be found [here](../../../ref/plugins/other-plugins/user-variables-plugin.md#options).
+The options related to the `[user_variables](../../../reference/plugins/other-plugins/user-variables-plugin.md)` information schema plugin can be found [here](../../../reference/plugins/other-plugins/user-variables-plugin.md#options).
 
 
 ### Information Schema Plugin - `WSREP_MEMBERSHIP`
 
 
-The options related to the `[WSREP_MEMBERSHIP](../../../ref/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md)` information schema plugin can be found [here](../../../ref/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md#options).
+The options related to the `[WSREP_MEMBERSHIP](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md)` information schema plugin can be found [here](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md#options).
 
 
 ### Information Schema Plugin - `WSREP_STATUS`
 
 
-The options related to the `[WSREP_STATUS](../../../ref/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md)` information schema plugin can be found [here](../../../ref/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md#options).
+The options related to the `[WSREP_STATUS](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md)` information schema plugin can be found [here](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md#options).
 
 
 ## Replication Plugins - Options and System Variables

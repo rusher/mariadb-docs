@@ -8,7 +8,7 @@ The list excludes status related to the following storage engines included in [M
 
 
 * [Galera Status Variables](../../../../galera-cluster/galera-cluster-status-variables.md)
-* [Mroonga Status Variables](../../../../../../ref/storage-engines/mroonga/mroonga-status-variables.md)
+* [Mroonga Status Variables](../../../../../../reference/storage-engines/mroonga/mroonga-status-variables.md)
 * [Spider Status Variables](../../spider-status-variables.md)
 
 

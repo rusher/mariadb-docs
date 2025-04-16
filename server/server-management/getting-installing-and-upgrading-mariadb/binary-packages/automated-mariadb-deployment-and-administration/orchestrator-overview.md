@@ -11,7 +11,7 @@ Orchestrator provides automation for MariaDB replication in the following ways:
 
 
 * It can be used to perform certain operations, like repairing broken replication or moving a replica from one master to another. These operations can be requested using CLI commands, or via the GUI provided with Orchestrator. The actual commands sent to MariaDB are automated by Orchestrator, and the user doesn't have to worry about the details.
-* Orchestrator can also automatically perform a failover in case a master crashes or is unreachable by its replicas. If that is the case, Orchestrator will promote one of the replicas to a master. The replica to promote is chosen based on several criteria, like the server versions, the [binary log](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) formats in use and the datacenters locations.
+* Orchestrator can also automatically perform a failover in case a master crashes or is unreachable by its replicas. If that is the case, Orchestrator will promote one of the replicas to a master. The replica to promote is chosen based on several criteria, like the server versions, the [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) formats in use and the datacenters locations.
 
 
 Note that, if we don't want to use Orchestrator to automate operations, we can still use it as a dynamic inventory. Other tools can use it to obtain a list of existing MariaDB servers via its REST API or CLI commands.
@@ -31,7 +31,7 @@ To install Orchestrator, see:
 ## Supported Topologies
 
 
-Currently, Orchestrator fully supports MariaDB [GTID](../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md), [replication](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md), and [semi-synchronous replication](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md). While Orchestrator does not support Galera specific logic, it works with Galera clusters. For details, see [Supported Topologies and Versions](https://github.com/openark/orchestrator/blob/master/docs/supported-topologies-and-versions) in Orchestrator documentation.
+Currently, Orchestrator fully supports MariaDB [GTID](../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md), [replication](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md), and [semi-synchronous replication](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md). While Orchestrator does not support Galera specific logic, it works with Galera clusters. For details, see [Supported Topologies and Versions](https://github.com/openark/orchestrator/blob/master/docs/supported-topologies-and-versions) in Orchestrator documentation.
 
 
 ## Architecture

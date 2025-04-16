@@ -15,7 +15,7 @@ DROP FUNCTION [IF EXISTS] function_name
 This statement drops the [user-defined function](user-defined-functions-security.md) (UDF) named `function_name`.
 
 
-To drop a function, you must have the `[DELETE privilege](../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md)` for the mysql database. This is because `DROP FUNCTION` removes the row from the [mysql.func](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-func-table.md) system table that records the function's name, type and shared library name.
+To drop a function, you must have the `[DELETE privilege](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md)` for the mysql database. This is because `DROP FUNCTION` removes the row from the [mysql.func](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-func-table.md) system table that records the function's name, type and shared library name.
 
 
 For dropping a stored function, see [DROP FUNCTION](../stored-routines/stored-functions/drop-function.md).

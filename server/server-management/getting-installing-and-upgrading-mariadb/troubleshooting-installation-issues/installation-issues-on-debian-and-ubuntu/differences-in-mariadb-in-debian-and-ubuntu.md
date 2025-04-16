@@ -45,7 +45,7 @@ Since [MariaDB 11.6](../../../../../release-notes/mariadb-community-server/what-
 | Option | MariaDB in Debian | Standard MariaDB | Notes |
 | --- | --- | --- | --- |
 | Option | MariaDB in Debian | Standard MariaDB | Notes |
-| [plugin-load-add](../../starting-and-stopping-mariadb/mariadbd-options.md) | auth_socket.so | - | Before [MariaDB 10.4.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md), MariaDB did not enable the [unix_socket](../../../../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin by default.This is default in Debian, allowing passwordless login. |
+| [plugin-load-add](../../starting-and-stopping-mariadb/mariadbd-options.md) | auth_socket.so | - | Before [MariaDB 10.4.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md), MariaDB did not enable the [unix_socket](../../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin by default.This is default in Debian, allowing passwordless login. |
 
 
 
@@ -76,10 +76,10 @@ Since [MariaDB 11.6](../../../../../release-notes/mariadb-community-server/what-
 ## Authentication
 
 
-* The `[unix_socket](../../../../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md)` authentication plugin is installed by default in new installations that use the `[.deb](../../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md)` packages provided by Debian's default repositories in Debian 9 and later and Ubuntu's default repositories in Ubuntu 15.10 and later.
+* The `[unix_socket](../../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md)` authentication plugin is installed by default in new installations that use the `[.deb](../../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md)` packages provided by Debian's default repositories in Debian 9 and later and Ubuntu's default repositories in Ubuntu 15.10 and later.
 
 
-* The `root@localhost` created by [mariadb-install-db](../../mariadb-install-db-exe.md) will also be created to authenticate via the [unix_socket](../../../../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin in these builds.
+* The `root@localhost` created by [mariadb-install-db](../../mariadb-install-db-exe.md) will also be created to authenticate via the [unix_socket](../../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin in these builds.
 
 
 ## See Also

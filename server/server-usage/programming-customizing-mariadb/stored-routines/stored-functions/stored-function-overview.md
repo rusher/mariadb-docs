@@ -58,7 +58,7 @@ DELIMITER ;
 This function takes an argument, `price` which is defined as a DECIMAL, and returns an INT.
 
 
-Take a look at the [CREATE FUNCTION](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) page for more details.
+Take a look at the [CREATE FUNCTION](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) page for more details.
 
 
 From [MariaDB 10.3.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md), it is also possible to create [stored aggregate functions](stored-aggregate-functions.md).
@@ -67,7 +67,7 @@ From [MariaDB 10.3.3](../../../../../release-notes/mariadb-community-server/rele
 ## Stored Function listings and definitions
 
 
-To find which stored functions are running on the server, use [SHOW FUNCTION STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-function-status.md).
+To find which stored functions are running on the server, use [SHOW FUNCTION STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-function-status.md).
 
 
 ```
@@ -87,7 +87,7 @@ collation_connection: utf8_general_ci
 1 row in set (0.00 sec)
 ```
 
-or query the [routines table](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION_SCHEMA database directly:
+or query the [routines table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION_SCHEMA database directly:
 
 
 ```
@@ -100,7 +100,7 @@ SELECT ROUTINE_NAME FROM INFORMATION_SCHEMA.ROUTINES WHERE
 +--------------+
 ```
 
-To find out what the stored function does, use [SHOW CREATE FUNCTION](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-function.md).
+To find out what the stored function does, use [SHOW CREATE FUNCTION](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-function.md).
 
 
 ```
@@ -130,7 +130,7 @@ To drop a stored function, use the [DROP FUNCTION](drop-function.md) statement.
 DROP FUNCTION FortyTwo;
 ```
 
-To change the characteristics of a stored function, use [ALTER FUNCTION](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md). Note that you cannot change the parameters or body of a stored function using this statement; to make such changes, you must drop and re-create the function using DROP FUNCTION and CREATE FUNCTION.
+To change the characteristics of a stored function, use [ALTER FUNCTION](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md). Note that you cannot change the parameters or body of a stored function using this statement; to make such changes, you must drop and re-create the function using DROP FUNCTION and CREATE FUNCTION.
 
 
 ## Permissions in Stored Functions
@@ -142,11 +142,11 @@ See the article [Stored Routine Privileges](stored-routine-privileges.md).
 ## See Also
 
 
-* [CREATE FUNCTION](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)
-* [SHOW CREATE FUNCTION](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-function.md)
+* [CREATE FUNCTION](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)
+* [SHOW CREATE FUNCTION](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-function.md)
 * [DROP FUNCTION](drop-function.md)
 * [Stored Routine Privileges](stored-routine-privileges.md)
-* [SHOW FUNCTION STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-function-status.md)
-* [Information Schema ROUTINES Table](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
+* [SHOW FUNCTION STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-function-status.md)
+* [Information Schema ROUTINES Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 * [Stored Aggregate Functions](stored-aggregate-functions.md).
 

@@ -50,5 +50,5 @@ SHOW CATALOG STATUS
 ## See Also
 
 
-* [SHOW STATUS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md)
+* [SHOW STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md)
 

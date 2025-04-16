@@ -1,7 +1,7 @@
 
 # aria_read_log
 
-**aria_read_log** is a tool for displaying and applying log records from an [Aria](../../ref/storage-engines/s3-storage-engine/aria_s3_copy.md) [transaction log](../../ref/storage-engines/aria/aria-storage-engine.md#aria-log-files).
+**aria_read_log** is a tool for displaying and applying log records from an [Aria](../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) [transaction log](../../reference/storage-engines/aria/aria-storage-engine.md#aria-log-files).
 
 
 Note: Aria is compiled without -DIDENTICAL_PAGES_AFTER_RECOVERY
