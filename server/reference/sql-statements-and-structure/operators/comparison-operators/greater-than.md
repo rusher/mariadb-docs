@@ -12,7 +12,7 @@
 ## Description
 
 
-Greater than operator. Evaluates both SQL expressions and returns 1 if the left value is greater than the right value and 0 if it is not, or `<code>NULL</code>` if either expression is NULL. If the expressions return different data types, (for instance, a number and a string), performs type conversion.
+Greater than operator. Evaluates both SQL expressions and returns 1 if the left value is greater than the right value and 0 if it is not, or `NULL` if either expression is NULL. If the expressions return different data types, (for instance, a number and a string), performs type conversion.
 
 
 When used in row comparisons these two queries return the same results:

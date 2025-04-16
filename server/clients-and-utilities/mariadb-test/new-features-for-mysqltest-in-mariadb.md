@@ -19,8 +19,8 @@ connection attempt times out.
 ## Test Commands for Handling Warnings During Prepare Statements
 
 
-* `<code class="highlight fixed" style="white-space:pre-wrap">enable_prepare_warnings;</code>`
-* `<code class="highlight fixed" style="white-space:pre-wrap">disable_prepare_warnings;</code>`
+* `enable_prepare_warnings;`
+* `disable_prepare_warnings;`
 
 
 Normally, when running with the prepared statement protocol with warnings
@@ -33,10 +33,10 @@ between prepared statement execution and normal execution (where there is no
 prepare phase).
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">enable_prepare_warnings</code>` command changes this so that
+The `enable_prepare_warnings` command changes this so that
 warnings from both the prepare and execute phase are shown, regardless of
 whether the statement produces a result set in the execute phase. The
-`<code class="highlight fixed" style="white-space:pre-wrap">disable_prepare_warnings</code>` command reverts to the default
+`disable_prepare_warnings` command reverts to the default
 behaviour.
 
 
@@ -47,7 +47,7 @@ return a result set (as for statements without result sets, warnings from are
 always shown when warnings are enabled).
 
 
-The `<code>replace_regex</code>` command supports paired delimiters (like in perl, etc). If the first non-space character in the `<code>replace_regex</code>` argument is one of `<code>(</code>`, `<code>[</code>`, `<code>{</code>`, `<code><</code>`, then the pattern should end with `<code>)</code>`, `<code>]</code>`, `<code>}</code>`, `<code>></code>` accordingly. The replacement string can use its own pair of delimiters, not necessarily the same as the pattern. If the first non-space character in the `<code>replace_regex</code>` argument is not one of the above, then it should also separate the pattern and the replacement string and it should end the replacement string. Backslash can be used to escape the current terminating character as usual. The examples below demonstrate valid usage of `<code>replace_regex</code>`:
+The `replace_regex` command supports paired delimiters (like in perl, etc). If the first non-space character in the `replace_regex` argument is one of `(`, `[`, `{`, `<`, then the pattern should end with `)`, `]`, `}`, `>` accordingly. The replacement string can use its own pair of delimiters, not necessarily the same as the pattern. If the first non-space character in the `replace_regex` argument is not one of the above, then it should also separate the pattern and the replacement string and it should end the replacement string. Backslash can be used to escape the current terminating character as usual. The examples below demonstrate valid usage of `replace_regex`:
 
 
 ```
@@ -62,7 +62,7 @@ The `<code>replace_regex</code>` command supports paired delimiters (like in per
 Sometimes it is only interesting to see the output of a utility to stdout/stderr, if utility failed. In case of success , the output might be unpredictable, and contain timestamps, startup messages etc. mariabackup can be a good example of such utility.
 
 
-mysqltest in MariaDB can helps in this situation. In the example below, the output of $XTRABACKUP is suppressed, however if `<code>exec</code>` fails, stdout and stderr both will be dumped , to aid diagnostics:
+mysqltest in MariaDB can helps in this situation. In the example below, the output of $XTRABACKUP is suppressed, however if `exec` fails, stdout and stderr both will be dumped , to aid diagnostics:
 
 
 ```

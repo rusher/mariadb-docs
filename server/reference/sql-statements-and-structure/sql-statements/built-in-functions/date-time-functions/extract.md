@@ -15,7 +15,7 @@ EXTRACT(unit FROM date)
 The EXTRACT() function extracts the required unit from the date. See [Date and Time Units](date-and-time-units.md) for a complete list of permitted units.
 
 
-In [MariaDB 10.0.7](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes.md) and [MariaDB 5.5.35](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5535-release-notes.md), `<code>EXTRACT (HOUR FROM ...)</code>` was changed to return a value from 0 to 23, adhering to the SQL standard. Until [MariaDB 10.0.6](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1006-release-notes.md) and [MariaDB 5.5.34](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5534-release-notes.md), and in all versions of MySQL at least as of MySQL 5.7, it could return a value > 23. [HOUR()](hour.md) is not a standard function, so continues to adhere to the old behaviour inherited from MySQL.
+In [MariaDB 10.0.7](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes.md) and [MariaDB 5.5.35](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5535-release-notes.md), `EXTRACT (HOUR FROM ...)` was changed to return a value from 0 to 23, adhering to the SQL standard. Until [MariaDB 10.0.6](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1006-release-notes.md) and [MariaDB 5.5.34](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5534-release-notes.md), and in all versions of MySQL at least as of MySQL 5.7, it could return a value > 23. [HOUR()](hour.md) is not a standard function, so continues to adhere to the old behaviour inherited from MySQL.
 
 
 ## Examples
@@ -51,7 +51,7 @@ SELECT EXTRACT(MICROSECOND FROM '2003-01-02 10:30:00.000123');
 +--------------------------------------------------------+
 ```
 
-From [MariaDB 10.0.7](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes.md) and [MariaDB 5.5.35](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5535-release-notes.md), `<code>EXTRACT (HOUR FROM...)</code>` returns a value from 0 to 23, as per the SQL standard. `<code>HOUR</code>` is not a standard function, so continues to adhere to the old behaviour inherited from MySQL.
+From [MariaDB 10.0.7](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes.md) and [MariaDB 5.5.35](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5535-release-notes.md), `EXTRACT (HOUR FROM...)` returns a value from 0 to 23, as per the SQL standard. `HOUR` is not a standard function, so continues to adhere to the old behaviour inherited from MySQL.
 
 
 ```

@@ -8,9 +8,9 @@
 ### How Parsing and Execution of Queries Work
 
 
-In order to execute a query, the function `<code>sql_parse.cc:mysql_parse()</code>` is
- called, which in turn calls the parser (`<code>yyparse()</code>`) with an updated Lex
- structure as the result. `<code>mysql_parse()</code>` then calls `<code>mysql_execute_command()</code>`
+In order to execute a query, the function `sql_parse.cc:mysql_parse()` is
+ called, which in turn calls the parser (`yyparse()`) with an updated Lex
+ structure as the result. `mysql_parse()` then calls `mysql_execute_command()`
  which dispatches on the command code (in Lex) to the corresponding code for
  executing that particular query.
 
@@ -27,10 +27,10 @@ There are three structures involved in the execution of a query which are of
 * THD is the "run-time" state of a connection, containing all that is
  needed for a particular client connection, and, among other things, the
  Lex structure currently being executed.
-* `<code>Item_*</code>`: During parsing, all data is translated into "items", objects of
- the subclasses of "Item", such as `<code>Item_int</code>`, `<code>Item_real</code>`, `<code>Item_string</code>`, etc.,
+* `Item_*`: During parsing, all data is translated into "items", objects of
+ the subclasses of "Item", such as `Item_int`, `Item_real`, `Item_string`, etc.,
  for basic datatypes, and also various more specialized Item types for
- expressions to be evaluated (`<code>Item_func</code>` objects).
+ expressions to be evaluated (`Item_func` objects).
 
 
 ### How to Fit Stored Procedures into this Scheme
@@ -114,9 +114,9 @@ This contains functions for creating, dropping and finding a stored
 
 
 When parsing a [CREATE PROCEDURE](../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure.md) the parser first initializes the
- `<code>sphead</code>` and `<code>spcont</code>` (runtime context) fields in the Lex.
+ `sphead` and `spcont` (runtime context) fields in the Lex.
  The sql_command code for the result of parsing a is
- `<code>SQLCOM_CREATE_PROCEDURE</code>`.
+ `SQLCOM_CREATE_PROCEDURE`.
 
 
 The parsing of the parameter list and body is relatively
@@ -124,20 +124,20 @@ The parsing of the parameter list and body is relatively
 
 
 * Parameters:
- name, type and mode (IN/OUT/INOUT) is pushed to `<code>spcont</code>`
+ name, type and mode (IN/OUT/INOUT) is pushed to `spcont`
 * Declared local variables:
  Same as parameters (mode is then IN)
 * Local Variable references:
- If an identifier is found in in `<code>spcont</code>`, an `<code>Item_splocal</code>` is created
- with the variable's frame index, otherwise an `<code>Item_field</code>` or `<code>Item_ref</code>`
+ If an identifier is found in in `spcont`, an `Item_splocal` is created
+ with the variable's frame index, otherwise an `Item_field` or `Item_ref`
  is created (as before).
 * Statements:
  The Lex in THD is replaced by a new Lex structure and the statement,
- is parsed as usual. A `<code>sp_instr_stmt</code>` is created, containing the new
- Lex, and added to the instructions in `<code>sphead</code>`.
+ is parsed as usual. A `sp_instr_stmt` is created, containing the new
+ Lex, and added to the instructions in `sphead`.
  Afterwards, the procedure's Lex is restored in THD.
 * SET var:
- Setting a local variable generates a `<code>sp_instr_set</code>` instruction,
+ Setting a local variable generates a `sp_instr_set` instruction,
  containing the variable's frame offset, the expression (an Item),
  and the type.
 * Flow control:
@@ -147,9 +147,9 @@ The parsing of the parameter list and body is relatively
 * Forward jumps: When jumping forward, the exact destination is not
  known at the time of the creation of the jump instruction. The
 
-  1. sphead`<code> therefore contains a list of instruction-label pairs for
+  1. sphead` therefore contains a list of instruction-label pairs for
  each forward reference. When the position later is known, the
- instructions in the list are updated with the correct location.</code>`
+ instructions in the list are updated with the correct location.`
 * Loop constructs have optional labels. If a loop doesn't have a
  label, an anonymous label is generated to simplify the parsing.
 * There are two types of CASE. The "simple" case is implemented
@@ -191,9 +191,9 @@ ______
                                    |_______________________|
 ```
 
-Note that the contents of the `<code>spcont</code>` is changing during the parsing,
+Note that the contents of the `spcont` is changing during the parsing,
  at all times reflecting the state of the would-be runtime frame.
- The `<code>m_instr</code>` is an array of instructions:
+ The `m_instr` is an array of instructions:
 
 
 ```
@@ -340,7 +340,7 @@ The semantics in stored procedures is "call-by-value", so we have to
  evaluate any "func" Items at the point of the CALL or SET, otherwise
  we would get a kind of "lazy" evaluation with unexpected results with
  respect to OUT parameters for instance.
- For this the support function, `<code>sp_head.cc:eval_func_item()</code>` is needed.
+ For this the support function, `sp_head.cc:eval_func_item()` is needed.
 
 
 #### Calling a FUNCTION
@@ -350,8 +350,8 @@ Functions don't have an explicit call keyword like procedures. Instead,
  they appear in expressions with the conventional syntax "fun(arg, ...)".
  The problem is that we already have [User Defined Functions](../../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md) (UDFs) which
  are called the same way. A UDF is detected by the lexical analyzer (not
- the parser!), in the `<code>find_keyword()</code>` function, and returns a `<code>UDF_*_FUNC</code>`
- or `<code>UDA_*_SUM</code>` token with the `<code>udf_func</code>` object as the yylval.
+ the parser!), in the `find_keyword()` function, and returns a `UDF_*_FUNC`
+ or `UDA_*_SUM` token with the `udf_func` object as the yylval.
 
 
 So, stored functions must be handled in a similar way, and as a
@@ -402,9 +402,9 @@ A FUNCTION differs from a PROCEDURE in one important aspect: Whereas a
 
 So, the solution is to collect the names of the referred FUNCTIONs during
  parsing in the lex.
- Then, before doing anything else in `<code>mysql_execute_command()</code>`, read all
+ Then, before doing anything else in `mysql_execute_command()`, read all
  functions from the database an keep them in the THD, where the function
- `<code>sp_find_function()</code>` can find them during the execution.
+ `sp_find_function()` can find them during the execution.
  Note: Even with an in-memory cache, we must still make sure that the
  functions are indeed read and cached at this point.
  The code that read and cache functions from the database must also be
@@ -417,11 +417,11 @@ So, the solution is to collect the names of the referred FUNCTIONs during
 
 The procedure name is pushed to Lex->value_list.
  The sql_command code for the result of parsing a is
- `<code>SQLCOM_DROP_PROCEDURE</code>`/`<code>SQLCOM_DROP_FUNCTION</code>`.
+ `SQLCOM_DROP_PROCEDURE`/`SQLCOM_DROP_FUNCTION`.
 
 
 Dropping is done by simply getting the procedure with the sp_find()
- function and calling `<code>sp_drop()</code>` (both in `<code>sp.{cc,h}</code>`).
+ function and calling `sp_drop()` (both in `sp.{cc,h}`).
 
 
 [DROP PROCEDURE](../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/drop-procedure.md)/[DROP FUNCTION](../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/drop-function.md) also supports the non-standard "IF EXISTS", analogous to other [DROP](../../sql-statements-and-structure/sequences/drop-sequence.md) statements in MariaDB.

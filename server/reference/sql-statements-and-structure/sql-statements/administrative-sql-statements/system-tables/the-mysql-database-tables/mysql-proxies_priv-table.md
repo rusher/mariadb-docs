@@ -5,13 +5,13 @@
 
 
 
-The `<code>mysql.proxies_priv</code>` table contains information about proxy privileges. The table can be queried and although it is possible to directly update it, it is best to use [GRANT](../../../account-management-sql-commands/grant.md) for setting privileges.
+The `mysql.proxies_priv` table contains information about proxy privileges. The table can be queried and although it is possible to directly update it, it is best to use [GRANT](../../../account-management-sql-commands/grant.md) for setting privileges.
 
 
 This table uses the [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine.
 
 
-The `<code>mysql.proxies_priv</code>` table contains the following fields:
+The `mysql.proxies_priv` table contains the following fields:
 
 
 
@@ -28,5 +28,5 @@ The `<code>mysql.proxies_priv</code>` table contains the following fields:
 
 
 
-The [Acl_proxy_users](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_proxy_users) status variable indicates how many rows the `<code>mysql.proxies_priv</code>` table contains.
+The [Acl_proxy_users](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_proxy_users) status variable indicates how many rows the `mysql.proxies_priv` table contains.
 

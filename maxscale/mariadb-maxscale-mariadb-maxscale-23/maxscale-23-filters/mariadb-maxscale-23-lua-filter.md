@@ -12,7 +12,7 @@ information on how to write Lua scripts.
 
 
 *Note:* This module is a part of the experimental module package,
- `<code>maxscale-experimental</code>`.
+ `maxscale-experimental`.
 
 
 ## Filter Parameters
@@ -20,11 +20,11 @@ information on how to write Lua scripts.
 
 The luafilter has two parameters. They control which scripts will be called by
 the filter. Both parameters are optional but at least one should be defined. If
-both `<code>global_script</code>` and `<code>session_script</code>` are defined, the entry points in both
+both `global_script` and `session_script` are defined, the entry points in both
 scripts will be called.
 
 
-### `<code>global_script</code>`
+### `global_script`
 
 
 The global Lua script. The parameter value is a path to a readable Lua script
@@ -35,7 +35,7 @@ This script will always be called with the same global Lua state and it can be
 used to build a global view of the whole service.
 
 
-### `<code>session_script</code>`
+### `session_script`
 
 
 The session level Lua script. The parameter value is a path to a readable Lua
@@ -52,25 +52,25 @@ unique Lua environment. Use this script to do session specific tasks.
 The entry points for the Lua script expect the following signatures:
 
 
-* `<code>nil createInstance()</code>` - global script only, called when MaxScale is started
+* `nil createInstance()` - global script only, called when MaxScale is started
 
 
   * The global script will be loaded in this function and executed once on a
  global level before calling the createInstance function in the Lua script.
-* `<code>nil newSession(string, string)</code>` - new session is created
+* `nil newSession(string, string)` - new session is created
 
 
   * After the session script is loaded, the newSession function in the Lua
  scripts is called. The first parameter is the username of the client and
  the second parameter is the client's network address.
-* `<code>nil closeSession()</code>` - session is closed
+* `nil closeSession()` - session is closed
 
 
-  * The `<code>closeSession</code>` function in the Lua scripts will be called.
-* `<code>(nil | bool | string) routeQuery(string)</code>` - query is being routed
+  * The `closeSession` function in the Lua scripts will be called.
+* `(nil | bool | string) routeQuery(string)` - query is being routed
 
 
-  * The Luafilter calls the `<code>routeQuery</code>` functions of both the session and the
+  * The Luafilter calls the `routeQuery` functions of both the session and the
  global script. The query is passed as a string parameter to the
  routeQuery Lua function and the return values of the session specific
  function, if any were returned, are interpreted. If the first value is
@@ -78,14 +78,14 @@ The entry points for the Lua script expect the following signatures:
  send an error packet to the client. If it is a string, the current query
  is replaced with the return value and the query will be routed. If nil is
  returned, the query is routed normally.
-* `<code>nil clientReply()</code>` - reply to a query is being routed
+* `nil clientReply()` - reply to a query is being routed
 
 
-  * This function calls the `<code>clientReply</code>` function of the Lua scripts.
-* `<code>string diagnostic()</code>` - global script only, print diagnostic information
+  * This function calls the `clientReply` function of the Lua scripts.
+* `string diagnostic()` - global script only, print diagnostic information
 
 
-  * This will call the matching `<code>diagnostics</code>` entry point in the Lua script. If
+  * This will call the matching `diagnostics` entry point in the Lua script. If
  the Lua function returns a string, it will be printed to the client.
 
 
@@ -97,8 +97,8 @@ matching entry point is made.
 
 
 Here is a script template that can be used to try out the luafilter. Copy it
-into a file and add `<code>global_script=<path to script></code>` into the filter
-configuration. Make sure the file is readable by the `<code>maxscale</code>` user.
+into a file and add `global_script=<path to script>` into the filter
+configuration. Make sure the file is readable by the `maxscale` user.
 
 
 
@@ -136,19 +136,19 @@ end
 The luafilter exposes three functions that can be called from the Lua script.
 
 
-* `<code>string lua_qc_get_type_mask()</code>`
+* `string lua_qc_get_type_mask()`
 * Returns the type of the current query being executed as a string. The values
  are the string versions of the query types defined in query_classifier.h
- are separated by vertical bars (`<code>|</code>`).
-This function can only be called from the `<code>routeQuery</code>` entry point.
-* `<code>string lua_qc_get_operation()</code>`
+ are separated by vertical bars (`|`).
+This function can only be called from the `routeQuery` entry point.
+* `string lua_qc_get_operation()`
 * Returns the current operation type as a string. The values are defined in
  query_classifier.h.
-This function can only be called from the `<code>routeQuery</code>` entry point.
-* `<code>string lua_get_canonical()</code>`
+This function can only be called from the `routeQuery` entry point.
+* `string lua_get_canonical()`
 * Returns the canonical version of a query by replacing all user-defined constant values with question marks.
-This function can only be called from the `<code>routeQuery</code>` entry point.
-* `<code>number id_gen()</code>`
+This function can only be called from the `routeQuery` entry point.
+* `number id_gen()`
 * This function generates unique integers that can be used to distinct
  sessions from each other.
 
@@ -169,7 +169,7 @@ global_script=/path/to/script.lua
 
 
 
-And here is a script that opens a file in `<code>/tmp/</code>` and logs output to it.
+And here is a script that opens a file in `/tmp/` and logs output to it.
 
 
 

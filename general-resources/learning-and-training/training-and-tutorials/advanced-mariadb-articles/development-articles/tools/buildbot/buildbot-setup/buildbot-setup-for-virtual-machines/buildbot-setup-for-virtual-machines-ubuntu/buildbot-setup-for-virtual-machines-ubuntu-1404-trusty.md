@@ -47,7 +47,7 @@ During the install, pick default options for the most part, with the following
 notes:
 
 
-* Set the hostname to `<code>ubuntu-trusty-amd64</code>` or `<code>ubuntu-trusty-i386</code>`
+* Set the hostname to `ubuntu-trusty-amd64` or `ubuntu-trusty-i386`
  (depending on which architecture we're installing)
 * do not encrypt the home directory
 * When prompted if the timezone is correct, answer "No" and when the list comes
@@ -59,7 +59,7 @@ notes:
 
 
 Reboot when prompted. It will fail, so just kill the kvm process with
-`<code>^Ctrl+C</code>`.
+`^Ctrl+C`.
 
 
 Now that the VM is installed, it's time to configure it.
@@ -80,7 +80,7 @@ qemu-system-x86_64 -m 2048 -hda /kvm/vms/vm-trusty-i386-serial.qcow2 \
   -nographic
 ```
 
-* set `<code>vim</code>` as the preferred editor
+* set `vim` as the preferred editor
 
 
 ```
@@ -113,7 +113,7 @@ sudo update-grub
 # exit back to the host server
 ```
 
-* create the `<code>.ssh</code>` directory and the `<code>sudo</code>` group
+* create the `.ssh` directory and the `sudo` group
 
 
 ```
@@ -121,7 +121,7 @@ ssh -t -p 2293 localhost "mkdir -v .ssh; sudo addgroup $USER sudo"
 ssh -t -p 2294 localhost "mkdir -v .ssh; sudo addgroup $USER sudo"
 ```
 
-* copy the `<code>authorized_keys</code>` file up to the VMs
+* copy the `authorized_keys` file up to the VMs
 
 
 ```
@@ -193,7 +193,7 @@ done
 ## VMs for install testing.
 
 
-See [Buildbot Setup for Virtual Machines - General Principles](../buildbot-setup-for-virtual-machines-general-principles.md) for how to obtain `<code>my.seed</code>` and `<code>sources.append</code>`.
+See [Buildbot Setup for Virtual Machines - General Principles](../buildbot-setup-for-virtual-machines-general-principles.md) for how to obtain `my.seed` and `sources.append`.
 
 
 ```

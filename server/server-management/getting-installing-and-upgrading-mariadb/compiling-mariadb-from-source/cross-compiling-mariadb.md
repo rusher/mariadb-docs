@@ -42,7 +42,7 @@ $ cmake .. -DCMAKE_TOOLCHAIN_FILE=/path/to/toolchain/file.cmake -DIMPORT_EXECUTA
 $ make
 ```
 
-Here you invoke cmake, specifying the path to your toolchain file and the path to the `<code>import_executables.cmake</code>` that you have just built on the previous step. Of course, you can also specify any other cmake parameters that could be necessary for this build, for example, enable or disable specific storage engines.
+Here you invoke cmake, specifying the path to your toolchain file and the path to the `import_executables.cmake` that you have just built on the previous step. Of course, you can also specify any other cmake parameters that could be necessary for this build, for example, enable or disable specific storage engines.
 
 
 See also [msg02911.html](https://lists.launchpad.net/maria-discuss/msg02911.html)

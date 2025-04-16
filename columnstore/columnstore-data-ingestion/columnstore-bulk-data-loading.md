@@ -593,7 +593,7 @@ struct DateTime
 ## Working Folders & Logging
 
 
-As of version 1.4, **cpimport** uses the `<code class="fixed" style="white-space:pre-wrap">/var/lib/columnstore/bulk</code>` folder for all work being done. This folder contains:
+As of version 1.4, **cpimport** uses the `/var/lib/columnstore/bulk` folder for all work being done. This folder contains:
 
 
 1. Logs
@@ -630,5 +630,5 @@ A typical log might look like this:
 2020-12-29 06:42:04 (21779) INFO2 : Shutdown of all child threads Finished!!
 ```
 
-*Prior to version 1.4, this folder was located at* `<code class="fixed" style="white-space:pre-wrap">/usr/local/mariadb/columnstore/bulk</code>`*.*
+*Prior to version 1.4, this folder was located at* `/usr/local/mariadb/columnstore/bulk`*.*
 

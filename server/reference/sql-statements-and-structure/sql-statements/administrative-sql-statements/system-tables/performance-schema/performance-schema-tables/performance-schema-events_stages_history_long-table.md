@@ -1,10 +1,10 @@
 
 # Performance Schema events_stages_history_long Table
 
-The `<code>events_stages_history_long</code>` table by default contains the ten thousand most recent completed stage events. This number can be adjusted by setting the [performance_schema_events_stages_history_long_size](../performance-schema-system-variables.md#performance_schema_events_stages_history_long_size) system variable when the server starts up.
+The `events_stages_history_long` table by default contains the ten thousand most recent completed stage events. This number can be adjusted by setting the [performance_schema_events_stages_history_long_size](../performance-schema-system-variables.md#performance_schema_events_stages_history_long_size) system variable when the server starts up.
 
 
-The table structure is identical to the `<code>events_stage_current</code>` table structure, and contains the following columns:
+The table structure is identical to the `events_stage_current` table structure, and contains the following columns:
 
 
 
@@ -24,7 +24,7 @@ The table structure is identical to the `<code>events_stage_current</code>` tabl
 
 
 
-It is possible to empty this table with a `<code>TRUNCATE TABLE</code>` statement.
+It is possible to empty this table with a `TRUNCATE TABLE` statement.
 
 
 [events_stages_current](performance-schema-events_stages_current-table.md) and [events_stages_history](performance-schema-events_stages_history-table.md) are related tables.

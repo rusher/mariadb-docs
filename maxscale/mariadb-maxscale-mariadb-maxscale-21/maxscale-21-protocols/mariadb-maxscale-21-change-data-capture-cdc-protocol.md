@@ -15,10 +15,10 @@ with the new events coming from MariaDB 10.0/10.1 database.
 ## Creating Users
 
 
-The users and their hashed passwords are stored in `<code>/var/cache/maxscale/<service name>/cdcusers</code>` where `<code><service name></code>` is the name of the service.
+The users and their hashed passwords are stored in `/var/cache/maxscale/<service name>/cdcusers` where `<service name>` is the name of the service.
 
 
-For example, the following service entry will look into `<code>/var/cache/maxscale/CDC-Service/</code>` for a file called `<code>cdcusers</code>`. If that file is found, the users in that file will be used for authentication.
+For example, the following service entry will look into `/var/cache/maxscale/CDC-Service/` for a file called `cdcusers`. If that file is found, the users in that file will be used for authentication.
 
 
 
@@ -32,7 +32,7 @@ passwd=maxpwd
 
 
 
-If the `<code>cdcusers</code>` file cannot be found, the service user (*maxuser:maxpwd* in the example) can be used to connect through the CDC protocol.
+If the `cdcusers` file cannot be found, the service user (*maxuser:maxpwd* in the example) can be used to connect through the CDC protocol.
 
 
 For more details, refer to the [CDC users documentation](mariadb-maxscale-21-change-data-capture-cdc-users.md).
@@ -71,10 +71,10 @@ In the future, optional flags could be implemented.
 
 
 The authentication starts when the client sends the hexadecimal representation
-of the username concatenated with a colon (`<code>:</code>`) and the SHA1 of the password.
+of the username concatenated with a colon (`:`) and the SHA1 of the password.
 
 
-`<code>bin2hex(username + ':' + SHA1(password))</code>`
+`bin2hex(username + ':' + SHA1(password))`
 
 
 For example the user *foobar* with a password of *foopasswd* should send the
@@ -88,7 +88,7 @@ foobar:SHA1(foopasswd) ->  666f6f6261723a3137336363643535253331
 
 
 
-Server returns `<code>OK</code>` on success and `<code>ERR</code>` on failure.
+Server returns `OK` on success and `ERR` on failure.
 
 
 ### Registration
@@ -97,7 +97,7 @@ Server returns `<code>OK</code>` on success and `<code>ERR</code>` on failure.
 #### REGISTER
 
 
-`<code>REGISTER UUID=UUID, TYPE={JSON | AVRO}</code>`
+`REGISTER UUID=UUID, TYPE={JSON | AVRO}`
 
 
 Register as a client to the service.
@@ -113,7 +113,7 @@ REGISTER UUID=11ec2300-2e23-11e6-8308-0002a5d5c51b, TYPE=AVRO
 
 
 
-Server returns `<code>OK</code>` on success and `<code>ERR</code>` on failure.
+Server returns `OK` on success and `ERR` on failure.
 
 
 ### Change Data Capture Commands
@@ -122,7 +122,7 @@ Server returns `<code>OK</code>` on success and `<code>ERR</code>` on failure.
 #### REQUEST-DATA
 
 
-`<code>REQUEST-DATA DATABASE.TABLE[.VERSION] [GTID]</code>`
+`REQUEST-DATA DATABASE.TABLE[.VERSION] [GTID]`
 
 
 This command fetches data from specified table in a database and returns the
@@ -152,7 +152,7 @@ REQUEST-DATA db2.table4 0-11-345
 #### QUERY-LAST-TRANSACTION
 
 
-`<code>QUERY-LAST-TRANSACTION</code>`
+`QUERY-LAST-TRANSACTION`
 
 
 Returns JSON with last GTID, timestamp and affected tables.
@@ -174,7 +174,7 @@ Last GTID could then be used in a REQUEST-DATA query.
 #### QUERY-TRANSACTION
 
 
-`<code>QUERY-TRANSACTION GTID</code>`
+`QUERY-TRANSACTION GTID`
 
 
 Returns JSON from specified GTID, the commit timestamp and affected tables.

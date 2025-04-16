@@ -8,7 +8,7 @@ debugger, like ddd or gdb, and get comprehensive trace files of the execution of
 Core dumps are also much easier to investigate if they come from a debug binary.
 
 
-Note that a binary compiled for debugging and tracing is about 10-20% slower than a normal binary. If you just compile a binary for debugging (option `<code>-g</code>` with gcc) the speed difference compared to a normal binary is negligible.
+Note that a binary compiled for debugging and tracing is about 10-20% slower than a normal binary. If you just compile a binary for debugging (option `-g` with gcc) the speed difference compared to a normal binary is negligible.
 
 
 ### Checking That MariaDB is Compiled For Debugging
@@ -21,17 +21,17 @@ Execute:
 mariadbd --debug --help
 ```
 
-If you are using MariaDB before 10.5, then you should use `<code>mysqld</code>` instead of `<code>mariadbd</code>`!
+If you are using MariaDB before 10.5, then you should use `mysqld` instead of `mariadbd`!
 
 
-If you get an error `<code>unknown option '--debug</code>`, then MariaDB is not compiled
+If you get an error `unknown option '--debug`, then MariaDB is not compiled
 for debugging and tracing.
 
 
 ### Building MariaDB for Debugging Starting from 5.5
 
 
-On Unix you need to pass `<code>-DCMAKE_BUILD_TYPE=Debug</code>` to cmake to compile with debug information.
+On Unix you need to pass `-DCMAKE_BUILD_TYPE=Debug` to cmake to compile with debug information.
 
 
 ### Building [MariaDB 5.3](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) and Older
@@ -78,7 +78,7 @@ cd current
 ./BUILD/compile-pentium64-debug-max
 ```
 
-The last command will produce a debug version of `<code class="highlight fixed" style="white-space:pre-wrap">sql/mysqld</code>`.
+The last command will produce a debug version of `sql/mysqld`.
 
 
 ### Debugging MariaDB From the Source Directory
@@ -87,7 +87,7 @@ The last command will produce a debug version of `<code class="highlight fixed" 
 #### Creating the MariaDB Database Directory
 
 
-The following example creates the MariaDB databases in `<code>/data</code>`.
+The following example creates the MariaDB databases in `/data`.
 
 
 ```
@@ -97,7 +97,7 @@ The following example creates the MariaDB databases in `<code>/data</code>`.
 #### Running MariaDB in a Debugger
 
 
-The following example is using `<code>ddd</code>`, an excellent graphical debugger in Linux. If you don't have `<code>ddd</code>` installed, you can use `<code>gdb</code>` instead.
+The following example is using `ddd`, an excellent graphical debugger in Linux. If you don't have `ddd` installed, you can use `gdb` instead.
 
 
 ```
@@ -105,17 +105,17 @@ cd sql
 ddd ./mariadbd &
 ```
 
-In `<code>ddd</code>` or `<code>gdb</code>`
+In `ddd` or `gdb`
 
 
 ```
 run --datadir=/data --language=./share/english --gdb
 ```
 
-You can [set the options in your /.my.cnf file](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/running-mariadb-from-the-build-directory.md) so as not to have to repeat them on the `<code>run</code>` line.
+You can [set the options in your /.my.cnf file](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/running-mariadb-from-the-build-directory.md) so as not to have to repeat them on the `run` line.
 
 
-If you run `<code>mysqld</code>` with `<code>--debug</code>`, you will get a [trace file](creating-a-trace-file.md) in /tmp/mysqld.trace that shows what is happening.
+If you run `mysqld` with `--debug`, you will get a [trace file](creating-a-trace-file.md) in /tmp/mysqld.trace that shows what is happening.
 
 
 Note that you can have different options in the configuration file for each MariaDB version (like having a specific language directory).
@@ -124,14 +124,14 @@ Note that you can have different options in the configuration file for each Mari
 ### Debugging MariaDB Server with mariadb-test-run
 
 
-If you get a crash while running `<code>mariadb-test-run</code>` you can debug this in a debugger by using one of the following options:
+If you get a crash while running `mariadb-test-run` you can debug this in a debugger by using one of the following options:
 
 
 ```
 mariadb-test-run --gdb failing-test-name
 ```
 
-or if you prefer the `<code>ddd</code>` debugger:
+or if you prefer the `ddd` debugger:
 
 
 ```
@@ -168,7 +168,7 @@ lc-messages-dir=/my/maria-10.2/sql/share
 lc-messages-dir=/my/maria-10.3/sql/share
 ```
 
-The above `<code>.my.cnf</code>` file:
+The above `.my.cnf` file:
 
 
 * Uses an explicit socket for both client and server.

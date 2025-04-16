@@ -1,7 +1,7 @@
 
 # Information Schema TABLE_CONSTRAINTS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>TABLE_CONSTRAINTS</code>` table contains information about tables that have [constraints](../../../../data-definition/constraint.md).
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `TABLE_CONSTRAINTS` table contains information about tables that have [constraints](../../../../data-definition/constraint.md).
 
 
 It has the following columns:

@@ -3,10 +3,10 @@
 
 
 ##### MariaDB starting with [10.5.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
-The `<code>user_variables_by_thread</code>` table was added in [MariaDB 10.5.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
+The `user_variables_by_thread` table was added in [MariaDB 10.5.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
 
 
-The `<code>user_variables_by_thread</code>` table contains information about [user-defined variables](../../../../../sql-language-structure/user-defined-variables.md) and the threads that defined them.
+The `user_variables_by_thread` table contains information about [user-defined variables](../../../../../sql-language-structure/user-defined-variables.md) and the threads that defined them.
 
 
 [TRUNCATE TABLE](../../../../table-statements/truncate-table.md) cannot be performed on the table.

@@ -11,7 +11,7 @@ JSON_EXISTS(json_doc, json_path)
 ## Description
 
 
-Determines whether `<code>json_doc</code>` has an element pointed to by path `<code>json_path</code>`. Returns `<code>1</code>` if the element exists, `<code>0</code>` if not, or `<code>NULL</code>` if any of the inputs were NULL.
+Determines whether `json_doc` has an element pointed to by path `json_path`. Returns `1` if the element exists, `0` if not, or `NULL` if any of the inputs were NULL.
 
 
 ## Examples

@@ -75,7 +75,7 @@ We realize that "as quickly as possible" is a relative term. The dream scenario 
 When a report does not have all the information to reproduce the problem right away (which is quite often the case), we will ask the reporter to provide the missing information. Usually it takes more than one iteration to get everything right, so it is important that you respond to the questions as precisely as you can. Please make sure that you answered **all** questions (or, if you cannot answer some of them, please say so, otherwise we will have to ask again, and more time will be wasted on it).
 
 
-There is no status "Need Feedback" in our JIRA; instead, we are using the label `<code>need_feedback</code>`. As long as the report has this label, it remains on the "Waiting for feedback" list. The label is set and removed manually by whoever asks for the feedback and receives it; so it can happen that the reporter has provided the response, but it remained unnoticed and the bug keeps waiting. It will be our fault, but human errors happen; it would help a lot if the reporter removed the label along with providing the feedback.
+There is no status "Need Feedback" in our JIRA; instead, we are using the label `need_feedback`. As long as the report has this label, it remains on the "Waiting for feedback" list. The label is set and removed manually by whoever asks for the feedback and receives it; so it can happen that the reporter has provided the response, but it remained unnoticed and the bug keeps waiting. It will be our fault, but human errors happen; it would help a lot if the reporter removed the label along with providing the feedback.
 
 
 #### E-mail Notifications
@@ -84,7 +84,7 @@ There is no status "Need Feedback" in our JIRA; instead, we are using the label 
 This question arises fairly often, so it deserves mentioning.
 
 
-As already said before, the `<code>need_feedback</code>` label is set and *removed* manually. JIRA e-mail updates about it can be confusing when you look at them quickly. For example, when someone *removes* the label, the email looks like this:
+As already said before, the `need_feedback` label is set and *removed* manually. JIRA e-mail updates about it can be confusing when you look at them quickly. For example, when someone *removes* the label, the email looks like this:
 
 
 ```
@@ -94,7 +94,7 @@ Elena Stepanova updated MDEV-9791:
 ```
 
 
-What it says that the `<code>Labels</code>` field has become empty, while before it had been `<code>need_feedback</code>`. People often misread it and ask "What else do you need from me? I've answered your questions". This update means that at the moment we don't need anything, your report is back to the incoming queue, and your feedback will be analyzed as soon as possible. Then, we will possibly ask more questions and set the label again, and the notification will look like this:
+What it says that the `Labels` field has become empty, while before it had been `need_feedback`. People often misread it and ask "What else do you need from me? I've answered your questions". This update means that at the moment we don't need anything, your report is back to the incoming queue, and your feedback will be analyzed as soon as possible. Then, we will possibly ask more questions and set the label again, and the notification will look like this:
 
 
 ```
@@ -172,15 +172,15 @@ When a new sprint is created, bugs which affect the scheduled release are evalua
 * from all such bugs assigned to a developer, each developer chooses bugs he is able to work on during the given time interval;
 * bug priority plays the most significant role in this process, but this is not the only factor. 
 
-  * `<code>Blocker</code>` bugs must be either fixed or degraded before the release goes out;
-  * `<code>Critical</code>` bugs should be chosen above other bugs, except for `<code>Blocker</code>`s;
-  * among `<code>Major</code>` bugs, 
+  * `Blocker` bugs must be either fixed or degraded before the release goes out;
+  * `Critical` bugs should be chosen above other bugs, except for `Blocker`s;
+  * among `Major` bugs, 
 
     * bugs with patches, either external, or upstream, or internal, are usually prioritized above ordinary bug reports;
     * external reports (community reports) are ranked higher than bugs reported by the development team;
     * bugs which can realistically be fixed in the given time interval are chosen more frequently than those that are likelly to take several cycles;
     * bugs which affect the reporter in a worse matter get more attention than those that have viable workarounds;
-  * `<code>Minor</code>` bugs are usually fixed when there are no more urgent tasks.
+  * `Minor` bugs are usually fixed when there are no more urgent tasks.
 
 
 ## Tracking Progress
@@ -198,35 +198,35 @@ All JIRA fields are public, but some of them are mainly used for internal develo
 #### Resolution vs. Status
 
 
-It might come as counter-intuitive, but in the existing JIRA structure, the `<code>Status</code>` field does not mean much for the user, it is mainly used for development and management purposes. On the contrary, the `<code>Resoluton</code>` field is entirely user-facing: it does not participate in planning or development. It remains the same 'Unresolved' for the whole life of the report, and is only changed when the bug gets closed, demonstrating the reason why it was closed.
+It might come as counter-intuitive, but in the existing JIRA structure, the `Status` field does not mean much for the user, it is mainly used for development and management purposes. On the contrary, the `Resoluton` field is entirely user-facing: it does not participate in planning or development. It remains the same 'Unresolved' for the whole life of the report, and is only changed when the bug gets closed, demonstrating the reason why it was closed.
 
 
 ##### Resolution
 
 
-* `<code>Unresolved</code>` - the bug report remains open, the work has not been finished.
-* `<code>Fixed</code>` - the bug has been fixed, see [Fix version/s](#fix-versions) and possibly comments to the report for more information. This is almost always a terminal state, we do not re-open fixed bugs even if they later re-appear; please create a new one instead. The only case when it can be re-opened is when the 'Fix version/s' have not been released yet.
-* `<code>Duplicate</code>` - the bug report is identical to an already existing open (or recently fixed) report, which will be quoted in the comments and/or links. It is usually a terminal state, unless it is proven later that the report was not a duplicate after all.
-* `<code>Not a bug</code>` - the described behavior is not a bug, there will be a comment explaining why. It is usually a terminal state, unless you object and show why it is a bug. If the report is in fact a feature request, then rather than closing it as 'Not a bug', we will switch the type to 'Task'.
-* `<code>Incomplete</code>` - we had requested feedback from the user and waited for 1 month, but did not receive it. It is a pseudo-terminal state, the report can be re-opened any time when the requested information is provided.
-* `<code>Cannot reproduce</code>` - rather rarely used "resolution", which means we could not find the way to confirm the problem described by the reporter, and ran out of ideas what other information to request from the reporter in order to reproduce it.
-* `<code>Won't fix</code>` - another rarely used "resolution", which means that the bug is admitted, but we have no intention to fix it. Usually it happens when the bug only affects old versions, and is not important enough to fix in the old versions; or, when it is related to systems or architectures we don't officially support.
+* `Unresolved` - the bug report remains open, the work has not been finished.
+* `Fixed` - the bug has been fixed, see [Fix version/s](#fix-versions) and possibly comments to the report for more information. This is almost always a terminal state, we do not re-open fixed bugs even if they later re-appear; please create a new one instead. The only case when it can be re-opened is when the 'Fix version/s' have not been released yet.
+* `Duplicate` - the bug report is identical to an already existing open (or recently fixed) report, which will be quoted in the comments and/or links. It is usually a terminal state, unless it is proven later that the report was not a duplicate after all.
+* `Not a bug` - the described behavior is not a bug, there will be a comment explaining why. It is usually a terminal state, unless you object and show why it is a bug. If the report is in fact a feature request, then rather than closing it as 'Not a bug', we will switch the type to 'Task'.
+* `Incomplete` - we had requested feedback from the user and waited for 1 month, but did not receive it. It is a pseudo-terminal state, the report can be re-opened any time when the requested information is provided.
+* `Cannot reproduce` - rather rarely used "resolution", which means we could not find the way to confirm the problem described by the reporter, and ran out of ideas what other information to request from the reporter in order to reproduce it.
+* `Won't fix` - another rarely used "resolution", which means that the bug is admitted, but we have no intention to fix it. Usually it happens when the bug only affects old versions, and is not important enough to fix in the old versions; or, when it is related to systems or architectures we don't officially support.
 
 
 ##### Status
 
 
-* `<code>Open</code>`, `<code>Confirmed</code>` - this distinction is used in our internal queues, but from the user's perspective the difference is slim: setting the bug report to 'Confirmed' does mean that we are satisfied with the information provided in the report, but the user will also know about it from our comments and other updates. Otherwise, bugs in both statuses can be considered for fixing.
-* `<code>In Progress</code>`, `<code>Stalled</code>` - different intermediate states of bugs which help developers to filter their lists and management to gather a picture of the current activity. For the user, there is no important difference -- despite the negative semantics, 'Stalled' does not mean that something is wrong with the bug report, only that the developer is not working on it actively at the moment.
-* `<code>In review</code>` - means, literally, that a peer review has been requested.
-* `<code>Closed</code>` - means that the bug report is closed, on whatever reason. The real reason is in the 'Resolution' field.
+* `Open`, `Confirmed` - this distinction is used in our internal queues, but from the user's perspective the difference is slim: setting the bug report to 'Confirmed' does mean that we are satisfied with the information provided in the report, but the user will also know about it from our comments and other updates. Otherwise, bugs in both statuses can be considered for fixing.
+* `In Progress`, `Stalled` - different intermediate states of bugs which help developers to filter their lists and management to gather a picture of the current activity. For the user, there is no important difference -- despite the negative semantics, 'Stalled' does not mean that something is wrong with the bug report, only that the developer is not working on it actively at the moment.
+* `In review` - means, literally, that a peer review has been requested.
+* `Closed` - means that the bug report is closed, on whatever reason. The real reason is in the 'Resolution' field.
 
 
 #### Fix Versions
 
 
 This is an important field for progress tracking. 
-After the bug is confirmed or otherwise acknowledged, this field is populated with a set of major versions where we intend to fix it. E.g. if the field is set to `<code>10.0 10.1</code>`, it means that at the moment we consider it for fixing in some future 10.0 release (not necessarily the next one), and the bugfix will be merged into the next 10.1 release after that; but we do not consider it for fixing in 5.5, even if it is affected to.
+After the bug is confirmed or otherwise acknowledged, this field is populated with a set of major versions where we intend to fix it. E.g. if the field is set to `10.0 10.1`, it means that at the moment we consider it for fixing in some future 10.0 release (not necessarily the next one), and the bugfix will be merged into the next 10.1 release after that; but we do not consider it for fixing in 5.5, even if it is affected to.
 
 
 To some extent, you can influence the initial plans: if you see that the fix is not targeted for versions where you think it should be, you can comment on the report, and if you provide convincing arguments and make your case, it can be reconsidered.
@@ -235,7 +235,7 @@ To some extent, you can influence the initial plans: if you see that the fix is 
 The value of the field is not a promise to fix the bug in the mentioned releases. It can be changed both ways: during further analysis, the developer can find out that it can be safely fixed in an earlier release, or, on the contrary, that it cannot be safely fixed in the GA release, and the fix can only go to the next versions which are currently under development.
 
 
-After the bug is fixed, the value of the field is changed to the exact versions, e.g. `<code>10.0.25 10.1.14</code>`. It means that the patch has been pushed into the 10.0 branch, and will be released with 10.0.25 release; it also means that the patch *will be* merged to 10.1 tree and released with 10.1.14 release, but it does not mean that it is already in the 10.1 branch.
+After the bug is fixed, the value of the field is changed to the exact versions, e.g. `10.0.25 10.1.14`. It means that the patch has been pushed into the 10.0 branch, and will be released with 10.0.25 release; it also means that the patch *will be* merged to 10.1 tree and released with 10.1.14 release, but it does not mean that it is already in the 10.1 branch.
 
 
 #### Priority
@@ -247,10 +247,10 @@ As the other article says, the **[Priority](reporting-bugs.md#priority)** field 
 The value of the field normally means the following:
 
 
-* `<code>Blocker</code>` - we currently think that the bug must be fixed before the next release(s) set in the 'Fix version/s' field;
-* `<code>Critical</code>` - the bug should be picked up for fixing earlier than any other bugs apart from blockers;
-* `<code>Major</code>` - the bug will be present in the main queue for fixing in the upcoming 'Fix version/s', although only a part of such bugs will be fixed in every release;
-* `<code>Minor</code>`, `<code>Trivial</code>` - the bugs will be picked up when the assignee does not have more pressing issues for the upcoming release.
+* `Blocker` - we currently think that the bug must be fixed before the next release(s) set in the 'Fix version/s' field;
+* `Critical` - the bug should be picked up for fixing earlier than any other bugs apart from blockers;
+* `Major` - the bug will be present in the main queue for fixing in the upcoming 'Fix version/s', although only a part of such bugs will be fixed in every release;
+* `Minor`, `Trivial` - the bugs will be picked up when the assignee does not have more pressing issues for the upcoming release.
 
 
 Please note that the Priority field only demonstrates our intentions at the moment, it does not guarantee that things will happen according to these intentions.
@@ -262,9 +262,9 @@ Please note that the Priority field only demonstrates our intentions at the mome
 Labels are mostly used for more convenient filtering and don't carry much importance otherwise. However, there are a few that affect the processing of a bug report:
 
 
-* `<code>need_feedback</code>` - its role during the initial bug processing was already described [above](#need-feedback-what-is-it-and-how-to-deal-with-it). However, after a bug is confirmed and queued for fixing, it should not appear anymore; and even if it's left by mistake, it won't affect the progress.
-* `<code>upstream</code>` - the label means that the bug also exists in the upstream version of the corresponding component - normally, in MySQL server or a client program, but can also be in Percona's XtraDB or TokuDB. Normally there should also be a link to the upstream bug report. Setting this label means that we might want to take for a while and see whether the bug is fixed in the upstream version before we fix it in MariaDB directly. It was usual for 5.5, less usual for 10.x where bugfixes, apart from InnoDB, are not merged automatically. The label is still set, but it is more for informational purposes than to affect the priority.
-* `<code>upstream-fixed</code>` - the label means that the bug used to exist in the upstream version, but not anymore. It means that there is nothing more to wait; moreover, it might be worth picking up the bug soon and at least evaluating the upstream bugfix.
+* `need_feedback` - its role during the initial bug processing was already described [above](#need-feedback-what-is-it-and-how-to-deal-with-it). However, after a bug is confirmed and queued for fixing, it should not appear anymore; and even if it's left by mistake, it won't affect the progress.
+* `upstream` - the label means that the bug also exists in the upstream version of the corresponding component - normally, in MySQL server or a client program, but can also be in Percona's XtraDB or TokuDB. Normally there should also be a link to the upstream bug report. Setting this label means that we might want to take for a while and see whether the bug is fixed in the upstream version before we fix it in MariaDB directly. It was usual for 5.5, less usual for 10.x where bugfixes, apart from InnoDB, are not merged automatically. The label is still set, but it is more for informational purposes than to affect the priority.
+* `upstream-fixed` - the label means that the bug used to exist in the upstream version, but not anymore. It means that there is nothing more to wait; moreover, it might be worth picking up the bug soon and at least evaluating the upstream bugfix.
 
 
 ## Bug Reports with Patches

@@ -8,7 +8,7 @@ We participated in the Google Summer of Code 2015. MariaDB and the MariaDB Found
 # Where to start
 
 
-Please join us at `<code class="fixed" style="white-space:pre-wrap">irc.freenode.net</code>` at #maria to mingle with the community. Don't forget to subscribe to [maria-developers@lists.launchpad.net](https://launchpad.net/~maria-developers) (this is the main list where we discuss development).
+Please join us at `irc.freenode.net` at #maria to mingle with the community. Don't forget to subscribe to [maria-developers@lists.launchpad.net](https://launchpad.net/~maria-developers) (this is the main list where we discuss development).
 
 
 Please keep in mind that in April we travel a lot (conferences, busy time focusing on a release), so if you have a question and nobody on IRC answers — do not feel disappointed, ask in an email to maria-developers@lists.launchpad.net. Asking on the mailing list means others benefit from your Q&A too!

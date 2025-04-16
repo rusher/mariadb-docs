@@ -12,34 +12,34 @@ FLUSH TABLE[S] table_name [, table_name] FOR EXPORT
 ## Description
 
 
-`<code>FLUSH TABLES ... FOR EXPORT</code>` flushes changes to the specified tables to disk so that binary copies can be made while the server is still running. This works for [Archive](../../../../storage-engines/archive/README.md), [Aria](../../../../storage-engines/s3-storage-engine/aria_s3_copy.md), [CSV](../../../../storage-engines/csv/csv-overview.md), [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), [MyISAM](../../../../storage-engines/myisam-storage-engine/myisam-system-variables.md) and [MERGE](../../../../storage-engines/merge.md) tables.
+`FLUSH TABLES ... FOR EXPORT` flushes changes to the specified tables to disk so that binary copies can be made while the server is still running. This works for [Archive](../../../../storage-engines/archive/README.md), [Aria](../../../../storage-engines/s3-storage-engine/aria_s3_copy.md), [CSV](../../../../storage-engines/csv/csv-overview.md), [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), [MyISAM](../../../../storage-engines/myisam-storage-engine/myisam-system-variables.md) and [MERGE](../../../../storage-engines/merge.md) tables.
 
 
 The table is read locked until one has issued [UNLOCK TABLES](../../transactions/transactions-unlock-tables.md).
 
 
-If a storage engine does not support `<code>FLUSH TABLES FOR EXPORT</code>`, a 1031 error ([SQLSTATE](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'HY000') is produced.
+If a storage engine does not support `FLUSH TABLES FOR EXPORT`, a 1031 error ([SQLSTATE](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'HY000') is produced.
 
 
-If `<code>FLUSH TABLES ... FOR EXPORT</code>` is in effect in the session, the following statements will produce an error if attempted:
+If `FLUSH TABLES ... FOR EXPORT` is in effect in the session, the following statements will produce an error if attempted:
 
 
-* `<code>FLUSH TABLES WITH READ LOCK</code>`
-* `<code>FLUSH TABLES ... WITH READ LOCK</code>`
-* `<code>FLUSH TABLES ... FOR EXPORT</code>`
+* `FLUSH TABLES WITH READ LOCK`
+* `FLUSH TABLES ... WITH READ LOCK`
+* `FLUSH TABLES ... FOR EXPORT`
 * Any statement trying to update any table
 
 
-If any of the following statements is in effect in the session, attempting `<code> FLUSH TABLES ... FOR EXPORT</code>` will produce an error.
+If any of the following statements is in effect in the session, attempting ` FLUSH TABLES ... FOR EXPORT` will produce an error.
 
 
-* `<code>FLUSH TABLES ... WITH READ LOCK</code>`
-* `<code>FLUSH TABLES ... FOR EXPORT</code>`
-* `<code>LOCK TABLES ... READ</code>`
-* `<code>LOCK TABLES ... WRITE</code>`
+* `FLUSH TABLES ... WITH READ LOCK`
+* `FLUSH TABLES ... FOR EXPORT`
+* `LOCK TABLES ... READ`
+* `LOCK TABLES ... WRITE`
 
 
-`<code>FLUSH FOR EXPORT</code>` is not written to the [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md).
+`FLUSH FOR EXPORT` is not written to the [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md).
 
 
 This statement requires the [RELOAD](../../account-management-sql-commands/grant.md#global-privileges) and the [LOCK TABLES](../../account-management-sql-commands/grant.md#database-privileges) privileges.

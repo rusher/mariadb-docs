@@ -599,7 +599,7 @@ MariaDB ColumnStore DBRM files: This is where the Extent Map and Versioning file
 The Extent Map is loaded into shared memory on each of the nodes during the start-system process time. The version in shared memory on the PM1 node is the main copy. Changes are applied to that version in memory. Then changes are made to the disk version that only exist on PM1 disk storage and a copy of those changes are sent out to the other nodes and their memory copies are updated.
 
 
-NOTE: The following utility can be used to dump the internal memory copy of the Extent Map `<code>/usr/local/mariadb/columnstore/bin/editem</code>` : there are a few options with this command, -i dumps a raw copy and -d dumps a formatted copy
+NOTE: The following utility can be used to dump the internal memory copy of the Extent Map `/usr/local/mariadb/columnstore/bin/editem` : there are a few options with this command, -i dumps a raw copy and -d dumps a formatted copy
 
 
 ### MariaDB ColumnStore utilities

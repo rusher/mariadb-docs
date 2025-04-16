@@ -23,15 +23,15 @@ ALTER
 ## Description
 
 
-The `<code>ALTER EVENT</code>` statement is used to change one or more of the
+The `ALTER EVENT` statement is used to change one or more of the
 characteristics of an existing [event](events.md) without the need to drop and recreate it.
-The syntax for each of the `<code>DEFINER</code>`, `<code>ON SCHEDULE</code>`, `<code>ON COMPLETION</code>`,
-`<code>COMMENT</code>`, `<code>ENABLE</code>` `<code>/</code>` `<code>DISABLE</code>`, and `<code>DO</code>` clauses is exactly the
+The syntax for each of the `DEFINER`, `ON SCHEDULE`, `ON COMPLETION`,
+`COMMENT`, `ENABLE` `/` `DISABLE`, and `DO` clauses is exactly the
 same as when used with [CREATE EVENT](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-event.md).
 
 
 This statement requires the [EVENT](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#database-privileges) privilege.
-When a user executes a successful `<code>ALTER EVENT</code>` statement, that user becomes
+When a user executes a successful `ALTER EVENT` statement, that user becomes
 the definer for the affected event.
 
 
@@ -39,7 +39,7 @@ the definer for the affected event.
 by a user having the [SUPER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege.)
 
 
-`<code>ALTER EVENT</code>` works only with an existing event:
+`ALTER EVENT` works only with an existing event:
 
 
 ```

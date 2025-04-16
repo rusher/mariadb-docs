@@ -29,7 +29,7 @@ report at [Jira](https://jira.mariadb.org).
 ### Masking
 
 
-* The masking filter now has a default fill character `<code>X</code>`, which
+* The masking filter now has a default fill character `X`, which
  is used if only a value has been specified and the length of
  the value does not match the length of the value received from
  the server.

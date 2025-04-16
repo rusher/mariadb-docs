@@ -6,7 +6,7 @@
 The prepared_statements_instances table was introduced in [MariaDB 10.5.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
 
 
-The `<code>prepared_statements_instances</code>` table contains aggregated statistics of prepared statements.
+The `prepared_statements_instances` table contains aggregated statistics of prepared statements.
 
 
 The maximum number of rows in the table is determined by the [performance_schema_max_prepared_statement_instances](../performance-schema-system-variables.md#performance_schema_max_prepared_statement_instances) system variable, which is by default autosized on startup.

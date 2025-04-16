@@ -1,7 +1,7 @@
 
 # USE INDEX
 
-You can limit which indexes are considered with the `<code>USE INDEX</code>` option.
+You can limit which indexes are considered with the `USE INDEX` option.
 
 
 ## Syntax

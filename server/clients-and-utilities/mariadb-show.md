@@ -4,7 +4,7 @@
 Shows the structure of a MariaDB database (databases, tables, columns and indexes).
 
 
-Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysqlshow</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqlshow`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 You can also use [SHOW DATABASES](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-databases.md), [SHOW TABLES](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-tables.md), [SHOW COLUMNS](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-columns.md), [SHOW INDEX](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index.md) and [SHOW TABLE STATUS](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-status.md), as well as the [Information Schema](../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) tables ([TABLES](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md), [COLUMNS](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md), [STATISTICS](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-statistics-table.md)), to get similar functionality.
@@ -30,7 +30,7 @@ what's matched by the wildcard is shown. If a database name contains any undersc
 ### Options
 
 
-`<code>mariadb-show</code>` supports the following options:
+`mariadb-show` supports the following options:
 
 
 
@@ -83,7 +83,7 @@ what's matched by the wildcard is shown. If a database name contains any undersc
 ### Option Files
 
 
-In addition to reading options from the command-line, `<code>mariadb-show</code>` can also read options from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `<code>mariadb-show</code>` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadb-show` can also read options from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-show` in an option file, then it is ignored.
 
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
@@ -101,13 +101,13 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-In [MariaDB 10.2](../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, `<code>mariadb-show</code>` is linked with [MariaDB Connector/C](../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+In [MariaDB 10.2](../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, `mariadb-show` is linked with [MariaDB Connector/C](../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 
 #### Option Groups
 
 
-`<code>mariadb-show</code>` reads options from the following [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
+`mariadb-show` reads options from the following [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
 
 
 
@@ -138,7 +138,7 @@ bin/mariadb-show
 +--------------------+
 ```
 
-Getting a list of tables in the `<code>test</code>` database:
+Getting a list of tables in the `test` database:
 
 
 ```
@@ -154,7 +154,7 @@ Database: test
 +---------+
 ```
 
-Getting a list of columns in the `<code>test</code>`.`<code>book</code>` table:
+Getting a list of columns in the `test`.`book` table:
 
 
 ```

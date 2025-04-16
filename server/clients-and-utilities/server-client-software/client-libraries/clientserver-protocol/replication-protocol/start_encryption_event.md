@@ -1,7 +1,7 @@
 
 # START_ENCRYPTION_EVENT
 
-The `<code>START_ENCRYPTION</code>` event is written to every [binary log](../../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file if [encrypt_binlog](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) is set to ON.
+The `START_ENCRYPTION` event is written to every [binary log](../../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file if [encrypt_binlog](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) is set to ON.
 
 
 This event is written just once, after the Format Description event (which is the first event of a binlog file at pos 4).

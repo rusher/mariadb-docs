@@ -12,7 +12,7 @@ LONGTEXT [CHARACTER SET charset_name] [COLLATE collation_name]
 ## Description
 
 
-A [TEXT](text.md) column with a maximum length of 4,294,967,295 or 4GB (`<code>2<sup>32</sup> - 1</code>`) characters. The effective maximum length is less if the value contains multi-byte characters. The effective maximum length of LONGTEXT columns also depends on the configured maximum packet size in the client/server protocol and available memory. Each LONGTEXT value is stored using a four-byte length prefix that indicates the number of bytes in the value.
+A [TEXT](text.md) column with a maximum length of 4,294,967,295 or 4GB (`2<sup>32</sup> - 1`) characters. The effective maximum length is less if the value contains multi-byte characters. The effective maximum length of LONGTEXT columns also depends on the configured maximum packet size in the client/server protocol and available memory. Each LONGTEXT value is stored using a four-byte length prefix that indicates the number of bytes in the value.
 
 
 JSON is an alias for LONGTEXT. See [JSON Data Type](../../storage-engines/connect/json-sample-files.md) for details.
@@ -21,7 +21,7 @@ JSON is an alias for LONGTEXT. See [JSON Data Type](../../storage-engines/connec
 ## Oracle Mode
 
 
-In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), [CLOB](https://mariadb.com/kb/en/clob/) is a synonym for `<code>LONGTEXT</code>`.
+In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), [CLOB](https://mariadb.com/kb/en/clob/) is a synonym for `LONGTEXT`.
 
 
 ## EXAMPLES
@@ -43,7 +43,7 @@ CREATE TABLE longtext_example (
 
 #### Note:
 
-The maximum size of a `<code>LONGTEXT</code>` is so large that it cannot be sent to the server without breaking the value up into chunks (something that the command-line client cannot do). For values larger than `<code>16M</code>`, you can increase the `<code>max_allowed_packet</code>` size up to a maximum of `<code>1024M</code>` to increase the allowed size of non-chunked values.
+The maximum size of a `LONGTEXT` is so large that it cannot be sent to the server without breaking the value up into chunks (something that the command-line client cannot do). For values larger than `16M`, you can increase the `max_allowed_packet` size up to a maximum of `1024M` to increase the allowed size of non-chunked values.
 
 
 ```

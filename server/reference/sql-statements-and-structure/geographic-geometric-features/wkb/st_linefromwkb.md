@@ -17,7 +17,7 @@ LineStringFromWKB(wkb[,srid])
 Constructs a LINESTRING value using its [WKB](well-known-binary-wkb-format.md) representation and SRID.
 
 
-`<code>ST_LineFromWKB()</code>`, `<code>LineFromWKB()</code>`, `<code>ST_LineStringFromWKB()</code>`, and `<code>LineStringFromWKB()</code>` are synonyms.
+`ST_LineFromWKB()`, `LineFromWKB()`, `ST_LineStringFromWKB()`, and `LineStringFromWKB()` are synonyms.
 
 
 ## Examples

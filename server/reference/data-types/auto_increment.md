@@ -5,13 +5,13 @@
 ## Description
 
 
-The `<code>AUTO_INCREMENT</code>` attribute can be used to generate a unique identity for new rows. When you insert a new record to the table (or upon adding an [AUTO_INCREMENT](../storage-engines/innodb/auto_increment-handling-in-innodb.md) attribute with the [ALTER TABLE](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement), and the auto_increment field is [NULL](null-values.md) or DEFAULT (in the case of an INSERT), the value will automatically be incremented. This also applies to 0, unless the [NO_AUTO_VALUE_ON_ZERO SQL_MODE](../../server-management/variables-and-modes/sql-mode.md#no_auto_value_on_zero) is enabled.
+The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. When you insert a new record to the table (or upon adding an [AUTO_INCREMENT](../storage-engines/innodb/auto_increment-handling-in-innodb.md) attribute with the [ALTER TABLE](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement), and the auto_increment field is [NULL](null-values.md) or DEFAULT (in the case of an INSERT), the value will automatically be incremented. This also applies to 0, unless the [NO_AUTO_VALUE_ON_ZERO SQL_MODE](../../server-management/variables-and-modes/sql-mode.md#no_auto_value_on_zero) is enabled.
 
 
-`<code>AUTO_INCREMENT</code>` columns start from 1 by default. The automatically generated value can never be lower than 0.
+`AUTO_INCREMENT` columns start from 1 by default. The automatically generated value can never be lower than 0.
 
 
-Each table can have only one `<code>AUTO_INCREMENT</code>` column. It must defined as a key (not necessarily the `<code>PRIMARY KEY</code>` or `<code>UNIQUE</code>` key). In some storage engines (including the default [InnoDB](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md)), if the key consists of multiple columns, the `<code>AUTO_INCREMENT</code>` column must be the first column. Storage engines that permit the column to be placed elsewhere are [Aria](../storage-engines/s3-storage-engine/aria_s3_copy.md), [MyISAM](../storage-engines/myisam-storage-engine/myisam-system-variables.md), [MERGE](../storage-engines/merge.md), [Spider](../storage-engines/spider/spider-functions/spider_copy_tables.md), [TokuDB](../storage-engines/tokudb/tokudb-resources.md), [BLACKHOLE](../storage-engines/blackhole.md), [FederatedX](../storage-engines/federatedx-storage-engine/README.md) and [Federated](../storage-engines/legacy-storage-engines/federated-storage-engine.md).
+Each table can have only one `AUTO_INCREMENT` column. It must defined as a key (not necessarily the `PRIMARY KEY` or `UNIQUE` key). In some storage engines (including the default [InnoDB](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md)), if the key consists of multiple columns, the `AUTO_INCREMENT` column must be the first column. Storage engines that permit the column to be placed elsewhere are [Aria](../storage-engines/s3-storage-engine/aria_s3_copy.md), [MyISAM](../storage-engines/myisam-storage-engine/myisam-system-variables.md), [MERGE](../storage-engines/merge.md), [Spider](../storage-engines/spider/spider-functions/spider_copy_tables.md), [TokuDB](../storage-engines/tokudb/tokudb-resources.md), [BLACKHOLE](../storage-engines/blackhole.md), [FederatedX](../storage-engines/federatedx-storage-engine/README.md) and [Federated](../storage-engines/legacy-storage-engines/federated-storage-engine.md).
 
 
 ```
@@ -40,7 +40,7 @@ SELECT * FROM animals;
 +----+---------+
 ```
 
-`<code>SERIAL</code>` is an alias for `<code>BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE</code>`.
+`SERIAL` is an alias for `BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE`.
 
 
 ```
@@ -59,10 +59,10 @@ Create Table: CREATE TABLE `t` (
 ## Setting or Changing the Auto_Increment Value
 
 
-You can use an `<code>[ALTER TABLE](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)</code>` statement to assign a new value to the `<code>auto_increment</code>` table option, or set the [insert_id](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#insert_id) server system variable to change the next `<code>AUTO_INCREMENT</code>` value inserted by the current session.
+You can use an `[ALTER TABLE](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)` statement to assign a new value to the `auto_increment` table option, or set the [insert_id](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#insert_id) server system variable to change the next `AUTO_INCREMENT` value inserted by the current session.
 
 
-`<code>[LAST_INSERT_ID()](../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)</code>` can be used to see the last `<code>AUTO_INCREMENT</code>` value inserted by the current session.
+`[LAST_INSERT_ID()](../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)` can be used to see the last `AUTO_INCREMENT` value inserted by the current session.
 
 
 ```
@@ -114,10 +114,10 @@ See also [AUTO_INCREMENT Handling in InnoDB](../storage-engines/innodb/auto_incr
 ## Setting Explicit Values
 
 
-It is possible to specify a value for an `<code>AUTO_INCREMENT</code>` column. If the key is primary or unique, the value must not already exist in the key.
+It is possible to specify a value for an `AUTO_INCREMENT` column. If the key is primary or unique, the value must not already exist in the key.
 
 
-If the new value is higher than the current maximum value, the `<code>AUTO_INCREMENT</code>` value is updated, so the next value will be higher. If the new value is lower than the current maximum value, the `<code>AUTO_INCREMENT</code>` value remains unchanged.
+If the new value is higher than the current maximum value, the `AUTO_INCREMENT` value is updated, so the next value will be higher. If the new value is lower than the current maximum value, the `AUTO_INCREMENT` value remains unchanged.
 
 
 The following example demonstrates these behaviors:
@@ -171,7 +171,7 @@ Thus AUTO_INCREMENT values can be used to sort results in a chronological order,
 ## Replication
 
 
-To make master-master or Galera safe to use `<code>AUTO_INCREMENT</code>` one should use the system variables 
+To make master-master or Galera safe to use `AUTO_INCREMENT` one should use the system variables 
  [auto_increment_increment](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) and [auto_increment_offset](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) to generate unique values for each server.
 
 
@@ -223,7 +223,7 @@ SELECT * FROM t2;
 +---+
 ```
 
-If `<code>auto_increment_offset</code>` is larger than `<code>auto_increment_increment</code>`, the value of `<code>auto_increment_offset</code>` is ignored, and the offset reverts to the default of 1 instead:
+If `auto_increment_offset` is larger than `auto_increment_increment`, the value of `auto_increment_offset` is ignored, and the offset reverts to the default of 1 instead:
 
 
 ```

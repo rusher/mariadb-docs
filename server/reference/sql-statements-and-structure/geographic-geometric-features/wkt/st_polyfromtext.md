@@ -17,7 +17,7 @@ PolygonFromText(wkt[,srid])
 Constructs a [POLYGON](../geometry-constructors/polygon.md) value using its [WKT](wkt-definition.md) representation and [SRID](../geometry-properties/st_srid.md).
 
 
-`<code>ST_PolyFromText()</code>`, `<code>ST_PolygonFromText()</code>`, `<code>PolyFromText()</code>` and `<code>ST_PolygonFromText()</code>` are all synonyms.
+`ST_PolyFromText()`, `ST_PolygonFromText()`, `PolyFromText()` and `ST_PolygonFromText()` are all synonyms.
 
 
 ## Examples

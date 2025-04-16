@@ -4,7 +4,7 @@
 # Configuring the MaxAdmin Administrative Interface
 
 
-To configure the service which is used by the `<code>maxadmin</code>` command to connect to
+To configure the service which is used by the `maxadmin` command to connect to
 MariaDB MaxScale, add the following service and listener sections to the
 configuration file.
 
@@ -24,6 +24,6 @@ socket=default
 
 
 
-This defines a UNIX domain socket which `<code>maxadmin</code>` will use to connect to
+This defines a UNIX domain socket which `maxadmin` will use to connect to
 MaxScale. MaxAdmin provides monitoring and administration functionality that can
 be used to inspect the state of MaxScale.

@@ -11,12 +11,12 @@ ROUND(X), ROUND(X,D)
 ## Description
 
 
-Rounds the argument `<code>X</code>` to `<code>D</code>` decimal places. `<code>D</code>` defaults to `<code>0</code>` if not specified.
-`<code>D</code>` can be negative to cause `<code>D</code>` digits left of the decimal point of the
-value `<code>X</code>` to become zero.
+Rounds the argument `X` to `D` decimal places. `D` defaults to `0` if not specified.
+`D` can be negative to cause `D` digits left of the decimal point of the
+value `X` to become zero.
 
 
-The rounding algorithm depends on the data type of `<code>X</code>`:
+The rounding algorithm depends on the data type of `X`:
 
 
 * for floating point types ([FLOAT](../../../../data-types/data-types-numeric-data-types/float.md), [DOUBLE](../../../../data-types/data-types-numeric-data-types/double.md)) the C libraries rounding function is used, so the behavior *may* differ between operating systems

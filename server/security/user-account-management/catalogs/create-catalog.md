@@ -23,10 +23,10 @@ create_specification:
 ## Description
 
 
-Creates a [catalog](catalogs-overview.md) and the `<code>mysql</code>`, `<code>sys</code>` and `<code>performance_schema</code>` schemas inside the catalog.
+Creates a [catalog](catalogs-overview.md) and the `mysql`, `sys` and `performance_schema` schemas inside the catalog.
 
 
-`<code>CREATE CATALOG</code>` can only be performed by a user in the `<code>def</code>` catalog with the CATALOG privilege.
+`CREATE CATALOG` can only be performed by a user in the `def` catalog with the CATALOG privilege.
 
 
 Note that no users are created.
@@ -55,8 +55,8 @@ space in their internal data dictionary.
 ## Pre-Creating Catalog Directories
 
 
-`<code>CREATE CATALOG</code>` works even if the catalog directory already exists (as long as there is no `<code>mysql</code>` sub directory). This is to allow a database administrator to pre-create the catalog directory and mount it to disk volume and optionally add a [configuration file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) inside the catalog directory.
-The directory will not be recognized as a catalog or show up in [SHOW CATALOGS](show-catalogs.md) until the `<code>mysql</code>` sub directory is created by [CREATE CATALOG](create-catalog.md) or [mariadb-install-db](../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md).
+`CREATE CATALOG` works even if the catalog directory already exists (as long as there is no `mysql` sub directory). This is to allow a database administrator to pre-create the catalog directory and mount it to disk volume and optionally add a [configuration file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) inside the catalog directory.
+The directory will not be recognized as a catalog or show up in [SHOW CATALOGS](show-catalogs.md) until the `mysql` sub directory is created by [CREATE CATALOG](create-catalog.md) or [mariadb-install-db](../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md).
 
 
 ## See Also

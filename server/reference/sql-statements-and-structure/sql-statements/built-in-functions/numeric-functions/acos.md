@@ -12,8 +12,8 @@ ACOS(X)
 ## Description
 
 
-Returns the arc cosine of `<code>X</code>`, that is, the value whose cosine is `<code>X</code>`.
-Returns `<code>NULL</code>` if `<code>X</code>` is not in the range `<code>-1</code>` to `<code>1</code>`.
+Returns the arc cosine of `X`, that is, the value whose cosine is `X`.
+Returns `NULL` if `X` is not in the range `-1` to `1`.
 
 
 ## Examples

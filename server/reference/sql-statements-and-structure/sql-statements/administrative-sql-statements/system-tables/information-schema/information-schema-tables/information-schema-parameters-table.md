@@ -1,7 +1,7 @@
 
 # Information Schema PARAMETERS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>PARAMETERS</code>` table stores information about [stored procedures](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [stored functions](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) parameters.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `PARAMETERS` table stores information about [stored procedures](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [stored functions](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) parameters.
 
 
 It contains the following columns:
@@ -30,7 +30,7 @@ It contains the following columns:
 
 
 
-Information from this table is similar to that found in the `<code>param_list</code>` column in the [mysql.proc](../../the-mysql-database-tables/mysql-proc-table.md) table, and the output of the `<code>[SHOW CREATE PROCEDURE](../../../show/show-create-procedure.md)</code>` and `<code>[SHOW CREATE FUNCTION](../../../show/show-create-function.md)</code>` statements.
+Information from this table is similar to that found in the `param_list` column in the [mysql.proc](../../the-mysql-database-tables/mysql-proc-table.md) table, and the output of the `[SHOW CREATE PROCEDURE](../../../show/show-create-procedure.md)` and `[SHOW CREATE FUNCTION](../../../show/show-create-function.md)` statements.
 
 
 To obtain information about the routine itself, you can query the [Information Schema ROUTINES table](information-schema-routines-table.md).

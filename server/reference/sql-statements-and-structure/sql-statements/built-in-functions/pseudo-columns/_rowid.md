@@ -10,7 +10,7 @@ _rowid
 ## Description
 
 
-The `<code>_rowid</code>` pseudo column is mapped to the primary key in the related table. This can be used as a replacement of the `<code>rowid</code>` pseudo column in other databases. Another usage is to simplify sql queries as one doesn't have to know the name of the primary key.
+The `_rowid` pseudo column is mapped to the primary key in the related table. This can be used as a replacement of the `rowid` pseudo column in other databases. Another usage is to simplify sql queries as one doesn't have to know the name of the primary key.
 
 
 ## Examples

@@ -13,8 +13,8 @@ MAKE_SET(bits,str1,str2,...)
 
 Returns a set value (a string containing substrings separated by ","
 characters) consisting of the strings that have the corresponding bit
-in bits set. *`<code>str1</code>`* corresponds to bit 0, *`<code>str2</code>`* to bit 1, and so on. NULL
-values in *`<code>str1</code>`*, *`<code>str2</code>`*, ... are not appended to the result.
+in bits set. *`str1`* corresponds to bit 0, *`str2`* to bit 1, and so on. NULL
+values in *`str1`*, *`str2`*, ... are not appended to the result.
 
 
 ## Examples

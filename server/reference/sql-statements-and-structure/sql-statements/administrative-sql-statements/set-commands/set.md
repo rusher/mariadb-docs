@@ -24,10 +24,10 @@ user_var_name:= expr
 ## Description
 
 
-The `<code class="fixed" style="white-space:pre-wrap">SET</code>` statement assigns values to different types of
+The `SET` statement assigns values to different types of
 variables that affect the operation of the server or your client. Older
-versions of MySQL employed `<code class="fixed" style="white-space:pre-wrap">SET OPTION</code>`, but this syntax was
-deprecated in favor of `<code class="fixed" style="white-space:pre-wrap">SET</code>` without `<code class="fixed" style="white-space:pre-wrap">OPTION</code>`, and was removed in [MariaDB 10.0](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md).
+versions of MySQL employed `SET OPTION`, but this syntax was
+deprecated in favor of `SET` without `OPTION`, and was removed in [MariaDB 10.0](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md).
 
 
 Changing a system variable by using the SET statement does not make the change permanently. To do so, the change must be made in a [configuration file](../../../../../server-management/getting-installing-and-upgrading-mariadb/mariadbd-configuration-files-and-groups.md).

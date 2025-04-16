@@ -23,13 +23,13 @@ MaxScale 2.1.3.
 ### MariaDB 10.2
 
 
-The parser of MaxScale correctly parses `<code>WITH</code>` statements, but fails to
-collect columns, functions and tables used in the `<code>SELECT</code>` defining the
-`<code>WITH</code>` clause.
+The parser of MaxScale correctly parses `WITH` statements, but fails to
+collect columns, functions and tables used in the `SELECT` defining the
+`WITH` clause.
 
 
-Consequently, the database firewall will **not** block `<code>WITH</code>` statements
-where the `<code>SELECT</code>` of the `<code>WITH</code>` clause refers to forbidden columns.
+Consequently, the database firewall will **not** block `WITH` statements
+where the `SELECT` of the `WITH` clause refers to forbidden columns.
 
 
 ## Query Classification
@@ -131,7 +131,7 @@ to the backend database. This results in failed connections and unusable
 usernames in MariaDB MaxScale.
 * Only a subset of netmasks are supported for the Host-column in the
 mysql.user-table (and related tables). Specifically, if the Host is of the
-form `<code>base_ip/netmask</code>`, then the netmask must only contain the numbers 0 or 255.
+form `base_ip/netmask`, then the netmask must only contain the numbers 0 or 255.
 For example, a netmask of 255.255.255.0 is fine while 255.255.255.192 is not.
 
 
@@ -201,7 +201,7 @@ If Master changes (ie. new Master promotion) during current connection, the
 router cannot check the change.
 
 
-Sending of binary data with `<code>LOAD DATA LOCAL INFILE</code>` is not supported.
+Sending of binary data with `LOAD DATA LOCAL INFILE` is not supported.
 
 
 ### Limitations in the Read/Write Splitter (readwritesplit)
@@ -213,8 +213,8 @@ Read queries are routed to the master server in the following situations:
 * query is executed inside an open transaction
 * query is a prepared statement
 * statement includes a stored procedure or an UDF call
-* if there are multiple statements inside one query e.g. `<code>INSERT INTO ... ; SELECT
-LAST_INSERT_ID();</code>`
+* if there are multiple statements inside one query e.g. `INSERT INTO ... ; SELECT
+LAST_INSERT_ID();`
 
 
 #### JDBC Batched Statements
@@ -227,7 +227,7 @@ readwritesplit expects that the protocol is idle before another command is sent.
 
 Most clients conform to this expectation but some JDBC drivers send multiple
 requests without waiting for the protocol to be idle. If you are using the
-MariaDB Connector/J, add `<code>useBatchMultiSend=false</code>` to the JDBC connection string
+MariaDB Connector/J, add `useBatchMultiSend=false` to the JDBC connection string
 to disable batched statement execution.
 
 
@@ -236,13 +236,13 @@ to disable batched statement execution.
 
 The backend connections opened by readwritesplit will not be kept alive if they
 aren't used. To keep all of the connections alive, a session command must be
-periodically executed (for example `<code>SET @a = 1;</code>`).
+periodically executed (for example `SET @a = 1;`).
 
 
 If the backend server is configured with a low
 [wait_timeout](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md),
 it is possible that connections get closed during long sessions. It is
-recommended to set the `<code>wait_timeout</code>` to a high value and let MariaDB MaxScale
+recommended to set the `wait_timeout` to a high value and let MariaDB MaxScale
 handle the client timeouts. This can be achieved by using the
 [connection_timeout](../maxscale-21-getting-started/mariadb-maxscale-21-mariadb-maxscale-configuration-usage-scenarios.md#connection_timeout)
 parameter for the service.
@@ -257,7 +257,7 @@ after a multi-statement query will be routed to the master to prevent possible
 reads of false data.
 
 
-You can override this behavior with the `<code>strict_multi_stmt=false</code>` router option.
+You can override this behavior with the `strict_multi_stmt=false` router option.
 In this mode, the multi-statement queries will still be routed to the master but
 individual statements are routed normally. If you use multi-statements and you
 know they don't modify the session state in any relevant way, you can disable
@@ -272,7 +272,7 @@ For more information, read the
 
 
 Some of the queries that a client sends are routed to all backends instead of
-just to one. These queries include `<code>USE <db name></code>` and `<code>SET autocommit=0</code>`, among
+just to one. These queries include `USE <db name>` and `SET autocommit=0`, among
 many others. Readwritesplit sends a copy of these queries to each backend server
 and forwards the master's reply to the client. Below is a list of MySQL commands
 which are classified as session commands.
@@ -300,7 +300,7 @@ SET autocommit=1|0
 
 
 
-There is a possibility for misbehavior. If `<code>USE mytable</code>` is executed in one of
+There is a possibility for misbehavior. If `USE mytable` is executed in one of
 the slaves and fails, it may be due to replication lag rather than the
 database not existing. Thus, the same command may produce different result in
 different backend servers. The slaves which fail to execute a session command
@@ -309,7 +309,7 @@ consistent session state across all the servers used by the session.
 
 
 The above-mentioned behavior can be partially controlled with the configuration
-parameter `<code>use_sql_variables_in</code>`:
+parameter `use_sql_variables_in`:
 
 
 
@@ -327,8 +327,8 @@ prepared statements are routed to all nodes always.
 **WARNING**
 
 
-If a SELECT query modifies a user variable when the `<code>use_sql_variables_in</code>`
-parameter is set to `<code>all</code>`, it will not be routed and the client will receive an
+If a SELECT query modifies a user variable when the `use_sql_variables_in`
+parameter is set to `all`, it will not be routed and the client will receive an
 error. A log message is written into the log further explaining the reason for
 the error. Here is an example use of a SELECT query which modifies a user
 variable and how MariaDB MaxScale responds to it.
@@ -346,15 +346,15 @@ ERROR 1064 (42000): Routing query to backend failed. See the error log for furth
 
 
 Allow user variable modification in SELECT queries by setting the value of
-`<code>use_sql_variables_in</code>` to `<code>master</code>`. This will route all queries that use user
+`use_sql_variables_in` to `master`. This will route all queries that use user
 variables to the master.
 
 
 #### Examples of session command limitations
 
 
-In a situation where a new database `<code>db</code>` is created, immediately after which a client executes `<code>USE db</code>`, it is possible that the command is routed
-to a slave before the `<code>CREATE DATABASE</code>` clause is replicated to all slaves. In this case a query may be executed in the wrong database. Similarly, if any response
+In a situation where a new database `db` is created, immediately after which a client executes `USE db`, it is possible that the command is routed
+to a slave before the `CREATE DATABASE` clause is replicated to all slaves. In this case a query may be executed in the wrong database. Similarly, if any response
 that ReadWriteSplit sends back to the client differ from that of the master,
 there is a risk for misbehavior. To prevent this, any failures in session
 command execution are treated as fatal errors and all connections by the session
@@ -380,16 +380,16 @@ sharding implementation and the way the session variables are detected and
 routed. Here is a list of the current limitations:
 
 
-* Cross-database queries (e.g. `<code>SELECT column FROM database1.table UNION select
-column FROM database2.table</code>`) are not supported and are routed either to the
+* Cross-database queries (e.g. `SELECT column FROM database1.table UNION select
+column FROM database2.table`) are not supported and are routed either to the
 first explicit database in the query, the current database in use or to the
 first available database, depending on which succeeds.
 * Without a default database, queries without explicit databases that do not
 modify the session state will be routed to the first available server. This
 means that, for example when creating a new database, queries should be done
 directly on the node or the router should be equipped with the hint filter and a
-routing hint should be used. Queries that modify the session state (e.g. `<code>SET
-autocommit=1</code>`) will be routed to all servers regardless of the default database.
+routing hint should be used. Queries that modify the session state (e.g. `SET
+autocommit=1`) will be routed to all servers regardless of the default database.
 * SELECT queries that modify session variables are not currently supported because
 uniform results can not be guaranteed. If such a query is executed, the behavior
 of the router is undefined. To work around this limitation, the query must be

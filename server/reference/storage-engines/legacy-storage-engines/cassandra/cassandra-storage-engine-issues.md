@@ -15,7 +15,7 @@ There seems to be no way to get even a rough estimate of how many different keys
 
 
 * EXPLAIN will always show rows=1000 for full table scans. In the future, this may cause poor query plans.
-* `<code>DELETE FROM table</code>` always prints "1000 rows affected", with no regards how many records were actually there in the table.
+* `DELETE FROM table` always prints "1000 rows affected", with no regards how many records were actually there in the table.
 
 
 ```

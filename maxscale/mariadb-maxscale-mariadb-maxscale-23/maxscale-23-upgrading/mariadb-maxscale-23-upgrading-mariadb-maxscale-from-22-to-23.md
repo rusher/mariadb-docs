@@ -26,9 +26,9 @@ the time this happens when the readwritesplit router or filters are used.
 
 
 The amount of memory that MaxScale uses can be controlled with the
-`<code>query_classifier_cache_size</code>` parameter. For example, to limit the total
-memory to 1GB, add `<code>query_classifier_cache_size=1G</code>` to your
-configuration. To disable it, set the value to `<code>0</code>`.
+`query_classifier_cache_size` parameter. For example, to limit the total
+memory to 1GB, add `query_classifier_cache_size=1G` to your
+configuration. To disable it, set the value to `0`.
 
 
 In addition to the aforementioned query classifier caching, the
@@ -45,12 +45,12 @@ All unknown parameters are now treated as errors. Check your configuration for
 errors if MaxScale fails to start after upgrading to 2.3.1.
 
 
-## `<code>passwd</code>` is deprecated
+## `passwd` is deprecated
 
 
 In the configuration file, passwords for monitors and services should be
-specified using `<code>password</code>`; the support for the deprecated
-`<code>passwd</code>` will be removed in the future. That is, the following
+specified using `password`; the support for the deprecated
+`passwd` will be removed in the future. That is, the following
 
 
 

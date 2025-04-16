@@ -45,7 +45,7 @@ export_options:
     ]
 ```
 
-`<code class="unknown_macro"><<<span class="macro_name">toc</span><span class="macro_arg_string"></span>>></code>`
+`<<<span class="macro_name">toc</span><span class="macro_arg_string"></span>>>`
 
 
 ## Projection List (SELECT)

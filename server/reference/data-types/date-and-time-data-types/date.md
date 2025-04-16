@@ -12,17 +12,17 @@ DATE
 ## Description
 
 
-A date. The supported range is '`<code>1000-01-01</code>`' to '`<code>9999-12-31</code>`'. MariaDB
-displays `<code>DATE</code>` values in '`<code>YYYY-MM-DD</code>`' format, but can be assigned dates in looser formats, including strings or numbers, as long as they make sense. These include a short year, `<code>YY-MM-DD</code>`, no delimiters, `<code>YYMMDD</code>`, or any other acceptable delimiter, for example `<code>YYYY/MM/DD</code>`. For details, see [date and time literals](../../sql-statements-and-structure/sql-language-structure/date-and-time-literals.md).
+A date. The supported range is '`1000-01-01`' to '`9999-12-31`'. MariaDB
+displays `DATE` values in '`YYYY-MM-DD`' format, but can be assigned dates in looser formats, including strings or numbers, as long as they make sense. These include a short year, `YY-MM-DD`, no delimiters, `YYMMDD`, or any other acceptable delimiter, for example `YYYY/MM/DD`. For details, see [date and time literals](../../sql-statements-and-structure/sql-language-structure/date-and-time-literals.md).
 
 
-'`<code>0000-00-00</code>`' is a permitted special value (zero-date), unless the [NO_ZERO_DATE](../../../server-management/variables-and-modes/sql-mode.md#no_zero_date) [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md) is used. Also, individual components of a date can be set to 0 (for example: '`<code>2015-00-12</code>`'), unless the [NO_ZERO_IN_DATE](../../../server-management/variables-and-modes/sql-mode.md#no_zero_in_date) [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md) is used. In many cases, the result of en expression involving a zero-date, or a date with zero-parts, is `<code>NULL</code>`. If the [ALLOW_INVALID_DATES](../../../server-management/variables-and-modes/sql-mode.md#allow_invalid_dates) SQL_MODE is enabled, if the day part is in the range between 1 and 31, the date does not produce any error, even for months that have less than 31 days.
+'`0000-00-00`' is a permitted special value (zero-date), unless the [NO_ZERO_DATE](../../../server-management/variables-and-modes/sql-mode.md#no_zero_date) [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md) is used. Also, individual components of a date can be set to 0 (for example: '`2015-00-12`'), unless the [NO_ZERO_IN_DATE](../../../server-management/variables-and-modes/sql-mode.md#no_zero_in_date) [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md) is used. In many cases, the result of en expression involving a zero-date, or a date with zero-parts, is `NULL`. If the [ALLOW_INVALID_DATES](../../../server-management/variables-and-modes/sql-mode.md#allow_invalid_dates) SQL_MODE is enabled, if the day part is in the range between 1 and 31, the date does not produce any error, even for months that have less than 31 days.
 
 
 ### Oracle Mode
 
 
-In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `<code>DATE</code>` with a time portion is a synonym for [DATETIME](datetime.md). See also [mariadb_schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md).
+In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `DATE` with a time portion is a synonym for [DATETIME](datetime.md). See also [mariadb_schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md).
 
 
 ## Examples

@@ -5,16 +5,16 @@
 
 
 
-The [mysql.global_priv table](mysql-global_priv-table.md) has replaced the `<code>mysql.user</code>` table, and `<code>mysql.user</code>` should be considered obsolete. It is now a [view](../../../../../../server-usage/programming-customizing-mariadb/views/README.md) into `<code>mysql.global_priv</code>` created for compatibility with older applications and monitoring scripts. New tools are supposed to use `<code>INFORMATION_SCHEMA</code>` tables. The dedicated `<code>mariadb.sys</code>` user is created as the definer of the view. Previously, `<code>root</code>` was the definer, which resulted in privilege problems when this username was changed ([MDEV-19650](https://jira.mariadb.org/browse/MDEV-19650)).
+The [mysql.global_priv table](mysql-global_priv-table.md) has replaced the `mysql.user` table, and `mysql.user` should be considered obsolete. It is now a [view](../../../../../../server-usage/programming-customizing-mariadb/views/README.md) into `mysql.global_priv` created for compatibility with older applications and monitoring scripts. New tools are supposed to use `INFORMATION_SCHEMA` tables. The dedicated `mariadb.sys` user is created as the definer of the view. Previously, `root` was the definer, which resulted in privilege problems when this username was changed ([MDEV-19650](https://jira.mariadb.org/browse/MDEV-19650)).
 
 
-The `<code>mysql.user</code>` table contains information about users that have permission to access the MariaDB server, and their global privileges. The table can be queried and although it is possible to directly update it, it is best to use [GRANT](../../../account-management-sql-commands/grant.md) and [CREATE USER](../../../account-management-sql-commands/create-user.md) for adding users and privileges.
+The `mysql.user` table contains information about users that have permission to access the MariaDB server, and their global privileges. The table can be queried and although it is possible to directly update it, it is best to use [GRANT](../../../account-management-sql-commands/grant.md) and [CREATE USER](../../../account-management-sql-commands/create-user.md) for adding users and privileges.
 
 
-Note that the MariaDB privileges occur at many levels. A user may not be granted `<code>create</code>` privilege at the user level, but may still have `<code>create</code>` permission on certain tables or databases, for example. See [privileges](../../../account-management-sql-commands/grant.md) for a more complete view of the MariaDB privilege system.
+Note that the MariaDB privileges occur at many levels. A user may not be granted `create` privilege at the user level, but may still have `create` permission on certain tables or databases, for example. See [privileges](../../../account-management-sql-commands/grant.md) for a more complete view of the MariaDB privilege system.
 
 
-The `<code>mysql.user</code>` table contains the following fields:
+The `mysql.user` table contains the following fields:
 
 
 
@@ -72,22 +72,22 @@ The `<code>mysql.user</code>` table contains the following fields:
 
 
 
-The [Acl_roles](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_roles) status variable indicates how many rows the `<code>mysql.user</code>` table contains where `<code>is_role='Y'</code>`.
+The [Acl_roles](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_roles) status variable indicates how many rows the `mysql.user` table contains where `is_role='Y'`.
 
 
-The [Acl_users](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_users) status variable, indicates how many rows the `<code>mysql.user</code>` table contains where `<code>is_role='N'</code>`.
+The [Acl_users](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_users) status variable, indicates how many rows the `mysql.user` table contains where `is_role='N'`.
 
 
 ### Authentication Plugin
 
 
-When the `<code>plugin</code>` column is empty, MariaDB defaults to authenticating accounts with either the `<code>[mysql_native_password](../../../../../plugins/authentication-plugins/authentication-plugin-mysql_native_password.md)</code>` or the `<code>[mysql_old_password](../../../../../plugins/authentication-plugins/authentication-plugin-mysql_old_password.md)</code>` plugins. It decides which based on the hash used in the value for the `<code>Password</code>` column. When there's no password set or when the 4.1 password hash is used, (which is 41 characters long), MariaDB uses the `<code>[mysql_native_password](../../../../../plugins/authentication-plugins/authentication-plugin-mysql_native_password.md)</code>` plugin. The `<code>[mysql_old_password](../../../../../plugins/authentication-plugins/authentication-plugin-mysql_old_password.md)</code>` plugin is used with pre-4.1 password hashes, (which are 16 characters long).
+When the `plugin` column is empty, MariaDB defaults to authenticating accounts with either the `[mysql_native_password](../../../../../plugins/authentication-plugins/authentication-plugin-mysql_native_password.md)` or the `[mysql_old_password](../../../../../plugins/authentication-plugins/authentication-plugin-mysql_old_password.md)` plugins. It decides which based on the hash used in the value for the `Password` column. When there's no password set or when the 4.1 password hash is used, (which is 41 characters long), MariaDB uses the `[mysql_native_password](../../../../../plugins/authentication-plugins/authentication-plugin-mysql_native_password.md)` plugin. The `[mysql_old_password](../../../../../plugins/authentication-plugins/authentication-plugin-mysql_old_password.md)` plugin is used with pre-4.1 password hashes, (which are 16 characters long).
 
 
-MariaDB also supports the use of alternative [authentication plugins](../../../../../plugins/authentication-plugins/README.md). When the `<code>plugin</code>` column is not empty for the given account, MariaDB uses it to authenticate connection attempts. The specific plugin then uses the value of either the `<code>Password</code>` column or the `<code>authentication_string</code>` column to authenticate the user.
+MariaDB also supports the use of alternative [authentication plugins](../../../../../plugins/authentication-plugins/README.md). When the `plugin` column is not empty for the given account, MariaDB uses it to authenticate connection attempts. The specific plugin then uses the value of either the `Password` column or the `authentication_string` column to authenticate the user.
 
 
-A specific authentication plugin can be used for an account by providing the `<code>IDENTIFIED VIA authentication_plugin</code>` clause with the [CREATE USER](../../../account-management-sql-commands/create-user.md), [ALTER USER](../../../account-management-sql-commands/alter-user.md), or [GRANT](../../../account-management-sql-commands/grant.md) statements.
+A specific authentication plugin can be used for an account by providing the `IDENTIFIED VIA authentication_plugin` clause with the [CREATE USER](../../../account-management-sql-commands/create-user.md), [ALTER USER](../../../account-management-sql-commands/alter-user.md), or [GRANT](../../../account-management-sql-commands/grant.md) statements.
 
 
 For example, the following statement would create an account that authenticates with the [PAM authentication plugin](../../../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md):
@@ -97,7 +97,7 @@ For example, the following statement would create an account that authenticates 
 CREATE USER foo2@test IDENTIFIED VIA pam;
 ```
 
-If the specific authentication plugin uses the `<code>authentication_string</code>` column, then this value for the account can be specified after a `<code>USING</code>` or `<code>AS</code>` keyword. For example, the [PAM authentication plugin](../../../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) accepts a [service name](../../../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#configuring-the-pam-service) that would go into the `<code>authentication_string</code>` column for the account:
+If the specific authentication plugin uses the `authentication_string` column, then this value for the account can be specified after a `USING` or `AS` keyword. For example, the [PAM authentication plugin](../../../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) accepts a [service name](../../../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#configuring-the-pam-service) that would go into the `authentication_string` column for the account:
 
 
 ```

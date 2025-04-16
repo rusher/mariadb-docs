@@ -13,7 +13,7 @@ that change reads, so that instead of reading data from the local disk it
 reads things from S3.
 
 
-The S3 engine uses it's own page cache, modified to be able to handle reading blocks from S3 (of size `<code>s3_block_size</code>`). Internally the S3 page cache uses pages of [aria-block-size](../aria/aria-system-variables.md#aria_block_size) for splitting the blocks read from S3.
+The S3 engine uses it's own page cache, modified to be able to handle reading blocks from S3 (of size `s3_block_size`). Internally the S3 page cache uses pages of [aria-block-size](../aria/aria-system-variables.md#aria_block_size) for splitting the blocks read from S3.
 
 
 ## ALTER TABLE
@@ -43,16 +43,16 @@ All [ALTER PARTITION](../../sql-statements-and-structure/sql-statements/data-def
 
 One of the properties of many S3 implementations is that they favor large
 reads. It's said that 4M gives the best performance, which is why the
-default value for `<code>S3_BLOCK_SIZE</code>` is 4M.
+default value for `S3_BLOCK_SIZE` is 4M.
 
 
 ## Compression
 
 
-If compression (`<code>COMPRESSION_ALGORITHM=zlib</code>`) is used, then all index blocks and data blocks are compressed. The `<code>.frm</code>` file and Aria definition header (first page/pages in the index file) are not compressed as these are used by discovery/open.
+If compression (`COMPRESSION_ALGORITHM=zlib`) is used, then all index blocks and data blocks are compressed. The `.frm` file and Aria definition header (first page/pages in the index file) are not compressed as these are used by discovery/open.
 
 
-If compression is used, then the local block size is `<code>S3_BLOCK_SIZE</code>`, but the block stored in S3 will be the size of the compressed block.
+If compression is used, then the local block size is `S3_BLOCK_SIZE`, but the block stored in S3 will be the size of the compressed block.
 
 
 Typical compression we have seen is in the range of 80% saved space.
@@ -105,7 +105,7 @@ aws configure
 ### Using the awsctl Tool
 
 
-One can use the `<code>aws</code>` python tool to see how things are stored on S3:
+One can use the `aws` python tool to see how things are stored on S3:
 
 
 ```
@@ -116,7 +116,7 @@ shell> aws s3 ls --recursive s3://mariadb-bucket/
 2019-05-10 17:46:48    1015808 foo/test1/index/000001
 ```
 
-To delete an obsolete table `<code>foo.test1</code>` one can do:
+To delete an obsolete table `foo.test1` one can do:
 
 
 ```

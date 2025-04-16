@@ -60,7 +60,7 @@ options=case,extended
 ## Filter Parameters
 
 
-The top filter has one mandatory parameter, `<code>filebase</code>`, and a number of optional parameters.
+The top filter has one mandatory parameter, `filebase`, and a number of optional parameters.
 
 
 ### Filebase

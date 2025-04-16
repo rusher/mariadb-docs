@@ -14,8 +14,8 @@ The following information is the state in [MariaDB 10.6.1](../../../../../releas
 ## Local Thread Memory
 
 
-This is part of `<code class="fixed" style="white-space:pre-wrap"><span class="k">select</span> <span class="n">memory_used</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">processlist</span>
-</code>`.
+This is part of `<span class="k">select</span> <span class="n">memory_used</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">processlist</span>
+`.
 
 
 

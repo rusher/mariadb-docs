@@ -1,7 +1,7 @@
 
 # Information Schema REFERENTIAL_CONSTRAINTS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>REFERENTIAL_CONSTRAINTS</code>` table contains information about [foreign keys](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/foreign-keys.md). The single columns are listed in the `<code>[KEY_COLUMN_USAGE](information-schema-key_column_usage-table.md)</code>` table.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `REFERENTIAL_CONSTRAINTS` table contains information about [foreign keys](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/foreign-keys.md). The single columns are listed in the `[KEY_COLUMN_USAGE](information-schema-key_column_usage-table.md)` table.
 
 
 It has the following columns:

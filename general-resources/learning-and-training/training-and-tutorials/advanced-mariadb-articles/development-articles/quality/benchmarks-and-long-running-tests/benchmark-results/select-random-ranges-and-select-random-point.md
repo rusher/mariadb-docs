@@ -1,14 +1,14 @@
 
 # Select Random Ranges and Select Random Point
 
-* `<code>select_random_ranges</code>` (select 10 ranges with a delta as parameter)
-* `<code>select_random_points</code>` (select 100 random points)
+* `select_random_ranges` (select 10 ranges with a delta as parameter)
+* `select_random_points` (select 100 random points)
 
 
 ## Findings:
 
 
-`<code>select_random_ranges</code>`
+`select_random_ranges`
 
 
 * A delta of 100 for the ranges gives 3 - 6% performance gain
@@ -17,7 +17,7 @@
 * A delta of 1 million shows no difference at all.
 
 
-`<code>select_random_points</code>`
+`select_random_points`
 
 
 * We see up to 150% performance gain fetching index only

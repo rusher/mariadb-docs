@@ -1,7 +1,7 @@
 
 # Information Schema PROCESSLIST Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>PROCESSLIST</code>` table contains information about running threads.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `PROCESSLIST` table contains information about running threads.
 
 
 Similar information can also be returned with the [SHOW [FULL] PROCESSLIST](../../../show/show-processlist.md) statement, or the [mariadb-admin processlist](../../../../../../../clients-and-utilities/mariadb-admin.md) command.
@@ -37,22 +37,22 @@ It contains the following columns:
 
 
 
-Note that as a difference to MySQL, in MariaDB the `<code class="highlight fixed" style="white-space:pre-wrap">TIME</code>`
-column (and also the `<code class="highlight fixed" style="white-space:pre-wrap">TIME_MS</code>` column) are not affected by
-any setting of `<code>[@TIMESTAMP](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#timestamp)</code>`. This means that it can be
-reliably used also for threads that change `<code class="highlight fixed" style="white-space:pre-wrap">@TIMESTAMP</code>` (such
+Note that as a difference to MySQL, in MariaDB the `TIME`
+column (and also the `TIME_MS` column) are not affected by
+any setting of `[@TIMESTAMP](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#timestamp)`. This means that it can be
+reliably used also for threads that change `@TIMESTAMP` (such
 as the [replication](../../../replication-statements/README.md) SQL thread). See also [MySQL Bug #22047](https://bugs.mysql.com/bug.php?id=22047).
 
 
-As a consequence of this, the `<code class="highlight fixed" style="white-space:pre-wrap">TIME</code>` column of 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW FULL PROCESSLIST</code>` and
-`<code class="highlight fixed" style="white-space:pre-wrap">INFORMATION_SCHEMA.PROCESSLIST</code>` can not be used to determine
+As a consequence of this, the `TIME` column of 
+`SHOW FULL PROCESSLIST` and
+`INFORMATION_SCHEMA.PROCESSLIST` can not be used to determine
 if a slave is lagging behind. For this, use instead the
-`<code class="highlight fixed" style="white-space:pre-wrap">Seconds_Behind_Master</code>` column in the output of 
+`Seconds_Behind_Master` column in the output of 
 [SHOW SLAVE STATUS](../../../show/show-replica-status.md).
 
 
-Note that the `<code>PROGRESS</code>` field from the information schema, and the `<code>PROGRESS</code>` field from `<code>SHOW PROCESSLIST</code>` display different results. `<code>SHOW PROCESSLIST</code>` shows the total progress, while the information schema shows the progress for the current stage only.. To retrieve a similar "total" Progress value from `<code>information_schema.PROCESSLIST</code>` as the one from `<code>SHOW PROCESSLIST</code>`, use
+Note that the `PROGRESS` field from the information schema, and the `PROGRESS` field from `SHOW PROCESSLIST` display different results. `SHOW PROCESSLIST` shows the total progress, while the information schema shows the progress for the current stage only.. To retrieve a similar "total" Progress value from `information_schema.PROCESSLIST` as the one from `SHOW PROCESSLIST`, use
 
 ```
 SELECT CASE WHEN Max_Stage < 2 THEN Progress ELSE (Stage-1)/Max_Stage*100+Progress/Max_Stage END 

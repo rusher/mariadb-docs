@@ -11,7 +11,7 @@ OVERLAPS(g1,g2)
 ## Description
 
 
-Returns `<code>1</code>` or `<code>0</code>` to indicate whether `<code>g1</code>` spatially overlaps `<code>g2</code>`.
+Returns `1` or `0` to indicate whether `g1` spatially overlaps `g2`.
 The term spatially overlaps is used if two geometries of equal dimensions intersect and their
 intersection results in a geometry of the same dimension but not equal to
 either of the given geometries.

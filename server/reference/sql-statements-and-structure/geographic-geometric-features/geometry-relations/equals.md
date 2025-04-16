@@ -18,11 +18,11 @@ MBREQUALS(g1,g2)
 ## Description
 
 
-Returns `<code>1</code>` or `<code>0</code>` to indicate whether *`<code>g1</code>`* is spatially equal to *`<code>g2</code>`*.
+Returns `1` or `0` to indicate whether *`g1`* is spatially equal to *`g2`*.
 
 
 EQUALS() is based on the original MySQL implementation and uses object bounding rectangles, while [ST_EQUALS()](equals.md) uses object shapes.
 
 
-From [MariaDB 10.2.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md), `<code>MBREQUALS</code>` is a synonym for `<code>Equals</code>`.
+From [MariaDB 10.2.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md), `MBREQUALS` is a synonym for `Equals`.
 

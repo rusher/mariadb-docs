@@ -11,7 +11,7 @@ MultiPoint(pt1,pt2,...)
 ## Description
 
 
-Constructs a [WKB](../wkb/wkb-polyfromwkb.md) MultiPoint value using WKB [Point](point.md) arguments. If any argument is not a WKB Point, the return value is `<code>NULL</code>`.
+Constructs a [WKB](../wkb/wkb-polyfromwkb.md) MultiPoint value using WKB [Point](point.md) arguments. If any argument is not a WKB Point, the return value is `NULL`.
 
 
 ## Examples

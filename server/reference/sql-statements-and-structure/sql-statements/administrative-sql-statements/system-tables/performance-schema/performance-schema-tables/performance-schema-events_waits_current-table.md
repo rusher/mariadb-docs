@@ -1,7 +1,7 @@
 
 # Performance Schema events_waits_current Table
 
-The `<code>events_waits_current</code>` table contains the status of a thread's most recently monitored wait event, listing one event per thread.
+The `events_waits_current` table contains the status of a thread's most recently monitored wait event, listing one event per thread.
 
 
 The table contains the following columns:
@@ -33,7 +33,7 @@ The table contains the following columns:
 
 
 
-It is possible to empty this table with a `<code>TRUNCATE TABLE</code>` statement.
+It is possible to empty this table with a `TRUNCATE TABLE` statement.
 
 
 The related tables, [events_waits_history](performance-schema-events_waits_history-table.md) and [events_waits_history_long](performance-schema-events_waits_history_long-table.md) derive their values from the current events.

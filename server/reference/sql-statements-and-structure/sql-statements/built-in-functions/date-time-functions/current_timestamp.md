@@ -12,7 +12,7 @@ CURRENT_TIMESTAMP([precision])
 ## Description
 
 
-`<code>CURRENT_TIMESTAMP</code>` and `<code>CURRENT_TIMESTAMP()</code>` are synonyms for `<code>[NOW()](now.md)</code>`.
+`CURRENT_TIMESTAMP` and `CURRENT_TIMESTAMP()` are synonyms for `[NOW()](now.md)`.
 
 
 ## See Also

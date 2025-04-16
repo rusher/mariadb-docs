@@ -1,7 +1,7 @@
 
 # Subqueries and ALL
 
-[Subqueries](subqueries-and-all.md) using the ALL keyword will return `<code>true</code>` if the comparison returns `<code>true</code>` for each row returned by the subquery, or the subquery returns no rows.
+[Subqueries](subqueries-and-all.md) using the ALL keyword will return `true` if the comparison returns `true` for each row returned by the subquery, or the subquery returns no rows.
 
 
 ## Syntax
@@ -11,20 +11,20 @@
 scalar_expression comparison_operator ALL <Table subquery>
 ```
 
-* `<code>scalar_expression</code>` may be any expression that evaluates to a single
+* `scalar_expression` may be any expression that evaluates to a single
 value
-* `<code>comparison_operator</code>` may be any one of: `<code>=</code>`, `<code>></code>`, `<code><</code>`, `<code>>=</code>`, `<code><=</code>`, `<code><></code>` or `<code>!=</code>`
+* `comparison_operator` may be any one of: `=`, `>`, `<`, `>=`, `<=`, `<>` or `!=`
 
 
-`<code>ALL</code>` returns:
+`ALL` returns:
 
 
-* `<code>NULL</code>` if the comparison operator returns `<code>NULL</code>` for at least one row returned by the Table subquery or scalar_expression returns `<code>NULL</code>`.
-* `<code>FALSE</code>` if the comparison operator returns `<code>FALSE</code>` for at least one row returned by the Table subquery.
-* `<code>TRUE</code>` if the comparison operator returns `<code>TRUE</code>` for all rows returned by the Table subquery, or if Table subquery returns no rows.
+* `NULL` if the comparison operator returns `NULL` for at least one row returned by the Table subquery or scalar_expression returns `NULL`.
+* `FALSE` if the comparison operator returns `FALSE` for at least one row returned by the Table subquery.
+* `TRUE` if the comparison operator returns `TRUE` for all rows returned by the Table subquery, or if Table subquery returns no rows.
 
 
-`<code>NOT IN</code>` is an alias for `<code><> ALL</code>`.
+`NOT IN` is an alias for `<> ALL`.
 
 
 ## Examples
@@ -47,7 +47,7 @@ SELECT * FROM sq1 WHERE num > ALL (SELECT * FROM sq2);
 +------+
 ```
 
-Since `<code>100</code>` > all of `<code>40</code>`,`<code>50</code>` and `<code>60</code>`, the evaluation is true and the row is returned
+Since `100` > all of `40`,`50` and `60`, the evaluation is true and the row is returned
 
 
 Adding a second row to sq1, where the evaluation for that record is false:

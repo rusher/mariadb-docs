@@ -1,7 +1,7 @@
 
 # Performance Schema table_io_waits_summary_by_index_usage Table
 
-The `<code>table_io_waits_summary_by_index_usage</code>` table records table I/O waits by index.
+The `table_io_waits_summary_by_index_usage` table records table I/O waits by index.
 
 
 

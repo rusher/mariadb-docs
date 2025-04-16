@@ -24,7 +24,7 @@ explain what each of them actually does:
 
 
 ##### MariaDB starting with [10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md)
-  Multiple comma-separated addresses can now be given to `<code>bind_address</code>` to allow the server to listen on more than one specific interface while not listening on others.
+  Multiple comma-separated addresses can now be given to `bind_address` to allow the server to listen on more than one specific interface while not listening on others.
 
 
 If [bind-address](../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) is bound to 127.0.0.1 (localhost), one can't connect to the MariaDB server from other hosts or from the same host over TCP/IP on a different interface than the loopback (127.0.0.1). This for example will not work (connecting with a hostname that points to a local IP of the host):
@@ -38,7 +38,7 @@ Trying 192.168.0.11...
 telnet: connect to address 192.168.0.11: Connection refused
 ```
 
-Using 'localhost' works when binding with `<code>bind_address</code>`:
+Using 'localhost' works when binding with `bind_address`:
 
 
 ```
@@ -249,7 +249,7 @@ firewall-cmd --permanent --add-port=3306/tcp
 * If your system is running a software firewall (or behind a hardware firewall
  or NAT) you must allow connections destined to TCP port that MariaDB runs on (by
  default and almost always 3306).
-* To undo this change and not allow remote access anymore, simply remove the `<code>skip-bind-address</code>` line or uncomment the [bind-address](../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) line in your defaults file. The end result should be that you should have in the output from `<code class="fixed" style="white-space:pre-wrap">./sql/mariadbd --print-defaults</code>` the option `<code>--bind-address=127.0.0.1</code>` and no `<code>--skip-bind-address</code>`.
+* To undo this change and not allow remote access anymore, simply remove the `skip-bind-address` line or uncomment the [bind-address](../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) line in your defaults file. The end result should be that you should have in the output from `./sql/mariadbd --print-defaults` the option `--bind-address=127.0.0.1` and no `--skip-bind-address`.
 
 
 *The initial version of this article was copied, with permission, from [Remote_Clients_Cannot_Connect](https://hashmysql.org/wiki/Remote_Clients_Cannot_Connect) on 2012-10-30.*

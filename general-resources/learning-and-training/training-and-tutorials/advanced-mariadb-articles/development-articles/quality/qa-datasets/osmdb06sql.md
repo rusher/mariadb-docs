@@ -2,7 +2,7 @@
 # osmdb06.sql
 
 Below is the schema described in the [OpenStreetMap Dataset Use](openstreetmap-dataset.md) article. To use, copy everything in the box below into a file called
-'`<code>osmdb06.sql</code>`', then continue with the instructions.
+'`osmdb06.sql`', then continue with the instructions.
 
 
 ```

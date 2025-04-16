@@ -21,11 +21,11 @@ First, check that the bug or feature request isn't already filed in the
 For the MariaDB issue database, use JIRA search to check if a report you are going to submit already exists. You are not expected to be a JIRA search guru, but please at least make some effort.
 
 
-* Choose `<code>Issues => Search for issues</code>`;
-* If the form opens for you with a long blank line at top, press `<code>Basic</code>` on the right to switch to a simpler mode;
-* In the `<code>Project</code>` field, choose the related project, (`<code>MDEV</code>` for generic MariaDB server and clients);
-* In the `<code>Contains text</code>` text field, enter the most significant key words from your future report;
-* Press `<code>Enter</code>` or the magnifying glass icon to search.
+* Choose `Issues => Search for issues`;
+* If the form opens for you with a long blank line at top, press `Basic` on the right to switch to a simpler mode;
+* In the `Project` field, choose the related project, (`MDEV` for generic MariaDB server and clients);
+* In the `Contains text` text field, enter the most significant key words from your future report;
+* Press `Enter` or the magnifying glass icon to search.
 
 
 If you see issue reports which are already closed, pay attention to the 'Fix version/s' field -- it is possible that they were addressed in the *upcoming* release. If they are said to be addressed in the release that you are currently using or earlier, you can ignore them and file a new one (although please mention in your report that you found them, it might be useful).
@@ -78,12 +78,12 @@ A good bug report consists of:
 
 
 1. The environment (Operating system, hardware and MariaDB version) where the bug happened.
-1. Any related errors or warnings from the server error log file. Normally it is `<code class="highlight fixed" style="white-space:pre-wrap">hostname.err</code>` file in your database directory, but it can be different depending on the distribution and version; if you cannot find it, run `<code>SELECT @@log_error</code>` on the running server. If either the variable or the file it points at is empty, the error log most likely goes to your system log. If this is systemd you can get the last 50 lines of the MariaDB log with `<code>journalctl -n 50 -u mariadb.service</code>`. If possible, attach the full unabridged error log at least from the last server restart and till the end of the log.,
+1. Any related errors or warnings from the server error log file. Normally it is `hostname.err` file in your database directory, but it can be different depending on the distribution and version; if you cannot find it, run `SELECT @@log_error` on the running server. If either the variable or the file it points at is empty, the error log most likely goes to your system log. If this is systemd you can get the last 50 lines of the MariaDB log with `journalctl -n 50 -u mariadb.service`. If possible, attach the full unabridged error log at least from the last server restart and till the end of the log.,
 1. If the problem is related to MariaDB updates, or otherwise changing the version of the server, recovery from a previous crash, and such, then include the previous versions used, and the error log from previous server sessions.
-1. The content of your my.cnf file or alternatively the output from `<code>mariadbd --print-defaults</code>` or `<code>SHOW VARIABLES</code>`.
-1. Any background information you can provide ([stack trace](https://mariadb.com/kb/en/how-to-produce-a-full-stack-trace-for-mariadbd-the-mariadb-server), tables, table definitions (`<code>[show-create-table SHOW CREATE TABLE {tablename}](https://mariadb.com/kb/en/show-create-table_SHOW_CREATE_TABLE_%7Btablename%7D)</code>`), data dumps, query logs).
+1. The content of your my.cnf file or alternatively the output from `mariadbd --print-defaults` or `SHOW VARIABLES`.
+1. Any background information you can provide ([stack trace](https://mariadb.com/kb/en/how-to-produce-a-full-stack-trace-for-mariadbd-the-mariadb-server), tables, table definitions (`[show-create-table SHOW CREATE TABLE {tablename}](https://mariadb.com/kb/en/show-create-table_SHOW_CREATE_TABLE_%7Btablename%7D)`), data dumps, query logs).
 1. If the bug is about server producing wrong query results: the actual result (what you are getting), the expected result (what you think should be produced instead), and, unless it is obvious, the reason why you think the current result is wrong.
-1. If the bug about a performance problem, e.g. a certain query is slower on one version than on another, output of `<code>EXPLAIN EXTENDED <query></code>` on both servers. If its a `<code>SELECT</code>` query use [analyze-format-json ANALYZE FORMAT=JSON](https://mariadb.com/kb/en/analyze-format-json_ANALYZE_FORMAT%3DJSON).
+1. If the bug about a performance problem, e.g. a certain query is slower on one version than on another, output of `EXPLAIN EXTENDED <query>` on both servers. If its a `SELECT` query use [analyze-format-json ANALYZE FORMAT=JSON](https://mariadb.com/kb/en/analyze-format-json_ANALYZE_FORMAT%3DJSON).
 1. A test case or some other way to repeat the bug. This should preferably be in plain SQL or in mysqltest format. See mysqltest/README for information about this.
 1. If it's impossible to do a test case, then providing us with a [backtrace information](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd.md) would be of great help.
 
@@ -98,7 +98,7 @@ Apart from what's mentioned below, you don't have to fill or change any fields w
 #### Project
 
 
-If you are filing a report for MariaDB server, client programs, or MariaDB Galera cluster, the target project is `<code>MDEV</code>`. Connectors and MaxScale have separate projects with corresponding names. If you choose a wrong project, bug processing can be delayed, but there is no reason to panic -- we'll correct it. If you inform us about the mistake, we'll change it faster.
+If you are filing a report for MariaDB server, client programs, or MariaDB Galera cluster, the target project is `MDEV`. Connectors and MaxScale have separate projects with corresponding names. If you choose a wrong project, bug processing can be delayed, but there is no reason to panic -- we'll correct it. If you inform us about the mistake, we'll change it faster.
 
 
 Some project names include:
@@ -120,7 +120,7 @@ Some project names include:
 #### Type
 
 
-Feature requests are not the same as bug reports. Specify a `<code>New feature</code>` type for feature requests in [Jira](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md), and a `<code>Bug</code>` type for bug reports. Like with the project field, choosing a wrong type will put the request to the wrong queue and can delay its processing, but eventually it will be noticed and amended.
+Feature requests are not the same as bug reports. Specify a `New feature` type for feature requests in [Jira](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md), and a `Bug` type for bug reports. Like with the project field, choosing a wrong type will put the request to the wrong queue and can delay its processing, but eventually it will be noticed and amended.
 
 
 See also [plans for next release](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plans-for-103.md) for things that we are considering to have in the next MariaDB release.
@@ -187,13 +187,13 @@ If you have SQL code, a database dump, a log etc. of a reasonable size, attach t
 #### Links
 
 
-If you found or filed a bug report either in MariaDB or MySQL or Percona bug base which you think is related to yours, you can put them in the `<code>Links</code>` section; same for any external links to 3rd-party resources which you find important to mention. Alternatively, you can just mention them in the description or comments.
+If you found or filed a bug report either in MariaDB or MySQL or Percona bug base which you think is related to yours, you can put them in the `Links` section; same for any external links to 3rd-party resources which you find important to mention. Alternatively, you can just mention them in the description or comments.
 
 
 #### Tags
 
 
-You don't have to set any tags, but if you want to use any for your convenience, feel free to do so. However, please don't put too generic values -- for example, the tag `<code>mariadb</code>` is meaningless, because everything there is `<code>mariadb</code>`. Don't be surprised if some tags are removed later during report processing.
+You don't have to set any tags, but if you want to use any for your convenience, feel free to do so. However, please don't put too generic values -- for example, the tag `mariadb` is meaningless, because everything there is `mariadb`. Don't be surprised if some tags are removed later during report processing.
 
 
 ### Bugs that also Affect MySQL or Percona

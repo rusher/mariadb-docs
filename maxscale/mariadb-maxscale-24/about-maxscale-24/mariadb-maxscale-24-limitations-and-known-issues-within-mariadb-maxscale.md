@@ -71,13 +71,13 @@ use.
 ### MariaDB 10.2
 
 
-The parser of MaxScale correctly parses `<code>WITH</code>` statements, but fails to
-collect columns, functions and tables used in the `<code>SELECT</code>` defining the
-`<code>WITH</code>` clause.
+The parser of MaxScale correctly parses `WITH` statements, but fails to
+collect columns, functions and tables used in the `SELECT` defining the
+`WITH` clause.
 
 
-Consequently, the database firewall will **not** block `<code>WITH</code>` statements
-where the `<code>SELECT</code>` of the `<code>WITH</code>` clause refers to forbidden columns.
+Consequently, the database firewall will **not** block `WITH` statements
+where the `SELECT` of the `WITH` clause refers to forbidden columns.
 
 
 ## Query Classification
@@ -155,10 +155,10 @@ transaction or change the autocommit mode using a prepared statement.
 
 
 * Compression is not included in the server handshake.
-* MariaDB MaxScale does not support `<code>KILL QUERY ID <query_id></code>` type
+* MariaDB MaxScale does not support `KILL QUERY ID <query_id>` type
  statements. If a query by a query ID is to be killed, it needs to be done
  directly on the backend databases.
-* The `<code>KILL</code>` commands are executed asynchronously and the results are
+* The `KILL` commands are executed asynchronously and the results are
  ignored. Due to this, they will always appear to succeed even if the user is
  lacking the permissions.
 
@@ -185,7 +185,7 @@ to the backend database. This results in failed connections and unusable
 usernames in MariaDB MaxScale.
 * Only a subset of netmasks are supported for the Host-column in the
 mysql.user-table (and related tables). Specifically, if the Host is of the
-form `<code>base_ip/netmask</code>`, then the netmask must only contain the numbers 0 or 255.
+form `base_ip/netmask`, then the netmask must only contain the numbers 0 or 255.
 For example, a netmask of 255.255.255.0 is fine while 255.255.255.192 is not.
 
 

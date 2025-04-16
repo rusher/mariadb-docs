@@ -8,7 +8,7 @@
 ## Description
 
 
-`<code>PERCENTILE_CONT()</code>` (standing for continuous percentile) is a [window function](window-functions-overview.md) which returns a value which corresponds to the given fraction in the sort order. If required, it will interpolate between adjacent input items.
+`PERCENTILE_CONT()` (standing for continuous percentile) is a [window function](window-functions-overview.md) which returns a value which corresponds to the given fraction in the sort order. If required, it will interpolate between adjacent input items.
 
 
 Essentially, the following process is followed to find the value to return:
@@ -24,7 +24,7 @@ Essentially, the following process is followed to find the value to return:
 * (RN - FRN) * (value of expression for row at CRN)
 
 
-The [MEDIAN function](median.md) is a specific case of `<code>PERCENTILE_CONT</code>`, equivalent to `<code>PERCENTILE_CONT(0.5)</code>`.
+The [MEDIAN function](median.md) is a specific case of `PERCENTILE_CONT`, equivalent to `PERCENTILE_CONT(0.5)`.
 
 
 ## Examples
@@ -95,5 +95,5 @@ SELECT name, PERCENTILE_CONT(0.6) WITHIN GROUP (ORDER BY star_rating)
 ## See Also
 
 
-* [MEDIAN()](median.md) - a special case of `<code>PERCENTILE_CONT</code>` equivalent to `<code>PERCENTILE_CONT(0.5)</code>`
+* [MEDIAN()](median.md) - a special case of `PERCENTILE_CONT` equivalent to `PERCENTILE_CONT(0.5)`
 

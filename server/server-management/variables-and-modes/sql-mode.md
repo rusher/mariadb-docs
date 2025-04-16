@@ -4,10 +4,10 @@
 MariaDB supports several different modes which allow you to tune it to suit your needs.
 
 
-The most important ways for doing this are using `<code>SQL_MODE</code>` (controlled by the [sql_mode](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable) and [OLD_MODE](old-mode.md) (the [old_mode](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_mode) system variable). `<code>SQL_MODE</code>` is used for getting MariaDB to emulate behavior from other SQL servers, while [OLD_MODE](old-mode.md) is used for emulating behavior from older MariaDB or MySQL versions.
+The most important ways for doing this are using `SQL_MODE` (controlled by the [sql_mode](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable) and [OLD_MODE](old-mode.md) (the [old_mode](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_mode) system variable). `SQL_MODE` is used for getting MariaDB to emulate behavior from other SQL servers, while [OLD_MODE](old-mode.md) is used for emulating behavior from older MariaDB or MySQL versions.
 
 
-`<code class="fixed" style="white-space:pre-wrap">SQL_MODE</code>`is a string with different options separated by commas ('`<code>,</code>`') without spaces. The options are case insensitive.
+`SQL_MODE`is a string with different options separated by commas ('`,`') without spaces. The options are case insensitive.
 
 
 You can check the local and global value of it with:
@@ -33,9 +33,9 @@ SELECT @@SQL_MODE, @@GLOBAL.SQL_MODE;
 
 
 
-You can set the `<code class="fixed" style="white-space:pre-wrap"><span class="n">SQL_MODE</span>
-</code>` either from the
-[command line](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) (the `<code class="fixed" style="white-space:pre-wrap">--sql-mode</code>` option) or by setting the [sql_mode](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable.
+You can set the `<span class="n">SQL_MODE</span>
+` either from the
+[command line](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) (the `--sql-mode` option) or by setting the [sql_mode](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable.
 
 
 ```
@@ -49,7 +49,7 @@ The session value only affects the current client, and can be changed by the cli
 ## SQL_MODE Values
 
 
-The different `<code>SQL_MODE</code>` values are:
+The different `SQL_MODE` values are:
 
 
 #### ALLOW_INVALID_DATES
@@ -76,7 +76,7 @@ If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-sta
 #### ANSI_QUOTES
 
 
-Changes `<code>"</code>` to be treated as `<code>`</code>`, the identifier quote character. This may break old MariaDB applications which assume that `<code>"</code>` is used as a string quote character.
+Changes `"` to be treated as ```, the identifier quote character. This may break old MariaDB applications which assume that `"` is used as a string quote character.
 
 
 #### DB2
@@ -91,7 +91,7 @@ If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-sta
 #### EMPTY_STRING_IS_NULL
 
 
-Oracle-compatibility option that translates Item_string created in the parser to Item_null, and translates binding an empty string as prepared statement parameters to binding NULL. For example, `<code>SELECT '' IS NULL</code>` returns TRUE, `<code>INSERT INTO t1 VALUES ('')</code>` inserts NULL. Since [MariaDB 10.3.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md)
+Oracle-compatibility option that translates Item_string created in the parser to Item_null, and translates binding an empty string as prepared statement parameters to binding NULL. For example, `SELECT '' IS NULL` returns TRUE, `INSERT INTO t1 VALUES ('')` inserts NULL. Since [MariaDB 10.3.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md)
 
 
 #### ERROR_FOR_DIVISION_BY_ZERO
@@ -103,7 +103,7 @@ If not set, division by zero returns NULL. If set returns an error if one tries 
 #### HIGH_NOT_PRECEDENCE
 
 
-Compatibility option for MySQL 5.0.1 and before; This changes `<code>NOT a BETWEEN b AND c</code>` to be parsed as `<code>(NOT a) BETWEEN b AND c</code>`
+Compatibility option for MySQL 5.0.1 and before; This changes `NOT a BETWEEN b AND c` to be parsed as `(NOT a) BETWEEN b AND c`
 
 
 #### IGNORE_BAD_TABLE_OPTIONS
@@ -157,19 +157,19 @@ Same as: [NO_FIELD_OPTIONS](#no_field_options), [HIGH_NOT_PRECEDENCE](#high_not_
 #### NO_AUTO_CREATE_USER
 
 
-Don't automatically create users with `<code>GRANT</code>` unless authentication information is specified. If none is provided, will produce a 1133 error: "Can't find any matching row in the user table". Default since [MariaDB 10.1.7](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes.md).
+Don't automatically create users with `GRANT` unless authentication information is specified. If none is provided, will produce a 1133 error: "Can't find any matching row in the user table". Default since [MariaDB 10.1.7](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes.md).
 
 
 #### NO_AUTO_VALUE_ON_ZERO
 
 
-If set, don't generate an [AUTO_INCREMENT](../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) on [INSERT](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) of zero in an `<code>AUTO_INCREMENT</code>` column, or when adding an [AUTO_INCREMENT](../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) attribute with the [ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement. Normally both `<code>zero</code>` and `<code>NULL</code>` generate new `<code>AUTO_INCREMENT</code>` values.
+If set, don't generate an [AUTO_INCREMENT](../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) on [INSERT](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) of zero in an `AUTO_INCREMENT` column, or when adding an [AUTO_INCREMENT](../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) attribute with the [ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement. Normally both `zero` and `NULL` generate new `AUTO_INCREMENT` values.
 
 
 #### NO_BACKSLASH_ESCAPES
 
 
-Disables using the backslash character `<code>\</code>` as an escape character within strings, making it equivalent to an ordinary character.
+Disables using the backslash character `\` as an escape character within strings, making it equivalent to an ordinary character.
 
 
 #### NO_DIR_IN_CREATE
@@ -229,7 +229,7 @@ For [SELECT ... GROUP BY](../../../general-resources/learning-and-training/train
 #### ORACLE
 
 
-In all versions of MariaDB up to [MariaDB 10.2](../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), this sets `<code>sql_mode</code>` that is equivalent to: [PIPES_AS_CONCAT](#pipes_as_concat), [ANSI_QUOTES](#ansi_quotes), [IGNORE_SPACE](#ignore_space), [NO_KEY_OPTIONS](#no_key_options), [NO_TABLE_OPTIONS](#no_table_options), [NO_FIELD_OPTIONS](#no_field_options), [NO_AUTO_CREATE_USER](#no_auto_create_user)
+In all versions of MariaDB up to [MariaDB 10.2](../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), this sets `sql_mode` that is equivalent to: [PIPES_AS_CONCAT](#pipes_as_concat), [ANSI_QUOTES](#ansi_quotes), [IGNORE_SPACE](#ignore_space), [NO_KEY_OPTIONS](#no_key_options), [NO_TABLE_OPTIONS](#no_table_options), [NO_FIELD_OPTIONS](#no_field_options), [NO_AUTO_CREATE_USER](#no_auto_create_user)
 
 
 From [MariaDB 10.3](../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), this mode also sets [SIMULTANEOUS_ASSIGNMENT](#simultaneous_assignment) and configures the server to understand a large subset of Oracle's PL/SQL language instead of MariaDB's traditional syntax for stored routines. See [SQL_MODE=ORACLE From MariaDB 10.3](../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md).
@@ -247,7 +247,7 @@ Trailing spaces in [CHAR](../../reference/sql-statements-and-structure/sql-state
 #### PIPES_AS_CONCAT
 
 
-Allows using the pipe character (ASCII 124) as string concatenation operator. This means that `<code>"A" || "B"</code>` can be used in place of `<code>CONCAT("A", "B")</code>`.
+Allows using the pipe character (ASCII 124) as string concatenation operator. This means that `"A" || "B"` can be used in place of `CONCAT("A", "B")`.
 
 
 #### POSTGRESQL
@@ -262,7 +262,7 @@ If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-sta
 #### REAL_AS_FLOAT
 
 
-`<code>REAL</code>` is a synonym for [FLOAT](../../reference/data-types/data-types-numeric-data-types/float.md) rather than [DOUBLE](../../reference/data-types/data-types-numeric-data-types/double.md).
+`REAL` is a synonym for [FLOAT](../../reference/data-types/data-types-numeric-data-types/float.md) rather than [DOUBLE](../../reference/data-types/data-types-numeric-data-types/double.md).
 
 
 #### SIMULTANEOUS_ASSIGNMENT
@@ -298,10 +298,10 @@ Makes MariaDB work like a traditional SQL server. Same as: [STRICT_TRANS_TABLES]
 ## Strict Mode
 
 
-A mode where at least one of `<code>STRICT_TRANS_TABLES</code>` or `<code>STRICT_ALL_TABLES</code>` is enabled is called *strict mode*.
+A mode where at least one of `STRICT_TRANS_TABLES` or `STRICT_ALL_TABLES` is enabled is called *strict mode*.
 
 
-With strict mode set (default from [MariaDB 10.2.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)), statements that modify tables (either transactional for `<code>STRICT_TRANS_TABLES</code>` or all for `<code>STRICT_ALL_TABLES</code>`) will fail, and an error will be returned instead. The IGNORE keyword can be used when strict mode is set to convert the error to a warning.
+With strict mode set (default from [MariaDB 10.2.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)), statements that modify tables (either transactional for `STRICT_TRANS_TABLES` or all for `STRICT_ALL_TABLES`) will fail, and an error will be returned instead. The IGNORE keyword can be used when strict mode is set to convert the error to a warning.
 
 
 With strict mode not set (default in version <= [MariaDB 10.2.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md)), MariaDB will automatically adjust invalid values, for example, truncating strings that are too long, or adjusting numeric values that are out of range, and produce a warning.

@@ -4,7 +4,7 @@
 ## Description
 
 
-The `<code>file_instances</code>` table lists instances of instruments seen by the Performance Schema when executing file I/O instrumentation, and the associated files. Only files that have been opened, and that have not been deleted, will be listed in the table.
+The `file_instances` table lists instances of instruments seen by the Performance Schema when executing file I/O instrumentation, and the associated files. Only files that have been opened, and that have not been deleted, will be listed in the table.
 
 
 The [performance_schema_max_file_instances](../performance-schema-system-variables.md#performance_schema_max_file_instances) system variable specifies the maximum number of instrumented file objects.

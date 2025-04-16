@@ -64,11 +64,11 @@ filters=MyLogFilter
 ### Filter Parameters
 
 
-The top filter has one mandatory parameter, `<code>filebase</code>`, and a number of optional
+The top filter has one mandatory parameter, `filebase`, and a number of optional
 parameters.
 
 
-#### `<code>filebase</code>`
+#### `filebase`
 
 
 The basename of the output file created for each session. The session ID is
@@ -87,7 +87,7 @@ via the filter option is superseded by the parameter. If both are set the
 parameter setting will be used and the filter option ignored.
 
 
-#### `<code>count</code>`
+#### `count`
 
 
 The number of SQL statements to store and report upon.
@@ -103,7 +103,7 @@ count=30
 The default value for the number of statements recorded is 10.
 
 
-#### `<code>match</code>`, `<code>exclude</code>` and `<code>options</code>`
+#### `match`, `exclude` and `options`
 
 
 These [regular expression settings](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -119,7 +119,7 @@ options=case,extended
 
 
 
-#### `<code>source</code>`
+#### `source`
 
 
 The optional source parameter defines an address that is used to match against
@@ -134,7 +134,7 @@ source=127.0.0.1
 
 
 
-#### `<code>user</code>`
+#### `user`
 
 
 The optional user parameter defines a user name that is used to match against

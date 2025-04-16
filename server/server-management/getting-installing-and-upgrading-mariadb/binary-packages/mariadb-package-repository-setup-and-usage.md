@@ -26,7 +26,7 @@ The script can be executed in the following way:
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash
 ```
 
-For the script to work, the `<code>curl</code>` and `<code>ca-certificates</code>` packages need to be installed on your system. Additionally on Debian and Ubuntu the `<code>apt-transport-https</code>` package needs to be installed. The script will check if these are installed and let you know before it attempts to create the repository configuration on your system.
+For the script to work, the `curl` and `ca-certificates` packages need to be installed on your system. Additionally on Debian and Ubuntu the `apt-transport-https` package needs to be installed. The script will check if these are installed and let you know before it attempts to create the repository configuration on your system.
 
 
 
@@ -48,10 +48,10 @@ The binaries in MariaDB Corporation's **MariaDB Repository** are currently ident
 By default, the script will configure your system to install from the 11.rolling repository which contains the latest stable version of MariaDB. If you would like to stick to a major long-term release series, then you will need to either manually edit the repository configuration file to point to that specific version or series, or run the MariaDB Package Repository setup script again.
 
 
-The script can also configure your system to install from the repository of a different version of MariaDB if you use the `<code>[--mariadb-server-version](#-mariadb-server-version)</code>` option.
+The script can also configure your system to install from the repository of a different version of MariaDB if you use the `[--mariadb-server-version](#-mariadb-server-version)` option.
 
 
-If you would not like to configure the **MariaDB Repository** on your system, then you can use the `<code>--skip-server</code>` option to prevent the MariaDB Package Repository setup script from configuring it.
+If you would not like to configure the **MariaDB Repository** on your system, then you can use the `--skip-server` option to prevent the MariaDB Package Repository setup script from configuring it.
 
 
 ### MariaDB MaxScale Repository
@@ -60,16 +60,16 @@ If you would not like to configure the **MariaDB Repository** on your system, th
 The **MariaDB MaxScale Repository** contains software packages related to [MariaDB MaxScale](../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md).
 
 
-By default, the script will configure your system to install from the repository of the *latest* GA version of MariaDB MaxScale. When a new major GA release occurs, the repository will automatically switch to the new version. If instead you would like to stay on a particular version you will need to manually edit the repository configuration file and change '`<code>latest</code>`' to the version you want (e.g. '`<code>6.1</code>`') or run the MariaDB Package Repository setup script again, specifying the particular version or series you want.
+By default, the script will configure your system to install from the repository of the *latest* GA version of MariaDB MaxScale. When a new major GA release occurs, the repository will automatically switch to the new version. If instead you would like to stay on a particular version you will need to manually edit the repository configuration file and change '`latest`' to the version you want (e.g. '`6.1`') or run the MariaDB Package Repository setup script again, specifying the particular version or series you want.
 
 
-Older versions of the MariaDB Package Repository setup script would configure a specific MariaDB MaxScale series in the repository (i.e. '`<code>2.4</code>`'), so if you used the script in the past to set up your repository and want MariaDB MaxScale to automatically use the latest GA version then change '`<code>2.4</code>`' or '`<code>2.3</code>`' in the repository configuration to '`<code>latest</code>`'. Or download the current version of the script and re-run it to set up the repository again.
+Older versions of the MariaDB Package Repository setup script would configure a specific MariaDB MaxScale series in the repository (i.e. '`2.4`'), so if you used the script in the past to set up your repository and want MariaDB MaxScale to automatically use the latest GA version then change '`2.4`' or '`2.3`' in the repository configuration to '`latest`'. Or download the current version of the script and re-run it to set up the repository again.
 
 
-The script can configure your system to install from the repository of an older version of MariaDB MaxScale if you use the `<code>[--mariadb-maxscale-version](#-mariadb-maxscale-version)</code>` option. For example, `<code>--mariadb-maxscale-version=2.4</code>` if you want the latest release in the MariaDB MaxScale 2.4.x series.
+The script can configure your system to install from the repository of an older version of MariaDB MaxScale if you use the `[--mariadb-maxscale-version](#-mariadb-maxscale-version)` option. For example, `--mariadb-maxscale-version=2.4` if you want the latest release in the MariaDB MaxScale 2.4.x series.
 
 
-If you do not want to configure the **MariaDB MaxScale Repository** on your system, then you can use the `<code>--skip-maxscale</code>` option to prevent the MariaDB Package Repository setup script from configuring it.
+If you do not want to configure the **MariaDB MaxScale Repository** on your system, then you can use the `--skip-maxscale` option to prevent the MariaDB Package Repository setup script from configuring it.
 
 
 MariaDB MaxScale is licensed under the [Business Source License 1.1](https://mariadb.com/bsl11/), so it is not entirely free to use for organizations who do not have a subscription with MariaDB Corporation. If you would like more information, see the information at [MariaDB Business Source License (BSL): Frequently Asked Questions](https://mariadb.com/bsl-faq-mariadb/). If you would like to know how much a subscription to use MariaDB MaxScale would cost, see [MariaDB Corporation's subscription pricing](https://mariadb.com/pricing/).
@@ -106,13 +106,13 @@ curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash
 The script will have to set up package repository configuration files, so it will need to be executed as root.
 
 
-The script will also install the GPG public keys used to verify the signature of MariaDB software packages. If you want to avoid that, then you can use the `<code>--skip-key-import</code>` option.
+The script will also install the GPG public keys used to verify the signature of MariaDB software packages. If you want to avoid that, then you can use the `--skip-key-import` option.
 
 
 If the script tries to create the repository configuration file and one with that name already exists, then the script will rename the existing file with an extension in the format ".old_[0-9]+", which would make the OS's package manager ignore the file. You can safely remove those files after you have confirmed that the updated repository configuration file works..
 
 
-If you want to see the repository configuration file that would be created without actually doing so, then you can use the `<code>[--write-to-stdout](#-write-to-stdout)</code>` option. This also prevents the need to run the script as root,
+If you want to see the repository configuration file that would be created without actually doing so, then you can use the `[--write-to-stdout](#-write-to-stdout)` option. This also prevents the need to run the script as root,
 
 
 If you want to download the script, rather than executing it, then you can do so in the following way:
@@ -125,7 +125,7 @@ curl -LO https://r.mariadb.com/downloads/mariadb_repo_setup
 ### Options
 
 
-To provide options to the script, you must tell bash to expect them by executing bash with the options `<code>-s --</code>`, for example:
+To provide options to the script, you must tell bash to expect them by executing bash with the options `-s --`, for example:
 
 
 ```
@@ -153,16 +153,16 @@ curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- -
 
 
 
-#### `<code>--mariadb-server-version</code>`
+#### `--mariadb-server-version`
 
 
 By default, the script will configure your system to install from the repository of the latest GA version of MariaDB. If a new major GA release occurs and you would like to upgrade to it, then you will need to either manually edit the repository configuration file to point to the new version, or run the MariaDB Package Repository setup script again.
 
 
-The script can also configure your system to install from the repository of a different version of MariaDB if you use the `<code>--mariadb-server-version</code>` option.
+The script can also configure your system to install from the repository of a different version of MariaDB if you use the `--mariadb-server-version` option.
 
 
-The string `<code>mariadb-</code>` has to be prepended to the version number. For example, to configure your system to install from the repository of [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), that would be:
+The string `mariadb-` has to be prepended to the version number. For example, to configure your system to install from the repository of [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), that would be:
 
 
 ```
@@ -172,24 +172,24 @@ curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- -
 The following MariaDB versions are currently supported:
 
 
-* `<code>mariadb-10.5</code>`
-* `<code>mariadb-10.6</code>`
-* `<code>mariadb-10.11</code>`
-* `<code>mariadb-11.4</code>`
-* `<code>mariadb-11.7</code>`
-* `<code>mariadb-11.8</code>`
-* `<code>mariadb-11.rolling</code>`
-* `<code>mariadb-11.rc</code>`
+* `mariadb-10.5`
+* `mariadb-10.6`
+* `mariadb-10.11`
+* `mariadb-11.4`
+* `mariadb-11.7`
+* `mariadb-11.8`
+* `mariadb-11.rolling`
+* `mariadb-11.rc`
 
 
 If you want to pin the repository of a specific minor release, such as [MariaDB
 10.6.14](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-14-release-notes.md), then you can also specify the minor release. For example,
-`<code>mariadb-10.6.14</code>`. This may be helpful if you want to avoid upgrades. However,
+`mariadb-10.6.14`. This may be helpful if you want to avoid upgrades. However,
 avoiding upgrades is not recommended, since minor maintenance releases may
 contain important bug fixes and fixes for security vulnerabilities.
 
 
-#### `<code>--mariadb-maxscale-version</code>`
+#### `--mariadb-maxscale-version`
 
 
 By default, the script will configure your system to install from the
@@ -199,7 +199,7 @@ repository of the latest GA version of MariaDB MaxScale.
 If you would like to pin the repository to a specific version of MariaDB
 MaxScale then you will need
 to either manually edit the repository configuration file to point to the
-desired version, or use the `<code>--mariadb-maxscale-version</code>` option.
+desired version, or use the `--mariadb-maxscale-version` option.
 
 
 For example, to configure your system to install from the repository of MariaDB
@@ -224,44 +224,44 @@ The following MariaDB MaxScale versions are currently supported:
 * MaxScale 6.2
 
 
-The special identifiers `<code>latest</code>` (for the latest GA release) and `<code>beta</code>`
+The special identifiers `latest` (for the latest GA release) and `beta`
 (for the latest beta release) are also supported. By default the
-`<code>mariadb_repo_setup</code>` script uses `<code>latest</code>` as the version.
+`mariadb_repo_setup` script uses `latest` as the version.
 
 
-#### `<code>--os-type</code>` and `<code>--os-version</code>`
+#### `--os-type` and `--os-version`
 
 
 If you want to run this script on an unsupported OS that you believe to be
 package-compatible with an OS that is supported, then you can use the
-`<code>--os-type</code>` and `<code>--os-version</code>` options to override the script's OS
+`--os-type` and `--os-version` options to override the script's OS
 detection. If you use either option, then you must use both options.
 
 
-The supported values for `<code>--os-type</code>` are:
+The supported values for `--os-type` are:
 
 
-* `<code>rhel</code>`
-* `<code>debian</code>`
-* `<code>ubuntu</code>`
-* `<code>sles</code>`
+* `rhel`
+* `debian`
+* `ubuntu`
+* `sles`
 
 
 If you use a non-supported value, then the script will fail, just as it would
 fail if you ran the script on an unsupported OS.
 
 
-The supported values for `<code>--os-version</code>` are entirely dependent on the OS
+The supported values for `--os-version` are entirely dependent on the OS
 type.
 
 
-For Red Hat Enterprise Linux (RHEL) and CentOS, `<code>7</code>` and `<code>8</code>` are valid
+For Red Hat Enterprise Linux (RHEL) and CentOS, `7` and `8` are valid
 options.
 
 
 For Debian and Ubuntu, the version must be specified as the codename of the
-specific release. For example, Debian 9 must be specified as `<code>stretch</code>`, and
-Ubuntu 18.04 must be specified as `<code>bionic</code>`.
+specific release. For example, Debian 9 must be specified as `stretch`, and
+Ubuntu 18.04 must be specified as `bionic`.
 
 
 These options can be useful if your distribution is a fork of another
@@ -269,11 +269,11 @@ distribution. As an example, Linux Mint 8.1 is based on and is fully compatible
 with Ubuntu 16.04 LTS (Xenial). Therefore, If you are using Linux Mint 8.1,
 then you can configure your system to install from the repository of Ubuntu
 16.04 LTS (Xenial). If you would like to do that, then you can do so by
-specifying `<code>--os-type=ubuntu</code>` and `<code>--os-version=xenial</code>` to the MariaDB
+specifying `--os-type=ubuntu` and `--os-version=xenial` to the MariaDB
 Package Repository setup script.
 
 
-For example, to manually set the `<code>--os-type</code>` and `<code>--os-version</code>` to RHEL 8
+For example, to manually set the `--os-type` and `--os-version` to RHEL 8
 you could do:
 
 
@@ -281,17 +281,17 @@ you could do:
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- --os-type=rhel --os-version=8
 ```
 
-#### `<code>--write-to-stdout</code>`
+#### `--write-to-stdout`
 
 
-The `<code>--write-to-stdout</code>` option will prevent the script from modifying
+The `--write-to-stdout` option will prevent the script from modifying
 anything on the system. The repository configuration will not be written to the
 repository configuration file. Instead, it will be printed to standard output.
 That allows the configuration to be reviewed, redirected elsewhere, consumed by
 another script, or used in some other way.
 
 
-The `<code>--write-to-stdout</code>` option automatically enables `<code>--skip-key-import</code>`.
+The `--write-to-stdout` option automatically enables `--skip-key-import`.
 
 
 For example:
@@ -311,11 +311,11 @@ On Red Hat Enterprise Linux (RHEL) and CentOS, the MariaDB Package Repository se
 
 
 1. Creates a repository configuration file
- at `<code>/etc/yum.repos.d/mariadb.repo</code>`.
+ at `/etc/yum.repos.d/mariadb.repo`.
 
 
 1. Imports the GPG public key used to verify the signature of MariaDB software
- packages with `<code>rpm --import</code>` from `<code>downloads.mariadb.com</code>`.
+ packages with `rpm --import` from `downloads.mariadb.com`.
 
 
 #### Platform-Specific Behavior on Debian and Ubuntu
@@ -326,11 +326,11 @@ following tasks:
 
 
 1. Creates a repository configuration file
- at `<code>/etc/apt/sources.list.d/mariadb.list</code>`.
+ at `/etc/apt/sources.list.d/mariadb.list`.
 
 
 1. Creates a package preferences file
- at `<code>/etc/apt/preferences.d/mariadb-enterprise.pref</code>`, which gives packages
+ at `/etc/apt/preferences.d/mariadb-enterprise.pref`, which gives packages
  from MariaDB repositories a higher priority than packages from OS and other
  repositories, which can help avoid conflicts. It looks like the following:
 
@@ -343,11 +343,11 @@ Pin-Priority: 1000
 
 
 1. Imports the GPG public key used to verify the signature of MariaDB software
- package with `<code>apt-key</code>` from the `<code>keyserver.ubuntu.com</code>` key server.
+ package with `apt-key` from the `keyserver.ubuntu.com` key server.
 
 
 1. Updates the package cache with package definitions from the MariaDB Package
- Repository with `<code>apt-get update</code>`.
+ Repository with `apt-get update`.
 
 
 #### Platform-Specific Behavior on SLES
@@ -356,11 +356,11 @@ Pin-Priority: 1000
 On SUSE Linux Enterprise Server (SLES), the MariaDB Package Repository setup script performs the following tasks:
 
 
-1. Creates a repository configuration file at `<code>/etc/zypp/repos.d/mariadb.repo</code>`.
+1. Creates a repository configuration file at `/etc/zypp/repos.d/mariadb.repo`.
 
 
 1. Imports the GPG public key used to verify the signature of MariaDB software
- packages with `<code>rpm --import</code>` from `<code>downloads.mariadb.com</code>`.
+ packages with `rpm --import` from `downloads.mariadb.com`.
 
 
 ## Installing Packages with the MariaDB Package Repository

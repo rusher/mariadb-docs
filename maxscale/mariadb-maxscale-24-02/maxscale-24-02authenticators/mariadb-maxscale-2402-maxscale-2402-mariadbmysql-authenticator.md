@@ -16,7 +16,7 @@ The following settings may be given in the *authenticator_options* of the
 listener.
 
 
-### `<code>clear_pw_passthrough</code>`
+### `clear_pw_passthrough`
 
 
 Boolean, default value is "false". Activates passthrough-mode. In this mode,
@@ -37,7 +37,7 @@ the original password.
 
 
 This feature is incompatible with service setting *lazy_connect*. Either leave
-it unspecified or set `<code>lazy_connect=false</code>` in the linked service. Also,
+it unspecified or set `lazy_connect=false` in the linked service. Also,
 multiple client authenticators are not allowed on the listener when
 passthrough-mode is on.
 
@@ -58,13 +58,13 @@ ssl=true
 
 
 
-### `<code>log_password_mismatch</code>`
+### `log_password_mismatch`
 
 
 * Type: [boolean](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 The service setting *log_auth_warnings* must
@@ -74,13 +74,13 @@ be useful when diagnosing authentication issues. It should only be enabled on a
 secure system as the logging of password hashes may be a security risk.
 
 
-### `<code>cache_dir</code>`
+### `cache_dir`
 
 
 Deprecated and ignored.
 
 
-### `<code>inject_service_user</code>`
+### `inject_service_user`
 
 
 Deprecated and ignored.

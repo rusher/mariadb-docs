@@ -17,7 +17,7 @@ Note that storage engines can have their logs too: for example, InnoDB keeps an 
 * Usually a file in the data directory, but some distributions may move this to other locations.
 * All critical errors are logged here.
 * One can get warnings to be logged by setting [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings).
-* With the [mysqld_safe](../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) `<code class="fixed" style="white-space:pre-wrap">--syslog</code>` option one can duplicate the messages to the system's syslog.
+* With the [mysqld_safe](../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) `--syslog` option one can duplicate the messages to the system's syslog.
 
 
 ### [General Query Log](general-query-log.md)
@@ -71,7 +71,7 @@ If you are a super user running a log batch job that you don't want to have logg
 SET LOCAL SQL_LOG_OFF=1, LOCAL SLOW_QUERY_LOG=0;
 ```
 
-[mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (previously mysqldump) since [MariaDB 10.1](../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) will add this automatically to your dump file if you run it with the `<code class="fixed" style="white-space:pre-wrap">--skip-log-queries</code>` option.
+[mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (previously mysqldump) since [MariaDB 10.1](../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) will add this automatically to your dump file if you run it with the `--skip-log-queries` option.
 
 
 ## See Also

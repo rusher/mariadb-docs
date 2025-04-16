@@ -12,7 +12,7 @@ VAR_SAMP(expr)
 ## Description
 
 
-Returns the sample variance of *`<code>expr</code>`*. That is, the denominator is the number of rows minus one.
+Returns the sample variance of *`expr`*. That is, the denominator is the number of rows minus one.
 
 
 It is an [aggregate function](../special-functions/window-functions/aggregate-functions-as-window-functions.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
@@ -21,7 +21,7 @@ It is an [aggregate function](../special-functions/window-functions/aggregate-fu
 VAR_SAMP() can be used as a [window function](../special-functions/window-functions/window-functions-overview.md).
 
 
-VAR_SAMP() returns `<code>NULL</code>` if there were no matching rows.
+VAR_SAMP() returns `NULL` if there were no matching rows.
 
 
 ## Examples

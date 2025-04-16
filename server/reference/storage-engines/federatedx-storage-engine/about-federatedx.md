@@ -38,7 +38,7 @@ In [MariaDB 10.0.2](../../../../release-notes/mariadb-community-server/old-relea
 Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing `<code>[INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)</code>` or `<code>[INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)</code>`. For example:
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing `[INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)` or `[INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)`. For example:
 
 
 ```
@@ -57,7 +57,7 @@ plugin_load_add = ha_federatedx
 ## Uninstalling the Plugin
 
 
-You can uninstall the plugin dynamically by executing `<code>[UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)</code>` or `<code>[UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)</code>`. For example:
+You can uninstall the plugin dynamically by executing `[UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)`. For example:
 
 
 ```
@@ -88,9 +88,9 @@ for each table's data (such as .MYD). A foreign database will store
 the data that would normally be in this file. This will necessitate
 the use of MySQL client API to read, delete, update, insert this
 data. The data will have to be retrieve via an SQL call 
-"`<code class="fixed" style="white-space:pre-wrap"><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span>
-</code>`". Then, to read this data, it will have to be retrieved via `<code class="fixed" style="white-space:pre-wrap"><span class="n">mysql_fetch_row</span>
-</code>` one row at a time, then converted from the
+"`<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span>
+`". Then, to read this data, it will have to be retrieved via `<span class="n">mysql_fetch_row</span>
+` one row at a time, then converted from the
 column in this select into the format that the handler expects.
 
 
@@ -110,8 +110,8 @@ The basic functionality of how FederatedX works is:
 
 
 The create table will simply create the .frm file, and within the
-`<code class="fixed" style="white-space:pre-wrap"><span class="k">CREATE</span> <span class="k">TABLE</span>
-</code>` SQL statement, there SHALL be any of the following :
+`<span class="k">CREATE</span> <span class="k">TABLE</span>
+` SQL statement, there SHALL be any of the following :
 
 
 ```
@@ -156,7 +156,7 @@ You can also use 'mariadb' as a wrapper.
 
 
 Then the FederatedX table is created specifying the newly created Federated server.
-The following statements creates a federated table, `<code class="highlight fixed" style="white-space:pre-wrap">federated.t1</code>` against the table `<code class="highlight fixed" style="white-space:pre-wrap">db1.t1</code>` on the remote server.
+The following statements creates a federated table, `federated.t1` against the table `db1.t1` on the remote server.
 
 
 ```
@@ -188,10 +188,10 @@ You can also change the server to point to a new schema:
 ALTER SERVER 'server_one' options(DATABASE 'db2');
 ```
 
-All subsequent calls to any FederatedX table using the 'server_one' will now be against tables in `<code class="highlight fixed" style="white-space:pre-wrap">db2</code>`! Guess what? You no longer have to perform an alter table in order to point one or more FederatedX tables to a new server!
+All subsequent calls to any FederatedX table using the 'server_one' will now be against tables in `db2`! Guess what? You no longer have to perform an alter table in order to point one or more FederatedX tables to a new server!
 
 
-This `<code class="highlight fixed" style="white-space:pre-wrap">connection="connection string"</code>` is necessary 
+This `connection="connection string"` is necessary 
 for the handler to be able to connect to the foreign server, either
 by URL, or by server name.
 
@@ -205,8 +205,8 @@ One way to see how the FederatedX storage engine works is to compile a debug bui
 #### SELECT
 
 
-If the query is for instance "`<code class="fixed" style="white-space:pre-wrap"><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">foo</span>
-</code>`", then the primary methods you would see with debug turned on would be first:
+If the query is for instance "`<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">foo</span>
+`", then the primary methods you would see with debug turned on would be first:
 
 
 ```
@@ -237,8 +237,8 @@ ha_federatedx::reset
 #### INSERT
 
 
-If the query was "`<code class="fixed" style="white-space:pre-wrap"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">foo</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">now</span><span class="p">());</span>
-</code>`", the trace would be:
+If the query was "`<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">foo</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">now</span><span class="p">());</span>
+`", the trace would be:
 
 
 ```
@@ -249,8 +249,8 @@ ha_federatedx::reset
 #### UPDATE
 
 
-If the query was "`<code class="fixed" style="white-space:pre-wrap"><span class="k">UPDATE</span> <span class="n">foo</span> <span class="k">SET</span> <span class="n">ts</span> <span class="o">=</span> <span class="n">now</span><span class="p">()</span> <span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</code>`", the resultant trace would be:
+If the query was "`<span class="k">UPDATE</span> <span class="n">foo</span> <span class="k">SET</span> <span class="n">ts</span> <span class="o">=</span> <span class="n">now</span><span class="p">()</span> <span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+`", the resultant trace would be:
 
 
 ```
@@ -365,7 +365,7 @@ Then, I started the foreign server:
 ```
 
 Then, I went back to the directory containing the newly compiled mysqld 
-`<code class="highlight fixed" style="white-space:pre-wrap"><builddir>/sql/</code>`, started up gdb:
+`<builddir>/sql/`, started up gdb:
 
 
 ```
@@ -415,7 +415,7 @@ Both should display the federatedx storage handler.
 A federated server is a way to have a foreign data source defined-- with all connection parameters-- so that you don't have to specify explicitly the connection parameters in a string.
 
 
-For instance, if you wanted to connect to a table, `<code class="highlight fixed" style="white-space:pre-wrap">first_db.test_table</code>`, using this definition:
+For instance, if you wanted to connect to a table, `first_db.test_table`, using this definition:
 
 
 ```
@@ -445,7 +445,7 @@ CREATE TABLE federated_test_table ENGINE=FEDERATED
   CONNECTION='server_one/test_table';
 ```
 
-On the server where you create this `<code class="highlight fixed" style="white-space:pre-wrap">federated_test_table</code>` you will now have access to the table `<code class="highlight fixed" style="white-space:pre-wrap">test_table</code>` in the `<code class="highlight fixed" style="white-space:pre-wrap">first_db</code>` database on the remote server found on 192.168.1.123.
+On the server where you create this `federated_test_table` you will now have access to the table `test_table` in the `first_db` database on the remote server found on 192.168.1.123.
 
 
 ## How does FederatedX differ from the old Federated Engine?

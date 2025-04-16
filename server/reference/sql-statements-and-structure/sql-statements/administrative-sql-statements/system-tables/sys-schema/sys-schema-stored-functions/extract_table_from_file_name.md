@@ -11,7 +11,7 @@ sys.extract_table_from_file_name(path)
 ## Description
 
 
-`<code>extract_table_from_file_name</code>` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md).
+`extract_table_from_file_name` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md).
 
 
 Given a file path, it returns the table name.

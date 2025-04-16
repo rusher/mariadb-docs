@@ -19,10 +19,10 @@ However, for now the database access is only available locally on the machine (h
 ## Schema
 
 
-The most current information about the schema used is available in the file `<code class="fixed" style="white-space:pre-wrap">buildbot/process/mtrlogobserver.py</code>` in the Buildbot sources. As the code evolves and more kinds of information is made available in the database, the schema might be extended, but the schema description in the source code should always be up-to-date.
+The most current information about the schema used is available in the file `buildbot/process/mtrlogobserver.py` in the Buildbot sources. As the code evolves and more kinds of information is made available in the database, the schema might be extended, but the schema description in the source code should always be up-to-date.
 
 
-### The `<code class="fixed" style="white-space:pre-wrap">test_run</code>` table
+### The `test_run` table
 
 
 This table has one row for every test run that Buildbot does. Thus, each row corresponds to one cell in the [[waterfall](https://askmonty.org/buildbot/waterfall) Waterfall display]. The format of the table is as follows:
@@ -49,12 +49,12 @@ CREATE TABLE test_run(
 * revision: The Bzr revision number tested.
 * platform: The name of the builder that ran the test.
 * dt: Date when the buildbot run was started.
-* bbnum: The Buildbot '''build number''' which together with `<code class="fixed" style="white-space:pre-wrap">platform</code>` uniquely identifies a build within Buildbot.
-* typ: Concise abbreviation describing the kind of test. For example `<code class="fixed" style="white-space:pre-wrap">pr</code>` for --ps-protocol with row based replication, or `<code class="fixed" style="white-space:pre-wrap">nm</code>` for normal run with mixed-mode replication.
+* bbnum: The Buildbot '''build number''' which together with `platform` uniquely identifies a build within Buildbot.
+* typ: Concise abbreviation describing the kind of test. For example `pr` for --ps-protocol with row based replication, or `nm` for normal run with mixed-mode replication.
 * info: Short textual description of the kind of test run.
 
 
-### The `<code class="fixed" style="white-space:pre-wrap">test_failure</code>` table
+### The `test_failure` table
 
 
 This table has one row for every test failure encountered:
@@ -71,15 +71,15 @@ CREATE TABLE test_failure(
 ) ENGINE=innodb
 ```
 
-* test_run_id: This identifies the test run in which the test failure occured (eg. it is a foreign key to `<code class="fixed" style="white-space:pre-wrap">id</code>` in table `<code class="fixed" style="white-space:pre-wrap">test_run</code>`).
-* test_name: The name of the test that failed, eg. `<code class="fixed" style="white-space:pre-wrap">main.information_schema</code>`.
+* test_run_id: This identifies the test run in which the test failure occured (eg. it is a foreign key to `id` in table `test_run`).
+* test_name: The name of the test that failed, eg. `main.information_schema`.
 * test_variant: Some tests are run multiple times in different variants. Ie. many replication tests are run under both statement-based, mixed-mode, and row-based replication. The variant will be 'stmt', 'mix', or 'row' accordingly. For tests that do not have multiple variants, the value will be the empty string (ie. not a NULL value).
 * info_text: This is a short description that mysql-test-run.pl sometimes gives for some kinds of test failures (for example "timeout").
-* failure_text: This is the entire output from mysql-test-run.pl concerning this test failure. It usually contains the diff against the result file, a stacktrace for a crash, etc. This is useful to run `<code class="fixed" style="white-space:pre-wrap"><span class="k">LIKE</span>
-</code>` queries against when searching for test failures similar to one being investigated.
+* failure_text: This is the entire output from mysql-test-run.pl concerning this test failure. It usually contains the diff against the result file, a stacktrace for a crash, etc. This is useful to run `<span class="k">LIKE</span>
+` queries against when searching for test failures similar to one being investigated.
 
 
-### The `<code class="fixed" style="white-space:pre-wrap">test_warnings</code>` table
+### The `test_warnings` table
 
 
 This table holds information about test problems that were detected after a test case ran, during server restart (typically by finding an error or warning message in the server error log files). A typical example of this is a memory leak or a crash during server shutdown.

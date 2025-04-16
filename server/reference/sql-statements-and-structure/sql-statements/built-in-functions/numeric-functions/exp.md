@@ -16,7 +16,7 @@ power of X. The inverse of this function is [LOG()](../../../../../../general-re
 argument only) or [LN()](ln.md).
 
 
-If `<code>X</code>` is `<code>NULL</code>`, this function returns `<code>NULL</code>`.
+If `X` is `NULL`, this function returns `NULL`.
 
 
 ## Examples

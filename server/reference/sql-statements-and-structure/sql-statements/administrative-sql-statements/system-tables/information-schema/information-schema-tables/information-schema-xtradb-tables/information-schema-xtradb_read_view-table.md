@@ -1,10 +1,10 @@
 
 # Information Schema XTRADB_READ_VIEW Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>XTRADB_READ_VIEW</code>` table contains information about the oldest active transaction in the system.
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `XTRADB_READ_VIEW` table contains information about the oldest active transaction in the system.
 
 
-The `<code>PROCESS</code>` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
 
 
 It has the following columns:

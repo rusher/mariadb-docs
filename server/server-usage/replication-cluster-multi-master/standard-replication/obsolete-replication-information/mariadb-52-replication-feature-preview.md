@@ -48,12 +48,12 @@ mirrors are available.
 
 
 For Debian and Ubuntu, it is highly recommended to install from the
-repositories, using `<code>apt-get</code>`, `<code>aptitude</code>`, or other favorite package
+repositories, using `apt-get`, `aptitude`, or other favorite package
 managers.
 
 
 First import the [public key](https://ftp.osuosl.org/pub/mariadb/PublicKey) with
-which the repositories are signed, so that `<code>apt</code>` can verify the integrity of
+which the repositories are signed, so that `apt` can verify the integrity of
 the packages it downloads. For example like this:
 
 
@@ -62,7 +62,7 @@ wget -O- http://ftp.osuosl.org/pub/mariadb/PublicKey | sudo apt-key add -
 ```
 
 Now add the appropriate repository. An easy way is to create a file called
-`<code>mariadb-5.2-rpl.list</code>` in `<code>/etc/apt/sources.list.d/</code>` with contents like
+`mariadb-5.2-rpl.list` in `/etc/apt/sources.list.d/` with contents like
 this for Debian:
 
 
@@ -101,7 +101,7 @@ sudo apt-get install mariadb-server-5.2
 
 (To manually download and install packages, browse the directories below
 [](https://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/) - the .debs are in
-`<code>debian/pool/</code>` and `<code>ubuntu/pool/</code>`, respectively.)
+`debian/pool/` and `ubuntu/pool/`, respectively.)
 
 
 ### Generic Linux binary tarball
@@ -158,14 +158,14 @@ is disabled, but stops working when the binary log is enabled).
 ### [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](../enhancements-for-start-transaction-with-consistent-snapshot.md)
 
 
-`<code>START TRANSACTION WITH CONSISTENT SNAPSHOT</code>` now also works with the binary
+`START TRANSACTION WITH CONSISTENT SNAPSHOT` now also works with the binary
 log. This means it is possible to obtain the binlog position corresponding
 to a transactional snapshot of the database without blocking any other
-queries. This is used by `<code>mysqldump --single-transaction --master-data</code>` to do
+queries. This is used by `mysqldump --single-transaction --master-data` to do
 a fully non-blocking backup which can be used to provision a new slave.
 
 
-`<code>START TRANSACTION WITH CONSISTENT SNAPSHOT</code>` now also works consistently
+`START TRANSACTION WITH CONSISTENT SNAPSHOT` now also works consistently
 between transactions involving more than one storage engine (currently XTraDB
 and PBXT support this).
 
@@ -191,7 +191,7 @@ replication events.
 This feature can improve the performance of row-based replication on tables
 that do not have a primary key (or other unique key), but which do have another
 index that can help locate rows to update or delete. With this feature, index
-cardinality information from `<code>ANALYZE TABLE</code>` is considered when selecting the
+cardinality information from `ANALYZE TABLE` is considered when selecting the
 index to use (before this feature is implemented, the first index was selected
 unconditionally).
 
@@ -200,11 +200,11 @@ unconditionally).
 
 
 This feature implements the new commit ordering storage engine API in
-PBXT. With this feature, it is possible to use `<code>START TRANSACTION WITH
-CONSISTENT SNAPSHOT</code>` and get consistency among transactions which involve both
+PBXT. With this feature, it is possible to use `START TRANSACTION WITH
+CONSISTENT SNAPSHOT` and get consistency among transactions which involve both
 XtraDB and InnoDB. (Without this feature, there is no such consistency
-guarantee. For example, even after running `<code>START TRANSACTION WITH CONSISTENT
-SNAPSHOT</code>` it was still possible for the InnoDB/XtraDB part of some
+guarantee. For example, even after running `START TRANSACTION WITH CONSISTENT
+SNAPSHOT` it was still possible for the InnoDB/XtraDB part of some
 transaction *T* to be visible and the PBXT part of the same transaction *T*
 to not be visible.)
 
@@ -213,8 +213,8 @@ to not be visible.)
 
 
 * This preview also includes a small change to make mysqlbinlog omit
- redundant `<code>use</code>` statements around `<code>BEGIN</code>`, `<code>SAVEPOINT</code>`, `<code>COMMIT</code>`,
- and `<code>ROLLBACK</code>` events when reading MySQL 5.0 binlogs.
+ redundant `use` statements around `BEGIN`, `SAVEPOINT`, `COMMIT`,
+ and `ROLLBACK` events when reading MySQL 5.0 binlogs.
 * The preview included a feature
  [--innodb-release-locks-early](xtradb-option-innodb-release-locks-early.md). However we
  decided to omit this feature from future MariaDB releases because of a

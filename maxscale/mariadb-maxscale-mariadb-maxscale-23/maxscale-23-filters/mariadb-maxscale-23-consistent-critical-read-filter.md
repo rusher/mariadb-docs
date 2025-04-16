@@ -34,9 +34,9 @@ ignored.
 
 The comments must follow the [MaxScale hint syntax](../maxscale-23-reference/mariadb-maxscale-23-hint-syntax.md)
 and the *HintFilter* needs to be in the filter chain before the CCR-filter. If a
-query has a MaxScale supported comment line which defines the parameter `<code>ccr</code>`,
-that comment is caught by the CCR-filter. Parameter values `<code>match</code>` and `<code>ignore</code>`
-are supported, causing the filter to trigger (`<code>match</code>`) or not trigger (`<code>ignore</code>`)
+query has a MaxScale supported comment line which defines the parameter `ccr`,
+that comment is caught by the CCR-filter. Parameter values `match` and `ignore`
+are supported, causing the filter to trigger (`match`) or not trigger (`ignore`)
 on receiving the write query. For example, the query
 
 
@@ -48,7 +48,7 @@ INSERT INTO departments VALUES ('d1234', 'NewDepartment'); -- maxscale ccr=ignor
 
 
 would normally cause the filter to trigger, but does not because of the
-comment. The `<code>match</code>`-comment typically has no effect, since write queries by
+comment. The `match`-comment typically has no effect, since write queries by
 default trigger the filter anyway. It can be used to override an ignore-type
 regular expression that would othewise prevent triggering.
 
@@ -59,7 +59,7 @@ regular expression that would othewise prevent triggering.
 The CCR filter has no mandatory parameters.
 
 
-### `<code>time</code>`
+### `time`
 
 
 The time window in seconds during which queries are routed to the master. The
@@ -77,7 +77,7 @@ the time window and number of queries to be inspected. If either of the two
 conditions are met, the query is re-routed to the master.
 
 
-### `<code>count</code>`
+### `count`
 
 
 The number of SQL statements to route to master after detecting a data modifying
@@ -92,7 +92,7 @@ modifying SQL statement is processed, the counter is reset to the value of
 *count*.
 
 
-### `<code>match</code>`, `<code>ignore</code>` and `<code>options</code>`
+### `match`, `ignore` and `options`
 
 
 These [regular expression settings](../../mariadb-maxscale-21-06/README.md)

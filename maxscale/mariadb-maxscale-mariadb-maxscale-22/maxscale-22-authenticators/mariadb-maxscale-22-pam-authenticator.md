@@ -7,7 +7,7 @@
 Pluggable authentication module (PAM) is a general purpose authentication API.
 An application using PAM can authenticate a user without knowledge about the
 underlying authentication implementation. The actual authentication scheme is
-defined in the operating system PAM config (e.g. `<code>/etc/pam.d/</code>`), and can be
+defined in the operating system PAM config (e.g. `/etc/pam.d/`), and can be
 quite elaborate. MaxScale supports a very limited form of the PAM protocol,
 which this document details.
 
@@ -16,8 +16,8 @@ which this document details.
 
 
 The MaxScale PAM modules themselves have no configuration. All that is required
-is to change the listener and backend authenticator modules to `<code>PAMAuth</code>` and
-`<code>PAMBackendAuth</code>`, respectively.
+is to change the listener and backend authenticator modules to `PAMAuth` and
+`PAMBackendAuth`, respectively.
 
 
 
@@ -39,13 +39,13 @@ authenticator=PAMBackendAuth
 
 
 
-The PAM authenticator fetches user entries with `<code>plugin='pam'</code>` from
-the `<code>mysql.user</code>` table of a backend. The user accounts also need to have either
+The PAM authenticator fetches user entries with `plugin='pam'` from
+the `mysql.user` table of a backend. The user accounts also need to have either
 the global SELECT-privilege or a database or a table-level privilege. The PAM
-service name of a user is read from the `<code>authetication_string</code>`-column. The
+service name of a user is read from the `authetication_string`-column. The
 matching PAM service in the operating system PAM config is used for
-authenticating the user. If the `<code>authetication_string</code>` for a user is empty,
-the fallback service `<code>mysql</code>` is used. If a username@host-combination matches
+authenticating the user. If the `authetication_string` for a user is empty,
+the fallback service `mysql` is used. If a username@host-combination matches
 multiple rows, they will all be attempted until authentication succeeds or all
 services fail.
 
@@ -79,8 +79,8 @@ one-time passwords or two-factor authentication.
 The current version of the MaxScale PAM authentication module only supports a
 simple password exchange. On the client side, the authentication begins with
 MaxScale sending an AuthSwitchRequest packet. In addition to the command, the
-packet contains the client plugin name `<code>dialog</code>`, a message type byte `<code>4</code>` and the
-message `<code>Password:</code>`. In the next packet, the client should send the password,
+packet contains the client plugin name `dialog`, a message type byte `4` and the
+message `Password:`. In the next packet, the client should send the password,
 which MaxScale will forward to the PAM API running on the local machine. If the
 password is correct, an OK packet is sent to the client. No additional
 PAM-related messaging is allowed, as this would indicate a more complicated

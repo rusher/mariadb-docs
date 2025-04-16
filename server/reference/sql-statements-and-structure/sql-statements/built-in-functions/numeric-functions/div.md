@@ -15,7 +15,7 @@ Integer division. Similar to [FLOOR()](floor.md), but is safe with [BIGINT](../.
 Incorrect results may occur for non-integer operands that exceed BIGINT range.
 
 
-If the `<code>ERROR_ON_DIVISION_BY_ZERO</code>` [SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) is used, a division by zero produces an error. Otherwise, it returns NULL.
+If the `ERROR_ON_DIVISION_BY_ZERO` [SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) is used, a division by zero produces an error. Otherwise, it returns NULL.
 
 
 The remainder of a division can be obtained using the [MOD](mod.md) operator.

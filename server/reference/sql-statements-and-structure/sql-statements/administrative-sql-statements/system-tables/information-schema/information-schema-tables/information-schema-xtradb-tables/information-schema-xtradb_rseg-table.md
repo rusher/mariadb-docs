@@ -1,10 +1,10 @@
 
 # Information Schema XTRADB_RSEG Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>XTRADB_RSEG</code>` table contains information about the XtraDB rollback segments.
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `XTRADB_RSEG` table contains information about the XtraDB rollback segments.
 
 
-The `<code>PROCESS</code>` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
 
 
 It has the following columns:
@@ -23,5 +23,5 @@ It has the following columns:
 
 
 
-The number of records will match the value set in the `<code>[innodb_undo_logs](../../../../../../../storage-engines/innodb/innodb-system-variables.md)</code>` variable (by default 128).
+The number of records will match the value set in the `[innodb_undo_logs](../../../../../../../storage-engines/innodb/innodb-system-variables.md)` variable (by default 128).
 

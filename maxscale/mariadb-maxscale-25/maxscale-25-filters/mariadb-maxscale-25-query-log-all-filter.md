@@ -64,7 +64,7 @@ filters=MyLogFilter
 ## Log Rotation
 
 
-The `<code>qlafilter</code>` logs can be rotated by executing the `<code>maxctrl rotate logs</code>`
+The `qlafilter` logs can be rotated by executing the `maxctrl rotate logs`
 command. This will cause the log files to be reopened when the next message is
 written to the file. This applies to both unified and session type logging.
 
@@ -72,11 +72,11 @@ written to the file. This applies to both unified and session type logging.
 ## Filter Parameters
 
 
-The QLA filter has one mandatory parameter, `<code>filebase</code>`, and a number of optional
+The QLA filter has one mandatory parameter, `filebase`, and a number of optional
 parameters. These were introduced in the 1.0 release of MariaDB MaxScale.
 
 
-### `<code>filebase</code>`
+### `filebase`
 
 
 The basename of the output file created for each session. A session index is
@@ -91,7 +91,7 @@ filebase=/tmp/SqlQueryLog
 
 
 
-### `<code>match</code>`, `<code>exclude</code>` and `<code>options</code>`
+### `match`, `exclude` and `options`
 
 
 These
@@ -108,12 +108,12 @@ options=case,extended
 
 
 
-### `<code>user</code>` and `<code>source</code>`
+### `user` and `source`
 
 
-These optional parameters limit logging on a session level. If `<code>user</code>` is
+These optional parameters limit logging on a session level. If `user` is
 defined, only the sessions with a matching client username are logged. If
-`<code>source</code>` is defined, only sessions with a matching client source address are
+`source` is defined, only sessions with a matching client source address are
 logged.
 
 
@@ -125,7 +125,7 @@ source=127.0.0.1
 
 
 
-### `<code>log_type</code>`
+### `log_type`
 
 
 The type of log file to use. The default value is *session*.
@@ -146,11 +146,11 @@ log_type=session
 
 
 
-The log types can be combined, e.g. setting `<code>log_type=session,stdout</code>`
+The log types can be combined, e.g. setting `log_type=session,stdout`
 will write both session-specific files, and all sessions to stdout.
 
 
-### `<code>log_data</code>`
+### `log_data`
 
 
 Type of data to log in the log files. The parameter value is a comma separated
@@ -182,7 +182,7 @@ server is received. Otherwise, the entry is written when receiving query from
 client.
 
 
-### `<code>flush</code>`
+### `flush`
 
 
 Flush log files after every write. The default is false.
@@ -195,7 +195,7 @@ flush=true
 
 
 
-### `<code>append</code>`
+### `append`
 
 
 Append new entries to log files instead of overwriting them. The default is
@@ -211,7 +211,7 @@ append=true
 
 
 
-### `<code>separator</code>`
+### `separator`
 
 
 Default value is "," (a comma). Defines the separator string between elements of
@@ -225,7 +225,7 @@ separator=" | "
 
 
 
-### `<code>newline_replacement</code>`
+### `newline_replacement`
 
 
 Default value is " " (one space). SQL-queries may include line breaks, which, if
@@ -276,8 +276,8 @@ filters=ProductsSelectLogger
 
 The result of using this filter with the service used by the application would
 be a log file of all select queries querying PRODUCTS without using the
-PRODUCT_ID primary key in the predicates of the query. Executing `<code>SELECT * FROM
-PRODUCTS</code>` would log the following into `<code>/var/logs/qla/SelectProducts</code>`:
+PRODUCT_ID primary key in the predicates of the query. Executing `SELECT * FROM
+PRODUCTS` would log the following into `/var/logs/qla/SelectProducts`:
 
 
 

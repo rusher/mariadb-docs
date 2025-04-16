@@ -7,7 +7,7 @@ The following restrictions apply to [triggers](triggers-and-implicit-locks.md).
 * All of the restrictions listed in [Stored Routine Limitations](../../stored-routines/stored-routine-limitations.md).
 * All of the restrictions listed in [Stored Function Limitations](../../stored-routines/stored-functions/stored-function-limitations.md).
 * Until [MariaDB 10.2.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md), each table can have only one trigger for each timing/event combination (ie: you can't define two BEFORE INSERT triggers for the same table).
-* Triggers are always executed for each row. The standard `<code>FOR EACH STATEMENT</code>` option is not supported in MariaDB,
+* Triggers are always executed for each row. The standard `FOR EACH STATEMENT` option is not supported in MariaDB,
 * Triggers cannot operate on any tables in the mysql, information_schema or performance_schema database.
 * Cannot return a resultset.
 * The [RETURN](../../programmatic-compound-statements/return.md) statement is not permitted, since triggers don't return any values. Use [LEAVE](../../programmatic-compound-statements/leave.md) to immediately exit a trigger.

@@ -13,8 +13,8 @@ SHOW COLLATION
 ## Description
 
 
-The output from `<code class="highlight fixed" style="white-space:pre-wrap">SHOW COLLATION</code>` includes all available
-[collations](../../../../data-types/string-data-types/character-sets/README.md). The `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clause, if present on its own, indicates which collation names to match. The `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+The output from `SHOW COLLATION` includes all available
+[collations](../../../../data-types/string-data-types/character-sets/README.md). The `LIKE` clause, if present on its own, indicates which collation names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 
 Similar information, including some extra information (such as, from [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md),.5, which collation an alias refers to), can be queried from the [Information Schema COLLATIONS](../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) table.

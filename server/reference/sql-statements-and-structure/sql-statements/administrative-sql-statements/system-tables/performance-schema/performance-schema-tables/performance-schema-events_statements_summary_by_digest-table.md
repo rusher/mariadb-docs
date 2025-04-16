@@ -4,7 +4,7 @@
 The [Performance Schema digest](../performance-schema-digests.md) is a hashed, normalized form of a statement with the specific data values removed. It allows statistics to be gathered for similar kinds of statements.
 
 
-The [Performance Schema](performance-schema-table_handles-table.md) `<code>events_statements_summary_by_digest</code>` table records statement events summarized by schema and digest. It contains the following columns:
+The [Performance Schema](performance-schema-table_handles-table.md) `events_statements_summary_by_digest` table records statement events summarized by schema and digest. It contains the following columns:
 
 
 
@@ -43,8 +43,8 @@ The [Performance Schema](performance-schema-table_handles-table.md) `<code>event
 
 
 
-The `<code>*_TIMER_WAIT</code>` columns only calculate results for timed events, as non-timed events have a `<code>NULL</code>` wait time.
+The `*_TIMER_WAIT` columns only calculate results for timed events, as non-timed events have a `NULL` wait time.
 
 
-The `<code>events_statements_summary_by_digest</code>` table is limited in size by the [performance_schema_digests_size](../performance-schema-system-variables.md#performance_schema_digests_size) system variable. Once the limit has been reached and the table is full, all entries are aggregated in a row with a `<code>NULL</code>` digest. The `<code>COUNT_STAR</code>` value of this `<code>NULL</code>` row indicates how many digests are recorded in the row and therefore gives an indication of whether `<code>performance_schema_digests_size</code>` should be increased to provide more accurate statistics.
+The `events_statements_summary_by_digest` table is limited in size by the [performance_schema_digests_size](../performance-schema-system-variables.md#performance_schema_digests_size) system variable. Once the limit has been reached and the table is full, all entries are aggregated in a row with a `NULL` digest. The `COUNT_STAR` value of this `NULL` row indicates how many digests are recorded in the row and therefore gives an indication of whether `performance_schema_digests_size` should be increased to provide more accurate statistics.
 

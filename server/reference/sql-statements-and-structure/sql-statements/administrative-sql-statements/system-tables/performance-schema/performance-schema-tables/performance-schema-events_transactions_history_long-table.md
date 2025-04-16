@@ -6,7 +6,7 @@
 The events_transactions_history_long table was introduced in [MariaDB 10.5.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
 
 
-The `<code>events_transactions_history_long</code>` table contains the most recent completed transaction events that have ended globally, across all threads.
+The `events_transactions_history_long` table contains the most recent completed transaction events that have ended globally, across all threads.
 
 
 The number of records stored in the table is determined by the [performance_schema_events_transactions_history_long_size](../performance-schema-system-variables.md#performance_schema_events_transactions_history_long_size) system variable, which is autosized on startup.

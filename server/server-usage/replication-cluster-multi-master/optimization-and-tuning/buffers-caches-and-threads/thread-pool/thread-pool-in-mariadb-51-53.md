@@ -23,7 +23,7 @@ and there are few table/row locks in your system.
 
 
 To enable pool-of-threads you must first run configure with the
-`<code class="highlight fixed" style="white-space:pre-wrap">--with-libevent</code>` option. (This is automatically done if you
+`--with-libevent` option. (This is automatically done if you
 use any 'max' scripts in the BUILD directory):
 
 

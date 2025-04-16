@@ -1,7 +1,7 @@
 
 # SHOW ENGINE INNODB STATUS
 
-`<code>SHOW ENGINE INNODB STATUS</code>` is a specific form of the [SHOW ENGINE](show-engine-innodb-status.md) statement that displays the [InnoDB Monitor](../../../../storage-engines/innodb/innodb-monitors.md) output, which is extensive InnoDB information which can be useful in diagnosing problems.
+`SHOW ENGINE INNODB STATUS` is a specific form of the [SHOW ENGINE](show-engine-innodb-status.md) statement that displays the [InnoDB Monitor](../../../../storage-engines/innodb/innodb-monitors.md) output, which is extensive InnoDB information which can be useful in diagnosing problems.
 
 
 The following sections are displayed
@@ -9,7 +9,7 @@ The following sections are displayed
 
 * Status: Shows the timestamp, monitor name and the number of seconds, or the elapsed time between the current time and the time the InnoDB Monitor output was last displayed. The per-second averages are based upon this time.
 * BACKGROUND THREAD: srv_master_thread lines show work performed by the main background thread.
-* SEMAPHORES: Threads waiting for a semaphore and stats on how the number of times threads have needed a spin or a wait on a mutex or rw-lock semaphore. If this number of threads is large, there may be I/O or contention issues. Reducing the size of the [innodb_thread_concurrency](../../../../storage-engines/innodb/innodb-system-variables.md) system variable may help if contention is related to thread scheduling. `<code>Spin rounds per wait</code>` shows the number of spinlock rounds per OS wait for a mutex.
+* SEMAPHORES: Threads waiting for a semaphore and stats on how the number of times threads have needed a spin or a wait on a mutex or rw-lock semaphore. If this number of threads is large, there may be I/O or contention issues. Reducing the size of the [innodb_thread_concurrency](../../../../storage-engines/innodb/innodb-system-variables.md) system variable may help if contention is related to thread scheduling. `Spin rounds per wait` shows the number of spinlock rounds per OS wait for a mutex.
 * LATEST FOREIGN KEY ERROR: Only shown if there has been a foreign key constraint error, it displays the failed statement and information about the constraint and the related tables.
 * LATEST DETECTED DEADLOCK: Only shown if there has been a deadlock, it displays the transactions involved in the deadlock and the statements being executed, held and required locked and the transaction rolled back to.
 * TRANSACTIONS: The output of this section can help identify lock contention, as well as reasons for the deadlocks.
@@ -20,7 +20,7 @@ The following sections are displayed
 * ROW OPERATIONS:Information about the main thread, including the number and performance rate for each type of row operation.
 
 
-If the [innodb_status_output_locks](../../../../storage-engines/innodb/innodb-system-variables.md) system variable is set to `<code>1</code>`, extended lock information will be displayed.
+If the [innodb_status_output_locks](../../../../storage-engines/innodb/innodb-system-variables.md) system variable is set to `1`, extended lock information will be displayed.
 
 
 Example output:

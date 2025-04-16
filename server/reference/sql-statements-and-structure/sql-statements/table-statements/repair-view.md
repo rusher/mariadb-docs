@@ -12,13 +12,13 @@ REPAIR [NO_WRITE_TO_BINLOG | LOCAL] VIEW  view_name[, view_name] ... [FROM MYSQL
 ## Description
 
 
-The `<code>REPAIR VIEW</code>` statement was introduced to assist with fixing [MDEV-6916](https://jira.mariadb.org/browse/MDEV-6916), an issue introduced in [MariaDB 5.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md) where the view algorithms were swapped compared to their MySQL on disk representation. It checks whether the view algorithm is correct. It is run as part of [mariadb-upgrade](../../../../clients-and-utilities/mariadb-upgrade.md), and should not normally be required in regular use.
+The `REPAIR VIEW` statement was introduced to assist with fixing [MDEV-6916](https://jira.mariadb.org/browse/MDEV-6916), an issue introduced in [MariaDB 5.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md) where the view algorithms were swapped compared to their MySQL on disk representation. It checks whether the view algorithm is correct. It is run as part of [mariadb-upgrade](../../../../clients-and-utilities/mariadb-upgrade.md), and should not normally be required in regular use.
 
 
-By default it corrects the checksum and if necessary adds the mariadb-version field. If the optional `<code>FROM MYSQL</code>` clause is used, and no mariadb-version field is present, the MERGE and TEMPTABLE algorithms are toggled.
+By default it corrects the checksum and if necessary adds the mariadb-version field. If the optional `FROM MYSQL` clause is used, and no mariadb-version field is present, the MERGE and TEMPTABLE algorithms are toggled.
 
 
-By default, `<code>REPAIR VIEW</code>` statements are written to the [binary log](../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and will be [replicated](../administrative-sql-statements/replication-statements/README.md). The `<code>NO_WRITE_TO_BINLOG</code>` keyword (`<code>LOCAL</code>` is an alias) will ensure the statement is not written to the binary log.
+By default, `REPAIR VIEW` statements are written to the [binary log](../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and will be [replicated](../administrative-sql-statements/replication-statements/README.md). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
 
 
 ## See Also

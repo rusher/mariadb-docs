@@ -11,10 +11,10 @@ SHOW PRIVILEGES
 ## Description
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW PRIVILEGES</code>` shows the list of [system privileges](../../account-management-sql-commands/grant.md) that the MariaDB server supports. The exact list of privileges depends on the version of your server.
+`SHOW PRIVILEGES` shows the list of [system privileges](../../account-management-sql-commands/grant.md) that the MariaDB server supports. The exact list of privileges depends on the version of your server.
 
 
-Note that before [MariaDB 10.3.23](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10323-release-notes.md), [MariaDB 10.4.13](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md) and [MariaDB 10.5.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md) , the [Delete history](../../account-management-sql-commands/grant.md#table-privileges) privilege displays as `<code>Delete versioning rows</code>` ([MDEV-20382](https://jira.mariadb.org/browse/MDEV-20382)).
+Note that before [MariaDB 10.3.23](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10323-release-notes.md), [MariaDB 10.4.13](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md) and [MariaDB 10.5.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md) , the [Delete history](../../account-management-sql-commands/grant.md#table-privileges) privilege displays as `Delete versioning rows` ([MDEV-20382](https://jira.mariadb.org/browse/MDEV-20382)).
 
 
 ## Example
@@ -77,5 +77,5 @@ SHOW PRIVILEGES;
 
 
 * [SHOW CREATE USER](show-create-user.md) shows how the user was created.
-* [SHOW GRANTS](show-grants.md) shows the `<code>GRANTS/PRIVILEGES</code>` for a user.
+* [SHOW GRANTS](show-grants.md) shows the `GRANTS/PRIVILEGES` for a user.
 

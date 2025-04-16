@@ -11,7 +11,7 @@ ISNULL(expr)
 ## Description
 
 
-If *`<code>expr</code>`* is NULL, ISNULL() returns 1, otherwise it returns 0.
+If *`expr`* is NULL, ISNULL() returns 1, otherwise it returns 0.
 
 
 See also [NULL Values in MariaDB](../../../data-types/null-values.md).

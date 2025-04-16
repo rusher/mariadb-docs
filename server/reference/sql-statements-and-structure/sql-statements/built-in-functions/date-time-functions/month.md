@@ -11,7 +11,7 @@ MONTH(date)
 ## Description
 
 
-Returns the month for `<code>date</code>` in the range 1 to 12 for January to
+Returns the month for `date` in the range 1 to 12 for January to
 December, or 0 for dates such as '0000-00-00' or '2008-00-00' that
 have a zero month part.
 

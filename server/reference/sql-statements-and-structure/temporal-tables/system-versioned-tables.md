@@ -43,7 +43,7 @@ CREATE TABLE t (
 ) WITH SYSTEM VERSIONING;
 ```
 
-In the latter case no extra columns will be created and they won't clutter the output of, say, `<code>SELECT * FROM t</code>`. The versioning information will still be stored, and it can be accessed via the pseudo-columns `<code>ROW_START</code>` and `<code>ROW_END</code>`:
+In the latter case no extra columns will be created and they won't clutter the output of, say, `SELECT * FROM t`. The versioning information will still be stored, and it can be accessed via the pseudo-columns `ROW_START` and `ROW_END`:
 
 
 ```
@@ -115,7 +115,7 @@ Create Table: CREATE TABLE `t` (
 
 
 ##### MariaDB starting with [11.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md)
-From [MariaDB 11.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md), it is possible to convert a versioned table from implicit to explicit row_start/row_end columns. Note that in order to do any ALTER on a system versioned table, [system_versioning_alter_history](#system_versioning_alter_history) must be set to `<code>KEEP</code>`.
+From [MariaDB 11.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md), it is possible to convert a versioned table from implicit to explicit row_start/row_end columns. Note that in order to do any ALTER on a system versioned table, [system_versioning_alter_history](#system_versioning_alter_history) must be set to `KEEP`.
 
 ```
 CREATE OR REPLACE TABLE t1 (x INT) WITH SYSTEM VERSIONING;
@@ -176,27 +176,27 @@ SELECT a,row_start,row_end FROM t;
 ### Querying Historical Data
 
 
-#### `<code>SELECT</code>`
+#### `SELECT`
 
 
-To query the historical data one uses the clause `<code>FOR SYSTEM_TIME</code>` directly after the table name (before the table alias, if any). SQL:2011 provides three syntactic extensions:
+To query the historical data one uses the clause `FOR SYSTEM_TIME` directly after the table name (before the table alias, if any). SQL:2011 provides three syntactic extensions:
 
 
-* `<code>AS OF</code>` is used to see the table as it was at a specific point in time in the past:
+* `AS OF` is used to see the table as it was at a specific point in time in the past:
 
 
 ```
 SELECT * FROM t FOR SYSTEM_TIME AS OF TIMESTAMP'2016-10-09 08:07:06';
 ```
 
-* `<code>BETWEEN start AND end</code>` will show all rows that were visible at any point between two specified points in time. It works inclusively, a row visible exactly at start or exactly at end will be shown too.
+* `BETWEEN start AND end` will show all rows that were visible at any point between two specified points in time. It works inclusively, a row visible exactly at start or exactly at end will be shown too.
 
 
 ```
 SELECT * FROM t FOR SYSTEM_TIME BETWEEN (NOW() - INTERVAL 1 YEAR) AND NOW();
 ```
 
-* `<code>FROM start TO end</code>` will also show all rows that were visible at any point between two specified points in time, including start, but excluding end.
+* `FROM start TO end` will also show all rows that were visible at any point between two specified points in time, including start, but excluding end.
 
 
 ```
@@ -206,14 +206,14 @@ SELECT * FROM t FOR SYSTEM_TIME FROM '2016-01-01 00:00:00' TO '2017-01-01 00:00:
 Additionally MariaDB implements a non-standard extension:
 
 
-* `<code>ALL</code>` will show all rows, historical and current.
+* `ALL` will show all rows, historical and current.
 
 
 ```
 SELECT * FROM t FOR SYSTEM_TIME ALL;
 ```
 
-If the `<code>FOR SYSTEM_TIME</code>` clause is not used, the table will show the *current* data. This is usually the same as if one had specified `<code>FOR SYSTEM_TIME AS OF CURRENT_TIMESTAMP</code>`, unless one has adjusted the *row_start* value (until [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), only possible by setting the [secure_timestamp](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#secure_timestamp) variable). For example:
+If the `FOR SYSTEM_TIME` clause is not used, the table will show the *current* data. This is usually the same as if one had specified `FOR SYSTEM_TIME AS OF CURRENT_TIMESTAMP`, unless one has adjusted the *row_start* value (until [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), only possible by setting the [secure_timestamp](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#secure_timestamp) variable). For example:
 
 
 ```
@@ -263,7 +263,7 @@ Empty set (0.001 sec)
 #### Views and Subqueries
 
 
-When a system-versioned tables is used in a view or in a subquery in the from clause, `<code>FOR SYSTEM_TIME</code>` can be used directly in the view or subquery body, or (non-standard) applied to the whole view when it's being used in a `<code>SELECT</code>`:
+When a system-versioned tables is used in a view or in a subquery in the from clause, `FOR SYSTEM_TIME` can be used directly in the view or subquery body, or (non-standard) applied to the whole view when it's being used in a `SELECT`:
 
 
 ```
@@ -281,13 +281,13 @@ SELECT * FROM v1 FOR SYSTEM_TIME AS OF TIMESTAMP'2016-10-09 08:07:06';
 #### Use in Replication and Binary Logs
 
 
-Tables that use system-versioning implicitly add the `<code>row_end</code>` column to the Primary Key. While this is generally not an issue for most use cases, it can lead to problems when re-applying write statements from the binary log or in replication environments, where a primary retries an SQL statement on the replica.
+Tables that use system-versioning implicitly add the `row_end` column to the Primary Key. While this is generally not an issue for most use cases, it can lead to problems when re-applying write statements from the binary log or in replication environments, where a primary retries an SQL statement on the replica.
 
 
-Specifically, these writes include a value on the `<code>row_end</code>` column containing the timestamp from when the write was initially made. The re-occurrence of the Primary Key with the old system-versioning columns raises an error due to the duplication.
+Specifically, these writes include a value on the `row_end` column containing the timestamp from when the write was initially made. The re-occurrence of the Primary Key with the old system-versioning columns raises an error due to the duplication.
 
 
-To mitigate this with MariaDB Replication, set the [secure_timestamp](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#secure_timestamp) system variable to `<code>YES</code>` on the replica. When set, the replica uses its own system clock when applying to the row log, meaning that the primary can retry as many times as needed without causing a conflict. The retries generate new historical rows with new values for the `<code>row_start</code>` and `<code>row_end</code>` columns.
+To mitigate this with MariaDB Replication, set the [secure_timestamp](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#secure_timestamp) system variable to `YES` on the replica. When set, the replica uses its own system clock when applying to the row log, meaning that the primary can retry as many times as needed without causing a conflict. The retries generate new historical rows with new values for the `row_start` and `row_end` columns.
 
 
 ### Transaction-Precise History in InnoDB
@@ -299,10 +299,10 @@ A point in time when a row was inserted or deleted does not necessarily mean tha
 For some applications — for example, when doing data analytics on one-year-old data — this distinction does not matter much. For others — forensic analysis — it might be crucial.
 
 
-MariaDB supports transaction-precise history (only for the [InnoDB storage engine](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md)) that allows seeing the data exactly as it would've been seen by a new connection doing a `<code>SELECT</code>` at the specified point in time — rows inserted *before* that point, but committed *after* will not be shown.
+MariaDB supports transaction-precise history (only for the [InnoDB storage engine](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md)) that allows seeing the data exactly as it would've been seen by a new connection doing a `SELECT` at the specified point in time — rows inserted *before* that point, but committed *after* will not be shown.
 
 
-To use transaction-precise history, InnoDB needs to remember not timestamps, but transaction identifier per row. This is done by creating generated columns as `<code>BIGINT UNSIGNED</code>`, not `<code>TIMESTAMP(6)</code>`:
+To use transaction-precise history, InnoDB needs to remember not timestamps, but transaction identifier per row. This is done by creating generated columns as `BIGINT UNSIGNED`, not `TIMESTAMP(6)`:
 
 
 ```
@@ -314,13 +314,13 @@ CREATE TABLE t(
 ) WITH SYSTEM VERSIONING;
 ```
 
-These columns must be specified explicitly, but they can be made [INVISIBLE](../sql-statements/data-definition/create/invisible-columns.md) to avoid cluttering `<code>SELECT *</code>` output.
+These columns must be specified explicitly, but they can be made [INVISIBLE](../sql-statements/data-definition/create/invisible-columns.md) to avoid cluttering `SELECT *` output.
 
 
 Note that if you are using an engine that does not support system versioning with transaction ids, you will get an error like "`start_trxid` must be of type TIMESTAMP(6) for system-versioned table `t`".
 
 
-When one uses transaction-precise history, one can optionally use transaction identifiers in the `<code>FOR SYSTEM_TIME</code>` clause:
+When one uses transaction-precise history, one can optionally use transaction identifiers in the `FOR SYSTEM_TIME` clause:
 
 
 ```
@@ -339,7 +339,7 @@ Data for this feature is stored in the [mysql.transaction_registry table](../sql
 When the history is stored together with the current data, it increases the size of the table, so current data queries — table scans and index searches — will take more time, because they will need to skip over historical data. If most queries on that table use only current data, it might make sense to store the history separately, to reduce the overhead from versioning.
 
 
-This is done by partitioning the table by `<code>SYSTEM_TIME</code>`. Because of the [partition pruning](../../../server-management/partitioning-tables/partition-pruning-and-selection.md) optimization, all current data queries will only access one partition, the one that stores current data.
+This is done by partitioning the table by `SYSTEM_TIME`. Because of the [partition pruning](../../../server-management/partitioning-tables/partition-pruning-and-selection.md) optimization, all current data queries will only access one partition, the one that stores current data.
 
 
 This example shows how to create such a partitioned table:
@@ -353,10 +353,10 @@ CREATE TABLE t (x INT) WITH SYSTEM VERSIONING
   );
 ```
 
-In this example all history will be stored in the partition `<code>p_hist</code>` while all current data will be in the partition `<code>p_cur</code>`. The table must have exactly one current partition and at least one historical partition.
+In this example all history will be stored in the partition `p_hist` while all current data will be in the partition `p_cur`. The table must have exactly one current partition and at least one historical partition.
 
 
-Partitioning by `<code>SYSTEM_TIME</code>` also supports automatic partition rotation. One can rotate historical partitions by time or by size. This example shows how to rotate partitions by size:
+Partitioning by `SYSTEM_TIME` also supports automatic partition rotation. One can rotate historical partitions by time or by size. This example shows how to rotate partitions by size:
 
 
 ```
@@ -368,7 +368,7 @@ CREATE TABLE t (x INT) WITH SYSTEM VERSIONING
   );
 ```
 
-MariaDB will start writing history rows into partition `<code>p0</code>`, and at the end of the statement that wrote the 100000th row, MariaDB will switch to partition `<code>p1</code>`. There are only two historical partitions, so when `<code>p1</code>` overflows, MariaDB will issue a warning, but will continue writing into it.
+MariaDB will start writing history rows into partition `p0`, and at the end of the statement that wrote the 100000th row, MariaDB will switch to partition `p1`. There are only two historical partitions, so when `p1` overflows, MariaDB will issue a warning, but will continue writing into it.
 
 
 Similarly, one can rotate partitions by time:
@@ -384,10 +384,10 @@ CREATE TABLE t (x INT) WITH SYSTEM VERSIONING
   );
 ```
 
-This means that the history for the first week after the table was created will be stored in `<code>p0</code>`. The history for the second week — in `<code>p1</code>`, and all later history will go into `<code>p2</code>`. One can see the exact rotation time for each partition in the [INFORMATION_SCHEMA.PARTITIONS](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) table.
+This means that the history for the first week after the table was created will be stored in `p0`. The history for the second week — in `p1`, and all later history will go into `p2`. One can see the exact rotation time for each partition in the [INFORMATION_SCHEMA.PARTITIONS](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) table.
 
 
-It is possible to combine partitioning by `<code>SYSTEM_TIME</code>` and subpartitions:
+It is possible to combine partitioning by `SYSTEM_TIME` and subpartitions:
 
 
 ```
@@ -451,7 +451,7 @@ ERROR 4128 (HY000): Wrong partitions for `t`: must have at least one HISTORY and
 
 
 ##### MariaDB starting with [10.9.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-1091-release-notes.md)
-From [MariaDB 10.9.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-1091-release-notes.md), the `<code>AUTO</code>` keyword can be used to automatically create history partitions.
+From [MariaDB 10.9.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-1091-release-notes.md), the `AUTO` keyword can be used to automatically create history partitions.
 For example
 
 ```
@@ -528,7 +528,7 @@ or only old history up to a specific point in time:
 DELETE HISTORY FROM t BEFORE SYSTEM_TIME '2016-10-09 08:07:06';
 ```
 
-or to a specific transaction (with `<code>BEFORE SYSTEM_TIME TRANSACTION xxx</code>`).
+or to a specific transaction (with `BEFORE SYSTEM_TIME TRANSACTION xxx`).
 
 
 To protect the integrity of the history, this statement requires a special [DELETE HISTORY](../sql-statements/account-management-sql-commands/grant.md#table-privileges) privilege.
@@ -551,7 +551,7 @@ ERROR 4137 (HY000): System-versioned tables do not support TRUNCATE TABLE
 ### Excluding Columns From Versioning
 
 
-Another MariaDB extension allows one to version only a subset of columns in a table. This is useful, for example, if you have a table with user information that should be versioned, but one column is, let's say, a login counter that is incremented often and is not interesting to version. Such a column can be excluded from versioning by declaring it `<code>WITHOUT VERSIONING</code>`
+Another MariaDB extension allows one to version only a subset of columns in a table. This is useful, for example, if you have a table with user information that should be versioned, but one column is, let's say, a login counter that is incremented often and is not interesting to version. Such a column can be excluded from versioning by declaring it `WITHOUT VERSIONING`
 
 
 ```
@@ -561,7 +561,7 @@ CREATE TABLE t (
 ) WITH SYSTEM VERSIONING;
 ```
 
-A column can also be declared `<code>WITH VERSIONING</code>`, that will automatically make the table versioned. The statement below is equivalent to the one above:
+A column can also be declared `WITH VERSIONING`, that will automatically make the table versioned. The statement below is equivalent to the one above:
 
 
 ```
@@ -595,30 +595,30 @@ There are a number of system variables related to system-versioned tables:
 #### system_versioning_alter_history
 
 
-* Description: SQL:2011 does not allow [ALTER TABLE](../sql-statements/data-definition/alter/alter-tablespace.md) on system-versioned tables. When this variable is set to `<code>ERROR</code>`, an attempt to alter a system-versioned table will result in an error. When this variable is set to `<code>KEEP</code>`, ALTER TABLE will be allowed, but the history will become incorrect — querying historical data will show the new table structure. This mode is still useful, for example, when adding new columns to a table. Note that if historical data contains or would contain nulls, attempting to ALTER these columns to be `<code>NOT NULL</code>` will return an error (or warning if [strict_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is not set).
-* Commandline: `<code>--system-versioning-alter-history=value</code>`
+* Description: SQL:2011 does not allow [ALTER TABLE](../sql-statements/data-definition/alter/alter-tablespace.md) on system-versioned tables. When this variable is set to `ERROR`, an attempt to alter a system-versioned table will result in an error. When this variable is set to `KEEP`, ALTER TABLE will be allowed, but the history will become incorrect — querying historical data will show the new table structure. This mode is still useful, for example, when adding new columns to a table. Note that if historical data contains or would contain nulls, attempting to ALTER these columns to be `NOT NULL` will return an error (or warning if [strict_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is not set).
+* Commandline: `--system-versioning-alter-history=value`
 * Scope: Global, Session
 * Dynamic: Yes
 * Type: Enum
-* Default Value: `<code>ERROR</code>`
-* Valid Values: `<code>ERROR</code>`, `<code>KEEP</code>`
+* Default Value: `ERROR`
+* Valid Values: `ERROR`, `KEEP`
 
 
 
-#### `<code>system_versioning_asof</code>`
+#### `system_versioning_asof`
 
 
-* Description: If set to a specific timestamp value, an implicit `<code>FOR SYSTEM_TIME AS OF</code>` clause will be applied to all queries. This is useful if one wants to do many queries for history at the specific point in time. Set it to `<code>'DEFAULT'</code>` to restore the default behavior. Has no effect on DML, so queries such as [INSERT .. SELECT](../sql-statements/data-manipulation/inserting-loading-data/insert-select.md) and [REPLACE .. SELECT](../sql-statements/built-in-functions/string-functions/replace-function.md) need to state AS OF explicitly.
+* Description: If set to a specific timestamp value, an implicit `FOR SYSTEM_TIME AS OF` clause will be applied to all queries. This is useful if one wants to do many queries for history at the specific point in time. Set it to `'DEFAULT'` to restore the default behavior. Has no effect on DML, so queries such as [INSERT .. SELECT](../sql-statements/data-manipulation/inserting-loading-data/insert-select.md) and [REPLACE .. SELECT](../sql-statements/built-in-functions/string-functions/replace-function.md) need to state AS OF explicitly.
 
 
-**Note**: You need to use quotes around the name `<code>'DEFAULT'</code>` when setting the session value, unquoted literal `<code>DEFAULT</code>` will restore the current global value instead.
+**Note**: You need to use quotes around the name `'DEFAULT'` when setting the session value, unquoted literal `DEFAULT` will restore the current global value instead.
 
 
 * Commandline: None
 * Scope: Global, Session
 * Dynamic: Yes
 * Type: Varchar
-* Default Value: `<code>DEFAULT</code>`
+* Default Value: `DEFAULT`
 
 
 
@@ -626,11 +626,11 @@ There are a number of system variables related to system-versioned tables:
 
 
 * Description: Never fully implemented and removed in the following release.
-* Commandline: `<code>--system-versioning-innodb-algorithm-simple[={0|1}]</code>`
+* Commandline: `--system-versioning-innodb-algorithm-simple[={0|1}]`
 * Scope: Global, Session
 * Dynamic: Yes
 * Type: Boolean
-* Default Value: `<code>ON</code>`
+* Default Value: `ON`
 * Introduced: [MariaDB 10.3.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1034-release-notes.md)
 * Removed: [MariaDB 10.3.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1035-release-notes.md)
 
@@ -640,11 +640,11 @@ There are a number of system variables related to system-versioned tables:
 
 
 * Description: Allows direct inserts into ROW_START and ROW_END columns if [secure_timestamp](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#secure_timestamp) allows changing [timestamp](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#timestamp).
-* Commandline: `<code>--system-versioning-insert-history[={0|1}]</code>`
+* Commandline: `--system-versioning-insert-history[={0|1}]`
 * Scope: Global, Session
 * Dynamic: Yes
 * Type: Boolean
-* Default Value: `<code>OFF</code>`
+* Default Value: `OFF`
 * Introduced: [MariaDB 10.11.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-0-release-notes.md)
 
 
@@ -653,7 +653,7 @@ There are a number of system variables related to system-versioned tables:
 
 
 * Versioning clauses can not be applied to [generated (virtual and persistent) columns](../sql-statements/data-definition/create/generated-columns.md).
-* [mariadb-dump](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) did not read historical rows from versioned tables, and so historical data would not be backed up. Also, a restore of the timestamps would not be possible as they cannot be defined by an insert/a user. From [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), use the `<code>-H</code>` or `<code>--dump-history</code>` options to include the history.
+* [mariadb-dump](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) did not read historical rows from versioned tables, and so historical data would not be backed up. Also, a restore of the timestamps would not be possible as they cannot be defined by an insert/a user. From [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), use the `-H` or `--dump-history` options to include the history.
 
 
 ## See Also

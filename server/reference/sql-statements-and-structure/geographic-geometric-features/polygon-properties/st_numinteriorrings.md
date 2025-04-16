@@ -12,13 +12,13 @@ NumInteriorRings(poly)
 ## Description
 
 
-Returns an integer containing the number of interior rings in the Polygon value `<code>poly</code>`.
+Returns an integer containing the number of interior rings in the Polygon value `poly`.
 
 
-Note that according the the OpenGIS standard, a [POLYGON](../geometry-constructors/polygon.md) should have exactly one ExteriorRing and all other rings should lie within that ExteriorRing and thus be the InteriorRings. Practically, however, some systems, including MariaDB's, permit polygons to have several 'ExteriorRings'. In the case of there being multiple, non-overlapping exterior rings ST_NumInteriorRings() will return `<code>1</code>`.
+Note that according the the OpenGIS standard, a [POLYGON](../geometry-constructors/polygon.md) should have exactly one ExteriorRing and all other rings should lie within that ExteriorRing and thus be the InteriorRings. Practically, however, some systems, including MariaDB's, permit polygons to have several 'ExteriorRings'. In the case of there being multiple, non-overlapping exterior rings ST_NumInteriorRings() will return `1`.
 
 
-`<code>ST_NumInteriorRings()</code>` and `<code>NumInteriorRings()</code>` are synonyms.
+`ST_NumInteriorRings()` and `NumInteriorRings()` are synonyms.
 
 
 ## Examples

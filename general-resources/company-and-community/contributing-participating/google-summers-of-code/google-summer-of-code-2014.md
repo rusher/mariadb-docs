@@ -8,7 +8,7 @@ We participated in Google Summer of Code 2014. MariaDB and the MariaDB Foundatio
 # Where to start
 
 
-Please join us at `<code class="fixed" style="white-space:pre-wrap">irc.freenode.net</code>` at #maria to mingle with the community. Or subscribe to [maria-developers@lists.launchpad.net](https://launchpad.net/~maria-developers). Or both.
+Please join us at `irc.freenode.net` at #maria to mingle with the community. Or subscribe to [maria-developers@lists.launchpad.net](https://launchpad.net/~maria-developers). Or both.
 
 
 Please keep in mind that in April we travel a lot (conferences, busy time), so if you have a question and nobody on IRC answers — do not feel disappointed, ask in an email to maria-developers@lists.launchpad.net. Asking on the mailing list means others benefit from your Q&A too!
@@ -98,7 +98,7 @@ Mentor: Jan Lindstrom, Sergei Golubchik
 ## Indexes for BLOBs (in MyISAM and Aria)
 
 
-MyISAM and Aria support special kinds of indexes that only store the hash of the data in the index tree. When two hashes match in the index, the engine compares actual row data to find whether the rows are identical. This is used in internal temporary tables that the optimizer creates to resolve `<code>SELECT DISTINCT</code>` queries. Normal unique indexes cannot always be used here, because the select list can be very long or include very long strings.
+MyISAM and Aria support special kinds of indexes that only store the hash of the data in the index tree. When two hashes match in the index, the engine compares actual row data to find whether the rows are identical. This is used in internal temporary tables that the optimizer creates to resolve `SELECT DISTINCT` queries. Normal unique indexes cannot always be used here, because the select list can be very long or include very long strings.
 
 
 This task is to provide a direct SQL interface to this feature and to allow users to create these indexes explicitly. This way we can have unique constraints for blobs and very longs strings.
@@ -116,7 +116,7 @@ Mentor: Sergei Golubchik
 *this project is taken*
 
 
-This task is to add support for `<code>OR REPLACE</code>` and `<code>IF EXISTS</code>` / `<code>IF NOT EXISTS</code>` to all `<code>CREATE</code>` and `<code>DROP</code>` variants for all objects (where it makes sense). [MDEV-5359](https://jira.mariadb.org/browse/MDEV-5359)
+This task is to add support for `OR REPLACE` and `IF EXISTS` / `IF NOT EXISTS` to all `CREATE` and `DROP` variants for all objects (where it makes sense). [MDEV-5359](https://jira.mariadb.org/browse/MDEV-5359)
 
 
 Skills: C++
@@ -167,7 +167,7 @@ Mentor: Sergei Golubchik
 ## GTID support in mysqlbinlog
 
 
-The `<code>mysqlbinlog</code>` tool needs to understand global transaction ids. In particular, it should be possible to start and end the dump at the specified GTID. Both when reading binlog files and when connecting to a running server. See [MDEV-4989](https://jira.mariadb.org/browse/MDEV-4989).
+The `mysqlbinlog` tool needs to understand global transaction ids. In particular, it should be possible to start and end the dump at the specified GTID. Both when reading binlog files and when connecting to a running server. See [MDEV-4989](https://jira.mariadb.org/browse/MDEV-4989).
 
 
 If time permits, other client programs could be extended similarly, like

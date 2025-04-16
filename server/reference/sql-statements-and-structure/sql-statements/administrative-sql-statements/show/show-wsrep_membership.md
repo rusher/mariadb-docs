@@ -1,7 +1,7 @@
 
 # SHOW WSREP_MEMBERSHIP
 
-`<code>SHOW WSREP_MEMBERSHIP</code>` is part of the `<code>[WSREP_INFO](../../../../plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md)</code>` plugin.
+`SHOW WSREP_MEMBERSHIP` is part of the `[WSREP_INFO](../../../../plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md)` plugin.
 
 
 ## Syntax
@@ -14,7 +14,7 @@ SHOW WSREP_MEMBERSHIP
 ## Description
 
 
-The `<code>SHOW WSREP_MEMBERSHIP</code>` statement returns [Galera](../../built-in-functions/special-functions/galera-functions/README.md) node cluster membership information. It returns the same information as found in the `<code>[information_schema.WSREP_MEMBERSHIP](../system-tables/information-schema/information-schema-tables/information-schema-wsrep_membership-table.md)</code>` table. Only users with the `<code>[SUPER](../../account-management-sql-commands/grant.md)</code>` privilege can access this information.
+The `SHOW WSREP_MEMBERSHIP` statement returns [Galera](../../built-in-functions/special-functions/galera-functions/README.md) node cluster membership information. It returns the same information as found in the `[information_schema.WSREP_MEMBERSHIP](../system-tables/information-schema/information-schema-tables/information-schema-wsrep_membership-table.md)` table. Only users with the `[SUPER](../../account-management-sql-commands/grant.md)` privilege can access this information.
 
 
 ## Examples

@@ -39,7 +39,7 @@ Extended keys can be used with:
 
 An example of how extended keys could be employed for a query built over a
 [DBT-3/TPC-H database](https://www.tpc.org/tpch/specs.asp) with one added index
-defined on `<code>p_retailprice</code>`:
+defined on `p_retailprice`:
 
 
 ```
@@ -49,7 +49,7 @@ where p_retailprice > 2095 and o_orderdate='1992-07-01'
       and o_orderkey=l_orderkey and p_partkey=l_partkey;
 ```
 
-The above query asks for the `<code>orderkeys</code>` of the orders placed on 1992-07-01
+The above query asks for the `orderkeys` of the orders placed on 1992-07-01
 which contain parts with a retail price greater than $2095.
 
 
@@ -57,15 +57,15 @@ Using Extended Keys, the query could be executed by the following execution
 plan:
 
 
-1. Scan the entries of the index `<code>i_p_retailprice</code>`
- where `<code>p_retailprice>2095</code>` and read `<code>p_partkey</code>` values from the extended
+1. Scan the entries of the index `i_p_retailprice`
+ where `p_retailprice>2095` and read `p_partkey` values from the extended
  keys.
-1. For each value `<code>p_partkey</code>` make an index look-up into the table lineitem
- employing index `<code>i_l_partkey</code>` and fetch the values of `<code>l_orderkey</code>` from
+1. For each value `p_partkey` make an index look-up into the table lineitem
+ employing index `i_l_partkey` and fetch the values of `l_orderkey` from
  the extended index.
-1. For each fetched value of `<code>l_orderkey</code>`, append it to the
- date `<code>'1992-07-01'</code>` and use the resulting key for an index look-up by
- index `<code>i_o_orderdate</code>` to fetch the values of `<code>o_orderkey</code>` from the found
+1. For each fetched value of `l_orderkey`, append it to the
+ date `'1992-07-01'` and use the resulting key for an index look-up by
+ index `i_o_orderdate` to fetch the values of `o_orderkey` from the found
  index entries.
 
 

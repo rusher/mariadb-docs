@@ -25,11 +25,11 @@ A basic overview of [window functions](window-functions-overview.md) is describe
 These include:
 
 
-* All rows before the current row (UNBOUNDED PRECEDING), for example `<code>RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW</code>`
-* All rows after the current row (UNBOUNDED FOLLOWING), for example `<code>RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING</code>`
-* A set number of rows before the current row (expr PRECEDING) for example `<code>RANGE BETWEEN 6 PRECEDING AND CURRENT ROW</code>`
-* A set number of rows after the current row (expr PRECEDING AND expr FOLLOWING) for example `<code>RANGE BETWEEN CURRENT ROW AND 2 FOLLOWING</code>`
-* A specified number of rows both before and after the current row, for example `<code>RANGE BETWEEN 6 PRECEDING AND 3 FOLLOWING </code>`
+* All rows before the current row (UNBOUNDED PRECEDING), for example `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`
+* All rows after the current row (UNBOUNDED FOLLOWING), for example `RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING`
+* A set number of rows before the current row (expr PRECEDING) for example `RANGE BETWEEN 6 PRECEDING AND CURRENT ROW`
+* A set number of rows after the current row (expr PRECEDING AND expr FOLLOWING) for example `RANGE BETWEEN CURRENT ROW AND 2 FOLLOWING`
+* A specified number of rows both before and after the current row, for example `RANGE BETWEEN 6 PRECEDING AND 3 FOLLOWING `
 
 
 The following functions operate on window frames:

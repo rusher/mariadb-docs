@@ -16,7 +16,7 @@ VEC_DISTANCE(v, s)
 ## Description
 
 
-`<code>VEC_DISTANCE</code>` is a generic function that will behave either as [VEC_DISTANCE_EUCLIDEAN](vec_distance_euclidean.md), calculating the Euclidean (L2) distance between two points. or [VEC_DISTANCE_COSINE](vec_distance_cosine.md), calculating the Cosine distance between two vectors, depending on the underlying index type.
+`VEC_DISTANCE` is a generic function that will behave either as [VEC_DISTANCE_EUCLIDEAN](vec_distance_euclidean.md), calculating the Euclidean (L2) distance between two points. or [VEC_DISTANCE_COSINE](vec_distance_cosine.md), calculating the Cosine distance between two vectors, depending on the underlying index type.
 
 
 If the underlying index cannot be determined, an [error 4206](../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4200-to-4299/e4206.md) is returned:

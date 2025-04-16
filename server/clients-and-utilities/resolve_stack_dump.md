@@ -11,7 +11,7 @@ resolve_stack_dump is a tool that resolves numeric stack strace dumps into symbo
 resolve_stack_dump [OPTIONS] symbols-file [numeric-dump-file]
 ```
 
-The symbols-file should include the output from: `<code>nm --numeric-sort mariadbd</code>`.
+The symbols-file should include the output from: `nm --numeric-sort mariadbd`.
 The numeric-dump-file should contain a numeric stack trace from mariadbd.
 If the numeric-dump-file is not given, the stack trace is read from stdin.
 

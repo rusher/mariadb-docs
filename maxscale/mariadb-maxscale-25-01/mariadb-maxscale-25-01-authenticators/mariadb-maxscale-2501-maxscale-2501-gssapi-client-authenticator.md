@@ -26,7 +26,7 @@ is a good example on how to set it up.
 The next step is to copy the keytab file from the server where MariaDB is
 installed to the server where MaxScale is located. The keytab file must be
 placed in the configured default location which almost always is
-`<code>/etc/krb5.keytab</code>`. Alternatively, the keytab filepath can be given as an
+`/etc/krb5.keytab`. Alternatively, the keytab filepath can be given as an
 authenticator option.
 
 
@@ -51,13 +51,13 @@ The principal name should be the same as on the MariaDB servers.
 ## Settings
 
 
-### `<code>principal_name</code>`
+### `principal_name`
 
 
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>mariadb/localhost.localdomain</code>`
+* Default: `mariadb/localhost.localdomain`
 
 
 The service principal name to send to the client. This parameter is a string
@@ -68,7 +68,7 @@ This parameter *must* be the same as the principal name that the backend MariaDB
 server uses.
 
 
-### `<code>gssapi_keytab_path</code>`
+### `gssapi_keytab_path`
 
 
 * Type: path
@@ -79,7 +79,7 @@ server uses.
 
 Keytab file location. This should be an absolute path to the file containing the
 keytab. If not defined, Kerberos will search from a default location, usually
-`<code>/etc/krb5.keytab</code>`. This path is set to an environment variable. This means that
+`/etc/krb5.keytab`. This path is set to an environment variable. This means that
 multiple listeners with GSSAPIAuth will override each other. If using multiple
 GSSAPI authenticators, either do not set this option or use the same value for
 all listeners.
@@ -104,7 +104,7 @@ details on how authentication modules work in MaxScale.
 
 The GSSAPI plugin authentication starts when the database server sends the
 service principal name in the AuthSwitchRequest packet. The principal name will
-usually be in the form `<code>service@REALM.COM</code>`.
+usually be in the form `service@REALM.COM`.
 
 
 The client searches its local cache for a token for the service or may request

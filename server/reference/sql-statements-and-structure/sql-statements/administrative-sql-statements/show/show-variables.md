@@ -13,22 +13,22 @@ SHOW [GLOBAL | SESSION] VARIABLES
 ## Description
 
 
-`<code>SHOW VARIABLES</code>` shows the values of MariaDB [system variables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md). This does not include user-defined variables - see [here](../../../sql-language-structure/user-defined-variables.md#viewing) for details on viewing those.
+`SHOW VARIABLES` shows the values of MariaDB [system variables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md). This does not include user-defined variables - see [here](../../../sql-language-structure/user-defined-variables.md#viewing) for details on viewing those.
 
 
 System variable information can also be obtained using the [mariadb-admin variables](../../../../../clients-and-utilities/mariadb-admin.md)
-command. The `<code>LIKE</code>` clause, if present, indicates which variable names
-to match. The `<code>WHERE</code>` clause can be given to select rows using more
+command. The `LIKE` clause, if present, indicates which variable names
+to match. The `WHERE` clause can be given to select rows using more
 general conditions.
 
 
-With the `<code>GLOBAL</code>` modifier, `<code>SHOW VARIABLES</code>` displays the values that are
-used for new connections to MariaDB. With `<code>SESSION</code>`, it displays the
+With the `GLOBAL` modifier, `SHOW VARIABLES` displays the values that are
+used for new connections to MariaDB. With `SESSION`, it displays the
 values that are in effect for the current connection. If no modifier
-is present, the default is `<code>SESSION</code>`. `<code>LOCAL</code>` is a synonym for `<code>SESSION</code>`.
-With a `<code>LIKE</code>` clause, the statement displays only rows for those
+is present, the default is `SESSION`. `LOCAL` is a synonym for `SESSION`.
+With a `LIKE` clause, the statement displays only rows for those
 variables with names that match the pattern. To obtain the row for a
-specific variable, use a `<code>LIKE</code>` clause as shown:
+specific variable, use a `LIKE` clause as shown:
 
 
 ```
@@ -36,8 +36,8 @@ SHOW VARIABLES LIKE 'maria_group_commit';
 SHOW SESSION VARIABLES LIKE 'maria_group_commit';
 ```
 
-To get a list of variables whose name match a pattern, use the "`<code>%</code>`"
-wildcard character in a `<code>LIKE</code>` clause:
+To get a list of variables whose name match a pattern, use the "`%`"
+wildcard character in a `LIKE` clause:
 
 
 ```
@@ -46,15 +46,15 @@ SHOW GLOBAL VARIABLES LIKE '%maria%';
 ```
 
 Wildcard characters can be used in any position within the pattern to
-be matched. Strictly speaking, because "`<code>_</code>`" is a wildcard that matches
-any single character, you should escape it as "`<code>\_</code>`" to match it
+be matched. Strictly speaking, because "`_`" is a wildcard that matches
+any single character, you should escape it as "`\_`" to match it
 literally. In practice, this is rarely necessary.
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 
-See `<code>[SET](../../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md)</code>` for information on setting server system variables.
+See `[SET](../../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md)` for information on setting server system variables.
 
 
 See [Server System Variables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) for a list of all the variables that can be set.

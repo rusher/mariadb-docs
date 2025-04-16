@@ -61,7 +61,7 @@ configuration file.
 
 
 There are various administration tasks that may be done with MariaDB MaxScale.
-Two command line tools are available, `<code>maxctrl</code>` and `<code>maxadmin</code>`, that will interact with a running
+Two command line tools are available, `maxctrl` and `maxadmin`, that will interact with a running
 MariaDB MaxScale and allow the status of MariaDB MaxScale to be monitored and
 give some control of the MariaDB MaxScale functionality.
 There are a separate reference guides for the [maxctrl](../../mariadb-maxscale-21-06/README.md) and [maxadmin](../maxscale-22-reference/mariadb-maxscale-22-maxadmin-admin-interface.md) utilities.

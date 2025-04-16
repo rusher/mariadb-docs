@@ -23,7 +23,7 @@ Common Locations:
 * C:\Program Files (x86)\MariaDB x.y\data (32bit version on 64bit Windows)
 
 
-It's also possible that the error log has been explicitly written to another location. This is often done by changing the `<code>[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)</code>` or `<code>[log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error)</code>` system variables in an [option file](../configuring-mariadb-with-option-files.md). See [Option Files](#option-files) below for more information about that.
+It's also possible that the error log has been explicitly written to another location. This is often done by changing the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` or `[log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error)` system variables in an [option file](../configuring-mariadb-with-option-files.md). See [Option Files](#option-files) below for more information about that.
 
 
 A quick way to get the values of these system variables is to execute the following commands:
@@ -37,7 +37,7 @@ mariadbd --help --verbose | grep 'datadir' | tail -1
 ## Option Files
 
 
-Another kind of file to consider when troubleshooting is [option files](../configuring-mariadb-with-option-files.md). The default option file is called `<code>my.cnf</code>`. Option files contain configuration options, such as the location of the data directory mentioned above. If you're unsure where the option file is located, see [Configuring MariaDB with Option Files: Default Option File Locations](../configuring-mariadb-with-option-files.md#default-option-file-locations) for information on the default locations.
+Another kind of file to consider when troubleshooting is [option files](../configuring-mariadb-with-option-files.md). The default option file is called `my.cnf`. Option files contain configuration options, such as the location of the data directory mentioned above. If you're unsure where the option file is located, see [Configuring MariaDB with Option Files: Default Option File Locations](../configuring-mariadb-with-option-files.md#default-option-file-locations) for information on the default locations.
 
 
 You can check which configuration options MariaDB server will use from its option files by executing the following command:
@@ -93,7 +93,7 @@ System error 1067 has occurred.
 Fatal error: Can't open privilege tables: Table 'mysql.host' doesn't exist
 ```
 
-If errors like this occur, then critical [system tables](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) are either missing or are in the wrong location. The above error is quite common after an upgrade if the [option files](../configuring-mariadb-with-option-files.md) set the `<code>[basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir)</code>` or `<code>[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)</code>` to a non-standard location, but the new server is using the default location. Therefore, make sure that the `<code>[basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir)</code>` and `<code>[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)</code>` variables are correctly set.
+If errors like this occur, then critical [system tables](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) are either missing or are in the wrong location. The above error is quite common after an upgrade if the [option files](../configuring-mariadb-with-option-files.md) set the `[basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir)` or `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` to a non-standard location, but the new server is using the default location. Therefore, make sure that the `[basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir)` and `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` variables are correctly set.
 
 
 If you're unsure where the option file is located, see [Configuring MariaDB with Option Files: Default Option File Locations](../configuring-mariadb-with-option-files.md#default-option-file-locations) for information on the default locations.
@@ -113,7 +113,7 @@ May 13 10:24:28 mariadb3 mariadbd[19221]: 2019-05-13 10:24:28 0 [Warning] Can't 
 May 13 10:24:28 mariadb3 maridbd[19221]: 2019-05-13 10:24:28 0 [ERROR] Aborting
 ```
 
-This is usually a permission error on the directory in which this file is being written. Ensure that the entire `<code>[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)</code>` is owned by the user running `<code>mariadbd</code>`, usually `<code>mysql</code>`. Ensure that directories have the "x" (execute) directory permissions for the owner. Ensure that all the parent directories of the `<code>[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)</code>` upwards have "x" (execute) permissions for all (`<code>user</code>`, `<code>group</code>`, and `<code>other</code>`).
+This is usually a permission error on the directory in which this file is being written. Ensure that the entire `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` is owned by the user running `mariadbd`, usually `mysql`. Ensure that directories have the "x" (execute) directory permissions for the owner. Ensure that all the parent directories of the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` upwards have "x" (execute) permissions for all (`user`, `group`, and `other`).
 
 
 Once this is checked look at the [systemd](#systemd) and [selinux](#selinux) documentation below, or [AppArmor](#AppArmorl).
@@ -122,7 +122,7 @@ Once this is checked look at the [systemd](#systemd) and [selinux](#selinux) doc
 ## Can't Lock Aria Control File
 
 
-On starting MariaDB, the `<code>aria_log_control</code>` file is locked. If a lock cannot be obtained, it will log and error like this:
+On starting MariaDB, the `aria_log_control` file is locked. If a lock cannot be obtained, it will log and error like this:
 
 
 ```
@@ -138,7 +138,7 @@ The less likely case is there isn't locking available which might occur on a NFS
 ## Unable to lock ./ibdata1 error 11
 
 
-Like the above for the Aria Control File, this is a attempting to exclusively lock the `<code>ibdata1</code>` InnoDB system tablespace. Error 11 corresponds to the system error "OS error code 11: Resource temporarily unavailable" meaning the lock cannot be created.
+Like the above for the Aria Control File, this is a attempting to exclusively lock the `ibdata1` InnoDB system tablespace. Error 11 corresponds to the system error "OS error code 11: Resource temporarily unavailable" meaning the lock cannot be created.
 
 
 ```
@@ -203,16 +203,16 @@ A MariaDB crash could cause system tables corruption. With the default settings,
 ## systemd
 
 
-If you are using `<code>[systemd](systemd.md)</code>`, then there are a few relevant notes about startup failures:
+If you are using `[systemd](systemd.md)`, then there are a few relevant notes about startup failures:
 
 
-* If MariaDB is configured to access files under `<code>/home</code>`, `<code>/root</code>`, or `<code>/run/user</code>`, then the default systemd unit file will prevent access to these directories with a `<code>Permission Denied</code>` error. This happens because the unit file set `<code>[ProtectHome=true](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#ProtectHome=)</code>`. See [Systemd: Configuring Access to Home Directories](systemd.md#configuring-access-to-home-directories) for information on how to work around this.
+* If MariaDB is configured to access files under `/home`, `/root`, or `/run/user`, then the default systemd unit file will prevent access to these directories with a `Permission Denied` error. This happens because the unit file set `[ProtectHome=true](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#ProtectHome=)`. See [Systemd: Configuring Access to Home Directories](systemd.md#configuring-access-to-home-directories) for information on how to work around this.
 
 
-* The default systemd unit file also sets [ProtectSystem=full](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#ProtectSystem=), which places restrictions on writing to a few other directories. Overwriting this with `<code>ProtectSystem=off</code>` in the same way as above will restore access to these directories.
+* The default systemd unit file also sets [ProtectSystem=full](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#ProtectSystem=), which places restrictions on writing to a few other directories. Overwriting this with `ProtectSystem=off` in the same way as above will restore access to these directories.
 
 
-* If MariaDB takes longer than 90 seconds to start, then the default systemd unit file will cause it to fail with an error. This happens because the default value for the `<code>[TimeoutStartSec](https://www.freedesktop.org/software/systemd/man/systemd.service.html#TimeoutStartSec=)</code>` option is 90 seconds. See [Systemd: Configuring the Systemd Service Timeout](systemd.md#configuring-the-systemd-service-timeout) for information on how to work around this.
+* If MariaDB takes longer than 90 seconds to start, then the default systemd unit file will cause it to fail with an error. This happens because the default value for the `[TimeoutStartSec](https://www.freedesktop.org/software/systemd/man/systemd.service.html#TimeoutStartSec=)` option is 90 seconds. See [Systemd: Configuring the Systemd Service Timeout](systemd.md#configuring-the-systemd-service-timeout) for information on how to work around this.
 
 
 * The systemd journal may also contain useful information about startup failures. See [Systemd: Systemd Journal](systemd.md#systemd-journal) for more information.
@@ -235,7 +235,7 @@ You might need to troubleshoot SELinux-related issues in cases, such as:
 * MariaDB is using a plugin that requires access to resources that default installations do not use.
 
 
-Setting SELinux state to `<code>permissive</code>` is a common way to investigate what is going wrong while allowing MariaDB to function normally. `<code>permissive</code>` is supposed to produce a log entry every time it should block a resource access, without actually blocking it. However, [there are situations](https://danwalsh.livejournal.com/67855.html) when SELinux blocks resource accesses even in `<code>permissive</code>` mode.
+Setting SELinux state to `permissive` is a common way to investigate what is going wrong while allowing MariaDB to function normally. `permissive` is supposed to produce a log entry every time it should block a resource access, without actually blocking it. However, [there are situations](https://danwalsh.livejournal.com/67855.html) when SELinux blocks resource accesses even in `permissive` mode.
 
 
 See [SELinux](../../../security/securing-mariadb/selinux.md) for more information.
@@ -244,7 +244,7 @@ See [SELinux](../../../security/securing-mariadb/selinux.md) for more informatio
 ## AppArmor
 
 
-Add the following to `<code>/etc/apparmor.d/tunables/alias</code>` if you have moved the datadir:
+Add the following to `/etc/apparmor.d/tunables/alias` if you have moved the datadir:
 
 
 ```

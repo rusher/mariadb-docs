@@ -8,7 +8,7 @@ obtained from the documentation of the normal client API.
 
 
 The API also contains the following three functions which are used to get the
-socket `<code>fd</code>` and `<code>timeout</code>` values when waiting for events to occur:
+socket `fd` and `timeout` values when waiting for events to occur:
 
 
 ```
@@ -23,11 +23,11 @@ my_socket mysql_get_socket(const MYSQL *mysql)
 unsigned int STDCALL mysql_get_timeout_value(const MYSQL *mysql)
 ```
 
- This should only be called when a `<code>_start()</code>` or `<code>_cont()</code>` function
- returns a value with the `<code>MYSQL_WAIT_TIMEOUT</code>` flag set. In this case, it
+ This should only be called when a `_start()` or `_cont()` function
+ returns a value with the `MYSQL_WAIT_TIMEOUT` flag set. In this case, it
  returns the value, in seconds, after which a timeout has occured and the
- application should call the appropriate `<code>_cont()</code>` function passing
- `<code>MYSQL_WAIT_TIMEOUT</code>` as the event that occured.
+ application should call the appropriate `_cont()` function passing
+ `MYSQL_WAIT_TIMEOUT` as the event that occured.
 
 
 
@@ -80,13 +80,13 @@ int mysql_real_connect_start(MYSQL **ret, MYSQL *mysql, const char *host,
 int mysql_real_connect_cont(MYSQL **ret, MYSQL *mysql, int ready_status)
 ```
 
- `<code>mysql_real_connect_start()</code>` initiates a non-blocking connection request to
+ `mysql_real_connect_start()` initiates a non-blocking connection request to
  a server.
 
 
 
- When `<code>mysql_real_connect_start()</code>` or `<code>mysql_real_connect_cont()</code>` returns
- zero, a copy of the passed '`<code>mysql</code>`' argument is stored in `<code>*ret</code>`.
+ When `mysql_real_connect_start()` or `mysql_real_connect_cont()` returns
+ zero, a copy of the passed '`mysql`' argument is stored in `*ret`.
 
 
 
@@ -101,25 +101,25 @@ int mysql_fetch_row_start(MYSQL_ROW *ret, MYSQL_RES *result)
 int mysql_fetch_row_cont(MYSQL_ROW *ret, MYSQL_RES *result, int ready_status)
 ```
 
- Initiate fetch of another row from a `<code>SELECT</code>` query.
+ Initiate fetch of another row from a `SELECT` query.
 
 
 
- If the `<code>MYSQL_RES</code>` was obtained from `<code>mysql_use_result()</code>`, then this
+ If the `MYSQL_RES` was obtained from `mysql_use_result()`, then this
  function allows stream processing, where initial rows are returned to the
  application while the server is still sending subsequent rows. When no more
- data is available on the socket, `<code>mysql_fetch_row_start()</code>` or
- `<code>mysql_fetch_row_cont()</code>` will return `<code>MYSQL_WAIT_READ</code>` (or possibly
- `<code>MYSQL_WAIT_WRITE</code>` if using TLS and TLS re-negotiation is needed; also
- `<code>MYSQL_WAIT_TIMEOUT</code>` may be set if read timeout is enabled). When data
- becomes available, more rows can be fetched with `<code>mysql_fetch_row_cont()</code>`.
+ data is available on the socket, `mysql_fetch_row_start()` or
+ `mysql_fetch_row_cont()` will return `MYSQL_WAIT_READ` (or possibly
+ `MYSQL_WAIT_WRITE` if using TLS and TLS re-negotiation is needed; also
+ `MYSQL_WAIT_TIMEOUT` may be set if read timeout is enabled). When data
+ becomes available, more rows can be fetched with `mysql_fetch_row_cont()`.
 
 
 
- If the `<code>MYSQL_RES</code>` was obtained from `<code>mysql_store_result()</code>` /
- `<code>mysql_store_result_start()</code>` / `<code>mysql_store_result_cont()</code>`, then this
- function cannot block — `<code>mysql_fetch_row_start()</code>`
- will always return 0 (and if desired, `<code>plain mysql_fetch_row()</code>` may be used
+ If the `MYSQL_RES` was obtained from `mysql_store_result()` /
+ `mysql_store_result_start()` / `mysql_store_result_cont()`, then this
+ function cannot block — `mysql_fetch_row_start()`
+ will always return 0 (and if desired, `plain mysql_fetch_row()` may be used
  instead with equivalent effect).
 
 
@@ -156,14 +156,14 @@ int mysql_free_result_cont(MYSQL_RES *result, int ready_status)
 
 
  If all rows were already fetched, then this function will not need to wait.
- `<code>mysql_free_result_start()</code>` will return zero (or if so desired, plain
- `<code>mysql_free_result()</code>` may be used instead).
+ `mysql_free_result_start()` will return zero (or if so desired, plain
+ `mysql_free_result()` may be used instead).
 
 
 
- Note that `<code>mysql_free_result()</code>` returns no value, so there is no extra
- '`<code>ret</code>`' parameter for `<code>mysql_free_result_start()</code>` or
- `<code>mysql_free_result_cont()</code>`.
+ Note that `mysql_free_result()` returns no value, so there is no extra
+ '`ret`' parameter for `mysql_free_result_start()` or
+ `mysql_free_result_cont()`.
 
 
 
@@ -172,7 +172,7 @@ int mysql_close_start(MYSQL *sock)
 int mysql_close_cont(MYSQL *sock, int ready_status)
 ```
 
- `<code>mysql_close()</code>` sends a `<code>COM_QUIT</code>` request to the server, though it does
+ `mysql_close()` sends a `COM_QUIT` request to the server, though it does
  not wait for any reply.
 
 
@@ -182,14 +182,14 @@ int mysql_close_cont(MYSQL *sock, int ready_status)
 
 
 
- The non-blocking version of `<code>mysql_close()</code>` is provided for completeness;
- for many applications using the normal `<code>mysql_close()</code>` is probably
+ The non-blocking version of `mysql_close()` is provided for completeness;
+ for many applications using the normal `mysql_close()` is probably
  sufficient (and may be simpler).
 
 
 
- Note that `<code>mysql_close()</code>` returns no value, so there is no extra '`<code>ret</code>`'
- parameter for `<code>mysql_close_start()</code>` or `<code>mysql_close_cont()</code>`.
+ Note that `mysql_close()` returns no value, so there is no extra '`ret`'
+ parameter for `mysql_close_start()` or `mysql_close_cont()`.
 
 
 
@@ -340,15 +340,15 @@ int mysql_stmt_next_result_cont(int *ret, MYSQL_STMT *stmt, int ready_status)
 
 The following client API functions never need to do I/O and thus can never
 block. Therefore, they can be used as normal in programs using non-blocking
-operations; no need to call any special `<code>_start()</code>` variant. (Even if a
-`<code>_start()</code>` variant was available, it would always return zero, so no
-`<code>_cont()</code>` call would ever be needed).
+operations; no need to call any special `_start()` variant. (Even if a
+`_start()` variant was available, it would always return zero, so no
+`_cont()` call would ever be needed).
 
 
 * [mysql_num_rows()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_num_rows.md)
 * [mysql_num_fields()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_num_fields.md)
-* mysql_eof()`<code>
-</code>`
+* mysql_eof()`
+`
 * [mysql_fetch_field_direct()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_fetch_field_direct.md)
 * [mysql_fetch_fields()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_fetch_fields.md)
 * [mysql_row_tell](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_row_tell.md)

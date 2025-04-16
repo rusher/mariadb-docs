@@ -4,7 +4,7 @@
 ## Description
 
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>OPTIMIZER_TRACE</code>` table contains [Optimizer Trace](../../../../../../mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/optimizer-trace-for-developers.md) information.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `OPTIMIZER_TRACE` table contains [Optimizer Trace](../../../../../../mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/optimizer-trace-for-developers.md) information.
 
 
 It contains the following columns:

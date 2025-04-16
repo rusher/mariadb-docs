@@ -4,7 +4,7 @@
 # ColumnStore Monitor
 
 
-The ColumnStore monitor, `<code>csmon</code>`, is a monitor module for MariaDB ColumnStore
+The ColumnStore monitor, `csmon`, is a monitor module for MariaDB ColumnStore
 servers. It supports multiple UM nodes and can detect the correct server for
 DML/DDL statements which will be labeled as the master. Other UM nodes will be
 used for reads.
@@ -13,8 +13,8 @@ used for reads.
 ## Required Grants
 
 
-The credentials defined with the `<code>user</code>` and `<code>password</code>` parameters must have all
-grants on the `<code>infinidb_vtable</code>` database.
+The credentials defined with the `user` and `password` parameters must have all
+grants on the `infinidb_vtable` database.
 
 
 For example, to create a user for this monitor with the required grants execute
@@ -37,7 +37,7 @@ of ColumnStore do not implement the required functionality to automatically
 detect which of the servers is the primary UM.
 
 
-With older versions the `<code>primary</code>` parameter must be defined to tell the monitor
+With older versions the `primary` parameter must be defined to tell the monitor
 which of the servers is the primary UM node. This guarantees that DDL statements
 are only executed on the primary UM.
 
@@ -49,16 +49,16 @@ Read the [Monitor Common](mariadb-maxscale-23-common-monitor-parameters.md) docu
 common monitor parameters.
 
 
-### `<code>primary</code>`
+### `primary`
 
 
-The `<code>primary</code>` parameter controls which server is chosen as the master
+The `primary` parameter controls which server is chosen as the master
 server. This is an optional parameter.
 
 
 If the server pointed to by this parameter is available and is ready to process
 queries, it receives the *Master* status. If the parameter is not defined and
-the ColumnStore server does not support the `<code>mcsSystemPrimary</code>` function, no
+the ColumnStore server does not support the `mcsSystemPrimary` function, no
 master server is chosen.
 
 
@@ -70,7 +70,7 @@ from ColumnStore itself is more reliable.
 ## Example
 
 
-The following is an example of a `<code>csmon</code>` configuration.
+The following is an example of a `csmon` configuration.
 
 
 
@@ -87,4 +87,4 @@ primary=um1
 
 
 
-It defines a set of three UMs and defines the UM `<code>um1</code>` as the primary UM.
+It defines a set of three UMs and defines the UM `um1` as the primary UM.

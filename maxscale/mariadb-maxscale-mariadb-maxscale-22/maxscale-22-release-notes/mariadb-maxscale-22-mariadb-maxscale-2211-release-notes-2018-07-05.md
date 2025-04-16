@@ -22,9 +22,9 @@ report at [Jira](https://jira.mariadb.org).
 
 
 The cache filter is no longer marked as being experimental. The default
-value for `<code>cached_data</code>` been changed from `<code>shared</code>` to `<code>thread_specific</code>`,
-and the default value for `<code>selects</code>` has been changed from `<code>verify_cacheable</code>`
-to `<code>assume_cacheable</code>`.
+value for `cached_data` been changed from `shared` to `thread_specific`,
+and the default value for `selects` has been changed from `verify_cacheable`
+to `assume_cacheable`.
 Please consult the
 [cache documentation](../../mariadb-maxscale-21-06/README.md)
 for details.

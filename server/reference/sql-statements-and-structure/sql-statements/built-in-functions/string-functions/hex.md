@@ -11,13 +11,13 @@ HEX(N_or_S)
 ## Description
 
 
-If `<code>N_or_S</code>` is a number, returns a string representation of the hexadecimal
-value of `<code>N</code>`, where `<code>N</code>` is a `<code>longlong</code>` (`<code>[BIGINT](../../../../data-types/data-types-numeric-data-types/bigint.md)</code>`) number. This is equivalent to `<code>[CONV](../../../../storage-engines/converting-tables-from-myisam-to-innodb.md)(N,10,16)</code>`.
+If `N_or_S` is a number, returns a string representation of the hexadecimal
+value of `N`, where `N` is a `longlong` (`[BIGINT](../../../../data-types/data-types-numeric-data-types/bigint.md)`) number. This is equivalent to `[CONV](../../../../storage-engines/converting-tables-from-myisam-to-innodb.md)(N,10,16)`.
 
 
-If `<code>N_or_S</code>` is a string, returns a hexadecimal string representation of
-`<code>N_or_S</code>` where each byte of each character in `<code>N_or_S</code>` is converted to two hexadecimal
-digits. If `<code>N_or_S</code>` is NULL, returns NULL. The inverse of this operation is performed by the [UNHEX](unhex.md)()
+If `N_or_S` is a string, returns a hexadecimal string representation of
+`N_or_S` where each byte of each character in `N_or_S` is converted to two hexadecimal
+digits. If `N_or_S` is NULL, returns NULL. The inverse of this operation is performed by the [UNHEX](unhex.md)()
 function.
 
 

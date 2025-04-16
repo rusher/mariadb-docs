@@ -4,7 +4,7 @@
 MariaDB RPM packages since [MariaDB 5.1.55](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/mariadb-5155-release-notes.md) are signed.
 
 
-The key we use has an id of `<code>1BB943DB</code>` and the key fingerprint is:
+The key we use has an id of `1BB943DB` and the key fingerprint is:
 
 
 ```

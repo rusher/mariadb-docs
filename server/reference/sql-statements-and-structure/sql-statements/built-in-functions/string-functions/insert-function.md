@@ -11,10 +11,10 @@ INSERT(str,pos,len,newstr)
 ## Description
 
 
-Returns the string `<code>str</code>`, with the substring beginning at position `<code>pos</code>`
-and `<code>len</code>` characters long replaced by the string `<code>newstr</code>`. Returns the
-original string if `<code>pos</code>` is not within the length of the string.
-Replaces the rest of the string from position `<code>pos</code>` if `<code>len</code>` is not within
+Returns the string `str`, with the substring beginning at position `pos`
+and `len` characters long replaced by the string `newstr`. Returns the
+original string if `pos` is not within the length of the string.
+Replaces the rest of the string from position `pos` if `len` is not within
 the length of the rest of the string. Returns NULL if any argument is
 NULL.
 

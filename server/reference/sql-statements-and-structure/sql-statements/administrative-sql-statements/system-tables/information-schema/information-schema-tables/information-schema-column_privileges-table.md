@@ -1,7 +1,7 @@
 
 # Information Schema COLUMN_PRIVILEGES Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>COLUMN_PRIVILEGES</code>` table contains column privilege information derived from the `<code>[mysql.columns_priv](../../the-mysql-database-tables/mysql-columns_priv-table.md)</code>` grant table.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `COLUMN_PRIVILEGES` table contains column privilege information derived from the `[mysql.columns_priv](../../the-mysql-database-tables/mysql-columns_priv-table.md)` grant table.
 
 
 It has the following columns:
@@ -21,10 +21,10 @@ It has the following columns:
 
 
 
-Similar information can be accessed with the `<code>[SHOW FULL COLUMNS](../../../show/show-columns.md)</code>` and `<code>[SHOW GRANTS](../../../show/show-grants.md)</code>` statements. See the `<code>[GRANT](../../../../account-management-sql-commands/grant.md)</code>` article for more about privileges.
+Similar information can be accessed with the `[SHOW FULL COLUMNS](../../../show/show-columns.md)` and `[SHOW GRANTS](../../../show/show-grants.md)` statements. See the `[GRANT](../../../../account-management-sql-commands/grant.md)` article for more about privileges.
 
 
-This information is also stored in the `<code>[columns_priv](../../the-mysql-database-tables/mysql-columns_priv-table.md)</code>` table, in the `<code>mysql</code>` system database.
+This information is also stored in the `[columns_priv](../../the-mysql-database-tables/mysql-columns_priv-table.md)` table, in the `mysql` system database.
 
 
 For a description of the privileges that are shown in this table, see [column privileges](../../../../account-management-sql-commands/grant.md#column-privileges).

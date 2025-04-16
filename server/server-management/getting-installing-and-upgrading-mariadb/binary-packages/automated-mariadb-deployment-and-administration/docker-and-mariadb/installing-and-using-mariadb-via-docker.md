@@ -13,7 +13,7 @@ In many cases, the best solution is using containers. Docker is a framework that
 Docker requires a very small amount of resources. It can run on a virtualized system. It is used both in development and in production environments. Docker is an open source project, released under the Apache License, version 2.
 
 
-Note that, while your package repositories could have a package called `<code>docker</code>`, it is probably not the Docker we are talking about. The Docker package could be called `<code>docker.io</code>` or `<code>docker-engine</code>`.
+Note that, while your package repositories could have a package called `docker`, it is probably not the Docker we are talking about. The Docker package could be called `docker.io` or `docker-engine`.
 
 
 For information about installing Docker, see [Get Docker](https://docs.docker.com/get-docker/) in Docker documentation.
@@ -32,7 +32,7 @@ curl -sSL https://get.docker.com/ | sh
 ### Starting dockerd
 
 
-On some systems you may have to start the `<code>dockerd daemon</code>` yourself:
+On some systems you may have to start the `dockerd daemon` yourself:
 
 
 ```
@@ -40,7 +40,7 @@ sudo systemctl start docker
 sudo gpasswd -a "${USER}" docker
 ```
 
-If you don't have `<code>dockerd</code>` running, you will get the following error for most `<code>docker</code>` commands:
+If you don't have `dockerd` running, you will get the following error for most `docker` commands:
 installing-and-using-mariadb-via-docker
 Cannot connect to the Docker daemon at unix:*/var/run/docker.sock. Is the docker daemon running?
 <</code>>*
@@ -95,7 +95,7 @@ An image is not a running process; it is just the software needed to be launched
 docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=mypass -p 3306:3306 -d docker.io/library/mariadb:10.3
 ```
 
-`<code>mariadbtest</code>` is the name we want to assign the container. If we don't specify a name, an id will be automatically generated.
+`mariadbtest` is the name we want to assign the container. If we don't specify a name, an id will be automatically generated.
 
 
 10.2 and 10.5 are also valid target versions:
@@ -155,7 +155,7 @@ The container will not be destroyed by this command. The data will still live in
 docker start mariadbtest
 ```
 
-With `<code>docker stop</code>`, the container will be gracefully terminated: a `<code>SIGTERM</code>` signal will be sent to the `<code>mariadbd</code>` process, and Docker will wait for the process to shutdown before returning the control to the shell. However, it is also possible to set a timeout, after which the process will be immediately killed with a `<code>SIGKILL</code>`. Or it is possible to immediately kill the process, with no timeout.
+With `docker stop`, the container will be gracefully terminated: a `SIGTERM` signal will be sent to the `mariadbd` process, and Docker will wait for the process to shutdown before returning the control to the shell. However, it is also possible to set a timeout, after which the process will be immediately killed with a `SIGKILL`. Or it is possible to immediately kill the process, with no timeout.
 
 
 ```
@@ -180,16 +180,16 @@ docker rm -v mariadbtest
 #### Automatic Restart
 
 
-When we start a container, we can use the `<code>--restart</code>` option to set an automatic restart policy. This is useful in production.
+When we start a container, we can use the `--restart` option to set an automatic restart policy. This is useful in production.
 
 
 Allowed values are:
 
 
-* `<code>no</code>`: No automatic restart.
-* `<code>on-failure</code>`: The container restarts if it exits with a non-zero exit code.
-* `<code>unless-stopped</code>`: Always restart the container, unless it was explicitly stopped as shown above.
-* `<code>always</code>`: Similar to `<code>unless-stopped</code>`, but when Docker itself restarts, even containers that were explicitly stopped will restart.
+* `no`: No automatic restart.
+* `on-failure`: The container restarts if it exits with a non-zero exit code.
+* `unless-stopped`: Always restart the container, unless it was explicitly stopped as shown above.
+* `always`: Similar to `unless-stopped`, but when Docker itself restarts, even containers that were explicitly stopped will restart.
 
 
 It is possible to change the restart policy of existing, possibly running containers:
@@ -201,16 +201,16 @@ docker update --restart always mariadb
 docker update --restart always $(docker ps -q)
 ```
 
-A use case for changing the restart policy of existing containers is performing maintenance in production. For example, before upgrading the Docker version, we may want to change all containers restart policy to `<code>always</code>`, so they will restart as soon as the new version is up and running. However, if some containers are stopped and not needed at the moment, we can change their restart policy to `<code>unless-stopped</code>`.
+A use case for changing the restart policy of existing containers is performing maintenance in production. For example, before upgrading the Docker version, we may want to change all containers restart policy to `always`, so they will restart as soon as the new version is up and running. However, if some containers are stopped and not needed at the moment, we can change their restart policy to `unless-stopped`.
 
 
 #### Pausing Containers
 
 
-A container can also be frozen with the `<code>pause</code>` command. Docker will freeze the process using croups. MariaDB will not know that it is being frozen and, when we `<code>unpause</code>` it, MariaDB will resume its work as expected.
+A container can also be frozen with the `pause` command. Docker will freeze the process using croups. MariaDB will not know that it is being frozen and, when we `unpause` it, MariaDB will resume its work as expected.
 
 
-Both `<code>pause</code>` and `<code>unpause</code>` accept one or more container names. So, if we are running a cluster, we can freeze and resume all nodes simultaneously:
+Both `pause` and `unpause` accept one or more container names. So, if we are running a cluster, we can freeze and resume all nodes simultaneously:
 
 
 ```
@@ -231,16 +231,16 @@ If the container doesn't start, or is not working properly, we can investigate w
 docker logs mariadbtest
 ```
 
-This command shows what the daemon sent to the stdout since the last attempt of starting - the text that we typically see when we invoke `<code>mariadbd</code>` from the command line.
+This command shows what the daemon sent to the stdout since the last attempt of starting - the text that we typically see when we invoke `mariadbd` from the command line.
 
 
-On some systems, commands such as `<code>docker stop mariadbtest</code>` and `<code>docker restart mariadbtest</code>` may fail with a permissions error. This can be caused by AppArmor, and even `<code>sudo</code>` won't allow you to execute the command. In this case, you will need to find out which profile is causing the problem and correct it, or disable it. **Disabling AppArmor altogether is not recommended, especially in production.**
+On some systems, commands such as `docker stop mariadbtest` and `docker restart mariadbtest` may fail with a permissions error. This can be caused by AppArmor, and even `sudo` won't allow you to execute the command. In this case, you will need to find out which profile is causing the problem and correct it, or disable it. **Disabling AppArmor altogether is not recommended, especially in production.**
 
 
 To check which operations were prevented by AppArmor, see [AppArmor Failures](https://gitlab.com/apparmor/apparmor/-/wikis/AppArmor_Failures) in AppArmor documentation.
 
 
-To disable a profile, create a symlink with the profile name (in this example, `<code>mariadbd</code>`) to `<code>etc/apparmor.d/disable</code>`, and then reload profiles:
+To disable a profile, create a symlink with the profile name (in this example, `mariadbd`) to `etc/apparmor.d/disable`, and then reload profiles:
 
 
 ```
@@ -289,7 +289,7 @@ Note that if we run [mariadb-admin shutdown](../../../../../clients-and-utilitie
 ### Connecting to MariaDB from Outside the Container
 
 
-If we try to connect to the MariaDB server on `<code>localhost</code>`, the client will bypass networking and attempt to connect to the server using a socket file in the local filesystem. However, this doesn't work when MariaDB is running inside a container because the server's filesystem is isolated from the host. The client can't access the socket file which is inside the container, so it fails to connect.
+If we try to connect to the MariaDB server on `localhost`, the client will bypass networking and attempt to connect to the server using a socket file in the local filesystem. However, this doesn't work when MariaDB is running inside a container because the server's filesystem is isolated from the host. The client can't access the socket file which is inside the container, so it fails to connect.
 
 
 Therefore connections to the MariaDB server must be made using TCP, even when the client is running on the same machine as the server container.
@@ -331,7 +331,7 @@ mysql -h 172.17.0.2 -P 3306 --protocol=TCP -u root -p
 Multiple MariaDB servers running in separate Docker containers can connect to each other using TCP. This is useful for forming a Galera cluster or for replication.
 
 
-When running a cluster or a replication setup via Docker, we will want the containers to use different ports. The fastest way to achieve this is mapping the containers ports to different port on our system. We can do this when creating the containers (`<code>docker run</code>` command), by using the `<code>-p</code>` option, several times if necessary. For example, for Galera nodes we will use a mapping similar to this one:
+When running a cluster or a replication setup via Docker, we will want the containers to use different ports. The fastest way to achieve this is mapping the containers ports to different port on our system. We can do this when creating the containers (`docker run` command), by using the `-p` option, several times if necessary. For example, for Galera nodes we will use a mapping similar to this one:
 
 
 ```

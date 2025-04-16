@@ -102,7 +102,7 @@ service maxscale start
 Starting with version 2.0.3, MaxScale also supports Upstart.
 
 
-An example configuration file is installed into the `<code>/etc/</code>` folder.
+An example configuration file is installed into the `/etc/` folder.
 This file should be changed according to your needs.
 
 
@@ -231,7 +231,7 @@ Passwords stored in the maxscale.cnf file may optionally be encrypted for added 
 This is done by creation of an encryption key on installation of MariaDB MaxScale.
 Encryption keys may be created manually by executing the maxkeys utility with the argument
 of the filename to store the key. The default location MariaDB MaxScale stores
-the keys is `<code>/var/lib/maxscale</code>`.
+the keys is `/var/lib/maxscale`.
 
 
 

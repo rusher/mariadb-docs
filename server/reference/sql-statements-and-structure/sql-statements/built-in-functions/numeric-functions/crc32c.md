@@ -25,9 +25,9 @@ InnoDB and MyRocks use a different polynomial, which was implemented in SSE4.2 i
 The CRC32C function uses the Castagnoli polynomial.
 
 
-This allows `<code>SELECT…INTO DUMPFILE</code>` to be used for the creation of files with
+This allows `SELECT…INTO DUMPFILE` to be used for the creation of files with
 valid checksums, such as a logically empty InnoDB redo log file
-`<code>ib_logfile0</code>` corresponding to a particular log sequence number.
+`ib_logfile0` corresponding to a particular log sequence number.
 
 
 The optional parameter allows the checksum to be computed in pieces:

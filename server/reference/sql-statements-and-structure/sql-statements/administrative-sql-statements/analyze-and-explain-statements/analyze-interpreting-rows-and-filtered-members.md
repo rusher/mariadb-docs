@@ -1,7 +1,7 @@
 
 # ANALYZE: Interpreting rows and filtered members
 
-This article describes how to interpret `<code>r_rows</code>` and `<code>r_filtered</code>` members in ANALYZE FORMAT=JSON when an index-based access method is used.
+This article describes how to interpret `r_rows` and `r_filtered` members in ANALYZE FORMAT=JSON when an index-based access method is used.
 
 
 
@@ -62,9 +62,9 @@ In MariaDB versions before 11.5, the counters were counted as follows:
 that is,
 
 
-* `<code>r_rows</code>` is counted after Index Condition Pushdown check and Rowid Filter check.
-* `<code>r_filtered</code>` only counts selectivity of the `<code>attached_condition</code>`.
-* selectivity of the Rowid Filter is in `<code>rowid_filter.r_selectivity_pct</code>`.
+* `r_rows` is counted after Index Condition Pushdown check and Rowid Filter check.
+* `r_filtered` only counts selectivity of the `attached_condition`.
+* selectivity of the Rowid Filter is in `rowid_filter.r_selectivity_pct`.
 
 
 ## Statistics values in [MariaDB 11.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md) and later versions
@@ -73,17 +73,17 @@ that is,
 Starting from [MariaDB 11.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md) ([MDEV-18478](https://jira.mariadb.org/browse/MDEV-18478)), the row counters are:
 
 
-* `<code>r_index_rows</code>` counts the number of enumerated index tuples, before any checks are made
-* `<code>r_rows</code>` is the same as before - number of rows after index checks.
+* `r_index_rows` counts the number of enumerated index tuples, before any checks are made
+* `r_rows` is the same as before - number of rows after index checks.
 
 
 The selectivity counters are:
 
 
-* `<code>r_icp_filtered</code>` is the percentage of records left after pushed index condition check.
-* `<code>rowid_filter.r_selectivity_pct</code>` shows selectivity of Rowid Filter, as before.
-* `<code>r_filtered</code>` is the selectivity of `<code>attached_condition</code>` check, as before.
-* `<code>r_total_filtered</code>` is the combined selectivity of all checks.
+* `r_icp_filtered` is the percentage of records left after pushed index condition check.
+* `rowid_filter.r_selectivity_pct` shows selectivity of Rowid Filter, as before.
+* `r_filtered` is the selectivity of `attached_condition` check, as before.
+* `r_total_filtered` is the combined selectivity of all checks.
 
 
 ![index-read-stats-new](../../../../../.gitbook/assets/analyze-interpreting-rows-and-filtered-members/+image/index-read-stats-new.png "index-read-stats-new")
@@ -104,8 +104,8 @@ in ANALYZE FORMAT=JSON output these members are placed as follows:
     "r_rows": 34,
 ```
 
-Whenever applicable, `<code>r_index_rows</code>` is shown. It is comparable with `<code>rows</code>` - both are numbers of rows to enumerate before any filtering is done. 
-If `<code>r_index_rows</code>` is not shown, `<code>r_rows</code>` shows the number of records enumerated.
+Whenever applicable, `r_index_rows` is shown. It is comparable with `rows` - both are numbers of rows to enumerate before any filtering is done. 
+If `r_index_rows` is not shown, `r_rows` shows the number of records enumerated.
 
 
 Then, filtering members:
@@ -117,7 +117,7 @@ Then, filtering members:
     "r_total_filtered": 9.742120344,
 ```
 
-`<code>filtered</code>` is comparable with `<code>r_total_filtered</code>`: both show total amount of filtering.
+`filtered` is comparable with `r_total_filtered`: both show total amount of filtering.
 
 
 ```
@@ -135,5 +135,5 @@ ICP and its observed filtering. The optimizer doesn't compute an estimate for th
     "r_filtered": 100
 ```
 
-`<code>attached_condition</code>` and its observed filtering.
+`attached_condition` and its observed filtering.
 

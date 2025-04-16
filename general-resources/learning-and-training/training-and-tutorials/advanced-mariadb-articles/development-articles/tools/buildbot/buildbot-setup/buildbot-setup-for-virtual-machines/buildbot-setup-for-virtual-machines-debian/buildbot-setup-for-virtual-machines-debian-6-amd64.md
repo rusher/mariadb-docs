@@ -78,7 +78,7 @@ kvm -m 2047 -hda /kvm/vms/vm-debian6-amd64-install.qcow2 -redir 'tcp:2244::22' -
 ```
 
 See the [General Principles](../buildbot-setup-for-virtual-machines-general-principles.md) 
-article for how to make the '`<code>my.seed</code>`' file.
+article for how to make the '`my.seed`' file.
 
 
 ```

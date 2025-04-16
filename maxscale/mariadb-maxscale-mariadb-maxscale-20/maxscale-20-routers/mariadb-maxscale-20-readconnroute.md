@@ -25,7 +25,7 @@ For more details about the standard service parameters, refer to the [Configurat
 ## Router Options
 
 
-**`<code>router_options</code>`** can contain a list of valid server roles. These roles are used as the valid types of servers the router will form connections to when new sessions are created.
+**`router_options`** can contain a list of valid server roles. These roles are used as the valid types of servers the router will form connections to when new sessions are created.
 
 
 
@@ -35,7 +35,7 @@ router_options=slave
 
 
 
-Here is a list of all possible values for the `<code>router_options</code>`.
+Here is a list of all possible values for the `router_options`.
 
 
 | Role | Description |
@@ -48,7 +48,7 @@ Here is a list of all possible values for the `<code>router_options</code>`.
 | running | A server that is up and running. All servers that MariaDB MaxScale can connect to are labeled as running. |
 
 
-If no `<code>router_options</code>` parameter is configured in the service definition, the router will use the default value of `<code>running</code>`. This means that it will load balance connections across all running servers defined in the `<code>servers</code>` parameter of the service.
+If no `router_options` parameter is configured in the service definition, the router will use the default value of `running`. This means that it will load balance connections across all running servers defined in the `servers` parameter of the service.
 
 
 When a connection is being created and the candidate server is being chosen, the
@@ -83,7 +83,7 @@ router_options=slave
 
 
 
-Here the `<code>router_options</code>` designates slaves as the only valid server type. With this configuration, the queries are load balanced across the slave servers.
+Here the `router_options` designates slaves as the only valid server type. With this configuration, the queries are load balanced across the slave servers.
 
 
 For more complex examples of the readconnroute router, take a look at the examples in the [Tutorials](https://mariadb.com/kb/Tutorials) folder.

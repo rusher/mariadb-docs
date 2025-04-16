@@ -7,7 +7,7 @@
 ### Wrong Create Options
 
 
-With InnoDB tables using encryption, there are several cases where a [CREATE TABLE](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) or [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement can throw Error 1005, due to the InnoDB error 140, `<code>Wrong create options</code>`. For instance,
+With InnoDB tables using encryption, there are several cases where a [CREATE TABLE](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) or [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement can throw Error 1005, due to the InnoDB error 140, `Wrong create options`. For instance,
 
 
 ```
@@ -21,7 +21,7 @@ When this occurs, you can usually get more information about the cause of the er
 This error is known to occur in the following cases:
 
 
-* Encrypting a table by setting the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option to `<code>YES</code>` when the [innodb_file_per_table](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) is set to `<code>OFF</code>`.In this case, [SHOW WARNINGS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md) would return the following:
+* Encrypting a table by setting the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option to `YES` when the [innodb_file_per_table](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) is set to `OFF`.In this case, [SHOW WARNINGS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md) would return the following:
 
 
 ```
@@ -36,7 +36,7 @@ SHOW WARNINGS;
 3 rows in set (0.00 sec)
 ```
 
-* Encrypting a table by setting the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option to `<code>YES</code>`, and the [innodb_default_encryption_key_id](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id) system variable or the [ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id) table option refers to a non-existent key identifier. In this case, [SHOW WARNINGS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md) would return the following:
+* Encrypting a table by setting the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option to `YES`, and the [innodb_default_encryption_key_id](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id) system variable or the [ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id) table option refers to a non-existent key identifier. In this case, [SHOW WARNINGS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md) would return the following:
 
 
 ```
@@ -51,7 +51,7 @@ SHOW WARNINGS;
 3 rows in set (0.00 sec)
 ```
 
-* In some versions, this could happen while creating a table with the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option set to `<code>DEFAULT</code>` while the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable is set to `<code>OFF</code>`, and the [innodb_default_encryption_key_id](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id) system variable or the [ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id) table option are not set to `<code>1</code>`. In this case, [SHOW WARNINGS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md) would return the following:
+* In some versions, this could happen while creating a table with the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option set to `DEFAULT` while the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable is set to `OFF`, and the [innodb_default_encryption_key_id](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id) system variable or the [ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id) table option are not set to `1`. In this case, [SHOW WARNINGS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md) would return the following:
 
 
 ```
@@ -66,7 +66,7 @@ SHOW WARNINGS;
 3 rows in set (0.00 sec)
 ```
 
-Starting in [MariaDB 10.1.39](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes.md), [MariaDB 10.2.23](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10223-release-notes.md), and [MariaDB 10.3.14](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10314-release-notes.md), creating a table with the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option set to `<code>DEFAULT</code>` while the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable is set to `<code>OFF</code>`, and the [innodb_default_encryption_key_id](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id) system variable or the [ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id) table option are **not** set to `<code>1</code>` will no longer fail, and it will no longer throw a warning.
+Starting in [MariaDB 10.1.39](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes.md), [MariaDB 10.2.23](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10223-release-notes.md), and [MariaDB 10.3.14](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10314-release-notes.md), creating a table with the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option set to `DEFAULT` while the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable is set to `OFF`, and the [innodb_default_encryption_key_id](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id) system variable or the [ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id) table option are **not** set to `1` will no longer fail, and it will no longer throw a warning.
 
 
 For more information, see [MDEV-18601](https://jira.mariadb.org/browse/MDEV-18601).
@@ -75,10 +75,10 @@ For more information, see [MDEV-18601](https://jira.mariadb.org/browse/MDEV-1860
 ### Setting Encryption Key ID For an Unencrypted Table
 
 
-If you set the [ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id) table option for a table that is unencrypted because the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable is set to `<code>OFF</code>` and the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option set to `<code>DEFAULT</code>`, then this encryption key ID will be saved in the table's `<code>.frm</code>` file, but the encryption key will not be saved to the table's `<code>.ibd</code>` file.
+If you set the [ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id) table option for a table that is unencrypted because the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable is set to `OFF` and the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option set to `DEFAULT`, then this encryption key ID will be saved in the table's `.frm` file, but the encryption key will not be saved to the table's `.ibd` file.
 
 
-As a side effect, with the current encryption design, if the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable is later set to `<code>ON</code>`, and InnoDB goes to encrypt the table, then the [InnoDB background encryption threads](innodb-background-encryption-threads.md) will not read this encryption key ID from the `<code>.frm</code>` file. Instead, the threads may encrypt the table with the encryption key with ID `<code>1</code>`, which is internally considered the default encryption key when no key is specified. For example:
+As a side effect, with the current encryption design, if the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable is later set to `ON`, and InnoDB goes to encrypt the table, then the [InnoDB background encryption threads](innodb-background-encryption-threads.md) will not read this encryption key ID from the `.frm` file. Instead, the threads may encrypt the table with the encryption key with ID `1`, which is internally considered the default encryption key when no key is specified. For example:
 
 
 ```
@@ -101,10 +101,10 @@ WHERE NAME='db1/tab1';
 +----------+-------------------+----------------+
 ```
 
-A similar problem is that, if you set the [ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id) table option for a table that is unencrypted because the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option is set to `<code>NO</code>`, then this encryption key ID will be saved in the table's `<code>.frm</code>` file, but the encryption key will not be saved to the table's `<code>.ibd</code>` file.
+A similar problem is that, if you set the [ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id) table option for a table that is unencrypted because the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option is set to `NO`, then this encryption key ID will be saved in the table's `.frm` file, but the encryption key will not be saved to the table's `.ibd` file.
 
 
-Recent versions of MariaDB will throw warnings in the case where the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option is set to `<code>NO</code>`, but they will allow the operation to succeed. For example:
+Recent versions of MariaDB will throw warnings in the case where the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option is set to `NO`, but they will allow the operation to succeed. For example:
 
 
 ```
@@ -123,7 +123,7 @@ SHOW WARNINGS;
 1 row in set (0.00 sec)
 ```
 
-However, in this case, if you change the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option to `<code>YES</code>` or `<code>DEFAULT</code>` with [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), then it will actually use the proper key. For example:
+However, in this case, if you change the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option to `YES` or `DEFAULT` with [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), then it will actually use the proper key. For example:
 
 
 ```
@@ -153,7 +153,7 @@ MariaDB's data-at-rest encryption implementation re-used previously unused field
 The fix for [MDEV-12112](https://jira.mariadb.org/browse/MDEV-12112) that was included in [MariaDB 10.1.38](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10138-release-notes.md), [MariaDB 10.2.20](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10220-release-notes.md), and [MariaDB 10.3.12](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10312-release-notes.md) changed the way that MariaDB distinguishes between encrypted and unencrypted pages, so that it is less likely to mistake an unencrypted page for an encrypted page.
 
 
-In [MariaDB 10.4.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md) and later, if [innodb_checksum_algorithm](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) is set to `<code>full_crc32</code>` or `<code>strict_full_crc32</code>`, and if the table does not use [ROW_FORMAT=COMPRESSED](../../../../../reference/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md), then data files will be guaranteed to be zero-initialized.
+In [MariaDB 10.4.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md) and later, if [innodb_checksum_algorithm](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) is set to `full_crc32` or `strict_full_crc32`, and if the table does not use [ROW_FORMAT=COMPRESSED](../../../../../reference/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md), then data files will be guaranteed to be zero-initialized.
 
 
 For more information, see [MDEV-18097](https://jira.mariadb.org/browse/MDEV-18097).
@@ -162,7 +162,7 @@ For more information, see [MDEV-18097](https://jira.mariadb.org/browse/MDEV-1809
 ### Spatial Indexes
 
 
-[MariaDB 10.4.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md) introduces support for encrypting [spatial indexes](../../../../../reference/sql-statements-and-structure/geographic-geometric-features/spatial-index.md). To enable, set the [innodb_checksum_algorithm](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) to `<code>full_crc32</code>` or to `<code>strict_full_crc32</code>`. Note that MariaDB only encrypts spatial indexes when the [ROW_FORMAT](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format) table option is **not** set to [COMPRESSED](../../../../../reference/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md).
+[MariaDB 10.4.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md) introduces support for encrypting [spatial indexes](../../../../../reference/sql-statements-and-structure/geographic-geometric-features/spatial-index.md). To enable, set the [innodb_checksum_algorithm](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) to `full_crc32` or to `strict_full_crc32`. Note that MariaDB only encrypts spatial indexes when the [ROW_FORMAT](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format) table option is **not** set to [COMPRESSED](../../../../../reference/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md).
 
 
 In older versions of MariaDB, spatial index encryption is unsupported. Tables that contain spatial indexes store them unencrypted.

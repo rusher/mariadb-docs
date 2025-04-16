@@ -24,9 +24,9 @@ This list is by no means complete. You can find more open tasks in [our project 
 * Description: MariaDB has support for
  [progress reporting](../../../server/reference/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) during DDL statements. In some
  scenarios, progress reporting actually works. In
- others (`<code>ALTER TABLE ... ADD INDEX</code>` being the most important of them) it
+ others (`ALTER TABLE ... ADD INDEX` being the most important of them) it
  has not been implemented. The task is to place progress reporting statements
- at appropriate places in the code, so that `<code>ALTER TABLE ... ADD INDEX</code>`
+ at appropriate places in the code, so that `ALTER TABLE ... ADD INDEX`
  provides some clues about which fraction of work it has done/has left. The
  [progress reporting](../../../server/reference/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) page has a section which gives
  clues what kind of statements will need to be inserted. Finding where to put

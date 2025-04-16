@@ -19,13 +19,13 @@ TRIM_ORACLE([{BOTH | LEADING | TRAILING} [remstr] FROM] str), TRIM([remstr FROM]
 ## Description
 
 
-Returns the string `<code>str</code>` with all `<code>remstr</code>` prefixes or suffixes removed. If none of the specifiers `<code>BOTH</code>`, `<code>LEADING</code>`, or `<code>TRAILING</code>` is given, `<code>BOTH</code>` is assumed. `<code>remstr</code>` is optional and, if not specified, spaces are removed.
+Returns the string `str` with all `remstr` prefixes or suffixes removed. If none of the specifiers `BOTH`, `LEADING`, or `TRAILING` is given, `BOTH` is assumed. `remstr` is optional and, if not specified, spaces are removed.
 
 
-Returns NULL if given a NULL argument. If the result is empty, returns either an empty string, or, from [MariaDB 10.3.6](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1036-release-notes.md) with [SQL_MODE=Oracle](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), NULL. `<code>SQL_MODE=Oracle</code>` is not set by default.
+Returns NULL if given a NULL argument. If the result is empty, returns either an empty string, or, from [MariaDB 10.3.6](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1036-release-notes.md) with [SQL_MODE=Oracle](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), NULL. `SQL_MODE=Oracle` is not set by default.
 
 
-The Oracle mode version of the function can be accessed in any mode by using `<code>TRIM_ORACLE</code>` as the function name.
+The Oracle mode version of the function can be accessed in any mode by using `TRIM_ORACLE` as the function name.
 
 
 ## Examples

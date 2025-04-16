@@ -55,7 +55,7 @@ Encryption of binary logs can be enabled by doing the following process.
 * First, stop the server.
 
 
-* Then, set `<code>[encrypt_binlog=ON](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#encrypt_binlog)</code>` in the MariaDB configuration file.
+* Then, set `[encrypt_binlog=ON](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#encrypt_binlog)` in the MariaDB configuration file.
 
 
 * Then, start the server.
@@ -73,7 +73,7 @@ Encryption of [binary logs](../../../../reference/storage-engines/innodb/binary-
 * First, stop the server.
 
 
-* Then, set `<code>[encrypt_binlog=OFF](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#encrypt_binlog)</code>` in the MariaDB configuration file.
+* Then, set `[encrypt_binlog=OFF](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#encrypt_binlog)` in the MariaDB configuration file.
 
 
 * Then, start the server.
@@ -85,10 +85,10 @@ From that point forward, any new [binary logs](../../../../reference/storage-eng
 ## Understanding Binlog Encryption
 
 
-When starting with binary log encryption, MariaDB Server logs a `<code>Format_descriptor_log_event</code>` and a `<code>START_ENCRYPTION_EVENT</code>`, then encrypts all subsequent events for the binary log.
+When starting with binary log encryption, MariaDB Server logs a `Format_descriptor_log_event` and a `START_ENCRYPTION_EVENT`, then encrypts all subsequent events for the binary log.
 
 
-Each event's header and footer are created and processed to produce encrypted blocks. These encrypted blocks are produced before transactions are committed and before the events are flushed to the binary log. As such, they exist in an encrypted state in memory buffers and in the `<code>IO_CACHE</code>` files for user connections.
+Each event's header and footer are created and processed to produce encrypted blocks. These encrypted blocks are produced before transactions are committed and before the events are flushed to the binary log. As such, they exist in an encrypted state in memory buffers and in the `IO_CACHE` files for user connections.
 
 
 ### Effects of Data-at-Rest Encryption on Replication
@@ -106,5 +106,5 @@ If you want to ensure that binary log events are encrypted as they are transmitt
 [mariadb-binlog](../../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) does not currently have the ability to decrypt encrypted [binary logs](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) on its own (see [MDEV-8813](https://jira.mariadb.org/browse/MDEV-8813) about that). In order to use mariadb-binlog with encrypted [binary logs](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), you have to use the [--read-from-remote-server](../../../../clients-and-utilities/mariadb-binlog/mariadb-binlog-options.md) command-line option, so that the server can decrypt the [binary logs](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) for mariadb-binlog.
 
 
-Note, using the `<code>--read-from-remote-server</code>` option on versions of the `<code>mariadb-binlog</code>` utility that do not have the [MDEV-20574](https://jira.mariadb.org/browse/MDEV-20574) fix (<=[MariaDB 10.4.9](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1049-release-notes.md), [MariaDB 10.3.19](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10319-release-notes.md), [MariaDB 10.2.28](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10228-release-notes.md)) can corrupt binlog positions when the binary log is encrypted.
+Note, using the `--read-from-remote-server` option on versions of the `mariadb-binlog` utility that do not have the [MDEV-20574](https://jira.mariadb.org/browse/MDEV-20574) fix (<=[MariaDB 10.4.9](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1049-release-notes.md), [MariaDB 10.3.19](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10319-release-notes.md), [MariaDB 10.2.28](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10228-release-notes.md)) can corrupt binlog positions when the binary log is encrypted.
 

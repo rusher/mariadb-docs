@@ -50,7 +50,7 @@ options=case,extended
 The CCR filter has no mandatory parameters.
 
 
-### `<code>time</code>`
+### `time`
 
 
 The time window in seconds during which queries are routed to the master. The
@@ -68,7 +68,7 @@ the time window and number of queries to be inspected. If either of the two
 conditions are met, the query is re-routed to the master.
 
 
-### `<code>count</code>`
+### `count`
 
 
 The number of SQL statements to route to master after detecting a data modifying
@@ -83,7 +83,7 @@ modifying SQL statement is processed, the counter is reset to the value of
 *count*.
 
 
-### `<code>match</code>`
+### `match`
 
 
 An optional parameter that can be used to control which statements trigger the
@@ -98,7 +98,7 @@ match=.*INSERT.*
 
 
 
-### `<code>ignore</code>`
+### `ignore`
 
 
 An optional parameter that can be used to control which statements don't trigger

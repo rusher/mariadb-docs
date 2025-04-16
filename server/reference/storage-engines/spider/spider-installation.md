@@ -39,7 +39,7 @@ CREATE USER spider@192.168.1.1;
 SET PASSWORD FOR spider@192.168.1.1 = PASSWORD('passwd');
 ```
 
-Then grant the `<code>spider</code>` user privileges on the example table.
+Then grant the `spider` user privileges on the example table.
 
 
 ```
@@ -62,7 +62,7 @@ $ mysql -u spider -p -h 192.168.1.5 test -e "SHOW TABLES;"
 ## Install Spider on Spider Node
 
 
-The Spider storage engine must be installed on the Spider node. The Spider node is the MariaDB server that receives queries for the table, (in this case `<code>test.spider_example</code>`). It then uses the Spider storage engine to connect to the tables on the data nodes to retrieve data and return the result-set.
+The Spider storage engine must be installed on the Spider node. The Spider node is the MariaDB server that receives queries for the table, (in this case `test.spider_example`). It then uses the Spider storage engine to connect to the tables on the data nodes to retrieve data and return the result-set.
 
 
 To install the Spider storage engine, complete the installation process shown below.
@@ -71,7 +71,7 @@ To install the Spider storage engine, complete the installation process shown be
 ### Step 1: Install Spider Package (Debian/Ubuntu)
 
 
-On Debian and Ubuntu, the Spider storage engine is installed via a separate `<code>mariadb-plugin-spider</code>` package. To install the package via APT, execute the following command:
+On Debian and Ubuntu, the Spider storage engine is installed via a separate `mariadb-plugin-spider` package. To install the package via APT, execute the following command:
 
 
 ```
@@ -87,14 +87,14 @@ On other Linux distributions, the Spider storage engine is installed with MariaD
 With [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) and later, the Spider storage engine can be loaded as a normal plugin, and Spider automatically creates its dependencies. There are two primary ways to load the plugin.
 
 
-The plugin can be loaded dynamically without a server restart by executing `<code>INSTALL SONAME</code>` or `<code>INSTALL PLUGIN</code>`:
+The plugin can be loaded dynamically without a server restart by executing `INSTALL SONAME` or `INSTALL PLUGIN`:
 
 
 ```
 INSTALL SONAME "ha_spider";
 ```
 
-Alternatively, the plugin can be loaded by adding `<code>plugin_load_add=ha_spider</code>` to a configuration file:
+Alternatively, the plugin can be loaded by adding `plugin_load_add=ha_spider` to a configuration file:
 
 
 ```
@@ -108,7 +108,7 @@ plugin_load_add = "ha_spider"
 If the plugin is loaded in a configuration file, then the server will load the plugin after the server has been restarted.
 
 
-Loading the plugin also creates a series of new tables in the `<code>mysql</code>` database, including:
+Loading the plugin also creates a series of new tables in the `mysql` database, including:
 
 
 
@@ -130,14 +130,14 @@ Loading the plugin also creates a series of new tables in the `<code>mysql</code
 ### Step 2b: Load the Spider Plugin ([MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and Before)
 
 
-With [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and before, the Spider storage engine can be loaded by executing the included `<code>install_spider.sql</code>` script:
+With [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and before, the Spider storage engine can be loaded by executing the included `install_spider.sql` script:
 
 
 ```
 $ mysql --user root --password < /usr/share/mysql/install_spider.sql
 ```
 
-Running this configuration script also creates a series of new tables in the `<code>mysql</code>` database, including:
+Running this configuration script also creates a series of new tables in the `mysql` database, including:
 
 
 
@@ -159,7 +159,7 @@ Running this configuration script also creates a series of new tables in the `<c
 ### Step 3: Verify Loading of the Spider Plugin
 
 
-You can verify that the Spider plugin has been loaded by querying the `<code>information_schema.ENGINES</code>` table:
+You can verify that the Spider plugin has been loaded by querying the `information_schema.ENGINES` table:
 
 
 ```
@@ -180,13 +180,13 @@ If the Spider plugin is not loaded, then the query will not return any results.
 ## Configuring Spider Nodes
 
 
-With the data node or data nodes configured, you can set up the Spider node to use them. The Spider node is the MariaDB server that receives queries for the table, (in this case `<code>test.spider_example</code>`). It then uses the Spider storage engine to connect to the tables on the data nodes to retrieve data and return the result-set.
+With the data node or data nodes configured, you can set up the Spider node to use them. The Spider node is the MariaDB server that receives queries for the table, (in this case `test.spider_example`). It then uses the Spider storage engine to connect to the tables on the data nodes to retrieve data and return the result-set.
 
 
 ### Configure the Server
 
 
-In order to connect the Spider node to the data nodes, you may issue a `<code>[CREATE SERVER](../../sql-statements-and-structure/sql-statements/data-definition/create/create-server.md)</code>` statement for each data node. You can then use the server definition in creating the Spider table.
+In order to connect the Spider node to the data nodes, you may issue a `[CREATE SERVER](../../sql-statements-and-structure/sql-statements/data-definition/create/create-server.md)` statement for each data node. You can then use the server definition in creating the Spider table.
 
 
 ```
@@ -199,7 +199,7 @@ OPTIONS (
    PORT 3306);
 ```
 
-In the event that you need to modify or replace this server after setting up the Spider table, remember to issue a `<code>[FLUSH](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)</code>` statement to update the server definition.
+In the event that you need to modify or replace this server after setting up the Spider table, remember to issue a `[FLUSH](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)` statement to update the server definition.
 
 
 ```
@@ -212,7 +212,7 @@ Alternatively, you could also choose not to create a server, but specify the con
 ### Create the Table
 
 
-With the data nodes set up and the Spider node configured for use, you can create the Spider table. The Spider table must have the same column definitions as the tables on the data nodes. Spider can be configured through table parameters passed to the `<code>COMMENT</code>` or `<code>CONNECTION</code>` option.
+With the data nodes set up and the Spider node configured for use, you can create the Spider table. The Spider table must have the same column definitions as the tables on the data nodes. Spider can be configured through table parameters passed to the `COMMENT` or `CONNECTION` option.
 
 
 ```
@@ -223,7 +223,7 @@ CREATE TABLE test.spider_example (
 COMMENT='wrapper "mysql", srv "dataNode1", table "spider_example"';
 ```
 
-This configures Spider to use the server `<code>dataNode1</code>`, (defined above), as a remote table. Any data you write to this table is actually stored on the MariaDB server at 192.168.1.5.
+This configures Spider to use the server `dataNode1`, (defined above), as a remote table. Any data you write to this table is actually stored on the MariaDB server at 192.168.1.5.
 
 
 Alternatively, starting from [MariaDB 10.8.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1081-release-notes.md), one could specify spider table parameters using table options:

@@ -1,13 +1,13 @@
 
 # mysql.global_priv Table
 
-The `<code>mysql.global_priv</code>` table contains information about users that have permission to access the MariaDB server, and their global privileges. It was introduced in [MariaDB 10.4.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1041-release-notes.md) to replace the [mysql.user](mysql-user-table.md) table in earlier versions.
+The `mysql.global_priv` table contains information about users that have permission to access the MariaDB server, and their global privileges. It was introduced in [MariaDB 10.4.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1041-release-notes.md) to replace the [mysql.user](mysql-user-table.md) table in earlier versions.
 
 
-Note that the MariaDB privileges occur at many levels. A user may not be granted `<code>create</code>` privilege at the user level, but may still have `<code>create</code>` permission on certain tables or databases, for example. See [privileges](../../../account-management-sql-commands/grant.md) for a more complete view of the MariaDB privilege system.
+Note that the MariaDB privileges occur at many levels. A user may not be granted `create` privilege at the user level, but may still have `create` permission on certain tables or databases, for example. See [privileges](../../../account-management-sql-commands/grant.md) for a more complete view of the MariaDB privilege system.
 
 
-The `<code>mysql.global_priv</code>` table contains the following fields:
+The `mysql.global_priv` table contains the following fields:
 
 
 
@@ -20,7 +20,7 @@ The `<code>mysql.global_priv</code>` table contains the following fields:
 
 
 
-From [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), in order to help the server understand which version a privilege record was written by, the `<code>priv</code>` field contains a new JSON field, `<code>version_id</code>` ([MDEV-21704](https://jira.mariadb.org/browse/MDEV-21704)).
+From [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), in order to help the server understand which version a privilege record was written by, the `priv` field contains a new JSON field, `version_id` ([MDEV-21704](https://jira.mariadb.org/browse/MDEV-21704)).
 
 
 ## Examples
@@ -104,10 +104,10 @@ JSON_DETAILED(Priv): {
 }
 ```
 
-## Mapping the `<code>access</code>` Field Values to Grants
+## Mapping the `access` Field Values to Grants
 
 
-The `<code>access</code>` field contains the grants of the user which can be mapped to individual grants with the following table. The most up-to-date information can be found in the `<code>sql/privilege.h</code>` file in the source code.
+The `access` field contains the grants of the user which can be mapped to individual grants with the following table. The most up-to-date information can be found in the `sql/privilege.h` file in the source code.
 
 
 

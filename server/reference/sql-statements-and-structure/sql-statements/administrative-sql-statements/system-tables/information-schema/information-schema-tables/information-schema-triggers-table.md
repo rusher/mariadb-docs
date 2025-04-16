@@ -1,7 +1,7 @@
 
 # Information Schema TRIGGERS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>TRIGGERS</code>` table contains information about [triggers](../../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md).
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `TRIGGERS` table contains information about [triggers](../../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md).
 
 
 It has the following columns:
@@ -36,16 +36,16 @@ It has the following columns:
 
 
 
-Queries to the `<code>TRIGGERS</code>` table will return information only for databases and tables for which you have the `<code>TRIGGER</code>` [privilege](../../../../account-management-sql-commands/grant.md#table-privileges). Similar information is returned by the `<code>[SHOW TRIGGERS](../../../show/show-triggers.md)</code>` statement.
+Queries to the `TRIGGERS` table will return information only for databases and tables for which you have the `TRIGGER` [privilege](../../../../account-management-sql-commands/grant.md#table-privileges). Similar information is returned by the `[SHOW TRIGGERS](../../../show/show-triggers.md)` statement.
 
 
 ## See also
 
 
 * [Trigger Overview](../../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/trigger-overview.md)
-* `<code>[CREATE TRIGGER](../../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/create-trigger.md)</code>`
-* `<code>[DROP TRIGGER](../../../../data-definition/drop/drop-trigger.md)</code>`
-* `<code>[SHOW TRIGGERS](../../../show/show-triggers.md)</code>`
-* `<code>[SHOW CREATE TRIGGER](../../../show/show-create-trigger.md)</code>`
+* `[CREATE TRIGGER](../../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/create-trigger.md)`
+* `[DROP TRIGGER](../../../../data-definition/drop/drop-trigger.md)`
+* `[SHOW TRIGGERS](../../../show/show-triggers.md)`
+* `[SHOW CREATE TRIGGER](../../../show/show-create-trigger.md)`
 * [Trigger Limitations](../../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/trigger-limitations.md)
 

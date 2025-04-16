@@ -1,7 +1,7 @@
 
 # Information Schema COLLATION_CHARACTER_SET_APPLICABILITY Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>COLLATION_CHARACTER_SET_APPLICABILITY</code>` table shows which [character sets](../../../../../../data-types/string-data-types/character-sets/README.md) are associated with which collations.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `COLLATION_CHARACTER_SET_APPLICABILITY` table shows which [character sets](../../../../../../data-types/string-data-types/character-sets/README.md) are associated with which collations.
 
 
 It contains the following columns:
@@ -19,10 +19,10 @@ It contains the following columns:
 
 
 
-The `<code>[COLLATIONS](information-schema-collations-table.md)</code>` table is table of the base `<code>COLLATION_NAMES</code>` in the same way that `<code>[CHARACTER_SETS](https://mariadb.com/kb/en/information-schema-character-sets-table)</code>` table is table of the base `<code>CHARACTER_SET_NAMES</code>`. The `<code>COLLATION_CHARACTER_SET_APPLICABILITY</code>` table is the mapping between collations and character sets.
+The `[COLLATIONS](information-schema-collations-table.md)` table is table of the base `COLLATION_NAMES` in the same way that `[CHARACTER_SETS](https://mariadb.com/kb/en/information-schema-character-sets-table)` table is table of the base `CHARACTER_SET_NAMES`. The `COLLATION_CHARACTER_SET_APPLICABILITY` table is the mapping between collations and character sets.
 
 
-When joining the `<code>[information_schema.TABLES](information-schema-tables-table.md)</code>` table with its field `<code>TABLE_COLLATIONS</code>`, this should be joined to `<code>FULL_COLLATION_NAME</code>` in the `<code>COLLATION_CHARACTER_SET_APPLICABILITY</code>` table.
+When joining the `[information_schema.TABLES](information-schema-tables-table.md)` table with its field `TABLE_COLLATIONS`, this should be joined to `FULL_COLLATION_NAME` in the `COLLATION_CHARACTER_SET_APPLICABILITY` table.
 
 
 See [Setting Character Sets and Collations](../../../../../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md) for details on specifying the character set at the server, database, table and column levels.

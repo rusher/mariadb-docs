@@ -1,13 +1,13 @@
 
 # Information Schema INNODB_FT_DELETED Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>INNODB_FT_DELETED</code>` table contains rows that have been deleted from an InnoDB [fulltext index](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md). This information is then used to filter results on subsequent searches, removing the need to expensively reorganise the index each time a row is deleted.
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_FT_DELETED` table contains rows that have been deleted from an InnoDB [fulltext index](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md). This information is then used to filter results on subsequent searches, removing the need to expensively reorganise the index each time a row is deleted.
 
 
-The fulltext index is then only reorganized when an [OPTIMIZE TABLE](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) statement is underway. The related [INNODB_FT_BEING_DELETED](information-schema-innodb_ft_being_deleted-table.md) table contains rows being deleted while an `<code>OPTIMIZE TABLE</code>` is in the process of running.
+The fulltext index is then only reorganized when an [OPTIMIZE TABLE](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) statement is underway. The related [INNODB_FT_BEING_DELETED](information-schema-innodb_ft_being_deleted-table.md) table contains rows being deleted while an `OPTIMIZE TABLE` is in the process of running.
 
 
-The `<code>SUPER</code>` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table, and it also requires the [innodb_ft_aux_table](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table) system variable to be set.
+The `SUPER` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table, and it also requires the [innodb_ft_aux_table](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table) system variable to be set.
 
 
 It has the following column:

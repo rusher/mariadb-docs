@@ -17,7 +17,7 @@ GeometryCollectionFromWKB(wkb[,srid])
 Constructs a GEOMETRYCOLLECTION value using its [WKB](well-known-binary-wkb-format.md) representation and SRID.
 
 
-`<code>ST_GeomCollFromWKB()</code>`, `<code>ST_GeometryCollectionFromWKB()</code>`, `<code>GeomCollFromWKB()</code>` and `<code>GeometryCollectionFromWKB()</code>` are synonyms.
+`ST_GeomCollFromWKB()`, `ST_GeometryCollectionFromWKB()`, `GeomCollFromWKB()` and `GeometryCollectionFromWKB()` are synonyms.
 
 
 ## Examples

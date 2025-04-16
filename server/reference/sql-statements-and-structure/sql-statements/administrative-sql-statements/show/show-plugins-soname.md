@@ -11,7 +11,7 @@ SHOW PLUGINS SONAME { library | LIKE 'pattern' | WHERE expr };
 ## Description
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW PLUGINS SONAME</code>` displays information about compiled-in and all server plugins in the `<code>[plugin_dir](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir)</code>` directory, including plugins that haven't been installed.
+`SHOW PLUGINS SONAME` displays information about compiled-in and all server plugins in the `[plugin_dir](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir)` directory, including plugins that haven't been installed.
 
 
 ## Examples
@@ -27,5 +27,5 @@ SHOW PLUGINS SONAME 'ha_example.so';
 +----------+---------------+----------------+---------------+---------+
 ```
 
-There is also a corresponding `<code>[information_schema](../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md)</code>` table, called `<code>[ALL_PLUGINS](../system-tables/information-schema/information-schema-tables/all-plugins-table-information-schema.md)</code>`, which contains more complete information.
+There is also a corresponding `[information_schema](../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md)` table, called `[ALL_PLUGINS](../system-tables/information-schema/information-schema-tables/all-plugins-table-information-schema.md)`, which contains more complete information.
 

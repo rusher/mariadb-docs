@@ -51,8 +51,8 @@ case insensitive. You may specify the name as a quoted string.
 The wrapper_name may be quoted with single quotes. Supported values are:
 
 
-* `<code>mysql</code>`
-* `<code>mariadb</code>` (in [MariaDB 10.3](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and later)
+* `mysql`
+* `mariadb` (in [MariaDB 10.3](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and later)
 
 
 For each option you must specify either a character literal or numeric literal.
@@ -62,7 +62,7 @@ characters. Numeric literals must be a number between 0 and 9999, default value
 is 0.
 
 
-**Note**: The `<code>OWNER</code>` option is currently not applied, and has no effect on
+**Note**: The `OWNER` option is currently not applied, and has no effect on
 the ownership or operation of the server connection that is created.
 
 
@@ -92,7 +92,7 @@ From [MariaDB 11.7](../../../../../../release-notes/mariadb-community-server/wha
 #### OR REPLACE
 
 
-If the optional `<code>OR REPLACE</code>` clause is used, it acts as a shortcut for:
+If the optional `OR REPLACE` clause is used, it acts as a shortcut for:
 
 
 ```

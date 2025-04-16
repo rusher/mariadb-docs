@@ -1,7 +1,7 @@
 
 # Information Schema PARTITIONS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>PARTITIONS</code>` contains information about [table partitions](../../../../../../../server-management/partitioning-tables/partitioning-overview.md), with each record corresponding to a single partition or subpartition of a partitioned table. Each non-partitioned table also has a record in the `<code>PARTITIONS</code>` table, but most of the values are `<code>NULL</code>`.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `PARTITIONS` contains information about [table partitions](../../../../../../../server-management/partitioning-tables/partitioning-overview.md), with each record corresponding to a single partition or subpartition of a partitioned table. Each non-partitioned table also has a record in the `PARTITIONS` table, but most of the values are `NULL`.
 
 
 It contains the following columns:

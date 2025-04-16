@@ -1,10 +1,10 @@
 
 # Performance Schema socket_instances Table
 
-The `<code>socket_instances</code>` table lists active server connections, with each record being a Unix socket file or TCP/IP connection.
+The `socket_instances` table lists active server connections, with each record being a Unix socket file or TCP/IP connection.
 
 
-The `<code>socket_instances</code>` table contains the following columns:
+The `socket_instances` table contains the following columns:
 
 
 

@@ -63,7 +63,7 @@ The available wrappers are:
 
 
 
-The wrapper used by default is specified by the [connect_java_wrapper](../connect-system-variables.md#connect_java_wrapper) session variable and is initially set to `<code>wrappers/JdbcInterface</code>`. The wrapper to use for a table can also be specified in the option list as a wrapper option of the “create table” statements.
+The wrapper used by default is specified by the [connect_java_wrapper](../connect-system-variables.md#connect_java_wrapper) session variable and is initially set to `wrappers/JdbcInterface`. The wrapper to use for a table can also be specified in the option list as a wrapper option of the “create table” statements.
 
 
 Note: Conforming java naming usage, class names are preceded by the java package name with a slash separator. However, this is not mandatory for CONNECT which adds the package name if it is missing.

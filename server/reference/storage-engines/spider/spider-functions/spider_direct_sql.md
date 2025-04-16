@@ -11,10 +11,10 @@ SPIDER_DIRECT_SQL('sql', 'tmp_table_list', 'parameters')
 ## Description
 
 
-A [UDF](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md) installed with the [Spider Storage Engine](spider_copy_tables.md), this function is used to execute the SQL string `<code>sql</code>` on the remote server, as defined in `<code>parameters</code>`. If any resultsets are returned, they are stored in the `<code>tmp_table_list</code>`.
+A [UDF](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md) installed with the [Spider Storage Engine](spider_copy_tables.md), this function is used to execute the SQL string `sql` on the remote server, as defined in `parameters`. If any resultsets are returned, they are stored in the `tmp_table_list`.
 
 
-The function returns `<code>1</code>` if the SQL executes successfully, or `<code>0</code>` if it fails.
+The function returns `1` if the SQL executes successfully, or `0` if it fails.
 
 
 ## Examples

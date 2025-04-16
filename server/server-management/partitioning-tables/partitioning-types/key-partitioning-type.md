@@ -21,7 +21,7 @@ KEY takes an optional list of *column_names*, and the hashing function is given 
 Just like HASH partitioning, in KEY partitioning the server takes care of the partition and ensures an even distribution among the partitions. However, the largest difference is that KEY partitioning makes use of *column_names*, and cannot accept a *partitioning_expression* which is based on *column_names*, in contrast to HASH partitioning, which can.
 
 
-If no *column_names* are specified, the table's primary key is used if present, or not null unique key if no primary key is present. If neither of these keys are present, not specifying any *column_names* will result in `<code>ERROR 1488 (HY000): Field in list of fields for partition function not found in table</code>`
+If no *column_names* are specified, the table's primary key is used if present, or not null unique key if no primary key is present. If neither of these keys are present, not specifying any *column_names* will result in `ERROR 1488 (HY000): Field in list of fields for partition function not found in table`
 
 
 Unlike other partitioning types, columns used for partitioning by KEY are not limited to integer or NULL values.
@@ -117,7 +117,7 @@ CREATE OR REPLACE TABLE t1 (
 ) PARTITION BY KEY() PARTITIONS 2;
 ```
 
-`<code>a(5)</code>` and `<code>c(5)</code>` are silently ignored in the former.
+`a(5)` and `c(5)` are silently ignored in the former.
 
 
 If all columns use index prefixes, the statement fails with a slightly misleading error:

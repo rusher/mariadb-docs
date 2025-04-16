@@ -9,8 +9,8 @@ commands. They allow the modules to expand beyond the capabilities of the module
 API. Currently, only MaxCtrl implements an interface to the module commands.
 
 
-All registered module commands can be shown with `<code>maxctrl list commands</code>` and
-they can be executed with `<code>maxctrl call command <module> <name> ARGS...</code>` where
+All registered module commands can be shown with `maxctrl list commands` and
+they can be executed with `maxctrl call command <module> <name> ARGS...` where
 *<module>* is the name of the module and *<name>* is the name of the command.
 *ARGS* is a command specific list of arguments.
 

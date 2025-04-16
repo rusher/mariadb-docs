@@ -71,12 +71,12 @@ reference to all the tasks that may be performed.
 
 
 MaxScale uses systemd for managing the process. This means that normal
-`<code>systemctl</code>` commands can be used to start and stop MaxScale. To start MaxScale,
-use `<code>systemctl start maxscale</code>`. To stop it, use `<code>systemctl stop maxscale</code>`.
+`systemctl` commands can be used to start and stop MaxScale. To start MaxScale,
+use `systemctl start maxscale`. To stop it, use `systemctl stop maxscale`.
 
 
 The systemd service file for MaxScale is located in
-`<code>/lib/systemd/system/maxscale.service</code>`.
+`/lib/systemd/system/maxscale.service`.
 
 
 ### Additional Options for MaxScale
@@ -84,7 +84,7 @@ The systemd service file for MaxScale is located in
 
 Additional command line options and other systemd configuration options
 can be given to MariaDB MaxScale by creating a drop-in file for the
-service unit file. You can do this with the `<code>systemctl edit maxscale.service</code>`
+service unit file. You can do this with the `systemctl edit maxscale.service`
 command. For more information about systemd drop-in
 files, refer to
 [the systemctl man page](https://www.freedesktop.org/software/systemd/man/systemctl.html)
@@ -96,7 +96,7 @@ and
 
 
 It is possible to use the maxctrl command to obtain statistics about the
-services that are running within MaxScale. The maxctrl command `<code>list services</code>`
+services that are running within MaxScale. The maxctrl command `list services`
 will give very basic information regarding services. This command may be either
 run in interactive mode or passed on the maxctrl command line.
 
@@ -130,7 +130,7 @@ obtained by using the "show service" command.
 
 
 To determine what client are currently connected to MariaDB MaxScale, you can
-use the `<code>list sessions</code>` command within maxctrl. This will give you IP address
+use the `list sessions` command within maxctrl. This will give you IP address
 and the ID of the session for that connection. As with any maxctrl
 command this can be passed on the command line or typed interactively in
 maxctrl.
@@ -163,7 +163,7 @@ The name of the log file is maxscale.log. When the log is rotated, MaxScale
 closes the current log file and opens a new one using the same name.
 
 
-Log file rotation is achieved by use of the `<code>rotate logs</code>` command
+Log file rotation is achieved by use of the `rotate logs` command
 in maxctrl.
 
 
@@ -249,7 +249,7 @@ maxctrl set server db-server-3 maintenance
 
 
 
-To achieve this, you can use the `<code>set server</code>` command in maxctrl to set the
+To achieve this, you can use the `set server` command in maxctrl to set the
 maintenance mode flag for the server. This may be done interactively within
 maxctrl or by passing the command on the command line.
 
@@ -257,8 +257,8 @@ maxctrl or by passing the command on the command line.
 This will cause MariaDB MaxScale to stop routing any new requests to the server,
 however if there are currently requests executing on the server these will not
 be interrupted. Connections to servers in maintenance mode are closed as soon as
-the next request arrives. To close them immediately, use the `<code>--force</code>` option
-for `<code>maxctrl set server</code>`.
+the next request arrives. To close them immediately, use the `--force` option
+for `maxctrl set server`.
 
 
 
@@ -312,7 +312,7 @@ maxctrl stop monitor db-monitor
 
 Stopping a monitor will cause it to stop monitoring the state of the servers
 assigned to it. This is useful when the state of the servers is assigned
-manually with `<code>maxctrl set server</code>`.
+manually with `maxctrl set server`.
 
 
 
@@ -329,11 +329,11 @@ assigned states will be overwritten by the monitor.
 ## Runtime Configuration Modification
 
 
-The MaxScale configuration can be changed at runtime by using the `<code>create</code>`,
-`<code>alter</code>` and `<code>destroy</code>` commands of `<code>maxctrl</code>`. These commands either create,
+The MaxScale configuration can be changed at runtime by using the `create`,
+`alter` and `destroy` commands of `maxctrl`. These commands either create,
 modify or destroy objects (servers, services, monitors etc.) inside
 MaxScale. The exact syntax for each of the commands and any additional options
-that they take can be seen with `<code>maxctrl --help <command></code>`.
+that they take can be seen with `maxctrl --help <command>`.
 
 
 Not all parameters can be modified at runtime. Refer to the module documentation
@@ -343,16 +343,16 @@ recreated in order to change it.
 
 
 All runtime changes are persisted in files stored by default in
-`<code>/var/lib/maxscale/maxscale.cnf.d/</code>`. This means that any changes done at runtime
+`/var/lib/maxscale/maxscale.cnf.d/`. This means that any changes done at runtime
 persist through restarts. Any changes done to objects in the main configuration
 file are ignored if a persisted entry is found for it.
 
 
-For example, if the address of a server is modified with `<code>maxctrl alter server
-db-server-1 address 192.168.0.100</code>`, the file
-`<code>/var/lib/maxscale/maxscale.cnf.d/db-server-1.cnf</code>` is created with the complete
+For example, if the address of a server is modified with `maxctrl alter server
+db-server-1 address 192.168.0.100`, the file
+`/var/lib/maxscale/maxscale.cnf.d/db-server-1.cnf` is created with the complete
 configuration for the object. To remove all runtime changes for all objects,
-remove all files found in `<code>/var/lib/maxscale/maxscale.cnf.d</code>`.
+remove all files found in `/var/lib/maxscale/maxscale.cnf.d`.
 
 
 ### Core Parameter Configuration
@@ -408,7 +408,7 @@ maxctrl destroy server db-server-1
 
 A server can only be destroyed if it is not used by any services or monitors. To
 automatically remove the server from the services and monitors that use it, use
-the `<code>--force</code>` flag.
+the `--force` flag.
 
 
 #### Drain a Server
@@ -421,14 +421,14 @@ maxctrl set server db-server-1 drain
 
 
 
-When a server is set into the `<code>drain</code>` state, no new connections to it are
-created. Unlike to the `<code>maintenance</code>` state which immediately stops all new
-requests and closes all connections if used with the `<code>--force</code>` option, the
-`<code>drain</code>` state allows existing connections to continue routing requests to them
+When a server is set into the `drain` state, no new connections to it are
+created. Unlike to the `maintenance` state which immediately stops all new
+requests and closes all connections if used with the `--force` option, the
+`drain` state allows existing connections to continue routing requests to them
 in order to be gracefully closed once the client disconnects.
 
 
-To remove the `<code>drain</code>` state, use `<code>clear server</code>` command:
+To remove the `drain` state, use `clear server` command:
 
 
 
@@ -438,7 +438,7 @@ maxctrl clear server db-server-1 drain
 
 
 
-Servers with the `<code>Master</code>` state cannot be drained. To drain them, first perform
+Servers with the `Master` state cannot be drained. To drain them, first perform
 a switchover to another node and then drain the server.
 
 
@@ -496,7 +496,7 @@ maxctrl destroy monitor db-monitor
 
 
 A monitor can only be destroyed if it is not monitoring any servers. To
-automatically remove the servers from the monitor, use the `<code>--force</code>` flag.
+automatically remove the servers from the monitor, use the `--force` flag.
 
 
 ### Managing Services
@@ -579,7 +579,7 @@ maxctrl destroy service db-service
 
 The service can only be destroyed if it uses no servers or clusters and has no
 listeners associated with it. To force destruction of a service even if it does
-use servers or has listeners, use the `<code>--force</code>` flag. This will also destroy any
+use servers or has listeners, use the `--force` flag. This will also destroy any
 listeners associated with the service.
 
 
@@ -607,7 +607,7 @@ maxctrl destroy filter my-regexfilter
 
 
 A filter can only be destroyed if it is not used by any services. To
-automatically remove the filter from all services using it, use the `<code>--force</code>`
+automatically remove the filter from all services using it, use the `--force`
 flag.
 
 
@@ -665,7 +665,7 @@ maxctrl create user basic-user basic-password
 
 
 By default new users are only allowed to read data. To make the account an
-administrative account, add the `<code>--type=admin</code>` option to the command:
+administrative account, add the `--type=admin` option to the command:
 
 
 

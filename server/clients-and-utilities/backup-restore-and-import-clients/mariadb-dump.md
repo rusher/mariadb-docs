@@ -1,30 +1,30 @@
 
 # mariadb-dump
 
-The `<code>mariadb-dump</code>` client is a backup program originally written by Igor Romanenko.
+The `mariadb-dump` client is a backup program originally written by Igor Romanenko.
 
 
-Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client used to be called `<code>mysqldump</code>`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client used to be called `mysqldump`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 
 ##### MariaDB starting with [11.0.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes.md)
-From [MariaDB 11.0.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes.md), `<code>mysqldump</code>` (the symlink) is deprecated and removed from the `<code>mariadb</code>` Docker Official Image.
+From [MariaDB 11.0.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes.md), `mysqldump` (the symlink) is deprecated and removed from the `mariadb` Docker Official Image.
 
 
-**Note:** From [MariaDB 10.5.25](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10-5-25-release-notes.md), [MariaDB 10.6.18](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-18-release-notes.md), [MariaDB 10.11.8](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes.md), [MariaDB 11.0.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes.md), [MariaDB 11.1.5](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes.md), [MariaDB 11.2.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes.md) and [MariaDB 11.4.2](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-2-release-notes.md) `<code>mariadb-dump</code>` generates a command at the beginning of the dump to enable [sandbox](../mariadb-client/mariadb-command-line-client.md#-sandbox) mode. This command cannot be interpreted by earlier versions of the [MariaDB command line client](../mariadb-client/mariadb-command-line-client.md) or by MySQL's command line client, and the client will generate an error if used against the versions that do not support it. This does not affect other methods of importing the data.
+**Note:** From [MariaDB 10.5.25](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10-5-25-release-notes.md), [MariaDB 10.6.18](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-18-release-notes.md), [MariaDB 10.11.8](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes.md), [MariaDB 11.0.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes.md), [MariaDB 11.1.5](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes.md), [MariaDB 11.2.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes.md) and [MariaDB 11.4.2](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-2-release-notes.md) `mariadb-dump` generates a command at the beginning of the dump to enable [sandbox](../mariadb-client/mariadb-command-line-client.md#-sandbox) mode. This command cannot be interpreted by earlier versions of the [MariaDB command line client](../mariadb-client/mariadb-command-line-client.md) or by MySQL's command line client, and the client will generate an error if used against the versions that do not support it. This does not affect other methods of importing the data.
 
 
-The `<code>mariadb-dump</code>` client can be used to dump a database or a collection of databases for backup or transfer to another database server (not necessarily MariaDB or MySQL). The dump typically contains SQL statements to create the table, populate it, or both. However, `<code>mariadb-dump</code>` can also be used to generate files in CSV, other delimited text, or XML format.
+The `mariadb-dump` client can be used to dump a database or a collection of databases for backup or transfer to another database server (not necessarily MariaDB or MySQL). The dump typically contains SQL statements to create the table, populate it, or both. However, `mariadb-dump` can also be used to generate files in CSV, other delimited text, or XML format.
 
 
 If you are doing a backup on the server and your tables all are [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables, consider using [mariadb-hotcopy](mariadb-hotcopy.md) instead because it can accomplish faster backups and faster restores.
 
 
-mariadb-dump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md), [views](../../server-usage/programming-customizing-mariadb/views/README.md), and [events](../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/events.md) are not, and need extra parameters to be recreated explicitly (for example, `<code>--routines</code>` and `<code>--events</code>`). [Procedures](../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [functions](https://mariadb.com/kb/en/functions) are however also part of the system tables (for example [mysql.proc](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table.md)).
+mariadb-dump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md), [views](../../server-usage/programming-customizing-mariadb/views/README.md), and [events](../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/events.md) are not, and need extra parameters to be recreated explicitly (for example, `--routines` and `--events`). [Procedures](../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [functions](https://mariadb.com/kb/en/functions) are however also part of the system tables (for example [mysql.proc](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table.md)).
 
 
-`<code>mariadb-dump</code>` supports the [enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](../../server-usage/replication-cluster-multi-master/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot.md#mariadb-dump).
+`mariadb-dump` supports the [enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](../../server-usage/replication-cluster-multi-master/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot.md#mariadb-dump).
 
 
 ## Performance
@@ -45,7 +45,7 @@ Although mariadb-dump will by default preserve your resources for regular spindl
 ## Usage
 
 
-There are four general ways to invoke `<code>mariadb-dump</code>`:
+There are four general ways to invoke `mariadb-dump`:
 
 
 ```
@@ -56,48 +56,48 @@ shell> mariadb-dump [options] --system=[option_list]
 ```
 
 If you do not name any tables following db_name or if you use the
-`<code class="fixed" style="white-space:pre-wrap">--databases</code>` or `<code class="fixed" style="white-space:pre-wrap">--all-databases</code>` option, entire
+`--databases` or `--all-databases` option, entire
 databases are dumped.
 
 
-`<code>mariadb-dump</code>` does not dump the INFORMATION_SCHEMA (or PERFORMANCE_SCHEMA, if enabled) database by default. MariaDB dumps the `<code>INFORMATION_SCHEMA</code>` if you name it explicitly on the command line, although currently you must also use the `<code class="fixed" style="white-space:pre-wrap">--skip-lock-tables</code>` option.
+`mariadb-dump` does not dump the INFORMATION_SCHEMA (or PERFORMANCE_SCHEMA, if enabled) database by default. MariaDB dumps the `INFORMATION_SCHEMA` if you name it explicitly on the command line, although currently you must also use the `--skip-lock-tables` option.
 
 
-To see a list of the options your version of `<code>mariadb-dump</code>` supports, execute `<code class="fixed" style="white-space:pre-wrap">mariadb-dump --help</code>`.
+To see a list of the options your version of `mariadb-dump` supports, execute `mariadb-dump --help`.
 
 
 ### Row by Row vs. Buffering
 
 
-`<code>mariadb-dump</code>` can retrieve and dump table contents row by row,
+`mariadb-dump` can retrieve and dump table contents row by row,
 or it can retrieve the entire content from a table and buffer it in memory
 before dumping it. Buffering in memory can be a problem if you are dumping
-large tables. To dump tables row by row, use the `<code class="fixed" style="white-space:pre-wrap">--quick</code>`
-option (or `<code class="fixed" style="white-space:pre-wrap">--opt</code>`, which enables `<code class="fixed" style="white-space:pre-wrap">--quick</code>`).
-The `<code class="fixed" style="white-space:pre-wrap">--opt</code>` option (and hence `<code class="fixed" style="white-space:pre-wrap">--quick</code>`) is
+large tables. To dump tables row by row, use the `--quick`
+option (or `--opt`, which enables `--quick`).
+The `--opt` option (and hence `--quick`) is
 enabled by default, so to enable memory buffering, use
- `<code class="fixed" style="white-space:pre-wrap">--skip-quick</code>`.
+ `--skip-quick`.
 
 
 ### mariadb-dump and the mysql.transaction_registry_table
 
 
-`<code>mariadb-dump</code>` includes logic to cater for the [mysql.transaction_registry table](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md). `<code>mysqldump</code>` from an earlier MariaDB release cannot be used on [MariaDB 10.3](../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and beyond.
+`mariadb-dump` includes logic to cater for the [mysql.transaction_registry table](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md). `mysqldump` from an earlier MariaDB release cannot be used on [MariaDB 10.3](../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and beyond.
 
 
 ### mariadb-dump and Old Versions of MySQL
 
 
-If you are using a recent version of `<code>mariadb-dump</code>` to generate a
+If you are using a recent version of `mariadb-dump` to generate a
 dump to be reloaded into a very old MySQL server, you should not use the
- `<code class="fixed" style="white-space:pre-wrap">--opt</code>` or `<code class="fixed" style="white-space:pre-wrap">--extended-insert</code>` option. Use
- `<code class="fixed" style="white-space:pre-wrap">--skip-opt</code>` instead.
+ `--opt` or `--extended-insert` option. Use
+ `--skip-opt` instead.
 
 
 ### Options
 
 
-`<code>mariadb-dump</code>` supports the following options:
+`mariadb-dump` supports the following options:
 
 
 
@@ -230,53 +230,53 @@ dump to be reloaded into a very old MySQL server, you should not use the
 #### Group Options
 
 
-Some `<code>mariadb-dump</code>` options are shorthand for groups of other options:
+Some `mariadb-dump` options are shorthand for groups of other options:
 
 
-* Use of `<code class="fixed" style="white-space:pre-wrap">--opt</code>` is the same as specifying
- `<code class="fixed" style="white-space:pre-wrap">--add-drop-table</code>`, `<code class="fixed" style="white-space:pre-wrap">--add-locks</code>`,
- `<code class="fixed" style="white-space:pre-wrap">--create-options</code>`, `<code class="fixed" style="white-space:pre-wrap">--disable-keys</code>`,
- `<code class="fixed" style="white-space:pre-wrap">--extended-insert</code>`, `<code class="fixed" style="white-space:pre-wrap">--lock-tables</code>`,
- `<code class="fixed" style="white-space:pre-wrap">--quick</code>`, and `<code class="fixed" style="white-space:pre-wrap">--set-charset</code>`. All of the
- options that `<code class="fixed" style="white-space:pre-wrap">--opt</code>` stands for also are on by default
- because `<code class="fixed" style="white-space:pre-wrap">--opt</code>` is on by default.
-* Use of `<code class="fixed" style="white-space:pre-wrap">--compact</code>` is the same as specifying
- `<code class="fixed" style="white-space:pre-wrap">--skip-add-drop-table</code>`,
- `<code class="fixed" style="white-space:pre-wrap">--skip-add-locks</code>`, `<code class="fixed" style="white-space:pre-wrap">--skip-comments</code>`,
- `<code class="fixed" style="white-space:pre-wrap">--skip-disable-keys</code>`, and
- `<code class="fixed" style="white-space:pre-wrap">--skip-set-charset</code>` options.
+* Use of `--opt` is the same as specifying
+ `--add-drop-table`, `--add-locks`,
+ `--create-options`, `--disable-keys`,
+ `--extended-insert`, `--lock-tables`,
+ `--quick`, and `--set-charset`. All of the
+ options that `--opt` stands for also are on by default
+ because `--opt` is on by default.
+* Use of `--compact` is the same as specifying
+ `--skip-add-drop-table`,
+ `--skip-add-locks`, `--skip-comments`,
+ `--skip-disable-keys`, and
+ `--skip-set-charset` options.
 
 
-To reverse the effect of a group option, uses its `<code class="fixed" style="white-space:pre-wrap">--skip-xxx</code>`
-form (`<code class="fixed" style="white-space:pre-wrap">--skip-opt</code>` or `<code class="fixed" style="white-space:pre-wrap">--skip-compact</code>`). It
+To reverse the effect of a group option, uses its `--skip-xxx`
+form (`--skip-opt` or `--skip-compact`). It
 is also possible to select only part of the effect of a group option by
 following it with options that enable or disable specific features. Here are
 some examples:
 
 
-* To select the effect of `<code class="fixed" style="white-space:pre-wrap">--opt</code>` except for some features,
- use the `<code class="fixed" style="white-space:pre-wrap">--skip</code>` option for each feature. To disable
- extended inserts and memory buffering, use `<code class="fixed" style="white-space:pre-wrap">--opt</code>`
-`<code class="fixed" style="white-space:pre-wrap">--skip-extended-insert</code>` `<code class="fixed" style="white-space:pre-wrap">--skip-quick</code>`.
- (Actually, `<code class="fixed" style="white-space:pre-wrap">--skip-extended-insert</code>`
-`<code class="fixed" style="white-space:pre-wrap">--skip-quick</code>` is sufficient because
- `<code class="fixed" style="white-space:pre-wrap">--opt</code>` is on by default.)
-* To reverse `<code class="fixed" style="white-space:pre-wrap">--opt</code>` for all features except index disabling
- and table locking, use `<code class="fixed" style="white-space:pre-wrap">--skip-opt</code>`
-`<code class="fixed" style="white-space:pre-wrap">--disable-keys</code>` `<code class="fixed" style="white-space:pre-wrap">--lock-tables</code>`.
+* To select the effect of `--opt` except for some features,
+ use the `--skip` option for each feature. To disable
+ extended inserts and memory buffering, use `--opt`
+`--skip-extended-insert` `--skip-quick`.
+ (Actually, `--skip-extended-insert`
+`--skip-quick` is sufficient because
+ `--opt` is on by default.)
+* To reverse `--opt` for all features except index disabling
+ and table locking, use `--skip-opt`
+`--disable-keys` `--lock-tables`.
 
 
 When you selectively enable or disable the effect of a group option, order is
 important because options are processed first to last. For example,
- `<code class="fixed" style="white-space:pre-wrap">--disable-keys</code>` `<code class="fixed" style="white-space:pre-wrap">--lock-tables</code>`
-`<code class="fixed" style="white-space:pre-wrap">--skip-opt</code>` would not have the intended effect; it is the
-same as `<code class="fixed" style="white-space:pre-wrap">--skip-opt</code>` by itself.
+ `--disable-keys` `--lock-tables`
+`--skip-opt` would not have the intended effect; it is the
+same as `--skip-opt` by itself.
 
 
 #### Special Characters in Option Values
 
 
-Some options, like `<code>--lines-terminated-by</code>`, accept a string. The string can be quoted, if necessary. For example, on Unix systems this is the option to enclose fields within double quotes:
+Some options, like `--lines-terminated-by`, accept a string. The string can be quoted, if necessary. For example, on Unix systems this is the option to enclose fields within double quotes:
 
 
 ```
@@ -293,7 +293,7 @@ An alternative to specify the hexadecimal value of a character. For example, the
 ### Option Files
 
 
-In addition to reading options from the command-line, `<code>mariadb-dump</code>` can also read options from [option files](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `<code>mariadb-dump</code>` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadb-dump` can also read options from [option files](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-dump` in an option file, then it is ignored.
 
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
@@ -311,13 +311,13 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-`<code>mariadb-dump</code>` is linked with [MariaDB Connector/C](../../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+`mariadb-dump` is linked with [MariaDB Connector/C](../../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 
 #### Option Groups
 
 
-`<code>mariadb-dump</code>` reads options from the following [option groups](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
+`mariadb-dump` reads options from the following [option groups](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
 
 
 
@@ -335,8 +335,8 @@ The following options relate to how MariaDB command-line tools handles option fi
 ### NULL, ´NULL´, and Empty Values in XML
 
 
-For a column named `<code>column_name</code>`, the `<code>NULL</code>` value, an empty string, and
-the string value `<code>´NULL´</code>` are distinguished from one another in the output
+For a column named `column_name`, the `NULL` value, an empty string, and
+the string value `´NULL´` are distinguished from one another in the output
 generated by this option as follows.
 
 
@@ -351,7 +351,7 @@ generated by this option as follows.
 
 
 The output from the mariadb client when run using
-the `<code>--xml</code>` option also follows the preceding rules.
+the `--xml` option also follows the preceding rules.
 
 
 XML output from mariadb-dump includes the XML namespace, as shown here :
@@ -411,7 +411,7 @@ mariadb db_name < backup-file.sql
 
 
 You can also set the following variables
-(`<code>--variable-name=value</code>`) and boolean options `<code>{FALSE|TRUE}</code>` by using:
+(`--variable-name=value`) and boolean options `{FALSE|TRUE}` by using:
 
 
 
@@ -502,7 +502,7 @@ You can also set the following variables
 ## Examples
 
 
-A common use of `<code>mariadb-dump</code>` is for making a backup of an entire database:
+A common use of `mariadb-dump` is for making a backup of an entire database:
 
 
 ```
@@ -523,7 +523,7 @@ Or like this:
 shell> mariadb -e "source /path-to-backup/backup-file.sql" db_name
 ```
 
-`<code>mariadb-dump</code>` is also very useful for populating databases by
+`mariadb-dump` is also very useful for populating databases by
 copying data from one MariaDB server to another:
 
 
@@ -538,14 +538,14 @@ It is possible to dump several databases with one command:
 shell> mariadb-dump --databases db_name1 [db_name2 ...] > my_databases.sql
 ```
 
-To dump all databases, use the `<code class="fixed" style="white-space:pre-wrap">--all-databases</code>` option:
+To dump all databases, use the `--all-databases` option:
 
 
 ```
 shell> mariadb-dump --all-databases > all_databases.sql
 ```
 
-For InnoDB tables, `<code>mariadb-dump</code>` provides a way of making an
+For InnoDB tables, `mariadb-dump` provides a way of making an
 online backup:
 
 
@@ -554,7 +554,7 @@ shell> mariadb-dump --all-databases --single-transaction all_databases.sql
 ```
 
 This backup acquires a global read lock on all tables (using
-`<code class="fixed" style="white-space:pre-wrap">FLUSH TABLES WITH READ LOCK</code>`) at the beginning of the dump. As
+`FLUSH TABLES WITH READ LOCK`) at the beginning of the dump. As
 soon as this lock has been acquired, the binary log coordinates are read and
 the lock is released. If long updating statements are running when the FLUSH
 statement is issued, the MariaDB server may get stalled until those statements
@@ -580,7 +580,7 @@ Or:
 shell> mariadb-dump --all-databases --flush-logs --master-data=2 > all_databases.sql
 ```
 
-The `<code class="fixed" style="white-space:pre-wrap">--master-data</code>` and `<code class="fixed" style="white-space:pre-wrap">--single-transaction</code>`
+The `--master-data` and `--single-transaction`
 options can be used simultaneously, which provides a convenient way to make an
 online backup suitable for use prior to point-in-time recovery if tables are
 stored using the InnoDB storage engine.

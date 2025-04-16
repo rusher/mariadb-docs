@@ -18,7 +18,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 ## Bug fixes
 
 
-* [MXS-3016](https://jira.mariadb.org/browse/MXS-3016) `<code>create server</code>` can accept multiple monitors
+* [MXS-3016](https://jira.mariadb.org/browse/MXS-3016) `create server` can accept multiple monitors
 * [MXS-3014](https://jira.mariadb.org/browse/MXS-3014) Missing parameters in /maxscale endpoint
 * [MXS-2998](https://jira.mariadb.org/browse/MXS-2998) maxctrl parsing trouble
 * [MXS-2990](https://jira.mariadb.org/browse/MXS-2990) QC bug
@@ -50,7 +50,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platfor
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

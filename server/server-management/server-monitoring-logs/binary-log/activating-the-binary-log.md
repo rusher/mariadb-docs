@@ -1,13 +1,13 @@
 
 # Activating the Binary Log
 
-To enable binary logging, start the server with the `<code>[--log-bin[=name](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md)]</code>` option.
+To enable binary logging, start the server with the `[--log-bin[=name](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md)]` option.
 
 
-If you specify a filename with an extension (for example `<code>.log</code>`), the extension will be silently ignored.
+If you specify a filename with an extension (for example `.log`), the extension will be silently ignored.
 
 
-If you don't provide a name (which can, optionally, include an absolute path), the default will be `<code>datadir/log-basename-bin</code>`, `<code>datadir/mysql-bin</code>` or `<code>datadir/mariadb-bin</code>` (the latter two if [--log-basename](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) is not specified, and dependent on server version). Datadir is determined by the value of the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable.
+If you don't provide a name (which can, optionally, include an absolute path), the default will be `datadir/log-basename-bin`, `datadir/mysql-bin` or `datadir/mariadb-bin` (the latter two if [--log-basename](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) is not specified, and dependent on server version). Datadir is determined by the value of the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable.
 
 
 We strongly recommend you use either [--log-basename](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or specify a filename to ensure that [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) doesn't stop if the hostname of the computer changes.
@@ -22,7 +22,7 @@ The binary log files will have a series of numbers as filename extensions. Each 
 A new binary log, with a new extension, is created every time the server starts, the logs are flushed, or the maximum size is reached (determined by [max_binlog_size](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#max_binlog_size)).
 
 
-The binary log index file contains a master list of all the binary logs, in order. From [MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), if [GTID binlog indexing](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#binlog-indexing) is enabled (the default), an additional index file (`<code>.idx</code>`) is present.
+The binary log index file contains a master list of all the binary logs, in order. From [MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), if [GTID binlog indexing](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#binlog-indexing) is enabled (the default), an additional index file (`.idx`) is present.
 
 
 A sample listing from a directory containing the binary logs:
@@ -43,7 +43,7 @@ total 100
 -rw-rw---- 1 mysql adm  816 Apr 21 17:05 mariadb-bin.index
 ```
 
-The binary log index file will by default have the same name as the individual binary logs, with the extension .index. You can specify an alternative name with the `<code>--log-bin-index[=filename]</code>` [option](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#log_bin_index).
+The binary log index file will by default have the same name as the individual binary logs, with the extension .index. You can specify an alternative name with the `--log-bin-index[=filename]` [option](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#log_bin_index).
 
 
 Clients with the [SUPER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#super) privilege (or, from [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), the [BINLOG ADMIN](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#binlog-admin) privilege, can disable and re-enable the binary log for the current session by setting the [sql_log_bin](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) variable.

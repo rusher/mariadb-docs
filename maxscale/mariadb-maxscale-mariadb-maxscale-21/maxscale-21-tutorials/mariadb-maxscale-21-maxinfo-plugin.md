@@ -13,7 +13,7 @@ The plugin is capable of returning data in one of two ways, either as MySQL resu
 # Configuration
 
 
-The plugin is configured in the `<code>maxscale.cnf</code>` configuration file in much the same way as any other router service is configured; there must be a service section in the configuration file and also listeners defined for that service. The service does not however require any backend servers to be associated with it, or any monitors.
+The plugin is configured in the `maxscale.cnf` configuration file in much the same way as any other router service is configured; there must be a service section in the configuration file and also listeners defined for that service. The service does not however require any backend servers to be associated with it, or any monitors.
 
 
 The service entry should define the service name, the type as service and the router module to load.
@@ -98,7 +98,7 @@ Uptime: 72  Threads: 1  Sessions: 11
 The SQL command used to interact with maxinfo is the show command, a variety of show commands are available and will be described in the following sections.
 
 
-Maxinfo also supports the `<code>FLUSH LOGS</code>`, `<code>SET SERVER <name> <status></code>` and `<code>CLEAR SERVER <name> <status></code>` commands. These behave the same as their MaxAdmin counterpart.
+Maxinfo also supports the `FLUSH LOGS`, `SET SERVER <name> <status>` and `CLEAR SERVER <name> <status>` commands. These behave the same as their MaxAdmin counterpart.
 
 
 ## Show variables

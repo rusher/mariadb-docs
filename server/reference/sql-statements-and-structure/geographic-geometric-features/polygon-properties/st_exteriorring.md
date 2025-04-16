@@ -12,10 +12,10 @@ ExteriorRing(poly)
 ## Description
 
 
-Returns the exterior ring of the Polygon value `<code>poly</code>` as a LineString.
+Returns the exterior ring of the Polygon value `poly` as a LineString.
 
 
-`<code>ST_ExteriorRing()</code>` and `<code>ExteriorRing()</code>` are synonyms.
+`ST_ExteriorRing()` and `ExteriorRing()` are synonyms.
 
 
 ## Examples

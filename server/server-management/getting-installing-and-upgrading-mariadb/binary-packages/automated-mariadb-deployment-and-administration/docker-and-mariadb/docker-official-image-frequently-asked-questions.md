@@ -194,7 +194,7 @@ Or:
 2024-08-16  4:54:05 0 [ERROR] InnoDB: The error means mariadbd does not have the access rights to the directory.
 ```
 
-In this case, the container is running as a user that, inside the container, does not have write permissions on the datadir `<code>/var<em>lib/mysql</em></code>`.
+In this case, the container is running as a user that, inside the container, does not have write permissions on the datadir `/var<em>lib/mysql</em>`.
 
 
 ## Bad magic header in tc log

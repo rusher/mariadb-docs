@@ -49,15 +49,15 @@ Locks may be used to emulate transactions or to get more speed when
 updating tables.
 
 
-`<code>LOCK TABLES</code>` explicitly acquires table locks for the current client session.
-Table locks can be acquired for base tables or views. To use `<code>LOCK TABLES</code>`,
-you must have the `<code>LOCK TABLES</code>` privilege, and the `<code>SELECT</code>` privilege for
-each object to be locked. See `<code>[GRANT](../account-management-sql-commands/grant.md)</code>`
+`LOCK TABLES` explicitly acquires table locks for the current client session.
+Table locks can be acquired for base tables or views. To use `LOCK TABLES`,
+you must have the `LOCK TABLES` privilege, and the `SELECT` privilege for
+each object to be locked. See `[GRANT](../account-management-sql-commands/grant.md)`
 
 
-For view locking, `<code>LOCK TABLES</code>` adds all base tables used in the view to the
+For view locking, `LOCK TABLES` adds all base tables used in the view to the
 set of tables to be locked and locks them automatically. If you lock a table
-explicitly with `<code>LOCK TABLES</code>`, any tables used in triggers are also locked
+explicitly with `LOCK TABLES`, any tables used in triggers are also locked
 implicitly, as described in [Triggers and Implicit Locks](../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md).
 
 
@@ -92,10 +92,10 @@ Set the lock wait timeout. See [WAIT and NOWAIT](wait-and-nowait.md).
 ## Limitations
 
 
-* `<code>LOCK TABLES</code>` [doesn't work when using Galera cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/mariadb-galera-cluster-known-limitations.md). You may experience crashes or locks when used with Galera.
-* `<code>LOCK TABLES</code>` works on XtraDB/InnoDB tables only if the [innodb_table_locks](../../../storage-engines/innodb/innodb-system-variables.md) system variable is set to 1 (the default) and [autocommit](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) is set to 0 (1 is default). Please note that no error message will be returned on LOCK TABLES with innodb_table_locks = 0.
-* `<code>LOCK TABLES</code>` [implicitly commits](sql-statements-that-cause-an-implicit-commit.md) the active transaction, if any. Also, starting a transaction always releases all table locks acquired with LOCK TABLES. This means that there is no way to have table locks and an active transaction at the same time. The only exceptions are the transactions in [autocommit](start-transaction.md#autocommit) mode. To preserve the data integrity between transactional and non-transactional tables, the [GET_LOCK()](../built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md) function can be used.
-* When using `<code>LOCK TABLES</code>` on a `<code>TEMPORARY</code>` table, it will always be locked with a `<code>WRITE</code>` lock.
+* `LOCK TABLES` [doesn't work when using Galera cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/mariadb-galera-cluster-known-limitations.md). You may experience crashes or locks when used with Galera.
+* `LOCK TABLES` works on XtraDB/InnoDB tables only if the [innodb_table_locks](../../../storage-engines/innodb/innodb-system-variables.md) system variable is set to 1 (the default) and [autocommit](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) is set to 0 (1 is default). Please note that no error message will be returned on LOCK TABLES with innodb_table_locks = 0.
+* `LOCK TABLES` [implicitly commits](sql-statements-that-cause-an-implicit-commit.md) the active transaction, if any. Also, starting a transaction always releases all table locks acquired with LOCK TABLES. This means that there is no way to have table locks and an active transaction at the same time. The only exceptions are the transactions in [autocommit](start-transaction.md#autocommit) mode. To preserve the data integrity between transactional and non-transactional tables, the [GET_LOCK()](../built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md) function can be used.
+* When using `LOCK TABLES` on a `TEMPORARY` table, it will always be locked with a `WRITE` lock.
 * While a connection holds an explicit read lock on a table, it cannot modify it. If you try, the following error will be produced:
 
 
@@ -117,7 +117,7 @@ ERROR 1100 (HY000): Table 'tab_name' was not locked with LOCK TABLES
 ERROR 1192 (HY000): Can't execute the given command because you have active locked tables or an active transaction
 ```
 
-* `<code>LOCK TABLES</code>` can not be used in stored routines - if you try, the following error will be produced on creation:
+* `LOCK TABLES` can not be used in stored routines - if you try, the following error will be produced on creation:
 
 
 ```

@@ -33,8 +33,8 @@ is considered a match if the column name matches. Please consult the
 ## New Features
 
 
-New configuration parameters `<code>retain_last_statements</code>` and
-`<code>dump_last_statements</code>` that can be of help when debugging problems. Please
+New configuration parameters `retain_last_statements` and
+`dump_last_statements` that can be of help when debugging problems. Please
 see the [configuration guide](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md)
 for details.
 

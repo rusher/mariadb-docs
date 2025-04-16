@@ -10,43 +10,43 @@ Optimizer hints are options available that affect the execution plan.
 ### HIGH PRIORITY
 
 
-`<code>HIGH_PRIORITY</code>` gives the statement a higher priority. If the table is locked, high priority `<code>SELECT</code>`s will be executed as soon as the lock is released, even if other statements are queued. `<code>HIGH_PRIORITY</code>` applies only if the storage engine only supports table-level locking (`<code>MyISAM</code>`, `<code>MEMORY</code>`, `<code>MERGE</code>`). See [HIGH_PRIORITY and LOW_PRIORITY clauses](../changing-deleting-data/high_priority-and-low_priority.md) for details.
+`HIGH_PRIORITY` gives the statement a higher priority. If the table is locked, high priority `SELECT`s will be executed as soon as the lock is released, even if other statements are queued. `HIGH_PRIORITY` applies only if the storage engine only supports table-level locking (`MyISAM`, `MEMORY`, `MERGE`). See [HIGH_PRIORITY and LOW_PRIORITY clauses](../changing-deleting-data/high_priority-and-low_priority.md) for details.
 
 
 ### SQL_CACHE / SQL_NO_CACHE
 
 
-If the [query_cache_type](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_type) system variable is set to 2 or `<code>DEMAND</code>`, and the current statement is cacheable, `<code>SQL_CACHE</code>` causes the query to be cached and `<code>SQL_NO_CACHE</code>` causes the query not to be cached. For `<code>UNION</code>`s, `<code>SQL_CACHE</code>` or `<code>SQL_NO_CACHE</code>` should be specified for the first query. See also [The Query Cache](../../../../plugins/other-plugins/query-cache-information-plugin.md) for more detail and a list of the types of statements that aren't cacheable.
+If the [query_cache_type](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_type) system variable is set to 2 or `DEMAND`, and the current statement is cacheable, `SQL_CACHE` causes the query to be cached and `SQL_NO_CACHE` causes the query not to be cached. For `UNION`s, `SQL_CACHE` or `SQL_NO_CACHE` should be specified for the first query. See also [The Query Cache](../../../../plugins/other-plugins/query-cache-information-plugin.md) for more detail and a list of the types of statements that aren't cacheable.
 
 
 ### SQL_BUFFER_RESULT
 
 
-`<code>SQL_BUFFER_RESULT</code>` forces the optimizer to use a temporary table to process the result. This is useful to free locks as soon as possible.
+`SQL_BUFFER_RESULT` forces the optimizer to use a temporary table to process the result. This is useful to free locks as soon as possible.
 
 
 ### SQL_SMALL_RESULT / SQL_BIG_RESULT
 
 
-`<code>SQL_SMALL_RESULT</code>` and `<code>SQL_BIG_RESULT</code>` tell the optimizer whether the result is very big or not. Usually, `<code>GROUP BY</code>` and `<code>DISTINCT</code>` operations are performed using a temporary table. Only if the result is very big, using a temporary table is not convenient. The optimizer automatically knows if the result is too big, but you can force the optimizer to use a temporary table with `<code>SQL_SMALL_RESULT</code>`, or avoid the temporary table using `<code>SQL_BIG_RESULT</code>`.
+`SQL_SMALL_RESULT` and `SQL_BIG_RESULT` tell the optimizer whether the result is very big or not. Usually, `GROUP BY` and `DISTINCT` operations are performed using a temporary table. Only if the result is very big, using a temporary table is not convenient. The optimizer automatically knows if the result is too big, but you can force the optimizer to use a temporary table with `SQL_SMALL_RESULT`, or avoid the temporary table using `SQL_BIG_RESULT`.
 
 
 ### STRAIGHT_JOIN
 
 
-`<code>STRAIGHT_JOIN</code>` applies to the [JOIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/joining-tables-with-join-clauses.md) queries, and tells the optimizer that the tables must be read in the order they appear in the `<code>SELECT</code>`. For `<code>const</code>` and `<code>system</code>` table this options is sometimes ignored.
+`STRAIGHT_JOIN` applies to the [JOIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/joining-tables-with-join-clauses.md) queries, and tells the optimizer that the tables must be read in the order they appear in the `SELECT`. For `const` and `system` table this options is sometimes ignored.
 
 
 ### SQL_CALC_FOUND_ROWS
 
 
-`<code>SQL_CALC_FOUND_ROWS</code>` is only applied when using the `<code>LIMIT</code>` clause. If this option is used, MariaDB will count how many rows would match the query, without the `<code>LIMIT</code>` clause. That number can be retrieved in the next query, using [FOUND_ROWS()](../../built-in-functions/secondary-functions/information-functions/found_rows.md).
+`SQL_CALC_FOUND_ROWS` is only applied when using the `LIMIT` clause. If this option is used, MariaDB will count how many rows would match the query, without the `LIMIT` clause. That number can be retrieved in the next query, using [FOUND_ROWS()](../../built-in-functions/secondary-functions/information-functions/found_rows.md).
 
 
 ### USE/FORCE/IGNORE INDEX
 
 
-`<code>USE INDEX</code>`, `<code>FORCE INDEX</code>` and `<code>IGNORE INDEX</code>` constrain the query planning to a specific index.
+`USE INDEX`, `FORCE INDEX` and `IGNORE INDEX` constrain the query planning to a specific index.
 
 
 For further information about some of these options, see [How to force query plans](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/index-hints-how-to-force-query-plans.md).
@@ -123,7 +123,7 @@ hint_name(@query_block  table_name [index_name [, index_name] ...])
 
 #### Query Block Naming
 
-The `<code>QB_NAME</code>` hint is used to assign a name to the query block the hint is in. The Query Block is either a SELECT or a top-level construct of UPDATE or DELETE statement.
+The `QB_NAME` hint is used to assign a name to the query block the hint is in. The Query Block is either a SELECT or a top-level construct of UPDATE or DELETE statement.
 
 ```
 SELECT /*+ QB_NAME(foo) */ select_list FROM ...

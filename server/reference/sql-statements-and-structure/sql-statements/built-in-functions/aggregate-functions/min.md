@@ -12,10 +12,10 @@ MIN([DISTINCT] expr)
 ## Description
 
 
-Returns the minimum value of *`<code>expr</code>`*. `<code>MIN()</code>` may take a string
-argument, in which case it returns the minimum string value. The `<code>DISTINCT</code>`
-keyword can be used to find the minimum of the distinct values of *`<code>expr</code>`*,
-however, this produces the same result as omitting `<code>DISTINCT</code>`.
+Returns the minimum value of *`expr`*. `MIN()` may take a string
+argument, in which case it returns the minimum string value. The `DISTINCT`
+keyword can be used to find the minimum of the distinct values of *`expr`*,
+however, this produces the same result as omitting `DISTINCT`.
 
 
 Note that [SET](../../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) and [ENUM](../../../../data-types/string-data-types/enum.md) fields are currently compared by their string value rather than their relative position in the set, so MIN() may produce a different lowest result than ORDER BY ASC.
@@ -24,10 +24,10 @@ Note that [SET](../../../../../../connectors/mariadb-connector-cpp/setup-for-con
 It is an [aggregate function](../special-functions/window-functions/aggregate-functions-as-window-functions.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
 
 
-`<code>MIN()</code>` can be used as a [window function](../special-functions/window-functions/window-functions-overview.md).
+`MIN()` can be used as a [window function](../special-functions/window-functions/window-functions-overview.md).
 
 
-`<code>MIN()</code>` returns `<code>NULL</code>` if there were no matching rows.
+`MIN()` returns `NULL` if there were no matching rows.
 
 
 From [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), not only ascending but also [descending indexes](../../../vectors/create-table-with-vectors.md#index-types) can be used to optimize MIN.

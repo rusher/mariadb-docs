@@ -16,7 +16,7 @@ JSON_OBJECT_FILTER_KEYS(obj, array_keys)
 ## Description
 
 
-`<code>JSON_OBJECT_FILTER_KEYS</code>` returns a JSON object with keys from the object that are also present in the array as string. It is used when one wants to get key-value pair such that the keys are common but the values may not be common.
+`JSON_OBJECT_FILTER_KEYS` returns a JSON object with keys from the object that are also present in the array as string. It is used when one wants to get key-value pair such that the keys are common but the values may not be common.
 
 
 ## Example

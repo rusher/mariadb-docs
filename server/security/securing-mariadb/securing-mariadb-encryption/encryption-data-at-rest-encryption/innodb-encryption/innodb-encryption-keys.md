@@ -17,10 +17,10 @@ The default key is set using the [innodb_default_encryption_key_id](../../../../
 Encryption keys can also be specified with the [ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id) table option for tables that use [file-per-table](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md) tablespaces.
 
 
-InnoDB encrypts the [temporary tablespace](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-temporary-tablespaces.md) using the encryption key with the ID `<code>1</code>`.
+InnoDB encrypts the [temporary tablespace](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-temporary-tablespaces.md) using the encryption key with the ID `1`.
 
 
-InnoDB encrypts the [Redo Log](../../../../../reference/storage-engines/innodb/innodb-redo-log.md) using the encryption key with the ID `<code>1</code>`.
+InnoDB encrypts the [Redo Log](../../../../../reference/storage-engines/innodb/innodb-redo-log.md) using the encryption key with the ID `1`.
 
 
 ### Keys with Manually Encrypted Tablespaces
@@ -97,7 +97,7 @@ WHERE NAME='db1/tab1';
 InnoDB tables that are part of the [system](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace can only be encrypted using the encryption key set by the [innodb_default_encryption_key_id](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id) system variable.
 
 
-If the table is in a [file-per-table](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md) tablespace, and if [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) is set to `<code>ON</code>` or `<code>FORCE</code>`, and if [innodb_encryption_threads](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads) is set to a value greater than `<code>0</code>`, then you can also set the specific encryption key for the table by using the [ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id) table option. For example:
+If the table is in a [file-per-table](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md) tablespace, and if [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) is set to `ON` or `FORCE`, and if [innodb_encryption_threads](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads) is set to a value greater than `0`, then you can also set the specific encryption key for the table by using the [ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id) table option. For example:
 
 
 ```
@@ -120,7 +120,7 @@ SELECT NAME, ENCRYPTION_SCHEME, CURRENT_KEY_ID
 +----------+-------------------+----------------+
 ```
 
-However, if [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) is set to `<code>OFF</code>` or if [innodb_encryption_threads](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads) is set to `<code>0</code>`, then this will not work. See [InnoDB Encryption Troubleshooting: Setting Encryption Key ID For an Unencrypted Table](innodb-encryption-troubleshooting.md#setting-encryption-key-id-for-an-unencrypted-table) for more information.
+However, if [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) is set to `OFF` or if [innodb_encryption_threads](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads) is set to `0`, then this will not work. See [InnoDB Encryption Troubleshooting: Setting Encryption Key ID For an Unencrypted Table](innodb-encryption-troubleshooting.md#setting-encryption-key-id-for-an-unencrypted-table) for more information.
 
 
 ## Key Rotation
@@ -141,7 +141,7 @@ In order for key rotation to work, both the backend key management service (KMS)
 ### Disabling Background Key Rotation Operations
 
 
-In the event that you encounter issues with background key encryption, you can disable it by setting the [innodb_encryption_rotate_key_age](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age) system variable to `<code>0</code>`. You may find this useful when the constant key version checks lead to excessive CPU usage. It's also useful in cases where your encryption key management plugin does not support key rotation, (such as with the [file_key_management](../key-management-and-encryption-plugins/encryption-key-management.md#file-key-management-encryption-plugin) plugin). For more information, see [MDEV-14180](https://jira.mariadb.org/browse/MDEV-14180).
+In the event that you encounter issues with background key encryption, you can disable it by setting the [innodb_encryption_rotate_key_age](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age) system variable to `0`. You may find this useful when the constant key version checks lead to excessive CPU usage. It's also useful in cases where your encryption key management plugin does not support key rotation, (such as with the [file_key_management](../key-management-and-encryption-plugins/encryption-key-management.md#file-key-management-encryption-plugin) plugin). For more information, see [MDEV-14180](https://jira.mariadb.org/browse/MDEV-14180).
 
 
 There are, however, issues that can arise when the background key rotation is disabled.

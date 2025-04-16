@@ -1,15 +1,15 @@
 
 # optimizer_adjust_secondary_key_costs
 
-#### `<code>optimizer_adjust_secondary_key_costs</code>`
+#### `optimizer_adjust_secondary_key_costs`
 
 
-* Description: Gives the user the ability to affect how the costs for secondary keys using `<code>ref</code>` are calculated in the few cases when [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) up to [MariaDB 10.11](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md) makes a sub-optimal choice when optimizing `<code>ref</code>` access, either for key lookups or `<code>GROUP BY</code>`. `<code>ref</code>`, as used by [EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md), means that the optimizer is using key-lookup on one value to find the matching rows from a table. Unused from [MariaDB 11.0](../../../../../release-notes/mariadb-community-server/what-is-mariadb-110.md). In [MariaDB 10.6.18](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-18-release-notes.md) the variable was changed from a number to a set of strings and `<code>disable_forced_index_in_group_by</code>` (value 4) was added.
+* Description: Gives the user the ability to affect how the costs for secondary keys using `ref` are calculated in the few cases when [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) up to [MariaDB 10.11](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md) makes a sub-optimal choice when optimizing `ref` access, either for key lookups or `GROUP BY`. `ref`, as used by [EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md), means that the optimizer is using key-lookup on one value to find the matching rows from a table. Unused from [MariaDB 11.0](../../../../../release-notes/mariadb-community-server/what-is-mariadb-110.md). In [MariaDB 10.6.18](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-18-release-notes.md) the variable was changed from a number to a set of strings and `disable_forced_index_in_group_by` (value 4) was added.
 * Scope: Global, Session
 * Dynamic: Yes
-* Data Type: `<code>set</code>`
-* Default Value: `<code>fix_card_multiplier</code>`
-* Range: `<code>0</code>` to `<code>63</code>` or any combination of `<code>adjust_secondary_key_cost</code>`, `<code>disable_max_seek</code>` or `<code>disable_forced_index_in_group_by</code>`, `<code>fix_innodb_cardinality</code>`,`<code>fix_reuse_range_for_ref</code>`, `<code>fix_card_multiplier</code>`
+* Data Type: `set`
+* Default Value: `fix_card_multiplier`
+* Range: `0` to `63` or any combination of `adjust_secondary_key_cost`, `disable_max_seek` or `disable_forced_index_in_group_by`, `fix_innodb_cardinality`,`fix_reuse_range_for_ref`, `fix_card_multiplier`
 * Introduced: [MariaDB 10.6.17](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-17-release-notes.md), [MariaDB 10.11.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-7-release-notes.md)
 
 
@@ -18,10 +18,10 @@
 
 
 ##### MariaDB starting with [11.0](../../../../../release-notes/mariadb-community-server/what-is-mariadb-110.md)
-`<code>optimizer_adjust_secondary_key_costs</code>` will be obsolete starting from [MariaDB 11.0](../../../../../release-notes/mariadb-community-server/what-is-mariadb-110.md) as the new optimizer in 11.0 does not have max_seek optimization and is already using cost based choices for index usage with GROUP BY.
+`optimizer_adjust_secondary_key_costs` will be obsolete starting from [MariaDB 11.0](../../../../../release-notes/mariadb-community-server/what-is-mariadb-110.md) as the new optimizer in 11.0 does not have max_seek optimization and is already using cost based choices for index usage with GROUP BY.
 
 
-The value for `<code>optimizer_adjust_secondary_key_costs</code>` is one of more of the following:
+The value for `optimizer_adjust_secondary_key_costs` is one of more of the following:
 
 
 

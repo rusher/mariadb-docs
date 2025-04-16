@@ -55,7 +55,7 @@ GET /v1/filters/:name
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -135,7 +135,7 @@ GET /v1/filters
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -246,16 +246,16 @@ Create a new filter. The posted object must define at
 least the following fields.
 
 
-* `<code>data.id</code>`
+* `data.id`
 * Name of the filter
-* `<code>data.type</code>`
-* Type of the object, must be `<code>filters</code>`
-* `<code>data.atttributes.module</code>`
+* `data.type`
+* Type of the object, must be `filters`
+* `data.atttributes.module`
 * The filter module to use
 
 
 All of the filter parameters should be defined at creation time in the
-`<code>data.atttributes.parameters</code>` object.
+`data.atttributes.parameters` object.
 
 
 As the service to filter relationship is ordered (filters are applied in the
@@ -290,7 +290,7 @@ The following example defines a request body which creates a new filter.
 Filter is created:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Update a filter
@@ -308,8 +308,8 @@ the individual module documentation for more details on whether it supports
 runtime configuration and which parameters can be updated.
 
 
-The following example modifies a filter by changing the `<code>match</code>` parameter to
-`<code>.*users.*</code>`.
+The following example modifies a filter by changing the `match` parameter to
+`.*users.*`.
 
 
 
@@ -333,7 +333,7 @@ The following example modifies a filter by changing the `<code>match</code>` par
 Filter is modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Destroy a filter
@@ -350,12 +350,12 @@ The *:filter* in the URI must map to the name of the filter to be destroyed.
 
 
 A filter can only be destroyed if no service uses it. This means that the
-`<code>data.relationships</code>` object for the filter must be empty. Note that the service
+`data.relationships` object for the filter must be empty. Note that the service
 → filter relationship cannot be modified from the filters resource and must be
 done via the services resource.
 
 
-This endpoint also supports the `<code>force=yes</code>` parameter that will unconditionally
+This endpoint also supports the `force=yes` parameter that will unconditionally
 delete the filter by first removing it from all services that it uses.
 
 
@@ -365,4 +365,4 @@ delete the filter by first removing it from all services that it uses.
 Filter is destroyed:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`

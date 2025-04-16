@@ -27,7 +27,7 @@ or trigger, NOW() returns the time at which the routine or triggering
 statement began to execute.)
 
 
-In addition, changing the [timestamp system variable](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#timestamp) with a [SET](../../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) `<code>timestamp</code>` statement affects the value returned by
+In addition, changing the [timestamp system variable](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#timestamp) with a [SET](../../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) `timestamp` statement affects the value returned by
 NOW() but not by SYSDATE(). This means that timestamp settings in the
 [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) have no effect on invocations of SYSDATE().
 

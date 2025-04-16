@@ -63,7 +63,7 @@ For more details, please refer to:
 
 
 * Authentication now allows table level resolution of grants. MaxScale service
- users will now need SELECT privileges on `<code>mysql.tables_priv</code>` to be able to
+ users will now need SELECT privileges on `mysql.tables_priv` to be able to
  authenticate users at the database and table level.
 * Firewall filter allows whitelisting.
 * Client side SSL works.
@@ -102,7 +102,7 @@ For more details, please refer to [MariaDB MaxScale 1.3 Release Notes](../mariad
 ## MariaDB MaxScale 1.1
 
 
-**NOTE:** MariaDB MaxScale default installation directory has changed to `<code>/usr/local/mariadb-maxscale</code>` and the default password for MaxAdmin is now ´mariadb´.
+**NOTE:** MariaDB MaxScale default installation directory has changed to `/usr/local/mariadb-maxscale` and the default password for MaxAdmin is now ´mariadb´.
 
 
 * New modules added
@@ -122,4 +122,4 @@ For more details, please refer to [MariaDB MaxScale 1.3 Release Notes](../mariad
 * Nagios plugins added.
 * Notification service added.
 * Readconnrouter has a new "running" router_option. This allows it to use any running server as a valid backend server.
-* Database names can be stripped of escape characters with the `<code>strip_db_esc</code>` service parameter.
+* Database names can be stripped of escape characters with the `strip_db_esc` service parameter.

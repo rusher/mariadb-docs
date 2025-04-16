@@ -12,13 +12,13 @@ IF(expr1,expr2,expr3)
 ## Description
 
 
-If `<code>expr1</code>` is `<code>TRUE</code>` (`<code>expr1 <> 0</code>` and `<code>expr1 <> NULL</code>`) then `<code>IF()</code>`
-returns `<code>expr2</code>`; otherwise it returns `<code>expr3</code>`. `<code>IF()</code>` returns a numeric
+If `expr1` is `TRUE` (`expr1 <> 0` and `expr1 <> NULL`) then `IF()`
+returns `expr2`; otherwise it returns `expr3`. `IF()` returns a numeric
 or string value, depending on the context in which it is used.
 
 
 **Note:** There is also an [IF statement](ifnull.md) which differs from the
-`<code>IF()</code>` function described here.
+`IF()` function described here.
 
 
 ## Examples
@@ -54,5 +54,5 @@ SELECT IF(STRCMP('test','test1'),'no','yes');
 ## See Also
 
 
-There is also an [IF statement](ifnull.md), which differs from the `<code>IF()</code>` function described above.
+There is also an [IF statement](ifnull.md), which differs from the `IF()` function described above.
 

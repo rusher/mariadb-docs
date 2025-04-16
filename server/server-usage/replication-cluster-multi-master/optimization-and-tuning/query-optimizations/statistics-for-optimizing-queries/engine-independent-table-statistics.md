@@ -17,7 +17,7 @@ fixed to some degree with the introduction of [Persistent Statistics](innodb-per
 Engine-independent table statistics lift these limitations.
 
 
-* Statistics are stored in regular tables in the `<code>mysql</code>` database.
+* Statistics are stored in regular tables in the `mysql` database.
 
   * it is possible for a DBA to read and update the values.
 * More data is collected/used.
@@ -50,7 +50,7 @@ Use or update of data from these tables is controlled by [use_stat_tables](../..
 Engine-independent statistics are collected by doing full table and full index scans, and this process can be quite expensive.
 
 
-The [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement can be used to collect table statistics. However, simply running `<code>ANALYZE TABLE table_name</code>` does not collect engine-independent (or histogram) statistics by default.
+The [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement can be used to collect table statistics. However, simply running `ANALYZE TABLE table_name` does not collect engine-independent (or histogram) statistics by default.
 
 
 When the [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement is executed, MariaDB makes a call to the table's storage engine, and the storage engine collects its own statistics for the table. The specific behavior depends on the storage engine. For the default [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) storage engine, see [InnoDB Persistent Statistics](innodb-persistent-statistics.md) for more information.
@@ -59,11 +59,11 @@ When the [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/s
 [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) may also collect engine-independent statistics for the table. The specific behavior depends on the value of the [use_stat_tables](../../system-variables/server-system-variables.md#use_stat_tables) system variable. Engine-independent statistics will only be collected if one of the following is true:
 
 
-* The [use_stat_tables](../../system-variables/server-system-variables.md#use_stat_tables) system variable is set to `<code>complementary</code>` or `<code>preferably</code>`.
-* The [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement includes the `<code>PERSISTENT FOR</code>` clause.
+* The [use_stat_tables](../../system-variables/server-system-variables.md#use_stat_tables) system variable is set to `complementary` or `preferably`.
+* The [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement includes the `PERSISTENT FOR` clause.
 
 
-The [use_stat_tables](../../system-variables/server-system-variables.md#use_stat_tables) system variable is set to `<code>preferably_for_queries</code>` by default. With this value, engine-independent statistics are used by default if available, but they are not collected by default. If you want to use engine-independent statistics with the default configuration, then you will have to collect them by executing the [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement and by specifying the `<code>PERSISTENT FOR</code>` clause. It is recommended to collect engine-independent statistics on as-needed basis, so typically one will not have engine-independent statistics for all indexes/all columns.
+The [use_stat_tables](../../system-variables/server-system-variables.md#use_stat_tables) system variable is set to `preferably_for_queries` by default. With this value, engine-independent statistics are used by default if available, but they are not collected by default. If you want to use engine-independent statistics with the default configuration, then you will have to collect them by executing the [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement and by specifying the `PERSISTENT FOR` clause. It is recommended to collect engine-independent statistics on as-needed basis, so typically one will not have engine-independent statistics for all indexes/all columns.
 
 
 When to collect statistics is very dependent on the dataset. If data changes frequently it may be necessary to collect statistics more frequently, and the benefits may be very noticeable (see [This one trick can make MariaDB 30x faster!](https://mariadb.org/mariadb-30x-faster/)). If the data distribution is relatively static, the costs of collecting may outweigh any benefits.
@@ -72,7 +72,7 @@ When to collect statistics is very dependent on the dataset. If data changes fre
 ### Collecting Statistics for Specific Columns or Indexes
 
 
-The syntax for the [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement has been extended with the `<code>PERSISTENT FOR</code>` clause. This clause allows one to collect engine-independent statistics only for particular columns or indexes. This clause also allows one to collect engine-independent statistics, regardless of the value of the [use_stat_tables](../../system-variables/server-system-variables.md#use_stat_tables) system variable. For example:
+The syntax for the [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement has been extended with the `PERSISTENT FOR` clause. This clause allows one to collect engine-independent statistics only for particular columns or indexes. This clause also allows one to collect engine-independent statistics, regardless of the value of the [use_stat_tables](../../system-variables/server-system-variables.md#use_stat_tables) system variable. For example:
 
 
 ```

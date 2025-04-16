@@ -20,7 +20,7 @@ returns no rows, a warning with error code 1329 occurs (No data), and
 the variable values remain unchanged. If the query returns multiple
 rows, error 1172 occurs (Result consisted of more than one row). If it
 is possible that the statement may retrieve multiple rows, you can use
-`<code>LIMIT 1</code>` to limit the result set to a single row.
+`LIMIT 1` to limit the result set to a single row.
 
 
 The INTO clause can also be specified at the end of the statement.
@@ -41,7 +41,7 @@ For the complete syntax, see [SELECT](../../../../general-resources/learning-and
 Another way to set a variable's value is the [SET](set-variable.md) statement.
 
 
-`<code>SELECT ... INTO</code>` results are not stored in the [query cache](../../../reference/plugins/other-plugins/query-cache-information-plugin.md) even if `<code>SQL_CACHE</code>` is specified.
+`SELECT ... INTO` results are not stored in the [query cache](../../../reference/plugins/other-plugins/query-cache-information-plugin.md) even if `SQL_CACHE` is specified.
 
 
 ## Examples
@@ -53,7 +53,7 @@ FROM test.t1 LIMIT 1;
 SELECT * from t1 where t1.a=@x and t1.b=@y
 ```
 
-If you want to use this construct with `<code>UNION</code>` you have to use the syntax:
+If you want to use this construct with `UNION` you have to use the syntax:
 
 
 ```

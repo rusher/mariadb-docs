@@ -26,15 +26,15 @@ The AWS Key Management plugin depends on the [AWS SDK for C++](https://github.co
 When [compiling MariaDB from source](../../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options.md), the AWS Key Management plugin is not built by default in [MariaDB 10.1](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), but it is built by default in [MariaDB 10.2](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, on systems that support it.
 
 
-Compilation is controlled by the `<code>-DPLUGIN_AWS_KEY_MANAGEMENT=DYNAMIC -DAWS_SDK_EXTERNAL_PROJECT=1</code>` [cmake](../../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake) arguments.
+Compilation is controlled by the `-DPLUGIN_AWS_KEY_MANAGEMENT=DYNAMIC -DAWS_SDK_EXTERNAL_PROJECT=1` [cmake](../../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake) arguments.
 
 
 The plugin uses [AWS C++ SDK](https://github.com/awslabs/aws-sdk-cpp), which introduces the following restrictions:
 
 
 * The plugin can only be built on Windows, Linux and macOS.
-* The plugin requires that one of the following compilers is used: `<code>gcc</code>` 4.8 or later, `<code>clang</code>` 3.3 or later, Visual Studio 2013 or later.
-* On Unix, the `<code>libcurl</code>` development package (e.g. `<code>libcurl3-dev</code>` on Debian Jessie), `<code>uuid</code>` development package and `<code>openssl</code>` need to be installed.
+* The plugin requires that one of the following compilers is used: `gcc` 4.8 or later, `clang` 3.3 or later, Visual Studio 2013 or later.
+* On Unix, the `libcurl` development package (e.g. `libcurl3-dev` on Debian Jessie), `uuid` development package and `openssl` need to be installed.
 * You may need to use a newer version of [cmake](../../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake) than is provided by default in your OS.
 
 
@@ -151,13 +151,13 @@ We now have a Customer Master Key and an IAM user that has privileges to access 
 There are a number of ways to give the IAM credentials to the AWS KMS plugin. The plugin supports reading credentials from all standard locations used across the various AWS API clients.
 
 
-The easiest approach is to run MariaDB Server in an EC2 instance that has an IAM Role with User access to the CMK you wish to use. You can give key access privileges to a Role already attached to your EC2 instance, or you can create a new IAM Role and attach it to an already-running EC2 instance. If you've done that, no further credentials management is required and you do not need to create a `<code>credentials</code>` file.
+The easiest approach is to run MariaDB Server in an EC2 instance that has an IAM Role with User access to the CMK you wish to use. You can give key access privileges to a Role already attached to your EC2 instance, or you can create a new IAM Role and attach it to an already-running EC2 instance. If you've done that, no further credentials management is required and you do not need to create a `credentials` file.
 
 
-If you're not running MariaDB Server on an EC2 instance, you can also place the credentials in the MariaDB data directory. The AWS API client looks for a `<code>credentials</code>` file in the `<code>.aws</code>` subdirectory of the home directory of the user running the client process. In the case of MariaDB, its home directory is its `<code>datadir</code>`.
+If you're not running MariaDB Server on an EC2 instance, you can also place the credentials in the MariaDB data directory. The AWS API client looks for a `credentials` file in the `.aws` subdirectory of the home directory of the user running the client process. In the case of MariaDB, its home directory is its `datadir`.
 
 
-1. Create a `<code>credentials</code>` file that MariaDB can read. Use the region you selected when creating the key. Master keys cannot be used across regions. For example:
+1. Create a `credentials` file that MariaDB can read. Use the region you selected when creating the key. Master keys cannot be used across regions. For example:
 ```
 $ cat /var/lib/mysql/.aws/credentials
 [default]
@@ -165,7 +165,7 @@ aws_access_key_id = AKIAIG6IZ6TKF52FVV5A
 aws_secret_access_key = o7CEf7KhZfsVF9cS0a2roqqZNmuzXtIR869zpSBT
 region = us-east-1
 ```
-1. Change the permissions of the file so that it it is owned by, and can only be read by, the `<code>mysql</code>` user:
+1. Change the permissions of the file so that it it is owned by, and can only be read by, the `mysql` user:
 ```
 chown mysql /var/lib/mysql/.aws/credentials
 chmod 600 /var/lib/mysql/.aws/credentials
@@ -175,7 +175,7 @@ chmod 600 /var/lib/mysql/.aws/credentials
 ## Configure MariaDB
 
 
-1. Create a new option file to tell MariaDB to enable encryption functionality and to use the AWS KMS plugin. Create a new file under `<code>/etc/my.cnf.d/</code>` (or wherever your OS may have you create such files) with contents like this:
+1. Create a new option file to tell MariaDB to enable encryption functionality and to use the AWS KMS plugin. Create a new file under `/etc/my.cnf.d/` (or wherever your OS may have you create such files) with contents like this:
 
 
 ```
@@ -187,10 +187,10 @@ aws-key-management-region = us-east-1
 !include /etc/my.cnf.d/enable_encryption.preset
 ```
 
-1. Append the "Alias" value you copied above to `<code>alias/</code>` to use as the value for the `<code>aws-key-management-master-key-id</code>` option.
+1. Append the "Alias" value you copied above to `alias/` to use as the value for the `aws-key-management-master-key-id` option.
 
 
-Note that you **must** include `<code>aws-key-management-region</code>` in your .cnf file if you are not using the us-east-1 region.
+Note that you **must** include `aws-key-management-region` in your .cnf file if you are not using the us-east-1 region.
 
 
 Now, you have told MariaDB to use the AWS KMS plugin and you've put credentials for the plugin in a location where the plugin will find them. The /etc/my.cnf.d/enable_encryption.preset file contains a set of options that enable all available encryption functionality.
@@ -218,7 +218,7 @@ There are more complex alternatives that have a more granular effect, but those 
 ## Start MariaDB
 
 
-Start MariaDB using the `<code>systemctl</code>` tool:
+Start MariaDB using the `systemctl` tool:
 
 
 ```
@@ -275,7 +275,7 @@ You can see the encrypted keys stored on-disk in the datadir:
 Note that those keys are not useful alone. They are encrypted. When MariaDB starts up, the AWS KMS plugin decrypts those keys by interacting with AWS KMS.
 
 
-For maximum security, you should start from an empty datadir and run [mariadb-install-db](../../../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md) after configuring encryption. Then you should re-import your data so that it is fully encrypted. Use `<code>sudo</code>` to run `<code>mariadb-install-db</code>` so that it finds your credentials file:
+For maximum security, you should start from an empty datadir and run [mariadb-install-db](../../../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md) after configuring encryption. Then you should re-import your data so that it is fully encrypted. Use `sudo` to run `mariadb-install-db` so that it finds your credentials file:
 
 
 ```
@@ -290,7 +290,7 @@ Installing MariaDB/MySQL system tables in '/var/lib/mysql' ...
 ## Create Encrypted Tables
 
 
-With `<code>innodb-encrypt-tables=ON</code>`, new InnoDB tables will be encrypted by default, using the key ID set in `<code>innodb_default_encryption_key_id</code>` (default 1). With `<code>innodb-encrypt-tables=FORCE</code>` enabled, it is not possible to manually bypass encryption when creating a table.
+With `innodb-encrypt-tables=ON`, new InnoDB tables will be encrypted by default, using the key ID set in `innodb_default_encryption_key_id` (default 1). With `innodb-encrypt-tables=FORCE` enabled, it is not possible to manually bypass encryption when creating a table.
 
 
 You can cause the AWS KMS plugin to create new encryption keys at-will by specifying a new ENCRYPTION_KEY_ID when creating a table:
@@ -319,12 +319,12 @@ Read more about encrypting data in the [Data at Rest Encryption](../data-at-rest
 ## AWS KMS Plugin Option Reference
 
 
-* `<code>aws_key_management_master_key_id</code>`: AWS KMS Customer Master Key ID (ARN or alias prefixed by `<code>alias/</code>`) for master encryption key. Used to create new data keys. If not set, no new data keys will be created.
-* `<code>aws_key_management_rotate_key</code>`: Set this variable to a data key ID to perform rotation of the key to the master key given in `<code>aws_key_management_master_key_id</code>`. Specify -1 to rotate all keys.
+* `aws_key_management_master_key_id`: AWS KMS Customer Master Key ID (ARN or alias prefixed by `alias/`) for master encryption key. Used to create new data keys. If not set, no new data keys will be created.
+* `aws_key_management_rotate_key`: Set this variable to a data key ID to perform rotation of the key to the master key given in `aws_key_management_master_key_id`. Specify -1 to rotate all keys.
 
 
-* `<code>aws_key_management_key_spec</code>`: Encryption algorithm used to create new keys. Allowed values are AES_128 (default) or AES_256.
-* `<code>aws_key_management_log_level</code>`: Logging for AWS API. Allowed values, in increasing verbosity, are "Off" (default), "Fatal", "Error", "Warn", "Info", "Debug", and "Trace".
+* `aws_key_management_key_spec`: Encryption algorithm used to create new keys. Allowed values are AES_128 (default) or AES_256.
+* `aws_key_management_log_level`: Logging for AWS API. Allowed values, in increasing verbosity, are "Off" (default), "Fatal", "Error", "Warn", "Info", "Debug", and "Trace".
 
 
 ## Next Steps

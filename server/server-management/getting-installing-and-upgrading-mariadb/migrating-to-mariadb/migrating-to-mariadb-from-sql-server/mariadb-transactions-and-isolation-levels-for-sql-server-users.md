@@ -67,10 +67,10 @@ DELETE ... ;
 COMMIT;
 ```
 
-`<code>BEGIN</code>` can also be used to start a transaction, but does not work in stored procedures.
+`BEGIN` can also be used to start a transaction, but does not work in stored procedures.
 
 
-Read-only transactions are also available using `<code>START TRANSACTION READ ONLY</code>`. This is a small performance optimization. MariaDB will issue an error when trying to write data in the middle of a read-only transaction.
+Read-only transactions are also available using `START TRANSACTION READ ONLY`. This is a small performance optimization. MariaDB will issue an error when trying to write data in the middle of a read-only transaction.
 
 
 Only DML statements are transactional and can be rolled back. This may change in a future version, see [MDEV-17567](https://jira.mariadb.org/browse/MDEV-17567) - Atomic DDL and [MDEV-4259](https://jira.mariadb.org/browse/MDEV-4259) - transactional DDL.
@@ -106,7 +106,7 @@ In some databases, constraints can temporarily be violated during a transaction,
 MariaDB does something different: it always checks constraints after each row change. There are cases this policy makes some statements fail with an error, even if those statements would work on SQL Server.
 
 
-For example, suppose you have an `<code>id</code>` column that is the primary key, and you need to increase its value for some reason:
+For example, suppose you have an `id` column that is the primary key, and you need to increase its value for some reason:
 
 
 ```
@@ -140,7 +140,7 @@ Rows matched: 5  Changed: 5  Warnings: 0
 Changing the ids in reversed order won't duplicate any value.
 
 
-Similar problems can happen with `<code>CHECK</code>` constraints and foreign keys. To solve them, we can use a different approach:
+Similar problems can happen with `CHECK` constraints and foreign keys. To solve them, we can use a different approach:
 
 
 ```
@@ -155,10 +155,10 @@ SET SESSION foreign_key_checks = 0;
 SET SESSION foreign_key_checks = 1;
 ```
 
-The last solutions temporarily disable `<code>CHECK</code>` constraints and foreign keys. Note that, while this may solve practical problems, it is dangerous because:
+The last solutions temporarily disable `CHECK` constraints and foreign keys. Note that, while this may solve practical problems, it is dangerous because:
 
 
-* This doesn't disable a single `<code>CHECK</code>` or foreign key, but also others, that you don't expect to violate.
+* This doesn't disable a single `CHECK` or foreign key, but also others, that you don't expect to violate.
 * This doesn't defer the constraint checks, but it simply disables them for a while. This means that, if you insert some invalid values, they will not be detected.
 
 
@@ -188,10 +188,10 @@ As a general rule:
 ### Changing the Isolation Level
 
 
-The default, the isolation level in MariaDB is `<code>REPEATABLE READ</code>`. This can be changed with the [tx_isolation](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#tx_isolation) system variable.
+The default, the isolation level in MariaDB is `REPEATABLE READ`. This can be changed with the [tx_isolation](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#tx_isolation) system variable.
 
 
-Applications developed for SQL Server and later ported to MariaDB may run with `<code>READ COMMITTED</code>` without problems. Using a stricter level would reduce scalability. To use `<code>READ COMMITTED</code>` by default, add the following line to the MariaDB configuration file:
+Applications developed for SQL Server and later ported to MariaDB may run with `READ COMMITTED` without problems. Using a stricter level would reduce scalability. To use `READ COMMITTED` by default, add the following line to the MariaDB configuration file:
 
 
 ```
@@ -218,21 +218,21 @@ SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
 MariaDB supports the following isolation levels:
 
 
-* `<code>READ UNCOMMITTED</code>`
-* `<code>READ COMMITTED</code>`
-* `<code>REPEATABLE READ</code>`
-* `<code>SERIALIZABLE</code>`
+* `READ UNCOMMITTED`
+* `READ COMMITTED`
+* `REPEATABLE READ`
+* `SERIALIZABLE`
 
 
 MariaDB isolation levels differ from SQL Server in the following ways:
 
 
-* `<code>REPEATABLE READ</code>` does not acquire share locks on all read rows, nor a range lock on the missing values that match a `<code>WHERE</code>` clause.
+* `REPEATABLE READ` does not acquire share locks on all read rows, nor a range lock on the missing values that match a `WHERE` clause.
 * It is not possible to change the isolation level in the middle of a transaction.
-* `<code>SNAPSHOT</code>` isolation level is not supported. Instead, you can use `<code>START TRANSACTION WITH CONSISTENT SNAPSHOT</code>` to acquire a snapshot at the beginning of the transaction. This is compatible with all isolation levels.
+* `SNAPSHOT` isolation level is not supported. Instead, you can use `START TRANSACTION WITH CONSISTENT SNAPSHOT` to acquire a snapshot at the beginning of the transaction. This is compatible with all isolation levels.
 
 
-Here is an example of `<code>WITH CONSISTENT SNAPSHOT</code>` usage:
+Here is an example of `WITH CONSISTENT SNAPSHOT` usage:
 
 
 ```
@@ -276,7 +276,7 @@ SELECT * FROM t2;
 +----+
 ```
 
-As you can see, session 1 uses `<code>WITH CONSISTENT SNAPSHOT</code>`, thus it sees all tables as they were when the transaction begun.
+As you can see, session 1 uses `WITH CONSISTENT SNAPSHOT`, thus it sees all tables as they were when the transaction begun.
 
 
 ### Avoiding Lock Waits
@@ -295,14 +295,14 @@ ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
 It is important to note that this variable has two limitations (by design):
 
 
-* It only affects transactional statements, not statements like `<code>ALTER TABLE</code>` or `<code>TRUNCATE TABLE</code>`.
+* It only affects transactional statements, not statements like `ALTER TABLE` or `TRUNCATE TABLE`.
 * It only concerns row locks. It does not put a timeout on metadata locks, or table locks acquired - for example - with the [LOCK TABLES](../../../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md) statement.
 
 
 Note however that [lock_wait_timeout](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lock_wait_timeout) can be used for metadata locks.
 
 
-There is a special syntax that can be used with `<code>SELECT</code>` and some non-transactional statements including `<code>ALTER TABLE</code>`: the [WAIT and NOWAIT](../../../../reference/sql-statements-and-structure/sql-statements/transactions/wait-and-nowait.md) clauses. This syntax puts a timeout in seconds for all lock types, including row locks, table locks, and metadata locks. For example:
+There is a special syntax that can be used with `SELECT` and some non-transactional statements including `ALTER TABLE`: the [WAIT and NOWAIT](../../../../reference/sql-statements-and-structure/sql-statements/transactions/wait-and-nowait.md) clauses. This syntax puts a timeout in seconds for all lock types, including row locks, table locks, and metadata locks. For example:
 
 
 ```
@@ -469,7 +469,7 @@ Record lock, heap no 3 PHYSICAL RECORD: n_fields 3; compact format; info bits 32
 *** WE ROLL BACK TRANSACTION (2)
 ```
 
-The latest detected deadlock never disappears from the output of `<code>SHOW ENGINE InnoDB STATUS</code>`. If you cannot see any, MariaDB hasn't detected any InnoDB deadlocks since the last restart.
+The latest detected deadlock never disappears from the output of `SHOW ENGINE InnoDB STATUS`. If you cannot see any, MariaDB hasn't detected any InnoDB deadlocks since the last restart.
 
 
 Another way to monitor deadlocks is to set [innodb_print_all_deadlocks](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_print_all_deadlocks) to 1 (0 is the default). InnoDB will log all detected deadlocks into the [error log](../../../server-monitoring-logs/error-log.md).

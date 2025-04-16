@@ -7,13 +7,13 @@ The healthcheck.sh script is part of the Docker Official Images of MariaDB Serve
 The script processes a number of argument and tests, together, in strict order. Arguments pertaining to a test must occur before the test name. If a test fails, no further processing is performed. Both arguments and tests begin with a double-hyphen.
 
 
-By default, (since 2023-06-27), official images will create healthcheck@localhost, healthcheck@127.0.0.1, healthcheck@::1 users with a random password and USAGE privileges. `<code>[MARIADB_HEALTHCHECK_GRANTS](mariadb-server-docker-official-image-environment-variables.md#mariadb_healthcheck_grants)</code>` can be used for `<code>--replication</code>` where additional grants are required. This is stored in .my-healthcheck.cnf in the datadir of the container and passed as the `<code>--defaults-extra-file</code>` to the healthcheck.sh script if it exists. The `<code>.my-healthcheck.cnf</code>` also sets `<code>protocol=tcp</code>` for the `<code>mariadb</code>` so `<code>--connect</code>` is effectively there on all tests.
+By default, (since 2023-06-27), official images will create healthcheck@localhost, healthcheck@127.0.0.1, healthcheck@::1 users with a random password and USAGE privileges. `[MARIADB_HEALTHCHECK_GRANTS](mariadb-server-docker-official-image-environment-variables.md#mariadb_healthcheck_grants)` can be used for `--replication` where additional grants are required. This is stored in .my-healthcheck.cnf in the datadir of the container and passed as the `--defaults-extra-file` to the healthcheck.sh script if it exists. The `.my-healthcheck.cnf` also sets `protocol=tcp` for the `mariadb` so `--connect` is effectively there on all tests.
 
 
-The `<code>[MARIADB_AUTO_UPGRADE=1](mariadb-server-docker-official-image-environment-variables.md#mariadb_auto_upgrade) will regenerate the .my-healthcheck.cnf file if missing and recreate the healthcheck users of the database with a new random password. The current port configuration of the MariaDB container is written into this file.</code>`
+The `[MARIADB_AUTO_UPGRADE=1](mariadb-server-docker-official-image-environment-variables.md#mariadb_auto_upgrade) will regenerate the .my-healthcheck.cnf file if missing and recreate the healthcheck users of the database with a new random password. The current port configuration of the MariaDB container is written into this file.`
 
 
-The `<code>[MARIADB_MYSQL_LOCALHOST_USER=1, MARIADB_MYSQL_LOCALHOST_GRANTS](mariadb-server-docker-official-image-environment-variables.md#mariadb_mysql_localhost_user-mariadb_mysql_localhost_grants)</code>` environment variables can also be used, but with the creation of the healthcheck user, these are backwards compatible.
+The `[MARIADB_MYSQL_LOCALHOST_USER=1, MARIADB_MYSQL_LOCALHOST_GRANTS](mariadb-server-docker-official-image-environment-variables.md#mariadb_mysql_localhost_user-mariadb_mysql_localhost_grants)` environment variables can also be used, but with the creation of the healthcheck user, these are backwards compatible.
 
 
 # Compose File Example
@@ -95,7 +95,7 @@ The connecting user must have [USAGE](../../../../../reference/sql-statements-an
 ## --replication
 
 
-This tests a replica based on the `<code>--replication_*</code>` parameters. The replica test must pass all of the subtests to be true. The subtests are:
+This tests a replica based on the `--replication_*` parameters. The replica test must pass all of the subtests to be true. The subtests are:
 
 
 * io - the IO thread is running
@@ -104,7 +104,7 @@ This tests a replica based on the `<code>--replication_*</code>` parameters. The
 * sql_remaining_delay - the delayed replica is less than X seconds behind the master's execution of the same SQL.
 
 
-These are tested for all connections, if `<code>--replication_all</code>` is set (default), or `<code>--replication_name</code>`.
+These are tested for all connections, if `--replication_all` is set (default), or `--replication_name`.
 
 
 The connecting user must have [REPLICATION_CLIENT](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replication-client) if using a version less than [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), or [REPLICA MONITOR](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replica-monitor) for [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) or later.
@@ -128,7 +128,7 @@ Checks all replication sources
 ## --replication_name=n
 
 
-Sets the multisource connection name tested. Unsets `<code>--replication_all</code>`.
+Sets the multisource connection name tested. Unsets `--replication_all`.
 
 
 ## --replication_io
@@ -164,19 +164,19 @@ Change to this user. Can only be done once as the root user is default for healt
 ## --su-mysql
 
 
-Change to the `<code>mysql</code>` unix user. Like `<code>--su</code>` this respawns the script so will reset all parameters. Should be the first argument. The `<code>[MARIADB_MYSQL_LOCALHOST_USER=1](mariadb-server-docker-official-image-environment-variables.md#mariadb_mysql_localhost_user-mariadb_mysql_localhost_grants)</code>` environment variable is designed around usage here.
+Change to the `mysql` unix user. Like `--su` this respawns the script so will reset all parameters. Should be the first argument. The `[MARIADB_MYSQL_LOCALHOST_USER=1](mariadb-server-docker-official-image-environment-variables.md#mariadb_mysql_localhost_user-mariadb_mysql_localhost_grants)` environment variable is designed around usage here.
 
 
 ## --datadir=n
 
 
-For the `<code>--mariadbupgrade</code>` test where the upgrade file is located.
+For the `--mariadbupgrade` test where the upgrade file is located.
 
 
 ## --no-defaults --defaults-file --defaults-extra-file --defaults-group-suffix
 
 
-These are passed to [mariadb shell](../../../../../clients-and-utilities/mariadb-client/README.md) for all tests except `<code>--mariadbupgrade</code>`
+These are passed to [mariadb shell](../../../../../clients-and-utilities/mariadb-client/README.md) for all tests except `--mariadbupgrade`
 
 
 # Examples
@@ -186,12 +186,12 @@ These are passed to [mariadb shell](../../../../../clients-and-utilities/mariadb
 healthcheck.sh --su-mysql --connect --innodb_initialized
 ```
 
-Switch to `<code>mysql</code>` user, and check if can connect and the innodb is initialized.
+Switch to `mysql` user, and check if can connect and the innodb is initialized.
 
 
 ```
 healthcheck.sh --su-mysql --connect --replication_io --replication_sql --replication_seconds_behind_master=600  --replication_sql_remaining_delay=30 ----replication_name=archive --replication --replication_seconds_behind_master=10  --replication_name=channel1 --replication
 ```
 
-Switch to `<code>mysql</code>` user, check if connections can be made, for the replication channel "archive", ensure io and sql threads are running and the seconds behind master < 600 seconds and the sql remaining delay < 30 seconds. For the "channel1", the seconds behind master is limit to 10 seconds maximum.
+Switch to `mysql` user, check if connections can be made, for the replication channel "archive", ensure io and sql threads are running and the seconds behind master < 600 seconds and the sql remaining delay < 30 seconds. For the "channel1", the seconds behind master is limit to 10 seconds maximum.
 

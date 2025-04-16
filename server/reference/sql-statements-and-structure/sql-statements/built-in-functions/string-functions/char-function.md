@@ -11,7 +11,7 @@ CHAR(N,... [USING charset_name])
 ## Description
 
 
-`<code>CHAR()</code>` interprets each argument as an `<code>[INT](../../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md)</code>` and returns a string consisting of the characters given by the code values of those integers. `<code>NULL</code>` values are skipped. By default, `<code>CHAR()</code>` returns a binary string. To produce a string in a given [character set](../../../../data-types/string-data-types/character-sets/README.md), use the optional `<code>USING</code>` clause:
+`CHAR()` interprets each argument as an `[INT](../../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md)` and returns a string consisting of the characters given by the code values of those integers. `NULL` values are skipped. By default, `CHAR()` returns a binary string. To produce a string in a given [character set](../../../../data-types/string-data-types/character-sets/README.md), use the optional `USING` clause:
 
 
 ```
@@ -23,7 +23,7 @@ SELECT CHARSET(CHAR(0x65)), CHARSET(CHAR(0x65 USING utf8));
 +---------------------+--------------------------------+
 ```
 
-If `<code>USING</code>` is given and the result string is illegal for the given character set, a warning is issued. Also, if strict [SQL mode](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) is enabled, the result from `<code>CHAR()</code>` becomes `<code>NULL</code>`.
+If `USING` is given and the result string is illegal for the given character set, a warning is issued. Also, if strict [SQL mode](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) is enabled, the result from `CHAR()` becomes `NULL`.
 
 
 ## Examples

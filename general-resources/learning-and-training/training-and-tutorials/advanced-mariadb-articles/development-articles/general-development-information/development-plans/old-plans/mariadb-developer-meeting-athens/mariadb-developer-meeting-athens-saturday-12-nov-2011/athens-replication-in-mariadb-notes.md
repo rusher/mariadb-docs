@@ -41,18 +41,18 @@ Overview of Replication in MariaDB: [Replication](../../../../../../../../../../
 ## To be in [MariaDB 5.5](../../../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
 
 
-* `<code>@@do_not_replicate</code>`
+* `@@do_not_replicate`
 
 
 ## Additional:
 
 
-* Fixing `<code>rpl_transaction_enabled</code>` in case we crash and rollback during XA
+* Fixing `rpl_transaction_enabled` in case we crash and rollback during XA
 
 
 ## Misc:
 
 
 * This preview also includes a small change to make mysqlbinlog omit redundatn use statements around BEGIN, SACEPOINT, COMMIT, and ROLLBACK events when reading MySQL 5.0 binlogs.
-* The preview included a feature `<code class="fixed" style="white-space:pre-wrap">--innodb-release-locks-early</code>`. However we decided to omit this feature from future MariaDB releases because of a fundamental design bug, [Bug #798213](https://bugs.launchpad.net/bugs/798213)
+* The preview included a feature `--innodb-release-locks-early`. However we decided to omit this feature from future MariaDB releases because of a fundamental design bug, [Bug #798213](https://bugs.launchpad.net/bugs/798213)
 

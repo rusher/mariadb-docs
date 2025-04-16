@@ -14,12 +14,12 @@ DEFAULT(col_name)
 Returns the default value for a table column. If the column has no default value (and is not NULLABLE - NULLABLE fields have a NULL default), an error is returned.
 
 
-For integer columns using [AUTO_INCREMENT](../../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md), `<code>0</code>` is returned.
+For integer columns using [AUTO_INCREMENT](../../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md), `0` is returned.
 
 
-When using `<code>DEFAULT</code>` as a value to set in an [INSERT](../../string-functions/insert-function.md) or [UPDATE](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)
-statement, you can use the bare keyword `<code>DEFAULT</code>` without the parentheses and argument to
-refer to the column in context. You can only use `<code>DEFAULT</code>` as a bare keyword if you are using it
+When using `DEFAULT` as a value to set in an [INSERT](../../string-functions/insert-function.md) or [UPDATE](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)
+statement, you can use the bare keyword `DEFAULT` without the parentheses and argument to
+refer to the column in context. You can only use `DEFAULT` as a bare keyword if you are using it
 alone without a surrounding expression or function.
 
 
@@ -40,7 +40,7 @@ Update values to be one greater than the default value:
 UPDATE t SET i = DEFAULT(i)+1 WHERE i < 100;
 ```
 
-When referring to the default value exactly in `<code>UPDATE</code>` or `<code>INSERT</code>`,
+When referring to the default value exactly in `UPDATE` or `INSERT`,
 you can omit the argument:
 
 

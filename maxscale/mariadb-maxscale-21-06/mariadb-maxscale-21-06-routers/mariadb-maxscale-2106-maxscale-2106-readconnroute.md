@@ -43,10 +43,10 @@ be re-established and the session will be closed. The fact that the server
 is fixed when the client connects also means that routing hints are ignored.
 
 
-**Warning:** `<code>readconnroute</code>` will not prevent writes from being done even if you
- define `<code>router_options=slave</code>`. The client application is responsible for
+**Warning:** `readconnroute` will not prevent writes from being done even if you
+ define `router_options=slave`. The client application is responsible for
  making sure that it only performs read-only queries in such
- cases. `<code>readconnroute</code>` is simple by design: it selects a server for each
+ cases. `readconnroute` is simple by design: it selects a server for each
  client connection and routes all queries there. If something more complex is
  required, the [readwritesplit](mariadb-maxscale-2106-maxscale-2106-readwritesplit.md) router is usually the right
  choice.
@@ -59,10 +59,10 @@ For more details about the standard service parameters, refer to the
 [Configuration Guide](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md).
 
 
-### `<code>router_options</code>`
+### `router_options`
 
 
-**`<code>router_options</code>`** can contain a comma separated list of valid server
+**`router_options`** can contain a comma separated list of valid server
 roles. These roles are used as the valid types of servers the router will
 form connections to when new sessions are created.
 
@@ -78,7 +78,7 @@ router_options=master,slave
 
 
 
-Here is a list of all possible values for the `<code>router_options</code>`.
+Here is a list of all possible values for the `router_options`.
 
 
 | Role | Description |
@@ -90,9 +90,9 @@ Here is a list of all possible values for the `<code>router_options</code>`.
 | running | A server that is up and running. All servers that MariaDB MaxScale can connect to are labeled as running. |
 
 
-If no `<code>router_options</code>` parameter is configured in the service definition,
-the router will use the default value of `<code>running</code>`. This means that it will
-load balance connections across all running servers defined in the `<code>servers</code>`
+If no `router_options` parameter is configured in the service definition,
+the router will use the default value of `running`. This means that it will
+load balance connections across all running servers defined in the `servers`
 parameter of the service.
 
 
@@ -102,32 +102,32 @@ that if two servers with equal weight and status are found, the one that's
 listed first in the *servers* parameter for the service is chosen.
 
 
-### `<code>master_accept_reads</code>`
+### `master_accept_reads`
 
 
 This option can be used to prevent queries from being sent to the current master.
-If `<code>router_options</code>` does not contain "master", the readconnroute instance is
-usually meant for reading. Setting `<code>master_accept_reads=false</code>` excludes the master
+If `router_options` does not contain "master", the readconnroute instance is
+usually meant for reading. Setting `master_accept_reads=false` excludes the master
 from server selection (and thus from receiving reads).
 
 
-If `<code>router_options</code>` contains "master", the setting of `<code>master_accept_reads</code>` has no effect.
+If `router_options` contains "master", the setting of `master_accept_reads` has no effect.
 
 
-By default `<code>master_accept_reads=true</code>`.
+By default `master_accept_reads=true`.
 
 
-### `<code>max_replication_lag</code>`
+### `max_replication_lag`
 
 
 The maximum acceptable replication lag. The value is in seconds and is specified
 as documented [here](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md). The
-default value is `<code>0s</code>`, which means that the lag is ignored.
+default value is `0s`, which means that the lag is ignored.
 
 
 The replication lag of a server must be less than the configured value in order
 for it to be used for routing. To configure the router to not allow any lag, use
-the smallest duration larger than 0, that is, `<code>max_replication_lag=1s</code>`.
+the smallest duration larger than 0, that is, `max_replication_lag=1s`.
 
 
 ## Examples
@@ -154,7 +154,7 @@ router_options=slave
 
 
 
-Here the `<code>router_options</code>` designates slaves as the only valid server
+Here the `router_options` designates slaves as the only valid server
 type. With this configuration, the queries are load balanced across the
 slave servers.
 
@@ -166,14 +166,14 @@ examples in the [Tutorials](https://mariadb.com/kb/Tutorials) folder.
 ## Router Diagnostics
 
 
-The `<code>router_diagnostics</code>` output for readconnroute has the following fields.
+The `router_diagnostics` output for readconnroute has the following fields.
 
 
-* `<code>queries</code>`: Number of queries executed through this service.
+* `queries`: Number of queries executed through this service.
 
 
 ## Limitations
 
 
-* Sending of binary data with `<code>LOAD DATA LOCAL INFILE</code>` is not supported.
+* Sending of binary data with `LOAD DATA LOCAL INFILE` is not supported.
 * The router will never reconnect to the server it initially connected to.

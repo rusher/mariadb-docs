@@ -4,5 +4,5 @@
 ## Description
 
 
-`<code>SUBSTR()</code>` is a synonym for `<code>[SUBSTRING](substring.md)()</code>`.
+`SUBSTR()` is a synonym for `[SUBSTRING](substring.md)()`.
 

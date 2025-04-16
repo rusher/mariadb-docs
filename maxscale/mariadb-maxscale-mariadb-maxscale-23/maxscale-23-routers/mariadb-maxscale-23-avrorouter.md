@@ -77,14 +77,14 @@ For information about common service parameters, refer to the
 ### Router Parameters
 
 
-#### `<code>source</code>`
+#### `source`
 
 
 The source for the binary logs. This is an optional parameter.
 
 
-**Note:** If the `<code>source</code>` parameter is defined the values for `<code>binlogdir</code>` and
- `<code>filestem</code>` are only read from the source service. This means that the
+**Note:** If the `source` parameter is defined the values for `binlogdir` and
+ `filestem` are only read from the source service. This means that the
  parameters defined for the avrorouter are ignored and the ones in the
  binlogrouter are used.
 
@@ -96,10 +96,10 @@ removes the need to manually enter the right *binlogdir* and *filestem* options
 for the avrorouter.
 
 
-Here is an example of two services. The first service (`<code>replication-router</code>`) is
+Here is an example of two services. The first service (`replication-router`) is
 responsible for downloading the binary logs from the master and the second service
-(`<code>avro-router</code>`) will convert the binary logs into Avro format files and store them
-in `<code>/var/lib/mysql</code>`.
+(`avro-router`) will convert the binary logs into Avro format files and store them
+in `/var/lib/mysql`.
 
 
 
@@ -119,7 +119,7 @@ source=replication-router
 
 
 
-#### `<code>codec</code>`
+#### `codec`
 
 
 The compression codec to use. By default, the avrorouter does not use compression.
@@ -131,7 +131,7 @@ Avro specification. For more information about the compression types,
 refer to the [Avro specification](https://avro.apache.org/docs/current/spec.html#Required+Codecs).
 
 
-#### `<code>match</code>` and `<code>exclude</code>`
+#### `match` and `exclude`
 
 
 These [regular expression settings](../../mariadb-maxscale-21-06/README.md)
@@ -143,10 +143,10 @@ filter events for processing depending on table names. Avrorouter does not suppo
 
 
 The avrorouter is configured with a comma-separated list of key-value pairs.
-Currently the router has one mandatory parameter, `<code>binlogdir</code>`. If no `<code>source</code>`
+Currently the router has one mandatory parameter, `binlogdir`. If no `source`
 parameter is defined, binlogdir needs to be manually defined in the router
 options. The following options should be given as a value to the
-`<code>router_options</code>` parameter.
+`router_options` parameter.
 
 
 #### General Options
@@ -155,7 +155,7 @@ options. The following options should be given as a value to the
 These options control various file locations and names.
 
 
-##### `<code>binlogdir</code>`
+##### `binlogdir`
 
 
 The location of the binary log files. This is the first mandatory parameter
@@ -164,11 +164,11 @@ this directory is required.
 
 
 If used in conjunction with the Binlog Server, the value of this option should
-be the same for both the Binlog Server and the avrorouter if the `<code>source</code>` parameter
+be the same for both the Binlog Server and the avrorouter if the `source` parameter
 is not used.
 
 
-##### `<code>avrodir</code>`
+##### `avrodir`
 
 
 The location where the Avro files are stored. This is the second mandatory
@@ -184,7 +184,7 @@ the default data directory, */var/lib/maxscale/*, is used. Before version 2.1 of
 MaxScale, the value of *binlogdir* was used as the default value for *avrodir*.
 
 
-##### `<code>filestem</code>`
+##### `filestem`
 
 
 The base name of the binlog files. The default value is "mysql-bin". The binlog
@@ -202,10 +202,10 @@ filestem=mybin,binlogdir=/var/lib/mysql/binlogs/
 
 
 
-The first binlog file the avrorouter would look for is `<code>/var/lib/mysql/binlogs/mybin.000001</code>`.
+The first binlog file the avrorouter would look for is `/var/lib/mysql/binlogs/mybin.000001`.
 
 
-##### `<code>start_index</code>`
+##### `start_index`
 
 
 The starting index number of the binlog file. The default value is 1.
@@ -219,7 +219,7 @@ beginning of the binary log file.
 
 
 **Note**: MaxScale version 2.2 introduces MariaDB GTID support in Binlog Server:
-currently, if used with Avrorouter, the option `<code>mariadb10_master_gtid</code>` must be
+currently, if used with Avrorouter, the option `mariadb10_master_gtid` must be
 set to off in the Binlog Server configuration in order to correclty read the
 binlog files.
 
@@ -256,8 +256,8 @@ format and how it organizes data, refer to the
 [Avro documentation](https://avro.apache.org/docs/current/).
 
 
-The avrorouter will flush a block and start a new one when either `<code>group_trx</code>`
-transactions or `<code>group_rows</code>` row events have been processed. Changing these
+The avrorouter will flush a block and start a new one when either `group_trx`
+transactions or `group_rows` row events have been processed. Changing these
 options will also allow more frequent updates to stored data but this
 will cause a small increase in file size and search times.
 
@@ -267,21 +267,21 @@ larger chunks of memory to be flushed to disk at one time. This will make
 the conversion process noticeably faster.
 
 
-##### `<code>group_trx</code>`
+##### `group_trx`
 
 
 Controls the number of transactions that are grouped into a single Avro
 data block. The default value is 1 transaction.
 
 
-##### `<code>group_rows</code>`
+##### `group_rows`
 
 
 Controls the number of row events that are grouped into a single Avro
 data block. The default value is 1000 row events.
 
 
-##### `<code>block_size</code>`
+##### `block_size`
 
 
 The Avro data block size in bytes. The default is 16 kilobytes. Increase this
@@ -301,7 +301,7 @@ details about module commands.
 The avrorouter supports the following module commands.
 
 
-### `<code>avrorouter::convert SERVICE {start | stop}</code>`
+### `avrorouter::convert SERVICE {start | stop}`
 
 
 Start or stop the binary log to Avro conversion. The first parameter is the name
@@ -309,7 +309,7 @@ of the service to stop and the second parameter tells whether to start the
 conversion process or to stop it.
 
 
-### `<code>avrorouter::purge SERVICE</code>`
+### `avrorouter::purge SERVICE`
 
 
 This command will delete all files created by the avrorouter. This includes all
@@ -318,7 +318,7 @@ files. Use this to completely reset the conversion process.
 
 
 **Note:** Once the command has completed, MaxScale must be restarted to restart
-the conversion process. Issuing a `<code>convert start</code>` command **will not work**.
+the conversion process. Issuing a `convert start` command **will not work**.
 
 
 **WARNING:** You will lose any and all converted data when this command is
@@ -338,7 +338,7 @@ conversion process, delete these two files and restart MaxScale.
 ## Resetting the Conversion Process
 
 
-To reset the binlog conversion process, issue the `<code>purge</code>` module command by
+To reset the binlog conversion process, issue the `purge` module command by
 executing it via MaxAdmin and stop MaxScale. If manually created schema files
 were used, they need to be recreated once MaxScale is stopped. After stopping
 MaxScale and optionally creating the schema files, the conversion process can be
@@ -352,9 +352,9 @@ The safest way to stop the avrorouter when used with the binlogrouter is to
 follow the following steps:
 
 
-* Issue `<code>STOP SLAVE</code>` on the binlogrouter
+* Issue `STOP SLAVE` on the binlogrouter
 * Wait for the avrorouter to process all files
-* Stop MaxScale with `<code>systemctl stop maxscale</code>`
+* Stop MaxScale with `systemctl stop maxscale`
 
 
 This guarantees that the conversion process halts at a known good position in
@@ -375,7 +375,7 @@ the user creation, please refer to the [CDC Protocol](../maxscale-23-protocols/m
 and [CDC Users](../maxscale-23-protocols/mariadb-maxscale-23-change-data-capture-cdc-users.md) documentation.
 
 
-Read the output of `<code>cdc.py --help</code>` for a full list of supported options
+Read the output of `cdc.py --help` for a full list of supported options
 and a short usage description of the client program.
 
 
@@ -390,7 +390,7 @@ generator. There are currently two methods to generate the .avsc schema files.
 ### Simple Schema Generator
 
 
-The `<code>cdc_one_schema.py</code>` generates a schema file for a single table by reading a
+The `cdc_one_schema.py` generates a schema file for a single table by reading a
 tab separated list of field and type names from the standard input. This is the
 recommended schema generation tool as it does not directly communicate with the
 database thus making it more flexible.
@@ -400,8 +400,8 @@ The only requirement to run the script is that a Python interpreter is
 installed.
 
 
-To use this script, pipe the output of the `<code>mysql</code>` command line into the
-`<code>cdc_one_schema.py</code>` script:
+To use this script, pipe the output of the `mysql` command line into the
+`cdc_one_schema.py` script:
 
 
 
@@ -411,18 +411,18 @@ mysql -ss -u <user> -p -h <host> -P <port> -e 'DESCRIBE `<database>`.`<table>`'|
 
 
 
-Replace the `<code><user></code>`, `<code><host></code>`, `<code><port></code>`, `<code><database></code>` and `<code><table></code>` with
-appropriate values and run the command. Note that the `<code>-ss</code>` parameter is
+Replace the `<user>`, `<host>`, `<port>`, `<database>` and `<table>` with
+appropriate values and run the command. Note that the `-ss` parameter is
 mandatory as that will generate the tab separated output instead of the default
 pretty-printed output.
 
 
 An .avsc file named after the database and table name will be generated in the
 current working directory. Copy this file to the location pointed by the
-`<code>avrodir</code>` parameter of the avrorouter.
+`avrodir` parameter of the avrorouter.
 
 
-Alternatively, you can also copy the output of the `<code>mysql</code>` command to a file and
+Alternatively, you can also copy the output of the `mysql` command to a file and
 feed it into the script if you cannot execute the SQL command directly:
 
 
@@ -437,8 +437,8 @@ mysql -ss -u <user> -p -h <host> -P <port> -e 'DESCRIBE `<database>`.`<table>`' 
 
 
 If you want to use a specific Python interpreter instead of the one found in the
-search path, you can modify the first line of the script from `<code>#!/usr/bin/env
-python</code>` to `<code>#!/path/to/python</code>` where `<code>/path/to/python</code>` is the absolute path to
+search path, you can modify the first line of the script from `#!/usr/bin/env
+python` to `#!/path/to/python` where `/path/to/python` is the absolute path to
 the Python interpreter (both Python 2 and Python 3 can be used).
 
 
@@ -458,7 +458,7 @@ Python 3 script that generates Avro schema files from an existing database.
 
 The script will generate the .avsc schema files into the current directory. Run
 the script for all required databases copy the generated .avsc files to the
-directory where the avrorouter stores the .avro files (the value of `<code>avrodir</code>`).
+directory where the avrorouter stores the .avro files (the value of `avrodir`).
 
 
 ### Go Schema Generator
@@ -467,18 +467,18 @@ directory where the avrorouter stores the .avro files (the value of `<code>avrod
 The *cdc_schema.go* example Go program is provided with MaxScale. This file
 can be used to create Avro schemas for the avrorouter by connecting to a
 database and reading the table definitions. You can find the file in MaxScale's
-share directory in `<code>/usr/share/maxscale/</code>`.
+share directory in `/usr/share/maxscale/`.
 
 
-You'll need to install the Go compiler and run `<code>go get</code>` to resolve Go
+You'll need to install the Go compiler and run `go get` to resolve Go
 dependencies before you can use the *cdc_schema* program. After resolving the
-dependencies you can run the program with `<code>go run cdc_schema.go</code>`. The program
+dependencies you can run the program with `go run cdc_schema.go`. The program
 will create .avsc files in the current directory. These files should be moved
 to the location pointed by the *avrodir* option of the avrorouter if they are
 to be used by the router itself.
 
 
-Read the output of `<code>go run cdc_schema.go -help</code>` for more information on how
+Read the output of `go run cdc_schema.go -help` for more information on how
 to run the program.
 
 
@@ -491,7 +491,7 @@ into easy to process Avro data.
 
 
 Here is a simple configuration example which reads binary logs locally from
-`<code>/var/lib/mysql/</code>` and stores them as Avro files in `<code>/var/lib/maxscale/avro/</code>`.
+`/var/lib/mysql/` and stores them as Avro files in `/var/lib/maxscale/avro/`.
 The service has one listener listening on port 4001 for CDC protocol clients.
 
 
@@ -536,8 +536,8 @@ cdc_kafka_producer.py --kafka-broker 127.0.0.1:9092 --kafka-topic test.mytable
 
 
 
-For more information on how to use these scripts, see the output of `<code>cdc.py -h</code>`
-and `<code>cdc_kafka_producer.py -h</code>`.
+For more information on how to use these scripts, see the output of `cdc.py -h`
+and `cdc_kafka_producer.py -h`.
 
 
 ## Building Avrorouter
@@ -547,7 +547,7 @@ To build the avrorouter from source, you will need the
 [Avro C](https://avro.apache.org/docs/current/api/c/) library, liblzma,
 [the Jansson library](https://www.digip.org/jansson/) and sqlite3 development
 headers. When configuring MaxScale with CMake, you will need to add
-`<code>-DBUILD_CDC=Y</code>` to build the CDC module set.
+`-DBUILD_CDC=Y` to build the CDC module set.
 
 
 The Avro C library needs to be build with position independent code enabled. You

@@ -57,9 +57,9 @@ ignored.
 
 The comments must follow the [MaxScale hint syntax](../mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-hint-syntax.md)
 and the *HintFilter* needs to be in the filter chain before the CCR-filter. If a
-query has a MaxScale supported comment line which defines the parameter `<code>ccr</code>`,
-that comment is caught by the CCR-filter. Parameter values `<code>match</code>` and `<code>ignore</code>`
-are supported, causing the filter to trigger (`<code>match</code>`) or not trigger (`<code>ignore</code>`)
+query has a MaxScale supported comment line which defines the parameter `ccr`,
+that comment is caught by the CCR-filter. Parameter values `match` and `ignore`
+are supported, causing the filter to trigger (`match`) or not trigger (`ignore`)
 on receiving the write query. For example, the query
 
 
@@ -71,7 +71,7 @@ INSERT INTO departments VALUES ('d1234', 'NewDepartment'); -- maxscale ccr=ignor
 
 
 would normally cause the filter to trigger, but does not because of the
-comment. The `<code>match</code>`-comment typically has no effect, since write queries by
+comment. The `match`-comment typically has no effect, since write queries by
 default trigger the filter anyway. It can be used to override an ignore-type
 regular expression that would otherwise prevent triggering.
 
@@ -82,13 +82,13 @@ regular expression that would otherwise prevent triggering.
 The CCR filter has no mandatory parameters.
 
 
-### `<code>time</code>`
+### `time`
 
 
 * Type: [duration](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>60s</code>`
+* Default: `60s`
 
 
 The time window during which queries are routed to the primary. The duration
@@ -111,13 +111,13 @@ the time window and number of queries to be inspected. If either of the two
 conditions are met, the query is re-routed to the primary.
 
 
-### `<code>count</code>`
+### `count`
 
 
 * Type: count
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0</code>`
+* Default: `0`
 
 
 The number of SQL statements to route to primary after detecting a data modifying
@@ -132,13 +132,13 @@ modifying SQL statement is processed, the counter is reset to the value of
 *count*.
 
 
-### `<code>match</code>`, `<code>ignore</code>`
+### `match`, `ignore`
 
 
 * Type: [regex](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 These [regular expression settings](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#standard-regular-expression-settings-for-filters)
@@ -156,36 +156,36 @@ options=case,extended
 
 
 
-### `<code>options</code>`
+### `options`
 
 
 * Type: [enum](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>ignorecase</code>`, `<code>case</code>`, `<code>extended</code>`
-* Default: `<code>ignorecase</code>`
+* Values: `ignorecase`, `case`, `extended`
+* Default: `ignorecase`
 
 
-Regular expression options for `<code>match</code>` and `<code>ignore</code>`.
+Regular expression options for `match` and `ignore`.
 
 
-### `<code>global</code>`
+### `global`
 
 
 * Type: [boolean](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
-`<code>global</code>` is a boolean parameter that when enabled causes writes from one
+`global` is a boolean parameter that when enabled causes writes from one
 connection to propagate to all other connections. This can be used to work
 around cases where one connection writes data and another reads it, expecting
 the write done by the other connection to be visible.
 
 
-This parameter only works with the `<code>time</code>` parameter. The use of `<code>global</code>` and
-`<code>count</code>` at the same time is not allowed and will be treated as an error.
+This parameter only works with the `time` parameter. The use of `global` and
+`count` at the same time is not allowed and will be treated as an error.
 
 
 ## Example Configuration

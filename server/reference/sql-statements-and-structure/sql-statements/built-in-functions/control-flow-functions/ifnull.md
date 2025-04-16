@@ -13,8 +13,8 @@ NVL(expr1,expr2)
 ## Description
 
 
-If *`<code>expr1</code>`* is not NULL, IFNULL() returns *`<code>expr1</code>`*; otherwise it returns
-*`<code>expr2</code>`*. IFNULL() returns a numeric or string value, depending on the
+If *`expr1`* is not NULL, IFNULL() returns *`expr1`*; otherwise it returns
+*`expr2`*. IFNULL() returns a numeric or string value, depending on the
 context in which it is used.
 
 

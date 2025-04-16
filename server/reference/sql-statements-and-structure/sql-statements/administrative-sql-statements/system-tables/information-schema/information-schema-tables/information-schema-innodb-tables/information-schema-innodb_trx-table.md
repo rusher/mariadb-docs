@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_TRX Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>INNODB_TRX</code>` table stores information about all currently executing InnoDB transactions.
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_TRX` table stores information about all currently executing InnoDB transactions.
 
 
 It has the following columns:
@@ -41,7 +41,7 @@ It has the following columns:
 The table is often used in conjunction with the [INNODB_LOCKS](information-schema-innodb_locks-table.md) and [INNODB_LOCK_WAITS](information-schema-innodb_lock_waits-table.md) tables to diagnose problematic locks and transactions.
 
 
-[XA transactions](../../../../../transactions/xa-transactions.md) are not stored in this table. To see them, `<code>XA RECOVER</code>` can be used.
+[XA transactions](../../../../../transactions/xa-transactions.md) are not stored in this table. To see them, `XA RECOVER` can be used.
 
 
 ## Example

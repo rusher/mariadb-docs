@@ -21,7 +21,7 @@ report at [Jira](https://jira.mariadb.org).
 ### Section and object names
 
 
-Section and object names starting with `<code>@@</code>` are now reserved for
+Section and object names starting with `@@` are now reserved for
 use by MaxScale itself. If any such names are encountered in
 configuration files, then MaxScale will not start.
 
@@ -41,7 +41,7 @@ connection creation speed with more dynamic balancing of connections.
 As a side-effect of this, it is possible for two MaxScale instances to bind on
 the same listener port on systems that have Linux kernels newer than 3.9. This
 can only happen if the MaxScale instances use completely different directory
-structures (i.e. different `<code>--basedir</code>` arguments). Normal use of MaxScale still
+structures (i.e. different `--basedir` arguments). Normal use of MaxScale still
 detects multiple MaxScales trying to bind to the same ports. Almost always, this
 will not have any negative side-effects.
 
@@ -58,11 +58,11 @@ administrative users, recreate the user.
 ### REST API
 
 
-#### Mandatory `<code>protocol</code>` parameter on server creation
+#### Mandatory `protocol` parameter on server creation
 
 
-The `<code>protocol</code>` parameter must now always be defined when a server is
-created. The previously undocumented default value of `<code>mariadbbackend</code>` now must
+The `protocol` parameter must now always be defined when a server is
+created. The previously undocumented default value of `mariadbbackend` now must
 be explicitly defined when a server is created via the REST API.
 
 
@@ -85,23 +85,23 @@ via MaxAdmin is no longer possible. Use MaxCtrl to create servers with TLS
 enabled.
 
 
-### `<code>debugcli</code>` and `<code>telnetd</code>`
+### `debugcli` and `telnetd`
 
 
-The `<code>debugcli</code>` router and the `<code>telnetd</code>` protocol module it uses have been
+The `debugcli` router and the `telnetd` protocol module it uses have been
 removed.
 
 
-### `<code>ndbclustermon</code>`
+### `ndbclustermon`
 
 
-The `<code>ndbclustermon</code>` module has been removed.
+The `ndbclustermon` module has been removed.
 
 
-### `<code>mmmon</code>`
+### `mmmon`
 
 
-The `<code>mmmon</code>` module has been removed as the `<code>mariadbmon</code>` monitor largely does
+The `mmmon` module has been removed as the `mariadbmon` monitor largely does
 what it used to do.
 
 
@@ -109,23 +109,23 @@ what it used to do.
 
 
 The following settings have been removed and cause a startup error
-if defined: `<code>mysql51_replication</code>`, `<code>multimaster</code>` and `<code>allow_cluster_recovery</code>`.
+if defined: `mysql51_replication`, `multimaster` and `allow_cluster_recovery`.
 
 
-### `<code>log_to_shm</code>`
+### `log_to_shm`
 
 
-The `<code>log_to_shm</code>` parameter that was removed in 2.3 will be treated as an unknown
+The `log_to_shm` parameter that was removed in 2.3 will be treated as an unknown
 parameter in 2.4.0.
 
 
 ## Deprecated Features
 
 
-### `<code>mqfilter</code>`
+### `mqfilter`
 
 
-The `<code>mqfilter</code>` has been deprecated and it will be removed in a future version
+The `mqfilter` has been deprecated and it will be removed in a future version
 of MaxScale.
 
 
@@ -172,8 +172,8 @@ connections to the server can continue to be used but new connections
 are no longer created to the server.
 
 
-In the output of `<code>maxctrl</code>`, the fact that a server is being drained
-is visible in the `<code>State</code>` column as the value `<code>Draining</code>`.
+In the output of `maxctrl`, the fact that a server is being drained
+is visible in the `State` column as the value `Draining`.
 
 
 
@@ -204,8 +204,8 @@ $ maxctrl set server Server2 drain
 
 
 
-Note that although the state is displayed as `<code>Draining</code>`, when setting
-and clearing the state, the word `<code>drain</code>` is used.
+Note that although the state is displayed as `Draining`, when setting
+and clearing the state, the word `drain` is used.
 
 
 Note that the full implication of draining a server depends upon
@@ -217,20 +217,20 @@ For instance, if readwritesplit is used and the server being drained
 is a slave, then from a client's perspective there will be no difference;
 readwritesplit will simply not use that server. However, if the server
 being drained is the master, then it will not be possible to connect
-unless `<code>master_failure_mode</code>` has been set to something else but the
-default `<code>fail_instantly</code>`.
+unless `master_failure_mode` has been set to something else but the
+default `fail_instantly`.
 
 
-Once the server has been drained, the state will be `<code>Drained</code>`.
+Once the server has been drained, the state will be `Drained`.
 
 
-### `<code>weightby</code>` Replacement for Servers: `<code>rank</code>`
+### `weightby` Replacement for Servers: `rank`
 
 
 The new [rank](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) parameter is
-the replacement for the deprecated `<code>weightby</code>` parameter. It allows explicit
+the replacement for the deprecated `weightby` parameter. It allows explicit
 groupings of servers into primary and secondary groups. Servers configured with
-`<code>rank=secondary</code>` will only be used if no primary servers are available.
+`rank=secondary` will only be used if no primary servers are available.
 
 
 ### UNIX Domain Socket for Servers
@@ -244,7 +244,7 @@ a local UNIX domain socket through which the connections will be created.
 ### Cluster
 
 
-The servers a service uses can now be specified using the `<code>cluster</code>`
+The servers a service uses can now be specified using the `cluster`
 parameter of the service.
 
 
@@ -258,7 +258,7 @@ cluster=TheMonitor
 
 
 In this case, the servers of the service will be defined by the
-referred to monitor. Note that the parameters `<code>servers</code>` and `<code>cluster</code>`
+referred to monitor. Note that the parameters `servers` and `cluster`
 are mutually exclusive.
 
 
@@ -266,7 +266,7 @@ are mutually exclusive.
 
 
 In the MaxScale configuration file, durations can now be suffixed with
-`<code>h</code>`, `<code>m</code>`, `<code>s</code>` or `<code>ms</code>` to indicate that the duration is specified as
+`h`, `m`, `s` or `ms` to indicate that the duration is specified as
 hours, minutes, seconds or milliseconds.
 
 
@@ -324,20 +324,20 @@ for more information.
 
 
 The API version prefix is now optional and if not present, will be assumed to be
-the latest version which currently is `<code>/v1</code>`.
+the latest version which currently is `/v1`.
 
 
 #### Hard maintenance mode
 
 
-The new `<code>--force</code>` option for the `<code>set server</code>` command in MaxCtrl allows all
+The new `--force` option for the `set server` command in MaxCtrl allows all
 connections to the server in question to be closed when it is set into
 maintenance mode. This causes idle connections to be closed immediately.
 
 
 For more information, read the
 [REST-API](../maxscale-24-rest-api/mariadb-maxscale-24-server-resource.md#set-server-state) documentation for
-the `<code>set</code>` endpoint.
+the `set` endpoint.
 
 
 #### Command History
@@ -349,8 +349,8 @@ The interactive mode for MaxCtrl now has command history.
 #### Multi-parameter Alter
 
 
-The `<code>alter</code>` commands in MaxCtrl now accept multiple key-value pairs in one
-command. See output of `<code>maxctrl help alter</code>` for more information.
+The `alter` commands in MaxCtrl now accept multiple key-value pairs in one
+command. See output of `maxctrl help alter` for more information.
 
 
 ### Readwritesplit
@@ -360,23 +360,23 @@ For more information on the readwritesplit router, refer to the
 [documentation](../maxscale-24-routers/mariadb-maxscale-24-readwritesplit.md).
 
 
-#### `<code>transaction_replay</code>`
+#### `transaction_replay`
 
 
 The transaction replay functionality will now also be applied in conjunction
 with server initiated transaction rollbacks.
 
 
-#### `<code>transaction_replay_attempts</code>`
+#### `transaction_replay_attempts`
 
 
-The new `<code>transaction_replay_attempts</code>` parameter controls how many errors the
+The new `transaction_replay_attempts` parameter controls how many errors the
 transaction replay mechanism tolerates before giving up on the replay
 attempt. The number of transaction replay attempts is now capped to a default
 value of 5.
 
 
-#### `<code>lazy_connect</code>`
+#### `lazy_connect`
 
 
 Lazy connection creation delays the opening of all connections until they are
@@ -389,8 +389,8 @@ client connections are short. This feature is disabled by default.
 
 The servers where new connections are created at the start of a session are now
 always use connection counts. This allows the use of
-`<code>slave_selection_criteria=LEAST_CURRENT_OPERATIONS</code>` and
-`<code>max_slave_connections=1</code>`.
+`slave_selection_criteria=LEAST_CURRENT_OPERATIONS` and
+`max_slave_connections=1`.
 
 
 #### Master Selection
@@ -406,7 +406,7 @@ clusters.
 
 Readwritesplit now allows open transactions to finish if the master is put into
 maintenance mode. To forcefully close all connections to a server use the
-`<code>maxctrl set server <name> maintenance --force</code>` command.
+`maxctrl set server <name> maintenance --force` command.
 
 
 ### Galeramon
@@ -419,23 +419,23 @@ If a slave server is replicating from a Galera node, galeramon will now
 correctly assign it the Slave status.
 
 
-#### GTID in `<code>list servers</code>`
+#### GTID in `list servers`
 
 
 Galera nodes will now display their GTID positions in the output of
-`<code>maxctrl list servers</code>`.
+`maxctrl list servers`.
 
 
 ### Avrorouter Direct Replication
 
 
-By defining the `<code>servers</code>` parameter for the avrorouter service, the replication
+By defining the `servers` parameter for the avrorouter service, the replication
 is done directly from a remote master server. This skips the binlogrouter
 definition completely making the conversion process faster and more space
 efficient.
 
 
-### `<code>enforce_simple_topology</code>`
+### `enforce_simple_topology`
 
 
 This MariaDB-Monitor setting allows the monitor greater freedom in managing the

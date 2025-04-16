@@ -15,7 +15,7 @@ Returns the year for the given date, in the range 1000 to 9999, or 0 for the
 "zero" date.
 
 
-`<code>SQL_TSI_YEAR</code>` is a synonym for `<code>YEAR</code>`:
+`SQL_TSI_YEAR` is a synonym for `YEAR`:
 
 
 ## Examples

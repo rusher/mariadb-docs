@@ -12,5 +12,5 @@ We merge TokuDB from Tokutek **git** repositories on GutHub:
 * [ft-index](https://github.com/Tokutek/ft-index)
 
 
-Just merge normally at release points (use tag names) and don't forget to update `<code>storage/tokudb/CMakeLists.txt</code>`, setting `<code>TOKUDB_VERSION</code>` correctly.
+Just merge normally at release points (use tag names) and don't forget to update `storage/tokudb/CMakeLists.txt`, setting `TOKUDB_VERSION` correctly.
 

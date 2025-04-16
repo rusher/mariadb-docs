@@ -7,10 +7,10 @@ Information Schema plugins can support [SHOW](../sql-statements-and-structure/sq
 ## SHOW
 
 
-`<code>SHOW</code>` statements support is enabled automatically. A plugin only needs to specify column names for the `<code>SHOW</code>` statement in the `<code>old_name</code>` member of the field declaration structure. Columns with the `<code>old_name</code>` set to 0 will be hidden from the `<code>SHOW</code>` statement. If all columns are hidden, the `<code>SHOW</code>` statement will not work for this plugin.
+`SHOW` statements support is enabled automatically. A plugin only needs to specify column names for the `SHOW` statement in the `old_name` member of the field declaration structure. Columns with the `old_name` set to 0 will be hidden from the `SHOW` statement. If all columns are hidden, the `SHOW` statement will not work for this plugin.
 
 
-Note that `<code>SHOW</code>` statement is a user-friendly shortcut; it's easier to type and should be easier to view — if the Information Schema table contains many columns, the `<code>SHOW</code>` statement is supposed to display only most important columns and fit nicely on the 80x25 terminal screen.
+Note that `SHOW` statement is a user-friendly shortcut; it's easier to type and should be easier to view — if the Information Schema table contains many columns, the `SHOW` statement is supposed to display only most important columns and fit nicely on the 80x25 terminal screen.
 
 
 Consider an example, [LOCALES plugin](../data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md):
@@ -49,7 +49,7 @@ MariaDB [test]> show locales;
 ## FLUSH
 
 
-To support the `<code>FLUSH</code>` statement a plugin must declare the `<code>reset_table</code>` callback. For example, in the [QUERY_RESPONSE_TIME](../plugins/other-plugins/query-response-time-plugin.md) plugin:
+To support the `FLUSH` statement a plugin must declare the `reset_table` callback. For example, in the [QUERY_RESPONSE_TIME](../plugins/other-plugins/query-response-time-plugin.md) plugin:
 
 
 ```

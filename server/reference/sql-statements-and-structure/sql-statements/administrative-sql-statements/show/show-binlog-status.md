@@ -22,7 +22,7 @@ To see information about the current [GTIDs](../../../../../server-usage/replica
 [gtid_binlog_pos](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) variable.
 
 
-`<code>SHOW MASTER STATUS</code>` was renamed to `<code>SHOW BINLOG STATUS</code>` in [MariaDB 10.5.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), but the old name remains an alias for compatibility purposes.
+`SHOW MASTER STATUS` was renamed to `SHOW BINLOG STATUS` in [MariaDB 10.5.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), but the old name remains an alias for compatibility purposes.
 
 
 ## Example

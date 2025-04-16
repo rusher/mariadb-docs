@@ -51,7 +51,7 @@ Note that MEDIUMINT columns will require 4 bytes in memory (for example, in Inno
 ## String Data Types
 
 
-In the descriptions below, `<code>M</code>` is the declared column length (in characters or in bytes), while `<code>len</code>` is the actual length in bytes of the value.
+In the descriptions below, `M` is the declared column length (in characters or in bytes), while `len` is the actual length in bytes of the value.
 
 
 

@@ -4,7 +4,7 @@
 Puppet can also be used to manage Docker container upgrades and configuration changes. Docker has more specific tools for this purpose, but sometimes there are reasons to choose alternatives. See [Benefits of Managing Docker Containers with Automation Software](../docker-and-mariadb/benefits-of-managing-mariadb-containers-with-orchestration-software.md).
 
 
-In this page you will find out what managing Docker with Puppet looks like. All the snippets in this page use the `<code>docker</code>` resource type, supported by the Puppet company.
+In this page you will find out what managing Docker with Puppet looks like. All the snippets in this page use the `docker` resource type, supported by the Puppet company.
 
 
 
@@ -33,7 +33,7 @@ class { 'docker':
 }
 ```
 
-Check the `<code>docker</code>` resource type documentation to find out how to use more features: for example you can use Docker Enterprise Edition, or bind the Docker daemon to a TCP port.
+Check the `docker` resource type documentation to find out how to use more features: for example you can use Docker Enterprise Edition, or bind the Docker daemon to a TCP port.
 
 
 ## How to Build or Pull Docker Images with Puppet
@@ -46,7 +46,7 @@ To pull an image from Dockerhub:
 docker::image { 'mariadb:10.0': }
 ```
 
-We specified the `<code>10.0</code>` tag to get the desired MariaDB version. If we don't, the image with the `<code>latest</code>` tag will be used. Note that this is not desirable in production, because it can lead to unexpected upgrades.
+We specified the `10.0` tag to get the desired MariaDB version. If we don't, the image with the `latest` tag will be used. Note that this is not desirable in production, because it can lead to unexpected upgrades.
 
 
 You can also write a Dockerfile yourself, and then build it to create a Docker image. To do so, you need to instruct Puppet to copy the Dockerfile to the target and then build it::
@@ -95,7 +95,7 @@ docker::run { 'mariadb-01':
 }
 ```
 
-`<code>mariadb-01</code>` is the contained name. We specified the optional `<code>10.5</code>` tag, and we mapped the guest port 3306 to the host port 6606. In production, you normally don't map ports because you don't need to connect MariaDB clients from the host system to MariaDB servers in the containers. Third-party tools can be installed as separate containers.
+`mariadb-01` is the contained name. We specified the optional `10.5` tag, and we mapped the guest port 3306 to the host port 6606. In production, you normally don't map ports because you don't need to connect MariaDB clients from the host system to MariaDB servers in the containers. Third-party tools can be installed as separate containers.
 
 
 ## References

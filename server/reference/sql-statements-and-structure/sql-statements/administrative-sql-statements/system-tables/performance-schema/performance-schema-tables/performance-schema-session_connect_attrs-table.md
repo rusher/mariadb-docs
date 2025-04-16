@@ -5,16 +5,16 @@
 ## Description
 
 
-`<code>session_connect_attrs</code>` is a [Performance Schema](performance-schema-table_handles-table.md) table that shows connection attributes for all sessions. The Performance Schema needs to be enabled for the table to be populated.
+`session_connect_attrs` is a [Performance Schema](performance-schema-table_handles-table.md) table that shows connection attributes for all sessions. The Performance Schema needs to be enabled for the table to be populated.
 
 
-Applications can pass key/value connection attributes to the server when a connection is made. The `<code>session_connect_attrs</code>` and [session_account_connect_attrs](performance-schema-session_account_connect_attrs-table.md) tables provide access to this information, for all sessions and the current session respectively.
+Applications can pass key/value connection attributes to the server when a connection is made. The `session_connect_attrs` and [session_account_connect_attrs](performance-schema-session_account_connect_attrs-table.md) tables provide access to this information, for all sessions and the current session respectively.
 
 
 The C API functions [mysql_options()](../../../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_options.md) and [mysql_optionsv()](../../../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv.md) are used for passing connection attributes to the server.
 
 
-`<code>session_connect_attrs</code>` contains the following columns:
+`session_connect_attrs` contains the following columns:
 
 
 
@@ -57,7 +57,7 @@ SELECT * FROM performance_schema.session_connect_attrs WHERE processlist_id=CONN
 Connection attributes values are set using the option [connectionAttributes](../../../../../../../../connectors/mariadb-connector-j/about-mariadb-connector-j.md#infrequently-used-parameters).
 
 
-Example using connection string `<code class="fixed" style="white-space:pre-wrap">jdbc:mariadb://localhost/?connectionAttributes=test:test1,test2:test2Val,test3</code>`
+Example using connection string `jdbc:mariadb://localhost/?connectionAttributes=test:test1,test2:test2Val,test3`
 
 
 ```
@@ -118,7 +118,7 @@ SELECT * FROM performance_schema.session_connect_attrs WHERE processlist_id=30;
 Connection attributes values are set using the option [connectionAttributes](https://github.com/mariadb-corporation/mariadb-connector-r2dbc#connection-options).
 
 
-Example using connection string `<code class="fixed" style="white-space:pre-wrap">jdbc:mariadb://localhost/?connectionAttributes=test:test1,test2:test2Val,test3</code>`
+Example using connection string `jdbc:mariadb://localhost/?connectionAttributes=test:test1,test2:test2Val,test3`
 
 
 ```

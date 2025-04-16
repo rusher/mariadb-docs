@@ -18,18 +18,18 @@ AES_ENCRYPT(str, key, [, iv [, mode]])
 ## Description
 
 
-`<code>AES_ENCRYPT()</code>` and [AES_DECRYPT()](aes_decrypt.md) allow encryption and decryption of
+`AES_ENCRYPT()` and [AES_DECRYPT()](aes_decrypt.md) allow encryption and decryption of
 data using the official AES (Advanced Encryption Standard) algorithm, previously known as "Rijndael." Encoding with a 128-bit key length is used (from [MariaDB 11.2.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md), this is the default, and can be changed). 128 bits is much faster and is secure enough for most purposes.
 
 
-`<code>AES_ENCRYPT()</code>` encrypts a string *`<code>str</code>`* using the key *`<code>key_str</code>`*, and returns a binary string.
+`AES_ENCRYPT()` encrypts a string *`str`* using the key *`key_str`*, and returns a binary string.
 
 
-`<code>AES_DECRYPT()</code>` decrypts the encrypted string and returns the original
+`AES_DECRYPT()` decrypts the encrypted string and returns the original
 string.
 
 
-The input arguments may be any length. If either argument is NULL, the result of this function is also `<code>NULL</code>`.
+The input arguments may be any length. If either argument is NULL, the result of this function is also `NULL`.
 
 
 Because AES is a block-level algorithm, padding is used to encode uneven length strings and so the result string length may be calculated using this formula:
@@ -39,7 +39,7 @@ Because AES is a block-level algorithm, padding is used to encode uneven length 
 16 x (trunc(string_length / 16) + 1)
 ```
 
-If `<code>AES_DECRYPT()</code>` detects invalid data or incorrect padding, it returns `<code>NULL</code>`. However, it is possible for `<code>AES_DECRYPT()</code>` to return a non-`<code>NULL</code>` value (possibly garbage) if the input data or the key is invalid.
+If `AES_DECRYPT()` detects invalid data or incorrect padding, it returns `NULL`. However, it is possible for `AES_DECRYPT()` to return a non-`NULL` value (possibly garbage) if the input data or the key is invalid.
 
 
 

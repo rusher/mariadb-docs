@@ -23,14 +23,14 @@ The suggested upgrade procedure is:
 1. Run [mysql_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md)
 
   * Ubuntu and Debian packages do this automatically when they are installed; Red Hat, CentOS, and Fedora packages do not
-  * `<code>mysql_upgrade</code>` does two things:
+  * `mysql_upgrade` does two things:
 
-    1. Upgrades the permission tables in the `<code>mysql</code>` database with some new fields
+    1. Upgrades the permission tables in the `mysql` database with some new fields
     1. Does a very quick check of all tables and marks them as compatible with [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
   * In most cases this should be a fast operation (depending of course on the number of tables)
 1. Add new options to [my.cnf](../../configuring-mariadb-with-option-files.md) to enable features
 
-  * If you change `<code class="highlight fixed" style="white-space:pre-wrap">my.cnf</code>` then you need to restart `<code>mysqld</code>`
+  * If you change `my.cnf` then you need to restart `mysqld`
 
 
 ### Incompatible changes between 5.3 and 5.5
@@ -80,7 +80,7 @@ Percona, the provider of [XtraDB](../../../../../general-resources/learning-and-
 ## Notes
 
 
-1. [↑](#_ref-0) If using a MariaDB `<code>apt</code>` or `<code>yum</code>` [repository](https://downloads.mariadb.org/mariadb/repositories/), it is often enough to replace instances of '5.3' with '5.5' and then run an update/upgrade. For example, in Ubuntu/Debian update the MariaDB `<code>sources.list</code>` entry from something that looks similar to this:
+1. [↑](#_ref-0) If using a MariaDB `apt` or `yum` [repository](https://downloads.mariadb.org/mariadb/repositories/), it is often enough to replace instances of '5.3' with '5.5' and then run an update/upgrade. For example, in Ubuntu/Debian update the MariaDB `sources.list` entry from something that looks similar to this:
 ```
 deb http://ftp.osuosl.org/pub/mariadb/repo/5.3/ubuntu trusty main
 ```
@@ -92,7 +92,7 @@ And then run
 ```
 apt-get update && apt-get upgrade
 ```
-And in Red Hat, CentOS, and Fedora, change the `<code>baseurl</code>` line from something that looks like this:
+And in Red Hat, CentOS, and Fedora, change the `baseurl` line from something that looks like this:
 ```
 baseurl = http://yum.mariadb.org/5.3/centos6-amd64
 ```

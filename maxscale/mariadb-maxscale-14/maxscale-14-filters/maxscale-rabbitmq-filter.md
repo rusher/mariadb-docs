@@ -7,7 +7,7 @@
 ## Overview
 
 
-This filter is designed to extract queries and transform them into a canonical form e.g. `<code>INSERT INTO database.table VALUES ("John Doe", "Downtown",100,50.0);</code>` turns into `<code>INSERT INTO database.table VALUES ("?", "?",?,?);</code>`. The filter pushes these canonicalized queries and their replies in to a RabbitMQ broker where they can later be retrieved. The retrieval can be done with your own application or the [RabbitMQ Consumer Client](maxscale-rabbitmq-consumer-client.md) utility tool, which reads the messages from the broker and sends the contents of those messages as SQL queries to a database.
+This filter is designed to extract queries and transform them into a canonical form e.g. `INSERT INTO database.table VALUES ("John Doe", "Downtown",100,50.0);` turns into `INSERT INTO database.table VALUES ("?", "?",?,?);`. The filter pushes these canonicalized queries and their replies in to a RabbitMQ broker where they can later be retrieved. The retrieval can be done with your own application or the [RabbitMQ Consumer Client](maxscale-rabbitmq-consumer-client.md) utility tool, which reads the messages from the broker and sends the contents of those messages as SQL queries to a database.
 
 
 ## Configuration

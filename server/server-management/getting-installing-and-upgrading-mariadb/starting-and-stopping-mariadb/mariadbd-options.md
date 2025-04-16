@@ -1,7 +1,7 @@
 
 # mariadbd Options
 
-This page lists all of the options for `<code>mariadbd</code>` (called mysqld before [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)), ordered by topic. For a full alphabetical list of all mariadbd options, as well as server and status variables, see [Full list of MariaDB options, system and status variables](../../variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+This page lists all of the options for `mariadbd` (called mysqld before [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)), ordered by topic. For a full alphabetical list of all mariadbd options, as well as server and status variables, see [Full list of MariaDB options, system and status variables](../../variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
 
 
 In many cases, the entry here is a summary, and links to the full description.
@@ -13,95 +13,95 @@ By convention, [server variables](../../../server-usage/replication-cluster-mult
 See [Configuring MariaDB with Option Files](../configuring-mariadb-with-option-files.md) for which files and groups mariadbd reads for it's default options.
 
 
-Prior to [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client used to be called `<code>mysqld</code>`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client used to be called `mysqld`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 ## Option Prefixes
 
 
-#### `<code>--autoset-*</code>`
+#### `--autoset-*`
 
 
 * Description: Sets the option value automatically. Only supported for certain options.
 
 
-#### `<code>--disable-*</code>`
+#### `--disable-*`
 
 
-* Description: For all boolean options, disables the setting (equivalent to setting it to `<code>0</code>`). Same as `<code>--skip</code>`.
+* Description: For all boolean options, disables the setting (equivalent to setting it to `0`). Same as `--skip`.
 
 
-#### `<code>--enable-*</code>`
+#### `--enable-*`
 
 
-* Description: For all boolean options, enables the setting (equivalent to setting it to `<code>1</code>`).
+* Description: For all boolean options, enables the setting (equivalent to setting it to `1`).
 
 
-#### `<code>--loose-*</code>`
+#### `--loose-*`
 
 
 * Description: Don't produce an error if the option doesn't exist.
 
 
-#### `<code>--maximum-*</code>`
+#### `--maximum-*`
 
 
 * Description: Sets the maximum value for the option.
 
 
-#### `<code>--skip-*</code>`
+#### `--skip-*`
 
 
-* Description: For all boolean options, disables the setting (equivalent to setting it to `<code>0</code>`). Same as `<code>--disable</code>`.
+* Description: For all boolean options, disables the setting (equivalent to setting it to `0`). Same as `--disable`.
 
 
 ## Option File Options
 
 
-#### `<code>--defaults-extra-file</code>`
+#### `--defaults-extra-file`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--defaults-extra-file=name</code>`
+* Commandline: `--defaults-extra-file=name`
 * Description: Read this extra option file after all other option files are read.
 
   * See [Configuring MariaDB with Option Files](../configuring-mariadb-with-option-files.md).
 
 
 
-#### `<code>--defaults-file</code>`
+#### `--defaults-file`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--defaults-file=name</code>`
+* Commandline: `--defaults-file=name`
 * Description: Only read options from the given option file.
 
   * See [Configuring MariaDB with Option Files](../configuring-mariadb-with-option-files.md).
 
 
 
-#### `<code>--defaults-group-suffix</code>`
+#### `--defaults-group-suffix`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--defaults-group-suffix=name</code>`
+* Commandline: `--defaults-group-suffix=name`
 * Description: In addition to the default option groups, also read option groups with the given suffix.
 
   * See [Configuring MariaDB with Option Files](../configuring-mariadb-with-option-files.md).
 
 
 
-#### `<code>--no-defaults</code>`
+#### `--no-defaults`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--no-defaults</code>`
+* Commandline: `--no-defaults`
 * Description: Don't read options from any option file.
 
   * See [Configuring MariaDB with Option Files](../configuring-mariadb-with-option-files.md).
 
 
 
-#### `<code>--print-defaults</code>`
+#### `--print-defaults`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--print-defaults</code>`
+* Commandline: `--print-defaults`
 * Description: Read options from option files, print all option values, and then exit the program.
 
   * See [Configuring MariaDB with Option Files](../configuring-mariadb-with-option-files.md).
@@ -115,35 +115,35 @@ The following options have been added to MariaDB to make it more compliant with
 other MariaDB and MySQL versions. Options that are also system variables are listed after:
 
 
-#### `<code>-a, --ansi</code>`
+#### `-a, --ansi`
 
 
 * Description: Use ANSI SQL syntax instead of MariaDB syntax. This mode will also set [transaction isolation level](../../../reference/sql-statements-and-structure/sql-statements/transactions/set-transaction.md) [serializable](../../../reference/sql-statements-and-structure/sql-statements/transactions/set-transaction.md).
 
 
 
-#### `<code>--new</code>`
+#### `--new`
 
 
 * Description: Use new functionality that will exist in next version of MariaDB. This function exists to make it easier to prepare for an upgrade.
 
 
 
-#### `<code>--old-style-user-limits</code>`
+#### `--old-style-user-limits`
 
 
 * Description: Enable old-style user limits (before MySQL 5.0.3, user resources were counted per each user+host vs. per account).
 
 
 
-#### `<code>--safe-mode</code>`
+#### `--safe-mode`
 
 
 * Description: Disable some potential unsafe optimizations. For 5.2, [INSERT DELAYED](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) is disabled, [myisam_recover_options](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options) is set to DEFAULT (automatically recover crashed MyISAM files) and the [query cache](../../../reference/plugins/other-plugins/query-cache-information-plugin.md) is disabled. For [Aria](../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables, disable bulk insert optimization to enable one to use [aria_read_log](../../../clients-and-utilities/aria-clients-and-utilities/aria_read_log.md) to recover tables even if tables are deleted (good for testing recovery).
 
 
 
-#### `<code>--skip-new</code>`
+#### `--skip-new`
 
 
 * Description: Disables [--new](#-new).
@@ -166,28 +166,28 @@ other MariaDB and MySQL versions. Options that are also system variables are lis
 Options that are also system variables are listed after:
 
 
-#### `<code>--character-set-client-handshake</code>`
+#### `--character-set-client-handshake`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--character-set-client-handshake</code>`
-* Description: Don't ignore client side character set value sent during handshake. `<code>--skip-character-set-client-handshake</code>` will ignore the client value and use the default server value.
+* Commandline: `--character-set-client-handshake`
+* Description: Don't ignore client side character set value sent during handshake. `--skip-character-set-client-handshake` will ignore the client value and use the default server value.
 
 
 
-#### `<code>--default-character-set</code>`
+#### `--default-character-set`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--default-character-set=name</code>`
+* Commandline: `--default-character-set=name`
 * Description: Still available as an option for setting the default character set for clients and their connections, it was deprecated and removed in [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) as a server option. Use [character-set-server](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_server) instead.
 
 
 
-#### `<code>--language</code>`
+#### `--language`
 
 
 * Description: This option can be used to set the server's language for error messages. This option can be specified either as a language name or as the path to the directory storing the language's [error message file](../../server-monitoring-logs/error-log.md#error-messages-file). See [Server Locales](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) for a list of supported locales and their associated languages.
 
-  * This option is deprecated. Use the `<code>[lc_messages](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages)</code>` and `<code>[lc_messages_dir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir)</code>` system variables instead.
+  * This option is deprecated. Use the `[lc_messages](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages)` and `[lc_messages_dir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir)` system variables instead.
   * See [Setting the Language for Error Messages](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages.md) for more information.
 
 
@@ -220,53 +220,53 @@ Options that are also system variables are listed after:
 Options that are also system variables are listed after:
 
 
-#### `<code>--console</code>`
+#### `--console`
 
 
 * Description: Windows-only option that keeps the console window open and for writing log messages to stderr and stdout. If specified together with [--log-error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error), the last option will take precedence.
 
 
 
-#### `<code>--install</code>`
+#### `--install`
 
 
-* Description: Windows-only option that installs the `<code>mariadbd</code>` process as a Windows service.
+* Description: Windows-only option that installs the `mariadbd` process as a Windows service.
 
-  * The Windows service created with this option [auto-starts](https://docs.microsoft.com/en-us/windows/desktop/Services/automatically-starting-services). If you want a service that is [started on demand](https://docs.microsoft.com/en-us/windows/desktop/Services/starting-services-on-demand), then use the `<code>[--install-manual](#install-manual)</code>` option.
+  * The Windows service created with this option [auto-starts](https://docs.microsoft.com/en-us/windows/desktop/Services/automatically-starting-services). If you want a service that is [started on demand](https://docs.microsoft.com/en-us/windows/desktop/Services/starting-services-on-demand), then use the `[--install-manual](#install-manual)` option.
   * This option takes a service name as an argument. If this option is provided without a service name, then the service name defaults to "MARIADB".
   * This option is deprecated and may be removed in a future version. See [MDEV-19358](https://jira.mariadb.org/browse/MDEV-19358) for more information.
 
 
 
-#### `<code>--install-manual</code>`
+#### `--install-manual`
 
 
-* Description: Windows-only option that installs the `<code>mariadbd</code>` process as a Windows service.
+* Description: Windows-only option that installs the `mariadbd` process as a Windows service.
 
-  * The Windows service created with this option is [started on demand](https://docs.microsoft.com/en-us/windows/desktop/Services/starting-services-on-demand). If you want a service that [auto-starts](https://docs.microsoft.com/en-us/windows/desktop/Services/automatically-starting-services), use the `<code>[--install](#install)</code>` option.
+  * The Windows service created with this option is [started on demand](https://docs.microsoft.com/en-us/windows/desktop/Services/starting-services-on-demand). If you want a service that [auto-starts](https://docs.microsoft.com/en-us/windows/desktop/Services/automatically-starting-services), use the `[--install](#install)` option.
   * This option takes a service name as an argument. If this option is provided without a service name, then the service name defaults to "MARIADB".
   * This option is deprecated and may be removed in a future version. See [MDEV-19358](https://jira.mariadb.org/browse/MDEV-19358) for more information.
 
 
 
-#### `<code>--remove</code>`
+#### `--remove`
 
 
-* Description: Windows-only option that removes the Windows service created by the `<code>[--install](#install)</code>` or `<code>[--install-manual](#install-manual)</code>` options.
+* Description: Windows-only option that removes the Windows service created by the `[--install](#install)` or `[--install-manual](#install-manual)` options.
 
   * This option takes a service name as an argument. If this option is provided without a service name, then the service name defaults to "MARIADB".
   * This option is deprecated and may be removed in a future version. See [MDEV-19358](https://jira.mariadb.org/browse/MDEV-19358) for more information.
 
 
 
-#### `<code>--slow-start-timeout</code>`
+#### `--slow-start-timeout`
 
 
-* Description: Windows-only option that defines the maximum number of milliseconds that the service control manager should wait before trying to kill the Windows service during startup. Defaults to `<code>15000</code>`.
+* Description: Windows-only option that defines the maximum number of milliseconds that the service control manager should wait before trying to kill the Windows service during startup. Defaults to `15000`.
 
 
 
-#### `<code>--standalone</code>`
+#### `--standalone`
 
 
 * Description: Windows-only option that has no effect. Kept for compatibility reasons.
@@ -279,7 +279,7 @@ Options that are also system variables are listed after:
 The following options and system variables are related to using MariaDB on Windows:
 
 
-* `<code>[--named-pipe](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#named_pipe)</code>`
+* `[--named-pipe](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#named_pipe)`
 
 
 ## Replication and Binary Logging Options
@@ -288,18 +288,18 @@ The following options and system variables are related to using MariaDB on Windo
 The following options are related to [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) and the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Options that are also system variables are listed after:
 
 
-#### `<code>--abort-slave-event-count</code>`
+#### `--abort-slave-event-count`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--abort-slave-event-count=#</code>`
+* Commandline: `--abort-slave-event-count=#`
 * Description: Option used by mysql-test for debugging and testing of replication.
 
 
 
-#### `<code>--binlog-do-db</code>`
+#### `--binlog-do-db`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--binlog-do-db=name</code>`
+* Commandline: `--binlog-do-db=name`
 * Description: This option allows you to configure a [replication master](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to write statements and transactions affecting databases that match a specified name into its [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Since the filtered statements or transactions will not be present in the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), its replicas will not be able to replicate them.
 
   * This option will not work with cross-database updates with [statement-based logging](../../server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-filters.md#statement-based-logging) section for more information.
@@ -309,10 +309,10 @@ The following options are related to [replication](../../../reference/sql-statem
 
 
 
-#### `<code>--binlog-ignore-db</code>`
+#### `--binlog-ignore-db`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--binlog-ignore-db=name</code>`
+* Commandline: `--binlog-ignore-db=name`
 * Description: This option allows you to configure a [replication master](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to not write statements and transactions affecting databases that match a specified name into its [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Since the filtered statements or transactions will not be present in the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), its replicas will not be able to replicate them.
 
   * This option will not work with cross-database updates with [statement-based logging](../../server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-filters.md#statement-based-logging) section for more information.
@@ -322,185 +322,185 @@ The following options are related to [replication](../../../reference/sql-statem
 
 
 
-#### `<code>--binlog-row-event-max-size</code>`
+#### `--binlog-row-event-max-size`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--binlog-row-event-max-size=#</code>`
+* Commandline: `--binlog-row-event-max-size=#`
 * Description: The maximum size of a row-based [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) event in bytes. Rows will be grouped into events smaller than this size if possible. The value has to be a multiple of 256. Available as a [system variable](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_row_event_max_size) from [MariaDB 11.2.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md).
-* Default value `<code>8192</code>`
+* Default value `8192`
 
 
 
-#### `<code>--disconnect-slave-event-count</code>`
+#### `--disconnect-slave-event-count`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--disconnect-slave-event-count=#</code>`
+* Commandline: `--disconnect-slave-event-count=#`
 * Description: Option used by mysql-test for debugging and testing of replication.
 
 
 
-#### `<code>--flashback</code>`
+#### `--flashback`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--flashback</code>`
-* Description: Setup the server to use flashback. This enables the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and sets `<code>binlog_format=ROW</code>`.
-
-
-
-#### `<code>--init-rpl-role</code>`
-
-
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--init-rpl-role=name</code>`
-* Description: Set the replication role. From [MariaDB 10.6.19](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-19-release-notes.md), [MariaDB 10.11.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes.md), [MariaDB 11.1.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes.md), [MariaDB 11.2.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes.md), [MariaDB 11.4.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-3-release-notes.md) and [MariaDB 11.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes.md), changes the condition for [semi-sync recovery](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md) to truncate the [binlog](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to instead use this option, when set to SLAVE. This allows for both [rpl_semi_sync_master_enabled](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_enabled) and [rpl_semi_sync_slave_enabled](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_slave_enabled) to be set for a primary that is restarted, and no transactions will be lost, so long as `<code>--init-rpl-role</code>` is not set to SLAVE. In earlier versions, for servers configured with both [rpl_semi_sync_master_enabled=1](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_enabled) and [rpl_semi_sync_slave_enabled=1](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_slave_enabled), if a primary is just re-started (i.e. retaining its role as primary), it can truncate its binlog to drop transactions which its replica(s) have already received and executed. If this happens, when the replica reconnects, its [gtid_slave_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) can be ahead of the recovered primary’s [gtid_binlog_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md), resulting in an error state where the replica’s state is ahead of the primary’s. See [-init-rpl-role](mariadbd-options.md#-init-rpl-role).
-* Valid values: Empty, `<code>MASTER</code>` or `<code>SLAVE</code>`
+* Commandline: `--flashback`
+* Description: Setup the server to use flashback. This enables the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and sets `binlog_format=ROW`.
 
 
 
-#### `<code>--log-basename</code>`
+#### `--init-rpl-role`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--log-basename=name</code>`
-* Description: Basename for all log files and the .pid file. This sets all log file names at once (in 'datadir') and is normally the only option you need for specifying log files. This is especially recommended to be set if you are using [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) as it ensures that your log file names are not dependent on your host name. Sets names for the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), [relay log](../../server-monitoring-logs/binary-log/relay-log.md), [general query log](../../server-monitoring-logs/general-query-log.md), [slow query log](../../server-monitoring-logs/slow-query-log/slow-query-log-overview.md) and [error log](../../server-monitoring-logs/error-log.md). Note that if you explicity set log file names with any of these other options; [log-bin-index](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md), [relay-log](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md), [relay-log-index](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md), [general-log-file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file), [log_slow_query_file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query_file) ([slow_query_log_file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file)), [log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error), and [pid-file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#pid_file), these should be placed after `<code>--log-basename</code>` in the config files. Later settings override earlier settings, so `<code>log-basename</code>` will override any earlier log file name settings.
+* Commandline: `--init-rpl-role=name`
+* Description: Set the replication role. From [MariaDB 10.6.19](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-19-release-notes.md), [MariaDB 10.11.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes.md), [MariaDB 11.1.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes.md), [MariaDB 11.2.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes.md), [MariaDB 11.4.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-3-release-notes.md) and [MariaDB 11.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes.md), changes the condition for [semi-sync recovery](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md) to truncate the [binlog](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to instead use this option, when set to SLAVE. This allows for both [rpl_semi_sync_master_enabled](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_enabled) and [rpl_semi_sync_slave_enabled](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_slave_enabled) to be set for a primary that is restarted, and no transactions will be lost, so long as `--init-rpl-role` is not set to SLAVE. In earlier versions, for servers configured with both [rpl_semi_sync_master_enabled=1](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_enabled) and [rpl_semi_sync_slave_enabled=1](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_slave_enabled), if a primary is just re-started (i.e. retaining its role as primary), it can truncate its binlog to drop transactions which its replica(s) have already received and executed. If this happens, when the replica reconnects, its [gtid_slave_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) can be ahead of the recovered primary’s [gtid_binlog_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md), resulting in an error state where the replica’s state is ahead of the primary’s. See [-init-rpl-role](mariadbd-options.md#-init-rpl-role).
+* Valid values: Empty, `MASTER` or `SLAVE`
 
 
 
-#### `<code>--log-bin-trust-routine-creators</code>`
+#### `--log-basename`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--log-bin-trust-routine-creators</code>`
+* Commandline: `--log-basename=name`
+* Description: Basename for all log files and the .pid file. This sets all log file names at once (in 'datadir') and is normally the only option you need for specifying log files. This is especially recommended to be set if you are using [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) as it ensures that your log file names are not dependent on your host name. Sets names for the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), [relay log](../../server-monitoring-logs/binary-log/relay-log.md), [general query log](../../server-monitoring-logs/general-query-log.md), [slow query log](../../server-monitoring-logs/slow-query-log/slow-query-log-overview.md) and [error log](../../server-monitoring-logs/error-log.md). Note that if you explicity set log file names with any of these other options; [log-bin-index](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md), [relay-log](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md), [relay-log-index](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md), [general-log-file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file), [log_slow_query_file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query_file) ([slow_query_log_file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file)), [log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error), and [pid-file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#pid_file), these should be placed after `--log-basename` in the config files. Later settings override earlier settings, so `log-basename` will override any earlier log file name settings.
+
+
+
+#### `--log-bin-trust-routine-creators`
+
+
+* Commandline: `--log-bin-trust-routine-creators`
 * Description: Deprecated, use [log-bin-trust-function-creators](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md).
 
 
 
-#### `<code>--master-host</code>`
+#### `--master-host`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--master-host=name</code>`
+* Commandline: `--master-host=name`
 * Description: Primary hostname or IP address for replication. If not set, the replica thread will not be started. Note that the setting of master-host will be ignored if there exists a valid master.info file.
 
 
 
-#### `<code>--master-info-file</code>`
+#### `--master-info-file`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--master-info-file=name</code>`
-* Description: Name and location of the file on the replica where the `<code>MASTER_LOG_FILE</code>` and `<code>MASTER_LOG_POS</code>` options (i.e. the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position on the primary) and most other [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) options are written. The [replica's I/O thread](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#replica-io-thread) keeps this [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position updated as it downloads events.
+* Commandline: `--master-info-file=name`
+* Description: Name and location of the file on the replica where the `MASTER_LOG_FILE` and `MASTER_LOG_POS` options (i.e. the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position on the primary) and most other [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) options are written. The [replica's I/O thread](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#replica-io-thread) keeps this [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position updated as it downloads events.
 
   * See [CHANGE MASTER TO: Option Persistence](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence) for more information.
 
 
 
-#### `<code>--master-password</code>`
+#### `--master-password`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--master-password=name</code>`
+* Commandline: `--master-password=name`
 * Description: The password the replica thread will authenticate with when connecting to the primary. If not set, an empty password is assumed. The value in master.info will take precedence if it can be read.
 
 
 
-#### `<code>--master-port</code>`
+#### `--master-port`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--master-port=#</code>`
+* Commandline: `--master-port=#`
 * Description: The port the master is listening on. If not set, the compiled setting of MYSQL_PORT is assumed. If you have not tinkered with configure options, this should be 3306. The value in master.info will take precedence if it can be read.
 
 
 
-#### `<code>--master-retry-count</code>`
+#### `--master-retry-count`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--master-retry-count=#</code>`
+* Commandline: `--master-retry-count=#`
 * Description: Number of times a replica will attempt to connect to a primary before giving up. The retry interval is determined by the MASTER_CONNECT_RETRY option for the CHANGE MASTER statement. A value of 0 means the replica will not stop attempting to reconnect. Reconnects are triggered when a replica has timed out. See [slave_net_timeout](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md).
-* Default Value: `<code>86400</code>` through 10.5, `<code>100000</code>` as of 10.6
-* Range - 32 bit: `<code>0 to 4294967295</code>`
-* Range - 64 bit: `<code>0 to 18446744073709551615</code>`
+* Default Value: `86400` through 10.5, `100000` as of 10.6
+* Range - 32 bit: `0 to 4294967295`
+* Range - 64 bit: `0 to 18446744073709551615`
 
 
 
-#### `<code>--master-ssl</code>`
+#### `--master-ssl`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--master-ssl</code>`
+* Commandline: `--master-ssl`
 * Description: Enable the replica to [connect to the master using TLS](../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md).
 
 
 
-#### `<code>--master-ssl-ca</code>`
+#### `--master-ssl-ca`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--master-ssl-ca[=name]</code>`
+* Commandline: `--master-ssl-ca[=name]`
 * Description: Master TLS CA file. Only applies if you have enabled [master-ssl](#-master-ssl).
 
 
 
-#### `<code>--master-ssl-capath</code>`
+#### `--master-ssl-capath`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--master-ssl-capath[=name]</code>`
+* Commandline: `--master-ssl-capath[=name]`
 * Description: Master TLS CA path. Only applies if you have enabled [master-ssl](#-master-ssl).
 
 
 
-#### `<code>--master-ssl-cert</code>`
+#### `--master-ssl-cert`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--master-ssl-cert[=name]</code>`
+* Commandline: `--master-ssl-cert[=name]`
 * Description: Master TLS certificate file name. Only applies if you have enabled [master-ssl](#-master-ssl).
 
 
 
-#### `<code>--master-ssl-cipher</code>`
+#### `--master-ssl-cipher`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--master-ssl-cipher[=name]</code>`
+* Commandline: `--master-ssl-cipher[=name]`
 * Description: Master TLS cipher. Only applies if you have enabled [master-ssl](#-master-ssl).
 
 
 
-#### `<code>--master-ssl-key</code>`
+#### `--master-ssl-key`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--master-ssl-key[=name]</code>`
+* Commandline: `--master-ssl-key[=name]`
 * Description: Master TLS keyfile name. Only applies if you have enabled [master-ssl](#-master-ssl).
 
 
 
-#### `<code>--master-user</code>`
+#### `--master-user`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--master-user=name</code>`
+* Commandline: `--master-user=name`
 * Description: The username the replica thread will use for authentication when connecting to the primary. The user must have FILE privilege. If the primary user is not set, user test is assumed. The value in master.info will take precedence if it can be read.
 
 
 
-#### `<code>--max-binlog-dump-events</code>`
+#### `--max-binlog-dump-events`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--max-binlog-dump-events=#</code>`
+* Commandline: `--max-binlog-dump-events=#`
 * Description: Option used by mysql-test for debugging and testing of replication.
 
 
 
-#### `<code>--replicate-same-server-id</code>`
+#### `--replicate-same-server-id`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--replicate-same-server-id</code>`
+* Commandline: `--replicate-same-server-id`
 * Description: In replication, if set to 1, do not skip events having our server id. Default value is 0 (to break infinite loops in circular replication). Can't be set to 1 if [log-slave-updates](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) is used.
 
 
 
-#### `<code>--sporadic-binlog-dump-fail</code>`
+#### `--sporadic-binlog-dump-fail`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--sporadic-binlog-dump-fail</code>`
+* Commandline: `--sporadic-binlog-dump-fail`
 * Description: Option used by mysql-test for debugging and testing of replication.
 
 
 
-#### `<code>--sysdate-is-now</code>`
+#### `--sysdate-is-now`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--sysdate-is-now</code>`
+* Commandline: `--sysdate-is-now`
 * Description: Non-default option to alias [SYSDATE()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/sysdate.md) to [NOW()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/now.md) to make it safe for [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md). Since 5.0, SYSDATE() has returned a `dynamic' value different for different invocations, even within the same statement.
 
 
@@ -610,19 +610,19 @@ The options and system variables related to [Semisynchronous Replication](../../
 Options that are also system variables are listed after:
 
 
-#### `<code>--record-buffer</code>`
+#### `--record-buffer`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--record-buffer=#</code>`
+* Commandline: `--record-buffer=#`
 * Description: Old alias for [read_buffer_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_buffer_size).
 * Removed: [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
 
 
 
-#### `<code>--table-cache</code>`
+#### `--table-cache`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--table-open-cache=#</code>`
+* Commandline: `--table-open-cache=#`
 * Description: Removed; use [--table-open-cache](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#table_open_cache) instead.
 * Removed: [MariaDB 5.1.3](https://mariadb.com/kb/en/mariadb-513-release-notes/)
 
@@ -673,19 +673,19 @@ Options that are also system variables are listed after:
 ## Storage Engine Options
 
 
-#### `<code>--skip-bdb</code>`
+#### `--skip-bdb`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">----skip-bdb</code>`
+* Commandline: `----skip-bdb`
 * Description: Deprecated option; Exists only for compatibility with very old my.cnf files.
 * Removed: [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md)
 
 
 
-#### `<code>--external-locking</code>`
+#### `--external-locking`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--external-locking</code>`
+* Commandline: `--external-locking`
 * Description: Use system (external) locking (disabled by default). With this option enabled you can run [myisamchk](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) to test (not repair) tables while the server is running. Disable with [--skip-external-locking](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#skip_external_locking). From [MariaDB 10.2.40](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10240-release-notes.md), [MariaDB 10.3.31](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10331-release-notes.md), [MariaDB 10.4.21](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10421-release-notes.md), [MariaDB 10.5.12](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10512-release-notes.md), [MariaDB 10.6.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1064-release-notes.md) and all later version, this effects InnoDB and can be used to prevent multiple instances running on the same data.
 
 
@@ -696,10 +696,10 @@ Options that are also system variables are listed after:
 The options related to the [MyISAM](../../../reference/storage-engines/myisam-storage-engine/README.md) storage engine are described below. Options that are also system variables are listed after:
 
 
-#### `<code>--log-isam</code>`
+#### `--log-isam`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--log-isam[=file_name]</code>`
+* Commandline: `--log-isam[=file_name]`
 * Description: Enable the [MyISAM log](../../server-monitoring-logs/myisam-log.md), which logs all MyISAM changes to file. If no filename is provided, the default, myisam.log is used.
 
 
@@ -738,151 +738,151 @@ Some options and system variables related to the [MyISAM](../../../reference/sto
 The options related to the [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) storage engine are described below. Options that are also system variables are listed after:
 
 
-#### `<code>--innodb</code>`
+#### `--innodb`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--innodb=value</code>`, `<code class="fixed" style="white-space:pre-wrap">--skip-innodb</code>`
-* Description: This variable controls whether or not to load the InnoDB storage engine. Possible values are `<code>ON</code>`, `<code>OFF</code>`, `<code>FORCE</code>` or `<code>FORCE_PLUS_PERMANENT</code>` (from [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)). If set to `<code>OFF</code>` (the same as --skip-innodb), since InnoDB is the default storage engine, the server will not start unless another storage engine has been chosen with [--default-storage-engine](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine). `<code>FORCE</code>` means that the storage engine must be successfully loaded, or else the server won't start. `<code>FORCE_PLUS_PERMANENT</code>` enables the plugin, but if plugin cannot initialize, the server will not start. In addition, the plugin cannot be uninstalled while the server is running.
+* Commandline: `--innodb=value`, `--skip-innodb`
+* Description: This variable controls whether or not to load the InnoDB storage engine. Possible values are `ON`, `OFF`, `FORCE` or `FORCE_PLUS_PERMANENT` (from [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)). If set to `OFF` (the same as --skip-innodb), since InnoDB is the default storage engine, the server will not start unless another storage engine has been chosen with [--default-storage-engine](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine). `FORCE` means that the storage engine must be successfully loaded, or else the server won't start. `FORCE_PLUS_PERMANENT` enables the plugin, but if plugin cannot initialize, the server will not start. In addition, the plugin cannot be uninstalled while the server is running.
 
 
 
-#### `<code>--innodb-cmp</code>`
+#### `--innodb-cmp`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--innodb-cmp</code>`
+* Commandline: `--innodb-cmp`
 * Description:
-* Default: `<code>ON</code>`
+* Default: `ON`
 
 
 
-#### `<code>--innodb-cmp-reset</code>`
+#### `--innodb-cmp-reset`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--innodb-cmp-reset</code>`
+* Commandline: `--innodb-cmp-reset`
 * Description:
-* Default: `<code>ON</code>`
+* Default: `ON`
 
 
 
-#### `<code>--innodb-cmpmem</code>`
+#### `--innodb-cmpmem`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--innodb-cmpmem</code>`
+* Commandline: `--innodb-cmpmem`
 * Description:
-* Default: `<code>ON</code>`
+* Default: `ON`
 
 
 
-#### `<code>--innodb-cmpmem-reset</code>`
+#### `--innodb-cmpmem-reset`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--innodb-cmpmem-reset</code>`
+* Commandline: `--innodb-cmpmem-reset`
 * Description:
-* Default: `<code>ON</code>`
+* Default: `ON`
 
 
 
-#### `<code>--innodb-file-io-threads</code>`
+#### `--innodb-file-io-threads`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--innodb-file-io-threads</code>`
+* Commandline: `--innodb-file-io-threads`
 * Description:
-* Default: `<code>4</code>`
+* Default: `4`
 * Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
 
 
 
-#### `<code>--innodb-index-stats</code>`
+#### `--innodb-index-stats`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--innodb-index-stats</code>`
+* Commandline: `--innodb-index-stats`
 * Description:
-* Default: `<code>ON</code>`
+* Default: `ON`
 * Removed: [MariaDB 10.0.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes.md)
 
 
 
-#### `<code>--innodb-lock-waits</code>`
+#### `--innodb-lock-waits`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--innodb-lock-waits</code>`
+* Commandline: `--innodb-lock-waits`
 * Description:
-* Default: `<code>ON</code>`
+* Default: `ON`
 
 
 
-#### `<code>--innodb-locks</code>`
+#### `--innodb-locks`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--innodb-locks</code>`
+* Commandline: `--innodb-locks`
 * Description:
-* Default: `<code>ON</code>`
+* Default: `ON`
 
 
 
-#### `<code>--innodb-rseg</code>`
+#### `--innodb-rseg`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--innodb-rseg</code>`
+* Commandline: `--innodb-rseg`
 * Description:
-* Default: `<code>ON</code>`
+* Default: `ON`
 * Removed: [MariaDB 10.0.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes.md)
 
 
 
-#### `<code>--innodb-status-file</code>`
+#### `--innodb-status-file`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--innodb-status-file</code>`
+* Commandline: `--innodb-status-file`
 * Description:
-* Default: `<code>FALSE</code>`
+* Default: `FALSE`
 
 
 
-#### `<code>--innodb-sys-indexes</code>`
+#### `--innodb-sys-indexes`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--innodb-sys-indexes</code>`
+* Commandline: `--innodb-sys-indexes`
 * Description:
-* Default: `<code>ON</code>`
+* Default: `ON`
 
 
 
-#### `<code>--innodb-sys-stats</code>`
+#### `--innodb-sys-stats`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--innodb-sys-stats</code>`
+* Commandline: `--innodb-sys-stats`
 * Description:
-* Default: `<code>ON</code>`
+* Default: `ON`
 * Removed: [MariaDB 10.0.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes.md)
 
 
 
-#### `<code>--innodb-sys-tables</code>`
+#### `--innodb-sys-tables`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--innodb-sys-tables</code>`
+* Commandline: `--innodb-sys-tables`
 * Description:
-* Default: `<code>ON</code>`
+* Default: `ON`
 
 
 
-#### `<code>--innodb-table-stats</code>`
+#### `--innodb-table-stats`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--innodb-table-stats</code>`
+* Commandline: `--innodb-table-stats`
 * Description:
-* Default: `<code>ON</code>`
+* Default: `ON`
 * Removed: [MariaDB 10.0.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes.md)
 
 
 
-#### `<code>--innodb-trx</code>`
+#### `--innodb-trx`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--innodb-trx</code>`
+* Commandline: `--innodb-trx`
 * Description:
-* Default: `<code>ON</code>`
+* Default: `ON`
 
 
 
@@ -1243,7 +1243,7 @@ The options and system variables related to the [TokuDB](../../../reference/stor
 ### Vector Options
 
 
-The options and system variables related to [Vectors](../../../reference/sql-statements-and-structure/vectors/README.md) storage engine (beginning with `<code>mhnsw</code>`) can be found [here](../../../reference/sql-statements-and-structure/vectors/vector-system-variables.md).
+The options and system variables related to [Vectors](../../../reference/sql-statements-and-structure/vectors/README.md) storage engine (beginning with `mhnsw`) can be found [here](../../../reference/sql-statements-and-structure/vectors/vector-system-variables.md).
 
 
 ## Performance Schema Options
@@ -1255,111 +1255,111 @@ The options related to the [Performance Schema](../../../reference/sql-statement
 
 
 
-#### `<code>--performance-schema-consumer-events-stages-current</code>`
+#### `--performance-schema-consumer-events-stages-current`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-stages-current</code>`
+* Commandline: `--performance-schema-consumer-events-stages-current`
 * Description: Enable the [events-stages-current](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_current-table.md) consumer.
-* Default: `<code>OFF</code>`
+* Default: `OFF`
 
 
 
-#### `<code>--performance-schema-consumer-events-stages-history</code>`
+#### `--performance-schema-consumer-events-stages-history`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-stages-history</code>`
+* Commandline: `--performance-schema-consumer-events-stages-history`
 * Description: Enable the [events-stages-history](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history-table.md) consumer.
-* Default: `<code>OFF</code>`
+* Default: `OFF`
 
 
 
-#### `<code>--performance-schema-consumer-events-stages-history-long</code>`
+#### `--performance-schema-consumer-events-stages-history-long`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-stages-history-long</code>`
+* Commandline: `--performance-schema-consumer-events-stages-history-long`
 * Description: Enable the [events-stages-history-long](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history_long-table.md) consumer.
-* Default: `<code>OFF</code>`
+* Default: `OFF`
 
 
 
-#### `<code>--performance-schema-consumer-events-statements-current</code>`
+#### `--performance-schema-consumer-events-statements-current`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-statements-current</code>`
-* Description: Enable the [events-statements-current](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_current-table.md) consumer. Use `<code>--skip-performance-schema-consumer-events-statements-current</code>` to disable.
-* Default: `<code>ON</code>`
+* Commandline: `--performance-schema-consumer-events-statements-current`
+* Description: Enable the [events-statements-current](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_current-table.md) consumer. Use `--skip-performance-schema-consumer-events-statements-current` to disable.
+* Default: `ON`
 
 
 
-#### `<code>--performance-schema-consumer-events-statements-history</code>`
+#### `--performance-schema-consumer-events-statements-history`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-statements-history</code>`
+* Commandline: `--performance-schema-consumer-events-statements-history`
 * Description: Enable the [events-statements-history](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history-table.md) consumer.
-* Default: `<code>OFF</code>`
+* Default: `OFF`
 
 
 
-#### `<code>--performance-schema-consumer-events-statements-history-long</code>`
+#### `--performance-schema-consumer-events-statements-history-long`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-statements-history-long</code>`
+* Commandline: `--performance-schema-consumer-events-statements-history-long`
 * Description: Enable the [events-statements-history-long](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history_long-table.md) consumer.
-* Default: `<code>OFF</code>`
+* Default: `OFF`
 
 
 
-#### `<code>--performance-schema-consumer-events-waits-current</code>`
+#### `--performance-schema-consumer-events-waits-current`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-waits-current</code>`
+* Commandline: `--performance-schema-consumer-events-waits-current`
 * Description: Enable the [events-waits-current](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_current-table.md) consumer.
-* Default: `<code>OFF</code>`
+* Default: `OFF`
 
 
 
-#### `<code>--performance-schema-consumer-events-waits-history</code>`
+#### `--performance-schema-consumer-events-waits-history`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-waits-history</code>`
+* Commandline: `--performance-schema-consumer-events-waits-history`
 * Description: Enable the [events-waits-history](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history-table.md) consumer.
-* Default: `<code>OFF</code>`
+* Default: `OFF`
 
 
 
-#### `<code>--performance-schema-consumer-events-waits-history-long</code>`
+#### `--performance-schema-consumer-events-waits-history-long`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-waits-history-long</code>`
+* Commandline: `--performance-schema-consumer-events-waits-history-long`
 * Description: Enable the [events-waits-history-long](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history_long-table.md) consumer.
-* Default: `<code>OFF</code>`
+* Default: `OFF`
 
 
 
-#### `<code>--performance-schema-consumer-global-instrumentation</code>`
+#### `--performance-schema-consumer-global-instrumentation`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-global-instrumentation</code>`
-* Description: Enable the global-instrumentation consumer. Use `<code>--skip-performance-schema-consumer-global-instrumentation</code>` to disable.
-* Default: `<code>ON</code>`
-
-
-
-#### `<code>--performance-schema-consumer-statements-digest</code>`
-
-
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-statements-digest</code>`
-* Description: Enable the statements-digest consumer. Use `<code>--skip-performance-schema-consumer-statements-digest</code>` to disable.
-* Default: `<code>ON</code>`
+* Commandline: `--performance-schema-consumer-global-instrumentation`
+* Description: Enable the global-instrumentation consumer. Use `--skip-performance-schema-consumer-global-instrumentation` to disable.
+* Default: `ON`
 
 
 
-#### `<code>--performance-schema-consumer-thread-instrumentation</code>`
+#### `--performance-schema-consumer-statements-digest`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-thread-instrumentation</code>`
-* Description: Enable the statements-thread-instrumentation. Use `<code>--skip-performance-schema-thread-instrumentation</code>` to disable.
-* Default: `<code>ON</code>`
+* Commandline: `--performance-schema-consumer-statements-digest`
+* Description: Enable the statements-digest consumer. Use `--skip-performance-schema-consumer-statements-digest` to disable.
+* Default: `ON`
+
+
+
+#### `--performance-schema-consumer-thread-instrumentation`
+
+
+* Commandline: `--performance-schema-consumer-thread-instrumentation`
+* Description: Enable the statements-thread-instrumentation. Use `--skip-performance-schema-thread-instrumentation` to disable.
+* Default: `ON`
 
 
 
@@ -1429,10 +1429,10 @@ Some options and system variables related to the [Performance Schema](../../../r
 The options related to [Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) are described below. Options that are also system variables are listed after:
 
 
-#### `<code>--wsrep-new-cluster</code>`
+#### `--wsrep-new-cluster`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--wsrep-new-cluster</code>`
+* Commandline: `--wsrep-new-cluster`
 * Description: Bootstrap a cluster. It works by overriding the current value of wsrep_cluster_address. It is recommended not to add this option to the config file as this will trigger bootstrap on every server start.
 
 
@@ -1497,74 +1497,74 @@ Some options and system variables related to [Galera Cluster](../../../reference
 ## Options When Debugging mariadbd
 
 
-#### `<code>--debug-assert-if-crashed-table</code>`
+#### `--debug-assert-if-crashed-table`
 
 
 * Description: Do an assert in handler::print_error() if we get a crashed table.
 
 
 
-#### `<code>--debug-binlog-fsync-sleep</code>`
+#### `--debug-binlog-fsync-sleep`
 
 
-* Description: `<code class="fixed" style="white-space:pre-wrap">--debug-binlog-fsync-sleep=#</code>`If not set to zero, sets the number of micro-seconds to sleep after running fsync() on the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to flush transactions to disk. This can thus be used to artificially increase the perceived cost of such an fsync().
-
-
-
-#### `<code>--debug-crc-break</code>`
-
-
-* Description: `<code class="fixed" style="white-space:pre-wrap">--debug-crc-break=#</code>`Call my_debug_put_break_here() if crc matches this number (for debug).
+* Description: `--debug-binlog-fsync-sleep=#`If not set to zero, sets the number of micro-seconds to sleep after running fsync() on the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to flush transactions to disk. This can thus be used to artificially increase the perceived cost of such an fsync().
 
 
 
-#### `<code>--debug-flush</code>`
+#### `--debug-crc-break`
+
+
+* Description: `--debug-crc-break=#`Call my_debug_put_break_here() if crc matches this number (for debug).
+
+
+
+#### `--debug-flush`
 
 
 * Description: Default debug log with flush after write.
 
 
 
-#### `<code>--debug-no-sync</code>`
+#### `--debug-no-sync`
 
 
-* Description: `<code class="fixed" style="white-space:pre-wrap">debug-no-sync[=#]</code>`Disables system sync calls. Only for running tests or debugging!
-
-
-
-#### `<code>--debug-sync-timeout</code>`
-
-
-* Description: `<code class="fixed" style="white-space:pre-wrap">debug-sync-timeout[=#]</code>`Enable the debug sync facility and optionally specify a default wait timeout in seconds. A zero value keeps the facility disabled.
+* Description: `debug-no-sync[=#]`Disables system sync calls. Only for running tests or debugging!
 
 
 
-#### `<code>--gdb</code>`
+#### `--debug-sync-timeout`
+
+
+* Description: `debug-sync-timeout[=#]`Enable the debug sync facility and optionally specify a default wait timeout in seconds. A zero value keeps the facility disabled.
+
+
+
+#### `--gdb`
 
 
 * Description: Set up signals usable for debugging.
 
 
 
-#### `<code>--silent-startup</code>`
+#### `--silent-startup`
 
 
 * Description: Don't print Notes to the [error log](../../server-monitoring-logs/error-log.md) during startup.
 
 
 
-#### `<code>--sync-sys</code>`
+#### `--sync-sys`
 
 
-* Description: Enable/disable system sync calls. Syncs should only be turned off (`<code class="fixed" style="white-space:pre-wrap">--disable-sync-sys</code>`) when running tests or debugging! Replaced by [debug-no-sync](#-debug-no-sync) from [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).
+* Description: Enable/disable system sync calls. Syncs should only be turned off (`--disable-sync-sys`) when running tests or debugging! Replaced by [debug-no-sync](#-debug-no-sync) from [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).
 * Removed: [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
 
 
 
-#### `<code>--thread-alarm</code>`
+#### `--thread-alarm`
 
 
-* Description: Enable/disable system thread alarm calls. Should only be turned off (`<code class="fixed" style="white-space:pre-wrap">--disable-thread-alarm</code>`) when running tests or debugging!
+* Description: Enable/disable system thread alarm calls. Should only be turned off (`--disable-thread-alarm`) when running tests or debugging!
 
 
 
@@ -1582,338 +1582,338 @@ Some options and system variables related to [Galera Cluster](../../../reference
 Options that are also system variables are listed after:
 
 
-#### `<code>--allow-suspicious-udfs</code>`
+#### `--allow-suspicious-udfs`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--allow-suspicious-udfs</code>`
-* Description: Allows use of [user-defined functions](../../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md) consisting of only one symbol `<code>x()</code>` without corresponding `<code>x_init()</code>` or `<code>x_deinit()</code>`. That also means that one can load any function from any library, for example `<code>exit()</code>` from `<code>libc.so</code>`. Not recommended unless you require old UDFs with one symbol that cannot be recompiled. From [MariaDB 10.10](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), available as a [system variable](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#allow_suspicious_udfs) as well.
+* Commandline: `--allow-suspicious-udfs`
+* Description: Allows use of [user-defined functions](../../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md) consisting of only one symbol `x()` without corresponding `x_init()` or `x_deinit()`. That also means that one can load any function from any library, for example `exit()` from `libc.so`. Not recommended unless you require old UDFs with one symbol that cannot be recompiled. From [MariaDB 10.10](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), available as a [system variable](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#allow_suspicious_udfs) as well.
 
 
 
-#### `<code>--bootstrap</code>`
+#### `--bootstrap`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--bootstrap</code>`
+* Commandline: `--bootstrap`
 * Description: Used by mariadb installation scripts, such as [mariadb-install-db](../mariadb-install-db-exe.md) to execute SQL scripts before any privilege or system tables exist. Do no use while an existing MariaDB instance is running.
 
 
 
-#### `<code>--chroot</code>`
+#### `--chroot`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--chroot=name</code>`
+* Commandline: `--chroot=name`
 * Description: Chroot mariadbd daemon during startup.
 
 
 
-#### `<code>--des-key-file</code>`
+#### `--des-key-file`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--des-key-file=name</code>`
+* Commandline: `--des-key-file=name`
 * Description: Load keys for [des_encrypt()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt.md) and des_encrypt from given file.
 
 
 
-#### `<code>--exit-info</code>`
+#### `--exit-info`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--exit-info[=#]</code>`
+* Commandline: `--exit-info[=#]`
 * Description: Used for debugging. Use at your own risk.
 
 
 
-#### `<code>--getopt-prefix-matching</code>`
+#### `--getopt-prefix-matching`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--getopt-prefix-matching={0|1}</code>`
+* Commandline: `--getopt-prefix-matching={0|1}`
 * Description: Makes it possible to disable historical "unambiguous prefix" matching in the command-line option parsing.
 * Default: TRUE
 * Introduced: [MariaDB 10.1.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md)
 
 
 
-#### `<code>--help</code>`
+#### `--help`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--help</code>`
+* Commandline: `--help`
 * Description: Displays help with many commandline options described, and exits. From [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md), includes deprecation information.
 
 
 
-#### `<code>--log-ddl-recovery</code>`
+#### `--log-ddl-recovery`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--log-ddl-recovery=name</code>`
+* Commandline: `--log-ddl-recovery=name`
 * Description: Path to file used for recovery of DDL statements after a crash.
-* Default Value: `<code>ddl-recover.log</code>`
+* Default Value: `ddl-recover.log`
 * Introduced: [MariaDB 10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md)
 
 
-#### `<code>--log-short-format</code>`
+#### `--log-short-format`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--log-short-format</code>`
+* Commandline: `--log-short-format`
 * Description: Don't log extra information to update and [slow-query](../../server-monitoring-logs/slow-query-log/slow-query-log-overview.md) logs.
 
 
 
-#### `<code>--log-slow-file</code>`
+#### `--log-slow-file`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--log-slow-file=name</code>`
+* Commandline: `--log-slow-file=name`
 * Description: Log [slow queries](../../server-monitoring-logs/slow-query-log/slow-query-log-overview.md) to given log file. Defaults logging to hostname-slow.log
 
 
 
-#### `<code>--log-slow-time</code>`
+#### `--log-slow-time`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--log-slow-time=#</code>`
+* Commandline: `--log-slow-time=#`
 * Description: Log all queries that have taken more than [long-query-time](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#long_query_time) seconds to execute to the slow query log, if active. The argument will be treated as a decimal value with microsecond precision.
 
 
 
-#### `<code>--log-tc</code>`
+#### `--log-tc`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--log-tc=name</code>`
-* Description: Defines the path to the memory-mapped file-based transaction coordinator log, which is only used if the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is disabled. If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available. See [Transaction Coordinator Log](../../server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md) for more information. Also see the the `<code>[log_tc_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_tc_size)</code>` system variable and the `<code>[--tc-heuristic-recover](#-tc-heuristic-recover)</code>` option.
-* Default Value: `<code>tc.log</code>`
+* Commandline: `--log-tc=name`
+* Description: Defines the path to the memory-mapped file-based transaction coordinator log, which is only used if the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is disabled. If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available. See [Transaction Coordinator Log](../../server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md) for more information. Also see the the `[log_tc_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_tc_size)` system variable and the `[--tc-heuristic-recover](#-tc-heuristic-recover)` option.
+* Default Value: `tc.log`
 
 
 
-#### `<code>--master-connect-retry</code>`
+#### `--master-connect-retry`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--master-connect-retry=#</code>`
+* Commandline: `--master-connect-retry=#`
 * Description: Deprecated in 5.1.17 and removed in 5.5. The number of seconds the replica thread will sleep before retrying to connect to the master, in case the master goes down or the connection is lost.
 
 
 
-#### `<code>--memlock</code>`
+#### `--memlock`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--memlock</code>`
+* Commandline: `--memlock`
 * Description: Lock mariadbd in memory.
 
 
 
-#### `<code>--ndb-use-copying-alter-table</code>`
+#### `--ndb-use-copying-alter-table`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--ndb-use-copying-alter-table</code>`
+* Commandline: `--ndb-use-copying-alter-table`
 * Description: Force ndbcluster to always copy tables at alter table (should only be used if on-line alter table fails).
 
 
 
-#### `<code>--one-thread</code>`
+#### `--one-thread`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--one-thread</code>`
+* Commandline: `--one-thread`
 * Description: (Deprecated): Only use one thread (for debugging under Linux). Use [thread-handling=no-threads](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) instead.
 * Removed: [MariaDB 10.0.4](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes.md)
 
 
 
-#### `<code>--plugin-load</code>`
+#### `--plugin-load`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--plugin-load=name</code>`
+* Commandline: `--plugin-load=name`
 * Description: This option can be used to configure the server to load specific [plugins](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md). This option uses the following format:
 
-  * Plugins can be specified in the format `<code>name=library</code>`, where `<code>name</code>` is the plugin name and `<code>library</code>` is the plugin library. This format installs a single plugin from the given plugin library.
-  * Plugins can also be specified in the format `<code>library</code>`, where `<code>library</code>` is the plugin library. This format installs all plugins from the given plugin library.
+  * Plugins can be specified in the format `name=library`, where `name` is the plugin name and `library` is the plugin library. This format installs a single plugin from the given plugin library.
+  * Plugins can also be specified in the format `library`, where `library` is the plugin library. This format installs all plugins from the given plugin library.
   * Multiple plugins can be specified by separating them with semicolons.
-* Special care must be taken when specifying the `<code>[--plugin-load](mariadbd-options.md#-plugin-load)</code>` option multiple times, or when specifying both the `<code>[--plugin-load](mariadbd-options.md#-plugin-load)</code>` option and the `<code>[--plugin-load-add](mariadbd-options.md#-plugin-load-add)</code>` option together. The `<code>[--plugin-load](mariadbd-options.md#-plugin-load)</code>` option resets the plugin load list, and this can cause unexpected problems if you are not aware. The `<code>[--plugin-load-add](mariadbd-options.md#-plugin-load-add)</code>` option does not reset the plugin load list, so it is much safer to use. See [Plugin Overview: Specifying Multiple Plugin Load Options](../../../reference/plugins/plugin-overview.md#specifying-multiple-plugin-load-options) for more information.
+* Special care must be taken when specifying the `[--plugin-load](mariadbd-options.md#-plugin-load)` option multiple times, or when specifying both the `[--plugin-load](mariadbd-options.md#-plugin-load)` option and the `[--plugin-load-add](mariadbd-options.md#-plugin-load-add)` option together. The `[--plugin-load](mariadbd-options.md#-plugin-load)` option resets the plugin load list, and this can cause unexpected problems if you are not aware. The `[--plugin-load-add](mariadbd-options.md#-plugin-load-add)` option does not reset the plugin load list, so it is much safer to use. See [Plugin Overview: Specifying Multiple Plugin Load Options](../../../reference/plugins/plugin-overview.md#specifying-multiple-plugin-load-options) for more information.
 * See [Plugin Overview: Installing a Plugin with Plugin Load Options](../../../reference/plugins/plugin-overview.md#installing-a-plugin-with-plugin-load-options) for more information.
 
 
 
-#### `<code>--plugin-load-add</code>`
+#### `--plugin-load-add`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--plugin-load-add=name</code>`
+* Commandline: `--plugin-load-add=name`
 * Description: This option can be used to configure the server to load specific [plugins](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md). This option uses the following format:
 
-  * Plugins can be specified in the format `<code>name=library</code>`, where `<code>name</code>` is the plugin name and `<code>library</code>` is the plugin library. This format installs a single plugin from the given plugin library.
-  * Plugins can also be specified in the format `<code>library</code>`, where `<code>library</code>` is the plugin library. This format installs all plugins from the given plugin library.
+  * Plugins can be specified in the format `name=library`, where `name` is the plugin name and `library` is the plugin library. This format installs a single plugin from the given plugin library.
+  * Plugins can also be specified in the format `library`, where `library` is the plugin library. This format installs all plugins from the given plugin library.
   * Multiple plugins can be specified by separating them with semicolons.
-* Special care must be taken when specifying both the `<code>[--plugin-load](mariadbd-options.md#-plugin-load)</code>` option and the `<code>[--plugin-load-add](mariadbd-options.md#-plugin-load-add)</code>` option together. The `<code>[--plugin-load](mariadbd-options.md#-plugin-load)</code>` option resets the plugin load list, and this can cause unexpected problems if you are not aware. The `<code>[--plugin-load-add](mariadbd-options.md#-plugin-load-add)</code>` option does not reset the plugin load list, so it is much safer to use. See [Plugin Overview: Specifying Multiple Plugin Load Options](../../../reference/plugins/plugin-overview.md#specifying-multiple-plugin-load-options) for more information.
+* Special care must be taken when specifying both the `[--plugin-load](mariadbd-options.md#-plugin-load)` option and the `[--plugin-load-add](mariadbd-options.md#-plugin-load-add)` option together. The `[--plugin-load](mariadbd-options.md#-plugin-load)` option resets the plugin load list, and this can cause unexpected problems if you are not aware. The `[--plugin-load-add](mariadbd-options.md#-plugin-load-add)` option does not reset the plugin load list, so it is much safer to use. See [Plugin Overview: Specifying Multiple Plugin Load Options](../../../reference/plugins/plugin-overview.md#specifying-multiple-plugin-load-options) for more information.
 * See [Plugin Overview: Installing a Plugin with Plugin Load Options](../../../reference/plugins/plugin-overview.md#installing-a-plugin-with-plugin-load-options) for more information.
 
 
 
-#### `<code>--port-open-timeout</code>`
+#### `--port-open-timeout`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--port-open-timeout=#</code>`
+* Commandline: `--port-open-timeout=#`
 * Description: Maximum time in seconds to wait for the port to become free. (Default: No wait).
 
 
 
-#### `<code>--safe-user-create</code>`
+#### `--safe-user-create`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--safe-user-create</code>`
+* Commandline: `--safe-user-create`
 * Description: Don't allow new user creation by the user who has no write privileges to the [mysql.user](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table.
 
 
 
-#### `<code>--safemalloc-mem-limit</code>`
+#### `--safemalloc-mem-limit`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--safemalloc-mem-limit=#</code>`
-* Description: Simulate memory shortage when compiled with the `<code><code>--</code>with-debug=full</code>` option.
+* Commandline: `--safemalloc-mem-limit=#`
+* Description: Simulate memory shortage when compiled with the `<code>--</code>with-debug=full` option.
 
 
 
-#### `<code>--show-slave-auth-info</code>`
+#### `--show-slave-auth-info`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--show-slave-auth-info</code>`
+* Commandline: `--show-slave-auth-info`
 * Description: Show user and password in SHOW SLAVE HOSTS on this primary.
 
 
 
-#### `<code>--skip-grant-tables</code>`
+#### `--skip-grant-tables`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--skip-grant-tables</code>`
+* Commandline: `--skip-grant-tables`
 * Description: Start without grant tables. This gives all users FULL ACCESS to all tables, which is useful in case of a lost root password. Use [mariadb-admin flush-privileges](../../../clients-and-utilities/mariadb-admin.md), [mariadb-admin reload](../../../clients-and-utilities/mariadb-admin.md) or [FLUSH PRIVILEGES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) to resume using the grant tables. From [MariaDB 10.10](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), available as a [system variable](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#skip_grant_tables) as well.
 
 
-Because the [Event Scheduler](../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/README.md) also depends on the grant tables for its functionality, it is automatically disabled when running with `<code class="fixed" style="white-space:pre-wrap">--skip-grant-tables</code>`.
+Because the [Event Scheduler](../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/README.md) also depends on the grant tables for its functionality, it is automatically disabled when running with `--skip-grant-tables`.
 
 
 
-#### `<code>--skip-host-cache</code>`
+#### `--skip-host-cache`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--skip-host-cache</code>`
+* Commandline: `--skip-host-cache`
 * Description: Don't cache host names.
 
 
 
-#### `<code>--skip-partition</code>`
+#### `--skip-partition`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--skip-partition</code>`, `<code class="fixed" style="white-space:pre-wrap">--disable-partition</code>`
+* Commandline: `--skip-partition`, `--disable-partition`
 * Description: Disables user-defined [partitioning](../../partitioning-tables/README.md). Previously partitioned tables cannot be accessed or modifed. Tables can still be seen with [SHOW TABLES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-tables.md) or by viewing the [INFORMATION_SCHEMA.TABLES table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md). Tables can be dropped with [DROP TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md), but this only removes .frm files, not the associated .par files, which will need to be removed manually.
 
 
 
-#### `<code>--skip-slave-start</code>`
+#### `--skip-slave-start`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--skip-slave-start</code>`
+* Commandline: `--skip-slave-start`
 * Description: If set, replica is not autostarted.
 
 
 
-#### `<code>--skip-ssl</code>`
+#### `--skip-ssl`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--skip-ssl</code>`
+* Commandline: `--skip-ssl`
 * Description: Disable [TLS connections](../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md).
 
 
 
-#### `<code>--skip-symlink</code>`
+#### `--skip-symlink`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--skip-symlink</code>`
-* Description: Don't allow symlinking of tables. Deprecated and removed in [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md). Use [symbolic-links](#-symbolic-links) with the `<code>skip</code>` [option prefix](#option-prefixes) instead.
+* Commandline: `--skip-symlink`
+* Description: Don't allow symlinking of tables. Deprecated and removed in [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md). Use [symbolic-links](#-symbolic-links) with the `skip` [option prefix](#option-prefixes) instead.
 * Removed: [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
 
 
 
-#### `<code>--skip-thread-priority</code>`
+#### `--skip-thread-priority`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--skip-thread-priority</code>`
+* Commandline: `--skip-thread-priority`
 * Description: Don't give threads different priorities. Deprecated and removed in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md).
 * Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
 
 
 
-#### `<code>--sql-bin-update-same</code>`
+#### `--sql-bin-update-same`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--sql-bin-update-same=#</code>`
+* Commandline: `--sql-bin-update-same=#`
 * Description: The update log was deprecated in version 5.0 and replaced by the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), so this option did nothing since then. Deprecated and removed in [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).
 * Removed: [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
 
 
 
-#### `<code>--ssl</code>`
+#### `--ssl`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--ssl</code>`
-* Description: Enable [TLS for connection](../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md) (automatically enabled with other flags). Disable with '`<code><code>--</code>skip-ssl</code>`'.
-
-
-
-#### `<code>--stack-trace</code>`
-
-
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--stack-trace</code>`, `<code class="fixed" style="white-space:pre-wrap">--skip-stack-trace</code>`
-* Description: Print a stack trace on failure. Enabled by default, disable with `<code>-skip-stack-trace</code>`.
+* Commandline: `--ssl`
+* Description: Enable [TLS for connection](../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md) (automatically enabled with other flags). Disable with '`<code>--</code>skip-ssl`'.
 
 
 
-#### `<code>--symbolic-links</code>`
+#### `--stack-trace`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--symbolic-links</code>`
-* Description: Enables symbolic link support. When set, the [have_symlink](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#have_symlink) system variable shows as `<code>YES</code>`. Silently ignored in Windows. Use `<code>--skip-symbolic-links</code>` to disable.
-
-
-
-#### `<code>--tc-heuristic-recover</code>`
-
-
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--tc-heuristic-recover=name</code>`
-* Description: If [manual heuristic recovery](../../server-monitoring-logs/transaction-coordinator-log/heuristic-recovery-with-the-transaction-coordinator-log.md) is needed, this option defines the decision to use in the heuristic recovery process. Manual heuristic recovery may be needed if the [transaction coordination log](../../server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md) is missing or if it doesn't contain all prepared transactions. This option can be set to `<code>OFF</code>`, `<code>COMMIT</code>`, or `<code>ROLLBACK</code>`. The default is `<code>OFF</code>`. See also the `<code>[--log-tc](mariadbd-options.md#-log-tc)</code>` server option and the `<code>[log_tc_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_tc_size)</code>` system variable.
+* Commandline: `--stack-trace`, `--skip-stack-trace`
+* Description: Print a stack trace on failure. Enabled by default, disable with `-skip-stack-trace`.
 
 
 
-#### `<code>--temp-pool</code>`
+#### `--symbolic-links`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--temp-pool</code>`
+* Commandline: `--symbolic-links`
+* Description: Enables symbolic link support. When set, the [have_symlink](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#have_symlink) system variable shows as `YES`. Silently ignored in Windows. Use `--skip-symbolic-links` to disable.
+
+
+
+#### `--tc-heuristic-recover`
+
+
+* Commandline: `--tc-heuristic-recover=name`
+* Description: If [manual heuristic recovery](../../server-monitoring-logs/transaction-coordinator-log/heuristic-recovery-with-the-transaction-coordinator-log.md) is needed, this option defines the decision to use in the heuristic recovery process. Manual heuristic recovery may be needed if the [transaction coordination log](../../server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md) is missing or if it doesn't contain all prepared transactions. This option can be set to `OFF`, `COMMIT`, or `ROLLBACK`. The default is `OFF`. See also the `[--log-tc](mariadbd-options.md#-log-tc)` server option and the `[log_tc_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_tc_size)` system variable.
+
+
+
+#### `--temp-pool`
+
+
+* Commandline: `--temp-pool`
 * Description: Using this option will cause most temporary files created to use a small set of names, rather than a unique name for each new file. This behavior works around a bug in old Linux kernels where the kernel appeared to "leak" memory. In a Docker environment it might look like an unbounded working-set memory growth. 
-Defaults to `<code>1</code>` until [MariaDB 10.5.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1056-release-notes.md), use `<code>--skip-temp-pool</code>` to disable. Defaults to `<code>0</code>` from [MariaDB 10.5.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes.md), as benchmarking shows it causes a heavy mutex contention.
+Defaults to `1` until [MariaDB 10.5.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1056-release-notes.md), use `--skip-temp-pool` to disable. Defaults to `0` from [MariaDB 10.5.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes.md), as benchmarking shows it causes a heavy mutex contention.
 
 
 
-#### `<code>--test-expect-abort</code>`
+#### `--test-expect-abort`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--test-expect-abort</code>`
+* Commandline: `--test-expect-abort`
 * Description: Expect that server aborts with 'abort'; Don't write out server variables on 'abort'. Useful only for test scripts.
 
 
 
-#### `<code>--test-ignore-wrong-options</code>`
+#### `--test-ignore-wrong-options`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--test-ignore-wrong-options</code>`
+* Commandline: `--test-ignore-wrong-options`
 * Description: Ignore wrong enums values in command line arguments. Useful only for test scripts.
 
 
 
-#### `<code>--user</code>`
+#### `--user`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--user=name</code>`
+* Commandline: `--user=name`
 * Description: Run mariadbd daemon as user.
 
 
 
-#### `<code>--verbose</code>`
+#### `--verbose`
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">-v</code>`, `<code class="fixed" style="white-space:pre-wrap">--verbose</code>`
+* Commandline: `-v`, `--verbose`
 * Description: Used with [help](#help) option for detailed help.
 
 
@@ -2124,94 +2124,94 @@ Defaults to `<code>1</code>` until [MariaDB 10.5.6](../../../../release-notes/ma
 ## Authentication Plugins - Options and System Variables
 
 
-### Authentication Plugin - `<code>ed25519</code>`
+### Authentication Plugin - `ed25519`
 
 
-The options related to the `<code>[ed25519](../../../reference/plugins/authentication-plugins/authentication-plugin-ed25519.md)</code>` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-plugin-ed25519.md#options).
+The options related to the `[ed25519](../../../reference/plugins/authentication-plugins/authentication-plugin-ed25519.md)` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-plugin-ed25519.md#options).
 
 
-### Authentication Plugin - `<code>gssapi</code>`
+### Authentication Plugin - `gssapi`
 
 
-The system variables related to the `<code>[gssapi](../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md)</code>` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#system-variables).
+The system variables related to the `[gssapi](../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#system-variables).
 
 
-The options related to the `<code>[gssapi](../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md)</code>` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#options).
+The options related to the `[gssapi](../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#options).
 
 
-### Authentication Plugin - `<code>named_pipe</code>`
+### Authentication Plugin - `named_pipe`
 
 
-The options related to the `<code>[named_pipe](../../../reference/plugins/authentication-plugins/authentication-plugin-named-pipe.md)</code>` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-plugin-named-pipe.md#options).
+The options related to the `[named_pipe](../../../reference/plugins/authentication-plugins/authentication-plugin-named-pipe.md)` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-plugin-named-pipe.md#options).
 
 
-### Authentication Plugin - `<code>pam</code>`
+### Authentication Plugin - `pam`
 
 
-The system variables related to the `<code>[pam](../../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md)</code>` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#system-variables).
+The system variables related to the `[pam](../../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md)` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#system-variables).
 
 
-The options related to the `<code>[pam](../../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md)</code>` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#options).
+The options related to the `[pam](../../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md)` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#options).
 
 
-### Authentication Plugin - `<code>unix_socket</code>`
+### Authentication Plugin - `unix_socket`
 
 
-The options related to the `<code>[unix_socket](../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md)</code>` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md#options).
+The options related to the `[unix_socket](../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md)` authentication plugin can be found [here](../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md#options).
 
 
 ## Encryption Plugins - Options and System Variables
 
 
-### Encryption Plugin - `<code>aws_key_management</code>`
+### Encryption Plugin - `aws_key_management`
 
 
-The system variables related to the `<code>[aws_key_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin-setup-guide.md)</code>` encryption plugin can be found [here](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin-setup-guide.md#system-variables).
+The system variables related to the `[aws_key_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin-setup-guide.md)` encryption plugin can be found [here](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin-setup-guide.md#system-variables).
 
 
-The options elated to the `<code>[aws_key_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin-setup-guide.md)</code>` encryption plugin can be found [here](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin-setup-guide.md#options).
+The options elated to the `[aws_key_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin-setup-guide.md)` encryption plugin can be found [here](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin-setup-guide.md#options).
 
 
-### Encryption Plugin - `<code>file_key_management</code>`
+### Encryption Plugin - `file_key_management`
 
 
-The system variables related to the `<code>[file_key_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md)</code>` encryption plugin can be found [here](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#system-variables).
+The system variables related to the `[file_key_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md)` encryption plugin can be found [here](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#system-variables).
 
 
-The options related to the `<code>[file_key_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md)</code>` encryption plugin can be found [here](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#options).
+The options related to the `[file_key_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md)` encryption plugin can be found [here](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#options).
 
 
 ## Password Validation Plugins - Options and System Variables
 
 
-### Password Validation Plugin - `<code>simple_password_check</code>`
+### Password Validation Plugin - `simple_password_check`
 
 
-The system variables related to the `<code>[simple_password_check](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md)</code>` password validation plugin can be found [here](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md).
+The system variables related to the `[simple_password_check](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md)` password validation plugin can be found [here](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md).
 
 
-The options related to the `<code>[simple_password_check](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md)</code>` password validation plugin can be found [here](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md).
+The options related to the `[simple_password_check](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md)` password validation plugin can be found [here](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md).
 
 
-### Password Validation Plugin - `<code>cracklib_password_check</code>`
+### Password Validation Plugin - `cracklib_password_check`
 
 
-The system variables related to the `<code>[cracklib_password_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md)</code>` password validation plugin can be found [here](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
+The system variables related to the `[cracklib_password_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md)` password validation plugin can be found [here](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
 
 
-The options related to the `<code>[cracklib_password_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md)</code>` password validation plugin can be found [here](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
+The options related to the `[cracklib_password_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md)` password validation plugin can be found [here](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
 
 
 ## Audit Plugins - Options and System Variables
 
 
-### Audit Plugin - `<code>server_audit</code>`
+### Audit Plugin - `server_audit`
 
 
-Options and system variables related to the `<code>[server_audit](../../../reference/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)</code>` audit plugin can be found [here](../../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md).
+Options and system variables related to the `[server_audit](../../../reference/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)` audit plugin can be found [here](../../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md).
 
 
-### Audit Plugin - `<code>SQL_ERROR_LOG</code>`
+### Audit Plugin - `SQL_ERROR_LOG`
 
 
 The options and system variables related to the [SQL_ERROR_LOG](../../server-monitoring-logs/sql-error-log-plugin.md) audit plugin can be found [here](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#system-variables).
@@ -2220,13 +2220,13 @@ The options and system variables related to the [SQL_ERROR_LOG](../../server-mon
 ### Audit Plugin - QUERY_RESPONSE_TIME_AUDIT
 
 
-The options related to the `<code>[QUERY_RESPONSE_TIME_AUDIT](../../../reference/plugins/other-plugins/query-response-time-plugin.md)</code>` audit plugin can be found [here](../../../reference/plugins/other-plugins/query-response-time-plugin.md#options).
+The options related to the `[QUERY_RESPONSE_TIME_AUDIT](../../../reference/plugins/other-plugins/query-response-time-plugin.md)` audit plugin can be found [here](../../../reference/plugins/other-plugins/query-response-time-plugin.md#options).
 
 
 ## Daemon Plugins - Options and System Variables
 
 
-### Daemon Plugin - `<code>handlersocket</code>`
+### Daemon Plugin - `handlersocket`
 
 
 The options for the HandlerSocket plugin are all described on the [HandlerSocket Configuration Option](../../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md) page.
@@ -2235,85 +2235,85 @@ The options for the HandlerSocket plugin are all described on the [HandlerSocket
 ## Information Schema Plugins - Options and System Variables
 
 
-### Information Schema Plugin - `<code>DISKS</code>`
+### Information Schema Plugin - `DISKS`
 
 
-The options related to the `<code>[DISKS](../../../reference/plugins/other-plugins/disks-plugin.md)</code>` information schema plugin can be found [here](../../../reference/plugins/other-plugins/disks-plugin.md#options).
+The options related to the `[DISKS](../../../reference/plugins/other-plugins/disks-plugin.md)` information schema plugin can be found [here](../../../reference/plugins/other-plugins/disks-plugin.md#options).
 
 
-### Information Schema Plugin - `<code>feedback</code>`
+### Information Schema Plugin - `feedback`
 
 
-The system variables related to the `<code>[feedback](../../../reference/plugins/other-plugins/feedback-plugin.md)</code>` plugin can be found [here](../../../reference/plugins/other-plugins/feedback-plugin.md#system-variables).
+The system variables related to the `[feedback](../../../reference/plugins/other-plugins/feedback-plugin.md)` plugin can be found [here](../../../reference/plugins/other-plugins/feedback-plugin.md#system-variables).
 
 
-The options related to the `<code>[feedback](../../../reference/plugins/other-plugins/feedback-plugin.md)</code>` plugin can be found [here](../../../reference/plugins/other-plugins/feedback-plugin.md#options).
+The options related to the `[feedback](../../../reference/plugins/other-plugins/feedback-plugin.md)` plugin can be found [here](../../../reference/plugins/other-plugins/feedback-plugin.md#options).
 
 
-### Information Schema Plugin - `<code>LOCALES</code>`
+### Information Schema Plugin - `LOCALES`
 
 
-The options related to the `<code>[LOCALES](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md)</code>` information schema plugin can be found [here](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md#options).
+The options related to the `[LOCALES](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md)` information schema plugin can be found [here](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md#options).
 
 
-### Information Schema Plugin - `<code>METADATA_LOCK_INFO</code>`
+### Information Schema Plugin - `METADATA_LOCK_INFO`
 
 
-The options related to the `<code>[METADATA_LOCK_INFO](../../../reference/plugins/other-plugins/metadata-lock-info-plugin.md)</code>` information schema plugin can be found [here](../../../reference/plugins/other-plugins/metadata-lock-info-plugin.md).
+The options related to the `[METADATA_LOCK_INFO](../../../reference/plugins/other-plugins/metadata-lock-info-plugin.md)` information schema plugin can be found [here](../../../reference/plugins/other-plugins/metadata-lock-info-plugin.md).
 
 
-### Information Schema Plugin - `<code>QUERY_CACHE_INFO</code>`
+### Information Schema Plugin - `QUERY_CACHE_INFO`
 
 
-The options related to the `<code>[QUERY_CACHE_INFO](../../../reference/plugins/other-plugins/query-cache-information-plugin.md)</code>` information schema plugin can be found [here](../../../reference/plugins/other-plugins/query-cache-information-plugin.md#options).
+The options related to the `[QUERY_CACHE_INFO](../../../reference/plugins/other-plugins/query-cache-information-plugin.md)` information schema plugin can be found [here](../../../reference/plugins/other-plugins/query-cache-information-plugin.md#options).
 
 
-### Information Schema Plugin - `<code>QUERY_RESPONSE_TIME</code>`
+### Information Schema Plugin - `QUERY_RESPONSE_TIME`
 
 
-The system variables related to the `<code>[QUERY_RESPONSE_TIME](../../../reference/plugins/other-plugins/query-response-time-plugin.md)</code>` information schema plugin can be found [here](../../../reference/plugins/other-plugins/query-response-time-plugin.md#system-variables).
+The system variables related to the `[QUERY_RESPONSE_TIME](../../../reference/plugins/other-plugins/query-response-time-plugin.md)` information schema plugin can be found [here](../../../reference/plugins/other-plugins/query-response-time-plugin.md#system-variables).
 
 
-The options related to the `<code>[QUERY_RESPONSE_TIME](../../../reference/plugins/other-plugins/query-response-time-plugin.md)</code>` information schema plugin can be found [here](../../../reference/plugins/other-plugins/query-response-time-plugin.md#options).
+The options related to the `[QUERY_RESPONSE_TIME](../../../reference/plugins/other-plugins/query-response-time-plugin.md)` information schema plugin can be found [here](../../../reference/plugins/other-plugins/query-response-time-plugin.md#options).
 
 
-### Information Schema Plugin - `<code>user_variables</code>`
+### Information Schema Plugin - `user_variables`
 
 
-The options related to the `<code>[user_variables](../../../reference/plugins/other-plugins/user-variables-plugin.md)</code>` information schema plugin can be found [here](../../../reference/plugins/other-plugins/user-variables-plugin.md#options).
+The options related to the `[user_variables](../../../reference/plugins/other-plugins/user-variables-plugin.md)` information schema plugin can be found [here](../../../reference/plugins/other-plugins/user-variables-plugin.md#options).
 
 
-### Information Schema Plugin - `<code>WSREP_MEMBERSHIP</code>`
+### Information Schema Plugin - `WSREP_MEMBERSHIP`
 
 
-The options related to the `<code>[WSREP_MEMBERSHIP](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md)</code>` information schema plugin can be found [here](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md#options).
+The options related to the `[WSREP_MEMBERSHIP](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md)` information schema plugin can be found [here](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md#options).
 
 
-### Information Schema Plugin - `<code>WSREP_STATUS</code>`
+### Information Schema Plugin - `WSREP_STATUS`
 
 
-The options related to the `<code>[WSREP_STATUS](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md)</code>` information schema plugin can be found [here](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md#options).
+The options related to the `[WSREP_STATUS](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md)` information schema plugin can be found [here](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md#options).
 
 
 ## Replication Plugins - Options and System Variables
 
 
-### Replication Plugin - `<code>rpl_semi_sync_master</code>`
+### Replication Plugin - `rpl_semi_sync_master`
 
 
-The system variables related to the `<code>[rpl_semi_sync_master](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md)</code>` replication plugin can be found [here](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#system-variables).
+The system variables related to the `[rpl_semi_sync_master](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md)` replication plugin can be found [here](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#system-variables).
 
 
-The options related to the `<code>[rpl_semi_sync_master](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md)</code>` replication plugin can be found [here](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#options).
+The options related to the `[rpl_semi_sync_master](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md)` replication plugin can be found [here](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#options).
 
 
-### Replication Plugin - `<code>rpl_semi_sync_slave</code>`
+### Replication Plugin - `rpl_semi_sync_slave`
 
 
-The system variables related to the `<code>[rpl_semi_sync_slave](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md)</code>` replication plugin can be found [here](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#system-variables).
+The system variables related to the `[rpl_semi_sync_slave](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md)` replication plugin can be found [here](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#system-variables).
 
 
-The options related to the `<code>[rpl_semi_sync_slave](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md)</code>` replication plugin can be found [here](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#options).
+The options related to the `[rpl_semi_sync_slave](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md)` replication plugin can be found [here](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#options).
 
 
 ## Default Values

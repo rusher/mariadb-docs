@@ -15,5 +15,5 @@ IsRing(g)
 Returns true if a given [LINESTRING](../geometry-constructors/linestring.md) is a ring, that is, both [ST_IsClosed](st_isclosed.md) and [ST_IsSimple](st_issimple.md). A simple curve does not pass through the same point more than once. However, see [MDEV-7510](https://jira.mariadb.org/browse/MDEV-7510).
 
 
-`<code>St_IsRing()</code>` and `<code>IsRing()</code>` are synonyms.
+`St_IsRing()` and `IsRing()` are synonyms.
 

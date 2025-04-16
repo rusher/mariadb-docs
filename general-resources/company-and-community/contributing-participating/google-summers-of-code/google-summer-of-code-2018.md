@@ -8,7 +8,7 @@ We participated in the [Google Summer of Code](https://summerofcode.withgoogle.c
 # Where to start
 
 
-Please join us at `<code>irc.freenode.net</code>` at #maria to mingle with the community. Don't forget to subscribe to [maria-developers@lists.launchpad.net](https://launchpad.net/~maria-developers) (this is the main list where we discuss development).
+Please join us at `irc.freenode.net` at #maria to mingle with the community. Don't forget to subscribe to [maria-developers@lists.launchpad.net](https://launchpad.net/~maria-developers) (this is the main list where we discuss development).
 
 
 A few handy tips for any interested students who are unsure which projects to choose:
@@ -94,9 +94,9 @@ The mysqlbinlog client program needs to be updated to support GTID.
 Here is a suggested list of things to be done:
 
 
-* The `<code>--start-position</code>` and `<code>--stop-position</code>` options should be able to take
- GTID positions; or maybe there should be new `<code>--start-gtid</code>` and `<code>--stop-gtid</code>`
- options. Like `<code>--start-gtid=0-1-100,1-2-200,2-1-1000</code>`.
+* The `--start-position` and `--stop-position` options should be able to take
+ GTID positions; or maybe there should be new `--start-gtid` and `--stop-gtid`
+ options. Like `--start-gtid=0-1-100,1-2-200,2-1-1000`.
 
 
 * A GTID position means the point just after that GTID. So starting from
@@ -108,9 +108,9 @@ Here is a suggested list of things to be done:
 
 * Starting and stopping GTID should work both with local files, and with
 
-  1. --read-from-remote-server`<code>. For the latter, there are a couple of extra
- things that need doing in the master-slave protocol, see</code>`
-  1. get_master_version_and_clock()`<code> in </code>`sql/slave.cc`<code>.</code>`
+  1. --read-from-remote-server`. For the latter, there are a couple of extra
+ things that need doing in the master-slave protocol, see`
+  1. get_master_version_and_clock()` in `sql/slave.cc`.`
 
 
 * At the end of the dump, put these statements, to reduce the risk of those session variables incorrectly spilling into subsequent statements run in the same session:
@@ -394,14 +394,14 @@ A lot can be done to improve it.
 ### Ideas
 
 
-* control structures, `<code>else</code>` in `<code>if</code>`, `<code>break</code>` and `<code>continue</code>` in `<code>while</code>`, `<code>for</code>` (or `<code>foreach</code>`) loop
-* proper expression support in `<code>let</code>`, `<code>if</code>`, etc
+* control structures, `else` in `if`, `break` and `continue` in `while`, `for` (or `foreach`) loop
+* proper expression support in `let`, `if`, etc
 * rich enough expressions to make resorting to sql unnecessary in most cases
-* remove unused and redundant commands (e.g. `<code>system</code>` vs `<code>exec</code>`, `<code>query_vertical</code>` vs `<code>vertical_results ONCE</code>`)
-* remove complex commands that do many sql statements under the hood, if they can be scripted, e.g. `<code>sync_slave_with_master</code>`
+* remove unused and redundant commands (e.g. `system` vs `exec`, `query_vertical` vs `vertical_results ONCE`)
+* remove complex commands that do many sql statements under the hood, if they can be scripted, e.g. `sync_slave_with_master`
 * remove over-verbose treatment of rpl test failures
 * scoped variables
-* parameters for the `<code>source</code>` command
+* parameters for the `source` command
 * remove dead code
 
 
@@ -510,7 +510,7 @@ A multiple-table DELETE returning a result set does the following:
 
 Currently, MariaDB privilege system only perform whiltelist check for access control to certain database, table and column. This makes it difficult if we need to block access to certain database/table/column while allow for all others.
 —
-A good solution would be to allow to `<code>REVOKE</code>` anything that a user is able to do — not only exactly those grants that were granted to a user, but also a subset. Like
+A good solution would be to allow to `REVOKE` anything that a user is able to do — not only exactly those grants that were granted to a user, but also a subset. Like
 
 
 ```

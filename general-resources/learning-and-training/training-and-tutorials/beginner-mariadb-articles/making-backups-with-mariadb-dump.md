@@ -14,7 +14,7 @@ To export all of the databases in MariaDB using [mariadb-dump](../../../../serve
 mariadb-dump -u admin_backup -p -x -A > /data/backup/dbs.sql
 ```
 
-The first set of options here (`<code>-u <em>admin_backup</em> -p</code>`) tell MariaDB that this utility is to be executed by the user *admin_backup* and that the user needs to be prompted for a password, which will have to be typed in on the next line when asked. Incidentally, although you might be tempted to just use the root user, you should create a special administrative user as we're using here. If the dump is to be executed by cron by way of a shell script, this option can be changed to `<code>-p<em>mypwd</em></code>`, where *mypwd* is the password—there's no space between the `<code>-p</code>` and the password. The `<code>-x</code>` option has MariaDB lock all of the tables before performing the backup. The lock won't be released until the process is finished. To bundle [INSERT](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) statements together for each table, we've added the `<code>-e</code>` option. This extended insert option will cause the dump file to be smaller and allow any possible future restores to be executed faster. The `<code>-A</code>` option specifies that all databases are to be exported. Finally, the greater-than sign is a shell redirect of the standard output (STDOUT) to the path and file named after it.
+The first set of options here (`-u <em>admin_backup</em> -p`) tell MariaDB that this utility is to be executed by the user *admin_backup* and that the user needs to be prompted for a password, which will have to be typed in on the next line when asked. Incidentally, although you might be tempted to just use the root user, you should create a special administrative user as we're using here. If the dump is to be executed by cron by way of a shell script, this option can be changed to `-p<em>mypwd</em>`, where *mypwd* is the password—there's no space between the `-p` and the password. The `-x` option has MariaDB lock all of the tables before performing the backup. The lock won't be released until the process is finished. To bundle [INSERT](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) statements together for each table, we've added the `-e` option. This extended insert option will cause the dump file to be smaller and allow any possible future restores to be executed faster. The `-A` option specifies that all databases are to be exported. Finally, the greater-than sign is a shell redirect of the standard output (STDOUT) to the path and file named after it.
 
 
 The example given for backing up all database is the short hand version. The convention is migrating to longer options, not the single letter options. In fact, some are being deprecated and won't be available in the future. So, the above could and should be entered like this:
@@ -24,7 +24,7 @@ The example given for backing up all database is the short hand version. The con
 mariadb-dump --user=admin_backup --password --lock-tables --all-databases > /data/backup/dbs.sql
 ```
 
-The longer option names are easier to follow and to remember. Again, if the backup is to be executed by a shell script, the user's password should be listed: `<code>--password=<em>mypwd</em></code>`. Notice that the equal-sign is added when the password is given with the long option name.
+The longer option names are easier to follow and to remember. Again, if the backup is to be executed by a shell script, the user's password should be listed: `--password=<em>mypwd</em>`. Notice that the equal-sign is added when the password is given with the long option name.
 
 
 ### Just One Database
@@ -40,7 +40,7 @@ To export only one database and not all, enter something like the following from
 mariadb-dump --user=admin_backup --password --lock-tables --databases db1 > /data/backup/db1.sql
 ```
 
-The only significant difference in this line is that the `<code>-A</code>` option has been replaced with `<code>-B</code>` and the database to be exported has been given. To export multiple databases, just enter them after the `<code>-B</code>` option, separated by spaces (e.g., `<code>-B db1 db2</code>`).
+The only significant difference in this line is that the `-A` option has been replaced with `-B` and the database to be exported has been given. To export multiple databases, just enter them after the `-B` option, separated by spaces (e.g., `-B db1 db2`).
 
 
 ### Dumping Tables
@@ -53,7 +53,7 @@ For very large databases, you may want to backup the data based on tables rather
 mariadb-dump --user=admin_backup --password --lock-tables db1 table1 > /data/backup/db1_table1.sql
 ```
 
-First notice that the `<code>--databases</code>` option has not been included in the line above. The utility assumes that the first name given is a database and the second name is a table name and not another database. To backup multiple tables from a database, just list them after the database name, separated by spaces (e.g., db1 table1 table2).
+First notice that the `--databases` option has not been included in the line above. The utility assumes that the first name given is a database and the second name is a table name and not another database. To backup multiple tables from a database, just list them after the database name, separated by spaces (e.g., db1 table1 table2).
 
 
 ### Conclusion

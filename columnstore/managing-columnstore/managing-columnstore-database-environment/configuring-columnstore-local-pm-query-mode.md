@@ -37,7 +37,7 @@ Enable Local Query feature? [y,n] (n) >
 ### Enable local PM query systemwide
 
 
-To enable the use of the local PM Query at the instance level, specify `<code>infinidb_local_query =1</code>` (enabled) in the my.cnf configuration file at /usr/local/mariadb/columnstore/mysql. The default is 0 (disabled).
+To enable the use of the local PM Query at the instance level, specify `infinidb_local_query =1` (enabled) in the my.cnf configuration file at /usr/local/mariadb/columnstore/mysql. The default is 0 (disabled).
 
 
 ### Enable/disable local PM query at the session level

@@ -12,16 +12,16 @@ CONV(N,from_base,to_base)
 
 
 Converts numbers between different number bases. Returns a string
-representation of the number *`<code>N</code>`*, converted from base *`<code>from_base</code>`*
-to base *`<code>to_base</code>`*.
+representation of the number *`N`*, converted from base *`from_base`*
+to base *`to_base`*.
 
 
-Returns `<code>NULL</code>` if any argument is `<code>NULL</code>`, or if the second or third argument are not in the allowed range.
+Returns `NULL` if any argument is `NULL`, or if the second or third argument are not in the allowed range.
 
 
-The argument *`<code>N</code>`* is interpreted as an integer, but may be specified as an
-integer or a string. The minimum base is 2 and the maximum base is 36 (prior to [MariaDB 11.4.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes.md)) or 62 (from [MariaDB 11.4.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes.md)). If *`<code>to_base</code>`* is a negative number, *`<code>N</code>`* is regarded as a signed number.
-Otherwise, *`<code>N</code>`* is treated as unsigned. `<code>CONV()</code>` works with 64-bit
+The argument *`N`* is interpreted as an integer, but may be specified as an
+integer or a string. The minimum base is 2 and the maximum base is 36 (prior to [MariaDB 11.4.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes.md)) or 62 (from [MariaDB 11.4.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes.md)). If *`to_base`* is a negative number, *`N`* is regarded as a signed number.
+Otherwise, *`N`* is treated as unsigned. `CONV()` works with 64-bit
 precision.
 
 

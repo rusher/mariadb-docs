@@ -16,7 +16,7 @@ VEC_ToText(v)
 ## Description
 
 
-`<code>VEC_ToText</code>` converts a binary vector into a json array of numbers (floats). Returns NULL and throws a warning [4201](../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4200-to-4299/e4201.md) if given an invalid vector.
+`VEC_ToText` converts a binary vector into a json array of numbers (floats). Returns NULL and throws a warning [4201](../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4200-to-4299/e4201.md) if given an invalid vector.
 
 
 ## Example

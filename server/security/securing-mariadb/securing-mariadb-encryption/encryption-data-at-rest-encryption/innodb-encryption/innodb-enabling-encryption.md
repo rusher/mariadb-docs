@@ -27,7 +27,7 @@ The [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/inno
 
 
 
-When [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) is set to `<code>ON</code>`, InnoDB tables are automatically encrypted by default. For example, the following statements create an encrypted table and confirm that it is encrypted:
+When [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) is set to `ON`, InnoDB tables are automatically encrypted by default. For example, the following statements create an encrypted table and confirm that it is encrypted:
 
 
 ```
@@ -52,7 +52,7 @@ WHERE NAME='db1/tab1';
 +----------+-------------------+----------------+
 ```
 
-When [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) is set to `<code>ON</code>`, an unencrypted InnoDB table can be created by setting the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option to `<code>NO</code>` for the table. For example, the following statements create an unencrypted table and confirm that it is not encrypted:
+When [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) is set to `ON`, an unencrypted InnoDB table can be created by setting the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option to `NO` for the table. For example, the following statements create an unencrypted table and confirm that it is not encrypted:
 
 
 ```
@@ -77,7 +77,7 @@ WHERE NAME='db1/tab1';
 +----------+-------------------+----------------+
 ```
 
-When [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) is set to `<code>FORCE</code>`, InnoDB tables are automatically encrypted by default, and unencrypted InnoDB tables can **not** be created. In this scenario, if you set the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option to `<code>NO</code>` for a table, then you will encounter an error. For example:
+When [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) is set to `FORCE`, InnoDB tables are automatically encrypted by default, and unencrypted InnoDB tables can **not** be created. In this scenario, if you set the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option to `NO` for a table, then you will encounter an error. For example:
 
 
 ```
@@ -105,7 +105,7 @@ SHOW WARNINGS;
 4 rows in set (0.00 sec)
 ```
 
-When [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) is set to `<code>ON</code>` or `<code>FORCE</code>`, then you must ensure that [innodb_encryption_threads](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads) is set to a non-zero value, so that InnoDB can perform any necessary encryption operations in the background. See [background operations](innodb-background-encryption-threads.md#background-operations) for more information about that. [innodb_encryption_rotate_key_age](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age) must also be set to a non-zero value for the initial encryption operations to happen in the background. See [disabling key rotations](innodb-background-encryption-threads.md#disabling-background-key-rotation-operations) for more information about that.
+When [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) is set to `ON` or `FORCE`, then you must ensure that [innodb_encryption_threads](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads) is set to a non-zero value, so that InnoDB can perform any necessary encryption operations in the background. See [background operations](innodb-background-encryption-threads.md#background-operations) for more information about that. [innodb_encryption_rotate_key_age](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age) must also be set to a non-zero value for the initial encryption operations to happen in the background. See [disabling key rotations](innodb-background-encryption-threads.md#disabling-background-key-rotation-operations) for more information about that.
 
 
 ### Enabling Encryption for Manually Encrypted Tablespaces
@@ -126,7 +126,7 @@ If you do not want to automatically encrypt every InnoDB table, then it is possi
 You can manually enable or disable encryption for a table by using the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option. If you only need to protect a subset of InnoDB tables with encryption, then it can be a good idea to manually encrypt each table that needs the extra protection, rather than encrypting all InnoDB tables globally with [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables). This allows you to balance security with speed, as it means the encryption and decryption performance overhead only applies to those tables that require the additional security.
 
 
-If a manually encrypted InnoDB table contains a [FULLTEXT INDEX](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md), then the internal table for the full-text index will not also be manually encrypted. To encrypt internal tables for InnoDB full-text indexes, you must [enable automatic InnoDB encryption](#enabling-encryption-for-automatically-encrypted-tablespaces) by setting [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) to `<code>ON</code>` or `<code>FORCE</code>`.
+If a manually encrypted InnoDB table contains a [FULLTEXT INDEX](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md), then the internal table for the full-text index will not also be manually encrypted. To encrypt internal tables for InnoDB full-text indexes, you must [enable automatic InnoDB encryption](#enabling-encryption-for-automatically-encrypted-tablespaces) by setting [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) to `ON` or `FORCE`.
 
 
 You can also manually specify a [encryption key](innodb-encryption-overview.md) for a table by using the [ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id) table option. This allows you to use different encryption keys for different tables. For example, you might create a table using a statement like this:
@@ -200,7 +200,7 @@ WHERE NAME='db1/tab1';
 +----------+-------------------+----------------+
 ```
 
-InnoDB does not permit manual encryption changes to tables in the [system](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace using [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md). Encryption of the [system](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace can only be configured by setting the value of the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable. This means that when you want to encrypt or decrypt the [system](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace, you must also set a non-zero value for the [innodb_encryption_threads](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads) system variable, and you must also set the [innodb_system_rotate_key_age](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age) system variable to `<code>1</code>` to ensure that the system tablespace is properly encrypted or decrypted by the background threads. See [MDEV-14398](https://jira.mariadb.org/browse/MDEV-14398) for more information.
+InnoDB does not permit manual encryption changes to tables in the [system](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace using [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md). Encryption of the [system](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace can only be configured by setting the value of the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable. This means that when you want to encrypt or decrypt the [system](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace, you must also set a non-zero value for the [innodb_encryption_threads](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads) system variable, and you must also set the [innodb_system_rotate_key_age](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age) system variable to `1` to ensure that the system tablespace is properly encrypted or decrypted by the background threads. See [MDEV-14398](https://jira.mariadb.org/browse/MDEV-14398) for more information.
 
 
 ### Enabling Encryption for Temporary Tablespaces
@@ -233,7 +233,7 @@ innodb_encrypt_temporary_tables=ON
 InnoDB uses the [Redo Log](../../../../../reference/storage-engines/innodb/innodb-redo-log.md) in crash recovery. By default, these events are written to file in an unencrypted state. In configuring MariaDB for data-at-rest encryption, ensure that you also enable encryption for the Redo Log.
 
 
-To encrypt the Redo Log, first [stop](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md) the server process. Then, set the [innodb_encrypt_log](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) to `<code>ON</code>` in a relevant server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+To encrypt the Redo Log, first [stop](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md) the server process. Then, set the [innodb_encrypt_log](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) to `ON` in a relevant server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 
 ```

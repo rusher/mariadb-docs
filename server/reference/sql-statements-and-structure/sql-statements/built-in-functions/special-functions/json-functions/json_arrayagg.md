@@ -16,7 +16,7 @@ JSON_ARRAYAGG(column_or_expression)
 ## Description
 
 
-`<code>JSON_ARRAYAGG</code>` returns a JSON array containing an element for each value in a given set of JSON or SQL values. It acts on a column or an expression that evaluates to a single value.
+`JSON_ARRAYAGG` returns a JSON array containing an element for each value in a given set of JSON or SQL values. It acts on a column or an expression that evaluates to a single value.
 
 
 The maximum returned length in bytes is determined by the [group_concat_max_len](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#group_concat_max_len) server system variable.
@@ -25,7 +25,7 @@ The maximum returned length in bytes is determined by the [group_concat_max_len]
 Returns NULL in the case of an error, or if the result contains no rows.
 
 
-`<code>JSON_ARRAYAGG</code>` cannot currently be used as a [window function](../window-functions/window-functions-overview.md).
+`JSON_ARRAYAGG` cannot currently be used as a [window function](../window-functions/window-functions-overview.md).
 
 
 The full syntax is as follows:

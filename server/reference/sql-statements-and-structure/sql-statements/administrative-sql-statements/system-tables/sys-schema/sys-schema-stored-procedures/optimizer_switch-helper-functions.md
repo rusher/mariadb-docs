@@ -14,7 +14,7 @@ optimizer_switch_choice("on" | "off")
 ## Description
 
 
-The above procedures can be used to check which [optimizer_switch](optimizer_switch-helper-functions.md) options are `<code>on</code>` or `<code>off</code>`.
+The above procedures can be used to check which [optimizer_switch](optimizer_switch-helper-functions.md) options are `on` or `off`.
 The result set is sorted according to [optimizer_switch](optimizer_switch-helper-functions.md) option name.
 
 
@@ -88,8 +88,8 @@ call sys.optimizer_switch_off();
 ## Notes
 
 
-`<code>sys.optimizer_switch_on()</code>` is a shortcut for `<code>sys.optimizer_switch_choice("on")</code>`;
-`<code>sys.optimizer_switch_off()</code>` is a shortcut for `<code>sys.optimizer_switch_choice("off")</code>`;
+`sys.optimizer_switch_on()` is a shortcut for `sys.optimizer_switch_choice("on")`;
+`sys.optimizer_switch_off()` is a shortcut for `sys.optimizer_switch_choice("off")`;
 
 
 ## See Also

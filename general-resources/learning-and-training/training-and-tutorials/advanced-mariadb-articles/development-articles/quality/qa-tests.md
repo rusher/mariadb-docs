@@ -18,7 +18,7 @@ The [QA - Aria Recovery](qa-aria-recovery.md) page contains a plan on how to tes
 
 
 * Upgrades using .deb and RPM packages are tested using very simple tests in
- BuildBot by the various `<code>bld_kvm*</code>` builders.
+ BuildBot by the various `bld_kvm*` builders.
 
 
 ### TODO:
@@ -29,8 +29,8 @@ The [QA - Aria Recovery](qa-aria-recovery.md) page contains a plan on how to tes
  and methods (mysqldump, mysql_upgrade) that we support and test each
  individually;
 * Test the Windows installer and service NSIS allows for scripted unattended
- installs by providing an `<code>/SD</code>` argument to functions such
- as `<code>MessageBox</code>`.
+ installs by providing an `/SD` argument to functions such
+ as `MessageBox`.
 * Test the contents of the Windows package, e.g. if HELP, .test, etc. files are
  properly placed and runnable;
 
@@ -39,8 +39,8 @@ The [QA - Aria Recovery](qa-aria-recovery.md) page contains a plan on how to tes
 
 
 The purpose of those tests is to check that various applications that use
-`<code>libmysql</code>` can be compiled, linked and run with MariaDB. They are run by the
-`<code>compile-connectors</code>` builder in BuildBot
+`libmysql` can be compiled, linked and run with MariaDB. They are run by the
+`compile-connectors` builder in BuildBot
 
 
 * Perl DBD::mysql
@@ -48,7 +48,7 @@ The purpose of those tests is to check that various applications that use
   * We configure and compile the Perl DBI MySQL driver. Then we run the test suite provided with it.
 * PHP
 
-  * We configure and compile both the `<code>mysql</code>` and `<code>mysqli</code>` PHP drivers
+  * We configure and compile both the `mysql` and `mysqli` PHP drivers
  without mysql-nd. For each, we run those tests from the PHP test suite
  that are known to be good (other tests fail for both MySQL and MariaDB).
 
@@ -66,8 +66,8 @@ The purpose of those tests is to check that the libraries that implement the
 MySQL protocol can work with MariaDB.
 
 
-* The `<code>libmysql</code>` library/connector is tested both by the MTR test suite
- (since `<code>mysqltest</code>` links with it)
+* The `libmysql` library/connector is tested both by the MTR test suite
+ (since `mysqltest` links with it)
 
 
 ### TODO:

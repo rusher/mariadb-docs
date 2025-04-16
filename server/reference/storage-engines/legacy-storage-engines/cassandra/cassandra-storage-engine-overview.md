@@ -39,7 +39,7 @@ command:
 install soname 'ha_cassandra.so';
 ```
 
-You can also activate the storage engine by using the `<code>--plugin-load</code>` command
+You can also activate the storage engine by using the `--plugin-load` command
 on server startup.
 
 
@@ -94,7 +94,7 @@ The Cassandra Query Language (CQL) is the best way to work with Cassandra. It
 resembles SQL on first glance, however the resemblance is very shallow. CQL
 queries are tightly bound to the way Cassandra accesses its data internally.
 For example, you can't have even the smallest join. In fact, adding a mere
-`<code>... AND non_indexed_column=1</code>` into a `<code>WHERE</code>` clause is already invalid
+`... AND non_indexed_column=1` into a `WHERE` clause is already invalid
 CQL.
 
 
@@ -115,7 +115,7 @@ rather a "window" from an SQL environment into NoSQL.
 
 
 Let's get specific. In order to access Cassandra's data from MariaDB, one needs
-to create a table with `<code>engine=cassandra</code>`. The table will represent a view
+to create a table with `engine=cassandra`. The table will represent a view
 of a Column Family in Cassandra and its definition will look like so:
 
 
@@ -152,7 +152,7 @@ types must "match" those of Cassandra.
 The table must define a column that corresponds to the Column Family's rowkey.
 
 
-* If Cassandra's `<code>rowkey</code>` has an alias (or name), then MariaDB's column must
+* If Cassandra's `rowkey` has an alias (or name), then MariaDB's column must
  have the same name.
 
   * Otherwise, it must be named "rowkey".
@@ -189,8 +189,8 @@ column:
 
 
 * with an arbitrary name
-* of type `<code>blob</code>`
-* with the `<code>DYNAMIC_COLUMN_STORAGE=yes</code>` attribute
+* of type `blob`
+* with the `DYNAMIC_COLUMN_STORAGE=yes` attribute
 
 
 Here is an example:
@@ -244,7 +244,7 @@ The types must be mapped as follows:
 
 
 
-For types like "`<code>VARBINARY(n)</code>`", `<code>n</code>` should be chosen sufficiently large to
+For types like "`VARBINARY(n)`", `n` should be chosen sufficiently large to
 accommodate all the data that is encountered in the table.
 
 
@@ -259,7 +259,7 @@ UPDATE. Therefore, INSERT works as INSERT-or-UPDATE, it will overwrite the
 data, if necessary.
 
 
-`<code>INSERT ... SELECT</code>` and multi-line INSERT will try to write data in batches.
+`INSERT ... SELECT` and multi-line INSERT will try to write data in batches.
 Batch size is controlled by the [cassandra_insert_batch_size](cassandra-system-variables.md#cassandra_insert_batch_size) system
 variable, which specifies the max. batch size in columns.
 
@@ -280,7 +280,7 @@ record being inserted)
 ### DELETE
 
 
-* `<code>DELETE FROM cassandra_table</code>` maps to the `<code>truncate(column_family)</code>` call.
+* `DELETE FROM cassandra_table` maps to the `truncate(column_family)` call.
 
 
 * The DELETE with WHERE clause will do per-row deletions.
@@ -290,7 +290,7 @@ record being inserted)
 
 
 Generally, all SELECT statements work like one expects SQL to work. Conditions
-in the form `<code>primary_key=...</code>` allow the server to construct query plans which
+in the form `primary_key=...` allow the server to construct query plans which
 access Cassandra's rows with key lookups.
 
 
@@ -389,7 +389,7 @@ experienced by Pig:
 
 
 Currently, Cassandra SE is only able to access Cassandra 1.2's column families
-that were defined `<code>WITH COMPACT STORAGE</code>` attribute.
+that were defined `WITH COMPACT STORAGE` attribute.
 
 
 ## See also

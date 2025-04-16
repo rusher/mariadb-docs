@@ -1,7 +1,7 @@
 
 # Information Schema CHECK_CONSTRAINTS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>CHECK_CONSTRAINTS</code>` table stores metadata about the [constraints](../../../../data-definition/constraint.md) defined for tables in all databases.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `CHECK_CONSTRAINTS` table stores metadata about the [constraints](../../../../data-definition/constraint.md) defined for tables in all databases.
 
 
 It contains the following columns:
@@ -30,7 +30,7 @@ A table with a numeric table check constraint and with a default check constrain
 CREATE TABLE t ( a int, CHECK (a>10));
 ```
 
-To see check constraint call `<code>check_constraints</code>` table from [information schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
+To see check constraint call `check_constraints` table from [information schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
 
 
 ```
@@ -46,7 +46,7 @@ CONSTRAINT_CATALOG: def
       CHECK_CLAUSE: `a` > 10
 ```
 
-A new table check constraint called `<code>a_upper</code>`:
+A new table check constraint called `a_upper`:
 
 
 ```
@@ -72,7 +72,7 @@ CONSTRAINT_CATALOG: def
       CHECK_CLAUSE: `a` < 100
 ```
 
-A new table `<code>tt</code>` with a field check constraint called `<code>b</code>` , as well as a table check constraint called `<code> b_upper</code>`:
+A new table `tt` with a field check constraint called `b` , as well as a table check constraint called ` b_upper`:
 
 
 ```
@@ -92,7 +92,7 @@ SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
 *Note:* The name of the field constraint is the same as the field name.
 
 
-After dropping the default table constraint called `<code> CONSTRAINT_1</code>`:
+After dropping the default table constraint called ` CONSTRAINT_1`:
 
 
 ```
@@ -108,7 +108,7 @@ SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
 +--------------------+-------------------+-----------------+------------+--------------+
 ```
 
-Trying to insert invalid arguments into table `<code>t</code>` and `<code>tt</code>` generates an error.
+Trying to insert invalid arguments into table `t` and `tt` generates an error.
 
 
 ```

@@ -299,7 +299,7 @@ Client response :
 
 
 
-The password is encrypted with: `<code>SHA1( password ) ^ SHA1( seed + SHA1( SHA1( password ) ) )</code>`
+The password is encrypted with: `SHA1( password ) ^ SHA1( seed + SHA1( SHA1( password ) ) )`
 
 
 

@@ -28,7 +28,7 @@ GET /v1/filters/:name
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -77,7 +77,7 @@ GET /v1/filters
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 

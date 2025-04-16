@@ -12,7 +12,7 @@ MariaDB supports the following types of replication:
 
 
 ##### MariaDB starting with [10.5.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md)
-Note: in the snippets in this page, several SQL statements use the keyword `<code>SLAVE</code>`. This word is considered inappropriate by some persons or cultures, so from [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) it is possible to use the `<code>REPLICA</code>` keyword, as a synonym.
+Note: in the snippets in this page, several SQL statements use the keyword `SLAVE`. This word is considered inappropriate by some persons or cultures, so from [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) it is possible to use the `REPLICA` keyword, as a synonym.
 Similar synonyms will be created in the future for status variables and system variables. See [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to track the status of these changes.
 
 
@@ -40,7 +40,7 @@ The replicas have an [I/O thread](../../../../server-usage/replication-cluster-m
 When a replica cannot apply an event to the local data, the SQL thread stops. This happens, for example, if the event is a row deletion but that row doesn't exist on the replica. There can be several reasons for this, for example non-deterministic statements, or a user deleted the row in the replica. To reduce the risk, it is recommended to set [read_only](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_only) to 1 in the replicas.
 
 
-[SHOW SLAVE STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) has columns named `<code>Slave_SQL_State</code>` and `<code>Slave_IO_State</code>` that show, respectively, if the SQL thread and the IO thread are running. If they are not, the column `<code>Last_IO_Errno</code>` and `<code>Last_IO_Error</code>` (for the IO thread) or `<code>Last_SQL_Errno</code>` and `<code>Last_SQL_Error</code>` (for the SQL thread) show what the problem is.
+[SHOW SLAVE STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) has columns named `Slave_SQL_State` and `Slave_IO_State` that show, respectively, if the SQL thread and the IO thread are running. If they are not, the column `Last_IO_Errno` and `Last_IO_Error` (for the IO thread) or `Last_SQL_Errno` and `Last_SQL_Error` (for the SQL thread) show what the problem is.
 
 
 In a replication chain, every server must have a unique [server_id](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#server_id).
@@ -52,25 +52,25 @@ For more information on replication, see [standard replication](../../../../serv
 ### Binary Log Coordinates, Relay Log Coordinates and GTID
 
 
-The binary log coordinates provide a way to identify a certain data change made by a server. Coordinates consist of a file name and the position of the latest event, expressed as an integer. The last event coordinates can be seen with the [SHOW MASTER STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md) columns `<code>File</code>` and `<code>Position</code>`. [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) includes them in a dump if the `<code>--master-data</code>` option is used.
+The binary log coordinates provide a way to identify a certain data change made by a server. Coordinates consist of a file name and the position of the latest event, expressed as an integer. The last event coordinates can be seen with the [SHOW MASTER STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md) columns `File` and `Position`. [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) includes them in a dump if the `--master-data` option is used.
 
 
-A replica uses primary binary log coordinates to identify the last event it read. This can be seen with the [SHOW SLAVE STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) columns `<code>Master_Log_File</code>` and `<code>Read_Master_Log_Pos</code>`.
+A replica uses primary binary log coordinates to identify the last event it read. This can be seen with the [SHOW SLAVE STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) columns `Master_Log_File` and `Read_Master_Log_Pos`.
 
 
-The columns `<code>Relay_Master_Log_File</code>` and `<code>Exec_Master_Log_Pos</code>` identify the primary event that corresponds to the last event applied by the SQL thread.
+The columns `Relay_Master_Log_File` and `Exec_Master_Log_Pos` identify the primary event that corresponds to the last event applied by the SQL thread.
 
 
-The replica relay log also has coordinates. The coordinates of the last applied event can be seen with the `<code>SHOW SLAVE STATUS</code>` columns `<code>Relay_Log_File</code>` and `<code>Relay_Log_Pos</code>`.
+The replica relay log also has coordinates. The coordinates of the last applied event can be seen with the `SHOW SLAVE STATUS` columns `Relay_Log_File` and `Relay_Log_Pos`.
 
 
-To easily find out how far the replica is lagging behind the primary, we can look at `<code>Seconds_Behind_Master</code>`.
+To easily find out how far the replica is lagging behind the primary, we can look at `Seconds_Behind_Master`.
 
 
 Coordinates represented in this way have a problem: they are different on each server. Each server can use files with different (or the same) names, depending on its configuration. And files can be rotated at different times, including when a user runs [FLUSH LOGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md). By enabling the GTID (global transaction id) an event will have the same id on the primary and on all the replicas.
 
 
-When [GTID](../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) is enabled, `<code>SHOW SLAVE STATUS</code>` shows two GTIDs: `<code>Gtid_IO_Pos</code>` is the last event written into the relay log, and `<code>Gtid_Slave_Pos</code>` is the last event applied by the SQL thread. There is no need for a column identifying the same event in the primary, because the id is the same.
+When [GTID](../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) is enabled, `SHOW SLAVE STATUS` shows two GTIDs: `Gtid_IO_Pos` is the last event written into the relay log, and `Gtid_Slave_Pos` is the last event applied by the SQL thread. There is no need for a column identifying the same event in the primary, because the id is the same.
 
 
 ### Provisioning a Replica
@@ -102,7 +102,7 @@ For more information see [Setting Up Replication](../../../../server-usage/repli
 A replica connects to a primary using its credentials. See [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md).
 
 
-The appropriate account must be created in the primary, and it needs to have the `<code>REPLICATION SLAVE</code>` permission.
+The appropriate account must be created in the primary, and it needs to have the `REPLICATION SLAVE` permission.
 
 
 See [Setting Up Replication](../../../../server-usage/replication-cluster-multi-master/standard-replication/setting-up-replication.md) for more information.
@@ -126,16 +126,16 @@ START SLAVE SQL_THREAD;
 There are different parallel replication styles available: in-order and out-of-order. The exact mode in use is determined by the [slave_parallel_mode](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#slave_parallel_mode) system variable. In parallel replication, the events are not replicated exactly in the same order as they occurred in the primary. But with an in-order replication mode the commit phase is always applied simultaneously. In this way data in the replica always reflect data as they have been in the primary at a certain point in time. Out-of-order replication is faster because there is less queuing, but it's not completely consistent with the primary. If two transactions modified different sets of rows in the primary, they could become visible in the replica in a different order.
 
 
-`<code>conservative</code>` relies on primary group commit: events in different groups are executed in a parallel way.
+`conservative` relies on primary group commit: events in different groups are executed in a parallel way.
 
 
-`<code>optimistic</code>` does not try to find out which transaction can be executed in a parallel way - except for transactions that conflicted on the primary. Instead, it always tries to apply many events together, and rolls transactions back when there is a conflict.
+`optimistic` does not try to find out which transaction can be executed in a parallel way - except for transactions that conflicted on the primary. Instead, it always tries to apply many events together, and rolls transactions back when there is a conflict.
 
 
-`<code>aggressive</code>` is similar to optimistic, but it does not take into account which transactions conflicted in the primary.
+`aggressive` is similar to optimistic, but it does not take into account which transactions conflicted in the primary.
 
 
-`<code>minimal</code>` applies commits together, but all other events are applied in order.
+`minimal` applies commits together, but all other events are applied in order.
 
 
 Out-of-order replication cannot be enabled automatically by changing a variable in the replica. Instead, it must be enabled by the applications that run transactions in the primary. They can do this if the GTID is enabled. They can set different values for the [gtid_domain_id](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#gtid_domain_id) variable in different transactions. This shifts a lot of responsibility to the application layer; however, if the application is aware of which transactions are not going to conflict and this information allows one to sensibly increase the parallelism, and using out-of-order replication can be a good idea.
@@ -158,7 +158,7 @@ To reduce the possible causes of conflicts, the following best practices are rec
 
 * Users must not change data in the replica directly. Set [read_only](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_only) to 1. Note that this won't prevent root from making changes.
 * Use the same table definitions in the primary and in the replica.
-* Use `<code>ROW</code>` binary log format on the primary.
+* Use `ROW` binary log format on the primary.
 
 
 Another cause of inconsistencies include MariaDB bugs and failover in case the primary crashes.
@@ -184,7 +184,7 @@ There are ways to have different data on the replicas. For example:
 ### Delayed Replication
 
 
-MariaDB supports delayed replication. This is the equivalent of setting a `<code>pollinginterval</code>` in SQL Server.
+MariaDB supports delayed replication. This is the equivalent of setting a `pollinginterval` in SQL Server.
 
 
 To delay replication in a MariaDB replica, use [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) to specify a delay in seconds.
@@ -205,14 +205,14 @@ A MariaDB replica can replicate from any number of primaries. It is very importa
 In multi-source replication different channels exist, one for each primary.
 
 
-This changed the way [SQL replication statements](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) work. [SHOW PROCESSLIST](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) returns a different row for each channel. Several statements, like [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md), [START SLAVE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) or [STOP SLAVE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md). accept a parameter which specifies which replication channel they should affect. For example, to stop a channel called `<code>wp1</code>`:
+This changed the way [SQL replication statements](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) work. [SHOW PROCESSLIST](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) returns a different row for each channel. Several statements, like [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md), [START SLAVE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) or [STOP SLAVE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md). accept a parameter which specifies which replication channel they should affect. For example, to stop a channel called `wp1`:
 
 
 ```
 STOP SLAVE "wp1";
 ```
 
-Furthermore, variables that affect parallel replication can be prefixed with a channel name. This allow one to only use parallel replication for certain channels, or to tune it differently for each channel. For example, to enable parallel replication on a channel called `<code>wp1</code>`:
+Furthermore, variables that affect parallel replication can be prefixed with a channel name. This allow one to only use parallel replication for certain channels, or to tune it differently for each channel. For example, to enable parallel replication on a channel called `wp1`:
 
 
 ```
@@ -236,7 +236,7 @@ Several problems should be considered in this scenario:
 
 * If the active primary crashes, it is very possible that the passive primary did not receive all events yet, because replication is asynchronous. If the primary data are lost (for example because the disk is damaged), some data are also lost.
 * If data is not lost, when we bring the primary up again, the latest events will be replicated by the other server. There could be conflicts that will break replication.
-* When is the active primary considered down? Even if a server cannot reach it, the active primary could be running and it could be able to communicate with the passive primary. Switching the clients to the passive primary could lead to unnecessary problems. It is a good idea to always check `<code>SHOW SLAVE STATUS</code>` to be sure that the two primary are not communicating.
+* When is the active primary considered down? Even if a server cannot reach it, the active primary could be running and it could be able to communicate with the passive primary. Switching the clients to the passive primary could lead to unnecessary problems. It is a good idea to always check `SHOW SLAVE STATUS` to be sure that the two primary are not communicating.
 * If we want to have more replicas, we should attach some of them to the active primary, and some of them to the passive primary. The reason is that when a server crashes, its replicas stop receiving any data. Failover is still possible, but it's better to have some servers that will not need any failover.
 
 
@@ -296,8 +296,8 @@ When the binary log is enabled, transactions must be committed both in the [stor
 The wait point determines at which point the primary must stop and wait for a confirmation from a replica. This is an important decision from disaster recovery standpoint, in case the primary crashes when a transaction is not fully committed. The [rpl_semi_sync_master_wait_point](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_wait_point) is used to set the wait point, Its allowed values are:
 
 
-* `<code>AFTER_SYNC</code>`: After committing the transaction in the binary log, but before committing it to the storage engine. After a crash, a transaction may be present in the binary log even if it was not committed.
-* `<code>AFTER_COMMIT</code>`. After committing a transaction both in the binary log and in the storage engine. In case of a crash, a transaction could possibly be committed in the primary but not replicated in the slaves. This is the default.
+* `AFTER_SYNC`: After committing the transaction in the binary log, but before committing it to the storage engine. After a crash, a transaction may be present in the binary log even if it was not committed.
+* `AFTER_COMMIT`. After committing a transaction both in the binary log and in the storage engine. In case of a crash, a transaction could possibly be committed in the primary but not replicated in the slaves. This is the default.
 
 
 Primary timeout is meant to avoid that a primary remains stuck for a long time, or virtually forever, because no replica acknowledges a transaction. If primary timeout is reached, the primary switches to asynchronous replication. Before doing that, the primary writes an error in the [error log](../../../server-monitoring-logs/error-log.md) and increments the [Rpl_semi_sync_master_no_times](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_no_times) status variable.
@@ -343,13 +343,13 @@ The size of Galera cache can be tuned using the [wsrep_provider_options](../../.
 wsrep_provider_options = 'gcache.size=2G';
 ```
 
-If a single transaction is bigger than half of the Galera cache, it needs to be written in a separate file, as *on-demand pages*. On-demand pages are regularly replaced. Whether a new page replaces an old one depends on another wsrep_provider_options flag: `<code>wsrep_provider_options#gcachekeep_pages_size|gcache.keep_pages_size</code>`, which limits the total size of on-demand pages.
+If a single transaction is bigger than half of the Galera cache, it needs to be written in a separate file, as *on-demand pages*. On-demand pages are regularly replaced. Whether a new page replaces an old one depends on another wsrep_provider_options flag: `wsrep_provider_options#gcachekeep_pages_size|gcache.keep_pages_size`, which limits the total size of on-demand pages.
 
 
 When a node is restarted (after a crash or for maintenance reasons), it will need to receive all the changes that were written by other nodes since the moment it was unreachable. A node is therefore chosen as a donor, possibly using the [gcssync_donor](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md#gcssync_donor) wsrep_provider_options flag.
 
 
-If possible, the donor will send all the recent changes, reading them from the Galera cache and on-demand pages. However, sometimes the Galera cache is not big enough to contain all the needed changes, or the on-demand pages have been overwritten because `<code>gcache.keep_pages_size</code>` is not big enough. In these cases, a [State Snapshot Transfer (SST)](../../../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/README.md) needs to be sent. This means that the donor will send the whole dataset to the restarted node. Most commonly, this happens using the [mariabackup method](../../../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method.md).
+If possible, the donor will send all the recent changes, reading them from the Galera cache and on-demand pages. However, sometimes the Galera cache is not big enough to contain all the needed changes, or the on-demand pages have been overwritten because `gcache.keep_pages_size` is not big enough. In these cases, a [State Snapshot Transfer (SST)](../../../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/README.md) needs to be sent. This means that the donor will send the whole dataset to the restarted node. Most commonly, this happens using the [mariabackup method](../../../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method.md).
 
 
 ### Flow Control
@@ -370,7 +370,7 @@ Once flow control is activated, [gcs.fc_factor](../../../../server-usage/replica
 Flow control and the receive queue can and should be monitored. The most useful metrics are:
 
 
-* [wsrep_flow_control_paused](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_flow_control_paused) indicates how many times the replication has been paused as requested by other nodes, since the last `<code>FLUSH STATUS</code>`.
+* [wsrep_flow_control_paused](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_flow_control_paused) indicates how many times the replication has been paused as requested by other nodes, since the last `FLUSH STATUS`.
 * [wsrep_flow_control_sent](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_flow_control_sent) indicates how many times this node requested other nodes to pause replication.
 * [wsrep_local_recv_queue](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_local_recv_queue) is the size of the receive queue.
 
@@ -381,7 +381,7 @@ Flow control and the receive queue can and should be monitored. The most useful 
 Galera is implemented as a plugin. Starting from version 10.1, MariaDB comes with Galera pre-installed, but not in use by default. To enable it one has to set the [wsrep_on](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_on) system variable.
 
 
-Like asynchronous replication, Galera uses the binary log. It also requires that data changes are logged in the `<code>ROW</code>` format.
+Like asynchronous replication, Galera uses the binary log. It also requires that data changes are logged in the `ROW` format.
 
 
 For other required settings, see [Mandatory Options](../../../../server-usage/replication-cluster-multi-master/galera-cluster/configuring-mariadb-galera-cluster.md#mandatory-options).
@@ -396,5 +396,5 @@ Galera is not suitable for all databases and workloads.
 * Galera only replicates [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables. Other storage engines should not be used.
 * For performance reasons, it is highly desirable that all tables have a primary key.
 * Long transactions will damage performance.
-* Some applications use an integer [AUTO_INCREMENT](../../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) primary key. In case of failover from a crashed node to another, Galera does not guarantee that `<code>AUTO_INCREMENT</code>` follows a chronological order. Therere, applications should use [TIMESTAMP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) columns for chronological order instead.
+* Some applications use an integer [AUTO_INCREMENT](../../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) primary key. In case of failover from a crashed node to another, Galera does not guarantee that `AUTO_INCREMENT` follows a chronological order. Therere, applications should use [TIMESTAMP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) columns for chronological order instead.
 

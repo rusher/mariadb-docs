@@ -15,7 +15,7 @@ MultiPointFromText(wkt[,srid])
 Constructs a [MULTIPOINT](../geometry-constructors/multipoint.md) value using its [WKT](wkt-definition.md) representation and [SRID](../geometry-properties/st_srid.md).
 
 
-`<code>MPointFromText()</code>` and `<code>MultiPointFromText()</code>` are synonyms.
+`MPointFromText()` and `MultiPointFromText()` are synonyms.
 
 
 ## Examples

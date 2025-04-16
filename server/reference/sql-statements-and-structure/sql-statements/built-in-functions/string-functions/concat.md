@@ -19,20 +19,20 @@ Returns the string that results from concatenating the arguments. May have one o
 SELECT CONCAT(CAST(int_col AS CHAR), char_col);
 ```
 
-`<code>CONCAT()</code>` returns `<code>NULL</code>` if any argument is `<code>NULL</code>`.
+`CONCAT()` returns `NULL` if any argument is `NULL`.
 
 
-A `<code>NULL</code>` parameter hides all information contained in other parameters from the result. Sometimes this is not desirable; to avoid this, you can:
+A `NULL` parameter hides all information contained in other parameters from the result. Sometimes this is not desirable; to avoid this, you can:
 
 
-* Use the `<code>[CONCAT_WS()](concat_ws.md)</code>` function with an empty separator, because that function is `<code>NULL</code>`-safe.
-* Use `<code>[IFNULL()](../control-flow-functions/ifnull.md)</code>` to turn NULLs into empty strings.
+* Use the `[CONCAT_WS()](concat_ws.md)` function with an empty separator, because that function is `NULL`-safe.
+* Use `[IFNULL()](../control-flow-functions/ifnull.md)` to turn NULLs into empty strings.
 
 
 ### Oracle Mode
 
 
-In [Oracle mode](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `<code>CONCAT</code>` ignores [nullif.md](../control-flow-functions/nullif.md).
+In [Oracle mode](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `CONCAT` ignores [nullif.md](../control-flow-functions/nullif.md).
 
 
 ## Examples
@@ -61,7 +61,7 @@ SELECT CONCAT(42.0);
 +--------------+
 ```
 
-Using `<code>IFNULL()</code>` to handle NULLs:
+Using `IFNULL()` to handle NULLs:
 
 
 ```

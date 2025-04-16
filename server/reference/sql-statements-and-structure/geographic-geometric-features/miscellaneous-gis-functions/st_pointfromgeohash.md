@@ -16,7 +16,7 @@ ST_PointFromGeoHash(geohash, srid)
 ## Description
 
 
-Takes a given `<code>geohash</code>` string and returns a point where the x is the longitude and the y is the latitude.
+Takes a given `geohash` string and returns a point where the x is the longitude and the y is the latitude.
 
 
 The latitude is returned as a numeric value in the interval [180, -180]. The longitude is returned as a numeric value in the interval [90, -90]. If the argument is NULL, the return value is NULL. If the argument is invalid, an ER_GIS_INVALID_DATA is thrown.

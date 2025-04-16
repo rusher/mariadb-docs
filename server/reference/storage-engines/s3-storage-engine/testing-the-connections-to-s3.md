@@ -75,11 +75,11 @@ some typing.
 One can use the [MariaDB test system](../../mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) to run all default S3 test against your S3 storage.
 
 
-To do that you have to locate the `<code>mysql-test</code>` directory in your system and
-`<code>cd</code>` to it.
+To do that you have to locate the `mysql-test` directory in your system and
+`cd` to it.
 
 
-The config file for the S3 test system can be found at `<code>suite/s3/my.cnf</code>`.
+The config file for the S3 test system can be found at `suite/s3/my.cnf`.
 To enable testing you have to edit this file and add the s3 connection options
 to the end of the file. It should look something like this after editing:
 
@@ -98,12 +98,12 @@ s3-secret-key=
 s3-region=
 ```
 
-You must give values for `<code>s3-access-key</code>`, `<code>s3-secret-key</code>` and `<code>s3-region</code>` that reflects your S3 provider. The `<code>s3-bucket</code>` name is defined by your administrator.
+You must give values for `s3-access-key`, `s3-secret-key` and `s3-region` that reflects your S3 provider. The `s3-bucket` name is defined by your administrator.
 
 
 If you are not using Amazon Web Services as your S3 provider you must
-also specify `<code>s3-hostname</code>` and possibly change
-`<code>s3-protocol-version</code>` to "Original".
+also specify `s3-hostname` and possibly change
+`s3-protocol-version` to "Original".
 
 
 Now you can test the configuration:
@@ -128,10 +128,10 @@ Note that there may be more tests in your output as we are constantly adding mor
 ## Create a trace of the S3 connection to see what goes wrong
 
 
-One can use the `<code>s3_debug</code>` variable to get a trace of the S3 engines interaction with the S3 storage. The trace is sent to the error log.
+One can use the `s3_debug` variable to get a trace of the S3 engines interaction with the S3 storage. The trace is sent to the error log.
 
 
-Here follows one example on can use to get a trace if `<code>ALTER TABLE .. ENGINE=S3</code>` fails:
+Here follows one example on can use to get a trace if `ALTER TABLE .. ENGINE=S3` fails:
 
 
 ```

@@ -4,7 +4,7 @@
 ## Description
 
 
-The `<code>mutex_instances</code>` table lists all mutexes that the Performance Schema seeing while the server is executing.
+The `mutex_instances` table lists all mutexes that the Performance Schema seeing while the server is executing.
 
 
 A mutex is a code mechanism for ensuring that threads can only access resources one at a time. A second thread attempting to access a resource will find it protected by a mutex, and will wait for it to be unlocked.

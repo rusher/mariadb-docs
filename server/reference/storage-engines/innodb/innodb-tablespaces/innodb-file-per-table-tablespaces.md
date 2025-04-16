@@ -4,7 +4,7 @@
 When you create a table using the [InnoDB storage engine](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), data written to that table is stored on the file system in a data file called a tablespace. Tablespace files contain both the data and indexes.
 
 
-When [innodb_file_per_table=ON](../innodb-system-variables.md#innodb_file_per_table) is set, InnoDB uses one tablespace file per InnoDB table. These tablespace files have the `<code>.ibd</code>` extension. When [innodb_file_per_table=OFF](../innodb-system-variables.md#innodb_file_per_table) is set, InnoDB stores all tables in the [InnoDB system tablespace](innodb-system-tablespaces.md).
+When [innodb_file_per_table=ON](../innodb-system-variables.md#innodb_file_per_table) is set, InnoDB uses one tablespace file per InnoDB table. These tablespace files have the `.ibd` extension. When [innodb_file_per_table=OFF](../innodb-system-variables.md#innodb_file_per_table) is set, InnoDB stores all tables in the [InnoDB system tablespace](innodb-system-tablespaces.md).
 
 
 InnoDB versions in MySQL 5.7 and above also support an additional type of tablespace called [general tablespaces](https://dev.mysql.com/doc/refman/5.7/en/general-tablespaces.html) that are created with [CREATE TABLESPACE](https://dev.mysql.com/doc/refman/5.7/en/create-tablespace.html). However, InnoDB versions in MariaDB Server do not support general tablespaces or [CREATE TABLESPACE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-tablespace.md).
@@ -40,7 +40,7 @@ drwxr-xr-x 3 mysql mysql  4096 Dec 8 18:46 ..
 -rw-rw---- 1 mysql mysql 98304 Dec 8 20:41 t1.ibd
 ```
 
-Note, the system user that runs the MariaDB Server process (which is usually `<code>mysql</code>`) must have write permissions on the given path.
+Note, the system user that runs the MariaDB Server process (which is usually `mysql`) must have write permissions on the given path.
 
 
 ## Copying Transportable Tablespaces
@@ -76,7 +76,7 @@ ALTER TABLE t1 IMPORT TABLESPACE;
 #### Exporting Transportable Tablespaces for Non-partitioned Tables
 
 
-You can export a non-partitioned table by locking the table and copying the table's `<code>.ibd</code>` and `<code>.cfg</code>` files from the relevant [tablespace location](#file-per-table-tablespace-locations) for the table to a backup location. For example, the process would go like this:
+You can export a non-partitioned table by locking the table and copying the table's `.ibd` and `.cfg` files from the relevant [tablespace location](#file-per-table-tablespace-locations) for the table to a backup location. For example, the process would go like this:
 
 
 * First, use the [FLUSH TABLES ... FOR EXPORT](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement on the target table:
@@ -107,7 +107,7 @@ UNLOCK TABLES;
 #### Importing Transportable Tablespaces for Non-partitioned Tables
 
 
-You can import a non-partitioned table by discarding the table's original tablespace, copying the table's `<code>.ibd</code>` and `<code>.cfg</code>` files from the backup location to the relevant [tablespace location](#file-per-table-tablespace-locations) for the table, and then telling the server to import the tablespace.
+You can import a non-partitioned table by discarding the table's original tablespace, copying the table's `.ibd` and `.cfg` files from the backup location to the relevant [tablespace location](#file-per-table-tablespace-locations) for the table, and then telling the server to import the tablespace.
 
 
 For example, the process would go like this:
@@ -130,7 +130,7 @@ CREATE TABLE test.t1 (
 ALTER TABLE test.t1 DISCARD TABLESPACE;
 ```
 
-* Then, copy the `<code>.ibd</code>` and `<code>.cfg</code>` files from the original server to the relevant directory on the target MariaDB Server.
+* Then, copy the `.ibd` and `.cfg` files from the original server to the relevant directory on the target MariaDB Server.
 
 
 ```
@@ -138,7 +138,7 @@ ALTER TABLE test.t1 DISCARD TABLESPACE;
 # scp /data/tablespaces/t1.cfg target-server.com:/var/lib/mysql/test/
 ```
 
-File-per-table tablespaces can be imported with just the `<code>.ibd</code>` file in many cases. If you do not have the tablespace's `<code>.cfg</code>` file for whatever reason, then it is usually worth trying to import the tablespace with just the `<code>.ibd</code>` file.
+File-per-table tablespaces can be imported with just the `.ibd` file in many cases. If you do not have the tablespace's `.cfg` file for whatever reason, then it is usually worth trying to import the tablespace with just the `.ibd` file.
 
 
 * Then, once the files are in the proper directory on the target server, use [ALTER TABLE ... IMPORT TABLESPACE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#import-tablespace) to import the new table's tablespace:
@@ -157,7 +157,7 @@ Currently, MariaDB does not directly support the transport of tablespaces from p
 #### Exporting Transportable Tablespaces for Partitioned Tables
 
 
-You can export a partitioned table by locking the table and copying the `<code>.ibd</code>` and `<code>.cfg</code>` files of each partition from the relevant [tablespace location](#file-per-table-tablespace-locations) for the partition to a backup location. For example, the process would go like this:
+You can export a partitioned table by locking the table and copying the `.ibd` and `.cfg` files of each partition from the relevant [tablespace location](#file-per-table-tablespace-locations) for the partition to a backup location. For example, the process would go like this:
 
 
 * First, let's create a test table with some data on the original server:
@@ -192,7 +192,7 @@ FLUSH TABLES test.t2 FOR EXPORT;
 This forces the server to close the table and provides your connection with a read lock on the table.
 
 
-* Then, if we grep the database directory in the data directory for the newly created `<code>t2</code>` table, we can see a number of `<code>.ibd</code>` and `<code>.cfg</code>` files for the table:
+* Then, if we grep the database directory in the data directory for the newly created `t2` table, we can see a number of `.ibd` and `.cfg` files for the table:
 
 
 ```
@@ -229,7 +229,7 @@ UNLOCK TABLES;
 #### Importing Transportable Tablespaces for Partitioned Tables
 
 
-You can import a partitioned table by creating a placeholder table, discarding the placeholder table's original tablespace, copying the partition's `<code>.ibd</code>` and `<code>.cfg</code>` files from the backup location to the relevant [tablespace location](#file-per-table-tablespace-locations) for the placeholder table, and then telling the server to import the tablespace. At that point, the server can exchange the tablespace for the placeholder table with the one for the partition. For example, the process would go like this:
+You can import a partitioned table by creating a placeholder table, discarding the placeholder table's original tablespace, copying the partition's `.ibd` and `.cfg` files from the backup location to the relevant [tablespace location](#file-per-table-tablespace-locations) for the placeholder table, and then telling the server to import the tablespace. At that point, the server can exchange the tablespace for the placeholder table with the one for the partition. For example, the process would go like this:
 
 
 * First, we need to copy the saved tablespace files from the original server to the target server:
@@ -263,7 +263,7 @@ CREATE TABLE test.t2_placeholder LIKE test.t2;
 ALTER TABLE test.t2_placeholder REMOVE PARTITIONING;
 ```
 
-This statement will create a new table called `<code>t2_placeholder</code>` that has the same schema structure as `<code>t2</code>`, but it does not use partitioning and it contains no rows.
+This statement will create a new table called `t2_placeholder` that has the same schema structure as `t2`, but it does not use partitioning and it contains no rows.
 
 
 ##### For Each Partition
@@ -279,7 +279,7 @@ From this point forward, the rest of our steps need to happen for each individua
 ALTER TABLE test.t2_placeholder DISCARD TABLESPACE;
 ```
 
-* Then, copy the `<code>.ibd</code>` and `<code>.cfg</code>` files for the next partition to the relevant directory for the `<code>t2_placeholder</code>` table on the target MariaDB Server:
+* Then, copy the `.ibd` and `.cfg` files for the next partition to the relevant directory for the `t2_placeholder` table on the target MariaDB Server:
 
 
 ```
@@ -288,7 +288,7 @@ ALTER TABLE test.t2_placeholder DISCARD TABLESPACE;
 # chown mysql:mysql /var/lib/mysql/test/t2_placeholder*
 ```
 
-File-per-table tablespaces can be imported with just the `<code>.ibd</code>` file in many cases. If you do not have the tablepace's `<code>.cfg</code>` file for whatever reason, then it is usually worth trying to import the tablespace with just the `<code>.ibd</code>` file.
+File-per-table tablespaces can be imported with just the `.ibd` file in many cases. If you do not have the tablepace's `.cfg` file for whatever reason, then it is usually worth trying to import the tablespace with just the `.ibd` file.
 
 
 * Then, once the files are in the proper directory on the target server, we need to use [ALTER TABLE ... IMPORT TABLESPACE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#import-tablespace) to import the new table's tablespace:
@@ -298,7 +298,7 @@ File-per-table tablespaces can be imported with just the `<code>.ibd</code>` fil
 ALTER TABLE test.t2_placeholder IMPORT TABLESPACE;
 ```
 
-The placeholder table now contains data from the `<code>p0</code>` partition on the source server.
+The placeholder table now contains data from the `p0` partition on the source server.
 
 
 ```

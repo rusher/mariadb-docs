@@ -11,7 +11,7 @@ ST_UNION(g1,g2)
 ## Description
 
 
-Returns a geometry that is the union of the geometry *`<code>g1</code>`* and geometry *`<code>g2</code>`*.
+Returns a geometry that is the union of the geometry *`g1`* and geometry *`g2`*.
 
 
 ## Examples

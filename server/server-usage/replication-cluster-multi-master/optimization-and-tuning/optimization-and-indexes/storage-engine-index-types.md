@@ -31,7 +31,7 @@ B-Tree Index Characteristics
 B-tree indexes are used for column comparisons using the >, >=, =, >=, < or BETWEEN operators, as well as for LIKE comparisons that begin with a constant.
 
 
-For example, the query `<code class="fixed" style="white-space:pre-wrap">SELECT * FROM Employees WHERE First_Name LIKE 'Maria%';</code>` can make use of a B-tree index, while `<code class="fixed" style="white-space:pre-wrap">SELECT * FROM Employees WHERE First_Name LIKE '%aria';</code>` cannot.
+For example, the query `SELECT * FROM Employees WHERE First_Name LIKE 'Maria%';` can make use of a B-tree index, while `SELECT * FROM Employees WHERE First_Name LIKE '%aria';` cannot.
 
 
 B-tree indexes also permit leftmost prefixing for searching of rows.

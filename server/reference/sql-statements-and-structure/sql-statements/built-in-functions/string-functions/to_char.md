@@ -17,7 +17,7 @@ TO_CHAR(expr[, fmt])
 ## Description
 
 
-The `<code>TO_CHAR</code>` function converts an *expr* of type [date](../../../sql-language-structure/date-and-time-literals.md), [datetime](../../../../data-types/date-and-time-data-types/datetime.md), [time](../../administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) or [timestamp](../date-time-functions/timestamp-function.md) to a string. The optional *fmt* argument supports YYYY/YYY/YY/RRRR/RR/MM/MON/MONTH/MI/DD/DY/HH/HH12/HH24/SS and special characters. The default value is "YYYY-MM-DD HH24:MI:SS".
+The `TO_CHAR` function converts an *expr* of type [date](../../../sql-language-structure/date-and-time-literals.md), [datetime](../../../../data-types/date-and-time-data-types/datetime.md), [time](../../administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) or [timestamp](../date-time-functions/timestamp-function.md) to a string. The optional *fmt* argument supports YYYY/YYY/YY/RRRR/RR/MM/MON/MONTH/MI/DD/DY/HH/HH12/HH24/SS and special characters. The default value is "YYYY-MM-DD HH24:MI:SS".
 
 
 In Oracle, TO_CHAR can also be used to convert numbers to strings, but this is not supported in MariaDB and will give an error.

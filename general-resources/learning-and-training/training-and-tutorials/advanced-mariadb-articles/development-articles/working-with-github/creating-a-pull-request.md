@@ -61,7 +61,7 @@ This gives other server developers a reasonable visibility of to why the branch 
 If you push with a command line client over a ssh transport remote, the output from GitHub will provide a link to create the pull request. This can be opened in your browser to complete the process.
 
 
-To use the *gh cli*, use [[[gh_pr_create|](https://cli.github.com/manual/gh_pr_create|)`<code class="fixed" style="white-space:pre-wrap">gh pr create</code>`] to interactively create it, or use a variety of the command line options to increase the automation.
+To use the *gh cli*, use [[[gh_pr_create|](https://cli.github.com/manual/gh_pr_create|)`gh pr create`] to interactively create it, or use a variety of the command line options to increase the automation.
 
 
 Common options you may wish to use:

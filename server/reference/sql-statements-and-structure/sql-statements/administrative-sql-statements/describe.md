@@ -12,13 +12,13 @@
 ## Description
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">DESCRIBE</code>` provides information about the columns in a table.
-It is a shortcut for `<code class="highlight fixed" style="white-space:pre-wrap">[SHOW COLUMNS FROM](show/show-columns.md)</code>`.
+`DESCRIBE` provides information about the columns in a table.
+It is a shortcut for `[SHOW COLUMNS FROM](show/show-columns.md)`.
 These statements also display information for [views](../../../../server-usage/programming-customizing-mariadb/views/README.md).
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">col_name</code>` can be a column name, or a string containing the
-SQL "`<code class="highlight fixed" style="white-space:pre-wrap">%</code>`" and "`<code class="highlight fixed" style="white-space:pre-wrap">_</code>`" wildcard characters to
+`col_name` can be a column name, or a string containing the
+SQL "`%`" and "`_`" wildcard characters to
 obtain output only for the columns with names matching the string. There is no
 need to enclose the string within quotes unless it contains spaces or other
 special characters.
@@ -37,7 +37,7 @@ DESCRIBE city;
 +------------+----------+------+-----+---------+----------------+
 ```
 
-The description for `<code class="highlight fixed" style="white-space:pre-wrap">[SHOW COLUMNS](show/show-columns.md)</code>` provides
+The description for `[SHOW COLUMNS](show/show-columns.md)` provides
 more information about the output columns.
 
 

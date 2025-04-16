@@ -72,7 +72,7 @@ sudo pip install buildbot-slave==0.8.9
 #### Creating the Buildbot builder
 
 
-After the buildbot-slave package is installed (either via apt or pip), you need to create the builder using the `<code>buildslave create-slave</code>` command. As part of this command you will need to specify a name for your buildslave and a password. Both need to be given to the MariaDB Buildbot maintainers so that they can add your builder to the build pool. Ask on the [maria-developers](https://launchpad.net/~maria-developers) mailing list or on [IRC](/kb/en/irc/) for who these people are.
+After the buildbot-slave package is installed (either via apt or pip), you need to create the builder using the `buildslave create-slave` command. As part of this command you will need to specify a name for your buildslave and a password. Both need to be given to the MariaDB Buildbot maintainers so that they can add your builder to the build pool. Ask on the [maria-developers](https://launchpad.net/~maria-developers) mailing list or on [IRC](/kb/en/irc/) for who these people are.
 
 
 An example command for creating the slave is:

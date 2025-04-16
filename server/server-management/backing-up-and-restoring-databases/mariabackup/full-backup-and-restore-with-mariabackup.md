@@ -7,7 +7,7 @@ When using mariadb-backup, you have the option of performing a full or an increm
 ## Backing up the Database Server
 
 
-In order to back up the database, you need to run mariadb-backup with the `<code>[--backup](mariabackup-options.md#-backup)</code>` option to tell it to perform a backup and with the `<code>[--target-dir](mariabackup-options.md#-target-dir)</code>` option to tell it where to place the backup files. When taking a full backup, the target directory must be empty or it must not exist.
+In order to back up the database, you need to run mariadb-backup with the `[--backup](mariabackup-options.md#-backup)` option to tell it to perform a backup and with the `[--target-dir](mariabackup-options.md#-target-dir)` option to tell it where to place the backup files. When taking a full backup, the target directory must be empty or it must not exist.
 
 
 To take a backup, run the following command:
@@ -43,7 +43,7 @@ ibdata1           xtrabackup_binlog_info
 The data files that mariadb-backup creates in the target directory are not point-in-time consistent, given that the data files are copied at different times during the backup operation. If you try to restore from these files, InnoDB notices the inconsistencies and crashes to protect you from corruption
 
 
-Before you can restore from a backup, you first need to **prepare** it to make the data files consistent. You can do so with the `<code>[--prepare](mariabackup-options.md#-prepare)</code>` option.
+Before you can restore from a backup, you first need to **prepare** it to make the data files consistent. You can do so with the `[--prepare](mariabackup-options.md#-prepare)` option.
 
 
 ```
@@ -61,13 +61,13 @@ $ mariadb-backup --prepare \
 ## Restoring the Backup
 
 
-Once the backup is complete and you have prepared the backup for restoration (previous step), you can restore the backup using either the `<code>[--copy-back](mariabackup-options.md#-copy-back)</code>` or the `<code>[--move-back](mariabackup-options.md#-move-back)</code>` options. The `<code>[--copy-back](mariabackup-options.md#-copy-back)</code>` option allows you to keep the original backup files. The `<code>[--move-back](mariabackup-options.md#-move-back)</code>` option actually moves the backup files to the `<code>[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)</code>`, so the original backup files are lost.
+Once the backup is complete and you have prepared the backup for restoration (previous step), you can restore the backup using either the `[--copy-back](mariabackup-options.md#-copy-back)` or the `[--move-back](mariabackup-options.md#-move-back)` options. The `[--copy-back](mariabackup-options.md#-copy-back)` option allows you to keep the original backup files. The `[--move-back](mariabackup-options.md#-move-back)` option actually moves the backup files to the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`, so the original backup files are lost.
 
 
 * First, [stop the MariaDB Server process](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md).
 
 
-* Then, ensure that the `<code>[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)</code>` is empty.
+* Then, ensure that the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` is empty.
 
 
 * Then, run mariadb-backup with one of the options mentioned above:
@@ -81,7 +81,7 @@ $ mariadb-backup --copy-back \
 * Then, you may need to fix the file permissions.
 
 
-When mariadb-backup restores a database, it preserves the file and directory privileges of the backup. However, it writes the files to disk as the user and group restoring the database. As such, after restoring a backup, you may need to adjust the owner of the data directory to match the user and group for the MariaDB Server, typically `<code>mysql</code>` for both. For example, to recursively change ownership of the files to the `<code>mysql</code>` user and group, you could execute:
+When mariadb-backup restores a database, it preserves the file and directory privileges of the backup. However, it writes the files to disk as the user and group restoring the database. As such, after restoring a backup, you may need to adjust the owner of the data directory to match the user and group for the MariaDB Server, typically `mysql` for both. For example, to recursively change ownership of the files to the `mysql` user and group, you could execute:
 
 
 ```
@@ -94,7 +94,7 @@ $ chown -R mysql:mysql /var/lib/mysql/
 ### Restoring with Other Tools
 
 
-Once a full backup is prepared, it is a fully functional MariaDB data directory. Therefore, as long as the MariaDB Server process is stopped on the target server, you can technically restore the backup using any file copying tool, such as `<code>cp</code>` or `<code>rysnc</code>`. For example, you could also execute the following to restore the backup:
+Once a full backup is prepared, it is a fully functional MariaDB data directory. Therefore, as long as the MariaDB Server process is stopped on the target server, you can technically restore the backup using any file copying tool, such as `cp` or `rysnc`. For example, you could also execute the following to restore the backup:
 
 
 ```

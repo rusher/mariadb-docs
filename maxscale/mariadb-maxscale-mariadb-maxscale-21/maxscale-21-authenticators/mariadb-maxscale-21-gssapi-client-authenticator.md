@@ -31,7 +31,7 @@ kadmin.local -q "addprinc -nokey mariadb/example.com@EXAMPLE.COM"
 
 
 
-The `<code>-nokey</code>` option will make the principal a passwordless one. This allows the
+The `-nokey` option will make the principal a passwordless one. This allows the
 *maxscale* user to acquire a ticket for it without a password being prompted.
 
 
@@ -46,7 +46,7 @@ kadmin.local -q "ktadd -k /etc/krb5.keytab -norandkey mariadb/example.com@EXAMPL
 
 
 This adds the *mariadb/[example.com@EXAMPLE.COM](https://mariadb.com/kb/en/mailto:example.com@EXAMPLE.COM)* principal into the keytab
-file. The `<code>-norandkey</code>` option tells that the password we defined earlier,
+file. The `-norandkey` option tells that the password we defined earlier,
 i.e. no password at all, should be used instead of a random password.
 
 
@@ -62,7 +62,7 @@ principal name that MaxScale sends to the client. The backend authenticator
 module has no options.
 
 
-### `<code>principal_name</code>`
+### `principal_name`
 
 
 The service principal name to send to the client. This parameter is a
@@ -73,7 +73,7 @@ The default value for this option is *mariadb/localhost.localdomain*.
 
 
 The parameter must be a valid GSSAPI principal name
-e.g. `<code>styx/pluto@EXAMPLE.COM</code>`. The principal name can also be defined
+e.g. `styx/pluto@EXAMPLE.COM`. The principal name can also be defined
 without the realm part in which case the default realm will be used.
 
 
@@ -89,7 +89,7 @@ details on how authentication modules work in MaxScale.
 
 The GSSAPI plugin authentication starts when the database server sends the
 service principal name in the AuthSwitchRequest packet. The principal name will
-usually be in the form `<code>service@REALM.COM</code>`.
+usually be in the form `service@REALM.COM`.
 
 
 The client will then request a token for this service from the GSSAPI server and

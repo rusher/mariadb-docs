@@ -9,7 +9,7 @@ These [Sys Schema](sys-schema-views-host_summary_by_statement_latency-and-xhost_
 ## Description
 
 
-The `<code>host_summary</code>` and `<code>x$host_summary</code>` views contain host activity information, grouped by host. The `<code>host_summary</code>` view is intended to be easier for human reading, while the `<code>x$host_summary</code>` view provides the data in raw form, intended for tools that process the data.
+The `host_summary` and `x$host_summary` views contain host activity information, grouped by host. The `host_summary` view is intended to be easier for human reading, while the `x$host_summary` view provides the data in raw form, intended for tools that process the data.
 
 
 They contain the following columns:

@@ -127,7 +127,7 @@ $ cat xtrabackup_binlog_info
 mariadb-bin.000096 568 0-1-2
 ```
 
-And then we would set `<code>MASTER_USE_GTID=slave_pos</code>` in the [CHANGE MASTER TO](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command. For example:
+And then we would set `MASTER_USE_GTID=slave_pos` in the [CHANGE MASTER TO](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command. For example:
 
 
 ```
@@ -144,7 +144,7 @@ START SLAVE;
 ### File and Position
 
 
-If we want to use the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position coordinates, then we would set `<code>MASTER_LOG_FILE</code>` and `<code>MASTER_LOG_POS</code>` in the [CHANGE MASTER TO](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command to the file and position coordinates that we pulled; either the [xtrabackup_binlog_info](files-created-by-mariabackup.md#xtrabackup_binlog_info) file or the [xtrabackup_slave_info](files-created-by-mariabackup.md#xtrabackup_slave_info) file in the backup directory, depending on whether the backup was taken from the primary or from a replica of the primary. For example:
+If we want to use the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position coordinates, then we would set `MASTER_LOG_FILE` and `MASTER_LOG_POS` in the [CHANGE MASTER TO](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command to the file and position coordinates that we pulled; either the [xtrabackup_binlog_info](files-created-by-mariabackup.md#xtrabackup_binlog_info) file or the [xtrabackup_slave_info](files-created-by-mariabackup.md#xtrabackup_slave_info) file in the backup directory, depending on whether the backup was taken from the primary or from a replica of the primary. For example:
 
 
 ```

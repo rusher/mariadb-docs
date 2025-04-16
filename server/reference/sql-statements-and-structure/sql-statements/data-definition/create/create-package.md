@@ -1,7 +1,7 @@
 
 # CREATE PACKAGE
 
-The `<code>CREATE PACKAGE</code>` statement can be used when [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set, or in any mode from [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md).
+The `CREATE PACKAGE` statement can be used when [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set, or in any mode from [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md).
 
 
 In Oracle mode, the PL/SQL dialect is used, while if Oracle mode is not set (the default), SQL/PSM is used.
@@ -112,13 +112,13 @@ package_routine_characteristic:
 ## Description
 
 
-The `<code>CREATE PACKAGE</code>` statement can be used when [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set, or in any mode from [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md).
+The `CREATE PACKAGE` statement can be used when [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set, or in any mode from [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md).
 
 
-`<code>CREATE PACKAGE</code>` creates the specification for a stored package (a collection of logically related stored objects). A stored package specification declares public routines (procedures and functions) of the package, but does not implement these routines.
+`CREATE PACKAGE` creates the specification for a stored package (a collection of logically related stored objects). A stored package specification declares public routines (procedures and functions) of the package, but does not implement these routines.
 
 
-A package whose specification was created by the `<code>CREATE PACKAGE</code>` statement, should later be implemented using the [CREATE PACKAGE BODY](create-package-body.md) statement.
+A package whose specification was created by the `CREATE PACKAGE` statement, should later be implemented using the [CREATE PACKAGE BODY](create-package-body.md) statement.
 
 
 ## Function parameter quantifiers IN | OUT | INOUT | IN OUT
@@ -126,10 +126,10 @@ A package whose specification was created by the `<code>CREATE PACKAGE</code>` s
 
 
 ##### MariaDB starting with [10.8.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes.md)
-The function parameter quantifiers for `<code>IN</code>`, `<code>OUT</code>`, `<code>INOUT</code>`, and `<code>IN OUT</code>` where added in a 10.8.0 preview release. Prior to 10.8.0 quantifiers were supported only in procedures.
+The function parameter quantifiers for `IN`, `OUT`, `INOUT`, and `IN OUT` where added in a 10.8.0 preview release. Prior to 10.8.0 quantifiers were supported only in procedures.
 
 
-`<code>OUT</code>`, `<code>INOUT</code>` and its equivalent `<code>IN OUT</code>`, are only valid if called from `<code>SET</code>` and not `<code>SELECT</code>`. These quantifiers are especially useful for creating functions and procedures with more than one return value. This allows functions and procedures to be more complex and nested.
+`OUT`, `INOUT` and its equivalent `IN OUT`, are only valid if called from `SET` and not `SELECT`. These quantifiers are especially useful for creating functions and procedures with more than one return value. This allows functions and procedures to be more complex and nested.
 
 
 ## Examples

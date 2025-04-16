@@ -36,7 +36,7 @@ filters=MyComment
 The Comment filter requires one mandatory parameter to be defined.
 
 
-### `<code>inject</code>`
+### `inject`
 
 
 A parameter that contains the comment injected before the statements.

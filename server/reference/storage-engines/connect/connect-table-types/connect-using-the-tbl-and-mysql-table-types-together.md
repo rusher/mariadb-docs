@@ -79,7 +79,7 @@ srcdef='select c1, sum(c2) as sc2 from t1 a, t2 b where a.id = b.id group by c1'
 Note the alias for the functional column. An alias would be required for the c1
 column if its name was different on some machines. The t1 and t2 table names
 can also be eventually different on the remote machines. The true names must be
-used in the `<code>SRCDEF</code>` parameter. This will create a set of tables with two columns
+used in the `SRCDEF` parameter. This will create a set of tables with two columns
 named c1 and sc2[[1](#_note-0)].
 
 
@@ -112,7 +112,7 @@ Thread is currently experimental. Use it only for test and report any malfunctio
 An interesting case is when the query to run on remote machines is the same for
 all of them. It is then possible to avoid declaring all sub-tables. In this
 case, the table list option will be used to specify the list of servers the
-`<code>SRCDEF</code>` query must be sent. This will be a list of URL’s and/or Federated
+`SRCDEF` query must be sent. This will be a list of URL’s and/or Federated
 server names.
 
 
@@ -152,5 +152,5 @@ MariaDB and a federated server named *server_one*.
 
 
 
-1. [↑](#_ref-0) To generate the columns from the `<code>SRCDEF</code>` query, CONNECT must execute it. This will make sure it is ok. However, if the remote server is not connected yet, or the remote table not existing yet, you can alternatively specify the columns in the create table statement.
+1. [↑](#_ref-0) To generate the columns from the `SRCDEF` query, CONNECT must execute it. This will make sure it is ok. However, if the remote server is not connected yet, or the remote table not existing yet, you can alternatively specify the columns in the create table statement.
 

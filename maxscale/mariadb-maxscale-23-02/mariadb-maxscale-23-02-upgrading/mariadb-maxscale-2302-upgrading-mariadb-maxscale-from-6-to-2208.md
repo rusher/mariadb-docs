@@ -19,9 +19,9 @@ up.
 # Removed Features
 
 
-* The support for legacy encryption keys generated with `<code>maxkeys</code>` from pre-2.5
+* The support for legacy encryption keys generated with `maxkeys` from pre-2.5
  versions has been removed. This feature was deprecated in MaxScale 2.5 when
  the new key storage format was introduced. To migrate to the new key storage
- format, create a new key file with `<code>maxkeys</code>` and re-encrypt the passwords with
- `<code>maxpasswd</code>`.
+ format, create a new key file with `maxkeys` and re-encrypt the passwords with
+ `maxpasswd`.
 * The deprecated Database Firewall filter has been removed.

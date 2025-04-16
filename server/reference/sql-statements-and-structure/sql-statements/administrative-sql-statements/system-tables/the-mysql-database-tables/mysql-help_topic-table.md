@@ -1,13 +1,13 @@
 
 # mysql.help_topic Table
 
-`<code>mysql.help_topic</code>` is one of the four tables used by the [HELP command](../../help-command.md). It is populated when the server is installed by the `<code>fill_help_tables.sql</code>` script. The other help tables are [help_relation](mysql-help_relation-table.md), [help_category](mysql-help_category-table.md) and [help_keyword](mysql-help_keyword-table.md).
+`mysql.help_topic` is one of the four tables used by the [HELP command](../../help-command.md). It is populated when the server is installed by the `fill_help_tables.sql` script. The other help tables are [help_relation](mysql-help_relation-table.md), [help_category](mysql-help_category-table.md) and [help_keyword](mysql-help_keyword-table.md).
 
 
 This table uses the [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine. Prior to [MariaDB 10.4](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) it used the [MyISAM](../../../../../storage-engines/myisam-storage-engine/myisam-system-variables.md) engine.
 
 
-The `<code>mysql.help_topic</code>` table contains the following fields:
+The `mysql.help_topic` table contains the following fields:
 
 
 

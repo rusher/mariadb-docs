@@ -66,7 +66,7 @@ From [MariaDB 10.6](../../../../../../../../release-notes/mariadb-community-serv
 SELECT * FROM (SELECT 1 FROM DUAL), (SELECT 2 FROM DUAL);
 ```
 
-From [MariaDB 11.7](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md). In this example, the second column of the derived table `<code>dt</code>` is used both within (WHERE c2 > 0), and outside, (WHERE a2 > 10), the specification. Both conditions apply to t1.c2.
+From [MariaDB 11.7](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md). In this example, the second column of the derived table `dt` is used both within (WHERE c2 > 0), and outside, (WHERE a2 > 10), the specification. Both conditions apply to t1.c2.
 
 
 ```

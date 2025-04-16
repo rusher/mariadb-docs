@@ -1,7 +1,7 @@
 
 # Using Encryption and Compression Tools With Mariabackup
 
-[Mariabackup](mariabackup-and-backup-stage-commands.md) supports streaming to stdout with the `<code>--stream=xbstream</code>` option. This option allows easy integration with popular encryption and compression tools. Below are several examples.
+[Mariabackup](mariabackup-and-backup-stage-commands.md) supports streaming to stdout with the `--stream=xbstream` option. This option allows easy integration with popular encryption and compression tools. Below are several examples.
 
 
 ## Encrypting and Decrypting Backup With openssl
@@ -48,7 +48,7 @@ This example adds a compression step before the encryption, otherwise looks almo
 mariabackup --user=root --backup --stream=xbstream | gzip | openssl  enc -aes-256-cbc -k mypass > backup.xb.gz.enc
 ```
 
-We can decrypt, decompress and unpack the backup as follow (note `<code>gzip -d</code>` in the pipeline):
+We can decrypt, decompress and unpack the backup as follow (note `gzip -d` in the pipeline):
 
 
 ```
@@ -58,7 +58,7 @@ openssl  enc -d -aes-256-cbc -k mypass -in backup.xb.gz.enc |gzip -d| mbstream -
 ## Compressing and Encrypting with 7Zip
 
 
-7zip archiver is a popular utility (especially on Windows) that supports reading from standard output, with the -`<code>-si</code>` option, and writing to stdout with the `<code>-so</code>` option, and can thus be used together with Mariabackup.
+7zip archiver is a popular utility (especially on Windows) that supports reading from standard output, with the -`-si` option, and writing to stdout with the `-so` option, and can thus be used together with Mariabackup.
 
 
 Compressing backup with the 7z command line utility works as follows:
@@ -75,7 +75,7 @@ Uncompress and unpack the archive with
 7z e backup.xb.7z -so |mbstream -x
 ```
 
-7z also has builtin AES-256 encryption. To encrypt the backup from the previous example using password SECRET, add `<code>-pSECRET</code>` to the 7z command line.
+7z also has builtin AES-256 encryption. To encrypt the backup from the previous example using password SECRET, add `-pSECRET` to the 7z command line.
 
 
 ## Compressing with zstd
@@ -121,10 +121,10 @@ Most of the described tools also provide a way to enter a passphrase interactive
 ## Writing extra status files
 
 
-By default files like `<code>[xtrabackup_checkpoints](files-created-by-mariabackup.md#xtrabackup_checkpoints)</code>` are also written to the output stream only, and so would not be available for taking further incremental backups without prior extraction from the compressed or encrypted stream output file.
+By default files like `[xtrabackup_checkpoints](files-created-by-mariabackup.md#xtrabackup_checkpoints)` are also written to the output stream only, and so would not be available for taking further incremental backups without prior extraction from the compressed or encrypted stream output file.
 
 
-To avoid this these files can additionally be written to a directory that can then be used as input for further incremental backups using the `<code>[--extra-lsndir=...](mariabackup-options.md#-extra-lsndir)</code>` option.
+To avoid this these files can additionally be written to a directory that can then be used as input for further incremental backups using the `[--extra-lsndir=...](mariabackup-options.md#-extra-lsndir)` option.
 
 
 See also e.g: [Combining incremental backups with streaming output](incremental-backup-and-restore-with-mariabackup.md#combining-with-stream-output)

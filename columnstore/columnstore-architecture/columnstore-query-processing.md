@@ -12,6 +12,6 @@ MariaDB ColumnStore processes an end user query from the user to User and Perfor
 1. The Performance Module or Modules carry out predicate filtering, join processing, initial aggregation of data from local or external storage, then send the data back to the User Module.
 1. The User Module performs the final result-set aggregation and composes the result-set for the query.
 1. The User Module / ExeMgr implements any window function calculations, as well as any necessary sorting on the result-set. It then returns the result-set to the server.
-1. The MariaDB Server performs any select list functions, `<code>ORDER BY</code>` and `<code>LIMIT</code>` operations on the result-set.
+1. The MariaDB Server performs any select list functions, `ORDER BY` and `LIMIT` operations on the result-set.
 1. The MariaDB Server returns the result-set to the client.
 

@@ -12,10 +12,10 @@ Querying these views can have a noticeable performance impact on a production se
 ## Description
 
 
-The `<code>innodb_buffer_stats_by_schema</code>` and `<code>x$innodb_buffer_stats_by_schema</code>` views summarize information from the [Information Schema INNODB_BUFFER_PAGE table](../../information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_buffer_page-table.md), grouped by schema. Rows are sorted by descending buffer size by default.
+The `innodb_buffer_stats_by_schema` and `x$innodb_buffer_stats_by_schema` views summarize information from the [Information Schema INNODB_BUFFER_PAGE table](../../information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_buffer_page-table.md), grouped by schema. Rows are sorted by descending buffer size by default.
 
 
-The `<code>innodb_buffer_stats_by_schema</code>` view is intended to be easier for human reading, while the `<code>x$innodb_buffer_stats_by_schema</code>` view provides the data in raw form, intended for tools that process the data.
+The `innodb_buffer_stats_by_schema` view is intended to be easier for human reading, while the `x$innodb_buffer_stats_by_schema` view provides the data in raw form, intended for tools that process the data.
 
 
 They contain the following columns:

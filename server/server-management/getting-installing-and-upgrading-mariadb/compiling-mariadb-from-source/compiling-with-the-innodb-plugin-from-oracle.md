@@ -5,9 +5,9 @@ From [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-m
 
 
 If you want to use Oracle's InnoDB plugin, then you need to compile MariaDB and
-**not** specify `<code class="fixed" style="white-space:pre-wrap">--without-plugin-innodb_plugin</code>` when
-configuring. For example, a simple `<code class="fixed" style="white-space:pre-wrap">./configure
-</code>` without
+**not** specify `--without-plugin-innodb_plugin` when
+configuring. For example, a simple `./configure
+` without
 any options will do.
 
 

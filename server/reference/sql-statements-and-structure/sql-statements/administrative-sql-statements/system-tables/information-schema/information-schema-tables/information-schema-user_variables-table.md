@@ -5,7 +5,7 @@
 ## Description
 
 
-The `<code>USER_VARIABLES</code>` table is created when the [user_variables](../../../../../../plugins/other-plugins/user-variables-plugin.md) plugin is enabled, and contains information about [user-defined variables](../../../../../sql-language-structure/user-defined-variables.md).
+The `USER_VARIABLES` table is created when the [user_variables](../../../../../../plugins/other-plugins/user-variables-plugin.md) plugin is enabled, and contains information about [user-defined variables](../../../../../sql-language-structure/user-defined-variables.md).
 
 
 The table contains the following columns:
@@ -22,7 +22,7 @@ The table contains the following columns:
 
 
 
-User variables are reset and the table emptied with the [FLUSH USER_VARIABLES](../../../flush-commands/flush-tables-for-export.md) statement. `<code>SHOW USER_VARIABLES</code>` displays a subset of the data.
+User variables are reset and the table emptied with the [FLUSH USER_VARIABLES](../../../flush-commands/flush-tables-for-export.md) statement. `SHOW USER_VARIABLES` displays a subset of the data.
 
 
 ## Example

@@ -37,7 +37,7 @@ for details.
 ### Cache
 
 
-* The storage `<code>storage_rocksdb</code>` is no longer built by default and is
+* The storage `storage_rocksdb` is no longer built by default and is
  not included in the MariaDB MaxScale package.
 
 

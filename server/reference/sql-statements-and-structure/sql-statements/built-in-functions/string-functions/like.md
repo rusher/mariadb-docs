@@ -13,47 +13,47 @@ expr NOT LIKE pat [ESCAPE 'escape_char']
 ## Description
 
 
-Tests whether *expr* matches the pattern *pat*. Returns either 1 (`<code>TRUE</code>`) or 0 (`<code>FALSE</code>`).
+Tests whether *expr* matches the pattern *pat*. Returns either 1 (`TRUE`) or 0 (`FALSE`).
 Both *expr* and *pat* may be any valid expression and are evaluated to strings.
 Patterns may use the following wildcard characters:
 
 
-* `<code>%</code>` matches any number of characters, including zero.
-* `<code>_</code>` matches any single character.
+* `%` matches any number of characters, including zero.
+* `_` matches any single character.
 
 
-Use `<code>NOT LIKE</code>` to test if a string does not match a pattern. This is equivalent to using
-the `<code>[NOT](../../../../mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used.md)</code>` operator on the entire `<code>LIKE</code>` expression.
+Use `NOT LIKE` to test if a string does not match a pattern. This is equivalent to using
+the `[NOT](../../../../mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used.md)` operator on the entire `LIKE` expression.
 
 
-If either the expression or the pattern is `<code>NULL</code>`, the result is `<code>NULL</code>`.
+If either the expression or the pattern is `NULL`, the result is `NULL`.
 
 
-`<code class="fixed" style="white-space:pre-wrap">LIKE</code>` performs case-insensitive substring matches if the collation for the
+`LIKE` performs case-insensitive substring matches if the collation for the
 expression and pattern is case-insensitive. For case-sensitive matches, declare either argument
-to use a binary collation using `<code>[collate](https://mariadb.com/kb/en/collate)</code>`, or coerce either of them to a `<code>[BINARY](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)</code>`
-string using `<code>[CAST](cast.md)</code>`. Use `<code>[SHOW COLLATION](../../administrative-sql-statements/show/show-collation.md)</code>` to get a list of
-available collations. Collations ending in `<code>_bin</code>` are case-sensitive.
+to use a binary collation using `[collate](https://mariadb.com/kb/en/collate)`, or coerce either of them to a `[BINARY](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)`
+string using `[CAST](cast.md)`. Use `[SHOW COLLATION](../../administrative-sql-statements/show/show-collation.md)` to get a list of
+available collations. Collations ending in `_bin` are case-sensitive.
 
 
 Numeric arguments are coerced to binary strings.
 
 
-The `<code>_</code>` wildcard matches a single character, not byte. It will only match a multi-byte character
-if it is valid in the expression's character set. For example, `<code>_</code>` will match `<code>_utf8"€"</code>`, but it
-will not match `<code>_latin1"€"</code>` because the Euro sign is not a valid latin1 character. If necessary,
-use `<code>[CONVERT](../../../../storage-engines/converting-tables-from-myisam-to-innodb.md)</code>` to use the expression in a different character set.
+The `_` wildcard matches a single character, not byte. It will only match a multi-byte character
+if it is valid in the expression's character set. For example, `_` will match `_utf8"€"`, but it
+will not match `_latin1"€"` because the Euro sign is not a valid latin1 character. If necessary,
+use `[CONVERT](../../../../storage-engines/converting-tables-from-myisam-to-innodb.md)` to use the expression in a different character set.
 
 
-If you need to match the characters `<code>_</code>` or `<code>%</code>`, you must escape them. By default,
-you can prefix the wildcard characters the backslash character `<code>\</code>` to escape them.
+If you need to match the characters `_` or `%`, you must escape them. By default,
+you can prefix the wildcard characters the backslash character `\` to escape them.
 The backslash is used both to encode special characters like newlines when a string is
 parsed as well as to escape wildcards in a pattern after parsing. Thus, to match an
-actual backslash, you sometimes need to double-escape it as `<code>"\</code>``<code>\</code>``<code>\</code>``<code>\"</code>`.
+actual backslash, you sometimes need to double-escape it as `"\``\``\``\"`.
 
 
 To avoid difficulties with the backslash character, you can change the wildcard escape
-character using `<code>ESCAPE</code>` in a `<code>LIKE</code>` expression. The argument to `<code>ESCAPE</code>`
+character using `ESCAPE` in a `LIKE` expression. The argument to `ESCAPE`
 must be a single-character string.
 
 
@@ -116,7 +116,7 @@ SELECT * FROM t1 WHERE d like "___day";
 +---------+
 ```
 
-With the default collations, `<code>LIKE</code>` is case-insensitive:
+With the default collations, `LIKE` is case-insensitive:
 
 
 ```
@@ -133,7 +133,7 @@ SELECT * FROM t1 where d like "t%";
 +----------+
 ```
 
-Use `<code>[collate](collate)</code>` to specify a binary collation, forcing
+Use `[collate](collate)` to specify a binary collation, forcing
 case-sensitive matches:
 
 
@@ -177,7 +177,7 @@ SELECT * FROM t2 WHERE DAYNAME(d) LIKE "T%";
 ## Optimizing LIKE
 
 
-* MariaDB can use indexes for LIKE on string columns in the case where the LIKE doesn't start with `<code>%</code>` or `<code>_</code>`.
+* MariaDB can use indexes for LIKE on string columns in the case where the LIKE doesn't start with `%` or `_`.
 * Starting from [MariaDB 10.0](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), one can set the [optimizer_use_condition_selectivity](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_use_condition_selectivity) variable to 5. If this is done, then the optimizer will read [optimizer_selectivity_sampling_limit](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_selectivity_sampling_limit) rows to calculate the selectivity of the LIKE expression before starting to calculate the query plan. This can help speed up some LIKE queries by providing the optimizer with more information about your data.
 
 

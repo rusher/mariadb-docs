@@ -19,7 +19,7 @@ show variables like 'rocksdb%compress%';
 +-------------------------------------+------------------------------------+
 ```
 
-Another way to make the check is to look into `<code>#rocksdb/LOG</code>` file in the data directory. It should have lines like:
+Another way to make the check is to look into `#rocksdb/LOG` file in the data directory. It should have lines like:
 
 
 ```
@@ -79,7 +79,7 @@ Compression settings are not dynamic parameters, one cannot change them by setti
 The procedure to change compression settings is as follows:
 
 
-* Edit `<code>my.cnf</code>` to set [rocksdb_override_cf_options](myrocks-system-variables.md#rocksdb_override_cf_options).
+* Edit `my.cnf` to set [rocksdb_override_cf_options](myrocks-system-variables.md#rocksdb_override_cf_options).
 
 
 Example:
@@ -98,7 +98,7 @@ The data will not be re-compressed immediately. However, all new SST files will 
 ### Caveat: Syntax Errors
 
 
-Please note that `<code>rocksdb-override-cf-options</code>` syntax is quite strict. Any typos will result in the parse error, and MyRocks plugin will not be loaded. Depending on your configuration, the server may still start. If it does start, you can use this command to check if the plugin is loaded:
+Please note that `rocksdb-override-cf-options` syntax is quite strict. Any typos will result in the parse error, and MyRocks plugin will not be loaded. Depending on your configuration, the server may still start. If it does start, you can use this command to check if the plugin is loaded:
 
 
 ```

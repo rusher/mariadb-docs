@@ -100,10 +100,10 @@ filters=DatabaseFirewall
 ### Filter Parameters
 
 
-The Database Firewall filter has one mandatory parameter, `<code>rules</code>`.
+The Database Firewall filter has one mandatory parameter, `rules`.
 
 
-#### `<code>rules</code>`
+#### `rules`
 
 
 A path to a file with the rule definitions in it. The file should be readable by
@@ -112,31 +112,31 @@ interpreted relative to the module configuration directory. The default module
 configuration directory is */etc/maxscale.modules.d*.
 
 
-#### `<code>action</code>`
+#### `action`
 
 
 This parameter is optional and determines what action is taken when a query
-matches a rule. The value can be either `<code>allow</code>`, which allows all matching
-queries to proceed but blocks those that don't match, or `<code>block</code>`, which blocks
-all matching queries, or `<code>ignore</code>` which allows all queries to proceed.
+matches a rule. The value can be either `allow`, which allows all matching
+queries to proceed but blocks those that don't match, or `block`, which blocks
+all matching queries, or `ignore` which allows all queries to proceed.
 
 
-The following statement types will always be allowed through when `<code>action</code>` is
-set to `<code>allow</code>`:
+The following statement types will always be allowed through when `action` is
+set to `allow`:
 
 
 * COM_CHANGE_USER: The user is changed for an active connection
-* COM_FIELD_LIST: Alias for the `<code>SHOW TABLES;</code>` query
-* COM_INIT_DB: Alias for `<code>USE <db>;</code>`
+* COM_FIELD_LIST: Alias for the `SHOW TABLES;` query
+* COM_INIT_DB: Alias for `USE <db>;`
 * COM_PING: Server is pinged
-* COM_PROCESS_INFO: Alias for `<code>SHOW PROCESSLIST;</code>`
-* COM_PROCESS_KILL: Alias for `<code>KILL <id>;</code>` query
+* COM_PROCESS_INFO: Alias for `SHOW PROCESSLIST;`
+* COM_PROCESS_KILL: Alias for `KILL <id>;` query
 * COM_QUIT: Client closes connection
 * COM_SET_OPTION: Client multi-statements are being configured
 
 
 You can have both blacklist and whitelist functionality by configuring one
-filter with `<code>action=allow</code>` and another one with `<code>action=block</code>`. You can then use
+filter with `action=allow` and another one with `action=block`. You can then use
 different rule files with each filter, one for blacklisting and another one for
 whitelisting. After this you only have to add both of these filters to a service
 in the following way.
@@ -171,28 +171,28 @@ If a query is blocked, the filter will return an error to the client with the
 error number 1141 and an SQL state of HY000.
 
 
-#### `<code>log_match</code>`
+#### `log_match`
 
 
-Log all queries that match a rule. For the `<code>any</code>` matching mode, the name of the
+Log all queries that match a rule. For the `any` matching mode, the name of the
 rule that matched is logged and for other matching modes, the name of the last
 matching rule is logged. In addition to the rule name the matched user and the
 query itself is logged. The log messages are logged at the notice level.
 
 
-#### `<code>log_no_match</code>`
+#### `log_no_match`
 
 
 Log all queries that do not match a rule. The matched user and the query is
 logged. The log messages are logged at the notice level.
 
 
-#### `<code>treat_string_as_field</code>`
+#### `treat_string_as_field`
 
 
 This optional parameter specifies how the database firewall should treat
 strings. If true, they will be handled as fields, which will cause column
-blocking rules to match even if `<code>ANSI_QUOTES</code>` has been enabled and `<code>"</code>` is
+blocking rules to match even if `ANSI_QUOTES` has been enabled and `"` is
 used instead of backtick.
 
 
@@ -203,20 +203,20 @@ treat_string_as_field=false
 
 
 
-The default value is `<code>true</code>`.
+The default value is `true`.
 
 
 Note that this may cause a false positive, if a "true" string contains the
 name of a column to be blocked.
 
 
-#### `<code>treat_string_arg_as_field</code>`
+#### `treat_string_arg_as_field`
 
 
 This optional parameter specifies how the database firewall should treat
 strings used as arguments to functions. If true, they will be handled
 as fields, which will cause function column blocking rules to match even
-even if `<code>ANSI_QUOTES</code>` has been enabled and `<code>"</code>` is used instead of backtick.
+even if `ANSI_QUOTES` has been enabled and `"` is used instead of backtick.
 
 
 
@@ -226,7 +226,7 @@ treat_string_arg_as_field=false
 
 
 
-The default value is `<code>true</code>`.
+The default value is `true`.
 
 
 Note that this may cause a false positive, if a "true" string contains the
@@ -250,13 +250,13 @@ Where *NAME* is the identifier for this rule and *RULE* is the mandatory rule de
 
 
 Rules are identified by their name and have mandatory parts and optional parts.
-You can add comments to the rule files by adding the `<code>#</code>` character at
+You can add comments to the rule files by adding the `#` character at
 the beginning of the line. Trailing comments are not supported.
 
 
-The first step of defining a rule is to start with the keyword `<code>rule</code>` which
+The first step of defining a rule is to start with the keyword `rule` which
 identifies this line of text as a rule. The second token is identified as
-the name of the rule. After that the mandatory token `<code>match</code>` is required
+the name of the rule. After that the mandatory token `match` is required
 to mark the start of the actual rule definition.
 
 
@@ -272,10 +272,10 @@ rule. You can define multiple rules to cover situations where you would like to
 apply multiple mandatory rules to a query.
 
 
-#### `<code>wildcard</code>`
+#### `wildcard`
 
 
-This rule blocks all queries that use the wildcard character `<code>*</code>`.
+This rule blocks all queries that use the wildcard character `*`.
 
 
 ##### Example
@@ -291,10 +291,10 @@ rule examplerule match wildcard
 
 
 
-#### `<code>columns</code>`
+#### `columns`
 
 
-This rule expects a list of values after the `<code>columns</code>` keyword. These values are
+This rule expects a list of values after the `columns` keyword. These values are
 interpreted as column names and if a query targets any of these, it is matched.
 
 
@@ -311,13 +311,13 @@ rule examplerule match columns name salary
 
 
 
-#### `<code>function</code>`
+#### `function`
 
 
-This rule expects a list of values after the `<code>function</code>` keyword. These values
+This rule expects a list of values after the `function` keyword. These values
 are interpreted as function names and if a query uses any of these, it is
-matched. The symbolic comparison operators (`<code><</code>`, `<code>></code>`, `<code>>=</code>` etc.) are also
-considered functions whereas the text versions (`<code>NOT</code>`, `<code>IS</code>`, `<code>IS NOT</code>` etc.) are
+matched. The symbolic comparison operators (`<`, `>`, `>=` etc.) are also
+considered functions whereas the text versions (`NOT`, `IS`, `IS NOT` etc.) are
 not considered functions.
 
 
@@ -334,13 +334,13 @@ rule examplerule match function sum count
 
 
 
-#### `<code>not_function</code>`
+#### `not_function`
 
 
-This rule expects a list of values after the `<code>not_function</code>` keyword. These values
+This rule expects a list of values after the `not_function` keyword. These values
 are interpreted as function names and if a query uses any function other than these,
-it is matched. The symbolic comparison operators (`<code><</code>`, `<code>></code>`, `<code>>=</code>` etc.) are also
-considered functions whereas the text versions (`<code>NOT</code>`, `<code>IS</code>`, `<code>IS NOT</code>` etc.) are
+it is matched. The symbolic comparison operators (`<`, `>`, `>=` etc.) are also
+considered functions whereas the text versions (`NOT`, `IS`, `IS NOT` etc.) are
 not considered functions.
 
 
@@ -370,7 +370,7 @@ rule examplerule match not_function
 
 
 
-#### `<code>uses_function</code>`
+#### `uses_function`
 
 
 This rule expects a list of column names after the keyword. If any of the
@@ -391,12 +391,12 @@ rule examplerule match uses_function name address
 
 
 
-#### `<code>function</code>` and `<code>columns</code>`
+#### `function` and `columns`
 
 
-This rule combines the `<code>function</code>` and `<code>columns</code>` type rules to match if one
+This rule combines the `function` and `columns` type rules to match if one
 of the listed columns uses one of the listed functions. The rule expects
-the `<code>function</code>` and `<code>columns</code>` keywords both followed by a list of values.
+the `function` and `columns` keywords both followed by a list of values.
 
 
 ##### Example
@@ -412,16 +412,16 @@ rule examplerule match function sum columns name address
 
 
 
-#### `<code>not_function</code>` and `<code>columns</code>`
+#### `not_function` and `columns`
 
 
-This rule combines the `<code>not_function</code>` and `<code>columns</code>` type rules to match if
+This rule combines the `not_function` and `columns` type rules to match if
 one of the listed columns is used in conjunction with functions other than
-the listed ones. The rule expects the `<code>not_function</code>` and `<code>columns</code>` keywords
+the listed ones. The rule expects the `not_function` and `columns` keywords
 both followed by a list of values.
 
 
-If `<code>not_function</code>` is not provided with a list of values, then the rule
+If `not_function` is not provided with a list of values, then the rule
 matches if any of the columns is used with any function.
 
 
@@ -449,14 +449,14 @@ rule examplerule match not_function columns ssn
 
 
 
-#### `<code>regex</code>`
+#### `regex`
 
 
 This rule blocks all queries matching the regular expression. The regex string expects a
 PCRE2 syntax regular expression. For more information about PCRE2 syntax, read the
 [PCRE2 documentation](https://www.pcre.org/current/doc/html/pcre2syntax.html). Unlike
 typical MaxScale regex parameters, the value should be enclosed in single or double
-quotes, not in `<code>/.../</code>`. Any compilation options must be included in the pattern itself.
+quotes, not in `/.../`. Any compilation options must be included in the pattern itself.
 
 
 ##### Example
@@ -472,7 +472,7 @@ rule examplerule match regex '.*select.*from.*accounts.*'
 
 
 
-#### `<code>limit_queries</code>`
+#### `limit_queries`
 
 
 This rule has been DEPRECATED. Please use the Throttle Filter instead.
@@ -484,7 +484,7 @@ in seconds and the third is the amount of time in seconds for which the rule is
 considered active and blocking.
 
 
-**WARNING:** Using `<code>limit_queries</code>` in `<code>action=allow</code>` is not supported.
+**WARNING:** Using `limit_queries` in `action=allow` is not supported.
 
 
 ##### Example
@@ -500,13 +500,13 @@ rule examplerule match limit_queries 50 5 100
 
 
 
-#### `<code>no_where_clause</code>`
+#### `no_where_clause`
 
 
 This rule inspects the query and blocks it if it has no WHERE clause. For
-example, this would disallow a `<code>DELETE FROM ...</code>` query without a `<code>WHERE</code>`
-clause. This does not prevent wrongful usage of the `<code>WHERE</code>` clause e.g. `<code>DELETE
-FROM ... WHERE 1=1</code>`.
+example, this would disallow a `DELETE FROM ...` query without a `WHERE`
+clause. This does not prevent wrongful usage of the `WHERE` clause e.g. `DELETE
+FROM ... WHERE 1=1`.
 
 
 ##### Example
@@ -529,18 +529,18 @@ Each mandatory rule accepts one or more optional parameters. These are to be
 defined after the mandatory part of the rule.
 
 
-#### `<code>at_times</code>`
+#### `at_times`
 
 
 This rule expects a list of time ranges that define the times when the rule in
 question is active. The time formats are expected to be ISO-8601 compliant and
 to be separated by a single dash (the - character). For example, to define the
-active period of a rule to be 5pm to 7pm, you would include `<code>at times
-17:00:00-19:00:00</code>` in the rule definition. The rule uses local time to check if
+active period of a rule to be 5pm to 7pm, you would include `at times
+17:00:00-19:00:00` in the rule definition. The rule uses local time to check if
 the rule is active and has a precision of one second.
 
 
-#### `<code>on_queries</code>`
+#### `on_queries`
 
 
 This limits the rule to be active only on certain types of queries. The possible
@@ -563,41 +563,41 @@ values are:
 | load | LOAD DATA operations |
 
 
-Multiple values can be combined using the pipe character `<code>|</code>` e.g.
-`<code>on_queries select|insert|update</code>`.
+Multiple values can be combined using the pipe character `|` e.g.
+`on_queries select|insert|update`.
 
 
 ### Applying rules to users
 
 
-The `<code>users</code>` directive defines the users to which the rule should be applied.
+The `users` directive defines the users to which the rule should be applied.
 
 
-`<code>users NAME... match { any | all | strict_all } rules RULE...</code>`
+`users NAME... match { any | all | strict_all } rules RULE...`
 
 
-The first keyword is `<code>users</code>`, which identifies this line as a user definition
+The first keyword is `users`, which identifies this line as a user definition
 line.
 
 
 The second component is a list of user names and network addresses in the format
-*`<code>user</code>`*`<code>@</code>`*`<code>0.0.0.0</code>`*. The first part is the user name and the second part is
-the network address. You can use the `<code>%</code>` character as the wildcard to enable
+*`user`*`@`*`0.0.0.0`*. The first part is the user name and the second part is
+the network address. You can use the `%` character as the wildcard to enable
 user name matching from any address or network matching for all users. After the
 list of users and networks the keyword match is expected.
 
 
-After this either the keyword `<code>any</code>`, `<code>all</code>` or `<code>strict_all</code>` is expected. This
-defined how the rules are matched. If `<code>any</code>` is used when the first rule is
+After this either the keyword `any`, `all` or `strict_all` is expected. This
+defined how the rules are matched. If `any` is used when the first rule is
 matched the query is considered as matched and the rest of the rules are
-skipped. If instead the `<code>all</code>` keyword is used all rules must match for the query
-to be considered as matched. The `<code>strict_all</code>` is the same as `<code>all</code>` but it checks the rules
+skipped. If instead the `all` keyword is used all rules must match for the query
+to be considered as matched. The `strict_all` is the same as `all` but it checks the rules
 from left to right in the order they were listed. If one of these does not
 match, the rest of the rules are not checked. This could be useful in situations
-where you would for example combine `<code>limit_queries</code>` and `<code>regex</code>` rules. By using
-`<code>strict_all</code>` you can have the `<code>regex</code>` rule first and the `<code>limit_queries</code>` rule
-second. This way the rule only matches if the `<code>regex</code>` rule matches enough times
-for the `<code>limit_queries</code>` rule to match.
+where you would for example combine `limit_queries` and `regex` rules. By using
+`strict_all` you can have the `regex` rule first and the `limit_queries` rule
+second. This way the rule only matches if the `regex` rule matches enough times
+for the `limit_queries` rule to match.
 
 
 After the matching part comes the rules keyword after which a list of rule names
@@ -605,10 +605,10 @@ is expected. This allows reusing of the rules and enables varying levels of
 query restriction.
 
 
-If a particular *NAME* appears on several `<code>users</code>` lines, then when an
+If a particular *NAME* appears on several `users` lines, then when an
 actual user matches that name, the rules of each line are checked
 independently until there is a match for the statement in question. That
-is, the rules of each `<code>users</code>` line are treated in an *OR* fashion with
+is, the rules of each `users` line are treated in an *OR* fashion with
 respect to each other.
 
 
@@ -622,7 +622,7 @@ details about module commands.
 The dbfwfilter supports the following module commands.
 
 
-### `<code>rules/reload FILTER [FILE]</code>`
+### `rules/reload FILTER [FILE]`
 
 
 Load a new rule file or reload the current rules. New rules are only taken into
@@ -632,7 +632,7 @@ whose rules are reloaded. The *FILE* argument is an optional path to a rule file
 and if it is not defined, the current rule file is used.
 
 
-### `<code>rules FILTER</code>`
+### `rules FILTER`
 
 
 Shows the current statistics of the rules. The *FILTER* parameter is the filter
@@ -665,7 +665,7 @@ rule query_regex match regex '.*select.*from.*user_data.*'
 
 
 
-To apply these rules we combine them into a single rule by adding a `<code>users</code>` line
+To apply these rules we combine them into a single rule by adding a `users` line
 to the rule file.
 
 

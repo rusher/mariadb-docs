@@ -1,7 +1,7 @@
 
 # Thread Command Values
 
-A thread can have any of the following `<code>COMMAND</code>` values (displayed by the `<code>COMMAND</code>` field listed by the [SHOW PROCESSLIST](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) statement or in the [Information Schema PROCESSLIST Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md), as well as the `<code>PROCESSLIST_COMMAND</code>` value listed in the [Performance Schema threads Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md)). These indicate the nature of the thread's activity.
+A thread can have any of the following `COMMAND` values (displayed by the `COMMAND` field listed by the [SHOW PROCESSLIST](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) statement or in the [Information Schema PROCESSLIST Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md), as well as the `PROCESSLIST_COMMAND` value listed in the [Performance Schema threads Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md)). These indicate the nature of the thread's activity.
 
 
 

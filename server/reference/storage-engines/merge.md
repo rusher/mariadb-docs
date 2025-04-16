@@ -22,8 +22,8 @@ Each index in a MERGE table must match an index in underlying MyISAM tables, but
 The following options are meaningful for MERGE tables:
 
 
-* `<code>UNION</code>`. This option specifies the list of the underlying MyISAM tables. The list is enclosed between parentheses and separated with commas.
-* `<code>INSERT_METHOD</code>`. This options specifies whether, and how, INSERTs are allowed for the table. Allowed values are: `<code>NO</code>` (INSERTs are not allowed), `<code>FIRST</code>` (new rows will be written into the first table specified in the `<code>UNION</code>` list), `<code>LAST</code>` (new rows will be written into the last table specified in the `<code>UNION</code>` list). The default value is `<code>NO</code>`.
+* `UNION`. This option specifies the list of the underlying MyISAM tables. The list is enclosed between parentheses and separated with commas.
+* `INSERT_METHOD`. This options specifies whether, and how, INSERTs are allowed for the table. Allowed values are: `NO` (INSERTs are not allowed), `FIRST` (new rows will be written into the first table specified in the `UNION` list), `LAST` (new rows will be written into the last table specified in the `UNION` list). The default value is `NO`.
 
 
 If you define a MERGE table with a definition which is different from the underlying MyISAM tables, or one of the underlying tables is not MyISAM, the CREATE TABLE statement will not return any error. But any statement which involves the table will produce an error like the following:
@@ -34,7 +34,7 @@ ERROR 1168 (HY000): Unable to open underlying table which is differently defined
   or of non-MyISAM type or doesn't exist
 ```
 
-A `<code>[CHECK TABLE](../sql-statements-and-structure/sql-statements/table-statements/check-table.md)</code>` will show more information about the problem.
+A `[CHECK TABLE](../sql-statements-and-structure/sql-statements/table-statements/check-table.md)` will show more information about the problem.
 
 
 The error is also produced if the table is properly define, but an underlying table's definition changes at some point in time.
@@ -136,5 +136,5 @@ Msg_type: error
 Msg_text: Corrupt
 ```
 
-Now, we know that the problem is in `<code>t3</code>`'s definition.
+Now, we know that the problem is in `t3`'s definition.
 

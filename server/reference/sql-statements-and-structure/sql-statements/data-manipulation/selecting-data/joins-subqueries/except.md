@@ -1,7 +1,7 @@
 
 # EXCEPT
 
-The result of `<code>EXCEPT</code>` is all records of the left `<code>SELECT</code>` result set except records which are in right `<code>SELECT</code>` result set, i.e. it is subtraction of two result sets. From [MariaDB 10.6.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), `<code>MINUS</code>` is a synonym when [SQL_MODE=ORACLE](../../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set.
+The result of `EXCEPT` is all records of the left `SELECT` result set except records which are in right `SELECT` result set, i.e. it is subtraction of two result sets. From [MariaDB 10.6.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), `MINUS` is a synonym when [SQL_MODE=ORACLE](../../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set.
 
 
 # Syntax
@@ -24,28 +24,28 @@ SELECT ...
 Please note:
 
 
-* Brackets for explicit operation precedence are not supported; use a subquery in the `<code class="fixed" style="white-space:pre-wrap">FROM</code>` clause as a workaround).
+* Brackets for explicit operation precedence are not supported; use a subquery in the `FROM` clause as a workaround).
 
 
 ## Description
 
 
-MariaDB supports `<code>EXCEPT</code>` and [INTERSECT](../../../../geographic-geometric-features/geometry-relations/intersects.md) in addition to [UNION](union.md).
+MariaDB supports `EXCEPT` and [INTERSECT](../../../../geographic-geometric-features/geometry-relations/intersects.md) in addition to [UNION](union.md).
 
 
-The queries before and after `<code>EXCEPT</code>` must be [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) or [VALUES](../../../../sql-language-structure/table-value-constructors.md) statements.
+The queries before and after `EXCEPT` must be [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) or [VALUES](../../../../sql-language-structure/table-value-constructors.md) statements.
 
 
-All behavior for naming columns, `<code class="fixed" style="white-space:pre-wrap">ORDER BY</code>` and `<code class="fixed" style="white-space:pre-wrap">LIMIT</code>` is the same as for [UNION](union.md). Note that the alternative [SELECT ... OFFSET ... FETCH](../select-offset-fetch.md) syntax is only supported. This allows us to use the `<code>WITH TIES</code>` clause.
+All behavior for naming columns, `ORDER BY` and `LIMIT` is the same as for [UNION](union.md). Note that the alternative [SELECT ... OFFSET ... FETCH](../select-offset-fetch.md) syntax is only supported. This allows us to use the `WITH TIES` clause.
 
 
-`<code>EXCEPT</code>` implicitly supposes a `<code>DISTINCT</code>` operation.
+`EXCEPT` implicitly supposes a `DISTINCT` operation.
 
 
-The result of `<code>EXCEPT</code>` is all records of the left `<code>SELECT</code>` result except records which are in right `<code>SELECT</code>` result set, i.e. it is subtraction of two result sets.
+The result of `EXCEPT` is all records of the left `SELECT` result except records which are in right `SELECT` result set, i.e. it is subtraction of two result sets.
 
 
-`<code>EXCEPT</code>` and `<code>UNION</code>` have the same operation precedence and `<code>INTERSECT</code>` has a higher precedence, unless [running in Oracle mode](../../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), in which case all three have the same precedence.
+`EXCEPT` and `UNION` have the same operation precedence and `INTERSECT` has a higher precedence, unless [running in Oracle mode](../../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), in which case all three have the same precedence.
 
 
 ### Parentheses
@@ -59,7 +59,7 @@ Parentheses can be used to specify precedence. Before this, a syntax error would
 
 ### ALL/DISTINCT
 
-`<code>EXCEPT ALL</code>` and `<code>EXCEPT DISTINCT</code>` were introduced in [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md). The `<code>ALL</code>` operator leaves duplicates intact, while the `<code>DISTINCT</code>` operator removes duplicates. `<code>DISTINCT</code>` is the default behavior if neither operator is supplied, and the only behavior prior to [MariaDB 10.5](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md).  
+`EXCEPT ALL` and `EXCEPT DISTINCT` were introduced in [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md). The `ALL` operator leaves duplicates intact, while the `DISTINCT` operator removes duplicates. `DISTINCT` is the default behavior if neither operator is supplied, and the only behavior prior to [MariaDB 10.5](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md).  
 
 
 ## Examples
@@ -74,7 +74,7 @@ EXCEPT
 (SELECT c_name AS name, email FROM employees);
 ```
 
-Difference between [UNION](union.md), EXCEPT and [INTERSECT](../../../../geographic-geometric-features/geometry-relations/intersects.md). `<code>INTERSECT ALL</code>` and `<code>EXCEPT ALL</code>` are available from [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md).
+Difference between [UNION](union.md), EXCEPT and [INTERSECT](../../../../geographic-geometric-features/geometry-relations/intersects.md). `INTERSECT ALL` and `EXCEPT ALL` are available from [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md).
 
 
 ```

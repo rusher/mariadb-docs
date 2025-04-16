@@ -70,7 +70,7 @@ Connection based routing to MySQL NDB clusters
 ### Updated installation path
 
 
-MaxScale is now installed into `<code>/usr/local/mariadb-maxscale</code>`
+MaxScale is now installed into `/usr/local/mariadb-maxscale`
 
 
 ## Bug Fixes

@@ -11,17 +11,17 @@ SHOW [FULL] PROCESSLIST
 ## Description
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW PROCESSLIST</code>` shows you which threads are running. You
+`SHOW PROCESSLIST` shows you which threads are running. You
 can also get this information from the
 [information_schema.PROCESSLIST](../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table or the [mariadb-admin processlist](../../../../../clients-and-utilities/mariadb-admin.md) command. If you have the 
-`<code class="highlight fixed" style="white-space:pre-wrap">[PROCESS privilege](show-privileges.md)</code>`, you can see all threads.
+`[PROCESS privilege](show-privileges.md)`, you can see all threads.
 Otherwise, you can see only your own threads (that is, threads associated with
 the MariaDB account that you are using). If you do not use the
-`<code class="highlight fixed" style="white-space:pre-wrap">FULL</code>` keyword, only the first 100 characters of each
+`FULL` keyword, only the first 100 characters of each
 statement are shown in the Info field.
 
 
-The columns shown in `<code>SHOW PROCESSLIST</code>` are:
+The columns shown in `SHOW PROCESSLIST` are:
 
 
 
@@ -40,10 +40,10 @@ The columns shown in `<code>SHOW PROCESSLIST</code>` are:
 
 
 
-The [information_schema.PROCESSLIST](../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table contains a number of additional columns. See `<code>TIME_MS</code>` column in [information_schema.PROCESSLIST](../system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) for differences in the `<code>TIME</code>` column between MariaDB and MySQL.
+The [information_schema.PROCESSLIST](../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table contains a number of additional columns. See `TIME_MS` column in [information_schema.PROCESSLIST](../system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) for differences in the `TIME` column between MariaDB and MySQL.
 
 
-Note that the `<code>PROGRESS</code>` field from the information schema, and the `<code>PROGRESS</code>` field from `<code>SHOW PROCESSLIST</code>` display different results. `<code>SHOW PROCESSLIST</code>` shows the total progress, while the information schema shows the progress for the current stage only.
+Note that the `PROGRESS` field from the information schema, and the `PROGRESS` field from `SHOW PROCESSLIST` display different results. `SHOW PROCESSLIST` shows the total progress, while the information schema shows the progress for the current stage only.
 
 
 Threads can be killed using their thread_id or their query_id, with the [KILL](../kill.md) statement.

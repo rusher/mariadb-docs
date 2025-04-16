@@ -13,8 +13,8 @@ SHOW CHARACTER SET
 ## Description
 
 
-The `<code class="fixed" style="white-space:pre-wrap">SHOW CHARACTER SET</code>` statement shows all available [character sets](../../../../data-types/string-data-types/character-sets/README.md). The `<code class="fixed" style="white-space:pre-wrap">LIKE</code>` clause, if present on its own, indicates which character
-set names to match. The `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+The `SHOW CHARACTER SET` statement shows all available [character sets](../../../../data-types/string-data-types/character-sets/README.md). The `LIKE` clause, if present on its own, indicates which character
+set names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 
 The same information can be queried from the [Information Schema CHARACTER_SETS](../system-tables/information-schema/information-schema-tables/information-schema-character_sets-table.md) table.

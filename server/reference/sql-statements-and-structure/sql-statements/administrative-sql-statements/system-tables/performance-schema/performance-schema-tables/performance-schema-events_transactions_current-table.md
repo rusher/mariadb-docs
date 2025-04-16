@@ -6,7 +6,7 @@
 The events_transactions_current table was introduced in [MariaDB 10.5.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
 
 
-The `<code>events_transactions_current</code>` table contains current transaction events for each thread.
+The `events_transactions_current` table contains current transaction events for each thread.
 
 
 The table size cannot be figured, and always stores one row for each thread, showing the current status of the thread's most recent monitored transaction event.

@@ -3,7 +3,7 @@
 
 
 ##### MariaDB starting with [10.5.1](../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md)
-`<code>mariadb-conv</code>` is a character set conversion utility for MariaDB and was added in [MariaDB 10.5.1](../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md). 
+`mariadb-conv` is a character set conversion utility for MariaDB and was added in [MariaDB 10.5.1](../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md). 
 
 
 
@@ -17,7 +17,7 @@ mariadb-conv [OPTION...] [FILE...]
 ## Options
 
 
-`<code>mariadb-conv</code>` supports the following options:
+`mariadb-conv` supports the following options:
 
 
 
@@ -31,34 +31,34 @@ mariadb-conv [OPTION...] [FILE...]
 
 
 
-By default, `<code>mariadb-conv</code>` exits whenever it encounters any conversion problems, for example:
+By default, `mariadb-conv` exits whenever it encounters any conversion problems, for example:
 
 
 * the input byte sequence is not valid in the source character set
 * the character cannot be converted to the target character set
 
 
-The `<code>-c</code>` option makes `<code>mariadb-conv</code>` ignore such errors and use the question mark '?' to replace bytes in bad input sequences, or unconvertable characters.
+The `-c` option makes `mariadb-conv` ignore such errors and use the question mark '?' to replace bytes in bad input sequences, or unconvertable characters.
 
 
-The `<code>--delimiter=...</code>` option makes `<code>mariadb-conv</code>` treat the specified characters as delimiters rather than data to convert, so the input is treated as a combination of:
+The `--delimiter=...` option makes `mariadb-conv` treat the specified characters as delimiters rather than data to convert, so the input is treated as a combination of:
 
 
-* data chunks, which are converted according to the `<code>-f</code>` and `<code>-t</code>` options.
+* data chunks, which are converted according to the `-f` and `-t` options.
 * delimiters, which are not converted and are copied from the input to the output as is.
 
 
 ## Examples
 
 
-Converts the file `<code>file.latin1.txt</code>` from `<code>latin1</code>` to `<code>utf8</code>`.
+Converts the file `file.latin1.txt` from `latin1` to `utf8`.
 
 
 ```
 mariadb-conv -f latin1 -t utf8 file.latin1.txt
 ```
 
-Convert the file `<code>file.latin1.txt</code>` from `<code>latin1</code>` to `<code>utf8</code>`, reading the input data from stdin.
+Convert the file `file.latin1.txt` from `latin1` to `utf8`, reading the input data from stdin.
 
 
 ```
@@ -116,7 +116,7 @@ t1.frm
 t1.ibd
 ```
 
-Note, the `<code>--delimiter=".\n"</code>` option is needed to make `<code>mariadb-conv</code>` treat the dot character (delimiting the encoded table name from the file extension) and the new line character (delimiting separate lines) as delimiters rather than as the data to convert (otherwise the conversion would fail).
+Note, the `--delimiter=".\n"` option is needed to make `mariadb-conv` treat the dot character (delimiting the encoded table name from the file extension) and the new line character (delimiting separate lines) as delimiters rather than as the data to convert (otherwise the conversion would fail).
 
 
 Windows users can use the following command to list the data directory in the ANSI text console:
@@ -129,7 +129,7 @@ dir /b | mariadb-conv -c -f filename -t cp850 --delimiter=".\r\n"
 Note:
 
 
-* The `<code>-t</code>` options assume a Western machine.
-* The `<code>-c</code>` option is needed to ignore conversion errors for Cyrillic and CJK characters.
-* `<code>--delimiter=</code>` additionally needs the carriage return character \r
+* The `-t` options assume a Western machine.
+* The `-c` option is needed to ignore conversion errors for Cyrillic and CJK characters.
+* `--delimiter=` additionally needs the carriage return character \r
 

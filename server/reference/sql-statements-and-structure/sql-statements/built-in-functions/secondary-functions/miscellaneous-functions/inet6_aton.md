@@ -25,7 +25,7 @@ Returns NULL if the argument is not understood.
 
 
 ##### MariaDB starting with [10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
-From [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md), `<code>INET6_ATON</code>` can take [INET6](inet6_aton.md) as an argument.
+From [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md), `INET6_ATON` can take [INET6](inet6_aton.md) as an argument.
 
 
 ## Examples

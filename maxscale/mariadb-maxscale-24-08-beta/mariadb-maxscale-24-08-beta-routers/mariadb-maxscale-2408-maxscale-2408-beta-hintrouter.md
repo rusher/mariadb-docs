@@ -50,7 +50,7 @@ end in error and the session closes. The different values are:
 | all | Default value. Route to all connected servers. |
 
 
-Note that setting default action to anything other than `<code>all</code>` means that session
+Note that setting default action to anything other than `all` means that session
 variable write commands are by default not routed to all backends.
 
 
@@ -61,7 +61,7 @@ default_server=<server-name>
 
 
 
-Defines the default backend name if `<code>default_action=named</code>`. `<code><server-name></code>` must
+Defines the default backend name if `default_action=named`. `<server-name>` must
 be a valid backend name.
 
 
@@ -72,7 +72,7 @@ max_slaves=<limit>
 
 
 
-`<code><limit></code>` should be an integer, -1 by default. Defines how many backend replica
+`<limit>` should be an integer, -1 by default. Defines how many backend replica
 servers a session should attempt to connect to. Having less replicas defined in
 the services and/or less successful connections during session creation is not
 an error. The router will attempt to distribute replicas evenly between sessions
@@ -86,7 +86,7 @@ number of backends in the service - 1, so that the sessions are connected to all
 replicas.
 
 
-If the hints or the `<code>default_action</code>` point to a named server, this setting is
+If the hints or the `default_action` point to a named server, this setting is
 probably best left to default to ensure that the specific server is connected to
 at session creation. The router will not attempt to connect to additional
 servers after session creation.

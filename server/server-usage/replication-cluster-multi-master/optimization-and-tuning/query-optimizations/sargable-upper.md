@@ -9,10 +9,10 @@ UPPER(key_col) = expr
 UPPER(key_col) IN (constant-list)
 ```
 
-are sargable if `<code>key_col</code>` uses either the `<code>utf8mb3_general_ci</code>` or `<code>utf8mb4_general_ci</code>` collation.
+are sargable if `key_col` uses either the `utf8mb3_general_ci` or `utf8mb4_general_ci` collation.
 
 
-`<code>UCASE</code>` is a synonym for [UPPER](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/upper.md) so is covered as well.
+`UCASE` is a synonym for [UPPER](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/upper.md) so is covered as well.
 
 
 Sargable means that the optimizer is able to use such conditions to construct access methods, estimate their selectivity, or perform partition pruning.
@@ -38,7 +38,7 @@ explain select * from t1 where UPPER(key1)='ABC'
 +------+-------------+-------+------+---------------+------+---------+-------+------+--------------------------+
 ```
 
-Note that `<code>ref</code>` access is used.
+Note that `ref` access is used.
 
 
 An example with join:
@@ -54,19 +54,19 @@ explain select * from t0,t1 where upper(t1.key1)=t0.col;
 +------+-------------+-------+------+---------------+------+---------+-------------+------+-------------+
 ```
 
-Here, the optimizer was able to construct `<code>ref</code>` access.
+Here, the optimizer was able to construct `ref` access.
 
 
 ## Controlling the Optimization
 
 
-The [optimizer_switch](optimizer-switch.md) variable has the flag `<code>sargable_casefold</code>` to turn the optimization on and off. The default is ON.
+The [optimizer_switch](optimizer-switch.md) variable has the flag `sargable_casefold` to turn the optimization on and off. The default is ON.
 
 
 ## Optimizer Trace
 
 
-The optimization is implemented as a rewrite for a query's WHERE/ON conditions. It uses the `<code>sargable_casefold_removal</code>` object name in the trace:
+The optimization is implemented as a rewrite for a query's WHERE/ON conditions. It uses the `sargable_casefold_removal` object name in the trace:
 
 
 ```

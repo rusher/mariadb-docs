@@ -12,7 +12,7 @@ BOUNDARY(g)
 ## Description
 
 
-Returns a geometry that is the closure of the combinatorial boundary of the geometry value *`<code>g</code>`*.
+Returns a geometry that is the closure of the combinatorial boundary of the geometry value *`g`*.
 
 
 BOUNDARY() is a synonym.

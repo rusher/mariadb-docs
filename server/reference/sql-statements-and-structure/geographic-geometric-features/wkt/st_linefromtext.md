@@ -17,7 +17,7 @@ LineStringFromText(wkt[,srid])
 Constructs a [LINESTRING](../geometry-constructors/linestring.md) value using its [WKT](wkt-definition.md) representation and [SRID](../geometry-properties/st_srid.md).
 
 
-`<code>ST_LineFromText()</code>`, `<code>ST_LineStringFromText()</code>`, `<code>ST_LineFromText()</code>` and `<code>ST_LineStringFromText()</code>` are all synonyms.
+`ST_LineFromText()`, `ST_LineStringFromText()`, `ST_LineFromText()` and `ST_LineStringFromText()` are all synonyms.
 
 
 ## Examples

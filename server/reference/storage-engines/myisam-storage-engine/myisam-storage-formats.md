@@ -7,7 +7,7 @@ The [MyISAM](myisam-system-variables.md) storage engine supports three different
 These are FIXED, DYNAMIC and COMPRESSED. FIXED and DYNAMIC can be set with the ROW FORMAT option in the [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md) statement, or will be chosen automatically depending on the columns the table contains. COMPRESSED can only be set via the [myisampack](../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) tool.
 
 
-The [SHOW TABLE STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the storage format used by a table. Note that `<code>COMPRESSED</code>` tables are reported as `<code>DYNAMIC</code>` in that context.
+The [SHOW TABLE STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the storage format used by a table. Note that `COMPRESSED` tables are reported as `DYNAMIC` in that context.
 
 
 ## Fixed-length

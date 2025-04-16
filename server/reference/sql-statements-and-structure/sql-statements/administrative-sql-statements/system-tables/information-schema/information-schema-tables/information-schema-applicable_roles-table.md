@@ -1,7 +1,7 @@
 
 # Information Schema APPLICABLE_ROLES Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>APPLICABLE_ROLES</code>` table shows the [role authorizations](../../../../../../../security/user-account-management/roles/roles_overview.md) that the current user may use.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `APPLICABLE_ROLES` table shows the [role authorizations](../../../../../../../security/user-account-management/roles/roles_overview.md) that the current user may use.
 
 
 It contains the following columns:

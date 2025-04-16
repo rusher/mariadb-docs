@@ -60,8 +60,8 @@ addresses of the servers.
 
 
 The *router_options*-parameter tells the *readconnroute*-module which servers it should
-route a client connection to. For the write service we use the `<code>master</code>`-type and for the
-read service the `<code>slave</code>`-type.
+route a client connection to. For the write service we use the `master`-type and for the
+read service the `slave`-type.
 
 
 The *user* and *password* parameters define the credentials the service uses to populate
@@ -108,7 +108,7 @@ database listeners. *port* defines the network port to listen on.
 
 The optional *address*-parameter defines the local address the listener should bind to.
 This may be required when the host machine has multiple network interfaces. The
-default behavior is to listen on all network interfaces (the IPv6 address `<code>::</code>`).
+default behavior is to listen on all network interfaces (the IPv6 address `::`).
 
 
 ## Starting MariaDB MaxScale

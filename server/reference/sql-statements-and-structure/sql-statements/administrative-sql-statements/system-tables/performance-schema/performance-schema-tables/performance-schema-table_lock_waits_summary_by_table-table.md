@@ -1,7 +1,7 @@
 
 # Performance Schema table_lock_waits_summary_by_table Table
 
-The `<code>table_lock_waits_summary_by_table</code>` table records table lock waits by table.
+The `table_lock_waits_summary_by_table` table records table lock waits by table.
 
 
 

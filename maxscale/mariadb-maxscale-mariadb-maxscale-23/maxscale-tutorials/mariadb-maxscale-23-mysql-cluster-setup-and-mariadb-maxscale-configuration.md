@@ -27,7 +27,7 @@ The MySQL Cluster 7.2.17 setup is based on two virtual servers with Linux Centos
 * MySQL 5.5.38 as SQL node2
 
 
-Cluster configuration file is `<code>/var/lib/mysql-cluster/config.ini</code>`, copied on all
+Cluster configuration file is `/var/lib/mysql-cluster/config.ini`, copied on all
 servers.
 
 
@@ -58,7 +58,7 @@ hostname=162.243.90.81
 
 
 
-Note that it’s possible to specify all node id:s and `<code>datadir</code>` as well for each
+Note that it’s possible to specify all node id:s and `datadir` as well for each
 cluster component.
 
 
@@ -75,7 +75,7 @@ datadir=/usr/local/mysql/data
 
 
 
-Also, `<code>/etc/my.cnf</code>`, copied as well in all servers.
+Also, `/etc/my.cnf`, copied as well in all servers.
 
 
 
@@ -141,7 +141,7 @@ If all has gone well and the cluster has been set up correctly, the cluster
 should now be operational.
 
 
-It’s possible to test this by invoking the `<code>ndb_mgm</code>` management node client.
+It’s possible to test this by invoking the `ndb_mgm` management node client.
 
 
 The output should look as shown here, although you might see some slight

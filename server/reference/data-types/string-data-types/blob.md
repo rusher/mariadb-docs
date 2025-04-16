@@ -12,38 +12,38 @@ BLOB[(M)]
 ## Description
 
 
-A `<code>BLOB</code>` column with a maximum length of `<code>65,535</code>` (`<code>2<sup>16</sup> - 1</code>`) bytes. Each
-`<code>BLOB</code>` value is stored using a two-byte length prefix that indicates the
+A `BLOB` column with a maximum length of `65,535` (`2<sup>16</sup> - 1`) bytes. Each
+`BLOB` value is stored using a two-byte length prefix that indicates the
 number of bytes in the value.
 
 
-An optional length `<code>M</code>` can be given for this type. If this is done,
-MariaDB creates the column as the smallest `<code>BLOB</code>` type large enough to
-hold values *`<code>M</code>`* bytes long.
+An optional length `M` can be given for this type. If this is done,
+MariaDB creates the column as the smallest `BLOB` type large enough to
+hold values *`M`* bytes long.
 
 
 BLOBS can also be used to store [dynamic columns](../../sql-statements-and-structure/nosql/dynamic-columns-api.md).
 
 
-`<code>BLOB</code>` and `<code>TEXT</code>` columns can both be assigned a [DEFAULT](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#default) value.
+`BLOB` and `TEXT` columns can both be assigned a [DEFAULT](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#default) value.
 
 
 ### Indexing
 
 
-On a column that uses the `<code>BLOB</code>` data type, setting a unique index is now possible.
+On a column that uses the `BLOB` data type, setting a unique index is now possible.
 
 
 
 #### Note
 
-In previous releases, setting a unique index on a column that uses the `<code>BLOB</code>` data type was not possible. Index would only guarantee the uniqueness of a fixed number of characters.
+In previous releases, setting a unique index on a column that uses the `BLOB` data type was not possible. Index would only guarantee the uniqueness of a fixed number of characters.
 
 
 ### Oracle Mode
 
 
-In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `<code>BLOB</code>` is a synonym for `<code>LONGBLOB</code>`.
+In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `BLOB` is a synonym for `LONGBLOB`.
 
 
 ## EXAMPLES

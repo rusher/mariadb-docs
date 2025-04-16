@@ -13,7 +13,7 @@
 MariaDB brought several improvements to the [ORDER BY](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) optimizer.
 
 
-The fixes were made as a response to complaints by MariaDB customers, so they fix real-world optimization problems. The fixes are a bit hard to describe (as the `<code>ORDER BY</code>` optimizer is complicated), but here's a short description:
+The fixes were made as a response to complaints by MariaDB customers, so they fix real-world optimization problems. The fixes are a bit hard to describe (as the `ORDER BY` optimizer is complicated), but here's a short description:
 
 
 The [ORDER BY](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) optimizer:
@@ -22,7 +22,7 @@ The [ORDER BY](../../../../../reference/sql-statements-and-structure/sql-stateme
 * Doesn’t make stupid choices when several multi-part keys and potential range accesses are present ([MDEV-6402](https://jira.mariadb.org/browse/MDEV-6402)).
 
   * This also fixes [MySQL Bug#12113](https://bugs.mysql.com/bug.php?id=12113).
-* Always uses “range” and (not full “index” scan) when it switches to an index to satisfy `<code>ORDER BY … LIMIT</code>` ([MDEV-6657](https://jira.mariadb.org/browse/MDEV-6657)).
+* Always uses “range” and (not full “index” scan) when it switches to an index to satisfy `ORDER BY … LIMIT` ([MDEV-6657](https://jira.mariadb.org/browse/MDEV-6657)).
 * Tries hard to be smart and use cost/number of records estimates from other parts of the optimizer ([MDEV-6384](https://jira.mariadb.org/browse/MDEV-6384), [MDEV-465](https://jira.mariadb.org/browse/MDEV-465)).
 
   * This change also fixes [MySQL Bug#36817](https://bugs.mysql.com/bug.php?id=36817).
@@ -47,7 +47,7 @@ In [MySQL 5.7 changelog](https://mysqlserverteam.com/whats-new-in-mysql-5-7-gene
 
 
 
-MariaDB is not using Oracle's fix (we believe `<code>make_join_select</code>` is not the right place to do ORDER BY optimization), but the effect is the same.
+MariaDB is not using Oracle's fix (we believe `make_join_select` is not the right place to do ORDER BY optimization), but the effect is the same.
 
 
 ## See Also

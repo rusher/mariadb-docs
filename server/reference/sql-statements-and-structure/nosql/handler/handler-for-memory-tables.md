@@ -11,7 +11,7 @@ If you want to scan a table for over different key values, not just search for e
 CREATE TABLE t1 (a INT, b INT, KEY(a), KEY b USING BTREE (b)) engine=memory;
 ```
 
-In the above table, `<code>a</code>` is a [HASH](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md#hash-indexes) key that only supports exact matches (=) while `<code>b</code>` is a [BTREE](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md#b-tree-indexes) key that you can use to scan the table in key order, starting from start or from a given key value.
+In the above table, `a` is a [HASH](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md#hash-indexes) key that only supports exact matches (=) while `b` is a [BTREE](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md#b-tree-indexes) key that you can use to scan the table in key order, starting from start or from a given key value.
 
 
 The limitations for HANDLER READ with Memory|HEAP tables are:

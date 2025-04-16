@@ -16,15 +16,15 @@ Returns a "short" universally unique identifier as a 64-bit unsigned integer (ra
 than a string-form 128-bit identifier as returned by the [UUID()](uuid.md) function).
 
 
-The value of `<code class="highlight fixed" style="white-space:pre-wrap">UUID_SHORT()</code>` is guaranteed to be unique if the
+The value of `UUID_SHORT()` is guaranteed to be unique if the
 following conditions hold:
 
 
 * The server_id of the current host is unique among your set of master and
  slave servers
-* `<code class="highlight fixed" style="white-space:pre-wrap">server_id</code>` is between 0 and 255
+* `server_id` is between 0 and 255
 * You don't set back your system time for your server between mariadbd restarts
-* You do not invoke `<code class="highlight fixed" style="white-space:pre-wrap">UUID_SHORT()</code>` on average more than 16
+* You do not invoke `UUID_SHORT()` on average more than 16
  million times per second between mariadbd restarts
 
 
@@ -70,6 +70,6 @@ select * from t1;
 * [UUID()](uuid.md) ; Return full (128 bit) Universally Unique Identifier
 * [AUTO_INCREMENT](../../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md)
 * [Sequences](../../../../sequences/README.md) - an alternative to auto_increment available from [MariaDB 10.3](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md)
-* [SYS_GUID](sys_guid.md) - UUID without the `<code>-</code>` character for Oracle compatibility
+* [SYS_GUID](sys_guid.md) - UUID without the `-` character for Oracle compatibility
 * [UUID data type](../../../../../data-types/string-data-types/uuid-data-type.md)
 

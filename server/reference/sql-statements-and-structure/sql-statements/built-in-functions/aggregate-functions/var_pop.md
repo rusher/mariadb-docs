@@ -12,7 +12,7 @@ VAR_POP(expr)
 ## Description
 
 
-Returns the population standard variance of `<code>expr</code>`. It considers rows as
+Returns the population standard variance of `expr`. It considers rows as
 the whole population, not as a sample, so it has the number of rows as
 the denominator. You can also use [VARIANCE()](variance.md), which is equivalent but
 is not standard SQL.
@@ -32,7 +32,7 @@ It is an [aggregate function](../special-functions/window-functions/aggregate-fu
 VAR_POP() can be used as a [window function](../special-functions/window-functions/window-functions-overview.md).
 
 
-VAR_POP() returns `<code>NULL</code>` if there were no matching rows.
+VAR_POP() returns `NULL` if there were no matching rows.
 
 
 ## Examples

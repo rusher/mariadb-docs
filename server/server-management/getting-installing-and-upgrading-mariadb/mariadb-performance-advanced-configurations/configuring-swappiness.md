@@ -29,7 +29,7 @@ The setting is from 0 to 100, with lower values meaning a lower likelihood of sw
 sysctl vm.swappiness
 ```
 
-The default setting encourages the server to use swap. Since there probably won't be much else on the database server besides MariaDB processes to put into swap, you'll probably want to reduce this to zero to avoid swapping as much as possible. You can change the default by adding a line to the `<code>sysctl.conf</code>` file (usually found in `<code>/etc/sysctl.conf</code>`).
+The default setting encourages the server to use swap. Since there probably won't be much else on the database server besides MariaDB processes to put into swap, you'll probably want to reduce this to zero to avoid swapping as much as possible. You can change the default by adding a line to the `sysctl.conf` file (usually found in `/etc/sysctl.conf`).
 
 
 To set the swappiness to zero, add the line:

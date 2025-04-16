@@ -31,7 +31,7 @@ In MacOS, create a file called /Library/LaunchDaemons/com.mariadb.server.plist w
 </plist>
 ```
 
-Then from a shell, run `<code class="fixed" style="white-space:pre-wrap">launchctl load /Library/LaunchDaemons/com.mariadb.server.plist</code>` and MariaDB will run immediately, and also upon reboot.
+Then from a shell, run `launchctl load /Library/LaunchDaemons/com.mariadb.server.plist` and MariaDB will run immediately, and also upon reboot.
 
 
 ## See Also

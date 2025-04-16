@@ -5,13 +5,13 @@
 Extending [system-versioned tables](system-versioned-tables.md), MariaDB supports application-time period tables. Time periods are defined by a range between two temporal columns. The columns must be of the same [temporal data type](../../data-types/date-and-time-data-types/README.md), i.e. [DATE](../sql-language-structure/date-and-time-literals.md), [TIMESTAMP](../sql-statements/built-in-functions/date-time-functions/timestamp-function.md) or [DATETIME](../../data-types/date-and-time-data-types/datetime.md) ([TIME](../sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) and [YEAR](../../data-types/date-and-time-data-types/year-data-type.md) are not supported), and of the same width.
 
 
-Using time periods implicitly defines the two columns as `<code>NOT NULL</code>`. It also adds a constraint to check whether the first value is less than the second value. The constraint is invisible to [SHOW CREATE TABLE](../sql-statements/administrative-sql-statements/show/show-create-table.md) statements. The name of this constraint is prefixed by the time period name, to avoid conflict with other constraints.
+Using time periods implicitly defines the two columns as `NOT NULL`. It also adds a constraint to check whether the first value is less than the second value. The constraint is invisible to [SHOW CREATE TABLE](../sql-statements/administrative-sql-statements/show/show-create-table.md) statements. The name of this constraint is prefixed by the time period name, to avoid conflict with other constraints.
 
 
 ### Creating Tables with Time Periods
 
 
-To create a table with a time period, use a [CREATE TABLE](../vectors/create-table-with-vectors.md) statement with the `<code>PERIOD</code>` table option.
+To create a table with a time period, use a [CREATE TABLE](../vectors/create-table-with-vectors.md) statement with the `PERIOD` table option.
 
 
 ```
@@ -22,16 +22,16 @@ CREATE TABLE t1(
    PERIOD FOR date_period(date_1, date_2));
 ```
 
-This creates a table with a `<code>time_period</code>` period and populates the table with some basic temporal values.
+This creates a table with a `time_period` period and populates the table with some basic temporal values.
 
 
-Examples are available in the MariaDB Server source code, at `<code>mysql-test/suite/period/r/create.result</code>`.
+Examples are available in the MariaDB Server source code, at `mysql-test/suite/period/r/create.result`.
 
 
 ### Adding and Removing Time Periods
 
 
-The [ALTER TABLE](../sql-statements/data-definition/alter/alter-tablespace.md) statement now supports syntax for adding and removing time periods from a table. To add a period, use the `<code>ADD PERIOD</code>` clause.
+The [ALTER TABLE](../sql-statements/data-definition/alter/alter-tablespace.md) statement now supports syntax for adding and removing time periods from a table. To add a period, use the `ADD PERIOD` clause.
 
 
 For example:
@@ -48,14 +48,14 @@ CREATE OR REPLACE TABLE rooms (
 ALTER TABLE rooms ADD PERIOD FOR p(checkin,checkout);
 ```
 
-To remove a period, use the `<code>DROP PERIOD</code>` clause:
+To remove a period, use the `DROP PERIOD` clause:
 
 
 ```
 ALTER TABLE rooms DROP PERIOD FOR p;
 ```
 
-Both `<code>ADD PERIOD</code>` and `<code>DROP PERIOD</code>` clauses include an option to handle whether the period already exists:
+Both `ADD PERIOD` and `DROP PERIOD` clauses include an option to handle whether the period already exists:
 
 
 ```
@@ -70,7 +70,7 @@ ALTER TABLE rooms DROP PERIOD IF EXISTS FOR p;
 You can also remove rows that fall within certain time periods.
 
 
-When MariaDB executes a `<code>DELETE FOR PORTION</code>` statement, it removes the row:
+When MariaDB executes a `DELETE FOR PORTION` statement, it removes the row:
 
 
 * When the row period falls completely within the delete period, it removes the row.
@@ -105,7 +105,7 @@ SELECT * FROM t1;
 +------+------------+------------+
 ```
 
-Then, run the `<code>DELETE FOR PORTION</code>` statement:
+Then, run the `DELETE FOR PORTION` statement:
 
 
 ```
@@ -129,26 +129,26 @@ SELECT * FROM t1 ORDER BY name;
 Here:
 
 
-* `<code>a</code>` is unchanged, as the range falls entirely out of the specified portion to be deleted.
-* `<code>b</code>`, with values ranging from 1999 to 2018, is split into two rows, 1999 to 2000 and 2018-01 to 2018-12 (i.e. one extra row has been inserted).
-* `<code>c</code>`, with values ranging from 1999 to 2017, where only the upper value falls within the portion to be deleted, has been shrunk to 1999 to 2001.
-* `<code>d</code>`, with values ranging from 2017 to 2019, where only the lower value falls within the portion to be deleted, has been shrunk to 2018 to 2019.
+* `a` is unchanged, as the range falls entirely out of the specified portion to be deleted.
+* `b`, with values ranging from 1999 to 2018, is split into two rows, 1999 to 2000 and 2018-01 to 2018-12 (i.e. one extra row has been inserted).
+* `c`, with values ranging from 1999 to 2017, where only the upper value falls within the portion to be deleted, has been shrunk to 1999 to 2001.
+* `d`, with values ranging from 2017 to 2019, where only the lower value falls within the portion to be deleted, has been shrunk to 2018 to 2019.
 
 
-The `<code>DELETE FOR PORTION</code>` statement has the following restrictions
+The `DELETE FOR PORTION` statement has the following restrictions
 
 
-* The `<code>FROM...TO</code>` clause must be constant
+* The `FROM...TO` clause must be constant
 * Multi-delete is not supported
 
 
-If there are `<code>DELETE</code>` or `<code>INSERT</code>` triggers, it works as follows: any matched row is deleted, and then one or two rows are inserted. If the record is deleted completely, nothing is inserted. 
+If there are `DELETE` or `INSERT` triggers, it works as follows: any matched row is deleted, and then one or two rows are inserted. If the record is deleted completely, nothing is inserted. 
 
 
 ### Updating by Portion
 
 
-The [UPDATE](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) syntax now supports `<code>UPDATE FOR PORTION</code>`, which modifies rows based on their occurrence in a range:
+The [UPDATE](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) syntax now supports `UPDATE FOR PORTION`, which modifies rows based on their occurrence in a range:
 
 
 To test it, first populate the table with some data:
@@ -197,19 +197,19 @@ SELECT * FROM t1 ORDER BY name;
 +------------+------------+------------+
 ```
 
-* `<code>a</code>` is unchanged, as the range falls entirely out of the specified portion to be updated.
-* For `<code>b</code>`, with years ranging from 1999 to 2018, two extra rows are inserted, with ranges 1999-01 to 2000-01 and 2018-01 to 2018-12. The original row's period has been shrunk to years 2000 and 2018, and the `<code>name</code>` field has got "_original" appended.
-* `<code>c</code>`, with values ranging from 1999 to 2017, where only the upper value falls within the portion to be updated, has been shrunk to 1999 to 2001.
-* `<code>d</code>`, with values ranging from 2017 to 2019, where only the lower value falls within the portion to be updated, has been shrunk to 2018 to 2019.
+* `a` is unchanged, as the range falls entirely out of the specified portion to be updated.
+* For `b`, with years ranging from 1999 to 2018, two extra rows are inserted, with ranges 1999-01 to 2000-01 and 2018-01 to 2018-12. The original row's period has been shrunk to years 2000 and 2018, and the `name` field has got "_original" appended.
+* `c`, with values ranging from 1999 to 2017, where only the upper value falls within the portion to be updated, has been shrunk to 1999 to 2001.
+* `d`, with values ranging from 2017 to 2019, where only the lower value falls within the portion to be updated, has been shrunk to 2018 to 2019.
 * Original rows affected by the update have "_original" appended to the name.
 
 
-The `<code>UPDATE FOR PORTION</code>` statement has the following limitations:
+The `UPDATE FOR PORTION` statement has the following limitations:
 
 
 * The operation cannot modify the two temporal columns used by the time period
-* The operation cannot reference period values in the `<code>SET</code>` expression
-* `<code>FROM...TO</code>` expressions must be constant
+* The operation cannot reference period values in the `SET` expression
+* `FROM...TO` expressions must be constant
 
 
 ### WITHOUT OVERLAPS
@@ -217,8 +217,8 @@ The `<code>UPDATE FOR PORTION</code>` statement has the following limitations:
 
 
 ##### MariaDB starting with [10.5.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes.md)
-[MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) introduced a new clause, `<code>WITHOUT OVERLAPS</code>`, which allows one to create an index specifying that application time periods should not overlap.
-An index constrained by `<code>WITHOUT OVERLAPS</code>` is required to be either a primary key or a unique index.
+[MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) introduced a new clause, `WITHOUT OVERLAPS`, which allows one to create an index specifying that application time periods should not overlap.
+An index constrained by `WITHOUT OVERLAPS` is required to be either a primary key or a unique index.
 
 
 Take the following example, an application time period table for a booking system:
@@ -240,7 +240,7 @@ INSERT INTO rooms VALUES
  (2, 'Eusebius', '2020-10-04', '2020-10-06');
 ```
 
-Our system is not intended to permit overlapping bookings, so the fourth record above should not have been inserted. Using `<code>WITHOUT OVERLAPS</code>` in a unique index (in this case based on a combination of room number and the application time period) allows us to specify this constraint in the table definition.
+Our system is not intended to permit overlapping bookings, so the fourth record above should not have been inserted. Using `WITHOUT OVERLAPS` in a unique index (in this case based on a combination of room number and the application time period) allows us to specify this constraint in the table definition.
 
 
 ```
@@ -270,7 +270,7 @@ From [MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-m
 
 * [INFORMATION_SCHEMA.PERIODS](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-periods-table.md) view.
 * [INFORMATION_SCHEMA.KEY_PERIOD_USAGE](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_period_usage-table.md) view.
-* Additional columns `<code>IS_SYSTEM_TIME_PERIOD_START</code>` and `<code>IS_SYSTEM_TIME_PERIOD_END</code>` in the [INFORMATION_SCHEMA.COLUMNS](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) view.
+* Additional columns `IS_SYSTEM_TIME_PERIOD_START` and `IS_SYSTEM_TIME_PERIOD_END` in the [INFORMATION_SCHEMA.COLUMNS](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) view.
 
 
 

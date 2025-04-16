@@ -38,7 +38,7 @@ SELECT CONCAT('$', FORMAT(col5, 2))
 FROM table3;
 ```
 
-In this statement, the [CONCAT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat_ws.md) will place a dollar sign in front of the numbers found in the `<code>col5</code>` column, which will be formatted with commas by [FORMAT()](../../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_statement.md). The `<code>2</code>` within the [FORMAT()](../../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_statement.md) stipulates two decimal places.
+In this statement, the [CONCAT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat_ws.md) will place a dollar sign in front of the numbers found in the `col5` column, which will be formatted with commas by [FORMAT()](../../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_statement.md). The `2` within the [FORMAT()](../../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_statement.md) stipulates two decimal places.
 
 
 Occasionally, one will want to convert the text from a column to either all upper-case letters or all lower-case letters. In the example that follows, the output of the first column is converted to upper-case and the second to lower-case:
@@ -62,7 +62,7 @@ FROM catalog;
 In this SQL statement, dots are added to the right end of each part number. So a part number of "H200" will display as "H200....", but without the quotes. Each part's description will have under-scores preceding it. A part with a description of "brass hinge" will display as "brass hinge".
 
 
-If a column is a [CHAR](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) data-type, a fixed width column, then it may be necessary to trim any leading or trailing spaces from displays. There are a few functions to accomplish this task. The [LTRIM()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/ltrim.md) function will eliminate any leading spaces to the left. So "`<code> H200</code>`" becomes "`<code>H200</code>`". For columns with trailing spaces, spaces on the right, [RTRIM()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/rtrim.md) will work: "`<code>H500 </code>`" becomes "`<code>H500</code>`". A more versatile trimming function, though, is [TRIM()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/trim.md). With it one can trim left, right or both. Below are a few examples:
+If a column is a [CHAR](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) data-type, a fixed width column, then it may be necessary to trim any leading or trailing spaces from displays. There are a few functions to accomplish this task. The [LTRIM()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/ltrim.md) function will eliminate any leading spaces to the left. So "` H200`" becomes "`H200`". For columns with trailing spaces, spaces on the right, [RTRIM()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/rtrim.md) will work: "`H500 `" becomes "`H500`". A more versatile trimming function, though, is [TRIM()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/trim.md). With it one can trim left, right or both. Below are a few examples:
 
 
 ```
@@ -73,7 +73,7 @@ TRIM(col4)
 FROM table5;
 ```
 
-In the first [TRIM()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/trim.md) clause, the padding component is specified; the leading dots are to be trimmed from the output of `<code>col1</code>`. The trailing spaces will be trimmed off of `<code>col2</code>`—space is the default. Both leading and trailing under-scores are trimmed from `<code>col3</code>` above. Unless specified, BOTH is the default. So leading and trailing spaces are trimmed from `<code>col4</code>` in the statement here.
+In the first [TRIM()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/trim.md) clause, the padding component is specified; the leading dots are to be trimmed from the output of `col1`. The trailing spaces will be trimmed off of `col2`—space is the default. Both leading and trailing under-scores are trimmed from `col3` above. Unless specified, BOTH is the default. So leading and trailing spaces are trimmed from `col4` in the statement here.
 
 
 #### Extracting
@@ -153,7 +153,7 @@ FROM table8
 WHERE CHAR_LENGTH(school_id)=8;
 ```
 
-The [COUNT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count.md) function above counts the number of rows that meet the condition of the `<code>WHERE</code>` clause.
+The [COUNT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count.md) function above counts the number of rows that meet the condition of the `WHERE` clause.
 
 
 In a [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement, an [ORDER BY](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#order-by) clause can be used to sort a results set by a specific column. However, if the column contains IP addresses, a simple sort may not produce the desired results:
@@ -182,7 +182,7 @@ FROM computers WHERE server='Y'
 ORDER BY INET_ATON(ip_address) LIMIT 3;
 ```
 
-Basically, the [INET_ATON()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_aton.md) function will convert IP addresses to regular numbers for numeric sorting. For instance, if we were to use the function in the list of columns in a [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement, instead of the `<code>WHERE</code>` clause, the address 10.0.1.1 would return 167772417, 10.0.11.1 will return 167774977, and 10.0.2.1 the number 167772673. As a complement to [INET_ATON()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_aton.md), the function [INET_NTOA()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_ntoa.md) will translate these numbers back to their original IP addresses.
+Basically, the [INET_ATON()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_aton.md) function will convert IP addresses to regular numbers for numeric sorting. For instance, if we were to use the function in the list of columns in a [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement, instead of the `WHERE` clause, the address 10.0.1.1 would return 167772417, 10.0.11.1 will return 167774977, and 10.0.2.1 the number 167772673. As a complement to [INET_ATON()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_aton.md), the function [INET_NTOA()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_ntoa.md) will translate these numbers back to their original IP addresses.
 
 
 MariaDB is fairly case insensitive, which usually is fine. However, to be able to check by case, the [STRCMP()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/strcmp.md) function can be used. It converts the column examined to a string and makes a comparison to the search parameter.
@@ -194,7 +194,7 @@ FROM table6
 WHERE STRCMP(col3, 'text')=0;
 ```
 
-If there is an exact match, the function [STRCMP()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/strcmp.md) returns 0. So if `<code>col3</code>` here contains "Text", it won't match. Incidentally, if `<code>col3</code>` alphabetically is before the string to which it's compared, a `<code>-1</code>` will be returned. If it's after it, a `<code>1</code>` is returned.
+If there is an exact match, the function [STRCMP()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/strcmp.md) returns 0. So if `col3` here contains "Text", it won't match. Incidentally, if `col3` alphabetically is before the string to which it's compared, a `-1` will be returned. If it's after it, a `1` is returned.
 
 
 When you have list of items in one string, the [SUBSTRING_INDEX()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/substring_index.md) can be used to pull out a sub-string of data. As an example, suppose we have a column which has five elements, but we want to retrieve just the first two elements. This SQL statement will return them:

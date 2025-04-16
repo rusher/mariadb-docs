@@ -47,7 +47,7 @@ TokuDB has been included with MariaDB since [MariaDB 5.5.34](../../../../release
 
 
 In [MariaDB 5.5.33](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5533-release-notes.md), [MariaDB 10.0.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes.md), and starting from [MariaDB 10.2.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1025-release-notes.md) TokuDB is in a separate RPM package
-called `<code>MariaDB-tokudb-engine</code>` and is installed as follows:
+called `MariaDB-tokudb-engine` and is installed as follows:
 
 
 ```
@@ -70,8 +70,8 @@ sudo apt-get install mariadb-plugin-tokudb
 ```
 
 In some earlier versions, from [MariaDB 5.5.33](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5533-release-notes.md) and [MariaDB 10.0.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes.md), TokuDB is in a separate package called
-`<code>mariadb-tokudb-engine-x.x</code>`, where `<code>x.x</code>` is the MariaDB series (`<code>5.5</code>` or
-`<code>10.0</code>`). The package is installed, for example on `<code>5.5</code>`, as follows:
+`mariadb-tokudb-engine-x.x`, where `x.x` is the MariaDB series (`5.5` or
+`10.0`). The package is installed, for example on `5.5`, as follows:
 
 
 ```
@@ -139,7 +139,7 @@ indicating Transparent Hugepages are not enabled and you may continue. If the fo
 Transparent Hugepages are enabled, and you will need to disable them.
 
 
-To disable them, pass "transparent_hugepage=never" to the kernel in your bootloader (grub, lilo, etc.). For example, for SUSE, add `<code>transparent_hugepage=never</code>` to Optional Kernel Command Line Parameter at the end, such as after "showopts", and press OK. The setting will take effect on the next reboot.
+To disable them, pass "transparent_hugepage=never" to the kernel in your bootloader (grub, lilo, etc.). For example, for SUSE, add `transparent_hugepage=never` to Optional Kernel Command Line Parameter at the end, such as after "showopts", and press OK. The setting will take effect on the next reboot.
 
 
 You can also disable with:
@@ -153,7 +153,7 @@ echo never > /sys/kernel/mm/transparent_hugepage/defrag
 On Centos or RedHat you can do:
 
 
-Add line `<code class="fixed" style="white-space:pre-wrap">GRUB_CMDLINE_LINUX_DEFAULT="transparent_hugepage=never"</code>` to file /etc/default/grub
+Add line `GRUB_CMDLINE_LINUX_DEFAULT="transparent_hugepage=never"` to file /etc/default/grub
 
 
 Update grub (boot loader):
@@ -186,7 +186,7 @@ The [binary log also needs to be enabled](../../../server-management/server-moni
 Cannot enable tc-log at run-time. XA features of TokuDB are disabled
 ```
 
-MariaDB's default `<code class="highlight fixed" style="white-space:pre-wrap">my.cnf</code>` files come with a section for
+MariaDB's default `my.cnf` files come with a section for
 TokuDB. To enable TokuDB just remove the '#' comment markers from the options
 in the TokuDB section.
 
@@ -204,7 +204,7 @@ A typical TokuDB section looks like the following:
 plugin-load=ha_tokudb
 ```
 
-By default, the `<code>plugin-load</code>` option is commented out. Simply un-comment it
+By default, the `plugin-load` option is commented out. Simply un-comment it
 as in the example above.
 
 
@@ -222,15 +222,15 @@ With these changes done, you can restart MariaDB to activate TokuDB.
 ### Enabling TokuDB on Fedora
 
 
-Instead of putting the TokuDB section in the main `<code>my.cnf</code>` file, it is
-placed in a separate file located at: `<code>/etc/my.cnf.d/tokudb.cnf</code>`
+Instead of putting the TokuDB section in the main `my.cnf` file, it is
+placed in a separate file located at: `/etc/my.cnf.d/tokudb.cnf`
 
 
 ### Enabling TokuDB on Ubuntu & Debian
 
 
-Instead of putting the TokuDB section in the main `<code>my.cnf</code>` file, it is
-placed in a separate file located at: `<code>/etc/mysql/conf.d/tokudb.cnf</code>`
+Instead of putting the TokuDB section in the main `my.cnf` file, it is
+placed in a separate file located at: `/etc/mysql/conf.d/tokudb.cnf`
 
 
 ### Enabling TokuDB Manually From the mysql Command Line
@@ -239,7 +239,7 @@ placed in a separate file located at: `<code>/etc/mysql/conf.d/tokudb.cnf</code>
 Generally, it is recommended to use one of the above methods to enable the
 TokuDB storage engine, but it is also possible to enable it manually as with
 other plugins. To do so, launch the mysql command-line client and connect to
-MariaDB as a user with the `<code>SUPER</code>` privilege and execute the following
+MariaDB as a user with the `SUPER` privilege and execute the following
 command:
 
 
@@ -253,7 +253,7 @@ TokuDB will be installed until someone executes [UNINSTALL SONAME](../../sql-sta
 ### Temporarily Enabling TokuDB When Starting MariaDB
 
 
-If you just want to test TokuDB, you can start the `<code>mysqld</code>` server with TokuDB with the following command:
+If you just want to test TokuDB, you can start the `mysqld` server with TokuDB with the following command:
 
 
 ```

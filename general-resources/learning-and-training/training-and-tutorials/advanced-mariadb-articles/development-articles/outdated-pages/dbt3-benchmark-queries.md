@@ -49,7 +49,7 @@ Query plan:
 * l_shipdate < date_sub('1998-12-01', interval 79 day) is satisifed by 59,334,576
 rows.
 * The table has 59,986,052 rows in total.
-* There are a total of 4 different values of `<code>(l_returnflag,l_linestatus)</code>`. This means, sorting doesn't matter, and temporary table is a very small heap table.
+* There are a total of 4 different values of `(l_returnflag,l_linestatus)`. This means, sorting doesn't matter, and temporary table is a very small heap table.
 
 
 ## Q2

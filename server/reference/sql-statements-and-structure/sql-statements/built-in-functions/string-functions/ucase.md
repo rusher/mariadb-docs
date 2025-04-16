@@ -11,5 +11,5 @@ UCASE(str)
 ## Description
 
 
-`<code>UCASE()</code>` is a synonym for `<code>[UPPER](upper.md)()</code>`.
+`UCASE()` is a synonym for `[UPPER](upper.md)()`.
 

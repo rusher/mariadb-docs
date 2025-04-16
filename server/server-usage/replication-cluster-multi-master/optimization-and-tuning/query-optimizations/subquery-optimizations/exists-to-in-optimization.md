@@ -8,7 +8,7 @@ MySQL (including MySQL 5.6) has only one execution strategy for EXISTS subquerie
 [MariaDB 5.3](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) introduced a rich set of optimizations for IN subqueries. Since then, it makes sense to convert an EXISTS subquery into an IN so that the new optimizations can be used.
 
 
-`<code>EXISTS</code>` will be converted into `<code>IN</code>` in two cases:
+`EXISTS` will be converted into `IN` in two cases:
 
 
 1. Trivially correlated EXISTS subqueries
@@ -36,14 +36,14 @@ In this case, the subquery can be re-written into uncorrelated IN:
 outer_col IN (SELECT inner_col FROM ... WHERE inner_where)
 ```
 
-(`<code>NULL</code>` values require some special handling, see below). For uncorrelated IN subqueries, MariaDB is able a cost-based choice between two execution strategies:
+(`NULL` values require some special handling, see below). For uncorrelated IN subqueries, MariaDB is able a cost-based choice between two execution strategies:
 
 
 * [IN-to-EXISTS](non-semi-join-subquery-optimizations.md#the-in-to-exists-transformation) (basically, convert back into EXISTS)
 * [Materialization](non-semi-join-subquery-optimizations.md#materialization-for-non-correlated-in-subqueries)
 
 
-That is, converting trivially-correlated `<code>EXISTS</code>` into uncorrelated `<code>IN</code>` gives query optimizer an option to use Materialization strategy for the subquery.
+That is, converting trivially-correlated `EXISTS` into uncorrelated `IN` gives query optimizer an option to use Materialization strategy for the subquery.
 
 
 Currently, EXISTS->IN conversion works only for subqueries that are at top
@@ -54,7 +54,7 @@ level of the WHERE clause.
 ## Semi-join EXISTS subqueries
 
 
-If `<code>EXISTS</code>` subquery is an AND-part of the `<code>WHERE</code>` clause:
+If `EXISTS` subquery is an AND-part of the `WHERE` clause:
 
 
 ```
@@ -95,7 +95,7 @@ TODO: rephrase this:
 ## Control
 
 
-The optimization is controlled by the `<code>exists_to_in</code>` flag in [optimizer_switch](../../system-variables/server-system-variables.md#optimizer_switch). Before [MariaDB 10.0.12](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10012-release-notes.md), the optimization was OFF by default. Since [MariaDB 10.0.12](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10012-release-notes.md), it has been ON by default.
+The optimization is controlled by the `exists_to_in` flag in [optimizer_switch](../../system-variables/server-system-variables.md#optimizer_switch). Before [MariaDB 10.0.12](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10012-release-notes.md), the optimization was OFF by default. Since [MariaDB 10.0.12](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10012-release-notes.md), it has been ON by default.
 
 
 ## Limitations

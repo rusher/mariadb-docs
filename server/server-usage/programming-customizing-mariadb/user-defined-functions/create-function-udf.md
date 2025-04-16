@@ -19,12 +19,12 @@ that works like a native (built-in) MariaDB function such as [ABS()](../../../re
 [CONCAT()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat_ws.md).
 
 
-`<code>function_name</code>` is the name that should be used in SQL statements to invoke
+`function_name` is the name that should be used in SQL statements to invoke
 the function.
 
 
 To create a function, you must have the [INSERT privilege](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) for the
-mysql database. This is necessary because`<code>CREATE FUNCTION</code>` adds a row to the
+mysql database. This is necessary because`CREATE FUNCTION` adds a row to the
 [mysql.func system table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-func-table.md) that records the function's name,
 type, and shared library name. If you do not have this table, you should run
 the [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md) command to create it.
@@ -35,7 +35,7 @@ conventions, MariaDB needs to have been dynamically compiled, and your
 operating system must support dynamic loading.
 
 
-For an example, see `<code>sql/udf_example.cc</code>` in the source tree. For a collection of existing UDFs see [sql-udf](https://github.com/pluots/sql-udf).
+For an example, see `sql/udf_example.cc` in the source tree. For a collection of existing UDFs see [sql-udf](https://github.com/pluots/sql-udf).
 
 
 Statements making use of user-defined functions are not
@@ -52,14 +52,14 @@ For valid identifiers to use as function names, see [Identifier Names](../../../
 #### RETURNS
 
 
-The `<code>RETURNS</code>` clause indicates the type of the function's
-return value, and can be one of [string-literals.md](../../../reference/sql-statements-and-structure/sql-language-structure/string-literals.md), [INTEGER](../../../reference/data-types/data-types-numeric-data-types/integer.md), [REAL](https://mariadb.com/kb/en/real/) or [DECIMAL](../../../reference/data-types/data-types-numeric-data-types/decimal.md). `<code>DECIMAL</code>` functions currently return string values and should be written like [STRING](../../../reference/data-types/string-data-types/README.md) functions.
+The `RETURNS` clause indicates the type of the function's
+return value, and can be one of [string-literals.md](../../../reference/sql-statements-and-structure/sql-language-structure/string-literals.md), [INTEGER](../../../reference/data-types/data-types-numeric-data-types/integer.md), [REAL](https://mariadb.com/kb/en/real/) or [DECIMAL](../../../reference/data-types/data-types-numeric-data-types/decimal.md). `DECIMAL` functions currently return string values and should be written like [STRING](../../../reference/data-types/string-data-types/README.md) functions.
 
 
 #### shared_library_name
 
 
-`<code>shared_library_name</code>` is the basename of the shared object file that contains
+`shared_library_name` is the basename of the shared object file that contains
 the code that implements the function. The file must be located in the plugin
 directory. This directory is given by the value of the
 [plugin_dir](../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir) system variable. Note that
@@ -78,7 +78,7 @@ Aggregate UDF functions can be used as [window functions](../../../reference/sql
 #### OR REPLACE
 
 
-If the optional `<code>OR REPLACE</code>` clause is used, it acts as a shortcut for:
+If the optional `OR REPLACE` clause is used, it acts as a shortcut for:
 
 
 ```

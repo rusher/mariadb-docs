@@ -35,7 +35,7 @@ Typically you'll want to start an unnamed object, then use member names to show 
 ## Making sure the trace is valid
 
 
-`<code>Json_writer_object</code>` and `<code>Json_writer_array</code>` classes use RAII idiom and ensure that JSON objects and arrays are "closed" in the reverse order they were started.
+`Json_writer_object` and `Json_writer_array` classes use RAII idiom and ensure that JSON objects and arrays are "closed" in the reverse order they were started.
 
 
 However, they do not ensure these constraints:
@@ -51,7 +51,7 @@ Tracing code has runtime checks for these. Attempt to write invalid JSON will ca
 ## Test coverage
 
 
-It is possible to run `<code>mysql-test-run</code>` with this argument
+It is possible to run `mysql-test-run` with this argument
 
 
 ```
@@ -61,7 +61,7 @@ It is possible to run `<code>mysql-test-run</code>` with this argument
 This will run all tests with tracing on. As mentioned earlier, debug build will perform checks that we are not producing invalid trace.
 
 
-The BuildBot instance at [](https://buildbot.askmonty.org/) also runs tests with this argument, see `<code>mtr_opttrace</code>` pass in kvm-fulltest and kvm-fulltest2.
+The BuildBot instance at [](https://buildbot.askmonty.org/) also runs tests with this argument, see `mtr_opttrace` pass in kvm-fulltest and kvm-fulltest2.
 
 
 ## Debugging

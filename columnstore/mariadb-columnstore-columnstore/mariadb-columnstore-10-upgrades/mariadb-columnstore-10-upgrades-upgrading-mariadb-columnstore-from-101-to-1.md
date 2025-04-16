@@ -73,7 +73,7 @@ Upgrade MariaDB ColumnStore as user root on the server designated as PM1:
 * Unpack the tarball, which will generate a set of RPMs that will reside in the /root/ directory.
 
 
-`<code>tar -zxf mariadb-columnstore-1.0.2-1-centos#.x86_64.rpm.tar.gz</code>`
+`tar -zxf mariadb-columnstore-1.0.2-1-centos#.x86_64.rpm.tar.gz`
 
 
 * Upgrade the RPMs. The MariaDB ColumnStore software will be installed in /usr/local/.
@@ -116,32 +116,32 @@ server where you are installing MariaDB ColumnStore.
 * Shutdown the MariaDB ColumnStore system:
 
 
-`<code>cc shutdownsystem y</code>`
+`cc shutdownsystem y`
 
 
 * Run pre-uninstall script
 
 
-`<code>/usr/local/MariaDB/Columnstore/bin/pre-uninstall</code>`
+`/usr/local/MariaDB/Columnstore/bin/pre-uninstall`
 
 
 * Unpack the tarball, which will generate the /usr/local/ directory.
 
 
-`<code> tar -zxvf -mariadb-columnstore-release#.x86_64.bin.tar.gz</code>`
+` tar -zxvf -mariadb-columnstore-release#.x86_64.bin.tar.gz`
 
 
 * Run post-install scripts
 
 
-`<code> /usr/local/MariaDB/Columnstore/bin/post-install</code>`
+` /usr/local/MariaDB/Columnstore/bin/post-install`
 
 
 * Run postConfigure using the upgrade option, which will utilize the configuration from
 the Columnstore.xml,rpmsave
 
 
-`<code>/usr/local/MariaDB/Columnstore/bin/postConfigure -u</code>`
+`/usr/local/MariaDB/Columnstore/bin/postConfigure -u`
 
 
 
@@ -210,30 +210,30 @@ server where you are installing MariaDB ColumnStore.
 * Shutdown the MariaDB ColumnStore system:
 
 
-`<code>cc shutdownsystem y</code>`
+`cc shutdownsystem y`
 
 
 * Run pre-uninstall script
 
 
-`<code> $HOME/MariaDB/Columnstore/bin/pre-uninstall</code>`
+` $HOME/MariaDB/Columnstore/bin/pre-uninstall`
 
 
 * Unpack the tarball, which will generate the $HOME/ directory.
 
 
-`<code> tar -zxvf -mariadb-columnstore-release#.x86_64.bin.tar.gz</code>`
+` tar -zxvf -mariadb-columnstore-release#.x86_64.bin.tar.gz`
 
 
 * Run post-install scripts 
 
-  1. $HOME/MariaDB/Columnstore/bin/post-install`<code>
-</code>`
+  1. $HOME/MariaDB/Columnstore/bin/post-install`
+`
 
 
 * Run postConfigure using the upgrade option, which will utilize the configuration from
 the Columnstore.xml,rpmsave
 
 
-`<code> $HOME<em>MariaDB/Columnstore/bin/postConfigure -n</em></code>`
+` $HOME<em>MariaDB/Columnstore/bin/postConfigure -n</em>`
 

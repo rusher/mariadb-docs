@@ -21,13 +21,13 @@ operands are NULL, the result is NULL.
 For this operator, [short-circuit evaluation](../operator-precedence.md#short-circuit-evaluation) can be used.
 
 
-Note that, if the `<code>PIPES_AS_CONCAT</code>` [SQL_MODE](../../../../server-management/variables-and-modes/sql-mode.md) is set, `<code>||</code>` is used as a string concatenation operator. This means that `<code>a || b</code>` is the same as `<code>CONCAT(a,b)</code>`. See `<code>[CONCAT()](../../sql-statements/built-in-functions/string-functions/concat_ws.md)</code>` for details.
+Note that, if the `PIPES_AS_CONCAT` [SQL_MODE](../../../../server-management/variables-and-modes/sql-mode.md) is set, `||` is used as a string concatenation operator. This means that `a || b` is the same as `CONCAT(a,b)`. See `[CONCAT()](../../sql-statements/built-in-functions/string-functions/concat_ws.md)` for details.
 
 
 ### Oracle Mode
 
 
-In [Oracle mode](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md#null-handling), `<code>||</code>` ignores [nullif.md](../../sql-statements/built-in-functions/control-flow-functions/nullif.md).
+In [Oracle mode](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md#null-handling), `||` ignores [nullif.md](../../sql-statements/built-in-functions/control-flow-functions/nullif.md).
 
 
 ## Examples

@@ -12,9 +12,9 @@ PREPARE stmt_name FROM preparable_stmt
 ## Description
 
 
-The `<code class="fixed" style="white-space:pre-wrap">PREPARE</code>` statement prepares a statement and assigns it a name,
-`<code class="fixed" style="white-space:pre-wrap">stmt_name</code>`, by which to refer to the statement later. Statement names
-are not case sensitive. `<code class="fixed" style="white-space:pre-wrap">preparable_stmt</code>` is either a string literal or a [user variable](../../sql-language-structure/user-defined-variables.md) (not a [local variable](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/declare-variable.md), an SQL expression or a subquery) that contains the text of the statement. The text must 
+The `PREPARE` statement prepares a statement and assigns it a name,
+`stmt_name`, by which to refer to the statement later. Statement names
+are not case sensitive. `preparable_stmt` is either a string literal or a [user variable](../../sql-language-structure/user-defined-variables.md) (not a [local variable](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/declare-variable.md), an SQL expression or a subquery) that contains the text of the statement. The text must 
 represent a single SQL statement, not multiple statements. Within the
 statement, "?" characters can be used as parameter markers to indicate
 where data values are to be bound to the query later when you execute
@@ -59,8 +59,8 @@ END;
 The [FOUND_ROWS()](../built-in-functions/secondary-functions/information-functions/found_rows.md) and [ROW_COUNT()](../built-in-functions/secondary-functions/information-functions/row_count.md) functions, if called immediatly after EXECUTE, return the number of rows read or affected by the prepared statements; however, if they are called after DEALLOCATE PREPARE, they provide information about this statement. If the prepared statement produces errors or warnings, [GET DIAGNOSTICS](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) return information about them. DEALLOCATE PREPARE shouldn't clear the [diagnostics area](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area.md), unless it produces an error.
 
 
-A prepared statement is executed with `<code>[EXECUTE](execute-statement.md)</code>` and released 
-with `<code>[DEALLOCATE PREPARE](deallocate-drop-prepare.md)</code>`.
+A prepared statement is executed with `[EXECUTE](execute-statement.md)` and released 
+with `[DEALLOCATE PREPARE](deallocate-drop-prepare.md)`.
 
 
 The [max_prepared_stmt_count](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_prepared_stmt_count) server system variable determines the number of allowed prepared statements that can be prepared on the server. If it is set to 0, prepared statements are not allowed. If the limit is reached, an error similar to the following will be produced:
@@ -74,7 +74,7 @@ ERROR 1461 (42000): Can't create more than max_prepared_stmt_count statements
 ### Oracle Mode
 
 
-In [Oracle mode](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `<code>PREPARE stmt FROM 'SELECT :1, :2'</code>` is used, instead of `<code>?</code>`.
+In [Oracle mode](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `PREPARE stmt FROM 'SELECT :1, :2'` is used, instead of `?`.
 
 
 ## Permitted Statements

@@ -42,7 +42,7 @@ and
 are equivalent.
 
 
-The `<code>\</code>` (backslash character) is used to escape characters (unless the [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md) hasn't been set to [NO_BACKSLASH_ESCAPES](../../../server-management/variables-and-modes/sql-mode.md#no_backslash_escapes)). For example:
+The `\` (backslash character) is used to escape characters (unless the [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md) hasn't been set to [NO_BACKSLASH_ESCAPES](../../../server-management/variables-and-modes/sql-mode.md#no_backslash_escapes)). For example:
 
 
 ```
@@ -104,11 +104,11 @@ There are other escape sequences also. Here is a full list:
 
 
 
-Escaping the `<code>%</code>` and `<code>_</code>` characters can be necessary when using the [LIKE](../sql-statements/built-in-functions/string-functions/like.md) operator, which treats them as special characters.
+Escaping the `%` and `_` characters can be necessary when using the [LIKE](../sql-statements/built-in-functions/string-functions/like.md) operator, which treats them as special characters.
 
 
-The ASCII 26 character (`<code>\Z</code>`) needs to be escaped when included in a batch file which needs to be executed in Windows. The reason is that ASCII 26, in Windows, is the end of file (EOF).
+The ASCII 26 character (`\Z`) needs to be escaped when included in a batch file which needs to be executed in Windows. The reason is that ASCII 26, in Windows, is the end of file (EOF).
 
 
-Backslash (`<code>\</code>`), if not used as an escape character, must always be escaped. When followed by a character that is not in the above table, backslashes will simply be ignored.
+Backslash (`\`), if not used as an escape character, must always be escaped. When followed by a character that is not in the above table, backslashes will simply be ignored.
 

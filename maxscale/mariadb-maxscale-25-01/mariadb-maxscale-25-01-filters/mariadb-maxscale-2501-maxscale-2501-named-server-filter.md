@@ -46,10 +46,10 @@ backwards compatibility and allows only one regular expression and one server
 name in the configuration. In indexed mode, up to 25 regex-server pairs are
 allowed in the form *match01* - *target01*, *match02* - *target02* and so on.
 Also, in indexed mode, the server names (targets) may contain a list of names or
-special tags `<code>->master</code>` or `<code>->slave</code>`.
+special tags `->master` or `->slave`.
 
 
-All parameters except the deprecated `<code>match</code>` and `<code>target</code>` parameters can
+All parameters except the deprecated `match` and `target` parameters can
 be modified at runtime. Any modifications to the filter configuration will
 only affect sessions created after the change has completed.
 
@@ -92,7 +92,7 @@ filters=NamedServerFilter
 NamedServerFilter requires at least one *matchXY* - *targetXY* pair.
 
 
-### `<code>matchXY</code>`
+### `matchXY`
 
 
 * Type: [regex](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -118,21 +118,21 @@ options=case,extended
 
 
 
-### `<code>options</code>`
+### `options`
 
 
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>ignorecase</code>`, `<code>case</code>`, `<code>extended</code>`
-* Default: `<code>ignorecase</code>`
+* Values: `ignorecase`, `case`, `extended`
+* Default: `ignorecase`
 
 
 [Regular expression options](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
-for `<code>matchXY</code>`.
+for `matchXY`.
 
 
-### `<code>targetXY</code>`
+### `targetXY`
 
 
 * Type: string
@@ -146,16 +146,16 @@ The hint which is attached to the queries matching the regular expression define
 accordingly. The target can be one of the following:
 
 
-* a server or service name (adds a `<code>HINT_ROUTE_TO_NAMED_SERVER</code>` hint)
+* a server or service name (adds a `HINT_ROUTE_TO_NAMED_SERVER` hint)
 * a list of server names, comma-separated (adds several
- `<code>HINT_ROUTE_TO_NAMED_SERVER</code>` hints)
-* `<code>->master</code>` (adds a `<code>HINT_ROUTE_TO_MASTER</code>` hint)
-* `<code>->slave</code>` (adds a `<code>HINT_ROUTE_TO_SLAVE</code>` hint)
-* `<code>->all</code>` (adds a `<code>HINT_ROUTE_TO_ALL</code>` hint)
+ `HINT_ROUTE_TO_NAMED_SERVER` hints)
+* `->master` (adds a `HINT_ROUTE_TO_MASTER` hint)
+* `->slave` (adds a `HINT_ROUTE_TO_SLAVE` hint)
+* `->all` (adds a `HINT_ROUTE_TO_ALL` hint)
 
 
 The support for service names was added in MaxScale 6.3.2. Older
-versions of MaxScale did not accept service names in the `<code>target</code>`
+versions of MaxScale did not accept service names in the `target`
 parameters.
 
 
@@ -166,7 +166,7 @@ target01=MyServer2
 
 
 
-### `<code>source</code>`
+### `source`
 
 
 * Type: string
@@ -200,7 +200,7 @@ source=192.168.10.%
 
 
 
-Note that using `<code>source=%</code>` to match any IP is not allowed.
+Note that using `source=%` to match any IP is not allowed.
 
 
 Since MaxScale 2.3 it's also possible to specify multiple addresses separated
@@ -214,7 +214,7 @@ source=192.168.21.3,192.168.10.%
 
 
 
-### `<code>user</code>`
+### `user`
 
 
 * Type: string
@@ -265,12 +265,12 @@ regular expressions which match the specific "EXECUTE"-query.
 ### Example 1 - Route queries targeting a specific table to a server
 
 
-This will route all queries matching the regular expression `<code>*from *users</code>` to
+This will route all queries matching the regular expression `*from *users` to
 the server named *server2*. The filter will ignore character case in queries.
 
 
-A query like `<code>SELECT * FROM users</code>` would be routed to server2 where as a query
-like `<code>SELECT * FROM accounts</code>` would be routed according to the normal rules of
+A query like `SELECT * FROM users` would be routed to server2 where as a query
+like `SELECT * FROM accounts` would be routed according to the normal rules of
 the router.
 
 

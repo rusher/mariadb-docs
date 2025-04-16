@@ -16,7 +16,7 @@ JSON_OBJECTAGG(key, value)
 ## Description
 
 
-`<code>JSON_OBJECTAGG</code>` returns a JSON object containing key-value pairs. It takes two expressions that evaluate to a single value, or two column names, as arguments, the first used as a key, and the second as a value.
+`JSON_OBJECTAGG` returns a JSON object containing key-value pairs. It takes two expressions that evaluate to a single value, or two column names, as arguments, the first used as a key, and the second as a value.
 
 
 The maximum returned length in bytes is determined by the [group_concat_max_len](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#group_concat_max_len) server system variable.
@@ -25,7 +25,7 @@ The maximum returned length in bytes is determined by the [group_concat_max_len]
 Returns NULL in the case of an error, or if the result contains no rows.
 
 
-`<code>JSON_OBJECTAGG</code>` cannot currently be used as a [window function](../window-functions/window-functions-overview.md).
+`JSON_OBJECTAGG` cannot currently be used as a [window function](../window-functions/window-functions-overview.md).
 
 
 ## Examples

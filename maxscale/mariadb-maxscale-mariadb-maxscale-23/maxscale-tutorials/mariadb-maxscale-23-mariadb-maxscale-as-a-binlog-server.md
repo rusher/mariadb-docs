@@ -152,7 +152,7 @@ replication proxies this router name is *binlogrouter*.
 
 
 The minimum set of router options that must be given in the configuration are
-are `<code>server_id</code>` and `<code>binlogdir</code>`, default values may be used for all other
+are `server_id` and `binlogdir`, default values may be used for all other
 options.
 
 
@@ -232,9 +232,9 @@ for more details about the SSL configuration in MaxScale.
 
 When the binlogrouter is started for the first time, it needs to be configured
 to replicate from a master. To do this, connect to the binlogrouter listener
-that was defined before and execute a normal `<code>CHANGE MASTER TO</code>` command. Use the
-credentials defined in `<code>maxscale.cnf</code>` when you connect to MaxScale. Finally,
-execute a `<code>START SLAVE</code>` command to start the replication.
+that was defined before and execute a normal `CHANGE MASTER TO` command. Use the
+credentials defined in `maxscale.cnf` when you connect to MaxScale. Finally,
+execute a `START SLAVE` command to start the replication.
 
 
 Here is an example SQL command that configures the binlogrouter to replicate
@@ -260,19 +260,19 @@ Both the *MASTER_LOG_FILE* and *MASTER_LOG_POS* must be defined and the value of
 
 
 **Note:** Legacy versions defined the server by configuring a separate server
-object in `<code>maxscale.cnf</code>`.
+object in `maxscale.cnf`.
 
 
 ### Stopping and Starting the Replication
 
 
 When router is configured and it is properly working it is possible to stop the
-replication with `<code>STOP SLAVE</code>` and to resume it with `<code>START SLAVE</code>`. In addition
-to this, the `<code>SHOW SLAVE STATUS</code>` command can be used to display information
+replication with `STOP SLAVE` and to resume it with `START SLAVE`. In addition
+to this, the `SHOW SLAVE STATUS` command can be used to display information
 about the replication configuration.
 
 
-Slave connections are not affected by the `<code>STOP SLAVE</code>` and `<code>START SLAVE</code>`
+Slave connections are not affected by the `STOP SLAVE` and `START SLAVE`
 commands. They only control the connection to the master server.
 
 
@@ -304,20 +304,20 @@ A successful configuration change results in *master.ini* being updated. Any
 error is reported in the MySQL and in log files.
 
 
-The supported `<code>CHAGE MASTER TO</code>` options are:
+The supported `CHAGE MASTER TO` options are:
 
 
-* `<code>MASTER_HOST</code>`
-* `<code>MASTER_PORT</code>`
-* `<code>MASTER_USER</code>`
-* `<code>MASTER_PASSWORD</code>`
-* `<code>MASTER_LOG_FILE</code>`
-* `<code>MASTER_LOG_POS</code>`
-* `<code>MASTER_SSL</code>`
-* `<code>MASTER_SSL_CERT</code>` (path to certificate file)
-* `<code>MASTER_SSL_KEY</code>` (path to key file)
-* `<code>MASTER_SSL_CA</code>` (path to CA cerificate file)
-* `<code>MASTER_TLS_VERSION</code>` (TLS/SSL version)
+* `MASTER_HOST`
+* `MASTER_PORT`
+* `MASTER_USER`
+* `MASTER_PASSWORD`
+* `MASTER_LOG_FILE`
+* `MASTER_LOG_POS`
+* `MASTER_SSL`
+* `MASTER_SSL_CERT` (path to certificate file)
+* `MASTER_SSL_KEY` (path to key file)
+* `MASTER_SSL_CA` (path to CA cerificate file)
+* `MASTER_TLS_VERSION` (TLS/SSL version)
 
 
 Further details about level of encryption or certificates could be found in the
@@ -353,7 +353,7 @@ The latter example specifies a *MASTER_LOG_POS* for the selected
  MaxScale binlogdir
 * If MASTER_LOG_POS is not set with CHANGE MASTER TO it defaults to 4
 * Latest binlog file name and pos in MariaDB MaxScale can be found by executing
- `<code>SHOW MASTER STATUS</code>` on MaxScale.
+ `SHOW MASTER STATUS` on MaxScale.
 
 
 ### Controlling the Binlogrouter
@@ -473,9 +473,9 @@ Binlog Router Plugin is compatible with MariaDB 5.5, 10.0, 10.1 and 10.2 as well
 as MySQL 5.6 and 5.7.
 
 
-Note: When using MariaDB 10.2 or MySQL 5.7 the `<code>send_slave_heartbeat</code>` option
+Note: When using MariaDB 10.2 or MySQL 5.7 the `send_slave_heartbeat` option
 must be set to On as the slave servers request the hearbeat to MaxScale.
-As an alternative use `<code>CHANGE MASTER TO MASTER_HEARTBEAT_PERIOD=0</code>` in
+As an alternative use `CHANGE MASTER TO MASTER_HEARTBEAT_PERIOD=0` in
 the slave server in order to disable the heartbeat request.
 
 
@@ -492,7 +492,7 @@ mariadb10-compatibility=1
 
 
 
-`<code>version_string</code>` can be modified in order to present MariaDB 10 version when
+`version_string` can be modified in order to present MariaDB 10 version when
 MariaDB MaxScale sends server handshake packet.
 
 
@@ -508,7 +508,7 @@ version_string=10.0.17-log
 
 In order to use it with MySQL 5.6/5.7, the *GTID_MODE* setting must be OFF and
 connecting slaves must not use *MASTER_AUTO_POSITION = 1* option. Additionally
-with MySQL 5.7 slaves the `<code>send_slave_heartbeat</code>` option must be set to on.
+with MySQL 5.7 slaves the `send_slave_heartbeat` option must be set to on.
 
 
 Binlog Router currently does not work for MySQL 5.5 due to missing
@@ -520,14 +520,14 @@ Binlog Router currently does not work for MySQL 5.5 due to missing
 
 Starting from version 10.2 there are new replication events related
 to binlog event compression: these new events are not supported yet.
-Be sure that `<code>log_bin_compress</code>` is not set in any MariaDB 10.2 server.
+Be sure that `log_bin_compress` is not set in any MariaDB 10.2 server.
 
 
 # MariaDB MaxScale Replication Diagnostics
 
 
 The binlog router module of MariaDB MaxScale produces diagnostic output that can
-be viewed via the `<code>maxadmin</code>` client application. Running the maxadmin command
+be viewed via the `maxadmin` client application. Running the maxadmin command
 and issuing a show service command will produce output that will show both the
 master connection status and statistics and also a block for each of the slaves
 currently connected.
@@ -631,7 +631,7 @@ Slaves:
 
 
 
-The `<code>SHOW SLAVE STATUS</code>` command provides diagnostic information about the
+The `SHOW SLAVE STATUS` command provides diagnostic information about the
 replication state.
 
 

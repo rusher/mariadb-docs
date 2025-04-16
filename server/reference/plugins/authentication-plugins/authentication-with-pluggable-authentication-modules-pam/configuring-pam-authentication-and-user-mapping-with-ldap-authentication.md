@@ -1,7 +1,7 @@
 
 # Configuring PAM Authentication and User Mapping with LDAP Authentication
 
-In this article, we will walk through the configuration of PAM authentication using the `<code>[pam](authentication-plugin-pam.md)</code>` authentication plugin and user and group mapping with the `<code>[pam_user_map](user-and-group-mapping-with-pam.md)</code>` PAM module. The primary authentication will be handled by the `<code>[pam_ldap](https://linux.die.net/man/5/pam_ldap)</code>` PAM module, which performs LDAP authentication. We will also set up an OpenLDAP server.
+In this article, we will walk through the configuration of PAM authentication using the `[pam](authentication-plugin-pam.md)` authentication plugin and user and group mapping with the `[pam_user_map](user-and-group-mapping-with-pam.md)` PAM module. The primary authentication will be handled by the `[pam_ldap](https://linux.die.net/man/5/pam_ldap)` PAM module, which performs LDAP authentication. We will also set up an OpenLDAP server.
 
 
 
@@ -11,8 +11,8 @@ In this article, we will walk through the configuration of PAM authentication us
 In this walkthrough, we are going to assume the following hypothetical requirements:
 
 
-* The LDAP user `<code>foo</code>` should be mapped to the MariaDB user `<code>bar</code>`. (`<code>foo: bar</code>`)
-* Any LDAP user in the LDAP group `<code>dba</code>` should be mapped to the MariaDB user `<code>dba</code>`. (`<code>@dba: dba</code>`)
+* The LDAP user `foo` should be mapped to the MariaDB user `bar`. (`foo: bar`)
+* Any LDAP user in the LDAP group `dba` should be mapped to the MariaDB user `dba`. (`@dba: dba`)
 
 
 ## Setting up the OpenLDAP Server
@@ -37,7 +37,7 @@ sudo yum install openldap openldap-servers openldap-clients nss-pam-ldapd
 ### Configuring the OpenLDAP Server
 
 
-Next, let's to configure the OpenLDAP Server. The easiest way to do that is to copy the template configuration file that is included with the installation. In many installations, that will be at `<code>/usr/share/openldap-servers/DB_CONFIG.example</code>`. For example:
+Next, let's to configure the OpenLDAP Server. The easiest way to do that is to copy the template configuration file that is included with the installation. In many installations, that will be at `/usr/share/openldap-servers/DB_CONFIG.example`. For example:
 
 
 ```
@@ -51,20 +51,20 @@ sudo chown ldap. /var/lib/ldap/DB_CONFIG
 Sometimes it is useful to change the port used by OpenLDAP. For example, some cloud environments block well-known authentication services, so they block the default LDAP port.
 
 
-On some systems, the port can be changed by setting `<code>SLAPD_URLS</code>` in `<code>/etc/sysconfig/slapd</code>`:
+On some systems, the port can be changed by setting `SLAPD_URLS` in `/etc/sysconfig/slapd`:
 
 
 ```
 SLAPD_URLS="ldapi:/// ldap://0.0.0.0:3306/"
 ```
 
-I used `<code>3306</code>` because that is the port that is usually used by `<code>mysqld</code>`, so I know that it is not blocked.
+I used `3306` because that is the port that is usually used by `mysqld`, so I know that it is not blocked.
 
 
 ### Starting the OpenLDAP Server
 
 
-Next, let's start the OpenLDAP Server and configure it to start on reboot. On `<code>[systemd](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md)</code>` systems, that would go like this:
+Next, let's start the OpenLDAP Server and configure it to start on reboot. On `[systemd](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md)` systems, that would go like this:
 
 
 ```
@@ -75,10 +75,10 @@ sudo systemctl enable slapd
 ### Installing the Standard LDAP objectClasses
 
 
-In order to use LDAP for authentication, we also need to install some standard `<code>objectClasses</code>`, such as `<code>posixAccount</code>` and `<code>posixGroup</code>`. In LDAP, things like `<code>objectClasses</code>` are defined in `<code>[LDIF](https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system)</code>` files. In many installations, these specific `<code>objectClasses</code>` are defined in `<code>/etc/openldap/schema/nis.ldif</code>`. `<code>nis.ldif</code>` also depends on `<code>core.ldif</code>` and `<code>cosine.ldif</code>`. However, `<code>core.ldif</code>` is usually installed by default.
+In order to use LDAP for authentication, we also need to install some standard `objectClasses`, such as `posixAccount` and `posixGroup`. In LDAP, things like `objectClasses` are defined in `[LDIF](https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system)` files. In many installations, these specific `objectClasses` are defined in `/etc/openldap/schema/nis.ldif`. `nis.ldif` also depends on `core.ldif` and `cosine.ldif`. However, `core.ldif` is usually installed by default.
 
 
-We can install them with `<code>[ldapmodify](https://www.openldap.org/software/man.cgi?query=ldapmodify&sektion=1&apropos=0&manpath=OpenLDAP+2.4-Release)</code>`:
+We can install them with `[ldapmodify](https://www.openldap.org/software/man.cgi?query=ldapmodify&sektion=1&apropos=0&manpath=OpenLDAP+2.4-Release)`:
 
 
 ```
@@ -89,23 +89,23 @@ sudo ldapmodify -a -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif
 ### Creating the LDAP Directory Manager User
 
 
-Next, let’s create a directory manager user. We can do this by using OpenLDAP's [olc](https://www.openldap.org/doc/admin24/slapdconf2.html) configuration system to change the `<code>[olcRootDN](https://www.openldap.org/doc/admin24/slapdconf2.html#olcRootDN:%20%3CDN%3E)</code>` directive to the DN of the directory manager user, which means that the user will be a privileged LDAP user that is not subject to access controls. We will also set the root password for the user by changing the `<code>[olcRootPW](https://www.openldap.org/doc/admin24/slapdconf2.html#olcRootPW:%20%3Cpassword%3E)</code>` directive.
+Next, let’s create a directory manager user. We can do this by using OpenLDAP's [olc](https://www.openldap.org/doc/admin24/slapdconf2.html) configuration system to change the `[olcRootDN](https://www.openldap.org/doc/admin24/slapdconf2.html#olcRootDN:%20%3CDN%3E)` directive to the DN of the directory manager user, which means that the user will be a privileged LDAP user that is not subject to access controls. We will also set the root password for the user by changing the `[olcRootPW](https://www.openldap.org/doc/admin24/slapdconf2.html#olcRootPW:%20%3Cpassword%3E)` directive.
 
 
-We will also set the DN suffix for our backend LDAP database by changing the `<code>[olcSuffix](https://www.openldap.org/doc/admin24/slapdconf2.html#olcSuffix:%20%3Cdn%20suffix%3E)</code>` directive.
+We will also set the DN suffix for our backend LDAP database by changing the `[olcSuffix](https://www.openldap.org/doc/admin24/slapdconf2.html#olcSuffix:%20%3Cdn%20suffix%3E)` directive.
 
 
-Let’s use the `<code>[slappasswd](https://www.openldap.org/software/man.cgi?query=slappasswd&apropos=0&sektion=8&manpath=OpenLDAP+2.4-Release&format=html)</code>` utility to generate a password hash from a clear-text password. Simply execute:
+Let’s use the `[slappasswd](https://www.openldap.org/software/man.cgi?query=slappasswd&apropos=0&sektion=8&manpath=OpenLDAP+2.4-Release&format=html)` utility to generate a password hash from a clear-text password. Simply execute:
 
 
 ```
 slappasswd
 ```
 
-This utility should provide a password hash that looks kind of like this: `<code>{SSHA}AwT4jrvmokeCkbDrFAnGvzzjCMb7bvEl</code>`
+This utility should provide a password hash that looks kind of like this: `{SSHA}AwT4jrvmokeCkbDrFAnGvzzjCMb7bvEl`
 
 
-OpenLDAP's [olc](https://www.openldap.org/doc/admin24/slapdconf2.html) configuration system also uses `<code>[LDIF](https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system)</code>` files. Now that we have the password hash, let’s create an `<code>LDIF</code>` file to create the directory manager user:
+OpenLDAP's [olc](https://www.openldap.org/doc/admin24/slapdconf2.html) configuration system also uses `[LDIF](https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system)` files. Now that we have the password hash, let’s create an `LDIF` file to create the directory manager user:
 
 
 ```
@@ -149,10 +149,10 @@ olcAccess: {2}to *
 EOF
 ```
 
-Note that I am using the `<code>dc=support,dc=mariadb,dc=com</code>` domain for my directory. You can change this to whatever is relevant to you.
+Note that I am using the `dc=support,dc=mariadb,dc=com` domain for my directory. You can change this to whatever is relevant to you.
 
 
-Now let’s run the ldif file with `<code>[ldapmodify](https://www.openldap.org/software/man.cgi?query=ldapmodify&sektion=1&apropos=0&manpath=OpenLDAP+2.4-Release)</code>`:
+Now let’s run the ldif file with `[ldapmodify](https://www.openldap.org/software/man.cgi?query=ldapmodify&sektion=1&apropos=0&manpath=OpenLDAP+2.4-Release)`:
 
 
 ```
@@ -200,7 +200,7 @@ ou: System Users
 EOF
 ```
 
-Now let’s use our new directory manager user and run the `<code>[LDIF](https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system)</code>` file with `<code>[ldapmodify](https://www.openldap.org/software/man.cgi?query=ldapmodify&sektion=1&apropos=0&manpath=OpenLDAP+2.4-Release)</code>`:
+Now let’s use our new directory manager user and run the `[LDIF](https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system)` file with `[ldapmodify](https://www.openldap.org/software/man.cgi?query=ldapmodify&sektion=1&apropos=0&manpath=OpenLDAP+2.4-Release)`:
 
 
 ```
@@ -213,7 +213,7 @@ ldapmodify -a -x -D cn=Manager,dc=support,dc=mariadb,dc=com -W -f ~/setupDirecto
 Let's go ahead and create the LDAP users and groups that we are using for this hypothetical scenario.
 
 
-First, let's create the the `<code>foo</code>` user:
+First, let's create the the `foo` user:
 
 
 ```
@@ -238,7 +238,7 @@ EOF
 ldapmodify -a -x -D cn=Manager,dc=support,dc=mariadb,dc=com -W -f ~/createFooUser.ldif
 ```
 
-Then let's create a couple users to go into the `<code>dba</code>` group:
+Then let's create a couple users to go into the `dba` group:
 
 
 ```
@@ -280,7 +280,7 @@ EOF
 ldapmodify -a -x -D cn=Manager,dc=support,dc=mariadb,dc=com -W -f ~/createDbaUsers.ldif
 ```
 
-Note that each of these users needs a password, so we can set it for each user with `<code>[ldappasswd](https://www.openldap.org/software/man.cgi?query=ldappasswd&apropos=0&sektion=1&manpath=OpenLDAP+2.4-Release&format=html)</code>`:
+Note that each of these users needs a password, so we can set it for each user with `[ldappasswd](https://www.openldap.org/software/man.cgi?query=ldappasswd&apropos=0&sektion=1&manpath=OpenLDAP+2.4-Release&format=html)`:
 
 
 ```
@@ -289,7 +289,7 @@ ldappasswd -x -D cn=Manager,dc=support,dc=mariadb,dc=com -W -S uid=gmontee,ou=Pe
 ldappasswd -x -D cn=Manager,dc=support,dc=mariadb,dc=com -W -S uid=bstillman,ou=People,dc=support,dc=mariadb,dc=com
 ```
 
-And then let's create our `<code>dba</code>` group
+And then let's create our `dba` group
 
 
 ```
@@ -320,7 +320,7 @@ EOF
 ldapmodify -a -x -D cn=Manager,dc=support,dc=mariadb,dc=com -W -f ~/addUsersToDbaGroup.ldif
 ```
 
-We also need to create LDAP users with the same name as the `<code>bar</code>` and `<code>dba</code>` MariaDB users. See [here](user-and-group-mapping-with-pam.md#pam-user-with-same-name-as-mapped-mariadb-user-must-exist) to read more about why. No one will be logging in as these users, so they do not need passwords. Instead of the `<code>People</code>` `<code>organizationalUnit</code>`, we will create them in the `<code>System Users</code>` `<code>organizationalUnit</code>`.
+We also need to create LDAP users with the same name as the `bar` and `dba` MariaDB users. See [here](user-and-group-mapping-with-pam.md#pam-user-with-same-name-as-mapped-mariadb-user-must-exist) to read more about why. No one will be logging in as these users, so they do not need passwords. Instead of the `People` `organizationalUnit`, we will create them in the `System Users` `organizationalUnit`.
 
 
 ```
@@ -384,7 +384,7 @@ sudo yum install openldap-clients nss-pam-ldapd pam pam-devel
 ### Configuring LDAP
 
 
-Next, let's configure LDAP on the system. We can use `<code>[authconfig](https://linux.die.net/man/8/authconfig)</code>` for this:
+Next, let's configure LDAP on the system. We can use `[authconfig](https://linux.die.net/man/8/authconfig)` for this:
 
 
 ```
@@ -396,7 +396,7 @@ sudo authconfig --enableldap \
    --update
 ```
 
-Be sure to replace `<code>-–ldapserver</code>` and `<code>-–ldapbasedn</code>` with values that are relevant for your environment.
+Be sure to replace `-–ldapserver` and `-–ldapbasedn` with values that are relevant for your environment.
 
 
 ### Installing the pam_user_map PAM Module
@@ -411,14 +411,14 @@ Next, let's [install the pam_user_map PAM module](user-and-group-mapping-with-pa
 Before the module can be compiled from source, we may need to install some dependencies.
 
 
-On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md), we need to install `<code>gcc</code>` and `<code>pam-devel</code>`:
+On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md), we need to install `gcc` and `pam-devel`:
 
 
 ```
 sudo yum install gcc pam-devel
 ```
 
-On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md), we need to install `<code>gcc</code>` and `<code>libpam0g-dev</code>`:
+On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md), we need to install `gcc` and `libpam0g-dev`:
 
 
 ```
@@ -440,7 +440,7 @@ sudo install --mode=0755 pam_user_map.so /lib64/security/
 Next, let's [configure the pam_user_map PAM module](user-and-group-mapping-with-pam.md#configuring-the-pam_user_map-pam-module) based on our hypothetical requirements.
 
 
-The configuration file for the `<code>pam_user_map</code>` PAM module is `<code>/etc/security/user_map.conf</code>`. Based on our hypothetical requirements, ours would look like:
+The configuration file for the `pam_user_map` PAM module is `/etc/security/user_map.conf`. Based on our hypothetical requirements, ours would look like:
 
 
 ```
@@ -464,13 +464,13 @@ INSTALL SONAME 'auth_pam';
 ### Configuring the PAM Service
 
 
-Next, let's [configure the PAM service](authentication-plugin-pam.md#configuring-the-pam-service). We will call our service `<code>mariadb</code>`, so our PAM service configuration file will be located at `<code>/etc/pam.d/mariadb</code>` on most systems.
+Next, let's [configure the PAM service](authentication-plugin-pam.md#configuring-the-pam-service). We will call our service `mariadb`, so our PAM service configuration file will be located at `/etc/pam.d/mariadb` on most systems.
 
 
 #### Configuring PAM to Allow Only LDAP Authentication
 
 
-Since we are only doing LDAP authentication with the `<code>[pam_ldap](https://linux.die.net/man/5/pam_ldap)</code>` PAM module and group mapping with the `<code>pam_user_map</code>` PAM module, our configuration file would look like this:
+Since we are only doing LDAP authentication with the `[pam_ldap](https://linux.die.net/man/5/pam_ldap)` PAM module and group mapping with the `pam_user_map` PAM module, our configuration file would look like this:
 
 
 ```
@@ -482,7 +482,7 @@ account required pam_ldap.so
 #### Configuring PAM to Allow LDAP and Local Unix Authentication
 
 
-If we want to allow authentication from LDAP users **and** from local Unix users through `<code>[pam_unix](https://linux.die.net/man/8/pam_unix)</code>`, while giving priority to the local users, then we could do this instead:
+If we want to allow authentication from LDAP users **and** from local Unix users through `[pam_unix](https://linux.die.net/man/8/pam_unix)`, while giving priority to the local users, then we could do this instead:
 
 
 ```
@@ -496,10 +496,10 @@ account required pam_ldap.so
 ##### Configuring the pam_unix PAM Module
 
 
-If you also want to allow authentication from local Unix users, the `<code>pam_unix</code>` PAM module adds [some additional configuration steps](authentication-plugin-pam.md#configuring-the-pam-service) on a lot of systems. We basically have to give the user that runs `<code>mysqld</code>` access to `<code>/etc/shadow</code>`.
+If you also want to allow authentication from local Unix users, the `pam_unix` PAM module adds [some additional configuration steps](authentication-plugin-pam.md#configuring-the-pam-service) on a lot of systems. We basically have to give the user that runs `mysqld` access to `/etc/shadow`.
 
 
-If the `<code>mysql</code>` user is running `<code>mysqld</code>`, then we can do that by executing the following:
+If the `mysql` user is running `mysqld`, then we can do that by executing the following:
 
 
 ```
@@ -515,13 +515,13 @@ The [server needs to be restarted](https://mariadb.com/kb/en/) for this change t
 ## Creating MariaDB Users
 
 
-Next, let's [create the MariaDB users](authentication-plugin-pam.md#creating-users). Remember that our PAM service is called `<code>mariadb</code>`.
+Next, let's [create the MariaDB users](authentication-plugin-pam.md#creating-users). Remember that our PAM service is called `mariadb`.
 
 
-First, let's create the MariaDB user for the user mapping: `<code>foo: bar</code>`
+First, let's create the MariaDB user for the user mapping: `foo: bar`
 
 
-That means that we need to create a `<code>bar</code>` user:
+That means that we need to create a `bar` user:
 
 
 ```
@@ -529,10 +529,10 @@ CREATE USER 'bar'@'%' IDENTIFIED BY 'strongpassword';
 GRANT ALL PRIVILEGES ON *.* TO 'bar'@'%' ;
 ```
 
-And then let's create the MariaDB user for the group mapping: `<code>@dba: dba</code>`
+And then let's create the MariaDB user for the group mapping: `@dba: dba`
 
 
-That means that we need to create a `<code>dba</code>` user:
+That means that we need to create a `dba` user:
 
 
 ```
@@ -540,7 +540,7 @@ CREATE USER 'dba'@'%' IDENTIFIED BY 'strongpassword';
 GRANT ALL PRIVILEGES ON *.* TO 'dba'@'%' ;
 ```
 
-And then to allow for the user and group mapping, we need to [create an anonymous user that authenticates with the pam authentication plugin](user-and-group-mapping-with-pam.md#creating-users) that is also able to `<code>PROXY</code>` as the `<code>bar</code>` and `<code>dba</code>` users. Before we can create the proxy user, we might need to [clean up some defaults](../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#fixing-a-legacy-default-anonymous-account):
+And then to allow for the user and group mapping, we need to [create an anonymous user that authenticates with the pam authentication plugin](user-and-group-mapping-with-pam.md#creating-users) that is also able to `PROXY` as the `bar` and `dba` users. Before we can create the proxy user, we might need to [clean up some defaults](../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#fixing-a-legacy-default-anonymous-account):
 
 
 ```
@@ -560,13 +560,13 @@ GRANT PROXY ON 'dba'@'%' TO ''@'%';
 ## Testing our Configuration
 
 
-Next, let's test out our configuration by [verifying that mapping is occurring](user-and-group-mapping-with-pam.md#verifying-that-mapping-is-occurring). We can verify this by logging in as each of our users and comparing the return value of `<code>[USER()](../../other-plugins/user-variables-plugin.md)</code>`, which is the original user name and the return value of `<code>[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)</code>`, which is the authenticated user name.
+Next, let's test out our configuration by [verifying that mapping is occurring](user-and-group-mapping-with-pam.md#verifying-that-mapping-is-occurring). We can verify this by logging in as each of our users and comparing the return value of `[USER()](../../other-plugins/user-variables-plugin.md)`, which is the original user name and the return value of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`, which is the authenticated user name.
 
 
 ### Testing LDAP Authentication
 
 
-First, let's test out our `<code>foo</code>` user:
+First, let's test out our `foo` user:
 
 
 ```
@@ -589,10 +589,10 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `<code>foo</code>` LDAP user was properly mapped to the `<code>bar</code>` MariaDB user by looking at the return value of `<code>[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)</code>`.
+We can verify that our `foo` LDAP user was properly mapped to the `bar` MariaDB user by looking at the return value of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`.
 
 
-Then let's test out our `<code>gmontee</code>` user in the `<code>dba</code>` group:
+Then let's test out our `gmontee` user in the `dba` group:
 
 
 ```
@@ -615,7 +615,7 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-And then let's test out our `<code>bstillman</code>` user in the `<code>dba</code>` group:
+And then let's test out our `bstillman` user in the `dba` group:
 
 
 ```
@@ -638,7 +638,7 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `<code>gmontee</code>` and `<code>bstillman</code>` LDAP users in the `<code>dba</code>` LDAP group were properly mapped to the `<code>dba</code>` MariaDB user by looking at the return values of `<code>[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)</code>`.
+We can verify that our `gmontee` and `bstillman` LDAP users in the `dba` LDAP group were properly mapped to the `dba` MariaDB user by looking at the return values of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`.
 
 
 ### Testing Local Unix Authentication
@@ -652,7 +652,7 @@ sudo useradd alice
 sudo passwd alice
 ```
 
-And let's also map this user to `<code>dba</code>`:
+And let's also map this user to `dba`:
 
 
 ```
@@ -661,7 +661,7 @@ foo: bar
 alice: dba
 ```
 
-And we know that the existing anonymous user already has the `<code>PROXY</code>` privilege granted to the `<code>dba</code>` user, so this should just work without any other configuration. Let's test it out:
+And we know that the existing anonymous user already has the `PROXY` privilege granted to the `dba` user, so this should just work without any other configuration. Let's test it out:
 
 
 ```
@@ -684,5 +684,5 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `<code>alice</code>` Unix user was properly mapped to the `<code>dba</code>` MariaDB user by looking at the return values of `<code>[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)</code>`.
+We can verify that our `alice` Unix user was properly mapped to the `dba` MariaDB user by looking at the return values of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`.
 

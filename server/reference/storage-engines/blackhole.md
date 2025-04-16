@@ -1,13 +1,13 @@
 
 # BLACKHOLE
 
-The `<code>BLACKHOLE</code>` storage engine accepts data but does not store it and always returns an empty result.
+The `BLACKHOLE` storage engine accepts data but does not store it and always returns an empty result.
 
 
-A table using the `<code>BLACKHOLE</code>` storage engine consists of a single .frm table format file, but no associated data or index files.
+A table using the `BLACKHOLE` storage engine consists of a single .frm table format file, but no associated data or index files.
 
 
-This storage engine can be useful, for example, if you want to run complex filtering rules on a slave without incurring any overhead on a master. The master can run a `<code>BLACKHOLE</code>` storage engine, with the data replicated to the slave for processing.
+This storage engine can be useful, for example, if you want to run complex filtering rules on a slave without incurring any overhead on a master. The master can run a `BLACKHOLE` storage engine, with the data replicated to the slave for processing.
 
 
 
@@ -52,7 +52,7 @@ If you installed the plugin by providing the [--plugin-load](../../server-manage
 ### Using with DML
 
 
-[INSERT](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md), [UPDATE](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md), and [DELETE](../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements all work with the `<code>BLACKHOLE</code>` storage engine. However, no data changes are actually applied.
+[INSERT](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md), [UPDATE](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md), and [DELETE](../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements all work with the `BLACKHOLE` storage engine. However, no data changes are actually applied.
 
 
 ### Using with Replication
@@ -64,34 +64,34 @@ If the binary log is enabled, all SQL statements will be logged as usual, and re
 ### Using with Triggers
 
 
-Some [triggers](../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) work with the `<code>BLACKHOLE</code>` storage engine.
+Some [triggers](../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) work with the `BLACKHOLE` storage engine.
 
 
-`<code>BEFORE</code>` [triggers](../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) for [INSERT](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) statements are still activated.
+`BEFORE` [triggers](../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) for [INSERT](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) statements are still activated.
 
 
 [Triggers](../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) for [UPDATE](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) and [DELETE](../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements are **not** activated.
 
 
-[Triggers](../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) with the `<code>FOR EACH ROW</code>` clause do not apply, since the tables have no rows.
+[Triggers](../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) with the `FOR EACH ROW` clause do not apply, since the tables have no rows.
 
 
 ### Using with Foreign Keys
 
 
-Foreign keys are not supported. If you convert an [InnoDB](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) table to `<code>BLACKHOLE</code>`, then the foreign keys will disappear. If you convert the same table back to InnoDB, then you will have to recreate them.
+Foreign keys are not supported. If you convert an [InnoDB](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) table to `BLACKHOLE`, then the foreign keys will disappear. If you convert the same table back to InnoDB, then you will have to recreate them.
 
 
 ### Using with Virtual Columns
 
 
-If you convert an [InnoDB](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) table which contains [virtual columns](../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) to `<code>BLACKHOLE</code>`, then it produces an error.
+If you convert an [InnoDB](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) table which contains [virtual columns](../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) to `BLACKHOLE`, then it produces an error.
 
 
 ### Using with AUTO_INCREMENT
 
 
-Because a BLACKHOLE table does not store data, it will not maintain the [AUTO_INCREMENT](innodb/auto_increment-handling-in-innodb.md) value. If you are replicating to a table that can handle `<code>AUTO_INCREMENT</code>` columns, and are not explicitly setting the primary key auto-increment value in the [INSERT](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) query, or using the [SET](../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) [INSERT_ID](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#insert_id) statement, inserts will fail on the slave due to duplicate keys.
+Because a BLACKHOLE table does not store data, it will not maintain the [AUTO_INCREMENT](innodb/auto_increment-handling-in-innodb.md) value. If you are replicating to a table that can handle `AUTO_INCREMENT` columns, and are not explicitly setting the primary key auto-increment value in the [INSERT](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) query, or using the [SET](../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) [INSERT_ID](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#insert_id) statement, inserts will fail on the slave due to duplicate keys.
 
 
 ## Limits

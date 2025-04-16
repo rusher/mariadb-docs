@@ -5,7 +5,7 @@
 
 
 
-The `<code>mysql.slow_log</code>` table stores the contents of the [Slow Query Log](../../../../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md) if slow logging is active and the output is being written to table (see [Writing logs into tables](../../../../../../server-management/server-monitoring-logs/writing-logs-into-tables.md)).
+The `mysql.slow_log` table stores the contents of the [Slow Query Log](../../../../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md) if slow logging is active and the output is being written to table (see [Writing logs into tables](../../../../../../server-management/server-monitoring-logs/writing-logs-into-tables.md)).
 
 
 It contains the following fields:

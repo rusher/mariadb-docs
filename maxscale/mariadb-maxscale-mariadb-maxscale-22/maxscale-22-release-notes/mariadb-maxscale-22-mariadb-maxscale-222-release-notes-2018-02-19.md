@@ -18,11 +18,11 @@ report at [Jira](https://jira.mariadb.org).
 ## Changed Features
 
 
-### MaxCtrl Moved to `<code>maxscale</code>` Package
+### MaxCtrl Moved to `maxscale` Package
 
 
-The MaxCtrl client is now a part of the main MaxScale package, `<code>maxscale</code>`. This
-means that the `<code>maxctrl</code>` executable is now immediately available upon the
+The MaxCtrl client is now a part of the main MaxScale package, `maxscale`. This
+means that the `maxctrl` executable is now immediately available upon the
 installation of MaxScale.
 
 
@@ -34,11 +34,11 @@ installation of MaxCtrl, please remove it before upgrading to MaxScale 2.2.2.
 
 
 The MaxScale C++ CDC Connector is now distributed as a part of MaxScale. The
-connector libraries are in a separate package, `<code>maxscale-cdc-connector</code>`. Refer
+connector libraries are in a separate package, `maxscale-cdc-connector`. Refer
 to the [CDC Connector documentation](../../mariadb-maxscale-21-06/README.md) for more details.
 
 
-### Output of `<code>show threads</code>` has changed.
+### Output of `show threads` has changed.
 
 
 For each thread is shown what state it is in, how many descriptors are currently

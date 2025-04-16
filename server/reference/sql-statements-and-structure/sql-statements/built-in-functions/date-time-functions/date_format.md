@@ -65,7 +65,7 @@ The options that can be used by DATE_FORMAT(), as well as its inverse [STR_TO_DA
 
 
 
-To get a date in one of the standard formats, `<code>[GET_FORMAT()](get_format.md)</code>` can be used.
+To get a date in one of the standard formats, `[GET_FORMAT()](get_format.md)` can be used.
 
 
 ## Examples

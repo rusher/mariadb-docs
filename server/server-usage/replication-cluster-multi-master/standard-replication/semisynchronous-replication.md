@@ -35,7 +35,7 @@ If a server needs to be able to switch between acting as a primary and a replica
 ### Enabling Semisynchronous Replication on the Primary
 
 
-Semisynchronous replication can be enabled on the primary by setting the [rpl_semi_sync_master_enabled](#rpl_semi_sync_master_enabled) system variable to `<code>ON</code>`. It can be set dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+Semisynchronous replication can be enabled on the primary by setting the [rpl_semi_sync_master_enabled](#rpl_semi_sync_master_enabled) system variable to `ON`. It can be set dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
 
 
 ```
@@ -54,7 +54,7 @@ rpl_semi_sync_master_enabled=ON
 ### Enabling Semisynchronous Replication on the Replica
 
 
-Semisynchronous replication can be enabled on the replica by setting the [rpl_semi_sync_slave_enabled](#rpl_semi_sync_slave_enabled) system variable to `<code>ON</code>`. It can be set dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+Semisynchronous replication can be enabled on the replica by setting the [rpl_semi_sync_slave_enabled](#rpl_semi_sync_slave_enabled) system variable to `ON`. It can be set dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
 
 
 ```
@@ -93,7 +93,7 @@ In semisynchronous replication, only after the events have been written to the r
 [Note] Semi-sync replication switched OFF.
 ```
 
-When this occurs, the [Rpl_semi_sync_master_status](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_status) status variable will be switched to `<code>OFF</code>`.
+When this occurs, the [Rpl_semi_sync_master_status](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_status) status variable will be switched to `OFF`.
 
 
 When at least one semisynchronous replica catches up, semisynchronous replication is resumed. This will be reflected in the primary's [error log](../../../server-management/server-monitoring-logs/error-log.md) with messages like the following:
@@ -103,7 +103,7 @@ When at least one semisynchronous replica catches up, semisynchronous replicatio
 [Note] Semi-sync replication switched ON with replica (server_id: 184137206) at (mariadb-1-bin.000002, 215076)
 ```
 
-When this occurs, the [Rpl_semi_sync_master_status](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_status) status variable will be switched to `<code>ON</code>`.
+When this occurs, the [Rpl_semi_sync_master_status](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_status) status variable will be switched to `ON`.
 
 
 The number of times that semisynchronous replication has been switched off can be checked by looking at the value of the [Rpl_semi_sync_master_no_times](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_no_times) status variable.
@@ -137,8 +137,8 @@ In semisynchronous replication, there are two potential points at which the prim
 The wait point is configured by the [rpl_semi_sync_master_wait_point](#rpl_semi_sync_master_wait_point) system variable. The supported values are:
 
 
-* `<code>AFTER_SYNC</code>`
-* `<code>AFTER_COMMIT</code>`
+* `AFTER_SYNC`
+* `AFTER_COMMIT`
 
 
 It can be set dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
@@ -157,7 +157,7 @@ It can also be set in a server [option group](../../../server-management/getting
 rpl_semi_sync_master_wait_point=AFTER_SYNC
 ```
 
-When this variable is set to `<code>AFTER_SYNC</code>`, the primary performs the following steps:
+When this variable is set to `AFTER_SYNC`, the primary performs the following steps:
 
 
 1. Prepares the transaction in the storage engine.
@@ -167,7 +167,7 @@ When this variable is set to `<code>AFTER_SYNC</code>`, the primary performs the
 1. Returns an acknowledgement to the client.
 
 
-The effects of the `<code>AFTER_SYNC</code>` wait point are:
+The effects of the `AFTER_SYNC` wait point are:
 
 
 * All clients see the same data on the primary at the same time; after acknowledgement by the replica and after being committed to the storage engine on the primary.
@@ -180,7 +180,7 @@ The effects of the `<code>AFTER_SYNC</code>` wait point are:
 been reconfigured to replace the old primary with a new one.
 The old primary in such a scenario can be re-introduced only as a 
 [semisync slave](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_slave_enabled).
-The server post-crash recovery of the server configured with `<code>rpl_semi_sync_slave_enabled = ON</code>`
+The server post-crash recovery of the server configured with `rpl_semi_sync_slave_enabled = ON`
 ensures through [MDEV-21117](https://jira.mariadb.org/browse/MDEV-21117) that the server will not have extra transactions.
 The reconfigured as semisync replica server's binlog gets truncated to discard transactions proven
 not to be committed, in any of their branches if they are multi-engine.
@@ -188,7 +188,7 @@ Truncation does not occur though when there exists a non-transactional group of 
 When the semisync replica recovery can't be carried out, the crashed primary may need to be rebuilt.
 
 
-When this variable is set to `<code>AFTER_COMMIT</code>`, the primary performs the following steps:
+When this variable is set to `AFTER_COMMIT`, the primary performs the following steps:
 
 
 1. Prepares the transaction in the storage engine.
@@ -198,7 +198,7 @@ When this variable is set to `<code>AFTER_COMMIT</code>`, the primary performs t
 1. Returns an acknowledgement to the client.
 
 
-The effects of the `<code>AFTER_COMMIT</code>` wait point are:
+The effects of the `AFTER_COMMIT` wait point are:
 
 
 * Other clients may see the committed transaction before the committing client.
@@ -225,189 +225,189 @@ The effects of the `<code>AFTER_COMMIT</code>` wait point are:
 ## System Variables
 
 
-#### `<code>rpl_semi_sync_master_enabled</code>`
+#### `rpl_semi_sync_master_enabled`
 
 
-* Description: Set to `<code>ON</code>` to enable semi-synchronous replication primary. Disabled by default.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--rpl-semi-sync-master-enabled[={0|1}]</code>`
+* Description: Set to `ON` to enable semi-synchronous replication primary. Disabled by default.
+* Commandline: `--rpl-semi-sync-master-enabled[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>boolean</code>`
-* Default Value: `<code>OFF</code>`
+* Data Type: `boolean`
+* Default Value: `OFF`
 
 
 
-#### `<code>rpl_semi_sync_master_timeout</code>`
+#### `rpl_semi_sync_master_timeout`
 
 
 * Description: The timeout value, in milliseconds, for semi-synchronous replication in the primary. If this timeout is exceeded in waiting on a commit for acknowledgement from a replica, the primary will revert to asynchronous replication.
 
-  * When a timeout occurs, the [Rpl_semi_sync_master_status](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_status) status variable will also be switched to `<code>OFF</code>`.
+  * When a timeout occurs, the [Rpl_semi_sync_master_status](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_status) status variable will also be switched to `OFF`.
   * See [Configuring the Primary Timeout](#configuring-the-primary-timeout) for more information.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--rpl-semi-sync-master-timeout[=#]</code>`
+* Commandline: `--rpl-semi-sync-master-timeout[=#]`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>10000</code>` (10 seconds)
-* Range: `<code>0</code>` to `<code>18446744073709551615</code>`
+* Data Type: `numeric`
+* Default Value: `10000` (10 seconds)
+* Range: `0` to `18446744073709551615`
 
 
 
-#### `<code>rpl_semi_sync_master_trace_level</code>`
+#### `rpl_semi_sync_master_trace_level`
 
 
 * Description: The tracing level for semi-sync replication. Four levels are defined:
 
-  * `<code>1</code>`: General level, including for example time function failures.
-  * `<code>16</code>`: More detailed level, with more verbose information.
-  * `<code>32</code>`: Net wait level, including more information about network waits.
-  * `<code>64</code>`: Function level, including information about function entries and exits.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--rpl-semi-sync-master-trace-level[=#]</code>`
+  * `1`: General level, including for example time function failures.
+  * `16`: More detailed level, with more verbose information.
+  * `32`: Net wait level, including more information about network waits.
+  * `64`: Function level, including information about function entries and exits.
+* Commandline: `--rpl-semi-sync-master-trace-level[=#]`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>32</code>`
-* Range: `<code>0</code>` to `<code>18446744073709551615</code>`
+* Data Type: `numeric`
+* Default Value: `32`
+* Range: `0` to `18446744073709551615`
 
 
 
-#### `<code>rpl_semi_sync_master_wait_no_slave</code>`
+#### `rpl_semi_sync_master_wait_no_slave`
 
 
-* Description: If set to `<code>ON</code>`, the default, the replica count (recorded by [Rpl_semi_sync_master_clients](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_clients)) may drop to zero, and the primary will still wait for the timeout period. If set to `<code>OFF</code>`, the primary will revert to asynchronous replication as soon as the replica count drops to zero.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--rpl-semi-sync-master-wait-no-slave[={0|1}]</code>`
+* Description: If set to `ON`, the default, the replica count (recorded by [Rpl_semi_sync_master_clients](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_clients)) may drop to zero, and the primary will still wait for the timeout period. If set to `OFF`, the primary will revert to asynchronous replication as soon as the replica count drops to zero.
+* Commandline: `--rpl-semi-sync-master-wait-no-slave[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>boolean</code>`
-* Default Value: `<code>ON</code>`
+* Data Type: `boolean`
+* Default Value: `ON`
 
 
 
-#### `<code>rpl_semi_sync_master_wait_point</code>`
+#### `rpl_semi_sync_master_wait_point`
 
 
-* Description: Whether the transaction should wait for semi-sync acknowledgement after having synced the binlog (`<code>AFTER_SYNC</code>`), or after having committed in storage engine (`<code>AFTER_COMMIT</code>`, the default).
+* Description: Whether the transaction should wait for semi-sync acknowledgement after having synced the binlog (`AFTER_SYNC`), or after having committed in storage engine (`AFTER_COMMIT`, the default).
 
-  * When this variable is set to `<code>AFTER_SYNC</code>`, the primary performs the following steps:
+  * When this variable is set to `AFTER_SYNC`, the primary performs the following steps:
 
     1. Prepares the transaction in the storage engine.
     1. Syncs the transaction to the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md).
     1. Waits for acknowledgement from the replica.
     1. Commits the transaction to the storage engine.
     1. Returns an acknowledgement to the client.
-  * When this variable is set to `<code>AFTER_COMMIT</code>`, the primary performs the following steps:
+  * When this variable is set to `AFTER_COMMIT`, the primary performs the following steps:
 
     1. Prepares the transaction in the storage engine.
     1. Syncs the transaction to the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md).
     1. Commits the transaction to the storage engine.
     1. Waits for acknowledgement from the replica.
     1. Returns an acknowledgement to the client.
-  * In [MariaDB 10.1.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md) and before, this system variable does not exist. However, in those versions, the primary waits for the acknowledgement from replicas at a point that is equivalent to `<code>AFTER_COMMIT</code>`.
+  * In [MariaDB 10.1.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md) and before, this system variable does not exist. However, in those versions, the primary waits for the acknowledgement from replicas at a point that is equivalent to `AFTER_COMMIT`.
   * See [Configuring the Primary Wait Point](#configuring-the-primary-wait-point) for more information.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--rpl-semi-sync-master-wait-point=value</code>`
+* Commandline: `--rpl-semi-sync-master-wait-point=value`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>enum</code>`
-* Default Value: `<code>AFTER_COMMIT</code>`
-* Valid Values: `<code>AFTER_SYNC</code>`, `<code>AFTER_COMMIT</code>`
+* Data Type: `enum`
+* Default Value: `AFTER_COMMIT`
+* Valid Values: `AFTER_SYNC`, `AFTER_COMMIT`
 
 
 
-#### `<code>rpl_semi_sync_slave_delay_master</code>`
+#### `rpl_semi_sync_slave_delay_master`
 
 
 * Description: Only write primary info file when ack is needed.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--rpl-semi-sync-slave-delay-master[={0|1}]</code>`
+* Commandline: `--rpl-semi-sync-slave-delay-master[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>boolean</code>`
-* Default Value: `<code>OFF</code>`
+* Data Type: `boolean`
+* Default Value: `OFF`
 
 
 
-#### `<code>rpl_semi_sync_slave_enabled</code>`
+#### `rpl_semi_sync_slave_enabled`
 
 
-* Description: Set to `<code>ON</code>` to enable semi-synchronous replication replica. Disabled by default.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--rpl-semi-sync-slave-enabled[={0|1}]</code>`
+* Description: Set to `ON` to enable semi-synchronous replication replica. Disabled by default.
+* Commandline: `--rpl-semi-sync-slave-enabled[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>boolean</code>`
-* Default Value: `<code>OFF</code>`
+* Data Type: `boolean`
+* Default Value: `OFF`
 
 
 
-#### `<code>rpl_semi_sync_slave_kill_conn_timeout</code>`
+#### `rpl_semi_sync_slave_kill_conn_timeout`
 
 
 * Description: Timeout for the mysql connection used to kill the replica io_thread's connection on primary. This timeout comes into play when stop slave is executed.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--rpl-semi-sync-slave-kill-conn-timeout[={0|1}]</code>`
+* Commandline: `--rpl-semi-sync-slave-kill-conn-timeout[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>5</code>`
-* Range: `<code>0</code>` to `<code>4294967295</code>`
+* Data Type: `numeric`
+* Default Value: `5`
+* Range: `0` to `4294967295`
 
 
 
-#### `<code>rpl_semi_sync_slave_trace_level</code>`
+#### `rpl_semi_sync_slave_trace_level`
 
 
 * Description: The tracing level for semi-sync replication. The levels are the same as for [rpl_semi_sync_master_trace_level](#rpl_semi_sync_master_trace_level).
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--rpl-semi-sync-slave-trace_level[=#]</code>`
+* Commandline: `--rpl-semi-sync-slave-trace_level[=#]`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>32</code>`
-* Range: `<code>0</code>` to `<code>18446744073709551615</code>`
+* Data Type: `numeric`
+* Default Value: `32`
+* Range: `0` to `18446744073709551615`
 
 
 
 ## Options
 
 
-### `<code>init-rpl-rol</code>`
+### `init-rpl-rol`
 
 
 * From [MariaDB 10.6.19](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-19-release-notes.md), [MariaDB 10.11.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes.md), [MariaDB 11.1.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes.md), [MariaDB 11.2.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes.md), [MariaDB 11.4.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-3-release-notes.md) and [MariaDB 11.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes.md), changes the condition for semi-sync recovery to truncate the [binlog](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to instead use this option, when set to SLAVE. This avoids a possible error state where the replica’s state is ahead of the primary’s. See [-init-rpl-role](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-init-rpl-role).
 
 
-### `<code>rpl-semi-sync_master</code>`
+### `rpl-semi-sync_master`
 
 
 * Description: Controls how the server should treat the plugin when the server starts up.
 
   * Valid values are:
 
-    * `<code>OFF</code>` - Disables the plugin without removing it from the [mysql.plugins](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
-    * `<code>ON</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
-    * `<code>FORCE</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `<code>FORCE_PLUS_PERMANENT</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
+    * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../../reference/plugins/plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--rpl-semi-sync-master=value</code>`
-* Data Type: `<code>enumerated</code>`
-* Default Value: `<code>ON</code>`
-* Valid Values: `<code>OFF</code>`, `<code>ON</code>`, `<code>FORCE</code>`, `<code>FORCE_PLUS_PERMANENT</code>`
+* Commandline: `--rpl-semi-sync-master=value`
+* Data Type: `enumerated`
+* Default Value: `ON`
+* Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
 * Removed: [MariaDB 10.3.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md)
 
 
 
-### `<code>rpl-semi-sync_slave</code>`
+### `rpl-semi-sync_slave`
 
 
 * Description: Controls how the server should treat the plugin when the server starts up.
 
   * Valid values are:
 
-    * `<code>OFF</code>` - Disables the plugin without removing it from the [mysql.plugins](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
-    * `<code>ON</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
-    * `<code>FORCE</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `<code>FORCE_PLUS_PERMANENT</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
+    * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../../reference/plugins/plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--rpl-semi-sync-slave=value</code>`
-* Data Type: `<code>enumerated</code>`
-* Default Value: `<code>ON</code>`
-* Valid Values: `<code>OFF</code>`, `<code>ON</code>`, `<code>FORCE</code>`, `<code>FORCE_PLUS_PERMANENT</code>`
+* Commandline: `--rpl-semi-sync-slave=value`
+* Data Type: `enumerated`
+* Default Value: `ON`
+* Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
 * Removed: [MariaDB 10.3.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md)
 
 

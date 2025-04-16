@@ -38,7 +38,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-3988](https://jira.mariadb.org/browse/MXS-3988) Document implications of changed auth_all_servers default on schemarouter
 * [MXS-3984](https://jira.mariadb.org/browse/MXS-3984) COM_CHANGE_USER from 'user' to 'user' succeeded on MaxScale yet failed on backends
 * [MXS-3979](https://jira.mariadb.org/browse/MXS-3979) Not all state transitions are written to the log
-* [MXS-3957](https://jira.mariadb.org/browse/MXS-3957) Remove the `<code>Don't Limit</code>` option for max_rows value of the Query Editor
+* [MXS-3957](https://jira.mariadb.org/browse/MXS-3957) Remove the `Don't Limit` option for max_rows value of the Query Editor
 * [MXS-3954](https://jira.mariadb.org/browse/MXS-3954) Got below signal 11 error after upgrading maxscale version maxscale 6.2.1
 * [MXS-3945](https://jira.mariadb.org/browse/MXS-3945) Sync marker mismatch while reading Avro file
 * [MXS-3931](https://jira.mariadb.org/browse/MXS-3931) Check certificates with extendedKeyUsage options set for correct purpose flags
@@ -66,7 +66,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platfor
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

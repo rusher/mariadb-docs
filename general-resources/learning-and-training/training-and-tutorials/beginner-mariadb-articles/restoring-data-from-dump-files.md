@@ -8,7 +8,7 @@ If you lose your data in MariaDB, but have been using [mariadb-dump](../../../..
 mariadb --user admin_restore --password < /data/backup/db1.sql
 ```
 
-Again, this is not using [mariadb-dump](../../../../server/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md). The [mariadb-dump](../../../../server/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) utility is only for making back-up copies, not restoring databases. Instead, you would use the mariadb client, which will read the dump file's content in order to batch execute the SQL statements that it contains. Notice that the redirect for `<code>STDOUT</code>` is not used here, but the redirect for the standard input (`<code>STDIN</code>`); the less-than sign is used since the dump file is an input source. Also, notice that in this example a database isn't specified. That's given within the dump file.
+Again, this is not using [mariadb-dump](../../../../server/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md). The [mariadb-dump](../../../../server/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) utility is only for making back-up copies, not restoring databases. Instead, you would use the mariadb client, which will read the dump file's content in order to batch execute the SQL statements that it contains. Notice that the redirect for `STDOUT` is not used here, but the redirect for the standard input (`STDIN`); the less-than sign is used since the dump file is an input source. Also, notice that in this example a database isn't specified. That's given within the dump file.
 
 
 #### Restoring One Table
@@ -29,7 +29,7 @@ GRANT ALL ON db1.table1
 TO 'admin_restore_temp'@'localhost';
 ```
 
-These two SQL statements allow the temporary user to have the needed [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) privileges on all of the tables of `<code>db1</code>` and `<code>ALL</code>` privileges for the `<code>table1</code>` table. Now when you restore the dump file containing the whole `<code>db1</code>` database, only `<code>table1</code>` will be replaced with the back-up copy. Of course, MariaDB will generate errors. To overlook the errors and to proceed with the restoration of data where no errors are generated (i.e., `<code>table1</code>`), use the `<code>--force</code>` option. Here's what you would enter at the command-line for this situation:
+These two SQL statements allow the temporary user to have the needed [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) privileges on all of the tables of `db1` and `ALL` privileges for the `table1` table. Now when you restore the dump file containing the whole `db1` database, only `table1` will be replaced with the back-up copy. Of course, MariaDB will generate errors. To overlook the errors and to proceed with the restoration of data where no errors are generated (i.e., `table1`), use the `--force` option. Here's what you would enter at the command-line for this situation:
 
 
 ```

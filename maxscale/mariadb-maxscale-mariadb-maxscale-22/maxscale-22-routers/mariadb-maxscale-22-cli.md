@@ -4,8 +4,8 @@
 # CLI
 
 
-The command line interface as used by `<code>maxadmin</code>`. The *CLI* router requires the
-use of the `<code>maxscaled</code>` protocol.
+The command line interface as used by `maxadmin`. The *CLI* router requires the
+use of the `maxscaled` protocol.
 
 
 ## Configuration
@@ -45,13 +45,13 @@ port=6603
 
 In the example above, two listeners have been specified; one that listens on the
 default Unix domain socket and one that listens on the default port. In the
-latter case, if the `<code>address=</code>` entry is removed, connections are allowed from
+latter case, if the `address=` entry is removed, connections are allowed from
 any machine on your network.
 
 
-In the former case, if the value of `<code>socket</code>` is changed and in the latter case,
-if the value of `<code>port</code>` is changed, *maxadmin* must be invoked with the `<code>-S</code>` and
-`<code>-P</code>` options, respectively.
+In the former case, if the value of `socket` is changed and in the latter case,
+if the value of `port` is changed, *maxadmin* must be invoked with the `-S` and
+`-P` options, respectively.
 
 
 If Unix domain sockets are used, the connection is secure, but *maxadmin* can

@@ -17,7 +17,7 @@ See [Pluggable Authentication](../plugins/authentication-plugins/pluggable-authe
 ## Storage Engine Plugins
 
 
-Storage engines can extend `<code class="highlight fixed" style="white-space:pre-wrap">CREATE TABLE</code>` syntax with optional
+Storage engines can extend `CREATE TABLE` syntax with optional
 index, field, and table attribute clauses. See
 [Extending CREATE TABLE](../storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md) for more information.
 
@@ -56,7 +56,7 @@ the MySQL plugin declaration in the following ways:
 1. it has a field for a text representation of the version field
 
 
-MariaDB can load plugins that only have the MySQL plugin declaration but both `<code>PLUGIN_MATURITY</code>` and `<code>PLUGIN_AUTH_VERSION</code>` will show up as 'Unknown' in the
+MariaDB can load plugins that only have the MySQL plugin declaration but both `PLUGIN_MATURITY` and `PLUGIN_AUTH_VERSION` will show up as 'Unknown' in the
 [INFORMATION_SCHEMA.PLUGINS table](../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md).
 
 

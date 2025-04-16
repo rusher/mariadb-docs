@@ -1,7 +1,7 @@
 
 # SHOW QUERY_RESPONSE_TIME
 
-It is possible to use `<code>SHOW QUERY_RESPONSE_TIME</code>` as an alternative for retrieving information from the [QUERY_RESPONSE_TIME](../../../../plugins/other-plugins/query-response-time-plugin.md) plugin.
+It is possible to use `SHOW QUERY_RESPONSE_TIME` as an alternative for retrieving information from the [QUERY_RESPONSE_TIME](../../../../plugins/other-plugins/query-response-time-plugin.md) plugin.
 
 
 This was introduced as part of the [Information Schema plugin extension](../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md).

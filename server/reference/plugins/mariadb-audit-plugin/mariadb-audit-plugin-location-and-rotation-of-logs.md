@@ -1,7 +1,7 @@
 
 # MariaDB Audit Plugin - Location and Rotation of Logs
 
-Logs can be written to a separate file or to the system logs. If you prefer to have the logging separated from other system information, the value of the variable, [server_audit_output_type](mariadb-audit-plugin-options-and-system-variables.md) should be set to `<code>file</code>`. Incidentally, `<code>file</code>` is the only option on Windows systems.
+Logs can be written to a separate file or to the system logs. If you prefer to have the logging separated from other system information, the value of the variable, [server_audit_output_type](mariadb-audit-plugin-options-and-system-variables.md) should be set to `file`. Incidentally, `file` is the only option on Windows systems.
 
 
 You can force a rotation by enabling the [server_audit_file_rotate_now](mariadb-audit-plugin-options-and-system-variables.md) variable like so:
@@ -17,7 +17,7 @@ SET GLOBAL server_audit_file_rotate_now = ON;
 In addition to setting [server_audit_output_type](mariadb-audit-plugin-options-and-system-variables.md), you will have to provide the file path and name of the audit file. This is set in the variable, [server_audit_file_path](mariadb-audit-plugin-options-and-system-variables.md). You can set the file size limit of the log file with the variable, [server_audit_file_rotate_size](mariadb-audit-plugin-options-and-system-variables.md).
 
 
-So, if rotation is on and the log file has reached the size limit you set, a copy is created with a consecutive number as extension, the original file will be truncated to be used for the auditing again. To limit the number of log files created, set the variable, [server_audit_file_rotations](mariadb-audit-plugin-options-and-system-variables.md). You can force log file rotation by setting the variable, [server_audit_file_rotate_now](mariadb-audit-plugin-options-and-system-variables.md) to a value of `<code>ON</code>`. When the number of files permitted is reached, the oldest file will be overwritten. Below is an example of how the variables described above might be set in a server's configuration files:
+So, if rotation is on and the log file has reached the size limit you set, a copy is created with a consecutive number as extension, the original file will be truncated to be used for the auditing again. To limit the number of log files created, set the variable, [server_audit_file_rotations](mariadb-audit-plugin-options-and-system-variables.md). You can force log file rotation by setting the variable, [server_audit_file_rotate_now](mariadb-audit-plugin-options-and-system-variables.md) to a value of `ON`. When the number of files permitted is reached, the oldest file will be overwritten. Below is an example of how the variables described above might be set in a server's configuration files:
 
 
 ```
@@ -32,13 +32,13 @@ server_audit_file_rotations=5
 ### System logs
 
 
-For security reasons, it's better sometimes to use the system logs instead of a local file owned by the `<code>mysql</code>` user. To do this, the value of [server_audit_output_type](mariadb-audit-plugin-options-and-system-variables.md) needs to be set to `<code>syslog</code>`. Advanced configurations, such as using a remote `<code>syslogd</code>` service, are part of the `<code>syslogd</code>` configuration.
+For security reasons, it's better sometimes to use the system logs instead of a local file owned by the `mysql` user. To do this, the value of [server_audit_output_type](mariadb-audit-plugin-options-and-system-variables.md) needs to be set to `syslog`. Advanced configurations, such as using a remote `syslogd` service, are part of the `syslogd` configuration.
 
 
-The variables, [server_audit_syslog_ident](mariadb-audit-plugin-options-and-system-variables.md) and [server_audit_syslog_info](mariadb-audit-plugin-options-and-system-variables.md) can be used to identify a system log entry made by the audit plugin. If a remote `<code>syslogd</code>` service is used for several MariaDB servers, these same variables are also used to identify the MariaDB server.
+The variables, [server_audit_syslog_ident](mariadb-audit-plugin-options-and-system-variables.md) and [server_audit_syslog_info](mariadb-audit-plugin-options-and-system-variables.md) can be used to identify a system log entry made by the audit plugin. If a remote `syslogd` service is used for several MariaDB servers, these same variables are also used to identify the MariaDB server.
 
 
-Below is an example of a system log entry taken from a server which had [server_audit_syslog_ident](mariadb-audit-plugin-options-and-system-variables.md) set to the default value of `<code>mysql­-server_auditing</code>`, and [server_audit_syslog_info](mariadb-audit-plugin-options-and-system-variables.md) set to `<code><prod1></code>`.
+Below is an example of a system log entry taken from a server which had [server_audit_syslog_ident](mariadb-audit-plugin-options-and-system-variables.md) set to the default value of `mysql­-server_auditing`, and [server_audit_syslog_info](mariadb-audit-plugin-options-and-system-variables.md) set to `<prod1>`.
 
 
 ```
@@ -47,5 +47,5 @@ Aug 717:19:58localhostmysql-­server_auditing:
 QUERY, mysql, 'SELECT * FROM user',0
 ```
 
-Although the default values for [server_audit_syslog_facility](mariadb-audit-plugin-options-and-system-variables.md) and [server_audit_syslog_priority](mariadb-audit-plugin-options-and-system-variables.md) should be sufficient in most cases, they can be changed based on the definition in `<code>syslog.h</code>` for the functions `<code>openlog()</code>` and `<code>syslog()</code>`.
+Although the default values for [server_audit_syslog_facility](mariadb-audit-plugin-options-and-system-variables.md) and [server_audit_syslog_priority](mariadb-audit-plugin-options-and-system-variables.md) should be sufficient in most cases, they can be changed based on the definition in `syslog.h` for the functions `openlog()` and `syslog()`.
 

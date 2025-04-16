@@ -13,7 +13,7 @@ Instructions on how to build a mysqld that contains all the information we need 
 * Compile MariaDB with the -g compiler flag (Unix).
 * Optionally: with more checking [Compile MariaDB for debugging](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging.md) - will cause slowdown.
 * Shut down your old mysqld server.
-* Install the new compiled `<code>mysqld</code>` binary. Note that if you are compiling same version of MariaDB that you have already installed it's enough to just copy this one binary!
+* Install the new compiled `mysqld` binary. Note that if you are compiling same version of MariaDB that you have already installed it's enough to just copy this one binary!
 * Restart mysqld.
 
 

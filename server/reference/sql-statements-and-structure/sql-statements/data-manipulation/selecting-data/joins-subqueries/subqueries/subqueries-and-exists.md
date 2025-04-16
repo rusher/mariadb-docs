@@ -11,7 +11,7 @@ SELECT ... WHERE EXISTS <Table subquery>
 ## Description
 
 
-[Subqueries](subqueries-and-all.md) using the `<code>EXISTS</code>` keyword will return `<code>true</code>` if the subquery returns any rows. Conversely, subqueries using `<code>NOT EXISTS</code>` will return `<code>true</code>` only if the subquery returns no rows from the table.
+[Subqueries](subqueries-and-all.md) using the `EXISTS` keyword will return `true` if the subquery returns any rows. Conversely, subqueries using `NOT EXISTS` will return `true` only if the subquery returns no rows from the table.
 
 
 EXISTS subqueries ignore the columns specified by the [SELECT](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) of the subquery, since they're not relevant. For example,

@@ -11,7 +11,7 @@ Some KVM images end up not having enough space on them. In such cases, it is pre
 cp -avi vm-rhel5-x86-build.qcow2 vm-rhel5-x86-build-new.qcow2
 ```
 
-1. Using the `<code>qemu-img</code>` command, resize the image:
+1. Using the `qemu-img` command, resize the image:
 
 
 ```
@@ -21,7 +21,7 @@ qemu-img info vm-rhel5-x86-build-new.qcow2
 rsync -avP vm-rhel5-x86-build-new.qcow2 terrier:/kvm/vms/
 ```
 
- Not all versions of `<code>qemu-img</code>` can resize VMs.
+ Not all versions of `qemu-img` can resize VMs.
 
 
 
@@ -80,11 +80,11 @@ sudo rsync -avP /home/ /mnt/
 ```
 sudo vi /etc/fstab
 ```
-  * mv `<code>/home</code>` to `<code>/home-old</code>`, create `<code>/home</code>` dir, mount `<code>/home</code>`
+  * mv `/home` to `/home-old`, create `/home` dir, mount `/home`
 ```
 sudo mv -vi /home /home-old;sudo mkdir -v /home;sudo mount /home
 ```
-  * (optional) unmount `<code>/mnt</code>`
+  * (optional) unmount `/mnt`
 ```
 sudo umount /mnt
 ```
@@ -92,10 +92,10 @@ sudo umount /mnt
 ```
 sudo /sbin/shutdown -h now
 ```
-  * if things do look good (new drive mounted OK, accounts work, etc...), delete `<code>/home-old</code>`
+  * if things do look good (new drive mounted OK, accounts work, etc...), delete `/home-old`
 
 
-1. Move the old VM to `<code>-old</code>` and the `<code>-new</code>` VM to what the old VM used to be named
+1. Move the old VM to `-old` and the `-new` VM to what the old VM used to be named
 
 
 ```

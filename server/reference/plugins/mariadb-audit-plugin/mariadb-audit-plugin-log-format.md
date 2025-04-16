@@ -9,7 +9,7 @@ The audit plugin logs user access to MariaDB and its objects. The audit trail (i
 [queryid],[operation],[database],[object],[retcode]
 ```
 
-If the [server_audit_output_type](mariadb-audit-plugin-options-and-system-variables.md) variable is set to `<code>syslog</code>` instead of the default, `<code>file</code>`, the audit log file format will be as follows:
+If the [server_audit_output_type](mariadb-audit-plugin-options-and-system-variables.md) variable is set to `syslog` instead of the default, `file`, the audit log file format will be as follows:
 
 
 ```
@@ -69,5 +69,5 @@ Below are generic examples of records that are entered in the audit log for each
 [timestamp],[serverhost],[username],[host],[connectionid],[queryid],DROP,[database],[object],
 ```
 
-Starting in version 1.2.0, passwords are hidden in the log for certain types of queries. They are replaced with asterisks for `<code>GRANT</code>`, `<code>CREATE USER</code>`, `<code>CREATE MASTER</code>`, `<code>CREATE SERVER</code>`, and `<code>ALTER SERVER</code>` statements. Passwords, however, are not replaced for the `<code>PASSWORD()</code>` and `<code>OLD_PASSWORD()</code>` functions when they are used inside other SQL statements (i.e., SET PASSWORD`<code>).</code>`
+Starting in version 1.2.0, passwords are hidden in the log for certain types of queries. They are replaced with asterisks for `GRANT`, `CREATE USER`, `CREATE MASTER`, `CREATE SERVER`, and `ALTER SERVER` statements. Passwords, however, are not replaced for the `PASSWORD()` and `OLD_PASSWORD()` functions when they are used inside other SQL statements (i.e., SET PASSWORD`).`
 

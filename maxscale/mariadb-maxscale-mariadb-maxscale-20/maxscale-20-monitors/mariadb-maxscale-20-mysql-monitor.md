@@ -51,7 +51,7 @@ For a list of optional parameters that all monitors support, read the [Monitor C
 These are optional parameters specific to the MySQL Monitor.
 
 
-### `<code>detect_replication_lag</code>`
+### `detect_replication_lag`
 
 
 A truth value which controls if replication lag between the master and the
@@ -72,7 +72,7 @@ maxscale_schema database. The monitor user will always try to create the databas
 and the table if they do not exist.
 
 
-### `<code>detect_stale_master</code>`
+### `detect_stale_master`
 
 
 Allow previous master to be available even in case of stopped or misconfigured
@@ -96,7 +96,7 @@ detect_stale_master=true
 
 
 
-### `<code>detect_stale_slave</code>`
+### `detect_stale_slave`
 
 
 Treat running slaves servers without a master server as valid slave servers.
@@ -122,7 +122,7 @@ detect_stale_slave=true
 
 
 
-### `<code>mysql51_replication</code>`
+### `mysql51_replication`
 
 
 Enable support for MySQL 5.1 replication monitoring. This is needed if a MySQL server older than 5.5 is used as a slave in replication.

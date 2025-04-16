@@ -7,16 +7,16 @@
 ## Background information
 
 
-The version of MySQL in Debian 8 "Jessie" is 5.5. When installing, most users will install the `<code>mysql-server</code>` package, which depends on the `<code>mysql-server-5.5 package</code>`. In Debian 9 "Stretch" the `<code>mysql-server</code>` package depends on a new package called `<code>default-mysql-server</code>`. This package in turn depends on `<code>mariadb-server-10.1</code>`. There is no `<code>default-mysql-server</code>` package in Jessie.
+The version of MySQL in Debian 8 "Jessie" is 5.5. When installing, most users will install the `mysql-server` package, which depends on the `mysql-server-5.5 package`. In Debian 9 "Stretch" the `mysql-server` package depends on a new package called `default-mysql-server`. This package in turn depends on `mariadb-server-10.1`. There is no `default-mysql-server` package in Jessie.
 
 
-In both Jessie and Stretch there is also a `<code>mariadb-server</code>` package which is a MariaDB-specific analog to the `<code>mysql-server</code>` package. In Jessie this package depends on `<code>mariadb-server-10.0</code>` and in Stretch this package depends on `<code>mariadb-server-10.1</code>` (the same as the `<code>default-mysql-server</code>` package).
+In both Jessie and Stretch there is also a `mariadb-server` package which is a MariaDB-specific analog to the `mysql-server` package. In Jessie this package depends on `mariadb-server-10.0` and in Stretch this package depends on `mariadb-server-10.1` (the same as the `default-mysql-server` package).
 
 
-So, the main repository difference in Debian 9 "Stretch" is that when you install the `<code>mysql-server</code>` package on Stretch you will get [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) instead of MySQL, like you would with previous versions of Debian. Note that `<code>mysql-server</code>` is just an empty transitional meta-package and users are encouraged to install MariaDB using the actual package `<code>mariadb-server</code>`.
+So, the main repository difference in Debian 9 "Stretch" is that when you install the `mysql-server` package on Stretch you will get [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) instead of MySQL, like you would with previous versions of Debian. Note that `mysql-server` is just an empty transitional meta-package and users are encouraged to install MariaDB using the actual package `mariadb-server`.
 
 
-All apps and tools, such as the popular LAMP stack, in the repositories that depend on the `<code>mysql-server</code>` package will continue to work using MariaDB as the database. For new installs there is nothing different that needs to be done when installing the mysql-server or mariadb-server packages.
+All apps and tools, such as the popular LAMP stack, in the repositories that depend on the `mysql-server` package will continue to work using MariaDB as the database. For new installs there is nothing different that needs to be done when installing the mysql-server or mariadb-server packages.
 
 
 ## Before you upgrade
@@ -148,7 +148,7 @@ If you need help with upgrading or setting up replication, you can always [conta
 The suggested upgrade procedure is:
 
 
-1. Set [innodb_fast_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md) to `<code>0</code>`. This is to ensure that if you make a backup as part of the upgrade, all data is written to the InnoDB data files, which simplifies any restore in the future.
+1. Set [innodb_fast_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md) to `0`. This is to ensure that if you make a backup as part of the upgrade, all data is written to the InnoDB data files, which simplifies any restore in the future.
 1. Shutdown MySQL 5.5
 1. Take a [backup](../../../backing-up-and-restoring-databases/backup-and-restore-overview.md)
 
@@ -157,13 +157,13 @@ The suggested upgrade procedure is:
 1. Perform the upgrade from Debian 8 to Debian 9
 1. During the upgrade, the [mysql_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md) script will be run automatically; this script does two things:
 
-  1. Upgrades the permission tables in the `<code>mysql</code>` database with some new fields
+  1. Upgrades the permission tables in the `mysql` database with some new fields
   1. Does a very quick check of all tables and marks them as compatible with [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)
 
     * In most cases this should be a fast operation (depending of course on the number of tables)
 1. Add new options to [my.cnf](../../configuring-mariadb-with-option-files.md) to enable features
 
-  * If you change `<code class="highlight fixed" style="white-space:pre-wrap">my.cnf</code>` then you need to restart `<code>mysqld</code>` with e.g. `<code>sudo service mysql restart</code>` or `<code>sudo service mariadb restart</code>`.
+  * If you change `my.cnf` then you need to restart `mysqld` with e.g. `sudo service mysql restart` or `sudo service mariadb restart`.
 
 
 ## Upgrading to [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) from an older version of MariaDB
@@ -187,13 +187,13 @@ You should always perform a compete backup of your data prior to performing any 
 ## MariaDB Galera Cluster
 
 
-If you have been using MariaDB Galera Cluster 5.5 or 10.0 on Debian 8 "Jessie" it is worth mentioning that [Galera Cluster](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) is included by default in [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), there is no longer a need to install a separate `<code>mariadb-galera-server</code>` package.
+If you have been using MariaDB Galera Cluster 5.5 or 10.0 on Debian 8 "Jessie" it is worth mentioning that [Galera Cluster](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) is included by default in [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), there is no longer a need to install a separate `mariadb-galera-server` package.
 
 
 ## Configuration options for advanced database users
 
 
-To get better performance from MariaDB used in production environments, here are some suggested additions to [your configuration file](../../configuring-mariadb-with-option-files.md) which in Debian is at `<code>/etc/mysql/mariadb.d/my.cnf</code>`:
+To get better performance from MariaDB used in production environments, here are some suggested additions to [your configuration file](../../configuring-mariadb-with-option-files.md) which in Debian is at `/etc/mysql/mariadb.d/my.cnf`:
 
 
 ```
@@ -235,5 +235,5 @@ If you have comments or suggestions on things we can add or change to improve th
 ## Notes
 
 
-1. [↑](#_ref-0) The `<code>innodb-open-files</code>` variable defaults to the value of `<code>table-open-cache</code>` (`<code>400</code>` is the default) if it is set to any value less than `<code>10</code>` so long as `<code>innodb-file-per-table</code>` is set to `<code>1</code>` or `<code>TRUE</code>` (the default). If `<code>innodb_file_per_table</code>` is set to `<code>0</code>` or `<code>FALSE</code>` and `<code>innodb-open-files</code>` is set to a value less than `<code>10</code>`, the default is `<code>300</code>`
+1. [↑](#_ref-0) The `innodb-open-files` variable defaults to the value of `table-open-cache` (`400` is the default) if it is set to any value less than `10` so long as `innodb-file-per-table` is set to `1` or `TRUE` (the default). If `innodb_file_per_table` is set to `0` or `FALSE` and `innodb-open-files` is set to a value less than `10`, the default is `300`
 

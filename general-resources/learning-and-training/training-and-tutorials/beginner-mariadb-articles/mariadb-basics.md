@@ -5,7 +5,7 @@
 #### Connecting to MariaDB
 
 
-MariaDB is a database system, a database server. To interface with the MariaDB server, you can use a client program, or you can write a program or script with one of the popular programming languages (e.g., PHP) using an API (Application Programming Interface) to interface with the MariaDB server. For the purposes of this article, we will focus on using the default client that comes with MariaDB called `<code>mariadb</code>`. With this client, you can either enter queries from the command-line, or you can switch to a terminal, that is to say, monitor mode. To start, we'll use the latter.
+MariaDB is a database system, a database server. To interface with the MariaDB server, you can use a client program, or you can write a program or script with one of the popular programming languages (e.g., PHP) using an API (Application Programming Interface) to interface with the MariaDB server. For the purposes of this article, we will focus on using the default client that comes with MariaDB called `mariadb`. With this client, you can either enter queries from the command-line, or you can switch to a terminal, that is to say, monitor mode. To start, we'll use the latter.
 
 
 From the Linux command-line, you would enter the following to log in as the root user and to enter monitor mode:
@@ -15,10 +15,10 @@ From the Linux command-line, you would enter the following to log in as the root
 mariadb -u root -p -h localhost
 ```
 
-The `<code>-u</code>` option is for specifying the user name. You would replace `<code>root</code>` here if you want to use a different user name. This is the MariaDB user name, not the Linux user name. The password for the MariaDB user `<code>root</code>` will probably be different from the Linux user `<code>root</code>`. Incidentally, it's not a good security practice to use the `<code>root</code>` user unless you have a specific administrative task to perform for which only `<code>root</code>` has the needed privileges.
+The `-u` option is for specifying the user name. You would replace `root` here if you want to use a different user name. This is the MariaDB user name, not the Linux user name. The password for the MariaDB user `root` will probably be different from the Linux user `root`. Incidentally, it's not a good security practice to use the `root` user unless you have a specific administrative task to perform for which only `root` has the needed privileges.
 
 
-The `<code>-p</code>` option above instructs the `<code>mariadb</code>` client to prompt you for the password. If the password for the `<code>root</code>` user hasn't been set yet, then the password is blank and you would just hit [Enter] when prompted. The `<code>-h</code>` option is for specifying the host name or the IP address of the server. This would be necessary if the client is running on a different machine than the server. If you've secure-shelled into the server machine, you probably won't need to use the host option. In fact, if you're logged into Linux as `<code>root</code>`, you won't need the user option—the `<code>-p</code>` is all you'll need. Once you've entered the line above along with the password when prompted, you will be logged into MariaDB through the client. To exit, type quit or exit and press [Enter].
+The `-p` option above instructs the `mariadb` client to prompt you for the password. If the password for the `root` user hasn't been set yet, then the password is blank and you would just hit [Enter] when prompted. The `-h` option is for specifying the host name or the IP address of the server. This would be necessary if the client is running on a different machine than the server. If you've secure-shelled into the server machine, you probably won't need to use the host option. In fact, if you're logged into Linux as `root`, you won't need the user option—the `-p` is all you'll need. Once you've entered the line above along with the password when prompted, you will be logged into MariaDB through the client. To exit, type quit or exit and press [Enter].
 
 
 #### Creating a Structure
@@ -89,7 +89,7 @@ We'll join this table to the books table as needed. For instance, we would use i
 #### Minor Items
 
 
-Before moving on to the next step of adding data to the tables, let me point out a few minor items that I've omitted mentioning. SQL statements end with a semi-colon (or a \G). You can spread an SQL statement over multiple lines. However, it won't be passed to the server by the client until you terminate it with a semi-colon and hit [Enter]. To cancel an SQL statement once you've started typing it, enter `<code>\c</code>` and press [Enter].
+Before moving on to the next step of adding data to the tables, let me point out a few minor items that I've omitted mentioning. SQL statements end with a semi-colon (or a \G). You can spread an SQL statement over multiple lines. However, it won't be passed to the server by the client until you terminate it with a semi-colon and hit [Enter]. To cancel an SQL statement once you've started typing it, enter `\c` and press [Enter].
 
 
 As a basic convention, reserved words are printed in all capital letters. This isn't necessary, though. MariaDB is case-insensitive with regards to reserved words. Database and table names, however, are case-sensitive on Linux. This is because they reference the related directories and files on the filesystem. Column names aren't case sensitive since they're not affected by the filesystem, per se. As another convention, we use lower-case letters for structural names (e.g., table names). It's a matter of preference for deciding on names.
@@ -130,7 +130,7 @@ VALUES('The Trial', '1', '0805210407', '1995'),
 ('America', '1', '0805210644', '1995');
 ```
 
-In this example, we've added three books in one statement. This allows us to give the list of column names once. We also give the keyword `<code>VALUES</code>` only once, followed by a separate set of values for each book, each contained in parentheses and separated by commas. This cuts down on typing and speeds up the process. Either method is fine and both have their advantages. To be able to continue with our examples, let's assume that data on thousands of books has been entered. With that behind us, let's look at how to retrieve data from tables.
+In this example, we've added three books in one statement. This allows us to give the list of column names once. We also give the keyword `VALUES` only once, followed by a separate set of values for each book, each contained in parentheses and separated by commas. This cuts down on typing and speeds up the process. Either method is fine and both have their advantages. To be able to continue with our examples, let's assume that data on thousands of books has been entered. With that behind us, let's look at how to retrieve data from tables.
 
 
 #### Retrieving Data
@@ -162,10 +162,10 @@ FROM books
 JOIN authors USING (author_id);
 ```
 
-Notice that the primary table from which we're drawing data is given in the `<code>FROM</code>` clause. The table to which we're joining is given in the [JOIN](../../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) clause along with the commonly named column (i.e., author_id) that we're using for the join.
+Notice that the primary table from which we're drawing data is given in the `FROM` clause. The table to which we're joining is given in the [JOIN](../../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) clause along with the commonly named column (i.e., author_id) that we're using for the join.
 
 
-To retrieve the titles of only books written by Kafka based on his name (not the author_id), we would use the `<code>WHERE</code>` clause with the [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement. This would be entered like the following:
+To retrieve the titles of only books written by Kafka based on his name (not the author_id), we would use the `WHERE` clause with the [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement. This would be entered like the following:
 
 
 ```
@@ -184,7 +184,7 @@ WHERE name_last = 'Kafka';
 +-------------------+
 ```
 
-This statement will list the titles of Kafka books stored in the database. Notice that I've added the `<code>AS</code>` parameter next to the column name title to change the column heading in the results set to Kafka Books. This is known as an alias. Looking at the results here, we can see that the title for one of Kafka's books is incorrect. His book Amerika is spelled above with a "c" in the table instead of a "k". This leads to the next section on changing data.
+This statement will list the titles of Kafka books stored in the database. Notice that I've added the `AS` parameter next to the column name title to change the column heading in the results set to Kafka Books. This is known as an alias. Looking at the results here, we can see that the title for one of Kafka's books is incorrect. His book Amerika is spelled above with a "c" in the table instead of a "k". This leads to the next section on changing data.
 
 
 #### Changing & Deleting Data

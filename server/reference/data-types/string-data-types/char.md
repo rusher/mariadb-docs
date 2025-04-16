@@ -16,15 +16,15 @@ This article covers the CHAR data type. See [CHAR Function](../../sql-statements
 
 
 A fixed-length string that is always right-padded with spaces to the specified
-length when stored. `<code>M</code>` represents the column length in characters. The range
-of `<code>M</code>` is `<code>0</code>` to `<code>255</code>`. If `<code>M</code>` is omitted, the length is `<code>1</code>`.
+length when stored. `M` represents the column length in characters. The range
+of `M` is `0` to `255`. If `M` is omitted, the length is `1`.
 
 
 CHAR(0) columns can contain 2 values: an empty string or NULL. Such columns cannot be part of an index. The [CONNECT](../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) storage engine does not support CHAR(0).
 
 
-**Note:** Trailing spaces are removed when `<code>CHAR</code>` values are retrieved
-unless the `<code>PAD_CHAR_TO_FULL_LENGTH</code>` [SQL mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) is enabled.
+**Note:** Trailing spaces are removed when `CHAR` values are retrieved
+unless the `PAD_CHAR_TO_FULL_LENGTH` [SQL mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) is enabled.
 
 
 If a unique index consists of a column where trailing pad characters are stripped or ignored, inserts into that column where values differ only by the number of trailing pad characters will result in a duplicate-key error.

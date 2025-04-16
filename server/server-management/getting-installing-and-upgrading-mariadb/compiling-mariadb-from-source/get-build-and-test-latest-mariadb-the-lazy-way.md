@@ -37,7 +37,7 @@ git checkout 11.4
 ## [Build It](generic-build-instructions.md)
 
 
-The following command builds a server the same way that is used for building releases. Use `<code>cmake . -DCMAKE_BUILD_TYPE=Debug</code>` to build for debugging.
+The following command builds a server the same way that is used for building releases. Use `cmake . -DCMAKE_BUILD_TYPE=Debug` to build for debugging.
 
 
 ```

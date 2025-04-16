@@ -76,7 +76,7 @@ kvm -m 2047 -hda /kvm/vms/vm-debian4-amd64-install.qcow2 -cdrom /kvm/debian-40r8
 ```
 
 See the [General Principles](../buildbot-setup-for-virtual-machines-general-principles.md) 
-article for how to make the '`<code>my.seed</code>`' file.
+article for how to make the '`my.seed`' file.
 
 
 ```

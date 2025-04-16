@@ -149,14 +149,14 @@ MariaDB:
 
 * Supports ROWS and RANGE-type frames
 
-  * All kinds of frame bounds are supported, including `<code>RANGE PRECEDING|FOLLOWING n</code>` frame bounds (unlike PostgreSQL or MS SQL Server)
+  * All kinds of frame bounds are supported, including `RANGE PRECEDING|FOLLOWING n` frame bounds (unlike PostgreSQL or MS SQL Server)
   * Does not yet support DATE[TIME] datatype and arithmetic for RANGE-type frames ([MDEV-9727](https://jira.mariadb.org/browse/MDEV-9727))
 * Does not support GROUPS-type frames (it seems that no popular database supports it, either)
 
 
 * Does not support frame exclusion (no other database seems to support it, either) ([MDEV-9724](https://jira.mariadb.org/browse/MDEV-9724))
-* Does not support explicit `<code>NULLS FIRST</code>` or `<code>NULLS LAST</code>`.
-* Does not support nested navigation in window functions (this is `<code>VALUE_OF(expr AT row_marker [, default_value)</code>` syntax)
+* Does not support explicit `NULLS FIRST` or `NULLS LAST`.
+* Does not support nested navigation in window functions (this is `VALUE_OF(expr AT row_marker [, default_value)` syntax)
 
 
 * The following window functions are supported:
@@ -166,7 +166,7 @@ MariaDB:
 
 
 * Aggregate functions that are currently supported as window functions are: [COUNT](../../aggregate-functions/count.md), [SUM](../../aggregate-functions/sum.md), [AVG](../../aggregate-functions/avg.md), [BIT_OR](../../aggregate-functions/bit_or.md), [BIT_AND](../../aggregate-functions/bit_and.md), [BIT_XOR](../../aggregate-functions/bit_xor.md).
-* Aggregate functions with the `<code>DISTINCT</code>` specifier (e.g. `<code>COUNT( DISTINCT x)</code>`) are not supported as window functions.
+* Aggregate functions with the `DISTINCT` specifier (e.g. `COUNT( DISTINCT x)`) are not supported as window functions.
 
 
 ## Links
@@ -174,7 +174,7 @@ MariaDB:
 
 * [MDEV-6115](https://jira.mariadb.org/browse/MDEV-6115) is the main jira task for window functions development. Other tasks are are attached as sub-tasks
 * [bb-10.2-mdev9543](https://github.com/MariaDB/server/commits/bb-10.2-mdev9543) is the feature tree for window functions. Development is ongoing, and this tree has the newest changes.
-* Testcases are in `<code>mysql-test/t/win*.test</code>`
+* Testcases are in `mysql-test/t/win*.test`
 
 
 ## Examples

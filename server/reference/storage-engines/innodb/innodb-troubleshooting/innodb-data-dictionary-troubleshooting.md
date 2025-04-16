@@ -12,7 +12,7 @@ If InnoDB returns something like the following error:
 ERROR 1016: Can't open file: 'x.ibd'. (errno: 1)
 ```
 
-it may be that an orphan `<code>.frm</code>` file exists. Something like the following may also appear in the [error log](../../../../server-management/server-monitoring-logs/error-log.md):
+it may be that an orphan `.frm` file exists. Something like the following may also appear in the [error log](../../../../server-management/server-monitoring-logs/error-log.md):
 
 
 ```
@@ -22,13 +22,13 @@ InnoDB: have deleted and recreated InnoDB data files but have forgotten
 InnoDB: to delete the corresponding .frm files of InnoDB tables?
 ```
 
-If this is the case, as the text describes, delete the orphan `<code>.frm</code>` file on the filesystem.
+If this is the case, as the text describes, delete the orphan `.frm` file on the filesystem.
 
 
 ## Could not find a valid tablespace file
 
 
-In this case the table definition, the `<code>.frm</code>` file, is missing and the InnoDB dictionary expects it to be there. To remove the InnoDB dictionary entry, the existence of the file needs to faked and then dropped. The existence of the file is faked by creating the `<code>tablename.frm</code>` and potential the database directory if it is missing. Then a `<code>DROP TABLE</code>` or `<code>DROP DATABASE</code>` can be executed which will remove the InnoDB dictionary entry.
+In this case the table definition, the `.frm` file, is missing and the InnoDB dictionary expects it to be there. To remove the InnoDB dictionary entry, the existence of the file needs to faked and then dropped. The existence of the file is faked by creating the `tablename.frm` and potential the database directory if it is missing. Then a `DROP TABLE` or `DROP DATABASE` can be executed which will remove the InnoDB dictionary entry.
 
 
 Use the query to identify potentially other tablespaces that are known but missing with:
@@ -44,7 +44,7 @@ SELECT * FROM INFORMATION_SCHEMA.INNODB_SYS_TABLES WHERE NAME LIKE 'dbname/%';
 An orphan intermediate table may prevent you from dropping the tablespace even if it is otherwise empty, and generally takes up unnecessary space.
 
 
-It may come about if MariaDB exits in the middle of an [ALTER TABLE ... ALGORITHM=INPLACE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#algorithm) operation. They will be listed in the [INFORMATION_SCHEMA.INNODB_SYS_TABLES](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table, and always start with an `<code>#sql-ib</code>` prefix. The accompanying `<code>.frm</code>` file also begins with `<code>#sql-</code>`, but has a different name.
+It may come about if MariaDB exits in the middle of an [ALTER TABLE ... ALGORITHM=INPLACE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#algorithm) operation. They will be listed in the [INFORMATION_SCHEMA.INNODB_SYS_TABLES](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table, and always start with an `#sql-ib` prefix. The accompanying `.frm` file also begins with `#sql-`, but has a different name.
 
 
 To identify orphan tables, run:
@@ -54,13 +54,13 @@ To identify orphan tables, run:
 SELECT * FROM INFORMATION_SCHEMA.INNODB_SYS_TABLES WHERE NAME LIKE '%#sql%';
 ```
 
-When [innodb_file_per_table](../innodb-system-variables.md) is set, the `<code>#sql-*.ibd</code>` file will also be visible in the database directory.
+When [innodb_file_per_table](../innodb-system-variables.md) is set, the `#sql-*.ibd` file will also be visible in the database directory.
 
 
 To remove an orphan intermediate table:
 
 
-* Rename the `<code>#sql-*.frm</code>` file (in the database directory) to match the base name of the orphan intermediate table, for example:
+* Rename the `#sql-*.frm` file (in the database directory) to match the base name of the orphan intermediate table, for example:
 
 
 ```

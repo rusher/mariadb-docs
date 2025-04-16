@@ -29,26 +29,26 @@ MariaDB has a feature called wsrep GTID mode. When this mode is enabled, MariaDB
 Several things need to be configured for wsrep GTID mode to work, such as:
 
 
-* `<code>[wsrep_gtid_mode=ON](../galera-cluster-system-variables.md#wsrep_gtid_mode)</code>` needs to be set on all nodes in the cluster.
+* `[wsrep_gtid_mode=ON](../galera-cluster-system-variables.md#wsrep_gtid_mode)` needs to be set on all nodes in the cluster.
 
 
-* `<code>[wsrep_gtid_domain_id](../galera-cluster-system-variables.md#wsrep_gtid_domain_id)</code>` needs to be set to the same value on all nodes in a given cluster, so that each cluster node uses the same domain when assigning [GTIDs](../../standard-replication/gtid.md) for Galera Cluster's write sets. When replicating between two clusters, each cluster should have this set to a different value, so that each cluster uses different domains when assigning [GTIDs](../../standard-replication/gtid.md) for their write sets.
+* `[wsrep_gtid_domain_id](../galera-cluster-system-variables.md#wsrep_gtid_domain_id)` needs to be set to the same value on all nodes in a given cluster, so that each cluster node uses the same domain when assigning [GTIDs](../../standard-replication/gtid.md) for Galera Cluster's write sets. When replicating between two clusters, each cluster should have this set to a different value, so that each cluster uses different domains when assigning [GTIDs](../../standard-replication/gtid.md) for their write sets.
 
 
-* `<code>[log_slave_updates](../../standard-replication/replication-and-binary-log-system-variables.md#log_slave_updates)</code>` needs to be enabled on all nodes in the cluster. See [MDEV-9855](https://jira.mariadb.org/browse/MDEV-9855).
+* `[log_slave_updates](../../standard-replication/replication-and-binary-log-system-variables.md#log_slave_updates)` needs to be enabled on all nodes in the cluster. See [MDEV-9855](https://jira.mariadb.org/browse/MDEV-9855).
 
 
-* `<code>[log_bin](../../standard-replication/replication-and-binary-log-system-variables.md)</code>` needs to be set to the same path on all nodes in the cluster. See [MDEV-9856](https://jira.mariadb.org/browse/MDEV-9856).
+* `[log_bin](../../standard-replication/replication-and-binary-log-system-variables.md)` needs to be set to the same path on all nodes in the cluster. See [MDEV-9856](https://jira.mariadb.org/browse/MDEV-9856).
 
 
 And as an extra safety measure:
 
 
-* `<code>[gtid_domain_id](../../standard-replication/gtid.md#gtid_domain_id)</code>` should be set to a different value on all nodes in a given cluster, and each of these values should be different than the configured `<code>[wsrep_gtid_domain_id](../galera-cluster-system-variables.md#wsrep_gtid_domain_id)</code>` value. This is to prevent a node from using the same domain used for Galera Cluster's write sets when assigning [GTIDs](../../standard-replication/gtid.md) for non-Galera transactions, such as DDL executed with `<code>[wsrep_sst_method=RSU](../galera-cluster-system-variables.md#wsrep_sst_method)</code>` set or DML executed with `<code>[wsrep_on=OFF](../galera-cluster-system-variables.md#wsrep_on)</code>` set.
+* `[gtid_domain_id](../../standard-replication/gtid.md#gtid_domain_id)` should be set to a different value on all nodes in a given cluster, and each of these values should be different than the configured `[wsrep_gtid_domain_id](../galera-cluster-system-variables.md#wsrep_gtid_domain_id)` value. This is to prevent a node from using the same domain used for Galera Cluster's write sets when assigning [GTIDs](../../standard-replication/gtid.md) for non-Galera transactions, such as DDL executed with `[wsrep_sst_method=RSU](../galera-cluster-system-variables.md#wsrep_sst_method)` set or DML executed with `[wsrep_on=OFF](../galera-cluster-system-variables.md#wsrep_on)` set.
 
 
 If you want to avoid writes accidentialy local GTIDS, you can avoid it with 
-`<code>[wsrep_gtid_mode](../galera-cluster-system-variables.md#wsrep_gtid_mode)</code>` = DISALLOW_LOCAL_GTID
+`[wsrep_gtid_mode](../galera-cluster-system-variables.md#wsrep_gtid_mode)` = DISALLOW_LOCAL_GTID
 
 
 In this case you get an error:
@@ -56,10 +56,10 @@ ERROR 4165 (HY000): Galera replication not supported
 
 
 You can overwrite it temporarily with
-set `<code>[sql_log_bin](../../standard-replication/replication-and-binary-log-system-variables.md)</code>` = 0;
+set `[sql_log_bin](../../standard-replication/replication-and-binary-log-system-variables.md)` = 0;
 
 
-For information on setting `<code>[server_id](../../standard-replication/replication-and-binary-log-system-variables.md#server_id)</code>`, see [Using MariaDB Replication with MariaDB Galera Cluster: Setting server_id on Cluster Nodes](using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica.md#setting-server_id-on-cluster-nodes).
+For information on setting `[server_id](../../standard-replication/replication-and-binary-log-system-variables.md#server_id)`, see [Using MariaDB Replication with MariaDB Galera Cluster: Setting server_id on Cluster Nodes](using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica.md#setting-server_id-on-cluster-nodes).
 
 
 #### Known Problems with Wsrep GTID Mode
@@ -80,11 +80,11 @@ This does not necessarily imply that wsrep GTID mode works perfectly in all othe
 ### GTIDs for Transactions Applied by Slave Thread
 
 
-If a Galera Cluster node is also a [replication slave](../../standard-replication/replication-overview.md), then that node's [slave SQL thread](../../standard-replication/replication-threads.md#slave-sql-thread) will be applying transactions that it replicates from its replication master. If the node has `<code>[log_slave_updates=ON](../../standard-replication/replication-and-binary-log-system-variables.md#log_slave_updates)</code>` set, then each transaction that the [slave SQL thread](../../standard-replication/replication-threads.md#slave-sql-thread) applies will also generate a Galera Cluster write set that is replicated to the rest of the nodes in the cluster.
+If a Galera Cluster node is also a [replication slave](../../standard-replication/replication-overview.md), then that node's [slave SQL thread](../../standard-replication/replication-threads.md#slave-sql-thread) will be applying transactions that it replicates from its replication master. If the node has `[log_slave_updates=ON](../../standard-replication/replication-and-binary-log-system-variables.md#log_slave_updates)` set, then each transaction that the [slave SQL thread](../../standard-replication/replication-threads.md#slave-sql-thread) applies will also generate a Galera Cluster write set that is replicated to the rest of the nodes in the cluster.
 
 
 In [MariaDB 10.1.30](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10130-release-notes.md) and earlier, the node acting as slave would apply the transaction with the original GTID that it received from the master, and the other Galera Cluster nodes would generate their own GTIDs for the transaction when they replicated the write set.
 
 
-In [MariaDB 10.1.31](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10131-release-notes.md) and later, the node acting as slave will include the transaction's original `<code>Gtid_Log_Event</code>` in the replicated write set, so all nodes should associate the write set with its original GTID. See [MDEV-13431](https://jira.mariadb.org/browse/MDEV-13431) about that.
+In [MariaDB 10.1.31](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10131-release-notes.md) and later, the node acting as slave will include the transaction's original `Gtid_Log_Event` in the replicated write set, so all nodes should associate the write set with its original GTID. See [MDEV-13431](https://jira.mariadb.org/browse/MDEV-13431) about that.
 

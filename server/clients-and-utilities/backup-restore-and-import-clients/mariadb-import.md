@@ -1,13 +1,13 @@
 
 # mariadb-import
 
-`<code>mariadb-import</code>` loads tables from text files in various formats.
+`mariadb-import` loads tables from text files in various formats.
 
 
-Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysqlimport</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqlimport`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
-`<code>mariadb-import</code>` loads tables from text files in various formats. The base name
+`mariadb-import` loads tables from text files in various formats. The base name
 of the text file must be the name of the table that should be used. If one
 uses sockets to connect to the MariaDB server, the server will open and read the
 text file directly. In other cases the client will open the text file. The SQL
@@ -17,7 +17,7 @@ command [LOAD DATA INFILE](../../reference/sql-statements-and-structure/sql-stat
 ## Using mariadb-import
 
 
-The command to use `<code>mariadb-import</code>` and the general syntax is:
+The command to use `mariadb-import` and the general syntax is:
 
 
 ```
@@ -27,7 +27,7 @@ mariadb-import [OPTIONS] database textfile1 [textfile2 ...]
 ### Options
 
 
-`<code>mariadb-import</code>` supports the following options:
+`mariadb-import` supports the following options:
 
 
 
@@ -100,7 +100,7 @@ mariadb-import [OPTIONS] database textfile1 [textfile2 ...]
 ### Option Files
 
 
-In addition to reading options from the command-line, `<code>mariadb-import</code>` can also read options from [option files](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `<code>mariadb-import</code>` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadb-import` can also read options from [option files](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-import` in an option file, then it is ignored.
 
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
@@ -117,13 +117,13 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-`<code>mariadb-import</code>` is linked with [MariaDB Connector/C](../../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). Therefore, it may be helpful to see [Configuring MariaDB Connector/C with Option Files](../../../connectors/mariadb-connector-c/configuring-mariadb-connectorc-with-option-files.md) for more information on how MariaDB Connector/C handles option files.
+`mariadb-import` is linked with [MariaDB Connector/C](../../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). Therefore, it may be helpful to see [Configuring MariaDB Connector/C with Option Files](../../../connectors/mariadb-connector-c/configuring-mariadb-connectorc-with-option-files.md) for more information on how MariaDB Connector/C handles option files.
 
 
 #### Option Groups
 
 
-`<code>mariadb-import</code>` reads options from the following [option groups](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
+`mariadb-import` reads options from the following [option groups](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
 
 
 

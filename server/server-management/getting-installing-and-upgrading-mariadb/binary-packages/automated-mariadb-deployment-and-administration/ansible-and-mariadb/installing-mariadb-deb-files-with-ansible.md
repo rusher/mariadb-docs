@@ -37,13 +37,13 @@ If you prefer to keep the repository information in a [source list file](install
 ## Updating the Repository Cache
 
 
-Both the Ansible modules [ansible.builtin.apt](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html) and [ansible.builtin.apt_repository](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html) have an `<code>update_cache</code>` attribute. In ansible.builtin.apt it is set to "no" by default. Whenever a task sets it to 'yes', `<code>apt-get update</code>` is run on the target system. You have three ways to make sure that repositories are updated.
+Both the Ansible modules [ansible.builtin.apt](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html) and [ansible.builtin.apt_repository](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html) have an `update_cache` attribute. In ansible.builtin.apt it is set to "no" by default. Whenever a task sets it to 'yes', `apt-get update` is run on the target system. You have three ways to make sure that repositories are updated.
 
 
 The first is to use ansible.builtin.apt_repository to add the desired repository, as shown above. So you only need to worry about updating repositories if you use the file method.
 
 
-The second is to make sure that `<code>update_cache</code>` is set to 'yes' when you install a repository:
+The second is to make sure that `update_cache` is set to 'yes' when you install a repository:
 
 
 ```
@@ -97,7 +97,7 @@ To make sure that a specific version is installed, performing an upgrade or a do
     name: foo=1.0
 ```
 
-To install a package or upgrade it to the latest version, use: `<code>state: latest</code>`.
+To install a package or upgrade it to the latest version, use: `state: latest`.
 
 
 To install multiple packages at once:

@@ -8,7 +8,7 @@
 ## Description
 
 
-`<code>PERCENTILE_DISC()</code>` (standing for discrete percentile) is a [window function](window-functions-overview.md) which returns the first value in the set whose ordered position is the same or more than the specified fraction.
+`PERCENTILE_DISC()` (standing for discrete percentile) is a [window function](window-functions-overview.md) which returns the first value in the set whose ordered position is the same or more than the specified fraction.
 
 
 Essentially, the following process is followed to find the value to return:

@@ -11,9 +11,9 @@ STRCMP(expr1,expr2)
 ## Description
 
 
-`<code>STRCMP()</code>` returns `<code>0</code>` if the strings are the same, `<code>-1</code>` if the first
+`STRCMP()` returns `0` if the strings are the same, `-1` if the first
 argument is smaller than the second according to the current sort order,
-and `<code>1</code>` if the strings are otherwise not the same. Returns `<code>NULL</code>` is either argument is `<code>NULL</code>`.
+and `1` if the strings are otherwise not the same. Returns `NULL` is either argument is `NULL`.
 
 
 ## Examples

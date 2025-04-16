@@ -634,13 +634,13 @@ SELECT collation_name, character_set_name as cs_name, id, is_default AS def, is_
 The UCA-14.0.0 collations were added in [MariaDB 10.10.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10101-release-notes.md).
 
 
-Before [MariaDB 10.6.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), the `<code>utf8mb3*</code>` collations listed above were named `<code>utf8*</code>`.
+Before [MariaDB 10.6.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), the `utf8mb3*` collations listed above were named `utf8*`.
 
 
 [MariaDB 11.4.5](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-5-release-notes.md) added UCA-9.0.0 collations, as well as a Comment column to information_schema.collations, to make it clear that the UCA-9.0.0 collations are mapped to the UCA-14.0.0 collations. The UCA-9.0.0 collations have mainly been added to make it easy to replicate from MySQL 8.0 to [MariaDB 11.4.5](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-5-release-notes.md) and newer.
 
 
-Note that some of the collations are used with several different character sets. In this case the `<code>Charset</code>` and `<code>Id</code>` columns are `<code>NULL</code>`.
+Note that some of the collations are used with several different character sets. In this case the `Charset` and `Id` columns are `NULL`.
 
 
 You can find all combinations of supported character set and collation in the
@@ -650,15 +650,15 @@ You can find all combinations of supported character set and collation in the
 ## Case Sensitivity
 
 
-A '`<code class="highlight fixed" style="white-space:pre-wrap">ci</code>`' at the end of a collation name indicates the
-collation is case insensitive. A '`<code class="highlight fixed" style="white-space:pre-wrap">cs</code>`' at the end of a
+A '`ci`' at the end of a collation name indicates the
+collation is case insensitive. A '`cs`' at the end of a
 collation name indicates the collation is case sensitive.
 
 
 ## NO PAD Collations
 
 
-`<code>NO PAD</code>` collations regard trailing spaces as normal characters. You can get a list of all of these by querying the [Information Schema COLLATIONS Table](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) as follows:
+`NO PAD` collations regard trailing spaces as normal characters. You can get a list of all of these by querying the [Information Schema COLLATIONS Table](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) as follows:
 
 
 ```
@@ -694,15 +694,15 @@ An accent insensitive collation is one where the accented and unaccented version
 
 
 * [MariaDB 10.10](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) added 184 UCA-14.0.0 collations. Unicode-14.0.0 was released in September 2021. They contain 939 [built-in contractions](https://www.unicode.org/Public/UCA/14.0.0/allkeys.txt). Old collations based on UCA-4.0.0 and UCA-5.2.0 did not support built-in contractions. This is a step towards better Unicode Collation Algorithm compliance. With built-in contractions, some languages (e.g. Thai) won't need specific collations and will just work with the default "root" collation.
-* [MariaDB 10.6.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) changed the `<code>utf8</code>` character set by default to be an alias for utf8mb3 rather than the other way around. It can be set to imply `<code>utf8mb4</code>` by changing the value of the [old_mode](../../../../server-management/variables-and-modes/old-mode.md) system variable.
-* [MariaDB 10.2.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md) added 88 `<code>NO PAD</code>` collations.
-* [MariaDB 10.1.15](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10115-release-notes.md) added the `<code>utf8_thai_520_w2</code>`, `<code>utf8mb4_thai_520_w2</code>`, `<code>ucs2_thai_520_w2</code>`, `<code>utf16_thai_520_w2</code>` and `<code>utf32_thai_520_w2</code>` collations.
-* [MariaDB 10.0.7](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes.md) added the `<code>utf8_myanmar_ci</code>`, `<code>ucs2_myanmar_ci</code>`, `<code>utf8mb4_myanmar_ci</code>`, `<code>utf16_myanmar_ci</code>` and `<code>utf32_myanmar_ci</code>` collations.
-* [MariaDB 10.0.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes.md) added the `<code>utf8_german2_ci</code>`, `<code>utf8mb4_german2_ci</code>`, `<code>ucs2_german2_ci</code>`, `<code>utf16_german2_ci</code>` and `<code>utf32_german2_ci</code>` collations.
+* [MariaDB 10.6.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) changed the `utf8` character set by default to be an alias for utf8mb3 rather than the other way around. It can be set to imply `utf8mb4` by changing the value of the [old_mode](../../../../server-management/variables-and-modes/old-mode.md) system variable.
+* [MariaDB 10.2.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md) added 88 `NO PAD` collations.
+* [MariaDB 10.1.15](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10115-release-notes.md) added the `utf8_thai_520_w2`, `utf8mb4_thai_520_w2`, `ucs2_thai_520_w2`, `utf16_thai_520_w2` and `utf32_thai_520_w2` collations.
+* [MariaDB 10.0.7](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes.md) added the `utf8_myanmar_ci`, `ucs2_myanmar_ci`, `utf8mb4_myanmar_ci`, `utf16_myanmar_ci` and `utf32_myanmar_ci` collations.
+* [MariaDB 10.0.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes.md) added the `utf8_german2_ci`, `utf8mb4_german2_ci`, `ucs2_german2_ci`, `utf16_german2_ci` and `utf32_german2_ci` collations.
 * [MariaDB 5.1.41](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/mariadb-5141-release-notes.md) added a Croatian collation patch from
 [Alexander Barkov](https://www.collation-charts.org/) to fix some problems with the
-Croatian character set and `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` queries. This patch added
-`<code class="highlight fixed" style="white-space:pre-wrap">utf8_croatian_ci</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">ucs2_croatian_ci</code>`
+Croatian character set and `LIKE` queries. This patch added
+`utf8_croatian_ci` and `ucs2_croatian_ci`
 collations to MariaDB.
 
 

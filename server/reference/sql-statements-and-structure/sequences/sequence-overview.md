@@ -154,7 +154,7 @@ SELECT SETVAL(s, 100);
 +----------------+
 ```
 
-`<code>SETVAL</code>` can only be used to increase the sequence value. Attempting to set a lower value will fail, returning NULL:
+`SETVAL` can only be used to increase the sequence value. Attempting to set a lower value will fail, returning NULL:
 
 
 ```
@@ -180,7 +180,7 @@ DROP SEQUENCE s;
 
 
 If one wants to use Sequences in a master-master setup or with Galera one
-should use `<code>INCREMENT=0</code>`. This will tell the Sequence to use [auto_increment_increment](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) and [auto_increment_offset](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) to generate unique values for each server.
+should use `INCREMENT=0`. This will tell the Sequence to use [auto_increment_increment](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) and [auto_increment_offset](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) to generate unique values for each server.
 
 
 ## Standards Compliance
@@ -189,7 +189,7 @@ should use `<code>INCREMENT=0</code>`. This will tell the Sequence to use [auto_
 MariaDB supports both ANSI SQL and Oracle syntax for sequences.
 
 
-However as `<code>SEQUENCE</code>` is implemented as a special kind of table, it uses the same namespace as tables. The benefits are that sequences show up in [SHOW TABLES](../sql-statements/administrative-sql-statements/show/show-tables.md), and one can also create a sequence with [CREATE TABLE](../vectors/create-table-with-vectors.md) and drop it with [DROP TABLE](../sql-statements/data-definition/drop/drop-tablespace.md). One can [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) from it as from any other table. This ensures that all old tools that work with tables should work with sequences.
+However as `SEQUENCE` is implemented as a special kind of table, it uses the same namespace as tables. The benefits are that sequences show up in [SHOW TABLES](../sql-statements/administrative-sql-statements/show/show-tables.md), and one can also create a sequence with [CREATE TABLE](../vectors/create-table-with-vectors.md) and drop it with [DROP TABLE](../sql-statements/data-definition/drop/drop-tablespace.md). One can [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) from it as from any other table. This ensures that all old tools that work with tables should work with sequences.
 
 
 Since sequence objects act as regular tables in many contexts, they will be affected by [LOCK TABLES](../sql-statements/transactions/lock-tables.md). This is not the case in other DBMS, such as Oracle, where LOCK TABLE does not affect sequences.
@@ -203,7 +203,7 @@ tools, such as [mariadb-dump](../../../clients-and-utilities/backup-restore-and-
 normal usage of sequence standard compatibly.
 
 
-To make this possible, `<code>sequence</code>` is currently implemented as a table with a few exclusive properties.
+To make this possible, `sequence` is currently implemented as a table with a few exclusive properties.
 
 
 The special properties for sequence tables are:
@@ -211,9 +211,9 @@ The special properties for sequence tables are:
 
 * A sequence table has always one row.
 * When one creates a sequence, either with [CREATE TABLE](../vectors/create-table-with-vectors.md) or [CREATE SEQUENCE](create-sequence.md), one row will be inserted.
-* If one tries to insert into a sequence table, the single row will be updated. This allows [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) to work but also gives the additional benefit that one can change all properties of a sequence with a single insert. New applications should of course also use `<code>ALTER SEQUENCE</code>`.
+* If one tries to insert into a sequence table, the single row will be updated. This allows [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) to work but also gives the additional benefit that one can change all properties of a sequence with a single insert. New applications should of course also use `ALTER SEQUENCE`.
 * [UPDATE](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [DELETE](../sql-statements/data-manipulation/changing-deleting-data/delete.md) can't be performed on Sequence objects.
-* Doing a select on the sequence shows the current state of the sequence, except the values that are reserved in the cache. The `<code>next_value</code>` column shows the next value not reserved by the cache.
+* Doing a select on the sequence shows the current state of the sequence, except the values that are reserved in the cache. The `next_value` column shows the next value not reserved by the cache.
 * [FLUSH TABLES](../sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) will close the sequence and the next sequence number generated will be according to what's stored in the Sequence object. In effect, this will discard the cached values.
 * A number of normal table operations work on Sequence tables. See next section.
 
@@ -221,7 +221,7 @@ The special properties for sequence tables are:
 ## Table Operations that Work with Sequences
 
 
-* [SHOW CREATE TABLE sequence_name](../sql-statements/administrative-sql-statements/show/show-create-table.md). This shows the table structure that is behind the `<code>SEQUENCE</code>` including the field names that can be used with [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) or even [CREATE TABLE](../vectors/create-table-with-vectors.md).
+* [SHOW CREATE TABLE sequence_name](../sql-statements/administrative-sql-statements/show/show-create-table.md). This shows the table structure that is behind the `SEQUENCE` including the field names that can be used with [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) or even [CREATE TABLE](../vectors/create-table-with-vectors.md).
 * [CREATE TABLE sequence-structure ... SEQUENCE=1](../vectors/create-table-with-vectors.md)
 * [ALTER TABLE sequence RENAME TO sequence2](../sql-statements/data-definition/alter/alter-tablespace.md)
 * [RENAME TABLE sequence_name TO new_sequence_name](../sql-statements/data-definition/rename-table.md)
@@ -281,7 +281,7 @@ next_not_cached_value: 1
 ```
 
 
-The `<code>cycle_count</code>` column is incremented every time the sequence wraps around.
+The `cycle_count` column is incremented every time the sequence wraps around.
 
 
 ## Credits

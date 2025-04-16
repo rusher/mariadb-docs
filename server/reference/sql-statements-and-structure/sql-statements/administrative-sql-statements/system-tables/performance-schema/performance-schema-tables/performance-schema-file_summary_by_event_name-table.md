@@ -1,7 +1,7 @@
 
 # Performance Schema file_summary_by_event_name Table
 
-The [Performance Schema](performance-schema-table_handles-table.md) `<code>file_summary_by_event_name</code>` table contains file events summarized by event name. It contains the following columns:
+The [Performance Schema](performance-schema-table_handles-table.md) `file_summary_by_event_name` table contains file events summarized by event name. It contains the following columns:
 
 
 

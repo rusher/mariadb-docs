@@ -11,7 +11,7 @@ COLUMN_JSON(dyncol_blob)
 ## Description
 
 
-Returns a JSON representation of data in `<code>dyncol_blob</code>`. Can also be used to display nested columns. See [dynamic columns](../../../../nosql/dynamic-columns-api.md) for more information.
+Returns a JSON representation of data in `dyncol_blob`. Can also be used to display nested columns. See [dynamic columns](../../../../nosql/dynamic-columns-api.md) for more information.
 
 
 ## Example
@@ -27,5 +27,5 @@ select item_name, COLUMN_JSON(dynamic_cols) from assets;
 +-----------------+----------------------------------------+
 ```
 
-Limitation: `<code>COLUMN_JSON</code>` will decode nested dynamic columns at a nesting level of not more than 10 levels deep. Dynamic columns that are nested deeper than 10 levels will be shown as BINARY string, without encoding.
+Limitation: `COLUMN_JSON` will decode nested dynamic columns at a nesting level of not more than 10 levels deep. Dynamic columns that are nested deeper than 10 levels will be shown as BINARY string, without encoding.
 

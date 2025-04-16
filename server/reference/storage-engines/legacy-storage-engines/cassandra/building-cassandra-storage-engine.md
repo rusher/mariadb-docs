@@ -35,9 +35,9 @@ The build process is as follows
 * Install the Thrift library (we used 0.8.0 and [0.9.0-trunk](https://dist.apache.org/repos/dist/release/thrift/0.9.0/thrift-0.9.0.tar.gz)), only the C++ backend is needed.
 
   * we have installed it by compiling the source tarball downloaded from [thrift.apache.org](https://thrift.apache.org/)
-* edit `<code>storage/cassandra/CMakeLists.txt</code>` and modify the `<code>INCLUDE_DIRECTORIES</code>` directive to point to Thrift's include directory.
-* `<code>export LIBS="-lthrift"</code>`, on another machine it was "-lthrift -ldl"
-* `<code>export LDFLAGS=-L/path/to/thrift/libs</code>`
+* edit `storage/cassandra/CMakeLists.txt` and modify the `INCLUDE_DIRECTORIES` directive to point to Thrift's include directory.
+* `export LIBS="-lthrift"`, on another machine it was "-lthrift -ldl"
+* `export LDFLAGS=-L/path/to/thrift/libs`
 * Build the server
 
   * we used BUILD/compile-pentium-max script (the name is for historic reasons. It will actually build an optimized amd64 binary)
@@ -56,7 +56,7 @@ There is a basic testsuite. In order to run it, one needs
 
 
 * Start Cassandra on localhost
-* Set PATH so that `<code>cqlsh</code>` and `<code>cassandra-cli</code>` binaries can be found
+* Set PATH so that `cqlsh` and `cassandra-cli` binaries can be found
 * From the build directory, run
 
 

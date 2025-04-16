@@ -93,7 +93,7 @@ git branch --all
 git checkout branch-name
 ```
 
-Note that if the output from `<code>git branch --all</code>` is `<code>remotes/origin/XXX</code>` you should just use `<code>XXX</code>` as branch name.
+Note that if the output from `git branch --all` is `remotes/origin/XXX` you should just use `XXX` as branch name.
 
 
 ### Making a Local Copy of a Branch (Like bzr clone)
@@ -135,7 +135,7 @@ git reset --hard origin/##branch-name##
 ### Other Things About Branches
 
 
-* Note: branches whose names start with `<code>bb-</code>` are automatically put into the buildbot.
+* Note: branches whose names start with `bb-` are automatically put into the buildbot.
 
 
 ## Equivalents For Some bzr Commands
@@ -144,25 +144,25 @@ git reset --hard origin/##branch-name##
 CAVEAT UTILITOR. Check the manual before running!
 
 
-* `<code>bzr status</code>` is `<code>git status</code>`
-* `<code>bzr diff</code>` is `<code>git diff</code>`
-* `<code>bzr log</code>` is `<code>git log</code>`
-* `<code>bzr revert</code>` is `<code>git reset --hard</code>`
-* `<code>bzr revert filename</code>` is `<code>git checkout filename</code>`
-* `<code>bzr parent</code>` is `<code>git remote -v</code>` (but there are more detailed commands)
-* `<code>bzr parent to-default-mariadb-repo </code>` git remote set-url origin git@github.com:MariaDB/server.git
-* `<code>bzr push</code>` is `<code>git push REMOTENAME BRANCHNAME</code>`. REMOTENAME is typically "origin", for example: `<code>git push origin HEAD:10.3-new-feature</code>`. The HEAD: stands for "from current branch".
-* `<code>bzr clean-tree --ignored</code>` is `<code>git clean -Xdf</code>` (note the capital X!)
-* `<code>bzr root</code>` is `<code>git rev-parse --show-toplevel</code>`
-* `<code>bzr missing --mine-only</code>` is `<code>git cherry -v origin</code>` (kind-of).
+* `bzr status` is `git status`
+* `bzr diff` is `git diff`
+* `bzr log` is `git log`
+* `bzr revert` is `git reset --hard`
+* `bzr revert filename` is `git checkout filename`
+* `bzr parent` is `git remote -v` (but there are more detailed commands)
+* `bzr parent to-default-mariadb-repo ` git remote set-url origin git@github.com:MariaDB/server.git
+* `bzr push` is `git push REMOTENAME BRANCHNAME`. REMOTENAME is typically "origin", for example: `git push origin HEAD:10.3-new-feature`. The HEAD: stands for "from current branch".
+* `bzr clean-tree --ignored` is `git clean -Xdf` (note the capital X!)
+* `bzr root` is `git rev-parse --show-toplevel`
+* `bzr missing --mine-only` is `git cherry -v origin` (kind-of).
 
 
 GUIs
 
 
-* `<code>bzr gcommit</code>` is `<code>git citool</code>`
-* `<code>bzr viz</code>` is `<code>gitk</code>`
-* `<code>bzr gannotate</code>` is `<code>git gui blame</code>`
+* `bzr gcommit` is `git citool`
+* `bzr viz` is `gitk`
+* `bzr gannotate` is `git gui blame`
 
 
 ## Commit Emails
@@ -181,12 +181,12 @@ A script and instructions on how to setup commit triggers in Git are here:
 If you add code on behalf of someone else, please attribute the code to the original author:
 
 
-* Run `<code>git citool</code>` and move changed files to staged.
-* Don't `<code>commit</code>`, abort instead
-* run `<code>git commit --author="Original author name <email_address>"</code>`
+* Run `git citool` and move changed files to staged.
+* Don't `commit`, abort instead
+* run `git commit --author="Original author name <email_address>"`
 
 
-The above is needed as `<code>git citool</code>` can't handle the `<code>--author</code>` option.
+The above is needed as `git citool` can't handle the `--author` option.
 
 
 ## Applying a Pull Request
@@ -230,7 +230,7 @@ git checkout @{-1}
 git ff @{-1}
 ```
 
-If you want to do small changes to the pull request, do it in a separate commit, after `<code>git rebase @{-1}</code>` above. If you want to do *big* changes to the pull request, perhaps you shouldn't merge it in the first place, but ask the contributor to fix it?
+If you want to do small changes to the pull request, do it in a separate commit, after `git rebase @{-1}` above. If you want to do *big* changes to the pull request, perhaps you shouldn't merge it in the first place, but ask the contributor to fix it?
 
 
 ## Examples
@@ -246,7 +246,7 @@ git show
 ### Applying New Code From Main Tree to a Branch
 
 
-You are working on a branch (`<code class="highlight fixed" style="white-space:pre-wrap">NEW_FEATURE</code>`) and would like to have into that branch all changes from the main branch (`<code class="highlight fixed" style="white-space:pre-wrap">10.1</code>`).
+You are working on a branch (`NEW_FEATURE`) and would like to have into that branch all changes from the main branch (`10.1`).
 
 
 ```

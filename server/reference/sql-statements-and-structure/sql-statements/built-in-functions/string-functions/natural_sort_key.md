@@ -17,7 +17,7 @@ NATURAL_SORT_KEY(str)
 ## Description
 
 
-The `<code>NATURAL_SORT_KEY</code>` function is used for sorting that is closer to natural sorting. Strings are sorted in alphabetical order, while numbers are treated in a way such that, for example, `<code>10</code>` is greater than `<code>2</code>`, whereas in other forms of sorting, `<code>2</code>` would be greater than `<code>10</code>`, just like `<code>z</code>` is greater than `<code>ya</code>`.
+The `NATURAL_SORT_KEY` function is used for sorting that is closer to natural sorting. Strings are sorted in alphabetical order, while numbers are treated in a way such that, for example, `10` is greater than `2`, whereas in other forms of sorting, `2` would be greater than `10`, just like `z` is greater than `ya`.
 
 
 There are multiple natural sort implementations, differing in the way they handle leading zeroes, fractions, i18n, negatives, decimals and so on.
@@ -26,7 +26,7 @@ There are multiple natural sort implementations, differing in the way they handl
 MariaDB's implementation ignores leading zeroes when performing the sort.
 
 
-You can use also use `<code>NATURAL_SORT_KEY</code>` with [generated columns](../../data-definition/create/generated-columns.md). The value is not stored permanently in the table. When using a generated column, the virtual column must be longer than the base column to cater for embedded numbers in the string and [MDEV-24582](https://jira.mariadb.org/browse/MDEV-24582).
+You can use also use `NATURAL_SORT_KEY` with [generated columns](../../data-definition/create/generated-columns.md). The value is not stored permanently in the table. When using a generated column, the virtual column must be longer than the base column to cater for embedded numbers in the string and [MDEV-24582](https://jira.mariadb.org/browse/MDEV-24582).
 
 
 ## Examples

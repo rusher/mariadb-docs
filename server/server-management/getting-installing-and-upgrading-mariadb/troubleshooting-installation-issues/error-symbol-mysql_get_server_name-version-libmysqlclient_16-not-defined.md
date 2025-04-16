@@ -12,13 +12,13 @@ symbol mysql_get_server_name, version libmysqlclient_16 not defined in file libm
 MariaDB with libmysqlclient.so from MySQL.
 
 
-The symbol `<code class="highlight fixed" style="white-space:pre-wrap">mysql_get_server_name()</code>` is something present in the MariaDB
+The symbol `mysql_get_server_name()` is something present in the MariaDB
 source tree and not in the MySQL tree.
 
 
 If you have both the MariaDB client package and the MySQL client packages
 installed this error will happen if your system finds the MySQL version of
-`<code class="highlight fixed" style="white-space:pre-wrap">libmysqlclient.so</code>` first.
+`libmysqlclient.so` first.
 
 
 To figure out which library is being linked in dynamically (ie, the
@@ -72,8 +72,8 @@ libmariadbclient16: /usr/lib/libmysqlclient.so.16
 ```
 
 The above shows that the mysql command-line client is using the library
- `<code class="highlight fixed" style="white-space:pre-wrap">/usr/lib/libmysqlclient.so.16</code>` and that that library is part of
-the `<code class="highlight fixed" style="white-space:pre-wrap">libmariadbclient16</code>` Ubuntu package. Unsurprisingly, the
+ `/usr/lib/libmysqlclient.so.16` and that that library is part of
+the `libmariadbclient16` Ubuntu package. Unsurprisingly, the
 mysql command-line client works perfectly on this system.
 
 

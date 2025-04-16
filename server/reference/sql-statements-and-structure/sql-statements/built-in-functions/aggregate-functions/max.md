@@ -12,10 +12,10 @@ MAX([DISTINCT] expr)
 ## Description
 
 
-Returns the largest, or maximum, value of *`<code>expr</code>`*. `<code>MAX()</code>` can also take a string
-argument in which case it returns the maximum string value. The `<code>DISTINCT</code>`
-keyword can be used to find the maximum of the distinct values of *`<code>expr</code>`*,
-however, this produces the same result as omitting `<code>DISTINCT</code>`.
+Returns the largest, or maximum, value of *`expr`*. `MAX()` can also take a string
+argument in which case it returns the maximum string value. The `DISTINCT`
+keyword can be used to find the maximum of the distinct values of *`expr`*,
+however, this produces the same result as omitting `DISTINCT`.
 
 
 Note that [SET](../../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) and [ENUM](../../../../data-types/string-data-types/enum.md) fields are currently compared by their string value rather than their relative position in the set, so MAX() may produce a different highest result than ORDER BY DESC.
@@ -27,7 +27,7 @@ It is an [aggregate function](../special-functions/window-functions/aggregate-fu
 MAX() can be used as a [window function](../special-functions/window-functions/window-functions-overview.md).
 
 
-`<code>MAX()</code>` returns `<code>NULL</code>` if there were no matching rows.
+`MAX()` returns `NULL` if there were no matching rows.
 
 
 From [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), not only ascending but also [descending indexes](../../../vectors/create-table-with-vectors.md#index-types) can be used to optimize MAX.

@@ -32,7 +32,7 @@ report at [Jira](https://jira.mariadb.org).
 ### Persistent connection statistics
 
 
-The output of `<code>show servers</code>` now shows the number of times a connection was
+The output of `show servers` now shows the number of times a connection was
 taken from a server's pool as well as the ratio of connections taken from the
 pool versus newly created connections.
 
@@ -63,7 +63,7 @@ it will now look like
 
 
 
-where `<code>4711</code>` is the session id.
+where `4711` is the session id.
 
 
 ## Bug fixes

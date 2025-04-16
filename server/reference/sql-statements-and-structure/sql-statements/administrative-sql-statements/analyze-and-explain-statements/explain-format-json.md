@@ -5,7 +5,7 @@
 ## Synopsis
 
 
-`<code>EXPLAIN FORMAT=JSON</code>` is a variant of [EXPLAIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) command that produces output in JSON form. The output always has one row which has only one column titled "`<code>JSON</code>`". The contents are a JSON representation of the query plan, formatted for readability:
+`EXPLAIN FORMAT=JSON` is a variant of [EXPLAIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) command that produces output in JSON form. The output always has one row which has only one column titled "`JSON`". The contents are a JSON representation of the query plan, formatted for readability:
 
 
 ```
@@ -31,11 +31,11 @@ EXPLAIN: {
 ## Output is different from MySQL
 
 
-The output of MariaDB's `<code>EXPLAIN FORMAT=JSON</code>` is different from `<code>EXPLAIN FORMAT=JSON</code>` in MySQL.The reasons for that are:
+The output of MariaDB's `EXPLAIN FORMAT=JSON` is different from `EXPLAIN FORMAT=JSON` in MySQL.The reasons for that are:
 
 
 * MySQL's output has deficiencies. Some are listed here: [EXPLAIN FORMAT=JSON in MySQL](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md)
-* The output of MySQL's `<code>EXPLAIN FORMAT=JSON</code>` is not defined. Even MySQL Workbench has trouble parsing it (see this [blog post](https://s.petrunia.net/blog/?p=93)).
+* The output of MySQL's `EXPLAIN FORMAT=JSON` is not defined. Even MySQL Workbench has trouble parsing it (see this [blog post](https://s.petrunia.net/blog/?p=93)).
 * MariaDB has query optimizations that MySQL does not have. Ergo, MariaDB generates query plans that MySQL does not generate.
 
 
@@ -51,5 +51,5 @@ TODO: MariaDB's output format description.
 ## See Also
 
 
-* [ANALYZE FORMAT=JSON](analyze-formatjson-examples.md) produces output like `<code>EXPLAIN FORMAT=JSON</code>`, but amended with the data from query execution.
+* [ANALYZE FORMAT=JSON](analyze-formatjson-examples.md) produces output like `EXPLAIN FORMAT=JSON`, but amended with the data from query execution.
 

@@ -11,10 +11,10 @@
 Before we set up replication, we need to ensure that the clusters are configured properly. This involves the following steps:
 
 
-* Set `<code>[log_slave_updates=ON](../../standard-replication/replication-and-binary-log-system-variables.md#log_slave_updates)</code>` on all nodes in both clusters. See [Configuring MariaDB Galera Cluster: Writing Replicated Write Sets to the Binary Log](../configuring-mariadb-galera-cluster.md#writing-replicated-write-sets-to-the-binary-log) and [Using MariaDB Replication with MariaDB Galera Cluster: Configuring a Cluster Node as a Replication Master](using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica.md#configuring-a-cluster-node-as-a-replication-master) for more information on why this is important. This is also needed to [enable wsrep GTID mode](using-mariadb-gtids-with-mariadb-galera-cluster.md#enabling-wsrep-gtid-mode).
+* Set `[log_slave_updates=ON](../../standard-replication/replication-and-binary-log-system-variables.md#log_slave_updates)` on all nodes in both clusters. See [Configuring MariaDB Galera Cluster: Writing Replicated Write Sets to the Binary Log](../configuring-mariadb-galera-cluster.md#writing-replicated-write-sets-to-the-binary-log) and [Using MariaDB Replication with MariaDB Galera Cluster: Configuring a Cluster Node as a Replication Master](using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica.md#configuring-a-cluster-node-as-a-replication-master) for more information on why this is important. This is also needed to [enable wsrep GTID mode](using-mariadb-gtids-with-mariadb-galera-cluster.md#enabling-wsrep-gtid-mode).
 
 
-* Set `<code>[server_id](../../standard-replication/replication-and-binary-log-system-variables.md#server_id)</code>` to the same value on all nodes in a given cluster, but be sure to use a different value in each cluster. See [Using MariaDB Replication with MariaDB Galera Cluster: Setting server_id on Cluster Nodes](using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica.md#setting-server_id-on-cluster-nodes) for more information on what this means.
+* Set `[server_id](../../standard-replication/replication-and-binary-log-system-variables.md#server_id)` to the same value on all nodes in a given cluster, but be sure to use a different value in each cluster. See [Using MariaDB Replication with MariaDB Galera Cluster: Setting server_id on Cluster Nodes](using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica.md#setting-server_id-on-cluster-nodes) for more information on what this means.
 
 
 ### Configuring Wsrep GTID Mode
@@ -23,22 +23,22 @@ Before we set up replication, we need to ensure that the clusters are configured
 If you want to use [GTID](../../standard-replication/gtid.md) replication, then you also need to configure some things to [enable wsrep GTID mode](using-mariadb-gtids-with-mariadb-galera-cluster.md#enabling-wsrep-gtid-mode). For example:
 
 
-* `<code>[wsrep_gtid_mode=ON](../galera-cluster-system-variables.md#wsrep_gtid_mode)</code>` needs to be set on all nodes in each cluster.
+* `[wsrep_gtid_mode=ON](../galera-cluster-system-variables.md#wsrep_gtid_mode)` needs to be set on all nodes in each cluster.
 
 
-* `<code>[wsrep_gtid_domain_id](../galera-cluster-system-variables.md#wsrep_gtid_domain_id)</code>` needs to be set to the same value on all nodes in a given cluster, so that each cluster node uses the same domain when assigning [GTIDs](../../standard-replication/gtid.md) for Galera Cluster's write sets. Each cluster should have this set to a different value, so that each cluster uses different domains when assigning [GTIDs](../../standard-replication/gtid.md) for their write sets.
+* `[wsrep_gtid_domain_id](../galera-cluster-system-variables.md#wsrep_gtid_domain_id)` needs to be set to the same value on all nodes in a given cluster, so that each cluster node uses the same domain when assigning [GTIDs](../../standard-replication/gtid.md) for Galera Cluster's write sets. Each cluster should have this set to a different value, so that each cluster uses different domains when assigning [GTIDs](../../standard-replication/gtid.md) for their write sets.
 
 
-* `<code>[log_slave_updates](../../standard-replication/replication-and-binary-log-system-variables.md#log_slave_updates)</code>` needs to be enabled on all nodes in the cluster. See [MDEV-9855](https://jira.mariadb.org/browse/MDEV-9855) about that.
+* `[log_slave_updates](../../standard-replication/replication-and-binary-log-system-variables.md#log_slave_updates)` needs to be enabled on all nodes in the cluster. See [MDEV-9855](https://jira.mariadb.org/browse/MDEV-9855) about that.
 
 
-* `<code>[log_bin](../../standard-replication/replication-and-binary-log-system-variables.md)</code>` needs to be set to the same path on all nodes in the cluster. See [MDEV-9856](https://jira.mariadb.org/browse/MDEV-9856) about that.
+* `[log_bin](../../standard-replication/replication-and-binary-log-system-variables.md)` needs to be set to the same path on all nodes in the cluster. See [MDEV-9856](https://jira.mariadb.org/browse/MDEV-9856) about that.
 
 
 And as an extra safety measure:
 
 
-* `<code>[gtid_domain_id](../../standard-replication/gtid.md#gtid_domain_id)</code>` should be set to a different value on all nodes in a given cluster, and each of these values should be different than the configured `<code>[wsrep_gtid_domain_id](../galera-cluster-system-variables.md#wsrep_gtid_domain_id)</code>` value. This is to prevent a node from using the same domain used for Galera Cluster's write sets when assigning [GTIDs](../../standard-replication/gtid.md) for non-Galera transactions, such as DDL executed with `<code>[wsrep_sst_method=RSU](../galera-cluster-system-variables.md#wsrep_sst_method)</code>` set or DML executed with `<code>[wsrep_on=OFF](../galera-cluster-system-variables.md#wsrep_on)</code>` set.
+* `[gtid_domain_id](../../standard-replication/gtid.md#gtid_domain_id)` should be set to a different value on all nodes in a given cluster, and each of these values should be different than the configured `[wsrep_gtid_domain_id](../galera-cluster-system-variables.md#wsrep_gtid_domain_id)` value. This is to prevent a node from using the same domain used for Galera Cluster's write sets when assigning [GTIDs](../../standard-replication/gtid.md) for non-Galera transactions, such as DDL executed with `[wsrep_sst_method=RSU](../galera-cluster-system-variables.md#wsrep_sst_method)` set or DML executed with `[wsrep_on=OFF](../galera-cluster-system-variables.md#wsrep_on)` set.
 
 
 ## Setting up Replication
@@ -146,7 +146,7 @@ Regardless of the coordinates you use, you will have to set up the primary conne
 #### GTIDs
 
 
-If you want to use GTIDs, then you will have to first set [gtid_slave_pos](../../standard-replication/gtid.md#gtid_slave_pos) to the [GTID](../../standard-replication/gtid.md) coordinates that we pulled from the [xtrabackup_binlog_info](../../../../server-management/backing-up-and-restoring-databases/mariabackup/files-created-by-mariabackup.md#xtrabackup_binlog_info) file, and we would set `<code>MASTER_USE_GTID=slave_pos</code>` in the [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command. For example:
+If you want to use GTIDs, then you will have to first set [gtid_slave_pos](../../standard-replication/gtid.md#gtid_slave_pos) to the [GTID](../../standard-replication/gtid.md) coordinates that we pulled from the [xtrabackup_binlog_info](../../../../server-management/backing-up-and-restoring-databases/mariabackup/files-created-by-mariabackup.md#xtrabackup_binlog_info) file, and we would set `MASTER_USE_GTID=slave_pos` in the [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command. For example:
 
 
 ```
@@ -163,7 +163,7 @@ START SLAVE;
 #### File and Position
 
 
-If you want to use the [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position coordinates, then you would set `<code>MASTER_LOG_FILE</code>` and `<code>MASTER_LOG_POS</code>` in the [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command to the file and position coordinates that we pulled the [xtrabackup_binlog_info](../../../../server-management/backing-up-and-restoring-databases/mariabackup/files-created-by-mariabackup.md#xtrabackup_binlog_info) file. For example:
+If you want to use the [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position coordinates, then you would set `MASTER_LOG_FILE` and `MASTER_LOG_POS` in the [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command to the file and position coordinates that we pulled the [xtrabackup_binlog_info](../../../../server-management/backing-up-and-restoring-databases/mariabackup/files-created-by-mariabackup.md#xtrabackup_binlog_info) file. For example:
 
 
 ```
@@ -225,7 +225,7 @@ Regardless, you need to ensure that the second cluster is not accepting any writ
 #### GTIDs
 
 
-To get the GTID coordinates on the second cluster, you can check `<code>[gtid_current_pos](../../standard-replication/gtid.md#gtid_current_pos)</code>` by executing:
+To get the GTID coordinates on the second cluster, you can check `[gtid_current_pos](../../standard-replication/gtid.md#gtid_current_pos)` by executing:
 
 
 ```
@@ -256,7 +256,7 @@ To get the [binary log](../../../../reference/storage-engines/innodb/binary-log-
 SHOW MASTER STATUS
 ```
 
-Then on the first cluster, you would set `<code>master_log_file</code>` and `<code>master_log_pos</code>` in the [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command. For example:
+Then on the first cluster, you would set `master_log_file` and `master_log_pos` in the [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command. For example:
 
 
 ```

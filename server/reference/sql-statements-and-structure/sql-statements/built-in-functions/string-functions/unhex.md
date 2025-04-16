@@ -17,7 +17,7 @@ converts it to the character represented by the number. The resulting
 characters are returned as a binary string.
 
 
-If `<code>str</code>` is `<code>NULL</code>`, `<code>UNHEX()</code>` returns `<code>NULL</code>`.
+If `str` is `NULL`, `UNHEX()` returns `NULL`.
 
 
 ## Examples

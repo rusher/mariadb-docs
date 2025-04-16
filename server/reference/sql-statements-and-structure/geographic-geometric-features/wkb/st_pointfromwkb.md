@@ -15,7 +15,7 @@ PointFromWKB(wkb[,srid])
 Constructs a [POINT](../geometry-constructors/point.md) value using its [WKB](well-known-binary-wkb-format.md) representation and [SRID](../geometry-properties/st_srid.md).
 
 
-`<code>ST_PointFromWKB()</code>` and `<code>PointFromWKB()</code>` are synonyms.
+`ST_PointFromWKB()` and `PointFromWKB()` are synonyms.
 
 
 ## Examples

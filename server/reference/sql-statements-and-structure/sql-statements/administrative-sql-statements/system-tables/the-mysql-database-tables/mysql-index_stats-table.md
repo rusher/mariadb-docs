@@ -1,7 +1,7 @@
 
 # mysql.index_stats Table
 
-The `<code>mysql.index_stats</code>` table is one of three tables storing data used for [Engine-independent table statistics](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md). The others are [mysql.column_stats](mysql-column_stats-table.md) and [mysql.table_stats](mysql-table_stats-table.md).
+The `mysql.index_stats` table is one of three tables storing data used for [Engine-independent table statistics](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md). The others are [mysql.column_stats](mysql-column_stats-table.md) and [mysql.table_stats](mysql-table_stats-table.md).
 
 
 It is populated when the [ANALYZE TABLE](../../../table-statements/analyze-table.md) statement is run, although not by default. See [Collecting Statistics with the ANALYZE TABLE Statement](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md#collecting-statistics-with-the-analyze-table-statement) for details.
@@ -13,7 +13,7 @@ It is possible to manually update the table and, unlike most system tables, ther
 This table uses the [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine.
 
 
-The `<code>mysql.index_stats</code>` table contains the following fields:
+The `mysql.index_stats` table contains the following fields:
 
 
 

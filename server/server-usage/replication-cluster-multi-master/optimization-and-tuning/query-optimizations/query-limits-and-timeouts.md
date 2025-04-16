@@ -32,7 +32,7 @@ Stops the query after 'rows_limit' number of rows have been examined.
 
 
 If the [sql_safe_updates](../system-variables/server-system-variables.md#sql_safe_updates) variable is set, one can't execute an [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)
-statement unless one specifies a key constraint in the `<code class="fixed" style="white-space:pre-wrap">WHERE</code>` clause or provide a `<code class="fixed" style="white-space:pre-wrap">LIMIT</code>` clause (or both).
+statement unless one specifies a key constraint in the `WHERE` clause or provide a `LIMIT` clause (or both).
 
 
 ```
@@ -45,7 +45,7 @@ UPDATE tbl_name SET not_key_column=val;
 ## sql_select_limit
 
 
-[sql_select_limit](../system-variables/server-system-variables.md#sql_select_limit) acts as an automatic `<code class="fixed" style="white-space:pre-wrap">LIMIT row_count</code>` to any [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) query.
+[sql_select_limit](../system-variables/server-system-variables.md#sql_select_limit) acts as an automatic `LIMIT row_count` to any [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) query.
 
 
 ```
@@ -63,9 +63,9 @@ SELECT * from big_table LIMIT 1000;
 ## max_join_size
 
 
-If the [max_join_size](../system-variables/server-system-variables.md#max_join_size) variable (also called `<code>sql_max_join_size</code>`) is set, then it will limit
+If the [max_join_size](../system-variables/server-system-variables.md#max_join_size) variable (also called `sql_max_join_size`) is set, then it will limit
 any SELECT statements that probably need to examine more than 
-`<code class="fixed" style="white-space:pre-wrap">MAX_JOIN_SIZE</code>` rows.
+`MAX_JOIN_SIZE` rows.
 
 
 ```
@@ -78,7 +78,7 @@ SELECT count(null_column) from big_table;
 ## max_statement_time
 
 
-If the [max_statement_time](../system-variables/server-system-variables.md#max_statement_time) variable is set, any query (excluding stored procedures) taking longer than the value of `<code>max_statement_time</code>` (specified in seconds) to execute will be aborted. This can be set globally, by session, as well as per user and per query. See [Aborting statements that take longer than a certain time to execute](aborting-statements.md).
+If the [max_statement_time](../system-variables/server-system-variables.md#max_statement_time) variable is set, any query (excluding stored procedures) taking longer than the value of `max_statement_time` (specified in seconds) to execute will be aborted. This can be set globally, by session, as well as per user and per query. See [Aborting statements that take longer than a certain time to execute](aborting-statements.md).
 
 
 ## See Also

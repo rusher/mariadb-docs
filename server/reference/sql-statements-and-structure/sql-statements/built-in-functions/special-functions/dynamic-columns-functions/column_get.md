@@ -12,16 +12,16 @@ COLUMN_GET(dyncol_blob, column_name as type);
 ## Description
 
 
-Gets the value of a [dynamic column](../../../../nosql/dynamic-columns-api.md) by its name. If no column with the given name exists, `<code>NULL</code>` will be returned.
+Gets the value of a [dynamic column](../../../../nosql/dynamic-columns-api.md) by its name. If no column with the given name exists, `NULL` will be returned.
 
 
-**`<code>column_name as type</code>`** requires that one specify the datatype of the dynamic column they are reading.
+**`column_name as type`** requires that one specify the datatype of the dynamic column they are reading.
 
 
 This may seem counter-intuitive: why would one need to specify which datatype they're retrieving? Can't the dynamic columns system figure the datatype from the data being stored?
 
 
-The answer is: SQL is a statically-typed language. The SQL interpreter needs to know the datatypes of all expressions before the query is run (for example, when one is using prepared statements and runs `<code>"select COLUMN_GET(...)"</code>`, the prepared statement API requires the server to inform the client about the datatype of the column being read before the query is executed and the server can see what datatype the column actually has).
+The answer is: SQL is a statically-typed language. The SQL interpreter needs to know the datatypes of all expressions before the query is run (for example, when one is using prepared statements and runs `"select COLUMN_GET(...)"`, the prepared statement API requires the server to inform the client about the datatype of the column being read before the query is executed and the server can see what datatype the column actually has).
 
 
 ### Lengths
@@ -34,7 +34,7 @@ If you're running queries like:
 SELECT COLUMN_GET(blob, 'colname' as CHAR) ...
 ```
 
-without specifying a maximum length (i.e. using `<code>as CHAR</code>`, not `<code>as CHAR(n)</code>`), MariaDB will report the maximum length of the resultset column to be 16,777,216. This may cause excessive memory usage in some client libraries, because they try to pre-allocate a buffer of maximum resultset width. To avoid this problem, use CHAR(n) whenever you're using COLUMN_GET in the select list.
+without specifying a maximum length (i.e. using `as CHAR`, not `as CHAR(n)`), MariaDB will report the maximum length of the resultset column to be 16,777,216. This may cause excessive memory usage in some client libraries, because they try to pre-allocate a buffer of maximum resultset width. To avoid this problem, use CHAR(n) whenever you're using COLUMN_GET in the select list.
 
 
 See [Dynamic Columns:Datatypes](../../../../nosql/dynamic-columns-api.md#datatypes) for more information about datatypes.

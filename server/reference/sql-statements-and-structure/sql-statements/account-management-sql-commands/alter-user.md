@@ -54,10 +54,10 @@ lock_option:
 ## Description
 
 
-The `<code>ALTER USER</code>` statement modifies existing MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#global-privileges) privilege or the [UPDATE](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. The global [SUPER](grant.md#global-privileges) privilege is also required if the [read_only](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_only) system variable is enabled.
+The `ALTER USER` statement modifies existing MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#global-privileges) privilege or the [UPDATE](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. The global [SUPER](grant.md#global-privileges) privilege is also required if the [read_only](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_only) system variable is enabled.
 
 
-If any of the specified user accounts do not yet exist, an error results. If an error occurs, `<code>ALTER USER</code>` will still modify the accounts that do not result in an error. Only one error is produced for all users which have not been modified.
+If any of the specified user accounts do not yet exist, an error results. If an error occurs, `ALTER USER` will still modify the accounts that do not result in an error. Only one error is produced for all users which have not been modified.
 
 
 For renaming an existing account (user name and/or host), see [RENAME USER](rename-user.md).
@@ -66,16 +66,16 @@ For renaming an existing account (user name and/or host), see [RENAME USER](rena
 ## IF EXISTS
 
 
-When the `<code>IF EXISTS</code>` clause is used, MariaDB will return a warning instead of an error for each specified user that does not exist.
+When the `IF EXISTS` clause is used, MariaDB will return a warning instead of an error for each specified user that does not exist.
 
 
 ## Account Names
 
 
-For `<code>ALTER USER</code>` statements, account names are specified as the `<code>username</code>` argument in the same way as they are for [CREATE USER](create-user.md) statements. See [account names](create-user.md#account-names) from the `<code>CREATE USER</code>` page for details on how account names are specified.
+For `ALTER USER` statements, account names are specified as the `username` argument in the same way as they are for [CREATE USER](create-user.md) statements. See [account names](create-user.md#account-names) from the `CREATE USER` page for details on how account names are specified.
 
 
-[CURRENT_USER](../built-in-functions/secondary-functions/information-functions/current_user.md) or `<code>CURRENT_USER()</code>` can also be used to alter the account logged into the current session. For example, to change the current user's password to `<code>mariadb</code>`:
+[CURRENT_USER](../built-in-functions/secondary-functions/information-functions/current_user.md) or `CURRENT_USER()` can also be used to alter the account logged into the current session. For example, to change the current user's password to `mariadb`:
 
 
 ```
@@ -88,7 +88,7 @@ ALTER USER CURRENT_USER() IDENTIFIED BY 'mariadb';
 From [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), it is possible to use more than one authentication plugin for each user account. For example, this can be useful to slowly migrate users to the more secure ed25519 authentication plugin over time, while allowing the old mysql_native_password authentication plugin as an alternative for the transitional period. See [Authentication from MariaDB 10.4](../../../../security/user-account-management/authentication-from-mariadb-10-4.md) for more.
 
 
-When running `<code>ALTER USER</code>`, not specifying an authentication option in the IDENTIFIED VIA clause will remove that authentication method. (However this was not the case before [MariaDB 10.4.13](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md), see [MDEV-21928](https://jira.mariadb.org/browse/MDEV-21928))
+When running `ALTER USER`, not specifying an authentication option in the IDENTIFIED VIA clause will remove that authentication method. (However this was not the case before [MariaDB 10.4.13](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md), see [MDEV-21928](https://jira.mariadb.org/browse/MDEV-21928))
 
 
 For example, a user is created with the ability to authenticate via both a password and unix_socket:
@@ -107,7 +107,7 @@ CREATE USER for bob@localhost: CREATE USER `bob`@`localhost`
   OR unix_socket
 ```
 
-If the user's password is updated, but unix_socket authentication is not specified in the `<code>IDENTIFIED VIA</code>` clause, unix_socket authentication will no longer be permitted.
+If the user's password is updated, but unix_socket authentication is not specified in the `IDENTIFIED VIA` clause, unix_socket authentication will no longer be permitted.
 
 
 ```
@@ -123,17 +123,17 @@ CREATE USER for bob@localhost: CREATE USER `bob`@`localhost`
 ### IDENTIFIED BY 'password'
 
 
-The optional `<code>IDENTIFIED BY</code>` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function prior to being stored to the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table.
+The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function prior to being stored to the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table.
 
 
-For example, if our password is `<code>mariadb</code>`, then we can set the account's password with:
+For example, if our password is `mariadb`, then we can set the account's password with:
 
 
 ```
 ALTER USER foo2@test IDENTIFIED BY 'mariadb';
 ```
 
-If you do not specify a password with the `<code>IDENTIFIED BY</code>` clause, the user
+If you do not specify a password with the `IDENTIFIED BY` clause, the user
 will be able to connect without a password. A blank password is not a wildcard
 to match any password. The user must connect without providing a password if no
 password is set.
@@ -145,10 +145,10 @@ The only [authentication plugins](../../../plugins/authentication-plugins/README
 ### IDENTIFIED BY PASSWORD 'password_hash'
 
 
-The optional `<code>IDENTIFIED BY PASSWORD</code>` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md)#function. It will be stored to the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table as-is.
+The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md)#function. It will be stored to the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table as-is.
 
 
-For example, if our password is `<code>mariadb</code>`, then we can find the hash with:
+For example, if our password is `mariadb`, then we can find the hash with:
 
 
 ```
@@ -168,7 +168,7 @@ ALTER USER foo2@test
   IDENTIFIED BY PASSWORD '*54958E764CE10E50764C2EECBB71D01F08549980';
 ```
 
-If you do not specify a password with the `<code>IDENTIFIED BY</code>` clause, the user
+If you do not specify a password with the `IDENTIFIED BY` clause, the user
 will be able to connect without a password. A blank password is not a wildcard
 to match any password. The user must connect without providing a password if no
 password is set.
@@ -180,7 +180,7 @@ The only [authentication plugins](../../../plugins/authentication-plugins/README
 ### IDENTIFIED {VIA|WITH} authentication_plugin
 
 
-The optional `<code>IDENTIFIED VIA authentication_plugin</code>` allows you to specify that the account should be authenticated by a specific [authentication plugin](../../../plugins/authentication-plugins/README.md). The plugin name must be an active authentication plugin as per [SHOW PLUGINS](../administrative-sql-statements/show/show-plugins-soname.md). If it doesn't show up in that output, then you will need to install it with [INSTALL PLUGIN](../administrative-sql-statements/plugin-sql-statements/install-plugin.md) or [INSTALL SONAME](../administrative-sql-statements/plugin-sql-statements/install-soname.md).
+The optional `IDENTIFIED VIA authentication_plugin` allows you to specify that the account should be authenticated by a specific [authentication plugin](../../../plugins/authentication-plugins/README.md). The plugin name must be an active authentication plugin as per [SHOW PLUGINS](../administrative-sql-statements/show/show-plugins-soname.md). If it doesn't show up in that output, then you will need to install it with [INSTALL PLUGIN](../administrative-sql-statements/plugin-sql-statements/install-plugin.md) or [INSTALL SONAME](../administrative-sql-statements/plugin-sql-statements/install-soname.md).
 
 
 For example, this could be used with the [PAM authentication plugin](../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md):
@@ -190,7 +190,7 @@ For example, this could be used with the [PAM authentication plugin](../../../pl
 ALTER USER foo2@test IDENTIFIED VIA pam;
 ```
 
-Some authentication plugins allow additional arguments to be specified after a `<code>USING</code>` or `<code>AS</code>` keyword. For example, the [PAM authentication plugin](../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) accepts a [service name](../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#configuring-the-pam-service):
+Some authentication plugins allow additional arguments to be specified after a `USING` or `AS` keyword. For example, the [PAM authentication plugin](../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) accepts a [service name](../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#configuring-the-pam-service):
 
 
 ```
@@ -200,7 +200,7 @@ ALTER USER foo2@test IDENTIFIED VIA pam USING 'mariadb';
 The exact meaning of the additional argument would depend on the specific authentication plugin.
 
 
-From [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), the `<code>USING</code>` or `<code>AS</code>` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. This is only valid for [authentication plugins](../../../plugins/authentication-plugins/README.md) that have implemented a hook for the [PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. For example, the [ed25519](../../../plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin supports this:
+From [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), the `USING` or `AS` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. This is only valid for [authentication plugins](../../../plugins/authentication-plugins/README.md) that have implemented a hook for the [PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. For example, the [ed25519](../../../plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin supports this:
 
 
 ```
@@ -235,7 +235,7 @@ You can set certain TLS-related restrictions for specific user accounts. For ins
 
 
 
-The `<code>REQUIRE</code>` keyword must be used only once for all specified options, and the `<code>AND</code>` keyword can be used to separate individual options, but it is not required.
+The `REQUIRE` keyword must be used only once for all specified options, and the `AND` keyword can be used to separate individual options, but it is not required.
 
 
 For example, you can alter a user account to require these TLS options with the following:
@@ -272,7 +272,7 @@ It is possible to set per-account limits for certain server resources. The follo
 
 
 
-If any of these limits are set to `<code>0</code>`, then there is no limit for that resource for that user.
+If any of these limits are set to `0`, then there is no limit for that resource for that user.
 
 
 Here is an example showing how to set an account's resource limits:
@@ -284,13 +284,13 @@ ALTER USER 'someone'@'localhost' WITH
     MAX_QUERIES_PER_HOUR 200;
 ```
 
-The resources are tracked per account, which means `<code>'user'@'server'</code>`; not per user name or per connection.
+The resources are tracked per account, which means `'user'@'server'`; not per user name or per connection.
 
 
 The count can be reset for all users using [FLUSH USER_RESOURCES](../administrative-sql-statements/flush-commands/flush-tables-for-export.md), [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush-tables-for-export.md) or [mysqladmin reload](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqladmin.md).
 
 
-Per account resource limits are stored in the [user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, in the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. Columns used for resources limits are named `<code>max_questions</code>`, `<code>max_updates</code>`, `<code>max_connections</code>` (for `<code>MAX_CONNECTIONS_PER_HOUR</code>`), and `<code>max_user_connections</code>` (for `<code>MAX_USER_CONNECTIONS</code>`).
+Per account resource limits are stored in the [user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, in the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
 
 
 ## Password Expiry

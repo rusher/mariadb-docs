@@ -21,7 +21,7 @@ MyRocks (actually RocksDB) uses LSM files which are written once and never updat
 For performance reasons, statistics are computed based on a fraction of rows in the LSM file. The percentage of rows used is controlled by [rocksdb_table_stats_sampling_pct](myrocks-system-variables.md#rocksdb_table_stats_sampling_pct); the default value is 10%.
 
 
-Before the data is dumped into LSM file, it is stored in the MemTable. MemTable doesn't allow computing index cardinalities, but it can provide an approximate number of rows in the table. Use of MemTable data for statistics is controlled by [rocksdb_force_compute_memtable_stats](myrocks-system-variables.md#rocksdb_force_compute_memtable_stats); the default value is `<code>ON</code>`.
+Before the data is dumped into LSM file, it is stored in the MemTable. MemTable doesn't allow computing index cardinalities, but it can provide an approximate number of rows in the table. Use of MemTable data for statistics is controlled by [rocksdb_force_compute_memtable_stats](myrocks-system-variables.md#rocksdb_force_compute_memtable_stats); the default value is `ON`.
 
 
 ### Are index statistics predictable?

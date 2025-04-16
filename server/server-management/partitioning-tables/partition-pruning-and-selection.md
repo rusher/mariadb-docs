@@ -4,7 +4,7 @@
 When a WHERE clause is related to the partitioning expression, the optimizer knows which partitions are relevant for the query. Other partitions will not be read. This optimization is called *partition pruning*.
 
 
-[EXPLAIN PARTITIONS](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) can be used to know which partitions will be read for a given query. A column called `<code>partitions</code>` will contain a comma-separated list of the accessed partitions. For example:
+[EXPLAIN PARTITIONS](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) can be used to know which partitions will be read for a given query. A column called `partitions` will contain a comma-separated list of the accessed partitions. For example:
 
 
 ```
@@ -40,5 +40,5 @@ The PARTITION clause is supported for all DML statements:
 In general, partition pruning is applied to statements contained in [triggers](../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md).
 
 
-However, note that if a `<code>BEFORE INSERT</code>` or `<code>BEFORE UPDATE</code>` trigger is defined on a table, MariaDB doesn't know in advance if the columns used in the partitioning expression will be changed. For this reason, it is forced to lock all partitions.
+However, note that if a `BEFORE INSERT` or `BEFORE UPDATE` trigger is defined on a table, MariaDB doesn't know in advance if the columns used in the partitioning expression will be changed. For this reason, it is forced to lock all partitions.
 

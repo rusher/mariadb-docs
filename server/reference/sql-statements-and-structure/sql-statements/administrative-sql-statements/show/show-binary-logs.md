@@ -13,7 +13,7 @@ SHOW MASTER LOGS
 
 
 Lists the [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) files on the server. This statement is used as part of the
-procedure described in `<code>[PURGE BINARY LOGS](../purge-binary-logs.md)</code>`, that shows how to
+procedure described in `[PURGE BINARY LOGS](../purge-binary-logs.md)`, that shows how to
 determine which logs can be purged.
 
 

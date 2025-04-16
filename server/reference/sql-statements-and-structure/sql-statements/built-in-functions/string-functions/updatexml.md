@@ -12,11 +12,11 @@ UpdateXML(xml_target, xpath_expr, new_xml)
 
 
 This function replaces a single portion of a given fragment of XML markup
-`<code>xml_target</code>` with a new XML fragment `<code>new_xml</code>`, and then returns the
-changed XML. The portion of `<code>xml_target</code>` that is replaced matches an XPath
-expression `<code>xpath_expr</code>` supplied by the user. If no expression matching
-`<code>xpath_expr</code>` is found, or if multiple matches are found, the function returns
-the original `<code>xml_target</code>` XML fragment. All three arguments should be
+`xml_target` with a new XML fragment `new_xml`, and then returns the
+changed XML. The portion of `xml_target` that is replaced matches an XPath
+expression `xpath_expr` supplied by the user. If no expression matching
+`xpath_expr` is found, or if multiple matches are found, the function returns
+the original `xml_target` XML fragment. All three arguments should be
 strings.
 
 

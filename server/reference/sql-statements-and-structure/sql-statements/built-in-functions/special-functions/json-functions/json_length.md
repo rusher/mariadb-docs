@@ -17,7 +17,7 @@ Returns the length of a JSON document, or, if the optional path argument is give
 Returns NULL if any of the arguments argument are null or the path argument does not identify a value in the document.
 
 
-An error will occur if the JSON document is invalid, the path is invalid or if the path contains a `<code>*</code>` or `<code>**</code>` wildcard.
+An error will occur if the JSON document is invalid, the path is invalid or if the path contains a `*` or `**` wildcard.
 
 
 Length will be determined as follow:

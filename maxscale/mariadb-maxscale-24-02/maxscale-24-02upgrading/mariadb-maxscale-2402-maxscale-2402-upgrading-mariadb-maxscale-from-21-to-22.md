@@ -21,7 +21,7 @@ file.
 
 The file format for the administrative users used by MaxScale has been
 changed. Old style files are automatically upgraded and a backup of the old file is
-stored in `<code>/var/lib/maxscale/passwd.backup</code>`.
+stored in `/var/lib/maxscale/passwd.backup`.
 
 
 ### Regular Expression Parameters
@@ -30,7 +30,7 @@ stored in `<code>/var/lib/maxscale/passwd.backup</code>`.
 Modules may now use a built-in regular expression string parameter type instead
 of a normal string when accepting patterns. The modules that use the new regex
 parameter type are *qlafilter* and *tee*. When inputting pattern, enclose the
-string in slashes, e.g. `<code>match=/^select/</code>` defines the pattern `<code>^select</code>`.
+string in slashes, e.g. `match=/^select/` defines the pattern `^select`.
 
 
 ### Binlog Server
@@ -44,5 +44,5 @@ by saving all incoming GTIDs into a SQLite map database.
 
 
 In the 2.2.1 beta version MaxCtrl was in its own package whereas in 2.2.2
-it is in the main `<code>maxscale</code>` package. If you have a previous installation
+it is in the main `maxscale` package. If you have a previous installation
 of MaxCtrl, please remove it before upgrading to MaxScale 2.2.2.

@@ -65,7 +65,7 @@ SELECT * FROM t1 WHERE a/2+b=100;
 in this case the optimizer should be able to use an index.
 This task naturally splits in two steps:
 
-1. add expression matching into the optimizer, use it for generated columns. Like in `<code>CREATE TABLE t1 (a int, b int, v INT GENERATED ALWAYS AS (a/2+b), INDEX (v));</code>`
+1. add expression matching into the optimizer, use it for generated columns. Like in `CREATE TABLE t1 (a int, b int, v INT GENERATED ALWAYS AS (a/2+b), INDEX (v));`
 1. support the syntax to create an index on expression directly, this will automatically create a hidden generated column under the hood
 
 *original task description is visible in the history*
@@ -253,7 +253,7 @@ that point.
 The idea is to do this non-blocking on the master, in a way that works for any
 storage engine. It will rely on row-based replication to be used between the
 master and the slave.
-At the start of `<code>LOAD DATA FROM MASTER</code>`, the slave will enter a special
+At the start of `LOAD DATA FROM MASTER`, the slave will enter a special
 provisioning mode. It will start replicating events from the master at the
 master's current position.
 The master dump thread will send binlog events to the slave as normal. But in

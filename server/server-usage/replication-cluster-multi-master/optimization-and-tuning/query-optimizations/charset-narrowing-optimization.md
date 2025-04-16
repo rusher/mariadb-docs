@@ -8,10 +8,10 @@ The Charset Narrowing optimization handles equality comparisons like:
 utf8mb3_key_column=utf8mb4_expression
 ```
 
-It enables the optimizer to construct `<code>ref</code>` access to `<code>utf8mb3_key_column</code>` based on this equality. The optimization supports comparisons of columns that use `<code>utf8mb3_general_ci</code>` to expressions that use `<code>utf8mb4_general_ci</code>` .
+It enables the optimizer to construct `ref` access to `utf8mb3_key_column` based on this equality. The optimization supports comparisons of columns that use `utf8mb3_general_ci` to expressions that use `utf8mb4_general_ci` .
 
 
-The optimization was introduced in [MariaDB 10.6.16](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes.md), [MariaDB 10.10.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10-10-7-release-notes.md), [MariaDB 10.11.6](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-6-release-notes.md), [MariaDB 11.0.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-4-release-notes.md), [MariaDB 11.1.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-3-release-notes.md) and [MariaDB 11.2.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-2-release-notes.md), where it is **OFF** by default. From [MariaDB 11.7](../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md), it is `<code>ON</code>` by default.
+The optimization was introduced in [MariaDB 10.6.16](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes.md), [MariaDB 10.10.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10-10-7-release-notes.md), [MariaDB 10.11.6](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-6-release-notes.md), [MariaDB 11.0.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-4-release-notes.md), [MariaDB 11.1.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-3-release-notes.md) and [MariaDB 11.2.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-2-release-notes.md), where it is **OFF** by default. From [MariaDB 11.7](../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md), it is `ON` by default.
 
 
 ## Description
@@ -48,14 +48,14 @@ One can join *users* to *orders* on user_name:
 select * from orders, users where orders.user_name_mb3=users.user_name_mb4;
 ```
 
-Internally the optimizer will handle the equality by converting the UTF8MB3 value into UTF8MB4 and then doing the comparison. One can see the call to `<code>CONVERT</code>` in EXPLAIN FORMAT=JSON output or Optimizer Trace:
+Internally the optimizer will handle the equality by converting the UTF8MB3 value into UTF8MB4 and then doing the comparison. One can see the call to `CONVERT` in EXPLAIN FORMAT=JSON output or Optimizer Trace:
 
 
 ```
 convert(orders.user_name_mb3 using utf8mb4) = users.user_name_mb4
 ```
 
-This produces the expected result but the query optimizer is not able to use the index over `<code>orders.user_name_mb3</code>` to find matches for values of `<code>users.user_name_mb4</code>`.
+This produces the expected result but the query optimizer is not able to use the index over `orders.user_name_mb3` to find matches for values of `users.user_name_mb4`.
 
 
 The EXPLAIN of the above query looks like this:
@@ -71,7 +71,7 @@ explain select * from orders, users where orders.user_name_mb3=users.user_name_m
 +------+-------------+--------+------+---------------+------+---------+------+-------+-------------------------------------------------+
 ```
 
-The Charset Narrowing optimization enables the optimizer to perform the comparison between UTF8MB3 and UTF8MB4 values by "narrowing" the value in UTF8MB4 to UTF8MB3. The `<code>CONVERT</code>` call is no longer needed, and the optimizer is able to use the equality to construct ref access:
+The Charset Narrowing optimization enables the optimizer to perform the comparison between UTF8MB3 and UTF8MB4 values by "narrowing" the value in UTF8MB4 to UTF8MB3. The `CONVERT` call is no longer needed, and the optimizer is able to use the equality to construct ref access:
 
 
 ```

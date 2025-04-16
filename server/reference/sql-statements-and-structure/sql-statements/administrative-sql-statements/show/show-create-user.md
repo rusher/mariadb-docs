@@ -14,7 +14,7 @@ SHOW CREATE USER [user]
 Shows the [CREATE USER](../../account-management-sql-commands/create-user.md) statement that creates the given user. The statement requires the [SELECT](../../account-management-sql-commands/grant.md#table-privileges) privilege for the [mysql](../system-tables/the-mysql-database-tables/README.md) database, except for the current user. The [CREATE USER](../../account-management-sql-commands/create-user.md) statement for the current user is shown where no user is specified.
 
 
-`<code>SHOW CREATE USER</code>` quotes identifiers according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
+`SHOW CREATE USER` quotes identifiers according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
 
 
 ## Examples
@@ -51,6 +51,6 @@ SHOW CREATE USER 'monty'@'localhost';
 
 * [CREATE USER](../../account-management-sql-commands/create-user.md)
 * [ALTER USER](../../account-management-sql-commands/alter-user.md)
-* [SHOW GRANTS](show-grants.md) shows the `<code>GRANTS/PRIVILEGES</code>` for a user.
+* [SHOW GRANTS](show-grants.md) shows the `GRANTS/PRIVILEGES` for a user.
 * [SHOW PRIVILEGES](show-privileges.md) shows the privileges supported by MariaDB.
 

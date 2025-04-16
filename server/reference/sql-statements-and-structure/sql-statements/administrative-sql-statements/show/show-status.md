@@ -12,32 +12,32 @@ SHOW [GLOBAL | SESSION] STATUS
 ## Description
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW STATUS</code>` provides server status information. This
+`SHOW STATUS` provides server status information. This
 information also can be obtained using the [mariadb-admin extended-status](../../../../../clients-and-utilities/mariadb-admin.md) command, or by querying the [Information Schema GLOBAL_STATUS and SESSION_STATUS](../system-tables/information-schema/information-schema-tables/information-schema-global_status-and-session_status-tables.md) tables.
-The `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clause, if present, indicates which variable names
-to match. The `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` clause can be given to select rows using
+The `LIKE` clause, if present, indicates which variable names
+to match. The `WHERE` clause can be given to select rows using
 more general conditions.
 
 
-With the `<code class="highlight fixed" style="white-space:pre-wrap">GLOBAL</code>` modifier, `<code class="highlight fixed" style="white-space:pre-wrap">SHOW STATUS</code>`
+With the `GLOBAL` modifier, `SHOW STATUS`
 displays the status values for all connections to MariaDB. With
-`<code class="highlight fixed" style="white-space:pre-wrap">SESSION</code>`, it displays the status values
+`SESSION`, it displays the status values
 for the current connection. If no modifier is present, the default is
- `<code class="highlight fixed" style="white-space:pre-wrap">SESSION</code>`. `<code class="highlight fixed" style="white-space:pre-wrap">LOCAL</code>` is a synonym for
- `<code class="highlight fixed" style="white-space:pre-wrap">SESSION</code>`. If you see a lot of 0 values, the reason is probably that you have used `<code class="highlight fixed" style="white-space:pre-wrap">SHOW STATUS</code>` with a new connection instead of `<code class="highlight fixed" style="white-space:pre-wrap">SHOW GLOBAL STATUS</code>`.
+ `SESSION`. `LOCAL` is a synonym for
+ `SESSION`. If you see a lot of 0 values, the reason is probably that you have used `SHOW STATUS` with a new connection instead of `SHOW GLOBAL STATUS`.
 
 
 Some status variables have only a global value. For these, you get the
-same value for both `<code class="highlight fixed" style="white-space:pre-wrap">GLOBAL</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">SESSION</code>`.
+same value for both `GLOBAL` and `SESSION`.
 
 
-See [Server Status Variables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md) for a full list, scope and description of the variables that can be viewed with `<code>SHOW STATUS</code>`.
+See [Server Status Variables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md) for a full list, scope and description of the variables that can be viewed with `SHOW STATUS`.
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clause, if present on its own, indicates which variable name to match.
+The `LIKE` clause, if present on its own, indicates which variable name to match.
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 
 ## Examples

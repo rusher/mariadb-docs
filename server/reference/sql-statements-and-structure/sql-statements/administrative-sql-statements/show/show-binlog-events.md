@@ -12,7 +12,7 @@ SHOW BINLOG EVENTS
 ## Description
 
 
-Shows the events in the [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). If you do not specify '`<code>log_name</code>`',
+Shows the events in the [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). If you do not specify '`log_name`',
 the first binary log is displayed.
 
 

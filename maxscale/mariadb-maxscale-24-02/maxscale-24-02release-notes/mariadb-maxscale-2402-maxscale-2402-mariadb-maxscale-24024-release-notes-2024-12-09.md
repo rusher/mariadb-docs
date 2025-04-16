@@ -85,7 +85,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-5229](https://jira.mariadb.org/browse/MXS-5229) Master Stickiness status not displayed correctly with use_priority
 * [MXS-5218](https://jira.mariadb.org/browse/MXS-5218) Binlgorouter purge
 * [MXS-5178](https://jira.mariadb.org/browse/MXS-5178) Replicas after maxscale binlog don't get updates
-* [MXS-4933](https://jira.mariadb.org/browse/MXS-4933) Using `<code>targets=...</code>` in `<code>maxctrl create service</code>` should be allowed
+* [MXS-4933](https://jira.mariadb.org/browse/MXS-4933) Using `targets=...` in `maxctrl create service` should be allowed
 
 
 ## Known Issues and Limitations
@@ -115,7 +115,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platfor
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

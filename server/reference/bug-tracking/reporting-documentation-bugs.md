@@ -18,11 +18,11 @@ First, check that the bug isn't already filed in the
 For the MariaDB bugs database, use JIRA search to check if a report you are going to submit already exists. You are not expected to be a JIRA search guru, but please at least make some effort.
 
 
-* Choose `<code>Issues => Search for issues</code>`;
-* If the form opens for you with a long blank line at top, press `<code>Basic</code>` on the right to switch to a simpler mode;
-* In the `<code>Project</code>` field, choose the related project, (`<code>MDEV</code>` for generic MariaDB server and clients);
-* In the `<code>Contains text</code>` text field, enter the most significant key words from your future report;
-* Press `<code>Enter</code>` or the magnifying glass icon to search.
+* Choose `Issues => Search for issues`;
+* If the form opens for you with a long blank line at top, press `Basic` on the right to switch to a simpler mode;
+* In the `Project` field, choose the related project, (`MDEV` for generic MariaDB server and clients);
+* In the `Contains text` text field, enter the most significant key words from your future report;
+* Press `Enter` or the magnifying glass icon to search.
 
 
 If you see bug reports which are already closed, but you still see the error, please confirm that the issue still exists in the Knowledge Base.
@@ -62,7 +62,7 @@ Apart from what's mentioned below, you don't have to fill or change any fields w
 #### Project
 
 
-If you are filing a report for documentation about MariaDB server, client programs, or MariaDB Galera Cluster, the target project is `<code>MDEV</code>`. Connectors and MaxScale have separate projects with corresponding names. If you choose a wrong project, bug processing can be delayed, but there is no reason to panic -- we'll correct it. If you inform us about the mistake, we'll change it faster.
+If you are filing a report for documentation about MariaDB server, client programs, or MariaDB Galera Cluster, the target project is `MDEV`. Connectors and MaxScale have separate projects with corresponding names. If you choose a wrong project, bug processing can be delayed, but there is no reason to panic -- we'll correct it. If you inform us about the mistake, we'll change it faster.
 
 
 Some project names include:
@@ -82,7 +82,7 @@ Some project names include:
 #### Type
 
 
-Feature requests are not the same as bug reports. Specify a `<code>Task</code>` type for feature requests in [Jira](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md), and a `<code>Bug</code>` type for bug reports. Like with the project field, choosing a wrong type will put the request to the wrong queue and can delay its processing, but eventually it will be noticed and amended.
+Feature requests are not the same as bug reports. Specify a `Task` type for feature requests in [Jira](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md), and a `Bug` type for bug reports. Like with the project field, choosing a wrong type will put the request to the wrong queue and can delay its processing, but eventually it will be noticed and amended.
 
 
 #### Summary
@@ -143,5 +143,5 @@ If the documentation error relates to an existing bug/feature request in JIRA (f
 #### Tags
 
 
-You don't have to set any tags, but if you want to use any for your convenience, feel free to do so. However, please don't put too generic values -- for example, the tag `<code>mariadb</code>` is meaningless, because everything there is `<code>mariadb</code>`. Don't be surprised if some tags are removed later during report processing.
+You don't have to set any tags, but if you want to use any for your convenience, feel free to do so. However, please don't put too generic values -- for example, the tag `mariadb` is meaningless, because everything there is `mariadb`. Don't be surprised if some tags are removed later during report processing.
 

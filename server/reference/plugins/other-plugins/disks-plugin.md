@@ -1,10 +1,10 @@
 
 # Disks Plugin
 
-The `<code>DISKS</code>` plugin creates the [DISKS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-disks-table.md) table in the [INFORMATION_SCHEMA](../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database. This table shows metadata about disks on the system.
+The `DISKS` plugin creates the [DISKS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-disks-table.md) table in the [INFORMATION_SCHEMA](../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database. This table shows metadata about disks on the system.
 
 
-Before [MariaDB 10.4.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md), [MariaDB 10.3.17](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10317-release-notes.md) and [MariaDB 10.2.26](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10226-release-notes.md), this plugin did **not** check [user privileges](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md). When it is enabled, **any** user can query the `<code>INFORMATION_SCHEMA.DISKS</code>` table and see all the information it provides.
+Before [MariaDB 10.4.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md), [MariaDB 10.3.17](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10317-release-notes.md) and [MariaDB 10.2.26](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10226-release-notes.md), this plugin did **not** check [user privileges](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md). When it is enabled, **any** user can query the `INFORMATION_SCHEMA.DISKS` table and see all the information it provides.
 
 
 Since [MariaDB 10.4.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md), [MariaDB 10.3.17](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10317-release-notes.md) and [MariaDB 10.2.26](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10226-release-notes.md) , it required the [FILE privilege](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md).
@@ -79,21 +79,21 @@ SELECT * FROM information_schema.DISKS;
 ## Options
 
 
-### `<code>disks</code>`
+### `disks`
 
 
 * Description: Controls how the server should treat the plugin when the server starts up.
 
   * Valid values are:
 
-    * `<code>OFF</code>` - Disables the plugin without removing it from the [mysql.plugins](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
-    * `<code>ON</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
-    * `<code>FORCE</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `<code>FORCE_PLUS_PERMANENT</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
+    * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--disks=value</code>`
-* Data Type: `<code>enumerated</code>`
-* Default Value: `<code>ON</code>`
-* Valid Values: `<code>OFF</code>`, `<code>ON</code>`, `<code>FORCE</code>`, `<code>FORCE_PLUS_PERMANENT</code>`
+* Commandline: `--disks=value`
+* Data Type: `enumerated`
+* Default Value: `ON`
+* Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
 
 

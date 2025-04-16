@@ -34,20 +34,20 @@ module=hintfilter
 ## Comments and comment types
 
 
-The client connection will need to have comments enabled. For example the `<code>mysql</code>` command line client has comments disabled by default.
+The client connection will need to have comments enabled. For example the `mysql` command line client has comments disabled by default.
 
 
-For comment types, use either `<code>--</code>` (notice the whitespace) or `<code>#</code>` after the semicolon or `<code>/* .. */</code>` before the semicolon. All comment types work with routing hints.
+For comment types, use either `--` (notice the whitespace) or `#` after the semicolon or `/* .. */` before the semicolon. All comment types work with routing hints.
 
 
-The MySQL manual doesn`<code>t specify if comment blocks, i.e.</code>`/*..*/`, should contain a w
+The MySQL manual doesn`t specify if comment blocks, i.e.`/*..*/`, should contain a w
 whitespace character before or after the tags, so adding whitespace at both the start and the end is advised.
 
 
 ## Hint body
 
 
-All hints must start with the `<code>maxscale</code>` tag.
+All hints must start with the `maxscale` tag.
 
 
 
@@ -74,7 +74,7 @@ These hints will instruct the router to route a query to a certain type of a ser
 
 
 
-A `<code>master</code>` value in a routing hint will route the query to a master server. This can be used to direct read queries to a master server for a up-to-date result with no replication lag. A `<code>slave</code>` value will route the query to a slave server. A `<code>server</code>` value will route the query to a named server. The value of <server name=""> needs to be the same as the server section name in maxscale.cnf.
+A `master` value in a routing hint will route the query to a master server. This can be used to direct read queries to a master server for a up-to-date result with no replication lag. A `slave` value will route the query to a slave server. A `server` value will route the query to a named server. The value of <server name=""> needs to be the same as the server section name in maxscale.cnf.
 
 
 ### Name-value hints
@@ -90,7 +90,7 @@ These control the behavior and affect the routing decisions made by the router.
 
 
 
-Currently the only accepted parameter is `<code>max_slave_replication_lag</code>`. This will route the query to a server with lower replication lag then what is defined in the hint value.
+Currently the only accepted parameter is `max_slave_replication_lag`. This will route the query to a server with lower replication lag then what is defined in the hint value.
 
 
 ## Hint stack

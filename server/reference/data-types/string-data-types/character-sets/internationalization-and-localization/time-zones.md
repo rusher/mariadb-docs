@@ -11,9 +11,9 @@ MariaDB keeps track of several time zone settings.
 The [time_zone](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) system variable is the primary way to set the time zone. It can be specified in one of the following formats:
 
 
-* The default value is `<code>SYSTEM</code>`, which indicates that the system time zone defined in the [system_time_zone](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#system_time_zone) system variable will be used. Note that if you are using `<code>SYSTEM</code>` with replication in either statement or mixed mode, you MUST use the same value for `<code>system_time_zone</code>` on all replicas (otherwise `<code>TIMESTAMP</code>` columns will not replicate correctly). See [System Time Zone](#system-time-zone) below for more information.
-* An offset from [Coordinated Universal Time (UTC)](coordinated-universal-time.md), such as `<code>+5:00</code>` or `<code>-9:00</code>`, can also be used.
-* If the time zone tables in the [mysql](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database were loaded, then a named time zone, such as `<code>America/New_York</code>`, `<code>Africa/Johannesburg</code>`, or `<code>Europe/Helsinki</code>`, is also permissible. See [mysql Time Zone Tables](#mysql-time-zone-tables) below for more information.
+* The default value is `SYSTEM`, which indicates that the system time zone defined in the [system_time_zone](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#system_time_zone) system variable will be used. Note that if you are using `SYSTEM` with replication in either statement or mixed mode, you MUST use the same value for `system_time_zone` on all replicas (otherwise `TIMESTAMP` columns will not replicate correctly). See [System Time Zone](#system-time-zone) below for more information.
+* An offset from [Coordinated Universal Time (UTC)](coordinated-universal-time.md), such as `+5:00` or `-9:00`, can also be used.
+* If the time zone tables in the [mysql](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database were loaded, then a named time zone, such as `America/New_York`, `Africa/Johannesburg`, or `Europe/Helsinki`, is also permissible. See [mysql Time Zone Tables](#mysql-time-zone-tables) below for more information.
 
 
 There are two time zone settings that can be set within MariaDB--the global server time zone, and the time zone for your current session. There is also a third time zone setting which may be relevant--the system time zone.
@@ -22,7 +22,7 @@ There are two time zone settings that can be set within MariaDB--the global serv
 ### Global Server Time Zone
 
 
-The global server time zone can be changed at server startup by setting the `<code>--default-time-zone</code>` option either on the command-line or in a server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+The global server time zone can be changed at server startup by setting the `--default-time-zone` option either on the command-line or in a server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 
 ```
@@ -81,7 +81,7 @@ SHOW SESSION VARIABLES LIKE 'time_zone';
 The system time zone is determined when the server starts, and it sets the value of the [system_time_zone](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#system_time_zone) system variable. The system time zone is usually read from the operating system's environment. You can change the system time zone in several different ways, such as:
 
 
-* If you are starting the server with [mariadbd-safe](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-safe.md), then you can set the system time zone with the `<code>--timezone</code>` option either on the command-line or in the [mariadbd-safe] [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+* If you are starting the server with [mariadbd-safe](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-safe.md), then you can set the system time zone with the `--timezone` option either on the command-line or in the [mariadbd-safe] [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 
 ```
@@ -89,7 +89,7 @@ The system time zone is determined when the server starts, and it sets the value
 timezone='America/New_York'
 ```
 
-* If you are using a Unix-like operating system, then you can set the system time zone by setting the `<code>TZ</code>` [environment variable](../../../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-environment-variables.md) in your shell before starting the server. For example:
+* If you are using a Unix-like operating system, then you can set the system time zone by setting the `TZ` [environment variable](../../../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-environment-variables.md) in your shell before starting the server. For example:
 
 
 ```

@@ -234,7 +234,7 @@ the figure below.
   * Set maintenance mode: Setting a server to a maintenance mode.
   * Clear server state: Clear current server state.
   * Drain server: Drain the server of connections.
-1. Quick access to query editor button. Opening the `<code>Query Editor</code>` page for
+1. Quick access to query editor button. Opening the `Query Editor` page for
  this server. If the connection is already created for that server, it'll use
  it. Otherwise, it creates a blank worksheet and shows a connection dialog to
  connect to that server.
@@ -244,7 +244,7 @@ the figure below.
 1. Anchor link of the server. Opening the detail page of the server in a new
  tab.
 1. Collapse its children nodes.
-1. Rejoin node. When the `<code>auto_rejoin</code>` parameter is disabled, the node can be
+1. Rejoin node. When the `auto_rejoin` parameter is disabled, the node can be
  manually rejoined by dragging it on top of the primary server.
 1. Monitor manipulation operations button. Showing a dropdown with the
  following operations:
@@ -254,7 +254,7 @@ the figure below.
   * Reset Replication.
   * Release Locks.
   * Master failover. Manually performing a primary failover. This option is
- visible only when the `<code>auto_failover</code>` parameter is disabled.
+ visible only when the `auto_failover` parameter is disabled.
 1. Refresh rate dropdown. The frequency with which the data is refreshed.
 1. Create a new MaxScale object button.
 
@@ -346,7 +346,7 @@ There are two ways to set the current database:
 
 * Double-click on the name of the database.
 * Right-click on the name of the database to show the context menu, then select
- the `<code>Use database</code>` option.
+ the `Use database` option.
 
 
 ##### Preview table data of the top 1000 rows
@@ -357,14 +357,14 @@ There are two ways to preview data of a table:
 
 * Click on the name of the table.
 * Right-click on the name of the table to show the context menu, then select
- the `<code>Preview Data (top 1000)</code>` option.
+ the `Preview Data (top 1000)` option.
 
 
 ##### Describe table
 
 
 Right-click on the name of the table to show the context menu, then select the
-`<code>View Details</code>` option.
+`View Details` option.
 
 
 ##### Alter/Drop/Truncate table
@@ -382,15 +382,15 @@ There are two ways to quickly insert an object to the editor:
 
 * Drag the object and drop it in the desire position in the editor.
 * Right-click on the object to show the context menu, then mouse
- hover the `<code>Place to Editor</code>` option and select the desired insert option.
+ hover the `Place to Editor` option and select the desired insert option.
 
 
 ##### Show object creation statement and insights info
 
 
 To view the statement that creates the given object in the [Schemas objects sidebar](#schemas-objects-sidebar), right-clicking on schema or table node and
-select the `<code>View Insights</code>` option. For other objects such as view, stored
-procedure, function and trigger, select the `<code>Show Create</code>` option.
+select the `View Insights` option. For other objects such as view, stored
+procedure, function and trigger, select the `Show Create` option.
 
 
 #### Editor
@@ -411,7 +411,7 @@ available options, right-click on the editor to show the context menu.
 
 
 Every executed query will be saved in the browser's storage (IndexedDB).
-Query history can be seen in the `<code>History/Snippets</code>` tab.
+Query history can be seen in the `History/Snippets` tab.
 To re-execute a query, follow the same step to [insert an object into the editor](#quickly-insert-an-object-into-the-editor)
 and click the execute query button in the editor.
 
@@ -428,7 +428,7 @@ the editor, it will be suggested in the "code completion" menu.
 
 
 To initiate the process, either right-click on the schema name and select the
-`<code>Generate ERD</code>` option, or click on the icon button that resembles a line graph,
+`Generate ERD` option, or click on the icon button that resembles a line graph,
 located on the schemas sidebar. This will open a dialog for selecting the
 tables for the diagram.
 
@@ -438,7 +438,7 @@ tables for the diagram.
 
 Clicking on the "Data Migration" card will open a dialog, providing an option
 to name the task. The Data Migration worksheet will be rendered in the active
-worksheet after clicking the `<code>Create</code>` button in the dialog.
+worksheet after clicking the `Create` button in the dialog.
 
 
 ### Data Migration worksheet
@@ -457,12 +457,12 @@ and limitations [here](../maxscale-24-02about/mariadb-maxscale-2402-maxscale-240
 
 
 Source connection shows the most common parameter inputs for creating
-an ODBC connection. For extra parameters, enable the `<code>Advanced</code>` mode
-to manually edit the `<code>Connection String</code>` input.
+an ODBC connection. For extra parameters, enable the `Advanced` mode
+to manually edit the `Connection String` input.
 
 
 After successfully connected to both source and destination servers,
-click on the `<code>Select objects to migrate</code>` to navigate to the next stage.
+click on the `Select objects to migrate` to navigate to the next stage.
 
 
 #### Objects Selection
@@ -474,9 +474,9 @@ click on the `<code>Select objects to migrate</code>` to navigate to the next st
 Select the objects you wish to migrate to the MariaDB server.
 
 
-After selecting the desired objects, click on the `<code>Prepare Migration Script</code>` to
+After selecting the desired objects, click on the `Prepare Migration Script` to
 navigate to the next stage. The migration scripts will be generated
-differently based on the value selected for the `<code>Create mode</code>` input. Hover over
+differently based on the value selected for the `Create mode` input. Hover over
 the question icon for additional information on the modes.
 
 
@@ -491,7 +491,7 @@ by selecting the corresponding object in the table and using the editors on the
 right-hand side to make any necessary changes.
 
 
-After clicking the `<code>Start Migration</code>` button, the script for each object will be
+After clicking the `Start Migration` button, the script for each object will be
 executed in parallel.
 
 
@@ -502,21 +502,21 @@ executed in parallel.
 
 
 If errors are reported for certain objects, review the output messages and
-adjust the script accordingly. Then, click the `<code>Manage</code>` button and select `<code>Restart</code>`.
+adjust the script accordingly. Then, click the `Manage` button and select `Restart`.
 
 
-To migrate additional objects, click the `<code>Manage</code>` button and select
-`<code>Migrate other objects</code>`. Doing so will replace the current migration
+To migrate additional objects, click the `Manage` button and select
+`Migrate other objects`. Doing so will replace the current migration
 report for the current object with a new one.
 
 
 To retain the report and terminate open connections after migration, click the
-`<code>Manage</code>` button, then select `<code>Disconnect</code>`, and finally delete the worksheet.
+`Manage` button, then select `Disconnect`, and finally delete the worksheet.
 
 
 Deleting the worksheet will not delete the migration task. To clean-up
-everything after migration, click the `<code>Manage</code>` button, then select
-`<code>Delete</code>`.
+everything after migration, click the `Manage` button, then select
+`Delete`.
 
 
 ## Create an ERD
@@ -554,14 +554,14 @@ New tables can be created by using either of the following methods:
 
 * Click on the icon button that resembles a line graph, located on the
  top toolbar.
-* Right-click on the diagram board and select the `<code>Create Table</code>`
+* Right-click on the diagram board and select the `Create Table`
  option.
 
 
 #### Entity options
 
 
-Two options are available: `<code>Edit Table</code>` and `<code>Remove from Diagram</code>`. These
+Two options are available: `Edit Table` and `Remove from Diagram`. These
 options can be accessed using either of the following methods:
 
 
@@ -582,12 +582,12 @@ entity. The entity editor will be shown at the bottom of the worksheet.
 
 * Edit Foreign Key, this opens an editor for viewing/editing foreign keys.
 * Remove Foreign Key.
-* `<code>Change to One To One</code>` or `<code>Change to One To Many</code>`. Toggling the uniqueness
+* `Change to One To One` or `Change to One To Many`. Toggling the uniqueness
  of the foreign key column.
-* `<code>Set FK Column Mandatory</code>` or `<code>Set FK Column Optional</code>`. Toggling the
- `<code>NOT NULL</code>` option of the foreign key column.
-* `<code>Set Referenced Column Mandatory</code>` or `<code>Set Referenced Column Optional</code>`
- Toggling the `<code>NOT NULL</code>` option of the referenced column.
+* `Set FK Column Mandatory` or `Set FK Column Optional`. Toggling the
+ `NOT NULL` option of the foreign key column.
+* `Set Referenced Column Mandatory` or `Set Referenced Column Optional`
+ Toggling the `NOT NULL` option of the referenced column.
 
 
 To show the above foreign key common options, perform a right-click on the link
@@ -630,8 +630,8 @@ on the entity.
 #### Export options
 
 
-Three options are available: `<code>Copy script to clipboard</code>`, `<code>Export script</code>` and
-`<code>Export as jpeg</code>`. These options can be accessed using either of the following
+Three options are available: `Copy script to clipboard`, `Export script` and
+`Export as jpeg`. These options can be accessed using either of the following
 methods:
 
 

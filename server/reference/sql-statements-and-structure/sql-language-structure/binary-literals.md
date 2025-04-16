@@ -1,7 +1,7 @@
 
 # Binary Literals
 
-Binary literals can be written in one of the following formats: `<code>b'value'</code>`, `<code>B'value'</code>` or `<code>0bvalue</code>`, where `<code>value</code>` is a string composed by `<code>0</code>` and `<code>1</code>` digits.
+Binary literals can be written in one of the following formats: `b'value'`, `B'value'` or `0bvalue`, where `value` is a string composed by `0` and `1` digits.
 
 
 Binary literals are interpreted as binary strings, and are convenient to represent [VARBINARY](../../data-types/string-data-types/varbinary.md), [BINARY](../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) or [BIT](../temporal-tables/bitemporal-tables.md) values.

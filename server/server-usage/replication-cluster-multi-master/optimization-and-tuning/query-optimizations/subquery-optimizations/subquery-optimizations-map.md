@@ -7,13 +7,13 @@ the optimizer strategies available to handle them.
 
 * Uncolored areas represent different kinds of subqueries, for example:
 
-  * Subqueries that have form `<code class="fixed" style="white-space:pre-wrap">x IN (SELECT ...)</code>`
-  * Subqueries that are in the `<code class="fixed" style="white-space:pre-wrap">FROM</code>` clause
+  * Subqueries that have form `x IN (SELECT ...)`
+  * Subqueries that are in the `FROM` clause
   * .. and so forth
 * The size of each uncolored area roughly corresponds to how important (i.e.
  frequently used) that kind of subquery is. For
- example, `<code class="fixed" style="white-space:pre-wrap">x IN (SELECT ...)</code>` queries are the most important,
- and `<code class="fixed" style="white-space:pre-wrap">EXISTS (SELECT ...)</code>` are relatively unimportant.
+ example, `x IN (SELECT ...)` queries are the most important,
+ and `EXISTS (SELECT ...)` are relatively unimportant.
 * Colored areas represent optimizations/execution strategies that are applied
  to handle various kinds of subqueries.
 * The color of optimization indicates which version of MySQL/MariaDB it was

@@ -14,7 +14,7 @@ This page documents status variables related to the [S3 storage engine](s3-stora
 See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
 
 
-#### `<code>S3_pagecache_blocks_not_flushed</code>`
+#### `S3_pagecache_blocks_not_flushed`
 
 
 * Description:
@@ -24,7 +24,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 
 
-#### `<code>S3_pagecache_blocks_unused</code>`
+#### `S3_pagecache_blocks_unused`
 
 
 * Description:
@@ -34,7 +34,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 
 
-#### `<code>S3_pagecache_blocks_used</code>`
+#### `S3_pagecache_blocks_used`
 
 
 * Description:
@@ -44,7 +44,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 
 
-#### `<code>S3_pagecache_reads</code>`
+#### `S3_pagecache_reads`
 
 
 * Description:

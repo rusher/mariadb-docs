@@ -19,7 +19,7 @@ To make it, you need to have access to the most recent MariaDB source code. Then
 1. jsonutil.cpp
 
 
-`<code>jsonutil.cpp</code>` is not distributed with the source code, you will have to make it from the following:
+`jsonutil.cpp` is not distributed with the source code, you will have to make it from the following:
 
 
 ```
@@ -98,7 +98,7 @@ void *PlgDBSubAlloc(PGLOBAL g, void *memp, size_t size)
 You can create the file by copy/paste from the above.
 
 
-Set all the additional include directories to the MariaDB include directories used in plugin compiling plus the reference of the storage/connect directories, and compile like any other UDF giving any name to the made library module (I used `<code>jsonudf.dll</code>` on Windows).
+Set all the additional include directories to the MariaDB include directories used in plugin compiling plus the reference of the storage/connect directories, and compile like any other UDF giving any name to the made library module (I used `jsonudf.dll` on Windows).
 
 
 Then you can create the functions using this name as the soname parameter.

@@ -4,7 +4,7 @@
 # ColumnStore Monitor
 
 
-The ColumnStore monitor, `<code>csmon</code>`, is a monitor module for MariaDB ColumnStore
+The ColumnStore monitor, `csmon`, is a monitor module for MariaDB ColumnStore
 servers. It supports multiple UM nodes and can detect the correct server for
 DML/DDL statements which will be labeled as the master. Other UM nodes will be
 used for reads.
@@ -13,8 +13,8 @@ used for reads.
 ## Required Grants
 
 
-The credentials defined with the `<code>user</code>` and `<code>password</code>` parameters must have all
-grants on the `<code>infinidb_vtable</code>` database.
+The credentials defined with the `user` and `password` parameters must have all
+grants on the `infinidb_vtable` database.
 
 
 For example, to create a user for this monitor with the required grants execute
@@ -36,10 +36,10 @@ The ColumnStore Monitor in MaxScale 2.5 supports ColumnStore 1.0, 1.2 and 1.5,
 and the master selection is done differently for each version.
 
 
-* If the version is 1.0, the master server must be specified using the `<code>primary</code>`
+* If the version is 1.0, the master server must be specified using the `primary`
 parameter.
 * If the version is 1.2, the master server is selected automatically using
-the ColumnStore function `<code>mcsSystemPrimary()</code>`.
+the ColumnStore function `mcsSystemPrimary()`.
 * If the version is 1.5, the master server is selected automatically by
 querying the ColumnStore daemon running on each node.
 
@@ -51,20 +51,20 @@ Read the [Monitor Common](mariadb-maxscale-25-common-monitor-parameters.md) docu
 common monitor parameters.
 
 
-### `<code>version</code>`
+### `version`
 
 
 With this mandatory parameter the used ColumnStore version is specified.
-The allowed values are `<code>1.0</code>`, `<code>1.2</code>` and `<code>1.5</code>`.
+The allowed values are `1.0`, `1.2` and `1.5`.
 
 
-### `<code>primary</code>`
+### `primary`
 
 
-Required and only allowed when the value of `<code>version</code>` is `<code>1.0</code>`.
+Required and only allowed when the value of `version` is `1.0`.
 
 
-The `<code>primary</code>` parameter controls which server is chosen as the master
+The `primary` parameter controls which server is chosen as the master
 server.
 
 
@@ -72,39 +72,39 @@ If the server pointed to by this parameter is available and is ready to process
 queries, it receives the *Master* status.
 
 
-### `<code>admin_port</code>`
+### `admin_port`
 
 
-Allowed only when the value of version is `<code>1.5</code>`.
+Allowed only when the value of version is `1.5`.
 
 
 This optional parameter specifies the port of the ColumnStore administrative
-daemon. The default value is `<code>8640</code>`. Note that the daemons of all nodes must
+daemon. The default value is `8640`. Note that the daemons of all nodes must
 be listening on the same port.
 
 
-### `<code>admin_base_path</code>`
+### `admin_base_path`
 
 
-Allowed only when the value of version is `<code>1.5</code>`.
+Allowed only when the value of version is `1.5`.
 
 
 This optional parameter specifies the base path of the ColumnStore
-administrative daemon. The default value is `<code>/cmapi/0.4.0</code>`.
+administrative daemon. The default value is `/cmapi/0.4.0`.
 
 
-### `<code>api_key</code>`
+### `api_key`
 
 
-Allowed only when the value of version is `<code>1.5</code>`.
+Allowed only when the value of version is `1.5`.
 
 
 This optional parameter specifies the API key to be used in the
 communication with the ColumnStore administrative daemon. If no
 key is specified, then a key will be generated and stored to the
-file `<code>api_key.txt</code>` in the directory with the same name as the
+file `api_key.txt` in the directory with the same name as the
 monitor in data directory of MaxScale. Typically that will
-be `<code>/var/lib/maxscale/<monitor-section>/api_key.txt</code>`.
+be `/var/lib/maxscale/<monitor-section>/api_key.txt`.
 
 
 Note that ColumnStore will store the first key provided and
@@ -112,15 +112,15 @@ thereafter require it, so changing the key requires the
 resetting of the key on the ColumnStore nodes as well.
 
 
-### `<code>local_address</code>`
+### `local_address`
 
 
-Allowed only when the value of version is `<code>1.5</code>`.
+Allowed only when the value of version is `1.5`.
 
 
 With this parameter it is specified what IP MaxScale should
 tell the ColumnStore nodes it resides at. Either it or
-`<code>local_address</code>` at the global level in the MaxScale
+`local_address` at the global level in the MaxScale
 configuration file must be specified. If both have been
 specified, then the one specified for the monitor overrides.
 
@@ -179,7 +179,7 @@ servers=CsNode1,CsNode2
 
 
 
-### `<code>start</code>`
+### `start`
 
 
 Starts the ColumnStore cluster.
@@ -202,7 +202,7 @@ call command csmon start CsMonitor 20s
 
 
 
-### `<code>shutdown</code>`
+### `shutdown`
 
 
 Shuts down the ColumnStore cluster.
@@ -225,7 +225,7 @@ call command csmon shutdown CsMonitor 20s
 
 
 
-### `<code>status</code>`
+### `status`
 
 
 Get the status of the ColumnStore cluster.
@@ -252,7 +252,7 @@ call command csmon status CsMonitor CsNode1
 
 
 
-### `<code>mode-set</code>`
+### `mode-set`
 
 
 Sets the mode of the cluster.
@@ -275,7 +275,7 @@ call command csmon mode-set CsMonitor readonly 20s
 
 
 
-### `<code>config-get</code>`
+### `config-get`
 
 
 Returns the cluster configuration.
@@ -307,7 +307,7 @@ call command csmon config-get CsMonitor CsNode2
 
 
 
-### `<code>add-node</code>`
+### `add-node`
 
 
 Adds a new node located on the server at the hostname or IP *host*
@@ -334,7 +334,7 @@ call command csmon add-node CsMonitor mcs2 20s
 For a more complete example, please refer to [adding a node](#adding-a-node).
 
 
-### `<code>remove-node</code>`
+### `remove-node`
 
 
 Remove the node located on the server at the hostname or IP *host*
@@ -364,7 +364,7 @@ For a more complete example, please refer to [removing a node](#removing-a-node)
 ## Example
 
 
-The following is an example of a `<code>csmon</code>` configuration.
+The following is an example of a `csmon` configuration.
 
 
 
@@ -415,7 +415,7 @@ servers=CsNode1,CsNode2
 
 
 
-Invoking `<code>maxctrl list servers</code>` will now show:
+Invoking `maxctrl list servers` will now show:
 
 
 
@@ -431,7 +431,7 @@ Invoking `<code>maxctrl list servers</code>` will now show:
 
 
 
-If we now want to add a new ColumnStore node, located at `<code>mcs3/10.10.10.12</code>`
+If we now want to add a new ColumnStore node, located at `mcs3/10.10.10.12`
 to the cluster, the steps are as follows.
 
 
@@ -481,7 +481,7 @@ maxctrl create server CsNode3 10.10.10.12
 
 
 
-Invoking `<code>maxctrl list servers</code>` will now show:
+Invoking `maxctrl list servers` will now show:
 
 
 
@@ -499,7 +499,7 @@ Invoking `<code>maxctrl list servers</code>` will now show:
 
 
 
-The server `<code>CsNode3</code>` has been created, but its state is `<code>Down</code>` since
+The server `CsNode3` has been created, but its state is `Down` since
 it is not yet being monitored.
 
 
@@ -524,7 +524,7 @@ maxctrl link monitor CsMonitor CsNode3
 
 
 
-Now the server is monitored and `<code>maxctrl list monitors</code>` shows:
+Now the server is monitored and `maxctrl list monitors` shows:
 
 
 
@@ -539,7 +539,7 @@ Now the server is monitored and `<code>maxctrl list monitors</code>` shows:
 
 
 The state of the new node is now also set correctly, as shown by
-`<code>maxctrl list servers</code>`.
+`maxctrl list servers`.
 
 
 
@@ -559,7 +559,7 @@ The state of the new node is now also set correctly, as shown by
 
 Note that the MaxScale server object can be created at any point, but
 it must not be added to the monitor before the node has been added to
-the ColumnStore cluster using `<code>call command csmon add-node</code>`.
+the ColumnStore cluster using `call command csmon add-node`.
 
 
 ## Removing a Node
@@ -570,7 +570,7 @@ node was added. First, the MaxScale server should be removed from the
 monitor. Then, the node should be removed from the ColumnStore cluster.
 
 
-Suppose we want to remove the ColumnStore node at `<code>mcs2/10.10.10.12</code>`
+Suppose we want to remove the ColumnStore node at `mcs2/10.10.10.12`
 and the current situation is as:
 
 
@@ -595,7 +595,7 @@ maxctrl unlink monitor CsMonitor CsNode3
 
 
 
-Checking with `<code>maxctrl list monitors</code>` we see that the server has
+Checking with `maxctrl list monitors` we see that the server has
 indeed been removed.
 
 

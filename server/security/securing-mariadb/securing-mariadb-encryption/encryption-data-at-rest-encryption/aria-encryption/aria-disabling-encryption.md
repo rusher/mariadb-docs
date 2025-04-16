@@ -11,7 +11,7 @@ Don't remove the [Encryption Key Management](https://mariadb.com/kb/en/key-manag
 ## Disabling Encryption on User-created Tables
 
 
-With tables that the user creates, you can disable encryption by setting the `<code>[aria_encrypt_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)</code>` system variable to `<code>OFF</code>`. Once this is set, MariaDB no longer encrypts new tables created with the Aria storage engine.
+With tables that the user creates, you can disable encryption by setting the `[aria_encrypt_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)` system variable to `OFF`. Once this is set, MariaDB no longer encrypts new tables created with the Aria storage engine.
 
 
 ```
@@ -21,7 +21,7 @@ SET GLOBAL aria_encrypt_tables = OFF;
 Unlike [InnoDB](../innodb-encryption/innodb-encryption-troubleshooting.md), Aria does not currently use background encryption threads. Before removing the [Encryption Key Management](key-management-encryption-plugins) plugin from the configuration file, you first need to manually rebuild each table to an unencrypted state.
 
 
-To find the encrypted tables, query the Information Schema, filtering the `<code>[TABLES](https://mariadb.com/kb/en/information_schema-tables-table)</code>` table for those that use the Aria storage engine and the `<code>PAGE</code>` `<code>[ROW_FORMAT](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format)</code>`.
+To find the encrypted tables, query the Information Schema, filtering the `[TABLES](https://mariadb.com/kb/en/information_schema-tables-table)` table for those that use the Aria storage engine and the `PAGE` `[ROW_FORMAT](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format)`.
 
 
 ```
@@ -32,7 +32,7 @@ WHERE ENGINE = 'Aria'
   AND TABLE_SCHEMA != 'information_schema';
 ```
 
-Each table in the result-set was potentially written to disk in an encrypted state. Before removing the configuration for the encryption keys, you need to rebuild each of these to an unencrypted state. This can be done with an `<code>[ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)</code>` statement.
+Each table in the result-set was potentially written to disk in an encrypted state. Before removing the configuration for the encryption keys, you need to rebuild each of these to an unencrypted state. This can be done with an `[ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)` statement.
 
 
 ```
@@ -45,8 +45,8 @@ Once all of the Aria tables are rebuilt, they're safely unencrypted.
 ## Disabling Encryption for Internal On-disk Temporary Tables
 
 
-MariaDB routinely creates internal temporary tables. When these temporary tables are written to disk and the `<code>[aria_used_for_temp_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_used_for_temp_tables)</code>` system variable is set to `<code>ON</code>`, MariaDB uses the Aria storage engine.
+MariaDB routinely creates internal temporary tables. When these temporary tables are written to disk and the `[aria_used_for_temp_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_used_for_temp_tables)` system variable is set to `ON`, MariaDB uses the Aria storage engine.
 
 
-To decrypt these tables, set the `<code>[encrypt_tmp_disk_tables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_disk_tables)</code>` to `<code>OFF</code>`. Once set, all internal temporary tables that are created from that point on are written unencrypted to disk.
+To decrypt these tables, set the `[encrypt_tmp_disk_tables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_disk_tables)` to `OFF`. Once set, all internal temporary tables that are created from that point on are written unencrypted to disk.
 

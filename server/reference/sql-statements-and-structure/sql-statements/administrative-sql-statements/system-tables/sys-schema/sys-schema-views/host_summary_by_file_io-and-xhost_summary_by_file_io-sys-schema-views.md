@@ -9,10 +9,10 @@ These [Sys Schema](sys-schema-views-host_summary_by_statement_latency-and-xhost_
 ## Description
 
 
-The `<code>host_summary_by_file_io</code>` and `<code>x$host_summary_by_file_io</code>` views summarize file I/O, grouped by host. Rows are sorted by descending total file I/O latency by default.
+The `host_summary_by_file_io` and `x$host_summary_by_file_io` views summarize file I/O, grouped by host. Rows are sorted by descending total file I/O latency by default.
 
 
-The `<code>host_summary_by_file_io</code>` view is intended to be easier for human reading, while the `<code>and </code>`x$host_summary_by_file_io`<code><code> view provides the data in raw form, intended for tools that process the data. </code></code>`
+The `host_summary_by_file_io` view is intended to be easier for human reading, while the `and `x$host_summary_by_file_io`<code> view provides the data in raw form, intended for tools that process the data. </code>`
 
 
 They contain the following columns:

@@ -11,15 +11,15 @@ RESET reset_option [, reset_option] ...
 ## Description
 
 
-The `<code>RESET</code>` statement is used to clear the state of various server
-operations. You must have the `<code>[RELOAD privilege](../account-management-sql-commands/grant.md)</code>` to execute
-`<code>RESET</code>`.
+The `RESET` statement is used to clear the state of various server
+operations. You must have the `[RELOAD privilege](../account-management-sql-commands/grant.md)` to execute
+`RESET`.
 
 
-`<code>RESET</code>` acts as a stronger version of the [FLUSH](flush-commands/flush-tables-for-export.md) statement.
+`RESET` acts as a stronger version of the [FLUSH](flush-commands/flush-tables-for-export.md) statement.
 
 
-The different `<code>RESET</code>` options are:
+The different `RESET` options are:
 
 
 

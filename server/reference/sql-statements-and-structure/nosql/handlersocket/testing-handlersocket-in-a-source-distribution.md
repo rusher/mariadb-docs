@@ -5,7 +5,7 @@
 ## [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
 
 
-In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), which is built using `<code>cmake</code>`, `<code>Makefile.PL</code>` is not generated automatically. If you want to run the perl tests, you will need to create it manually from `<code>Makefile.PL.in</code>`. It is fairly easy to do by replacing `<code>LIB</code>` and `<code>INC</code>` values with the correct ones. Also, `<code>libhsclient.so</code>` is not built by default; `<code>libhsclient.a</code>` can be found in `<code>plugin/handler_socket</code>` folder.
+In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), which is built using `cmake`, `Makefile.PL` is not generated automatically. If you want to run the perl tests, you will need to create it manually from `Makefile.PL.in`. It is fairly easy to do by replacing `LIB` and `INC` values with the correct ones. Also, `libhsclient.so` is not built by default; `libhsclient.a` can be found in `plugin/handler_socket` folder.
 
 
 ## [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)
@@ -15,8 +15,8 @@ If you want to test or use handlersocket with a source installation of [MariaDB 
 here is one way to do this:
 
 
-1. Compile with one of the build scripts that has the `<code>-max</code>` option,
- like `<code>BUILD/compile-pentium64-max</code>` or `<code>BUILD/compile-pentium64-debug-max</code>`
+1. Compile with one of the build scripts that has the `-max` option,
+ like `BUILD/compile-pentium64-max` or `BUILD/compile-pentium64-debug-max`
 1. Start mysqld with the test framework
 ```
 cd mysql-test
@@ -48,7 +48,7 @@ should do:
 make install
 ```
 
-If you do this, you don't have to set `<code>PERL5LIB</code>` below.
+If you do this, you don't have to set `PERL5LIB` below.
 1. Run the handlersocket test suite
 ```
 cd plugin/handler_socket/regtest/test_01_lib

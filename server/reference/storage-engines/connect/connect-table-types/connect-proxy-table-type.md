@@ -1,8 +1,8 @@
 
 # CONNECT PROXY Table Type
 
-A `<code>PROXY</code>` table is a table that accesses and reads the data of another table or view.
-For instance, to create a table based on the boys `<code>FIX</code>` table:
+A `PROXY` table is a table that accesses and reads the data of another table or view.
+For instance, to create a table based on the boys `FIX` table:
 
 
 ```
@@ -10,7 +10,7 @@ create table xboy engine=connect
   table_type=PROXY tabname=boys;
 ```
 
-Simply, `<code>PROXY</code>` being the default type when `<code>TABNAME</code>` is specified:
+Simply, `PROXY` being the default type when `TABNAME` is specified:
 
 
 ```
@@ -29,16 +29,16 @@ need to access CONNECT tables.
 
 When the sub-table is a view or not a CONNECT table, CONNECT internally creates a
 temporary CONNECT table of [MYSQL](connect-mysql-table-type-accessing-mysqlmariadb-tables.md) type to access it. This connection uses
-the same default parameters as for a `<code>MYSQL</code>` table. It is also possible to
-specify them to the `<code>PROXY</code>` table using in the `<code>PROXY</code>` declaration the same
-`<code>OPTION_LIST</code>` options as for a `<code>MYSQL</code>` table. Of course, it is simpler and 
+the same default parameters as for a `MYSQL` table. It is also possible to
+specify them to the `PROXY` table using in the `PROXY` declaration the same
+`OPTION_LIST` options as for a `MYSQL` table. Of course, it is simpler and 
 more natural to use directly the MYSQL type in this case.
 
 
-Normally, the default parameters should enable the `<code>PROXY</code>` table to reconnect
+Normally, the default parameters should enable the `PROXY` table to reconnect
 the server. However, an issue is when the current user was logged using a
 password. The security protocol prevents CONNECT to retrieve this password and
-requires it to be given in the `<code>PROXY</code>` table create statement. For instance
+requires it to be given in the `PROXY` table create statement. For instance
 adding to it:
 
 
@@ -62,7 +62,7 @@ instance SELECT on desired directories, and needs no password. Supposing
 ## Using a PROXY Table as a View
 
 
-A `<code>PROXY</code>` table can also be used by itself to modify the way a table is
+A `PROXY` table can also be used by itself to modify the way a table is
 viewed. For instance, a proxy table does not use the indexes of the object
 table. It is also possible to define its columns with different names or type,
 to use only some of them or to changes their order. For instance:
@@ -102,16 +102,16 @@ of the boys table, the *name* column.
 ## Avoiding PROXY table loop
 
 
-CONNECT is able to test whether a `<code>PROXY</code>`, or `<code>PROXY</code>`-based, table refers
+CONNECT is able to test whether a `PROXY`, or `PROXY`-based, table refers
 directly or indirectly to itself. If a direct reference can tested at table
 creation, an indirect reference can only be tested when executing a query on
 the table. However, this is possible only for local tables. When using remote
 tables or views, a problem can occur if the remote table or the view refers 
 back to one of the local tables of the chain. The same caution should be used
-than when using `<code>[FEDERATEDX](../../federatedx-storage-engine/README.md)</code>` tables.
+than when using `[FEDERATEDX](../../federatedx-storage-engine/README.md)` tables.
 
 
-**Note:** All `<code>PROXY</code>` or `<code>PROXY</code>`-based tables are read-only in this
+**Note:** All `PROXY` or `PROXY`-based tables are read-only in this
 version.
 
 

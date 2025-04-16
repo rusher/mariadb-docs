@@ -70,7 +70,7 @@ immediate, i.e. a session will only be allowed very short bursts of high
 frequency querying.
 
 
-When a session has been continuously throttled for `<code>throttling_duration</code>`
+When a session has been continuously throttled for `throttling_duration`
 milliseconds, or 60 seconds in this example, MaxScale will disconnect the
 session.
 
@@ -78,7 +78,7 @@ session.
 ### Allowing high frequency bursts
 
 
-The two parameters `<code>max_qps</code>` and `<code>sampling_duration</code>` together define how a
+The two parameters `max_qps` and `sampling_duration` together define how a
 session is throttled.
 
 
@@ -99,7 +99,7 @@ If the client continues to query at high speed and throttling duration is set to
 ### Filter Parameters
 
 
-#### `<code>max_qps</code>`
+#### `max_qps`
 
 
 * Type: number
@@ -112,10 +112,10 @@ Maximum queries per second.
 
 This is the frequency to which a session will be limited over a given time
 period. QPS is not measured as an instantaneous value but over a configurable
-sampling duration (see `<code>sampling_duration</code>`).
+sampling duration (see `sampling_duration`).
 
 
-#### `<code>throttling_duration</code>`
+#### `throttling_duration`
 
 
 * Type: [duration](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
@@ -127,7 +127,7 @@ This defines how long a session is allowed to be throttled before MaxScale
 disconnects the session.
 
 
-### `<code>sampling_duration</code>`
+### `sampling_duration`
 
 
 * Type: [duration](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
@@ -145,7 +145,7 @@ The lower this value is, the more strict throttling becomes. Conversely, the
 longer this time is, the longer bursts of high frequency querying is allowed.
 
 
-### `<code>continuous_duration</code>`
+### `continuous_duration`
 
 
 * Type: [duration](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
@@ -156,4 +156,4 @@ longer this time is, the longer bursts of high frequency querying is allowed.
 
 This value defines what continuous throttling means. Continuous throttling
 starts as soon as the filter throttles the frequency. Continuous throttling ends
-when no throttling has been performed in the past `<code>continuous_duration</code>` time.
+when no throttling has been performed in the past `continuous_duration` time.

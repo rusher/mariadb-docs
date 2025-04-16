@@ -28,10 +28,10 @@ For more details about the standard service parameters, refer to the [Configurat
 ## Optional parameters
 
 
-### `<code>max_slave_connections</code>`
+### `max_slave_connections`
 
 
-**`<code>max_slave_connections</code>`** sets the maximum number of slaves a router session uses at any moment. The default is to use all available slaves.
+**`max_slave_connections`** sets the maximum number of slaves a router session uses at any moment. The default is to use all available slaves.
 
 
 ```
@@ -39,10 +39,10 @@ max_slave_connections=<max. number, or % of available slaves>
 ```
 
 
-### `<code>max_slave_replication_lag</code>`
+### `max_slave_replication_lag`
 
 
-**`<code>max_slave_replication_lag</code>`** specifies how many seconds a slave is allowed to be behind the master. If the lag is bigger than configured value a slave can't be used for routing.
+**`max_slave_replication_lag`** specifies how many seconds a slave is allowed to be behind the master. If the lag is bigger than configured value a slave can't be used for routing.
 
 
 This feature is disabled by default.
@@ -53,14 +53,14 @@ max_slave_replication_lag=<allowed lag in seconds>
 ```
 
 
-This applies to Master/Slave replication with MySQL monitor and `<code>detect_replication_lag=1</code>` options set.
+This applies to Master/Slave replication with MySQL monitor and `detect_replication_lag=1` options set.
 Please note max_slave_replication_lag must be greater than monitor interval.
 
 
-### `<code>use_sql_variables_in</code>`
+### `use_sql_variables_in`
 
 
-**`<code>use_sql_variables_in</code>`** specifies where should queries, which read session variable, be routed. The syntax for `<code>use_sql_variable_in</code>` is:
+**`use_sql_variables_in`** specifies where should queries, which read session variable, be routed. The syntax for `use_sql_variable_in` is:
 
 
 ```
@@ -79,13 +79,13 @@ INSERT INTO test.t1 VALUES (@myid:=@myid+1)
 ```
 
 
-In above-mentioned case the user-defined variable would only be updated in the master where query would be routed due to `<code>INSERT</code>` statement.
+In above-mentioned case the user-defined variable would only be updated in the master where query would be routed due to `INSERT` statement.
 
 
 ## Router options
 
 
-**`<code>router_options</code>`** may include multiple **readwritesplit**-specific options. All the options are parameter-value pairs. All parameters listed in this section must be configured as a value in `<code>router_options</code>`.
+**`router_options`** may include multiple **readwritesplit**-specific options. All the options are parameter-value pairs. All parameters listed in this section must be configured as a value in `router_options`.
 
 
 Multiple options can be defined as a comma-separated list of parameter-value pairs.
@@ -98,10 +98,10 @@ router_options=<option>,<option>
 
 
 
-### `<code>slave_selection_criteria</code>`
+### `slave_selection_criteria`
 
 
-This option controls how the readwritesplit router chooses the slaves it connects to and how the load balancing is done. The default behavior is to route read queries to the slave server with the lowest amount of ongoing queries i.e. `<code>LEAST_CURRENT_OPERATIONS</code>`.
+This option controls how the readwritesplit router chooses the slaves it connects to and how the load balancing is done. The default behavior is to route read queries to the slave server with the lowest amount of ongoing queries i.e. `LEAST_CURRENT_OPERATIONS`.
 
 
 The option syntax:
@@ -114,22 +114,22 @@ router_options=slave_selection_criteria=<criteria>
 
 
 
-Where `<code><criteria></code>` is one of the following values.
+Where `<criteria>` is one of the following values.
 
 
-* `<code>LEAST_GLOBAL_CONNECTIONS</code>`, the slave with least connections from MaxScale
-* `<code>LEAST_ROUTER_CONNECTIONS</code>`, the slave with least connections from this service
-* `<code>LEAST_BEHIND_MASTER</code>`, the slave with smallest replication lag
-* `<code>LEAST_CURRENT_OPERATIONS</code>` (default), the slave with least active operations
+* `LEAST_GLOBAL_CONNECTIONS`, the slave with least connections from MaxScale
+* `LEAST_ROUTER_CONNECTIONS`, the slave with least connections from this service
+* `LEAST_BEHIND_MASTER`, the slave with smallest replication lag
+* `LEAST_CURRENT_OPERATIONS` (default), the slave with least active operations
 
 
-The `<code>LEAST_GLOBAL_CONNECTIONS</code>` and `<code>LEAST_ROUTER_CONNECTIONS</code>` use the connections from MaxScale to the server, not the amount of connections reported by the server itself.
+The `LEAST_GLOBAL_CONNECTIONS` and `LEAST_ROUTER_CONNECTIONS` use the connections from MaxScale to the server, not the amount of connections reported by the server itself.
 
 
-### `<code>max_sescmd_history</code>`
+### `max_sescmd_history`
 
 
-**`<code>max_sescmd_history</code>`** sets a limit on how many session commands each session can execute before the session command history is disabled. The default is an unlimited number of session commands.
+**`max_sescmd_history`** sets a limit on how many session commands each session can execute before the session command history is disabled. The default is an unlimited number of session commands.
 
 
 
@@ -143,10 +143,10 @@ max_sescmd_history=1500
 When a limitation is set, it effectively creates a cap on the session's memory consumption. This might be useful if connection pooling is used and the sessions use large amounts of session commands.
 
 
-### `<code>disable_sescmd_history</code>`
+### `disable_sescmd_history`
 
 
-**`<code>disable_sescmd_history</code>`** disables the session command history. This way no history is stored and if a slave server fails, the router will not try to replace the failed slave. Disabling session command history will allow connection pooling without causing a constant growth in the memory consumption. The session command history is enabled by default.
+**`disable_sescmd_history`** disables the session command history. This way no history is stored and if a slave server fails, the router will not try to replace the failed slave. Disabling session command history will allow connection pooling without causing a constant growth in the memory consumption. The session command history is enabled by default.
 
 
 
@@ -157,10 +157,10 @@ disable_sescmd_history=true
 
 
 
-### `<code>master_accept_reads</code>`
+### `master_accept_reads`
 
 
-**`<code>master_accept_reads</code>`** allows the master server to be used for reads. This is a useful option to enable if you are using a small number of servers and wish to use the master for reads as well.
+**`master_accept_reads`** allows the master server to be used for reads. This is a useful option to enable if you are using a small number of servers and wish to use the master for reads as well.
 
 
 By default, no reads are sent to the master.
@@ -174,12 +174,12 @@ master_accept_reads=true
 
 
 
-### `<code>strict_multi_stmt</code>`
+### `strict_multi_stmt`
 
 
 When a client executes a multi-statement query, all queries after that will be routed to
 the master to guarantee a consistent session state. This behavior can be controlled with
-the **`<code>strict_multi_stmt</code>`** router option. This option is enabled by default.
+the **`strict_multi_stmt`** router option. This option is enabled by default.
 
 
 If set to false, queries are routed normally after a multi-statement query. **Warning**, this
@@ -233,12 +233,12 @@ The following operations are routed to master:
 * all statements within an open transaction,
 * stored procedure calls, and
 * user-defined function calls.
-* DDL statements (`<code>DROP</code>`|`<code>CREATE</code>`|`<code>ALTER TABLE</code>` … etc.)
-* `<code>EXECUTE</code>` (prepared) statements
+* DDL statements (`DROP`|`CREATE`|`ALTER TABLE` … etc.)
+* `EXECUTE` (prepared) statements
 * all statements using temporary tables
 
 
-In addition to these, if the **readwritesplit** service is configured with the `<code>max_slave_replication_lag</code>` parameter, and if all slaves suffer from too much replication lag, then statements will be routed to the *Master*. (There might be other similar configuration parameters in the future which limit the number of statements that will be routed to slaves.)
+In addition to these, if the **readwritesplit** service is configured with the `max_slave_replication_lag` parameter, and if all slaves suffer from too much replication lag, then statements will be routed to the *Master*. (There might be other similar configuration parameters in the future which limit the number of statements that will be routed to slaves.)
 
 
 ### Routing to Slaves
@@ -252,7 +252,7 @@ Queries which can be routed to slaves must be auto committed and belong to one o
 
 * read-only database queries,
 * read-only queries to system, or user-defined variables,
-* `<code>SHOW</code>` statements, and
+* `SHOW` statements, and
 * system function calls.
 
 
@@ -265,14 +265,14 @@ A third class of statements includes those which modify session data, such as se
 Session commands include for example:
 
 
-* `<code>SET</code>` statements
-* `<code>USE</code>``<code><dbname></code>`
-* system/user-defined variable assignments embedded in read-only statements, such as `<code>SELECT (@myvar := 5)</code>`
-* `<code>PREPARE</code>` statements
-* `<code>QUIT</code>`, `<code>PING</code>`, `<code>STMT RESET</code>`, `<code>CHANGE USER</code>`, etc. commands
+* `SET` statements
+* `USE``<dbname>`
+* system/user-defined variable assignments embedded in read-only statements, such as `SELECT (@myvar := 5)`
+* `PREPARE` statements
+* `QUIT`, `PING`, `STMT RESET`, `CHANGE USER`, etc. commands
 
 
-**NOTE: if variable assignment is embedded in a write statement it is routed to *Master* only. For example, `<code>INSERT INTO t1 values(@myvar:=5, 7)</code>` would be routed to *Master* only.**
+**NOTE: if variable assignment is embedded in a write statement it is routed to *Master* only. For example, `INSERT INTO t1 values(@myvar:=5, 7)` would be routed to *Master* only.**
 
 
 The router stores all of the executed session commands so that in case of a slave failure, a replacement slave can be chosen and the session command history can be repeated on that new slave. This means that the router stores each executed session command for the duration of the session. Applications that use long-running sessions might cause MaxScale to consume a growing amount of memory unless the sessions are closed. This can be solved by setting a connection timeout on the application side.

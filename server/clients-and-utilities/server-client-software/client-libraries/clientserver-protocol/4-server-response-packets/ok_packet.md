@@ -183,14 +183,14 @@ XA START <XA specification>;
 The transaction state string is always 8 characters long. The characters, in order, are:
 
 
-1. No transaction: `<code>_</code>` Explicit transaction: `<code>T</code>` Implicit transaction: `<code>I</code>`
-1. Transaction read safe: `<code>_</code>` Transaction read unsafe: `<code>r</code>`
-1. Unknown transaction type: `<code>_</code>` Read-only transaction: `<code>R</code>`
-1. Transaction write safe: `<code>_</code>` Transaction write unsafe: `<code>w</code>`
-1. Unknown transaction type: `<code>_</code>` Read-write transaction: `<code>W</code>`
-1. Transaction statement safe: `<code>_</code>` Transaction statement unsafe: `<code>s</code>`
-1. Transaction does not have resultsets: `<code>_</code>` Transaction with resultsets: `<code>S</code>`
-1. No locked tables: `<code>_</code>` Tables have been locked: `<code>L</code>`
+1. No transaction: `_` Explicit transaction: `T` Implicit transaction: `I`
+1. Transaction read safe: `_` Transaction read unsafe: `r`
+1. Unknown transaction type: `_` Read-only transaction: `R`
+1. Transaction write safe: `_` Transaction write unsafe: `w`
+1. Unknown transaction type: `_` Read-write transaction: `W`
+1. Transaction statement safe: `_` Transaction statement unsafe: `s`
+1. Transaction does not have resultsets: `_` Transaction with resultsets: `S`
+1. No locked tables: `_` Tables have been locked: `L`
 
 
 ### Notes

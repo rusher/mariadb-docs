@@ -40,10 +40,10 @@ reference_option:
     RESTRICT | CASCADE | SET NULL | NO ACTION | SET DEFAULT
 ```
 
-The `<code>symbol</code>` clause, if specified, is used in error messages and must be unique in the database.
+The `symbol` clause, if specified, is used in error messages and must be unique in the database.
 
 
-The columns in the child table must be a BTREE (not HASH, RTREE, or FULLTEXT — see [SHOW INDEX](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index.md)) index, or the leftmost part of a BTREE index. Index prefixes are not supported (thus, [TEXT](../../../../reference/data-types/string-data-types/text.md) and [BLOB](../../../../reference/data-types/string-data-types/blob.md) columns cannot be used as foreign keys). If MariaDB automatically creates an index for the foreign key (because it does not exist and is not explicitly created), its name will be `<code>index_name</code>`.
+The columns in the child table must be a BTREE (not HASH, RTREE, or FULLTEXT — see [SHOW INDEX](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index.md)) index, or the leftmost part of a BTREE index. Index prefixes are not supported (thus, [TEXT](../../../../reference/data-types/string-data-types/text.md) and [BLOB](../../../../reference/data-types/string-data-types/blob.md) columns cannot be used as foreign keys). If MariaDB automatically creates an index for the foreign key (because it does not exist and is not explicitly created), its name will be `index_name`.
 
 
 The referenced columns in the parent table must be a an index or a prefix of an index.
@@ -55,33 +55,33 @@ The foreign key columns and the referenced columns must be of the same type, or 
 Both the foreign key columns and the referenced columns can be [PERSISTENT](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) columns. However, the ON UPDATE CASCADE, ON UPDATE SET NULL, ON DELETE SET NULL clauses are not allowed in this case.
 
 
-The parent and the child table must use the same storage engine, and must not be `<code>TEMPORARY</code>` or partitioned tables. They can be the same table.
+The parent and the child table must use the same storage engine, and must not be `TEMPORARY` or partitioned tables. They can be the same table.
 
 
 ## Constraints
 
 
-If a foreign keys exists, each row in the child table must match a row in the parent table. Multiple child rows can match the same parent row. A child row *matches* a parent row if all its foreign key values are identical to a parent row's values in the parent table. However, if at least one of the foreign key values is `<code>NULL</code>`, the row has no parents, but it is still allowed.
+If a foreign keys exists, each row in the child table must match a row in the parent table. Multiple child rows can match the same parent row. A child row *matches* a parent row if all its foreign key values are identical to a parent row's values in the parent table. However, if at least one of the foreign key values is `NULL`, the row has no parents, but it is still allowed.
 
 
 MariaDB performs certain checks to guarantee that the data integrity is enforced:
 
 
 * Trying to insert non-matching rows (or update matching rows in a way that makes them non-matching rows) in the child table produces a 1452 error ([SQLSTATE](../../../programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) '23000').
-* When a row in the parent table is deleted and at least one child row exists, MariaDB performs an action which depends on the `<code>ON DELETE</code>` clause of the foreign key.
-* When a value in the column referenced by a foreign key changes and at least one child row exists, MariaDB performs an action which depends on the `<code>ON UPDATE</code>` clause of the foreign key.
+* When a row in the parent table is deleted and at least one child row exists, MariaDB performs an action which depends on the `ON DELETE` clause of the foreign key.
+* When a value in the column referenced by a foreign key changes and at least one child row exists, MariaDB performs an action which depends on the `ON UPDATE` clause of the foreign key.
 * Trying to drop a table that is referenced by a foreign key produces a 1217 error ([SQLSTATE](../../../programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) '23000').
 * A [TRUNCATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md) against a table containing one or more foreign keys is executed as a [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) without WHERE, so that the foreign keys are enforced for each row.
 
 
-The allowed actions for `<code>ON DELETE</code>` and `<code>ON UPDATE</code>` are:
+The allowed actions for `ON DELETE` and `ON UPDATE` are:
 
 
-* `<code>RESTRICT</code>`: The change on the parent table is prevented. The statement terminates with a 1451 error ([SQLSTATE](../../../programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) '2300'). This is the default behavior for both `<code>ON DELETE</code>` and `<code>ON UPDATE</code>`.
-* `<code>NO ACTION</code>`: Synonym for `<code>RESTRICT</code>`.
-* `<code>CASCADE</code>`: The change is allowed and propagates on the child table. For example, if a parent row is deleted, the child row is also deleted; if a parent row's ID changes, the child row's ID will also change.
-* `<code>SET NULL</code>`: The change is allowed, and the child row's foreign key columns are set to `<code>NULL</code>`.
-* `<code>SET DEFAULT</code>`: Only worked with PBXT. Similar to `<code>SET NULL</code>`, but the foreign key columns were set to their default values. If default values do not exist, an error is produced.
+* `RESTRICT`: The change on the parent table is prevented. The statement terminates with a 1451 error ([SQLSTATE](../../../programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) '2300'). This is the default behavior for both `ON DELETE` and `ON UPDATE`.
+* `NO ACTION`: Synonym for `RESTRICT`.
+* `CASCADE`: The change is allowed and propagates on the child table. For example, if a parent row is deleted, the child row is also deleted; if a parent row's ID changes, the child row's ID will also change.
+* `SET NULL`: The change is allowed, and the child row's foreign key columns are set to `NULL`.
+* `SET DEFAULT`: Only worked with PBXT. Similar to `SET NULL`, but the foreign key columns were set to their default values. If default values do not exist, an error is produced.
 
 
 The delete or update operations triggered by foreign keys do not activate [triggers](../../../programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) and are not counted in the [Com_delete](../system-variables/server-status-variables.md#com_delete) and [Com_update](../system-variables/server-status-variables.md#com_update) status variables.
@@ -93,13 +93,13 @@ Foreign key constraints can be disabled by setting the [foreign_key_checks](../s
 ## Metadata
 
 
-The [Information Schema](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>[REFERENTIAL_CONSTRAINTS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-referential_constraints-table.md)</code>` table contains information about foreign keys. The individual columns are listed in the `<code>[KEY_COLUMN_USAGE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md)</code>` table.
+The [Information Schema](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `[REFERENTIAL_CONSTRAINTS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-referential_constraints-table.md)` table contains information about foreign keys. The individual columns are listed in the `[KEY_COLUMN_USAGE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md)` table.
 
 
-The InnoDB-specific Information Schema tables also contain information about the InnoDB foreign keys. The foreign key information is stored in the `<code>[INNODB_SYS_FOREIGN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_foreign-table.md)</code>`. Data about the individual columns are stored in `<code>[INNODB_SYS_FOREIGN_COLS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_foreign_cols-table.md)</code>`.
+The InnoDB-specific Information Schema tables also contain information about the InnoDB foreign keys. The foreign key information is stored in the `[INNODB_SYS_FOREIGN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_foreign-table.md)`. Data about the individual columns are stored in `[INNODB_SYS_FOREIGN_COLS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_foreign_cols-table.md)`.
 
 
-The most human-readable way to get information about a table's foreign keys sometimes is the `<code>[SHOW CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md)</code>` statement.
+The most human-readable way to get information about a table's foreign keys sometimes is the `[SHOW CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md)` statement.
 
 
 ## Limitations
@@ -110,7 +110,7 @@ Foreign keys have the following limitations in MariaDB:
 
 * Currently, foreign keys are only supported by InnoDB.
 * Cannot be used with views.
-* The `<code>SET DEFAULT</code>` action is not supported.
+* The `SET DEFAULT` action is not supported.
 * Foreign keys actions do not activate [triggers](../../../programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md).
 * If ON UPDATE CASCADE recurses to update the same table it has previously updated during the cascade, it acts like RESTRICT.
 * Indexed [generated columns](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) (both VIRTUAL and PERSISTENT) are not supported as InnoDB foreign key indexes.
@@ -119,7 +119,7 @@ Foreign keys have the following limitations in MariaDB:
 ## Examples
 
 
-Let's see an example. We will create an `<code>author</code>` table and a `<code>book</code>` table. Both tables have a primary key called `<code>id</code>`. `<code>book</code>` also has a foreign key composed by a field called `<code>author_id</code>`, which refers to the `<code>author</code>` primary key. The foreign key constraint name is optional, but we'll specify it because we want it to appear in error messages: `<code>fk_book_author</code>`.
+Let's see an example. We will create an `author` table and a `book` table. Both tables have a primary key called `id`. `book` also has a foreign key composed by a field called `author_id`, which refers to the `author` primary key. The foreign key constraint name is optional, but we'll specify it because we want it to appear in error messages: `fk_book_author`.
 
 
 ```
@@ -168,7 +168,7 @@ INSERT INTO book (title, author_id) VALUES
 It worked!
 
 
-Now, let's delete the second author. When we created the foreign key, we specified `<code>ON DELETE CASCADE</code>`. This should propagate the deletion, and make the deleted author's books disappear:
+Now, let's delete the second author. When we created the foreign key, we specified `ON DELETE CASCADE`. This should propagate the deletion, and make the deleted author's books disappear:
 
 
 ```
@@ -182,7 +182,7 @@ SELECT * FROM book;
 +----+--------------+-----------+
 ```
 
-We also specified `<code>ON UPDATE RESTRICT</code>`. This should prevent us from modifying an author's `<code>id</code>` (the column referenced by the foreign key) if a child row exists:
+We also specified `ON UPDATE RESTRICT`. This should prevent us from modifying an author's `id` (the column referenced by the foreign key) if a child row exists:
 
 
 ```

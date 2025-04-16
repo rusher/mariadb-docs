@@ -38,7 +38,7 @@ PARTITION BY LIST COLUMNS (partitioning_expression)
 )
 ```
 
-`<code>partition_name</code>` is the name of a partition.
+`partition_name` is the name of a partition.
 
 
 ## Comparisons
@@ -53,7 +53,7 @@ With LIST COLUMNS, a row matches a partition if all row values are identical to 
 With RANGE COLUMNS, a row matches a partition if all row values are less than the specified values. The first partition that matches the row values will be used.
 
 
-The `<code>DEFAULT</code>` partition catches all records which do not fit in other partitions. Only one `<code>DEFAULT</code>` partition is allowed.
+The `DEFAULT` partition catches all records which do not fit in other partitions. Only one `DEFAULT` partition is allowed.
 
 
 ## Examples

@@ -12,13 +12,13 @@ DROP USER [IF EXISTS] user_name [, user_name] ...
 ## Description
 
 
-The `<code>DROP USER</code>` statement removes one or more MariaDB accounts. It removes
+The `DROP USER` statement removes one or more MariaDB accounts. It removes
 privilege rows for the account from all grant tables. To use this statement,
 you must have the global [CREATE USER](grant.md#create-user) privilege
 or the [DELETE](grant.md#table-privileges) privilege for the mysql database.
-Each account is named using the same format as for the `<code>CREATE USER</code>`
-statement; for example, `<code class="fixed" style="white-space:pre-wrap">'jeffrey'@'localhost'</code>`. If you specify
-only the user name part of the account name, a host name part of `<code>'%'</code>` is
+Each account is named using the same format as for the `CREATE USER`
+statement; for example, `'jeffrey'@'localhost'`. If you specify
+only the user name part of the account name, a host name part of `'%'` is
 used. For additional information about specifying account names, see
 [CREATE USER](create-user.md).
 
@@ -28,8 +28,8 @@ be deleted until the connection is closed. The connection will not be
 automatically closed.
 
 
-If any of the specified user accounts do not exist, `<code>ERROR 1396 (HY000)</code>`
-results. If an error occurs, `<code>DROP USER</code>` will still drop the accounts that do
+If any of the specified user accounts do not exist, `ERROR 1396 (HY000)`
+results. If an error occurs, `DROP USER` will still drop the accounts that do
 not result in an error. Only one error is produced for all users which have not
 been dropped:
 
@@ -38,14 +38,14 @@ been dropped:
 ERROR 1396 (HY000): Operation DROP USER failed for 'u1'@'%','u2'@'%'
 ```
 
-Failed `<code>CREATE</code>` or `<code>DROP</code>` operations, for both users and roles, produce the
+Failed `CREATE` or `DROP` operations, for both users and roles, produce the
 same error code.
 
 
 #### IF EXISTS
 
 
-If the `<code>IF EXISTS</code>` clause is used, MariaDB will return a note instead of an error if the user does not exist.
+If the `IF EXISTS` clause is used, MariaDB will return a note instead of an error if the user does not exist.
 
 
 ## Examples
@@ -57,7 +57,7 @@ DROP USER bob;
 DROP USER foo2@localhost,foo2@'127.%';
 ```
 
-`<code>IF EXISTS</code>`:
+`IF EXISTS`:
 
 
 ```

@@ -29,13 +29,13 @@ Some notes on how the benchmarks were run:
 
 1. The benchmark client and server used different CPUs - ('taskset'
  (Linux), or 'start /affinity' (Windows) were used to run the benchmark client
- on `<code class="fixed" style="white-space:pre-wrap">#CPUs/4</code>`, the rest of CPUs were used by the server). On
- the Linux boxes, `<code class="fixed" style="white-space:pre-wrap">--thread_pool_size=<N></code>` (where N is number
+ on `#CPUs/4`, the rest of CPUs were used by the server). On
+ the Linux boxes, `--thread_pool_size=<N>` (where N is number
  of cores dedicated to the server) was used.
-1. `<code>innodb_flush_log_at_trx_commit=0</code>` and `<code>innodb_flush_method=ALL_O_DIRECT</code>`
+1. `innodb_flush_log_at_trx_commit=0` and `innodb_flush_method=ALL_O_DIRECT`
  was used to avoid extensive fsyncing, which is ok for the purposes of the
  testing for this.
-1. Every "write" benchmark (`<code>oltp_rw</code>` and `<code>update_nokey</code>`) started with a new
+1. Every "write" benchmark (`oltp_rw` and `update_nokey`) started with a new
  server (i.e. kill mysqld, remove innodb files, and restart mysqld for each
  test). Every "read" benchmark, on the other hand, reused the same running
  server instance. Starting afresh with a new server on write benchmarks is

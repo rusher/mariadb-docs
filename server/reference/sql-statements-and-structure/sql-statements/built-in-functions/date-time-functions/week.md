@@ -11,10 +11,10 @@ WEEK(date[,mode])
 ## Description
 
 
-This function returns the week number for `<code>date</code>`. The two-argument form of
-`<code>WEEK()</code>` allows you to specify whether the week starts on Sunday or Monday
+This function returns the week number for `date`. The two-argument form of
+`WEEK()` allows you to specify whether the week starts on Sunday or Monday
 and whether the return value should be in the range from 0 to 53 or from 1 to
-53. If the `<code>mode</code>` argument is omitted, the value of the [default_week_format](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_week_format) system variable is used.
+53. If the `mode` argument is omitted, the value of the [default_week_format](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_week_format) system variable is used.
 
 
 ### Modes

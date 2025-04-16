@@ -21,7 +21,7 @@ The table size is determined at startup by the value of the [performance_schema_
 
 
 
-The `<code>USER</code>` and `<code>HOST</code>` values shown here are the username and host used for user connections, not the patterns used to check permissions.
+The `USER` and `HOST` values shown here are the username and host used for user connections, not the patterns used to check permissions.
 
 
 ## Example

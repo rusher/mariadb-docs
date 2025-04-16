@@ -22,7 +22,7 @@ will be returned as a JSON document.
 # Configuration
 
 
-The plugin is configured in the `<code>maxscale.cnf</code>` configuration file in much
+The plugin is configured in the `maxscale.cnf` configuration file in much
 the same way as any other router service is configured; there must be a
 service section in the configuration file and also listeners defined for
 that service. The service does not however require any backend servers to be
@@ -53,7 +53,7 @@ protocol a section as shown below should be added to the configuration
 file.
 
 
-In this example we use a cleartext password `<code>my_secret</code>`. For increased
+In this example we use a cleartext password `my_secret`. For increased
 security the password can be encrypted as explained
 [here](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#encrypting-passwords).
 
@@ -130,8 +130,8 @@ of show commands are available and will be described in the following
 sections.
 
 
-Maxinfo also supports the `<code>FLUSH LOGS</code>`, `<code>SET SERVER <name> <status></code>` and
-`<code>CLEAR SERVER <name> <status></code>` commands. These behave the same as their
+Maxinfo also supports the `FLUSH LOGS`, `SET SERVER <name> <status>` and
+`CLEAR SERVER <name> <status>` commands. These behave the same as their
 MaxAdmin counterpart.
 
 
@@ -359,7 +359,7 @@ mysql>
 
 
 The show clients command reports a row for every client application
-connected to MariaDB MaxScale. `<code>Like</code>` clauses cannot be used in the show
+connected to MariaDB MaxScale. `Like` clauses cannot be used in the show
 clients command.
 
 

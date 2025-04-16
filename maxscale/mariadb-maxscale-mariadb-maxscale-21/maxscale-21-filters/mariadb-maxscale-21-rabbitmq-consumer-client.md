@@ -29,7 +29,7 @@ The **RabbitMQ Consumer Client** only has one command line argument.
 
 To install the RabbitMQ Consumer Client you can either use the provided packages
 or you can compile it from source code. The source code is included as a part of the
-MariaDB MaxScale source code and can be found in the `<code>rabbitmq_consumer</code>` folder.
+MariaDB MaxScale source code and can be found in the `rabbitmq_consumer` folder.
 
 
 ## Building from source
@@ -70,7 +70,7 @@ path1:path2:path3
 
 
 
-After running CMake run `<code>make</code>` to build the binaries and `<code>make package</code>` to build RPMs.
+After running CMake run `make` to build the binaries and `make package` to build RPMs.
 
 
 To build without CMake, use the provided makefile and update the
@@ -80,13 +80,13 @@ include and library directories 'in buildvars.inc'
 ## Configuration
 
 
-The consumer client requires that the `<code>consumer.cnf</code>` configuration file is either
-be present in the `<code>etc</code>` folder of the installation directory or in the folder
-specified by the `<code>-c</code>` argument.
+The consumer client requires that the `consumer.cnf` configuration file is either
+be present in the `etc` folder of the installation directory or in the folder
+specified by the `-c` argument.
 
 
 The source broker, the destination database and the message log file can be
-configured into the separate `<code>consumer.cnf</code>` file.
+configured into the separate `consumer.cnf` file.
 
 
 | Option | Description |

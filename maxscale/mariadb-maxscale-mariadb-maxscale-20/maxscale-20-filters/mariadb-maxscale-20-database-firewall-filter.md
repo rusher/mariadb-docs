@@ -37,39 +37,39 @@ filters=DatabaseFirewall
 ### Filter Parameters
 
 
-The database firewall filter has one mandatory parameter, `<code>rules</code>`.
+The database firewall filter has one mandatory parameter, `rules`.
 
 
-#### `<code>rules</code>`
+#### `rules`
 
 
 Absolute path to a file with the rule definitions in it. The file should be readable by the user MariaDB MaxScale is run with.
 
 
-#### `<code>action</code>`
+#### `action`
 
 
 This parameter is optional and determines what action is taken when a query
-matches a rule. The value can be either `<code>allow</code>`, which allows all matching
-queries to proceed but blocks those that don't match, or `<code>block</code>`, which blocks
-all matching queries, or `<code>ignore</code>` which allows all queries to proceed.
+matches a rule. The value can be either `allow`, which allows all matching
+queries to proceed but blocks those that don't match, or `block`, which blocks
+all matching queries, or `ignore` which allows all queries to proceed.
 
 
-The following statement types will always be allowed through when `<code>action</code>` is
-set to `<code>allow</code>`:
+The following statement types will always be allowed through when `action` is
+set to `allow`:
 
 
 * COM_QUIT: Client closes connection
 * COM_PING: Server is pinged
 * COM_CHANGE_USER: The user is changed for an active connection
 * COM_SET_OPTION: Client multi-statements are being configured
-* COM_FIELD_LIST: Alias for the `<code>SHOW TABLES;</code>` query
-* COM_PROCESS_KILL: Alias for `<code>KILL <id>;</code>` query
-* COM_PROCESS_INFO: Alias for `<code>SHOW PROCESSLIST;</code>`
+* COM_FIELD_LIST: Alias for the `SHOW TABLES;` query
+* COM_PROCESS_KILL: Alias for `KILL <id>;` query
+* COM_PROCESS_INFO: Alias for `SHOW PROCESSLIST;`
 
 
 You can have both blacklist and whitelist functionality by configuring one filter
-with `<code>action=allow</code>` and another one with `<code>action=block</code>`. You can then use
+with `action=allow` and another one with `action=block`. You can then use
 different rule files with each filter, one for blacklisting and another one
 for whitelisting. After this you only have to add both of these filters
 to a service in the following way.
@@ -100,16 +100,16 @@ rules=/home/user/blacklist-rules.txt
 
 
 
-#### `<code>log_match</code>`
+#### `log_match`
 
 
-Log all queries that match a rule. For the `<code>any</code>` matching mode, the name of
+Log all queries that match a rule. For the `any` matching mode, the name of
 the rule that matched is logged and for other matching modes, the name of
 the last matching rule is logged. In addition to the rule name the matched
 user and the query itself is logged. The log messages are logged at the notice level.
 
 
-#### `<code>log_no_match</code>`
+#### `log_no_match`
 
 
 Log all queries that do not match a rule. The matched user and the query is
@@ -132,13 +132,13 @@ rule NAME deny { wildcard | columns VALUE... |
 
 
 Rules are identified by their name and have mandatory parts and optional parts.
-You can add comments to the rule files by adding the `<code>#</code>` character at
+You can add comments to the rule files by adding the `#` character at
 the beginning of the line. Trailing comments are not supported.
 
 
-The first step of defining a rule is to start with the keyword `<code>rule</code>` which
+The first step of defining a rule is to start with the keyword `rule` which
 identifies this line of text as a rule. The second token is identified as
-the name of the rule. After that the mandatory action token `<code>deny</code>` is required
+the name of the rule. After that the mandatory action token `deny` is required
 to mark the start of the actual rule definition.
 
 
@@ -147,8 +147,8 @@ also contain one of each type of optional rule parameter.
 
 
 **NOTE**
-Even though the rules use the `<code>deny</code>` token, the action taken by the filter when
-a query matches a rule is controlled *solely* by the value of the `<code>action</code>`
+Even though the rules use the `deny` token, the action taken by the filter when
+a query matches a rule is controlled *solely* by the value of the `action`
 parameter (*allow*, *block* or *ignore*).
 
 
@@ -158,19 +158,19 @@ parameter (*allow*, *block* or *ignore*).
 The database firewall filter's rules expect a single mandatory parameter for a rule. You can define multiple rules to cover situations where you would like to apply multiple mandatory rules to a query.
 
 
-#### `<code>wildcard</code>`
+#### `wildcard`
 
 
 This rule blocks all queries that use the wildcard character *.
 
 
-#### `<code>columns</code>`
+#### `columns`
 
 
-This rule expects a list of values after the `<code>columns</code>` keyword. These values are interpreted as column names and if a query targets any of these, it is blocked.
+This rule expects a list of values after the `columns` keyword. These values are interpreted as column names and if a query targets any of these, it is blocked.
 
 
-#### `<code>regex</code>`
+#### `regex`
 
 
 This rule blocks all queries matching a regex enclosed in single or double quotes.
@@ -178,16 +178,16 @@ The regex string expects a PCRE2 syntax regular expression. For more information
 about the PCRE2 syntax, read the [PCRE2 documentation](https://www.pcre.org/current/doc/html/pcre2syntax.html).
 
 
-#### `<code>limit_queries</code>`
+#### `limit_queries`
 
 
 The limit_queries rule expects three parameters. The first parameter is the number of allowed queries during the time period. The second is the time period in seconds and the third is the amount of time for which the rule is considered active and blocking.
 
 
-#### `<code>no_where_clause</code>`
+#### `no_where_clause`
 
 
-This rule inspects the query and blocks it if it has no WHERE clause. For example, this would disallow a `<code>DELETE FROM ...</code>` query without a `<code>WHERE</code>` clause. This does not prevent wrongful usage of the `<code>WHERE</code>` clause e.g. `<code>DELETE FROM ... WHERE 1=1</code>`.
+This rule inspects the query and blocks it if it has no WHERE clause. For example, this would disallow a `DELETE FROM ...` query without a `WHERE` clause. This does not prevent wrongful usage of the `WHERE` clause e.g. `DELETE FROM ... WHERE 1=1`.
 
 
 ### Optional rule parameters
@@ -196,13 +196,13 @@ This rule inspects the query and blocks it if it has no WHERE clause. For exampl
 Each mandatory rule accepts one or more optional parameters. These are to be defined after the mandatory part of the rule.
 
 
-#### `<code>at_times</code>`
+#### `at_times`
 
 
-This rule expects a list of time ranges that define the times when the rule in question is active. The time formats are expected to be ISO-8601 compliant and to be separated by a single dash (the - character). For example, to define the active period of a rule to be 5pm to 7pm, you would include `<code>at times 17:00:00-19:00:00</code>` in the rule definition. The rule uses local time to check if the rule is active and has a precision of one second.
+This rule expects a list of time ranges that define the times when the rule in question is active. The time formats are expected to be ISO-8601 compliant and to be separated by a single dash (the - character). For example, to define the active period of a rule to be 5pm to 7pm, you would include `at times 17:00:00-19:00:00` in the rule definition. The rule uses local time to check if the rule is active and has a precision of one second.
 
 
-#### `<code>on_queries</code>`
+#### `on_queries`
 
 
 This limits the rule to be active only on certain types of queries. The possible values are:
@@ -227,19 +227,19 @@ This limits the rule to be active only on certain types of queries. The possible
 ### Applying rules to users
 
 
-The `<code>users</code>` directive defines the users to which the rule should be applied.
+The `users` directive defines the users to which the rule should be applied.
 
 
-`<code>users NAME... match { any | all | strict_all } rules RULE...</code>`
+`users NAME... match { any | all | strict_all } rules RULE...`
 
 
-The first keyword is `<code>users</code>`, which identifies this line as a user definition line.
+The first keyword is `users`, which identifies this line as a user definition line.
 
 
-The second component is a list of user names and network addresses in the format *`<code>user</code>`*`<code>@</code>`*`<code>0.0.0.0</code>`*. The first part is the user name and the second part is the network address. You can use the `<code>%</code>` character as the wildcard to enable user name matching from any address or network matching for all users. After the list of users and networks the keyword match is expected.
+The second component is a list of user names and network addresses in the format *`user`*`@`*`0.0.0.0`*. The first part is the user name and the second part is the network address. You can use the `%` character as the wildcard to enable user name matching from any address or network matching for all users. After the list of users and networks the keyword match is expected.
 
 
-After this either the keyword `<code>any</code>` `<code>all</code>` or `<code>strict_all</code>` is expected. This defined how the rules are matched. If `<code>any</code>` is used when the first rule is matched the query is considered blocked and the rest of the rules are skipped. If instead the `<code>all</code>` keyword is used all rules must match for the query to be blocked. The `<code>strict_all</code>` is the same as `<code>all</code>` but it checks the rules from left to right in the order they were listed. If one of these does not match, the rest of the rules are not checked. This could be useful in situations where you would for example combine `<code>limit_queries</code>` and `<code>regex</code>` rules. By using `<code>strict_all</code>` you can have the `<code>regex</code>` rule first and the `<code>limit_queries</code>` rule second. This way the rule only matches if the `<code>regex</code>` rule matches enough times for the `<code>limit_queries</code>` rule to match.
+After this either the keyword `any` `all` or `strict_all` is expected. This defined how the rules are matched. If `any` is used when the first rule is matched the query is considered blocked and the rest of the rules are skipped. If instead the `all` keyword is used all rules must match for the query to be blocked. The `strict_all` is the same as `all` but it checks the rules from left to right in the order they were listed. If one of these does not match, the rest of the rules are not checked. This could be useful in situations where you would for example combine `limit_queries` and `regex` rules. By using `strict_all` you can have the `regex` rule first and the `limit_queries` rule second. This way the rule only matches if the `regex` rule matches enough times for the `limit_queries` rule to match.
 
 
 After the matching part comes the rules keyword after which a list of rule names is expected. This allows reusing of the rules and enables varying levels of query restriction.
@@ -265,7 +265,7 @@ rule query_regex deny regex '.*select.*from.*user_data.*'
 
 
 
-To apply these rules we combine them into a single rule by adding a `<code>users</code>` line to the rule file.
+To apply these rules we combine them into a single rule by adding a `users` line to the rule file.
 
 
 

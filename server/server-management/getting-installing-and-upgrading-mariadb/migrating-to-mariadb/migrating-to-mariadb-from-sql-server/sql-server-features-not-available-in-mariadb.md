@@ -12,26 +12,26 @@ This page has a list of SQL Server features that are not supported in MariaDB. T
 
 
 * Full outer joins.
-* `<code>GROUP BY CUBE</code>` syntax.
-* `<code>MERGE</code>` statement.
-* In MariaDB, indexes are always ascending. Defining them as `<code>ASC</code>` or `<code>DESC</code>` has no effect.
+* `GROUP BY CUBE` syntax.
+* `MERGE` statement.
+* In MariaDB, indexes are always ascending. Defining them as `ASC` or `DESC` has no effect.
 
-  * For single-column indexes, the performance difference between an `<code>ORDER BY ... ASC</code>` and `<code>DESC</code>` is negligible.
-  * For multiple-column indexes, an index may be unusable for certain queries because `<code>DESC</code>` is not supported. In some cases, a [generated column](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) can be used to invert the order of an index (for example, the expression `<code>0 - price</code>` can be indexed to index the prices in a descending order).
-* The [WITH](../../../../reference/sql-statements-and-structure/geographic-geometric-features/geometry-relations/within.md) syntax is currently only supported for the `<code>SELECT</code>` statement.
-* Filtered indexes (`<code>CREATE INDEX ... WHERE</code>`).
+  * For single-column indexes, the performance difference between an `ORDER BY ... ASC` and `DESC` is negligible.
+  * For multiple-column indexes, an index may be unusable for certain queries because `DESC` is not supported. In some cases, a [generated column](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) can be used to invert the order of an index (for example, the expression `0 - price` can be indexed to index the prices in a descending order).
+* The [WITH](../../../../reference/sql-statements-and-structure/geographic-geometric-features/geometry-relations/within.md) syntax is currently only supported for the `SELECT` statement.
+* Filtered indexes (`CREATE INDEX ... WHERE`).
 * Autonomous transactions.
 * User-defined types.
 * Rules.
 * [Triggers](../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) don't support the following features:
 
   * Triggers on DDL and login.
-  * `<code>INSTEAD OF</code>` triggers.
-  * The `<code>DISABLE TRIGGER</code>` syntax.
+  * `INSTEAD OF` triggers.
+  * The `DISABLE TRIGGER` syntax.
 * [Cursors](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/README.md) advanced features.
 
   * Global cursors.
-  * `<code>DELETE ... CURRENT OF</code>`, `<code>UPDATE ... CURRENT OF</code>` statements: MariaDB cursors are read-only.
+  * `DELETE ... CURRENT OF`, `UPDATE ... CURRENT OF` statements: MariaDB cursors are read-only.
   * Specifying a direction (MariaDB cursors can only advance by one row).
 * Synonyms.
 * Table variables.
@@ -39,11 +39,11 @@ This page has a list of SQL Server features that are not supported in MariaDB. T
 * XML indexes, XML schema collection, XQuery.
 * User access to system functionalities, for example:
 
-  * Running system commands (`<code>xp_cmdshell()</code>`).
-  * Sending emails (`<code>sp_send_dbmail()</code>`).
+  * Running system commands (`xp_cmdshell()`).
+  * Sending emails (`sp_send_dbmail()`).
   * Sending HTTP requests.
 * External languages, external libraries (MariaDB only supports procedural SQL and PL/SQL).
-* Negative permissions (the `<code>DENY</code>` command).
+* Negative permissions (the `DENY` command).
 * Snapshot replication. See [Provisioning a Slave](mariadb-replication-overview-for-sql-server-users.md#provisioning-a-slave).
 
 

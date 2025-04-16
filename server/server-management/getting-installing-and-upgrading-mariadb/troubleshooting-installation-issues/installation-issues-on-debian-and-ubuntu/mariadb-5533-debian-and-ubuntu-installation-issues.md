@@ -17,10 +17,10 @@ If you ran into issues when moving from [MariaDB 5.5.32](../../../../../release-
 To get your system ready to apply the fix, do the following:
 
 
-* Comment out the standard [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) repo in the `<code>/etc/apt/sources.list</code>` or `<code>/etc/apt/sources.list.d/mariadb.repo</code>` file (or wherever you have the repositories configured).
+* Comment out the standard [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) repo in the `/etc/apt/sources.list` or `/etc/apt/sources.list.d/mariadb.repo` file (or wherever you have the repositories configured).
 
 
-* Add a [MariaDB 5.5.32](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5532-release-notes.md) repository to the `<code>sources.list</code>`. The easiest way is to add the following. Just replace '`<code>{os}</code>`' and '`<code>{dist}</code>`' with the appropriate values.
+* Add a [MariaDB 5.5.32](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5532-release-notes.md) repository to the `sources.list`. The easiest way is to add the following. Just replace '`{os}`' and '`{dist}`' with the appropriate values.
 
 
 ```
@@ -45,19 +45,19 @@ And on Ubuntu Raring the line would be:
 deb http://ftp.osuosl.org/pub/mariadb/mariadb-5.5.32/repo/ubuntu raring main
 ```
 
-* Then run '`<code>sudo apt-get update</code>`'
+* Then run '`sudo apt-get update`'
 
 
-* Then '`<code>sudo apt-get install</code>`' the list of packages to downgrade as given in the applicable section below.
+* Then '`sudo apt-get install`' the list of packages to downgrade as given in the applicable section below.
 
 
 * Next, modify our sources.list to remove the 5.5.32 repo and switch back to the normal 5.5 repo
 
 
-* Then '`<code>sudo apt-get update</code>`' to get things back to normal
+* Then '`sudo apt-get update`' to get things back to normal
 
 
-* As a final optional step, once your normal mirror has at least [MariaDB 5.5.33a](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5533a-release-notes.md) you can '`<code>sudo apt-get upgrade</code>`' to upgrade. To check what version of MariaDB our mirror has, run the following command (after running '`<code>sudo apt-get update</code>`'):
+* As a final optional step, once your normal mirror has at least [MariaDB 5.5.33a](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5533a-release-notes.md) you can '`sudo apt-get upgrade`' to upgrade. To check what version of MariaDB our mirror has, run the following command (after running '`sudo apt-get update`'):
 
 
 ```
@@ -81,7 +81,7 @@ The following packages have unmet dependencies:
  mariadb-server-core-5.5 : Depends: libmariadbclient18 (>= 5.5.33+maria-1~wheezy) but 5.5.32+maria-1~wheezy is installed
 ```
 
-To fix it, the following server and client packages need to be temporarily downgraded to 5.5.32 (replace '`<code>wheezy</code>`' with the name of whatever distribution you are using):
+To fix it, the following server and client packages need to be temporarily downgraded to 5.5.32 (replace '`wheezy`' with the name of whatever distribution you are using):
 
 
 ```

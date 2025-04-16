@@ -46,8 +46,8 @@ This filter adds routing hints to a service. The filter has no parameters.
 
 
 The client connection will need to have comments enabled. For example the
-`<code>mariadb</code>` and `<code>mysql</code>` command line clients have comments disabled by default and
-they need to be enabled by passing the `<code>--comments</code>` or `<code>-c</code>` option to it. Most,
+`mariadb` and `mysql` command line clients have comments disabled by default and
+they need to be enabled by passing the `--comments` or `-c` option to it. Most,
 if not all, connectors keep all comments intact in executed queries.
 
 
@@ -59,18 +59,18 @@ mariadb --comments -u my-user -psecret -e "SELECT @@hostname -- maxscale route t
 
 
 
-For comment types, use either `<code>--</code>` (notice the whitespace after the double
-hyphen) or `<code>#</code>` after the semicolon or `<code>/* ... */</code>` before the semicolon.
+For comment types, use either `--` (notice the whitespace after the double
+hyphen) or `#` after the semicolon or `/* ... */` before the semicolon.
 
 
-Inline comment blocks, i.e. `<code>/* .. */</code>`, do not require a whitespace character
+Inline comment blocks, i.e. `/* .. */`, do not require a whitespace character
 after the start tag or before the end tag but adding the whitespace is advised.
 
 
 ## Hint body
 
 
-All hints must start with the `<code>maxscale</code>` tag.
+All hints must start with the `maxscale` tag.
 
 
 
@@ -108,7 +108,7 @@ server.
 
 
 
-A `<code>master</code>` value in a routing hint will route the query to a master server. This
+A `master` value in a routing hint will route the query to a master server. This
 can be used to direct read queries to a master server for a up-to-date result
 with no replication lag.
 
@@ -123,7 +123,7 @@ with no replication lag.
 
 
 
-A `<code>slave</code>` value will route the query to a slave server. Please note that the
+A `slave` value will route the query to a slave server. Please note that the
 hints will override any decisions taken by the routers which means that it is
 possible to force writes to a slave server.
 
@@ -138,8 +138,8 @@ possible to force writes to a slave server.
 
 
 
-A `<code>server</code>` value will route the query to a named server. The value of
-`<code><server name></code>` needs to be the same as the server section name in
+A `server` value will route the query to a named server. The value of
+`<server name>` needs to be the same as the server section name in
 maxscale.cnf. If the server is not used by the service, the hint is ignored.
 
 
@@ -153,7 +153,7 @@ maxscale.cnf. If the server is not used by the service, the hint is ignored.
 
 
 
-A `<code>last</code>` value will route the query to the server that processed the last
+A `last` value will route the query to the server that processed the last
 query. This hint can be used to force certain queries to be grouped to the same
 server.
 
@@ -170,7 +170,7 @@ server.
 
 These control the behavior and affect the routing decisions made by the
 router. Currently the only accepted parameter is the readwritesplit parameter
-`<code>max_slave_replication_lag</code>`. This will route the query to a server with a lower
+`max_slave_replication_lag`. This will route the query to a server with a lower
 replication lag than this parameter's value.
 
 
@@ -236,7 +236,7 @@ they are on the stack:
 
 
 The hintfilter supports routing hints in prepared statements for both the
-`<code>PREPARE</code>` and `<code>EXECUTE</code>` SQL commands as well as the binary protocol prepared
+`PREPARE` and `EXECUTE` SQL commands as well as the binary protocol prepared
 statements.
 
 
@@ -250,8 +250,8 @@ servers.
 
 
 For example, when the following prepared statement is prepared with the MariaDB
-Connector-C function `<code>mariadb_stmt_prepare</code>` and then executed with
-`<code>mariadb_stmt_execute</code>` the result is always returned from the master:
+Connector-C function `mariadb_stmt_prepare` and then executed with
+`mariadb_stmt_execute` the result is always returned from the master:
 
 
 
@@ -277,16 +277,16 @@ The protocol commands that the routing hints are applied to are:
 
 Support for direct execution of prepared statements was added in MaxScale
 6.2.0. For example the MariaDB Connector-C uses direct execution when
-`<code>mariadb_stmt_execute_direct</code>` is used.
+`mariadb_stmt_execute_direct` is used.
 
 
 ## Text Protocol
 
 
-Text protocol prepared statements (i.e. the `<code>PREPARE</code>` and `<code>EXECUTE</code>` SQL
-commands) behave differently. If a `<code>PREPARE</code>` command has a routing hint, it will
-be routed according to the routing hint. Any subsequent `<code>EXECUTE</code>` command will
-not be affected by the routing hint in the `<code>PREPARE</code>` statement. This means they
+Text protocol prepared statements (i.e. the `PREPARE` and `EXECUTE` SQL
+commands) behave differently. If a `PREPARE` command has a routing hint, it will
+be routed according to the routing hint. Any subsequent `EXECUTE` command will
+not be affected by the routing hint in the `PREPARE` statement. This means they
 must have their own routing hints.
 
 
@@ -302,15 +302,15 @@ EXECUTE my_ps USING 123; -- maxscale route to master
 
 
 
-The `<code>PREPARE</code>` is routed normally and will be routed to all servers. The
-`<code>EXECUTE</code>` will be routed to the master as a result of it having the `<code>route to
-master</code>` hint.
+The `PREPARE` is routed normally and will be routed to all servers. The
+`EXECUTE` will be routed to the master as a result of it having the `route to
+master` hint.
 
 
 # Examples
 
 
-## Routing `<code>SELECT</code>` queries to master
+## Routing `SELECT` queries to master
 
 
 In this example, MariaDB MaxScale is configured with the readwritesplit router

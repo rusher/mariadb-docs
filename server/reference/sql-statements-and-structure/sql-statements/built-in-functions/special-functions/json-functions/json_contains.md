@@ -11,7 +11,7 @@ JSON_CONTAINS(json_doc, val[, path])
 ## Description
 
 
-Returns whether or not the specified value is found in the given JSON document or, optionally, at the specified path within the document. Returns `<code>1</code>` if it does, `<code>0</code>` if not and NULL if any of the arguments are null. An error occurs if the document or path is not valid, or contains the `<code>*</code>` or `<code>**</code>` wildcards.
+Returns whether or not the specified value is found in the given JSON document or, optionally, at the specified path within the document. Returns `1` if it does, `0` if not and NULL if any of the arguments are null. An error occurs if the document or path is not valid, or contains the `*` or `**` wildcards.
 
 
 ## Examples

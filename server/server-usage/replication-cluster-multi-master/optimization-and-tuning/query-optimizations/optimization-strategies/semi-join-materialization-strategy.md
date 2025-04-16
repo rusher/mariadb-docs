@@ -48,7 +48,7 @@ If you run a join from Countries to the materialized table, the cheapest way to 
 ### Materialization-Scan
 
 
-If we chose to look for cities with a population greater than 7 million, the optimizer will use Materialization-Scan and `<code>EXPLAIN</code>` will show this:
+If we chose to look for cities with a population greater than 7 million, the optimizer will use Materialization-Scan and `EXPLAIN` will show this:
 
 
 ```
@@ -67,9 +67,9 @@ MariaDB [world]> explain select * from Country where Country.code IN
 Here, you can see:
 
 
-* There are still two `<code>SELECT</code>`s (look for columns with `<code class="fixed" style="white-space:pre-wrap">id=1</code>` and `<code class="fixed" style="white-space:pre-wrap">id=2</code>`)
-* The second select (with `<code>id=2</code>`) has `<code class="fixed" style="white-space:pre-wrap">select_type=MATERIALIZED</code>`. This means it will be executed and its results will be stored in a temporary table with a unique key over all columns. The unique key is there to prevent the table from containing any duplicate records.
-* The first select received the table name `<code class="fixed" style="white-space:pre-wrap">subquery2</code>`. This is the table that we got as a result of the materialization of the select with `<code>id=2</code>`.
+* There are still two `SELECT`s (look for columns with `id=1` and `id=2`)
+* The second select (with `id=2`) has `select_type=MATERIALIZED`. This means it will be executed and its results will be stored in a temporary table with a unique key over all columns. The unique key is there to prevent the table from containing any duplicate records.
+* The first select received the table name `subquery2`. This is the table that we got as a result of the materialization of the select with `id=2`.
 
 
 The optimizer chose to do a full scan over the materialized table, so this is an example of a use of the Materialization-Scan strategy.
@@ -78,7 +78,7 @@ The optimizer chose to do a full scan over the materialized table, so this is an
 As for execution costs, we're going to read 15 rows from table City, write 15 rows to materialized table, read them back (the optimizer assumes there won't be any duplicates), and then do 15 eq_ref accesses to table Country. In total, we'll do 45 reads and 15 writes.
 
 
-By comparison, if you run the `<code>EXPLAIN</code>` with semi-join optimizations disabled, you'll get this:
+By comparison, if you run the `EXPLAIN` with semi-join optimizations disabled, you'll get this:
 
 
 ```
@@ -92,7 +92,7 @@ MariaDB [world]> explain select * from Country where Country.code IN
 +----+--------------------+---------+-------+--------------------+------------+---------+------+------+------------------------------------+
 ```
 
-...which is a plan to do `<code>(239 + 239*15) = 3824</code>` table reads.
+...which is a plan to do `(239 + 239*15) = 3824` table reads.
 
 
 ### Materialization-Lookup
@@ -114,17 +114,17 @@ MariaDB [world]> explain select * from Country where Country.code IN
 3 rows in set (0.00 sec)
 ```
 
-The `<code>EXPLAIN</code>` output is similar to the one which used Materialization-scan, except that:
+The `EXPLAIN` output is similar to the one which used Materialization-scan, except that:
 
 
-* the `<code class="fixed" style="white-space:pre-wrap"><subquery2></code>` table is accessed with the `<code>eq_ref</code>` access method
-* the access uses an index named `<code class="fixed" style="white-space:pre-wrap">distinct_key</code>`
+* the `<subquery2>` table is accessed with the `eq_ref` access method
+* the access uses an index named `distinct_key`
 
 
 This means that the optimizer is planning to do index lookups into the materialized table. In other words, we're going to use the Materialization-lookup strategy.
 
 
-With `<code class="fixed" style="white-space:pre-wrap">optimizer_switch='semijoin=off,materialization=off'</code>`), one will get this `<code>EXPLAIN</code>`:
+With `optimizer_switch='semijoin=off,materialization=off'`), one will get this `EXPLAIN`:
 
 
 ```
@@ -138,10 +138,10 @@ MariaDB [world]> explain select * from Country where Country.code IN
 +----+--------------------+---------+----------------+--------------------+---------+---------+------+------+-------------+
 ```
 
-One can see that both plans will do a full scan on the `<code>Country</code>` table. For the second step, MariaDB will fill the materialized table (238 rows read from table City and written to the temporary table) and then do a unique key lookup for each record in table `<code>Country</code>`, which works out to 238 unique key lookups. In total, the second step will cost `<code>(239+238) = 477</code>` reads and `<code>238</code>` temp.table writes.
+One can see that both plans will do a full scan on the `Country` table. For the second step, MariaDB will fill the materialized table (238 rows read from table City and written to the temporary table) and then do a unique key lookup for each record in table `Country`, which works out to 238 unique key lookups. In total, the second step will cost `(239+238) = 477` reads and `238` temp.table writes.
 
 
-Execution of the latter (`<code>DEPENDENT SUBQUERY</code>`) plan reads 18 rows using an index on `<code>City.Country</code>` for each record it receives for table `<code>Country</code>`. This works out to a cost of `<code>(18*239) = 4302</code>` reads. Had there been fewer subquery invocations, this plan would have been better than the one with Materialization. By the way, MariaDB has an option to use such a query plan, too (see [FirstMatch Strategy](firstmatch-strategy.md)), but it did not choose it.
+Execution of the latter (`DEPENDENT SUBQUERY`) plan reads 18 rows using an index on `City.Country` for each record it receives for table `Country`. This works out to a cost of `(18*239) = 4302` reads. Had there been fewer subquery invocations, this plan would have been better than the one with Materialization. By the way, MariaDB has an option to use such a query plan, too (see [FirstMatch Strategy](firstmatch-strategy.md)), but it did not choose it.
 
 
 ## Subqueries with grouping
@@ -197,8 +197,8 @@ Semi-join materialization
 
 
 * Can be used for uncorrelated IN-subqueries. The subselect may use grouping and/or aggregate functions.
-* Is shown in `<code>EXPLAIN</code>` as `<code class="fixed" style="white-space:pre-wrap">type=MATERIALIZED</code>` for the subquery, and a line with
-`<code class="fixed" style="white-space:pre-wrap">table=<subqueryN></code>` in the parent subquery.
-* Is enabled when one has both `<code class="fixed" style="white-space:pre-wrap">materialization=on</code>` and `<code class="fixed" style="white-space:pre-wrap">semijoin=on</code>` in the [optimizer_switch](../../system-variables/server-system-variables.md#optimizer_switch) variable.
-* The `<code class="fixed" style="white-space:pre-wrap">materialization=on|off</code>` flag is shared with [Non-semijoin materialization](../subquery-optimizations/non-semi-join-subquery-optimizations.md#materialization-for-non-correlated-in-subqueries).
+* Is shown in `EXPLAIN` as `type=MATERIALIZED` for the subquery, and a line with
+`table=<subqueryN>` in the parent subquery.
+* Is enabled when one has both `materialization=on` and `semijoin=on` in the [optimizer_switch](../../system-variables/server-system-variables.md#optimizer_switch) variable.
+* The `materialization=on|off` flag is shared with [Non-semijoin materialization](../subquery-optimizations/non-semi-join-subquery-optimizations.md#materialization-for-non-correlated-in-subqueries).
 

@@ -284,7 +284,7 @@ TEXT or BLOB may help. In current row format, BLOB prefix of 0 bytes is stored i
 The following shell script will read through a MariaDB server to identify every table that has a row size definition that is too large for its row format and the server's page size. It runs on most common distributions of Linux.
 
 
-To run the script, copy the code below to a shell-script named `<code>rowsize.sh</code>`, make it executable with the command `<code>chmod 755 ./rowsize.sh</code>`, and invoke it with the following parameters:
+To run the script, copy the code below to a shell-script named `rowsize.sh`, make it executable with the command `chmod 755 ./rowsize.sh`, and invoke it with the following parameters:
 
 
 ```
@@ -297,7 +297,7 @@ When the script runs, it displays the name of the temporary database it creates,
 As the script runs it will output one line reporting the database and tablename for each table it finds that has the oversize row problem. If it finds none, it will print the following message: "No tables with rows size too big found."
 
 
-In either case, the script prints one final line to announce when it's done: `<code>./rowsize.sh done.</code>`
+In either case, the script prints one final line to announce when it's done: `./rowsize.sh done.`
 
 
 ```
@@ -397,7 +397,7 @@ Therefore, a counter-intuitive solution to the *Row size too large* error in a l
 Some possible ways to change the table schema are listed below.
 
 
-#### Converting Some Columns to `<code>BLOB</code>` or `<code>TEXT</code>`
+#### Converting Some Columns to `BLOB` or `TEXT`
 
 
 For [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) columns, the [DYNAMIC](innodb-dynamic-row-format.md) row format can store these columns on overflow pages. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](innodb-dynamic-row-format.md#overflow-pages-with-the-dynamic-row-format) for more information.
@@ -406,16 +406,16 @@ For [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../da
 Therefore, a potential solution to the *Row size too large* error is to convert some columns to the [BLOB](../../../data-types/string-data-types/blob.md) or [TEXT](../../../data-types/string-data-types/text.md) data types.
 
 
-#### Increasing the Length of `<code>VARBINARY</code>` Columns
+#### Increasing the Length of `VARBINARY` Columns
 
 
 For [VARBINARY](../../../data-types/string-data-types/varbinary.md) columns, the [DYNAMIC](innodb-dynamic-row-format.md) row format can only store these columns on overflow pages if the maximum length of the column is 256 bytes or longer. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](innodb-dynamic-row-format.md#overflow-pages-with-the-dynamic-row-format) for more information.
 
 
-Therefore, a potential solution to the *Row size too large* error is to ensure that all [VARBINARY](../../../data-types/string-data-types/varbinary.md) columns are at least as long as `<code>varbinary(256)</code>`.
+Therefore, a potential solution to the *Row size too large* error is to ensure that all [VARBINARY](../../../data-types/string-data-types/varbinary.md) columns are at least as long as `varbinary(256)`.
 
 
-#### Increasing the Length of `<code>VARCHAR</code>` Columns
+#### Increasing the Length of `VARCHAR` Columns
 
 
 For [VARCHAR](../../../data-types/string-data-types/varchar.md) columns, the [DYNAMIC](innodb-dynamic-row-format.md) row format can only store these columns on overflow pages if the maximum length of the column is 256 bytes or longer. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](innodb-dynamic-row-format.md#overflow-pages-with-the-dynamic-row-format) for more information.
@@ -427,7 +427,7 @@ The original table schema shown earlier on this page causes the *Row size too la
 Therefore, a potential solution to the *Row size too large* error is to ensure that all [VARCHAR](../../../data-types/string-data-types/varchar.md) columns are at least as long as 256 bytes. The number of characters required to reach the 256 byte limit depends on the [character set](../../../data-types/string-data-types/character-sets/README.md) used by the column.
 
 
-For example, when using InnoDB's [DYNAMIC](innodb-dynamic-row-format.md) row format and a default character set of [latin1](../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md) (which requires up to 1 byte per character), the 256 byte limit means that a [VARCHAR](../../../data-types/string-data-types/varchar.md) column will only be stored on overflow pages if it is at least as large as a `<code>varchar(256)</code>`:
+For example, when using InnoDB's [DYNAMIC](innodb-dynamic-row-format.md) row format and a default character set of [latin1](../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md) (which requires up to 1 byte per character), the 256 byte limit means that a [VARCHAR](../../../data-types/string-data-types/varchar.md) column will only be stored on overflow pages if it is at least as large as a `varchar(256)`:
 
 
 ```
@@ -636,7 +636,7 @@ CREATE OR REPLACE TABLE tab (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 ```
 
-And when using InnoDB's [DYNAMIC](innodb-dynamic-row-format.md) row format and a default character set of [utf8](../../../data-types/string-data-types/character-sets/unicode.md) (which requires up to 3 bytes per character), the 256 byte limit means that a [VARCHAR](../../../data-types/string-data-types/varchar.md) column will only be stored on overflow pages if it is at least as large as a `<code>varchar(86)</code>`:
+And when using InnoDB's [DYNAMIC](innodb-dynamic-row-format.md) row format and a default character set of [utf8](../../../data-types/string-data-types/character-sets/unicode.md) (which requires up to 3 bytes per character), the 256 byte limit means that a [VARCHAR](../../../data-types/string-data-types/varchar.md) column will only be stored on overflow pages if it is at least as large as a `varchar(86)`:
 
 
 ```
@@ -845,7 +845,7 @@ CREATE OR REPLACE TABLE tab (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
-And when using InnoDB's [DYNAMIC](innodb-dynamic-row-format.md) row format and a default character set of [utf8mb4](../../../data-types/string-data-types/character-sets/unicode.md) (which requires up to 4 bytes per character), the 256 byte limit means that a [VARCHAR](../../../data-types/string-data-types/varchar.md) column will only be stored on overflow pages if it is at least as large as a `<code>varchar(64)</code>`:
+And when using InnoDB's [DYNAMIC](innodb-dynamic-row-format.md) row format and a default character set of [utf8mb4](../../../data-types/string-data-types/character-sets/unicode.md) (which requires up to 4 bytes per character), the 256 byte limit means that a [VARCHAR](../../../data-types/string-data-types/varchar.md) column will only be stored on overflow pages if it is at least as large as a `varchar(64)`:
 
 
 ```
@@ -1096,7 +1096,7 @@ This workaround can even work if your table is so wide that the previous solutio
 ### Disabling InnoDB Strict Mode
 
 
-An *unsafe* workaround is to disable [InnoDB strict mode](../innodb-strict-mode.md). [InnoDB strict mode](../innodb-strict-mode.md) can be disabled by setting the [innodb_strict_mode](../innodb-system-variables.md) system variable to `<code>OFF</code>`.
+An *unsafe* workaround is to disable [InnoDB strict mode](../innodb-strict-mode.md). [InnoDB strict mode](../innodb-strict-mode.md) can be disabled by setting the [innodb_strict_mode](../innodb-system-variables.md) system variable to `OFF`.
 
 
 For example, even though the following table schema is too large for most InnoDB row formats to store, it can still be created when [InnoDB strict mode](../innodb-strict-mode.md) is disabled:

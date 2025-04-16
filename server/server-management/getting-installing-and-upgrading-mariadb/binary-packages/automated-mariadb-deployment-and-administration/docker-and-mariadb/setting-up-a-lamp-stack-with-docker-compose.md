@@ -8,10 +8,10 @@ For information about installing Docker Compose, see [Install Docker Compose](ht
 
 
 
-## The `<code>docker-compose.yml</code>` File
+## The `docker-compose.yml` File
 
 
-When using Docker Compose, the Docker infrastructure must be described in a YAML file called `<code>docker-compose.yml</code>`.
+When using Docker Compose, the Docker infrastructure must be described in a YAML file called `docker-compose.yml`.
 
 
 Let's see an example:
@@ -48,18 +48,18 @@ services:
 In the first line we declare that we are using version 3 of the Docker compose language.
 
 
-Then we have the list of services, namely the `<code>web</code>` and the `<code>mariadb</code>` services.
+Then we have the list of services, namely the `web` and the `mariadb` services.
 
 
 Let's see the properties of the services:
 
 
-* `<code>port</code>` maps the 8080 container port to the 80 host system port. This is very useful for a development environment, but not in production, because it allows us to connect our browser to the containerized web server. Normally there is no need to connect to MariaDB from the host system.
-* `<code>links</code>` declares that this container must be able to connect `<code>mariadb</code>`. The hostname is the container name.
-* `<code>depends_on</code>` declares that `<code>mariadb</code>` needs to start before `<code>web</code>`. This is because we cannot do anything with our application until MariaDB is ready to accept connections.
-* `<code>restart: always</code>` declares that the containers must restart if they crash.
-* `<code>volumes</code>` creates volumes for the container if it is set in a service definition, or a volume that can be used by any container if it is set globally, at the same level as `<code>services</code>`. Volumes are directories in the host system that can be accessed by any number of containers. This allows destroying a container without losing data.
-* `<code>environment</code>` sets environment variables inside the container. This is important because in setting these variables we set the MariaDB root credentials for the container.
+* `port` maps the 8080 container port to the 80 host system port. This is very useful for a development environment, but not in production, because it allows us to connect our browser to the containerized web server. Normally there is no need to connect to MariaDB from the host system.
+* `links` declares that this container must be able to connect `mariadb`. The hostname is the container name.
+* `depends_on` declares that `mariadb` needs to start before `web`. This is because we cannot do anything with our application until MariaDB is ready to accept connections.
+* `restart: always` declares that the containers must restart if they crash.
+* `volumes` creates volumes for the container if it is set in a service definition, or a volume that can be used by any container if it is set globally, at the same level as `services`. Volumes are directories in the host system that can be accessed by any number of containers. This allows destroying a container without losing data.
+* `environment` sets environment variables inside the container. This is important because in setting these variables we set the MariaDB root credentials for the container.
 
 
 ### About Volumes
@@ -79,7 +79,7 @@ Note that Docker Compose variables are just placeholders for values. Compose doe
 ### Using Variables
 
 
-In the above example you can see several variables, like `<code>${MARIADB_VERSION}</code>`. Before executing the file, Docker Compose will replace this syntax with the `<code>MARIADB_VERSION</code>` variable.
+In the above example you can see several variables, like `${MARIADB_VERSION}`. Before executing the file, Docker Compose will replace this syntax with the `MARIADB_VERSION` variable.
 
 
 Variables allow making Docker Compose files more re-usable: in this case, we can use any MariaDB image version without modifying the Docker Compose file.
@@ -108,10 +108,10 @@ services:
 ## Docker Compose Commands
 
 
-Docker Compose is operated using `<code>docker-compose</code>`. Here we'll see the most common commands. For more commands and for more information about the commands mentioned here, see the documentation.
+Docker Compose is operated using `docker-compose`. Here we'll see the most common commands. For more commands and for more information about the commands mentioned here, see the documentation.
 
 
-Docker Compose assumes that the Composer file is located in the current directory and it's called `<code>docker-compose.yml</code>`. To use a different file, the `<code>-f <filename></code>` parameter must be specified.
+Docker Compose assumes that the Composer file is located in the current directory and it's called `docker-compose.yml`. To use a different file, the `-f <filename>` parameter must be specified.
 
 
 To pull the necessary images:
@@ -145,7 +145,7 @@ To recreate containers in all cases:
 docker-compose up --force-recreate
 ```
 
-Normally `<code>docker-compose up</code>` starts the containers. To create them without starting them, add the `<code>--no-start</code>` option.
+Normally `docker-compose up` starts the containers. To create them without starting them, add the `--no-start` option.
 
 
 To restart containers without recreating them:
@@ -155,7 +155,7 @@ To restart containers without recreating them:
 docker-compose restart
 ```
 
-To kill a container by sending it a `<code>SIGKILL</code>`:
+To kill a container by sending it a `SIGKILL`:
 
 
 ```

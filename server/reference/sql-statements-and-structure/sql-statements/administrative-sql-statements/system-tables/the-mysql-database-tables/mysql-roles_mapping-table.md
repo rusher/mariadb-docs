@@ -5,13 +5,13 @@
 
 
 
-The `<code>mysql.roles_mapping</code>` table contains information about mariaDB [roles](../../../../../../security/user-account-management/roles/roles_overview.md).
+The `mysql.roles_mapping` table contains information about mariaDB [roles](../../../../../../security/user-account-management/roles/roles_overview.md).
 
 
 This table uses the [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine.
 
 
-The `<code>mysql.roles_mapping</code>` table contains the following fields:
+The `mysql.roles_mapping` table contains the following fields:
 
 
 
@@ -25,5 +25,5 @@ The `<code>mysql.roles_mapping</code>` table contains the following fields:
 
 
 
-The [Acl_role_grants](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_role_grants) status variable indicates how many rows the `<code>mysql.roles_mapping</code>` table contains.
+The [Acl_role_grants](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_role_grants) status variable indicates how many rows the `mysql.roles_mapping` table contains.
 

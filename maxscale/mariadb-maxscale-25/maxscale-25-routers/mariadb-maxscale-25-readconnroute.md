@@ -41,10 +41,10 @@ be re-established and the session will be closed. The fact that the server
 is fixed when the client connects also means that routing hints are ignored.
 
 
-**Warning:** `<code>readconnroute</code>` will not prevent writes from being done even if you
- define `<code>router_options=slave</code>`. The client application is responsible for
+**Warning:** `readconnroute` will not prevent writes from being done even if you
+ define `router_options=slave`. The client application is responsible for
  making sure that it only performs read-only queries in such
- cases. `<code>readconnroute</code>` is simple by design: it selects a server for each
+ cases. `readconnroute` is simple by design: it selects a server for each
  client connection and routes all queries there. If something more complex is
  required, the [readwritesplit](mariadb-maxscale-25-readwritesplit.md) router is usually the right
  choice.
@@ -60,7 +60,7 @@ For more details about the standard service parameters, refer to the
 ### Router Options
 
 
-**`<code>router_options</code>`** can contain a comma separated list of valid server
+**`router_options`** can contain a comma separated list of valid server
 roles. These roles are used as the valid types of servers the router will
 form connections to when new sessions are created.
 
@@ -76,7 +76,7 @@ router_options=master,slave
 
 
 
-Here is a list of all possible values for the `<code>router_options</code>`.
+Here is a list of all possible values for the `router_options`.
 
 
 | Role | Description |
@@ -88,9 +88,9 @@ Here is a list of all possible values for the `<code>router_options</code>`.
 | running | A server that is up and running. All servers that MariaDB MaxScale can connect to are labeled as running. |
 
 
-If no `<code>router_options</code>` parameter is configured in the service definition,
-the router will use the default value of `<code>running</code>`. This means that it will
-load balance connections across all running servers defined in the `<code>servers</code>`
+If no `router_options` parameter is configured in the service definition,
+the router will use the default value of `running`. This means that it will
+load balance connections across all running servers defined in the `servers`
 parameter of the service.
 
 
@@ -124,7 +124,7 @@ router_options=slave
 
 
 
-Here the `<code>router_options</code>` designates slaves as the only valid server
+Here the `router_options` designates slaves as the only valid server
 type. With this configuration, the queries are load balanced across the
 slave servers.
 
@@ -136,14 +136,14 @@ examples in the [Tutorials](https://mariadb.com/kb/Tutorials) folder.
 ## Router Diagnostics
 
 
-The `<code>router_diagnostics</code>` output for readconnroute has the following fields.
+The `router_diagnostics` output for readconnroute has the following fields.
 
 
-* `<code>queries</code>`: Number of queries executed through this service.
+* `queries`: Number of queries executed through this service.
 
 
 ## Limitations
 
 
-* Sending of binary data with `<code>LOAD DATA LOCAL INFILE</code>` is not supported.
+* Sending of binary data with `LOAD DATA LOCAL INFILE` is not supported.
 * The router will never reconnect to the server it initially connected to.

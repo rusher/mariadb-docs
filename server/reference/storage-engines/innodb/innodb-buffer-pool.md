@@ -49,7 +49,7 @@ If innodb_buffer_pool_size is set to more than 1GB, [innodb_buffer_pool_instance
 The default 37% reserved for the old list can be adjusted by changing the value of [innodb_old_blocks_pct](innodb-system-variables.md#innodb_old_blocks_pct). It can accept anything between between 5% and 95%.
 
 
-The [innodb_old_blocks_time](innodb-system-variables.md#innodb_old_blocks_time) variable specifies the delay before a block can be moved from the old to the new sublist. `<code>0</code>` means no delay, while the default has been set to `<code>1000</code>`.
+The [innodb_old_blocks_time](innodb-system-variables.md#innodb_old_blocks_time) variable specifies the delay before a block can be moved from the old to the new sublist. `0` means no delay, while the default has been set to `1000`.
 
 
 Before changing either of these values from their defaults, make sure you understand the impact and how your system currently uses the buffer. Their main reason for existence is to reduce the impact of full table scans, which are usually infrequent, but large, and previously could clear everything from the buffer. Setting a non-zero delay could help in situations where full table scans are performed in quick succession.

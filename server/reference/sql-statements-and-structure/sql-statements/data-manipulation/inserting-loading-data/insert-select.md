@@ -15,7 +15,7 @@ INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
 ## Description
 
 
-With `<code class="highlight fixed" style="white-space:pre-wrap">INSERT ... SELECT</code>`, you can quickly insert many rows
+With `INSERT ... SELECT`, you can quickly insert many rows
 into a table from one or more other tables. For example:
 
 
@@ -25,16 +25,16 @@ INSERT INTO tbl_temp2 (fld_id)
   FROM tbl_temp1 WHERE tbl_temp1.fld_order_id > 100;
 ```
 
-`<code>tbl_name</code>` can also be specified in the form `<code>db_name</code>`.`<code>tbl_name</code>` (see [Identifier Qualifiers](../../../sql-language-structure/identifier-qualifiers.md)). This allows to copy rows between different databases.
+`tbl_name` can also be specified in the form `db_name`.`tbl_name` (see [Identifier Qualifiers](../../../sql-language-structure/identifier-qualifiers.md)). This allows to copy rows between different databases.
 
 
 If the new table has a primary key or UNIQUE indexes, you can use [IGNORE](ignore.md) to handle duplicate key errors during the query. The newer values will not be inserted if an identical value already exists.
 
 
-`<code>[REPLACE](../../built-in-functions/string-functions/replace-function.md)</code>` can be used instead of `<code>INSERT</code>` to prevent duplicates on `<code>UNIQUE</code>` indexes by deleting old values. In that case, `<code>ON DUPLICATE KEY UPDATE</code>` cannot be used.
+`[REPLACE](../../built-in-functions/string-functions/replace-function.md)` can be used instead of `INSERT` to prevent duplicates on `UNIQUE` indexes by deleting old values. In that case, `ON DUPLICATE KEY UPDATE` cannot be used.
 
 
-`<code>INSERT ... SELECT</code>` works for tables which already exist. To create a table for a given resultset, you can use [CREATE TABLE ... SELECT](../../../vectors/create-table-with-vectors.md).
+`INSERT ... SELECT` works for tables which already exist. To create a table for a given resultset, you can use [CREATE TABLE ... SELECT](../../../vectors/create-table-with-vectors.md).
 
 
 ## See Also

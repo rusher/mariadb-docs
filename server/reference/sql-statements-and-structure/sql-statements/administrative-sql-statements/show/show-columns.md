@@ -13,23 +13,23 @@ SHOW [FULL] {COLUMNS | FIELDS} FROM tbl_name [FROM db_name]
 ## Description
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW COLUMNS</code>` displays information about the columns in a
-given table. It also works for views. The `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clause, if
-present on its own, indicates which column names to match. The `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+`SHOW COLUMNS` displays information about the columns in a
+given table. It also works for views. The `LIKE` clause, if
+present on its own, indicates which column names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 
 If the data types differ from what you expect them to be based on a
-`<code class="highlight fixed" style="white-space:pre-wrap">CREATE TABLE</code>` statement, note that MariaDB sometimes changes
+`CREATE TABLE` statement, note that MariaDB sometimes changes
 data types when you create or alter a table. The conditions under which this
 occurs are described in the [Silent Column Changes](../../data-definition/create/silent-column-changes.md) article.
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">FULL</code>` keyword causes the output to include the column
+The `FULL` keyword causes the output to include the column
 collation and comments, as well as the privileges you have for each column.
 
 
-You can use `<code class="highlight fixed" style="white-space:pre-wrap">db_name.tbl_name</code>` as an alternative to the
-`<code class="highlight fixed" style="white-space:pre-wrap">tbl_name FROM db_name</code>` syntax. In other words, these two
+You can use `db_name.tbl_name` as an alternative to the
+`tbl_name FROM db_name` syntax. In other words, these two
 statements are equivalent:
 
 
@@ -38,7 +38,7 @@ SHOW COLUMNS FROM mytable FROM mydb;
 SHOW COLUMNS FROM mydb.mytable;
 ```
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW COLUMNS</code>` displays the following values for each table
+`SHOW COLUMNS` displays the following values for each table
 column:
 
 
@@ -62,13 +62,13 @@ The **Key** field indicates whether the column is indexed:
 
 * If Key is empty, the column either is not indexed or is indexed only as a
  secondary column in a multiple-column, non-unique index.
-* If Key is PRI, the column is a `<code class="highlight fixed" style="white-space:pre-wrap">PRIMARY KEY</code>` or
- is one of the columns in a multiple-column `<code class="highlight fixed" style="white-space:pre-wrap">PRIMARY KEY</code>`.
+* If Key is PRI, the column is a `PRIMARY KEY` or
+ is one of the columns in a multiple-column `PRIMARY KEY`.
 * If Key is UNI, the column is the first column of a unique-valued
- index that cannot contain `<code class="highlight fixed" style="white-space:pre-wrap">NULL</code>` values.
+ index that cannot contain `NULL` values.
 * If Key is MUL, multiple occurrences of a given value are allowed
  within the column. The column is the first column of a non-unique index or a
- unique-valued index that can contain `<code class="highlight fixed" style="white-space:pre-wrap">NULL</code>` values.
+ unique-valued index that can contain `NULL` values.
 
 
 If more than one of the **Key** values applies to a given column of a
@@ -76,11 +76,11 @@ table, **Key** displays the one with the highest priority, in the order
 PRI, UNI, MUL.
 
 
-A `<code class="highlight fixed" style="white-space:pre-wrap">UNIQUE</code>` index may be displayed as `<code class="highlight fixed" style="white-space:pre-wrap">PRI</code>` if
-it cannot contain `<code class="highlight fixed" style="white-space:pre-wrap">NULL</code>` values and there is no
-`<code class="highlight fixed" style="white-space:pre-wrap">PRIMARY KEY</code>` in the table. A `<code class="highlight fixed" style="white-space:pre-wrap">UNIQUE</code>` index
-may display as `<code class="highlight fixed" style="white-space:pre-wrap">MUL</code>` if several columns form a composite
-`<code class="highlight fixed" style="white-space:pre-wrap">UNIQUE</code>` index; although the combination of the columns is
+A `UNIQUE` index may be displayed as `PRI` if
+it cannot contain `NULL` values and there is no
+`PRIMARY KEY` in the table. A `UNIQUE` index
+may display as `MUL` if several columns form a composite
+`UNIQUE` index; although the combination of the columns is
 unique, each column can still hold multiple occurrences of a given value.
 
 
@@ -103,15 +103,15 @@ The **Extra** field contains any additional information that is available about 
 
 
 **Privileges** indicates the privileges you have for the column. This
-value is displayed only if you use the `<code class="highlight fixed" style="white-space:pre-wrap">FULL</code>` keyword.
+value is displayed only if you use the `FULL` keyword.
 
 
 **Comment** indicates any comment the column has. This value is displayed
-only if you use the `<code class="highlight fixed" style="white-space:pre-wrap">FULL</code>` keyword.
+only if you use the `FULL` keyword.
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW FIELDS</code>` is a synonym for
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW COLUMNS</code>`. Also [DESCRIBE](../describe.md) and [EXPLAIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) can be used as shortcuts.
+`SHOW FIELDS` is a synonym for
+`SHOW COLUMNS`. Also [DESCRIBE](../describe.md) and [EXPLAIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) can be used as shortcuts.
 
 
 You can also list a table's columns with:
@@ -124,7 +124,7 @@ mariadb-show db_name tbl_name
 See the [mariadb-show](../../../../../clients-and-utilities/mariadb-show.md) command for more details.
 
 
-The [DESCRIBE](../describe.md) statement provides information similar to `<code>SHOW COLUMNS</code>`. The [information_schema.COLUMNS](../system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) table provides similar, but more complete, information.
+The [DESCRIBE](../describe.md) statement provides information similar to `SHOW COLUMNS`. The [information_schema.COLUMNS](../system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) table provides similar, but more complete, information.
 
 
 The [SHOW CREATE TABLE](show-create-table.md), [SHOW TABLE STATUS](show-table-status.md), and [SHOW INDEX](show-index.md) statements also provide information about tables.

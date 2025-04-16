@@ -5,12 +5,12 @@
 ## Installing MariaDB with APT
 
 
-On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant `<code>.deb</code>` packages from MariaDB's
-repository using `<code>[apt](https://manpages.ubuntu.com/manpages/bionic/man8/apt.8.html)</code>`, `<code>[aptitude](https://manpages.ubuntu.com/manpages/bionic/man8/aptitude-curses.8.html)</code>`, [Ubuntu Software Center](https://help.ubuntu.com/community/UbuntuSoftwareCenter), [Synaptic Package Manager](https://help.ubuntu.com/community/SynapticHowto), or another package
+On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant `.deb` packages from MariaDB's
+repository using `[apt](https://manpages.ubuntu.com/manpages/bionic/man8/apt.8.html)`, `[aptitude](https://manpages.ubuntu.com/manpages/bionic/man8/aptitude-curses.8.html)`, [Ubuntu Software Center](https://help.ubuntu.com/community/UbuntuSoftwareCenter), [Synaptic Package Manager](https://help.ubuntu.com/community/SynapticHowto), or another package
 manager.
 
 
-This page walks you through the simple installation steps using `<code>apt</code>`.
+This page walks you through the simple installation steps using `apt`.
 
 
 ### Adding the MariaDB APT repository
@@ -33,10 +33,10 @@ We currently have APT repositories for the following Linux distributions:
 #### Using the MariaDB Package Repository Setup Script
 
 
-If you want to install MariaDB with `<code>apt</code>`, then you can configure `<code>apt</code>` to install from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](mariadb-package-repository-setup-and-usage.md).
+If you want to install MariaDB with `apt`, then you can configure `apt` to install from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](mariadb-package-repository-setup-and-usage.md).
 
 
-MariaDB Corporation provides a MariaDB Package Repository for several Linux distributions that use `<code>apt</code>` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](/kb/en/clients-utilities/), [client libraries](../../../clients-and-utilities/server-client-software/client-libraries/README.md), [plugins](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md), and [Mariabackup](../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md). The MariaDB Package Repository setup script automatically configures your system to install packages from the MariaDB Package Repository.
+MariaDB Corporation provides a MariaDB Package Repository for several Linux distributions that use `apt` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](/kb/en/clients-utilities/), [client libraries](../../../clients-and-utilities/server-client-software/client-libraries/README.md), [plugins](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md), and [Mariabackup](../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md). The MariaDB Package Repository setup script automatically configures your system to install packages from the MariaDB Package Repository.
 
 
 To use the script, execute the following command:
@@ -55,10 +55,10 @@ See [MariaDB Package Repository Setup and Usage](mariadb-package-repository-setu
 #### Using the MariaDB Repository Configuration Tool
 
 
-If you want to install MariaDB with `<code>apt</code>`, then you can configure `<code>apt</code>` to install from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://mariadb.org/download/?t=repo-config).
+If you want to install MariaDB with `apt`, then you can configure `apt` to install from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://mariadb.org/download/?t=repo-config).
 
 
-The MariaDB Foundation provides a MariaDB repository for several Linux distributions that use `<code>apt-get</code>` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](/kb/en/clients-utilities/), [client libraries](../../../clients-and-utilities/server-client-software/client-libraries/README.md), [plugins](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md), and [Mariabackup](../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md). The MariaDB Repository Configuration Tool can easily generate the appropriate commands to add the repository for your distribution.
+The MariaDB Foundation provides a MariaDB repository for several Linux distributions that use `apt-get` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](/kb/en/clients-utilities/), [client libraries](../../../clients-and-utilities/server-client-software/client-libraries/README.md), [plugins](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md), and [Mariabackup](../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md). The MariaDB Repository Configuration Tool can easily generate the appropriate commands to add the repository for your distribution.
 
 
 There are several ways to add the repository.
@@ -67,10 +67,10 @@ There are several ways to add the repository.
 ##### Executing add-apt-repository
 
 
-One way to add an `<code>apt</code>` repository is by using the `<code>[add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html)</code>` command. This command will add the repository configuration to `<code>/etc/apt/sources.list</code>`.
+One way to add an `apt` repository is by using the `[add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html)` command. This command will add the repository configuration to `/etc/apt/sources.list`.
 
 
-For example, if you wanted to use the repository to install [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) on Ubuntu 18.04 LTS (Bionic), then you could use the following commands to add the MariaDB `<code>apt</code>` repository:
+For example, if you wanted to use the repository to install [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) on Ubuntu 18.04 LTS (Bionic), then you could use the following commands to add the MariaDB `apt` repository:
 
 
 ```
@@ -88,10 +88,10 @@ sudo apt update
 ##### Creating a Source List File
 
 
-Another way to add an `<code>apt</code>` repository is by creating a [source list](https://manpages.ubuntu.com/manpages/bionic/man5/sources.list.5.html) file in `<code>/etc/apt/sources.list.d/</code>`.
+Another way to add an `apt` repository is by creating a [source list](https://manpages.ubuntu.com/manpages/bionic/man5/sources.list.5.html) file in `/etc/apt/sources.list.d/`.
 
 
-For example, if you wanted to use the repository to install [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) on Ubuntu 18.04 LTS (Bionic), then you could create the `<code>MariaDB.list</code>` file in `<code>/etc/apt/sources.list.d/</code>` with the following contents to add the MariaDB `<code>apt</code>` repository:
+For example, if you wanted to use the repository to install [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) on Ubuntu 18.04 LTS (Bionic), then you could create the `MariaDB.list` file in `/etc/apt/sources.list.d/` with the following contents to add the MariaDB `apt` repository:
 
 
 ```
@@ -111,7 +111,7 @@ sudo apt update
 ##### Using Ubuntu Software Center
 
 
-Another way to add an `<code>apt</code>` repository is by using [Ubuntu Software Center](https://help.ubuntu.com/community/UbuntuSoftwareCenter).
+Another way to add an `apt` repository is by using [Ubuntu Software Center](https://help.ubuntu.com/community/UbuntuSoftwareCenter).
 
 
 You can do this by going to the **Software Sources** window. This window can be opened either by navigating to **Edit** > **Software Sources** or by navigating to **System** > **Administration** > **Software Sources**.
@@ -126,7 +126,7 @@ See [here](https://help.ubuntu.com/community/UbuntuSoftwareCenter#Managing_softw
 ##### Using Synaptic Package Manager
 
 
-Another way to add an `<code>apt</code>` repository is by using [Synaptic Package Manager](https://help.ubuntu.com/community/SynapticHowto).
+Another way to add an `apt` repository is by using [Synaptic Package Manager](https://help.ubuntu.com/community/SynapticHowto).
 
 
 You can do this by going to the **Software Sources** window. This window can be opened either by navigating to **System** > **Administrator** > **Software Sources** or by navigating to **Settings** > **Repositories**.
@@ -141,7 +141,7 @@ See [here](https://help.ubuntu.com/community/SynapticHowto#Managing_Repositories
 #### Pinning the MariaDB Repository to a Specific Minor Release
 
 
-If you wish to pin the `<code>apt</code>` repository to a specific minor release, or if you would like to downgrade to a specific minor release, then you can create a `<code>apt</code>` repository with the URL hard-coded to that specific minor release.
+If you wish to pin the `apt` repository to a specific minor release, or if you would like to downgrade to a specific minor release, then you can create a `apt` repository with the URL hard-coded to that specific minor release.
 
 
 The MariaDB Foundation archives repositories of old minor releases at the following URL:
@@ -150,10 +150,10 @@ The MariaDB Foundation archives repositories of old minor releases at the follow
 * [](https://archive.mariadb.org/)
 
 
-Archives are only of the distros and architectures supported at the time of release. For example, [MariaDB 10.6.21](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-21-release-notes.md) exists for Ubuntu `<code>bionic, focal, jammy, kinetic,</code>` and #lunar`<code> is obtained looking in [dists](https://archive.mariadb.org/mariadb-10.6.21/repo/ubuntu/dists).</code>`
+Archives are only of the distros and architectures supported at the time of release. For example, [MariaDB 10.6.21](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-21-release-notes.md) exists for Ubuntu `bionic, focal, jammy, kinetic,` and #lunar` is obtained looking in [dists](https://archive.mariadb.org/mariadb-10.6.21/repo/ubuntu/dists).`
 
 
-For example, if you wanted to pin your repository to [MariaDB 10.5.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes.md) on Ubuntu 20.04 LTS (Focal), then you would have to first remove any existing MariaDB repository source list file from `<code>/etc/apt/sources.list.d/</code>`. And then you could use the following commands to add the MariaDB `<code>apt-get</code>` repository:
+For example, if you wanted to pin your repository to [MariaDB 10.5.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes.md) on Ubuntu 20.04 LTS (Focal), then you would have to first remove any existing MariaDB repository source list file from `/etc/apt/sources.list.d/`. And then you could use the following commands to add the MariaDB `apt-get` repository:
 
 
 ```
@@ -180,38 +180,38 @@ sudo apt update
 ### Updating the MariaDB APT repository to a New Major Release
 
 
-MariaDB's `<code>apt</code>` repository can be updated to a new major release. How this is done depends on how you originally configured the repository.
+MariaDB's `apt` repository can be updated to a new major release. How this is done depends on how you originally configured the repository.
 
 
 #### Updating the Major Release with the MariaDB Package Repository Setup Script
 
 
-If you configured `<code>apt</code>` to install from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](mariadb-package-repository-setup-and-usage.md), then you can update the major release that the repository uses by running the script again.
+If you configured `apt` to install from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](mariadb-package-repository-setup-and-usage.md), then you can update the major release that the repository uses by running the script again.
 
 
 #### Updating the Major Release with the MariaDB Repository Configuration Tool
 
 
-If you configured `<code>apt</code>` to install from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/), then you can update the major release in various ways, depending on how you originally added the repository.
+If you configured `apt` to install from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/), then you can update the major release in various ways, depending on how you originally added the repository.
 
 
 ##### Updating a Repository with add-apt-repository
 
 
-If you added the `<code>apt</code>` repository by using the `<code>[add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html)</code>` command, then you can update the major release that the repository uses by using the the `<code>[add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html)</code>` command again.
+If you added the `apt` repository by using the `[add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html)` command, then you can update the major release that the repository uses by using the the `[add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html)` command again.
 
 
-First, look for the repository string for the old version in `<code>/etc/apt/sources.list</code>`.
+First, look for the repository string for the old version in `/etc/apt/sources.list`.
 
 
-And then, you can remove the repository for the old version by executing the `<code>[add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html)</code>` command and providing the `<code>--remove</code>` option. For example, if you wanted to remove a [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) repository, then you could do so by executing something like the following:
+And then, you can remove the repository for the old version by executing the `[add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html)` command and providing the `--remove` option. For example, if you wanted to remove a [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) repository, then you could do so by executing something like the following:
 
 
 ```
 sudo add-apt-repository --remove 'deb [arch=amd64,arm64,ppc64el] http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.6/ubuntu bionic main'
 ```
 
-After that, you can add the repository for the new version with the `<code>[add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html)</code>` command. For example, if you wanted to use the repository to install [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) on Ubuntu 18.04 LTS (Bionic), then you could use the following commands to add the MariaDB `<code>apt</code>` repository:
+After that, you can add the repository for the new version with the `[add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html)` command. For example, if you wanted to use the repository to install [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) on Ubuntu 18.04 LTS (Bionic), then you could use the following commands to add the MariaDB `apt` repository:
 
 
 ```
@@ -232,7 +232,7 @@ After that, the repository should refer to [MariaDB 10.6](../../../../release-no
 ##### Updating a Source List File
 
 
-If you added the `<code>apt</code>` repository by creating a [source list](https://manpages.ubuntu.com/manpages/bionic/man5/sources.list.5.html) file in `<code>/etc/apt/sources.list.d/</code>`, then you can update the major release that the repository uses by updating the source list file in-place. For example, if you wanted to change the repository from [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) to [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), and if the source list file was at `<code>/etc/apt/sources.list.d/MariaDB.list</code>`, then you could execute the following:
+If you added the `apt` repository by creating a [source list](https://manpages.ubuntu.com/manpages/bionic/man5/sources.list.5.html) file in `/etc/apt/sources.list.d/`, then you can update the major release that the repository uses by updating the source list file in-place. For example, if you wanted to change the repository from [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) to [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), and if the source list file was at `/etc/apt/sources.list.d/MariaDB.list`, then you could execute the following:
 
 
 ```
@@ -252,38 +252,38 @@ After that, the repository should refer to [MariaDB 10.6](../../../../release-no
 ### Importing the MariaDB GPG Public Key
 
 
-Before MariaDB can be installed, you also have to import the GPG public key that is used to verify the digital signatures of the packages in our repositories. This allows the `<code>apt</code>` utility to verify the integrity of the packages that it installs.
+Before MariaDB can be installed, you also have to import the GPG public key that is used to verify the digital signatures of the packages in our repositories. This allows the `apt` utility to verify the integrity of the packages that it installs.
 
 
-* Prior to Debian 9 (Stretch), and Debian Unstable (Sid), and Ubuntu 16.04 LTS (Xenial), the id of our GPG public key is `<code>0xcbcb082a1bb943db</code>`. The full key fingerprint is:
+* Prior to Debian 9 (Stretch), and Debian Unstable (Sid), and Ubuntu 16.04 LTS (Xenial), the id of our GPG public key is `0xcbcb082a1bb943db`. The full key fingerprint is:
 
 
 ```
 1993 69E5 404B D5FC 7D2F E43B CBCB 082A 1BB9 43DB
 ```
 
-The `<code>[apt-key](https://manpages.ubuntu.com/manpages/bionic/man8/apt-key.8.html)</code>` utility can be used to import this key. For example:
+The `[apt-key](https://manpages.ubuntu.com/manpages/bionic/man8/apt-key.8.html)` utility can be used to import this key. For example:
 
 
 ```
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
 ```
 
-* Starting with Debian 9 (Stretch) and Ubuntu 16.04 LTS (Xenial), the id of our GPG public key is `<code>0xF1656F24C74CD1D8</code>`. The full key fingerprint is:
+* Starting with Debian 9 (Stretch) and Ubuntu 16.04 LTS (Xenial), the id of our GPG public key is `0xF1656F24C74CD1D8`. The full key fingerprint is:
 
 
 ```
 177F 4010 FE56 CA33 3630  0305 F165 6F24 C74C D1D8
 ```
 
-The `<code>[apt-key](https://manpages.ubuntu.com/manpages/bionic/man8/apt-key.8.html)</code>` utility can be used to import this key. For example:
+The `[apt-key](https://manpages.ubuntu.com/manpages/bionic/man8/apt-key.8.html)` utility can be used to import this key. For example:
 
 
 ```
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
 ```
 
-Starting with Debian 9 (Stretch), the `<code>[dirmngr](https://manpages.debian.org/stretch/dirmngr/dirmngr.8.en.html)</code>` package needs to be installed before the GPG public key can be imported. To install it, execute: `<code>sudo apt install dirmngr</code>`
+Starting with Debian 9 (Stretch), the `[dirmngr](https://manpages.debian.org/stretch/dirmngr/dirmngr.8.en.html)` package needs to be installed before the GPG public key can be imported. To install it, execute: `sudo apt install dirmngr`
 
 
 If you are unsure which GPG public key you need, then it is perfectly safe to import both keys.
@@ -308,7 +308,7 @@ Once the GPG public key is imported, you are ready to install packages from the 
 ### Installing MariaDB Packages with APT
 
 
-After the `<code>apt</code>` repository is configured, you can install MariaDB by executing the `<code>[apt-get](https://manpages.ubuntu.com/manpages/bionic/man8/apt-get.8.html)</code>` command. The specific command that you would use would depend on which specific packages that you want to install.
+After the `apt` repository is configured, you can install MariaDB by executing the `[apt-get](https://manpages.ubuntu.com/manpages/bionic/man8/apt-get.8.html)` command. The specific command that you would use would depend on which specific packages that you want to install.
 
 
 #### Installing the Most Common Packages with APT
@@ -348,13 +348,13 @@ sudo apt-get install mariadb-server
 #### Installing MariaDB Galera Cluster with APT
 
 
-The process to install MariaDB Galera Cluster with the MariaDB `<code>apt-get</code>` repository is practically the same as installing standard MariaDB Server.
+The process to install MariaDB Galera Cluster with the MariaDB `apt-get` repository is practically the same as installing standard MariaDB Server.
 
 
-Galera Cluster support is included in the standard MariaDB Server packages, so you will need to install the `<code>mariadb-server</code>` package, as you normally would.
+Galera Cluster support is included in the standard MariaDB Server packages, so you will need to install the `mariadb-server` package, as you normally would.
 
 
-You also need to install the `<code>galera-4</code>` package to obtain the [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 wsrep provider library.
+You also need to install the `galera-4` package to obtain the [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 wsrep provider library.
 
 
 To install MariaDB Galera Cluster, first you would have to update the package cache by executing the following command:
@@ -371,7 +371,7 @@ To install MariaDB Galera Cluster, you could execute the following command:
 sudo apt-get install mariadb-server mariadb-client galera-4
 ```
 
-MariaDB Galera Cluster also has a separate package that can be installed on arbitrator nodes. The package is called `<code>galera-arbitrator-4</code>`. This package should be installed on whatever node you want to serve as the arbitrator. It can either run on a separate server that is not acting as a cluster node, which is the recommended configuration, or it can run on a server that is also acting as an existing cluster node.
+MariaDB Galera Cluster also has a separate package that can be installed on arbitrator nodes. The package is called `galera-arbitrator-4`. This package should be installed on whatever node you want to serve as the arbitrator. It can either run on a separate server that is not acting as a cluster node, which is the recommended configuration, or it can run on a server that is also acting as an existing cluster node.
 
 
 To install the arbitrator package, you could execute the following command:
@@ -430,7 +430,7 @@ sudo apt-get install mariadb-backup
 Some [plugins](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md) may also need to be installed.
 
 
-For example, to install the `<code>[cracklib_password_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md)</code>` password validation plugin, first you would have to update the package cache by executing the following command:
+For example, to install the `[cracklib_password_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md)` password validation plugin, first you would have to update the package cache by executing the following command:
 
 
 ```
@@ -447,7 +447,7 @@ sudo apt-get install mariadb-cracklib-password-check
 #### Installing Older Versions from the Repository
 
 
-The MariaDB `<code>apt</code>` repository contains the last few versions of MariaDB. To show what versions are available, use the `<code>[apt-cache](https://manpages.ubuntu.com/manpages/bionic/man8/apt-cache.8.html)</code>` command:
+The MariaDB `apt` repository contains the last few versions of MariaDB. To show what versions are available, use the `[apt-cache](https://manpages.ubuntu.com/manpages/bionic/man8/apt-cache.8.html)` command:
 
 
 ```
@@ -461,7 +461,7 @@ To install an older version of a package instead of the latest version we just
 need to specify the package name, an equal sign, and then the version number.
 
 
-However, when installing an older version of a package, if `<code>apt-get</code>` has to install dependencies, then it will automatically choose to install the latest versions of those packages. To ensure that all MariaDB packages are on the same version in this scenario, it is necessary to specify them all. Therefore, to install [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md). from this `<code>apt</code>` repository, we would do the following:
+However, when installing an older version of a package, if `apt-get` has to install dependencies, then it will automatically choose to install the latest versions of those packages. To ensure that all MariaDB packages are on the same version in this scenario, it is necessary to specify them all. Therefore, to install [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md). from this `apt` repository, we would do the following:
 
 
 ```
@@ -475,16 +475,16 @@ The rest of the install and setup process is as normal.
 
 
 While it is not recommended, it is possible to download and install the
-`<code>.deb</code>` packages manually. However, it is generally recommended to use a package manager like `<code>apt-get</code>`.
+`.deb` packages manually. However, it is generally recommended to use a package manager like `apt-get`.
 
 
-A tarball that contains the `<code>.deb</code>` packages can be downloaded from the following URL:
+A tarball that contains the `.deb` packages can be downloaded from the following URL:
 
 
 * [downloads.mariadb.com](https://downloads.mariadb.com)
 
 
-For example, to install the [MariaDB 10.6.21](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-21-release-notes.md) `<code>.deb</code>` packages on Ubuntu 18.04 LTS (Bionic), you could execute the following:
+For example, to install the [MariaDB 10.6.21](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-21-release-notes.md) `.deb` packages on Ubuntu 18.04 LTS (Bionic), you could execute the following:
 
 
 ```
@@ -560,7 +560,7 @@ For MariaDB, the following DEBs are available:
 ### Users and Groups Created
 
 
-When the `<code>mariadb-server</code>` DEB package is installed, it will create a user and group named `<code>mysql</code>`, if they do not already exist.
+When the `mariadb-server` DEB package is installed, it will create a user and group named `mysql`, if they do not already exist.
 
 
 ## See Also

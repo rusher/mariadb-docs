@@ -78,20 +78,20 @@ UPDATE animal_count SET animal_count.animals = animal_count.animals+1;
 The trigger has:
 
 
-* a name (in this case `<code>increment_animal</code>`)
+* a name (in this case `increment_animal`)
 * a trigger time (in this case after the specified trigger event)
-* a trigger event (an `<code>INSERT</code>`)
-* a table with which it is associated (`<code>animals</code>`)
+* a trigger event (an `INSERT`)
+* a table with which it is associated (`animals`)
 * a set of statements to run (here, just the one UPDATE statement)
 
 
-`<code>AFTER INSERT</code>` specifies that the trigger will run *after* an `<code>INSERT</code>`. The trigger could also be set to run *before*, and the statement causing the trigger could be a `<code>DELETE</code>` or an `<code>UPDATE</code>` as well. You can also have multiple triggers for an action. In this case you can use `<code>FOLLOWS | PRECEDES other_trigger_name</code>` to specify the order of the triggers.
+`AFTER INSERT` specifies that the trigger will run *after* an `INSERT`. The trigger could also be set to run *before*, and the statement causing the trigger could be a `DELETE` or an `UPDATE` as well. You can also have multiple triggers for an action. In this case you can use `FOLLOWS | PRECEDES other_trigger_name` to specify the order of the triggers.
 
 
-The set of statements to run are the statements on the table of the trigger, therefore columns/values that change are always just a column name or an expression like `<code>NEW.column_name</code>`. Table references of other tables must come from explicit table references.
+The set of statements to run are the statements on the table of the trigger, therefore columns/values that change are always just a column name or an expression like `NEW.column_name`. Table references of other tables must come from explicit table references.
 
 
-Now, if we insert a record into the `<code>animals</code>` table, the trigger will run, incrementing the animal_count table;
+Now, if we insert a record into the `animals` table, the trigger will run, incrementing the animal_count table;
 
 
 ```

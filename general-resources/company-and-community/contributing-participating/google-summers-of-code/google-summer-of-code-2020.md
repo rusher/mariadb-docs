@@ -167,15 +167,15 @@ supported in MySQL-8.0 and MSSQL
 The mysqlbinlog client program needs to be updated to support GTID.
 Here is a suggested list of things to be done:
 
-* The `<code>--start-position</code>` and `<code>--stop-position</code>` options should be able to take
-GTID positions; or maybe there should be new `<code>--start-gtid</code>` and `<code>--stop-gtid</code>`
-options. Like `<code>--start-gtid=0-1-100,1-2-200,2-1-1000</code>`.
+* The `--start-position` and `--stop-position` options should be able to take
+GTID positions; or maybe there should be new `--start-gtid` and `--stop-gtid`
+options. Like `--start-gtid=0-1-100,1-2-200,2-1-1000`.
 * A GTID position means the point just after that GTID. So starting from
 GTID 0-1-100 and stopping at GTID 0-1-200, the first GTID output will
 probably be 0-1-101 and the last one 0-1-200. Note that if some domain is
 not specified in the position, it means to start from the begining,
 respectively stop immediately in that domain.
-* Starting and stopping GTID should work both with local files, and with `<code>--read-from-remote-server</code>`. For the latter, there are a couple of extra things that need doing in the master-slave protocol, see `<code>get_master_version_and_clock()</code>` in `<code>sql/slave.cc</code>`.
+* Starting and stopping GTID should work both with local files, and with `--read-from-remote-server`. For the latter, there are a couple of extra things that need doing in the master-slave protocol, see `get_master_version_and_clock()` in `sql/slave.cc`.
 * At the end of the dump, put these statements, to reduce the risk of those session variables incorrectly spilling into subsequent statements run in the same session:
 
 
@@ -370,7 +370,7 @@ Implementing this will likely require the following:
 
 ### Replace glibc with google's re2 for regex processing
 
-CS as of 1.4.2 relies on glibc for regex processing. We need to replace glibc with re2 for `<code>LIKE</code>`, `<code>REGEX</code>` and other facilities that affects performance.
+CS as of 1.4.2 relies on glibc for regex processing. We need to replace glibc with re2 for `LIKE`, `REGEX` and other facilities that affects performance.
 1) Identify places with glibc regex functions invocations
 2) Pick the invocations that significantly affects timings of the query
 3) Replace glibc regex calls with appropriate re2
@@ -433,8 +433,8 @@ CS now has a very rudimentary query optimization capabilities and we want to imp
 There are different levels of complexity for the task:
 
 * implement standalone segment files reader that in the end populates both mysql.column_stats and mysql.table_stats using out of band mariadb client connection
-* implement `<code>ANALYZE TABLE</code>` functionality for Columnstore engine
-* implement `<code>ANALYZE TABLE</code>` and Histograms with equal-width bins for values distribution histograms(similar to [MDEV-12313](https://jira.mariadb.org/browse/MDEV-12313)) together with NDV histograms to decrease I/O
+* implement `ANALYZE TABLE` functionality for Columnstore engine
+* implement `ANALYZE TABLE` and Histograms with equal-width bins for values distribution histograms(similar to [MDEV-12313](https://jira.mariadb.org/browse/MDEV-12313)) together with NDV histograms to decrease I/O
 We expect to have both unit and regression tests but this is optional.
 
 

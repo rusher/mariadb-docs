@@ -7,13 +7,13 @@ The [S3 storage engine](s3-storage-engine-status-variables.md) has been availabl
 
 
 
-`<code>aria_s3_copy</code>` is a tool for copying an [Aria](aria_s3_copy.md) table to and from [S3](s3-storage-engine-status-variables.md).
+`aria_s3_copy` is a tool for copying an [Aria](aria_s3_copy.md) table to and from [S3](s3-storage-engine-status-variables.md).
 
 
 The Aria table must be non transactional and have [ROW_FORMAT=PAGE](../aria/aria-storage-formats.md#page).
 
 
-For `<code>aria_s3_copy</code>` to work reliably, the table should not be changed by the MariaDB server during the copy, and one should have first performed [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) to ensure that the table is properly closed.
+For `aria_s3_copy` to work reliably, the table should not be changed by the MariaDB server during the copy, and one should have first performed [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) to ensure that the table is properly closed.
 
 
 Example of properly created Aria table:
@@ -78,8 +78,8 @@ op=to
 ### Example Usage
 
 
-The following code will copy an existing Aria table named `<code>test1</code>` to S3.
-If the `<code>--database</code>` option is not given, then the directory name where the table files exist will be used as the database.
+The following code will copy an existing Aria table named `test1` to S3.
+If the `--database` option is not given, then the directory name where the table files exist will be used as the database.
 
 
 ```
@@ -97,11 +97,11 @@ Copying data information foo/test1/data
 .
 ```
 
-When using `<code>--verbose</code>`, `<code>aria_s3_copy</code>` will write a dot for each #/79 part of the file copied.
+When using `--verbose`, `aria_s3_copy` will write a dot for each #/79 part of the file copied.
 
 
 ## See Also
 
 
-[Using the S3 storage engine](using-the-s3-storage-engine.md#aria_s3_copy). This pages has examples of .my.cnf entries for using `<code>aria_s3_copy</code>`.
+[Using the S3 storage engine](using-the-s3-storage-engine.md#aria_s3_copy). This pages has examples of .my.cnf entries for using `aria_s3_copy`.
 

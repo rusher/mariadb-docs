@@ -15,7 +15,7 @@ SHOW CREATE TABLE tbl_name
 Shows the [CREATE TABLE](../../../vectors/create-table-with-vectors.md) statement that creates the given table. The statement requires the [SELECT privilege](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) for the table. This statement also works with [views](../../../../../server-usage/programming-customizing-mariadb/views/README.md) and [SEQUENCE](../../../sequences/create-sequence.md).
 
 
-`<code>SHOW CREATE TABLE</code>` quotes table and
+`SHOW CREATE TABLE` quotes table and
 column names according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) server system variable.
 
 
@@ -25,13 +25,13 @@ Certain [SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode
 Invalid table options, column options and index options are normally commented out (note, that it is possible to create a table with invalid options, by altering a table of a different engine, where these options were valid). To have them uncommented, enable the [IGNORE_BAD_TABLE_OPTIONS](../../../../../server-management/variables-and-modes/sql-mode.md#ignore_bad_table_options) [SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md). Remember that replaying a [CREATE TABLE](../../../vectors/create-table-with-vectors.md) statement with uncommented invalid options will fail with an error, unless the [IGNORE_BAD_TABLE_OPTIONS](../../../../../server-management/variables-and-modes/sql-mode.md#ignore_bad_table_options) [SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) is in effect.
 
 
-Note that `<code>SHOW CREATE TABLE</code>` is not meant to provide metadata about a table. It provides information about how the table was declared, but the real table structure could differ a bit. For example, if an index has been declared as `<code>HASH</code>`, the `<code>CREATE TABLE</code>` statement returned by `<code>SHOW CREATE TABLE</code>` will declare that index as `<code>HASH</code>`; however, it is possible that the index is in fact a `<code>BTREE</code>`, because the storage engine does not support `<code>HASH</code>`.
+Note that `SHOW CREATE TABLE` is not meant to provide metadata about a table. It provides information about how the table was declared, but the real table structure could differ a bit. For example, if an index has been declared as `HASH`, the `CREATE TABLE` statement returned by `SHOW CREATE TABLE` will declare that index as `HASH`; however, it is possible that the index is in fact a `BTREE`, because the storage engine does not support `HASH`.
 
 
-MariaDB permits [TEXT](../../../../data-types/string-data-types/text.md) and [BLOB](../../../../data-types/string-data-types/blob.md) data types to be assigned a [DEFAULT](../../../vectors/create-table-with-vectors.md#default) value. As a result, `<code>SHOW CREATE TABLE</code>` will append a `<code>DEFAULT NULL</code>` to nullable TEXT or BLOB fields if no specific default is provided.
+MariaDB permits [TEXT](../../../../data-types/string-data-types/text.md) and [BLOB](../../../../data-types/string-data-types/blob.md) data types to be assigned a [DEFAULT](../../../vectors/create-table-with-vectors.md#default) value. As a result, `SHOW CREATE TABLE` will append a `DEFAULT NULL` to nullable TEXT or BLOB fields if no specific default is provided.
 
 
-Numbers are no longer quoted in the `<code>DEFAULT</code>` clause in `<code>SHOW CREATE</code>` statement. Prior to [MariaDB 10.2.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md), MariaDB quoted numbers.
+Numbers are no longer quoted in the `DEFAULT` clause in `SHOW CREATE` statement. Prior to [MariaDB 10.2.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md), MariaDB quoted numbers.
 
 
 ### Index Order

@@ -10,7 +10,7 @@ command line client that is no longer supported or included.
 
 
 By default, the MaxScale REST API listens on port 8989 on the local host. The
-default credentials for the REST API are `<code>admin:mariadb</code>`. The users used by the
+default credentials for the REST API are `admin:mariadb`. The users used by the
 REST API are the same that are used by the MaxAdmin network interface. This
 means that any users created for the MaxAdmin network interface should work with
 the MaxScale REST API and MaxCtrl.
@@ -161,10 +161,10 @@ For more information about the MaxScale REST API, refer to the
 # .maxctrl.cnf
 
 
-If the file `<code>~/.maxctrl.cnf</code>` exists, maxctrl will use any values in the
-section `<code>[maxctrl]</code>` as defaults for command line arguments. For instance,
+If the file `~/.maxctrl.cnf` exists, maxctrl will use any values in the
+section `[maxctrl]` as defaults for command line arguments. For instance,
 to avoid having to specify the user and password on the command line,
-create the file `<code>.maxctrl.cnf</code>` in your home directory, with the following
+create the file `.maxctrl.cnf` in your home directory, with the following
 content:
 
 
@@ -182,7 +182,7 @@ but the owner. MaxCtrl refuses to use the file unless the rights have been
 removed.
 
 
-Another file from which to read the defaults can be specified with the `<code>-c</code>`
+Another file from which to read the defaults can be specified with the `-c`
 flag.
 
 

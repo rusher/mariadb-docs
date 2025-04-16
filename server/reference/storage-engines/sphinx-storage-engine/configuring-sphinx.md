@@ -4,14 +4,14 @@
 Before you can get Sphinx working with the Sphinx Storage Engine on MariaDB, you need to configure it.
 
 
-* The default configuration file is called `<code>sphinx.conf</code>`, usually located in `<code>/etc/sphinxsearch</code>` (Debian/Ubuntu), `<code>/etc/sphinx/sphinx.conf.</code>` (Red Hat/CentOS) or `<code>C:\Sphinx\sphinx.conf</code>` (Windows).
+* The default configuration file is called `sphinx.conf`, usually located in `/etc/sphinxsearch` (Debian/Ubuntu), `/etc/sphinx/sphinx.conf.` (Red Hat/CentOS) or `C:\Sphinx\sphinx.conf` (Windows).
 
 
-If it doesn't already exist, you can use the sample configuration file, `<code>sphinx.conf.dist</code>`. There is also sample data supplied that we can use for testing. Load the sample data (which creates two tables, `<code>documents</code>` and `<code>tags</code>` in the `<code>test</code>` database), for example:
+If it doesn't already exist, you can use the sample configuration file, `sphinx.conf.dist`. There is also sample data supplied that we can use for testing. Load the sample data (which creates two tables, `documents` and `tags` in the `test` database), for example:
 
 
-`<code>mysql -u test < /usr/local/sphinx/etc/example.sql</code>` (Red Hat, CentOS)
-`<code>mysql -u test < /usr/share/doc/sphinxsearch/example-conf/example.sql</code>` (Debian/Ubuntu)
+`mysql -u test < /usr/local/sphinx/etc/example.sql` (Red Hat, CentOS)
+`mysql -u test < /usr/share/doc/sphinxsearch/example-conf/example.sql` (Debian/Ubuntu)
 
 
 The sample configuration file documents the available options. You will need to make at least a few changes. A MariaDB user with permission to access the database must be created. For example:
@@ -23,7 +23,7 @@ CREATE USER 'sphinx'@localhost
 GRANT SELECT on test.* to 'sphinx'@localhost;
 ```
 
-Add these details to the `<code>mysql</code>` section of the config file:
+Add these details to the `mysql` section of the config file:
 
 
 ```
@@ -34,7 +34,7 @@ sql_db   = test
 sql_port = 3306
 ```
 
-On Windows, the `<code>path</code>` and `<code>pid</code>` lines will need to be changed to reflect a valid path, usually as follows:
+On Windows, the `path` and `pid` lines will need to be changed to reflect a valid path, usually as follows:
 
 
 ```

@@ -22,11 +22,11 @@ The return value is suitable for
 * further modification with other dynamic columns functions
 
 
-The **`<code>as type</code>`** part allows one to specify the value type. In most cases,
+The **`as type`** part allows one to specify the value type. In most cases,
 this is redundant because MariaDB will be able to deduce the type of the
 value. Explicit type specification may be needed when the type of the value is
-not apparent. For example, a literal `<code>'2012-12-01'</code>` has a CHAR type by
-default, one will need to specify `<code>'2012-12-01' AS DATE</code>` to have it stored as
+not apparent. For example, a literal `'2012-12-01'` has a CHAR type by
+default, one will need to specify `'2012-12-01' AS DATE` to have it stored as
 a date. See [Dynamic Columns:Datatypes](../../../../nosql/dynamic-columns-api.md#datatypes) for further details.
 
 

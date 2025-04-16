@@ -27,14 +27,14 @@ You don't. Insert, then find out what you did with [LAST_INSERT_ID()](../sql-sta
 ## How do I change what number auto_increment starts with?
 
 
-`<code>ALTER TABLE yourTable AUTO_INCREMENT = x;</code>` — Next insert will contain `<code>x</code>` or `<code>MAX(autoField) + 1</code>`, whichever is higher
+`ALTER TABLE yourTable AUTO_INCREMENT = x;` — Next insert will contain `x` or `MAX(autoField) + 1`, whichever is higher
 
 
 or
 
 
-`<code>INSERT INTO yourTable (autoField) VALUES (x);</code>` —
-Next insert will contain `<code>x+1</code>` or `<code>MAX(autoField) + 1</code>`, whichever is higher
+`INSERT INTO yourTable (autoField) VALUES (x);` —
+Next insert will contain `x+1` or `MAX(autoField) + 1`, whichever is higher
 
 
 Issuing [TRUNCATE TABLE](../sql-statements-and-structure/sql-statements/table-statements/truncate-table.md) will delete all the rows in the table, and will reset
@@ -67,7 +67,7 @@ You don't. It's only available after insert.
 
 
 You can't, not even with an AFTER INSERT trigger. Insert, then go back and
-update using `<code>LAST_INSERT_ID()</code>`. Those two statements could be
+update using `LAST_INSERT_ID()`. Those two statements could be
 wrapped into one stored procedure if you wish.
 
 
@@ -123,12 +123,12 @@ See [AUTO_INCREMENT handling in InnoDB](../storage-engines/innodb/auto_increment
 ## Manual Notes
 
 
-There can be only one `<code>AUTO_INCREMENT</code>` column per table, it must be indexed,
-and it cannot have a `<code>DEFAULT</code>` value. An `<code>AUTO_INCREMENT</code>` column works
+There can be only one `AUTO_INCREMENT` column per table, it must be indexed,
+and it cannot have a `DEFAULT` value. An `AUTO_INCREMENT` column works
 properly only if it contains only positive values. Inserting a negative number
 is regarded as inserting a very large positive number. This is done to avoid
 precision problems when numbers wrap over from positive to negative and also to
-ensure that you do not accidentally get an `<code>AUTO_INCREMENT</code>` column that
+ensure that you do not accidentally get an `AUTO_INCREMENT` column that
 contains 0.
 
 

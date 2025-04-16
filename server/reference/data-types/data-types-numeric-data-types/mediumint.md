@@ -16,10 +16,10 @@ A medium-sized integer. The signed range is -8388608 to 8388607. The
 unsigned range is 0 to 16777215.
 
 
-`<code>ZEROFILL</code>` pads the integer with zeroes and assumes `<code>UNSIGNED</code>` (even if `<code>UNSIGNED</code>` is not specified).
+`ZEROFILL` pads the integer with zeroes and assumes `UNSIGNED` (even if `UNSIGNED` is not specified).
 
 
-`<code>INT3</code>` is a synonym for `<code>MEDIUMINT</code>`.
+`INT3` is a synonym for `MEDIUMINT`.
 
 
 For details on the attributes, see [Numeric Data Type Overview](numeric-data-type-overview.md).

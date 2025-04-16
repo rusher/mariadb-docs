@@ -63,7 +63,7 @@ engine=CONNECT table_type=INI file_name='contact.ini';
 ```
 
 The column that will contain the section name can have any name but must
-specify `<code>flag=1</code>`. All other columns must have the names of the keys we want to
+specify `flag=1`. All other columns must have the names of the keys we want to
 display (case insensitive). The type can be character or numeric depending on
 the key value type, and the length is the maximum expected length for the key
 value. Once done, the statement:
@@ -138,7 +138,7 @@ option_list='Layout=Row';
 In this statement, the "Layout" option sets the display format, Column by
 default or anything else not beginning by 'C' for row layout display. The names
 of the three columns can be freely chosen. The Flag option gives the meaning of
-the column. Specify `<code>flag=1</code>` for the section name and `<code>flag=2</code>` for the key
+the column. Specify `flag=1` for the section name and `flag=2` for the key
 name. Otherwise, the column will contain the key value.
 
 

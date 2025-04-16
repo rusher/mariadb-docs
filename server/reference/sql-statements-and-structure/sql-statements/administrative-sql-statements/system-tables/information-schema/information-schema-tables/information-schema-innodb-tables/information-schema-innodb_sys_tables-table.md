@@ -1,10 +1,10 @@
 
 # Information Schema INNODB_SYS_TABLES Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>INNODB_SYS_TABLES</code>` table contains information about InnoDB tables.
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_SYS_TABLES` table contains information about InnoDB tables.
 
 
-The `<code>PROCESS</code>` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
 
 
 It has the following columns:

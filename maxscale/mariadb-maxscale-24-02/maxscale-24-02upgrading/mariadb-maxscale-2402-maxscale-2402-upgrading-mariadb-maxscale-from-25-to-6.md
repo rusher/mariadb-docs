@@ -9,7 +9,7 @@ version 2.5 to 6.
 
 
 Note that the versioning scheme has changed and that version 6 immediately
-follows version 2.5. Effectively, the non-changing `<code>2.</code>`-prefix has been dropped
+follows version 2.5. Effectively, the non-changing `2.`-prefix has been dropped
 and henceforth at a major release, the *major*, instead of the *minor* version
 number, will be bumped. This change also affects how maintenance releases are
 versioned. For instance, 2.5.1, the first GA version of MaxScale 2.5, was
@@ -30,7 +30,7 @@ up.
 
 Using duration type parameters without an explicit suffix has been deprecated in
 MaxScale 2.4. In MaxScale 6 they are no longer allowed when used with the REST
-API or MaxCtrl. This means that any `<code>create</code>` or `<code>alter</code>` commands in MaxCtrl that
+API or MaxCtrl. This means that any `create` or `alter` commands in MaxCtrl that
 use a duration type parameter must explicitly specify the suffix of the unit.
 
 
@@ -63,10 +63,10 @@ MaxScale 6.
 ## Changed Parameters
 
 
-### `<code>threads</code>`
+### `threads`
 
 
-The default value of `<code>threads</code>` was changed to `<code>auto</code>`.
+The default value of `threads` was changed to `auto`.
 
 
 ## Removed Parameters
@@ -78,29 +78,29 @@ The default value of `<code>threads</code>` was changed to `<code>auto</code>`.
 The following deprecated core parameters have been removed:
 
 
-* `<code>thread_stack_size</code>`
+* `thread_stack_size`
 
 
 ### Schemarouter
 
 
-The deprecated aliases for the schemarouter parameters `<code>ignore_databases</code>` and
-`<code>ignore_databases_regex</code>` have been removed. They can be replaced with
-`<code>ignore_tables</code>` and `<code>ignore_tables_regex</code>`.
+The deprecated aliases for the schemarouter parameters `ignore_databases` and
+`ignore_databases_regex` have been removed. They can be replaced with
+`ignore_tables` and `ignore_tables_regex`.
 
 
-In addition, the `<code>preferred_server</code>` parameter that was deprecated in 2.5 has
+In addition, the `preferred_server` parameter that was deprecated in 2.5 has
 also been removed.
 
 
 ## Session Command History
 
 
-The `<code>prune_sescmd_history</code>`, `<code>max_sescmd_history</code>` and `<code>disable_sescmd_history</code>`
+The `prune_sescmd_history`, `max_sescmd_history` and `disable_sescmd_history`
 have been made into generic service parameters that are shared between all
 routers that support it.
 
 
-The default value of `<code>prune_sescmd_history</code>` was changed from `<code>false</code>` to
-`<code>true</code>`. This was done as most MaxScale installations either benefit from it
+The default value of `prune_sescmd_history` was changed from `false` to
+`true`. This was done as most MaxScale installations either benefit from it
 being enabled or are not affected by it.

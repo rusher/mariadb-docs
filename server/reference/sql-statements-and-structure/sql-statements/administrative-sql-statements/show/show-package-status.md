@@ -13,10 +13,10 @@ SHOW PACKAGE STATUS
 ## Description
 
 
-The `<code>SHOW PACKAGE STATUS</code>` statement returns characteristics of stored package specifications, such as the database, name, type, creator, creation and modification dates, and character set information. A similar statement, `<code class="highlight fixed" style="white-space:pre-wrap">[SHOW PACKAGE BODY STATUS](show-package-body-status.md)</code>`, displays information about stored package bodies (i.e. implementations).
+The `SHOW PACKAGE STATUS` statement returns characteristics of stored package specifications, such as the database, name, type, creator, creation and modification dates, and character set information. A similar statement, `[SHOW PACKAGE BODY STATUS](show-package-body-status.md)`, displays information about stored package bodies (i.e. implementations).
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clause, if present, indicates which package names to match. The `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+The `LIKE` clause, if present, indicates which package names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 
 The [ROUTINES table](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION_SCHEMA database contains more detailed information.

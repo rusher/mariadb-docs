@@ -8,8 +8,8 @@ Multi Range Read is an optimization aimed at improving performance for IO-bound 
 Multi Range Read can be used with
 
 
-* `<code>range</code>` access
-* `<code>ref</code>` and `<code>eq_ref</code>` access, when they are using [Batched Key Access](../../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/block-based-join-algorithms.md#batch-key-access-join)
+* `range` access
+* `ref` and `eq_ref` access, when they are using [Batched Key Access](../../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/block-based-join-algorithms.md#batch-key-access-join)
 
 
 as shown in this diagram:
@@ -51,7 +51,7 @@ When the table is sufficiently big, each table record read will need to actually
 SSD drives do not need to do disk seeks, so they will not be hurt as badly, however the performance will still be poor in many cases.
 
 
-Multi-Range-Read optimization aims to make disk access faster by sorting record read requests and then doing one ordered disk sweep. If one enables Multi Range Read, `<code>EXPLAIN</code>` will show that a "`<code>Rowid-ordered scan</code>`" is used:
+Multi-Range-Read optimization aims to make disk access faster by sorting record read requests and then doing one ordered disk sweep. If one enables Multi Range Read, `EXPLAIN` will show that a "`Rowid-ordered scan`" is used:
 
 
 ```
@@ -87,7 +87,7 @@ The above can make a huge difference on performance. There is also a catch, thou
 * If you're scanning small data ranges in a table that is sufficiently small so that it completely fits into the OS disk cache, then you may observe that the only effect of MRR is that extra buffering/sorting adds some CPU overhead.
 
 
-* `<code>LIMIT n</code>` and `<code>ORDER BY ... LIMIT n</code>` queries with small values of `<code>n</code>` may become slower. The reason is that MRR reads data in disk order, while `<code>ORDER BY ... LIMIT n</code>` wants first `<code>n</code>` records in index order.
+* `LIMIT n` and `ORDER BY ... LIMIT n` queries with small values of `n` may become slower. The reason is that MRR reads data in disk order, while `ORDER BY ... LIMIT n` wants first `n` records in index order.
 
 
 ### Case 2: Rowid Sorting for Batched Key Access
@@ -107,7 +107,7 @@ explain select * from t1,t2 where t2.key1=t1.col1;
 2 rows in set (0.00 sec)
 ```
 
-Execution of this query will cause table `<code>t2</code>` to be hit in random locations by lookups made through `<code>t2.key1=t1.col</code>`. If you enable Multi Range and and Batched Key Access, you will get table `<code>t2</code>` to be accessed using a `<code>Rowid-ordered scan</code>`:
+Execution of this query will cause table `t2` to be hit in random locations by lookups made through `t2.key1=t1.col`. If you enable Multi Range and and Batched Key Access, you will get table `t2` to be accessed using a `Rowid-ordered scan`:
 
 
 ```
@@ -127,16 +127,16 @@ explain select * from t1,t2 where t2.key1=t1.col1;
 2 rows in set (0.00 sec)
 ```
 
-The benefits will be similar to those listed for `<code>range</code>` access.
+The benefits will be similar to those listed for `range` access.
 
 
-An additional source of speedup is this property: if there are multiple records in `<code>t1</code>` that have the same value of `<code>t1.col1</code>`, then regular Nested-Loops join will make multiple index lookups for the same value of `<code>t2.key1=t1.col1</code>`. The lookups may or may not hit the cache, depending on how big the join is. With Batched Key Access and Multi-Range Read, no duplicate index lookups will be made.
+An additional source of speedup is this property: if there are multiple records in `t1` that have the same value of `t1.col1`, then regular Nested-Loops join will make multiple index lookups for the same value of `t2.key1=t1.col1`. The lookups may or may not hit the cache, depending on how big the join is. With Batched Key Access and Multi-Range Read, no duplicate index lookups will be made.
 
 
 ### Case 3: Key Sorting for Batched Key Access
 
 
-Let us consider again the nested loop join example, with `<code>ref</code>` access on the second table:
+Let us consider again the nested loop join example, with `ref` access on the second table:
 
 
 ```
@@ -149,7 +149,7 @@ explain select * from t1,t2 where t2.key1=t1.col1;
 +----+-------------+-------+------+---------------+------+---------+--------------+------+-------------+
 ```
 
-Execution of this query plan will cause random hits to be made into the index `<code>t2.key1</code>`, as shown in this picture:
+Execution of this query plan will cause random hits to be made into the index `t2.key1`, as shown in this picture:
 
 
 ![key-sorting-regular-nl-join](../../../../.gitbook/assets/multi-range-read-optimization/+image/key-sorting-regular-nl-join.png "key-sorting-regular-nl-join")
@@ -161,7 +161,7 @@ In particular, on step #5 we'll read the same index page that we've read on step
 ![key-sorting-join](../../../../.gitbook/assets/multi-range-read-optimization/+image/key-sorting-join.png "key-sorting-join")
 
 
-This is roughly what `<code>Key-ordered scan</code>` optimization does. In EXPLAIN, it looks as follows:
+This is roughly what `Key-ordered scan` optimization does. In EXPLAIN, it looks as follows:
 
 
 ```
@@ -196,7 +196,7 @@ possible_keys: key1
 2 rows in set (0.00 sec)
 ```
 
-((TODO: a note about why sweep-read over InnoDB's clustered primary index scan (which is, actually the whole InnoDB table itself) will use `<code>Key-ordered scan</code>` algorithm, but not `<code>Rowid-ordered scan</code>` algorithm, even though conceptually they are the same thing in this case))
+((TODO: a note about why sweep-read over InnoDB's clustered primary index scan (which is, actually the whole InnoDB table itself) will use `Key-ordered scan` algorithm, but not `Rowid-ordered scan` algorithm, even though conceptually they are the same thing in this case))
 
 
 ## Buffer Space Management
@@ -208,7 +208,7 @@ As was shown above, Multi Range Read requires sort buffers to operate. The size 
 ### Range Access
 
 
-When MRR is used for `<code>range</code>` access, the size of its buffer is controlled by the [mrr_buffer_size](../system-variables/server-system-variables.md#mrr_buffer_size) system variable. Its value specifies how much space can be used for each table. For example, if there is a query which is a 10-way join and MRR is used for each table, `<code>10*@@mrr_buffer_size</code>` bytes may be used.
+When MRR is used for `range` access, the size of its buffer is controlled by the [mrr_buffer_size](../system-variables/server-system-variables.md#mrr_buffer_size) system variable. Its value specifies how much space can be used for each table. For example, if there is a query which is a 10-way join and MRR is used for each table, `10*@@mrr_buffer_size` bytes may be used.
 
 
 ### Batched Key Access
@@ -237,7 +237,7 @@ There are three status variables related to Multi Range Read:
 
 
 
-Non-zero values of `<code>Handler_mrr_key_refills</code>` and/or `<code>Handler_mrr_rowid_refills</code>` mean that Multi Range Read scan did not have enough memory and had to do multiple key/rowid sort-and-sweep passes. The greatest speedup is achieved when Multi Range Read runs everything in one pass, if you see lots of refills it may be beneficial to increase sizes of relevant buffers [mrr_buffer_size](../system-variables/server-system-variables.md#mrr_buffer_size) [join_buffer_size](../system-variables/server-system-variables.md#join_buffer_size) and [join_buffer_space_limit](../system-variables/server-system-variables.md#join_buffer_space_limit)
+Non-zero values of `Handler_mrr_key_refills` and/or `Handler_mrr_rowid_refills` mean that Multi Range Read scan did not have enough memory and had to do multiple key/rowid sort-and-sweep passes. The greatest speedup is achieved when Multi Range Read runs everything in one pass, if you see lots of refills it may be beneficial to increase sizes of relevant buffers [mrr_buffer_size](../system-variables/server-system-variables.md#mrr_buffer_size) [join_buffer_size](../system-variables/server-system-variables.md#join_buffer_size) and [join_buffer_space_limit](../system-variables/server-system-variables.md#join_buffer_space_limit)
 
 
 ### Effect on Other Status Variables
@@ -254,10 +254,10 @@ Multi Range Read is used for scans that do full record reads (i.e., they are not
 
 1. an index record, to get a rowid of the table record
 1. a table record
-Both actions will be done by making one call to the storage engine, so the effect of the call will be that the relevan `<code>Handler_read_XXX</code>` counter will be incremented BY ONE, and [Innodb_rows_read](../system-variables/innodb-status-variables.md) will be incremented BY ONE.
+Both actions will be done by making one call to the storage engine, so the effect of the call will be that the relevan `Handler_read_XXX` counter will be incremented BY ONE, and [Innodb_rows_read](../system-variables/innodb-status-variables.md) will be incremented BY ONE.
 
 
-Multi Range Read will make separate calls for steps #1 and #2, causing TWO increments to `<code>Handler_read_XXX</code>` counters and TWO increments to `<code>Innodb_rows_read</code>` counter. To the uninformed, this looks as if Multi Range Read was making things worse. Actually, it doesn't - the query will still read the same index/table records, and actually Multi Range Read may give speedups because it reads data in disk order.
+Multi Range Read will make separate calls for steps #1 and #2, causing TWO increments to `Handler_read_XXX` counters and TWO increments to `Innodb_rows_read` counter. To the uninformed, this looks as if Multi Range Read was making things worse. Actually, it doesn't - the query will still read the same index/table records, and actually Multi Range Read may give speedups because it reads data in disk order.
 
 
 ## Multi Range Read Factsheet
@@ -265,32 +265,32 @@ Multi Range Read will make separate calls for steps #1 and #2, causing TWO incre
 
 * Multi Range Read is used by
 
-  * `<code>range</code>` access method for range scans.
+  * `range` access method for range scans.
   * [Batched Key Access](https://mariadb.com/kb/en/Batched_Key_Access) for joins
 * Multi Range Read can cause slowdowns for small queries over small tables, so it is disabled by default.
 * There are two strategies:
 
   * Rowid-ordered scan
   * Key-ordered scan
-* : and you can tell if either of them is used by checking the `<code>Extra</code>` column in `<code>EXPLAIN</code>` output.
+* : and you can tell if either of them is used by checking the `Extra` column in `EXPLAIN` output.
 * There are three [optimizer_switch](../system-variables/server-system-variables.md#optimizer_switch) flags you can switch ON:
 
-  * `<code>mrr=on</code>` - enable MRR and rowid ordered scans
-  * `<code>mrr_sort_keys=on</code>` - enable Key-ordered scans (you must also set `<code>mrr=on</code>` for this to have any effect)
-  * `<code>mrr_cost_based=on</code>` - enable cost-based choice whether to use MRR. Currently not recommended, because cost model is not sufficiently tuned yet.
+  * `mrr=on` - enable MRR and rowid ordered scans
+  * `mrr_sort_keys=on` - enable Key-ordered scans (you must also set `mrr=on` for this to have any effect)
+  * `mrr_cost_based=on` - enable cost-based choice whether to use MRR. Currently not recommended, because cost model is not sufficiently tuned yet.
 
 
 ## Differences from MySQL
 
 
-* MySQL supports only `<code>Rowid ordered scan</code>` strategy, which it shows in `<code>EXPLAIN</code>` as `<code>Using MRR</code>`.
-* EXPLAIN in MySQL shows `<code>Using MRR</code>`, while in MariaDB it may show
+* MySQL supports only `Rowid ordered scan` strategy, which it shows in `EXPLAIN` as `Using MRR`.
+* EXPLAIN in MySQL shows `Using MRR`, while in MariaDB it may show
 
-  * `<code>Rowid-ordered scan</code>`
-  * `<code>Key-ordered scan</code>`
-  * `<code>Key-ordered Rowid-ordered scan</code>`
-* MariaDB uses [mrr_buffer_size](../system-variables/server-system-variables.md#mrr_buffer_size) as a limit of MRR buffer size for `<code>range</code>` access, while MySQL uses [read_rnd_buffer_size](../system-variables/server-system-variables.md#read_rnd_buffer_size).
-* MariaDB has three MRR counters: [Handler_mrr_init](../system-variables/server-status-variables.md#handler_mrr_init), `<code>Handler_mrr_extra_rowid_sorts</code>`, `<code>Handler_mrr_extra_key_sorts</code>`, while MySQL has only `<code>Handler_mrr_init</code>`, and it will only count MRR scans that were used by BKA. MRR scans used by range access are not counted.
+  * `Rowid-ordered scan`
+  * `Key-ordered scan`
+  * `Key-ordered Rowid-ordered scan`
+* MariaDB uses [mrr_buffer_size](../system-variables/server-system-variables.md#mrr_buffer_size) as a limit of MRR buffer size for `range` access, while MySQL uses [read_rnd_buffer_size](../system-variables/server-system-variables.md#read_rnd_buffer_size).
+* MariaDB has three MRR counters: [Handler_mrr_init](../system-variables/server-status-variables.md#handler_mrr_init), `Handler_mrr_extra_rowid_sorts`, `Handler_mrr_extra_key_sorts`, while MySQL has only `Handler_mrr_init`, and it will only count MRR scans that were used by BKA. MRR scans used by range access are not counted.
 
 
 ## See Also

@@ -12,7 +12,7 @@ ROW (<field name> <data type> [{, <field name> <data type>}... ])
 ## Description
 
 
-`<code>ROW</code>` is a data type for [stored procedure](../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) variables.
+`ROW` is a data type for [stored procedure](../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) variables.
 
 
 ## Features
@@ -21,11 +21,11 @@ ROW (<field name> <data type> [{, <field name> <data type>}... ])
 ### ROW fields as normal variables
 
 
-`<code>ROW</code>` fields (members) act as normal variables, and are able to appear in all
+`ROW` fields (members) act as normal variables, and are able to appear in all
 query parts where a stored procedure variable is allowed:
 
 
-* Assignment is using the `<code>:=</code>` operator and the [SET](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) command:
+* Assignment is using the `:=` operator and the [SET](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) command:
 
 
 ```
@@ -48,14 +48,14 @@ SELECT f1(rec.a), rec.a<10;
 SELECT var.a, t1.b FROM t1 WHERE t1.b=var.b LIMIT var.c;
 ```
 
-* `<code>INSERT</code>` values:
+* `INSERT` values:
 
 
 ```
 INSERT INTO t1 VALUES (rec.a, rec.b, rec.c);
 ```
 
-* `<code>SELECT .. INTO</code>` targets
+* `SELECT .. INTO` targets
 
 
 ```
@@ -72,17 +72,17 @@ EXECUTE IMMEDIATE 'CALL proc_with_out_param(?)' USING rec.a;
 ### ROW type variables as FETCH targets
 
 
-`<code>ROW</code>` type variables are allowed as [FETCH](../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/fetch.md) targets:
+`ROW` type variables are allowed as [FETCH](../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/fetch.md) targets:
 
 
 ```
 FETCH cur INTO rec;
 ```
 
-where `<code>cur</code>` is a `<code>CURSOR</code>` and `<code>rec</code>` is a `<code>ROW</code>` type stored procedure variable.
+where `cur` is a `CURSOR` and `rec` is a `ROW` type stored procedure variable.
 
 
-Note, currently an attempt to use `<code>FETCH</code>` for a `<code>ROW</code>` type variable returns this error:
+Note, currently an attempt to use `FETCH` for a `ROW` type variable returns this error:
 
 ```
 ERROR 1328 (HY000): Incorrect number of FETCH variables
@@ -90,10 +90,10 @@ ERROR 1328 (HY000): Incorrect number of FETCH variables
 
 
 
-`<code>FETCH</code>` from a cursor `<code>cur</code>` into a `<code>ROW</code>` variable `<code>rec</code>` works as follows:
+`FETCH` from a cursor `cur` into a `ROW` variable `rec` works as follows:
 
 
-* The number of fields in `<code>cur</code>` must match the number of fields in `<code>rec</code>`.
+* The number of fields in `cur` must match the number of fields in `rec`.
  Otherwise, an error is reported.
 
 
@@ -102,35 +102,35 @@ ERROR 1328 (HY000): Incorrect number of FETCH variables
  variable field, etc.
 
 
-* Field names in `<code>rec</code>` are not important and can differ from field names
- in `<code>cur</code>`.
+* Field names in `rec` are not important and can differ from field names
+ in `cur`.
 
 
 See [FETCH Examples](#fetch-examples) (below) for examples of using this with
-`<code>sql_mode=ORACLE</code>` and `<code>sql_mode=DEFAULT</code>`.
+`sql_mode=ORACLE` and `sql_mode=DEFAULT`.
 
 
-### ROW type variables as `<code>SELECT...INTO</code>` targets
+### ROW type variables as `SELECT...INTO` targets
 
 
-`<code>ROW</code>` type variables are allowed as `<code>SELECT..INTO</code>` targets with some
-differences depending on which `<code>sql_mode</code>` is in use.
+`ROW` type variables are allowed as `SELECT..INTO` targets with some
+differences depending on which `sql_mode` is in use.
 
 
-* When using `<code>sql_mode=ORACLE</code>`, `<code>table%ROWTYPE</code>` and `<code>cursor%ROWTYPE</code>`
- variables can be used as `<code>SELECT...INTO</code>` targets.
+* When using `sql_mode=ORACLE`, `table%ROWTYPE` and `cursor%ROWTYPE`
+ variables can be used as `SELECT...INTO` targets.
 
 
-* Using multiple `<code>ROW</code>` variables in the `<code>SELECT..INTO</code>` list will report an
+* Using multiple `ROW` variables in the `SELECT..INTO` list will report an
  error.
 
 
-* Using `<code>ROW</code>` variables with a different column count than in
- the `<code>SELECT..INTO</code>` list will report an error.
+* Using `ROW` variables with a different column count than in
+ the `SELECT..INTO` list will report an error.
 
 
 See [SELECT...INTO Examples](#selectinto-examples) (below) for examples of
-using this with `<code>sql_mode=ORACLE</code>` and `<code>sql_mode=DEFAULT</code>`.
+using this with `sql_mode=ORACLE` and `sql_mode=DEFAULT`.
 
 
 ## Features not implemented
@@ -146,7 +146,7 @@ The following features are planned, but not implemented yet:
 SELECT f1().x FROM DUAL;
 ```
 
-* Returning a ROW type expression from a built-in hybrid type function, such as `<code>CASE</code>`, `<code>IF</code>`, etc.
+* Returning a ROW type expression from a built-in hybrid type function, such as `CASE`, `IF`, etc.
 * ROW of ROWs
 
 
@@ -173,7 +173,7 @@ CALL p1();
 ### FETCH Examples
 
 
-A complete `<code>FETCH</code>` example for `<code>sql_mode=ORACLE</code>`:
+A complete `FETCH` example for `sql_mode=ORACLE`:
 
 
 ```
@@ -203,7 +203,7 @@ DELIMITER ;
 CALL p1();
 ```
 
-A complete `<code>FETCH</code>` example for `<code>sql_mode=DEFAULT</code>`:
+A complete `FETCH` example for `sql_mode=DEFAULT`:
 
 
 ```
@@ -241,7 +241,7 @@ CALL p1();
 ### SELECT...INTO Examples
 
 
-A `<code>SELECT...INTO</code>` example for `<code>sql_mode=DEFAULT</code>`:
+A `SELECT...INTO` example for `sql_mode=DEFAULT`:
 
 
 ```
@@ -273,7 +273,7 @@ The above example returns:
 +--------+--------+
 ```
 
-A `<code>SELECT...INTO</code>` example for `<code>sql_mode=ORACLE</code>`:
+A `SELECT...INTO` example for `sql_mode=ORACLE`:
 
 
 ```
@@ -305,7 +305,7 @@ The above example returns:
 +--------+--------+
 ```
 
-An example for `<code>sql_mode=ORACLE</code>` using `<code>table%ROWTYPE</code>` variables as `<code>SELECT..INTO</code>` targets:
+An example for `sql_mode=ORACLE` using `table%ROWTYPE` variables as `SELECT..INTO` targets:
 
 
 ```
@@ -337,7 +337,7 @@ The above example returns:
 +--------+--------+
 ```
 
-An example for `<code>sql_mode=ORACLE</code>` using `<code>cursor%ROWTYPE</code>` variables as `<code>SELECT..INTO</code>` targets:
+An example for `sql_mode=ORACLE` using `cursor%ROWTYPE` variables as `SELECT..INTO` targets:
 
 
 ```

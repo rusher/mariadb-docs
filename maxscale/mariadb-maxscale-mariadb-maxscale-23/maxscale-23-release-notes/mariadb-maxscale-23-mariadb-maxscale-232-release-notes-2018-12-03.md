@@ -30,10 +30,10 @@ By default it is enabled with a timeout of 60 seconds.
 ### Readwritesplit
 
 
-#### `<code>connection_keepalive</code>`
+#### `connection_keepalive`
 
 
-The default value of `<code>connection_keepalive</code>` is now 300 seconds. This prevents
+The default value of `connection_keepalive` is now 300 seconds. This prevents
 the connections from dying due to wait_timeout with longer sessions. This is
 especially helpful with pooled connections that stay alive for a very long time.
 
@@ -43,10 +43,10 @@ especially helpful with pooled connections that stay alive for a very long time.
 
 The monitor by default assumes that hostnames used by MaxScale to connect to the backends
 are equal to the ones backends use to connect to each other. Specifically, for the slave
-connections to be properly detected the `<code>Master_Host</code>` and `<code>Master_Port</code>` fields of the
+connections to be properly detected the `Master_Host` and `Master_Port` fields of the
 output to "SHOW ALL SLAVES STATUS"-query must match server entries in the MaxScale
 configuration file. If the network configuration is such that this is not the case, the
-setting `<code>assume_unique_hostnames</code>` should be disabled.
+setting `assume_unique_hostnames` should be disabled.
 
 
 ## New Features
@@ -90,7 +90,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/mariadb-tx/maxsc
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

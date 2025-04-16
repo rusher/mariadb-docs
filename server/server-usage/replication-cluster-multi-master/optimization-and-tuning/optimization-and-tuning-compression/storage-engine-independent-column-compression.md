@@ -6,90 +6,90 @@ Storage-engine independent column compression enables [TINYBLOB](../../../../ref
 
 
 This is performed by means of a new COMPRESSED [column attribute](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#column-and-index-definitions):
-`<code>COMPRESSED[=<compression_method>]</code>`
+`COMPRESSED[=<compression_method>]`
 
 
-Currently the only supported compression method is `<code>zlib</code>`.
+Currently the only supported compression method is `zlib`.
 
 
 ### Field Length Compatibility
 
 
-When using the `<code>COMPRESSED</code>` attribute, note that FIELD LENGTH is reduced by 1; for example, a BLOB has a length of 65535, while BLOB COMPRESSED has 65535-1. See [MDEV-15592](https://jira.mariadb.org/browse/MDEV-15592).
+When using the `COMPRESSED` attribute, note that FIELD LENGTH is reduced by 1; for example, a BLOB has a length of 65535, while BLOB COMPRESSED has 65535-1. See [MDEV-15592](https://jira.mariadb.org/browse/MDEV-15592).
 
 
 ### New System Variables
 
 
-#### `<code>column_compression_threshold</code>`
+#### `column_compression_threshold`
 
 
 * Description: Minimum column data length eligible for compression.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--column-compression-threshold=#</code>`
+* Commandline: `--column-compression-threshold=#`
 * Scope: Global, Session
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>100</code>`
-* Range: `<code>0</code>` to `<code>4294967295</code>`
+* Data Type: `numeric`
+* Default Value: `100`
+* Range: `0` to `4294967295`
 
 
 
-#### `<code>column_compression_zlib_level</code>`
+#### `column_compression_zlib_level`
 
 
 * Description: zlib compression level (1 gives best speed, 9 gives best compression).
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--column-compression-zlib-level=#</code>`
+* Commandline: `--column-compression-zlib-level=#`
 * Scope: Global, Session
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>6</code>`
-* Range: `<code>1</code>` to `<code>9</code>`
+* Data Type: `numeric`
+* Default Value: `6`
+* Range: `1` to `9`
 
 
 
-#### `<code>column_compression_zlib_strategy</code>`
+#### `column_compression_zlib_strategy`
 
 
-* Description: The strategy parameter is used to tune the compression algorithm. Use the value `<code>DEFAULT_STRATEGY</code>` for normal data, `<code>FILTERED</code>` for data produced by a filter (or predictor), `<code>HUFFMAN_ONLY</code>` to force Huffman encoding only (no string match), or `<code>RLE</code>` to limit match distances to one (run-length encoding). Filtered data consists mostly of small values with a somewhat random distribution. In this case, the compression algorithm is tuned to compress them better. The effect of `<code>FILTERED</code>` is to force more Huffman coding and less string matching; it is somewhat intermediate between `<code>DEFAULT_STRATEGY</code>` and `<code>HUFFMAN_ONLY</code>`. `<code>RLE</code>` is designed to be almost as fast as `<code>HUFFMAN_ONLY</code>`, but give better compression for PNG image data. The strategy parameter only affects the compression ratio but not the correctness of the compressed output even if it is not set appropriately. `<code>FIXED</code>` prevents the use of dynamic Huffman codes, allowing for a simpler decoder for special applications.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--column-compression-zlib-strategy=#</code>`
+* Description: The strategy parameter is used to tune the compression algorithm. Use the value `DEFAULT_STRATEGY` for normal data, `FILTERED` for data produced by a filter (or predictor), `HUFFMAN_ONLY` to force Huffman encoding only (no string match), or `RLE` to limit match distances to one (run-length encoding). Filtered data consists mostly of small values with a somewhat random distribution. In this case, the compression algorithm is tuned to compress them better. The effect of `FILTERED` is to force more Huffman coding and less string matching; it is somewhat intermediate between `DEFAULT_STRATEGY` and `HUFFMAN_ONLY`. `RLE` is designed to be almost as fast as `HUFFMAN_ONLY`, but give better compression for PNG image data. The strategy parameter only affects the compression ratio but not the correctness of the compressed output even if it is not set appropriately. `FIXED` prevents the use of dynamic Huffman codes, allowing for a simpler decoder for special applications.
+* Commandline: `--column-compression-zlib-strategy=#`
 * Scope: Global, Session
 * Dynamic: Yes
-* Data Type: `<code>enum</code>`
-* Default Value: `<code>DEFAULT_STRATEGY</code>`
-* Valid Values: `<code>DEFAULT_STRATEGY</code>`, `<code>FILTERED</code>`, `<code>HUFFMAN_ONLY</code>`, `<code>RLE</code>`, `<code>FIXED</code>`
+* Data Type: `enum`
+* Default Value: `DEFAULT_STRATEGY`
+* Valid Values: `DEFAULT_STRATEGY`, `FILTERED`, `HUFFMAN_ONLY`, `RLE`, `FIXED`
 
 
 
-#### `<code>column_compression_zlib_wrap</code>`
+#### `column_compression_zlib_wrap`
 
 
-* Description: If set to `<code>1</code>` (`<code>0</code>` is default), generate zlib header and trailer and compute adler32 check value. It can be used with storage engines that don't provide data integrity verification to detect data corruption.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--column-compression-zlib-wrap{=0|1}</code>`
+* Description: If set to `1` (`0` is default), generate zlib header and trailer and compute adler32 check value. It can be used with storage engines that don't provide data integrity verification to detect data corruption.
+* Commandline: `--column-compression-zlib-wrap{=0|1}`
 * Scope: Global, Session
 * Dynamic: Yes
-* Data Type: `<code>boolean</code>`
-* Default Value: `<code>OFF</code>`
+* Data Type: `boolean`
+* Default Value: `OFF`
 
 
 
 ### New Status Variables
 
 
-#### `<code>Column_compressions</code>`
+#### `Column_compressions`
 
 
 * Description: Incremented each time field data is compressed.
 * Scope: Global, Session
-* Data Type: `<code>numeric</code>`
+* Data Type: `numeric`
 
 
 
-#### `<code>Column_decompressions</code>`
+#### `Column_decompressions`
 
 
 * Description: Incremented each time field data is decompressed.
 * Scope: Global, Session
-* Data Type: `<code>numeric</code>`
+* Data Type: `numeric`
 
 
 

@@ -1,10 +1,10 @@
 
 # mariadb-check
 
-`<code>mariadb-check</code>` is a maintenance tool that allows you to check, repair, analyze and optimize multiple tables from the command line.
+`mariadb-check` is a maintenance tool that allows you to check, repair, analyze and optimize multiple tables from the command line.
 
 
-Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysqlcheck</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqlcheck`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 It is essentially a commandline interface to the [CHECK TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md), [REPAIR TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md), [ANALYZE TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) and [OPTIMIZE TABLE](../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) commands, and so, unlike [myisamchk](myisam-clients-and-utilities/myisamchk-table-information.md) and [aria_chk](aria-clients-and-utilities/aria_chk.md), requires the server to be running.
@@ -34,7 +34,7 @@ OR
 ./client/mariadb-check [OPTIONS] --all-databases
 ```
 
-`<code>mariadb-check</code>` can be used to CHECK (-c, -m, -C), REPAIR (-r), ANALYZE (-a),
+`mariadb-check` can be used to CHECK (-c, -m, -C), REPAIR (-r), ANALYZE (-a),
 or OPTIMIZE (-o) tables. Some of the options (like -e or -q) can be
 used at the same time. Not all options are supported by all storage engines.
 
@@ -42,7 +42,7 @@ used at the same time. Not all options are supported by all storage engines.
 The -c, -r, -a and -o options are exclusive to each other.
 
 
-The option `<code>--check</code>` will be used by default, if no other options were specified.
+The option `--check` will be used by default, if no other options were specified.
 You can change the default behavior by making a symbolic link to the binary, or
 copying it somewhere with another name, the alternatives are:
 
@@ -59,7 +59,7 @@ copying it somewhere with another name, the alternatives are:
 ### Options
 
 
-`<code>mariadb-check</code>` supports the following options:
+`mariadb-check` supports the following options:
 
 
 
@@ -128,7 +128,7 @@ copying it somewhere with another name, the alternatives are:
 ### Option Files
 
 
-In addition to reading options from the command-line, `<code>mariadb-check</code>` can also read options from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `<code>mariadb-check</code>` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadb-check` can also read options from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-check` in an option file, then it is ignored.
 
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
@@ -146,13 +146,13 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-`<code>mariadb-check</code>` is linked with [MariaDB Connector/C](../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+`mariadb-check` is linked with [MariaDB Connector/C](../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 
 #### Option Groups
 
 
-`<code>mariadb-check</code>` reads options from the following [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
+`mariadb-check` reads options from the following [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
 
 
 
@@ -185,8 +185,8 @@ from configuration files you can do:
 ### mariadb-check and auto-repair
 
 
-When running `<code>mariadb-check</code>` with `<code>--auto-repair</code>` (as done by
-[mariadb-upgrade](mariadb-upgrade.md)), `<code>mariadb-check</code>` will first
+When running `mariadb-check` with `--auto-repair` (as done by
+[mariadb-upgrade](mariadb-upgrade.md)), `mariadb-check` will first
 check all tables and then in a separate phase repair those that failed the
 check.
 
@@ -194,17 +194,17 @@ check.
 ### mariadb-check and all-databases
 
 
-`<code>mariadb-check --all-databases</code>` will ignore the internal log tables [general_log](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) and [slow_log](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) as these can't be checked, repaired or optimized.
+`mariadb-check --all-databases` will ignore the internal log tables [general_log](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) and [slow_log](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) as these can't be checked, repaired or optimized.
 
 
 ### mariadb-check and verbose
 
 
-Using one `<code>--verbose</code>` option will give you more information about what mariadb-check is doing.
+Using one `--verbose` option will give you more information about what mariadb-check is doing.
 
 
-Using two `<code>--verbose</code>` options will also give you connection information.
+Using two `--verbose` options will also give you connection information.
 
 
-If you use three `<code>--verbose</code>` options you will also get, on stdout, all [ALTER](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), [RENAME](../reference/sql-statements-and-structure/sql-statements/data-definition/rename-table.md), and [CHECK](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md) commands that mariadb-check executes.
+If you use three `--verbose` options you will also get, on stdout, all [ALTER](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), [RENAME](../reference/sql-statements-and-structure/sql-statements/data-definition/rename-table.md), and [CHECK](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md) commands that mariadb-check executes.
 

@@ -40,7 +40,7 @@ For a list of optional parameters that all monitors support, read the [Monitor C
 These are optional parameters specific to the Galera Monitor.
 
 
-### `<code>disable_master_failback</code>`
+### `disable_master_failback`
 
 
 If a node marked as master inside MaxScale happens to fail and the master status is assigned to another node MaxScale will normally return the master status to the original node after it comes back up. With this option enabled, if the master status is assigned to a new node it will not be reassigned to the original node for as long as the new master node is running.
@@ -53,7 +53,7 @@ disable_master_failback=true
 
 
 
-### `<code>available_when_donor</code>`
+### `available_when_donor`
 
 
 This option only has an effect if there is a single Galera node being backed up an XtraBackup instance. This causes the initial node to go into Donor state which would normally prevent if from being marked as a valid server inside MaxScale. If this option is enabled, a single node in Donor state where the method is XtraBackup will be kept in Synced state.
@@ -66,7 +66,7 @@ available_when_donor=true
 
 
 
-### `<code>disable_master_role_setting</code>`
+### `disable_master_role_setting`
 
 
 This disables the assignment of master and slave roles to the Galera cluster nodes. If this option is enabled, Synced is the only status assigned by this monitor.
@@ -79,7 +79,7 @@ disable_master_role_setting=true
 
 
 
-### `<code>use_priority</code>`
+### `use_priority`
 
 
 Enable interaction with server priorities. This will allow the monitor to deterministically pick the write node for the monitored Galera cluster and will allow for controlled node replacement.
@@ -95,7 +95,7 @@ use_priority=true
 ## Interaction with Server Priorities
 
 
-If the `<code>use_priority</code>` option is set and a server is configured with the `<code>priority=<int></code>` parameter, galeramon will use that as the basis on which the master node is chosen. This requires the `<code>disable_master_role_setting</code>` to be undefined or disabled. The server with the lowest value in `<code>priority</code>` will be chosen as the master node when a replacement Galera node is promoted to a master server inside MaxScale.
+If the `use_priority` option is set and a server is configured with the `priority=<int>` parameter, galeramon will use that as the basis on which the master node is chosen. This requires the `disable_master_role_setting` to be undefined or disabled. The server with the lowest value in `priority` will be chosen as the master node when a replacement Galera node is promoted to a master server inside MaxScale.
 
 
 Here is an example with two servers.
@@ -124,7 +124,7 @@ priority=2
 
 
 
-In this example `<code>node-1</code>` is always used as the master if available. If `<code>node-1</code>` is not available, then the next node with the highest priority rank is used. In this case it would be `<code>node-3</code>`. If both `<code>node-1</code>` and `<code>node-3</code>` were down, then `<code>node-2</code>` would be used. Nodes without priority are considered as having the lowest priority rank and will be used only if all nodes with priority ranks are not available.
+In this example `node-1` is always used as the master if available. If `node-1` is not available, then the next node with the highest priority rank is used. In this case it would be `node-3`. If both `node-1` and `node-3` were down, then `node-2` would be used. Nodes without priority are considered as having the lowest priority rank and will be used only if all nodes with priority ranks are not available.
 
 
 With priority ranks you can control the order in which MaxScale chooses the master node. This will allow for a controlled failure and replacement of nodes.

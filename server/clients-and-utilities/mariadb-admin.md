@@ -2,7 +2,7 @@
 # mariadb-admin
 
 
-`<code>mariadb-admin</code>` is an administration program for the mariadbd daemon. It can be used to:
+`mariadb-admin` is an administration program for the mariadbd daemon. It can be used to:
 
 
 * Monitor what the MariaDB clients are doing (processlist)
@@ -15,13 +15,13 @@
 * Check if the server is alive (ping)
 
 
-Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysqladmin</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqladmin`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 ## Using mariadb-admin
 
 
-The command to use `<code>mariadb-admin</code>` and the general syntax is:
+The command to use `mariadb-admin` and the general syntax is:
 
 
 ```
@@ -31,7 +31,7 @@ mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 ### Options
 
 
-`<code>mariadb-admin</code>` supports the following options:
+`mariadb-admin` supports the following options:
 
 
 
@@ -86,7 +86,7 @@ mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 ### Option Files
 
 
-In addition to reading options from the command-line, `<code>mariadb-admin</code>` can also read options from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `<code>mariadb-admin</code>` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadb-admin` can also read options from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-admin` in an option file, then it is ignored.
 
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
@@ -104,13 +104,13 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-`<code>mariadb-admin</code>` is linked with [MariaDB Connector/C](../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+`mariadb-admin` is linked with [MariaDB Connector/C](../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 
 #### Option Groups
 
 
-`<code>mariadb-admin</code>` reads options from the following [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
+`mariadb-admin` reads options from the following [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
 
 
 
@@ -128,7 +128,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 ## mariadb-admin Variables
 
 
-Variables can be set with `<code>--variable-name=value</code>`.
+Variables can be set with `--variable-name=value`.
 
 
 
@@ -222,17 +222,17 @@ mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 ## The shutdown Command and the --wait-for-all-slaves Option
 
 
-The `<code>--wait-for-all-slaves</code>` option was first added in [MariaDB 10.4.4](../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1044-release-notes.md). When a primary server is shutdown and it goes through the normal shutdown process, the primary kills client threads in random order. By default, the primary also considers its binary log dump threads to be regular client threads. As a consequence, the binary log dump threads can be killed while client threads still exist, and this means that data can be written on the primary during a normal shutdown that won't be replicated. This is true even if [semi-synchronous replication](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md) is being used.
+The `--wait-for-all-slaves` option was first added in [MariaDB 10.4.4](../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1044-release-notes.md). When a primary server is shutdown and it goes through the normal shutdown process, the primary kills client threads in random order. By default, the primary also considers its binary log dump threads to be regular client threads. As a consequence, the binary log dump threads can be killed while client threads still exist, and this means that data can be written on the primary during a normal shutdown that won't be replicated. This is true even if [semi-synchronous replication](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md) is being used.
 
 
-In [MariaDB 10.4](../../release-notes/mariadb-community-server/what-is-mariadb-104.md) and later, this problem can be solved by shutting down the server with the mariadb-admin utility and by providing the `<code>--wait-for-all-slaves</code>` option to the utility and by executing the `<code>shutdown</code>` command with the utility. For example:
+In [MariaDB 10.4](../../release-notes/mariadb-community-server/what-is-mariadb-104.md) and later, this problem can be solved by shutting down the server with the mariadb-admin utility and by providing the `--wait-for-all-slaves` option to the utility and by executing the `shutdown` command with the utility. For example:
 
 
 ```
 mariadb-admin --wait-for-all-slaves shutdown
 ```
 
-When the `<code>--wait-for-all-slaves</code>` option is provided, the server only kills its binary log dump threads after all client threads have been killed, and it only completes the shutdown after the last [binary log](../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) has been sent to all connected replicas.
+When the `--wait-for-all-slaves` option is provided, the server only kills its binary log dump threads after all client threads have been killed, and it only completes the shutdown after the last [binary log](../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) has been sent to all connected replicas.
 
 
 See [Replication Threads: Binary Log Dump Threads and the Shutdown Process](../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#binary-log-dump-threads-and-the-shutdown-process) for more information.
@@ -271,7 +271,7 @@ shell> mariadb-admin variables | grep datadir
 | datadir | /my/data/ |
 ```
 
-Using a shortened prefix for the `<code>version</code>` command:
+Using a shortened prefix for the `version` command:
 
 
 ```
@@ -298,17 +298,17 @@ If you get the error:
 mariadb-admin: shutdown failed; error: 'Access denied; you need (at least one of) the SHUTDOWN privilege(s) for this operation'
 ```
 
-It means that you didn't use `<code class="fixed" style="white-space:pre-wrap">mariadb-admin</code>` with a user that has the SUPER or SHUTDOWN privilege.
+It means that you didn't use `mariadb-admin` with a user that has the SUPER or SHUTDOWN privilege.
 
 
-If you don't know the user password, you can still take the mariadbd process down with a system `<code class="highlight fixed" style="white-space:pre-wrap">kill</code>` command:
+If you don't know the user password, you can still take the mariadbd process down with a system `kill` command:
 
 
 ```
 kill -SIGTERM pid-of-mariadbd-process
 ```
 
-The above is identical to `<code class="highlight fixed" style="white-space:pre-wrap">mariadb-admin shutdown</code>`.
+The above is identical to `mariadb-admin shutdown`.
 
 
 On windows you should use:

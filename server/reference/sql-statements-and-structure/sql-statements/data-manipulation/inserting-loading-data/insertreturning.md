@@ -49,7 +49,7 @@ INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
 ## Description
 
 
-`<code>INSERT ... RETURNING</code>` returns a resultset of the [inserted](../../built-in-functions/string-functions/insert-function.md) rows.
+`INSERT ... RETURNING` returns a resultset of the [inserted](../../built-in-functions/string-functions/insert-function.md) rows.
 This returns the listed columns for all the rows that are inserted, or alternatively, the specified SELECT expression. Any SQL expressions which can be calculated can be used in the select expression for the RETURNING clause, including virtual columns and aliases, expressions which use various operators such as bitwise, logical and arithmetic operators, string functions, date-time functions, numeric functions, control flow functions, secondary functions and stored functions. Along with this, statements which have subqueries and prepared statements can also be used.
 
 

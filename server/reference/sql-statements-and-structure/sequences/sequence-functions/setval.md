@@ -12,49 +12,49 @@ SETVAL(sequence_name, next_value, [is_used, [round]])
 ## Description
 
 
-Set the next value to be returned for a `<code>SEQUENCE</code>`.
+Set the next value to be returned for a `SEQUENCE`.
 
 
 This function is compatible with PostgreSQL syntax, extended
-with the `<code>round</code>` argument.
+with the `round` argument.
 
 
-If the `<code>is_used</code>` argument is not given or is `<code>1</code>` or `<code>true</code>`, then the next used value will
-one after the given value. If `<code>is_used</code>` is `<code>0</code>` or `<code>false</code>` then the next generated value
+If the `is_used` argument is not given or is `1` or `true`, then the next used value will
+one after the given value. If `is_used` is `0` or `false` then the next generated value
 will be the given value.
 
 
-If `<code>round</code>` is used then it will set the `<code>round</code>` value (or the internal cycle count, starting at zero) for the sequence.
-If `<code>round</code>` is not used, it's assumed to be 0.
+If `round` is used then it will set the `round` value (or the internal cycle count, starting at zero) for the sequence.
+If `round` is not used, it's assumed to be 0.
 
 
-`<code>next_value</code>` must be an integer literal.
+`next_value` must be an integer literal.
 
 
-For `<code>SEQUENCE</code>` tables defined with `<code>CYCLE</code>` (see [CREATE SEQUENCE](../create-sequence.md)) one should use both `<code>next_value</code>` and `<code>round</code>` to define the next value. In this case the
-current sequence value is defined to be `<code>round</code>`, `<code>next_value</code>`.
+For `SEQUENCE` tables defined with `CYCLE` (see [CREATE SEQUENCE](../create-sequence.md)) one should use both `next_value` and `round` to define the next value. In this case the
+current sequence value is defined to be `round`, `next_value`.
 
 
-The result returned by `<code>SETVAL()</code>` is `<code>next_value</code>` or NULL if the given `<code>next_value</code>` and `<code>round</code>` is smaller than the current value.
+The result returned by `SETVAL()` is `next_value` or NULL if the given `next_value` and `round` is smaller than the current value.
 
 
-`<code>SETVAL()</code>` will not set the `<code>SEQUENCE</code>` value to a something that is less than
-its current value. This is needed to ensure that `<code>SETVAL()</code>`
+`SETVAL()` will not set the `SEQUENCE` value to a something that is less than
+its current value. This is needed to ensure that `SETVAL()`
 is replication safe. If you want to set the SEQUENCE to a smaller number
 use [ALTER SEQUENCE](../alter-sequence.md).
 
 
-If `<code>CYCLE</code>` is used, first `<code>round</code>` and then `<code>next_value</code>` are compared
+If `CYCLE` is used, first `round` and then `next_value` are compared
 to see if the value is bigger than the current value.
 
 
-Internally, in the MariaDB server, `<code>SETVAL()</code>` is used to inform
-replicas that a `<code>SEQUENCE</code>` has changed value. The replica may get
-`<code>SETVAL()</code>` statements out of order, but this is ok as only the
+Internally, in the MariaDB server, `SETVAL()` is used to inform
+replicas that a `SEQUENCE` has changed value. The replica may get
+`SETVAL()` statements out of order, but this is ok as only the
 biggest one will have an effect.
 
 
-`<code>SETVAL</code>` requires the [INSERT privilege](../../sql-statements/account-management-sql-commands/grant.md).
+`SETVAL` requires the [INSERT privilege](../../sql-statements/account-management-sql-commands/grant.md).
 
 
 ## Examples
@@ -106,7 +106,7 @@ SELECT NEXTVAL(s);
 +------------+
 ```
 
-Example demonstrating `<code>round</code>`:
+Example demonstrating `round`:
 
 
 ```
@@ -133,7 +133,7 @@ SELECT NEXTVAL(s1);
 +-------------+
 ```
 
-The following statement returns NULL, as the given `<code>next_value</code>` and `<code>round</code>` is smaller than the current value.
+The following statement returns NULL, as the given `next_value` and `round` is smaller than the current value.
 
 
 ```
@@ -152,7 +152,7 @@ SELECT NEXTVAL(s1);
 +-------------+
 ```
 
-Increasing the round from zero to 1 will allow `<code>next_value</code>` to be returned.
+Increasing the round from zero to 1 will allow `next_value` to be returned.
 
 
 ```

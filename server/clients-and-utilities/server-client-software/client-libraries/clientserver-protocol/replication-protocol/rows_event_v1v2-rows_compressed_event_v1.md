@@ -161,13 +161,13 @@ The types that aren't listed here do not store data in the the metadata block.
 
 
 
-#### `<code>MYSQL_TYPE_BLOB</code>` and other blob types
+#### `MYSQL_TYPE_BLOB` and other blob types
 
 
 Stored as a length-encoded string where the string is preceded by a variable-sized integer that stores the length of the blob. The size of the preceding integer in bytes is stored as a one byte integer in the table metadata that is a part of the table map event.
 
 
-For example if the value 4 is stored in the table metadata the length is stored as a 4 byte integer (e.g. `<code>uint32_t</code>`) followed by the data.
+For example if the value 4 is stored in the table metadata the length is stored as a 4 byte integer (e.g. `uint32_t`) followed by the data.
 
 
 The exact column_type can be determined by the metadata length:
@@ -184,13 +184,13 @@ The exact column_type can be determined by the metadata length:
 
 
 
-#### `<code>MYSQL_TYPE_STRING</code>`, `<code>MYSQL_TYPE_SET</code>` and `<code>MYSQL_TYPE_ENUM</code>`
+#### `MYSQL_TYPE_STRING`, `MYSQL_TYPE_SET` and `MYSQL_TYPE_ENUM`
 
 
-Stored as a fixed-length string with the length of the string stored in the second byte of the table metadata. All three of these types are stored as `<code>MYSQL_TYPE_STRING</code>` in the binlog and the real type of the field is stored in the first byte of the metadata.
+Stored as a fixed-length string with the length of the string stored in the second byte of the table metadata. All three of these types are stored as `MYSQL_TYPE_STRING` in the binlog and the real type of the field is stored in the first byte of the metadata.
 
 
-#### `<code>MYSQL_TYPE_VARCHAR</code>` and other variable length string types
+#### `MYSQL_TYPE_VARCHAR` and other variable length string types
 
 
 Stored as a length-encoded string where the string is preceded by a variable-sized integer that stores the length of the string. The field length is stored as a two byte integer in the table metadata.
@@ -199,7 +199,7 @@ Stored as a length-encoded string where the string is preceded by a variable-siz
 If the field length is larger than 255, the string length is stored as a two byte integer. If the value is equal to or less than 255, the string length is stored as a one byte integer.
 
 
-#### `<code>MYSQL_TYPE_DATETIME</code>`
+#### `MYSQL_TYPE_DATETIME`
 
 
 **Note**: This field type is only used in MariaDB if global variable mysql56_temporal_format was set to OFF.
@@ -220,11 +220,11 @@ second = time_val % 100
 ```
 
 
-#### `<code>MYSQL_TYPE_TIME</code>`
+#### `MYSQL_TYPE_TIME`
 
 
 **Note**: This field type is only used in MariaDB if global variable mysql56_temporal_format was set to OFF.
-Stored as a 3 byte value with the values stored as multiples of 100. This means that the stored value is in the format HHMMSS and can be easily extracted the same way a `<code>MYSQL_TYPE_DATETIME</code>` is extracted. The following pseudo-code demonstrates extracting the value.
+Stored as a 3 byte value with the values stored as multiples of 100. This means that the stored value is in the format HHMMSS and can be easily extracted the same way a `MYSQL_TYPE_DATETIME` is extracted. The following pseudo-code demonstrates extracting the value.
 
 
 ```
@@ -235,10 +235,10 @@ second = time_val % 100;
 ```
 
 
-#### `<code>MYSQL_TYPE_DATETIME2</code>`
+#### `MYSQL_TYPE_DATETIME2`
 
 
-Stored as 4-byte value The number of decimals for the fractional part is stored in the table metadata as a one byte value. The number of bytes that follow the 5 byte datetime value can be calculated with the following formula: `<code>(decimals + 1) / 2</code>`
+Stored as 4-byte value The number of decimals for the fractional part is stored in the table metadata as a one byte value. The number of bytes that follow the 5 byte datetime value can be calculated with the following formula: `(decimals + 1) / 2`
 
 
 ```
@@ -255,10 +255,10 @@ hour= (t_val)(time_part >> 12);
 ```
 
 
-#### `<code>MYSQL_TYPE_TIME2</code>`
+#### `MYSQL_TYPE_TIME2`
 
 
-Stored as 3-byte value The number of decimals for the fractional part is stored in the table metadata as a one byte value. The number of bytes that follow the 3 byte time value can be calculated with the following formula: `<code>(decimals + 1) / 2</code>`
+Stored as 3-byte value The number of decimals for the fractional part is stored in the table metadata as a one byte value. The number of bytes that follow the 3 byte time value can be calculated with the following formula: `(decimals + 1) / 2`
 
 
 ```
@@ -274,10 +274,10 @@ second= t_val % (1 << 6);
 ```
 
 
-#### `<code>MYSQL_TYPE_TIMESTAMP2</code>`
+#### `MYSQL_TYPE_TIMESTAMP2`
 
 
-Stored as a 4 byte UNIX timestamp (number of seconds since 00:00, Jan 1 1970 UTC) followed by the fractional second parts. The number of decimals for the fractional part is stored in the table metadata as a one byte value. The number of bytes that follow the 4 byte timestamp can be calculated with the following formula: `<code>(decimals + 1) / 2</code>`
+Stored as a 4 byte UNIX timestamp (number of seconds since 00:00, Jan 1 1970 UTC) followed by the fractional second parts. The number of decimals for the fractional part is stored in the table metadata as a one byte value. The number of bytes that follow the 4 byte timestamp can be calculated with the following formula: `(decimals + 1) / 2`
 
 
 ##### Microseconds for MYSQL_TYPE_DATETIME2, MYSQL_TYPE_TIME2 and MYSQL_TYPE_TIMESTAMP
@@ -293,13 +293,13 @@ len = (decimals + 1) / 2
 ```
 
 
-#### `<code>MYSQL_TYPE_DATE</code>`
+#### `MYSQL_TYPE_DATE`
 
 
 Stored as a 3 byte value where bits 1 to 5 store the day, bits 6 to 9 store the month and the remaining bits store the year.
 
 
-#### `<code>MYSQL_TYPE_TIMESTAMP</code>`
+#### `MYSQL_TYPE_TIMESTAMP`
 
 
 Stored as a 4 byte UNIX timestamp (number of seconds since 00:00, Jan 1 1970 UTC).

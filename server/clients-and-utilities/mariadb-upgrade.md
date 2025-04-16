@@ -1,14 +1,14 @@
 
 # mariadb-upgrade
 
-`<code>mariadb-upgrade</code>` is a tool that checks and updates your tables to the latest version.
+`mariadb-upgrade` is a tool that checks and updates your tables to the latest version.
 
 
-Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysql_upgrade</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysql_upgrade`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 
-You should run `<code>mariadb-upgrade</code>` after upgrading from one major MySQL/MariaDB release to another, such as [from MySQL 5.0 to MariaDB 10.4](../server-management/getting-installing-and-upgrading-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-to-mariadb-from-mysql-50-or-older.md) or [MariaDB 10.4](../../release-notes/mariadb-community-server/what-is-mariadb-104.md) to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md). You also have to use `<code>mariadb-upgrade</code>` after a direct "horizontal" migration, for example from MySQL 5.5.40 to [MariaDB 5.5.40](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5540-release-notes.md). It's also safe to run `<code>mariadb-upgrade</code>` for minor upgrades, as if there are no incompatibilities nothing is changed.
+You should run `mariadb-upgrade` after upgrading from one major MySQL/MariaDB release to another, such as [from MySQL 5.0 to MariaDB 10.4](../server-management/getting-installing-and-upgrading-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-to-mariadb-from-mysql-50-or-older.md) or [MariaDB 10.4](../../release-notes/mariadb-community-server/what-is-mariadb-104.md) to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md). You also have to use `mariadb-upgrade` after a direct "horizontal" migration, for example from MySQL 5.5.40 to [MariaDB 5.5.40](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5540-release-notes.md). It's also safe to run `mariadb-upgrade` for minor upgrades, as if there are no incompatibilities nothing is changed.
 
 
 It needs to be run as a user with write access to the data directory.
@@ -16,19 +16,19 @@ It needs to be run as a user with write access to the data directory.
 
 
 ##### MariaDB starting with [10.5.14](../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10514-release-notes.md)
-Starting from `<code>mariadb-upgrade</code>` 2.0, the user running the upgrade tool must have write access to `<code>datadir/mysql_upgrade_info</code>`, so that the tool can write the current MariaDB version into the file. `<code>mariadb-upgrade</code>` (or `<code>mysql_upgrade</code>`) was updated in [MariaDB 10.2.42](../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10242-release-notes.md), [MariaDB 10.3.33](../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10333-release-notes.md), [MariaDB 10.4.23](../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10423-release-notes.md), [MariaDB 10.5.14](../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10514-release-notes.md), [MariaDB 10.6.6](../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes.md), [MariaDB 10.7.2](../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1072-release-notes.md) and newer.
+Starting from `mariadb-upgrade` 2.0, the user running the upgrade tool must have write access to `datadir/mysql_upgrade_info`, so that the tool can write the current MariaDB version into the file. `mariadb-upgrade` (or `mysql_upgrade`) was updated in [MariaDB 10.2.42](../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10242-release-notes.md), [MariaDB 10.3.33](../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10333-release-notes.md), [MariaDB 10.4.23](../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10423-release-notes.md), [MariaDB 10.5.14](../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10514-release-notes.md), [MariaDB 10.6.6](../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes.md), [MariaDB 10.7.2](../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1072-release-notes.md) and newer.
 
 
-`<code>mariadb-upgrade</code>` is run after starting the new MariaDB server. Running it before you shut down the old version will not hurt anything and will allow you to make sure it works and figure out authentication for it ahead of time.
+`mariadb-upgrade` is run after starting the new MariaDB server. Running it before you shut down the old version will not hurt anything and will allow you to make sure it works and figure out authentication for it ahead of time.
 
 
-It is recommended to make a [backup](../server-management/backing-up-and-restoring-databases/README.md) of all the databases before running `<code>mariadb-upgrade</code>`.
+It is recommended to make a [backup](../server-management/backing-up-and-restoring-databases/README.md) of all the databases before running `mariadb-upgrade`.
 
 
-In most cases, `<code>mariadb-upgrade</code>` should just take a few seconds. The main work of `<code>mariadb-upgrade</code>` is to:
+In most cases, `mariadb-upgrade` should just take a few seconds. The main work of `mariadb-upgrade` is to:
 
 
-* Update the system tables in the `<code>mysql</code>` database to the latest version (normally just add new fields to a few tables).
+* Update the system tables in the `mysql` database to the latest version (normally just add new fields to a few tables).
 * Check that all tables are up to date (runs [CHECK TABLE table_name FOR UPGRADE](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md)). For tables that are not up to date, runs [ALTER TABLE table_name FORCE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) on the table to update it. A table is not up to date if:
 
   * The table uses an index for which there has been a [collation](../reference/data-types/string-data-types/character-sets/README.md) change (rare)
@@ -45,7 +45,7 @@ mariadb-upgrade [--force] [--user=# --password=#
   --verbose] [OTHER_OPTIONS]
 ```
 
-`<code>mariadb-upgrade</code>` is mainly a framework to call [mariadb-check](mariadb-check.md). `<code>mariadb-upgrade</code>` works by doing the following operations:
+`mariadb-upgrade` is mainly a framework to call [mariadb-check](mariadb-check.md). `mariadb-upgrade` works by doing the following operations:
 
 
 ```
@@ -57,27 +57,27 @@ mariadb-check --no-defaults --all-databases --fix-db-names --fix-table-names
 mariadb-check --no-defaults --check-upgrade --all-databases --auto-repair
 ```
 
-The connect options given to `<code>mariadb-upgrade</code>` are passed along to [mariadb-check](mariadb-check.md) and [mysql](mariadb-client/mysql-command-line-client.md).
+The connect options given to `mariadb-upgrade` are passed along to [mariadb-check](mariadb-check.md) and [mysql](mariadb-client/mysql-command-line-client.md).
 
 
-The `<code>mysql_fix_privilege_tables</code>` script is not actually called; it's included as part of `<code>mariadb-upgrade</code>`
+The `mysql_fix_privilege_tables` script is not actually called; it's included as part of `mariadb-upgrade`
 
 
-If you have a problem with `<code>mariadb-upgrade</code>` try run it in very verbose mode:
+If you have a problem with `mariadb-upgrade` try run it in very verbose mode:
 
 
 ```
 mariadb-upgrade --verbose --verbose other-options
 ```
 
-`<code>mariadb-upgrade</code>` also saves the MariaDB version number in a file named `<code>mysql_upgrade_info</code>` in the [data directory](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir). This is used to quickly check whether all tables have been checked for this release so that table-checking can be skipped. For this reason, 
-`<code>mariadb-upgrade</code>` needs to be run as a user with write access to the data directory. To ignore this file and perform the check regardless, use the `<code>--force</code>` option.
+`mariadb-upgrade` also saves the MariaDB version number in a file named `mysql_upgrade_info` in the [data directory](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir). This is used to quickly check whether all tables have been checked for this release so that table-checking can be skipped. For this reason, 
+`mariadb-upgrade` needs to be run as a user with write access to the data directory. To ignore this file and perform the check regardless, use the `--force` option.
 
 
 ### Options
 
 
-`<code>mariadb-upgrade</code>` supports the following options:
+`mariadb-upgrade` supports the following options:
 
 
 
@@ -125,28 +125,28 @@ mariadb-upgrade --verbose --verbose other-options
 ## mariadb-upgrade 2.0
 
 
-`<code>mariadb-upgrate/mysql_upgrade 2.0</code>` was introduced in [MariaDB 10.2.42](../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10242-release-notes.md), [MariaDB 10.3.33](../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10333-release-notes.md), [MariaDB 10.4.23](../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10423-release-notes.md), [MariaDB 10.5.14](../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10514-release-notes.md), [MariaDB 10.6.6](../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes.md), [MariaDB 10.7.2](../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1072-release-notes.md).
+`mariadb-upgrate/mysql_upgrade 2.0` was introduced in [MariaDB 10.2.42](../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10242-release-notes.md), [MariaDB 10.3.33](../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10333-release-notes.md), [MariaDB 10.4.23](../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10423-release-notes.md), [MariaDB 10.5.14](../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10514-release-notes.md), [MariaDB 10.6.6](../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes.md), [MariaDB 10.7.2](../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1072-release-notes.md).
 
 
-Previously the tool first ran the upgrade process and then created the `<code>datadir/mysql_upgrade_info</code>` file. If the file could not be created because of permissions (`<code>mariadb-upgrade</code>` did not have rights to create the file), `<code>mariadb-upgrad</code>` gave an error, but this was often ignored.
-One effect of not being able to create the `<code>mysql_upgrade_info</code>` file was that every new `<code>mariadb-upgrade</code>` run would have to do a full upgrade check, which can take a while if there are a lot of tables.
+Previously the tool first ran the upgrade process and then created the `datadir/mysql_upgrade_info` file. If the file could not be created because of permissions (`mariadb-upgrade` did not have rights to create the file), `mariadb-upgrad` gave an error, but this was often ignored.
+One effect of not being able to create the `mysql_upgrade_info` file was that every new `mariadb-upgrade` run would have to do a full upgrade check, which can take a while if there are a lot of tables.
 
 
-`<code>mariadb-upgrade</code>` 2.0 fixes the following issues:
+`mariadb-upgrade` 2.0 fixes the following issues:
 
 
-* The `<code>datadir/mysql_upgrade_info</code>` is now created at the start of the upgrade process and locked. This ensures that two `<code>mariadb-upgrade</code>` processes cannot be run in parallel, which can cause deadlocks ([MDEV-27068](https://jira.mariadb.org/browse/MDEV-27068)). One side-effect of this is that `<code>mariadb-upgrade</code>` has to have write access to `<code>datadir</code>`, which means it has to be run as as the user that installed MariaDB, normally 'mysql' or 'root' .
-* One can use `<code>mariadb-upgrade --force --force</code>` to force the upgrade to be run, even if there was no version change or if one doesn't have write access to `<code>datadir</code>`. Note that if this option is used, the next `<code>mariadb-upgrade</code>` run will assume that there is a major version change and the upgrade must be done (again).
+* The `datadir/mysql_upgrade_info` is now created at the start of the upgrade process and locked. This ensures that two `mariadb-upgrade` processes cannot be run in parallel, which can cause deadlocks ([MDEV-27068](https://jira.mariadb.org/browse/MDEV-27068)). One side-effect of this is that `mariadb-upgrade` has to have write access to `datadir`, which means it has to be run as as the user that installed MariaDB, normally 'mysql' or 'root' .
+* One can use `mariadb-upgrade --force --force` to force the upgrade to be run, even if there was no version change or if one doesn't have write access to `datadir`. Note that if this option is used, the next `mariadb-upgrade` run will assume that there is a major version change and the upgrade must be done (again).
 * The upgrade will only be done if there is a major server version change (10.4.X -> 10.5.X). This will avoid unnecessary upgrades.
-* New option added: `<code>--check-if-upgrade-is-needed</code>`. If this is used, `<code>mariadb-upgrade</code>` will return 0 if there has been a major version change and one should run `<code>mariadb-upgrade</code>`. If not upgrade is need, 1 will be returned.
-* `<code>--verbose</code>` writes more information, including from which version to which version the upgrade will be done.
-* Better messages when there is no need to run `<code>mariadb-upgrade</code>`.
+* New option added: `--check-if-upgrade-is-needed`. If this is used, `mariadb-upgrade` will return 0 if there has been a major version change and one should run `mariadb-upgrade`. If not upgrade is need, 1 will be returned.
+* `--verbose` writes more information, including from which version to which version the upgrade will be done.
+* Better messages when there is no need to run `mariadb-upgrade`.
 
 
 ### Option Files
 
 
-In addition to reading options from the command-line, `<code>mariadb-upgrade</code>` can also read options from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `<code>mariadb-upgrade</code>` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadb-upgrade` can also read options from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-upgrade` in an option file, then it is ignored.
 
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
@@ -164,13 +164,13 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-In [MariaDB 10.2](../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, `<code>mariadb-upgrade</code>` is linked with [MariaDB Connector/C](../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+In [MariaDB 10.2](../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, `mariadb-upgrade` is linked with [MariaDB Connector/C](../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 
 #### Option Groups
 
 
-`<code>mariadb-upgrade</code>` reads options from the following [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
+`mariadb-upgrade` reads options from the following [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
 
 
 
@@ -192,7 +192,7 @@ This is as of [MariaDB 5.1.50](../../release-notes/mariadb-community-server/old-
 
 
 * MariaDB will convert long [table names](../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md) properly.
-* MariaDB will convert [InnoDB](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables (no need to do a dump/restore or `<code>[ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)</code>`).
+* MariaDB will convert [InnoDB](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables (no need to do a dump/restore or `[ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)`).
 * MariaDB will convert old archive tables to the new 5.1 format.
 * "mysql_upgrade --verbose" will run "mariadb-check --verbose" so that you get more information of what is happening. Running with 3 times --verbose will in [MariaDB 10.0](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) print out all CHECK, RENAME and ALTER TABLE commands executed.
 * The [mysql.event table](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-event-table.md) is upgraded live; no need to restart the server to use events if the event table has changed ([MariaDB 10.0.22](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes.md) and [MariaDB 10.1.9](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-9-release-notes.md)).
@@ -202,10 +202,10 @@ This is as of [MariaDB 5.1.50](../../release-notes/mariadb-community-server/old-
 ## Speeding Up mariadb-upgrade
 
 
-- If you are sure that all your tables are up to date with the current version, then you can run `<code>mariadb-upgrade ---upgrade-system-tables</code>`, which will only fix your system tables in the mysql database to be compatible with the latest version.
+- If you are sure that all your tables are up to date with the current version, then you can run `mariadb-upgrade ---upgrade-system-tables`, which will only fix your system tables in the mysql database to be compatible with the latest version.
 
 
-The main reason to run `<code>mariadb-upgrade</code>` on all your tables is to allow it to check that:
+The main reason to run `mariadb-upgrade` on all your tables is to allow it to check that:
 
 
 * There has not been any change in table formats between versions.
@@ -216,7 +216,7 @@ The main reason to run `<code>mariadb-upgrade</code>` on all your tables is to a
   * This has not happened since [MariaDB 5.5](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).
 
 
-If you are 100% sure this applies to you, you can just run `<code>mariadb-upgrade</code>` with the `<code>---upgrade-system-tables</code>` option.
+If you are 100% sure this applies to you, you can just run `mariadb-upgrade` with the `---upgrade-system-tables` option.
 
 
 ## Symptoms of Not Having Run mariadb-upgrade When It Was Needed
@@ -228,13 +228,13 @@ If you are 100% sure this applies to you, you can just run `<code>mariadb-upgrad
 * The error message "Cannot load from mysql.proc. The table is probably corrupted."
 
 
-To fix issues like this, run `<code>mariadb-upgrade</code>`, [mariadb-check](mariadb-check.md), [CHECK TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md) and if needed [REPAIR TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md) on the wrong table.
+To fix issues like this, run `mariadb-upgrade`, [mariadb-check](mariadb-check.md), [CHECK TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md) and if needed [REPAIR TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md) on the wrong table.
 
 
 ## Other Uses
 
 
-* `<code>mariadb-upgrade</code>` will re-create any missing tables in the [mysql database](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md). It will not touch any data in existing tables.
+* `mariadb-upgrade` will re-create any missing tables in the [mysql database](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md). It will not touch any data in existing tables.
 
 
 ## See Also

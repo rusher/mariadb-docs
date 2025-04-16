@@ -41,7 +41,7 @@ dialogs to control various database properties. Note that you do not
 necessarily have to create an instance at this stage. For example, if you
 already have MySQL or MariaDB databases running as services, you can just
 upgrade them during the installation. Also, you can create additional database
-instances after the installation, with the `<code>[mysql_install_db.exe](../mariadb-install-db-exe.md)</code>` utility.
+instances after the installation, with the `[mysql_install_db.exe](../mariadb-install-db-exe.md)` utility.
 
 
 **NOTE**: By default, if you install a database instance, the data directory
@@ -73,7 +73,7 @@ not recommended to change this setting.
 
 
 * Defines whether the database should be run as a service. If it should be run as a service, then it also defines the service name. It is recommended to run your database instance as a service as it greatly
-simplifies database management. In [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) and later, the default service name used by the MSI installer is "MariaDB". In 10.3 and before, the default service name used by the MSI installer is "MySQL". Note that the default service name for the `<code>[--install](../starting-and-stopping-mariadb/mariadbd-options.md)</code>` and `<code>[--install-manual](../starting-and-stopping-mariadb/mariadbd-options.md)</code>` options for `<code>mysqld.exe</code>` is "MySQL" in all versions of MariaDB.
+simplifies database management. In [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) and later, the default service name used by the MSI installer is "MariaDB". In 10.3 and before, the default service name used by the MSI installer is "MySQL". Note that the default service name for the `[--install](../starting-and-stopping-mariadb/mariadbd-options.md)` and `[--install-manual](../starting-and-stopping-mariadb/mariadbd-options.md)` options for `mysqld.exe` is "MySQL" in all versions of MariaDB.
 
 
 * Enable Networking
@@ -233,8 +233,8 @@ Setup" dialog.
 
 
 Silent installation supports adding features with the special property
-`<code>ADDLOCAL=Feature_1,..,Feature_N</code>` and removing features with
-`<code>REMOVE=Feature_1,..., Feature_N</code>`
+`ADDLOCAL=Feature_1,..,Feature_N` and removing features with
+`REMOVE=Feature_1,..., Feature_N`
 
 
 Features in the MariaDB installer:
@@ -277,7 +277,7 @@ msiexec /i path-to-package.msi SERVICENAME=MySQL ADDLOCAL=DEBUGSYMBOLS REMOVE=DE
 ### Silent Uninstall
 
 
-To uninstall silently, use the `<code>REMOVE=ALL</code>` property with msiexec:
+To uninstall silently, use the `REMOVE=ALL` property with msiexec:
 
 ```
 msiexec /i path-to-package.msi REMOVE=ALL /qn
@@ -297,7 +297,7 @@ msiexec /i path-to-package.msi REMOVE=ALL CLEANUPDATA="" /qn
 
 If you encounter a bug in the installer, the installer logs should be used for
 diagnosis. Please attach verbose logs to the bug reports you create. To create a verbose
-installer log, start the installer from the command line with the `<code>/l*v</code>`
+installer log, start the installer from the command line with the `/l*v`
 switch, like so:
 
 

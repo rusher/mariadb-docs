@@ -19,7 +19,7 @@ LOAD XML [LOW_PRIORITY | CONCURRENT] [LOCAL] INFILE 'file_name'
 
 
 The LOAD XML statement reads data from an XML file into a table. The
-`<code>file_name</code>` must be given as a literal string. The `<code>tagname</code>` in the
+`file_name` must be given as a literal string. The `tagname` in the
 optional ROWS IDENTIFIED BY clause must also be given as a literal
 string, and must be surrounded by angle brackets (< and >).
 
@@ -99,7 +99,7 @@ number rows in the XML file to be skipped. It is analogous to the LOAD
 DATA statement's IGNORE ... LINES clause.
 
 
-If the `<code>[LOW_PRIORITY](../../changing-deleting-data/high_priority-and-low_priority.md)</code>` keyword is used, insertions are delayed until no other clients are reading from the table. The `<code>CONCURRENT</code>` keyword allows the use of [concurrent inserts](../concurrent-inserts.md). These clauses cannot be specified together.
+If the `[LOW_PRIORITY](../../changing-deleting-data/high_priority-and-low_priority.md)` keyword is used, insertions are delayed until no other clients are reading from the table. The `CONCURRENT` keyword allows the use of [concurrent inserts](../concurrent-inserts.md). These clauses cannot be specified together.
 
 
 This statement activates INSERT [triggers](../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md).

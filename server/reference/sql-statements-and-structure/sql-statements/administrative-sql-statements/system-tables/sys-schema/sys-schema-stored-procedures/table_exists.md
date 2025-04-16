@@ -15,7 +15,7 @@ table_exists(in_db_name,in_table_name, out_table_type)
 ## Description
 
 
-`<code>table_exists</code>` is a [stored procedure](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md).
+`table_exists` is a [stored procedure](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md).
 
 
 Given a database *in_db_name* and table name *in_table_name*, returns the table type in the OUT parameter *out_table_type*. The return value is an ENUM field containing one of:

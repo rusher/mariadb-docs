@@ -11,10 +11,10 @@ In order to safely disable encryption, you first need to decrypt the tablespaces
 ### Disabling Encryption for Automatically Encrypted Tablespaces
 
 
-When an InnoDB tablespace has the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option set to `<code>DEFAULT</code>` and the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable is set to `<code>ON</code>` or `<code>FORCE</code>`, the tablespace's encryption is automatically managed by the background encryption threads. When you want to disable encryption for these tablespaces, you must ensure that the background encryption threads decrypt the tablespaces before removing the encryption keys. Otherwise, the tablespace remains encrypted and becomes inaccessible once you've removed the keys.
+When an InnoDB tablespace has the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option set to `DEFAULT` and the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable is set to `ON` or `FORCE`, the tablespace's encryption is automatically managed by the background encryption threads. When you want to disable encryption for these tablespaces, you must ensure that the background encryption threads decrypt the tablespaces before removing the encryption keys. Otherwise, the tablespace remains encrypted and becomes inaccessible once you've removed the keys.
 
 
-To safely decrypt the tablespaces, first, set the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable to `<code>OFF</code>`:
+To safely decrypt the tablespaces, first, set the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable to `OFF`:
 
 
 ```
@@ -28,14 +28,14 @@ Next, set the [innodb_encryption_threads](../../../../../reference/storage-engin
 SET GLOBAL innodb_encryption_threads = 4;
 ```
 
-Then, set the [innodb_encryption_rotate_key_age](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age) system variable to `<code>1</code>`:
+Then, set the [innodb_encryption_rotate_key_age](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age) system variable to `1`:
 
 
 ```
 SET GLOBAL innodb_encryption_rotate_key_age = 1;
 ```
 
-Once set, any InnoDB tablespaces that have the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option set to `<code>DEFAULT</code>` will be [decrypted](innodb-background-encryption-threads.md#background-operations) in the background by the InnoDB [background encryption threads](innodb-background-encryption-threads.md#background-encryption-threads).
+Once set, any InnoDB tablespaces that have the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option set to `DEFAULT` will be [decrypted](innodb-background-encryption-threads.md#background-operations) in the background by the InnoDB [background encryption threads](innodb-background-encryption-threads.md#background-encryption-threads).
 
 
 #### Decryption Status
@@ -57,10 +57,10 @@ This query shows the number of InnoDB tablespaces that currently using backgroun
 ### Disabling Encryption for Manually Encrypted Tablespaces
 
 
-In the case of manually encrypted InnoDB tablespaces, (that is, those where the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option is set to `<code>YES</code>`), you must issue an [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement to decrypt each tablespace before removing the encryption keys. Otherwise, the tablespace remains encrypted and becomes inaccessible without the keys.
+In the case of manually encrypted InnoDB tablespaces, (that is, those where the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option is set to `YES`), you must issue an [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement to decrypt each tablespace before removing the encryption keys. Otherwise, the tablespace remains encrypted and becomes inaccessible without the keys.
 
 
-First, query the Information Schema [TABLES](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table to find the encrypted tables. This can be done with a `<code>WHERE</code>` clause filtering the `<code>CREATE_OPTIONS</code>` column.
+First, query the Information Schema [TABLES](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table to find the encrypted tables. This can be done with a `WHERE` clause filtering the `CREATE_OPTIONS` column.
 
 
 ```
@@ -70,7 +70,7 @@ WHERE ENGINE='InnoDB'
       AND CREATE_OPTIONS LIKE '%`ENCRYPTED`=YES%';
 ```
 
-For each table in the result-set, issue an [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement, setting the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option to `<code>NO</code>`.
+For each table in the result-set, issue an [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement, setting the [ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted) table option to `NO`.
 
 
 ```
@@ -99,7 +99,7 @@ WHERE NAME='db1/tab1';
 Once you have removed encryption from all the tables, your InnoDB deployment is unencrypted. Be sure to also remove encryption from the [Redo Log](#disabling-encryption-for-the-redo-log) as well as [Aria](../aria-encryption/aria-encryption-overview.md) and any other storage engines that support encryption before removing the encryption key management settings from your configuration file.
 
 
-InnoDB does not permit manual encryption changes to tables in the [system](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace using [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md). Encryption of the [system](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace can only be configured by setting the value of the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable. This means that when you want to encrypt or decrypt the [system](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace, you must also set a non-zero value for the [innodb_encryption_threads](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads) system variable, and you must also set the [innodb_encryption_rotate_key_age](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age) system variable to `<code>1</code>` to ensure that the system tablespace is properly encrypted or decrypted by the background threads. See [MDEV-14398](https://jira.mariadb.org/browse/MDEV-14398) for more information.
+InnoDB does not permit manual encryption changes to tables in the [system](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace using [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md). Encryption of the [system](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace can only be configured by setting the value of the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable. This means that when you want to encrypt or decrypt the [system](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace, you must also set a non-zero value for the [innodb_encryption_threads](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads) system variable, and you must also set the [innodb_encryption_rotate_key_age](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age) system variable to `1` to ensure that the system tablespace is properly encrypted or decrypted by the background threads. See [MDEV-14398](https://jira.mariadb.org/browse/MDEV-14398) for more information.
 
 
 ### Disabling Encryption for Temporary Tablespaces
@@ -114,7 +114,7 @@ The [innodb_encrypt_temporary_tables](../../../../../reference/storage-engines/i
 InnoDB uses the [Redo Log](../../../../../reference/storage-engines/innodb/innodb-redo-log.md) in crash recovery. By default, these events are written to file in an unencrypted state. In removing data-at-rest encryption for InnoDB, be sure to also disable encryption for the Redo Log before removing encryption key settings. Otherwise the Redo Log can become inaccessible without the encryption keys.
 
 
-First, set the [innodb_encrypt_log](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) system variable to `<code>OFF</code>` in a server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). Once this is done, [restart](https://mariadb.com/kb/en/) the MariaDB Server. When the Server comes back online, it begins writing unencrypted data to the Redo Log.
+First, set the [innodb_encrypt_log](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) system variable to `OFF` in a server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). Once this is done, [restart](https://mariadb.com/kb/en/) the MariaDB Server. When the Server comes back online, it begins writing unencrypted data to the Redo Log.
 
 
 After the server has been successfully restarted with encryption disabled, you may remove the [key management and encryption plugin](../key-management-and-encryption-plugins/encryption-key-management.md) that had been used. If you try to disable encryption for the Redo Log and remove the plugin in a single step, InnoDB will be unable to decrypt the log in order to remove the encryption.

@@ -43,7 +43,7 @@ REPLACE [LOW_PRIORITY | DELAYED]
 ## Description
 
 
-`<code>REPLACE ... RETURNING</code>` returns a resultset of the replaced rows.
+`REPLACE ... RETURNING` returns a resultset of the replaced rows.
 This returns the listed columns for all the rows that are replaced, or alternatively, the specified SELECT expression. Any SQL expressions which can be calculated can be used in the select expression for the RETURNING clause, including virtual columns and aliases, expressions which use various operators such as bitwise, logical and arithmetic operators, string functions, date-time functions, numeric functions, control flow functions, secondary functions and stored functions. Along with this, statements which have subqueries and prepared statements can also be used.
 
 

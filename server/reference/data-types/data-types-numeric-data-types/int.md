@@ -19,7 +19,7 @@ A normal-size integer. When marked UNSIGNED, it ranges from 0 to 4294967295, oth
 **Note:** If the ZEROFILL attribute has been specified, the column will automatically become UNSIGNED.
 
 
-`<code>INT4</code>` is a synonym for `<code>INT</code>`.
+`INT4` is a synonym for `INT`.
 
 
 For details on the attributes, see [Numeric Data Type Overview](numeric-data-type-overview.md).

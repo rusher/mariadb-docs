@@ -35,25 +35,25 @@ This document lists optional parameters that all current monitors support.
 ## Parameters
 
 
-### `<code>user</code>`
+### `user`
 
 
 Username used by the monitor to connect to the backend servers. If a server defines
-the `<code>monitoruser</code>` parameter, that value will be used instead.
+the `monitoruser` parameter, that value will be used instead.
 
 
-### `<code>password</code>`
+### `password`
 
 
-Password for the user defined with the `<code>user</code>` parameter. If a server defines
-the `<code>monitorpw</code>` parameter, that value will be used instead.
+Password for the user defined with the `user` parameter. If a server defines
+the `monitorpw` parameter, that value will be used instead.
 
 
-**Note:** In older versions of MaxScale this parameter was called `<code>passwd</code>`. The
- use of `<code>passwd</code>` was deprecated in MaxScale 2.3.0.
+**Note:** In older versions of MaxScale this parameter was called `passwd`. The
+ use of `passwd` was deprecated in MaxScale 2.3.0.
 
 
-### `<code>monitor_interval</code>`
+### `monitor_interval`
 
 
 * Type: [duration](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -63,7 +63,7 @@ the `<code>monitorpw</code>` parameter, that value will be used instead.
 
 Defines how often the monitor updates the status of the servers. Choose a lower
 value if servers should be queried more often. The smallest possible value is
-100 milliseconds. If querying the servers takes longer than `<code>monitor_interval</code>`,
+100 milliseconds. If querying the servers takes longer than `monitor_interval`,
 the effective update rate is reduced.
 
 
@@ -80,7 +80,7 @@ is provided, the value is interpreted as milliseconds in MaxScale 2.4. In subseq
 versions a value without a unit may be rejected.
 
 
-### `<code>backend_connect_timeout</code>`
+### `backend_connect_timeout`
 
 
 * Type: [duration](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -104,7 +104,7 @@ backend_connect_timeout=3s
 
 
 
-### `<code>backend_write_timeout</code>`
+### `backend_write_timeout`
 
 
 * Type: [duration](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -128,7 +128,7 @@ backend_write_timeout=3s
 
 
 
-### `<code>backend_read_timeout</code>`
+### `backend_read_timeout`
 
 
 * Type: [duration](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -152,7 +152,7 @@ backend_read_timeout=3s
 
 
 
-### `<code>backend_connect_attempts</code>`
+### `backend_connect_attempts`
 
 
 * Type: integer
@@ -161,7 +161,7 @@ backend_read_timeout=3s
 
 
 This parameter defines the maximum times a backend connection is attempted every
-monitoring loop. Every attempt may take up to `<code>backend_connect_timeout</code>` seconds
+monitoring loop. Every attempt may take up to `backend_connect_timeout` seconds
 to perform. If none of the attempts are successful, the backend is considered to
 be unreachable and down.
 
@@ -173,17 +173,17 @@ backend_connect_attempts=1
 
 
 
-### `<code>disk_space_threshold</code>`
+### `disk_space_threshold`
 
 
-This parameter duplicates the `<code>disk_space_threshold</code>`
+This parameter duplicates the `disk_space_threshold`
 [server parameter](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md).
 If the parameter has *not* been specified for a server, then the one specified
 for the monitor is applied.
 
 
 **NOTE**: Since MariaDB 10.4.7, MariaDB 10.3.17 and MariaDB 10.2.26, the
-information will be available *only* if the monitor user has the `<code>FILE</code>`
+information will be available *only* if the monitor user has the `FILE`
 privilege.
 
 
@@ -194,8 +194,8 @@ different on all or some servers, then the disk space threshold can be
 specified individually for each server.
 
 
-For example, suppose `<code>server1</code>`, `<code>server2</code>` and `<code>server3</code>` are identical
-in all respects. In that case we can specify `<code>disk_space_threshold</code>`
+For example, suppose `server1`, `server2` and `server3` are identical
+in all respects. In that case we can specify `disk_space_threshold`
 in the monitor.
 
 
@@ -281,12 +281,12 @@ disk_space_threshold=/data:80
 
 
 
-Above, `<code>server1</code>` has the disk used for the data directory mounted
-at `<code>/DbData</code>` while both `<code>server2</code>` and `<code>server3</code>` have it mounted on
-`<code>/data</code>` and thus the setting in the monitor covers them both.
+Above, `server1` has the disk used for the data directory mounted
+at `/DbData` while both `server2` and `server3` have it mounted on
+`/data` and thus the setting in the monitor covers them both.
 
 
-### `<code>disk_space_check_interval</code>`
+### `disk_space_check_interval`
 
 
 * Type: [duration](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -305,12 +305,12 @@ will not be checked.
 
 Note that as the checking is made as part of the regular monitor interval
 cycle, the disk space check interval is affected by the value of
-`<code>monitor_interval</code>`. In particular, even if the value of
-`<code>disk_space_check_interval</code>` is smaller than that of `<code>monitor_interval</code>`,
-the checking will still take place at `<code>monitor_interval</code>` intervals.
+`monitor_interval`. In particular, even if the value of
+`disk_space_check_interval` is smaller than that of `monitor_interval`,
+the checking will still take place at `monitor_interval` intervals.
 
 
-### `<code>script</code>`
+### `script`
 
 
 * Type: string
@@ -328,23 +328,23 @@ MaxScale will substitute with useful information when launching the script.
 The placeholders and their substitution results are:
 
 
-* `<code>$INITIATOR</code>` -> IP and port of the server which initiated the event
-* `<code>$EVENT</code>` -> event description, e.g. "server_up"
-* `<code>$LIST</code>` -> list of IPs and ports of all servers
-* `<code>$NODELIST</code>` -> list of IPs and ports of all running servers
-* `<code>$SLAVELIST</code>` -> list of IPs and ports of all replica servers
-* `<code>$MASTERLIST</code>` -> list of IPs and ports of all primary servers
-* `<code>$SYNCEDLIST</code>` -> list of IPs and ports of all synced Galera nodes
-* `<code>$PARENT</code>` -> IP and port of the parent of the server which initiated the event.
+* `$INITIATOR` -> IP and port of the server which initiated the event
+* `$EVENT` -> event description, e.g. "server_up"
+* `$LIST` -> list of IPs and ports of all servers
+* `$NODELIST` -> list of IPs and ports of all running servers
+* `$SLAVELIST` -> list of IPs and ports of all replica servers
+* `$MASTERLIST` -> list of IPs and ports of all primary servers
+* `$SYNCEDLIST` -> list of IPs and ports of all synced Galera nodes
+* `$PARENT` -> IP and port of the parent of the server which initiated the event.
 For primary-replica setups, this will be the primary if the initiating server is a
 replica.
-* `<code>$CHILDREN</code>` -> list of IPs and ports of the child nodes of the server who
+* `$CHILDREN` -> list of IPs and ports of the child nodes of the server who
 initiated the event. For primary-replica setups, this will be a list of replica
 servers if the initiating server is a primary.
 
 
 The expanded variable value can be an empty string if no servers match the
-variable's requirements. For example, if no primaries are available `<code>$MASTERLIST</code>`
+variable's requirements. For example, if no primaries are available `$MASTERLIST`
 will expand into an empty string. The list-type substitutions will only contain
 servers monitored by the current monitor.
 
@@ -374,8 +374,8 @@ outputted line will be logged as a separate log message.
 
 
 The log level on which the messages are logged depends on the format of the
-messages. If the first word in the output line is one of `<code>alert:</code>`, `<code>error:</code>`,
-`<code>warning:</code>`, `<code>notice:</code>`, `<code>info:</code>` or `<code>debug:</code>`, the message will be logged on the
+messages. If the first word in the output line is one of `alert:`, `error:`,
+`warning:`, `notice:`, `info:` or `debug:`, the message will be logged on the
 corresponding level. If the message is not prefixed with one of the keywords,
 the message will be logged on the notice level. Whitespace before, after or
 between the keyword and the colon is ignored and the matching is
@@ -386,12 +386,12 @@ Currently, the script must not execute any of the following MaxCtrl
 calls as they cause a deadlock:
 
 
-* `<code>alter monitor</code>` to the monitor executing the script
-* `<code>stop monitor</code>` to the monitor executing the script
-* `<code>call command</code>` to a MariaDB-Monitor that is executing the script
+* `alter monitor` to the monitor executing the script
+* `stop monitor` to the monitor executing the script
+* `call command` to a MariaDB-Monitor that is executing the script
 
 
-### `<code>script_timeout</code>`
+### `script_timeout`
 
 
 * Type: [duration](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -412,12 +412,12 @@ a SIGTERM signal to it. If the process does not stop, a SIGKILL signal will be
 sent to it once the execution time is greater than twice the configured timeout.
 
 
-### `<code>events</code>`
+### `events`
 
 
 * Type: enum
 * Dynamic: Yes
-* Values: `<code>master_down</code>`, `<code>master_up</code>`, `<code>slave_down</code>`, `<code>slave_up</code>`, `<code>server_down</code>`, `<code>server_up</code>`, `<code>lost_master</code>`, `<code>lost_slave</code>`, `<code>new_master</code>`, `<code>new_slave</code>`
+* Values: `master_down`, `master_up`, `slave_down`, `slave_up`, `server_down`, `server_up`, `lost_master`, `lost_slave`, `new_master`, `new_slave`
 * Default: All events
 
 
@@ -452,7 +452,7 @@ descriptions.
 | new_slave | A new Replica was detected |
 
 
-### `<code>journal_max_age</code>`
+### `journal_max_age`
 
 
 * Type: [duration](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -483,13 +483,13 @@ information when MaxScale is restarted.
 
 
 For MySQL monitor, options that introduce states into the monitoring process are
-the `<code>detect_stale_master</code>` and `<code>detect_stale_slave</code>` options, both of which are
-enabled by default. Galeramon has the `<code>disable_master_failback</code>` parameter which
+the `detect_stale_master` and `detect_stale_slave` options, both of which are
+enabled by default. Galeramon has the `disable_master_failback` parameter which
 introduces a state.
 
 
 The default location for the server state journal is in
-`<code>/var/lib/maxscale/<monitor name>/monitor.dat</code>` where `<code><monitor name></code>` is the
+`/var/lib/maxscale/<monitor name>/monitor.dat` where `<monitor name>` is the
 name of the monitor section in the configuration file. If MaxScale crashes or is
 shut down in an uncontrolled fashion, the journal will be read when MaxScale is
 started. To skip the recovery process, manually delete the journal file before

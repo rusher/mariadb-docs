@@ -12,11 +12,11 @@ PointN(ls,N)
 ## Description
 
 
-Returns the N-th [Point](../geometry-constructors/point.md) in the [LineString](../geometry-constructors/linestring.md) value `<code>ls</code>`.
-Points are numbered beginning with `<code>1</code>`.
+Returns the N-th [Point](../geometry-constructors/point.md) in the [LineString](../geometry-constructors/linestring.md) value `ls`.
+Points are numbered beginning with `1`.
 
 
-`<code>ST_PointN()</code>` and `<code>PointN()</code>` are synonyms.
+`ST_PointN()` and `PointN()` are synonyms.
 
 
 ## Examples

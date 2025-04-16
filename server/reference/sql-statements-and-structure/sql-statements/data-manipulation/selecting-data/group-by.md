@@ -1,25 +1,25 @@
 
 # GROUP BY
 
-Use the `<code>GROUP BY</code>` clause in a [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement to group rows together that have the same value in one or more column, or the same computed value using expressions with any
+Use the `GROUP BY` clause in a [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement to group rows together that have the same value in one or more column, or the same computed value using expressions with any
 [functions and operators](../../built-in-functions/README.md) except
 [grouping functions](../../built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions.md). When you
-use a `<code>GROUP BY</code>` clause, you will get a single result row for each group of rows
-that have the same value for the expression given in `<code>GROUP BY</code>`.
+use a `GROUP BY` clause, you will get a single result row for each group of rows
+that have the same value for the expression given in `GROUP BY`.
 
 
-When grouping rows, grouping values are compared as if by the `<code>[=](../../../geographic-geometric-features/geometry-relations/equals.md)</code>` operator.
-For string values, the `<code>=</code>` operator ignores trailing whitespace and may normalize
+When grouping rows, grouping values are compared as if by the `[=](../../../geographic-geometric-features/geometry-relations/equals.md)` operator.
+For string values, the `=` operator ignores trailing whitespace and may normalize
 characters and ignore case, depending on the [collation](../../../../data-types/string-data-types/character-sets/README.md) in use.
 
 
 You can use any of the grouping functions in your select expression. Their values will
 be calculated based on all the rows that have been grouped together for each result
 row. If you select a non-grouped column or a value computed from a non-grouped
-column, it is undefined which row the returned value is taken from. This is not permitted if the `<code>ONLY_FULL_GROUP_BY</code>` [SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) is used.
+column, it is undefined which row the returned value is taken from. This is not permitted if the `ONLY_FULL_GROUP_BY` [SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) is used.
 
 
-You can use multiple expressions in the `<code>GROUP BY</code>` clause, separated by commas.
+You can use multiple expressions in the `GROUP BY` clause, separated by commas.
 Rows are grouped together if they match on each of the expressions.
 
 
@@ -27,15 +27,15 @@ You can also use a single integer as the grouping expression. If you use an inte
 the results will be grouped by the *n*th column in the select expression.
 
 
-The `<code>WHERE</code>` clause is applied before the `<code>GROUP BY</code>` clause. It filters non-aggregated
+The `WHERE` clause is applied before the `GROUP BY` clause. It filters non-aggregated
 rows before the rows are grouped together. To filter grouped rows based on aggregate values,
-use the `<code>HAVING</code>` clause. The `<code>HAVING</code>` clause takes any expression and evaluates it as
-a boolean, just like the `<code>WHERE</code>` clause. You can use grouping functions in the `<code>HAVING</code>`
-clause. As with the select expression, if you reference non-grouped columns in the `<code>HAVING</code>`
+use the `HAVING` clause. The `HAVING` clause takes any expression and evaluates it as
+a boolean, just like the `WHERE` clause. You can use grouping functions in the `HAVING`
+clause. As with the select expression, if you reference non-grouped columns in the `HAVING`
 clause, the behavior is undefined.
 
 
-By default, if a `<code>GROUP BY</code>` clause is present, the rows in the output will be sorted by the expressions used in the `<code>GROUP BY</code>`. You can also specify `<code>ASC</code>` or `<code>DESC</code>` (ascending, descending) after those expressions, like in [ORDER BY](order-by.md). The default is `<code>ASC</code>`.
+By default, if a `GROUP BY` clause is present, the rows in the output will be sorted by the expressions used in the `GROUP BY`. You can also specify `ASC` or `DESC` (ascending, descending) after those expressions, like in [ORDER BY](order-by.md). The default is `ASC`.
 
 
 If you want the rows to be sorted by another field, you can add an explicit [ORDER BY](order-by.md). If you don't want the result to be ordered, you can add [ORDER BY NULL](order-by.md).
@@ -44,7 +44,7 @@ If you want the rows to be sorted by another field, you can add an explicit [ORD
 ### WITH ROLLUP
 
 
-The `<code>WITH ROLLUP</code>` modifer adds extra rows to the resultset that represent super-aggregate summaries. For a full description with examples, see [SELECT WITH ROLLUP](select-with-rollup.md).
+The `WITH ROLLUP` modifer adds extra rows to the resultset that represent super-aggregate summaries. For a full description with examples, see [SELECT WITH ROLLUP](select-with-rollup.md).
 
 
 ### GROUP BY Examples
@@ -77,8 +77,8 @@ SELECT wins, COUNT(*) FROM plays GROUP BY wins;
 3 rows in set (0.00 sec)
 ```
 
-The `<code>GROUP BY</code>` expression can be a computed value, and can refer back to an identifer
-specified with `<code>AS</code>`. Get a list of win averages along with a count:
+The `GROUP BY` expression can be a computed value, and can refer back to an identifer
+specified with `AS`. Get a list of win averages along with a count:
 
 
 ```
@@ -111,9 +111,9 @@ SELECT (wins / plays) AS winavg, AVG(plays) FROM plays
 3 rows in set (0.00 sec)
 ```
 
-You can filter on aggregate information using the `<code>HAVING</code>` clause. The `<code>HAVING</code>`
-clause is applied after `<code>GROUP BY</code>` and allows you to filter on aggregate data that is
-not available to the `<code>WHERE</code>` clause. Restrict the above example to results that involve
+You can filter on aggregate information using the `HAVING` clause. The `HAVING`
+clause is applied after `GROUP BY` and allows you to filter on aggregate data that is
+not available to the `WHERE` clause. Restrict the above example to results that involve
 an average number of plays over 20:
 
 

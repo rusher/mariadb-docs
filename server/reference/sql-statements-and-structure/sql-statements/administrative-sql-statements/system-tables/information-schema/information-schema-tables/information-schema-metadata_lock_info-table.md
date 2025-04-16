@@ -1,7 +1,7 @@
 
 # Information Schema METADATA_LOCK_INFO Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>METADATA_LOCK_INFO</code>` table is created by the [metadata_lock_info](../../../../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin. It shows active [metadata locks](../../../../transactions/metadata-locking.md) and user locks (the locks acquired with [GET_LOCK](../../../../built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md)).
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `METADATA_LOCK_INFO` table is created by the [metadata_lock_info](../../../../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin. It shows active [metadata locks](../../../../transactions/metadata-locking.md) and user locks (the locks acquired with [GET_LOCK](../../../../built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md)).
 
 
 It has the following columns:
@@ -23,7 +23,7 @@ It has the following columns:
 #### "LOCK_MODE" Descriptions
 
 
-The `<code>LOCK_MODE</code>` column can have the following values:
+The `LOCK_MODE` column can have the following values:
 
 
 
@@ -46,7 +46,7 @@ The `<code>LOCK_MODE</code>` column can have the following values:
 ## Examples
 
 
-First, install the `<code>metadata _lock_info</code>` plugin, if it is not already installed:
+First, install the `metadata _lock_info` plugin, if it is not already installed:
 
 
 ```

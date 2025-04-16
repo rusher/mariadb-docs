@@ -1,7 +1,7 @@
 
 # CREATE PACKAGE BODY
 
-The `<code>CREATE PACKAGE BODY</code>` statement can be used when [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set, or in any mode from [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md).
+The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set, or in any mode from [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md).
 
 
 In Oracle mode, the PL/SQL dialect is used, while in non-Oracle mode, SQL/PSM is used.
@@ -99,10 +99,10 @@ condition_value:
 ## Description
 
 
-The `<code>CREATE PACKAGE BODY</code>` statement can be used when [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set, or in any mode from [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md).
+The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set, or in any mode from [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md).
 
 
-The `<code>CREATE PACKAGE BODY</code>` statement creates the package body for a stored package. The package specification must be previously created using the [CREATE PACKAGE](create-package-body.md) statement.
+The `CREATE PACKAGE BODY` statement creates the package body for a stored package. The package specification must be previously created using the [CREATE PACKAGE](create-package-body.md) statement.
 
 
 A package body provides implementations of the package public routines and can optionally have:

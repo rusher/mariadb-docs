@@ -65,7 +65,7 @@ options=case,extended
 The named server filter requires two mandatory parameters to be defined.
 
 
-### `<code>match</code>`
+### `match`
 
 
 A parameter that can be used to match text in the SQL statement which should be replaced.
@@ -81,7 +81,7 @@ match=TYPE[ ]*=
 If the filter option ignorecase is used all regular expressions are evaluated with the option to ignore the case of the text, therefore a match option of select will match both type, TYPE and any form of the word with upper or lowercase characters.
 
 
-### `<code>server</code>`
+### `server`
 
 
 This is the server where matching queries will be router. The server should be in use by the service which uses this filter.
@@ -94,7 +94,7 @@ server=server2
 
 
 
-### `<code>source</code>`
+### `source`
 
 
 The optional source parameter defines an address that is used to match against the address from which the client connection to MaxScale originates. Only sessions that originate from this address will have the match and replacement applied to them.
@@ -107,7 +107,7 @@ source=127.0.0.1
 
 
 
-### `<code>user</code>`
+### `user`
 
 
 The optional user parameter defines a user name that is used to match against the user from which the client connection to MaxScale originates. Only sessions that are connected using this username will have the match and replacement applied to them.
@@ -126,10 +126,10 @@ user=john
 ### Example 1 - Route queries targeting a specific table to a server
 
 
-This will route all queries matching the regular expression `<code>*from *users</code>` to the server named *server2*. The filter will ignore character case in queries.
+This will route all queries matching the regular expression `*from *users` to the server named *server2*. The filter will ignore character case in queries.
 
 
-A query like `<code>SELECT * FROM users</code>` would be routed to server2 where as a query like `<code>SELECT * FROM accounts</code>` would be routed according to the normal rules of the router.
+A query like `SELECT * FROM users` would be routed to server2 where as a query like `SELECT * FROM accounts` would be routed according to the normal rules of the router.
 
 
 

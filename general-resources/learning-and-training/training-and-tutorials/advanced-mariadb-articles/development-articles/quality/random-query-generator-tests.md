@@ -15,8 +15,8 @@ The latest RQG used by MariaDB can be found at:
 * [master](https://github.com/MariaDB/randgen/tree/master)
 
 
-The list of automatic tests is located in the `<code>buildbot.conf</code>` file in the
-`<code>[mariadb.org-tools](benchmarks-and-long-running-tests/benchmarks/mariadb-tools.md)</code>` repository.
+The list of automatic tests is located in the `buildbot.conf` file in the
+`[mariadb.org-tools](benchmarks-and-long-running-tests/benchmarks/mariadb-tools.md)` repository.
 
 
 ## See Also

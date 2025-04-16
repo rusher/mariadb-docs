@@ -1,7 +1,7 @@
 
 # INT1
 
-`<code>INT1</code>` is a synonym for [TINYINT](tinyint.md).
+`INT1` is a synonym for [TINYINT](tinyint.md).
 
 
 ```

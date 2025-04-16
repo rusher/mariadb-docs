@@ -62,22 +62,22 @@ DELETE HISTORY
 
 
 
-For the single-table syntax, the `<code class="fixed" style="white-space:pre-wrap">DELETE</code>` statement deletes rows
+For the single-table syntax, the `DELETE` statement deletes rows
 from tbl_name and returns a count of the number of deleted rows. This count can
 be obtained by calling the [ROW_COUNT()](../../built-in-functions/secondary-functions/information-functions/row_count.md) function. The
-`<code class="fixed" style="white-space:pre-wrap">WHERE</code>` clause, if given, specifies the conditions that identify
-which rows to delete. With no `<code class="fixed" style="white-space:pre-wrap">WHERE</code>` clause, all rows are
+`WHERE` clause, if given, specifies the conditions that identify
+which rows to delete. With no `WHERE` clause, all rows are
 deleted. If the [ORDER BY](../selecting-data/order-by.md) clause is specified, the rows are
 deleted in the order that is specified. The [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clause
 places a limit on the number of rows that can be deleted.
 
 
-For the multiple-table syntax, `<code class="fixed" style="white-space:pre-wrap">DELETE</code>` deletes from each
-`<code class="fixed" style="white-space:pre-wrap">tbl_name</code>` the rows that satisfy the conditions. In this case,
-[ORDER BY](../selecting-data/order-by.md) and [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md)> cannot be used. A `<code>DELETE</code>` can also reference tables which are located in different databases; see [Identifier Qualifiers](../../../sql-language-structure/identifier-qualifiers.md) for the syntax.
+For the multiple-table syntax, `DELETE` deletes from each
+`tbl_name` the rows that satisfy the conditions. In this case,
+[ORDER BY](../selecting-data/order-by.md) and [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md)> cannot be used. A `DELETE` can also reference tables which are located in different databases; see [Identifier Qualifiers](../../../sql-language-structure/identifier-qualifiers.md) for the syntax.
 
 
-`<code class="fixed" style="white-space:pre-wrap">where_condition</code>` is an expression that evaluates to true for
+`where_condition` is an expression that evaluates to true for
 each row to be deleted. It is specified as described in [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md).
 
 
@@ -85,17 +85,17 @@ Currently, you cannot delete from a table and select from the same
 table in a subquery.
 
 
-You need the `<code class="fixed" style="white-space:pre-wrap">DELETE</code>` privilege on a table to delete rows from
-it. You need only the `<code class="fixed" style="white-space:pre-wrap">SELECT</code>` privilege for any columns that
-are only read, such as those named in the `<code class="fixed" style="white-space:pre-wrap">WHERE</code>` clause. See
+You need the `DELETE` privilege on a table to delete rows from
+it. You need only the `SELECT` privilege for any columns that
+are only read, such as those named in the `WHERE` clause. See
 [GRANT](../../account-management-sql-commands/grant.md).
 
 
-As stated, a `<code class="highlight fixed" style="white-space:pre-wrap">DELETE</code>` statement with no `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>`
+As stated, a `DELETE` statement with no `WHERE`
 clause deletes all rows. A faster way to do this, when you do not need to know
-the number of deleted rows, is to use `<code class="highlight fixed" style="white-space:pre-wrap">TRUNCATE TABLE</code>`. However,
+the number of deleted rows, is to use `TRUNCATE TABLE`. However,
 within a transaction or if you have a lock on the table, 
-`<code class="fixed" style="white-space:pre-wrap">TRUNCATE TABLE</code>` cannot be used whereas `<code class="fixed" style="white-space:pre-wrap">DELETE</code>`
+`TRUNCATE TABLE` cannot be used whereas `DELETE`
 can. See [TRUNCATE TABLE](../../table-statements/truncate-table.md), and
 [LOCK](../../transactions/lock-tables.md).
 
@@ -130,7 +130,7 @@ See [Application Time Periods - Deletion by Portion](../../../temporal-tables/ap
 ### RETURNING
 
 
-It is possible to return a resultset of the deleted rows for a single table to the client by using the syntax `<code>DELETE ... RETURNING select_expr [, select_expr2 ...]]</code>`
+It is possible to return a resultset of the deleted rows for a single table to the client by using the syntax `DELETE ... RETURNING select_expr [, select_expr2 ...]]`
 
 
 Any of SQL expression that can be calculated from a single row fields is allowed. Subqueries are allowed. The AS keyword is allowed, so it is possible to use aliases.
@@ -152,7 +152,7 @@ DELETE FROM t1 WHERE c1 IN (SELECT b.c1 FROM t1 b WHERE b.c2=0);
 ### DELETE HISTORY
 
 
-One can use `<code>DELETE HISTORY</code>` to delete historical information from [System-versioned tables](../../../temporal-tables/system-versioned-tables.md).
+One can use `DELETE HISTORY` to delete historical information from [System-versioned tables](../../../temporal-tables/system-versioned-tables.md).
 
 
 ## Examples

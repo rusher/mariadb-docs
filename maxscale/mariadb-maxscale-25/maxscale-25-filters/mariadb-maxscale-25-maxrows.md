@@ -64,7 +64,7 @@ The Maxrows filter has no mandatory parameters.
 Optional parameters are:
 
 
-#### `<code>max_resultset_rows</code>`
+#### `max_resultset_rows`
 
 
 Specifies the maximum number of rows a resultset can have in order to be returned
@@ -84,10 +84,10 @@ max_resultset_rows=1000
 Zero or a negative value is interpreted as no limitation.
 
 
-The default value is `<code>-1</code>`.
+The default value is `-1`.
 
 
-#### `<code>max_resultset_size</code>`
+#### `max_resultset_size`
 
 
 Specifies the maximum size a resultset can have in order
@@ -107,7 +107,7 @@ max_resultset_size=128Ki
 The default value is 64Ki
 
 
-#### `<code>max_resultset_return</code>`
+#### `max_resultset_return`
 
 
 Specifies what the filter sends to the client when the
@@ -140,7 +140,7 @@ ERROR 1415 (0A000): Row limit/size exceeded for query: select * from test.t4
 
 
 
-#### `<code>debug</code>`
+#### `debug`
 
 
 An integer value, using which the level of debug logging made by the Maxrows
@@ -148,12 +148,12 @@ filter can be controlled. The value is actually a bitfield with different bits
 denoting different logging.
 
 
-* `<code>0</code>` (`<code>0b00000</code>`) No logging is made.
-* `<code>1</code>` (`<code>0b00001</code>`) A decision to handle data form server is logged.
-* `<code>2</code>` (`<code>0b00010</code>`) Reached max_resultset_rows or max_resultset_size is logged.
+* `0` (`0b00000`) No logging is made.
+* `1` (`0b00001`) A decision to handle data form server is logged.
+* `2` (`0b00010`) Reached max_resultset_rows or max_resultset_size is logged.
 
 
-Default is `<code>0</code>`. To log everything, give `<code>debug</code>` a value of `<code>3</code>`.
+Default is `0`. To log everything, give `debug` a value of `3`.
 
 
 

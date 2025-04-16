@@ -11,7 +11,7 @@ ORD(str)
 ## Description
 
 
-If the leftmost character of the string `<code>str</code>` is a multi-byte character,
+If the leftmost character of the string `str` is a multi-byte character,
 returns the code for that character, calculated from the numeric
 values of its constituent bytes using this formula:
 

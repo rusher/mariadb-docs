@@ -1,11 +1,11 @@
 
 # Information Schema INNODB_SYS_TABLESPACES Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>INNODB_SYS_TABLESPACES</code>` table contains information about InnoDB tablespaces. Until [MariaDB 10.5](../../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) it was based on the internal `<code>SYS_TABLESPACES</code>` table. This internal table was removed in [MariaDB 10.6.0](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md), so this Information Schema table has been repurposed
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_SYS_TABLESPACES` table contains information about InnoDB tablespaces. Until [MariaDB 10.5](../../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) it was based on the internal `SYS_TABLESPACES` table. This internal table was removed in [MariaDB 10.6.0](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md), so this Information Schema table has been repurposed
 to directly reflect the filesystem (fil_system.space_list).
 
 
-The `<code>PROCESS</code>` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
 
 
 It has the following columns:

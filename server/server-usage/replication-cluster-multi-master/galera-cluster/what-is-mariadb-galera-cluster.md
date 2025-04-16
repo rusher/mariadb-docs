@@ -49,7 +49,7 @@ Galera Cluster](getting-started-with-mariadb-galera-cluster.md) page has instruc
 MariaDB Galera Cluster.
 
 
-A great resource for Galera users is [Codership on Google Groups](https://groups.google.com/forum/?fromgroups#!forum/codership-team) (*`<code>codership-team</code>` `<code>'at'</code>` `<code>googlegroups</code>` `<code>(dot)</code>` `<code>com</code>`*) - If you use Galera it is recommended you subscribe.
+A great resource for Galera users is [Codership on Google Groups](https://groups.google.com/forum/?fromgroups#!forum/codership-team) (*`codership-team` `'at'` `googlegroups` `(dot)` `com`*) - If you use Galera it is recommended you subscribe.
 
 
 ## Galera Versions
@@ -75,7 +75,7 @@ See [Deciphering Galera Version Numbers](https://galeracluster.com/library/docum
 ### Galera 4 Versions
 
 
-The following table lists each version of the [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 using [yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md), [apt](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-with-apt), or [zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md), then the package is called `<code>galera-4</code>`.
+The following table lists each version of the [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 using [yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md), [apt](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-with-apt), or [zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md), then the package is called `galera-4`.
 
 
 
@@ -114,7 +114,7 @@ The following table lists each version of the [Galera](../../../reference/sql-st
 ## See Also
 
 
-* [Codership on Google Groups](https://groups.google.com/forum/?fromgroups#!forum/codership-team) (`<code>codership-team 'at' googlegroups (dot) com</code>`) - A great mailing list for Galera users.
+* [Codership on Google Groups](https://groups.google.com/forum/?fromgroups#!forum/codership-team) (`codership-team 'at' googlegroups (dot) com`) - A great mailing list for Galera users.
 * [About Galera Replication](about-galera-replication.md)
 * [Codership: Using Galera Cluster](https://codership.com/content/using-galera-cluster)
 * [Galera Use Cases](galera-use-cases.md)

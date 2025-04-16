@@ -1,10 +1,10 @@
 
 # mariadb-tzinfo-to-sql
 
-`<code>mariadb-tzinfo-to-sql</code>` is a utility used to load [time zones](../reference/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md) on systems that have a zoneinfo database to load the time zone tables ([time_zone](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone-table.md), [time_zone_leap_second](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_leap_second-table.md), [time_zone_name](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_name-table.md), [time_zone_transition](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_transition-table.md) and [time_zone_transition_type](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_transition_type-table.md)) into the mysql database.
+`mariadb-tzinfo-to-sql` is a utility used to load [time zones](../reference/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md) on systems that have a zoneinfo database to load the time zone tables ([time_zone](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone-table.md), [time_zone_leap_second](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_leap_second-table.md), [time_zone_name](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_name-table.md), [time_zone_transition](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_transition-table.md) and [time_zone_transition_type](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_transition_type-table.md)) into the mysql database.
 
 
-Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysql_tzinfo_to_sql</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysql_tzinfo_to_sql`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 Most Linux, Mac OS X, FreeBSD and Solaris systems will have a zoneinfo database - Windows does not. The database is commonly found in the /usr/share/zoneinfo directory, or, on Solaris, the /usr/share/lib/zoneinfo directory.
@@ -13,7 +13,7 @@ Most Linux, Mac OS X, FreeBSD and Solaris systems will have a zoneinfo database 
 ## Usage
 
 
-`<code>mariadb-tzinfo-to-sql</code>` can be called in several ways. The output is usually passed straight to the [mariadb client](mariadb-client/README.md) for direct loading in the mysql database.
+`mariadb-tzinfo-to-sql` can be called in several ways. The output is usually passed straight to the [mariadb client](mariadb-client/README.md) for direct loading in the mysql database.
 
 
 ```
@@ -25,7 +25,7 @@ shell> mariadb-tzinfo-to-sql --leap timezone_file
 ## Resetting timezone tables
 
 
-If there is a need to reset the timezone to the default, to before using `<code>mariadb-tzinfo-to-sql</code>`, one can do that by executing:
+If there is a need to reset the timezone to the default, to before using `mariadb-tzinfo-to-sql`, one can do that by executing:
 
 
 ```
@@ -49,7 +49,7 @@ Most commonly, the whole directory is passed:
 shell>mariadb-tzinfo-to-sql /usr/share/zoneinfo | mariadb -u root mysql
 ```
 
-Load a single time zone file, `<code>timezone_file</code>`, corresponding to the time zone called `<code>timezone_name</code>`.
+Load a single time zone file, `timezone_file`, corresponding to the time zone called `timezone_name`.
 
 
 ```

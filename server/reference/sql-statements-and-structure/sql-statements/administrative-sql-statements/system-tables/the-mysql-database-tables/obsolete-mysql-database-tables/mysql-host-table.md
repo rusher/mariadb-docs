@@ -5,7 +5,7 @@
 ### Usage
 
 
-Until [MariaDB 5.5](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), the `<code>mysql.host</code>` table contained information about hosts and their related privileges. When determining permissions, if a matching record in the [mysql.db table](../mysql-db-table.md) had a blank host value, the mysql.host table would be examined.
+Until [MariaDB 5.5](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), the `mysql.host` table contained information about hosts and their related privileges. When determining permissions, if a matching record in the [mysql.db table](../mysql-db-table.md) had a blank host value, the mysql.host table would be examined.
 
 
 This table is not affected by any [GRANT](../../../../account-management-sql-commands/grant.md) statements, and had to be updated manually.
@@ -23,7 +23,7 @@ This table is no longer created. However if the table is created it will be used
 ### Table fields
 
 
-The `<code>mysql.host</code>` table contains the following fields:
+The `mysql.host` table contains the following fields:
 
 
 

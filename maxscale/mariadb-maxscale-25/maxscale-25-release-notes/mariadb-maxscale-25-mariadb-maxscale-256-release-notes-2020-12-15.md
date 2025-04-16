@@ -16,8 +16,8 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 
 
 **NOTE** After the release of 2.5.6 it was noticed that configuring the same
-server for *both* the persistent pool (configuration settings `<code>persistpoolmax</code>`
-and `<code>persistmaxtime</code>`) and the proxy protocol (configuration setting `<code>proxy_protocol</code>`)
+server for *both* the persistent pool (configuration settings `persistpoolmax`
+and `persistmaxtime`) and the proxy protocol (configuration setting `proxy_protocol`)
 may in some situations lead to a crash. Using either one is ok. We will release
 2.5.7 with a fix for this as soon as possible (January 2021).
 
@@ -47,7 +47,7 @@ may in some situations lead to a crash. Using either one is ok. We will release
 * [MXS-3301](https://jira.mariadb.org/browse/MXS-3301) MaxScale does not recognize xpand properly
 * [MXS-3295](https://jira.mariadb.org/browse/MXS-3295) Layout of classify REST API endpoint stores non-parameter data in parameters object
 * [MXS-3293](https://jira.mariadb.org/browse/MXS-3293) Backticks not stripped in USE statements.
-* [MXS-3292](https://jira.mariadb.org/browse/MXS-3292) Unable to execute use `<code>database</code>`
+* [MXS-3292](https://jira.mariadb.org/browse/MXS-3292) Unable to execute use `database`
 * [MXS-3283](https://jira.mariadb.org/browse/MXS-3283) Scramble should be composed of characters
 * [MXS-3282](https://jira.mariadb.org/browse/MXS-3282) Select query inside transactions are routed to slave with session_track_trx_state=true
 * [MXS-3272](https://jira.mariadb.org/browse/MXS-3272) maxctrl not prompt directy for the password
@@ -82,7 +82,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platfor
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

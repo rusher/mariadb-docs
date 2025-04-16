@@ -38,14 +38,14 @@ You can install these programs individually through your package manager.
 In addition, some package managers support the use a build dependency command. When using this command, the package manager retrieves a list of build dependencies and install them for you, making it much easier to get started on the compile. The actual option varies, depending on the distribution you use.
 
 
-On Ubuntu and Debian you can use the `<code>build-dep</code>` command.
+On Ubuntu and Debian you can use the `build-dep` command.
 
 
 ```
 # apt build-dep mariadb-server
 ```
 
-Fedora uses the `<code>builddep</code>` command with DNF.
+Fedora uses the `builddep` command with DNF.
 
 
 ```
@@ -85,7 +85,7 @@ After editing the sources.list, do:
 ```
 sudo apt update
 ```
-...and then the above mentioned `<code>build-dep</code>` command.
+...and then the above mentioned `build-dep` command.
 
 
 Note: On openSUSE the source package repository may be disabled. The following command will enable it:

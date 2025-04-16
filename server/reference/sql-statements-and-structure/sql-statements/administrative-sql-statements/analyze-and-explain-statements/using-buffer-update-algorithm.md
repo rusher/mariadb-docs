@@ -43,5 +43,5 @@ In order to prevent such situations, the optimizer checks whether the UPDATE sta
 This way, each row will be updated only once.
 
 
-The `<code>Using buffer</code>` [EXPLAIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) output indicates that the buffer as described above will be used.
+The `Using buffer` [EXPLAIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) output indicates that the buffer as described above will be used.
 

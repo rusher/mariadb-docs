@@ -121,11 +121,11 @@ INSERT INTO shared_info.account_types VALUES (1, 'admin'), (2, 'user');
 ## Configuring MaxScale
 
 
-The MaxScale configuration is stored in `<code>/etc/maxscale.cnf</code>`.
+The MaxScale configuration is stored in `/etc/maxscale.cnf`.
 
 
-First, we configure two servers we will use to shard our database. The `<code>db-01</code>`
-server has the `<code>customer_01</code>` schema and the `<code>db-02</code>` server has the `<code>customer_02</code>`
+First, we configure two servers we will use to shard our database. The `db-01`
+server has the `customer_01` schema and the `db-02` server has the `customer_02`
 schema.
 
 
@@ -149,7 +149,7 @@ section defines which router to use, which servers to connect to and the
 credentials to use. For sharding, we use schemarouter router and the
 service_user credentials we defined earlier. By default the schemarouter warns
 if two or more nodes have duplicate schemas so we need to ignore them with
-`<code>ignore_tables_regex=.*</code>`.
+`ignore_tables_regex=.*`.
 
 
 
@@ -182,10 +182,10 @@ port=4000
 
 The final step is to configure a monitor which will monitor the state of the
 servers. The monitor will notify MariaDB MaxScale if the servers are down. We
-add the two servers to the monitor and use the `<code>monitor_user</code>` credentials. For
-the sharding use-case, the `<code>galeramon</code>` module is suitable even if we're not
-using a Galera cluster. The `<code>schemarouter</code>` is only interested in whether the
-server is in the `<code>Running</code>` state or in the `<code>Down</code>` state.
+add the two servers to the monitor and use the `monitor_user` credentials. For
+the sharding use-case, the `galeramon` module is suitable even if we're not
+using a Galera cluster. The `schemarouter` is only interested in whether the
+server is in the `Running` state or in the `Down` state.
 
 
 
@@ -201,7 +201,7 @@ password=secret
 
 
 After this we have a fully working configuration and the contents of
-`<code>/etc/maxscale.cnf</code>` should look like this.
+`/etc/maxscale.cnf` should look like this.
 
 
 

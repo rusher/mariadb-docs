@@ -15,7 +15,7 @@ MultiPolygonFromWKB(wkb[,srid])
 Constructs a [MULTIPOLYGON](../geometry-constructors/multipolygon.md) value using its [WKB](well-known-binary-wkb-format.md) representation and [SRID](../geometry-properties/st_srid.md).
 
 
-`<code>MPolyFromWKB()</code>` and `<code>MultiPolygonFromWKB()</code>` are synonyms.
+`MPolyFromWKB()` and `MultiPolygonFromWKB()` are synonyms.
 
 
 ## Examples

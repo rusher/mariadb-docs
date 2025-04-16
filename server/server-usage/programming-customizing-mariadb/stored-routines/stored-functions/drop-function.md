@@ -12,15 +12,15 @@ DROP FUNCTION [IF EXISTS] f_name
 ## Description
 
 
-The DROP FUNCTION statement is used to drop a [stored function](README.md) or a user-defined function (UDF). That is, the specified routine is removed from the server, along with all privileges specific to the function. You must have the `<code>ALTER ROUTINE</code>` [privilege](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) for the routine in order to drop it. If the [automatic_sp_privileges](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges) server system variable is set, both the `<code>ALTER ROUTINE</code>` and `<code>EXECUTE</code>` privileges are granted automatically to the routine creator - see [Stored Routine Privileges](stored-routine-privileges.md).
+The DROP FUNCTION statement is used to drop a [stored function](README.md) or a user-defined function (UDF). That is, the specified routine is removed from the server, along with all privileges specific to the function. You must have the `ALTER ROUTINE` [privilege](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) for the routine in order to drop it. If the [automatic_sp_privileges](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges) server system variable is set, both the `ALTER ROUTINE` and `EXECUTE` privileges are granted automatically to the routine creator - see [Stored Routine Privileges](stored-routine-privileges.md).
 
 
 #### IF EXISTS
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">IF EXISTS</code>` clause is a MySQL/MariaDB extension. It
+The `IF EXISTS` clause is a MySQL/MariaDB extension. It
 prevents an error from occurring if the function does not exist. A
-`<code>NOTE</code>` is produced that can be viewed with [SHOW WARNINGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md).
+`NOTE` is produced that can be viewed with [SHOW WARNINGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md).
 
 
 For dropping a [user-defined functions](../../user-defined-functions/user-defined-functions-security.md) (UDF), see [DROP FUNCTION UDF](../../user-defined-functions/drop-function-udf.md).

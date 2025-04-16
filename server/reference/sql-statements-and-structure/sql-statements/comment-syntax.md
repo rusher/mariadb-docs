@@ -4,18 +4,18 @@
 There are three supported comment styles in MariaDB:
 
 
-1. From a '`<code class="fixed" style="white-space:pre-wrap">#</code>`' to the end of a line:
+1. From a '`#`' to the end of a line:
 ```
 SELECT * FROM users; 
 
 # This is a comment
 
 ```
-1. From a '`<code class="fixed" style="white-space:pre-wrap">-- </code>`' to the end of a line. The space after the two dashes is required (as in MySQL).
+1. From a '`-- `' to the end of a line. The space after the two dashes is required (as in MySQL).
 ```
 SELECT * FROM users; -- This is a comment
 ```
-1. C style comments from an opening '`<code class="fixed" style="white-space:pre-wrap">/*</code>`' to a closing '`<code class="fixed" style="white-space:pre-wrap">*/</code>`'. Comments of this form can span multiple lines:
+1. C style comments from an opening '`/*`' to a closing '`*/`'. Comments of this form can span multiple lines:
 ```
 SELECT * FROM users; /* This is a
 multi-line
@@ -61,7 +61,7 @@ Code that should be executed only starting from a specific MySQL or MariaDB vers
 /*!##### MySQL or MariaDB-specific code */
 ```
 
-The numbers, represented by '`<code class="fixed" style="white-space:pre-wrap">######</code>`' in the syntax examples
+The numbers, represented by '`######`' in the syntax examples
 above specify the specific the minimum versions of MySQL and MariaDB that should execute the comment. The first number is the major version, the second 2 numbers are the minor version and the last 2 is the patch level.
 
 
@@ -80,14 +80,14 @@ MariaDB-only executable comment syntax (starting from [MariaDB 5.3.1](../../../.
 /*M!###### MariaDB-specific code */
 ```
 
-MariaDB ignores MySQL-style executable comments that have a version number in the range `<code>50700..99999</code>`. This is needed to skip features introduced in MySQL-5.7 that are not ported to MariaDB 10.x yet.
+MariaDB ignores MySQL-style executable comments that have a version number in the range `50700..99999`. This is needed to skip features introduced in MySQL-5.7 that are not ported to MariaDB 10.x yet.
 
 
 ```
 /*!50701 MariaDB-10.x ignores MySQL-5.7 specific code */
 ```
 
-**Note:** comments which have a version number in the range `<code>50700..99999</code>` that use
+**Note:** comments which have a version number in the range `50700..99999` that use
 MariaDB-style executable comment syntax are still executed.
 
 

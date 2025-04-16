@@ -4,7 +4,7 @@
 # CLI
 
 
-The command line interface as used by `<code>maxadmin</code>`. This is a variant of the debugcli that is built slightly differently so that it may be accessed by the client application `<code>maxadmin</code>`. The CLI requires the use of the `<code>maxscaled</code>` protocol.
+The command line interface as used by `maxadmin`. This is a variant of the debugcli that is built slightly differently so that it may be accessed by the client application `maxadmin`. The CLI requires the use of the `maxscaled` protocol.
 
 
 ## Configuration

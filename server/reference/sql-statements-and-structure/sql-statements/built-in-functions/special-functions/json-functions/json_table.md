@@ -48,13 +48,13 @@ on_error:
 JSON_TABLE can be used in contexts where a table reference can be used; in the FROM clause of a [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement, and in multi-table [UPDATE](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)/[DELETE](../../../data-manipulation/changing-deleting-data/delete.md) statements.
 
 
-`<code>json_doc</code>` is the JSON document to extract data from. In the simplest case, it is a string literal containing JSON. In more complex cases it can be an arbitrary expression returning JSON. The expression may have references to columns of other tables. However, one can only refer to tables that precede this JSON_TABLE invocation. For RIGHT JOIN, it is assumed that its outer side precedes the inner. All tables in outer selects are also considered preceding.
+`json_doc` is the JSON document to extract data from. In the simplest case, it is a string literal containing JSON. In more complex cases it can be an arbitrary expression returning JSON. The expression may have references to columns of other tables. However, one can only refer to tables that precede this JSON_TABLE invocation. For RIGHT JOIN, it is assumed that its outer side precedes the inner. All tables in outer selects are also considered preceding.
 
 
-`<code>context_path</code>` is a [JSON Path](jsonpath-expressions.md) expression pointing to a collection of nodes in `<code>json_doc</code>` that will be used as the source of rows.
+`context_path` is a [JSON Path](jsonpath-expressions.md) expression pointing to a collection of nodes in `json_doc` that will be used as the source of rows.
 
 
-The `<code>COLUMNS</code>` clause declares the names and types of the columns that JSON_TABLE returns, as well as how the values of the columns are produced.
+The `COLUMNS` clause declares the names and types of the columns that JSON_TABLE returns, as well as how the values of the columns are produced.
 
 
 ### Column Definitions
@@ -70,7 +70,7 @@ The following types of columns are supported:
 name type PATH path_str [on_empty] [on_error]
 ```
 
-Locates the JSON node pointed to by `<code>path_str</code>` and returns its value. The path_str is evaluated using the current row source node as the context node.
+Locates the JSON node pointed to by `path_str` and returns its value. The path_str is evaluated using the current row source node as the context node.
 
 
 ```
@@ -94,7 +94,7 @@ select * from json_table(@json, '$[*]'
 +--------+-------+---------+
 ```
 
-The `<code>on_empty</code>` and `<code>on_error</code>` clauses specify the actions to be performed when the value was not found or there was an error condition. See the ON EMPTY and ON ERROR clauses section for details.
+The `on_empty` and `on_error` clauses specify the actions to be performed when the value was not found or there was an error condition. See the ON EMPTY and ON ERROR clauses section for details.
 
 
 #### ORDINALITY Columns
@@ -137,7 +137,7 @@ select * from json_table(@json, '$[*]'
 name type EXISTS PATH path_str
 ```
 
-Checks whether the node pointed to by `<code>value_path</code>` exists. The `<code>value_path</code>` is evaluated using the current row source node as the context node.
+Checks whether the node pointed to by `value_path` exists. The `value_path` is evaluated using the current row source node as the context node.
 
 
 ```
@@ -170,7 +170,7 @@ NESTED PATH converts nested JSON structures into multiple rows.
 NESTED PATH path COLUMNS (column_list)
 ```
 
-It finds the sequence of JSON nodes pointed to by `<code>path</code>` and uses it to produce rows. For each found node, a row is generated with column values as specified by the NESTED PATH's COLUMNS clause. If `<code>path</code>` finds no nodes, only one row is generated with all columns having NULL values.
+It finds the sequence of JSON nodes pointed to by `path` and uses it to produce rows. For each found node, a row is generated with column values as specified by the NESTED PATH's COLUMNS clause. If `path` finds no nodes, only one row is generated with all columns having NULL values.
 
 
 For example, consider a JSON document that contains an array of items, and each item, in turn, is expected to have an array of its available sizes:
@@ -256,7 +256,7 @@ on_empty:
     {NULL | DEFAULT string | ERROR} ON EMPTY
 ```
 
-When `<code>ON EMPTY</code>` clause is not present, `<code>NULL ON EMPTY</code>` is implied.
+When `ON EMPTY` clause is not present, `NULL ON EMPTY` is implied.
 
 
 ```
@@ -265,10 +265,10 @@ on_error:
 ```
 
 The ON ERROR clause specifies what should be done if a JSON structure error occurs when trying to extract the value pointed to by the path expression. A JSON structure error here occurs only when one attempts to convert a JSON non-scalar (array or object) into a scalar value.
-When the `<code>ON ERROR</code>` clause is not present, `<code>NULL ON ERROR</code>` is implied.
+When the `ON ERROR` clause is not present, `NULL ON ERROR` is implied.
 
 
-**Note**: A datatype conversion error (e.g. attempt to store a non-integer value into an [integer](../../../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) field, or a [varchar](../../../../../data-types/string-data-types/varchar.md) column being truncated) is not considered a JSON error and so will not trigger the `<code>ON ERROR</code>` behavior. It will produce warnings, in the same way as [CAST(value AS datatype)](../../string-functions/cast.md) would.
+**Note**: A datatype conversion error (e.g. attempt to store a non-integer value into an [integer](../../../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) field, or a [varchar](../../../../../data-types/string-data-types/varchar.md) column being truncated) is not considered a JSON error and so will not trigger the `ON ERROR` behavior. It will produce warnings, in the same way as [CAST(value AS datatype)](../../string-functions/cast.md) would.
 
 
 ### Replication

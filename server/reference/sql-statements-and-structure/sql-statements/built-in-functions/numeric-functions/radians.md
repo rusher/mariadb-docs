@@ -11,7 +11,7 @@ RADIANS(X)
 ## Description
 
 
-Returns the argument *`<code>X</code>`*, converted from degrees to radians. Note that
+Returns the argument *`X`*, converted from degrees to radians. Note that
 π radians equals 180 degrees.
 
 

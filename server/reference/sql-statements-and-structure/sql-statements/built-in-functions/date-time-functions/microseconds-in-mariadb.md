@@ -12,7 +12,7 @@ CREATE TABLE example(
 );
 ```
 
-Generally, the precision can be specified for any `<code>TIME</code>`, `<code>DATETIME</code>`, or `<code>TIMESTAMP</code>` column, in parentheses, after the type name. The datetime precision specifies number of digits after the decimal dot and can be any integer number from 0 to 6. If no precision is specified it is assumed to be 0, for backward compatibility reasons.
+Generally, the precision can be specified for any `TIME`, `DATETIME`, or `TIMESTAMP` column, in parentheses, after the type name. The datetime precision specifies number of digits after the decimal dot and can be any integer number from 0 to 6. If no precision is specified it is assumed to be 0, for backward compatibility reasons.
 
 
 A datetime precision can be specified wherever a type name is used. For example:
@@ -21,7 +21,7 @@ A datetime precision can be specified wherever a type name is used. For example:
 * when declaring arguments of stored routines.
 * when specifying a return type of a stored function.
 * when declaring variables.
-* in a `<code>CAST</code>` function:
+* in a `CAST` function:
 ```
 create function example(x datetime(5)) returns time(4)
 begin
@@ -31,7 +31,7 @@ end;
 ```
 
 
-`<code>%f</code>` is used as the formatting option for microseconds in the [STR_TO_DATE](str_to_date.md), [DATE_FORMAT](date_format.md) and [FROM_UNIXTIME](from_unixtime.md) functions, for example:
+`%f` is used as the formatting option for microseconds in the [STR_TO_DATE](str_to_date.md), [DATE_FORMAT](date_format.md) and [FROM_UNIXTIME](from_unixtime.md) functions, for example:
 
 
 ```
@@ -46,8 +46,8 @@ SELECT STR_TO_DATE('20200809 020917076','%Y%m%d %H%i%s%f');
 ## Additional Information
 
 
-* when comparing anything to a temporal value (`<code>DATETIME</code>`, `<code>TIME</code>`, `<code>[DATE](../../../sql-language-structure/date-and-time-literals.md)</code>`, or `<code>TIMESTAMP</code>`), both values are compared as temporal values, not as strings.
-* The [INFORMATION_SCHEMA.COLUMNS table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) has a new column `<code>DATETIME_PRECISION</code>`
+* when comparing anything to a temporal value (`DATETIME`, `TIME`, `[DATE](../../../sql-language-structure/date-and-time-literals.md)`, or `TIMESTAMP`), both values are compared as temporal values, not as strings.
+* The [INFORMATION_SCHEMA.COLUMNS table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) has a new column `DATETIME_PRECISION`
 * [NOW()](now.md), [CURTIME()](curtime.md), [UTC_TIMESTAMP()](utc_timestamp.md), [UTC_TIME()](utc_time.md), [CURRENT_TIME()](current_time.md), [CURRENT_TIMESTAMP()](current_timestamp.md), [LOCALTIME()](localtimestamp.md) and [LOCALTIMESTAMP()](localtimestamp.md) now accept datetime precision as an optional argument. For example:
 ```
 SELECT CURTIME(4);
@@ -59,24 +59,24 @@ SELECT TIME_TO_SEC('10:10:10.12345');
 --> 36610.12345
 ```
 * Current versions of this patch fix a bug in the following optimization: in
- certain queries with `<code>DISTINCT</code>` MariaDB can ignore this clause if it can
+ certain queries with `DISTINCT` MariaDB can ignore this clause if it can
  prove that all result rows are unique anyway, for example, when a primary key
  is compared with a constant. Sometimes this optimization was applied
  incorrectly, though — for example, when comparing a
  string with a date constant. This is now fixed.
-* `<code>DATE_ADD()</code>` and `<code>DATE_SUB()</code>` functions can now take a `<code>TIME</code>`
- expression as an argument (not just `<code>DATETIME</code>` as before).
+* `DATE_ADD()` and `DATE_SUB()` functions can now take a `TIME`
+ expression as an argument (not just `DATETIME` as before).
 ```
 SELECT TIME('10:10:10') + INTERVAL 100 MICROSECOND;
 --> 10:10:10.000100
 ```
-* The `<code>event_time</code>` field in the [mysql.general_log](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table and the `<code>start_time</code>`, `<code>query_time</code>`, and `<code>lock_time</code>` fields in the [mysql.slow_log](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) table now store values with microsecond precision.
-* This patch fixed a bug when comparing a temporal value using the `<code>BETWEEN</code>` operator and one of the operands is `<code>NULL</code>`.
-* The old syntax `<code>TIMESTAMP(N)</code>`, where `<code>N</code>` is the display width, is no longer supported. It was deprecated in MySQL 4.1.0 (released on
+* The `event_time` field in the [mysql.general_log](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table and the `start_time`, `query_time`, and `lock_time` fields in the [mysql.slow_log](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) table now store values with microsecond precision.
+* This patch fixed a bug when comparing a temporal value using the `BETWEEN` operator and one of the operands is `NULL`.
+* The old syntax `TIMESTAMP(N)`, where `N` is the display width, is no longer supported. It was deprecated in MySQL 4.1.0 (released on
  2003-04-03).
-* when a `<code>DATETIME</code>` value is compared to a `<code>TIME</code>` value, the latter is treated as a full datetime with a zero date part, similar to comparing `<code>DATE</code>` to a `<code>DATETIME</code>`, or to comparing `<code>DECIMAL</code>` numbers.
+* when a `DATETIME` value is compared to a `TIME` value, the latter is treated as a full datetime with a zero date part, similar to comparing `DATE` to a `DATETIME`, or to comparing `DECIMAL` numbers.
  Earlier versions of MariaDB used to compare only the time part of both operands in such a case.
-* In MariaDB, an extra column `<code>[TIME_MS](../../administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md)</code>` has been added to the `<code>[INFORMATION_SCHEMA.PROCESSLIST](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md)</code>` table, as well as to the output of `<code>[SHOW FULL PROCESSLIST](../../administrative-sql-statements/show/show-processlist.md)</code>`.
+* In MariaDB, an extra column `[TIME_MS](../../administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md)` has been added to the `[INFORMATION_SCHEMA.PROCESSLIST](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md)` table, as well as to the output of `[SHOW FULL PROCESSLIST](../../administrative-sql-statements/show/show-processlist.md)`.
 
 
 **Note:** When you convert a temporal value to a value with a smaller

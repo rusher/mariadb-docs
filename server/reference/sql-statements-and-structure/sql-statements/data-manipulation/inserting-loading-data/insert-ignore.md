@@ -17,8 +17,8 @@ Invalid values are changed to the closest valid value and inserted, with a warni
 The IGNORE and DELAYED options are ignored when you use [ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md).
 
 
-Prior to MySQL and [MariaDB 5.5.28](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5528-release-notes.md), no warnings were issued for duplicate key errors when using `<code class="highlight fixed" style="white-space:pre-wrap">IGNORE</code>`.
-You can get the old behavior if you set [OLD_MODE](../../../../../server-management/variables-and-modes/old-mode.md) to `<code class="highlight fixed" style="white-space:pre-wrap">NO_DUP_KEY_WARNINGS_WITH_IGNORE</code>`.
+Prior to MySQL and [MariaDB 5.5.28](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5528-release-notes.md), no warnings were issued for duplicate key errors when using `IGNORE`.
+You can get the old behavior if you set [OLD_MODE](../../../../../server-management/variables-and-modes/old-mode.md) to `NO_DUP_KEY_WARNINGS_WITH_IGNORE`.
 
 
 See [IGNORE](ignore.md) for a full description of effects.

@@ -1,7 +1,7 @@
 
 # mysql.spider_table_sts Table
 
-The `<code>mysql.spider_table_sts</code>` table is installed by the [Spider storage engine](../../../../../../storage-engines/spider/spider-functions/spider_copy_tables.md).
+The `mysql.spider_table_sts` table is installed by the [Spider storage engine](../../../../../../storage-engines/spider/spider-functions/spider_copy_tables.md).
 
 
 This table uses the [Aria](../../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine.

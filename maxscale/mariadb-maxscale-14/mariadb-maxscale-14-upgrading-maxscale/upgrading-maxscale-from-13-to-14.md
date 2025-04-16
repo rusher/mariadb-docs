@@ -39,7 +39,7 @@ GRANT SELECT ON mysql.tables_priv TO 'username'@'maxscalehost';
 
 
 MaxScale 1.4 upgrades the used password encryption algorithms to more secure ones.
-This requires that the password files are recreated with the `<code>maxkeys</code>` tool.
+This requires that the password files are recreated with the `maxkeys` tool.
 For more information about how to do this, please read the installation guide:
 [MariaDB MaxScale Installation Guide](../maxscale-14-getting-started/mariadb-maxscale-installation-guide.md)
 
@@ -104,7 +104,7 @@ ssl_version=TLSv12
 
 
 
-Please also note that the `<code>enabled</code>` SSL mode is no longer supported due to
+Please also note that the `enabled` SSL mode is no longer supported due to
 the inherent security issues with allowing SSL and non-SSL connections on
 the same port. In addition to this, SSLv3 is no longer supported due to
 vulnerabilities found in it.

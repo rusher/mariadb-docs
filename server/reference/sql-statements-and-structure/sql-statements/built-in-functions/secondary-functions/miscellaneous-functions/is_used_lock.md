@@ -12,15 +12,15 @@ IS_USED_LOCK(str)
 ## Description
 
 
-Checks whether the lock named `<code>str</code>` is in use (that is, locked). If so,
+Checks whether the lock named `str` is in use (that is, locked). If so,
 it returns the connection identifier of the client that holds the
-lock. Otherwise, it returns `<code class="highlight fixed" style="white-space:pre-wrap">NULL</code>`. `<code class="highlight fixed" style="white-space:pre-wrap">str</code>` is case insensitive.
+lock. Otherwise, it returns `NULL`. `str` is case insensitive.
 
 
 If the [metadata_lock_info](../../../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin is installed, the [Information Schema](../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) [metadata_lock_info](../../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table.md) table contains information about locks of this kind (as well as [metadata locks](../../../transactions/metadata-locking.md)).
 
 
-Statements using the `<code>IS_USED_LOCK</code>` function are [not safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
+Statements using the `IS_USED_LOCK` function are [not safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 
 ## See Also

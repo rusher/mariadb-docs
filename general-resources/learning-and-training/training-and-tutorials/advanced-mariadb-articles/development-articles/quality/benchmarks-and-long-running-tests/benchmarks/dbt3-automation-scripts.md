@@ -68,14 +68,14 @@ sudo /sbin/sysctl vm.drop_caches=3
 This command must be run with superuser rights. Even if a user supplies a
 password to sudo, this password expires after some timeout. In order for this
 command to be run without requiring password, the following line should be
-added to the sudoers file (edit it with the `<code>"sudo visudo"</code>` command):
+added to the sudoers file (edit it with the `"sudo visudo"` command):
 
 
 ```
 'your_username' ALL=NOPASSWD:/sbin/sysctl
 ```
 
-...where `<code>'your_username'</code>` is the user that will run the benchmark.
+...where `'your_username'` is the user that will run the benchmark.
 
 
 ### Required software
@@ -92,7 +92,7 @@ The automated DBT3 benchmark requires the following software:
 * [mariadb-tools](https://launchpad.net/mariadb-tools)
 
   * Project home: [mariadb-tools](https://launchpad.net/mariadb-tools)
-  * The project folder is called "`<code>dbt3_benchmark</code>`" and is under `<code>mariadb-tools</code>`.
+  * The project folder is called "`dbt3_benchmark`" and is under `mariadb-tools`.
 
 
 * [dbt3-1.9](https://sourceforge.net/projects/osdldbt/files/dbt3/)
@@ -122,7 +122,7 @@ sudo cpan DBD::mysql
 
 
 **NOTE:** You may receive an error saying that CPAN could not find
-`<code>mysql_config</code>`. In this case you have to install the mysql client development
+`mysql_config`. In this case you have to install the mysql client development
 library. In OpenSuse the command is:
 
 ```
@@ -142,13 +142,13 @@ perl Makefile.PL --mysql_config=/path/to/some/mysql_binary_distribution/bin/mysq
 ```
 
 
-1. Run `<code>make</code>` to compile `<code>DBD::mysql</code>`:
+1. Run `make` to compile `DBD::mysql`:
 ```
 make
 ```
 
 
-1. Add the necessary paths in order to run `<code>DBD::mysql</code>`:
+1. Add the necessary paths in order to run `DBD::mysql`:
 ```
 export PERL5LIB="/path/to/unzipped_DBD_mysql/DBD-mysql-4.020/lib"
 export LD_LIBRARY_PATH="/path/to/unzipped_DBD_mysql/DBD-mysql-4.020/blib/arch/auto/DBD/mysql/:/path/to/some/mysql_binary_distribution/lib/"
@@ -198,8 +198,8 @@ bzr branch lp:maria/5.5
 **NOTE:** The DBT3 benchmark requires a lot of disk space (for example MySQL
 5.5.x + MyISAM database with scale factor 30 takes about 50 GB). Also some
 queries require the utilization of temp tables under the directory set by the
-`<code class="fixed" style="white-space:pre-wrap">--tmpdir</code>` startup parameter passed to `<code>mysqld</code>`. In the
-prepared configuration files the temp directory is pointed to the `<code>mysql</code>`
+`--tmpdir` startup parameter passed to `mysqld`. In the
+prepared configuration files the temp directory is pointed to the `mysql`
 system directory of the binary distribution, but one should reassure that there
 is enough free space available for the temp directory.
 
@@ -208,7 +208,7 @@ is enough free space available for the temp directory.
 
 
 **NOTE:** The directory where all the files will be downloaded or installed
-will be referred as `<code>$PROJECT_HOME</code>`. This could be for example `<code class="fixed" style="white-space:pre-wrap">~/benchmark/dbt3</code>`.
+will be referred as `$PROJECT_HOME`. This could be for example `~/benchmark/dbt3`.
 
 
 ### Download [mariadb-tools](https://launchpad.net/mariadb-tools)
@@ -231,12 +231,12 @@ Now the project for the dbt3 benchmark test will be in the following dir:
 $PROJECT_HOME/mariadb-tools/dbt3_benchmark/
 ```
 
-The project `<code>dbt3_benchmark</code>` has the following directories and files:
+The project `dbt3_benchmark` has the following directories and files:
 
 
 * config — a folder where the configuration files
  for MariaDB, MySQL and PostgreSQL are stored. They are divided into
- subfolders named '`<code>sXX</code>`', where `<code>XX</code>` is the scale factor.
+ subfolders named '`sXX`', where `XX` is the scale factor.
 * dbt3_mysql — a folder with all the necessary
  files for preparing DBT3 databases and queries for the tests with MySQL and
  MariaDB
@@ -283,7 +283,7 @@ cp $PROJECT_HOME/mariadb-tools/dbt3_benchmark/dbt3_mysql/tpcd.h $PROJECT_HOME/db
 ```
 
 
-1. Copy the file Makefile under `<code>$PROJECT_HOME/mariadb-tools/dbt3_benchmark/dbt3_mysql/</code>` into the dbt3 folder
+1. Copy the file Makefile under `$PROJECT_HOME/mariadb-tools/dbt3_benchmark/dbt3_mysql/` into the dbt3 folder
 
 
 * NOTE: This step is executed only if you want to overwrite the default
@@ -324,7 +324,7 @@ mkdir $PROJECT_HOME/gen_query
 
 
  **NOTE:** The examples use scale factor 30. If you want different scale, change
- the value of `<code>-s</code>` parameter
+ the value of `-s` parameter
 
 
 
@@ -383,7 +383,7 @@ cd $PROJECT_HOME/dbt3-1.9/src/dbgen
 
 
 Now the generated queries for MariaDB/MySQL test are ready and are stored into
-the folder `<code>$PROJECT_HOME/gen_query/s30-m/</code>` (-m is for MariaDB/MySQL).
+the folder `$PROJECT_HOME/gen_query/s30-m/` (-m is for MariaDB/MySQL).
 
 
 Additional reorganization of directories is up to the user.
@@ -404,22 +404,22 @@ export DSS_PATH=$PROJECT_HOME/gen_data/s30/
 1. Generate the table data
 
 
-* NOTE: The example uses scale factor = `<code>30</code>`. If you want to change it, you should change the parameter `<code>-s</code>`.
+* NOTE: The example uses scale factor = `30`. If you want to change it, you should change the parameter `-s`.
 ```
 ./dbgen -vfF -s 30
 ```
 
 
-* Now the generated data load is stored into the folder set in `<code class="fixed" style="white-space:pre-wrap">$DSS_PATH = $PROJECT_HOME/gen_data/</code>`
+* Now the generated data load is stored into the folder set in `$DSS_PATH = $PROJECT_HOME/gen_data/`
 
 
 For the purpose of this benchmark these steps have been performed for scale
 factor 30 and are stored on facebook-maria1 in the following locations:
 
 
-* `<code>/benchmark/dbt3/gen_data/s30</code>` — the data load for scale factor 30
-* `<code>/benchmark/dbt3/gen_query/s30-m</code>` — generated queries for MariaDB/MySQL with scale factor 30
-* `<code>/benchmark/dbt3/gen_query/s30-p</code>` — generated queries for PostgreSQL with scale factor 30
+* `/benchmark/dbt3/gen_data/s30` — the data load for scale factor 30
+* `/benchmark/dbt3/gen_query/s30-m` — generated queries for MariaDB/MySQL with scale factor 30
+* `/benchmark/dbt3/gen_query/s30-p` — generated queries for PostgreSQL with scale factor 30
 
 
 See [DBT3 example preparation time](dbt3-example-preparation-time.md) to see how long it would take you to
@@ -429,7 +429,7 @@ prepare the databases for the test.
 ### Download [MySQL 5.5.x](https://dev.mysql.com/downloads/mysql/#downloads)
 
 
-1. Download the tar.gz file into your project folder `<code>$PROJECT_HOME/bin/</code>` for example
+1. Download the tar.gz file into your project folder `$PROJECT_HOME/bin/` for example
 
 
 1. Unzip the archive with the following command:
@@ -448,7 +448,7 @@ $PROJECT_HOME/bin/mysql-5.5.x-linux2.6-x86_64/bin/mysqld_safe --datadir=some/dat
 ### Download [MySQL 5.6.x](https://dev.mysql.com/downloads/mysql/#downloads)
 
 
-1. Download the tar.gz file into your project folder `<code>$PROJECT_HOME/bin/</code>` for example
+1. Download the tar.gz file into your project folder `$PROJECT_HOME/bin/` for example
 
 
 1. Unzip the archive with the following command:
@@ -513,13 +513,13 @@ $PROJECT_HOME/bin/mariadb-5.3.x-beta-linux-x86_64/bin/mysqld_safe --datadir=some
 **NOTE:** These instructions are the same for MariaDB, MySQL 5.5.x and MySQL
 5.6.x with changing only the database home folders, noted here as $DB_HOME (for
 example for MySQL 5.5.x $DB_HOME is
-`<code>$PROJECT_HOME/bin/mysql-5.5.x-linux2.6-x86_64</code>`). Also you can prepare InnoDB
+`$PROJECT_HOME/bin/mysql-5.5.x-linux2.6-x86_64`). Also you can prepare InnoDB
 storage engine test databases. Instructions for preparing PostgreSQL could be
 found in the section for downloading, building and preparing PostgreSQL later
 on this page.
 
 
-1. Open the file `<code>$PROJECT_HOME/mariadb-tools/dbt3_benchmark/dbt3_mysql/make-dbt3-db_innodb.sql</code>` and edit the values for the call of the sql commands that look like this one:
+1. Open the file `$PROJECT_HOME/mariadb-tools/dbt3_benchmark/dbt3_mysql/make-dbt3-db_innodb.sql` and edit the values for the call of the sql commands that look like this one:
 ```
 LOAD DATA INFILE '/some/path/to/gen_data/nation.tbl' into table nation fields terminated by '|';
 ```
@@ -543,24 +543,24 @@ cd $DB_HOME
 ```
 
 
-* NOTE: For InnoDB change the defaults-file to `<code>load_mysql_innodb_my.cnf</code>`.
+* NOTE: For InnoDB change the defaults-file to `load_mysql_innodb_my.cnf`.
 
 
-1. Start the mysqld process`<code class="fixed" style="white-space:pre-wrap">./bin/mysqld_safe --defaults-file=$PROJECT_HOME/mariadb-tools/dbt3_benchmark/config/s30/load_mysql_myisam_my.cnf --tmpdir=$PROJECT_HOME/temp/ --socket=$PROJECT_HOME/temp/mysql.sock --datadir=$PROJECT_HOME/db_data/myisam-s30/ &</code>`
+1. Start the mysqld process`./bin/mysqld_safe --defaults-file=$PROJECT_HOME/mariadb-tools/dbt3_benchmark/config/s30/load_mysql_myisam_my.cnf --tmpdir=$PROJECT_HOME/temp/ --socket=$PROJECT_HOME/temp/mysql.sock --datadir=$PROJECT_HOME/db_data/myisam-s30/ &`
 
 
-* NOTE: For InnoDB change the defaults-file to `<code>load_mysql_innodb_my.cnf</code>`.
+* NOTE: For InnoDB change the defaults-file to `load_mysql_innodb_my.cnf`.
  Also make sure that you have enough space in the directory set by the
- parameter `<code class="fixed" style="white-space:pre-wrap">--tmpdir</code>`, since loading the database could take a
+ parameter `--tmpdir`, since loading the database could take a
  lot of temporary space.
 
 
-1. Load the data into the database by executing the file `<code>make-dbt3-db_pre_create_PK.sql</code>` (for InnoDB) or `<code>make-dbt3-db_post_create_PK.sql</code>` (for MyISAM)`<code class="fixed" style="white-space:pre-wrap">./bin/mysql -u root -S $PROJECT_HOME/temp/mysql.sock < $PROJECT_HOME/mariadb-tools/dbt3_benchmark/dbt3_mysql/make-dbt3-db_post_create_PK.sql</code>`
+1. Load the data into the database by executing the file `make-dbt3-db_pre_create_PK.sql` (for InnoDB) or `make-dbt3-db_post_create_PK.sql` (for MyISAM)`./bin/mysql -u root -S $PROJECT_HOME/temp/mysql.sock < $PROJECT_HOME/mariadb-tools/dbt3_benchmark/dbt3_mysql/make-dbt3-db_post_create_PK.sql`
 
 
 * NOTE: For faster creation, it is recommended to
- use `<code>make-dbt3-db_pre_create_PK.sql</code>` for loading InnoDB
- and `<code>make-dbt3-db_post_create_PK.sql</code>` for loading MyISAM databases.
+ use `make-dbt3-db_pre_create_PK.sql` for loading InnoDB
+ and `make-dbt3-db_post_create_PK.sql` for loading MyISAM databases.
 
 
 1. Shutdown the database server:
@@ -570,7 +570,7 @@ cd $DB_HOME
 
 
 Now you have a database loaded with scale 30. Its datadir is
-`<code>$PROJECT_HOME/db_data/myisam-s30/</code>`
+`$PROJECT_HOME/db_data/myisam-s30/`
 
 
 The same steps can be reproduced for different scale factors and for different
@@ -605,7 +605,7 @@ make install
 * NOTE: Configure script may not find the following libraries: readline
  and zlib. In that case you can run configure without these libraries by
  adding the following parameters to the command line:
- `<code class="fixed" style="white-space:pre-wrap">--without-readline --without-zlib</code>`
+ `--without-readline --without-zlib`
 
 
 1. Prepare the database to test with:
@@ -629,7 +629,7 @@ cd $PROJECT_HOME/bin/PostgreSQL_bin
 ```
 
 
-* NOTE: Here under `<code class="fixed" style="white-space:pre-wrap">{YOUR_USERNAME}</code>` you should put the
+* NOTE: Here under `{YOUR_USERNAME}` you should put the
  database owner.
 
 
@@ -646,22 +646,22 @@ the different DBMS, storage engines and scale factors that are prepared on
 facebook-maria1:
 
 
-* `<code class="fixed" style="white-space:pre-wrap">~/benchmark/dbt3/db_data/myisam_s30</code>`
+* `~/benchmark/dbt3/db_data/myisam_s30`
 — datadir for MariaDB/MySQL + MyISAM with scale
  factor 30
 
 
-* `<code class="fixed" style="white-space:pre-wrap">~/benchmark/dbt3/db_data/innodb_mariadb_s30</code>`
+* `~/benchmark/dbt3/db_data/innodb_mariadb_s30`
 — datadir for MariaDB + InnoDB with scale factor 30
  (TODO)
 
 
-* `<code class="fixed" style="white-space:pre-wrap">~/benchmark/dbt3/db_data/innodb_mysql_s30</code>`
+* `~/benchmark/dbt3/db_data/innodb_mysql_s30`
 — datadir for
  MySQL + InnoDB with scale factor 30 (TODO)
 
 
-* `<code class="fixed" style="white-space:pre-wrap">~/benchmark/dbt3/db_data/postgre_s30</code>`
+* `~/benchmark/dbt3/db_data/postgre_s30`
 — datadir for
  PostgreSQL with scale factor 30 (TODO)
 
@@ -678,7 +678,7 @@ of the DBT3 benchmarking project.
 
 
 The database is created by the file
-`<code>$PROJECT_HOME/mariadb-tools/dbt3_benchmark/dbt3_mysql/make-results-db.sql</code>`.
+`$PROJECT_HOME/mariadb-tools/dbt3_benchmark/dbt3_mysql/make-results-db.sql`.
 In that file you can find details about every table and column in the database.
 
 
@@ -692,7 +692,7 @@ cd $PROJECT_HOME/bin/mariadb-5.3.x-beta-linux-x86_64
 
 
 1. Install the system database tables into the datadir for the results (for
-example `<code>$PROJECT_HOME/db_data/dbt3_results_db</code>`)
+example `$PROJECT_HOME/db_data/dbt3_results_db`)
 ```
 ./scripts/mysql_install_db --datadir=$PROJECT_HOME/db_data/dbt3_results_db
 ```
@@ -733,8 +733,8 @@ In order to run a benchmark, one should have:
   1. Results database configuration (see [#results-database-configuration](#results-database-configuration))
   1. Top-level configuration file that combines all of the above (see
  [#top-level-configuration](#top-level-configuration))
-* an automation script `<code>launcher.pl</code>` that could be found
- under `<code>mariadb-tools/dbt3_benchmark/</code>`
+* an automation script `launcher.pl` that could be found
+ under `mariadb-tools/dbt3_benchmark/`
 * startup parameters that should be passed to the automation script (see
  [#script-startup-parameters](#script-startup-parameters)).
 
@@ -758,31 +758,31 @@ make your configuration files more common to the environment that you have
 prepared for the benchmark. These keywords are:
 
 
-* `<code>$PROJECT_HOME</code>` — used as the directory where the
- project '`<code>mariadb-tools</code>`' is located or as a base path for the whole project
- (e.g. "`<code class="fixed" style="white-space:pre-wrap">DBMS_HOME = $PROJECT_HOME/bin/mariadb-5.3.x-beta-linux-x86_64</code>`").
+* `$PROJECT_HOME` — used as the directory where the
+ project '`mariadb-tools`' is located or as a base path for the whole project
+ (e.g. "`DBMS_HOME = $PROJECT_HOME/bin/mariadb-5.3.x-beta-linux-x86_64`").
  It is replaced by the value set with the startup parameter 'project-home'
  passed to launcher.pl,
 
 
-* `<code>$DATADIR_HOME</code>` — used as the directory where the
+* `$DATADIR_HOME` — used as the directory where the
  datadir folders are located for the benchmark (e.g.
- "`<code class="fixed" style="white-space:pre-wrap">$DATADIR_HOME/myisam-s30</code>`"). It is replaced by the value set
+ "`$DATADIR_HOME/myisam-s30`"). It is replaced by the value set
  with the startup parameter 'datadir-home' passed to launcher.pl.
 
 
-* `<code>$QUERIES_HOME</code>` — used as the directory where the
- queries are located (e.g. "`<code>$QUERIES_HOME/s30-m</code>`"
+* `$QUERIES_HOME` — used as the directory where the
+ queries are located (e.g. "`$QUERIES_HOME/s30-m`"
  — queries for MariaDB/MySQL for scale factor 30). It
  is replaced by the value set with the startup parameter 'queries-home'
  passed to launcher.pl.
 
 
-* `<code>$SCALE_FACTOR</code>` — the scale factor that will be
+* `$SCALE_FACTOR` — the scale factor that will be
  used. It is usually a part of the name of the datadir directory (e.g.
- "`<code>$DATADIR_HOME/myisam-s$SCALE_FACTOR</code>`"), the queries directory (e.g.
- "`<code>$QUERIES_HOME/s$SCALE_FACTOR-m</code>`") or the database configuration directory
- (e.g. `<code>$PROJECT_HOME/mariadb-tools/dbt3_benchmark/config/s$SCALE_FACTOR</code>`).
+ "`$DATADIR_HOME/myisam-s$SCALE_FACTOR`"), the queries directory (e.g.
+ "`$QUERIES_HOME/s$SCALE_FACTOR-m`") or the database configuration directory
+ (e.g. `$PROJECT_HOME/mariadb-tools/dbt3_benchmark/config/s$SCALE_FACTOR`).
  It is replaced by the value set with the startup parameter 'scale-factor'
  passed to launcher.pl.
 
@@ -799,7 +799,7 @@ and **Results database** configurations files
 
 
 There are default configuration files in the directory
-`<code>mariadb-tools/dbt3_benchmark/tests/</code>` and contain the following settings:
+`mariadb-tools/dbt3_benchmark/tests/` and contain the following settings:
 
 
 
@@ -831,16 +831,16 @@ DB_CONFIG 	= $PROJECT_HOME/mariadb-tools/dbt3_benchmark/tests/db_conf/db_mysql_5
 ...
 ```
 
-**NOTE:** The settings `<code>RESULTS_DB_CONFIG</code>` and `<code>TEST_CONFIG</code>` should be set
-under the `<code>[common]</code>` section. They are common for the whole test (although
-some settings from `<code>TEST_CONFIG</code>` could be overridden in the
-`<code>QUERIES_CONFIG</code>` file). All settings that combine `<code>QUERIES_CONFIG</code>` and
-`<code>DB_CONFIG</code>` should be in a separate section (e.g. `<code>[mariadb_5_3]</code>`).
+**NOTE:** The settings `RESULTS_DB_CONFIG` and `TEST_CONFIG` should be set
+under the `[common]` section. They are common for the whole test (although
+some settings from `TEST_CONFIG` could be overridden in the
+`QUERIES_CONFIG` file). All settings that combine `QUERIES_CONFIG` and
+`DB_CONFIG` should be in a separate section (e.g. `[mariadb_5_3]`).
 
 
 A test configuration is passed as an input parameter to the automation script
 with the parameter
-`<code class="fixed" style="white-space:pre-wrap">--test=/path/to/some_test_configuration.conf</code>` (see
+`--test=/path/to/some_test_configuration.conf` (see
 [#script-startup-parameters](#script-startup-parameters))
 
 
@@ -849,7 +849,7 @@ with the parameter
 
 These configuration files contain settings that describe the benchmarked DBMS.
 They are usually contained into the folder
-`<code>mariadb-tools/dbt3_benchmark/tests/db_conf</code>`.
+`mariadb-tools/dbt3_benchmark/tests/db_conf`.
 
 
 Here is the list of parameters that could be set into this configuration file:
@@ -882,7 +882,7 @@ Here is the list of parameters that could be set into this configuration file:
 
 
 
-**`<code>MYSQL_SYSTEM_DIR</code>` note:**
+**`MYSQL_SYSTEM_DIR` note:**
 This option is added for convenience when you want to save time and disk space
 for generating databases for different DBMS (and different versions) and use a
 single data directory for all of them. When running different versions of
@@ -892,14 +892,14 @@ order to fix the system tables. So in one data directory, you could prepare the
 following directories for different MariaDB/MySQL system directories:
 
 
-* `<code>mysql_mysql_5_5</code>` — a copy of the system directory
- '`<code>mysql</code>`' upgraded by MySQL 5.5.x
-* `<code>mysql_mariadb_5_3</code>` — a copy of the system
- directory '`<code>mysql</code>`' upgraded by [MariaDB 5.3](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md).x
-* `<code>mysql_mariadb_5_5</code>` — a copy of the system
- directory '`<code>mysql</code>`' upgraded by [MariaDB 5.5](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).x
+* `mysql_mysql_5_5` — a copy of the system directory
+ '`mysql`' upgraded by MySQL 5.5.x
+* `mysql_mariadb_5_3` — a copy of the system
+ directory '`mysql`' upgraded by [MariaDB 5.3](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md).x
+* `mysql_mariadb_5_5` — a copy of the system
+ directory '`mysql`' upgraded by [MariaDB 5.5](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).x
 
-If `<code>MYSQL_SYSTEM_DIR</code>` is set to one of these directories, the automation
+If `MYSQL_SYSTEM_DIR` is set to one of these directories, the automation
 script will unlink the current system directory 'mysql' and make a new symbolic
 link with that name to the one in the setting.
 Here is an example command that will be executed:
@@ -923,7 +923,7 @@ DBMS_USER	= root
 ...
 ```
 
-Note that the section `<code>[db_settings]</code>` is required for the file to be properly
+Note that the section `[db_settings]` is required for the file to be properly
 parsed by the automation script.
 
 
@@ -979,9 +979,9 @@ WARMUP		= 0
 
 These configuration files contain the list of all the queries that will be
 benchmarked against each database. Some settings
-from `<code>DBMS server configuration</code>` and `<code>Test configuration</code>` could be
-overridden into the `<code>Queries configuration</code>` files. The folder that contains
-such configurations is `<code>mariadb-tools/dbt3_benchmark/tests/queries_conf</code>`.
+from `DBMS server configuration` and `Test configuration` could be
+overridden into the `Queries configuration` files. The folder that contains
+such configurations is `mariadb-tools/dbt3_benchmark/tests/queries_conf`.
 
 
 Here is the list of parameters that could be set into this configuration file:
@@ -1033,15 +1033,15 @@ STARTUP_PARAMS=--optimizer_switch='mrr=on' --mrr_buffer_size=8M --some_startup_p
 ...
 ```
 
-...where "`<code>QUERIES_HOME = /path/to/queries</code>`" could be replaced with
-"`<code>QUERIES_HOME = $QUERIES_HOME/s$SCALE_FACTOR-m</code>`" for example and thus
-`<code>$QUERIES_HOME</code>` and $SCALE_FACTOR will be replaced by the script startup
-parameters passed to `<code>launcher.pl</code>` (see [#script-startup-parameters](#script-startup-parameters))
+...where "`QUERIES_HOME = /path/to/queries`" could be replaced with
+"`QUERIES_HOME = $QUERIES_HOME/s$SCALE_FACTOR-m`" for example and thus
+`$QUERIES_HOME` and $SCALE_FACTOR will be replaced by the script startup
+parameters passed to `launcher.pl` (see [#script-startup-parameters](#script-startup-parameters))
 
 
-**NOTE:** The section `<code>[queries_settings]</code>` is required for the configuration
+**NOTE:** The section `[queries_settings]` is required for the configuration
 file to be parsed correctly. Also each query settings should be set under an
-uniquely named configuration section (e.g. `<code>[query1]</code>` or `<code>[1.sql]</code>`)
+uniquely named configuration section (e.g. `[query1]` or `[1.sql]`)
 
 
 #### Results database configuration
@@ -1049,7 +1049,7 @@ uniquely named configuration section (e.g. `<code>[query1]</code>` or `<code>[1.
 
 These configuration files contain settings about the database where the results
 will be stored. They are usually contained into the folder
-`<code>mariadb-tools/dbt3_benchmark/tests/results_db_conf</code>`.
+`mariadb-tools/dbt3_benchmark/tests/results_db_conf`.
 
 
 Here is the list of parameters that could be set into this configuration file:
@@ -1083,8 +1083,8 @@ DBMS_USER	= root
 #### Script startup parameters
 
 
-`<code>launcher.pl</code>` could accept startup parameters called in the manner
-"`<code class="fixed" style="white-space:pre-wrap">--some-param</code>`". Note that these startup parameters are
+`launcher.pl` could accept startup parameters called in the manner
+"`--some-param`". Note that these startup parameters are
 case-sensitive. The ones that are with upper-case are used when overriding a
 setting in some of the configuration files.
 
@@ -1127,34 +1127,34 @@ There are three possible result extraction mechanisms. They are set by the
 parameters set into the test configuration file:
 
 
-* `<code>ANALYZE_EXPLAIN</code>`
-* `<code>MIN_MAX_OUT_OF_N</code>`
-* `<code>SIMPLE_AVERAGE</code>`
+* `ANALYZE_EXPLAIN`
+* `MIN_MAX_OUT_OF_N`
+* `SIMPLE_AVERAGE`
 
 
 Only one of these should be set to true (1).
 
 
-**`<code>ANALYZE_EXPLAIN</code>`** is used for benchmarking InnoDB storage engine where the
+**`ANALYZE_EXPLAIN`** is used for benchmarking InnoDB storage engine where the
 execution plan could change for the same query when the server is restarted. It
 is designed to run the query only with the fastest execution plan. This means
 that the server is restarted if the current execution plan is proven slower
 than the other. As a final result is taken the result for the query plan that
-turns out to be fastest and there are at least `<code>CLUSTER_SIZE</code>` tests with it for
-that query. By setting the configuration parameter `<code>NUM_TESTS</code>` you can set a
+turns out to be fastest and there are at least `CLUSTER_SIZE` tests with it for
+that query. By setting the configuration parameter `NUM_TESTS` you can set a
 maximum test runs that when reached will get the best cluster's average time
-(even if it is less than `<code>CLUSTER_SIZE</code>`). Also when a timeout for that query
-(`<code>MAX_QUERY_TIME</code>`) is reached, the scoring mechanism will return the best
+(even if it is less than `CLUSTER_SIZE`). Also when a timeout for that query
+(`MAX_QUERY_TIME`) is reached, the scoring mechanism will return the best
 available cluster result.
 
 
-**`<code>MIN_MAX_OUT_OF_N</code>`** is also used for benchmarking InnoDB storage engine.
+**`MIN_MAX_OUT_OF_N`** is also used for benchmarking InnoDB storage engine.
 As a result are stored the values for the fastest and the slowest run. It is
 assumed that when the execution plan has changed it has different execution
 plan and we are interested only in the min and max time.
 
 
-**`<code>SIMPLE_AVERAGE</code>`** is used for benchmarking storage engines that do not
+**`SIMPLE_AVERAGE`** is used for benchmarking storage engines that do not
 change the execution plan between restarts like MyISAM. The final result is the
 average execution time from all the test runs for the query.
 
@@ -1163,17 +1163,17 @@ average execution time from all the test runs for the query.
 
 
 After each query test run, the result is stored into a file named
-**results.dat** located into `<code class="fixed" style="white-space:pre-wrap">{RESULTS_OUTPUT_DIR}</code>`. This file
+**results.dat** located into `{RESULTS_OUTPUT_DIR}`. This file
 is designed to be easy to be read by the plotting program Gnuplot 4.4. It is
 divided into blocks, separated by several new lines. Each block starts with a
 comment line containing details for the current block of results.
 
 
-Queries that have timed out have a value of `<code>100000</code>` so that they run out of
+Queries that have timed out have a value of `100000` so that they run out of
 the graphics and are cut off. Other queries have their real times (in seconds)
-starting from `<code>0</code>`. The graphics is cut off on the y-axis on the longest time
-for `<code>completed test + 20%</code>`. For example if the longest time is `<code>100</code>`
-seconds, the graphics is cut-off to `<code>120</code>` seconds. Thus the timed out queries
+starting from `0`. The graphics is cut off on the y-axis on the longest time
+for `completed test + 20%`. For example if the longest time is `100`
+seconds, the graphics is cut-off to `120` seconds. Thus the timed out queries
 will be truncated by this limitation and will seem as really timed out.
 
 
@@ -1181,7 +1181,7 @@ During the test run, a gnuplot script file is generated with the necessary
 parameters for the graphics to be generated automatically. After each query
 test run is complete, the graphic is regenerated, so that the user can see the
 current results before the whole benchmark is complete. This file is called
-`<code>gnuplot_script.txt</code>` and is located into `<code>{RESULTS_OUTPUT_DIR}</code>`. The user
+`gnuplot_script.txt` and is located into `{RESULTS_OUTPUT_DIR}`. The user
 can edit it to fine-tune the parameters or headings after the test is complete
 so that one could get the look and feel he/she wants for the final result.
 
@@ -1193,15 +1193,15 @@ so that one could get the look and feel he/she wants for the final result.
 
 
 In the directory set by the parameter {RESULTS_OUTPUT_DIR} (example:
-`<code>/benchmark/dbt3/results/myisam_test_2011-12-08_191427/</code>`) there are the
+`/benchmark/dbt3/results/myisam_test_2011-12-08_191427/`) there are the
 following files/directories:
 
 
 * A directory for each test, named as the parameter {KEYWORD} from the test
- configuration (example: `<code>mariadb-5-3-2</code>`)
+ configuration (example: `mariadb-5-3-2`)
 * cpu_info.txt — the output
- of "`<code>/bin/cat /proc/cpuinfo</code>`" OS command
-* uname.txt — the output of "`<code>uname -a</code>`" OS
+ of "`/bin/cat /proc/cpuinfo`" OS command
+* uname.txt — the output of "`uname -a`" OS
  command
 * results.dat — the results of each query
  execution in one file. This file will be used as a datafile for the gnuplot
@@ -1211,12 +1211,12 @@ following files/directories:
  renders the graphics.
 * graphics.jpeg — the output graphics
 * A benchmark configuration file
- (example: `<code>myisam_test_mariadb_5_3_mysql_5_5_mysql_5_6.conf</code>`) copied
- from `<code>mariadb-tools/dbt3_benchmark/tests/</code>`
-* A results database configuration file (example: `<code>results_db.conf</code>`)
- copied from `<code>mariadb-tools/dbt3_benchmark/tests/results_db_conf/</code>`
-* A test configuration file (example: `<code>test_myisam.conf</code>`) copied
- from `<code>mariadb-tools/dbt3_benchmark/tests/test_conf/</code>`
+ (example: `myisam_test_mariadb_5_3_mysql_5_5_mysql_5_6.conf`) copied
+ from `mariadb-tools/dbt3_benchmark/tests/`
+* A results database configuration file (example: `results_db.conf`)
+ copied from `mariadb-tools/dbt3_benchmark/tests/results_db_conf/`
+* A test configuration file (example: `test_myisam.conf`) copied
+ from `mariadb-tools/dbt3_benchmark/tests/test_conf/`
 
 
 #### Test output
@@ -1224,7 +1224,7 @@ following files/directories:
 
 In the subdirectory for the particular test, set by the parameter {KEYWORD}
 (example:
-`<code>/benchmark/dbt3/results/myisam_test_2011-12-08_191427/mariadb-5-3-2/</code>`),
+`/benchmark/dbt3/results/myisam_test_2011-12-08_191427/mariadb-5-3-2/`),
 there are the following files:
 
 
@@ -1239,12 +1239,12 @@ there are the following files:
 * all_explains.txt - a file containing all the explain queries, their
  startup parameters for the benchmark and the explain result
 * The config file (my.cnf) that was passed to mysqld or postgres
- (example: `<code>mariadb_myisam_my.cnf</code>`) copied
- from `<code>mariadb-tools/dbt3_benchmark/config/s$SCALE_FACTOR/</code>`
+ (example: `mariadb_myisam_my.cnf`) copied
+ from `mariadb-tools/dbt3_benchmark/config/s$SCALE_FACTOR/`
 * The queries configuration file (example: ''queries-mariadb.conf'') copied
- from `<code>mariadb-tools/dbt3_benchmark/tests/queries_conf/</code>`
+ from `mariadb-tools/dbt3_benchmark/tests/queries_conf/`
 * The database configuration file (example: ''db_mariadb_5_3_myisam.conf'')
- copied from `<code>mariadb-tools/dbt3_benchmark/tests/db_conf/</code>`
+ copied from `mariadb-tools/dbt3_benchmark/tests/db_conf/`
 
 
 #### Query output
@@ -1252,7 +1252,7 @@ there are the following files:
 
 For each query execution there are several files that are outputted by the
 automation script. They are all saved under the subdirectory set by the
-parameters `<code>{KEYWORD}</code>`:
+parameters `{KEYWORD}`:
 
 
 * Explain result - a file named
@@ -1285,36 +1285,36 @@ parameters `<code>{KEYWORD}</code>`:
 The automation script provides hooks that allow the user to add both SQL and OS commands prior and after each test. Here is a list of all possible hooks:
 
 
-* Pre-test SQL hook: it is set with the parameter `<code>PRE_TEST_SQL</code>`. Contains
+* Pre-test SQL hook: it is set with the parameter `PRE_TEST_SQL`. Contains
  SQL commands that are run once for the whole test configuration before the
  first run.
- (Example: "`<code class="fixed" style="white-space:pre-wrap"><span class="k">use</span> <span class="n">dbt3</span><span class="p">;</span> <span class="k">select</span> <span class="nf">version</span><span class="p">();</span> <span class="k">show</span> <span class="n">variables</span><span class="p">;</span> <span class="k">show</span> <span class="n">engines</span><span class="p">;</span> <span class="k">show</span> <span class="k">table</span> <span class="n">status</span><span class="p">;</span>
-</code>`")
-* Post-test SQL hook: it is set with the parameter `<code>POST_TEST_SQL</code>`. Contains
+ (Example: "`<span class="k">use</span> <span class="n">dbt3</span><span class="p">;</span> <span class="k">select</span> <span class="nf">version</span><span class="p">();</span> <span class="k">show</span> <span class="n">variables</span><span class="p">;</span> <span class="k">show</span> <span class="n">engines</span><span class="p">;</span> <span class="k">show</span> <span class="k">table</span> <span class="n">status</span><span class="p">;</span>
+`")
+* Post-test SQL hook: it is set with the parameter `POST_TEST_SQL`. Contains
  SQL commands that are run once for the whole test configuration after the
  last run.
-* Pre-test OS hook: it is set with the parameter `<code>PRE_TEST_OS</code>`. Contains OS
+* Pre-test OS hook: it is set with the parameter `PRE_TEST_OS`. Contains OS
  commands that are run once for the whole test configuration before the first
  run.
-* Post-test OS hook: it is set with the parameter `<code>POST_TEST_OS</code>`. Contains OS
+* Post-test OS hook: it is set with the parameter `POST_TEST_OS`. Contains OS
  commands that are run once for the whole test configuration after the last
  run.
-* Pre-run SQL hook: it is set with the parameter `<code>PRE_RUN_SQL</code>`. Contains SQL
+* Pre-run SQL hook: it is set with the parameter `PRE_RUN_SQL`. Contains SQL
  commands that are run prior each query run.
- (Example: "`<code class="fixed" style="white-space:pre-wrap"><span class="k">flush</span> <span class="n">status</span><span class="p">;</span> <span class="kt">set</span> <span class="n">global</span> <span class="n">userstat</span><span class="o">=</span><span class="k">on</span><span class="p">;</span>
-</code>`")
-* Post-run SQL hook: it is set with the parameter `<code>POST_RUN_SQL</code>`. Contains SQL
+ (Example: "`<span class="k">flush</span> <span class="n">status</span><span class="p">;</span> <span class="kt">set</span> <span class="n">global</span> <span class="n">userstat</span><span class="o">=</span><span class="k">on</span><span class="p">;</span>
+`")
+* Post-run SQL hook: it is set with the parameter `POST_RUN_SQL`. Contains SQL
  commands that are run after each query run.
- (Example: "`<code class="fixed" style="white-space:pre-wrap"><span class="k">show</span> <span class="n">status</span><span class="p">;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLE_STATISTICS</span><span class="p">;</span>
-</code>`")
-* Pre-run OS hook: it is set with the parameter `<code>PRE_RUN_OS</code>`. Contains OS
+ (Example: "`<span class="k">show</span> <span class="n">status</span><span class="p">;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLE_STATISTICS</span><span class="p">;</span>
+`")
+* Pre-run OS hook: it is set with the parameter `PRE_RUN_OS`. Contains OS
  commands that are run once prior each query run.
-* Post-run OS hook: it is set with the parameter `<code>POST_RUN_OS</code>`. Contains OS
+* Post-run OS hook: it is set with the parameter `POST_RUN_OS`. Contains OS
  commands that are run once after each query run.
 
 
 The results of these commands is stored into the
-`<code>{RESULTS_OUTPUT_DIR}/{KEYWORD}</code>` folder (see [#script-output](#script-output))
+`{RESULTS_OUTPUT_DIR}/{KEYWORD}` folder (see [#script-output](#script-output))
 
 
 ### Activities
@@ -1326,8 +1326,8 @@ Here are the main activities that this script does:
 1. Parse the configuration files and check the input parameters - if any of the
  required parameters is missing, the script will stop resulting an error.
 1. Collect hardware information - collecting information about the hardware of
- the machine that the benchmark is run. Currently it collects `<code>cpuinfo</code>`
- and `<code>uname</code>`. Results of these commands are stored into the results output
+ the machine that the benchmark is run. Currently it collects `cpuinfo`
+ and `uname`. Results of these commands are stored into the results output
  directory set as an input parameter
 1. Loop through the passed test configurationsFor each passed in test
  configuration the script does the following:
@@ -1343,20 +1343,20 @@ sudo /sbin/sysctl vm.drop_caches=3
 
 
     * NOTE: In order to clear the caches, the user is required to have
- sudo rights and the following line should be added to the `<code>sudoers</code>` file
- (edit it with "`<code>sudo vusudo</code>`"
+ sudo rights and the following line should be added to the `sudoers` file
+ (edit it with "`sudo vusudo`"
  command):
 ```
 {your_username} ALL=NOPASSWD:/sbin/sysctl
 ```
   1. Start the database server
   1. Perform pre-test SQL commands. The results are stored
- under `<code>results_output_dir/{KEYWORD}</code>` folder and are
- called `<code>pre_test_sql_results.txt</code>`. `<code>{KEYWORD}</code>` is a unique keyword for
+ under `results_output_dir/{KEYWORD}` folder and are
+ called `pre_test_sql_results.txt`. `{KEYWORD}` is a unique keyword for
  the current database configuration.
   1. Perform pre-test OS commands. The results are stored
- under `<code>results_output_dir/{KEYWORD}</code>` folder and are
- called `<code>pre_test_os_results.txt</code>`.
+ under `results_output_dir/{KEYWORD}` folder and are
+ called `pre_test_os_results.txt`.
 
     * NOTE: If in the test configuration the setting QUERIES_AT_ONCE is
  set to 0, then the server is restarted between each query run. Thus the
@@ -1367,15 +1367,15 @@ sudo /sbin/sysctl vm.drop_caches=3
  required parameter, the program will exit resulting an error.
     1. Get the server version if that's the first run of the query
     1. Perform pre-run OS commands in shell. The results of these queries are
- stored into a file named `<code>pre_run_os_q_{QUERY}_no_{RUN_NO}_results.txt</code>`
- under `<code>results_output_dir/{KEYWORD}</code>` where `<code>{QUERY}</code>` is the query name
- (ex: `<code>1.sql</code>`), `<code>{RUN_NO}</code>` is the sequential run number
- and `<code>{KEYWORD}</code>` is a unique keyword for the particular test
+ stored into a file named `pre_run_os_q_{QUERY}_no_{RUN_NO}_results.txt`
+ under `results_output_dir/{KEYWORD}` where `{QUERY}` is the query name
+ (ex: `1.sql`), `{RUN_NO}` is the sequential run number
+ and `{KEYWORD}` is a unique keyword for the particular test
  configuration.
     1. Perform pre-run SQL queries. The results of these queries are stored into a
- file named `<code>pre_run_sql_q_{QUERY}_no_{RUN_NO}_results.txt</code>`
- under `<code>results_output_dir/{KEYWORD}</code>` where `<code>{QUERY}</code>` is the query name
- (ex: `<code>1.sql</code>`), `<code>{RUN_NO}</code>` is the sequential run number and `<code>{KEYWORD}</code>` is
+ file named `pre_run_sql_q_{QUERY}_no_{RUN_NO}_results.txt`
+ under `results_output_dir/{KEYWORD}` where `{QUERY}` is the query name
+ (ex: `1.sql`), `{RUN_NO}` is the sequential run number and `{KEYWORD}` is
  a unique keyword for the particular test configuration.
     1. Perform warm-up runs if set into the test configuration file
     1. Perform actual test run and measure time.
@@ -1395,31 +1395,31 @@ sar -b 0 2>null
 ```
 sar -r 0 2>null
 ```
-      * These statistics are measured every N seconds, where `<code>N</code>` is set with
- the `<code>OS_STATS_INTERVAL</code>` test configuration parameter.
+      * These statistics are measured every N seconds, where `N` is set with
+ the `OS_STATS_INTERVAL` test configuration parameter.
       * The test run for MariaDB and MySQL has an implemented mechanism for
- cut-off when timeout exceeds. It is controlled with the `<code>TIMEOUT</code>` test
+ cut-off when timeout exceeds. It is controlled with the `TIMEOUT` test
  parameter. Currently for PostgreSQL there is no such functionality and
  should be implemented in future versions.
     1. Execute the "explain" statement for that query.
 
-      * NOTE: Running `<code>EXPLAIN</code>` queries with MySQL prior version 5.6.3 could
+      * NOTE: Running `EXPLAIN` queries with MySQL prior version 5.6.3 could
  result in long running queries since MySQL has to execute the whole query
  when there are nested selects in it. For MariaDB and PostgreSQL there is
  no such problem. The long-running explain queries are for queries #7, 8,
  9, 13 and 15. For that reason in MySQL prior version 5.6.3 for these
- queries no `<code>EXPLAIN</code>` selects should be executed.
+ queries no `EXPLAIN` selects should be executed.
     1. Perform post-run SQL queries
     1. Perform post-run OS commands in shell
     1. Log the results into the results database
     1. A graphics with the current results is generated using Gnuplot
   1. Shutdown the database server.
   1. Perform post-test SQL commands. The results are stored
- under `<code>results_output_dir/{KEYWORD}</code>` folder and are
- called `<code>post_test_sql_results.txt</code>`.
+ under `results_output_dir/{KEYWORD}` folder and are
+ called `post_test_sql_results.txt`.
   1. Perform post-test OS commands. The results are stored
- under `<code>results_output_dir/{KEYWORD}</code>` folder and are
- called `<code>post_test_os_results.txt</code>`.
+ under `results_output_dir/{KEYWORD}` folder and are
+ called `post_test_os_results.txt`.
   1. Stop the results database server
 
 
@@ -1439,13 +1439,13 @@ perl launcher.pl \
 ```
 
 
-...where `<code>/path/to/project/home</code>` is where the `<code>mariadb-tools</code>` project is
+...where `/path/to/project/home` is where the `mariadb-tools` project is
 located. This will replace all occurrences of the string "$PROJECT_HOME" in the
-configuration files (example: "`<code>TMPDIR = $PROJECT_HOME/temp/</code>`" will become
-"`<code>TMPDIR = /path/to/project/home/temp/</code>`").
+configuration files (example: "`TMPDIR = $PROJECT_HOME/temp/`" will become
+"`TMPDIR = /path/to/project/home/temp/`").
 
 
-`<code class="fixed" style="white-space:pre-wrap">--TIMEOUT</code>` overrides the timeout setting into the test
+`--TIMEOUT` overrides the timeout setting into the test
 configuration file to 10 minutes.
 
 
@@ -1467,19 +1467,19 @@ perl launcher.pl \
 * If a newer version of [MariaDB 5.5](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) is available:
 
   * copy or edit the DMBS server configuration
- file `<code>mariadb-tools/dbt3_benchmark/tests/db_conf/db_mariadb_5_5_myisam.conf</code>`
- and change the parameter `<code>DBMS_HOME</code>` to the new binary distribution. You
- can also edit `<code>KEYWORD</code>` and `<code>GRAPH_HEADING</code>`
+ file `mariadb-tools/dbt3_benchmark/tests/db_conf/db_mariadb_5_5_myisam.conf`
+ and change the parameter `DBMS_HOME` to the new binary distribution. You
+ can also edit `KEYWORD` and `GRAPH_HEADING`
 
 
 * If you want to add additional test in the MyISAM benchmark for [MariaDB 5.3](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md),
  but with another defaults-file (my.cnf):
 
   * copy or edit the DMBS server configuration
- file `<code>mariadb-tools/dbt3_benchmark/tests/db_conf/db_mariadb_5_3_myisam.conf</code>`
+ file `mariadb-tools/dbt3_benchmark/tests/db_conf/db_mariadb_5_3_myisam.conf`
  and change the parameter CONFIG_FILE to the new my.cnf
   * copy or edit the test configuration
- file `<code>mariadb-tools/dbt3_benchmark/tests/myisam_test_mariadb_5_3_mysql_5_5_mysql_5_6.conf</code>`
+ file `mariadb-tools/dbt3_benchmark/tests/myisam_test_mariadb_5_3_mysql_5_5_mysql_5_6.conf`
  and add the new configuration settings:
 ```
 [mariadb_5_3_new_configuration]
@@ -1492,12 +1492,12 @@ DB_CONFIG 	= $PROJECT_HOME/mariadb-tools/dbt3_benchmark/tests/db_conf/db_mariadb
  example:
 
   * copy or edit the
- file `<code>mariadb-tools/dbt3_benchmark/tests/queries_conf/queries-mariadb.conf</code>`
+ file `mariadb-tools/dbt3_benchmark/tests/queries_conf/queries-mariadb.conf`
  and add a parameter
- "`<code class="fixed" style="white-space:pre-wrap">STARTUP_PARAMS=--optimizer_switch='mrr=on' --mrr_buffer_size=96M</code>`"
+ "`STARTUP_PARAMS=--optimizer_switch='mrr=on' --mrr_buffer_size=96M`"
  for example for the section for query 6.
   * copy or edit the test configuration
- file `<code>mariadb-tools/dbt3_benchmark/tests/myisam_test_mariadb_5_3_mysql_5_5_mysql_5_6.conf</code>`
+ file `mariadb-tools/dbt3_benchmark/tests/myisam_test_mariadb_5_3_mysql_5_5_mysql_5_6.conf`
  to include the new queries configuration file
 
 

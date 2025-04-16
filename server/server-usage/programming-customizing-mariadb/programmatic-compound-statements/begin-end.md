@@ -11,31 +11,31 @@ END [end_label]
 ```
 
 
-`<code>NOT ATOMIC</code>` is required when used outside of a [stored procedure](../stored-routines/stored-procedures/README.md). Inside stored procedures or within an anonymous block, `<code>BEGIN</code>` alone starts a new anonymous block.
+`NOT ATOMIC` is required when used outside of a [stored procedure](../stored-routines/stored-procedures/README.md). Inside stored procedures or within an anonymous block, `BEGIN` alone starts a new anonymous block.
 
 
 ## Description
 
 
-`<code>BEGIN ... END</code>` syntax is used for writing compound statements. A compound statement can contain multiple statements, enclosed by the `<code>BEGIN</code>` and `<code>END</code>` keywords. statement_list represents a list of one or more statements, each
-terminated by a semicolon (i.e., `<code>;</code>`) statement delimiter. statement_list is
-optional, which means that the empty compound statement (`<code>BEGIN END</code>`) is
+`BEGIN ... END` syntax is used for writing compound statements. A compound statement can contain multiple statements, enclosed by the `BEGIN` and `END` keywords. statement_list represents a list of one or more statements, each
+terminated by a semicolon (i.e., `;`) statement delimiter. statement_list is
+optional, which means that the empty compound statement (`BEGIN END`) is
 legal.
 
 
-Note that `<code>END</code>` will perform a commit. If you are running in [autocommit](../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) mode, every statement will be committed separately. If you are not running in `<code>autocommit</code>` mode, you must execute a [COMMIT](../../../reference/sql-statements-and-structure/sql-statements/transactions/commit.md) or [ROLLBACK](../../../reference/sql-statements-and-structure/sql-statements/transactions/rollback.md) after `<code>END</code>` to get the database up to date.
+Note that `END` will perform a commit. If you are running in [autocommit](../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) mode, every statement will be committed separately. If you are not running in `autocommit` mode, you must execute a [COMMIT](../../../reference/sql-statements-and-structure/sql-statements/transactions/commit.md) or [ROLLBACK](../../../reference/sql-statements-and-structure/sql-statements/transactions/rollback.md) after `END` to get the database up to date.
 
 
 Use of multiple statements requires that a client is able to send statement strings containing the ; statement delimiter. This is handled in the [mysql](https://mariadb.com/kb/en/mysql-command-line_client) command-line client with the [DELIMITER](../../../clients-and-utilities/mariadb-client/delimiters.md) command.
-Changing the `<code>;</code>` end-of-statement delimiter (for example, to
-`<code class="highlight fixed" style="white-space:pre-wrap">//</code>`) allows `<code>;</code>` to be used in a program body.
+Changing the `;` end-of-statement delimiter (for example, to
+`//`) allows `;` to be used in a program body.
 
 
 A compound statement within a [stored program](../stored-routines/README.md) can be
-[labeled](labels.md). `<code>end_label</code>` cannot be given unless `<code>begin_label</code>` also is present. If both are present, they must be the same.
+[labeled](labels.md). `end_label` cannot be given unless `begin_label` also is present. If both are present, they must be the same.
 
 
-`<code>BEGIN ... END</code>` constructs can be nested. Each block can define its own variables, a `<code>CONDITION</code>`, a `<code>HANDLER</code>` and a [CURSOR](programmatic-compound-statements-cursors/README.md), which don't exist in the outer blocks. The most local declarations override the outer objects which use the same name (see example below).
+`BEGIN ... END` constructs can be nested. Each block can define its own variables, a `CONDITION`, a `HANDLER` and a [CURSOR](programmatic-compound-statements-cursors/README.md), which don't exist in the outer blocks. The most local declarations override the outer objects which use the same name (see example below).
 
 
 The declarations order is the following:
@@ -47,7 +47,7 @@ The declarations order is the following:
 * [DECLARE HANDLERs](declare-handler.md);
 
 
-Note that `<code>DECLARE HANDLER</code>` contains another `<code>BEGIN ... END</code>` construct.
+Note that `DECLARE HANDLER` contains another `BEGIN ... END` construct.
 
 
 Here is an example of a very simple, anonymous block:
@@ -76,7 +76,7 @@ BEGIN
 END;
 ```
 
-In this example, a [TINYINT](../../../reference/data-types/data-types-numeric-data-types/tinyint.md) variable, `<code>x</code>` is declared in the outter block. But in the inner block `<code>x</code>` is re-declared as a [CHAR](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) and an `<code>y</code>` variable is declared. The inner [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) shows the "new" value of `<code>x</code>`, and the value of `<code>y</code>`. But when x is selected in the outer block, the "old" value is returned. The final [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) doesn't try to read `<code>y</code>`, because it doesn't exist in that context.
+In this example, a [TINYINT](../../../reference/data-types/data-types-numeric-data-types/tinyint.md) variable, `x` is declared in the outter block. But in the inner block `x` is re-declared as a [CHAR](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) and an `y` variable is declared. The inner [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) shows the "new" value of `x`, and the value of `y`. But when x is selected in the outer block, the "old" value is returned. The final [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) doesn't try to read `y`, because it doesn't exist in that context.
 
 
 ## See Also

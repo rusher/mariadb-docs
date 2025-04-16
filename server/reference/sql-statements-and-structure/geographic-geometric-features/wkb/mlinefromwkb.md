@@ -15,7 +15,7 @@ MultiLineStringFromWKB(wkb[,srid])
 Constructs a [MULTILINESTRING](../geometry-constructors/multilinestring.md) value using its [WKB](well-known-binary-wkb-format.md) representation and [SRID](../geometry-properties/st_srid.md).
 
 
-`<code>MLineFromWKB()</code>` and `<code>MultiLineStringFromWKB()</code>` are synonyms.
+`MLineFromWKB()` and `MultiLineStringFromWKB()` are synonyms.
 
 
 ## Examples

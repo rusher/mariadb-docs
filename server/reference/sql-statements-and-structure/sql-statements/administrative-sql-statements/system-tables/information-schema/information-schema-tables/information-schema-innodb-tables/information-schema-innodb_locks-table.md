@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_LOCKS Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>INNODB_LOCKS</code>` table stores information about locks that InnoDB transactions have requested but not yet acquired, or that are blocking another transaction.
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_LOCKS` table stores information about locks that InnoDB transactions have requested but not yet acquired, or that are blocking another transaction.
 
 
 It has the following columns:

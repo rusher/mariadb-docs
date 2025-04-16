@@ -1,10 +1,10 @@
 
 # LOCK IN SHARE MODE
 
-InnoDB supports row-level locking. Selected rows can be locked using `<code>LOCK IN SHARE MODE</code>` or [FOR UPDATE](for-update.md). In both cases, a lock is acquired on the rows read by the query, and it will be released when the current transaction is committed.
+InnoDB supports row-level locking. Selected rows can be locked using `LOCK IN SHARE MODE` or [FOR UPDATE](for-update.md). In both cases, a lock is acquired on the rows read by the query, and it will be released when the current transaction is committed.
 
 
-When `<code>LOCK IN SHARE MODE</code>` is specified in a [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement, MariaDB will wait until all transactions that have modified the rows are committed. Then, a write lock is acquired. All transactions can read the rows, but if they want to modify them, they have to wait until your transaction is committed.
+When `LOCK IN SHARE MODE` is specified in a [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement, MariaDB will wait until all transactions that have modified the rows are committed. Then, a write lock is acquired. All transactions can read the rows, but if they want to modify them, they have to wait until your transaction is committed.
 
 
 If [autocommit](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) is set to 1 (the default), the LOCK IN SHARE MODE and [FOR UPDATE](for-update.md) clauses have no effect in InnoDB. For non-transactional storage engines like MyISAM and ARIA, a table level lock will be taken even if autocommit is set to 1.

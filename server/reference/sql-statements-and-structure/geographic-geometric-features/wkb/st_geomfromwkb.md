@@ -17,7 +17,7 @@ GeometryFromWKB(wkb[,srid])
 Constructs a geometry value of any type using its [WKB](well-known-binary-wkb-format.md) representation and SRID.
 
 
-`<code>ST_GeomFromWKB()</code>`, `<code>ST_GeometryFromWKB()</code>`, `<code>GeomFromWKB()</code>` and `<code>GeometryFromWKB()</code>` are synonyms.
+`ST_GeomFromWKB()`, `ST_GeometryFromWKB()`, `GeomFromWKB()` and `GeometryFromWKB()` are synonyms.
 
 
 ## Examples

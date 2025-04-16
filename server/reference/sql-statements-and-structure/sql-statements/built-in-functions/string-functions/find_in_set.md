@@ -11,10 +11,10 @@ FIND_IN_SET(pattern, strlist)
 ## Description
 
 
-Returns the index position where the given pattern occurs in a string list. The first argument is the pattern you want to search for. The second argument is a string containing comma-separated variables. If the second argument is of the `<code>[SET](../../../../data-types/string-data-types/set-data-type.md)</code>` data-type, the function is optimized to use bit arithmetic.
+Returns the index position where the given pattern occurs in a string list. The first argument is the pattern you want to search for. The second argument is a string containing comma-separated variables. If the second argument is of the `[SET](../../../../data-types/string-data-types/set-data-type.md)` data-type, the function is optimized to use bit arithmetic.
 
 
-If the pattern does not occur in the string list or if the string list is an empty string, the function returns `<code>0</code>`. If either argument is `<code>NULL</code>`, the function returns `<code>NULL</code>`. The function does not return the correct result if the pattern contains a comma ("`<code>,</code>`") character.
+If the pattern does not occur in the string list or if the string list is an empty string, the function returns `0`. If either argument is `NULL`, the function returns `NULL`. The function does not return the correct result if the pattern contains a comma ("`,`") character.
 
 
 ## Examples

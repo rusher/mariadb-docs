@@ -118,11 +118,11 @@ The UDF spider_copy_tables relies on Spider's high availability feature, which h
 The UDF function [spider_copy_tables](spider-functions/spider_copy_tables.md) is available for copying table data from the source link ID to the destination link ID list without stopping your service for copying
 
 
-`<code>spider_copy_tables(Spider table name, source link ID, destination link ID list[, parameters])</code>`
+`spider_copy_tables(Spider table name, source link ID, destination link ID list[, parameters])`
 
 
-* `<code>Returns 1</code>` if copying data succeeded.
-* `<code>Returns 0</code>` if copying data failed.
+* `Returns 1` if copying data succeeded.
+* `Returns 0` if copying data failed.
 
 
 If the Spider table is partitioned, you must set "Spider table name" with a part name such as "table_name#P#part_name".
@@ -138,7 +138,7 @@ SELECT table_name FROM mysql.spider_tables;
 ## General Log
 
 
-To capture all queries sent to remote backends on a `<code>Spider Node</code>` :
+To capture all queries sent to remote backends on a `Spider Node` :
 
 
 ```

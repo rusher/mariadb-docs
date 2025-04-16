@@ -11,10 +11,10 @@ MAKETIME(hour,minute,second)
 ## Description
 
 
-Returns a time value calculated from the `<code>hour</code>`, `<code>minute</code>`, and `<code>second</code>` arguments.
+Returns a time value calculated from the `hour`, `minute`, and `second` arguments.
 
 
-If `<code>minute</code>` or `<code>second</code>` are out of the range 0 to 60, NULL is returned. The `<code>hour</code>` can be in the range -838 to 838, outside of which the value is truncated with a warning.
+If `minute` or `second` are out of the range 0 to 60, NULL is returned. The `hour` can be in the range -838 to 838, outside of which the value is truncated with a warning.
 
 
 ## Examples

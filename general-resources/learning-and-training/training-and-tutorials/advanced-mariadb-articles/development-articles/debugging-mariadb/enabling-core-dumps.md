@@ -8,7 +8,7 @@
 Core dumps are enabled by default on **Windows**, so **this step can be skipped on Windows** in those versions. See [MDEV-18439](https://jira.mariadb.org/browse/MDEV-18439) for more information.
 
 
-In order to enable core dumps, you need to set the `<code>[core_file](../../../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#core_file)</code>` system variable either on the command-line or in a relevant server [option group](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+In order to enable core dumps, you need to set the `[core_file](../../../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#core_file)` system variable either on the command-line or in a relevant server [option group](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 
 ```
@@ -47,23 +47,23 @@ On some systems there is a limit on the sizes of core files that can be dumped. 
 ulimit -c
 ```
 
-You can check the current limit of the `<code>mariadbd</code>` process specifically by executing the following:
+You can check the current limit of the `mariadbd` process specifically by executing the following:
 
 
 ```
 sudo cat /proc/$(pidof mariadbd)/limits | grep "core file"
 ```
 
-If you need to change the core size limit, the method you use depends on how you start `<code>mariadbd</code>`. See the sections below for more details.
+If you need to change the core size limit, the method you use depends on how you start `mariadbd`. See the sections below for more details.
 
 
-The resource limits for the `<code>mariadbd</code>` process are printed to the [error log](../../../../../../server/server-management/server-monitoring-logs/error-log.md) when the `<code>mariadbd</code>` process crashes. That way, users can confirm whether the process may have been allowed to dump a core file. See [MDEV-15051](https://jira.mariadb.org/browse/MDEV-15051) for more information.
+The resource limits for the `mariadbd` process are printed to the [error log](../../../../../../server/server-management/server-monitoring-logs/error-log.md) when the `mariadbd` process crashes. That way, users can confirm whether the process may have been allowed to dump a core file. See [MDEV-15051](https://jira.mariadb.org/browse/MDEV-15051) for more information.
 
 
 #### Running mariadbd Using mysqld_safe
 
 
-If you are starting MariaDB by running `<code>[mysqld_safe](../../../../../../server/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md)</code>`, then configuring the following in the `<code>[mysqld_safe]</code>` option group in an option file should allow for unlimited sized core files:
+If you are starting MariaDB by running `[mysqld_safe](../../../../../../server/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md)`, then configuring the following in the `[mysqld_safe]` option group in an option file should allow for unlimited sized core files:
 
 
 ```
@@ -82,8 +82,8 @@ my_print_defaults mysqld_safe
 See [mysqld_safe: Configuring the Core File Size](../../../../../../server/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) for more details.
 
 
-**Note:** If you are using `<code>[mysqld_safe](../../../../../../server/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md)</code>` and running `<code>mariadbd</code>` as the `<code>root</code>` user, then no
-core file is created on some systems. The solution is to run `<code>mariadbd</code>` as another user.
+**Note:** If you are using `[mysqld_safe](../../../../../../server/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md)` and running `mariadbd` as the `root` user, then no
+core file is created on some systems. The solution is to run `mariadbd` as another user.
 
 
 #### Running mariadbd Manually
@@ -99,10 +99,10 @@ ulimit -c unlimited
 #### Running mariadbd Using systemd
 
 
-If you are starting `<code>mariadbd</code>` using `<code>[systemd](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md)</code>`, then you may need to customize the MariaDB service to allow for unlimited size core files. For example, you could execute the following:
+If you are starting `mariadbd` using `[systemd](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md)`, then you may need to customize the MariaDB service to allow for unlimited size core files. For example, you could execute the following:
 
 
-Using `<code>sudo systemctl edit mariadb.service</code>` add the contents:
+Using `sudo systemctl edit mariadb.service` add the contents:
 
 
 ```
@@ -117,7 +117,7 @@ See [systemd: Configuring the Core File Size](../../../../../../server/server-ma
 #### Running MariaDB Containers
 
 
-To get a core dump in a `<code>mariadb</code>` container requires [setting the path on Linux](#setting-the-path-on-linux) to not include a `<code>sysctl kernel.core_pattern</code>` beginning with a pipe to an executable that doesn't exist in the container. Setting to a straight `<code>core</code>` is recommended.
+To get a core dump in a `mariadb` container requires [setting the path on Linux](#setting-the-path-on-linux) to not include a `sysctl kernel.core_pattern` beginning with a pipe to an executable that doesn't exist in the container. Setting to a straight `core` is recommended.
 
 
 Also see [Container with Debug Symbols](how-to-produce-a-full-stack-trace-for-mariadbd.md#containers-with-debug-symbols).
@@ -126,7 +126,7 @@ Also see [Container with Debug Symbols](how-to-produce-a-full-stack-trace-for-ma
 #### Changing the System-Wide Limit
 
 
-If you want to change the system-wide limit to allow for unlimited size core files for for the `<code>mysql</code>` user account, then you can do so by adding the following lines to a file in `<code>[/etc/security/limits.d/](https://linux.die.net/man/5/limits.conf)</code>`. For example:
+If you want to change the system-wide limit to allow for unlimited size core files for for the `mysql` user account, then you can do so by adding the following lines to a file in `[/etc/security/limits.d/](https://linux.die.net/man/5/limits.conf)`. For example:
 
 
 ```
@@ -145,7 +145,7 @@ See [Configuring Linux for MariaDB: Configuring the Core File Size](../../../../
 ### Setting the Path on Linux
 
 
-If you are using Linux, then it can be helpful to change a few settings to alter where the core files is written and what file name is used. This is done by setting the `<code>kernel.core_pattern</code>` and `<code>kernel.core_uses_pid</code>` attributes. You can check the current values by executing the following:
+If you are using Linux, then it can be helpful to change a few settings to alter where the core files is written and what file name is used. This is done by setting the `kernel.core_pattern` and `kernel.core_uses_pid` attributes. You can check the current values by executing the following:
 
 
 ```
@@ -153,8 +153,8 @@ sysctl kernel.core_pattern
 sysctl kernel.core_uses_pid
 ```
 
-If you are using `<code>mysql-test-run</code>` and want to have the core as part of the test result, the optimal
-setting is probably the following (store cores in the current directory as `<code>core.number-of-process-id</code>`):
+If you are using `mysql-test-run` and want to have the core as part of the test result, the optimal
+setting is probably the following (store cores in the current directory as `core.number-of-process-id`):
 
 
 ```
@@ -162,7 +162,7 @@ sudo sysctl kernel.core_pattern=core.%p kernel.core_uses_pid=0
 ```
 
 If you are using a production system, you probably want to have the core files in a specific directory,
-not in the data directory. They place to store cores can be temporarily altered using the `<code>[sysctl](https://linux.die.net/man/8/sysctl)</code>` utility, but it is often more common to alter them via the `<code>[/proc](https://linux.die.net/man/5/proc)</code>` file system. See the following example:
+not in the data directory. They place to store cores can be temporarily altered using the `[sysctl](https://linux.die.net/man/8/sysctl)` utility, but it is often more common to alter them via the `[/proc](https://linux.die.net/man/5/proc)` file system. See the following example:
 
 
 ```
@@ -172,10 +172,10 @@ sudo sysctl kernel.core_pattern=/tmp/corefiles/core
 sudo sysctl kernel.core_uses_pid=1
 ```
 
-The above commands will tell the system to put core files in `<code>/tmp/corefiles</code>`, and it also tells the system to put the process ID in the file name.
+The above commands will tell the system to put core files in `/tmp/corefiles`, and it also tells the system to put the process ID in the file name.
 
 
-If you want to make these changes permanent, then you can add the following to a file in `<code>[/etc/sysctl.conf.d/](https://linux.die.net/man/5/sysctl.conf)</code>`. For example:
+If you want to make these changes permanent, then you can add the following to a file in `[/etc/sysctl.conf.d/](https://linux.die.net/man/5/sysctl.conf)`. For example:
 
 
 ```
@@ -185,22 +185,22 @@ kernel.core_uses_pid=1
 EOF
 ```
 
-Note: if you are using containers, the pid is always going to be 1, so this may not be a useful setting. Appending an identifier like %t to the `<code>[kernel.core_pattern](https://www.kernel.org/doc/html/latest/admin-guide/sysctl/kernel.html#core-pattern)</code>` will generate more unique files.
+Note: if you are using containers, the pid is always going to be 1, so this may not be a useful setting. Appending an identifier like %t to the `[kernel.core_pattern](https://www.kernel.org/doc/html/latest/admin-guide/sysctl/kernel.html#core-pattern)` will generate more unique files.
 
 
-The value of `<code>kernel.core_pattern</code>` is printed to the [error log](../../../../../../server/server-management/server-monitoring-logs/error-log.md) when the `<code>mariadbd</code>` process crashes. That way, users can determine where the process may have dumped a core file. See [MDEV-15051](https://jira.mariadb.org/browse/MDEV-15051) for more information.
+The value of `kernel.core_pattern` is printed to the [error log](../../../../../../server/server-management/server-monitoring-logs/error-log.md) when the `mariadbd` process crashes. That way, users can determine where the process may have dumped a core file. See [MDEV-15051](https://jira.mariadb.org/browse/MDEV-15051) for more information.
 
 
-**Note:** Ensure that you have enough free disk space in the path pointed to by `<code>kernel.core_pattern</code>`. 
+**Note:** Ensure that you have enough free disk space in the path pointed to by `kernel.core_pattern`. 
 
 
 #### Extracting Linux core dumps with systemd-coredump
 
 
-Core dump management can be automated using `<code>[systemd](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md)</code>`, which then centrally manages all core dump files and provides information about detected core dumps and access to collected core files using the `<code>[coredumpctl](https://www.freedesktop.org/software/systemd/man/coredumpctl.html)</code>` utility.
+Core dump management can be automated using `[systemd](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md)`, which then centrally manages all core dump files and provides information about detected core dumps and access to collected core files using the `[coredumpctl](https://www.freedesktop.org/software/systemd/man/coredumpctl.html)` utility.
 
 
-This is enabled per default on Red Hat Enterprise Linux 8 and CentOS 8, and maybe other contemporary Linux distribution releases by now, too. It can be easily checked for by looking at the `<code>kernel.core_pattern setting</code>`. If it looks like this systemd-coredump is enabled:
+This is enabled per default on Red Hat Enterprise Linux 8 and CentOS 8, and maybe other contemporary Linux distribution releases by now, too. It can be easily checked for by looking at the `kernel.core_pattern setting`. If it looks like this systemd-coredump is enabled:
 
 
 ```
@@ -225,7 +225,7 @@ Or you can check for MariaDB Server core dumps specifically with:
 # coredumpctl list /usr/sbin/mariadbd
 ```
 
-If an actual core file got stored you'll see `<code>present</code>` in the COREFILE column of the output, you can then extract the core file with:
+If an actual core file got stored you'll see `present` in the COREFILE column of the output, you can then extract the core file with:
 
 
 ```
@@ -239,41 +239,41 @@ using the process id number from the PID column, or when you just want to retrie
 # coredumpctl dump -o mariadb.core /usr/sbin/mariadbd
 ```
 
-Starting with `<code>systemd</code>` 248 it is also possible to invoke the `<code>gdb</code>` debugger directly using the new `<code>--debugger-arguments=...</code>` option, e.g. making the extraction of all thread backtraces from the most recent MariaDB server crash a one liner without even having to extract the core dump file first (requires `<code>gdb</code>` to be installed):
+Starting with `systemd` 248 it is also possible to invoke the `gdb` debugger directly using the new `--debugger-arguments=...` option, e.g. making the extraction of all thread backtraces from the most recent MariaDB server crash a one liner without even having to extract the core dump file first (requires `gdb` to be installed):
 
 
 ```
 # coredumpctl debug --debugger-arguments="-batch -ex 'thread apply all bt full'" /usr/sbin/mariadbd
 ```
 
-So far none of the long term support Linux distribution releases have a new enough `<code>systemd</code>` version for this, the (as of this writing) still upcoming Ubuntu 22.04 "Jammy Jellyfish" will probably the first to support this.
+So far none of the long term support Linux distribution releases have a new enough `systemd` version for this, the (as of this writing) still upcoming Ubuntu 22.04 "Jammy Jellyfish" will probably the first to support this.
 
 
 ### Core Dumps and setuid on Linux
 
 
-Since `<code>mariadbd</code>` executes `<code>[setuid](https://linux.die.net/man/2/setuid)</code>`, you may have to set `<code>fs.suid_dumpable=2</code>` to allow core dumps on Linux. You can check the current `<code>fs.suid_dumpable</code>` value by using the `<code>[sysctl](https://linux.die.net/man/8/sysctl)</code>` utility. For example:
+Since `mariadbd` executes `[setuid](https://linux.die.net/man/2/setuid)`, you may have to set `fs.suid_dumpable=2` to allow core dumps on Linux. You can check the current `fs.suid_dumpable` value by using the `[sysctl](https://linux.die.net/man/8/sysctl)` utility. For example:
 
 
 ```
 sysctl fs.suid_dumpable
 ```
 
-You can temporarily set it to `<code>2</code>` by using the `<code>[sysctl](https://linux.die.net/man/8/sysctl)</code>` utility. For example:
+You can temporarily set it to `2` by using the `[sysctl](https://linux.die.net/man/8/sysctl)` utility. For example:
 
 
 ```
 sudo sysctl -w fs.suid_dumpable=2
 ```
 
-Or you can temporarily set it to `<code>2</code>` by writing to the `<code>[/proc](https://linux.die.net/man/5/proc)</code>` file system. For example:
+Or you can temporarily set it to `2` by writing to the `[/proc](https://linux.die.net/man/5/proc)` file system. For example:
 
 
 ```
 sudo echo 2 > /proc/sys/fs/suid_dumpable
 ```
 
-If you want to permanently set it to `<code>2</code>` then you can add the following to a file in `<code>[/etc/sysctl.conf.d/](https://linux.die.net/man/5/sysctl.conf)</code>`:
+If you want to permanently set it to `2` then you can add the following to a file in `[/etc/sysctl.conf.d/](https://linux.die.net/man/5/sysctl.conf)`:
 
 
 ```
@@ -282,7 +282,7 @@ fs.suid_dumpable=2
 EOF
 ```
 
-**Note:** If you don't want to change `<code>fs.suid_dumpable</code>`, then another solution is to start `<code>mariadbd</code>` directly as the `<code>mysql</code>` user, so that the `<code>[setuid](https://linux.die.net/man/2/setuid)</code>` call is not needed.
+**Note:** If you don't want to change `fs.suid_dumpable`, then another solution is to start `mariadbd` directly as the `mysql` user, so that the `[setuid](https://linux.die.net/man/2/setuid)` call is not needed.
 
 
 ### Forcing a Core File on Linux
@@ -295,21 +295,21 @@ You can get a core dump from a running server with:
 sudo gcore -o filename $(pidof mariadbd)
 ```
 
-This will store a core dump in `<code>filename.pid</code>` where pid is the process ID of `<code>mariadbd</code>`.
-`<code>mariadbd</code>` will continue to be running and will not be affected by `<code>gcore</code>`.
+This will store a core dump in `filename.pid` where pid is the process ID of `mariadbd`.
+`mariadbd` will continue to be running and will not be affected by `gcore`.
 
 
-Another method is to force a core file for `<code>mariadbd</code>` by sending the process the `<code>sigabrt</code>` signal, which has the signal code `<code>6</code>`. This is very useful to get the state of the unresponsive `<code>mariadbd</code>` process. However, this will cause `<code>mariadbd</code>` to crash, and crash recovery will be run on restart.
+Another method is to force a core file for `mariadbd` by sending the process the `sigabrt` signal, which has the signal code `6`. This is very useful to get the state of the unresponsive `mariadbd` process. However, this will cause `mariadbd` to crash, and crash recovery will be run on restart.
 
 
-You can send the signal with the `<code>[kill](https://linux.die.net/man/1/kill)</code>` command. For example:
+You can send the signal with the `[kill](https://linux.die.net/man/1/kill)` command. For example:
 
 
 ```
 sudo kill -6 $(pidof mariadbd)
 ```
 
-As an alternative to `<code>$(pidof mariadbd)</code>`, you can find the process ID either by using the `<code>[ps](https://linux.die.net/man/1/ps)</code>` utility or by checking the file defined by the `<code>[pid_file](../../../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#pid_file)</code>` system variable.
+As an alternative to `$(pidof mariadbd)`, you can find the process ID either by using the `[ps](https://linux.die.net/man/1/ps)` utility or by checking the file defined by the `[pid_file](../../../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#pid_file)` system variable.
 
 
 ## Core Files on Windows
@@ -339,7 +339,7 @@ For details on how to configure and read the [minidump file](https://docs.micros
 ## Core Files and Address Sanitizer (ASAN)
 
 
-If your `<code>mariadbd</code>` binary is built with [Address Sanitizer (ASAN)](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compile-and-using-mariadb-with-sanitizers-asan-ubsan-tsan-msan.md) then it will not be able to generate a core file.
+If your `mariadbd` binary is built with [Address Sanitizer (ASAN)](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compile-and-using-mariadb-with-sanitizers-asan-ubsan-tsan-msan.md) then it will not be able to generate a core file.
 
 
 ## What's Included in Core Files
@@ -360,7 +360,7 @@ The following buffers are excluded:
 * [Query cache](../../../../../../server/reference/plugins/other-plugins/query-cache-information-plugin.md)
 
 
-The buffers are only excluded on Linux when using kernel version 3.4 and above and when using a non-debug build of `<code>mariadbd</code>`. Some Linux kernel versions have a [bug](https://lists.launchpad.net/maria-discuss/msg05245.html) which would cause the following warning to be printed to the log:
+The buffers are only excluded on Linux when using kernel version 3.4 and above and when using a non-debug build of `mariadbd`. Some Linux kernel versions have a [bug](https://lists.launchpad.net/maria-discuss/msg05245.html) which would cause the following warning to be printed to the log:
 
 
 ```

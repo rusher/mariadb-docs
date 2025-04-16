@@ -40,7 +40,7 @@ form. Why?
 
 * Flexibility. Let's say we need to see all clients even if they don't have
  a phone number in the system. With the second version, it's easy; just
- change `<code>INNER JOIN phoneNumbers</code>` to `<code>LEFT JOIN phoneNumbers</code>`. Try that
+ change `INNER JOIN phoneNumbers` to `LEFT JOIN phoneNumbers`. Try that
  with the first version, and MySQL version 5.0.12+ will issue a syntax error
  because of the change in precedence between the comma operator and the JOIN
  keyword. The solution is to rearrange the FROM clause or add parentheses to

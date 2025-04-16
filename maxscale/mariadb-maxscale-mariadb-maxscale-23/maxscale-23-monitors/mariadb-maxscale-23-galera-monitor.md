@@ -15,7 +15,7 @@ traditional master-slave clusters.
 
 
 By default, the Galera Monitor will choose the node with the lowest
-`<code>wsrep_local_index</code>` value as the master. This will mean that two MaxScales
+`wsrep_local_index` value as the master. This will mean that two MaxScales
 running on different servers will choose the same server as the master.
 
 
@@ -52,7 +52,7 @@ For a list of optional parameters that all monitors support, read the
 These are optional parameters specific to the Galera Monitor.
 
 
-### `<code>disable_master_failback</code>`
+### `disable_master_failback`
 
 
 If a node marked as master inside MaxScale happens to fail and the master status
@@ -69,23 +69,23 @@ disable_master_failback=true
 
 
 
-### `<code>available_when_donor</code>`
+### `available_when_donor`
 
 
 This option allows Galera nodes to be used normally when they are donors in an
 SST operation when the SST method is non-blocking
-(e.g. `<code>wsrep_sst_method=mariabackup</code>`).
+(e.g. `wsrep_sst_method=mariabackup`).
 
 
 Normally when an SST is performed, both participating nodes lose their Synced,
 Master or Slave statuses. When this option is enabled, the donor is treated as
-if it was a normal member of the cluster (i.e. `<code>wsrep_local_state = 4</code>`). This is
+if it was a normal member of the cluster (i.e. `wsrep_local_state = 4`). This is
 especially useful if the cluster drops down to one node and an SST is required
 to increase the cluster size.
 
 
 The current list of non-blocking SST
-methods are `<code>xtrabackup</code>`, `<code>xtrabackup-v2</code>` and `<code>mariabackup</code>`. Read the
+methods are `xtrabackup`, `xtrabackup-v2` and `mariabackup`. Read the
 [wsrep_sst_method](../../../server/server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md)
 documentation for more details.
 
@@ -97,7 +97,7 @@ available_when_donor=true
 
 
 
-### `<code>disable_master_role_setting</code>`
+### `disable_master_role_setting`
 
 
 This disables the assignment of master and slave roles to the Galera cluster
@@ -112,7 +112,7 @@ disable_master_role_setting=true
 
 
 
-### `<code>use_priority</code>`
+### `use_priority`
 
 
 Enable interaction with server priorities. This will allow the monitor to
@@ -127,7 +127,7 @@ use_priority=true
 
 
 
-### `<code>root_node_as_master</code>`
+### `root_node_as_master`
 
 
 This option controls whether the write master Galera node requires a
@@ -141,12 +141,12 @@ of 0. Based on this information, multiple MaxScale instances can always pick the
 same node for writes.
 
 
-If the `<code>root_node_as_master</code>` option is disabled for galeramon, the node with the
+If the `root_node_as_master` option is disabled for galeramon, the node with the
 lowest index will always be chosen as the master. If it is enabled, only the
 node with a a *wsrep_local_index* value of 0 can be chosen as the master.
 
 
-### `<code>set_donor_nodes</code>`
+### `set_donor_nodes`
 
 
 This option controls whether the global variable *wsrep_sst_donor* should be set
@@ -187,13 +187,13 @@ set_donor_nodes=true
 ## Interaction with Server Priorities
 
 
-If the `<code>use_priority</code>` option is set and a server is configured with the
-`<code>priority=<int></code>` parameter, galeramon will use that as the basis on which the
-master node is chosen. This requires the `<code>disable_master_role_setting</code>` to be
+If the `use_priority` option is set and a server is configured with the
+`priority=<int>` parameter, galeramon will use that as the basis on which the
+master node is chosen. This requires the `disable_master_role_setting` to be
 undefined or disabled. The server with the lowest positive value of *priority*
 will be chosen as the master node when a replacement Galera node is promoted to
 a master server inside MaxScale. If all candidate servers have the same
-priority, the order of the servers in the `<code>servers</code>` parameter dictates which is
+priority, the order of the servers in the `servers` parameter dictates which is
 chosen as the master.
 
 
@@ -234,10 +234,10 @@ priority=0
 
 
 
-In this example `<code>node-1</code>` is always used as the master if available. If `<code>node-1</code>`
+In this example `node-1` is always used as the master if available. If `node-1`
 is not available, then the next node with the highest priority rank is used. In
-this case it would be `<code>node-3</code>`. If both `<code>node-1</code>` and `<code>node-3</code>` were down, then
-`<code>node-2</code>` would be used. Because `<code>node-4</code>` has a value of 0 in *priority*, it will
+this case it would be `node-3`. If both `node-1` and `node-3` were down, then
+`node-2` would be used. Because `node-4` has a value of 0 in *priority*, it will
 never be the master. Nodes without *priority* parameter are considered as
 having the lowest priority rank and will be used only if all nodes
 with *priority* parameter are not available.

@@ -2,7 +2,7 @@
 # SET STATEMENT
 
 
-`<code>SET STATEMENT</code>` can be used to set the value of a system variable for the duration of the statement. It is also possible to set multiple variables.
+`SET STATEMENT` can be used to set the value of a system variable for the duration of the statement. It is also possible to set multiple variables.
 
 
 ## Syntax
@@ -13,13 +13,13 @@ SET STATEMENT var1=value1 [, var2=value2, ...]
   FOR <statement>
 ```
 
-where `<code>varN</code>` is a system variable (list of allowed variables is provided below), and `<code>valueN</code>` is a constant literal.
+where `varN` is a system variable (list of allowed variables is provided below), and `valueN` is a constant literal.
 
 
 ## Description
 
 
-`<code>SET STATEMENT var1=value1 FOR stmt</code>`
+`SET STATEMENT var1=value1 FOR stmt`
 
 
 is roughly equivalent to
@@ -38,7 +38,7 @@ The server parses the whole statement before executing it, so any variables set 
 ## Examples
 
 
-One can limit statement execution time `<code>[max_statement_time](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_statement_time)</code>`:
+One can limit statement execution time `[max_statement_time](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_statement_time)`:
 
 
 ```
@@ -59,7 +59,7 @@ It is possible to enable MRR/BKA for a query:
 SET STATEMENT  join_cache_level=6, optimizer_switch='mrr=on'  FOR SELECT ...
 ```
 
-Note that it makes no sense to try to set a session variable inside a `<code>SET STATEMENT</code>`:
+Note that it makes no sense to try to set a session variable inside a `SET STATEMENT`:
 
 
 ```
@@ -67,7 +67,7 @@ Note that it makes no sense to try to set a session variable inside a `<code>SET
 SET STATEMENT sort_buffer_size = 100000 for SET SESSION sort_buffer_size = 200000;
 ```
 
-For the above, after setting sort_buffer_size to 200000 it will be reset to its original state (the state before the `<code>SET STATEMENT</code>` started) after the statement execution.
+For the above, after setting sort_buffer_size to 200000 it will be reset to its original state (the state before the `SET STATEMENT` started) after the statement execution.
 
 
 ## Limitations
@@ -76,31 +76,31 @@ For the above, after setting sort_buffer_size to 200000 it will be reset to its 
 There are a number of variables that cannot be set on per-query basis. These include:
 
 
-* `<code>autocommit</code>`
-* `<code>character_set_client</code>`
-* `<code>character_set_connection</code>`
-* `<code>character_set_filesystem</code>`
-* `<code>collation_connection</code>`
-* `<code>default_master_connection</code>`
-* `<code>debug_sync</code>`
-* `<code>interactive_timeout</code>`
-* `<code>gtid_domain_id</code>`
-* `<code>last_insert_id</code>`
-* `<code>log_slow_filter</code>`
-* `<code>log_slow_rate_limit</code>`
-* `<code>log_slow_verbosity</code>`
-* `<code>long_query_time</code>`
-* `<code>min_examined_row_limit</code>`
-* `<code>profiling</code>`
-* `<code>profiling_history_size</code>`
-* `<code>query_cache_type</code>`
-* `<code>rand_seed1</code>`
-* `<code>rand_seed2</code>`
-* `<code>skip_replication</code>`
-* `<code>slow_query_log</code>`
-* `<code>sql_log_off</code>`
-* `<code>tx_isolation</code>`
-* `<code>wait_timeout</code>`
+* `autocommit`
+* `character_set_client`
+* `character_set_connection`
+* `character_set_filesystem`
+* `collation_connection`
+* `default_master_connection`
+* `debug_sync`
+* `interactive_timeout`
+* `gtid_domain_id`
+* `last_insert_id`
+* `log_slow_filter`
+* `log_slow_rate_limit`
+* `log_slow_verbosity`
+* `long_query_time`
+* `min_examined_row_limit`
+* `profiling`
+* `profiling_history_size`
+* `query_cache_type`
+* `rand_seed1`
+* `rand_seed2`
+* `skip_replication`
+* `slow_query_log`
+* `sql_log_off`
+* `tx_isolation`
+* `wait_timeout`
 
 
 ## Source

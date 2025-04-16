@@ -13,18 +13,18 @@ SHOW TRIGGERS [FROM db_name]
 ## Description
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW TRIGGERS</code>` lists the triggers currently defined for
-tables in a database (the default database unless a `<code class="highlight fixed" style="white-space:pre-wrap">FROM</code>`
+`SHOW TRIGGERS` lists the triggers currently defined for
+tables in a database (the default database unless a `FROM`
 clause is given). This statement requires the
-`<code class="highlight fixed" style="white-space:pre-wrap">[TRIGGER](show-privileges.md)</code>` privilege (prior to MySQL
-5.1.22, it required the `<code class="highlight fixed" style="white-space:pre-wrap">SUPER</code>` privilege).
+`[TRIGGER](show-privileges.md)` privilege (prior to MySQL
+5.1.22, it required the `SUPER` privilege).
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clause, if present on its own, indicates which table names to
-match and causes the statement to display triggers for those tables. The `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+The `LIKE` clause, if present on its own, indicates which table names to
+match and causes the statement to display triggers for those tables. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 
-Similar information is stored in the `<code>[information_schema.TRIGGERS](../system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)</code>` table.
+Similar information is stored in the `[information_schema.TRIGGERS](../system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)` table.
 
 
 If there are multiple triggers for the same action, then the triggers are shown in action order.
@@ -99,17 +99,17 @@ collation_connection: utf8_general_ci
   Database Collation: latin1_swedish_ci
 ```
 
-* `<code class="highlight fixed" style="white-space:pre-wrap">character_set_client</code>` is the session value of the `<code>[character_set_client](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_client)</code>` system variable when the trigger was created.
-* `<code class="highlight fixed" style="white-space:pre-wrap">collation_connection</code>` is the session value of the `<code>[collation_connection](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection)</code>` system variable when the trigger was
+* `character_set_client` is the session value of the `[character_set_client](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_client)` system variable when the trigger was created.
+* `collation_connection` is the session value of the `[collation_connection](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection)` system variable when the trigger was
  created.
-* `<code class="highlight fixed" style="white-space:pre-wrap">Database Collation</code>` is the collation of the database 
+* `Database Collation` is the collation of the database 
  with which the trigger is associated.
 
 
 These columns were added in MariaDB/MySQL 5.1.21.
 
 
-Old triggers created before MySQL 5.7 and [MariaDB 10.2.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md) have NULL in the `<code>Created</code>` column.
+Old triggers created before MySQL 5.7 and [MariaDB 10.2.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md) have NULL in the `Created` column.
 
 
 ## See also

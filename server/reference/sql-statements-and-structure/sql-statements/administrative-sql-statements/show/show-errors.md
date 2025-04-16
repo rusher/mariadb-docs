@@ -18,11 +18,11 @@ This statement is similar to [SHOW WARNINGS](show-warnings.md), except that inst
 displaying errors, warnings, and notes, it displays only errors.
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">LIMIT</code>` clause has the same syntax as for the
+The `LIMIT` clause has the same syntax as for the
 [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement.
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">SHOW COUNT(*) ERRORS</code>` statement displays the number of
+The `SHOW COUNT(*) ERRORS` statement displays the number of
 errors. You can also retrieve this number from the [error_count](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#error_count) variable.
 
 

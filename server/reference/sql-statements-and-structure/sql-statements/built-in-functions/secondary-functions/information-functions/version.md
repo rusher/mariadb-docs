@@ -27,7 +27,7 @@ SELECT VERSION();
 +----------------+
 ```
 
-The `<code class="fixed" style="white-space:pre-wrap">VERSION()</code>` string may have one or more of the following suffixes:
+The `VERSION()` string may have one or more of the following suffixes:
 
 
 
@@ -45,7 +45,7 @@ The `<code class="fixed" style="white-space:pre-wrap">VERSION()</code>` string m
 
 
 Some old legacy code may break because they are parsing the
-`<code>VERSION</code>` string and expecting a MySQL string or a simple version
+`VERSION` string and expecting a MySQL string or a simple version
 string like Joomla til API17, see [MDEV-7780](https://jira.mariadb.org/browse/MDEV-7780).
 
 

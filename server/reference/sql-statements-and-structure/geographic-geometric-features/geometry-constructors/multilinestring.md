@@ -13,7 +13,7 @@ MultiLineString(ls1,ls2,...)
 
 
 Constructs a WKB MultiLineString value using [WKB](../wkb/wkb-polyfromwkb.md) [LineString](linestring.md) arguments. If any argument is not a WKB LineString, the return value is
-`<code>NULL</code>`.
+`NULL`.
 
 
 ## Example

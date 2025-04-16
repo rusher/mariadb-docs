@@ -14,12 +14,12 @@ SHOW {INDEX | INDEXES | KEYS}
 ## Description
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW INDEX</code>` returns table index information. The format
+`SHOW INDEX` returns table index information. The format
 resembles that of the SQLStatistics call in ODBC.
 
 
-You can use `<code class="highlight fixed" style="white-space:pre-wrap">db_name.tbl_name</code>` as an alternative to the
- `<code class="highlight fixed" style="white-space:pre-wrap">tbl_name FROM db_name</code>` syntax. These two statements are
+You can use `db_name.tbl_name` as an alternative to the
+ `tbl_name FROM db_name` syntax. These two statements are
  equivalent:
 
 
@@ -28,7 +28,7 @@ SHOW INDEX FROM mytable FROM mydb;
 SHOW INDEX FROM mydb.mytable;
 ```
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW KEYS</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">SHOW INDEXES</code>` are synonyms for `<code class="highlight fixed" style="white-space:pre-wrap">SHOW INDEX</code>`.
+`SHOW KEYS` and `SHOW INDEXES` are synonyms for `SHOW INDEX`.
 
 
 You can also list a table's indexes with the [mariadb-show](../../../../../clients-and-utilities/mariadb-show.md) command:
@@ -41,7 +41,7 @@ mariadb-show -k db_name tbl_name
 The [information_schema.STATISTICS](../system-tables/information-schema/information-schema-tables/information-schema-statistics-table.md) table stores similar information.
 
 
-The following fields are returned by `<code>SHOW INDEX</code>`.
+The following fields are returned by `SHOW INDEX`.
 
 
 
@@ -65,7 +65,7 @@ The following fields are returned by `<code>SHOW INDEX</code>`.
 
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 
 ## Examples

@@ -23,8 +23,8 @@ configuration file.
 
 
 MaxScale 2.1.2 added support for IPv6 addresses. The default interface that listeners bind to
-was changed from the IPv4 address `<code>0.0.0.0</code>` to the IPv6 address `<code>::</code>`. To bind to the old IPv4 address,
-add `<code>address=0.0.0.0</code>` to the listener definition.
+was changed from the IPv4 address `0.0.0.0` to the IPv6 address `::`. To bind to the old IPv4 address,
+add `address=0.0.0.0` to the listener definition.
 
 
 ## Persisted Configuration Files
@@ -32,7 +32,7 @@ add `<code>address=0.0.0.0</code>` to the listener definition.
 
 Starting with MaxScale 2.1, any changes made with the newly added
 [runtime configuration change](../maxscale-21-reference/mariadb-maxscale-21-maxadmin-admin-interface.md#runtime-configuration-changes)
-will be persisted in a configuration file. These files are located in `<code>/var/lib/maxscale/maxscale.cnf.d/</code>`.
+will be persisted in a configuration file. These files are located in `/var/lib/maxscale/maxscale.cnf.d/`.
 
 
 ## MaxScale Log Files
@@ -49,9 +49,9 @@ renaming them. This makes the MaxScale logging facility *logrotate* compatible.
 ## ReadWriteSplit
 
 
-The `<code>disable_sescmd_history</code>` option is now enabled by default. This means that
+The `disable_sescmd_history` option is now enabled by default. This means that
 slaves will not be recovered mid-session even if a replacement slave is
-available. To enable the legacy behavior, add the `<code>disable_sescmd_history=true</code>`
+available. To enable the legacy behavior, add the `disable_sescmd_history=true`
 parameter to the service definition.
 
 
@@ -68,7 +68,7 @@ connection pool. For most users, this is the expected behavior.
 
 
 The location of the MariaDB user data cache was moved from
-`<code>/var/cache/maxscale/<Service></code>` to `<code>/var/cache/maxscale/<Service>/<Listener></code>`.
+`/var/cache/maxscale/<Service>` to `/var/cache/maxscale/<Service>/<Listener>`.
 
 
 ## Galeramon Monitoring Algorithm
@@ -79,7 +79,7 @@ Galeramon will assign the master status *only* to the node which has a
 multiple MaxScales but it also causes slower changes of the master node.
 
 
-To enable the legacy behavior, add `<code>root_node_as_master=false</code>` to the Galera
+To enable the legacy behavior, add `root_node_as_master=false` to the Galera
 monitor configuration.
 
 
@@ -87,4 +87,4 @@ monitor configuration.
 
 
 The default editing mode was changed from *vim* to *emacs* mode. To start
-maxadmin in the legacy mode, use the `<code>-i</code>` option.
+maxadmin in the legacy mode, use the `-i` option.

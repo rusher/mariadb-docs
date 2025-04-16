@@ -25,14 +25,14 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 ### REST API & MaxCtrl: Hard maintenance mode
 
 
-The new `<code>--force</code>` option for the `<code>set server</code>` command in MaxCtrl allows all
+The new `--force` option for the `set server` command in MaxCtrl allows all
 connections to the server in question to be closed when it is set into
 maintenance mode. This causes idle connections to be closed immediately.
 
 
 For more information, read the
 [REST-API](../../mariadb-maxscale-21-06/README.md) documentation for
-the `<code>set</code>` endpoint.
+the `set` endpoint.
 
 
 ## Bug fixes
@@ -67,7 +67,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/mariadb-tx/maxsc
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

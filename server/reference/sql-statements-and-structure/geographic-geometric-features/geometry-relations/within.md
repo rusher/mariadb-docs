@@ -11,8 +11,8 @@ Within(g1,g2)
 ## Description
 
 
-Returns `<code>1</code>` or `<code>0</code>` to indicate whether `<code>g1</code>` is spatially within `<code>g2</code>`.
-This tests the opposite relationship as `<code>[Contains()](contains.md)</code>`.
+Returns `1` or `0` to indicate whether `g1` is spatially within `g2`.
+This tests the opposite relationship as `[Contains()](contains.md)`.
 
 
 WITHIN() is based on the original MySQL implementation, and uses object bounding rectangles, while [ST_WITHIN()](st-within.md) uses object shapes.

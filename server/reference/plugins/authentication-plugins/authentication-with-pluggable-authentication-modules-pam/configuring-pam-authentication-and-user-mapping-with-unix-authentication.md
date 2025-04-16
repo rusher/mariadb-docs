@@ -1,7 +1,7 @@
 
 # Configuring PAM Authentication and User Mapping with Unix Authentication
 
-In this article, we will walk through the configuration of PAM authentication using the `<code>[pam](authentication-plugin-pam.md)</code>` authentication plugin and user and group mapping with the `<code>[pam_user_map](user-and-group-mapping-with-pam.md)</code>` PAM module. The primary authentication will be handled by the `<code>[pam_unix](https://linux.die.net/man/8/pam_unix)</code>` PAM module, which performs standard Unix password authentication.
+In this article, we will walk through the configuration of PAM authentication using the `[pam](authentication-plugin-pam.md)` authentication plugin and user and group mapping with the `[pam_user_map](user-and-group-mapping-with-pam.md)` PAM module. The primary authentication will be handled by the `[pam_unix](https://linux.die.net/man/8/pam_unix)` PAM module, which performs standard Unix password authentication.
 
 
 
@@ -11,8 +11,8 @@ In this article, we will walk through the configuration of PAM authentication us
 In this walkthrough, we are going to assume the following hypothetical requirements:
 
 
-* The Unix user `<code>foo</code>` should be mapped to the MariaDB user `<code>bar</code>`. (`<code>foo: bar</code>`)
-* Any Unix user in the Unix group `<code>dba</code>` should be mapped to the MariaDB user `<code>dba</code>`. (`<code>@dba: dba</code>`)
+* The Unix user `foo` should be mapped to the MariaDB user `bar`. (`foo: bar`)
+* Any Unix user in the Unix group `dba` should be mapped to the MariaDB user `dba`. (`@dba: dba`)
 
 
 ## Creating Our Unix Users and Groups
@@ -21,7 +21,7 @@ In this walkthrough, we are going to assume the following hypothetical requireme
 Let's go ahead and create the Unix users and groups that we are using for this hypothetical scenario.
 
 
-First, let's create the the `<code>foo</code>` user and a couple users to go into the `<code>dba</code>` group. Note that each of these users needs a password.
+First, let's create the the `foo` user and a couple users to go into the `dba` group. Note that each of these users needs a password.
 
 
 ```
@@ -33,7 +33,7 @@ sudo useradd bob
 sudo passwd bob
 ```
 
-And then let's create our `<code>dba</code>` group and add our two users to it:
+And then let's create our `dba` group and add our two users to it:
 
 
 ```
@@ -42,7 +42,7 @@ sudo usermod -a -G dba alice
 sudo usermod -a -G dba bob
 ```
 
-We also need to create Unix users with the same name as the `<code>bar</code>` and `<code>dba</code>` MariaDB users. See [here](user-and-group-mapping-with-pam.md#pam-user-with-same-name-as-mapped-mariadb-user-must-exist) to read more about why. No one will be logging in as these users, so they do not need passwords.
+We also need to create Unix users with the same name as the `bar` and `dba` MariaDB users. See [here](user-and-group-mapping-with-pam.md#pam-user-with-same-name-as-mapped-mariadb-user-must-exist) to read more about why. No one will be logging in as these users, so they do not need passwords.
 
 
 ```
@@ -59,14 +59,14 @@ Next, let's [install the pam_user_map PAM module](user-and-group-mapping-with-pa
 Before the module can be compiled from source, we may need to install some dependencies.
 
 
-On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md), we need to install `<code>gcc</code>` and `<code>pam-devel</code>`:
+On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md), we need to install `gcc` and `pam-devel`:
 
 
 ```
 sudo yum install gcc pam-devel
 ```
 
-On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md), we need to install `<code>gcc</code>` and `<code>libpam0g-dev</code>`:
+On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md), we need to install `gcc` and `libpam0g-dev`:
 
 
 ```
@@ -88,7 +88,7 @@ sudo install --mode=0755 pam_user_map.so /lib64/security/
 Next, let's [configure the pam_user_map PAM module](user-and-group-mapping-with-pam.md#configuring-the-pam_user_map-pam-module) based on our hypothetical requirements.
 
 
-The configuration file for the `<code>pam_user_map</code>` PAM module is `<code>/etc/security/user_map.conf</code>`. Based on our hypothetical requirements, ours would look like:
+The configuration file for the `pam_user_map` PAM module is `/etc/security/user_map.conf`. Based on our hypothetical requirements, ours would look like:
 
 
 ```
@@ -112,10 +112,10 @@ INSTALL SONAME 'auth_pam';
 ## Configuring the PAM Service
 
 
-Next, let's [configure the PAM service](authentication-plugin-pam.md#configuring-the-pam-service). We will call our service `<code>mariadb</code>`, so our PAM service configuration file will be located at `<code>/etc/pam.d/mariadb</code>` on most systems.
+Next, let's [configure the PAM service](authentication-plugin-pam.md#configuring-the-pam-service). We will call our service `mariadb`, so our PAM service configuration file will be located at `/etc/pam.d/mariadb` on most systems.
 
 
-Since we are only doing Unix authentication with the `<code>pam_unix</code>` PAM module and group mapping with the `<code>pam_user_map</code>` PAM module, our configuration file would look like this:
+Since we are only doing Unix authentication with the `pam_unix` PAM module and group mapping with the `pam_user_map` PAM module, our configuration file would look like this:
 
 
 ```
@@ -127,10 +127,10 @@ account required pam_unix.so audit
 ## Configuring the pam_unix PAM Module
 
 
-The `<code>pam_unix</code>` PAM module adds [some additional configuration steps](authentication-plugin-pam.md#configuring-the-pam-service) on a lot of systems. We basically have to give the user that runs `<code>mysqld</code>` access to `<code>/etc/shadow</code>`.
+The `pam_unix` PAM module adds [some additional configuration steps](authentication-plugin-pam.md#configuring-the-pam-service) on a lot of systems. We basically have to give the user that runs `mysqld` access to `/etc/shadow`.
 
 
-If the `<code>mysql</code>` user is running `<code>mysqld</code>`, then we can do that by executing the following:
+If the `mysql` user is running `mysqld`, then we can do that by executing the following:
 
 
 ```
@@ -146,13 +146,13 @@ The [server needs to be restarted](https://mariadb.com/kb/en/) for this change t
 ## Creating MariaDB Users
 
 
-Next, let's [create the MariaDB users](authentication-plugin-pam.md#creating-users). Remember that our PAM service is called `<code>mariadb</code>`.
+Next, let's [create the MariaDB users](authentication-plugin-pam.md#creating-users). Remember that our PAM service is called `mariadb`.
 
 
-First, let's create the MariaDB user for the user mapping: `<code>foo: bar</code>`
+First, let's create the MariaDB user for the user mapping: `foo: bar`
 
 
-That means that we need to create a `<code>bar</code>` user:
+That means that we need to create a `bar` user:
 
 
 ```
@@ -160,10 +160,10 @@ CREATE USER 'bar'@'%' IDENTIFIED BY 'strongpassword';
 GRANT ALL PRIVILEGES ON *.* TO 'bar'@'%' ;
 ```
 
-And then let's create the MariaDB user for the group mapping: `<code>@dba: dba</code>`
+And then let's create the MariaDB user for the group mapping: `@dba: dba`
 
 
-That means that we need to create a `<code>dba</code>` user:
+That means that we need to create a `dba` user:
 
 
 ```
@@ -171,7 +171,7 @@ CREATE USER 'dba'@'%' IDENTIFIED BY 'strongpassword';
 GRANT ALL PRIVILEGES ON *.* TO 'dba'@'%' ;
 ```
 
-And then to allow for the user and group mapping, we need to [create an anonymous user that authenticates with the pam authentication plugin](user-and-group-mapping-with-pam.md#creating-users) that is also able to `<code>PROXY</code>` as the `<code>bar</code>` and `<code>dba</code>` users. Before we can create the proxy user, we might need to [clean up some defaults](../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#fixing-a-legacy-default-anonymous-account):
+And then to allow for the user and group mapping, we need to [create an anonymous user that authenticates with the pam authentication plugin](user-and-group-mapping-with-pam.md#creating-users) that is also able to `PROXY` as the `bar` and `dba` users. Before we can create the proxy user, we might need to [clean up some defaults](../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#fixing-a-legacy-default-anonymous-account):
 
 
 ```
@@ -191,10 +191,10 @@ GRANT PROXY ON 'dba'@'%' TO ''@'%';
 ## Testing our Configuration
 
 
-Next, let's test out our configuration by [verifying that mapping is occurring](user-and-group-mapping-with-pam.md#verifying-that-mapping-is-occurring). We can verify this by logging in as each of our users and comparing the return value of `<code>[USER()](../../other-plugins/user-variables-plugin.md)</code>`, which is the original user name and the return value of `<code>[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)</code>`, which is the authenticated user name.
+Next, let's test out our configuration by [verifying that mapping is occurring](user-and-group-mapping-with-pam.md#verifying-that-mapping-is-occurring). We can verify this by logging in as each of our users and comparing the return value of `[USER()](../../other-plugins/user-variables-plugin.md)`, which is the original user name and the return value of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`, which is the authenticated user name.
 
 
-First, let's test out our `<code>foo</code>` user:
+First, let's test out our `foo` user:
 
 
 ```
@@ -217,10 +217,10 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `<code>foo</code>` Unix user was properly mapped to the `<code>bar</code>` MariaDB user by looking at the return value of `<code>[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)</code>`.
+We can verify that our `foo` Unix user was properly mapped to the `bar` MariaDB user by looking at the return value of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`.
 
 
-Then let's test out our `<code>alice</code>` user in the `<code>dba</code>` group:
+Then let's test out our `alice` user in the `dba` group:
 
 
 ```
@@ -243,7 +243,7 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-And then let's test out our `<code>bob</code>` user in the `<code>dba</code>` group:
+And then let's test out our `bob` user in the `dba` group:
 
 
 ```
@@ -266,5 +266,5 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `<code>alice</code>` and `<code>bob</code>` Unix users in the `<code>dba</code>` Unix group were properly mapped to the `<code>dba</code>` MariaDB user by looking at the return values of `<code>[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)</code>`.
+We can verify that our `alice` and `bob` Unix users in the `dba` Unix group were properly mapped to the `dba` MariaDB user by looking at the return values of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`.
 

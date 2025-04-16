@@ -12,8 +12,8 @@ DROP {DATABASE | SCHEMA} [IF EXISTS] db_name
 ## Description
 
 
-`<code>DROP DATABASE</code>` drops all tables in the database and deletes the database. Be very careful with this statement! To use DROP DATABASE,
-you need the [DROP privilege](../../account-management-sql-commands/grant.md#table-privileges) on the database. `<code>DROP SCHEMA</code>` is a synonym for `<code>DROP DATABASE</code>`.
+`DROP DATABASE` drops all tables in the database and deletes the database. Be very careful with this statement! To use DROP DATABASE,
+you need the [DROP privilege](../../account-management-sql-commands/grant.md#table-privileges) on the database. `DROP SCHEMA` is a synonym for `DROP DATABASE`.
 
 
 **Important:** When a database is dropped, user privileges on the database are not automatically dropped. See [GRANT](../../account-management-sql-commands/grant.md).
@@ -22,7 +22,7 @@ you need the [DROP privilege](../../account-management-sql-commands/grant.md#tab
 #### IF EXISTS
 
 
-Use `<code>IF EXISTS</code>` to prevent an error from occurring for databases that do not exist. A `<code>NOTE</code>` is generated for each non-existent database when using `<code>IF EXISTS</code>`. See [SHOW WARNINGS](../../administrative-sql-statements/show/show-warnings.md).
+Use `IF EXISTS` to prevent an error from occurring for databases that do not exist. A `NOTE` is generated for each non-existent database when using `IF EXISTS`. See [SHOW WARNINGS](../../administrative-sql-statements/show/show-warnings.md).
 
 
 ### Atomic DDL
@@ -31,13 +31,13 @@ Use `<code>IF EXISTS</code>` to prevent an error from occurring for databases th
 
 ##### MariaDB starting with [10.6.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md)
 [MariaDB 10.6.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) supports [Atomic DDL](../atomic-ddl.md). 
-`<code>DROP DATABASE</code>` is implemented as
+`DROP DATABASE` is implemented as
 
 ```
 loop over all tables
   DROP TABLE table
 ```
-Each individual [DROP TABLE](drop-tablespace.md) is atomic while `<code>DROP DATABASE</code>` as a whole is crash-safe.
+Each individual [DROP TABLE](drop-tablespace.md) is atomic while `DROP DATABASE` as a whole is crash-safe.
 
 
 ## Examples

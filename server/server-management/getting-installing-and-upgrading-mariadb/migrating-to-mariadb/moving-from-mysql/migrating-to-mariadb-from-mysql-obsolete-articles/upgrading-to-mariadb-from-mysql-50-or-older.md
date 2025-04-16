@@ -44,7 +44,7 @@ There are a variety of reasons tables need to be converted; they could be any of
 * The collation (sorting order) for an index column has changed
 * A field type has changed storage format
 
-  * `<code>[DECIMAL](../../../../../reference/data-types/data-types-numeric-data-types/decimal.md)</code>` and `<code>[VARCHAR](../../../../../reference/data-types/string-data-types/varchar.md)</code>` changed format between MySQL 4.1 and MySQL 5.0
+  * `[DECIMAL](../../../../../reference/data-types/data-types-numeric-data-types/decimal.md)` and `[VARCHAR](../../../../../reference/data-types/string-data-types/varchar.md)` changed format between MySQL 4.1 and MySQL 5.0
 * An engine has a new storage format
 
   * [ARCHIVE](../../../../../reference/storage-engines/archive/README.md) changed storage format between 5.0 and 5.1
@@ -52,7 +52,7 @@ There are a variety of reasons tables need to be converted; they could be any of
 
   * In MySQL 5.1 table names are encoded so that the file names are identical on all computers. Old table names that contains forbidden file name characters will show up prefixed with #mysql50
 
-# in `<code>SHOW TABLES</code>` until you convert them.
+# in `SHOW TABLES` until you convert them.
 
 
 If you don't convert the tables, one of the following things may happen:
@@ -74,7 +74,7 @@ The following differences exists between "mysql_upgrade" in MariaDB and MySQL (a
 
 
 * MariaDB will convert long table names properly.
-* MariaDB will convert [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables (no need to do a dump/restore or `<code>[ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)</code>`).
+* MariaDB will convert [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables (no need to do a dump/restore or `[ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)`).
 * MariaDB will convert old archive tables to the new 5.1 format (note: new feature in testing).
 * "mysql_upgrade --verbose" will run "mysqlcheck --verbose" so that you get more information of what is happening.
 

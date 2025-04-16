@@ -1,10 +1,10 @@
 
 # Cracklib Password Check Plugin
 
-`<code>cracklib_password_check</code>` is a [password validation](README.md) plugin. It uses the [CrackLib](https://github.com/cracklib/cracklib) library to check the strength of new passwords. CrackLib is installed by default in many Linux distributions, since the system's [Pluggable Authentication Module (PAM)](https://en.wikipedia.org/wiki/Pluggable_authentication_module) authentication framework is usually configured to check the strength of new passwords with the `<code>[pam_cracklib](https://linux.die.net/man/8/pam_cracklib)</code>` PAM module.
+`cracklib_password_check` is a [password validation](README.md) plugin. It uses the [CrackLib](https://github.com/cracklib/cracklib) library to check the strength of new passwords. CrackLib is installed by default in many Linux distributions, since the system's [Pluggable Authentication Module (PAM)](https://en.wikipedia.org/wiki/Pluggable_authentication_module) authentication framework is usually configured to check the strength of new passwords with the `[pam_cracklib](https://linux.die.net/man/8/pam_cracklib)` PAM module.
 
 
-Note that passwords can be directly set as a hash, bypassing the password validation, if the [strict_password_validation](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) variable is `<code>OFF</code>` (it is `<code>ON</code>` by default).
+Note that passwords can be directly set as a hash, bypassing the password validation, if the [strict_password_validation](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) variable is `OFF` (it is `ON` by default).
 
 
 The plugin requires at least cracklib 2.9.0, so it is not available on Debian/Ubuntu builds before Debian 8 Jessie/Ubuntu 14.04 Trusty, RedHat Enterprise Linux / CentOS 6.
@@ -13,19 +13,19 @@ The plugin requires at least cracklib 2.9.0, so it is not available on Debian/Ub
 ## Installing the Plugin's Package
 
 
-The `<code>cracklib_password_check</code>` plugin's shared library is included in MariaDB packages as the `<code>cracklib_password_check.so</code>` or `<code>cracklib_password_check.dll</code>` shared library on systems where it can be built.
+The `cracklib_password_check` plugin's shared library is included in MariaDB packages as the `cracklib_password_check.so` or `cracklib_password_check.dll` shared library on systems where it can be built.
 
 
 ### Installing on Linux
 
 
-The `<code>cracklib_password_check</code>` plugin is included in `<code>systemd</code>` [binary tarballs](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs.md) on Linux, but not in the older generic and `<code>glibc_214</code>` tarballs.
+The `cracklib_password_check` plugin is included in `systemd` [binary tarballs](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs.md) on Linux, but not in the older generic and `glibc_214` tarballs.
 
 
 #### Installing with a Package Manager
 
 
-The `<code>cracklib_password_check</code>` plugin can also be installed via a package manager on Linux. In order to do so, your system needs to be configured to install from one of the MariaDB repositories.
+The `cracklib_password_check` plugin can also be installed via a package manager on Linux. In order to do so, your system needs to be configured to install from one of the MariaDB repositories.
 
 
 You can configure your package manager to install it from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md).
@@ -38,7 +38,7 @@ You can also configure your package manager to install it from MariaDB Foundatio
 
 
 On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md) from MariaDB's
-repository using `<code>[yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md)</code>` or `<code>[dnf](https://en.wikipedia.org/wiki/DNF_(software))</code>`. Starting with RHEL 8 and Fedora 22, `<code>yum</code>` has been replaced by `<code>dnf</code>`, which is the next major version of `<code>yum</code>`. However, `<code>yum</code>` commands still work on many systems that use `<code>dnf</code>`. For example:
+repository using `[yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md)` or `[dnf](https://en.wikipedia.org/wiki/DNF_(software))`. Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
 
 
 ```
@@ -49,7 +49,7 @@ sudo yum install MariaDB-cracklib-password-check
 
 
 On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant [DEB package](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md) from MariaDB's
-repository using `<code>[apt-get](https://wiki.debian.org/apt-get)</code>`. For example:
+repository using `[apt-get](https://wiki.debian.org/apt-get)`. For example:
 
 
 ```
@@ -59,7 +59,7 @@ sudo apt-get install mariadb-plugin-cracklib-password-check
 ##### Installing with zypper
 
 
-On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md) from MariaDB's repository using `<code>[zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md)</code>`. For example:
+On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md) from MariaDB's repository using `[zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md)`. For example:
 
 
 ```
@@ -72,14 +72,14 @@ sudo zypper install MariaDB-cracklib-password-check
 Once the shared library is in place, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing `<code>[INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)</code>` or `<code>[INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)</code>`. For example:
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing `[INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)` or `[INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)`. For example:
 
 
 ```
 INSTALL SONAME 'cracklib_password_check';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the `<code>[--plugin-load](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` or the `<code>[--plugin-load-add](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` options. This can be specified as a command-line argument to `<code>[mysqld](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` or it can be specified in a relevant server [option group](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the `[--plugin-load](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or the `[--plugin-load-add](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` options. This can be specified as a command-line argument to `[mysqld](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or it can be specified in a relevant server [option group](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 
 ```
@@ -91,20 +91,20 @@ plugin_load_add = cracklib_password_check
 ## Uninstalling the Plugin
 
 
-You can uninstall the plugin dynamically by executing `<code>[UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)</code>` or `<code>[UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)</code>`. For example:
+You can uninstall the plugin dynamically by executing `[UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)`. For example:
 
 
 ```
 UNINSTALL SONAME 'cracklib_password_check';
 ```
 
-If you installed the plugin by providing the `<code>[--plugin-load](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` or the `<code>[--plugin-load-add](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` options in a relevant server [option group](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the `[--plugin-load](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or the `[--plugin-load-add](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` options in a relevant server [option group](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 
 ## Viewing CrackLib Errors
 
 
-If password validation fails, then the original CrackLib error message can be viewed by executing `<code>[SHOW WARNINGS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md)</code>`.
+If password validation fails, then the original CrackLib error message can be viewed by executing `[SHOW WARNINGS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md)`.
 
 
 ## Example
@@ -124,13 +124,13 @@ ERROR 1819 (HY000): Your password does not satisfy the current policy requiremen
 ### Issues with PAM Authentication Plugin
 
 
-Prior to [MariaDB 10.4.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1040-release-notes.md), all [password validation plugins](README.md) are incompatible with the `<code>[pam](../authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md)</code>` authentication plugin. See [Authentication Plugin - PAM: Conflicts with Password Validation](../authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#conflicts-with-password-validation) for more information.
+Prior to [MariaDB 10.4.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1040-release-notes.md), all [password validation plugins](README.md) are incompatible with the `[pam](../authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md)` authentication plugin. See [Authentication Plugin - PAM: Conflicts with Password Validation](../authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#conflicts-with-password-validation) for more information.
 
 
 ### SELinux
 
 
-When using the standard [SELinux](../../../security/securing-mariadb/selinux.md) policy with the [mode](../../../security/securing-mariadb/selinux.md#changing-selinuxs-mode) set to `<code>enforcing</code>`, `<code>mysqld</code>` does not have access to `<code>/usr/share/cracklib</code>`, and you may see the following error when attempting to use the `<code>cracklib_password_check</code>` plugin:
+When using the standard [SELinux](../../../security/securing-mariadb/selinux.md) policy with the [mode](../../../security/securing-mariadb/selinux.md#changing-selinuxs-mode) set to `enforcing`, `mysqld` does not have access to `/usr/share/cracklib`, and you may see the following error when attempting to use the `cracklib_password_check` plugin:
 
 
 ```
@@ -147,7 +147,7 @@ SHOW WARNINGS;
 +---------+------+----------------------------------------------------------------+
 ```
 
-And the SELinux `<code>audit.log</code>` will contain errors like the following:
+And the SELinux `audit.log` will contain errors like the following:
 
 
 ```
@@ -155,7 +155,7 @@ type=AVC msg=audit(1548371977.821:66): avc:  denied  { read } for  pid=3537 comm
 type=SYSCALL msg=audit(1548371977.821:66): arch=c000003e syscall=2 success=no exit=-13 a0=7fdd2a674580 a1=0 a2=1b6 a3=1b items=0 ppid=1 pid=3537 auid=4294967295 uid=995 gid=992 euid=995 suid=995 fsuid=995 egid=992 sgid=992 fsgid=992 tty=(none) ses=4294967295 comm="mysqld" exe="/usr/sbin/mysqld" subj=system_u:system_r:mysqld_t:s0 key=(null)
 ```
 
-This can be fixed by creating an SELinux policy that allows `<code>mysqld</code>` to load the CrackLib dictionary. For example:
+This can be fixed by creating an SELinux policy that allows `mysqld` to load the CrackLib dictionary. For example:
 
 
 ```
@@ -198,37 +198,37 @@ See [MDEV-18374](https://jira.mariadb.org/browse/MDEV-18374) for more informatio
 ## System Variables
 
 
-#### `<code>cracklib_password_check_dictionary</code>`
+#### `cracklib_password_check_dictionary`
 
 
-* Description: Sets the path to the CrackLib dictionary. If not set, the default CrackLib dictionary path is used. The parameter expects the base name of a cracklib dictionary (a set of three files with endings `<code>.hwm</code>`, `<code>.pwd</code>`, `<code>.pwi</code>`), not a directory path.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--cracklib-password-check-dictionary=value</code>`
+* Description: Sets the path to the CrackLib dictionary. If not set, the default CrackLib dictionary path is used. The parameter expects the base name of a cracklib dictionary (a set of three files with endings `.hwm`, `.pwd`, `.pwi`), not a directory path.
+* Commandline: `--cracklib-password-check-dictionary=value`
 * Scope: Global
 * Dynamic: No
-* Data Type: `<code>string</code>`
-* Default Value: Depends on the system. Often `<code>/usr/share/cracklib/pw_dict</code>`
+* Data Type: `string`
+* Default Value: Depends on the system. Often `/usr/share/cracklib/pw_dict`
 
 
 
 ## Options
 
 
-#### `<code>cracklib_password_check</code>`
+#### `cracklib_password_check`
 
 
 * Description: Controls how the server should treat the plugin when the server starts up.
 
   * Valid values are:
 
-    * `<code>OFF</code>` - Disables the plugin without removing it from the `<code>[mysql.plugins](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md)</code>` table.
-    * `<code>ON</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
-    * `<code>FORCE</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `<code>FORCE_PLUS_PERMANENT</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with `<code>[UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)</code>` or `<code>[UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)</code>` while the server is running.
+    * `OFF` - Disables the plugin without removing it from the `[mysql.plugins](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md)` table.
+    * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
+    * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with `[UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)` while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--cracklib-password-check=value</code>`
-* Data Type: `<code>enumerated</code>`
-* Default Value: `<code>ON</code>`
-* Valid Values: `<code>OFF</code>`, `<code>ON</code>`, `<code>FORCE</code>`, `<code>FORCE_PLUS_PERMANENT</code>`
+* Commandline: `--cracklib-password-check=value`
+* Data Type: `enumerated`
+* Default Value: `ON`
+* Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
 
 
 

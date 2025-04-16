@@ -16,7 +16,7 @@ JSON_KEY_VALUE(obj, json_path)
 ## Description
 
 
-`<code>JSON_KEY_VALUE</code>` extracts key/value pairs from a JSON object. The JSON path parameter is used to only return key/value pairs for matching JSON objects.
+`JSON_KEY_VALUE` extracts key/value pairs from a JSON object. The JSON path parameter is used to only return key/value pairs for matching JSON objects.
 
 
 ## Example

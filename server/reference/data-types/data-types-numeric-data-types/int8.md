@@ -1,7 +1,7 @@
 
 # INT8
 
-`<code>INT8</code>` is a synonym for [BIGINT](bigint.md).
+`INT8` is a synonym for [BIGINT](bigint.md).
 
 
 ```

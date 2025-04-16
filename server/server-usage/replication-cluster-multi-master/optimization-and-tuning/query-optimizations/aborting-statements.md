@@ -12,7 +12,7 @@ The value can be set globally or per session, as well as per user or per query (
 Replicas are not affected by this variable, however from [MariaDB 10.10](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), there is [slave_max_statement_time](../../standard-replication/replication-and-binary-log-system-variables.md#slave_max_statement_time) which serves the same purpose on replicas only.
 
 
-An associated status variable, [max_statement_time_exceeded](../system-variables/server-status-variables.md#max_statement_time_exceeded), stores the number of queries that have exceeded the execution time specified by [max_statement_time](../system-variables/server-system-variables.md#max_statement_time), and a `<code>MAX_STATEMENT_TIME_EXCEEDED</code>` column was added to the [CLIENT_STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-client_statistics-table.md) and [USER STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_statistics-table.md) Information Schema tables.
+An associated status variable, [max_statement_time_exceeded](../system-variables/server-status-variables.md#max_statement_time_exceeded), stores the number of queries that have exceeded the execution time specified by [max_statement_time](../system-variables/server-system-variables.md#max_statement_time), and a `MAX_STATEMENT_TIME_EXCEEDED` column was added to the [CLIENT_STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-client_statistics-table.md) and [USER STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_statistics-table.md) Information Schema tables.
 
 
 The feature was based upon a patch by Davi Arnaut.
@@ -36,7 +36,7 @@ SET STATEMENT max_statement_time=100 FOR
 ```
 
 max_statement_time per query
-Individual queries can also be limited by adding a `<code>MAX_STATEMENT_TIME</code>` clause to the query. For example:
+Individual queries can also be limited by adding a `MAX_STATEMENT_TIME` clause to the query. For example:
 
 ```
 SELECT MAX_STATEMENT_TIME=2 * FROM t1;
@@ -56,10 +56,10 @@ SELECT MAX_STATEMENT_TIME=2 * FROM t1;
 MySQL 5.7.4 introduced similar functionality, but the MariaDB implementation differs in a number of ways.
 
 
-* The MySQL version of [max_statement_time](../system-variables/server-system-variables.md#max_statement_time) (`<code>max_execution_time</code>`) is defined in millseconds, not seconds
+* The MySQL version of [max_statement_time](../system-variables/server-system-variables.md#max_statement_time) (`max_execution_time`) is defined in millseconds, not seconds
 * MySQL's implementation can only kill SELECTs, while MariaDB's can kill any queries (excluding stored procedures).
 * MariaDB only introduced the [max_statement_time_exceeded](../system-variables/server-status-variables.md#max_statement_time_exceeded) status variable, while MySQL also introduced a number of other variables which were not seen as necessary in MariaDB.
-* The `<code>SELECT MAX_STATEMENT_TIME = N ...</code>` syntax is not valid in MariaDB. In MariaDB one should use `<code>SET STATEMENT MAX_STATEMENT_TIME=N FOR...</code>`.
+* The `SELECT MAX_STATEMENT_TIME = N ...` syntax is not valid in MariaDB. In MariaDB one should use `SET STATEMENT MAX_STATEMENT_TIME=N FOR...`.
 
 
 ## See Also

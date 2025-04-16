@@ -64,7 +64,7 @@ Note that KEY_BLOCK_SIZE is currently ignored in CREATE INDEX, although it is in
 ## Privileges
 
 
-Executing the `<code>CREATE INDEX</code>` statement requires the `<code>[INDEX](../../account-management-sql-commands/grant.md#table-privileges)</code>` privilege for the table or the database.
+Executing the `CREATE INDEX` statement requires the `[INDEX](../../account-management-sql-commands/grant.md#table-privileges)` privilege for the table or the database.
 
 
 ## Online DDL
@@ -79,13 +79,13 @@ See [InnoDB Online DDL Overview](../../../../storage-engines/innodb/innodb-onlin
 ## CREATE OR REPLACE INDEX
 
 
-If the `<code>OR REPLACE</code>` clause is used and if the index already exists, then instead of returning an error, the server will drop the existing index and replace it with the newly defined index.
+If the `OR REPLACE` clause is used and if the index already exists, then instead of returning an error, the server will drop the existing index and replace it with the newly defined index.
 
 
 ## CREATE INDEX IF NOT EXISTS
 
 
-If the `<code>IF NOT EXISTS</code>` clause is used, then the index will only be created if an index with the same name does not already exist. If the index already exists, then a warning will be triggered by default.
+If the `IF NOT EXISTS` clause is used, then the index will only be created if an index with the same name does not already exist. If the index already exists, then a warning will be triggered by default.
 
 
 ## Index Definitions
@@ -115,7 +115,7 @@ See [ALTER TABLE: LOCK](../alter/alter-tablespace.md#lock) for more information.
 ## Progress Reporting
 
 
-MariaDB provides progress reporting for `<code>CREATE INDEX</code>` statement for clients
+MariaDB provides progress reporting for `CREATE INDEX` statement for clients
 that support the new progress reporting protocol. For example, if you were using the [mariadb](../../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) client, then the progress report might look like this::
 
 

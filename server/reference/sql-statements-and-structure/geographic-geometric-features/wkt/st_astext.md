@@ -17,7 +17,7 @@ AsWKT(g)
 Converts a value in internal geometry format to its [WKT](wkt-definition.md) representation and returns the string result.
 
 
-`<code>ST_AsText()</code>`, `<code>AsText()</code>`, `<code>ST_AsWKT()</code>` and `<code>AsWKT()</code>` are all synonyms.
+`ST_AsText()`, `AsText()`, `ST_AsWKT()` and `AsWKT()` are all synonyms.
 
 
 ## Examples

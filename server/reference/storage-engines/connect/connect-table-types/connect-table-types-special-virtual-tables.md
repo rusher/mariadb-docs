@@ -24,7 +24,7 @@ create table source (
 engine=CONNECT table_type=DIR file_name='..\\*.cc';
 ```
 
-When used in a query, the table returns the same file information listing than the system "DIR `<code>*.cc</code>`" statement would return if executed in the same current directory (here supposedly ..\)
+When used in a query, the table returns the same file information listing than the system "DIR `*.cc`" statement would return if executed in the same current directory (here supposedly ..\)
 
 
 For instance, the query:

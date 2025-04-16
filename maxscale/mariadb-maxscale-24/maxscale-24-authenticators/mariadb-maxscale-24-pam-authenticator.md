@@ -7,7 +7,7 @@
 Pluggable authentication module (PAM) is a general purpose authentication API.
 An application using PAM can authenticate a user without knowledge about the
 underlying authentication implementation. The actual authentication scheme is
-defined in the operating system PAM config (e.g. `<code>/etc/pam.d/</code>`), and can be
+defined in the operating system PAM config (e.g. `/etc/pam.d/`), and can be
 quite elaborate. MaxScale supports a very limited form of the PAM protocol,
 which this document details.
 
@@ -16,8 +16,8 @@ which this document details.
 
 
 The MaxScale PAM modules themselves have no configuration. All that is required
-is to change the listener and backend authenticator modules to `<code>PAMAuth</code>` and
-`<code>PAMBackendAuth</code>`, respectively.
+is to change the listener and backend authenticator modules to `PAMAuth` and
+`PAMBackendAuth`, respectively.
 
 
 
@@ -39,13 +39,13 @@ authenticator=PAMBackendAuth
 
 
 
-The PAM authenticator fetches user entries with `<code>plugin='pam'</code>` from the
-`<code>mysql.user</code>` table of a backend. The user accounts also need to have either the
+The PAM authenticator fetches user entries with `plugin='pam'` from the
+`mysql.user` table of a backend. The user accounts also need to have either the
 global SELECT-privilege or a database or a table-level privilege. Privileges
 through a default role are also detected. The PAM service name of a user is read
-from the `<code>authetication_string</code>`-column. The matching PAM service in the
+from the `authetication_string`-column. The matching PAM service in the
 operating system PAM config is used for authenticating the user. If the
-`<code>authetication_string</code>` for a user is empty, the fallback service `<code>mysql</code>` is
+`authetication_string` for a user is empty, the fallback service `mysql` is
 used.
 
 
@@ -70,32 +70,32 @@ The MaxScale PAM authenticator supports a limited version of
 It requires less configuration but is also less accurate than the server
 authentication. Anonymous mapping is enabled in MaxScale if the following user
 exists:
-- Empty username (e.g. `<code>''@'%'</code>` or `<code>''@'myhost.com'</code>`)
-- `<code>plugin = 'pam'</code>`
-- Proxy grant is on (The query `<code>SHOW GRANTS FOR user@host;</code>` returns at least one
-row with `<code>GRANT PROXY ON ...</code>`)
+- Empty username (e.g. `''@'%'` or `''@'myhost.com'`)
+- `plugin = 'pam'`
+- Proxy grant is on (The query `SHOW GRANTS FOR user@host;` returns at least one
+row with `GRANT PROXY ON ...`)
 
 
 When the authenticator detects such users, anonymous account mapping is enabled
 for the hosts of the anonymous users. To verify this, enable the info log
-(`<code>log_info=1</code>` in MaxScale config file) and look for messages such as "Found 2
+(`log_info=1` in MaxScale config file) and look for messages such as "Found 2
 anonymous PAM user(s) ..." and "Added anonymous PAM user ..." during MaxScale
 startup.
 
 
 When mapping is on, the MaxScale PAM authenticator does not require client
-accounts to exist in the `<code>mysql.user</code>`-table received from the backend. MaxScale
+accounts to exist in the `mysql.user`-table received from the backend. MaxScale
 only requires that the hostname of the incoming client matches the host field of
-one of the anonymous users (comparison performed using `<code>LIKE</code>`). If a match is
+one of the anonymous users (comparison performed using `LIKE`). If a match is
 found, MaxScale attempts to authenticate the client to the local machine with
 the username and password supplied. The PAM service used for authentication is
-read from the `<code>authentication_string</code>`-field of the anonymous user. If
+read from the `authentication_string`-field of the anonymous user. If
 authentication was successful, MaxScale then uses the username and password to
 log to the backends.
 
 
 Anonymous mapping is only attempted if the client username is not found in the
-`<code>mysql.user</code>`-table as explained in [Configuration](#configuration). This means,
+`mysql.user`-table as explained in [Configuration](#configuration). This means,
 that if a user is found and the authentication fails, anonymous authentication
 is not attempted even when it could use a different PAM service with a different
 outcome.
@@ -129,8 +129,8 @@ one-time passwords or two-factor authentication.
 The MaxScale PAM authentication module only supports a simple password exchange.
 On the client side, the authentication begins with MaxScale sending an
 AuthSwitchRequest packet. In addition to the command, the packet contains the
-client plugin name `<code>dialog</code>`, a message type byte `<code>4</code>` and the message
-`<code>Password:</code>`. In the next packet, the client should send the password, which
+client plugin name `dialog`, a message type byte `4` and the message
+`Password:`. In the next packet, the client should send the password, which
 MaxScale will forward to the PAM API running on the local machine. If the
 password is correct, an OK packet is sent to the client. If the local PAM API
 asks for additional credentials as is typical in two-factor authentication

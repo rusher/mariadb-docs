@@ -48,7 +48,7 @@ the [Monitor Common](mariadb-maxscale-23-common-monitor-parameters.md) document.
 These are optional parameters specific to the Multi-Master Monitor.
 
 
-### `<code>detect_stale_master</code>`
+### `detect_stale_master`
 
 
 Allow previous master to be available even in case of stopped or misconfigured replication.

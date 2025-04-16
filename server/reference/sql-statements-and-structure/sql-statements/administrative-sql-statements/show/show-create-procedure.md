@@ -24,19 +24,19 @@ Both statements require that:
 * have the [SELECT](../../account-management-sql-commands/grant.md) privilege on the [mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md) table.
 
 
-When none of the above statements are true, the statements display `<code>NULL</code>` for the `<code>Create Procedure</code>` or `<code>Create Function</code>` field.
+When none of the above statements are true, the statements display `NULL` for the `Create Procedure` or `Create Function` field.
 
 
-**Warning** Users with `<code>SELECT</code>` privileges on [mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md) or `<code>USAGE</code>` privileges on `<code>*.*</code>` can view the text of routines, even when they do not have privileges for the function or procedure itself.
+**Warning** Users with `SELECT` privileges on [mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md) or `USAGE` privileges on `*.*` can view the text of routines, even when they do not have privileges for the function or procedure itself.
 
 
-`<code>SHOW CREATE PROCEDURE</code>` quotes identifiers according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable. Prior to [MariaDB 10.6.5](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1065-release-notes.md), [MariaDB 10.5.13](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10513-release-notes.md) and [MariaDB 10.4.22](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10422-release-notes.md), the output of this statement was unreliably affected by the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
+`SHOW CREATE PROCEDURE` quotes identifiers according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable. Prior to [MariaDB 10.6.5](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1065-release-notes.md), [MariaDB 10.5.13](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10513-release-notes.md) and [MariaDB 10.4.22](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10422-release-notes.md), the output of this statement was unreliably affected by the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
 
 
 ## Examples
 
 
-Here's a comparison of the `<code>SHOW CREATE PROCEDURE</code>` and `<code>[SHOW CREATE FUNCTION](show-create-function.md)</code>` statements.
+Here's a comparison of the `SHOW CREATE PROCEDURE` and `[SHOW CREATE FUNCTION](show-create-function.md)` statements.
 
 
 ```
@@ -64,7 +64,7 @@ collation_connection: latin1_swedish_ci
   Database Collation: latin1_swedish_ci
 ```
 
-When the user issuing the statement does not have privileges on the routine, attempting to `<code>[CALL](../../stored-routine-statements/call.md)</code>` the procedure raises Error 1370.
+When the user issuing the statement does not have privileges on the routine, attempting to `[CALL](../../stored-routine-statements/call.md)` the procedure raises Error 1370.
 
 
 ```

@@ -65,7 +65,7 @@ Get a single monitor.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -241,7 +241,7 @@ Get all monitors.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -417,15 +417,15 @@ Create a new monitor. The request body must define at least the following
 fields.
 
 
-* `<code>data.id</code>`
+* `data.id`
 * Name of the monitor
-* `<code>data.type</code>`
-* Type of the object, must be `<code>monitors</code>`
-* `<code>data.attributes.module</code>`
+* `data.type`
+* Type of the object, must be `monitors`
+* `data.attributes.module`
 * The monitor module to use
-* `<code>data.attributes.parameters.user</code>`
+* `data.attributes.parameters.user`
 * The [user](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) to use
-* `<code>data.attributes.parameters.password</code>`
+* `data.attributes.parameters.password`
 * The [password](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) to use
 
 
@@ -477,7 +477,7 @@ the *monitor_interval* parameter.
 Monitor is created:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Update a monitor
@@ -520,13 +520,13 @@ parameters.
 Monitor is modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Invalid request body:
 
 
-`<code>Status: 400 Bad Request</code>`
+`Status: 400 Bad Request`
 
 
 ### Update monitor relationships
@@ -583,13 +583,13 @@ PATCH /v1/monitors/my-monitor/relationships/servers
 Monitor relationships modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Invalid JSON body:
 
 
-`<code>Status: 400 Bad Request</code>`
+`Status: 400 Bad Request`
 
 
 ### Destroy a monitor
@@ -606,7 +606,7 @@ Destroy a created monitor. The monitor must not have relationships to any
 servers in order to be destroyed.
 
 
-This endpoint also supports the `<code>force=yes</code>` parameter that will unconditionally
+This endpoint also supports the `force=yes` parameter that will unconditionally
 delete the monitor by first unlinking it from all servers that it uses.
 
 
@@ -616,13 +616,13 @@ delete the monitor by first unlinking it from all servers that it uses.
 Monitor is deleted:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Monitor could not be deleted:
 
 
-`<code>Status: 400 Bad Request</code>`
+`Status: 400 Bad Request`
 
 
 ### Stop a monitor
@@ -644,7 +644,7 @@ Stops a started monitor.
 Monitor is stopped:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Start a monitor
@@ -666,4 +666,4 @@ Starts a stopped monitor.
 Monitor is started:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`

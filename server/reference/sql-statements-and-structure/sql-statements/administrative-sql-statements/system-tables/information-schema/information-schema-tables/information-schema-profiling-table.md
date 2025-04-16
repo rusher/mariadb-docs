@@ -1,7 +1,7 @@
 
 # Information Schema PROFILING Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>PROFILING</code>` table contains information about statement resource usage. Profiling information is only recorded if the `<code>[profiling](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#profiling)</code>` session variable is set to 1.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `PROFILING` table contains information about statement resource usage. Profiling information is only recorded if the `[profiling](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#profiling)` session variable is set to 1.
 
 
 It contains the following columns:
@@ -32,7 +32,7 @@ It contains the following columns:
 
 
 
-It contains similar information to the `<code>[SHOW PROFILE](../../../show/show-profile.md) and [SHOW PROFILES](../../../show/show-profiles.md)</code>` statements.
+It contains similar information to the `[SHOW PROFILE](../../../show/show-profile.md) and [SHOW PROFILES](../../../show/show-profiles.md)` statements.
 
 
 Profiling is enabled per session. When a session ends, its profiling information is lost.

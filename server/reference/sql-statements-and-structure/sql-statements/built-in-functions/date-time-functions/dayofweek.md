@@ -15,8 +15,8 @@ Returns the day of the week index for the date (1 = Sunday, 2 = Monday, ..., 7 =
 Saturday). These index values correspond to the ODBC standard.
 
 
-This contrasts with `<code>[WEEKDAY()](weekday.md)</code>` which follows a different index numbering
-(`<code>0</code>` = Monday, `<code>1</code>` = Tuesday, ... `<code>6</code>` = Sunday).
+This contrasts with `[WEEKDAY()](weekday.md)` which follows a different index numbering
+(`0` = Monday, `1` = Tuesday, ... `6` = Sunday).
 
 
 ## Examples

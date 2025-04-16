@@ -4,7 +4,7 @@
 ## Performance testing
 
 
-The `<code>performance/perfrun.pl</code>` executes each query against a set of tw servers
+The `performance/perfrun.pl` executes each query against a set of tw servers
 and reports the outcome.
 
 
@@ -12,10 +12,10 @@ and reports the outcome.
 perl performance/perfrun.pl --input-directory=... --dsn1=... --dsn2=... --output-file=... --filter=...
 ```
 
-* `<code class="fixed" style="white-space:pre-wrap">--input-directory</code>` contains the queries to be run, one query
+* `--input-directory` contains the queries to be run, one query
  per file. Alternative sources for queries will be made available in the
  future;
-* `<code class="fixed" style="white-space:pre-wrap">--dsn1</code>` and `<code class="fixed" style="white-space:pre-wrap">--dsn2</code>` specify the locations of
+* `--dsn1` and `--dsn2` specify the locations of
  the two servers being compared in the Perl DBI URL format. If the queries are
  not fully qualified, the DSNs must contain the database name. The username
  and the password are also provided via the DSN. For example:
@@ -26,17 +26,17 @@ perl performance/perfrun.pl --input-directory=... --dsn1=... --dsn2=... --output
 --dsn2=dbi:mysql:host=127.0.0.1:port=19302:user=root:database=test
 ```
 
-* `<code class="fixed" style="white-space:pre-wrap">--output-file=...</code>` specifies a file where matching queries
- will be dumped in a form suitable for follow-up filtering with `<code>perfreport</code>`
-* if no `<code class="fixed" style="white-space:pre-wrap">--filter</code>` is specified, all queries from the input will
+* `--output-file=...` specifies a file where matching queries
+ will be dumped in a form suitable for follow-up filtering with `perfreport`
+* if no `--filter` is specified, all queries from the input will
  be reported;
 
 
 ## Performance reporting
 
 
-The `<code>performance/perfreport.pl</code>` script takes an ouput file created by
-`<code>perfrun</code>` and prints out its contents, possibly applying a filter in the
+The `performance/perfreport.pl` script takes an ouput file created by
+`perfrun` and prints out its contents, possibly applying a filter in the
 process:
 
 
@@ -44,7 +44,7 @@ process:
 perl performance/perfreport.pl --input-file=... --filter=...
 ```
 
-If no `<code class="fixed" style="white-space:pre-wrap">--filter</code>` is specified, all queries present in the input
+If no `--filter` is specified, all queries present in the input
 file are printed.
 
 
@@ -63,34 +63,34 @@ queries.
 The following variables can participate in filter expressions:
 
 
-* Variables from `<code>SHOW SESSION STATUS</code>`, except:
+* Variables from `SHOW SESSION STATUS`, except:
 
   * variables that are not reset at the start of the query, which
- includes `<code>Com_*</code>`, `<code>Uptime</code>`, `<code>Opened_files</code>` and the like;
+ includes `Com_*`, `Uptime`, `Opened_files` and the like;
   * variables that relate to the operation of SSL encryption or the query cache;
-* Variables from `<code>SHOW GLOBAL STATUS LIKE 'Innodb_%'</code>`
+* Variables from `SHOW GLOBAL STATUS LIKE 'Innodb_%'`
 
 
 For each MySQL status variable, 4 Perl variables are provided
 — the value of the MySQL variable from each server,
 their absolute difference and their ratio. For example, for the
-`<code>Innodb_rows_read</code>` MySQL variable, you can use `<code>Innodb_rows_read1</code>`,
-`<code>Innodb_rows_read2</code>` , `<code>Innodb_rows_read_delta</code>` and
-`<code>Innodb_rows_read_ratio</code>` in your Perl filter expressions.
+`Innodb_rows_read` MySQL variable, you can use `Innodb_rows_read1`,
+`Innodb_rows_read2` , `Innodb_rows_read_delta` and
+`Innodb_rows_read_ratio` in your Perl filter expressions.
 
 
 In addition to the MySQL status variables, the framework provides the following
 additional variables:
 
 
-* `<code>$Execution_time{1|2|delta|ratio}</code>` reports the time the query took to run
+* `$Execution_time{1|2|delta|ratio}` reports the time the query took to run
  from start to end in seconds. The value is truncated at milliseconds in order
  to prevent exorbitant performance ratios from being reported on very fast
  queries;
-* `<code>$Temperature</code>` can either be `<code>cold</code>` or `<code>warm</code>` depending on whether the
+* `$Temperature` can either be `cold` or `warm` depending on whether the
  first execution of the query is being processed, or the second.
-* `<code>$Query</code>` contains the text of the query, in order to enable filtering such
- as `<code>$Query !~ m{l_receiptDATE}</code>`
+* `$Query` contains the text of the query, in order to enable filtering such
+ as `$Query !~ m{l_receiptDATE}`
 
 
 For example, the following command-line option:
@@ -123,18 +123,18 @@ Innodb_rows_read                          1166               602              -5
 ```
 
 Only variables whose values are different between the two servers are reported.
-In this particular example, the query ran slower on `<code>5.3.0-MariaDB</code>` with warm
-cache and caused twice as many `<code>Innodb_rows_read</code>`.
+In this particular example, the query ran slower on `5.3.0-MariaDB` with warm
+cache and caused twice as many `Innodb_rows_read`.
 
 
 ## On-disk Data Storage Format
 
 
-The on-disk storage format is `<code>Data::Dumper</code>` objects, wrapped in
-`<code><![CDATA[ ... ]]></code>` tags, without the file being a full-blown XML. The
+The on-disk storage format is `Data::Dumper` objects, wrapped in
+`<![CDATA[ ... ]]>` tags, without the file being a full-blown XML. The
 serialized representation is created by
-`<code>GenTest::QueryPerformanceDelta::serialize()</code>` and is read by using `<code>eval()</code>`
-in `<code>performance/perfreport.pl</code>`
+`GenTest::QueryPerformanceDelta::serialize()` and is read by using `eval()`
+in `performance/perfreport.pl`
 
 
 ## See also:

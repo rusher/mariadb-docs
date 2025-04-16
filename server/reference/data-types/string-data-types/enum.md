@@ -14,8 +14,8 @@ ENUM('value1','value2',...) [CHARACTER SET charset_name] [COLLATE collation_name
 
 An enumeration. A string object that can have only one value, chosen
 from the list of values 'value1', 'value2', ..., NULL or the special 
-'' error value. In theory, an `<code>ENUM</code>` column can have a maximum of 65,535 distinct
-values; in practice, the real maximum depends on many factors. `<code>ENUM</code>` values are represented internally as integers.
+'' error value. In theory, an `ENUM` column can have a maximum of 65,535 distinct
+values; in practice, the real maximum depends on many factors. `ENUM` values are represented internally as integers.
 
 
 Trailing spaces are automatically stripped from ENUM values on table creation.
@@ -30,10 +30,10 @@ ENUMs require relatively little storage space compared to strings, either one or
 An ENUM can also contain NULL and empty values. If the ENUM column is declared to permit NULL values, NULL becomes a valid value, as well as the default value (see below). If [strict SQL Mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) is not enabled, and an invalid value is inserted into an ENUM, a special empty string, with an index value of zero (see Numeric index, below), is inserted, with a warning. This may be confusing, because the empty string is also a possible value, and the only difference if that is this case its index is not 0. Inserting will fail with an error if strict mode is active.
 
 
-If a `<code>DEFAULT</code>` clause is missing, the default value will be:
+If a `DEFAULT` clause is missing, the default value will be:
 
 
-* `<code>NULL</code>` if the column is nullable;
+* `NULL` if the column is nullable;
 * otherwise, the first value in the enumeration.
 
 

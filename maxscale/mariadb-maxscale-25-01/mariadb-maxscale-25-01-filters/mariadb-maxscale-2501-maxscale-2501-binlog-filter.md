@@ -26,7 +26,7 @@ This filter was introduced in MariaDB MaxScale 2.3.0.
 ## Overview
 
 
-The `<code>binlogfilter</code>` can be combined with a `<code>binlogrouter</code>` service to selectively
+The `binlogfilter` can be combined with a `binlogrouter` service to selectively
 replicate the binary log events to replica servers.
 
 
@@ -51,7 +51,7 @@ that there are no ambiguities in the event filtering.
 ## Settings
 
 
-### `<code>match</code>`
+### `match`
 
 
 * Type: [regex](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -60,10 +60,10 @@ that there are no ambiguities in the event filtering.
 * Default: None
 
 
-Include queries that match the regex. See next entry, `<code>exclude</code>`, for more information.
+Include queries that match the regex. See next entry, `exclude`, for more information.
 
 
-### `<code>exclude</code>`
+### `exclude`
 
 
 * Type: [regex](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -75,7 +75,7 @@ Include queries that match the regex. See next entry, `<code>exclude</code>`, fo
 Exclude queries that match the regex.
 
 
-If neither `<code>match</code>` nor `<code>exclude</code>` are defined, the filter does nothing and all events
+If neither `match` nor `exclude` are defined, the filter does nothing and all events
 are replicated. This filter does not accept regular expression options as a separate
 setting, such settings must be defined in the patterns themselves. See the
 [PCRE2 api documentation](https://www.pcre.org/current/doc/html/pcre2api.html#SEC20) for
@@ -84,7 +84,7 @@ more information.
 
 The two settings are matched against the database and table name concatenated
 with a period. For example, the string the patterns are matched against for the
-database `<code>test</code>` and table `<code>t1</code>` is `<code>test.t1</code>`.
+database `test` and table `t1` is `test.t1`.
 
 
 For statement based replication, the pattern is matched against all the tables
@@ -93,7 +93,7 @@ is replicated. If any of the tables matches the *exclude* pattern, the event is
 not replicated.
 
 
-### `<code>rewrite_src</code>`
+### `rewrite_src`
 
 
 * Type: [regex](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -102,10 +102,10 @@ not replicated.
 * Default: None
 
 
-See the next entry, `<code>rewrite_dest</code>`, for more information.
+See the next entry, `rewrite_dest`, for more information.
 
 
-### `<code>rewrite_dest</code>`
+### `rewrite_dest`
 
 
 * Type: [regex](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -114,15 +114,15 @@ See the next entry, `<code>rewrite_dest</code>`, for more information.
 * Default: None
 
 
-`<code>rewrite_src</code>` and `<code>rewrite_dest</code>` control the statement rewriting of the binlogfilter.
-The `<code>rewrite_src</code>` setting is a PCRE2 regular expression that is matched against
+`rewrite_src` and `rewrite_dest` control the statement rewriting of the binlogfilter.
+The `rewrite_src` setting is a PCRE2 regular expression that is matched against
 the default database and the SQL of statement based replication events (query
-events). `<code>rewrite_dest</code>` is the replacement string which supports the normal
-PCRE2 backreferences (e.g the first capture group is `<code>$1</code>`, the second is `<code>$2</code>`,
+events). `rewrite_dest` is the replacement string which supports the normal
+PCRE2 backreferences (e.g the first capture group is `$1`, the second is `$2`,
 etc.).
 
 
-Both `<code>rewrite_src</code>` and `<code>rewrite_dest</code>` must be defined to enable statement rewriting.
+Both `rewrite_src` and `rewrite_dest` must be defined to enable statement rewriting.
 
 
 When statement rewriting is enabled
@@ -141,8 +141,8 @@ the inserted data and is never used as a constant value.
 ## Example Configuration
 
 
-With the following configuration, only events belonging to database `<code>customers</code>`
-are replicated. In addition to this, events for the table `<code>orders</code>` are excluded
+With the following configuration, only events belonging to database `customers`
+are replicated. In addition to this, events for the table `orders` are excluded
 and thus are not replicated.
 
 

@@ -15,7 +15,7 @@ JSON_REPLACE(json_doc, path, val[, path, val] ...)
 Replaces existing values in a JSON document, returning the result, or NULL if any of the arguments are NULL.
 
 
-An error will occur if the JSON document is invalid, the path is invalid or if the path contains a `<code>*</code>` or `<code>**</code>` wildcard.
+An error will occur if the JSON document is invalid, the path is invalid or if the path contains a `*` or `**` wildcard.
 
 
 Paths and values are evaluated from left to right, with the result from the earlier evaluation being used as the value for the next.

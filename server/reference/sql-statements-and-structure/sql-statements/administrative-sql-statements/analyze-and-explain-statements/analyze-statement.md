@@ -5,10 +5,10 @@
 ## Description
 
 
-The `<code>ANALYZE statement</code>` is similar to the `<code>EXPLAIN statement</code>`. `<code>ANALYZE statement</code>` will invoke the optimizer, execute the statement, and then produce `<code>EXPLAIN</code>` output instead of the result set. The `<code>EXPLAIN</code>` output will be annotated with statistics from statement execution.
+The `ANALYZE statement` is similar to the `EXPLAIN statement`. `ANALYZE statement` will invoke the optimizer, execute the statement, and then produce `EXPLAIN` output instead of the result set. The `EXPLAIN` output will be annotated with statistics from statement execution.
 
 
-This lets one check how close the optimizer's estimates about the query plan are to the reality. `<code>ANALYZE</code>` produces an overview, while the
+This lets one check how close the optimizer's estimates about the query plan are to the reality. `ANALYZE` produces an overview, while the
 [ANALYZE FORMAT=JSON](analyze-formatjson-examples.md) command provides a more detailed view of the query plan and the query execution.
 
 
@@ -52,11 +52,11 @@ possible_keys: key1
         Extra: Using index condition; Using where
 ```
 
-Compared to `<code>EXPLAIN</code>`, `<code>ANALYZE</code>` produces two extra columns:
+Compared to `EXPLAIN`, `ANALYZE` produces two extra columns:
 
 
-* `<code>r_rows</code>` is an observation-based counterpart of the rows column. It shows how many rows were actually read from the table.
-* `<code>r_filtered</code>` is an observation-based counterpart of the filtered column. It shows which fraction of rows was left after applying the WHERE condition.
+* `r_rows` is an observation-based counterpart of the rows column. It shows how many rows were actually read from the table.
+* `r_filtered` is an observation-based counterpart of the filtered column. It shows which fraction of rows was left after applying the WHERE condition.
 
 
 ## Interpreting the Output
@@ -127,15 +127,15 @@ Indeed, we can also see customer.r_filtered=0.00. This shows that a part of WHER
 ## ANALYZE FORMAT=JSON
 
 
-[ANALYZE FORMAT=JSON](analyze-formatjson-examples.md) produces JSON output. It produces much more information than tabular `<code>ANALYZE</code>`.
+[ANALYZE FORMAT=JSON](analyze-formatjson-examples.md) produces JSON output. It produces much more information than tabular `ANALYZE`.
 
 
 ## Notes
 
 
-* `<code>ANALYZE UPDATE</code>` or `<code>ANALYZE DELETE</code>` will actually make updates/deletes (`<code>ANALYZE SELECT</code>` will perform the select operation and then discard the resultset).
-* PostgreSQL has a similar command, `<code>EXPLAIN ANALYZE</code>`.
-* The [EXPLAIN in the slow query log](../../../../../server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log.md) feature allows MariaDB to have `<code>ANALYZE</code>` output of slow queries printed into the [slow query log](../../../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md) (see [MDEV-6388](https://jira.mariadb.org/browse/MDEV-6388)).
+* `ANALYZE UPDATE` or `ANALYZE DELETE` will actually make updates/deletes (`ANALYZE SELECT` will perform the select operation and then discard the resultset).
+* PostgreSQL has a similar command, `EXPLAIN ANALYZE`.
+* The [EXPLAIN in the slow query log](../../../../../server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log.md) feature allows MariaDB to have `ANALYZE` output of slow queries printed into the [slow query log](../../../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md) (see [MDEV-6388](https://jira.mariadb.org/browse/MDEV-6388)).
 
 
 ## See Also

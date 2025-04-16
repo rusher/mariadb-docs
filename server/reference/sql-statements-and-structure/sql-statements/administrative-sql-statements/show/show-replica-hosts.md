@@ -26,10 +26,10 @@ SHOW SLAVE HOSTS;
 +------------+-----------+------+-----------+
 ```
 
-* `<code>Server_id</code>`: The unique server ID of the replica server, as configured in the server's option file, or on the command line with [--server-id=value](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md).
-* `<code>Host</code>`: The host name of the replica server, as configured in the server's option file, or on the command line with `<code>--report-host=host_name</code>` (note that this can differ from the machine name as configured in the operating system). Starting in [MariaDB 10.5.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md), if a replica doesn't configure `<code>--report-host</code>` explicitly, the value for the `<code>Host</code>` column is automatically extracted using the network connection's host name or IP address. Prior to 10.5, the Host value is left blank if a replica's `<code>--report-host</code>` parameter is not configured.
-* `<code>Port</code>`: The port the replica server is listening on.
-* `<code>Master_id</code>`: The unique server ID of the primary server that the replica server is replicating from.
+* `Server_id`: The unique server ID of the replica server, as configured in the server's option file, or on the command line with [--server-id=value](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md).
+* `Host`: The host name of the replica server, as configured in the server's option file, or on the command line with `--report-host=host_name` (note that this can differ from the machine name as configured in the operating system). Starting in [MariaDB 10.5.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md), if a replica doesn't configure `--report-host` explicitly, the value for the `Host` column is automatically extracted using the network connection's host name or IP address. Prior to 10.5, the Host value is left blank if a replica's `--report-host` parameter is not configured.
+* `Port`: The port the replica server is listening on.
+* `Master_id`: The unique server ID of the primary server that the replica server is replicating from.
 
 
 Some MariaDB and MySQL versions report another variable, [rpl_recovery_rank](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#rpl_recovery_rank). This
@@ -44,7 +44,7 @@ Requires the [REPLICATION MASTER ADMIN](../../account-management-sql-commands/gr
 
 
 ##### MariaDB starting with [10.5.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md)
-`<code>SHOW REPLICA HOSTS</code>` is an alias for `<code>SHOW SLAVE HOSTS</code>` from [MariaDB 10.5.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md). 
+`SHOW REPLICA HOSTS` is an alias for `SHOW SLAVE HOSTS` from [MariaDB 10.5.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md). 
 
 
 ## See Also
@@ -52,5 +52,5 @@ Requires the [REPLICATION MASTER ADMIN](../../account-management-sql-commands/gr
 
 * [MariaDB replication](../../../../../server-usage/replication-cluster-multi-master/standard-replication/README.md)
 * [Replication threads](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md)
-* [SHOW PROCESSLIST](show-processlist.md). In `<code>[SHOW PROCESSLIST](show-processlist.md)</code>` output, replica threads are identified by `<code>Binlog Dump</code>`
+* [SHOW PROCESSLIST](show-processlist.md). In `[SHOW PROCESSLIST](show-processlist.md)` output, replica threads are identified by `Binlog Dump`
 

@@ -33,7 +33,7 @@ Public key is here [MariaDB-Enterprise-GPG-KEY](https://downloads.mariadb.com/Ma
 * [MXS-3149](https://jira.mariadb.org/browse/MXS-3149) Monitor should remove [Master] when starting swithover
 * [MXS-3143](https://jira.mariadb.org/browse/MXS-3143) FOUND_ROWS() not routed to previous target
 * [MXS-3132](https://jira.mariadb.org/browse/MXS-3132) Monitor timeout defaults are wrong
-* [MXS-3131](https://jira.mariadb.org/browse/MXS-3131) Monitor module not displayed in `<code>show monitors</code>`
+* [MXS-3131](https://jira.mariadb.org/browse/MXS-3131) Monitor module not displayed in `show monitors`
 * [MXS-3123](https://jira.mariadb.org/browse/MXS-3123) Documentation: KB page for 2.4 does not mention maxctrl way to rotate the log
 * [MXS-2680](https://jira.mariadb.org/browse/MXS-2680) Monitor type not shown in show monitors
 
@@ -59,7 +59,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platfor
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

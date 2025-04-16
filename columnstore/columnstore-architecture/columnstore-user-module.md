@@ -28,13 +28,13 @@ It is responsible for the following core functions:
 ## Processes
 
 
-The User Module contains several processes, including `<code>[mysqld](#mariadb-server)</code>`, [ExeMgr](#execution-manager), and [distribution managers](#distribution-managers).
+The User Module contains several processes, including `[mysqld](#mariadb-server)`, [ExeMgr](#execution-manager), and [distribution managers](#distribution-managers).
 
 
 ### MariaDB Server
 
 
-The User Module runs `<code>mysqld</code>`. This is the MariaDB Server running with ColumnStore. It performs the same tasks as a normal MariaDB Server deployment: validating connections, parsing SQL statements, SQL plan generation, and final result-set distribution.
+The User Module runs `mysqld`. This is the MariaDB Server running with ColumnStore. It performs the same tasks as a normal MariaDB Server deployment: validating connections, parsing SQL statements, SQL plan generation, and final result-set distribution.
 
 
 Additionally, this server converts MariaDB Server query plans into ColumnStore query plan format. This format is essentially a parse tree, but adds execution hints from the optimizer to assist the User Module in converting the parse tree to a Job List.

@@ -17,10 +17,10 @@ string *str*. This is the same as the two-argument form of [LOCATE()](locate.md)
 except that the order of the arguments is reversed.
 
 
-`<code>INSTR()</code>` performs a case-insensitive search.
+`INSTR()` performs a case-insensitive search.
 
 
-If any argument is `<code>NULL</code>`, returns `<code>NULL</code>`.
+If any argument is `NULL`, returns `NULL`.
 
 
 ## Examples

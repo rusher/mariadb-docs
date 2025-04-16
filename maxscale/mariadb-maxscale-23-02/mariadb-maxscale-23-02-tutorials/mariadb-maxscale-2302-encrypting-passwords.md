@@ -12,7 +12,7 @@
 There are two options for representing the password, either plain text or
 encrypted passwords may be used. In order to use encrypted passwords a set of
 keys must be generated that will be used by the encryption and decryption
-process. To generate the keys, use the `<code>maxkeys</code>` command.
+process. To generate the keys, use the `maxkeys` command.
 
 
 
@@ -22,12 +22,12 @@ maxkeys
 
 
 
-By default the key file will be generated in `<code>/var/lib/maxscale</code>`. If a different
+By default the key file will be generated in `/var/lib/maxscale`. If a different
 directory is required, it can be given as the first argument to the program. For
-more information, see `<code>maxkeys --help</code>`.
+more information, see `maxkeys --help`.
 
 
-Once the keys have been created the `<code>maxpasswd</code>` command can be used to generate
+Once the keys have been created the `maxpasswd` command can be used to generate
 the encrypted password.
 
 
@@ -40,12 +40,12 @@ maxpasswd plainpassword
 
 
 The username and password, either encrypted or plain text, are stored in the
-service section using the `<code>user</code>` and `<code>password</code>` parameters.
+service section using the `user` and `password` parameters.
 
 
 If a custom location was used for the key file, give it as the first argument to
-`<code>maxpasswd</code>` and pass the password to be encrypted as the second argument. For
-more information, see `<code>maxkeys --help</code>`.
+`maxpasswd` and pass the password to be encrypted as the second argument. For
+more information, see `maxkeys --help`.
 
 
 Here is an example configuration that uses an encrypted password.

@@ -10,7 +10,7 @@ replacement software for the legacy MaxAdmin command line client.
 
 
 By default, the MaxScale REST API listens on port 8989 on the local host. The
-default credentials for the REST API are `<code>admin:mariadb</code>`. The users used by the
+default credentials for the REST API are `admin:mariadb`. The users used by the
 REST API are the same that are used by the MaxAdmin network interface. This
 means that any users created for the MaxAdmin network interface should work with
 the MaxScale REST API and MaxCtrl.
@@ -108,7 +108,7 @@ Commands:
 ### list servers
 
 
-`<code>Usage: list servers</code>`
+`Usage: list servers`
 
 
 List all servers in MaxScale.
@@ -128,7 +128,7 @@ List all servers in MaxScale.
 ### list services
 
 
-`<code>Usage: list services</code>`
+`Usage: list services`
 
 
 List all services and the servers they use.
@@ -147,7 +147,7 @@ List all services and the servers they use.
 ### list listeners
 
 
-`<code>Usage: list listeners <service></code>`
+`Usage: list listeners <service>`
 
 
 List listeners for a service.
@@ -165,7 +165,7 @@ List listeners for a service.
 ### list monitors
 
 
-`<code>Usage: list monitors</code>`
+`Usage: list monitors`
 
 
 List all monitors in MaxScale.
@@ -182,7 +182,7 @@ List all monitors in MaxScale.
 ### list sessions
 
 
-`<code>Usage: list sessions</code>`
+`Usage: list sessions`
 
 
 List all client sessions.
@@ -202,7 +202,7 @@ List all client sessions.
 ### list filters
 
 
-`<code>Usage: list filters</code>`
+`Usage: list filters`
 
 
 List all filters in MaxScale.
@@ -219,7 +219,7 @@ List all filters in MaxScale.
 ### list modules
 
 
-`<code>Usage: list modules</code>`
+`Usage: list modules`
 
 
 List all currently loaded modules.
@@ -236,7 +236,7 @@ List all currently loaded modules.
 ### list threads
 
 
-`<code>Usage: list threads</code>`
+`Usage: list threads`
 
 
 List all worker threads.
@@ -256,7 +256,7 @@ List all worker threads.
 ### list users
 
 
-`<code>Usage: list users</code>`
+`Usage: list users`
 
 
 List network the users that can be used to connect to the MaxScale REST API as
@@ -274,7 +274,7 @@ well as enabled local accounts.
 ### list commands
 
 
-`<code>Usage: list commands</code>`
+`Usage: list commands`
 
 
 List all available module commands.
@@ -319,10 +319,10 @@ Commands:
 ### show server
 
 
-`<code>Usage: show server <server></code>`
+`Usage: show server <server>`
 
 
-Show detailed information about a server. The `<code>Parameters</code>` field contains the currently configured parameters for this server. See `<code>help alter server</code>` for more details about altering server parameters.
+Show detailed information about a server. The `Parameters` field contains the currently configured parameters for this server. See `help alter server` for more details about altering server parameters.
 
 
 | Field | Description |
@@ -346,7 +346,7 @@ Show detailed information about a server. The `<code>Parameters</code>` field co
 ### show servers
 
 
-`<code>Usage: show servers</code>`
+`Usage: show servers`
 
 
 Show detailed information about all servers.
@@ -373,10 +373,10 @@ Show detailed information about all servers.
 ### show service
 
 
-`<code>Usage: show service <service></code>`
+`Usage: show service <service>`
 
 
-Show detailed information about a service. The `<code>Parameters</code>` field contains the currently configured parameters for this service. See `<code>help alter service</code>` for more details about altering service parameters.
+Show detailed information about a service. The `Parameters` field contains the currently configured parameters for this service. See `help alter service` for more details about altering service parameters.
 
 
 | Field | Description |
@@ -396,7 +396,7 @@ Show detailed information about a service. The `<code>Parameters</code>` field c
 ### show services
 
 
-`<code>Usage: show services</code>`
+`Usage: show services`
 
 
 Show detailed information about all services.
@@ -419,10 +419,10 @@ Show detailed information about all services.
 ### show monitor
 
 
-`<code>Usage: show monitor <monitor></code>`
+`Usage: show monitor <monitor>`
 
 
-Show detailed information about a monitor. The `<code>Parameters</code>` field contains the currently configured parameters for this monitor. See `<code>help alter monitor</code>` for more details about altering monitor parameters.
+Show detailed information about a monitor. The `Parameters` field contains the currently configured parameters for this monitor. See `help alter monitor` for more details about altering monitor parameters.
 
 
 | Field | Description |
@@ -438,7 +438,7 @@ Show detailed information about a monitor. The `<code>Parameters</code>` field c
 ### show monitors
 
 
-`<code>Usage: show monitors</code>`
+`Usage: show monitors`
 
 
 Show detailed information about all monitors.
@@ -457,13 +457,13 @@ Show detailed information about all monitors.
 ### show session
 
 
-`<code>Usage: show session <session></code>`
+`Usage: show session <session>`
 
 
-Show detailed information about a single session. The list of sessions can be retrieved with the `<code>list sessions</code>` command. The <session> is the session ID of a particular session.
+Show detailed information about a single session. The list of sessions can be retrieved with the `list sessions` command. The <session> is the session ID of a particular session.
 
 
-The `<code>Connections</code>` field lists the servers to which the session is connected and the `<code>Connection IDs</code>` field lists the IDs for those connections.
+The `Connections` field lists the servers to which the session is connected and the `Connection IDs` field lists the IDs for those connections.
 
 
 | Field | Description |
@@ -485,10 +485,10 @@ The `<code>Connections</code>` field lists the servers to which the session is c
 ### show sessions
 
 
-`<code>Usage: show sessions</code>`
+`Usage: show sessions`
 
 
-Show detailed information about all sessions. See `<code>help show session</code>` for more details.
+Show detailed information about all sessions. See `help show session` for more details.
 
 
 | Field | Description |
@@ -510,10 +510,10 @@ Show detailed information about all sessions. See `<code>help show session</code
 ### show filter
 
 
-`<code>Usage: show filter <filter></code>`
+`Usage: show filter <filter>`
 
 
-The list of services that use this filter is show in the `<code>Services</code>` field.
+The list of services that use this filter is show in the `Services` field.
 
 
 | Field | Description |
@@ -528,7 +528,7 @@ The list of services that use this filter is show in the `<code>Services</code>`
 ### show filters
 
 
-`<code>Usage: show filters</code>`
+`Usage: show filters`
 
 
 Show detailed information of all filters.
@@ -546,7 +546,7 @@ Show detailed information of all filters.
 ### show module
 
 
-`<code>Usage: show module <module></code>`
+`Usage: show module <module>`
 
 
 This command shows all available parameters as well as detailed version information of a loaded module.
@@ -567,7 +567,7 @@ This command shows all available parameters as well as detailed version informat
 ### show modules
 
 
-`<code>Usage: show modules</code>`
+`Usage: show modules`
 
 
 Displays detailed information about all modules.
@@ -588,10 +588,10 @@ Displays detailed information about all modules.
 ### show maxscale
 
 
-`<code>Usage: show maxscale</code>`
+`Usage: show maxscale`
 
 
-See `<code>help alter maxscale</code>` for more details about altering MaxScale parameters.
+See `help alter maxscale` for more details about altering MaxScale parameters.
 
 
 | Field | Description |
@@ -608,7 +608,7 @@ See `<code>help alter maxscale</code>` for more details about altering MaxScale 
 ### show thread
 
 
-`<code>Usage: show thread <thread></code>`
+`Usage: show thread <thread>`
 
 
 Show detailed information about a worker thread.
@@ -642,7 +642,7 @@ Show detailed information about a worker thread.
 ### show threads
 
 
-`<code>Usage: show threads</code>`
+`Usage: show threads`
 
 
 Show detailed information about all worker threads.
@@ -676,10 +676,10 @@ Show detailed information about all worker threads.
 ### show logging
 
 
-`<code>Usage: show logging</code>`
+`Usage: show logging`
 
 
-See `<code>help alter logging</code>` for more details about altering logging parameters.
+See `help alter logging` for more details about altering logging parameters.
 
 
 | Field | Description |
@@ -693,7 +693,7 @@ See `<code>help alter logging</code>` for more details about altering logging pa
 ### show commands
 
 
-`<code>Usage: show commands <module></code>`
+`Usage: show commands <module>`
 
 
 This command shows the parameters the command expects with the parameter descriptions.
@@ -727,13 +727,13 @@ Set options:
 ### set server
 
 
-`<code>Usage: set server <server> <state></code>`
+`Usage: set server <server> <state>`
 
 
 If <server> is monitored by a monitor, this command should only be used to set
-the server into the `<code>maintenance</code>` state. Any other states will be overridden by
+the server into the `maintenance` state. Any other states will be overridden by
 the monitor on the next monitoring interval. To manually control server states,
-use the `<code>stop monitor <name></code>` command to stop the monitor before setting the
+use the `stop monitor <name>` command to stop the monitor before setting the
 server states manually.
 
 
@@ -753,10 +753,10 @@ Commands:
 ### clear server
 
 
-`<code>Usage: clear server <server> <state></code>`
+`Usage: clear server <server> <state>`
 
 
-This command clears a server state set by the `<code>set server <server> <state></code>`
+This command clears a server state set by the `set server <server> <state>`
 command
 
 
@@ -781,14 +781,14 @@ Drain options:
 ### drain server
 
 
-`<code>Usage: drain server <server></code>`
+`Usage: drain server <server>`
 
 
 This command drains the server of connections by first removing it from all
 services after which it waits until all connections are closed. When all
-connections are closed, the server is put into the `<code>maintenance</code>` state and added
+connections are closed, the server is put into the `maintenance` state and added
 back to all the services where it was removed from. To take the server back into
-use, execute `<code>clear server <server> maintenance</code>`.
+use, execute `clear server <server> maintenance`.
 
 
 ## enable
@@ -812,16 +812,16 @@ Enable account options:
 ### enable log-priority
 
 
-`<code>Usage: enable log-priority <log></code>`
+`Usage: enable log-priority <log>`
 
 
-The `<code>debug</code>` log priority is only available for debug builds of MaxScale.
+The `debug` log priority is only available for debug builds of MaxScale.
 
 
 ### enable account
 
 
-`<code>Usage: enable account <name></code>`
+`Usage: enable account <name>`
 
 
 The Linux user accounts are used by the MaxAdmin UNIX Domain Socket interface
@@ -844,16 +844,16 @@ Commands:
 ### disable log-priority
 
 
-`<code>Usage: disable log-priority <log></code>`
+`Usage: disable log-priority <log>`
 
 
-The `<code>debug</code>` log priority is only available for debug builds of MaxScale.
+The `debug` log priority is only available for debug builds of MaxScale.
 
 
 ### disable account
 
 
-`<code>Usage: disable account <name></code>`
+`Usage: disable account <name>`
 
 
 The Linux user accounts are used by the MaxAdmin UNIX Domain Socket interface
@@ -910,18 +910,18 @@ Create user options:
 ### create server
 
 
-`<code>Usage: create server <name> <host> <port></code>`
+`Usage: create server <name> <host> <port>`
 
 
 The created server will not be used by any services or monitors unless the
 --services or --monitors options are given. The list of servers a service or a
-monitor uses can be altered with the `<code>link</code>` and `<code>unlink</code>` commands.
+monitor uses can be altered with the `link` and `unlink` commands.
 
 
 ### create monitor
 
 
-`<code>Usage: create monitor <name> <module> [params...]</code>`
+`Usage: create monitor <name> <module> [params...]`
 
 
 The list of servers given with the --servers option should not contain any
@@ -932,7 +932,7 @@ command is a list of key=value parameters given as the monitor parameters.
 ### create service
 
 
-`<code>Usage: service <name> <router> <params...></code>`
+`Usage: service <name> <router> <params...>`
 
 
 The last argument to this command is a list of key=value parameters given as the
@@ -940,13 +940,13 @@ service parameters. If the --servers or --filters options are used, they must be
 defined after the service parameters.
 
 
-Note that the `<code>user</code>` and `<code>password</code>` parameters must be defined.
+Note that the `user` and `password` parameters must be defined.
 
 
 ### create filter
 
 
-`<code>Usage: filter <name> <module> [params...]</code>`
+`Usage: filter <name> <module> [params...]`
 
 
 The last argument to this command is a list of key=value parameters given as the
@@ -956,7 +956,7 @@ filter parameters.
 ### create listener
 
 
-`<code>Usage: create listener <service> <name> <port></code>`
+`Usage: create listener <service> <name> <port>`
 
 
 The new listener will be taken into use immediately.
@@ -965,12 +965,12 @@ The new listener will be taken into use immediately.
 ### create user
 
 
-`<code>Usage: create user <name> <password></code>`
+`Usage: create user <name> <password>`
 
 
 The created user can be used with the MaxScale REST API as well as the MaxAdmin
 network interface. By default the created user will have read-only privileges.
-To make the user an administrative user, use the `<code>--type=admin</code>` option.
+To make the user an administrative user, use the `--type=admin` option.
 
 
 ## destroy
@@ -994,7 +994,7 @@ Commands:
 ### destroy server
 
 
-`<code>Usage: destroy server <name></code>`
+`Usage: destroy server <name>`
 
 
 The server must be unlinked from all services and monitor before it can be
@@ -1004,7 +1004,7 @@ destroyed.
 ### destroy monitor
 
 
-`<code>Usage: destroy monitor <name></code>`
+`Usage: destroy monitor <name>`
 
 
 The monitor must be unlinked from all servers before it can be destroyed.
@@ -1013,7 +1013,7 @@ The monitor must be unlinked from all servers before it can be destroyed.
 ### destroy listener
 
 
-`<code>Usage: destroy listener <service> <name></code>`
+`Usage: destroy listener <service> <name>`
 
 
 Destroying a listener closes the listening socket, opening it up for reuse.
@@ -1022,7 +1022,7 @@ Destroying a listener closes the listening socket, opening it up for reuse.
 ### destroy service
 
 
-`<code>Usage: destroy service <name></code>`
+`Usage: destroy service <name>`
 
 
 The service must be unlinked from all servers and filters. All listeners for the
@@ -1032,7 +1032,7 @@ service must be destroyed before the service itself can be destroyed.
 ### destroy filter
 
 
-`<code>Usage: destroy filter <name></code>`
+`Usage: destroy filter <name>`
 
 
 The filter must not be used by any service when it is destroyed.
@@ -1041,7 +1041,7 @@ The filter must not be used by any service when it is destroyed.
 ### destroy user
 
 
-`<code>Usage: destroy user <name></code>`
+`Usage: destroy user <name>`
 
 
 The last remaining administrative user cannot be removed. Create a replacement
@@ -1065,7 +1065,7 @@ Commands:
 ### link service
 
 
-`<code>Usage: link service <name> <server...></code>`
+`Usage: link service <name> <server...>`
 
 
 This command links servers to a service, making them available for any
@@ -1078,7 +1078,7 @@ use the old list of servers.
 ### link monitor
 
 
-`<code>Usage: link monitor <name> <server...></code>`
+`Usage: link monitor <name> <server...>`
 
 
 Linking a server to a monitor will add it to the list of servers that are
@@ -1103,7 +1103,7 @@ Commands:
 ### unlink service
 
 
-`<code>Usage: unlink service <name> <server...></code>`
+`Usage: unlink service <name> <server...>`
 
 
 This command unlinks servers from a service, removing them from the list of
@@ -1114,7 +1114,7 @@ the unlinked servers but existing connections can still use the servers.
 ### unlink monitor
 
 
-`<code>Usage: unlink monitor <name> <server...></code>`
+`Usage: unlink monitor <name> <server...>`
 
 
 This command unlinks servers from a monitor, removing them from the list of
@@ -1140,28 +1140,28 @@ Commands:
 ### start service
 
 
-`<code>Usage: start service <name></code>`
+`Usage: start service <name>`
 
 
-This starts a service stopped by `<code>stop service <name></code>`
+This starts a service stopped by `stop service <name>`
 
 
 ### start monitor
 
 
-`<code>Usage: start monitor <name></code>`
+`Usage: start monitor <name>`
 
 
-This starts a monitor stopped by `<code>stop monitor <name></code>`
+This starts a monitor stopped by `stop monitor <name>`
 
 
 ### start services
 
 
-`<code>Usage: start [services|maxscale]</code>`
+`Usage: start [services|maxscale]`
 
 
-This command will execute the `<code>start service</code>` command for all services in
+This command will execute the `start service` command for all services in
 MaxScale.
 
 
@@ -1183,7 +1183,7 @@ Commands:
 ### stop service
 
 
-`<code>Usage: stop service <name></code>`
+`Usage: stop service <name>`
 
 
 Stopping a service will prevent all the listeners for that service from
@@ -1194,20 +1194,20 @@ until they are closed.
 ### stop monitor
 
 
-`<code>Usage: stop monitor <name></code>`
+`Usage: stop monitor <name>`
 
 
 Stopping a monitor will pause the monitoring of the servers. This can be used to
-manually control server states with the `<code>set server</code>` command.
+manually control server states with the `set server` command.
 
 
 ### stop services
 
 
-`<code>Usage: stop [services|maxscale]</code>`
+`Usage: stop [services|maxscale]`
 
 
-This command will execute the `<code>stop service</code>` command for all services in
+This command will execute the `stop service` command for all services in
 MaxScale.
 
 
@@ -1233,28 +1233,28 @@ Commands:
 ### alter server
 
 
-`<code>Usage: alter server <server> <key> <value></code>`
+`Usage: alter server <server> <key> <value>`
 
 
-To display the server parameters, execute `<code>show server <server></code>`
+To display the server parameters, execute `show server <server>`
 
 
 ### alter monitor
 
 
-`<code>Usage: alter monitor <monitor> <key> <value></code>`
+`Usage: alter monitor <monitor> <key> <value>`
 
 
-To display the monitor parameters, execute `<code>show monitor <monitor></code>`
+To display the monitor parameters, execute `show monitor <monitor>`
 
 
 ### alter service
 
 
-`<code>Usage: alter service <service> <key> <value></code>`
+`Usage: alter service <service> <key> <value>`
 
 
-To display the service parameters, execute `<code>show service <service></code>`. Some
+To display the service parameters, execute `show service <service>`. Some
 routers support runtime configuration changes to all parameters. Currently all
 readconnroute, readwritesplit and schemarouter parameters can be changed at
 runtime. In addition to module specific parameters, the following list of common
@@ -1280,7 +1280,7 @@ service parameters can be altered at runtime:
 ### alter service-filters
 
 
-`<code>Usage: alter service-filters <service> [filters...]</code>`
+`Usage: alter service-filters <service> [filters...]`
 
 
 The order of the filters given as the second parameter will also be the order in
@@ -1288,28 +1288,28 @@ which queries pass through the filter chain. If no filters are given, all
 existing filters are removed from the service.
 
 
-For example, the command `<code>maxctrl alter service filters my-service A B C</code>` will
-set the filter chain for the service `<code>my-service</code>` so that A gets the query first
+For example, the command `maxctrl alter service filters my-service A B C` will
+set the filter chain for the service `my-service` so that A gets the query first
 after which it is passed to B and finally to C. This behavior is the same as if
-the `<code>filters=A|B|C</code>` parameter was defined for the service.
+the `filters=A|B|C` parameter was defined for the service.
 
 
 ### alter logging
 
 
-`<code>Usage: alter logging <key> <value></code>`
+`Usage: alter logging <key> <value>`
 
 
-To display the logging parameters, execute `<code>show logging</code>`
+To display the logging parameters, execute `show logging`
 
 
 ### alter maxscale
 
 
-`<code>Usage: alter maxscale <key> <value></code>`
+`Usage: alter maxscale <key> <value>`
 
 
-To display the MaxScale parameters, execute `<code>show maxscale</code>`. The following list
+To display the MaxScale parameters, execute `show maxscale`. The following list
 of parameters can be altered at runtime:
 
 
@@ -1332,7 +1332,7 @@ of parameters can be altered at runtime:
 ### alter user
 
 
-`<code>Usage: alter user <name> <password></code>`
+`Usage: alter user <name> <password>`
 
 
 Changes the password for a user. To change the user type, destroy the user and
@@ -1355,10 +1355,10 @@ Commands:
 ### rotate logs
 
 
-`<code>Usage: rotate logs</code>`
+`Usage: rotate logs`
 
 
-This command is intended to be used with the `<code>logrotate</code>` command.
+This command is intended to be used with the `logrotate` command.
 
 
 ## call
@@ -1377,10 +1377,10 @@ Commands:
 ### call command
 
 
-`<code>Usage: call command <module> <command> [params...]</code>`
+`Usage: call command <module> <command> [params...]`
 
 
-To inspect the list of module commands, execute `<code>list commands</code>`
+To inspect the list of module commands, execute `list commands`
 
 
 ## cluster
@@ -1400,7 +1400,7 @@ Commands:
 ### cluster diff
 
 
-`<code>Usage: cluster diff <target></code>`
+`Usage: cluster diff <target>`
 
 
 The list of host servers is controlled with the --hosts option. The target
@@ -1411,12 +1411,12 @@ format
 ### cluster sync
 
 
-`<code>Usage: cluster sync <target></code>`
+`Usage: cluster sync <target>`
 
 
 This command will alter all MaxScale instances given in the --hosts option to
 represent the <target> MaxScale. If the synchronization of a MaxScale instance
-fails, it will be disabled by executing the `<code>stop maxscale</code>` command on that
+fails, it will be disabled by executing the `stop maxscale` command on that
 instance. Synchronization can be attempted again if a previous attempt failed
 due to a network failure or some other ephemeral error. Any other errors require
 manual synchronization of the MaxScale configuration files and a restart of the
@@ -1444,7 +1444,7 @@ API options:
 ### api get
 
 
-`<code>Usage: get <resource> [path]</code>`
+`Usage: get <resource> [path]`
 
 
 Perform a raw REST API call. The path definition uses JavaScript syntax to

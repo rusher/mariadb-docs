@@ -10,7 +10,7 @@ This page describes how to get [MyRocks in MariaDB](myrocks-in-mariadb-102-vs-ma
 ## Build Process and Requirements
 
 
-MariaDB compile process will compile [MyRocks](myrocks-in-mariadb-102-vs-mariadb-103.md) into `<code class="fixed" style="white-space:pre-wrap">ha_rocksdb.so</code>` by default if the platform supports it (That is, no WITH_ROCKSDB switch is necessary).
+MariaDB compile process will compile [MyRocks](myrocks-in-mariadb-102-vs-mariadb-103.md) into `ha_rocksdb.so` by default if the platform supports it (That is, no WITH_ROCKSDB switch is necessary).
 
 
 Platform requirements:
@@ -48,7 +48,7 @@ cmake .
 make -j10
 ```
 
-This should produce `<code class="fixed" style="white-space:pre-wrap">storage/rocksdb/ha_rocksdb.so</code>` which is MyRocks storage engine in the loadable form.
+This should produce `storage/rocksdb/ha_rocksdb.so` which is MyRocks storage engine in the loadable form.
 
 
 ## Starting MyRocks

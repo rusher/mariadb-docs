@@ -6,14 +6,14 @@
 
 
 Many source data files are formatted with variable length fields and records.
-The simplest format, known as `<code>CSV</code>` (Comma Separated Variables), has column
+The simplest format, known as `CSV` (Comma Separated Variables), has column
 fields separated by a separator character. By default, the separator is a comma
-but can be specified by the `<code>SEP_CHAR</code>` option as any character, for instance
+but can be specified by the `SEP_CHAR` option as any character, for instance
 a semi-colon.
 
 
 If the CSV file first record is the list of column names, specifying the
-`<code>HEADER=1</code>` option will skip the first record on reading. On writing, if the
+`HEADER=1` option will skip the first record on reading. On writing, if the
 file is empty, the column names record is automatically written.
 
 
@@ -84,10 +84,10 @@ will display the table as:
 Many applications produce CSV files having some fields quoted, in particular
 because the field text contains the separator character. For such files,
 specify the 'QUOTED=*n*' option to indicate the level of quoting and/or the
-'`<code>QCHAR=c</code>`' to specify what is this eventual quoting character, which is
-`<code>"</code>` by default. Quoting with single quotes must be specified as
-`<code>QCHAR=''''</code>`. On writing, fields will be quoted depending on the value of
-the quoting level, which is `<code>–1</code>` by default meaning no quoting:
+'`QCHAR=c`' to specify what is this eventual quoting character, which is
+`"` by default. Quoting with single quotes must be specified as
+`QCHAR=''''`. On writing, fields will be quoted depending on the value of
+the quoting level, which is `–1` by default meaning no quoting:
 
 
 |   |   |
@@ -106,22 +106,22 @@ default to 1.
 
 
 **Note 2:** For CSV tables whose separator is the tab character, specify
-`<code>sep_char='\t'</code>`.
+`sep_char='\t'`.
 
 
 **Note 3:** When creating a table on an existing CSV file, you can let
 CONNECT analyze the file and make the column description. However, this is a
-not an elaborate analysis of the file and, for instance, `<code>DATE</code>` fields will
+not an elaborate analysis of the file and, for instance, `DATE` fields will
 not be recognized as such but will be regarded as string fields.
 
 
-**Note 4:** The CSV parser only reads and buffers up to 4KB per row by default, rows longer than this will be truncated when read from the file. If the rows are expected to be longer than this use `<code>lrecl</code>` to increase this. For example to set an 8KB maximum row read you would use `<code>lrecl=8192</code>`
+**Note 4:** The CSV parser only reads and buffers up to 4KB per row by default, rows longer than this will be truncated when read from the file. If the rows are expected to be longer than this use `lrecl` to increase this. For example to set an 8KB maximum row read you would use `lrecl=8192`
 
 
 ### Restrictions on CSV Tables
 
 
-* If `<code>[secure_file_priv](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#secure_file_priv)</code>` is set to the path of some directory, then CSV tables can only be created with files in that directory.
+* If `[secure_file_priv](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#secure_file_priv)` is set to the path of some directory, then CSV tables can only be created with files in that directory.
 
 
 ## FMT Type
@@ -149,7 +149,7 @@ simple example is:
 IP Char(15) not null field_format=' %n%s%n',
 ```
 
-In the above example, the format for this (1st) field is `<code>' %n%s%n'</code>`. Note
+In the above example, the format for this (1st) field is `' %n%s%n'`. Note
 that the blank character at the beginning of this format **is** significant. No
 trailing blank should be specified in the column formats.
 
@@ -169,10 +169,10 @@ This is why all column formats are made of five components:
 
 
 1. An eventual description of what is met and ignored before the column value.
-1. A marker of the beginning of the column value written as `<code>%n</code>`.
+1. A marker of the beginning of the column value written as `%n`.
 1. The format specification of the column value itself.
-1. A marker of the end of the column value written as `<code>%n</code>` (or `<code>%m</code>` for optional fields).
-1. An eventual description of what is met after the column value (not valid is `<code>%m</code>` was used).
+1. A marker of the end of the column value written as `%n` (or `%m` for optional fields).
+1. An eventual description of what is met after the column value (not valid is `%m` was used).
 
 
 For example, taking the file *funny.txt*:
@@ -197,14 +197,14 @@ create table FMTSAMPLE (
 Engine=CONNECT table_type=FMT file_name='funny.txt';
 ```
 
-**Field 1** is an integer (`<code>%d</code>`) with eventual leading blanks.
+**Field 1** is an integer (`%d`) with eventual leading blanks.
 
 
 **Field 2** is separated from field 1 by optional blanks, a comma, and other
 optional blanks and is between single quotes. The leading quote is included in
-component 1 of the column format, followed by the `<code>%n</code>` marker. The column
-value is specified as `<code>%[^']</code>` meaning to keep any characters read until a
-quote is met. The ending marker (`<code>%n</code>`) is followed by the 5th component of
+component 1 of the column format, followed by the `%n` marker. The column
+value is specified as `%[^']` meaning to keep any characters read until a
+quote is met. The ending marker (`%n`) is followed by the 5th component of
 the column format, the single quote that follows the column value.
 
 
@@ -212,7 +212,7 @@ the column format, the single quote that follows the column value.
 
 
 **Field 4,** separated by a semicolon eventually surrounded by blanks, is a
-number with an optional decimal point (`<code>%f</code>`).
+number with an optional decimal point (`%f`).
 
 
 This table will be displayed as:
@@ -249,7 +249,7 @@ This will display an error message such as *“Bad format line x field y of
 FMTSAMPLE”.* To avoid this and accept these records, the corresponding fields
 must be specified as "optional". In the above example, fields 2 and 3 can have
 null values (in lines 3 and 2 respectively). To specify them as optional, their
-format must be terminated by `<code>%m</code>` (instead of the second `<code>%n</code>`). A statement
+format must be terminated by `%m` (instead of the second `%n`). A statement
 such as this can do the table creation:
 
 
@@ -262,7 +262,7 @@ create table FMTAMPLE (
 Engine=CONNECT table_type=FMT file_name='funny.txt';
 ```
 
-Note that, because the statement must be terminated by `<code>%m</code>` with no
+Note that, because the statement must be terminated by `%m` with no
 additional characters, skipping the ending quote of field 2 was moved from the
 end of the second column format to the beginning of the third column format.
 
@@ -285,7 +285,7 @@ for character strings and 0 for numeric fields if it is not.
 
 
 **Note 1:** Because the formats are specified between quotes, quotes belonging
-to the formats must be doubled or escaped to avoid a `<code>CREATE TABLE</code>` statement syntax error.
+to the formats must be doubled or escaped to avoid a `CREATE TABLE` statement syntax error.
 
 
 **Note 2:** Characters separating columns can be included as well in component
@@ -306,10 +306,10 @@ NBONE integer(5) not null field_format=' %n%d%n',
 NBTWO integer(5) field_format=' %n%s%n',
 ```
 
-The first one specifies a required integer field (`<code>%d</code>`), the second line
+The first one specifies a required integer field (`%d`), the second line
 describes a field that can be an integer, but can be replaced by a "-" (or any
 other) character. Specifying the format specification for this column as a
-character field (`<code>%s</code>`) enables to recognize it with no error in all cases. Later
+character field (`%s`) enables to recognize it with no error in all cases. Later
 on, this field will be converted to integer by the column read function, and a
 null 0 value will be generated for field specified in their format as
 non-numeric.
@@ -386,14 +386,14 @@ Engine=CONNECT table_type=FMT lrecl=400
 file_name='e:\\data\\token\\Websamp.dat';
 ```
 
-**Note 1:** Here, `<code>field_length=20</code>` was necessary because the default size
-for datetime columns is only 19. The `<code>lrecl=400</code>` was also specified because
+**Note 1:** Here, `field_length=20` was necessary because the default size
+for datetime columns is only 19. The `lrecl=400` was also specified because
 the actual file contains more information in each records making the record
 size calculated by default too small.
 
 
 **Note 2:** The file name could have been specified as
-`<code>'e:/data/token/Websamp.dat'</code>`.
+`'e:/data/token/Websamp.dat'`.
 
 
 **Note 3:** FMT tables are currently read only.

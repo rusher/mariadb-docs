@@ -34,8 +34,8 @@ passwd=mypwd
 
 
 
-Note that from MaxScale 2.2.1 onwards, the module name is `<code>mariadbmon</code>`; up until
-MaxScale 2.2.0 it was `<code>mysqlmon</code>`. The name `<code>mysqlmon</code>` has been deprecated but can
+Note that from MaxScale 2.2.1 onwards, the module name is `mariadbmon`; up until
+MaxScale 2.2.0 it was `mysqlmon`. The name `mysqlmon` has been deprecated but can
 still be used, although it will cause a warning to be logged.
 
 
@@ -64,7 +64,7 @@ For a list of optional parameters that all monitors support, read the
 These are optional parameters specific to the MariaDB Monitor.
 
 
-### `<code>detect_replication_lag</code>`
+### `detect_replication_lag`
 
 
 A boolean value which controls if replication lag between the master and the
@@ -85,7 +85,7 @@ maxscale_schema database. The monitor user will always try to create the databas
 and the table if they do not exist.
 
 
-### `<code>detect_stale_master</code>`
+### `detect_stale_master`
 
 
 Allow previous master to be available even in case of stopped or misconfigured
@@ -109,7 +109,7 @@ detect_stale_master=true
 
 
 
-### `<code>detect_stale_slave</code>`
+### `detect_stale_slave`
 
 
 Treat running slaves servers without a master server as valid slave servers.
@@ -135,7 +135,7 @@ detect_stale_slave=true
 
 
 
-### `<code>mysql51_replication</code>`
+### `mysql51_replication`
 
 
 Enable support for MySQL 5.1 replication monitoring. This is needed if a MySQL
@@ -149,7 +149,7 @@ mysql51_replication=true
 
 
 
-### `<code>multimaster</code>`
+### `multimaster`
 
 
 Detect multi-master replication topologies. This feature is disabled by default.
@@ -163,9 +163,9 @@ special group ID 0 is assigned to all servers which are not a part of a
 multi-master replication cycle.
 
 
-If one or more masters in a group has the `<code>@@read_only</code>` system variable set to
-`<code>ON</code>`, those servers will receive the Slave status even though they are in the
-multi-master group. Slave servers with `<code>@@read_only</code>` disabled will never receive
+If one or more masters in a group has the `@@read_only` system variable set to
+`ON`, those servers will receive the Slave status even though they are in the
+multi-master group. Slave servers with `@@read_only` disabled will never receive
 the master status.
 
 
@@ -173,8 +173,8 @@ By setting the servers into read-only mode, the user can control which
 server receive the master status. To do this:
 
 
-* Enable `<code>@@read_only</code>` on all servers (preferably through the configuration file)
-* Manually disable `<code>@@read_only</code>` on the server which should be the master
+* Enable `@@read_only` on all servers (preferably through the configuration file)
+* Manually disable `@@read_only` on the server which should be the master
 
 
 This functionality is similar to the [Multi-Master Monitor](mariadb-maxscale-22-multi-master-monitor.md)
@@ -182,7 +182,7 @@ functionality. The only difference is that the MariaDB monitor will also detect
 traditional Master-Slave topologies.
 
 
-### `<code>ignore_external_masters</code>`
+### `ignore_external_masters`
 
 
 Ignore any servers that are not monitored by this monitor but are a part of the
@@ -191,24 +191,24 @@ by default.
 
 
 MaxScale detects if a master server replicates from an external server. When
-this is detected, the server is assigned the `<code>Slave</code>` and `<code>Slave of External
-Server</code>` labels and will be treated as a slave server. Most of the time this
+this is detected, the server is assigned the `Slave` and `Slave of External
+Server` labels and will be treated as a slave server. Most of the time this
 topology is used when MaxScale is used for read scale-out without master
 servers, a Galera cluster with read replicas being a prime example of this
 setup. Sometimes this is not the desired behavior and the external master server
 should be ignored. Most of the time this is due to multi-source replication.
 
 
-When this option is enabled, all servers that have the `<code>Master, Slave, Slave of
-External Server, Running</code>` labels will instead get the `<code>Master, Running</code>` labels.
+When this option is enabled, all servers that have the `Master, Slave, Slave of
+External Server, Running` labels will instead get the `Master, Running` labels.
 
 
-### `<code>detect_standalone_master</code>`
+### `detect_standalone_master`
 
 
 Detect standalone master servers. This feature takes a boolean parameter and
 from MaxScale 2.2.1 onwards is enabled by default. Up until MaxScale 2.2.0 it
-was disabled by default. In MaxScale 2.1.0, this parameter was called `<code>failover</code>`.
+was disabled by default. In MaxScale 2.1.0, this parameter was called `failover`.
 
 
 This parameter is intended to be used with simple, two node master-slave pairs
@@ -226,8 +226,8 @@ looking at the system variables of the server in question.
 
 
 By default, MaxScale will only attempt to deduce if the server can be used as a
-slave server (controlled by the `<code>detect_stale_slave</code>` parameter). When the
-`<code>detect_standalone_master</code>` mode is enabled, MaxScale will also attempt to deduce
+slave server (controlled by the `detect_stale_slave` parameter). When the
+`detect_standalone_master` mode is enabled, MaxScale will also attempt to deduce
 whether the server can be used as a master server. This is done by checking that
 the server is not in read-only mode and that it is not configured as a slave.
 
@@ -242,9 +242,9 @@ have been met:
 
 
 * Previous attempts to connect to other servers in the cluster have failed,
- controlled by the `<code>failcount</code>` parameter
+ controlled by the `failcount` parameter
 * There is only one running server among the monitored servers
-* The value of the `<code>@@read_only</code>` system variable is set to `<code>OFF</code>`
+* The value of the `@@read_only` system variable is set to `OFF`
 
 
 In 2.1.1, the following additional condition was added:
@@ -253,7 +253,7 @@ In 2.1.1, the following additional condition was added:
 * The last running server is not configured as a slave
 
 
-If the value of the `<code>allow_cluster_recovery</code>` parameter is set to false, the monitor
+If the value of the `allow_cluster_recovery` parameter is set to false, the monitor
 sets all other servers into maintenance mode. This is done to prevent accidental
 use of the failed servers if they came back online. If the failed servers come
 back up, the maintenance mode needs to be manually cleared once replication has
@@ -265,7 +265,7 @@ been set up.
  of acting as master servers.
 
 
-### `<code>failcount</code>`
+### `failcount`
 
 
 Number of failures that must occur on all failed servers before a standalone
@@ -273,27 +273,27 @@ server is labelled as a master. The default value is 5 failures.
 
 
 The monitor will attempt to contact all servers once per monitoring cycle. When
-`<code>detect_standalone_master</code>` is enabled, all of the failed servers must fail
+`detect_standalone_master` is enabled, all of the failed servers must fail
 *failcount* number of connection attempts before the last server is labeled as
 the master.
 
 
 The formula for calculating the actual number of milliseconds before the server
-is labelled as the master is `<code>monitor_interval * failcount</code>`.
+is labelled as the master is `monitor_interval * failcount`.
 
 
-If automatic failover is enabled (`<code>auto_failover=true</code>`), this setting also
+If automatic failover is enabled (`auto_failover=true`), this setting also
 controls how many times the master server must fail to respond before failover
 begins.
 
 
-### `<code>allow_cluster_recovery</code>`
+### `allow_cluster_recovery`
 
 
 Allow recovery after the cluster has dropped down to one server. This feature
 takes a boolean parameter is enabled by default. This parameter requires that
-`<code>detect_standalone_master</code>` is set to true. In MaxScale 2.1.0, this parameter was
-called `<code>failover_recovery</code>`.
+`detect_standalone_master` is set to true. In MaxScale 2.1.0, this parameter was
+called `failover_recovery`.
 
 
 When this parameter is disabled, if the last remaining server is labelled as the
@@ -308,16 +308,16 @@ cluster. One of these agents is the *replication-manager* which automatically
 configures the failed servers as new slaves of the current master.
 
 
-### `<code>enforce_read_only_slaves</code>`
+### `enforce_read_only_slaves`
 
 
 This feature is disabled by default. If set to ON, the monitor attempts to set
-the server `<code>read_only</code>` flag to ON on any slave server with `<code>read_only</code>` OFF. The
+the server `read_only` flag to ON on any slave server with `read_only` OFF. The
 flag is checked at every monitor iteration. The monitor user requires the
-SUPER-privilege for this feature to work. While the `<code>read_only</code>`-flag is ON, only
+SUPER-privilege for this feature to work. While the `read_only`-flag is ON, only
 users with the SUPER-privilege can write to the backend server. If temporary
 write access is required, this feature should be disabled before attempting to
-disable `<code>read_only</code>`. Otherwise the monitor would quickly re-enable it.
+disable `read_only`. Otherwise the monitor would quickly re-enable it.
 
 
 ## Failover, switchover and auto-rejoin
@@ -330,10 +330,10 @@ master), *switchover* (swapping a slave with a running master) and *rejoin*
 controlling them are presented in this section.
 
 
-These features require that the monitor user (`<code>user</code>`) has the SUPER and RELOAD privileges.
+These features require that the monitor user (`user`) has the SUPER and RELOAD privileges.
 In addition, the monitor needs to know which username and password a slave
-should use when starting replication. These are given in `<code>replication_user</code>` and
-`<code>replication_password</code>`.
+should use when starting replication. These are given in `replication_user` and
+`replication_password`.
 
 
 All three operations can be activated manually through MaxAdmin/MaxCtrl. All
@@ -360,9 +360,9 @@ following parameters define the server to promote (SlaveServ3) and the server to
 demote (MasterServ). For rejoin, the server to join (NewServer2) is required.
 
 
-Failover can also activate automatically, if `<code>auto_failover</code>` is on. The
+Failover can also activate automatically, if `auto_failover` is on. The
 activation begins when the master has been down for a number of monitor
-iterations defined in `<code>failcount</code>`.
+iterations defined in `failcount`.
 
 
 Rejoin stands for starting replication on a standalone server or redirecting a
@@ -381,14 +381,14 @@ cluster master info. These criteria mean that a STOP SLAVE does not yet set a
 slave as standalone.
 
 
-With `<code>auto_rejoin</code>` active, the monitor will try to rejoin any server matching
+With `auto_rejoin` active, the monitor will try to rejoin any server matching
 the above requirements. When activating rejoin manually, the user-designated
 server must fulfill the same requirements.
 
 
 The user can define files with SQL statements which are executed on any server
 being demoted or promoted by cluster manipulation commands. See the sections on
-`<code>promotion_sql_file</code>` and `<code>demotion_sql_file</code>` for more information.
+`promotion_sql_file` and `demotion_sql_file` for more information.
 
 
 ### Limitations and requirements
@@ -398,7 +398,7 @@ Switchover and failover only understand simple topologies. They will not work if
 the cluster has multiple masters, relay masters, or if the topology is circular.
 The server cluster is assumed to be well-behaving with no significant
 replication lag and all commands that modify the cluster complete in a few
-seconds (faster than `<code>backend_read_timeout</code>` and `<code>backend_write_timeout</code>`).
+seconds (faster than `backend_read_timeout` and `backend_write_timeout`).
 
 
 The backends must all use GTID-based replication, and the domain id should not
@@ -428,7 +428,7 @@ the new master does not have *log_slave_updates* on.
 
 
 If an automatic cluster operation such as auto-failover or auto-rejoin fails,
-all cluster modifying operations are disabled for `<code>failcount</code>` monitor iterations,
+all cluster modifying operations are disabled for `failcount` monitor iterations,
 after which the operation may be retried. Similar logic applies if the cluster is
 unsuitable for such operations, e.g. replication is not using GTID.
 
@@ -444,8 +444,8 @@ have an external master.
 
 If a failover/switchover happens, the new master server is set to replicate from
 the cluster external master server. The usename and password for the replication
-are defined in `<code>replication_user</code>` and `<code>replication_password</code>`. The address and
-port used are the ones shown by `<code>SHOW ALL SLAVES STATUS</code>` on the old cluster
+are defined in `replication_user` and `replication_password`. The address and
+port used are the ones shown by `SHOW ALL SLAVES STATUS` on the old cluster
 master server. In the case of switchover, the old master also stops replicating
 from the external server to preserve the topology.
 
@@ -460,7 +460,7 @@ master.
 ### Configuration parameters
 
 
-#### `<code>auto_failover</code>`
+#### `auto_failover`
 
 
 Enable automated master failover. This parameter expects a boolean value and the
@@ -469,15 +469,15 @@ default value is false.
 
 When automatic failover is enabled, traditional MariaDB Master-Slave clusters
 will automatically elect a new master if the old master goes down and stays down
-a number of iterations given in `<code>failcount</code>`. Failover will not take place when
+a number of iterations given in `failcount`. Failover will not take place when
 MaxScale is configured as a passive instance. For details on how MaxScale
-behaves in passive mode, see the documentation on `<code>failover_timeout</code>` below.
+behaves in passive mode, see the documentation on `failover_timeout` below.
 
 
 The monitor user must have the SUPER and RELOAD privileges for failover to work.
 
 
-#### `<code>auto_rejoin</code>`
+#### `auto_rejoin`
 
 
 Enable automatic joining of server to the cluster. This parameter expects a
@@ -498,34 +498,34 @@ For example, consider the following event series.
 
 
 Slave A is still trying to replicate from the downed master, since it wasn't
-online during failover. If `<code>auto_rejoin</code>` is on, Slave A will quickly be
+online during failover. If `auto_rejoin` is on, Slave A will quickly be
 redirected to Slave B, the current master.
 
 
-#### `<code>replication_user</code>` and `<code>replication_password</code>`
+#### `replication_user` and `replication_password`
 
 
 The username and password of the replication user. These are given as the values
-for `<code>MASTER_USER</code>` and `<code>MASTER_PASSWORD</code>` whenever a `<code>CHANGE MASTER TO</code>` command is
+for `MASTER_USER` and `MASTER_PASSWORD` whenever a `CHANGE MASTER TO` command is
 executed.
 
 
-Both `<code>replication_user</code>` and `<code>replication_password</code>` parameters must be defined if
+Both `replication_user` and `replication_password` parameters must be defined if
 a custom replication user is used. If neither of the parameters is defined, the
-`<code>CHANGE MASTER TO</code>` command will use the monitor credentials for the replication
+`CHANGE MASTER TO` command will use the monitor credentials for the replication
 user.
 
 
-The credentials used for replication must have the `<code>REPLICATION SLAVE</code>`
+The credentials used for replication must have the `REPLICATION SLAVE`
 privilege.
 
 
-`<code>replication_password</code>` uses the same encryption scheme as other password
-parameters. If password encryption is in use, `<code>replication_password</code>` must be
+`replication_password` uses the same encryption scheme as other password
+parameters. If password encryption is in use, `replication_password` must be
 encrypted with the same key to avoid erroneous decryption.
 
 
-#### `<code>failover_timeout</code>` and `<code>switchover_timeout</code>`
+#### `failover_timeout` and `switchover_timeout`
 
 
 Time limit for the cluster failover and switchover in seconds. The default values
@@ -537,23 +537,23 @@ period, a message is logged and automatic failover is disabled. This prevents
 further automatic modifications to the misbehaving cluster.
 
 
-`<code>failover_timeout</code>` also controls how long a MaxScale instance that has
+`failover_timeout` also controls how long a MaxScale instance that has
 transitioned from passive to active will wait for a failover to take place after
 an apparent loss of a master server. If no new master server is detected within
 the configured time period, failover will be initiated again.
 
 
-#### `<code>verify_master_failure</code>` and `<code>master_failure_timeout</code>`
+#### `verify_master_failure` and `master_failure_timeout`
 
 
 Enable additional master failure verification for automatic failover.
-`<code>verify_master_failure</code>` is a boolean value (default: true) which enables this
-feature and `<code>master_failure_timeout</code>` defines the timeout in seconds (default: 10).
+`verify_master_failure` is a boolean value (default: true) which enables this
+feature and `master_failure_timeout` defines the timeout in seconds (default: 10).
 
 
 The failure verification is performed by checking whether the slaves are still
 connected to the master and receiving events. Effectively, if a slave has
-received an event within `<code>master_failure_timeout</code>` seconds, the master is not
+received an event within `master_failure_timeout` seconds, the master is not
 considered down when deciding whether to auto_failover.
 
 
@@ -563,11 +563,11 @@ a faster failover when the master server crashes, as that causes immediate
 disconnection.
 
 
-For automatic failover to activate, the `<code>failcount</code>` requirement must also be
+For automatic failover to activate, the `failcount` requirement must also be
 met.
 
 
-#### `<code>servers_no_promotion</code>`
+#### `servers_no_promotion`
 
 
 This is a comma-separated list of server names that will not be chosen for
@@ -584,7 +584,7 @@ servers_no_promotion=backup_dc_server1,backup_dc_server2
 
 
 
-#### `<code>promotion_sql_file</code>` and `<code>demotion_sql_file</code>`
+#### `promotion_sql_file` and `demotion_sql_file`
 
 
 These optional settings are paths to text files with SQL statements in them.
@@ -600,12 +600,12 @@ grants for the custom commands to succeed.
 
 
 When promoting a slave to master during switchover or failover, the
-`<code>promotion_sql_file</code>` is read and executed on the new master server after its
+`promotion_sql_file` is read and executed on the new master server after its
 read-only flag is disabled. The commands are ran *before* starting replication
 from an external master if any.
 
 
-`<code>demotion_sql_file</code>` is ran on an old master during demotion to slave, before the
+`demotion_sql_file` is ran on an old master during demotion to slave, before the
 old master starts replicating from the new master. The file is also ran before
 rejoining a standalone server to the cluster, as the standalone server is
 typically a former master server. When redirecting a slave replicating from a
@@ -613,9 +613,9 @@ wrong master, the sql-file is not executed.
 
 
 Since the queries in the files are ran during operations which modify
-replication topology, care is required. If `<code>promotion_sql_file</code>` contains data
+replication topology, care is required. If `promotion_sql_file` contains data
 modification (DML) queries, the new master server may not be able to
-successfully replicate from an external master. `<code>demotion_sql_file</code>` should never
+successfully replicate from an external master. `demotion_sql_file` should never
 contain DML queries, as these may not replicate to the slave servers before
 slave threads are stopped, breaking replication.
 
@@ -635,7 +635,7 @@ Both failover and switchover can be activated manually through the REST API or
 MaxAdmin. The commands are only performed when MaxScale is in active mode.
 
 
-It is safe to perform switchover or failover even with `<code>auto_failover</code>` on, since
+It is safe to perform switchover or failover even with `auto_failover` on, since
 the automatic operation cannot happen simultaneously with the manual one.
 
 
@@ -649,10 +649,10 @@ When switchover is iniated via the REST-API, the URL path is:
 
 
 
-where `<code><monitor-instance></code>` is the monitor section mame from the MaxScale
-configuration file, `<code><new-master></code>` the name of the server that should be
-made into the new master and `<code><current-master></code>` the server that currently
-is the master. If there is no master currently, then `<code><current-master></code>`
+where `<monitor-instance>` is the monitor section mame from the MaxScale
+configuration file, `<new-master>` the name of the server that should be
+made into the new master and `<current-master>` the server that currently
+is the master. If there is no master currently, then `<current-master>`
 need not be specified.
 
 
@@ -670,8 +670,8 @@ servers=server1, server2, server3, server 4
 
 
 
-with the assumption that `<code>server2</code>` is the current master, then the URL
-path for making `<code>server4</code>` the new master would be:
+with the assumption that `server2` is the current master, then the URL
+path for making `server4` the new master would be:
 
 
 
@@ -681,8 +681,8 @@ path for making `<code>server4</code>` the new master would be:
 
 
 
-The REST-API path for manual failover is similar, although the `<code><new-master></code>`
-and `<code><current-master></code>` fields are left out.
+The REST-API path for manual failover is similar, although the `<new-master>`
+and `<current-master>` fields are left out.
 
 
 

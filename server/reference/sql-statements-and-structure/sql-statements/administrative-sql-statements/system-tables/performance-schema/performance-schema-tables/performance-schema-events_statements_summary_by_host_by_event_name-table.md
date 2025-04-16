@@ -37,7 +37,7 @@ The [Performance Schema](performance-schema-table_handles-table.md) events_state
 
 
 
-The `<code>*_TIMER_WAIT</code>` columns only calculate results for timed events, as non-timed events have a `<code>NULL</code>` wait time.
+The `*_TIMER_WAIT` columns only calculate results for timed events, as non-timed events have a `NULL` wait time.
 
 
 ## Example

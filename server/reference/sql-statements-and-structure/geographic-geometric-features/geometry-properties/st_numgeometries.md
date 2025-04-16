@@ -12,10 +12,10 @@ NumGeometries(gc)
 ## Description
 
 
-Returns the number of geometries in the GeometryCollection `<code>gc</code>`.
+Returns the number of geometries in the GeometryCollection `gc`.
 
 
-`<code>ST_NumGeometries()</code>` and `<code>NumGeometries()</code>` are synonyms.
+`ST_NumGeometries()` and `NumGeometries()` are synonyms.
 
 
 ## Example

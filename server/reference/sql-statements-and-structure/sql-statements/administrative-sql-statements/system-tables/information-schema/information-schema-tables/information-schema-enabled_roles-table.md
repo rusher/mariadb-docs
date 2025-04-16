@@ -1,7 +1,7 @@
 
 # Information Schema ENABLED_ROLES Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>ENABLED_ROLES</code>` table shows the enabled [roles](../../../../../../../security/user-account-management/roles/roles_overview.md) for the current session.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `ENABLED_ROLES` table shows the enabled [roles](../../../../../../../security/user-account-management/roles/roles_overview.md) for the current session.
 
 
 It contains the following column:
@@ -15,7 +15,7 @@ It contains the following column:
 
 
 
-This table lists all roles that are currently enabled, one role per row — the current role, roles granted to the current role, roles granted to these roles and so on. If no role is set, the row contains a `<code>NULL</code>` value.
+This table lists all roles that are currently enabled, one role per row — the current role, roles granted to the current role, roles granted to these roles and so on. If no role is set, the row contains a `NULL` value.
 
 
 The roles that the current user can enable are listed in the [APPLICABLE_ROLES](information-schema-applicable_roles-table.md) Information Schema table.

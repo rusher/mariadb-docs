@@ -12,13 +12,13 @@ There are two modes of crash recovery:
 
 
 * Automatic crash recovery.
-* Manual heuristic recovery when `<code>[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` is set to some value other than `<code>OFF</code>`.
+* Manual heuristic recovery when `[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` is set to some value other than `OFF`.
 
 
 ## Automatic Crash Recovery
 
 
-Automatic crash recovery occurs during startup when MariaDB needs to recover from a crash and `<code>[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` is set to `<code>OFF</code>`, which is the default value.
+Automatic crash recovery occurs during startup when MariaDB needs to recover from a crash and `[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` is set to `OFF`, which is the default value.
 
 
 ### Automatic Crash Recovery with the Binary Log-Based Transaction Coordinator Log
@@ -50,14 +50,14 @@ If MariaDB needs to perform automatic crash recovery and if the [binary log](../
 ## Manual Heuristic Recovery
 
 
-Manual heuristic recovery occurs when `<code>[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` is set to some value other than `<code>OFF</code>`. This might be needed if the server finds prepared transactions during crash recovery that are not in the transaction coordinator log. For example, the [error log](../error-log.md) might contain an error like this:
+Manual heuristic recovery occurs when `[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` is set to some value other than `OFF`. This might be needed if the server finds prepared transactions during crash recovery that are not in the transaction coordinator log. For example, the [error log](../error-log.md) might contain an error like this:
 
 
 ```
 [ERROR] Found 1 prepared transactions! It means that mysqld was not shut down properly last time and critical recovery information (last binlog or tc.log file) was manually deleted after a crash. You have to start mysqld with --tc-heuristic-recover switch to commit or rollback pending transactions.
 ```
 
-When manual heuristic recovery is initiated, MariaDB will ignore information about transactions in the transaction coordinator log during the recovery process. Prepared transactions that are encountered during the recovery process will either be rolled back or committed, depending on the value of `<code>[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>`.
+When manual heuristic recovery is initiated, MariaDB will ignore information about transactions in the transaction coordinator log during the recovery process. Prepared transactions that are encountered during the recovery process will either be rolled back or committed, depending on the value of `[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)`.
 
 
 When manual heuristic recovery is initiated, the [error log](../error-log.md) will contain a message like this:
@@ -70,7 +70,7 @@ When manual heuristic recovery is initiated, the [error log](../error-log.md) wi
 ### Manual Heuristic Recovery with the Binary Log-Based Transaction Coordinator Log
 
 
-If `<code>[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` is set to some value other than `<code>OFF</code>` and if the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is enabled, then MariaDB will ignore information about transactions in the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) during the recovery process. Prepared transactions that are encountered during the recovery process will either be rolled back or committed, depending on the value of `<code>[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>`.
+If `[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` is set to some value other than `OFF` and if the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is enabled, then MariaDB will ignore information about transactions in the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) during the recovery process. Prepared transactions that are encountered during the recovery process will either be rolled back or committed, depending on the value of `[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)`.
 
 
 After the recovery process is complete, MariaDB will create a new empty [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file, so that the old corrupt ones can be ignored.
@@ -79,5 +79,5 @@ After the recovery process is complete, MariaDB will create a new empty [binary 
 ### Manual Heuristic Recovery with the Memory-Mapped File-Based Transaction Coordinator Log
 
 
-If `<code>[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` is set to some value other than `<code>OFF</code>` and if the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is **not** enabled, then MariaDB will ignore information about transactions in the the memory-mapped file defined by the `<code>[--log-tc](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` option during the recovery process. Prepared transactions that are encountered during the recovery process will either be rolled back or committed, depending on the value of `<code>[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>`.
+If `[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` is set to some value other than `OFF` and if the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is **not** enabled, then MariaDB will ignore information about transactions in the the memory-mapped file defined by the `[--log-tc](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` option during the recovery process. Prepared transactions that are encountered during the recovery process will either be rolled back or committed, depending on the value of `[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)`.
 

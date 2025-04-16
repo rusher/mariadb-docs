@@ -15,7 +15,7 @@ TINYINT[(M)] [SIGNED | UNSIGNED | ZEROFILL]
 A very small [integer](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md). The signed range is -128 to 127. The unsigned range is 0 to 255. For details on the attributes, see [Numeric Data Type Overview](numeric-data-type-overview.md).
 
 
-[INT1](int1.md), [BOOL, and BOOLEAN](boolean.md) are synonyms for `<code>TINYINT</code>`.
+[INT1](int1.md), [BOOL, and BOOLEAN](boolean.md) are synonyms for `TINYINT`.
 
 
 ## Examples
@@ -61,7 +61,7 @@ SELECT * FROM tinyints;
 ### SIGNED and UNSIGNED
 
 
-The `<code>TINYINT</code>` data type may be `<code>SIGNED</code>` (allowing negative values) or `<code>UNSIGNED</code>` (not allowing negative values).
+The `TINYINT` data type may be `SIGNED` (allowing negative values) or `UNSIGNED` (not allowing negative values).
 
 
 Example of TINYINT SIGNED (the default):
@@ -103,7 +103,7 @@ INSERT INTO tinyint_unsigned_example VALUES
 ### Out-of-Range
 
 
-A value is considered "out-of-range" when it is too small or too large to be stored in a data type. When `<code>sql_mode=STRICT_TRANS_TABLES</code>` (the default) is set, an out-of-range value generates an error. If strict mode is not in effect, the value is rounded to the nearest valid value and a warning is generated (which might be hidden, depending on your warning settings).
+A value is considered "out-of-range" when it is too small or too large to be stored in a data type. When `sql_mode=STRICT_TRANS_TABLES` (the default) is set, an out-of-range value generates an error. If strict mode is not in effect, the value is rounded to the nearest valid value and a warning is generated (which might be hidden, depending on your warning settings).
 
 
 An example of non-strict out-of-range behavior:
@@ -170,10 +170,10 @@ SELECT * FROM tinyint_unsigned_example;
 ### TINYINT ZEROFILL
 
 
-A special type of `<code>TINYINT UNSIGNED</code>` is `<code>TINYINT ZEROFILL</code>`, which pads out the values with leading zeros in SELECT results. The number of leading zeros are just enough to pad the field out to the length of the type's maximum unsigned value, but the zeros are not included in an expression result or in a UNION `<code>SELECT</code>` column.
+A special type of `TINYINT UNSIGNED` is `TINYINT ZEROFILL`, which pads out the values with leading zeros in SELECT results. The number of leading zeros are just enough to pad the field out to the length of the type's maximum unsigned value, but the zeros are not included in an expression result or in a UNION `SELECT` column.
 
 
-Using `<code>TINYINT ZEROFILL</code>` works the same way as `<code>TINYINT UNSIGNED</code>` for most operations except a simple `<code>SELECT</code>`. For example, with the following test table setup:
+Using `TINYINT ZEROFILL` works the same way as `TINYINT UNSIGNED` for most operations except a simple `SELECT`. For example, with the following test table setup:
 
 
 ```

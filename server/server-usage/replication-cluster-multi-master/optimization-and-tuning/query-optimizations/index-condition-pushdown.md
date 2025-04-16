@@ -2,7 +2,7 @@
 # Index Condition Pushdown
 
 
-Index Condition Pushdown is an optimization that is applied for access methods that access table data through indexes: `<code>range</code>`, `<code>ref</code>`, `<code>eq_ref</code>`, `<code>ref_or_null</code>`, and [Batched Key Access](../../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/block-based-join-algorithms.md#batch-key-access-join).
+Index Condition Pushdown is an optimization that is applied for access methods that access table data through indexes: `range`, `ref`, `eq_ref`, `ref_or_null`, and [Batched Key Access](../../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/block-based-join-algorithms.md#batch-key-access-join).
 
 
 The idea is to check part of the WHERE condition that refers to index fields (we call it *Pushed Index Condition*) as soon as we've accessed the index. If the *Pushed Index Condition* is not satisfied, we won't need to read the whole table record.
@@ -115,7 +115,7 @@ There are two server status variables:
 
 
 
-That way, the value `<code class="fixed" style="white-space:pre-wrap">Handler_icp_attempts - Handler_icp_match</code>` shows the number records that the server did not have to read because of Index Condition Pushdown.
+That way, the value `Handler_icp_attempts - Handler_icp_match` shows the number records that the server did not have to read because of Index Condition Pushdown.
 
 
 ## Limitations
@@ -124,7 +124,7 @@ That way, the value `<code class="fixed" style="white-space:pre-wrap">Handler_ic
 * Currently, virtual column indexes can't be used for index condition pushdown. Instead, a generated column can be made declared STORED. Then, index condition pushdown will be possible.
 
 
-* Index Condition Pushdown can't be used with backward-ordered index scan. When the optimizer needs to execute an `<code>ORDER BY ... DESC</code>` query which can be handled by using a backward-ordered index scan, it will disable Index Condition Pushdown.
+* Index Condition Pushdown can't be used with backward-ordered index scan. When the optimizer needs to execute an `ORDER BY ... DESC` query which can be handled by using a backward-ordered index scan, it will disable Index Condition Pushdown.
 
 
 ## Partitioned Tables

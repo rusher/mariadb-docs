@@ -17,7 +17,7 @@ PolygonFromWKB(wkb[,srid])
 Constructs a [POLYGON](../geometry-constructors/polygon.md) value using its [WKB](well-known-binary-wkb-format.md) representation and [SRID](../geometry-properties/st_srid.md).
 
 
-`<code>ST_PolyFromWKB()</code>`, `<code>ST_PolygonFromWKB()</code>`, `<code>PolyFromWKB()</code>` and `<code>PolygonFromWKB()</code>` are synonyms.
+`ST_PolyFromWKB()`, `ST_PolygonFromWKB()`, `PolyFromWKB()` and `PolygonFromWKB()` are synonyms.
 
 
 ## Examples

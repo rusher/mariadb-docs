@@ -16,18 +16,18 @@ or when flushing tables:
 FLUSH [NO_WRITE_TO_BINLOG | LOCAL] TABLES [table_list]  [table_flush_option]
 ```
 
-where `<code>table_list</code>` is a list of tables separated by `<code>,</code>` (comma).
+where `table_list` is a list of tables separated by `,` (comma).
 
 
 ## Description
 
 
-The `<code>FLUSH</code>` statement clears or reloads various internal caches used by
-MariaDB. To execute `<code>FLUSH</code>`, you must have the `<code>RELOAD</code>`
+The `FLUSH` statement clears or reloads various internal caches used by
+MariaDB. To execute `FLUSH`, you must have the `RELOAD`
 privilege. See [GRANT](../../account-management-sql-commands/grant.md).
 
 
-The `<code class="fixed" style="white-space:pre-wrap">RESET</code>` statement is similar to `<code>FLUSH</code>`. See
+The `RESET` statement is similar to `FLUSH`. See
 [RESET](../replication-statements/reset-master.md).
 
 
@@ -41,7 +41,7 @@ If a listed table is a view, an error like the following will be produced:
 ERROR 1347 (HY000): 'test.v' is not BASE TABLE
 ```
 
-By default, `<code>FLUSH</code>` statements are written to the [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and will be [replicated](../replication-statements/README.md). The `<code>NO_WRITE_TO_BINLOG</code>` keyword (`<code>LOCAL</code>` is an alias) will ensure the statement is not written to the binary log.
+By default, `FLUSH` statements are written to the [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and will be [replicated](../replication-statements/README.md). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
 
 
 The different flush options are:
@@ -80,10 +80,10 @@ The different flush options are:
 
 
 
-You can also use the [mariadb-admin](../../../../../clients-and-utilities/mariadb-admin.md) client to flush things. Use `<code class="highlight fixed" style="white-space:pre-wrap">mariadb-admin --help</code>` to examine what flush commands it supports.
+You can also use the [mariadb-admin](../../../../../clients-and-utilities/mariadb-admin.md) client to flush things. Use `mariadb-admin --help` to examine what flush commands it supports.
 
 
-## `<code>FLUSH RELAY LOGS</code>`
+## `FLUSH RELAY LOGS`
 
 
 ```
@@ -95,8 +95,8 @@ FLUSH RELAY LOGS 'connection_name';
 
 
 ##### MariaDB starting with [10.7.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md)
-The `<code>FOR CHANNEL</code>` keyword was added for MySQL compatibility. This is identical to
-using the channel_name directly after the `<code>FLUSH command</code>`.
+The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical to
+using the channel_name directly after the `FLUSH command`.
 For example, one can now use:
 
 ```
@@ -122,14 +122,14 @@ Until [MariaDB 11.5](../../../../../../release-notes/mariadb-community-server/wh
 
 
 ##### MariaDB starting with [11.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
-From [MariaDB 11.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md) it is possible to specify FLUSH GLOBAL or FLUSH SESSION. Flushing of global status variables has been moved to `<code>FLUSH GLOBAL STATUS</code>` (in [MariaDB 11.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md), this flushes only the global variables previously flushed by `<code>FLUSH STATUS</code>`. In a future release, it is intended for this to reset all global summary variables.) `<code>FLUSH SESSION STATUS</code>` is a synonym for `<code>FLUSH STATUS</code>`. 
-One can use `<code>old-mode=OLD_FLUSH_STATUS</code>` to restore the old behavior of the `<code>FLUSH STATUS</code>`.
+From [MariaDB 11.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md) it is possible to specify FLUSH GLOBAL or FLUSH SESSION. Flushing of global status variables has been moved to `FLUSH GLOBAL STATUS` (in [MariaDB 11.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md), this flushes only the global variables previously flushed by `FLUSH STATUS`. In a future release, it is intended for this to reset all global summary variables.) `FLUSH SESSION STATUS` is a synonym for `FLUSH STATUS`. 
+One can use `old-mode=OLD_FLUSH_STATUS` to restore the old behavior of the `FLUSH STATUS`.
 
 
-### Global Status Variables that Support `<code>FLUSH STATUS</code>`
+### Global Status Variables that Support `FLUSH STATUS`
 
 
-Not all global status variables support being reset by `<code>FLUSH STATUS</code>`. Currently, the following is an incomplete list of status variables are reset by `<code>FLUSH GLOBAL STATUS</code>` in 11.5 or `<code>FLUSH STATUS</code>` in earlier versions:
+Not all global status variables support being reset by `FLUSH STATUS`. Currently, the following is an incomplete list of status variables are reset by `FLUSH GLOBAL STATUS` in 11.5 or `FLUSH STATUS` in earlier versions:
 
 
 * [Aborted_clients](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#aborted_clients)
@@ -219,7 +219,7 @@ Prior to [MariaDB 10.11.12](../../../../../../release-notes/mariadb-community-se
 ### Purpose of FLUSH TABLES
 
 
-The purpose of `<code>FLUSH TABLES</code>` is to clean up the open table cache and
+The purpose of `FLUSH TABLES` is to clean up the open table cache and
 table definition cache of tables that are not in use. This frees up memory
 and file descriptors. Normally this is not needed as the caches works
 on a first-in, first-out basis, but can be useful if the server seems to use too
@@ -229,8 +229,8 @@ much memory for some reason.
 ### Purpose of FLUSH TABLES WITH READ LOCK
 
 
-`<code>FLUSH TABLES WITH READ LOCK</code>` is useful if you want to take a backup
-of some tables. When `<code>FLUSH TABLES WITH READ LOCK</code>` returns, all
+`FLUSH TABLES WITH READ LOCK` is useful if you want to take a backup
+of some tables. When `FLUSH TABLES WITH READ LOCK` returns, all
 write access to tables is blocked and all tables are marked as
 'properly closed' on disk. The tables can still be used for read
 operations.
@@ -239,7 +239,7 @@ operations.
 ### Purpose of FLUSH TABLES table_list
 
 
-`<code>FLUSH TABLES</code>` table_list is useful if you want to copy a table
+`FLUSH TABLES` table_list is useful if you want to copy a table
 object or files to or from the server. This command puts a lock that
 stops new users of the table and will wait until everyone has stopped
 using the table. The table is then removed from the table definition
@@ -247,13 +247,13 @@ and table cache.
 
 
 Note that it's up to the user to ensure that no one is accessing the
-table between `<code>FLUSH TABLES</code>` and the table is copied to or from the
+table between `FLUSH TABLES` and the table is copied to or from the
 server. This can be secured by using [LOCK TABLES](../../transactions/lock-tables.md).
 
 
-If there are any tables locked by the connection that is using `<code>FLUSH TABLES</code>` all the locked tables will be closed as part of the flush and
-reopened and relocked before `<code>FLUSH TABLES</code>` returns. This allows one
-to copy the table after `<code>FLUSH TABLES</code>` returns without having any
+If there are any tables locked by the connection that is using `FLUSH TABLES` all the locked tables will be closed as part of the flush and
+reopened and relocked before `FLUSH TABLES` returns. This allows one
+to copy the table after `FLUSH TABLES` returns without having any
 writes on the table. For now this works works with most tables,
 except InnoDB as InnoDB may do background purges on the table even
 while it's write locked.
@@ -262,8 +262,8 @@ while it's write locked.
 ### Purpose of FLUSH TABLES table_list WITH READ LOCK
 
 
-`<code>FLUSH TABLES table_list WITH READ LOCK</code>` should work as `<code>FLUSH TABLES WITH READ LOCK</code>`, but only those tables that are listed will be
-properly closed. However in practice this works exactly like `<code>FLUSH TABLES WITH READ LOCK</code>` as the `<code>FLUSH</code>` command has anyway to wait
+`FLUSH TABLES table_list WITH READ LOCK` should work as `FLUSH TABLES WITH READ LOCK`, but only those tables that are listed will be
+properly closed. However in practice this works exactly like `FLUSH TABLES WITH READ LOCK` as the `FLUSH` command has anyway to wait
 for all WRITE operations to end because we are depending on a global
 read lock for this code. In the future we should consider fixing this
 to instead use meta data locks.
@@ -280,10 +280,10 @@ to instead use meta data locks.
 
 * Lock all tables read only for simple old style backup.
 * All background writes are suspended and tables are marked as closed.
-* No statement requiring table changes are allowed for any user until `<code>UNLOCK TABLES</code>`.
+* No statement requiring table changes are allowed for any user until `UNLOCK TABLES`.
 
 
-Instead of using `<code>FLUSH TABLE WITH READ LOCK</code>` one should in most cases instead use
+Instead of using `FLUSH TABLE WITH READ LOCK` one should in most cases instead use
 [BACKUP STAGE BLOCK_COMMIT](../backup-commands/backup-stage.md).
 
 
@@ -302,18 +302,18 @@ Instead of using `<code>FLUSH TABLE WITH READ LOCK</code>` one should in most ca
 * Free memory and file descriptors for tables not in use from table list
 * Lock given tables as read.
 * Wait until all background writes are suspended and tables are marked as closed.
-* Check that all tables supports `<code>FOR EXPORT</code>`
-* No changes to these tables allowed until `<code>UNLOCK TABLES</code>`
+* Check that all tables supports `FOR EXPORT`
+* No changes to these tables allowed until `UNLOCK TABLES`
 
 
 This is basically the same behavior as in old MariaDB version if one first lock the tables, then do
-`<code>FLUSH TABLES</code>`. The tables will be copyable until `<code>UNLOCK TABLES</code>`.
+`FLUSH TABLES`. The tables will be copyable until `UNLOCK TABLES`.
 
 
 ## FLUSH SSL
 
 
-The `<code>FLUSH SSL</code>` command can be used to dynamically reinitialize the server's [TLS](../../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md) context. This is most useful if you need to replace a certificate that is about to expire without restarting the server.
+The `FLUSH SSL` command can be used to dynamically reinitialize the server's [TLS](../../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md) context. This is most useful if you need to replace a certificate that is about to expire without restarting the server.
 
 
 This operation is performed by reloading the files defined by the following [TLS system variables](../../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md):

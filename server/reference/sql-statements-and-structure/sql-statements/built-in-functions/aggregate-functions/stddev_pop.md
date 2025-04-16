@@ -12,9 +12,9 @@ STDDEV_POP(expr)
 ## Description
 
 
-Returns the population standard deviation of *`<code>expr</code>`* (the square root of
-`<code>[VAR_POP()](var_pop.md)</code>`). You can also use `<code>[STD()](std.md)</code>` or
-`<code>[STDDEV()](stddev.md)</code>`, which are equivalent but not standard SQL.
+Returns the population standard deviation of *`expr`* (the square root of
+`[VAR_POP()](var_pop.md)`). You can also use `[STD()](std.md)` or
+`[STDDEV()](stddev.md)`, which are equivalent but not standard SQL.
 
 
 It is an [aggregate function](../special-functions/window-functions/aggregate-functions-as-window-functions.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
@@ -23,7 +23,7 @@ It is an [aggregate function](../special-functions/window-functions/aggregate-fu
 STDDEV_POP() can be used as a [window function](../special-functions/window-functions/window-functions-overview.md).
 
 
-STDDEV_POP() returns `<code>NULL</code>` if there were no matching rows.
+STDDEV_POP() returns `NULL` if there were no matching rows.
 
 
 ## Examples

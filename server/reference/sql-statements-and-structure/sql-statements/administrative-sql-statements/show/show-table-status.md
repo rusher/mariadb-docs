@@ -13,11 +13,11 @@ SHOW TABLE STATUS [{FROM | IN} db_name]
 ## Description
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW TABLE STATUS</code>` works like [SHOW TABLES](show-tables.md), but provides more extensive information about each table (until [MariaDB 11.2.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md), only non-TEMPORARY tables are shown).
+`SHOW TABLE STATUS` works like [SHOW TABLES](show-tables.md), but provides more extensive information about each table (until [MariaDB 11.2.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md), only non-TEMPORARY tables are shown).
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clause, if present on its own, indicates which table names to
-match. The `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+The `LIKE` clause, if present on its own, indicates which table names to
+match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 
 The following information is returned:
@@ -60,7 +60,7 @@ mariadb-show --status db_name
 ## Views
 
 
-For views, all columns in `<code>SHOW TABLE STATUS</code>` are `<code>NULL</code>` except 'Name' and 'Comment'
+For views, all columns in `SHOW TABLE STATUS` are `NULL` except 'Name' and 'Comment'
 
 
 ## Example

@@ -98,7 +98,7 @@ accounts that have **no** relationship to the Linux accounts.
 
 
 Note that if the socket path or port are changed, then MaxAdmin has to be invoked
-with `<code>-S</code>` or `<code>-P</code>` respectively.
+with `-S` or `-P` respectively.
 
 
 
@@ -134,7 +134,7 @@ MaxScale>
 ```
 
 
-If Unix domain sockets are used, then initially only `<code>root</code>` has access. MaxAdmin
+If Unix domain sockets are used, then initially only `root` has access. MaxAdmin
 usage can subsequently be enabled for other Linux users.
 
 
@@ -162,7 +162,7 @@ MaxScale>
 ```
 
 
-Please note that `<code>root</code>` will not be shown.
+Please note that `root` will not be shown.
 
 
 ## Enabling a Linux account
@@ -205,7 +205,7 @@ users connecting over a Unix domain socket.
 
 
 Note that it is possible to disable the current user, but that will only affect the
-next attempt to use MaxAdmin. `<code>root</code>` cannot be removed.
+next attempt to use MaxAdmin. `root` cannot be removed.
 
 
 ## Add A New User
@@ -355,19 +355,19 @@ Then simply set this file to have execute permissions and it may be run like any
 ## The .maxadmin file
 
 
-MaxAdmin supports a mechanism to set defaults for the command line switches via a file in the home directory of the user. If a file named `<code>.maxadmin</code>` exists, it will be read and parameters set according to the entries in that file.
+MaxAdmin supports a mechanism to set defaults for the command line switches via a file in the home directory of the user. If a file named `.maxadmin` exists, it will be read and parameters set according to the entries in that file.
 
 
-This mechanism can be used to provide defaults to the command line options. If a command line option is provided, it will still override the value in the `<code>.maxadmin</code>` file.
+This mechanism can be used to provide defaults to the command line options. If a command line option is provided, it will still override the value in the `.maxadmin` file.
 
 
 The parameters than can be set are:
- * `<code>1.4</code>`: *hostname*, *port*, *user* and *passwd*
- * `<code>2.0.0</code>` and `<code>2.0.1</code>`: *socket*
- * `<code>2.0.2</code>` onwards: *socket*, *hostname*, *port*, *user* and *passwd* (and as synonym *password*)
+ * `1.4`: *hostname*, *port*, *user* and *passwd*
+ * `2.0.0` and `2.0.1`: *socket*
+ * `2.0.2` onwards: *socket*, *hostname*, *port*, *user* and *passwd* (and as synonym *password*)
 
 
-An example of a `<code>.maxadmin</code>` file that will alter the default socket path is:
+An example of a `.maxadmin` file that will alter the default socket path is:
 
 
 ```
@@ -375,10 +375,10 @@ socket=/somepath/maxadmin.socket
 ```
 
 
-Note that if in `<code>2.0.2</code>` or later, a value for *socket* as well as any of the internet socket related options, such as *hostname*, is provided in `<code>.maxadmin</code>`, then *socket* takes precedense. In that case, provide at least one internet socket related option on the command line to force MaxAdmin to use an internet socket and thus the internet socket related options from `<code>.maxadmin</code>`.
+Note that if in `2.0.2` or later, a value for *socket* as well as any of the internet socket related options, such as *hostname*, is provided in `.maxadmin`, then *socket* takes precedense. In that case, provide at least one internet socket related option on the command line to force MaxAdmin to use an internet socket and thus the internet socket related options from `.maxadmin`.
 
 
-The `<code>.maxadmin</code>` file may be made read only to protect any passwords written to that file.
+The `.maxadmin` file may be made read only to protect any passwords written to that file.
 
 
 

@@ -16,7 +16,7 @@ JSON_EQUALS(json1, json2)
 ## Description
 
 
-Checks if there is equality between two json objects. Returns `<code>1</code>` if it there is, `<code>0</code>` if not, or NULL if any of the arguments are null.
+Checks if there is equality between two json objects. Returns `1` if it there is, `0` if not, or NULL if any of the arguments are null.
 
 
 ## Examples

@@ -8,8 +8,8 @@ Binary tarballs (bintars) are compressed tar archives that contain pre-compiled 
 MariaDB Binary tarballs are named following the pattern: mariadb-VERSION-OS.tar.gz. Be sure to [download](https://mariadb.org/download) the correct version for your machine.
 
 
-**Note:** Some older binary tarballs are marked *'(GLIBC_2.14)'* or *'(requires GLIBC_2.14+)'*. These binaries are built the same as the others, but on a newer build host, and they require GLIBC 2.14 or higher. Use the other binaries for machines with older versions of GLIBC installed. Run `<code>ldd --version</code>` to see which version is running on your distribution.
-Others are marked *'systemd'*, which are for systems with `<code>systemd</code>` and GLIBC 2.19 or higher.
+**Note:** Some older binary tarballs are marked *'(GLIBC_2.14)'* or *'(requires GLIBC_2.14+)'*. These binaries are built the same as the others, but on a newer build host, and they require GLIBC 2.14 or higher. Use the other binaries for machines with older versions of GLIBC installed. Run `ldd --version` to see which version is running on your distribution.
+Others are marked *'systemd'*, which are for systems with `systemd` and GLIBC 2.19 or higher.
 
 
 ### Benefits of Binary Tarballs
@@ -30,10 +30,10 @@ Binary tarballs provide multiple benefits:
 
 
 To install the [binaries](https://downloads.mariadb.org),
-unpack the distribution into the directory of your choice and run the `<code class="highlight fixed" style="white-space:pre-wrap">[mariadb-install-db](../installing-system-tables-mariadb-install-db.md)</code>` script.
+unpack the distribution into the directory of your choice and run the `[mariadb-install-db](../installing-system-tables-mariadb-install-db.md)` script.
 
 
-In the example below we install MariaDB in the `<code class="highlight fixed" style="white-space:pre-wrap">/usr/local/mysql</code>` directory (this is the default location for MariaDB for many platforms). However any other directory should work too.
+In the example below we install MariaDB in the `/usr/local/mysql` directory (this is the default location for MariaDB for many platforms). However any other directory should work too.
 
 
 We install the binary with a symlink to the original name. This is done so that you can easily change MariaDB versions just by moving the symlink to point to another directory.
@@ -42,14 +42,14 @@ We install the binary with a symlink to the original name. This is done so that 
 ### Ensure You Use the Correct my.cnf Files
 
 
-MariaDB searches for the configuration files '`<code>/etc/my.cnf</code>`' (on some
-systems '`<code>/etc/mysql/my.cnf</code>`') and '`<code>~/.my.cnf</code>`'. If you have an
-old `<code>my.cnf</code>` file (maybe from a system installation of MariaDB or MySQL) you
+MariaDB searches for the configuration files '`/etc/my.cnf`' (on some
+systems '`/etc/mysql/my.cnf`') and '`~/.my.cnf`'. If you have an
+old `my.cnf` file (maybe from a system installation of MariaDB or MySQL) you
 need to take care that you don't accidentally use the old one with your new
 binary .tar installation.
 
 
-The normal solution for this is to ignore the `<code>my.cnf</code>` file in `<code>/etc</code>` when
+The normal solution for this is to ignore the `my.cnf` file in `/etc` when
 you use the programs in the tar file.
 
 
@@ -57,7 +57,7 @@ This is done by [creating your own .my.cnf file](../configuring-mariadb-with-opt
 your home directory and telling [mariadb-install-db](../mariadb-install-db-exe.md),
 [mysqld_safe](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) and possibly [mariadb (the
 command-line client utility)](../../../clients-and-utilities/mariadb-client/README.md) to **only** use this one with the option
-'`<code class="fixed" style="white-space:pre-wrap">--defaults-file=~/.my.cnf</code>`'. Note that
+'`--defaults-file=~/.my.cnf`'. Note that
 this has to be first option for the above commands!
 
 
@@ -79,10 +79,10 @@ chown -R root .
 chown -R mysql data
 ```
 
-The symlinking with `<code class="fixed" style="white-space:pre-wrap">ln -s</code>` is recommended as it makes it easy to install many MariaDB version at the same time (for easy testing, upgrading, downgrading etc).
+The symlinking with `ln -s` is recommended as it makes it easy to install many MariaDB version at the same time (for easy testing, upgrading, downgrading etc).
 
 
-If you are installing MariaDB to replace MySQL, then you can leave out the call to `<code class="fixed" style="white-space:pre-wrap">mariadb-install-db</code>`. Instead shut down MySQL. MariaDB should find the path to the data directory from your old `<code class="fixed" style="white-space:pre-wrap">/etc/my.cnf</code>` file (path may vary depending on your system).
+If you are installing MariaDB to replace MySQL, then you can leave out the call to `mariadb-install-db`. Instead shut down MySQL. MariaDB should find the path to the data directory from your old `/etc/my.cnf` file (path may vary depending on your system).
 
 
 To start mariadbd you should now do:
@@ -135,14 +135,14 @@ To start mariadbd you should now do:
 ### Auto Start of mariadbd
 
 
-You can get mariadbd (the MariaDB server) to autostart by copying the file `<code class="fixed" style="white-space:pre-wrap">mysql.server</code>` file to the right place.
+You can get mariadbd (the MariaDB server) to autostart by copying the file `mysql.server` file to the right place.
 
 
 ```
 cp support-files/mysql.server /etc/init.d/mysql.server
 ```
 
-The exact place depends on your system. The `<code class="fixed" style="white-space:pre-wrap">mysql.server</code>` file contains instructions of how to use and fine tune it.
+The exact place depends on your system. The `mysql.server` file contains instructions of how to use and fine tune it.
 
 
 For systemd installation the mariadb.service file will need to be copied from the support-files/systemd folder to the /usr/lib/systemd/system/ folder.

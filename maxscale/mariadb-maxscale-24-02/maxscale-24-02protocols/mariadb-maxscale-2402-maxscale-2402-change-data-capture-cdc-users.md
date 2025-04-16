@@ -52,7 +52,7 @@ bash$ cdc_users.py [-h] USER PASSWORD
 
 
 The output of this command should be appended to the *cdcusers* file at
-`<code>/var/lib/maxscale/<service name>/</code>`.
+`/var/lib/maxscale/<service name>/`.
 
 
 

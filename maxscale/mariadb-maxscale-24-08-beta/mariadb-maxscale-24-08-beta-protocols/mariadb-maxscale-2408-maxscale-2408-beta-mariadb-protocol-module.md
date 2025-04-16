@@ -4,11 +4,11 @@
 # MariaDB Protocol Module
 
 
-The `<code>mariadbprotocol</code>` module implements the MariaDB client-server protocol.
+The `mariadbprotocol` module implements the MariaDB client-server protocol.
 
 
-The legacy protocol names `<code>mysqlclient</code>`, `<code>mariadb</code>` and `<code>mariadbclient</code>` are all
-aliases to `<code>mariadbprotocol</code>`.
+The legacy protocol names `mysqlclient`, `mariadb` and `mariadbclient` are all
+aliases to `mariadbprotocol`.
 
 
 
@@ -41,10 +41,10 @@ port=3306
 
 
 
-For the MariaDB protocol module, the prefix is always `<code>mariadbprotocol</code>`.
+For the MariaDB protocol module, the prefix is always `mariadbprotocol`.
 
 
-### `<code>allow_replication</code>`
+### `allow_replication`
 
 
 * Type: [boolean](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -54,6 +54,6 @@ For the MariaDB protocol module, the prefix is always `<code>mariadbprotocol</co
 
 
 Whether the use of the replication protocol is allowed through this listener. If
-disabled with `<code>mariadbprotocol.allow_replication=false</code>`, all attempts to start
+disabled with `mariadbprotocol.allow_replication=false`, all attempts to start
 replication will be rejected with a ER_FEATURE_DISABLED error (error number
 1289).

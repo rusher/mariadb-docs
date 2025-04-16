@@ -7,7 +7,7 @@ A user-defined function (UDF) is a historical way to extend MariaDB with a new f
 Statements making use of user-defined functions are not [safe for replication](../../replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 
-For an example, see `<code>sql/udf_example.cc</code>` in the source tree. For a collection of existing UDFs go to the [UDF Repository on GitHub](https://github.com/orgs/mysqludf/repositories).
+For an example, see `sql/udf_example.cc` in the source tree. For a collection of existing UDFs go to the [UDF Repository on GitHub](https://github.com/orgs/mysqludf/repositories).
 
 
 There are alternative ways to add a new function: a native function, which requires modifying and compiling the server source code; a [function plugin](../../../reference/mariadb-internals/development-writing-plugins-for-mariadb.md#function-plugins); or a [stored function](../stored-routines/stored-functions/README.md).

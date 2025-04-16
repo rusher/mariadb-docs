@@ -23,16 +23,16 @@ The syntax for each path is:
 path:size[:autoextend][:max:size][:autoshrink]
 ```
 
-`<code>size</code>` can have extensions 'G' (Gigabytes), 'M' (Megabytes) or 'K' (Kilobytes). If no extension is given, then megabytes is assumed.
+`size` can have extensions 'G' (Gigabytes), 'M' (Megabytes) or 'K' (Kilobytes). If no extension is given, then megabytes is assumed.
 
 
-* The first `<code>size</code>` argument is the initial size of the temporary table space.
-* `<code>autoextend</code>` means that the file size will automatically increase if needed.
-* `<code>max</code>` can be used to limit the total size of the temporary file if `<code>autoextend</code>` is used.
-* `<code>autoshrink</code>` means that the file will shrink to original size when possible.
+* The first `size` argument is the initial size of the temporary table space.
+* `autoextend` means that the file size will automatically increase if needed.
+* `max` can be used to limit the total size of the temporary file if `autoextend` is used.
+* `autoshrink` means that the file will shrink to original size when possible.
 
 
-Only the last path can have the `<code>autoextend</code>` , `<code>max</code>` and `<code>autoshrink</code>` options.
+Only the last path can have the `autoextend` , `max` and `autoshrink` options.
 
 
 ## Sizing Temporary Tablespaces
@@ -47,10 +47,10 @@ In order to size temporary tablespaces, use the [innodb_temp_data_file_path](../
 innodb_temp_data_file_path=ibtmp1:32M:autoextend
 ```
 
-This system variable's syntax is the same as the [innodb_data_file_path](../innodb-system-variables.md#innodb_data_file_path) system variable. That is, a file name, size and option. By default, it writes a 12MB autoextending file to `<code>ibtmp1</code>` in the data directory.
+This system variable's syntax is the same as the [innodb_data_file_path](../innodb-system-variables.md#innodb_data_file_path) system variable. That is, a file name, size and option. By default, it writes a 12MB autoextending file to `ibtmp1` in the data directory.
 
 
-To increase the size of the temporary tablespace, you can add a path to an additional tablespace file to the value of the the [innodb_temp_data_file_path](../innodb-system-variables.md#innodb_temp_data_file_path) system variable. Providing additional paths allows you to spread the temporary tablespace between multiple tablespace files. The last file can have the `<code>autoextend</code>` attribute, which ensures that you won't run out of space. For example:
+To increase the size of the temporary tablespace, you can add a path to an additional tablespace file to the value of the the [innodb_temp_data_file_path](../innodb-system-variables.md#innodb_temp_data_file_path) system variable. Providing additional paths allows you to spread the temporary tablespace between multiple tablespace files. The last file can have the `autoextend` attribute, which ensures that you won't run out of space. For example:
 
 
 ```

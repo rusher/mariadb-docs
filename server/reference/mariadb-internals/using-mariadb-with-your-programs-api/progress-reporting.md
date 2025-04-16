@@ -10,14 +10,14 @@ MariaDB supports progress reporting for some long running commands.
 Progress reporting means that:
 
 
-* There is a `<code>Progress</code>` column
+* There is a `Progress` column
  in [SHOW PROCESSLIST](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) which shows the total progress
  (0-100%)
 * [INFORMATION_SCHEMA.PROCESSLIST](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) has three columns which allow you to see in which process stage we are and how much of that stage is completed:
 
-  * `<code>STAGE</code>`
-  * `<code>MAX_STAGE</code>`
-  * `<code>PROGRESS</code>` (within current stage).
+  * `STAGE`
+  * `MAX_STAGE`
+  * `PROGRESS` (within current stage).
 * The client receives progress messages which it can display to the user to
  indicate how long the command will take.
 
@@ -36,7 +36,7 @@ client:
 * [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)
 * [CREATE INDEX](../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md)
 * [DROP INDEX](../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-index.md)
-* [LOAD DATA INFILE](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) (not `<code>LOAD DATA LOCAL INFILE</code>`, as in that case we
+* [LOAD DATA INFILE](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) (not `LOAD DATA LOCAL INFILE`, as in that case we
  don't know the size of the file).
 
 
@@ -58,19 +58,19 @@ Although the above commands support progress reporting, there are some limitatio
 ## Enabling and Disabling Progress Reporting
 
 
-`<code>mysqld</code>` (the MariaDB server) automatically sends progress report messages to clients that support the new protocol, using the value of the [progress_report_time](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#progress_report_time) variable. They are sent every
-max(`<code>global.progress_report_time</code>` , `<code>progress_report_time</code>`) seconds (by default 5). You can disable the sending of progress report messages to the client by setting either the local variable (affects only the current connection) or the global variable (affects all connections) to `<code>0</code>`.
+`mysqld` (the MariaDB server) automatically sends progress report messages to clients that support the new protocol, using the value of the [progress_report_time](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#progress_report_time) variable. They are sent every
+max(`global.progress_report_time` , `progress_report_time`) seconds (by default 5). You can disable the sending of progress report messages to the client by setting either the local variable (affects only the current connection) or the global variable (affects all connections) to `0`.
 
 
-If the extra column in `<code>SHOW PROCESSLIST</code>` gives you a compatibility problem,
-you can disable it by starting `<code>mysqld</code>` with the `<code class="fixed" style="white-space:pre-wrap">--old</code>` flag.
+If the extra column in `SHOW PROCESSLIST` gives you a compatibility problem,
+you can disable it by starting `mysqld` with the `--old` flag.
 
 
 ## Clients Which Support Progress Reporting
 
 
 * The [mariadb command line client](../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md)
-* The `<code>mytop</code>` that comes with MariaDB has a `<code>'%'</code>` column which shows
+* The `mytop` that comes with MariaDB has a `'%'` column which shows
  the progress.
 
 
@@ -78,7 +78,7 @@ you can disable it by starting `<code>mysqld</code>` with the `<code class="fixe
 
 
 Progress reporting is enabled by default in the [mariadb client](../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md). You can
-disable it with `<code class="fixed" style="white-space:pre-wrap">--disable-progress-reports</code>`. It is automatically disabled in
+disable it with `--disable-progress-reports`. It is automatically disabled in
 batch mode.
 
 
@@ -90,7 +90,7 @@ ALTER TABLE my_mail ENGINE=aria;
 Stage: 1 of 2 'copy to tmp table'  5.37% of stage done
 ```
 
-This is updated every [progress_report_time](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#progress_report_time) seconds (the default is 5). If the global `<code>progress_report_time</code>` is higher, this will be used. You can also disable error reporting by setting the variable to `<code>0</code>`.
+This is updated every [progress_report_time](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#progress_report_time) seconds (the default is 5). If the global `progress_report_time` is higher, this will be used. You can also disable error reporting by setting the variable to `0`.
 
 
 ## How to Add Support for Progress Reporting to a Client
@@ -105,7 +105,7 @@ supports progress reporting by doing:
 ```
 
 To enable progress reporting to the client you need to add
-`<code>CLIENT_PROGRESS</code>` to the `<code>connect_flag</code>` in `<code>mysql_real_connect()</code>`:
+`CLIENT_PROGRESS` to the `connect_flag` in `mysql_real_connect()`:
 
 
 ```
@@ -125,11 +125,11 @@ static void report_progress(const MYSQL *mysql, uint stage, uint max_stage,
 mysql_options(&mysql, MYSQL_PROGRESS_CALLBACK, (void*) report_progress);
 ```
 
-The above `<code>report_progress</code>` function will be called for each
+The above `report_progress` function will be called for each
 progress message.
 
 
-This is the implementation used by `<code>mysql.cc</code>`:
+This is the implementation used by `mysql.cc`:
 
 
 ```
@@ -158,8 +158,8 @@ double total_progress=
  ((stage -1) / (double) max_stage * 100.00 + progress / max_stage);
 ```
 
-**Note:** `<code>proc_info</code>` is totally independent of stage. You can have many
-different `<code>proc_info</code>` values within a stage. The idea behind `<code>proc_info</code>` is
+**Note:** `proc_info` is totally independent of stage. You can have many
+different `proc_info` values within a stage. The idea behind `proc_info` is
 to give the user more information about what the server is doing.
 
 
@@ -174,12 +174,12 @@ void thd_progress_init(MYSQL_THD thd, unsigned int max_stage);
 ```
 
 Initialize progress reporting with stages. This is mainly used for
-commands that are totally executed within the engine, like `<code>CHECK TABLE</code>`.
+commands that are totally executed within the engine, like `CHECK TABLE`.
 You should not use this for operations that could be called by, for example,
-`<code>ALTER TABLE</code>` as this has already called the function.
+`ALTER TABLE` as this has already called the function.
 
 
-`<code>max_stage</code>` is the number of stages your storage engine will have.
+`max_stage` is the number of stages your storage engine will have.
 
 
 ```
@@ -190,16 +190,16 @@ void thd_progress_report(MYSQL_THD thd, unsigned long long progress,
 The above is used for reporting progress.
 
 
-* `<code>progress</code>` is how much of the file/rows/keys you have gone through.
-* `<code>max_progress</code>` is the max number of rows you will go through.
+* `progress` is how much of the file/rows/keys you have gone through.
+* `max_progress` is the max number of rows you will go through.
 
 
 You can call this with varying numbers, but normally the ratio
-`<code>progress/max_progress</code>` should be increasing.
+`progress/max_progress` should be increasing.
 
 
 This function can be called even if you are not using stages, for example when
-enabling keys as part of `<code>ALTER TABLE</code>` or `<code>ADD INDEX</code>`.
+enabling keys as part of `ALTER TABLE` or `ADD INDEX`.
 
 
 ```
@@ -207,14 +207,14 @@ void thd_progress_next_stage(MYSQL_THD thd);
 ```
 
 To go to the next stage in a multi-stage process initiated by
-`<code>thd_progress_init()</code>`:
+`thd_progress_init()`:
 
 
 ```
 void thd_progress_end(MYSQL_THD thd);
 ```
 
-End progress reporting; Sets 'Progress' back to 0 in `<code>SHOW PROCESSLIST</code>`.
+End progress reporting; Sets 'Progress' back to 0 in `SHOW PROCESSLIST`.
 
 
 ```
@@ -222,35 +222,35 @@ const char *thd_proc_info(thd, 'stage name');
 ```
 
 This sets the name of the current status/stage that is displayed in
-`<code>SHOW PROCESSLIST</code>` and in the client. It's recommended that you call
-this between stages and thus before `<code>thd_progress_report()</code>` and
-`<code>thd_progress_next_stage()</code>`.
+`SHOW PROCESSLIST` and in the client. It's recommended that you call
+this between stages and thus before `thd_progress_report()` and
+`thd_progress_next_stage()`.
 
 
-This functions returns the last used `<code>proc_info</code>`. It's recommended that
-you restore `<code>proc_info</code>` to its original value when you are done
+This functions returns the last used `proc_info`. It's recommended that
+you restore `proc_info` to its original value when you are done
 processing.
 
 
-**Note:** `<code>thd_proc_info()</code>` is totally independent of stage. You can have
-many different `<code>proc_info</code>` values within a stage to give the user more
+**Note:** `thd_proc_info()` is totally independent of stage. You can have
+many different `proc_info` values within a stage to give the user more
 information about what is going on.
 
 
 ## Examples to Look at in the MariaDB Source:
 
 
-* `<code>client/mysql.cc</code>` for an example of how to use reporting.
-* `<code>libmysql/client.c:cli_safe_read()</code>` to see how progress packets are handled
+* `client/mysql.cc` for an example of how to use reporting.
+* `libmysql/client.c:cli_safe_read()` to see how progress packets are handled
  in client
-* `<code>sql/protocol.cc::net_send_progress_packet()</code>` for how progress packets are
+* `sql/protocol.cc::net_send_progress_packet()` for how progress packets are
  handled in server.
 
 
 ## Format of Progress Packets
 
 
-The progress packet is sent as an error packet with error number `<code>65535</code>`.
+The progress packet is sent as an error packet with error number `65535`.
 
 
 It contains the following data (in addition to the error header):

@@ -30,7 +30,7 @@ ERROR 2003 (HY000): Can't connect to MySQL server on  'localhost'
 the server is either not running, or not running on the specified port, socket or pipe. Make sure you are using the correct [host](../beginner-mariadb-articles/connecting-to-mariadb.md#host), [port](../beginner-mariadb-articles/connecting-to-mariadb.md#port), [pipe](../beginner-mariadb-articles/connecting-to-mariadb.md#pipe), [socket](../beginner-mariadb-articles/connecting-to-mariadb.md#socket) and [protocol](../beginner-mariadb-articles/connecting-to-mariadb.md#protocol) options, or alternatively, see [Getting, Installing and Upgrading MariaDB](../../../../server/server-management/getting-installing-and-upgrading-mariadb/README.md), [Starting and Stopping MariaDB](../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md) or [Troubleshooting Installation Issues](../../../../server/server-management/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/README.md).
 
 
-The socket file can be in a non-standard path. In this case, the `<code>socket</code>` option is probably written in the my.cnf file. Check that its value is identical in the [mysqld] and [client] sections; if not, the client will look for a socket in a wrong place.
+The socket file can be in a non-standard path. In this case, the `socket` option is probably written in the my.cnf file. Check that its value is identical in the [mysqld] and [client] sections; if not, the client will look for a socket in a wrong place.
 
 
 If unsure where the Unix socket file is running, it's possible to find this out, for example:
@@ -66,10 +66,10 @@ To solve this, see [Configuring MariaDB for Remote Client Access](configuring-ma
 Note that from [MariaDB 10.4.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md), the [unix_socket authentication plugin](../../../../server/reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is enabled by default on Unix-like systems. This uses operating system credentials when connecting to MariaDB via the local Unix socket file. See [unix_socket authentication plugin](../../../../server/reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) for instructions on connecting and on switching to password-based authentication as well as [Authentication from MariaDB 10.4](../../../../server/security/user-account-management/authentication-from-mariadb-10-4.md) for an overview of the [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) changes..
 
 
-Authentication is granted to a particular username/host combination. `<code>user1'@'localhost'</code>`, for example, is not the same as `<code>user1'@'166.78.144.191'</code>`. See the [GRANT](../../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) article for details on granting permissions.
+Authentication is granted to a particular username/host combination. `user1'@'localhost'`, for example, is not the same as `user1'@'166.78.144.191'`. See the [GRANT](../../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) article for details on granting permissions.
 
 
-Passwords are hashed with [PASSWORD](../../../../server/reference/plugins/password-validation-plugins/password-reuse-check-plugin.md) function. If you have set a password with the [SET PASSWORD](../../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md) statement, the [PASSWORD](../../../../server/reference/plugins/password-validation-plugins/password-reuse-check-plugin.md) function must be used at the same time. For example, `<code>SET PASSWORD FOR 'bob'@'%.loc.gov' = PASSWORD('newpass')</code>` rather than just `<code>SET PASSWORD FOR 'bob'@'%.loc.gov' = 'newpass'</code>`;
+Passwords are hashed with [PASSWORD](../../../../server/reference/plugins/password-validation-plugins/password-reuse-check-plugin.md) function. If you have set a password with the [SET PASSWORD](../../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md) statement, the [PASSWORD](../../../../server/reference/plugins/password-validation-plugins/password-reuse-check-plugin.md) function must be used at the same time. For example, `SET PASSWORD FOR 'bob'@'%.loc.gov' = PASSWORD('newpass')` rather than just `SET PASSWORD FOR 'bob'@'%.loc.gov' = 'newpass'`;
 
 
 #### Problems Exporting Query Results
@@ -90,7 +90,7 @@ ERROR 1044 (42000): Access denied for user 'ian'@'localhost' to database 'test'
 ```
 
 or can connect to a particular database, but not another, for example
-`<code>mariadb -uname -p -u name db1</code>` works but not `<code>mariadb -uname -p -u name db2</code>`, you have not been granted permission for the particular database. See the [GRANT](../../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) article.
+`mariadb -uname -p -u name db1` works but not `mariadb -uname -p -u name db2`, you have not been granted permission for the particular database. See the [GRANT](../../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) article.
 
 
 #### Option Files and Environment Variables
@@ -99,7 +99,7 @@ or can connect to a particular database, but not another, for example
 It's possible that option files or environment variables may be providing incorrect connection parameters. Check the values provided in any option files read by the client you are using (see [mariadbd Configuration Files and Groups](../../../../server/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) and the documentation for the particular client you're using - see [Clients and Utilities](../../../../server/clients-and-utilities/README.md)).
 
 
-Option files can usually be suppressed with `<code>no-defaults</code>` option, for example:
+Option files can usually be suppressed with `no-defaults` option, for example:
 
 
 ```

@@ -17,10 +17,10 @@ RELEASE_ALL_LOCKS()
 ## Description
 
 
-Releases all named locks held by the current session. Returns the number of locks released, or `<code>0</code>` if none were held.
+Releases all named locks held by the current session. Returns the number of locks released, or `0` if none were held.
 
 
-Statements using the `<code>RELEASE_ALL_LOCKS</code>` function are [not safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
+Statements using the `RELEASE_ALL_LOCKS` function are [not safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 
 ## Examples

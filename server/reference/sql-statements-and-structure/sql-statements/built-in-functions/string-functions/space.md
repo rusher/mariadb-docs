@@ -11,7 +11,7 @@ SPACE(N)
 ## Description
 
 
-Returns a string consisting of *`<code>N</code>`* space characters. If `<code>N</code>` is NULL, returns NULL.
+Returns a string consisting of *`N`* space characters. If `N` is NULL, returns NULL.
 
 
 ## Examples

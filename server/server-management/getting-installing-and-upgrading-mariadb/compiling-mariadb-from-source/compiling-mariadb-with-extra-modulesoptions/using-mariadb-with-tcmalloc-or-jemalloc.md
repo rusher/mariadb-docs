@@ -32,27 +32,27 @@ A value of "system" indicates the system default, which is normally malloc. If a
 #### Building MariaDB with an alternative to malloc
 
 
-To build [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) with `<code>TCMalloc</code>`, you need to use the following command
+To build [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) with `TCMalloc`, you need to use the following command
 
 
 ```
 cmake -DCMAKE_EXE_LINKER_FLAGS='-ltcmalloc'  -DWITH_SAFEMALLOC=OFF
 ```
 
-To use jemalloc, the option should be `<code>-ljemalloc</code>`.
+To use jemalloc, the option should be `-ljemalloc`.
 
 
 #### Starting mariadbd-safe with an alternative to malloc
 
 
-If you want to do this only one time, as a test, you can also start a standard MariaDB server with `<code>TCmalloc</code>` with:
+If you want to do this only one time, as a test, you can also start a standard MariaDB server with `TCmalloc` with:
 
 
 ```
 /usr/sbin/mariadbd-safe --malloc-lib=tcmalloc
 ```
 
-If you want to configure [mariadbd-safe](../../starting-and-stopping-mariadb/mariadbd-safe.md) to use tcmalloc or jemalloc, edit your [configuration file](../../configuring-mariadb-with-option-files.md), in the `<code>[server]</code>` or `<code>[mariadbd]</code>` group:
+If you want to configure [mariadbd-safe](../../starting-and-stopping-mariadb/mariadbd-safe.md) to use tcmalloc or jemalloc, edit your [configuration file](../../configuring-mariadb-with-option-files.md), in the `[server]` or `[mariadbd]` group:
 
 
 ```
@@ -72,7 +72,7 @@ find /usr/lib -name "libjemalloc.so.*"
 find /usr/lib -name "libtcmalloc.so.*"
 ```
 
-Now pass it to `<code>mariadbd</code>` using the `<code>LD_PRELOAD</code>` variable:
+Now pass it to `mariadbd` using the `LD_PRELOAD` variable:
 
 
 ```
@@ -92,7 +92,7 @@ If you use systemd to run MariaDB, first locate the library as explained above. 
 systemctl status mariadb |grep Loaded
 ```
 
-Now edit the `<code>mariadb.service</code>` file by adding a line to the `<code>[Service]</code>` group:
+Now edit the `mariadb.service` file by adding a line to the `[Service]` group:
 
 
 ```
@@ -118,7 +118,7 @@ systemctl restart mariadb
 #### Dockerfile
 
 
-If you run [MariaDB on Docker](../../binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/README.md) and use an image from a Dockerfile that is publicly available, most probably you have an entrypoint that is a Bash script, which starts `<code>mariadbd</code>` directly. You can edit this Bash script as explained above. Or you can set the `<code>LD_PRELOAD</code>` variable from the Dockerfile:
+If you run [MariaDB on Docker](../../binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/README.md) and use an image from a Dockerfile that is publicly available, most probably you have an entrypoint that is a Bash script, which starts `mariadbd` directly. You can edit this Bash script as explained above. Or you can set the `LD_PRELOAD` variable from the Dockerfile:
 
 
 ```
@@ -145,7 +145,7 @@ docker run -P -d --name mariadb --env LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libj
 #### Vagrantfile
 
 
-Usually [Vagrant](../../binary-packages/automated-mariadb-deployment-and-administration/vagrant-and-mariadb/README.md) is used to start a complete system in a virtual machine. If this is your case, you can use one of the methods above, for example you can modify your Vagrantfile to copy a modified version of the `<code>mariadb.service</code>` file into the guest system to configure systemd.
+Usually [Vagrant](../../binary-packages/automated-mariadb-deployment-and-administration/vagrant-and-mariadb/README.md) is used to start a complete system in a virtual machine. If this is your case, you can use one of the methods above, for example you can modify your Vagrantfile to copy a modified version of the `mariadb.service` file into the guest system to configure systemd.
 
 
 If you use Vagrant with the Docker provider, you can follow the instructions above to modify the Dockerfile.

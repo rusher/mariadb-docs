@@ -37,7 +37,7 @@
 ## Partial Stack Traces in the Error Log
 
 
-When `<code>mariadbd</code>` crashes, it will write a stack trace in the [error log](../../../../../../server/server-management/server-monitoring-logs/error-log.md) by default. This is because the [stack_trace](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-stack-trace) option defaults to `<code>ON</code>`. With a normal release build, this stack trace in the [error log](../../../../../../server/server-management/server-monitoring-logs/error-log.md) may look something like this:
+When `mariadbd` crashes, it will write a stack trace in the [error log](../../../../../../server/server-management/server-monitoring-logs/error-log.md) by default. This is because the [stack_trace](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-stack-trace) option defaults to `ON`. With a normal release build, this stack trace in the [error log](../../../../../../server/server-management/server-monitoring-logs/error-log.md) may look something like this:
 
 
 ```
@@ -114,7 +114,7 @@ stack_bottom = 0x7ff4dc62ccc8 thread_stack 0x49000
 If you plan to [report a bug](../../../../../../server/reference/bug-tracking/reporting-bugs.md) about the problem, then this information can be very useful for MariaDB's developers to track down the root cause. However, notice that some of the function names in the call stack are missing. In some cases, this partial stack trace may not be enough to find out exactly where the problem is.
 
 
-A full stack trace can only be produced if you have debugging symbols for your `<code>mariadbd</code>` binary.
+A full stack trace can only be produced if you have debugging symbols for your `mariadbd` binary.
 
 
 ## Obtaining Debugging Symbols for Your mariadbd executable
@@ -129,19 +129,19 @@ If you are obtaining a backtrace for a coredump, you can move the core dump to a
 ### Installing Debug Info Packages on Linux
 
 
-On some Linux distributions, you may be able to install `<code>debuginfo</code>` packages that contain debugging symbols.
+On some Linux distributions, you may be able to install `debuginfo` packages that contain debugging symbols.
 
 
-Currently, `<code>debuginfo</code>` packages may not allow the server to print a nice stack trace in the error log. They also allow users to extract full stack traces from core dumps. See [MDEV-20738](https://jira.mariadb.org/browse/MDEV-20738) for more information.
+Currently, `debuginfo` packages may not allow the server to print a nice stack trace in the error log. They also allow users to extract full stack traces from core dumps. See [MDEV-20738](https://jira.mariadb.org/browse/MDEV-20738) for more information.
 
 
 #### Installing Debug Info Packages with yum/dnf
 
 
-The MariaDB `<code>yum</code>` repository contains `<code>[debuginfo](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Developer_Guide/intro.debuginfo.html)</code>` packages.
+The MariaDB `yum` repository contains `[debuginfo](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Developer_Guide/intro.debuginfo.html)` packages.
 
 
-On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md) from MariaDB's repository using `<code>[yum](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md)</code>` or `<code>[dnf](https://en.wikipedia.org/wiki/DNF_(software))</code>`. Starting with RHEL 8 and Fedora 22, `<code>yum</code>` has been replaced by `<code>dnf</code>`, which is the next major version of `<code>yum</code>`. However, `<code>yum</code>` commands still work on many systems that use `<code>dnf</code>`. For example:
+On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md) from MariaDB's repository using `[yum](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md)` or `[dnf](https://en.wikipedia.org/wiki/DNF_(software))`. Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
 
 
 ```
@@ -154,10 +154,10 @@ See [Installing MariaDB with yum/dnf: Installing Debug Info Packages with YUM](.
 #### Installing Debug Info Packages with zypper
 
 
-The MariaDB `<code>zypper</code>` repository contains `<code>[debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo)</code>` packages.
+The MariaDB `zypper` repository contains `[debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo)` packages.
 
 
-On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md) from MariaDB's repository using `<code>[zypper](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md)</code>`. For example:
+On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md) from MariaDB's repository using `[zypper](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md)`. For example:
 
 
 ```
@@ -180,14 +180,14 @@ For Ubuntu an additional repository step is needed:
 sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el,s390x]  https://ftp.osuosl.org/pub/mariadb/repo/10.5/ubuntu focal main/debug'
 ```
 
-Adjust `<code>10.5</code>` to the major version you are debugging and `<code>focal</code>` to the required distribution.
+Adjust `10.5` to the major version you are debugging and `focal` to the required distribution.
 
 
 ```
 apt-get update && apt-get install -y mariadb-server-core-10.5-dbgsym
 ```
 
-From [MariaDB 10.9](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md) the version isn't included in the package name and `<code>mariadb-server-core-dbgsym</code>` can be used as the package name.
+From [MariaDB 10.9](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md) the version isn't included in the package name and `mariadb-server-core-dbgsym` can be used as the package name.
 
 
 #### Installing Debug Info Packages packaged by Ubuntu or Debian
@@ -238,10 +238,10 @@ These are currently only per major release version and are generated out of CI. 
 There are available on at [mariadb-debug?tab=tags](https://quay.io/repository/mariadb-foundation/mariadb-debug?tab=tags).
 
 
-Use the container name `<code>quay.io/mariadb-foundation/mariadb-debug:VERSION</code>`.
+Use the container name `quay.io/mariadb-foundation/mariadb-debug:VERSION`.
 
 
-Where `<code>VERSION</code>` corresponds to the major version you wish to test with.
+Where `VERSION` corresponds to the major version you wish to test with.
 
 
 #### Creating a Container with Debugging Symbols
@@ -266,7 +266,7 @@ Build with:
 buildah bud --tag mariadb_debug --build-arg VERSION=10.11.6 -f Containerfile .
 ```
 
-Then you will have a `<code>mariadb_debug</code>` container.
+Then you will have a `mariadb_debug` container.
 
 
 Example use:
@@ -307,7 +307,7 @@ If the was a core limit in the resource limits there may be limited or no core f
 If the core pattern begins with a **|**, then the following is the executable that handled the core file during the crash. The following show a few techniques to access the core depending on the pattern. If another program is used, look at its manual page to see how to get access to the core file.
 
 
-If a plain core filename is in the "Core pattern" there's a good chance it will be in the Working directory location. It might have a `<code>.{process number}</code>` suffix on the filename.
+If a plain core filename is in the "Core pattern" there's a good chance it will be in the Working directory location. It might have a `.{process number}` suffix on the filename.
 
 
 ### Extracting a core file from a container
@@ -316,13 +316,13 @@ If a plain core filename is in the "Core pattern" there's a good chance it will 
 If you are running MariaDB in a container, the locations where the core dump can be generated are limited. Looking at the container log, this will likely be where the error log information is. The "Core pattern" of a Linux system is currently a global fixed value. The consequence is if this core pattern refers to a program, that program isn't likely to be in the container and won't be executed on the crash.
 
 
-The system wide crash handler can be changed with `<code>sysctl kernel.core_pattern=core</code>` to set this back to a file based crash. With this, the crash should occur in the working directory, normally the `<code>/var/lib/mysql</code>` data directory of the container volume.
+The system wide crash handler can be changed with `sysctl kernel.core_pattern=core` to set this back to a file based crash. With this, the crash should occur in the working directory, normally the `/var/lib/mysql` data directory of the container volume.
 
 
 ### Extracting a core file from systemd-coredump
 
 
-For `<code>systemd-coredump</code>`, there is a program `<code>coredumpctl</code>` to manage access.
+For `systemd-coredump`, there is a program `coredumpctl` to manage access.
 
 
 ```
@@ -331,7 +331,7 @@ TIME                            PID   UID   GID SIG     COREFILE EXE            
 Fri 2022-09-09 14:16:37 AEST 213571  1000  1000 SIGSEGV present  /usr/sbin/mariadbd
 ```
 
-To access the program using `<code>gdb</code>`, `<code>coredumpctl debug</code>` (defaults to last crash), will load the core dump in gdb. The instructions in the [next section](#getting-backtraces-with-gdb-on-linux) for extracting information.
+To access the program using `gdb`, `coredumpctl debug` (defaults to last crash), will load the core dump in gdb. The instructions in the [next section](#getting-backtraces-with-gdb-on-linux) for extracting information.
 
 
 See also: [extracting core dumps with systemd-coredump](enabling-core-dumps.md#extracting-linux-core-dumps-with-systemd-coredump).
@@ -340,41 +340,41 @@ See also: [extracting core dumps with systemd-coredump](enabling-core-dumps.md#e
 ### Extract a core file from abrt
 
 
-A core pattern of `<code>|/usr/libexec/abrt-hook-ccpp</code>` indicates `<code>abrt</code>` system is used.
+A core pattern of `|/usr/libexec/abrt-hook-ccpp` indicates `abrt` system is used.
 
 
-`<code>[abrt-cli](https://abrt.readthedocs.io/en/latest/usage.html)</code>` is a command line user interface for access the core file.
+`[abrt-cli](https://abrt.readthedocs.io/en/latest/usage.html)` is a command line user interface for access the core file.
 
 
 ### Extract a core file from apport
 
 
-A core pattern of `<code>[|/usr/share/apport/apport</code>` indicates `<code>apport</code>`.
+A core pattern of `[|/usr/share/apport/apport` indicates `apport`.
 
 
 For more information see [Apport Project Wiki](https://wiki.ubuntu.com/Apport).
 
 
-`<code>[apport-retrace](https://wiki.ubuntu.com/DebuggingProgramCrash#Using_apport-retrace)</code>` allows you to "Examine Locally" and run a `<code>gdb</code>` session. One you have gdb started instructions in the [next section](#getting-backtraces-with-gdb-on-linux) can be used for extracting information.
+`[apport-retrace](https://wiki.ubuntu.com/DebuggingProgramCrash#Using_apport-retrace)` allows you to "Examine Locally" and run a `gdb` session. One you have gdb started instructions in the [next section](#getting-backtraces-with-gdb-on-linux) can be used for extracting information.
 
 
-## Analyzing a Core File with `<code>gdb</code>` on Linux
+## Analyzing a Core File with `gdb` on Linux
 
 
-To analyze the core file on Linux, you can use `<code>[gdb](https://www.gnu.org/software/gdb/documentation)</code>`.
+To analyze the core file on Linux, you can use `[gdb](https://www.gnu.org/software/gdb/documentation)`.
 
 
-For example, to open a core file with `<code>[gdb](https://www.gnu.org/software/gdb/documentation)</code>`, you could execute the following:
+For example, to open a core file with `[gdb](https://www.gnu.org/software/gdb/documentation)`, you could execute the following:
 
 
 ```
 sudo gdb /usr/sbin/mariadbd  /var/lib/mysql/core.932
 ```
 
-Be sure to replace `<code>/usr/sbin/mariadbd</code>` with the path to your `<code>mariadbd</code>` binary (might be `<code>mysqld</code>` on [MariaDB 10.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) and earlier) and to also replace `<code>/var/lib/mysql/core.932</code>` with the path to your core file.
+Be sure to replace `/usr/sbin/mariadbd` with the path to your `mariadbd` binary (might be `mysqld` on [MariaDB 10.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) and earlier) and to also replace `/var/lib/mysql/core.932` with the path to your core file.
 
 
-Once `<code>[gdb](https://www.gnu.org/software/gdb/documentation)</code>` has opened the core file, if you want to [log all output to a file](https://sourceware.org/gdb/current/onlinedocs/gdb/Logging-Output.html#Logging-Output), then you could execute the following commands:
+Once `[gdb](https://www.gnu.org/software/gdb/documentation)` has opened the core file, if you want to [log all output to a file](https://sourceware.org/gdb/current/onlinedocs/gdb/Logging-Output.html#Logging-Output), then you could execute the following commands:
 
 
 ```
@@ -382,19 +382,19 @@ set logging file /tmp/gdb_output.log
 set logging on
 ```
 
-If you do not execute `<code>set logging file</code>`, then the `<code>set logging on</code>` command creates a `<code>gdb.txt</code>` in your current working directory. Redirecting the output to a file is useful, because it can make it easier to analyze. It also makes it easier to send the information to a MariaDB developer, if that becomes necessary.
+If you do not execute `set logging file`, then the `set logging on` command creates a `gdb.txt` in your current working directory. Redirecting the output to a file is useful, because it can make it easier to analyze. It also makes it easier to send the information to a MariaDB developer, if that becomes necessary.
 
 
 Do any commands that you would like to do. For example, you could [get the backtraces](#getting-backtraces-with-gdb-on-linux).
 
 
-Once you are done, you can exit `<code>[gdb](https://www.gnu.org/software/gdb/documentation)</code>` by executing the `<code>[quit](https://sourceware.org/gdb/current/onlinedocs/gdb/Quitting-GDB.html#Quitting-GDB)</code>` command.
+Once you are done, you can exit `[gdb](https://www.gnu.org/software/gdb/documentation)` by executing the `[quit](https://sourceware.org/gdb/current/onlinedocs/gdb/Quitting-GDB.html#Quitting-GDB)` command.
 
 
-## Getting Backtraces with `<code>gdb</code>` on Linux
+## Getting Backtraces with `gdb` on Linux
 
 
-On Linux, once you have debugging symbols for your `<code>mariadbd</code>` binary, you can use the `<code>[gdb](https://www.gnu.org/software/gdb/documentation)</code>` utility to get [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace), which are what `<code>gdb</code>` calls stack traces. Backtraces can be obtained from a core file or from a running `<code>mariadbd</code>` process.
+On Linux, once you have debugging symbols for your `mariadbd` binary, you can use the `[gdb](https://www.gnu.org/software/gdb/documentation)` utility to get [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace), which are what `gdb` calls stack traces. Backtraces can be obtained from a core file or from a running `mariadbd` process.
 
 
 Full [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace) are preferred and will contain function arguments, which can contain useful information such as query strings, so it can make the information easier to analyze.
@@ -425,7 +425,7 @@ thread apply all bt full
 set logging off
 ```
 
-This will write the full backtrace into the file `<code>gdb.txt</code>`.
+This will write the full backtrace into the file `gdb.txt`.
 
 
 ### Getting Full Backtraces For All Threads From a Core File
@@ -434,48 +434,48 @@ This will write the full backtrace into the file `<code>gdb.txt</code>`.
 Sometimes it can be helpful to get **full** [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace) for all threads. The full [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace) will contain function arguments, which can contain useful information such as query strings, so it can make the information easier to analyze.
 
 
-To get **full** [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace) for all threads from a `<code>mariadbd</code>` core file, execute a command like the following:
+To get **full** [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace) for all threads from a `mariadbd` core file, execute a command like the following:
 
 
 ```
 sudo gdb --batch --eval-command="set print frame-arguments all" --eval-command="thread apply all bt full" /usr/sbin/mariadbd /var/lib/mysql/core.932  > mariadbd_full_bt_all_threads.txt
 ```
 
-Be sure to replace `<code>/usr/sbin/mariadbd</code>` with the path to your `<code>mariadbd</code>` binary and to also replace `<code>/var/lib/mysql/core.932</code>` with the path to your core dump.
+Be sure to replace `/usr/sbin/mariadbd` with the path to your `mariadbd` binary and to also replace `/var/lib/mysql/core.932` with the path to your core dump.
 
 
-The [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace) will be output to the file `<code>mariadbd_full_bt_all_threads.txt</code>`.
+The [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace) will be output to the file `mariadbd_full_bt_all_threads.txt`.
 
 
-### Getting Full Backtraces For All Threads From a Running `<code>mariadbd</code>` Process
+### Getting Full Backtraces For All Threads From a Running `mariadbd` Process
 
 
 Sometimes it can be helpful to get **full** [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace) for all threads. The full backtraces will contain function arguments, which can contain useful information such as query strings, so it can make the information easier to analyze.
 
 
-To get **full** [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace) for all threads from a running `<code>mariadbd</code>` process, execute a command like the following:
+To get **full** [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace) for all threads from a running `mariadbd` process, execute a command like the following:
 
 
 ```
 sudo gdb --batch --eval-command="set print frame-arguments all"  --eval-command="thread apply all bt full" /usr/sbin/mariadbd $(pgrep -xn mariadbd)  > mariadbd_full_bt_all_threads.txt
 ```
 
-Be sure to replace `<code>/usr/sbin/mariadbd</code>` with the path to your `<code>mariadbd</code>` binary.
+Be sure to replace `/usr/sbin/mariadbd` with the path to your `mariadbd` binary.
 
 
-The [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace) will be output to the file `<code>mariadbd_full_bt_all_threads.txt</code>`.
+The [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace) will be output to the file `mariadbd_full_bt_all_threads.txt`.
 
 
-Sometimes very busy systems are too busy to batch obtain the backtrace. If this is the case, `<code>gcore $(pidof mariadbd)</code>` can save the core and then obtain the backtrace out of the dumped core.
+Sometimes very busy systems are too busy to batch obtain the backtrace. If this is the case, `gcore $(pidof mariadbd)` can save the core and then obtain the backtrace out of the dumped core.
 
 
 ### Getting a Full Backtrace out of a Container
 
 
-If the crash or assertion is repeatable it could be easiest to run `<code>mariadbd</code>` under #gdb`<code>.</code>`
+If the crash or assertion is repeatable it could be easiest to run `mariadbd` under #gdb`.`
 
 
-The container image name here can be a prebuilt one from `<code>quay.io/mariadb-foundation/mariadb-debug</code>` or an explicit version built yourself as above.
+The container image name here can be a prebuilt one from `quay.io/mariadb-foundation/mariadb-debug` or an explicit version built yourself as above.
 
 
 ```
@@ -499,10 +499,10 @@ volumes:
   mariadbdata: {}
 ```
 
-Note, the initialization of data is assumed. Omit `<code>command</code>` and `<code>user</code>` if it isn't.
+Note, the initialization of data is assumed. Omit `command` and `user` if it isn't.
 
 
-If you wish to attach to and existing process in a container, the container needs to be started with the SYS_PTRACE capability. The sysctl `<code>kernel.yama.ptrace_scope</code>` that allows this should also be set to 0.
+If you wish to attach to and existing process in a container, the container needs to be started with the SYS_PTRACE capability. The sysctl `kernel.yama.ptrace_scope` that allows this should also be set to 0.
 
 
 ```
@@ -510,7 +510,7 @@ $ podman run -v data:/var/lib/mysql/ --cap-add SYS_PTRACE --name mtest -d quay.i
 $ podman exec --user mysql mtest gdb -p 1 -ex  'thread apply all bt -frame-arguments all full'
 ```
 
-Note: `<code>podman</code>` has the same arguments and behaviour as `<code>docker</code>` if you'd rather use that.
+Note: `podman` has the same arguments and behaviour as `docker` if you'd rather use that.
 
 
 or in compose:
@@ -521,16 +521,16 @@ cap_add:
     - SYS_PTRACE
 ```
 
-The container process is always pid one, and here we use `<code>c</code>` then `<code>thread apply all bt -frame-arguments all full</code>` as the pre-loaded `<code>gdb</code>` commands. When a particular signal like assert or SEGV is triggered, the backtrace will be displayed.
+The container process is always pid one, and here we use `c` then `thread apply all bt -frame-arguments all full` as the pre-loaded `gdb` commands. When a particular signal like assert or SEGV is triggered, the backtrace will be displayed.
 
 
 ## Letting a Container coredump
 
 
-First, the `<code>sysctl kernel.core_pattern</code>` needs to be `<code>core</code>`. If it starts with a pipe character it try to execute this within the container. This is a kernel wide setting and cannot be applied to a specific container. The bottom of a crash will show you want it is set to.
+First, the `sysctl kernel.core_pattern` needs to be `core`. If it starts with a pipe character it try to execute this within the container. This is a kernel wide setting and cannot be applied to a specific container. The bottom of a crash will show you want it is set to.
 
 
-With this set, just running a container with debug info is sufficient. The core should be dumped on the datadir volume. With the `<code>core</code>` dump here, analysis can occur like:
+With this set, just running a container with debug info is sufficient. The core should be dumped on the datadir volume. With the `core` dump here, analysis can occur like:
 
 
 ```
@@ -548,13 +548,13 @@ This is useful when you know which statement crashed the server.
 
 
 Just start mariadbd with the options
-`<code class="highlight fixed" style="white-space:pre-wrap">--datadir=/copy-of-original-data-directory --core-file --stack-trace --socket=/tmp/mariadbd-alone.sock --skip-networking</code>`
+`--datadir=/copy-of-original-data-directory --core-file --stack-trace --socket=/tmp/mariadbd-alone.sock --skip-networking`
 
 
 ## Disabling Stack Traces in the Error Log
 
 
-In order to disable stack traces in the [error log](../../../../../../server/server-management/server-monitoring-logs/error-log.md), you can configure the `<code>[skip_stack_trace](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-stack-trace)</code>` option either on the command-line or in a relevant server [option group](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+In order to disable stack traces in the [error log](../../../../../../server/server-management/server-monitoring-logs/error-log.md), you can configure the `[skip_stack_trace](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-stack-trace)` option either on the command-line or in a relevant server [option group](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 
 ```
@@ -577,13 +577,13 @@ If you encounter some problem in MariaDB, then MariaDB's developers would apprec
 * [SHOW CREATE TABLE {table](../../../../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) (for each table in query) and [EXPLAIN {query}](../outdated-pages/explain-formatjson-in-mysql.md) if a query related crash.
 
 
-A [MariaDB FTP server](/kb/en/mariadb-ftp-server/) is available for large and/or sensitive information. Please upload in `<code>.tar.gz</code>` or `<code>.zip</code>` archive.
+A [MariaDB FTP server](/kb/en/mariadb-ftp-server/) is available for large and/or sensitive information. Please upload in `.tar.gz` or `.zip` archive.
 
 
 For very difficult or critical errors, you should consider uploading the following information to the [MariaDB FTP server](/kb/en/mariadb-ftp-server/) the following:
 
 
-* Your build of `<code>mariadbd</code>` (if you compiled it), otherwise version information on the mariadb-server package.
+* Your build of `mariadbd` (if you compiled it), otherwise version information on the mariadb-server package.
 * Your core file.
 * Your contact information.
 * The associated [JIRA issue identifier](https://jira.mariadb.org) for the bug, if you [reported a bug](../../../../../../server/reference/bug-tracking/reporting-bugs.md).

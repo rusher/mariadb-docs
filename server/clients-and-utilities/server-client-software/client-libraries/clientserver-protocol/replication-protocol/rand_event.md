@@ -39,9 +39,9 @@ SET @@RAND_SEED1=685157301, @@RAND_SEED2=758850369/*!*/;
 #### Example Event As It's Written In The Binlog File
 
 
-`<code>
+`
 c0 e6 27 5a 0d 84 27 00 00 23 00 00 00 a8 01 00 ..'Z..'..#......
 00 00 00 b5 ab d6 28 00 00 00 00 41 23 3b 2d 00 ......(.........
 00 00 00 ....
-</code>`
+`
 

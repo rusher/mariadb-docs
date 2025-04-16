@@ -45,16 +45,16 @@ stored routines are disallowed.
 
 
 When a stored procedure has been created, you invoke it by
-using the `<code>CALL</code>` statement (see [CALL](../../../../reference/sql-statements-and-structure/sql-statements/stored-routine-statements/call.md)).
+using the `CALL` statement (see [CALL](../../../../reference/sql-statements-and-structure/sql-statements/stored-routine-statements/call.md)).
 
 
-To execute the `<code>CREATE PROCEDURE</code>` statement, it is
-necessary to have the `<code>CREATE ROUTINE</code>` privilege. By default, MariaDB
-automatically grants the `<code>ALTER ROUTINE</code>` and `<code>EXECUTE</code>` privileges to the
+To execute the `CREATE PROCEDURE` statement, it is
+necessary to have the `CREATE ROUTINE` privilege. By default, MariaDB
+automatically grants the `ALTER ROUTINE` and `EXECUTE` privileges to the
 routine creator. See also [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md).
 
 
-The `<code>DEFINER</code>` and SQL SECURITY clauses specify the security context to
+The `DEFINER` and SQL SECURITY clauses specify the security context to
 be used when checking access privileges at routine execution time, as
 described [here](../stored-functions/stored-routine-privileges.md). Requires the [SUPER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), the [SET USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#set-user) privilege.
 
@@ -87,62 +87,62 @@ For valid identifiers to use as procedure names, see [Identifier Names](../../..
 ### Things to be Aware of With CREATE OR REPLACE
 
 
-* One can't use `<code class="highlight fixed" style="white-space:pre-wrap">OR REPLACE</code>` together with `<code class="highlight fixed" style="white-space:pre-wrap">IF EXISTS</code>`.
+* One can't use `OR REPLACE` together with `IF EXISTS`.
 
 
 ## CREATE PROCEDURE IF NOT EXISTS
 
 
-If the `<code>IF NOT EXISTS</code>` clause is used, then the procedure will only be created if a procedure with the same name does not already exist. If the procedure already exists, then a warning will be triggered by default.
+If the `IF NOT EXISTS` clause is used, then the procedure will only be created if a procedure with the same name does not already exist. If the procedure already exists, then a warning will be triggered by default.
 
 
 ### IN/OUT/INOUT
 
 
-Each parameter is an `<code>IN</code>` parameter by default. To specify otherwise for
-a parameter, use the keyword `<code>OUT</code>` or `<code>INOUT</code>` before the parameter name.
+Each parameter is an `IN` parameter by default. To specify otherwise for
+a parameter, use the keyword `OUT` or `INOUT` before the parameter name.
 
 
-An `<code>IN</code>` parameter passes a value into a procedure. The procedure might
+An `IN` parameter passes a value into a procedure. The procedure might
 modify the value, but the modification is not visible to the caller
-when the procedure returns. An `<code>OUT</code>` parameter passes a value from the
+when the procedure returns. An `OUT` parameter passes a value from the
 procedure back to the caller. Its initial value is NULL within the
 procedure, and its value is visible to the caller when the procedure
-returns. An `<code>INOUT</code>` parameter is initialized by the caller, can be
+returns. An `INOUT` parameter is initialized by the caller, can be
 modified by the procedure, and any change made by the procedure is
 visible to the caller when the procedure returns.
 
 
-For each `<code>OUT</code>` or `<code>INOUT</code>` parameter, pass a user-defined variable in the
-`<code>CALL</code>` statement that invokes the procedure so that you can obtain its
+For each `OUT` or `INOUT` parameter, pass a user-defined variable in the
+`CALL` statement that invokes the procedure so that you can obtain its
 value when the procedure returns. If you are calling the procedure
 from within another stored procedure or function, you can also pass a
-routine parameter or local routine variable as an `<code>IN</code>` or `<code>INOUT</code>`
+routine parameter or local routine variable as an `IN` or `INOUT`
 parameter.
 
 
 ### DETERMINISTIC/NOT DETERMINISTIC
 
 
-`<code>DETERMINISTIC</code>` and `<code>NOT DETERMINISTIC</code>` apply only to [functions](../stored-functions/README.md). Specifying `<code>DETERMINISTC</code>` or `<code>NON-DETERMINISTIC</code>` in procedures has no effect. The default value is `<code>NOT DETERMINISTIC</code>`. Functions are `<code>DETERMINISTIC</code>` when they always return the same value for the same input. For example, a truncate or substring function. Any function involving data, therefore, is always `<code>NOT DETERMINISTIC</code>`.
+`DETERMINISTIC` and `NOT DETERMINISTIC` apply only to [functions](../stored-functions/README.md). Specifying `DETERMINISTC` or `NON-DETERMINISTIC` in procedures has no effect. The default value is `NOT DETERMINISTIC`. Functions are `DETERMINISTIC` when they always return the same value for the same input. For example, a truncate or substring function. Any function involving data, therefore, is always `NOT DETERMINISTIC`.
 
 
 ### CONTAINS SQL/NO SQL/READS SQL DATA/MODIFIES SQL DATA
 
 
-`<code>CONTAINS SQL</code>`, `<code>NO SQL</code>`, `<code>READS SQL DATA</code>`, and `<code>MODIFIES SQL DATA</code>` are informative clauses that tell the server what the function does. MariaDB does not check in any way whether the specified clause is correct. If none of these clauses are specified, `<code>CONTAINS SQL</code>` is used by default.
+`CONTAINS SQL`, `NO SQL`, `READS SQL DATA`, and `MODIFIES SQL DATA` are informative clauses that tell the server what the function does. MariaDB does not check in any way whether the specified clause is correct. If none of these clauses are specified, `CONTAINS SQL` is used by default.
 
 
-`<code>MODIFIES SQL DATA</code>` means that the function contains statements that may modify data stored in databases. This happens if the function contains statements like [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md), [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md), [INSERT](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md), [REPLACE](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md) or DDL.
+`MODIFIES SQL DATA` means that the function contains statements that may modify data stored in databases. This happens if the function contains statements like [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md), [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md), [INSERT](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md), [REPLACE](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md) or DDL.
 
 
-`<code>READS SQL DATA</code>` means that the function reads data stored in databases, but does not modify any data. This happens if [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statements are used, but there no write operations are executed.
+`READS SQL DATA` means that the function reads data stored in databases, but does not modify any data. This happens if [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statements are used, but there no write operations are executed.
 
 
-`<code>CONTAINS SQL</code>` means that the function contains at least one SQL statement, but it does not read or write any data stored in a database. Examples include [SET](../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) or [DO](../../../../../general-resources/company-and-community/contributing-participating/donate-to-the-foundation.md).
+`CONTAINS SQL` means that the function contains at least one SQL statement, but it does not read or write any data stored in a database. Examples include [SET](../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) or [DO](../../../../../general-resources/company-and-community/contributing-participating/donate-to-the-foundation.md).
 
 
-`<code>NO SQL</code>` means nothing, because MariaDB does not currently support any language other than SQL.
+`NO SQL` means nothing, because MariaDB does not currently support any language other than SQL.
 
 
 The routine_body consists of a valid SQL procedure statement. This can
@@ -152,9 +152,9 @@ can contain declarations, loops, and other control structure
 statements. See [Programmatic and Compound Statements](../../programmatic-compound-statements/programmatic-compound-statements-cursors/README.md) for syntax details.
 
 
-MariaDB allows routines to contain DDL statements, such as `<code>CREATE</code>` and
+MariaDB allows routines to contain DDL statements, such as `CREATE` and
 DROP. MariaDB also allows [stored procedures](README.md) (but not [stored functions](../stored-functions/README.md))
-to contain SQL transaction statements such as `<code>COMMIT</code>`.
+to contain SQL transaction statements such as `COMMIT`.
 
 
 For additional information about statements that are not allowed in
@@ -170,7 +170,7 @@ For information about invoking [stored procedures](README.md) from within progra
 ### OR REPLACE
 
 
-If the optional `<code>OR REPLACE</code>` clause is used, it acts as a shortcut for:
+If the optional `OR REPLACE` clause is used, it acts as a shortcut for:
 
 
 ```
@@ -202,7 +202,7 @@ A subset of Oracle's PL/SQL language is supported in addition to the traditional
 ## Examples
 
 
-The following example shows a simple stored procedure that uses an `<code>OUT</code>`
+The following example shows a simple stored procedure that uses an `OUT`
 parameter. It uses the DELIMITER command to set a new delimiter for the duration of the process — see [Delimiters in the mariadb client](../../../../clients-and-utilities/mariadb-client/delimiters.md).
 
 

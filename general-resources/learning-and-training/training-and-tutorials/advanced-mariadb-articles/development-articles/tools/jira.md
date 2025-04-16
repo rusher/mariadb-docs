@@ -16,7 +16,7 @@ After filling out the sign up form you can log in.
 ### Links to Jira Tasks
 
 
-You can easily create links to Jira tasks in the Knowledge Base using their "MDEV" number. For example, the text '`<code>mdev-191</code>`', when entered into the Knowledge Base becomes: [MDEV-191](https://jira.mariadb.org/browse/MDEV-191).
+You can easily create links to Jira tasks in the Knowledge Base using their "MDEV" number. For example, the text '`mdev-191`', when entered into the Knowledge Base becomes: [MDEV-191](https://jira.mariadb.org/browse/MDEV-191).
 
 
 ### See Also

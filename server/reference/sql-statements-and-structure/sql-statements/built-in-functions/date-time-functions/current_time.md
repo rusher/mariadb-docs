@@ -12,7 +12,7 @@ CURRENT_TIME([precision])
 ## Description
 
 
-`<code>CURRENT_TIME</code>` and `<code>CURRENT_TIME()</code>` are synonyms for `<code>[CURTIME()](curtime.md)</code>`.
+`CURRENT_TIME` and `CURRENT_TIME()` are synonyms for `[CURTIME()](curtime.md)`.
 
 
 ## See Also

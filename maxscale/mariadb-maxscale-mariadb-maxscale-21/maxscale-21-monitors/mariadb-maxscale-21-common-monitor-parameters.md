@@ -10,7 +10,7 @@ This document lists optional parameters that all current monitors support.
 ## Parameters
 
 
-### `<code>monitor_interval</code>`
+### `monitor_interval`
 
 
 This is the time the monitor waits between each cycle of monitoring. The default value of 10000 milliseconds (10 seconds) should be lowered if you want a faster response to changes in the server states. The value is defined in milliseconds and the smallest possible value is 100 milliseconds.
@@ -23,7 +23,7 @@ monitor_interval=2500
 
 
 
-### `<code>backend_connect_timeout</code>`
+### `backend_connect_timeout`
 
 
 This parameter controls the timeout for connecting to a monitored server. It is in seconds and the minimum value is 1 second. The default value for this parameter is 3 seconds.
@@ -36,7 +36,7 @@ backend_connect_timeout=6
 
 
 
-### `<code>backend_write_timeout</code>`
+### `backend_write_timeout`
 
 
 This parameter controls the timeout for writing to a monitored server. It is in seconds and the minimum value is 1 second. The default value for this parameter is 2 seconds.
@@ -49,7 +49,7 @@ backend_write_timeout=4
 
 
 
-### `<code>backend_read_timeout</code>`
+### `backend_read_timeout`
 
 
 This parameter controls the timeout for reading from a monitored server. It is in seconds and the minimum value is 1 second. The default value for this parameter is 1 seconds.
@@ -62,7 +62,7 @@ backend_read_timeout=2
 
 
 
-### `<code>script</code>`
+### `script`
 
 
 This command will be executed when a server changes its state. The parameter should be an absolute path to a command or the command should be in the executable path. The user which is used to run MaxScale should have execution rights to the file itself and the directory it resides in.
@@ -78,13 +78,13 @@ script=/home/user/myscript.sh initiator=$INITIATOR event=$EVENT live_nodes=$NODE
 The following substitutions will be made to the parameter value:
 
 
-* `<code>$INITIATOR</code>` will be replaced with the IP and port of the server who initiated the event
-* `<code>$EVENT</code>` will be replaced with the name of the event
-* `<code>$LIST</code>` will be replaced with a list of server IPs and ports
-* `<code>$NODELIST</code>` will be replaced with a list of server IPs and ports that are running
-* `<code>$SLAVELIST</code>` will be replaced with a list of server IPs and ports that are slaves
-* `<code>$MASTERLIST</code>` will be replaced with a list of server IPs and ports that are masters
-* `<code>$SYNCEDLIST</code>` will be replaced with a list of server IPs and ports that are synced Galera nodes
+* `$INITIATOR` will be replaced with the IP and port of the server who initiated the event
+* `$EVENT` will be replaced with the name of the event
+* `$LIST` will be replaced with a list of server IPs and ports
+* `$NODELIST` will be replaced with a list of server IPs and ports that are running
+* `$SLAVELIST` will be replaced with a list of server IPs and ports that are slaves
+* `$MASTERLIST` will be replaced with a list of server IPs and ports that are masters
+* `$SYNCEDLIST` will be replaced with a list of server IPs and ports that are synced Galera nodes
 
 
 For example, the previous example will be executed as:
@@ -97,7 +97,7 @@ For example, the previous example will be executed as:
 
 
 
-### `<code>events</code>`
+### `events`
 
 
 A list of event names which cause the script to be executed. If this option is not defined, all events cause the script to be executed. The list must contain a comma separated list of event names.

@@ -37,16 +37,16 @@ Currently, Orchestrator fully supports MariaDB [GTID](../../../../server-usage/r
 ## Architecture
 
 
-Orchestrator consists of a single executable called `<code>orchestrator</code>`. This is a process that periodically connects to the target servers. It will run SQL queries against target servers, so it needs a user with proper permissions. When the process is running, a GUI is available via a web browser, at the URL '[localhost:3000'](https://localhost:3000'). It also exposes a REST API (see [Using the web API](https://github.com/openark/orchestrator/blob/master/docs/using-the-web-api) in the Orchestrator documentation).
+Orchestrator consists of a single executable called `orchestrator`. This is a process that periodically connects to the target servers. It will run SQL queries against target servers, so it needs a user with proper permissions. When the process is running, a GUI is available via a web browser, at the URL '[localhost:3000'](https://localhost:3000'). It also exposes a REST API (see [Using the web API](https://github.com/openark/orchestrator/blob/master/docs/using-the-web-api) in the Orchestrator documentation).
 
 
-Orchestrator expects to find a JSON configuration file called `<code>orchestrator.conf.json</code>`, in `<code>/etc</code>`.
+Orchestrator expects to find a JSON configuration file called `orchestrator.conf.json`, in `/etc`.
 
 
 A database is used to store the configuration and the state of the target servers. By default, this is done using built-in SQLite. However, it is possible to use an external MariaDB or MySQL server instance.
 
 
-If a cluster of Orchestrator instances is running, only one central database is used. One Orchestrator node is active, while the others are passive and are only used for failover. If the active node crashes or becomes unreachable, one of the other nodes becomes the active instance. The `<code>active_node</code>` table shows which node is active. Nodes communicate between them using the Raft protocol.
+If a cluster of Orchestrator instances is running, only one central database is used. One Orchestrator node is active, while the others are passive and are only used for failover. If the active node crashes or becomes unreachable, one of the other nodes becomes the active instance. The `active_node` table shows which node is active. Nodes communicate between them using the Raft protocol.
 
 
 ## CLI Examples
@@ -111,7 +111,7 @@ Make a node writeable:
 orchestrator -c set-writeable -i <host>:<port>
 ```
 
-The `<code>--debug</code>` and `<code>--stack</code>` options can be added to the above commands to make them more verbose.
+The `--debug` and `--stack` options can be added to the above commands to make them more verbose.
 
 
 ## Orchestrator Resources and References

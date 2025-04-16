@@ -24,10 +24,10 @@ retrieved as fast as the other DBMS can do. If you have a lot of queries to exec
 Create table fastable table_specs select * from slowtable;
 ```
 
-`<code>FIX</code>` and `<code>BIN</code>` are often the better choice because the I/O functions are
-done on blocks of `<code>BLOCK_SIZE</code>` rows. `<code>VEC</code>` tables can be very efficient for
+`FIX` and `BIN` are often the better choice because the I/O functions are
+done on blocks of `BLOCK_SIZE` rows. `VEC` tables can be very efficient for
 tables having many columns only a few being used in each query. Furthermore,
-for tables of reasonable size, the `<code>MAPPED</code>` option can very often speed up
+for tables of reasonable size, the `MAPPED` option can very often speed up
 many queries.
 
 

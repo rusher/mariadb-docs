@@ -54,10 +54,10 @@ lock_option:
 ## Description
 
 
-The `<code>CREATE USER</code>` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#create-user) privilege or the [INSERT](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. For each account, `<code>CREATE USER</code>` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) (until [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) this is a table, from [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) it's a view) or [mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) (from [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md)) that has no privileges.
+The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#create-user) privilege or the [INSERT](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) (until [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) this is a table, from [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) it's a view) or [mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) (from [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md)) that has no privileges.
 
 
-If any of the specified accounts, or any permissions for the specified accounts, already exist, then the server returns `<code>ERROR 1396 (HY000)</code>`. If an error occurs, `<code>CREATE USER</code>` will still create the accounts that do not result in an error. Only one error is produced for all users which have not been created:
+If any of the specified accounts, or any permissions for the specified accounts, already exist, then the server returns `ERROR 1396 (HY000)`. If an error occurs, `CREATE USER` will still create the accounts that do not result in an error. Only one error is produced for all users which have not been created:
 
 
 ```
@@ -65,19 +65,19 @@ ERROR 1396 (HY000):
   Operation CREATE USER failed for 'u1'@'%','u2'@'%'
 ```
 
-`<code>CREATE USER</code>`, [DROP USER](drop-user.md), [CREATE ROLE](create-role.md), and [DROP ROLE](drop-role.md) all produce the same error code when they fail.
+`CREATE USER`, [DROP USER](drop-user.md), [CREATE ROLE](create-role.md), and [DROP ROLE](drop-role.md) all produce the same error code when they fail.
 
 
 See [Account Names](#account-names) below for details on how account names are specified.
 
 
-One can also create users with [GRANT](grant.md) if [SQL_MODE](../../../../server-management/variables-and-modes/sql-mode.md) does not have [NO_AUTO_CREATE_USER](../../../../server-management/variables-and-modes/sql-mode.md#no_auto_create_user) set. `<code>NO_AUTO_CREATE_USER</code>` is set by default.
+One can also create users with [GRANT](grant.md) if [SQL_MODE](../../../../server-management/variables-and-modes/sql-mode.md) does not have [NO_AUTO_CREATE_USER](../../../../server-management/variables-and-modes/sql-mode.md#no_auto_create_user) set. `NO_AUTO_CREATE_USER` is set by default.
 
 
 ## OR REPLACE
 
 
-If the optional `<code>OR REPLACE</code>` clause is used, it is basically a shortcut for:
+If the optional `OR REPLACE` clause is used, it is basically a shortcut for:
 
 
 ```
@@ -99,7 +99,7 @@ Query OK, 0 rows affected (0.00 sec)
 ## IF NOT EXISTS
 
 
-When the `<code>IF NOT EXISTS</code>` clause is used, MariaDB will return a warning instead of an error if the specified user already exists.
+When the `IF NOT EXISTS` clause is used, MariaDB will return a warning instead of an error if the specified user already exists.
 
 
 For example:
@@ -123,23 +123,23 @@ SHOW WARNINGS;
 ## Authentication Options
 
 
-If more than one authentication mechanism is declared using the `<code>OR</code>` keyword, the mechanisms are attempted in the order they are declared in the `<code>CREATE USER</code>` statement. As soon as one of the authentication mechanisms is successful, authentication is complete. If none of them is successful, the authentication has failed.
+If more than one authentication mechanism is declared using the `OR` keyword, the mechanisms are attempted in the order they are declared in the `CREATE USER` statement. As soon as one of the authentication mechanisms is successful, authentication is complete. If none of them is successful, the authentication has failed.
 
 
 ### IDENTIFIED BY 'password'
 
 
-The optional `<code>IDENTIFIED BY</code>` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function prior to being stored in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table.
+The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function prior to being stored in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table.
 
 
-For example, if our password is `<code>mariadb</code>`, then we can create the user with:
+For example, if our password is `mariadb`, then we can create the user with:
 
 
 ```
 CREATE USER foo2@test IDENTIFIED BY 'mariadb';
 ```
 
-If you do not specify a password with the `<code>IDENTIFIED BY</code>` clause, the user
+If you do not specify a password with the `IDENTIFIED BY` clause, the user
 will be able to connect without a password. A blank password is not a wildcard
 to match any password. The user must connect without providing a password if no
 password is set.
@@ -151,10 +151,10 @@ The only [authentication plugins](../../../plugins/authentication-plugins/README
 ### IDENTIFIED BY PASSWORD 'password_hash'
 
 
-The optional `<code>IDENTIFIED BY PASSWORD</code>` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. It will be stored in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table as-is.
+The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. It will be stored in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table as-is.
 
 
-For example, if our password is `<code>mariadb</code>`, then we can find the hash with:
+For example, if our password is `mariadb`, then we can find the hash with:
 
 
 ```
@@ -174,7 +174,7 @@ And then we can create a user with the hash:
 CREATE USER foo2@test IDENTIFIED BY PASSWORD '*54958E764CE10E50764C2EECBB71D01F08549980';
 ```
 
-If you do not specify a password with the `<code>IDENTIFIED BY</code>` clause, the user
+If you do not specify a password with the `IDENTIFIED BY` clause, the user
 will be able to connect without a password. A blank password is not a wildcard
 to match any password. The user must connect without providing a password if no
 password is set.
@@ -186,10 +186,10 @@ The only [authentication plugins](../../../plugins/authentication-plugins/README
 ### IDENTIFIED {VIA|WITH} authentication_plugin
 
 
-The optional `<code>IDENTIFIED VIA authentication_plugin</code>` allows you to specify that the account should be authenticated by a specific [authentication plugin](../../../plugins/authentication-plugins/README.md). The plugin name must be an active authentication plugin as per [SHOW PLUGINS](../administrative-sql-statements/show/show-plugins-soname.md). If it doesn't show up in that output, then you will need to install it with [INSTALL PLUGIN](../administrative-sql-statements/plugin-sql-statements/install-plugin.md) or [INSTALL SONAME](../administrative-sql-statements/plugin-sql-statements/install-soname.md).
+The optional `IDENTIFIED VIA authentication_plugin` allows you to specify that the account should be authenticated by a specific [authentication plugin](../../../plugins/authentication-plugins/README.md). The plugin name must be an active authentication plugin as per [SHOW PLUGINS](../administrative-sql-statements/show/show-plugins-soname.md). If it doesn't show up in that output, then you will need to install it with [INSTALL PLUGIN](../administrative-sql-statements/plugin-sql-statements/install-plugin.md) or [INSTALL SONAME](../administrative-sql-statements/plugin-sql-statements/install-soname.md).
 
 
-`<code>VIA</code>` and `<code>WITH</code>` are synonyms.
+`VIA` and `WITH` are synonyms.
 
 
 For example, this could be used with the [PAM authentication plugin](../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md):
@@ -199,7 +199,7 @@ For example, this could be used with the [PAM authentication plugin](../../../pl
 CREATE USER foo2@test IDENTIFIED VIA pam;
 ```
 
-Some authentication plugins allow additional arguments to be specified after a `<code>USING</code>` or `<code>AS</code>` keyword. For example, the [PAM authentication plugin](../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) accepts a [service name](../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#configuring-the-pam-service):
+Some authentication plugins allow additional arguments to be specified after a `USING` or `AS` keyword. For example, the [PAM authentication plugin](../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) accepts a [service name](../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#configuring-the-pam-service):
 
 
 ```
@@ -209,7 +209,7 @@ CREATE USER foo2@test IDENTIFIED VIA pam USING 'mariadb';
 The exact meaning of the additional argument would depend on the specific authentication plugin.
 
 
-The `<code>USING</code>` or `<code>AS</code>` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. This is only valid for [authentication plugins](../../../plugins/authentication-plugins/README.md) that have implemented a hook for the [PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. For example, the [ed25519](../../../plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin supports this:
+The `USING` or `AS` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. This is only valid for [authentication plugins](../../../plugins/authentication-plugins/README.md) that have implemented a hook for the [PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. For example, the [ed25519](../../../plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin supports this:
 
 
 ```
@@ -254,7 +254,7 @@ You can set certain TLS-related restrictions for specific user accounts. For ins
 
 
 
-The `<code>REQUIRE</code>` keyword must be used only once for all specified options, and the `<code>AND</code>` keyword can be used to separate individual options, but it is not required.
+The `REQUIRE` keyword must be used only once for all specified options, and the `AND` keyword can be used to separate individual options, but it is not required.
 
 
 For example, you can create a user account that requires these TLS options with the following:
@@ -291,7 +291,7 @@ It is possible to set per-account limits for certain server resources. The follo
 
 
 
-If any of these limits are set to `<code>0</code>`, then there is no limit for that resource for that user.
+If any of these limits are set to `0`, then there is no limit for that resource for that user.
 
 
 Here is an example showing how to create a user with resource limits:
@@ -303,44 +303,44 @@ CREATE USER 'someone'@'localhost' WITH
     MAX_QUERIES_PER_HOUR 200;
 ```
 
-The resources are tracked per account, which means `<code>'user'@'server'</code>`; not per user name or per connection.
+The resources are tracked per account, which means `'user'@'server'`; not per user name or per connection.
 
 
 The count can be reset for all users using [FLUSH USER_RESOURCES](../administrative-sql-statements/flush-commands/flush-tables-for-export.md), [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush-tables-for-export.md) or [mariadb-admin reload](../../../../clients-and-utilities/mariadb-admin.md).
 
 
-Per account resource limits are stored in the [user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, in the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. Columns used for resources limits are named `<code>max_questions</code>`, `<code>max_updates</code>`, `<code>max_connections</code>` (for `<code>MAX_CONNECTIONS_PER_HOUR</code>`), and `<code>max_user_connections</code>` (for `<code>MAX_USER_CONNECTIONS</code>`).
+Per account resource limits are stored in the [user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, in the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
 
 
 ## Account Names
 
 
-Account names have both a user name component and a host name component, and are specified as `<code>'user_name'@'host_name'</code>`.
+Account names have both a user name component and a host name component, and are specified as `'user_name'@'host_name'`.
 
 
-The user name and host name may be unquoted, quoted as strings using double quotes (`<code>"</code>`) or
-single quotes (`<code>'</code>`), or quoted as identifiers using backticks (`<code>`</code>`). You must use quotes
+The user name and host name may be unquoted, quoted as strings using double quotes (`"`) or
+single quotes (`'`), or quoted as identifiers using backticks (```). You must use quotes
 when using special characters (such as a hyphen) or wildcard characters. If you quote, you 
-must quote the user name and host name separately (for example `<code>'user_name'@'host_name'</code>`).
+must quote the user name and host name separately (for example `'user_name'@'host_name'`).
 
 
 ### Host Name Component
 
 
-If the host name is not provided, it is assumed to be `<code>'%'</code>`.
+If the host name is not provided, it is assumed to be `'%'`.
 
 
-Host names may contain the wildcard characters `<code>%</code>` and `<code>_</code>`. They are matched as if by
+Host names may contain the wildcard characters `%` and `_`. They are matched as if by
 the [LIKE](../built-in-functions/string-functions/like.md) clause. If you need to use a wildcard character literally (for example, to
-match a domain name with an underscore), prefix the character with a backslash. See `<code>LIKE</code>`
+match a domain name with an underscore), prefix the character with a backslash. See `LIKE`
 for more information on escaping wildcard characters.
 
 
 Host name matches are case-insensitive. Host names can match either domain names or IP
-addresses. Use `<code>'localhost'</code>` as the host name to allow only local client connections. On Linux, the loopback interface (127.0.0.1) will not match 'localhost' as it is not considered a local connection: this means that only connections via UNIX-domain sockets will match 'localhost'.
+addresses. Use `'localhost'` as the host name to allow only local client connections. On Linux, the loopback interface (127.0.0.1) will not match 'localhost' as it is not considered a local connection: this means that only connections via UNIX-domain sockets will match 'localhost'.
 
 
-You can use a netmask to match a range of IP addresses using `<code>'base_ip/netmask'</code>` as the
+You can use a netmask to match a range of IP addresses using `'base_ip/netmask'` as the
 host name. A user with an IP address *ip_addr* will be allowed to connect if the following
 condition is true:
 
@@ -359,10 +359,10 @@ CREATE USER 'maria'@'247.150.130.0/255.255.255.0';
 the IP addresses satisfying this condition range from 247.150.130.0 to 247.150.130.255.
 
 
-Using `<code>255.255.255.255</code>` is equivalent to not using a netmask at all. Netmasks cannot be used for IPv6 addresses.
+Using `255.255.255.255` is equivalent to not using a netmask at all. Netmasks cannot be used for IPv6 addresses.
 
 
-Note that the credentials added when creating a user with the `<code>'%'</code>` wildcard host will not grant access in all cases. For example, some systems come with an anonymous localhost user, and when connecting from localhost this will take precedence.
+Note that the credentials added when creating a user with the `'%'` wildcard host will not grant access in all cases. For example, some systems come with an anonymous localhost user, and when connecting from localhost this will take precedence.
 
 
 Before [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), the host name component could be up to 60 characters in length. Starting from [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), it can be up to 255 characters.
@@ -416,9 +416,9 @@ GRANT SELECT ON test.t1 to 'joffrey'@'192.168.0.3';
 GRANT SELECT ON test.t2 to 'joffrey'@'%';
 ```
 
-If you connect as joffrey from `<code class="fixed" style="white-space:pre-wrap">192.168.0.3</code>`, you will have the `<code>SELECT</code>`
-privilege on the table `<code>test.t1</code>`, but not on the table `<code>test.t2</code>`. If you connect as joffrey from any other IP address, you will have the `<code>SELECT</code>` privilege on the table `<code>test.t2</code>`, but not
-on the table `<code>test.t1</code>`.
+If you connect as joffrey from `192.168.0.3`, you will have the `SELECT`
+privilege on the table `test.t1`, but not on the table `test.t2`. If you connect as joffrey from any other IP address, you will have the `SELECT` privilege on the table `test.t2`, but not
+on the table `test.t1`.
 
 
 Usernames can be up to 80 characters long before 10.6 and starting from 10.6 it can be 128 characters long.
@@ -441,10 +441,10 @@ CREATE USER ''@'192.168.0.3';
 #### Fixing a Legacy Default Anonymous Account
 
 
-On some systems, the [mysql.db](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table has some entries for the `<code>''@'%'</code>` anonymous account by default. Unfortunately, there is no matching entry in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, which means that this anonymous account doesn't exactly exist, but it does have privileges--usually on the default `<code>test</code>` database created by [mariadb-install-db](../../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md). These account-less privileges are a legacy that is leftover from a time when MySQL's privilege system was less advanced.
+On some systems, the [mysql.db](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table has some entries for the `''@'%'` anonymous account by default. Unfortunately, there is no matching entry in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, which means that this anonymous account doesn't exactly exist, but it does have privileges--usually on the default `test` database created by [mariadb-install-db](../../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md). These account-less privileges are a legacy that is leftover from a time when MySQL's privilege system was less advanced.
 
 
-This situation means that you will run into errors if you try to create a `<code>''@'%'</code>` account. For example:
+This situation means that you will run into errors if you try to create a `''@'%'` account. For example:
 
 
 ```
@@ -460,7 +460,7 @@ DELETE FROM mysql.db WHERE User='' AND Host='%';
 FLUSH PRIVILEGES;
 ```
 
-Note that `<code>FLUSH PRIVILEGES</code>` is only needed if one modifies the `<code>mysql</code>` tables directly. It is not needed when using `<code>CREATE USER</code>`, `<code>DROP USER</code>`, `<code>GRANT</code>` etc.
+Note that `FLUSH PRIVILEGES` is only needed if one modifies the `mysql` tables directly. It is not needed when using `CREATE USER`, `DROP USER`, `GRANT` etc.
 
 
 And then the account can be created:
@@ -491,7 +491,7 @@ See [User Password Expiry](../../../../security/user-account-management/user-pas
 
 
 Account locking permits privileged administrators to lock/unlock user accounts. No new client connections will be permitted if an account is locked (existing connections are not affected). For example:
-`<code class="unknown_macro"><<<span class="macro_name">sql</span><span class="macro_arg_string"></span>>></code>`
+`<<<span class="macro_name">sql</span><span class="macro_arg_string"></span>>>`
 CREATE USER 'marijn'@'localhost' ACCOUNT LOCK;
 
 

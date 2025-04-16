@@ -25,18 +25,18 @@ Also see the [List of beginner friendly issues](https://jira.mariadb.org/issues/
 
 The mysqlbinlog client program needs to be updated to support GTID.
 Here is a suggested list of things to be done:
- - The `<code>--start-position</code>` and `<code>--stop-position</code>` options should be able to take
-   GTID positions; or maybe there should be new `<code>--start-gtid</code>` and `<code>--stop-gtid</code>`
-   options. Like `<code>--start-gtid=0-1-100,1-2-200,2-1-1000</code>`.
+ - The `--start-position` and `--stop-position` options should be able to take
+   GTID positions; or maybe there should be new `--start-gtid` and `--stop-gtid`
+   options. Like `--start-gtid=0-1-100,1-2-200,2-1-1000`.
  - A GTID position means the point just _after_ that GTID. So starting from
    GTID 0-1-100 and stopping at GTID 0-1-200, the first GTID output will
    probably be 0-1-101 and the last one 0-1-200. Note that if some domain is
    not specified in the position, it means to start from the begining,
    respectively stop immediately in that domain.
  - Starting and stopping GTID should work both with local files, and with
-   `<code>--read-from-remote-server</code>`. For the latter, there are a couple of extra
+   `--read-from-remote-server`. For the latter, there are a couple of extra
    things that need doing in the master-slave protocol, see
-   `<code>get_master_version_and_clock()</code>` in `<code>sql/slave.cc</code>`.
+   `get_master_version_and_clock()` in `sql/slave.cc`.
  - At the end of the dump, put these statements, to reduce the risk of those session variables incorrectly spilling into subsequent statements run in the same session:
 
 ```
@@ -207,7 +207,7 @@ select
 JSON_DETAILED(JSON_EXTRACT(trace, '$**.analyzing_range_alternatives')) 
 from INFORMATION_SCHEMA.OPTIMIZER_TRACE;
 ```
-Our experience is that `<code>JSON_DETAILED</code>` has some room for improvement when it comes to the quality of automatic JSON formatting.
+Our experience is that `JSON_DETAILED` has some room for improvement when it comes to the quality of automatic JSON formatting.
 Example:
 
 ```
@@ -247,7 +247,7 @@ JSON_DETAILED(JSON_EXTRACT(a, '$**.analyzing_range_alternatives')): [
 Things to note:
 
 * empty lines at the start (right before/after the "range_scan_alternatives")
-* `<code>"analyzing_index_merge_union":[]</code>` occupies 3 lines where one would be sufficient.
+* `"analyzing_index_merge_union":[]` occupies 3 lines where one would be sufficient.
 * the same goes for "ranges"
 
 One can look at the JSON pretty-printer that is used by EXPLAIN FORMAT=JSON and optimizer trace.  It produces a better result (but it has room for improvement, too.)
@@ -338,7 +338,7 @@ for now, let Histogram_json::point_selectivity() and Histogram_json::range_selec
 h3. Step 2:  Demonstrate saving/loading of histograms
 Now, the code already can: 
 - collect a JSON histogram and save it.
-- when loading a histogram, figure from `<code>histogram_type</code>` column that this is JSON histogram being loaded, create Histogram_json and invoke the parse function.
+- when loading a histogram, figure from `histogram_type` column that this is JSON histogram being loaded, create Histogram_json and invoke the parse function.
 Parse function at the moment only prints to stderr. 
 However, we should catch parse errors and make sure they are reported to the client. 
 The test may look like this:
@@ -356,7 +356,7 @@ The structure is
 ```
 std::vector<std::string>
 ```
-and it holds the data in KeyTupleFormat (See the comments for reasoning.  There was a suggestion to use `<code>in_vector</code>` (This is what IN subqueries use) but it didn't work out)
+and it holds the data in KeyTupleFormat (See the comments for reasoning.  There was a suggestion to use `in_vector` (This is what IN subqueries use) but it didn't work out)
 h2. Milestone 5.1 (aka Milestone 44)
 Make a function to estimate selectivity using the data structure specified in previous milestone.
 h2. Make range_selectivity() accept key_range parameters.
@@ -372,23 +372,23 @@ This means Histogram_binary will need to have access to min_value and max_value 
 
 ### make my_vsnprintf to use gcc-compatible format extensions
 
-`<code>my_vsnprintf()</code>` is used internally in the server as a portable `<code>printf</code>` replacement. And it's also exported to plugins as a service.
-It supports a subset of `<code>printf</code>` formats and three extensions:
+`my_vsnprintf()` is used internally in the server as a portable `printf` replacement. And it's also exported to plugins as a service.
+It supports a subset of `printf` formats and three extensions:
 
-* `<code>%`s</code>` means that a string should be quoted like an `<code>`identifier`</code>`
-* `<code>%b</code>` means that it's a binary string, not zero-terminated; printing won't stop at `<code>\0</code>`, so one should always specify the field width (like `<code>%.100b</code>`)
-* `<code>%M</code>` is used in error messages and prints the integer (errno) and the corresponding `<code>strerror()</code>` for it
+* `%`s` means that a string should be quoted like an ``identifier``
+* `%b` means that it's a binary string, not zero-terminated; printing won't stop at `\0`, so one should always specify the field width (like `%.100b`)
+* `%M` is used in error messages and prints the integer (errno) and the corresponding `strerror()` for it
 
-gcc knows `<code>printf</code>` formats and check whether actual arguments match the format string and issue a warning if they don't. Unfortunately there seems to be no easy way to teach gcc our extensions, so for now we have to disable `<code>printf</code>` format checks.
+gcc knows `printf` formats and check whether actual arguments match the format string and issue a warning if they don't. Unfortunately there seems to be no easy way to teach gcc our extensions, so for now we have to disable `printf` format checks.
 An better approach would be to use gcc compatible format extensions, like Linux kernel does. We should migrate to a different syntax for our extensions
 
-* `<code>%sI</code>` to mean "print as an identifier"
-* `<code>%sB</code>` to mean "print a binary string"
-* `<code>%uE</code>` to mean "print an errno"
-* `<code>%sT</code>` to put a "..." as truncation indicator
+* `%sI` to mean "print as an identifier"
+* `%sB` to mean "print a binary string"
+* `%uE` to mean "print an errno"
+* `%sT` to put a "..." as truncation indicator
 
 old formats can still be supported or they can be removed and in the latter case the major version of the service should be increased to signal an incompatible change.
-All error messages and all usages of `<code>my_vsnprintf</code>` should be changed to use the new syntax and gcc `<code>printf</code>` format checks should be enabled.
+All error messages and all usages of `my_vsnprintf` should be changed to use the new syntax and gcc `printf` format checks should be enabled.
 
 | Details: | Mentor: |
 | --- | --- |
@@ -410,7 +410,7 @@ JSON_CONTAINS can be used to test for JSON object equality in some cases, but we
 
 ### Concurrent multi-reader, multi-writer buffer for IO_CACHE
 
-IO_CACHE has basically three read/write modes: only read, only write, and a sequential read/write FIFO mode `<code>SEQ_READ_APPEND</code>`.
+IO_CACHE has basically three read/write modes: only read, only write, and a sequential read/write FIFO mode `SEQ_READ_APPEND`.
 While some performance-sensitive places, like replication slave thread, use SEQ_READ_APPEND, that may be a bottleneck. since reads and writes are sequential (and co-sequential i.e. reads and writes block each other).
 The task is to implement a non-blocking mode  or multi-reader, multi-writer use-case through a concurrent ring buffer implementation.
 h2. Possible approaches
@@ -447,21 +447,21 @@ The function should return future-like object, since we have to notify IO_CACHE 
 
 ### Custom formatting of strings in MariaDB queries
 
-Formatting more complex strings in a `<code>SELECT</code>` statement can get awkward when there are many `<code>concat()</code>`, `<code>format()</code>`, etc calls involved.
+Formatting more complex strings in a `SELECT` statement can get awkward when there are many `concat()`, `format()`, etc calls involved.
 It would be very cool and helpful to have a function that takes an input string and a formatting specification and returns string formatted using the rules the user passed in the specification.
-A great example for such a function is the classic `<code>C printf</code>` function, which, in this context, would look something like:
-`<code class="fixed" style="white-space:pre-wrap"><span class="k">SELECT</span> <span class="n">printf</span><span class="p">(</span><span class="s1">'%s %s, %s'</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">job_title</span><span class="p">)</span> <span class="k">from</span> <span class="n">employees</span><span class="p">;</span>
-</code>`
+A great example for such a function is the classic `C printf` function, which, in this context, would look something like:
+`<span class="k">SELECT</span> <span class="n">printf</span><span class="p">(</span><span class="s1">'%s %s, %s'</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">job_title</span><span class="p">)</span> <span class="k">from</span> <span class="n">employees</span><span class="p">;</span>
+`
 But it doesn't necessarily need to look this way, an alternative syntax could be Python-ish, which would leverage the fact that the server already knows the datatype of each field used in the formatting scheme:
-`<code class="fixed" style="white-space:pre-wrap"><span class="k">SELECT</span> <span class="n">sformat</span><span class="p">(</span><span class="s1">'arg1: {}, arg2: {}'</span><span class="p">,</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">)</span> <span class="k">from</span> <span class="k">table</span><span class="p">;</span>
-</code>`
+`<span class="k">SELECT</span> <span class="n">sformat</span><span class="p">(</span><span class="s1">'arg1: {}, arg2: {}'</span><span class="p">,</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">)</span> <span class="k">from</span> <span class="k">table</span><span class="p">;</span>
+`
 In that syntax one passes formatting options within the curly braces:
 
 ```
 -- Print 'arg1: col1, arg2: col2'  where col1 from table is of datetime type and should be printed as: 'Sunday November 2021'
 SELECT sformat('arg1: {%W %M %Y}, arg2: {}', col1, col2) from table;
 ```
-Ideally, this new function should use, behind the scenes, the existing builtin formatting functions in MariaDB (e.g. `<code>date_format()</code>`, `<code>format()</code>`) and even future formatting functions (e.g. MySQL's  `<code>format_bytes()</code>`, `<code>format_pico_time()</code>`), so the syntax has to be designed in a smart way to accommodate easily future additions.
+Ideally, this new function should use, behind the scenes, the existing builtin formatting functions in MariaDB (e.g. `date_format()`, `format()`) and even future formatting functions (e.g. MySQL's  `format_bytes()`, `format_pico_time()`), so the syntax has to be designed in a smart way to accommodate easily future additions.
 
 | Details: | Mentor: |
 | --- | --- |
@@ -471,10 +471,10 @@ Ideally, this new function should use, behind the scenes, the existing builtin f
 
 ### Add autocompletion capabilities to the MariaDB Jupyter kernel
 
-As part of the [Jupyter Messaging](https://jupyter-client.readthedocs.io/en/stable/messaging.html) protocol, the Jupyter frontend sends a `<code>complete_request</code>` message to the MariaDB kernel when the user invokes the code completer in a Jupyter notebook.
-This message is handled in the [do_complete](https://github.com/MariaDB/mariadb_kernel/blob/eadfbedbba93c0ea1146165580d86b050414e32a/mariadb_kernel/kernel.py#L111) function from the `<code>MariaDBKernel</code>` class.
+As part of the [Jupyter Messaging](https://jupyter-client.readthedocs.io/en/stable/messaging.html) protocol, the Jupyter frontend sends a `complete_request` message to the MariaDB kernel when the user invokes the code completer in a Jupyter notebook.
+This message is handled in the [do_complete](https://github.com/MariaDB/mariadb_kernel/blob/eadfbedbba93c0ea1146165580d86b050414e32a/mariadb_kernel/kernel.py#L111) function from the `MariaDBKernel` class.
 In simpler words, whenever the user hits the key shortcut for code autocompletion in a notebook, the MariaDB kernel's do_complete function is called with a number of arguments that help the kernel understand what the user wants to autocomplete.
-So the autocompletion infrastructure in the MariaDB kernel is already kindly provided by Jupyter, we only need to send back to Jupyter a list of suggestions based on the arguments that `<code>do_complete</code>` receives :-).
+So the autocompletion infrastructure in the MariaDB kernel is already kindly provided by Jupyter, we only need to send back to Jupyter a list of suggestions based on the arguments that `do_complete` receives :-).
 Ideally we should aim to enable at least database, table and column name completion and also SQL keyword completion.
 But no worries, there are plenty of possibilities to extend the functionality even more if the accepted student turns out to be very productive :D
 
@@ -486,9 +486,9 @@ But no worries, there are plenty of possibilities to extend the functionality ev
 
 ### Implement interacting editing of result sets in the MariaDB Jupyter kernel
 
-At this moment the MariaDB kernel is only capable of getting the results sets from the MariaDB client in `<code>HTML</code>` format and packing them in a Jupyter compatible format. Jupyter then displays them in notebooks like it would display Python Pandas dataframes.
-Sure, the users can easily write `<code>SQL</code>` code to modify the content of a table like they would write in a classical command line database client.
-But we want to go a bit further, we would love to have the capability to edit a result set returned by a `<code>SELECT</code>` statement (i.e. double click on table cells and edit) and have a button that users can press to generate a `<code>SQL</code>` statement that will update the content of the table via the MariaDB server.
+At this moment the MariaDB kernel is only capable of getting the results sets from the MariaDB client in `HTML` format and packing them in a Jupyter compatible format. Jupyter then displays them in notebooks like it would display Python Pandas dataframes.
+Sure, the users can easily write `SQL` code to modify the content of a table like they would write in a classical command line database client.
+But we want to go a bit further, we would love to have the capability to edit a result set returned by a `SELECT` statement (i.e. double click on table cells and edit) and have a button that users can press to generate a `SQL` statement that will update the content of the table via the MariaDB server.
 Apart from interacting with the Jupyter frontend for providing this UI capability, we also have to implement a field integrity functionality so that we make sure users can't enter data that is not compatible with the datatype of the column as it is seen by the MariaDB server.
 The project should start with a fair bit of research to understand how we can play with the [Jupyter Messaging](https://jupyter-client.readthedocs.io/en/stable/messaging.html)  protocol to create the UI functionality and also to check other Jupyter kernels and understand what's the right and best approach for tackling this.
 
@@ -500,13 +500,13 @@ The project should start with a fair bit of research to understand how we can pl
 
 ### Make the MariaDB Jupyter kernel capable of dealing with huge SELECTs
 
-Currently the MariaDB kernel doesn't impose any internal limits for the number of rows a user can `<code>SELECT</code>` in a notebook cell. Internally the kernel gets the result set from MariaDB and stores it in a pandas DataFrame, so users can use it with magic commands to chart data.
-But this DataFrame is stored in memory, so if you `<code>SELECT</code>` a huge number of rows, say 500k or 1M, it's probably not a very good idea to create such a huge DataFrame.
+Currently the MariaDB kernel doesn't impose any internal limits for the number of rows a user can `SELECT` in a notebook cell. Internally the kernel gets the result set from MariaDB and stores it in a pandas DataFrame, so users can use it with magic commands to chart data.
+But this DataFrame is stored in memory, so if you `SELECT` a huge number of rows, say 500k or 1M, it's probably not a very good idea to create such a huge DataFrame.
 We tested with 500k rows, and the DataFrame itself is not the biggest problem, it consumed around 500MB of memory. The problem is the amount of rows the browser needs to render, for 500k rows the browser tab with the notebook consumes around 2GB of memory, so the Jupyter frontend (JupyterLab, Jupyter Notebook) slows down considerably.
 A potential solution is to introduce a two new config options which would specify:
 
-* a limit for the number of rows the Jupyter notebook should render, a reasonable default value for this could 50 rows for instance (`<code>display_max_rows</code>`)
-* a limit for each `<code>SELECT</code>` statement, `<code>limit_max_rows</code>`, that the kernel would use to determine whether it should store the result set in memory in a DataFrame or store the result set on disk. A reasonable default value might be 100k rows.
+* a limit for the number of rows the Jupyter notebook should render, a reasonable default value for this could 50 rows for instance (`display_max_rows`)
+* a limit for each `SELECT` statement, `limit_max_rows`, that the kernel would use to determine whether it should store the result set in memory in a DataFrame or store the result set on disk. A reasonable default value might be 100k rows.
 
 The trickiest part of the project though is that, once the kernel writes a result set on disk, the charting magic commands need to detect that the data is not in memory, it is on disk, and they should find a smart mechanism for generating the chart from the disk data without loading the entire data in memory (which would defeat the whole purpose of the project). This might involve finding a new Python plotting library (instead of current matplotlib) that can accomplish the job.
 

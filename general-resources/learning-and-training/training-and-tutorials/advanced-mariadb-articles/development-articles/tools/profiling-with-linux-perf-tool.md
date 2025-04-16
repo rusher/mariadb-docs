@@ -1,7 +1,7 @@
 
 # Profiling with Linux perf tool
 
-Linux `<code>perf</code>` tool can be used to do non-intrusive profiling.
+Linux `perf` tool can be used to do non-intrusive profiling.
 
 
 ## Frequency Based Sampling
@@ -20,7 +20,7 @@ Perf records at a high frequency, so only a short recording is sufficient to ans
 sudo perf record -p ${pidof mysqld} -g -o sample.perf -- sleep 5
 ```
 
-The `<code>-g</code>` option here records the calling stack. Because seeing time in a mutex function isn't particularly interesting without knowing which mutex it is.
+The `-g` option here records the calling stack. Because seeing time in a mutex function isn't particularly interesting without knowing which mutex it is.
 
 
 ### Viewing a sample
@@ -40,7 +40,7 @@ sudo chown $USER: sample.perf
 perf report -i sample.perf -g
 ```
 
-To see which low level functions are consuming the most time, `<code>--no-children</code>` means that each function listed include only the time that is being spend it this function and excluding the other functions it calls.
+To see which low level functions are consuming the most time, `--no-children` means that each function listed include only the time that is being spend it this function and excluding the other functions it calls.
 
 
 ```
@@ -84,10 +84,10 @@ Something like:
 perf record -e 'probe_ha_rocksdb:*' -a -- sleep 60
 ```
 
-Note: `<code>-a</code>` means system-wide.
+Note: `-a` means system-wide.
 
 
-There's also `<code>-p $PID</code>` option
+There's also `-p $PID` option
 
 
 ```

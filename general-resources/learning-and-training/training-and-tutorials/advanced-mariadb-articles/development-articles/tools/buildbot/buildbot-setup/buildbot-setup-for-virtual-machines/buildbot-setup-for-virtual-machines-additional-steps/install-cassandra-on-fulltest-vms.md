@@ -50,7 +50,7 @@ sudo apt-get update
 sudo apt-get install cassandra
 ```
 
-1. in the VM, launch the `<code>cassandra-cli</code>` program and test the Cassandra installation:
+1. in the VM, launch the `cassandra-cli` program and test the Cassandra installation:
 
 
 ```
@@ -134,7 +134,7 @@ Elapsed time: 53 msec(s).
 sudo shutdown -h now
 ```
 
-1. Do steps 2-6 for `<code>vm-precise-i386-fulltest.qcow2</code>`. The output of the testing step was:
+1. Do steps 2-6 for `vm-precise-i386-fulltest.qcow2`. The output of the testing step was:
 
 
 ```

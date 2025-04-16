@@ -68,18 +68,18 @@ MariaDB> select * from information_schema.optimizer_trace limit 1\G
 For each SELECT, there are two "Steps":
 
 
-* `<code>join_preparation</code>`
-* `<code>join_optimization</code>`
+* `join_preparation`
+* `join_optimization`
 
 
-Join preparation shows early query rewrites. `<code>join_optmization</code>` is where most of the query optimizations are done. They are:
+Join preparation shows early query rewrites. `join_optmization` is where most of the query optimizations are done. They are:
 
 
-* `<code>condition_processing</code>` - basic rewrites in WHERE/ON conditions.
-* `<code>ref_optimizer_key_uses</code>` - Construction of possible ways to do ref and eq_ref accesses.
-* `<code>rows_estimation</code>` - Consideration of range and index_merge accesses.
-* `<code>considered_execution_plans</code>` - Join optimization itself, that is, choice of the join order.
-* `<code>attaching_conditions_to_tables</code>` - Once the join order is fixed, parts of the WHERE clause are "attached" to tables to filter out rows as early as possible.
+* `condition_processing` - basic rewrites in WHERE/ON conditions.
+* `ref_optimizer_key_uses` - Construction of possible ways to do ref and eq_ref accesses.
+* `rows_estimation` - Consideration of range and index_merge accesses.
+* `considered_execution_plans` - Join optimization itself, that is, choice of the join order.
+* `attaching_conditions_to_tables` - Once the join order is fixed, parts of the WHERE clause are "attached" to tables to filter out rows as early as possible.
 
 
 The above steps are for just one SELECT. If the query has subqueries, each SELECT will have these steps, and there will be extra steps/rewrites to handle the subquery construct itself.
@@ -95,7 +95,7 @@ If you are interested in some particular part of the trace, MariaDB has two func
 * [JSON_DETAILED](../../../sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_detailed.md) presents it in a user-readable way.
 
 
-For example, the contents of the `<code>analyzing_range_alternatives</code>` node can be extracted like so:
+For example, the contents of the `analyzing_range_alternatives` node can be extracted like so:
 
 
 ```
@@ -156,10 +156,10 @@ Optimizer trace will show:
         }
 ```
 
-Here, one can see that `<code>NOT</code>` was removed.
+Here, one can see that `NOT` was removed.
 
 
-Similarly, one can also see that `<code>IN(...)</code>` with one element is the same as equality:
+Similarly, one can also see that `IN(...)` with one element is the same as equality:
 
 
 ```
@@ -196,7 +196,7 @@ will show
           }
 ```
 
-so redundant `<code>CONVERT</code>` calls should be used with caution.
+so redundant `CONVERT` calls should be used with caution.
 
 
 ### VIEW Processing
@@ -292,14 +292,14 @@ Index-based Nested-loops joins are called "ref access" in the MariaDB optimizer.
 The optimizer analyzes the WHERE/ON conditions and collects all equality conditions that can be used by ref access using some index.
 
 
-The list of conditions can be found in the `<code>ref_optimizer_key_uses</code>` node.
+The list of conditions can be found in the `ref_optimizer_key_uses` node.
 (TODO example)
 
 
 ### Join Optimization
 
 
-The join optimizer's node is named `<code>considered_execution_plans</code>`.
+The join optimizer's node is named `considered_execution_plans`.
 
 
 The optimizer constructs the join orders in a left-to-right fashion. That is, if the query is a join of three tables:
@@ -336,7 +336,7 @@ In JSON, it looks like this:
       }
 ```
 
-(search for `<code>plan_prefix</code>` followed by `<code>table</code>`).
+(search for `plan_prefix` followed by `table`).
 
 
 If you are interested in how the join order of #t1,t2,t3
@@ -344,7 +344,7 @@ If you are interested in how the join order of #t1,t2,t3
 # was constructed (or not constructed), you need to search for these patterns:
 
 
-* `<code>"plan_prefix":[], "table":"t1"</code>`
-* `<code>"plan_prefix":["t1"], "table":"t2"</code>`
-* `<code>"plan_prefix":["t1", "t2"], "table":"t3"</code>`
+* `"plan_prefix":[], "table":"t1"`
+* `"plan_prefix":["t1"], "table":"t2"`
+* `"plan_prefix":["t1", "t2"], "table":"t3"`
 

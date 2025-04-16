@@ -8,7 +8,7 @@ Directly editing or moving the redo logs can cause corruption, and should never 
 ## Overview
 
 
-The redo log is used by [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) during crash recovery and background flushing of transactions to the tablespaces. The redo log files have names like `<code>ib_logfileN</code>`, where `<code>N</code>` is an integer. From [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), there is only one redo log, so the file will always be named `<code>ib_logfile0</code>`. If the [innodb_log_group_home_dir](innodb-system-variables.md#innodb_log_group_home_dir) system variable is configured, then the redo log files will be created in that directory. Otherwise, they will be created in the directory defined by the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable.
+The redo log is used by [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) during crash recovery and background flushing of transactions to the tablespaces. The redo log files have names like `ib_logfileN`, where `N` is an integer. From [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), there is only one redo log, so the file will always be named `ib_logfile0`. If the [innodb_log_group_home_dir](innodb-system-variables.md#innodb_log_group_home_dir) system variable is configured, then the redo log files will be created in that directory. Otherwise, they will be created in the directory defined by the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable.
 
 
 ## Flushing Effects on Performance and Consistency
@@ -36,15 +36,15 @@ The redo log group capacity is the total combined size of all InnoDB redo logs. 
 The redo log group capacity is determined by the following calculation:
 
 
-`<code>innodb_log_group_capacity</code>` = `<code>[innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size)</code>` * `<code>[innodb_log_files_in_group](innodb-system-variables.md#innodb_log_files_in_group)</code>`
+`innodb_log_group_capacity` = `[innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size)` * `[innodb_log_files_in_group](innodb-system-variables.md#innodb_log_files_in_group)`
 
 
-For example, if [innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size) is set to `<code>2G</code>` and [innodb_log_files_in_group](innodb-system-variables.md#innodb_log_files_in_group) is set to `<code>2</code>`, then we would have the following:
+For example, if [innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size) is set to `2G` and [innodb_log_files_in_group](innodb-system-variables.md#innodb_log_files_in_group) is set to `2`, then we would have the following:
 
 
-* `<code>innodb_log_group_capacity</code>` = `<code>[innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size)</code>` * `<code>[innodb_log_files_in_group](innodb-system-variables.md#innodb_log_files_in_group)</code>`
-* = `<code>2G</code>` * `<code>2</code>`
-* = `<code>4G</code>`
+* `innodb_log_group_capacity` = `[innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size)` * `[innodb_log_files_in_group](innodb-system-variables.md#innodb_log_files_in_group)`
+* = `2G` * `2`
+* = `4G`
 
 
 ### Changing the Redo Log Group Capacity
@@ -102,7 +102,7 @@ To determine the InnoDB checkpoint age, do the following:
 
 
 * Query [SHOW ENGINE INNODB STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md).
-* Find the `<code>LOG</code>` section. For example:
+* Find the `LOG` section. For example:
 
 
 ```
@@ -120,13 +120,13 @@ Last checkpoint at 252792767756840
 * Perform the following calculation:
 
 
-`<code>innodb_checkpoint_age</code>` = `<code>Log sequence number</code>` - `<code>Last checkpoint at</code>`
+`innodb_checkpoint_age` = `Log sequence number` - `Last checkpoint at`
 
 
 In the example above, that would be:
 
 
-* `<code>innodb_checkpoint_age</code>` = `<code>Log sequence number</code>` - `<code>Last checkpoint at</code>`
+* `innodb_checkpoint_age` = `Log sequence number` - `Last checkpoint at`
 * = 252794398789379 - 252792767756840
 * = 1631032539 bytes
 * = 1631032539 byes / (1024 * 1024 * 1024) (GB/bytes)
@@ -139,18 +139,18 @@ In the example above, that would be:
 The redo log occupancy is the percentage of the InnoDB redo log capacity that is taken up by dirty pages that have not yet been flushed to the physical InnoDB tablespace files in a checkpoint. Therefore, it's determined by the following calculation:
 
 
-`<code>innodb_log_occupancy</code>` = `<code>[innodb_checkpoint_age](#determining-the-checkpoint-age)</code>` / `<code>[innodb_log_group_capacity](#redo-log-group-capacity)</code>`
+`innodb_log_occupancy` = `[innodb_checkpoint_age](#determining-the-checkpoint-age)` / `[innodb_log_group_capacity](#redo-log-group-capacity)`
 
 
-For example, if `<code>[innodb_checkpoint_age](#determining-the-checkpoint-age)</code>` is `<code>1.5G</code>` and `<code>[innodb_log_group_capacity](#redo-log-group-capacity)</code>` is `<code>4G</code>`, then we would have the following:
+For example, if `[innodb_checkpoint_age](#determining-the-checkpoint-age)` is `1.5G` and `[innodb_log_group_capacity](#redo-log-group-capacity)` is `4G`, then we would have the following:
 
 
-* `<code>innodb_log_occupancy</code>` = `<code>[innodb_checkpoint_age](#determining-the-checkpoint-age)</code>` / `<code>[innodb_log_group_capacity](#redo-log-group-capacity)</code>`
-* = `<code>1.5G</code>` / `<code>4G</code>`
-* = `<code>0.375</code>`
+* `innodb_log_occupancy` = `[innodb_checkpoint_age](#determining-the-checkpoint-age)` / `[innodb_log_group_capacity](#redo-log-group-capacity)`
+* = `1.5G` / `4G`
+* = `0.375`
 
 
-If the calculated value for redo log occupancy is too close to `<code>1.0</code>`, then the InnoDB redo log capacity may be too small for the current workload.
+If the calculated value for redo log occupancy is too close to `1.0`, then the InnoDB redo log capacity may be too small for the current workload.
 
 
 ## [MariaDB 10.8](../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md) Updates

@@ -16,7 +16,7 @@ ST_LongFromGeoHash(geohash)
 ## Description
 
 
-Decodes a given `<code>geohash</code>` string and returns the longitude in the interval [180, -180].
+Decodes a given `geohash` string and returns the longitude in the interval [180, -180].
 
 
 If the argument is NULL, the return value is NULL. If the argument is invalid, an ER_INCORRECT_TYPE error is thrown.

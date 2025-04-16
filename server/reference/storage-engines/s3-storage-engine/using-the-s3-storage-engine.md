@@ -20,7 +20,7 @@ accessible for reading in MariaDB.
 As of [MariaDB 10.5.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes.md), the S3 storage engine is currently [gamma maturity](../../../../release-notes/mariadb-release-criteria.md), so the following step can be omitted.
 
 
-On earlier releases, when it was [alpha maturity](../../../../release-notes/mariadb-release-criteria.md), it will not load by default on a stable release of the server due to the default value of the [plugin_maturity](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_maturity) variable. Set to `<code>alpha</code>` (or below) in your config file to permit installation of the plugin:
+On earlier releases, when it was [alpha maturity](../../../../release-notes/mariadb-release-criteria.md), it will not load by default on a stable release of the server due to the default value of the [plugin_maturity](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_maturity) variable. Set to `alpha` (or below) in your config file to permit installation of the plugin:
 
 
 ```
@@ -64,8 +64,8 @@ shell> apt install mariadb-plugin-s3
 ## Creating an S3 table.
 
 
-As S3 tables are read only, one cannot create a S3 table with `<code>CREATE TABLE</code>`.
-One should use instead use `<code>ALTER TABLE old_table ENGINE=S3</code>` to convert an
+As S3 tables are read only, one cannot create a S3 table with `CREATE TABLE`.
+One should use instead use `ALTER TABLE old_table ENGINE=S3` to convert an
 existing table to be stored on S3.
 
 
@@ -89,8 +89,8 @@ ALTER TABLE s3_table ENGINE=INNODB
 ## New Options for [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)
 
 
-* `<code>S3_BLOCK_SIZE</code>` : Set to 4M as default. This is the block size for all index and data pages stored in S3.
-* `<code>COMPRESSION_ALGORITHM</code>` : Set to 'none' as default. Which compression algorithm to use for block stored in S3. Options are: `<code>none</code>` or `<code>zlib</code>`.
+* `S3_BLOCK_SIZE` : Set to 4M as default. This is the block size for all index and data pages stored in S3.
+* `COMPRESSION_ALGORITHM` : Set to 'none' as default. Which compression algorithm to use for block stored in S3. Options are: `none` or `zlib`.
 
 
 [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) can be used on S3 tables as normal to add columns or change column definitions.
@@ -124,8 +124,8 @@ If you are using an S3 service that is using HTTP to connect (like [](https://mi
 If you are going to use a primary-replica setup, you should look at the following variables:
 
 
-* [s3_replicate_alter_as_create_select](s3-storage-engine-system-variables.md#s3-replicate-alter-as-create-select): When converting an S3 table to local table, log all rows in binary log. Defaults to `<code class="fixed" style="white-space:pre-wrap">TRUE</code>`. This allows the replica to replicate `<code class="fixed" style="white-space:pre-wrap">CREATE TABLE .. SELECT FROM s3_table</code>` even it the replica doesn't have access to the original `<code class="fixed" style="white-space:pre-wrap">s3_table</code>`.
-* [s3_slave_ignore_updates](s3-storage-engine-system-variables.md#s3-slave-ignore-updates): Should be set if primary and replica share the same S3 instance. This tells the replica that it can ignore any updates to the S3 tables as they are already applied on the primary. Defaults to `<code class="fixed" style="white-space:pre-wrap">FALSE</code>`.
+* [s3_replicate_alter_as_create_select](s3-storage-engine-system-variables.md#s3-replicate-alter-as-create-select): When converting an S3 table to local table, log all rows in binary log. Defaults to `TRUE`. This allows the replica to replicate `CREATE TABLE .. SELECT FROM s3_table` even it the replica doesn't have access to the original `s3_table`.
+* [s3_slave_ignore_updates](s3-storage-engine-system-variables.md#s3-slave-ignore-updates): Should be set if primary and replica share the same S3 instance. This tells the replica that it can ignore any updates to the S3 tables as they are already applied on the primary. Defaults to `FALSE`.
 
 
 The above defaults assume that the primary and replica don't share the same S3 instance.
@@ -252,7 +252,7 @@ relevant, and if not, update or delete the .frm file.
 
 
 This means that if the table definition changes on S3 and it's in the
-local cache, one has to execute `<code>[FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)</code>` to
+local cache, one has to execute `[FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)` to
 get MariaDB to notice the change and update the .frm file.
 
 
@@ -275,21 +275,21 @@ S3 works with [replication](../../../server-usage/replication-cluster-multi-mast
 ## aria_s3_copy
 
 
-[aria_s3_copy](aria_s3_copy.md) is an external tool that one can use to copy [Aria](../aria/aria-storage-engine.md) tables to and from S3. Use `<code>aria_s3_copy --help</code>` to get the options of how to use it.
+[aria_s3_copy](aria_s3_copy.md) is an external tool that one can use to copy [Aria](../aria/aria-storage-engine.md) tables to and from S3. Use `aria_s3_copy --help` to get the options of how to use it.
 
 
 ## mariadb-dump
 
 
-* [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) will by default ignore S3 tables. If `<code>mariadb-dump</code>` is run with the `<code>--copy-s3-tables</code>` option, the resulting file will contain a CREATE statement for a similar [Aria](../aria/aria-storage-engine.md) table, followed by the table data and ending with an `<code>ALTER TABLE xxx ENGINE=S3</code>`.
+* [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) will by default ignore S3 tables. If `mariadb-dump` is run with the `--copy-s3-tables` option, the resulting file will contain a CREATE statement for a similar [Aria](../aria/aria-storage-engine.md) table, followed by the table data and ending with an `ALTER TABLE xxx ENGINE=S3`.
 
 
 ## ANALYZE TABLE
 
 
 As of [MariaDB 10.5.14](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10514-release-notes.md), [ANALYZE TABLE](../../sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) is supported for S3 tables.
-As the S3 tables are read-only, a normal `<code>ANALYZE TABLE</code>` will not do anything. However
-using `<code>ANALYZE TABLE table_name PERSISTENT FOR...</code>` will now work.
+As the S3 tables are read-only, a normal `ANALYZE TABLE` will not do anything. However
+using `ANALYZE TABLE table_name PERSISTENT FOR...` will now work.
 
 
 ## CHECK TABLE

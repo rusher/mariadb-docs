@@ -1,42 +1,42 @@
 
 # mariadb-install-db
 
-**This page is for the `<code>mariadb-install-db</code>` script for Linux/Unix only**
+**This page is for the `mariadb-install-db` script for Linux/Unix only**
 For the Windows specific tool of similar name and purpose see [mysql_install_db.exe](../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md).
 The Windows version shares the common theme (creating system tables), yet has a lot of functionality specific to Windows systems, for example creating a Windows service. The Windows version does *not* share command line parameters with the Unix shell script.
 
 
 
-`<code>mariadb-install-db</code>` initializes the MariaDB data directory and creates the
+`mariadb-install-db` initializes the MariaDB data directory and creates the
 [system tables](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) in the [mysql](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database, if they do not exist.
 
 
-Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysql_install_db</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysql_install_db`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 MariaDB uses these tables to manage [privileges](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#privilege-levels), [roles](../security/user-account-management/roles/roles_overview.md), and [plugins](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md). It also uses them to provide the data for the [help](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/help-command.md) command in the [mariadb](mariadb-client/mariadb-command-line-client.md) client.
 
 
-`<code>mariadb-install-db</code>` works by starting MariaDB Server's `<code>mariadbd</code>` process in [--bootstrap](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-bootstrap) mode and sending commands to create the [system tables](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) and their content.
+`mariadb-install-db` works by starting MariaDB Server's `mariadbd` process in [--bootstrap](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-bootstrap) mode and sending commands to create the [system tables](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) and their content.
 
 
 ## Using mariadb-install-db
 
 
-To invoke `<code>mariadb-install-db</code>`, use the following syntax:
+To invoke `mariadb-install-db`, use the following syntax:
 
 
 ```
 $ mariadb-install-db [options]
 ```
 
-Because the MariaDB server, `<code>mariadbd</code>`, needs to access the data directory
-when it runs later, you should either run `<code>mariadb-install-db</code>` from the same
-account that will be used for running `<code>mariadbd</code>` or run it as root and use the
-`<code>--user</code>` option to indicate the user name that `<code>mariadbd</code>` will run
+Because the MariaDB server, `mariadbd`, needs to access the data directory
+when it runs later, you should either run `mariadb-install-db` from the same
+account that will be used for running `mariadbd` or run it as root and use the
+`--user` option to indicate the user name that `mariadbd` will run
 as. It might be necessary to specify other options such as
-`<code>--basedir</code>` or `<code>--datadir</code>` if
-`<code>mariadb-install-db</code>` does not use the correct locations for the installation
+`--basedir` or `--datadir` if
+`mariadb-install-db` does not use the correct locations for the installation
 directory or data directory. For example:
 
 
@@ -49,7 +49,7 @@ $ scripts/mariadb-install-db --user=mysql \
 ### Options
 
 
-`<code>mariadb-install-db</code>` supports the following options:
+`mariadb-install-db` supports the following options:
 
 
 
@@ -87,7 +87,7 @@ $ scripts/mariadb-install-db --user=mysql \
 ### Option Files
 
 
-In addition to reading options from the command-line, `<code>mariadb-install-db</code>` can also read options from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `<code>mariadb-install-db</code>` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadb-install-db` can also read options from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-install-db` in an option file, then it is ignored.
 
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
@@ -108,7 +108,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 #### Option Groups
 
 
-`<code>mariadb-install-db</code>` reads options from the following [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
+`mariadb-install-db` reads options from the following [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
 
 
 
@@ -119,7 +119,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-`<code>mariadb-install-db</code>` also reads options from the following server [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
+`mariadb-install-db` also reads options from the following server [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
 
 
 
@@ -142,10 +142,10 @@ The following options relate to how MariaDB command-line tools handles option fi
 ### Installing System Tables From a Source Tree
 
 
-If you have just [compiled MariaDB from source](../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options.md), and if you want to use `<code>mariadb-install-db</code>` from your source tree, then that can be done without having to actually install MariaDB. This is very useful if you want to test your changes to MariaDB without disturbing any existing installations of MariaDB.
+If you have just [compiled MariaDB from source](../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options.md), and if you want to use `mariadb-install-db` from your source tree, then that can be done without having to actually install MariaDB. This is very useful if you want to test your changes to MariaDB without disturbing any existing installations of MariaDB.
 
 
-To do so, you would have to provide the `<code>--srcdir</code>` option. For example:
+To do so, you would have to provide the `--srcdir` option. For example:
 
 
 ```
@@ -156,18 +156,18 @@ To do so, you would have to provide the `<code>--srcdir</code>` option. For exam
 
 
 If you install a [binary tarball](../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs.md) package in a non standard path, like your home directory, and if you already have a MariaDB / MySQL package installed, then you may get conflicts
-with the default `<code>/etc/my.cnf</code>`. This often results in permissions
+with the default `/etc/my.cnf`. This often results in permissions
 errors.
 
 
-One possible solution is to use the `<code>--no-defaults</code>` option, so that it does not read any [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+One possible solution is to use the `--no-defaults` option, so that it does not read any [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 
 ```
 ./scripts/mariadb-install-db --no-defaults --basedir=. --datadir=data
 ```
 
-Another possible solution is to use the `<code>defaults-file</code>` option, so that you can specify your own [option file](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+Another possible solution is to use the `defaults-file` option, so that you can specify your own [option file](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 
 ```
@@ -177,14 +177,14 @@ Another possible solution is to use the `<code>defaults-file</code>` option, so 
 ## User Accounts Created by Default
 
 
-`<code>mariadb-install-db</code>` sets `<code>--auth-root-authentication-method=socket</code>` by default. When this is set, the default `<code>root@localhost</code>` user account is created with the ability to use two [authentication plugins](../reference/plugins/authentication-plugins/README.md):
+`mariadb-install-db` sets `--auth-root-authentication-method=socket` by default. When this is set, the default `root@localhost` user account is created with the ability to use two [authentication plugins](../reference/plugins/authentication-plugins/README.md):
 
 
-* First, it is configured to try to use the [unix_socket](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin. This allows the the `<code>root@localhost</code>` user to login without a password via the local Unix socket file defined by the [socket](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#socket) system variable, as long as the login is attempted from a process owned by the operating system `<code>root</code>` user account.
+* First, it is configured to try to use the [unix_socket](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin. This allows the the `root@localhost` user to login without a password via the local Unix socket file defined by the [socket](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#socket) system variable, as long as the login is attempted from a process owned by the operating system `root` user account.
 * Second, if authentication fails with the [unix_socket](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin, then it is configured to try to use the [mysql_native_password](../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication plugin.
 
 
-The definition of the default `<code>root@localhost</code>` user account is:
+The definition of the default `root@localhost` user account is:
 
 
 ```
@@ -194,18 +194,18 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
 GRANT PROXY ON ''@'%' TO 'root'@'localhost' WITH GRANT OPTION;
 ```
 
-Since `<code>mariadb-install-db</code>` sets `<code>--auth-root-authentication-method=socket</code>` by default, the following additional user accounts are **not** created by default:
+Since `mariadb-install-db` sets `--auth-root-authentication-method=socket` by default, the following additional user accounts are **not** created by default:
 
 
-* `<code>root@127.0.0.1</code>`
-* `<code>root@::1</code>`
-* `<code>root@${current_hostname}</code>`
+* `root@127.0.0.1`
+* `root@::1`
+* `root@${current_hostname}`
 
 
-However, an additional user account that is defined by the `<code>--auth-root-socket-user</code>` option is created. If this option is not set, then the value defaults to the value of the `<code>--user</code>` option. On most systems, the `<code>--user</code>` option will use the value of `<code>mysql</code>` by default, so this additional user account would be called `<code>mysql@localhost</code>`.
+However, an additional user account that is defined by the `--auth-root-socket-user` option is created. If this option is not set, then the value defaults to the value of the `--user` option. On most systems, the `--user` option will use the value of `mysql` by default, so this additional user account would be called `mysql@localhost`.
 
 
-The definition of this `<code>mysql@localhost</code>` user account is similar to the `<code>root@localhost</code>` user account:
+The definition of this `mysql@localhost` user account is similar to the `root@localhost` user account:
 
 
 ```
@@ -214,10 +214,10 @@ CREATE USER 'mysql'@'localhost' IDENTIFIED VIA unix_socket
 GRANT ALL PRIVILEGES ON *.* TO 'mysql'@'localhost' WITH GRANT OPTION;
 ```
 
-An invalid password is initially set for both of these user accounts. This means that before a password can be used to authenticate as either of these user accounts, the accounts must first be given a valid password by executing the `<code>[SET PASSWORD](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md)</code>` statement.
+An invalid password is initially set for both of these user accounts. This means that before a password can be used to authenticate as either of these user accounts, the accounts must first be given a valid password by executing the `[SET PASSWORD](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md)` statement.
 
 
-For example, here is an example of setting the password for the `<code>root@localhost</code>` user account immediately after installation:
+For example, here is an example of setting the password for the `root@localhost` user account immediately after installation:
 
 
 ```
@@ -228,7 +228,7 @@ $ sudo mariadb
 MariaDB> SET PASSWORD = PASSWORD('XH4VmT3_jt');
 ```
 
-You may notice in the above example that the [mariadb](mariadb-client/mariadb-command-line-client.md) command-line client is executed via [sudo](https://linux.die.net/man/8/sudo). This allows the `<code>root@localhost</code>` user account to successfully authenticate via the [unix_socket](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin.
+You may notice in the above example that the [mariadb](mariadb-client/mariadb-command-line-client.md) command-line client is executed via [sudo](https://linux.die.net/man/8/sudo). This allows the `root@localhost` user account to successfully authenticate via the [unix_socket](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin.
 <</product>>
 
 
@@ -238,14 +238,14 @@ You may notice in the above example that the [mariadb](mariadb-client/mariadb-co
 ### Checking the Error Log
 
 
-If `<code>mariadb-install-db</code>` fails, you should examine the [error log](../server-management/server-monitoring-logs/error-log.md) in the
-data directory, which is the directory specified with `<code>--datadir</code>` option. This should provide a clue about what went wrong.
+If `mariadb-install-db` fails, you should examine the [error log](../server-management/server-monitoring-logs/error-log.md) in the
+data directory, which is the directory specified with `--datadir` option. This should provide a clue about what went wrong.
 
 
 ### Testing With mariadbd
 
 
-You can also test that this is not a general fault of MariaDB Server by trying to start the `<code>mariadbd</code>` process. The [-skip-grant-tables](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables) option will tell it to ignore the [system tables](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md). Enabling the [general query log](../server-management/server-monitoring-logs/general-query-log.md) can help you determine what queries are being run on the server. For example:
+You can also test that this is not a general fault of MariaDB Server by trying to start the `mariadbd` process. The [-skip-grant-tables](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables) option will tell it to ignore the [system tables](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md). Enabling the [general query log](../server-management/server-monitoring-logs/general-query-log.md) can help you determine what queries are being run on the server. For example:
 
 
 ```
@@ -263,25 +263,25 @@ MariaDB [mysql]> show tables
 ## Using a Server Compiled With --disable-grant-options
 
 
-The following only apply in the exceptional case that you are using a mariadbd server which is configured with the `<code class="fixed" style="white-space:pre-wrap">--disable-grant-options</code>` option:
+The following only apply in the exceptional case that you are using a mariadbd server which is configured with the `--disable-grant-options` option:
 
 
-`<code>mariadb-install-db</code>` needs to invoke `<code>mariadbd</code>` with the
-`<code class="fixed" style="white-space:pre-wrap">--bootstrap</code>` and `<code class="fixed" style="white-space:pre-wrap">--skip-grant-tables</code>` options.
-A MariaDB configured with the `<code class="fixed" style="white-space:pre-wrap">--disable-grant-options</code>`
-option has `<code class="fixed" style="white-space:pre-wrap">--bootstrap</code>` and `<code class="fixed" style="white-space:pre-wrap">--skip-grant-tables</code>`
-disabled. To handle this case, set the `<code>MYSQLD_BOOTSTRAP</code>` environment
-variable to the full path name of a mariadbd server that is configured without `<code class="fixed" style="white-space:pre-wrap">--disable-grant-options</code>`. `<code>mariadb-install-db</code>` will use that server.
+`mariadb-install-db` needs to invoke `mariadbd` with the
+`--bootstrap` and `--skip-grant-tables` options.
+A MariaDB configured with the `--disable-grant-options`
+option has `--bootstrap` and `--skip-grant-tables`
+disabled. To handle this case, set the `MYSQLD_BOOTSTRAP` environment
+variable to the full path name of a mariadbd server that is configured without `--disable-grant-options`. `mariadb-install-db` will use that server.
 
 
 ## The test and test_% Databases
 
 
-When calling the `<code>mariadb-install-db</code>` script, a new folder called `<code>test</code>` is created in the data directory.
-It only has the single `<code>db.opt</code>` file, which sets the client options `<code>default-character-set</code>` and `<code>default-collation</code>` only.
+When calling the `mariadb-install-db` script, a new folder called `test` is created in the data directory.
+It only has the single `db.opt` file, which sets the client options `default-character-set` and `default-collation` only.
 
 
-If you run `<code>mysql</code>` as an anonymous user, `<code class="fixed" style="white-space:pre-wrap"> mysql -u''@localhost</code>`, and look for the grants and databases you are able to work with, you will get the following:
+If you run `mysql` as an anonymous user, ` mysql -u''@localhost`, and look for the grants and databases you are able to work with, you will get the following:
 
 
 ```
@@ -308,12 +308,12 @@ SHOW DATABASES;
 +--------------------+
 ```
 
-Shown are the `<code>information_schema</code>` as well as `<code>test</code>` databases that are built in databases.
+Shown are the `information_schema` as well as `test` databases that are built in databases.
 But looking from [SHOW GRANTS](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-grants.md) appears to be a paradox; how can the current user see something if they don't have privileges for that?
 
 
 Let's go a step further.
-Now, use the `<code>root</code>`/`<code>unix</code>` user, which has all rights, in order to create a new database with the prefix `<code>test_</code>` , something like:
+Now, use the `root`/`unix` user, which has all rights, in order to create a new database with the prefix `test_` , something like:
 
 
 ```
@@ -336,12 +336,12 @@ SHOW DATABASES
 ```
 
 Again we are able to see the newly created database, without any rights?
-We have an anonymous user that has no privileges, but still can see the `<code>test</code>` and `<code>test_electricity</code>` databases.
+We have an anonymous user that has no privileges, but still can see the `test` and `test_electricity` databases.
 **Where does this come from?**
 
 
 
-Login with the `<code>root</code>`/`<code>unix</code>` user to find out all privileges that the anonymous user has:
+Login with the `root`/`unix` user to find out all privileges that the anonymous user has:
 
 
 ```
@@ -397,14 +397,14 @@ Create_tablespace_priv: N
 ```
 
 As seen above from the [mysql.user](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, the anonymous user doesn't have any global privileges.
-Still, the anonymous user can see databases, so there must be a way so that anonymous user can see the `<code>test</code>` and `<code>test_electricity</code>` databases.
+Still, the anonymous user can see databases, so there must be a way so that anonymous user can see the `test` and `test_electricity` databases.
 
 
 Let's check for grants on the database level. That information can be found in the [mysql.db](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table.
-Looking at the `<code>mysql.db</code>` table, it already contains 2 rows created when the `<code>mariadb-install-db</code>` script was invoked.
+Looking at the `mysql.db` table, it already contains 2 rows created when the `mariadb-install-db` script was invoked.
 
 
-The anonymous user has database privileges (without `<code>grant</code>`, `<code>alter_routine</code>` and `<code>execute</code>`) on `<code>test</code>` and `<code>test_%</code>` databases:
+The anonymous user has database privileges (without `grant`, `alter_routine` and `execute`) on `test` and `test_%` databases:
 
 
 ```
@@ -459,22 +459,22 @@ Create_tmp_table_priv: Y
   Delete_history_priv: Y
 ```
 
-The first row is reserved for explicit usage for the `<code>test</code>` database, which is automatically created with `<code>mariadb-install-db</code>`.
+The first row is reserved for explicit usage for the `test` database, which is automatically created with `mariadb-install-db`.
 
 
-Since database `<code>test_electricity</code>` satisfies the `<code>test_%</code>` pattern where `<code>test_</code>` is a prefix, we can understand why the user has the right to work with the newly-created database.
+Since database `test_electricity` satisfies the `test_%` pattern where `test_` is a prefix, we can understand why the user has the right to work with the newly-created database.
 
 
-As long as records in `<code>mysql.db</code>` for the anonymous user exists, each new user created will have the privileges for the `<code>test</code>` and `<code>test_%</code>` databases.
+As long as records in `mysql.db` for the anonymous user exists, each new user created will have the privileges for the `test` and `test_%` databases.
 
 
-Other databases privileges **are not automatically granted** for the newly created user. We have to grant privileges, which will be visible in `<code>mysql.db</code>` table.
+Other databases privileges **are not automatically granted** for the newly created user. We have to grant privileges, which will be visible in `mysql.db` table.
 
 
 ### Not Creating the test Database and Anonymous User
 
 
-If you run `<code>mariadb-install-db</code>` with the `<code>--skip-test-db</code>` option, no `<code>test</code>` database will be created, which we can see as follows:
+If you run `mariadb-install-db` with the `--skip-test-db` option, no `test` database will be created, which we can see as follows:
 
 
 ```
@@ -491,7 +491,7 @@ SELECT * FROM mysql.db;
 Empty set (0.001 sec)
 ```
 
-Also, no anonymous user is created (only `<code>unix</code>`/`<code>mariadb.sys</code>`/`<code>root</code>` users):
+Also, no anonymous user is created (only `unix`/`mariadb.sys`/`root` users):
 
 
 ```
@@ -510,5 +510,5 @@ SELECT user,host FROM mysql.user;
 
 * [Configure MariaDB with catalog support](../security/user-account-management/catalogs/starting-with-catalogs.md)
 * [Installing system tables (mariadb-install-db)](../server-management/getting-installing-and-upgrading-mariadb/installing-system-tables-mariadb-install-db.md)
-* The Windows version of `<code>mariadb-install-db</code>`: `<code>[mysql_install_db.exe](../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md)</code>`
+* The Windows version of `mariadb-install-db`: `[mysql_install_db.exe](../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md)`
 

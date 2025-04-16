@@ -2,7 +2,7 @@
 # mysql.server
 
 
-The [mysql.server](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) startup script is in MariaDB distributions on Linux and Unix. It is a wrapper that works as a standard [sysVinit](sysvinit.md) script. However, it can be used independently of [sysVinit](sysvinit.md) as a regular `<code>sh</code>` script. The script starts the `<code>[mariadbd](mariadbd-options.md)</code>` server process by first changing its current working directory to the MariaDB install directory and then starting `<code>[mariadbd-safe](mariadbd-safe.md)</code>`. The script requires the standard [sysVinit](sysvinit.md) arguments, such as `<code>start</code>`, `<code>stop</code>`, `<code>restart</code>`, and `<code>status</code>`. For example:
+The [mysql.server](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) startup script is in MariaDB distributions on Linux and Unix. It is a wrapper that works as a standard [sysVinit](sysvinit.md) script. However, it can be used independently of [sysVinit](sysvinit.md) as a regular `sh` script. The script starts the `[mariadbd](mariadbd-options.md)` server process by first changing its current working directory to the MariaDB install directory and then starting `[mariadbd-safe](mariadbd-safe.md)`. The script requires the standard [sysVinit](sysvinit.md) arguments, such as `start`, `stop`, `restart`, and `status`. For example:
 
 
 ```
@@ -15,13 +15,13 @@ mysql.server status
 It can be used on systems such as Linux, Solaris, and Mac OS X.
 
 
-The `<code>mysql.server</code>` script starts `<code>[mariadbd](mariadbd-options.md)</code>` by first changing to the MariaDB install directory and then calling [mariadbd-safe](mariadbd-safe.md).
+The `mysql.server` script starts `[mariadbd](mariadbd-options.md)` by first changing to the MariaDB install directory and then calling [mariadbd-safe](mariadbd-safe.md).
 
 
 ## Using mysql.server
 
 
-The command to use `<code>mysql.server</code>` and the general syntax is:
+The command to use `mysql.server` and the general syntax is:
 
 
 ```
@@ -31,10 +31,10 @@ mysql.server [ start | stop | restart | status ] <options> <mariadbd_options>
 ### Options
 
 
-If an unknown option is provided to `<code>mariadbd-safe</code>` on the command-line, then it is passed to `<code>mariadbd-safe</code>`.
+If an unknown option is provided to `mariadbd-safe` on the command-line, then it is passed to `mariadbd-safe`.
 
 
-`<code>mysql.server</code>` supports the following options:
+`mysql.server` supports the following options:
 
 
 
@@ -54,7 +54,7 @@ If an unknown option is provided to `<code>mariadbd-safe</code>` on the command-
 ### Option Files
 
 
-In addition to reading options from the command-line, `<code>mysql.server</code>` can also read options from [option files](../configuring-mariadb-with-option-files.md).
+In addition to reading options from the command-line, `mysql.server` can also read options from [option files](../configuring-mariadb-with-option-files.md).
 
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
@@ -74,7 +74,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 #### Option Groups
 
 
-`<code>mysql.server</code>` reads options from the following [option groups](../configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb-with-option-files.md):
+`mysql.server` reads options from the following [option groups](../configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb-with-option-files.md):
 
 
 
@@ -85,7 +85,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-`<code>mysql.server</code>` also reads options from the following server [option groups](../configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb-with-option-files.md):
+`mysql.server` also reads options from the following server [option groups](../configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb-with-option-files.md):
 
 
 
@@ -105,10 +105,10 @@ The following options relate to how MariaDB command-line tools handles option fi
 ### Customizing mysql.server
 
 
-If you have installed MariaDB to a non-standard location, then you may need to edit the `<code>mysql.server</code>` script to get it to work right.
+If you have installed MariaDB to a non-standard location, then you may need to edit the `mysql.server` script to get it to work right.
 
 
-If you do not want to edit the `<code>mysql.server</code>` script itself, then `<code>mysql.server</code>` also sources a few other `<code>sh</code>` scripts. These files can be used to set any variables that might be needed to make the script work in your specific environment. The files are:
+If you do not want to edit the `mysql.server` script itself, then `mysql.server` also sources a few other `sh` scripts. These files can be used to set any variables that might be needed to make the script work in your specific environment. The files are:
 
 
 * /etc/default/mysql
@@ -119,30 +119,30 @@ If you do not want to edit the `<code>mysql.server</code>` script itself, then `
 ## Installed Locations
 
 
-`<code>mysql.server</code>` can be found in the `<code>support-files</code>` directory under your MariaDB installation directory or in a MariaDB source distribution.
+`mysql.server` can be found in the `support-files` directory under your MariaDB installation directory or in a MariaDB source distribution.
 
 
 ### Installed SysVinit Locations
 
 
-On systems that use [sysVinit](sysvinit.md), `<code>mysql.server</code>` may also be installed in other locations and with other names.
+On systems that use [sysVinit](sysvinit.md), `mysql.server` may also be installed in other locations and with other names.
 
 
-If you installed MariaDB on Linux using [RPMs](../binary-packages/rpm/README.md), then the `<code>mysql.server</code>` script will be installed into the `<code>/etc/init.d</code>` directory with the name `<code>mysql</code>`. You need not install it manually.
+If you installed MariaDB on Linux using [RPMs](../binary-packages/rpm/README.md), then the `mysql.server` script will be installed into the `/etc/init.d` directory with the name `mysql`. You need not install it manually.
 
 
 #### Manually Installing with SysVinit
 
 
-If you install MariaDB from [source](../compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options.md) or from a [binary tarball](../binary-packages/installing-mariadb-binary-tarballs.md) that does not install `<code>[mysql.server](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md)</code>`
-automatically, and if you are on a system that uses [sysVinit](sysvinit.md), then you can manually install `<code>mysql.server</code>` with [sysVinit](sysvinit.md). This is usually done by copying it to `<code class="highlight fixed" style="white-space:pre-wrap">/etc/init.d/</code>` and then creating specially named symlinks in the appropriate `<code class="highlight fixed" style="white-space:pre-wrap">/etc/rcX.d/</code>` directories (where 'X' is a number between 0 and 6).
+If you install MariaDB from [source](../compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options.md) or from a [binary tarball](../binary-packages/installing-mariadb-binary-tarballs.md) that does not install `[mysql.server](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md)`
+automatically, and if you are on a system that uses [sysVinit](sysvinit.md), then you can manually install `mysql.server` with [sysVinit](sysvinit.md). This is usually done by copying it to `/etc/init.d/` and then creating specially named symlinks in the appropriate `/etc/rcX.d/` directories (where 'X' is a number between 0 and 6).
 
 
 In the examples below we will follow the historical convention of renaming the
- `<code class="highlight fixed" style="white-space:pre-wrap">mysql.server</code>` script to '`<code class="highlight fixed" style="white-space:pre-wrap">mysql</code>`' when we copy it to `<code class="highlight fixed" style="white-space:pre-wrap">/etc/init.d/</code>`.
+ `mysql.server` script to '`mysql`' when we copy it to `/etc/init.d/`.
 
 
-The first step for most Linux distributions is to copy the `<code>mysql.server</code>` script to `<code class="highlight fixed" style="white-space:pre-wrap">/etc/init.d/</code>` and make it executable:
+The first step for most Linux distributions is to copy the `mysql.server` script to `/etc/init.d/` and make it executable:
 
 
 ```
@@ -154,7 +154,7 @@ chmod +x /etc/init.d/mysql
 Now all that is needed is to create the specially-named symlinks. On both RPM and Debian-based Linux distributions there are tools which do this for you. Consult your distribution's documentation if neither of these work for you and follow their instructions for generating the symlinks or creating them manually.
 
 
-On RPM-based distributions (like Fedora and CentOS), you use `<code class="highlight fixed" style="white-space:pre-wrap">chkconfig</code>`:
+On RPM-based distributions (like Fedora and CentOS), you use `chkconfig`:
 
 
 ```
@@ -162,7 +162,7 @@ chkconfig --add mysql
 chkconfig --level 345 mysql on
 ```
 
-On Debian-based distributions you use `<code class="highlight fixed" style="white-space:pre-wrap">update-rc.d</code>`:
+On Debian-based distributions you use `update-rc.d`:
 
 
 ```
@@ -170,8 +170,8 @@ update-rc.d mysql defaults
 ```
 
 On FreeBSD, the location for startup scripts is
- `<code class="highlight fixed" style="white-space:pre-wrap">/usr/local/etc/rc.d/</code>` and when you copy the
- `<code class="highlight fixed" style="white-space:pre-wrap">mysql.server</code>` script there you should rename it so that it matches the `<code class="highlight fixed" style="white-space:pre-wrap">*.sh</code>` pattern, like so:
+ `/usr/local/etc/rc.d/` and when you copy the
+ `mysql.server` script there you should rename it so that it matches the `*.sh` pattern, like so:
 
 
 ```
@@ -182,5 +182,5 @@ cp mysql.server /usr/local/etc/rc.d/mysql.server.sh
 As stated above, consult your distribution's documentation for more information on starting services like MariaDB at system startup.
 
 
-See [mariadbd startup options](https://mariadb.com/kb/en/mariadbd-startup-options) for information on configuration options for `<code>mariadbd</code>`.
+See [mariadbd startup options](https://mariadb.com/kb/en/mariadbd-startup-options) for information on configuration options for `mariadbd`.
 

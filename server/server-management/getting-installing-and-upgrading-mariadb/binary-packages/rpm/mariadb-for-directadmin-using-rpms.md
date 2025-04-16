@@ -39,7 +39,7 @@ We do not want DirectAdmin's custombuild to remove/overwrite our MariaDB
 installation whenever an update is performed. To rectify this, disable automatic MySQL installation.
 
 
-Edit `<code>/usr/local/directadmin/custombuild/options.conf</code>`
+Edit `/usr/local/directadmin/custombuild/options.conf`
 
 
 Change:

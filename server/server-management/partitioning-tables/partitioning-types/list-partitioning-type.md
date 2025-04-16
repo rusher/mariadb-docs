@@ -25,16 +25,16 @@ PARTITION BY LIST (partitioning_expression)
 PARTITION BY LIST indicates that the partitioning type is LIST.
 
 
-The `<code>partitioning_expression</code>` is an SQL expression that returns a value from each row. In the simplest cases, it is a column name. This value is used to determine which partition should contain a row.
+The `partitioning_expression` is an SQL expression that returns a value from each row. In the simplest cases, it is a column name. This value is used to determine which partition should contain a row.
 
 
-`<code>partition_name</code>` is the name of a partition.
+`partition_name` is the name of a partition.
 
 
-`<code>value_list</code>` is a list of values. If `<code>partitioning_expression</code>` returns one of these values, the row will be stored in this partition. If we try to insert something that does not belong to any of these value lists, the row will be rejected with an error.
+`value_list` is a list of values. If `partitioning_expression` returns one of these values, the row will be stored in this partition. If we try to insert something that does not belong to any of these value lists, the row will be rejected with an error.
 
 
-The `<code>DEFAULT</code>` partition catches all records which do not fit into other partitions.
+The `DEFAULT` partition catches all records which do not fit into other partitions.
 
 
 ## Use Cases

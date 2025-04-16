@@ -11,13 +11,13 @@ CHR(N)
 ## Description
 
 
-`<code>CHR()</code>` interprets each argument N as an integer and returns a `<code>[VARCHAR(1)](../../../../data-types/string-data-types/varchar.md)</code>` string consisting of the character given by the code values of the integer. The character set and collation of the string are set according to the values of the `<code>[character_set_database](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_database)</code>` and `<code>[collation_database](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#collation_database)</code>` system variables.
+`CHR()` interprets each argument N as an integer and returns a `[VARCHAR(1)](../../../../data-types/string-data-types/varchar.md)` string consisting of the character given by the code values of the integer. The character set and collation of the string are set according to the values of the `[character_set_database](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_database)` and `[collation_database](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#collation_database)` system variables.
 
 
-`<code>CHR()</code>` is similar to the `<code>[CHAR()](char-function.md)</code>` function, but only accepts a single argument.
+`CHR()` is similar to the `[CHAR()](char-function.md)` function, but only accepts a single argument.
 
 
-`<code>CHR()</code>` is available in all [sql_modes](../../../../../server-management/variables-and-modes/sql-mode.md).
+`CHR()` is available in all [sql_modes](../../../../../server-management/variables-and-modes/sql-mode.md).
 
 
 ## Examples

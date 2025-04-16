@@ -26,8 +26,8 @@ This is possible with the following [system variables](../optimization-and-tunin
 ## Primary Session Variable: skip_replication
 
 
-When the [skip_replication](replication-and-binary-log-system-variables.md) variable is set to true, changes are logged into the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) with the flag `<code>@@skip_replication</code>` set. Such events will not be replicated by replicas that run with
-`<code class="fixed" style="white-space:pre-wrap">--replicate-events-marked-for-skip</code>` set different from its default of `<code>REPLICATE</code>`.
+When the [skip_replication](replication-and-binary-log-system-variables.md) variable is set to true, changes are logged into the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) with the flag `@@skip_replication` set. Such events will not be replicated by replicas that run with
+`--replicate-events-marked-for-skip` set different from its default of `REPLICATE`.
 
 
 
@@ -41,24 +41,24 @@ When the [skip_replication](replication-and-binary-log-system-variables.md) vari
 
 
 
-The `<code>skip_replication</code>` option only has effect if [binary logging](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is enabled
+The `skip_replication` option only has effect if [binary logging](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is enabled
 and [sql_log_bin](replication-and-binary-log-system-variables.md) is true.
 
 
-Attempting to change `<code>@@skip_replication</code>` in the middle of a transaction will
+Attempting to change `@@skip_replication` in the middle of a transaction will
 fail; this is to avoid getting half of a transaction replicated while the other
 half is not replicated. Be sure to end any current transaction with
-`<code>COMMIT</code>`/`<code>ROLLBACK</code>` before changing the variable.
+`COMMIT`/`ROLLBACK` before changing the variable.
 
 
 ## Replica Option: --replicate-events-marked-for-skip
 
 
 The [replicate_events_marked_for_skip](replication-and-binary-log-system-variables.md) option tells the replica whether to replicate events that are marked with
-the `<code>@@skip_replication</code>` flag. Default is `<code>REPLICATE</code>`, to ensure that all
-changes are replicated to the replica. If set to `<code>FILTER_ON_SLAVE</code>`, events so
+the `@@skip_replication` flag. Default is `REPLICATE`, to ensure that all
+changes are replicated to the replica. If set to `FILTER_ON_SLAVE`, events so
 marked will be skipped on the replica and not replicated. If set to
-`<code>FILTER_ON_MASTER</code>`, the filtering will be done on the primary, saving on
+`FILTER_ON_MASTER`, the filtering will be done on the primary, saving on
 network bandwidth as the events will not be received by the replica at all.
 
 
@@ -73,17 +73,17 @@ network bandwidth as the events will not be received by the replica at all.
 
 
 
-**Note:** `<code>replicate_events_marked_for_skip</code>` is a dynamic variable (it can be
+**Note:** `replicate_events_marked_for_skip` is a dynamic variable (it can be
 changed without restarting the server), however the replica threads must be
 stopped when it is changed, otherwise an error will be thrown.
 
 
-When events are filtered due to `<code>@@skip_replication</code>`, the filtering happens
+When events are filtered due to `@@skip_replication`, the filtering happens
 on the primary side; in other words, the event is never sent to the replica. If
 many events are filtered like this, a replica can sit a long time without
 receiving any events from the primary. This is not a problem in itself, but must
 be kept in mind when inquiring on the replica about events that are filtered. For
-example `<code>START SLAVE UNTIL <some position></code>` will stop when the first event
+example `START SLAVE UNTIL <some position>` will stop when the first event
 that is **not** filtered is encountered at the given position or beyond. If the
 event at the given position is filtered, then the replica thread will only stop
 when the next non-filtered event is encountered. In effect, if an event is
@@ -96,43 +96,43 @@ be different on the replica and on the primary. It is the responsibility of the
 application to replicate the data outside of the built-in replication or
 otherwise ensure consistency of operation. If this is not done, it is possible
 for replication to encounter, for example,
-`<code>[UNIQUE](https://mariadb.com/kb/en/)</code>` contraint violations or
+`[UNIQUE](https://mariadb.com/kb/en/)` contraint violations or
 other problems which will cause replication to stop and require manual
 intervention to fix.
 
 
-The session variable `<code>@@skip_replication</code>` can be changed without requiring
+The session variable `@@skip_replication` can be changed without requiring
 special privileges. This makes it possible for normal applications to control
-it without requiring `<code>SUPER</code>` privileges. But it must be kept in mind when using
-replicas with `<code class="fixed" style="white-space:pre-wrap">--replicate-events-marked-for-skip</code>` set different
-from `<code>REPLICATE</code>`, as it allows any connection to do changes that are not
+it without requiring `SUPER` privileges. But it must be kept in mind when using
+replicas with `--replicate-events-marked-for-skip` set different
+from `REPLICATE`, as it allows any connection to do changes that are not
 replicated.
 
 
 ## skip_replication and sql_log_bin
 
 
-`<code>[@@sql_log_bin](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md)</code>` and `<code>@@skip_replication</code>` are somewhat
+`[@@sql_log_bin](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md)` and `@@skip_replication` are somewhat
 related, as they can both be used to prevent a change on the primary from being
-replicated to the replica. The difference is that with `<code>@@skip_replication</code>`,
+replicated to the replica. The difference is that with `@@skip_replication`,
 changes are still written into the binlog, and replication of the events is
 only skipped on replicas that explicitly are configured to do so, with
-`<code class="fixed" style="white-space:pre-wrap">--replicate-events-marked-for-skip</code>` different from
-`<code>REPLICATE</code>`. With `<code>@@sql_log_bin</code>`, events are not logged into the binlog,
+`--replicate-events-marked-for-skip` different from
+`REPLICATE`. With `@@sql_log_bin`, events are not logged into the binlog,
 and so are not replicated by any replica.
 
 
 ## skip_replication and the Binlog
 
 
-When events in the binlog are marked with the `<code>@@skip_replication</code>` flag, the
+When events in the binlog are marked with the `@@skip_replication` flag, the
 flag will be preserved if the events are dumped by the [mariadb-binlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md)
 program and re-applied against a server with the
 [mariadb client](../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) program. Similarly, the
 [BINLOG](../../../../maxscale/mariadb-maxscale-14/maxscale-14-routers/binlogrouter.md) statement will preserve the flag from the
 event being replayed. And a replica which runs with
-`<code class="fixed" style="white-space:pre-wrap">--log-slave-updates</code>` and does not filter events
-(`<code class="fixed" style="white-space:pre-wrap">--replicate-events-marked-for-skip=REPLICATE</code>`) will also
+`--log-slave-updates` and does not filter events
+(`--replicate-events-marked-for-skip=REPLICATE`) will also
 preserve the flag in the events logged into the binlog on the replica.
 
 

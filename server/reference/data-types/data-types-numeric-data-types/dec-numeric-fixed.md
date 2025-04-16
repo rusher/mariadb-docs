@@ -15,6 +15,6 @@ FIXED[(M[,D])] [SIGNED | UNSIGNED | ZEROFILL]
 ## Description
 
 
-These types are synonyms for [DECIMAL](decimal.md). The `<code>FIXED</code>` synonym is
+These types are synonyms for [DECIMAL](decimal.md). The `FIXED` synonym is
 available for compatibility with other database systems.
 

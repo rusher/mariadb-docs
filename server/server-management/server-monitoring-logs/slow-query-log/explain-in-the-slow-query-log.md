@@ -4,7 +4,7 @@
 ## Switching it On
 
 
-[EXPLAIN](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) output can be switched on by specifying the "`<code class="highlight fixed" style="white-space:pre-wrap">explain</code>`" keyword in the [log_slow_verbosity](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_verbosity) system variable. Alternatively, you can set with the `<code class="highlight fixed" style="white-space:pre-wrap">log-slow-verbosity</code>` command line argument.
+[EXPLAIN](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) output can be switched on by specifying the "`explain`" keyword in the [log_slow_verbosity](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_verbosity) system variable. Alternatively, you can set with the `log-slow-verbosity` command line argument.
 
 
 ```
@@ -36,9 +36,9 @@ SET timestamp=1384261412;
 select count(*) from customer, orders, nation where c_custkey=o_custkey and c_nationkey=n_nationkey and n_name='GERMANY';
 ```
 
-EXPLAIN lines start with `<code class="fixed" style="white-space:pre-wrap">
+EXPLAIN lines start with `
 
-# explain:</code>`.
+# explain:`.
 
 
 ## See Also

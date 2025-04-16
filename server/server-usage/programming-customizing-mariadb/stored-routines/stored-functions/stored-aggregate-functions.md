@@ -8,8 +8,8 @@
 Creating a custom aggregate function is done using the [CREATE FUNCTION](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) statement with two main differences:
 
 
-* The addition of the AGGREGATE keyword, so `<code>CREATE AGGREGATE FUNCTION</code>`
-* The `<code>FETCH GROUP NEXT ROW</code>` instruction inside the loop
+* The addition of the AGGREGATE keyword, so `CREATE AGGREGATE FUNCTION`
+* The `FETCH GROUP NEXT ROW` instruction inside the loop
 * Oracle PL/SQL compatibility using SQL/PL is provided
 
 

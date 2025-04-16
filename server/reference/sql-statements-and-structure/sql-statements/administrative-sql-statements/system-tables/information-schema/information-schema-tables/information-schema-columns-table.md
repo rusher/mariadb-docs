@@ -1,7 +1,7 @@
 
 # Information Schema COLUMNS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>COLUMNS</code>` table provides information about columns in each table on the server.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `COLUMNS` table provides information about columns in each table on the server.
 
 
 It contains the following columns:
@@ -108,7 +108,7 @@ AND TABLE_NAME='t';
 +------------+-------------+------------------+-----------------------+------------------------+
 ```
 
-In the results above, the two single quotes in `<code>concat(''A'',''B'')</code>` indicate an escaped single quote - see [string-literals](../../../../../sql-language-structure/string-literals.md). Note that while [mariadb client](../../../../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) appears to show the same default value for columns `<code>s5</code>` and `<code>s6</code>`, the first is a 4-character string "NULL", while the second is the SQL NULL value.
+In the results above, the two single quotes in `concat(''A'',''B'')` indicate an escaped single quote - see [string-literals](../../../../../sql-language-structure/string-literals.md). Note that while [mariadb client](../../../../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) appears to show the same default value for columns `s5` and `s6`, the first is a 4-character string "NULL", while the second is the SQL NULL value.
 
 
 From [MariaDB 11.3](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-113.md):

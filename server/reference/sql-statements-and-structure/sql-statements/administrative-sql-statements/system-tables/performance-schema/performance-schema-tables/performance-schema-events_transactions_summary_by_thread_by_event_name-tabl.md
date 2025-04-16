@@ -6,7 +6,7 @@
 The events_transactions_summary_by_thread_by_event_name table was introduced in [MariaDB 10.5.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
 
 
-The `<code>events_transactions_summary_by_thread_by_event_name</code>` table contains information on transaction events aggregated by thread and event name.
+The `events_transactions_summary_by_thread_by_event_name` table contains information on transaction events aggregated by thread and event name.
 
 
 The table contains the following columns:

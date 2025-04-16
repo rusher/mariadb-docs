@@ -16,7 +16,7 @@ BUILD/autorun.sh
 make dist
 ```
 
-This creates a source file with a name like `<code class="highlight fixed" style="white-space:pre-wrap">mysql-5.3.2-MariaDB-beta.tar.gz</code>`
+This creates a source file with a name like `mysql-5.3.2-MariaDB-beta.tar.gz`
 
 
 See also [the generic build instructions](generic-build-instructions.md).

@@ -219,9 +219,9 @@ Caution: Since there is no way to synchronize the clients with the DDL, you must
 Fast DDL operations can usually be executed in TOI mode:
 
 
-* DDL operations that support the `<code>NOCOPY</code>` and `<code>INSTANT</code>` algorithms are usually very fast.
-* DDL operations that support the `<code>INPLACE</code>` algorithm may be fast or slow, depending on whether the table needs to be rebuilt.
-* DDL operations that only support the `<code>COPY</code>` algorithm are usually very slow.
+* DDL operations that support the `NOCOPY` and `INSTANT` algorithms are usually very fast.
+* DDL operations that support the `INPLACE` algorithm may be fast or slow, depending on whether the table needs to be rebuilt.
+* DDL operations that only support the `COPY` algorithm are usually very slow.
 
 
 For a list of which operations support which algorithms, see [InnoDB Online DDL](../../../reference/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md).

@@ -5,8 +5,8 @@
 ## Description
 
 
-Use the `<code>LIMIT</code>` clause to restrict the number of returned rows. When you use a single
-integer *n* with `<code>LIMIT</code>`, the first *n* rows will be returned. Use the [ORDER BY](order-by.md)
+Use the `LIMIT` clause to restrict the number of returned rows. When you use a single
+integer *n* with `LIMIT`, the first *n* rows will be returned. Use the [ORDER BY](order-by.md)
 clause to control which rows come first. You can also select a number of rows after an offset
 using either of the following:
 
@@ -20,7 +20,7 @@ When you provide an offset *m* with a limit *n*, the first *m* rows will be igno
 following *n* rows will be returned.
 
 
-Executing an [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) with the `<code>LIMIT</code>` clause is not safe for replication. `<code>LIMIT 0</code>` is an exception to this rule (see [MDEV-6170](https://jira.mariadb.org/browse/MDEV-6170)).
+Executing an [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) with the `LIMIT` clause is not safe for replication. `LIMIT 0` is an exception to this rule (see [MDEV-6170](https://jira.mariadb.org/browse/MDEV-6170)).
 
 
 There is a [LIMIT ROWS EXAMINED](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/limit-rows-examined.md) optimization which provides the
@@ -31,13 +31,13 @@ many rows, and thus use too many resources. See [LIMIT ROWS EXAMINED](../../../.
 ### Multi-Table Updates
 
 
-Until [MariaDB 10.3.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md), it was not possible to use `<code>LIMIT</code>` (or [ORDER BY](order-by.md)) in a multi-table [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) statement. This restriction was lifted in [MariaDB 10.3.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md).
+Until [MariaDB 10.3.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md), it was not possible to use `LIMIT` (or [ORDER BY](order-by.md)) in a multi-table [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) statement. This restriction was lifted in [MariaDB 10.3.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md).
 
 
 ### GROUP_CONCAT
 
 
-Starting from [MariaDB 10.3.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md), it is possible to use `<code>LIMIT</code>` with [GROUP_CONCAT()](../../built-in-functions/aggregate-functions/group_concat.md).
+Starting from [MariaDB 10.3.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md), it is possible to use `LIMIT` with [GROUP_CONCAT()](../../built-in-functions/aggregate-functions/group_concat.md).
 
 
 ## Examples
@@ -111,7 +111,7 @@ SELECT * FROM members ORDER BY name LIMIT 2,1;
 +-------+
 ```
 
-From [MariaDB 10.3.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md), `<code>LIMIT</code>` can be used in a multi-table update:
+From [MariaDB 10.3.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md), `LIMIT` can be used in a multi-table update:
 
 
 ```
@@ -146,7 +146,7 @@ SELECT * FROM store;
 +------------+------+
 ```
 
-From [MariaDB 10.3.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md), `<code>LIMIT</code>` can be used with [GROUP_CONCAT](../../built-in-functions/aggregate-functions/group_concat.md), so, for example, given the following table:
+From [MariaDB 10.3.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md), `LIMIT` can be used with [GROUP_CONCAT](../../built-in-functions/aggregate-functions/group_concat.md), so, for example, given the following table:
 
 
 ```
@@ -184,7 +184,7 @@ SELECT GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC LIMIT 1) FROM d;
 ## See Also
 
 
-* [OFFSET ... FETCH](select-offset-fetch.md) Like limit, but also support `<code>WITH TIES</code>`
+* [OFFSET ... FETCH](select-offset-fetch.md) Like limit, but also support `WITH TIES`
 * [ROWNUM() function](../../built-in-functions/secondary-functions/information-functions/rownum.md)
 * [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
 * [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)

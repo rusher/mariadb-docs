@@ -4,7 +4,7 @@
 [Replication](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) can be used to support the [backup](README.md) strategy.
 
 
-Replication alone is *not* sufficient for backup. It assists in protecting against hardware failure on the primary server, but does not protect against data loss. An accidental or malicious `<code>DROP DATABASE</code>` or `<code>TRUNCATE TABLE</code>` statement will be replicated onto the replica as well. Care needs to be taken to prevent data getting out of sync between the primary and the replica.
+Replication alone is *not* sufficient for backup. It assists in protecting against hardware failure on the primary server, but does not protect against data loss. An accidental or malicious `DROP DATABASE` or `TRUNCATE TABLE` statement will be replicated onto the replica as well. Care needs to be taken to prevent data getting out of sync between the primary and the replica.
 
 
 The terms *master* and *slave* have historically been used in replication, and MariaDB has begun the process of adding *primary* and *replica* synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.

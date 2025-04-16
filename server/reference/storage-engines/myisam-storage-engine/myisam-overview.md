@@ -10,7 +10,7 @@ It's a light, non-transactional engine with great performance, is easy to copy b
 You're encouraged to rather use the [Aria](../s3-storage-engine/aria_s3_copy.md) storage engine for new applications, which has even better performance in most cases and the goal of being crash-safe.
 
 
-A MyISAM table is stored in three files on disk. There's a table definition file with an extension of `<code>.frm</code>`, a data file with the extension `<code>.MYD</code>`, and an index file with the extension `<code>.MYI</code>`.
+A MyISAM table is stored in three files on disk. There's a table definition file with an extension of `.frm`, a data file with the extension `.MYD`, and an index file with the extension `.MYI`.
 
 
 ## MyISAM features

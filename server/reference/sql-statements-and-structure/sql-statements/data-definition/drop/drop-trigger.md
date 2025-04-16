@@ -14,12 +14,12 @@ DROP TRIGGER [IF EXISTS] [schema_name.]trigger_name
 
 This statement drops a [trigger](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md). The schema (database) name is optional. If the
 schema is omitted, the trigger is dropped from the default schema.
-Its use requires the `<code>TRIGGER</code>` privilege for the table associated with the trigger.
+Its use requires the `TRIGGER` privilege for the table associated with the trigger.
 
 
-Use `<code class="highlight fixed" style="white-space:pre-wrap">IF EXISTS</code>` to prevent an error from occurring for a
-trigger that does not exist. A `<code>NOTE</code>` is generated for a non-existent trigger
-when using `<code>IF EXISTS</code>`. See [SHOW WARNINGS](../../administrative-sql-statements/show/show-warnings.md).
+Use `IF EXISTS` to prevent an error from occurring for a
+trigger that does not exist. A `NOTE` is generated for a non-existent trigger
+when using `IF EXISTS`. See [SHOW WARNINGS](../../administrative-sql-statements/show/show-warnings.md).
 
 
 **Note:** Triggers for a table are also dropped if you drop the table.
@@ -30,7 +30,7 @@ when using `<code>IF EXISTS</code>`. See [SHOW WARNINGS](../../administrative-sq
 
 
 ##### MariaDB starting with [10.6.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md)
-[MariaDB 10.6.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) supports [Atomic DDL](../atomic-ddl.md) and `<code>DROP TRIGGER</code>` is atomic.
+[MariaDB 10.6.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) supports [Atomic DDL](../atomic-ddl.md) and `DROP TRIGGER` is atomic.
 
 
 ## Examples

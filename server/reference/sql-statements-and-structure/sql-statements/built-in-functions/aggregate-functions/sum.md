@@ -12,9 +12,9 @@ SUM([DISTINCT] expr)
 ## Description
 
 
-Returns the sum of *`<code>expr</code>`*. If the return set has no rows, `<code>SUM()</code>` returns
-`<code>NULL</code>`. The `<code>DISTINCT</code>` keyword can be used to sum only the distinct values
-of `<code>expr</code>`.
+Returns the sum of *`expr`*. If the return set has no rows, `SUM()` returns
+`NULL`. The `DISTINCT` keyword can be used to sum only the distinct values
+of `expr`.
 
 
 SUM() can be used as a [window function](../special-functions/window-functions/window-functions-overview.md), although not with the DISTINCT specifier.

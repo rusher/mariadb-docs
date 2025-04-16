@@ -1,7 +1,7 @@
 
 # mysql.general_log Table
 
-The `<code>mysql.general_log</code>` table stores the contents of the [General Query Log](../../../../../../server-management/server-monitoring-logs/general-query-log.md) if general logging is active and the output is being written to table (see [Writing logs into tables](../../../../../../server-management/server-monitoring-logs/writing-logs-into-tables.md)).
+The `mysql.general_log` table stores the contents of the [General Query Log](../../../../../../server-management/server-monitoring-logs/general-query-log.md) if general logging is active and the output is being written to table (see [Writing logs into tables](../../../../../../server-management/server-monitoring-logs/writing-logs-into-tables.md)).
 
 
 It contains the following fields:

@@ -71,7 +71,7 @@ expected, a kind of sql debugging.
  on an x86_64 RHEL 8 instance, the replay should also happen on an x86_64 RHEL
  8 instance. Captured workloads are however usually compatible across different
  linux distributions that use the same CPU architecture.
-* The capture MariaDB instance must have binlogging enabled (`<code>log-bin=1</code>`)
+* The capture MariaDB instance must have binlogging enabled (`log-bin=1`)
 
 
 # Capture
@@ -118,7 +118,7 @@ module=wcar
 
 
 Here is an example configuration for capturing from a single MariaDB server, where capture
-starts when MaxScale starts and ends when MaxScale is stopped (`<code>start_capture=true</code>`).
+starts when MaxScale starts and ends when MaxScale is stopped (`start_capture=true`).
 MaxScale listens on port 4006 and connects to MariaDB on port 3306.
 
 
@@ -166,9 +166,9 @@ port=4006
 ## Capturing Traffic
 
 
-This first section explains how capture is done with configuration value `<code>start_capture=true</code>`.
+This first section explains how capture is done with configuration value `start_capture=true`.
 But note that capture can be started and stopped dynamically using module commands as well
-(where the configuration value can be `<code>start_capture=false</code>`, or omitted as that is the default).
+(where the configuration value can be `start_capture=false`, or omitted as that is the default).
 
 
 Two things are needed to replay a workload: the client traffic that's captured
@@ -179,20 +179,20 @@ following.
 
 
 * Stop MaxScale
-* Take a backup of the database with `<code>mariadb-dump --all-databases --system=all</code>`
+* Take a backup of the database with `mariadb-dump --all-databases --system=all`
 * Start MaxScale
 
 
 Once MaxScale has been started, the captured traffic will be written to files in
-`<code>/var/lib/maxscale/wcar/<name></code>` where `<code><name></code>` is the name of the filter (`<code>WCAR</code>`
+`/var/lib/maxscale/wcar/<name>` where `<name>` is the name of the filter (`WCAR`
 in the examples).
 
 
-Each capture will generate a number files named `<code>NAME_YYYY-MM-DD_HHMMSS.SUFFIX</code>`
-where `<code>NAME</code>` is the capture name (defaults to `<code>capture</code>`), `<code>YYYY-MM-DD</code>` is the
-date and `<code>HHMMSS</code>` is the time and the `<code>SUFFIX</code>` is one of `<code>.cx</code>`, `<code>.ex</code>` or
-`<code>.gx</code>`. For example, a capture started on the 18th of April 2024 at 10:26:11
-would generate a file named `<code>capture_2024-04-18_102611.cx</code>`.
+Each capture will generate a number files named `NAME_YYYY-MM-DD_HHMMSS.SUFFIX`
+where `NAME` is the capture name (defaults to `capture`), `YYYY-MM-DD` is the
+date and `HHMMSS` is the time and the `SUFFIX` is one of `.cx`, `.ex` or
+`.gx`. For example, a capture started on the 18th of April 2024 at 10:26:11
+would generate a file named `capture_2024-04-18_102611.cx`.
 
 
 ## Stopping the Capture
@@ -216,7 +216,7 @@ it from all services that it was added to. Restart MaxScale.
 
 
 If the replay is to take place on another server, the results can be collected
-easily from `<code>/var/lib/maxscale/wcar/</code>` with the following command.
+easily from `/var/lib/maxscale/wcar/` with the following command.
 
 
 
@@ -244,12 +244,12 @@ maxctrl call command wcar <command> <filter> [options]
 
 
 
-The `<code><filter></code>` is the name of the filter instance. In the example configuration,
-the value would be `<code>WCAR</code>`. The `<code>[options]</code>` is a list of optional arguments that
+The `<filter>` is the name of the filter instance. In the example configuration,
+the value would be `WCAR`. The `[options]` is a list of optional arguments that
 the command might expect.
 
 
-## `<code>start <filter> [options]</code>`
+## `start <filter> [options]`
 
 
 Starts a new capture. Issuing a start command will stop any ongoing capture.
@@ -257,7 +257,7 @@ Starts a new capture. Issuing a start command will stop any ongoing capture.
 
 The start command supports optional key-value pairs. If the values are also defined in
 the configuration file the command line options have priority. The supported keys are:
-- **prefix** The prefix added to capture files. The default value is `<code>capture</code>`.
+- **prefix** The prefix added to capture files. The default value is `capture`.
 - **duration** Limit capture to this duration. See also configuration file value ['capture_duration'](#capture_duration).
 - **size** Limit capture to approximately this many bytes in the file system. See also configuration file value ['capture_size'](https://mariadb.com/kb/en/capture_size).
 
@@ -266,8 +266,8 @@ The start command options are not persistent, but apply only to the "start" capt
 
 
 For example, starting a capture with the below command would create a capture
-file named `<code>Scenario1_2024-04-18_102605.cx</code>` and limit the file system usage to approximately 10GiB.
-If `<code>capture_duration</code>` was defined in the configuration file it would also be used.
+file named `Scenario1_2024-04-18_102605.cx` and limit the file system usage to approximately 10GiB.
+If `capture_duration` was defined in the configuration file it would also be used.
 
 
 If both duration and size are specified, the one that triggers first, stops the capture.
@@ -280,11 +280,11 @@ maxctrl call command wcar start WCAR prefix=Scenario1 size=10G
 
 
 
-Running the same command again, but without size=10G, the `<code>capture_size</code>` used would be that defined
+Running the same command again, but without size=10G, the `capture_size` used would be that defined
 in the configuration file or no limit if there was no such definition.
 
 
-## `<code>stop <filter></code>`
+## `stop <filter>`
 
 
 Stops the currently active capture if one is in progress.
@@ -333,7 +333,7 @@ maxplayer summary /path/to/capture.cx
 
 
 
-Run `<code>maxplayer --help</code>` to see the command line options. The help output
+Run `maxplayer --help` to see the command line options. The help output
 is also shown at the end of this file.
 
 
@@ -371,12 +371,12 @@ example, be used when fine tuning server settings.
 When replay is first done, the capture files will be transformed in-place.
 Transform can be run separately as well. Depending on the size and structure
 of the capture file, Transform can use up to twice the space of the capture.ex file.
-The files with extension `<code>.ex</code>` contain most of the captured data (events).
+The files with extension `.ex` contain most of the captured data (events).
 
 
-Start by copying the replay file tarball created earlier (`<code>captures.tar.gz</code>`) to
+Start by copying the replay file tarball created earlier (`captures.tar.gz`) to
 the replay MaxScale server and copy it to a directory of your choice (here called
-`<code>/path/to/capture-dir</code>`).
+`/path/to/capture-dir`).
 Then extract the files.
 
 
@@ -416,7 +416,7 @@ After both replays have been completed, the results can be post-processed and vi
 
 
 The results of the WCAR replay must first be post-processed into summaries that
-the visualization will then use. First, the `<code>canonicals.csv</code>` file must be
+the visualization will then use. First, the `canonicals.csv` file must be
 generated that is needed in the post-processing:
 
 
@@ -428,7 +428,7 @@ maxplayer canonicals /path/to/capture.cx > canonicals.csv
 
 
 After that, the baseline and comparison replay results can be post-processed
-into summaries using the `<code>maxpostprocess</code>` command:
+into summaries using the `maxpostprocess` command:
 
 
 
@@ -439,10 +439,10 @@ maxpostprocess canonicals.csv comparison-result.csv -o comparison-summary.json
 
 
 
-The visualization itself is done with the `<code>maxvisualize</code>` program. The
+The visualization itself is done with the `maxvisualize` program. The
 visualization will open up a browser window to show the visualization. If no
 browser opens up, the visualization URL is also printed into the command line
-which by default should be `<code>http://localhost:8866/</code>`.
+which by default should be `http://localhost:8866/`.
 
 
 
@@ -455,7 +455,7 @@ maxvisualize baseline-summary.json comparison-summary.json
 # WCAR Parameters
 
 
-## `<code>capture_dir</code>`
+## `capture_dir`
 
 
 * Type: path
@@ -469,7 +469,7 @@ capture directory has the name of the filter.
 In the examples above the name "WCAR" was used.
 
 
-## `<code>start_capture</code>`
+## `start_capture`
 
 
 * Type: boolean
@@ -481,7 +481,7 @@ In the examples above the name "WCAR" was used.
 Start capture when maxscale starts.
 
 
-## `<code>capture_duration</code>`
+## `capture_duration`
 
 
 * Type: [duration](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -493,7 +493,7 @@ Start capture when maxscale starts.
 Limit capture to this duration.
 
 
-## `<code>capture_size</code>`
+## `capture_size`
 
 
 * Type: [size](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)

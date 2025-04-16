@@ -8,7 +8,7 @@ We participated in the [Google Summer of Code 2017](https://summerofcode.withgoo
 # Where to start
 
 
-Please join us at `<code class="fixed" style="white-space:pre-wrap">irc.freenode.net</code>` at #maria to mingle with the community. Don't forget to subscribe to [maria-developers@lists.launchpad.net](https://launchpad.net/~maria-developers) (this is the main list where we discuss development).
+Please join us at `irc.freenode.net` at #maria to mingle with the community. Don't forget to subscribe to [maria-developers@lists.launchpad.net](https://launchpad.net/~maria-developers) (this is the main list where we discuss development).
 
 
 A few handy tips for any interested students who are unsure which projects to choose:
@@ -66,7 +66,7 @@ The purpose of this task is to create an easy-to-use facility for setting up a n
 ## mysqltest improvements
 
 
-`<code>mysqltest</code>` is a client utility that runs tests in the [mysql-test](../../../../server/reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) framework. It sends sql statements to the server, compares the results with the expected results, and uses a special small [DSL](https://en.wikipedia.org/wiki/Domain-specific_language) for loops, assignments, and so on. It's pretty old and very ad hoc with many strange limitations. It badly needs a proper parser and a consistent logical grammar.
+`mysqltest` is a client utility that runs tests in the [mysql-test](../../../../server/reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) framework. It sends sql statements to the server, compares the results with the expected results, and uses a special small [DSL](https://en.wikipedia.org/wiki/Domain-specific_language) for loops, assignments, and so on. It's pretty old and very ad hoc with many strange limitations. It badly needs a proper parser and a consistent logical grammar.
 
 
 | Details: | Skills: | Mentor: | Students Interested: |

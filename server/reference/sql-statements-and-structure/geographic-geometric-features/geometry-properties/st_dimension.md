@@ -12,7 +12,7 @@ Dimension(g)
 ## Description
 
 
-Returns the inherent dimension of the geometry value *`<code>g</code>`*. The result can
+Returns the inherent dimension of the geometry value *`g`*. The result can
 be
 
 
@@ -27,7 +27,7 @@ be
 
 
 
-`<code>ST_Dimension()</code>` and `<code>Dimension()</code>` are synonyms.
+`ST_Dimension()` and `Dimension()` are synonyms.
 
 
 ## Examples

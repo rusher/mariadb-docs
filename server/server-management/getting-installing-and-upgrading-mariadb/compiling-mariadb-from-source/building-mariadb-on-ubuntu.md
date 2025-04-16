@@ -4,7 +4,7 @@
 In the event that you are using the Linux-based operating system Ubuntu or any of its derivatives and would like to compile MariaDB from source code, you can do so using the MariaDB source repository for the release that interests you.
 
 
-Before you begin, install the `<code>software-properties-common</code>`, `<code>devscripts</code>` and `<code>equivs</code>` packages.
+Before you begin, install the `software-properties-common`, `devscripts` and `equivs` packages.
 
 
 ```
@@ -30,7 +30,7 @@ $ sudo add-apt-repository --update --yes --enable-source \
        'deb [arch=amd64] http://nyc2.mirrors.digitalocean.com/mariadb/repo/10.3/ubuntu '$(lsb_release -sc)' main'
 ```
 
-Once the repository is set up, you can use `<code>apt-get</code>` to retrieve the build dependencies. MariaDB packages supplied by Ubuntu and packages supplied by the MariaDB repository have the same base name of `<code>mariadb-server</code>`. You need to specify the specific version you want to retrieve.
+Once the repository is set up, you can use `apt-get` to retrieve the build dependencies. MariaDB packages supplied by Ubuntu and packages supplied by the MariaDB repository have the same base name of `mariadb-server`. You need to specify the specific version you want to retrieve.
 
 
 ```
@@ -40,14 +40,14 @@ $ sudo apt-get build-dep mariadb-10.3
 ## Building MariaDB
 
 
-Once you have the base dependencies installed, you can retrieve the source code and start building MariaDB. The source code is available on GitHub. Use the `<code>--branch</code>` option to specify the particular version of MariaDB you want to build.
+Once you have the base dependencies installed, you can retrieve the source code and start building MariaDB. The source code is available on GitHub. Use the `--branch` option to specify the particular version of MariaDB you want to build.
 
 
 ```
 $ git clone --branch 10.3 https://github.com/MariaDB/server.git
 ```
 
-The source code includes scripts to install the remaining build dependencies. For Ubuntu, they're located in the `<code>debian/</code>` directory. Navigate into the repository and run the `<code>autobake-deb.sh</code>` script. Then use
+The source code includes scripts to install the remaining build dependencies. For Ubuntu, they're located in the `debian/` directory. Navigate into the repository and run the `autobake-deb.sh` script. Then use
 
 
 ```
@@ -58,13 +58,13 @@ $ ./debian/autobake-deb.sh
 
 ### Further Dependencies
 
-In the event that there are still build dependencies that are not satisfied, use `<code>mk-build-deps</code>` to generate a build dependency `<code>deb</code>` to use in installing the remaining packages.
+In the event that there are still build dependencies that are not satisfied, use `mk-build-deps` to generate a build dependency `deb` to use in installing the remaining packages.
 
 ```
 $ mk-build-deps debian/control
 $ apt-get install ./mariadb-*build-deps_*.deb
 ```
-Then, call the `<code>autobake-deb.sh</code>` script again to build MariaDB.
+Then, call the `autobake-deb.sh` script again to build MariaDB.
 
 ```
 $ ./debian/autobake-deb.sh

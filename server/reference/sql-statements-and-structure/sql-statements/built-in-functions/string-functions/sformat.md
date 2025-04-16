@@ -9,7 +9,7 @@ SFORMAT was added in [MariaDB 10.7.0](../../../../../../release-notes/mariadb-co
 ## Description
 
 
-The `<code>SFORMAT</code>` function takes an input string and a formatting specification and returns the string formatted using the rules the user passed in the specification.
+The `SFORMAT` function takes an input string and a formatting specification and returns the string formatted using the rules the user passed in the specification.
 
 
 It uses the [fmtlib library](https://fmt.dev/) for Python-like (as well as Rust, C++20, etc) string formatting.

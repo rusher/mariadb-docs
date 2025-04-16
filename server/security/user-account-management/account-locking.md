@@ -22,7 +22,7 @@ or
 ALTER USER 'marijn'@'localhost' ACCOUNT LOCK;
 ```
 
-The server will return an `<code>ER_ACCOUNT_HAS_BEEN_LOCKED</code>` error when locked users attempt to connect:
+The server will return an `ER_ACCOUNT_HAS_BEEN_LOCKED` error when locked users attempt to connect:
 
 
 ```

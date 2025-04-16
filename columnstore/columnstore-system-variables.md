@@ -41,7 +41,7 @@
 
 
 
-`<code class="unknown_macro"><<<span class="macro_name">toc</span><span class="macro_arg_string"></span>>></code>`
+`<<<span class="macro_name">toc</span><span class="macro_arg_string"></span>>>`
 
 
 ## Compression mode
@@ -67,7 +67,7 @@ where n is:
 ## ColumnStore decimal to double math
 
 
-`<code class="unknown_macro"><<<span class="macro_name">toc</span><span class="macro_arg_string"> title='' layout=standalone</span>>></code>`
+`<<<span class="macro_name">toc</span><span class="macro_arg_string"> title='' layout=standalone</span>>>`
 MariaDB ColumnStore has the ability to change intermediate decimal mathematical results from decimal type to double. The decimal type has approximately 17-18 digits of precision, but a smaller maximum range. Whereas the double type has approximately 15-16 digits of precision, but a much larger maximum range. 
 In typical mathematical and scientific applications, the ability to avoid overflow in intermediate results with double math is likely more beneficial than the additional two digits of precisions. In banking applications, however, it may be more appropriate to leave in the default decimal setting to ensure accuracy to the least significant digit.
 
@@ -127,7 +127,7 @@ where *n* is the amount of precision desired for calculations.
 ## Disk-based joins
 
 
-`<code class="unknown_macro"><<<span class="macro_name">toc</span><span class="macro_arg_string"> title='' layout=standalone</span>>></code>`
+`<<<span class="macro_name">toc</span><span class="macro_arg_string"> title='' layout=standalone</span>>>`
 
 
 ### Introduction
@@ -180,7 +180,7 @@ set infinidb_um_mem_limit = value
 ## Batch insert mode for INSERTS
 
 
-`<code class="unknown_macro"><<<span class="macro_name">toc</span><span class="macro_arg_string"> title='' layout=standalone</span>>></code>`
+`<<<span class="macro_name">toc</span><span class="macro_arg_string"> title='' layout=standalone</span>>>`
 
 
 ### Introduction
@@ -241,7 +241,7 @@ The VersionBufferFileSize setting is updated in the ColumnStore.xml typically lo
 MariaDB ColumnStore has the ability to query data from just a single [PM](columnstore-architecture/columnstore-performance-module.md) instead of the whole database through the [UM](columnstore-architecture/columnstore-user-module.md). In order to accomplish this, the infinidb_local_query variable in the my.cnf configuration file is used and maybe set as a default at system wide or set at the session level.
 
 
-`<code class="unknown_macro"><<<span class="macro_name">toc</span><span class="macro_arg_string"> title='' layout=standalone</span>>></code>`
+`<<<span class="macro_name">toc</span><span class="macro_arg_string"> title='' layout=standalone</span>>>`
 
 
 ### Enable local PM query during installation
@@ -263,7 +263,7 @@ Enable Local Query feature? [y,n] (n) >
 ### Enable local PM query systemwide
 
 
-To enable the use of the local PM Query at the instance level, specify `<code>infinidb_local_query =1</code>` (enabled) in the my.cnf configuration file at /usr/local/mariadb/columnstore/mysql. The default is 0 (disabled).
+To enable the use of the local PM Query at the instance level, specify `infinidb_local_query =1` (enabled) in the my.cnf configuration file at /usr/local/mariadb/columnstore/mysql. The default is 0 (disabled).
 
 
 ### Enable/disable local PM query at the session level

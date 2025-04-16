@@ -31,5 +31,5 @@ protocol=MariaDBBackend
 
 
 
-The `<code>address</code>` and `<code>port</code>` parameters tell where the server is located. The
-`<code>protocol</code>` should always be set to `<code>MariaDBBackend</code>`.
+The `address` and `port` parameters tell where the server is located. The
+`protocol` should always be set to `MariaDBBackend`.

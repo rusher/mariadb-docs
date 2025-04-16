@@ -7,7 +7,7 @@ In MariaDB, a storage engine can allow the user to specify additional attributes
 ## API
 
 
-There are three new members in the `<code class="fixed" style="white-space:pre-wrap">handlerton</code>` structure, they can be set in the engine's initialization function as follows:
+There are three new members in the `handlerton` structure, they can be set in the engine's initialization function as follows:
 
 
 ```
@@ -44,18 +44,18 @@ ha_create_table_option example_table_option_list[]=
 ```
 
 The engine declares a structure 
-`<code class="fixed" style="white-space:pre-wrap"><span class="n">ha_table_option_struct</span>
-</code>`
+`<span class="n">ha_table_option_struct</span>
+`
 that will hold values of these new attributes.
 
 
 And it describes these attributes to MySQL by creating an array of 
-`<code class="fixed" style="white-space:pre-wrap"><span class="n">HA_TOPTION_</span><span class="o">*</span>
-</code>` macros. Note a detail: these macros expect a structure called 
-`<code class="fixed" style="white-space:pre-wrap"><span class="n">ha_table_option_struct</span>
-</code>`, if the structure is called differently, a 
-`<code class="fixed" style="white-space:pre-wrap"><span class="cp">#define</span>
-</code>` will be needed.
+`<span class="n">HA_TOPTION_</span><span class="o">*</span>
+` macros. Note a detail: these macros expect a structure called 
+`<span class="n">ha_table_option_struct</span>
+`, if the structure is called differently, a 
+`<span class="cp">#define</span>
+` will be needed.
 
 
 There are five supported kinds of attributes:
@@ -73,28 +73,28 @@ There are five supported kinds of attributes:
 
 
 
-*Do not use* `<code class="fixed" style="white-space:pre-wrap">enum</code>` *for your* `<code class="fixed" style="white-space:pre-wrap">HA_TOPTION_ENUM</code>` *C structure members, the size of the* `<code class="fixed" style="white-space:pre-wrap">enum</code>` *depends on the compiler, and even on the compilation options, and the plugin API uses only types with known storage sizes.*
+*Do not use* `enum` *for your* `HA_TOPTION_ENUM` *C structure members, the size of the* `enum` *depends on the compiler, and even on the compilation options, and the plugin API uses only types with known storage sizes.*
 
 
-In all macros the first two parameters are name of the attribute as should be used in SQL in the `<code class="fixed" style="white-space:pre-wrap">CREATE TABLE</code>` statement, and the name of the corresponding member of the `<code class="fixed" style="white-space:pre-wrap">ha_table_option_struct</code>` structure.
+In all macros the first two parameters are name of the attribute as should be used in SQL in the `CREATE TABLE` statement, and the name of the corresponding member of the `ha_table_option_struct` structure.
 
 
-The `<code class="fixed" style="white-space:pre-wrap">HA_TOPTION_SYSVAR</code>` stands aside a bit. It does not specify the attribute type or the default value, instead it binds the attribute to a system variable. The attribute type and the range of allowed values will be the same as of the corresponding system variable. The attribute **default value** will be the **current value** of its system variable. And unlike other attribute types that are only stored in the `<code>.frm</code>` file if explicitly set in the `<code>CREATE TABLE</code>` statement, the `<code class="fixed" style="white-space:pre-wrap">HA_TOPTION_SYSVAR</code>` attributes are always stored. If the system variable value is changed, it will not affect existing tables. Note that for this very reason, if a table was created in the old version of a storage engine, and a new version has introduced a `<code class="fixed" style="white-space:pre-wrap">HA_TOPTION_SYSVAR</code>` attribute, the attribute value in the old tables will be the **default** value of the system variable, not its **current** value.
+The `HA_TOPTION_SYSVAR` stands aside a bit. It does not specify the attribute type or the default value, instead it binds the attribute to a system variable. The attribute type and the range of allowed values will be the same as of the corresponding system variable. The attribute **default value** will be the **current value** of its system variable. And unlike other attribute types that are only stored in the `.frm` file if explicitly set in the `CREATE TABLE` statement, the `HA_TOPTION_SYSVAR` attributes are always stored. If the system variable value is changed, it will not affect existing tables. Note that for this very reason, if a table was created in the old version of a storage engine, and a new version has introduced a `HA_TOPTION_SYSVAR` attribute, the attribute value in the old tables will be the **default** value of the system variable, not its **current** value.
 
 
-The array ends with a `<code class="fixed" style="white-space:pre-wrap">HA_TOPTION_END</code>` macro.
+The array ends with a `HA_TOPTION_END` macro.
 
 
-Field and index (key) attributes are declared similarly using `<code class="fixed" style="white-space:pre-wrap">HA_FOPTION_*</code>` and `<code class="fixed" style="white-space:pre-wrap">HA_IOPTION_*</code>` macros.
+Field and index (key) attributes are declared similarly using `HA_FOPTION_*` and `HA_IOPTION_*` macros.
 
 
-When in a `<code class="fixed" style="white-space:pre-wrap">CREATE TABLE</code>` statement, the `<code class="fixed" style="white-space:pre-wrap">::create()</code>` handler method is called, the table attributes are available in the `<code class="fixed" style="white-space:pre-wrap">table_arg->s->option_struct</code>`, field attributes - in the `<code class="fixed" style="white-space:pre-wrap">option_struct</code>` member of the individual fields (objects of the `<code class="fixed" style="white-space:pre-wrap">Field</code>` class), index attributes - in the `<code class="fixed" style="white-space:pre-wrap">option_struct</code>` member of the individual keys (objects of the `<code class="fixed" style="white-space:pre-wrap">KEY</code>` class).
+When in a `CREATE TABLE` statement, the `::create()` handler method is called, the table attributes are available in the `table_arg->s->option_struct`, field attributes - in the `option_struct` member of the individual fields (objects of the `Field` class), index attributes - in the `option_struct` member of the individual keys (objects of the `KEY` class).
 
 
-Additionally, they are available in most other handler methods: the attributes are stored in the `<code class="fixed" style="white-space:pre-wrap">.frm</code>` file and on every open MySQL makes them available to the engine by filling the corresponding `<code class="fixed" style="white-space:pre-wrap">option_struct</code>` members of the table, fields, and keys.
+Additionally, they are available in most other handler methods: the attributes are stored in the `.frm` file and on every open MySQL makes them available to the engine by filling the corresponding `option_struct` members of the table, fields, and keys.
 
 
-The `<code class="fixed" style="white-space:pre-wrap">ALTER TABLE</code>` needs a special support from the engine. MySQL compares old and new table definitions to decide whether it needs to rebuild the table or not. As the semantics of the engine declared attributes is unknown, MySQL cannot make this decision by analyzing attribute values - this is delegated to the engine. The `<code class="fixed" style="white-space:pre-wrap">HA_CREATE_INFO</code>` structure has three new members:
+The `ALTER TABLE` needs a special support from the engine. MySQL compares old and new table definitions to decide whether it needs to rebuild the table or not. As the semantics of the engine declared attributes is unknown, MySQL cannot make this decision by analyzing attribute values - this is delegated to the engine. The `HA_CREATE_INFO` structure has three new members:
 
 
 ```
@@ -103,16 +103,16 @@ ha_field_option_struct **fields_option_struct;   ///< array of field option stru
 ha_index_option_struct **indexes_option_struct;  ///< array of index option structures
 ```
 
-The engine (in the `<code class="fixed" style="white-space:pre-wrap">::check_if_incompatible_data()</code>` method) is responsible for comparing new values of the attributes from the `<code class="fixed" style="white-space:pre-wrap">HA_CREATE_INFO</code>` structure with the old values from the table and returning `<code class="fixed" style="white-space:pre-wrap">COMPATIBLE_DATA_NO</code>` if they were changed in such a way that requires the table to be rebuild.
+The engine (in the `::check_if_incompatible_data()` method) is responsible for comparing new values of the attributes from the `HA_CREATE_INFO` structure with the old values from the table and returning `COMPATIBLE_DATA_NO` if they were changed in such a way that requires the table to be rebuild.
 
 
-The example of declaring the attributes and comparing the values for the `<code class="fixed" style="white-space:pre-wrap">ALTER TABLE</code>` can be found in the EXAMPLE engine.
+The example of declaring the attributes and comparing the values for the `ALTER TABLE` can be found in the EXAMPLE engine.
 
 
 ## SQL
 
 
-The engine declared attributes can be specified per field, index, or table in the `<code class="fixed" style="white-space:pre-wrap">CREATE TABLE</code>` or `<code class="fixed" style="white-space:pre-wrap">ALTER TABLE</code>`. The syntax is the conventional:
+The engine declared attributes can be specified per field, index, or table in the `CREATE TABLE` or `ALTER TABLE`. The syntax is the conventional:
 
 
 ```
@@ -134,17 +134,17 @@ CREATE TABLE ... ENGINE=FEDERATED CONNECTION='mysql://root@127.0.0.1';
 where the value of the ENGINE attribute is specified not quoted, while the value of the CONNECTION is quoted.
 
 
-When an attribute is set, it will be stored with the table definition and shown in the `<code class="fixed" style="white-space:pre-wrap"><span class="k">SHOW</span> <span class="k">CREATE</span> <span class="k">TABLE</span><span class="p">;</span>
-</code>`. To remove an attribute from a table definition use `<code class="fixed" style="white-space:pre-wrap"><span class="k">ALTER</span> <span class="k">TABLE</span>
-</code>` to set its value to a `<code class="fixed" style="white-space:pre-wrap"><span class="k">DEFAULT</span>
-</code>`.
+When an attribute is set, it will be stored with the table definition and shown in the `<span class="k">SHOW</span> <span class="k">CREATE</span> <span class="k">TABLE</span><span class="p">;</span>
+`. To remove an attribute from a table definition use `<span class="k">ALTER</span> <span class="k">TABLE</span>
+` to set its value to a `<span class="k">DEFAULT</span>
+`.
 
 
 The values of unknown attributes or attributes with the illegal values cause an error by default. But with [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) one can change the storage engine and some previously valid attributes may become unknown — to the new engine. They are not removed automatically, though, because the table might be altered back to the first engine, and these attributes will be valid again. Still [SHOW CREATE TABLE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) will comment these unknown attributes out in the output, otherwise they would make a generated [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md) statement invalid.
 
 
-With the `<code class="fixed" style="white-space:pre-wrap"><span class="n">IGNORE_BAD_TABLE_OPTIONS</span>
-</code>` [sql mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) this behavior changes. Unknown attributes do not cause an error, they only result in a warning. And [SHOW CREATE TABLE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) will not comment them out. This mode is implicitly enabled in the replication slave thread.
+With the `<span class="n">IGNORE_BAD_TABLE_OPTIONS</span>
+` [sql mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) this behavior changes. Unknown attributes do not cause an error, they only result in a warning. And [SHOW CREATE TABLE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) will not comment them out. This mode is implicitly enabled in the replication slave thread.
 
 
 ## See Also

@@ -43,7 +43,7 @@ the client and send the copies to another service within MariaDB MaxScale.
 
 **Please Note:** Starting with MaxScale 2.2.0, any client that connects to a
  service which uses a tee filter will require a grant for the loopback address,
- i.e. `<code>127.0.0.1</code>`.
+ i.e. `127.0.0.1`.
 
 
 ## Configuration
@@ -79,7 +79,7 @@ The tee filter requires a mandatory parameter to define the service to replicate
 statements to and accepts a number of optional parameters.
 
 
-### `<code>target</code>`
+### `target`
 
 
 * Type: target
@@ -93,7 +93,7 @@ a service or a server. The duplicate connection that is created to this target
 will be referred to as the "branch target" in this document.
 
 
-### `<code>service</code>`
+### `service`
 
 
 * Type: service
@@ -103,11 +103,11 @@ will be referred to as the "branch target" in this document.
 
 
 The service where the filter will duplicate all queries. This parameter is
-deprecated in favor of the `<code>target</code>` parameter and will be removed in a future
-release. Both `<code>target</code>` and `<code>service</code>` cannot be defined.
+deprecated in favor of the `target` parameter and will be removed in a future
+release. Both `target` and `service` cannot be defined.
 
 
-### `<code>match</code>`
+### `match`
 
 
 * Type: [regex](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)
@@ -126,7 +126,7 @@ match=/insert.*into.*order*/
 
 
 
-### `<code>exclude</code>`
+### `exclude`
 
 
 * Type: [regex](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)
@@ -145,14 +145,14 @@ exclude=/select.*from.*t1/
 
 
 
-## `<code>options</code>`
+## `options`
 
 
 * Type: [enum](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>ignorecase</code>`, `<code>case</code>`, `<code>extended</code>`
-* Default: `<code>ignorecase</code>`
+* Values: `ignorecase`, `case`, `extended`
+* Default: `ignorecase`
 
 
 How regular expressions should be interpreted.
@@ -165,7 +165,7 @@ options=case,extended
 
 
 
-### `<code>source</code>`
+### `source`
 
 
 * Type: string
@@ -186,7 +186,7 @@ source=127.0.0.1
 
 
 
-### `<code>user</code>`
+### `user`
 
 
 * Type: string
@@ -207,20 +207,20 @@ user=john
 
 
 
-### `<code>sync</code>`
+### `sync`
 
 
 * Type: [boolean](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
-Enable synchronous routing mode. When configured with `<code>sync=true</code>`, the filter
+Enable synchronous routing mode. When configured with `sync=true`, the filter
 will queue new queries until the response from both the main and the branch
-target has been received. This means that for `<code>n</code>` executed queries, `<code>n - 1</code>`
+target has been received. This means that for `n` executed queries, `n - 1`
 queries are guaranteed to be synchronized. Adding one extra statement
-(e.g. `<code>SELECT 1</code>`) to a batch of statements guarantees that all previous SQL
+(e.g. `SELECT 1`) to a batch of statements guarantees that all previous SQL
 statements have been successfully executed on both targets.
 
 
@@ -234,16 +234,16 @@ client session to be closed.
 * All statements that are executed on the branch target are done in an
  asynchronous manner. This means that when the client receives the response
  there is no guarantee that the statement has completed on the branch
- target. The `<code>sync</code>` feature provides some synchronization guarantees that can
+ target. The `sync` feature provides some synchronization guarantees that can
  be used to verify successful execution on both targets.
 * Any errors on the branch target will cause the connection to it to be
- closed. If `<code>target</code>` is a service, it is up to the router to decide whether the
+ closed. If `target` is a service, it is up to the router to decide whether the
  connection is closed. For direct connections to servers, any network errors
  cause the connection to be closed. When the connection is closed, no new
  queries will be routed to the branch target.
 
 
-With `<code>sync=true</code>`, a failure of the branch target will cause the whole session
+With `sync=true`, a failure of the branch target will cause the whole session
  to be closed.
 
 
@@ -257,14 +257,14 @@ details about module commands.
 The tee filter supports the following module commands.
 
 
-### `<code>tee disable [FILTER]</code>`
+### `tee disable [FILTER]`
 
 
 This command disables a tee filter instance. A disabled tee filter will not send
 any queries to the target service.
 
 
-### `<code>tee enable [FILTER]</code>`
+### `tee enable [FILTER]`
 
 
 Enable a disabled tee filter. This resumes the sending of queries to the target

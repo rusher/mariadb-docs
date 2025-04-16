@@ -13,12 +13,12 @@ EXECUTE stmt_name
 ## Description
 
 
-After preparing a statement with `<code>[PREPARE](prepare-statement.md)</code>`, you execute it with an
-`<code class="fixed" style="white-space:pre-wrap">EXECUTE</code>` statement that refers to the prepared statement name. If the
+After preparing a statement with `[PREPARE](prepare-statement.md)`, you execute it with an
+`EXECUTE` statement that refers to the prepared statement name. If the
 prepared statement contains any parameter markers, you must supply a
-`<code class="fixed" style="white-space:pre-wrap">USING</code>` clause that lists user variables containing the values to be
+`USING` clause that lists user variables containing the values to be
 bound to the parameters. Parameter values can be supplied only by user
-variables, and the `<code class="fixed" style="white-space:pre-wrap">USING</code>` clause must name exactly as many variables as
+variables, and the `USING` clause must name exactly as many variables as
 the number of parameter markers in the statement.
 
 
@@ -34,7 +34,7 @@ If the specified statement has not been PREPAREd, an error similar to the follow
 ERROR 1243 (HY000): Unknown prepared statement handler (stmt_name) given to EXECUTE
 ```
 
-`<code>EXECUTE</code>` with expression as parameters was introduced in [MariaDB 10.2.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md). Prior to that one could only use variables (@var_name) as parameters.
+`EXECUTE` with expression as parameters was introduced in [MariaDB 10.2.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md). Prior to that one could only use variables (@var_name) as parameters.
 
 
 ## Example

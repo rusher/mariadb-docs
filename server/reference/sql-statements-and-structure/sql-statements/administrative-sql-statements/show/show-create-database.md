@@ -13,8 +13,8 @@ SHOW CREATE {DATABASE | SCHEMA} db_name
 
 
 Shows the [CREATE DATABASE](../../data-definition/create/create-database.md) statement that
-creates the given database. `<code>SHOW CREATE SCHEMA</code>` is a synonym
-for `<code>SHOW CREATE DATABASE</code>`. `<code>SHOW CREATE DATABASE</code>` quotes database names according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) server system variable.
+creates the given database. `SHOW CREATE SCHEMA` is a synonym
+for `SHOW CREATE DATABASE`. `SHOW CREATE DATABASE` quotes database names according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) server system variable.
 
 
 ## Examples

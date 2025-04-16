@@ -180,14 +180,14 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 ## Oracle Mode
 
 
-In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `<code>VARCHAR2</code>` is a synonym.
+In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `VARCHAR2` is a synonym.
 
 
 ### For Storage Engine Developers
 
 
 * Internally the full length of the VARCHAR column is allocated inside each TABLE objects record[] structure. As there are three such buffers, each open table will allocate 3 times max-length-to-store-varchar bytes of memory.
-* [TEXT](text.md) and [BLOB](blob.md) columns are stored with a pointer (4 or 8 bytes) + a 1-4 bytes length. The [TEXT](text.md) data is only stored once. This means that internally `<code>TEXT</code>` uses less memory for each open table but instead has the additional overhead that each `<code>TEXT</code>` object needs to be allocated and freed for each row access (with some caching in between).
+* [TEXT](text.md) and [BLOB](blob.md) columns are stored with a pointer (4 or 8 bytes) + a 1-4 bytes length. The [TEXT](text.md) data is only stored once. This means that internally `TEXT` uses less memory for each open table but instead has the additional overhead that each `TEXT` object needs to be allocated and freed for each row access (with some caching in between).
 
 
 ## See Also

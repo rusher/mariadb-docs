@@ -4,7 +4,7 @@
 NULL represents an unknown value. It is *not* an empty string (by default), or a zero value. These are all valid values, and are not NULLs.
 
 
-When a table is [created](../sql-statements-and-structure/vectors/create-table-with-vectors.md) or the format [altered](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), columns can be specified as accepting NULL values, or not accepting them, with the `<code>NULL</code>` and `<code>NOT NULL</code>` clauses respectively.
+When a table is [created](../sql-statements-and-structure/vectors/create-table-with-vectors.md) or the format [altered](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), columns can be specified as accepting NULL values, or not accepting them, with the `NULL` and `NOT NULL` clauses respectively.
 
 
 For example, a customer table could contain dates of birth. For some customers, this information is unknown, so the value could be NULL.
@@ -30,10 +30,10 @@ CREATE TABLE customer (
 ## Syntax
 
 
-The case of `<code>NULL</code>` is not relevant. `<code>\N</code>` (uppercase) is an alias for `<code>NULL</code>`.
+The case of `NULL` is not relevant. `\N` (uppercase) is an alias for `NULL`.
 
 
-The `<code>[IS](../sql-statements-and-structure/geographic-geometric-features/geometry-properties/isclosed.md)</code>` operator accepts `<code>UNKNOWN</code>` as an alias for `<code>NULL</code>`, which is meant for [boolean contexts](../sql-statements-and-structure/sql-language-structure/sql-language-structure-boolean-literals.md).
+The `[IS](../sql-statements-and-structure/geographic-geometric-features/geometry-properties/isclosed.md)` operator accepts `UNKNOWN` as an alias for `NULL`, which is meant for [boolean contexts](../sql-statements-and-structure/sql-language-structure/sql-language-structure-boolean-literals.md).
 
 
 ## Comparison Operators
@@ -209,7 +209,7 @@ SELECT* FROM t3;
 +------+---------------------+
 ```
 
-If a `<code>NULL</code>` is assigned to a `<code>VIRTUAL</code>` or `<code>PERSISTENT</code>` column, the default value is assigned instead.
+If a `NULL` is assigned to a `VIRTUAL` or `PERSISTENT` column, the default value is assigned instead.
 
 
 ```
@@ -225,7 +225,7 @@ SELECT c, v FROM virt;
 +------+------+
 ```
 
-In all these special cases, `<code>NULL</code>` is equivalent to the `<code>DEFAULT</code>` keyword.
+In all these special cases, `NULL` is equivalent to the `DEFAULT` keyword.
 
 
 ## Inserting

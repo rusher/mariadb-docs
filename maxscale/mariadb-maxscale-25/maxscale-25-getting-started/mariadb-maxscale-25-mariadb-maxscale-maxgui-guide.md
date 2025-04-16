@@ -28,23 +28,23 @@
 
 *MaxGUI* is the new browser based tool for configuring and managing
 MaxScale. It is a more user friendly and intuitive to use companion
-to the command line tool `<code>maxctrl</code>`.
+to the command line tool `maxctrl`.
 
 
 # Enabling MaxGUI
 
 
-To enable MaxGUI in a testing mode, add `<code>admin_host=0.0.0.0</code>` and
-`<code>admin_secure_gui=false</code>` under the `<code>[maxscale]</code>` section of the MaxScale
+To enable MaxGUI in a testing mode, add `admin_host=0.0.0.0` and
+`admin_secure_gui=false` under the `[maxscale]` section of the MaxScale
 configuration file. Once enabled, MaxGUI will be available on port 8989:
-`<code>http://127.0.0.1:8989/</code>`
+`http://127.0.0.1:8989/`
 
 
 ## Securing the GUI
 
 
-To make MaxGUI secure, set `<code>admin_secure_gui=true</code>` and configure both the
-`<code>admin_ssl_key</code>` and `<code>admin_ssl_cert</code>` parameters.
+To make MaxGUI secure, set `admin_secure_gui=true` and configure both the
+`admin_ssl_key` and `admin_ssl_cert` parameters.
 
 
 Check the [Configuration Guide](mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md) for the parameter
@@ -57,8 +57,8 @@ how to harden your MaxScale installation for production use.
 
 
 MaxGUI cannot be used without providing credentials. MaxGUI uses
-the same credentials as `<code>maxctrl</code>`, so by default, the username is
-`<code>admin</code>` and the password is `<code>mariadb</code>`.
+the same credentials as `maxctrl`, so by default, the username is
+`admin` and the password is `mariadb`.
 
 
 MaxGUI uses [JSON Web Tokens](https://jwt.io/introduction/) as the

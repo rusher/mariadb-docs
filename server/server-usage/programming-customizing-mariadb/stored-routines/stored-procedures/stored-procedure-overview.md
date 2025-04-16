@@ -21,7 +21,7 @@ CREATE PROCEDURE Reset_animal_count()
 DELIMITER ;
 ```
 
-First, the delimiter is changed, since the function definition will contain the regular semicolon delimiter. The procedure is named `<code>Reset_animal_count</code>`. `<code>MODIFIES SQL DATA</code>` indicates that the procedure will perform a write action of sorts, and modify data. It's for advisory purposes only. Finally, there's the actual SQL statement - an UPDATE.
+First, the delimiter is changed, since the function definition will contain the regular semicolon delimiter. The procedure is named `Reset_animal_count`. `MODIFIES SQL DATA` indicates that the procedure will perform a write action of sorts, and modify data. It's for advisory purposes only. Finally, there's the actual SQL statement - an UPDATE.
 
 
 ```

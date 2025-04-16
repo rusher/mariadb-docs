@@ -94,7 +94,7 @@ port=4001
 
 
 
-You can see that the `<code>source</code>` parameter in the *avro-service* points to the
+You can see that the `source` parameter in the *avro-service* points to the
 *replication-service* we defined before. This service will be the data source
 for the avrorouter. The *filestem* is the prefix in the binlog files and the
 additional *avrodir* router_option is where the converted Avro files are stored.
@@ -113,7 +113,7 @@ supported protocol for the avrorouter.
 
 Before starting the MaxScale process, we need to make sure that the binary logs
 of the master server contain the DDL statements that define the table
-layouts. What this means is that the `<code>CREATE TABLE</code>` statements need to be in the
+layouts. What this means is that the `CREATE TABLE` statements need to be in the
 binary logs before the conversion process is started.
 
 
@@ -163,7 +163,7 @@ for details on the layout of the schema files.
 
 
 All Avro schema files for tables that are not created in the binary logs need to
-be in the location pointed by the *avrodir* router_option and must use the following naming: `<code><database>.<table>.<schema_version>.avsc</code>`. For example, the schema file name of the *test.t1* table would be `<code>test.t1.0000001.avsc</code>`.
+be in the location pointed by the *avrodir* router_option and must use the following naming: `<database>.<table>.<schema_version>.avsc`. For example, the schema file name of the *test.t1* table would be `test.t1.0000001.avsc`.
 
 
 # Starting MariaDB MaxScale

@@ -43,10 +43,10 @@ For more details about the standard service parameters, refer to the
 ## Optional parameters
 
 
-### `<code>max_slave_connections</code>`
+### `max_slave_connections`
 
 
-**`<code>max_slave_connections</code>`** sets the maximum number of slaves a router session
+**`max_slave_connections`** sets the maximum number of slaves a router session
 uses at any moment. The default is to use all available slaves.
 
 
@@ -55,10 +55,10 @@ max_slave_connections=<max. number, or % of available slaves>
 ```
 
 
-### `<code>max_slave_replication_lag</code>`
+### `max_slave_replication_lag`
 
 
-**`<code>max_slave_replication_lag</code>`** specifies how many seconds a slave is allowed to
+**`max_slave_replication_lag`** specifies how many seconds a slave is allowed to
 be behind the master. If the lag is bigger than the configured value a slave
 can't be used for routing.
 
@@ -72,7 +72,7 @@ max_slave_replication_lag=<allowed lag in seconds>
 
 
 This applies to Master/Slave replication with MySQL monitor and
-`<code>detect_replication_lag=1</code>` options set. max_slave_replication_lag must be
+`detect_replication_lag=1` options set. max_slave_replication_lag must be
 greater than the monitor interval.
 
 
@@ -80,11 +80,11 @@ This option only affects Master-Slave clusters. Galera clusters do not have a
 concept of slave lag even if the application of write sets might have lag.
 
 
-### `<code>use_sql_variables_in</code>`
+### `use_sql_variables_in`
 
 
-**`<code>use_sql_variables_in</code>`** specifies where should queries, which read session
-variable, be routed. The syntax for `<code>use_sql_variable_in</code>` is:
+**`use_sql_variables_in`** specifies where should queries, which read session
+variable, be routed. The syntax for `use_sql_variable_in` is:
 
 
 ```
@@ -95,7 +95,7 @@ use_sql_variables_in=[master|all]
 The default is to use SQL variables in all servers.
 
 
-When value `<code>all</code>` is used, queries reading session variables can be routed to any
+When value `all` is used, queries reading session variables can be routed to any
 available slave (depending on selection criteria). Queries modifying session
 variables are routed to all backend servers by default, excluding write queries
 with embedded session variable modifications, such as:
@@ -107,7 +107,7 @@ INSERT INTO test.t1 VALUES (@myid:=@myid+1)
 
 
 In above-mentioned case the user-defined variable would only be updated in the
-master where the query would be routed to due to the `<code>INSERT</code>` statement.
+master where the query would be routed to due to the `INSERT` statement.
 
 
 **Note:** As of version 2.1 of MaxScale, all of the router options can also be
@@ -132,9 +132,9 @@ master_failure_mode=fail_on_write
 ## Router options
 
 
-**`<code>router_options</code>`** may include multiple **readwritesplit**-specific options.
+**`router_options`** may include multiple **readwritesplit**-specific options.
 All the options are parameter-value pairs. All parameters listed in this section
-must be configured as a value in `<code>router_options</code>`.
+must be configured as a value in `router_options`.
 
 
 Multiple options can be defined as a comma-separated list of parameter-value
@@ -148,8 +148,8 @@ router_options=<option>,<option>
 
 
 
-For example, to set **`<code>slave_selection_criteria</code>`** and
-**`<code>disable_sescmd_history</code>`**, write
+For example, to set **`slave_selection_criteria`** and
+**`disable_sescmd_history`**, write
 
 
 
@@ -159,13 +159,13 @@ router_options=slave_selection_criteria=LEAST_GLOBAL_CONNECTIONS,disable_sescmd_
 
 
 
-### `<code>slave_selection_criteria</code>`
+### `slave_selection_criteria`
 
 
 This option controls how the readwritesplit router chooses the slaves it
 connects to and how the load balancing is done. The default behavior is to route
 read queries to the slave server with the lowest amount of ongoing queries i.e.
-`<code>LEAST_CURRENT_OPERATIONS</code>`.
+`LEAST_CURRENT_OPERATIONS`.
 
 
 The option syntax:
@@ -178,47 +178,47 @@ router_options=slave_selection_criteria=<criteria>
 
 
 
-Where `<code><criteria></code>` is one of the following values.
+Where `<criteria>` is one of the following values.
 
 
-* `<code>LEAST_GLOBAL_CONNECTIONS</code>`, the slave with least connections from MariaDB MaxScale
-* `<code>LEAST_ROUTER_CONNECTIONS</code>`, the slave with least connections from this service
-* `<code>LEAST_BEHIND_MASTER</code>`, the slave with smallest replication lag
-* `<code>LEAST_CURRENT_OPERATIONS</code>` (default), the slave with least active operations
+* `LEAST_GLOBAL_CONNECTIONS`, the slave with least connections from MariaDB MaxScale
+* `LEAST_ROUTER_CONNECTIONS`, the slave with least connections from this service
+* `LEAST_BEHIND_MASTER`, the slave with smallest replication lag
+* `LEAST_CURRENT_OPERATIONS` (default), the slave with least active operations
 
 
-The `<code>LEAST_GLOBAL_CONNECTIONS</code>` and `<code>LEAST_ROUTER_CONNECTIONS</code>` use the
+The `LEAST_GLOBAL_CONNECTIONS` and `LEAST_ROUTER_CONNECTIONS` use the
 connections from MariaDB MaxScale to the server, not the amount of connections
 reported by the server itself.
 
 
-`<code>LEAST_BEHIND_MASTER</code>` does not take server weights into account when choosing a
+`LEAST_BEHIND_MASTER` does not take server weights into account when choosing a
 server.
 
 
-#### Interaction Between `<code>slave_selection_criteria</code>` and `<code>max_slave_connections</code>`
+#### Interaction Between `slave_selection_criteria` and `max_slave_connections`
 
 
-Depending on the value of `<code>max_slave_connections</code>`, the slave selection criteria
+Depending on the value of `max_slave_connections`, the slave selection criteria
 behave in different ways. Here are a few example cases of how the different
 criteria work with different amounts of slave connections.
 
 
-* With `<code>slave_selection_criteria=LEAST_GLOBAL_CONNECTIONS</code>` and
-`<code>max_slave_connections=1</code>`, each session picks one slave and one master
-* With `<code>slave_selection_criteria=LEAST_CURRENT_OPERATIONS</code>` and
-`<code>max_slave_connections=100%</code>`, each session picks one master and as many slaves
+* With `slave_selection_criteria=LEAST_GLOBAL_CONNECTIONS` and
+`max_slave_connections=1`, each session picks one slave and one master
+* With `slave_selection_criteria=LEAST_CURRENT_OPERATIONS` and
+`max_slave_connections=100%`, each session picks one master and as many slaves
 as possible
-* With `<code>slave_selection_criteria=LEAST_CURRENT_OPERATIONS</code>` each read is load
+* With `slave_selection_criteria=LEAST_CURRENT_OPERATIONS` each read is load
 balanced based on how many queries are active on a particular slave
-* With `<code>slave_selection_criteria=LEAST_GLOBAL_CONNECTIONS</code>` each read is sent to
+* With `slave_selection_criteria=LEAST_GLOBAL_CONNECTIONS` each read is sent to
 the slave with the least amount of connections
 
 
-### `<code>max_sescmd_history</code>`
+### `max_sescmd_history`
 
 
-**`<code>max_sescmd_history</code>`** sets a limit on how many session commands each session
+**`max_sescmd_history`** sets a limit on how many session commands each session
 can execute before the session command history is disabled. The default is an
 unlimited number of session commands.
 
@@ -236,7 +236,7 @@ consumption. This might be useful if connection pooling is used and the sessions
 use large amounts of session commands.
 
 
-### `<code>disable_sescmd_history</code>`
+### `disable_sescmd_history`
 
 
 This option disables the session command history. This way no history is stored
@@ -246,7 +246,7 @@ without causing a constant growth in the memory consumption.
 
 
 This option is only intended to be enabled if the value of
-`<code>max_slave_connections</code>` is lowered below the default value. This will allow a
+`max_slave_connections` is lowered below the default value. This will allow a
 failed slave to be replaced with a standby slave server.
 
 
@@ -262,10 +262,10 @@ router_options=disable_sescmd_history=true
 
 
 
-### `<code>master_accept_reads</code>`
+### `master_accept_reads`
 
 
-**`<code>master_accept_reads</code>`** allows the master server to be used for reads. This is
+**`master_accept_reads`** allows the master server to be used for reads. This is
 a useful option to enable if you are using a small number of servers and wish to
 use the master for reads as well.
 
@@ -281,12 +281,12 @@ router_options=master_accept_reads=true
 
 
 
-### `<code>strict_multi_stmt</code>`
+### `strict_multi_stmt`
 
 
 When a client executes a multi-statement query, all queries after that will be
 routed to the master to guarantee a consistent session state. This behavior can
-be controlled with the **`<code>strict_multi_stmt</code>`** router option. This option is
+be controlled with the **`strict_multi_stmt`** router option. This option is
 enabled by default.
 
 
@@ -307,19 +307,19 @@ router_options=strict_multi_stmt=false
 
 
 
-### `<code>strict_sp_calls</code>`
+### `strict_sp_calls`
 
 
-Similar to `<code>strict_multi_stmt</code>`, this option allows all queries after a CALL
+Similar to `strict_multi_stmt`, this option allows all queries after a CALL
 operation on a stored procedure to be routed to the master. This option is
 disabled by default and was added in MaxScale 2.1.9.
 
 
-All warnings and restrictions that apply to `<code>strict_multi_stmt</code>` also apply to
-`<code>strict_sp_calls</code>`.
+All warnings and restrictions that apply to `strict_multi_stmt` also apply to
+`strict_sp_calls`.
 
 
-### `<code>master_failure_mode</code>`
+### `master_failure_mode`
 
 
 This option controls how the failure of a master server is handled. By default,
@@ -348,7 +348,7 @@ to the master is lost, clients will not be able to execute write queries without
 reconnecting to MariaDB MaxScale once a new master is available.
 
 
-### `<code>retry_failed_reads</code>`
+### `retry_failed_reads`
 
 
 This option controls whether autocommit selects are retried in case of failure.
@@ -411,13 +411,13 @@ The following operations are routed to master:
 * all statements within an open transaction,
 * stored procedure calls
 * user-defined function calls
-* DDL statements (`<code>DROP</code>`|`<code>CREATE</code>`|`<code>ALTER TABLE</code>` … etc.)
-* `<code>EXECUTE</code>` (prepared) statements
+* DDL statements (`DROP`|`CREATE`|`ALTER TABLE` … etc.)
+* `EXECUTE` (prepared) statements
 * all statements using temporary tables
 
 
 In addition to these, if the **readwritesplit** service is configured with the
-`<code>max_slave_replication_lag</code>` parameter, and if all slaves suffer from too much
+`max_slave_replication_lag` parameter, and if all slaves suffer from too much
 replication lag, then statements will be routed to the *Master*. (There might be
 other similar configuration parameters in the future which limit the number of
 statements that will be routed to slaves.)
@@ -437,7 +437,7 @@ of the following group:
 
 * read-only database queries,
 * read-only queries to system, or user-defined variables,
-* `<code>SHOW</code>` statements
+* `SHOW` statements
 * system function calls.
 
 
@@ -454,16 +454,16 @@ servers that could execute statements on behalf of this client.
 Session commands include for example:
 
 
-* `<code>SET</code>` statements
-* `<code>USE</code>``<code><dbname></code>`
+* `SET` statements
+* `USE``<dbname>`
 * system/user-defined variable assignments embedded in read-only statements, such
-as `<code>SELECT (@myvar := 5)</code>`
-* `<code>PREPARE</code>` statements
-* `<code>QUIT</code>`, `<code>PING</code>`, `<code>STMT RESET</code>`, `<code>CHANGE USER</code>`, etc. commands
+as `SELECT (@myvar := 5)`
+* `PREPARE` statements
+* `QUIT`, `PING`, `STMT RESET`, `CHANGE USER`, etc. commands
 
 
 **NOTE**: if variable assignment is embedded in a write statement it is routed
-to *Master* only. For example, `<code>INSERT INTO t1 values(@myvar:=5, 7)</code>` would be
+to *Master* only. For example, `INSERT INTO t1 values(@myvar:=5, 7)` would be
 routed to *Master* only.
 
 

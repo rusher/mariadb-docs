@@ -16,7 +16,7 @@ SYS_GUID()
 ## Description
 
 
-Returns a 16-byte globally unique identifier (GUID), similar to the [UUID](uuid.md) function, but without the `<code>-</code>` character.
+Returns a 16-byte globally unique identifier (GUID), similar to the [UUID](uuid.md) function, but without the `-` character.
 
 
 ## Example

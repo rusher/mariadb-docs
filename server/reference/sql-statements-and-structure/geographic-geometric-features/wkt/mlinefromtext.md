@@ -15,7 +15,7 @@ MultiLineStringFromText(wkt[,srid])
 Constructs a [MULTILINESTRING](../geometry-constructors/multilinestring.md) value using its [WKT](wkt-definition.md) representation and [SRID](../geometry-properties/st_srid.md).
 
 
-`<code>MLineFromText()</code>` and `<code>MultiLineStringFromText()</code>` are synonyms.
+`MLineFromText()` and `MultiLineStringFromText()` are synonyms.
 
 
 ## Examples

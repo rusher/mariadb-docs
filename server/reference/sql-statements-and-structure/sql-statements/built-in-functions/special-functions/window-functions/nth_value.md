@@ -15,5 +15,5 @@ NTH_VALUE (expr[, num_row]) OVER (
 ## Description
 
 
-The `<code>NTH_VALUE</code>` function returns the value evaluated at row number `<code>num_row</code>` of the window frame, starting from 1, or NULL if the row does not exist.
+The `NTH_VALUE` function returns the value evaluated at row number `num_row` of the window frame, starting from 1, or NULL if the row does not exist.
 

@@ -14,7 +14,7 @@ ST_AsGeoJSON(g[, max_decimals[, options]])
 Returns the given geometry *g* as a GeoJSON element. The optional *max_decimals* limits the maximum number of decimals displayed.
 
 
-The optional *options* flag can be set to `<code>1</code>` to add a bounding box to the output.
+The optional *options* flag can be set to `1` to add a bounding box to the output.
 
 
 ## Examples

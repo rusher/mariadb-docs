@@ -1,17 +1,17 @@
 
 # TIME_MS column in INFORMATION_SCHEMA.PROCESSLIST
 
-In MariaDB, an extra column `<code class="highlight fixed" style="white-space:pre-wrap">TIME_MS</code>` has been added to the
-[INFORMATION_SCHEMA.PROCESSLIST](information-schema-tables/information-schema-processlist-table.md) table. This column shows the same information as the column '`<code class="highlight fixed" style="white-space:pre-wrap">TIME</code>`', but in units of
+In MariaDB, an extra column `TIME_MS` has been added to the
+[INFORMATION_SCHEMA.PROCESSLIST](information-schema-tables/information-schema-processlist-table.md) table. This column shows the same information as the column '`TIME`', but in units of
 milliseconds with microsecond precision (the unit and precision of the
-`<code class="highlight fixed" style="white-space:pre-wrap">TIME</code>` column is one second).
+`TIME` column is one second).
 
 
 For details about microseconds support in MariaDB, see [microseconds in MariaDB](../../../built-in-functions/date-time-functions/microseconds-in-mariadb.md).
 
 
-The value displayed in the `<code class="highlight fixed" style="white-space:pre-wrap">TIME</code>` and
-`<code class="highlight fixed" style="white-space:pre-wrap">TIME_MS</code>` columns is the period of time that the given
+The value displayed in the `TIME` and
+`TIME_MS` columns is the period of time that the given
 thread has been in its current state. Thus it can be used to check for example
 how long a thread has been executing the current query, or for how long it has
 been idle.
@@ -27,18 +27,18 @@ select id, time, time_ms, command, state from
 +----+------+----------+---------+-----------+
 ```
 
-Note that as a difference to MySQL, in MariaDB the `<code class="highlight fixed" style="white-space:pre-wrap">TIME</code>`
-column (and also the `<code class="highlight fixed" style="white-space:pre-wrap">TIME_MS</code>` column) are not affected by
+Note that as a difference to MySQL, in MariaDB the `TIME`
+column (and also the `TIME_MS` column) are not affected by
 any setting of [@TIMESTAMP](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#timestamp). This means that it can be
-reliably used also for threads that change `<code class="highlight fixed" style="white-space:pre-wrap">@TIMESTAMP</code>` (such
+reliably used also for threads that change `@TIMESTAMP` (such
 as the [replication](../../replication-statements/README.md) SQL thread). See also [MySQL Bug #22047](https://bugs.mysql.com/bug.php?id=22047).
 
 
-As a consequence of this, the `<code class="highlight fixed" style="white-space:pre-wrap">TIME</code>` column of 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW FULL PROCESSLIST</code>` and
-`<code class="highlight fixed" style="white-space:pre-wrap">INFORMATION_SCHEMA.PROCESSLIST</code>` can not be used to determine
+As a consequence of this, the `TIME` column of 
+`SHOW FULL PROCESSLIST` and
+`INFORMATION_SCHEMA.PROCESSLIST` can not be used to determine
 if a slave is lagging behind. For this, use instead the
-`<code class="highlight fixed" style="white-space:pre-wrap">Seconds_Behind_Master</code>` column in the output of 
+`Seconds_Behind_Master` column in the output of 
 [SHOW SLAVE STATUS](../../show/show-replica-status.md).
 
 

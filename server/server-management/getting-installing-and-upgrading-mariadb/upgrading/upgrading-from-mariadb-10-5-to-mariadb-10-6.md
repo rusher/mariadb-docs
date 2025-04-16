@@ -27,21 +27,21 @@ The suggested upgrade procedure is:
 1. Uninstall the old version of MariaDB.
 
   * On Debian, Ubuntu, and other similar Linux distributions, execute the following: 
-`<code class="fixed" style="white-space:pre-wrap">sudo apt-get remove mariadb-server</code>`
+`sudo apt-get remove mariadb-server`
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, execute the following: 
-`<code class="fixed" style="white-space:pre-wrap">sudo yum remove MariaDB-server</code>`
+`sudo yum remove MariaDB-server`
   * On SLES, OpenSUSE, and other similar Linux distributions, execute the following: 
-`<code class="fixed" style="white-space:pre-wrap">sudo zypper remove MariaDB-server</code>`
+`sudo zypper remove MariaDB-server`
 1. Install the new version of MariaDB.
 
   * On Debian, Ubuntu, and other similar Linux distributions, see [Installing MariaDB Packages with APT](../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-packages-with-apt) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](../binary-packages/rpm/yum.md#installing-mariadb-packages-with-yum) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](../binary-packages/rpm/installing-mariadb-with-zypper.md#installing-mariadb-packages-with-zypp) for more information.
-1. Make any desired changes to configuration options in [option files](../configuring-mariadb-with-option-files.md), such as `<code>my.cnf</code>`. This includes removing any options that are no longer supported.
+1. Make any desired changes to configuration options in [option files](../configuring-mariadb-with-option-files.md), such as `my.cnf`. This includes removing any options that are no longer supported.
 1. [Start MariaDB](../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md).
 1. Run [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md).
 
-  * `<code>mariadb-upgrade</code>` does two things:
+  * `mariadb-upgrade` does two things:
 
     1. Ensures that the system tables in the [mysql](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database are fully compatible with the new version.
     1. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
@@ -66,19 +66,19 @@ see ([MDEV-27745](https://jira.mariadb.org/browse/MDEV-27745))
 #### InnoDB COMPRESSED Row Format
 
 
-From [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md) until [MariaDB 10.6.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1065-release-notes.md), tables that are of the `<code>COMPRESSED</code>` row format are read-only by default. This was intended to be the first step towards removing write support and deprecating the feature.
+From [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md) until [MariaDB 10.6.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1065-release-notes.md), tables that are of the `COMPRESSED` row format are read-only by default. This was intended to be the first step towards removing write support and deprecating the feature.
 
 
-This plan has been scrapped, and from [MariaDB 10.6.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes.md), `<code>COMPRESSED</code>` tables are no longer read-only by default.
+This plan has been scrapped, and from [MariaDB 10.6.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes.md), `COMPRESSED` tables are no longer read-only by default.
 
 
-From [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md) to [MariaDB 10.6.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1065-release-notes.md), set the [innodb_read_only_compressed](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_only_compressed) variable to `<code>OFF</code>` to make the tables writable.
+From [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md) to [MariaDB 10.6.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1065-release-notes.md), set the [innodb_read_only_compressed](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_only_compressed) variable to `OFF` to make the tables writable.
 
 
 #### Character Sets
 
 
-From [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), the `<code>utf8</code>` [character set](../../../reference/data-types/string-data-types/character-sets/README.md) (and related collations) is by default an alias for `<code>utf8mb3</code>` rather than the other way around. It can be set to imply `<code>utf8mb4</code>` by changing the value of the [old_mode](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_mode) system variable.
+From [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), the `utf8` [character set](../../../reference/data-types/string-data-types/character-sets/README.md) (and related collations) is by default an alias for `utf8mb3` rather than the other way around. It can be set to imply `utf8mb4` by changing the value of the [old_mode](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_mode) system variable.
 
 
 #### Options That Have Changed Default Values

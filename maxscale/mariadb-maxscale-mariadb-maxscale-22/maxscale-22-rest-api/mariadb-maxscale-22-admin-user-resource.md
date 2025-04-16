@@ -28,7 +28,7 @@ GET /v1/users/inet/:name
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -68,7 +68,7 @@ GET /v1/users/inet
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -111,7 +111,7 @@ GET /v1/users/unix/:name
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -151,7 +151,7 @@ GET /v1/users/unix
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -194,7 +194,7 @@ GET /v1/users
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -246,13 +246,13 @@ POST /v1/users/inet
 The request body must fulfill the following requirements.
 
 
-* The `<code>/data/id</code>`, `<code>/data/type</code>`, `<code>/data/attributes/account</code>` and
- `<code>/data/attributes/password</code>` fields must be defined.
-* The `<code>/data/id</code>` field defines the name of the account
-* The `<code>/data/attributes/password</code>` field defines the password for this user.
-* The `<code>/data/attributes/account</code>` field should be set to `<code>admin</code>` for
- administrative users and `<code>basic</code>` to read-only users.
-* The value of the `<code>/data/type</code>` field must always be `<code>inet</code>`.
+* The `/data/id`, `/data/type`, `/data/attributes/account` and
+ `/data/attributes/password` fields must be defined.
+* The `/data/id` field defines the name of the account
+* The `/data/attributes/password` field defines the password for this user.
+* The `/data/attributes/account` field should be set to `admin` for
+ administrative users and `basic` to read-only users.
+* The value of the `/data/type` field must always be `inet`.
 
 
 Here is an example request body defining the network user *my-user* with the
@@ -302,11 +302,11 @@ POST /v1/users/unix
 The request body must fulfill the following requirements.
 
 
-* The `<code>/data/id</code>`, `<code>/data/type</code>` and `<code>/data/attributes/account</code>` fields must be defined.
-* The `<code>/data/id</code>` field defines the name of the account
-* The `<code>/data/attributes/account</code>` field should be set to `<code>admin</code>` for
- administrative users and `<code>basic</code>` to read-only users.
-* The value of the `<code>/data/type</code>` field must always be `<code>unix</code>`.
+* The `/data/id`, `/data/type` and `/data/attributes/account` fields must be defined.
+* The `/data/id` field defines the name of the account
+* The `/data/attributes/account` field should be set to `admin` for
+ administrative users and `basic` to read-only users.
+* The value of the `/data/type` field must always be `unix`.
 
 
 Here is an example request body enabling the UNIX account *jdoe* for read-only operations.

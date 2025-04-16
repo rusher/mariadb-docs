@@ -22,10 +22,10 @@ Once you have MariaDB MaxScale installed and the database users created, we can 
 ## Creating Your MariaDB MaxScale Configuration
 
 
-MariaDB MaxScale reads its configuration from `<code>/etc/maxscale.cnf</code>`. A template configuration is provided with the MaxScale installation.
+MariaDB MaxScale reads its configuration from `/etc/maxscale.cnf`. A template configuration is provided with the MaxScale installation.
 
 
-A global, `<code>[maxscale]</code>`, section is included within every MariaDB MaxScale configuration file; this is used to set the values of various MariaDB MaxScale wide parameters, perhaps the most important of these is the number of threads that MariaDB MaxScale will use to handle client requests.
+A global, `[maxscale]`, section is included within every MariaDB MaxScale configuration file; this is used to set the values of various MariaDB MaxScale wide parameters, perhaps the most important of these is the number of threads that MariaDB MaxScale will use to handle client requests.
 
 
 

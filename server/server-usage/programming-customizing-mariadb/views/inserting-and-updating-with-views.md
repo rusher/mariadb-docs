@@ -24,7 +24,7 @@ A view cannot be used for updating if it uses any of the following:
 * multiple references to any base table column
 * an outer join
 * an inner join where more than one table in the view definition is being updated
-* if there's a LIMIT clause, the view does not contain all primary or not null unique key columns from the underlying table and the [updatable_views_with_limit](../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#updatable_views_with_limit) system variable is set to `<code>0</code>`.
+* if there's a LIMIT clause, the view does not contain all primary or not null unique key columns from the underlying table and the [updatable_views_with_limit](../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#updatable_views_with_limit) system variable is set to `0`.
 
 
 ## Inserting with views
@@ -66,7 +66,7 @@ If a row is rejected because of the CHECK OPTION, an error similar to the follow
 ERROR 1369 (HY000): CHECK OPTION failed 'db_name.view_name'
 ```
 
-A view with a WHERE which is always false (like `<code>WHERE 0</code>`) and WITH CHECK OPTION is similar to a [BLACKHOLE](../../../reference/storage-engines/blackhole.md) table: no row is ever inserted and no row is ever returned. An insertable view with a WHERE which is always false but no CHECK OPTION is a view that accepts data but does not show them.
+A view with a WHERE which is always false (like `WHERE 0`) and WITH CHECK OPTION is similar to a [BLACKHOLE](../../../reference/storage-engines/blackhole.md) table: no row is ever inserted and no row is ever returned. An insertable view with a WHERE which is always false but no CHECK OPTION is a view that accepts data but does not show them.
 
 
 ## Examples
@@ -97,7 +97,7 @@ This query works, as the view is updateable:
 UPDATE view1 SET x = 5;
 ```
 
-This query fails, since column `<code>y</code>` is a literal.
+This query fails, since column `y` is a literal.
 
 
 ```
@@ -116,14 +116,14 @@ CREATE VIEW view_check2 AS SELECT * FROM view_check1 WHERE x > 10 WITH LOCAL CHE
 CREATE VIEW view_check3 AS SELECT * FROM view_check1 WHERE x > 10 WITH CASCADED CHECK OPTION;
 ```
 
-This insert succeeds, as `<code>view_check2</code>` only checks the insert against `<code>view_check2</code>`, and the WHERE clause evaluates to true (`<code>150</code>` is `<code>>10</code>`).
+This insert succeeds, as `view_check2` only checks the insert against `view_check2`, and the WHERE clause evaluates to true (`150` is `>10`).
 
 
 ```
 INSERT INTO view_check2 VALUES (150);
 ```
 
-This insert fails, as `<code>view_check3</code>` checks the insert against both `<code>view_check3</code>` and the underlying views. The WHERE clause for `<code>view_check1</code>` evaluates as false (`<code>150</code>` is `<code>>10</code>`, but `<code>150</code>` is not `<code><100</code>`), so the insert fails.
+This insert fails, as `view_check3` checks the insert against both `view_check3` and the underlying views. The WHERE clause for `view_check1` evaluates as false (`150` is `>10`, but `150` is not `<100`), so the insert fails.
 
 
 ```

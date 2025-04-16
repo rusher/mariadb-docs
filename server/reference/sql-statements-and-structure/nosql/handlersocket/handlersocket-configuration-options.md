@@ -11,211 +11,211 @@ Add the options to the [mysqld] section of your my.cnf file.
 
 
 
-### `<code>handlersocket_accept_balance</code>`
+### `handlersocket_accept_balance`
 
 
-* Description: When set to a value other than zero ('`<code>0</code>`'), handlersocket will try to balance accepted connections among threads. Default is `<code>0</code>` but if you use persistent connections (for example if you use client-side connection pooling) then a non-zero value is recommended.
-* Commandline: `<code>--handlersocket-accept-balance="value"</code>`
+* Description: When set to a value other than zero ('`0`'), handlersocket will try to balance accepted connections among threads. Default is `0` but if you use persistent connections (for example if you use client-side connection pooling) then a non-zero value is recommended.
+* Commandline: `--handlersocket-accept-balance="value"`
 * Scope: Global
 * Dynamic: No
 * Type: number
-* Range: `<code>0</code>` to `<code>10000</code>`
-* Default Value: `<code>0</code>`
+* Range: `0` to `10000`
+* Default Value: `0`
 
 
 
-### `<code>handlersocket_address</code>`
+### `handlersocket_address`
 
 
 * Description: Specify the IP address to bind to.
-* Commandline: `<code>--handlersocket-address="value"</code>`
+* Commandline: `--handlersocket-address="value"`
 * Scope: Global
 * Dynamic: No
 * Type: IP Address
-* Default Value: Empty, previously `<code>0.0.0.0</code>`
+* Default Value: Empty, previously `0.0.0.0`
 
 
 
-### `<code>handlersocket_backlog</code>`
+### `handlersocket_backlog`
 
 
 * Description: Specify the listen backlog length.
-* Commandline: `<code>--handlersocket-backlog="value"</code>`
+* Commandline: `--handlersocket-backlog="value"`
 * Scope: Global
 * Dynamic: No
 * Type: number
-* Range: `<code>5</code>` to `<code>1000000</code>`
-* Default Value: `<code>32768</code>`
+* Range: `5` to `1000000`
+* Default Value: `32768`
 
 
 
-### `<code>handlersocket_epoll</code>`
+### `handlersocket_epoll`
 
 
 * Description: Specify whether to use epoll for I/O multiplexing.
-* Commandline: `<code>--handlersocket-epoll="value"</code>`
+* Commandline: `--handlersocket-epoll="value"`
 * Scope: Global
 * Dynamic: No
 * Type: number
 * Valid values:
 
-  * Min: `<code>0</code>`
-  * Max: `<code>1</code>`
-* Default Value: `<code>1</code>`
+  * Min: `0`
+  * Max: `1`
+* Default Value: `1`
 
 
 
-### `<code>handlersocket_plain_secret</code>`
+### `handlersocket_plain_secret`
 
 
 * Description: When set, enables plain-text authentication for the listener for read requests, with the value of the option specifying the secret authentication key.
-* Commandline: `<code>--handlersocket-plain-secret="value"</code>`
+* Commandline: `--handlersocket-plain-secret="value"`
 * Dynamic: No
 * Type: string
 * Default Value: Empty
 
 
 
-### `<code>handlersocket_plain_secret_wr</code>`
+### `handlersocket_plain_secret_wr`
 
 
 * Description: When set, enables plain-text authentication for the listener for write requests, with the value of the option specifying the secret authentication key.
-* Commandline: `<code>--handlersocket-plain-secret-wr="value"</code>`
+* Commandline: `--handlersocket-plain-secret-wr="value"`
 * Dynamic: No
 * Type: string
 * Default Value: Empty
 
 
 
-### `<code>handlersocket_port</code>`
+### `handlersocket_port`
 
 
 * Description: Specify the port to bind to for reads. An empty value disables the listener.
-* Commandline: `<code>--handlersocket-port="value"</code>`
+* Commandline: `--handlersocket-port="value"`
 * Scope: Global
 * Dynamic: No
 * Type: number
-* Default Value: Empty, previously `<code>9998</code>`
+* Default Value: Empty, previously `9998`
 
 
 
-### `<code>handlersocket_port_wr</code>`
+### `handlersocket_port_wr`
 
 
 * Description: Specify the port to bind to for writes. An empty value disables the listener.
-* Commandline: `<code>--handlersocket-port-wr="value"</code>`
+* Commandline: `--handlersocket-port-wr="value"`
 * Scope: Global
 * Dynamic: No
 * Type: number
-* Default Value: Empty, previously `<code>9999</code>`
+* Default Value: Empty, previously `9999`
 
 
 
-### `<code>handlersocket_rcvbuf</code>`
+### `handlersocket_rcvbuf`
 
 
 * Description: Specify the maximum socket receive buffer (in bytes). If '0' then the system default is used.
-* Commandline: `<code>--handlersocket-rcvbuf="value"</code>`
+* Commandline: `--handlersocket-rcvbuf="value"`
 * Scope: Global
 * Dynamic: No
 * Type: number
-* Range: `<code>0</code>` to `<code>1677216</code>`
-* Default Value: `<code>0</code>`
+* Range: `0` to `1677216`
+* Default Value: `0`
 
 
 
-### `<code>handlersocket_readsize</code>`
+### `handlersocket_readsize`
 
 
 * Description: Specify the minimum length of the request buffer. Larger values consume available memory but can make handlersocket faster for large requests.
-* Commandline: `<code>--handlersocket-readsize="value"</code>`
+* Commandline: `--handlersocket-readsize="value"`
 * Scope: Global
 * Dynamic: No
 * Type: number
-* Range: `<code>0</code>` to `<code>1677216</code>`
-* Default Value: `<code>0</code>` (possibly `<code>4096</code>`)
+* Range: `0` to `1677216`
+* Default Value: `0` (possibly `4096`)
 
 
 
-### `<code>handlersocket_sndbuf</code>`
+### `handlersocket_sndbuf`
 
 
 * Description: Specify the maximum socket send buffer (in bytes). If '0' then the system default is used.
-* Commandline: `<code>--handlersocket-sndbuf="value"</code>`
+* Commandline: `--handlersocket-sndbuf="value"`
 * Scope: Global
 * Dynamic: No
 * Type: number
-* Range: `<code>0</code>` to `<code>1677216</code>`
-* Default Value: `<code>0</code>`
+* Range: `0` to `1677216`
+* Default Value: `0`
 
 
 
-### `<code>handlersocket_threads</code>`
+### `handlersocket_threads`
 
 
 * Description: Specify the number of worker threads for reads. Recommended value = ((
 
 # CPU cores) * 2).
-* Commandline: `<code>--handlersocket-threads="value"</code>`
+* Commandline: `--handlersocket-threads="value"`
 * Scope: Global
 * Dynamic: No
 * Type: number
-* Range: `<code>1</code>` to `<code>3000</code>`
-* Default Value: `<code>16</code>`
+* Range: `1` to `3000`
+* Default Value: `16`
 
 
 
-### `<code>handlersocket_threads_wr</code>`
+### `handlersocket_threads_wr`
 
 
 * Description: Specify the number of worker threads for writes. Recommended value = 1.
-* Commandline: `<code>--handlersocket-threads-wr="value"</code>`
+* Commandline: `--handlersocket-threads-wr="value"`
 * Scope: Global
 * Dynamic: No
 * Type: number
-* Range: `<code>1</code>` to `<code>3000</code>`
-* Default Value: `<code>1</code>`
+* Range: `1` to `3000`
+* Default Value: `1`
 
 
 
-### `<code>handlersocket_timeout</code>`
+### `handlersocket_timeout`
 
 
 * Description: Specify the socket timeout in seconds.
-* Commandline: `<code>--handlersocket-timeout="value"</code>`
+* Commandline: `--handlersocket-timeout="value"`
 * Scope: Global
 * Dynamic: No
 * Type: number
-* Range: `<code>30</code>` to `<code>3600</code>`
-* Default Value: `<code>300</code>`
+* Range: `30` to `3600`
+* Default Value: `300`
 
 
 
-### `<code>handlersocket_verbose</code>`
+### `handlersocket_verbose`
 
 
 * Description: Specify the logging verbosity.
-* Commandline: `<code>--handlersocket-verbose="value"</code>`
+* Commandline: `--handlersocket-verbose="value"`
 * Scope: Global
 * Dynamic: No
 * Type: number
 * Valid values:
 
-  * Min: `<code>0</code>`
-  * Max: `<code>10000</code>`
-* Default Value: `<code>10</code>`
+  * Min: `0`
+  * Max: `10000`
+* Default Value: `10`
 
 
 
-### `<code>handlersocket_wrlock_timeout</code>`
+### `handlersocket_wrlock_timeout`
 
 
 * Description: The write lock timeout in seconds. When acting on write requests, handlersocket locks an advisory lock named 'handlersocket_wr' and this option sets the timeout for it.
-* Commandline: `<code>--handlersocket-wrlock-timeout="value"</code>`
+* Commandline: `--handlersocket-wrlock-timeout="value"`
 * Scope: Global
 * Dynamic: No
 * Type: number
-* Range: `<code>0</code>` to `<code>3600</code>``<code>
-</code>`
+* Range: `0` to `3600``
+`
 
 

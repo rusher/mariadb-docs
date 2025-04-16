@@ -78,7 +78,7 @@ The third step is sampling-based selectivity data which is out of the scope of t
 ## table_cond_selectivity()
 
 
-This function computes selectivity of restrictions that can be applied after table T has been joined with the join prefix `<code>{T1, ..., Tk}</code>`.
+This function computes selectivity of restrictions that can be applied after table T has been joined with the join prefix `{T1, ..., Tk}`.
 
 
 There are two cases:

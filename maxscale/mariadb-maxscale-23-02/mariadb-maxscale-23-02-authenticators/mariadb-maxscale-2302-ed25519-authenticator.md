@@ -62,15 +62,15 @@ continue, either use a mapping file or enable sha256-mode. Sha256-mode is
 enabled with the following settings.
 
 
-### `<code>ed_mode</code>`
+### `ed_mode`
 
 
 This setting defines the authentication mode used. Two values are supported:
 
 
-* `<code>ed25519</code>` (default) Digital signature based authentication. Requires mapping
+* `ed25519` (default) Digital signature based authentication. Requires mapping
 for backend support.
-* `<code>sha256</code>` Authenticate client with caching_sha2_password-plugin instead.
+* `sha256` Authenticate client with caching_sha2_password-plugin instead.
 Requires either SSL or configured RSA-keys.
 
 
@@ -81,7 +81,7 @@ authenticator_options=ed_mode=sha256
 
 
 
-### `<code>ed_rsa_privkey_path</code>` and `<code>ed_rsa_pubkey_path</code>`
+### `ed_rsa_privkey_path` and `ed_rsa_pubkey_path`
 
 
 Defines the RSA-keys used for encrypting the client password if SSL is not in

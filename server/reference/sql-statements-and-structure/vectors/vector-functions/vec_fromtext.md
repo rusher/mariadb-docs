@@ -16,7 +16,7 @@ VEC_FromText(s)
 ## Description
 
 
-`<code>VEC_FromText</code>` converts a text representation of the vector (json array of numbers) to a vector (little-endian IEEE float sequence of bytes, 4 bytes per float).
+`VEC_FromText` converts a text representation of the vector (json array of numbers) to a vector (little-endian IEEE float sequence of bytes, 4 bytes per float).
 
 
 ## Example

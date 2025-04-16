@@ -4,15 +4,15 @@
 # ColumnStore Monitor
 
 
-The ColumnStore monitor, `<code>csmon</code>`, is a monitor module for MariaDB ColumnStore
+The ColumnStore monitor, `csmon`, is a monitor module for MariaDB ColumnStore
 servers. The monitor supports ColumnStore version 1.5.
 
 
 ## Required Grants
 
 
-The credentials defined with the `<code>user</code>` and `<code>password</code>` parameters must have all
-grants on the `<code>infinidb_vtable</code>` database.
+The credentials defined with the `user` and `password` parameters must have all
+grants on the `infinidb_vtable` database.
 
 
 For example, to create a user for this monitor with the required grants execute
@@ -34,37 +34,37 @@ Read the [Monitor Common](mariadb-maxscale-2106-maxscale-2106-common-monitor-par
 common monitor parameters.
 
 
-### `<code>version</code>`
+### `version`
 
 
 With this *deprecated* optional parameter the used ColumnStore version is
-specified. The only allowed value is `<code>1.5</code>`.
+specified. The only allowed value is `1.5`.
 
 
-### `<code>admin_port</code>`
+### `admin_port`
 
 
 This optional parameter specifies the port of the ColumnStore administrative
-daemon. The default value is `<code>8640</code>`. Note that the daemons of all nodes must
+daemon. The default value is `8640`. Note that the daemons of all nodes must
 be listening on the same port.
 
 
-### `<code>admin_base_path</code>`
+### `admin_base_path`
 
 
 This optional parameter specifies the base path of the ColumnStore
-administrative daemon. The default value is `<code>/cmapi/0.4.0</code>`.
+administrative daemon. The default value is `/cmapi/0.4.0`.
 
 
-### `<code>api_key</code>`
+### `api_key`
 
 
 This optional parameter specifies the API key to be used in the
 communication with the ColumnStore administrative daemon. If no
 key is specified, then a key will be generated and stored to the
-file `<code>api_key.txt</code>` in the directory with the same name as the
+file `api_key.txt` in the directory with the same name as the
 monitor in data directory of MaxScale. Typically that will
-be `<code>/var/lib/maxscale/<monitor-section>/api_key.txt</code>`.
+be `/var/lib/maxscale/<monitor-section>/api_key.txt`.
 
 
 Note that ColumnStore will store the first key provided and
@@ -72,17 +72,17 @@ thereafter require it, so changing the key requires the
 resetting of the key on the ColumnStore nodes as well.
 
 
-### `<code>local_address</code>`
+### `local_address`
 
 
 With this parameter it is specified what IP MaxScale should
 tell the ColumnStore nodes it resides at. Either it or
-`<code>local_address</code>` at the global level in the MaxScale
+`local_address` at the global level in the MaxScale
 configuration file must be specified. If both have been
 specified, then the one specified for the monitor overrides.
 
 
-### `<code>dynamic_node_detection</code>`
+### `dynamic_node_detection`
 
 
 This optional boolean parameter specifies whether the monitor should
@@ -90,21 +90,21 @@ autonomously figure out the ColumnStore cluster configuration or whether
 it should solely rely upon the monitor configuration in the configuration
 file. Please see [Dynamic Node Detection](#dynamic-node-detection) for a
 thorough discussion on the meaning of the parameter. The default value
-is `<code>false</code>`.
+is `false`.
 
 
-### `<code>cluster_monitor_interval</code>`
+### `cluster_monitor_interval`
 
 
-This optional parameter, meaningful only if `<code>dynamic_node_detection</code>` is
-`<code>true</code>` specifies how often the monitor should probe the ColumnStore
+This optional parameter, meaningful only if `dynamic_node_detection` is
+`true` specifies how often the monitor should probe the ColumnStore
 cluster and adapt to any changes that have occurred in the number of
-nodes of the cluster. The default value is `<code>10s</code>`, that is, the
+nodes of the cluster. The default value is `10s`, that is, the
 cluster configuration is probed every 10 seconds.
 
 
 Note that as the probing is performed at the regular monitor round,
-the value should be some multiple of `<code>monitor_interval</code>`.
+the value should be some multiple of `monitor_interval`.
 
 
 ## Dynamic Node Detection
@@ -120,7 +120,7 @@ monitor. That is, it only monitors the servers it has been configured
 with.
 
 
-If `<code>dynamic_node_detection</code>` has been enabled, the behaviour of the monitor
+If `dynamic_node_detection` has been enabled, the behaviour of the monitor
 changes significantly. Instead of being explicitly told which servers it
 should monitor, the monitor is only told how to get into contact with the
 cluster whereafter it autonomously figures out the cluster configuration
@@ -173,12 +173,12 @@ in the bootstrap servers, the persisted information is not used.
 
 
 Based on the information obtained from the cluster itself, the monitor
-will create *dynamic* server instances that are named as `<code>@@</code>` followed by
-the monitor name, followed by a `<code>:</code>`, followed by the hostname.
+will create *dynamic* server instances that are named as `@@` followed by
+the monitor name, followed by a `:`, followed by the hostname.
 
 
 If the cluster in fact consists of three nodes, then the output of
-`<code>maxctrl list servers</code>` may look like
+`maxctrl list servers` may look like
 
 
 
@@ -206,7 +206,7 @@ which there is a bootstrap entry.
 
 When the service is defined, it is imperative that it does not explicitly
 refer to either the bootstrap or the dynamic entries. Instead, it should
-refer to the monitor using the `<code>cluster</code>` parameter.
+refer to the monitor using the `cluster` parameter.
 
 
 
@@ -278,7 +278,7 @@ servers=CsNode1,CsNode2
 
 
 
-### `<code>start</code>`
+### `start`
 
 
 Starts the ColumnStore cluster.
@@ -301,7 +301,7 @@ call command csmon start CsMonitor 20s
 
 
 
-### `<code>shutdown</code>`
+### `shutdown`
 
 
 Shuts down the ColumnStore cluster.
@@ -324,7 +324,7 @@ call command csmon shutdown CsMonitor 20s
 
 
 
-### `<code>status</code>`
+### `status`
 
 
 Get the status of the ColumnStore cluster.
@@ -351,7 +351,7 @@ call command csmon status CsMonitor CsNode1
 
 
 
-### `<code>mode-set</code>`
+### `mode-set`
 
 
 Sets the mode of the cluster.
@@ -374,7 +374,7 @@ call command csmon mode-set CsMonitor readonly 20s
 
 
 
-### `<code>config-get</code>`
+### `config-get`
 
 
 Returns the cluster configuration.
@@ -406,7 +406,7 @@ call command csmon config-get CsMonitor CsNode2
 
 
 
-### `<code>add-node</code>`
+### `add-node`
 
 
 Adds a new node located on the server at the hostname or IP *host*
@@ -433,7 +433,7 @@ call command csmon add-node CsMonitor mcs2 20s
 For a more complete example, please refer to [adding a node](#adding-a-node).
 
 
-### `<code>remove-node</code>`
+### `remove-node`
 
 
 Remove the node located on the server at the hostname or IP *host*
@@ -463,7 +463,7 @@ For a more complete example, please refer to [removing a node](#removing-a-node)
 ## Example
 
 
-The following is an example of a `<code>csmon</code>` configuration.
+The following is an example of a `csmon` configuration.
 
 
 
@@ -484,9 +484,9 @@ api_key=somekey1234
 ## Adding a Node
 
 
-Note that in the following `<code>dynamic_node_detection</code>` is not used, but
+Note that in the following `dynamic_node_detection` is not used, but
 the monitor is configured in the traditional way. The impact of
-`<code>dynamic_node_detection</code>` is described [here](#impact-of-dynamic_node_detection).
+`dynamic_node_detection` is described [here](#impact-of-dynamic_node_detection).
 
 
 Adding a new node to a ColumnStore cluster can be performed dynamically
@@ -519,7 +519,7 @@ servers=CsNode1,CsNode2
 
 
 
-Invoking `<code>maxctrl list servers</code>` will now show:
+Invoking `maxctrl list servers` will now show:
 
 
 
@@ -535,7 +535,7 @@ Invoking `<code>maxctrl list servers</code>` will now show:
 
 
 
-If we now want to add a new ColumnStore node, located at `<code>mcs3/10.10.10.12</code>`
+If we now want to add a new ColumnStore node, located at `mcs3/10.10.10.12`
 to the cluster, the steps are as follows.
 
 
@@ -585,7 +585,7 @@ maxctrl create server CsNode3 10.10.10.12
 
 
 
-Invoking `<code>maxctrl list servers</code>` will now show:
+Invoking `maxctrl list servers` will now show:
 
 
 
@@ -603,7 +603,7 @@ Invoking `<code>maxctrl list servers</code>` will now show:
 
 
 
-The server `<code>CsNode3</code>` has been created, but its state is `<code>Down</code>` since
+The server `CsNode3` has been created, but its state is `Down` since
 it is not yet being monitored.
 
 
@@ -628,7 +628,7 @@ maxctrl link monitor CsMonitor CsNode3
 
 
 
-Now the server is monitored and `<code>maxctrl list monitors</code>` shows:
+Now the server is monitored and `maxctrl list monitors` shows:
 
 
 
@@ -643,7 +643,7 @@ Now the server is monitored and `<code>maxctrl list monitors</code>` shows:
 
 
 The state of the new node is now also set correctly, as shown by
-`<code>maxctrl list servers</code>`.
+`maxctrl list servers`.
 
 
 
@@ -663,13 +663,13 @@ The state of the new node is now also set correctly, as shown by
 
 Note that the MaxScale server object can be created at any point, but
 it must not be added to the monitor before the node has been added to
-the ColumnStore cluster using `<code>call command csmon add-node</code>`.
+the ColumnStore cluster using `call command csmon add-node`.
 
 
-### Impact of `<code>dynamic_node_detection</code>`
+### Impact of `dynamic_node_detection`
 
 
-If `<code>dynamic_node_detection</code>` is enabled, there is no need to create any
+If `dynamic_node_detection` is enabled, there is no need to create any
 explicit server entries. All that needs to be done, is to add the node
 and the monitor will adapt automatically. Note that it does not matter
 whether the node is added indirectly via maxscale or directly using the
@@ -680,9 +680,9 @@ MaxScale may detect the new situation slightly faster.
 ## Removing a Node
 
 
-Note that in the following `<code>dynamic_node_detection</code>` is not used, but
+Note that in the following `dynamic_node_detection` is not used, but
 the monitor is configured in the traditional way. The impact of
-`<code>dynamic_node_detection</code>` is described [here](#impact-of-dynamic-node-detection-1).
+`dynamic_node_detection` is described [here](#impact-of-dynamic-node-detection-1).
 
 
 Removing a node should be performed in the reverse order of how a
@@ -690,7 +690,7 @@ node was added. First, the MaxScale server should be removed from the
 monitor. Then, the node should be removed from the ColumnStore cluster.
 
 
-Suppose we want to remove the ColumnStore node at `<code>mcs2/10.10.10.12</code>`
+Suppose we want to remove the ColumnStore node at `mcs2/10.10.10.12`
 and the current situation is as:
 
 
@@ -715,7 +715,7 @@ maxctrl unlink monitor CsMonitor CsNode3
 
 
 
-Checking with `<code>maxctrl list monitors</code>` we see that the server has
+Checking with `maxctrl list monitors` we see that the server has
 indeed been removed.
 
 
@@ -753,10 +753,10 @@ maxctrl --timeout 30s call command csmon remove-node CsMonitor mcs3 20s
 
 
 
-### Impact of `<code>dynamic_node_detection</code>`
+### Impact of `dynamic_node_detection`
 
 
-If `<code>dynamic_node_detection</code>` is enabled, there is in general no need
+If `dynamic_node_detection` is enabled, there is in general no need
 to explicitly remove a static server entry (as there never was one in
 the first place). The only exception is if the removed node happened
 to be a bootstrap server. In that case, the server entry should be

@@ -91,7 +91,7 @@ END
 sudo debconf-set-selections /tmp/my.seed
 ```
 
-See the [General Principles](../buildbot-setup-for-virtual-machines-general-principles.md) article how to obtain the `<code>my.seed</code>` file.
+See the [General Principles](../buildbot-setup-for-virtual-machines-general-principles.md) article how to obtain the `my.seed` file.
 
 
 ## Image for upgrade testing

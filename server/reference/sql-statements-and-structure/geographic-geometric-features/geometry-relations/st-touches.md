@@ -11,7 +11,7 @@ ST_TOUCHES(g1,g2)
 ## Description
 
 
-Returns `<code>1</code>` or `<code>0</code>` to indicate whether geometry *`<code>g1</code>`* spatially touches geometry *`<code>g2</code>`*. Two geometries spatially touch if the interiors of the geometries do not intersect,
+Returns `1` or `0` to indicate whether geometry *`g1`* spatially touches geometry *`g2`*. Two geometries spatially touch if the interiors of the geometries do not intersect,
 but the boundary of one of the geometries intersects either the boundary or the
 interior of the other.
 

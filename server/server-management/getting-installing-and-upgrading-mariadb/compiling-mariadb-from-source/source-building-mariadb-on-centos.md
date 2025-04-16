@@ -7,7 +7,7 @@ In the event that you are using the Linux-based operating system CentOS or any o
 ## Installing Build Dependencies for [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
 
 
-Before you start building MariaDB, you first need to install the build dependencies required to run the compile. CentOS provides a tool for installing build dependencies. The `<code>yum-builddep</code>` utility reads a package and generates a list of the packages required to build from source, then calls YUM to install them for you. In the event that this utility is not available on your system, you can install it through the `<code>yum-utils</code>` package. Once you have it, install the MariaDB build dependencies.
+Before you start building MariaDB, you first need to install the build dependencies required to run the compile. CentOS provides a tool for installing build dependencies. The `yum-builddep` utility reads a package and generates a list of the packages required to build from source, then calls YUM to install them for you. In the event that this utility is not available on your system, you can install it through the `yum-utils` package. Once you have it, install the MariaDB build dependencies.
 
 
 ```
@@ -55,7 +55,7 @@ yum install policycoreutils-python
 yum install galera.x86_64
 ```
 
-You can replace `<code>openssl</code>` with `<code>gnutls</code>` above, depending on the TLS implementation you want to use.
+You can replace `openssl` with `gnutls` above, depending on the TLS implementation you want to use.
 
 
 If you plan to use the BUILD scripts to make it easier to build different configurations of MariaDB,
@@ -81,7 +81,7 @@ For more information on dependencies, see [Linux Build Environment](/kb/en/Build
 ## Building MariaDB
 
 
-Once you have the base dependencies installed, you can retrieve the source code and start building MariaDB. The source code is available on GitHub. Use the `<code>--branch</code>` option to specify the particular version of MariaDB you want to build.
+Once you have the base dependencies installed, you can retrieve the source code and start building MariaDB. The source code is available on GitHub. Use the `--branch` option to specify the particular version of MariaDB you want to build.
 
 
 ```
@@ -106,7 +106,7 @@ $ make package
 This generates an RPM file, which you can then install on your system or copy over to install on other CentOS hosts. The umask is needed because of a bug in cmake / cmake scripts.
 
 
-Alternative, use one of the build scripts in the `<code>BUILD</code>` directory that allows you to compile different versions of MariaDB (debug, optimized, profiling etc).
+Alternative, use one of the build scripts in the `BUILD` directory that allows you to compile different versions of MariaDB (debug, optimized, profiling etc).
 
 
 A good option for developers is:

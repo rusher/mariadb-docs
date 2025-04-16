@@ -4,9 +4,9 @@
 # Psreuse
 
 
-The `<code>psreuse</code>` filter reuses identical prepared statements inside the same client
+The `psreuse` filter reuses identical prepared statements inside the same client
 connection. This filter only works with binary protocol prepared statements and
-not with text protocol prepared statements executed with the `<code>PREPARE</code>` SQL
+not with text protocol prepared statements executed with the `PREPARE` SQL
 command.
 
 
@@ -25,7 +25,7 @@ prepared SQL statement and the number of parameters the statement has.
 
 
 To add the filter to a service, define an instance of the filter and then add it
-to a service's `<code>filters</code>` list:
+to a service's `filters` list:
 
 
 

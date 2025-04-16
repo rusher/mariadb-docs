@@ -27,7 +27,7 @@
 ## Overview
 
 
-The `<code>mirror</code>` router is designed for data consistency and database behavior
+The `mirror` router is designed for data consistency and database behavior
 verification during system upgrades. It allows statement duplication to multiple
 servers in a manner similar to that of the
 [Tee filter](../mariadb-maxscale-21-06-filters/mariadb-maxscale-2106-maxscale-2106-tee-filter.md) with exporting of collected query metrics.
@@ -47,7 +47,7 @@ query results and has the following fields:
 | results | Array of query result objects |
 
 
-The objects in the `<code>results</code>` array describe an individual query result and have
+The objects in the `results` array describe an individual query result and have
 the following fields:
 
 
@@ -65,7 +65,7 @@ the following fields:
 ## Configuration Parameters
 
 
-### `<code>main</code>`
+### `main`
 
 
 * Type: target
@@ -75,7 +75,7 @@ the following fields:
 
 The main target from which results are returned to the client. This is a
 mandatory parameter and must define one of the targets configured in the
-`<code>targets</code>` parameter of the service.
+`targets` parameter of the service.
 
 
 If the connection to the main target cannot be created or is lost mid-session,
@@ -84,30 +84,30 @@ not fatal errors and any open connections to them will be closed. The router
 does not create new connections after the initial connections are created.
 
 
-### `<code>exporter</code>`
+### `exporter`
 
 
 * Type: enum
 * Mandatory: Yes
 * Dynamic: Yes
-* Values: `<code>log</code>`, `<code>file</code>`, `<code>kafka</code>`
+* Values: `log`, `file`, `kafka`
 
 
 The exporter where the data is exported. This is a mandatory parameter. Possible
 values are:
 
 
-* `<code>log</code>`
+* `log`
 * Exports metrics to MaxScale log on INFO level. No configuration parameters.
-* `<code>file</code>`
+* `file`
 * Exports metrics to a file. Configured with the [file](#file) parameter.
-* `<code>kafka</code>`
+* `kafka`
 * Exports metrics to a Kafka broker. Configured with the
  [kafka_broker](#kafka_broker) and [kafka_topic](#kafka_topic)
  parameters.
 
 
-### `<code>file</code>`
+### `file`
 
 
 * Type: string
@@ -117,19 +117,19 @@ values are:
 
 
 The output file where the metrics will be written. The file must be writable by
-the user that is running MaxScale, usually the `<code>maxscale</code>` user.
+the user that is running MaxScale, usually the `maxscale` user.
 
 
-When the `<code>file</code>` parameter is altered at runtime, the old file is closed before
+When the `file` parameter is altered at runtime, the old file is closed before
 the new file is opened. This makes it a convenient way of rotating the file
 where the metrics are exported. Note that the file name alteration must change
 the value for it to take effect.
 
 
-This is a mandatory parameter when configured with `<code>exporter=file</code>`.
+This is a mandatory parameter when configured with `exporter=file`.
 
 
-### `<code>kafka_broker</code>`
+### `kafka_broker`
 
 
 * Type: string
@@ -139,13 +139,13 @@ This is a mandatory parameter when configured with `<code>exporter=file</code>`.
 
 
 The Kafka broker list. Must be given as a comma-separated list of broker hosts
-with optional ports in `<code>host:port</code>` format.
+with optional ports in `host:port` format.
 
 
-This is a mandatory parameter when configured with `<code>exporter=kafka</code>`.
+This is a mandatory parameter when configured with `exporter=kafka`.
 
 
-### `<code>kafka_topic</code>`
+### `kafka_topic`
 
 
 * Type: string
@@ -157,26 +157,26 @@ This is a mandatory parameter when configured with `<code>exporter=kafka</code>`
 The kafka topic where the metrics are sent.
 
 
-This is a mandatory parameter when configured with `<code>exporter=kafka</code>`.
+This is a mandatory parameter when configured with `exporter=kafka`.
 
 
-### `<code>on_error</code>`
+### `on_error`
 
 
 * Type: enum
-* Default: `<code>ignore</code>`
+* Default: `ignore`
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>ignore</code>`, `<code>close</code>`
+* Values: `ignore`, `close`
 
 
 What to do when a backend network connection fails. Accepted values are:
 
 
-* `<code>ignore</code>`
-* Ignore the failing backend if it's not the backend that the `<code>main</code>` parameter
+* `ignore`
+* Ignore the failing backend if it's not the backend that the `main` parameter
  points to.
-* `<code>close</code>`
+* `close`
 * Close the client connection when the first backend fails.
 
 
@@ -184,22 +184,22 @@ This parameter was added in MaxScale 6.0. Older versions always ignored
 failing backends.
 
 
-### `<code>report</code>`
+### `report`
 
 
 * Type: enum
-* Default: `<code>always</code>`
+* Default: `always`
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>always</code>`, `<code>on_conflict</code>`
+* Values: `always`, `on_conflict`
 
 
 When to report the result of the queries. Accepted values are:
 
 
-* `<code>always</code>`
+* `always`
 * Always report the result for all queries.
-* `<code>on_conflict</code>`
+* `on_conflict`
 * Only report when one or more backends returns a conflicting result.
 
 

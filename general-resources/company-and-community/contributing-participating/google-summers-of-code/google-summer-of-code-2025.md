@@ -30,7 +30,7 @@ Also see the [List of beginner friendly issues](https://jira.mariadb.org/issues/
 **Full-time project 350h**
 
 
-`<code>LOAD DATA INFILE</code>` can flexibly load data into a table from CSV-like files accessible by the mariadbdb process. `<code>LOAD XML INFILE</code>` can do it for XML files. `<code>LOAD DATA LOCAL INFILE</code>` and `<code>LOAD XML LOCAL INFILE</code>` can do it with files accessible by the client, but not by the server. But there are requests to suport loading more file formats and from other locations, for example, from S3.
+`LOAD DATA INFILE` can flexibly load data into a table from CSV-like files accessible by the mariadbdb process. `LOAD XML INFILE` can do it for XML files. `LOAD DATA LOCAL INFILE` and `LOAD XML LOCAL INFILE` can do it with files accessible by the client, but not by the server. But there are requests to suport loading more file formats and from other locations, for example, from S3.
 
 
 This project is to implement support for LOAD plugins and refactor the current LOAD code accordingly. There are two kind of plugins — data parser plugin (CSV-like and XML) and transfer plugin (file and LOCAL). Implementing new plugins is not in the scope of this task, this task is mainly about moving existing code around, creating a *possibility* for new plugins (like JSON or S3).
@@ -64,13 +64,13 @@ Implement a syntax and a plugin API that the server will use to generate embeddi
 extend mysqltest language to support
 
 
-* standard arithmetic `<code>+</code>`, `<code>-</code>`, `<code>*</code>`, `<code>/</code>`, `<code>%</code>`
-* comparisons `<code>==</code>`, `<code>!=</code>`, `<code><</code>`, `<code><=</code>`, `<code>></code>`, `<code>>=</code>`
-* boolean `<code>&&</code>`, `<code>||</code>`, may be `<code>? :</code>`
-* if possible: string repetition, perl-style `<code>x</code>` (to replace `<code>SELECT REPEAT()</code>` in test files)
+* standard arithmetic `+`, `-`, `*`, `/`, `%`
+* comparisons `==`, `!=`, `<`, `<=`, `>`, `>=`
+* boolean `&&`, `||`, may be `? :`
+* if possible: string repetition, perl-style `x` (to replace `SELECT REPEAT()` in test files)
 
 
-This should work in commands `<code>if</code>`, `<code>while</code>`
+This should work in commands `if`, `while`
 
 
 Can be done together with [MDEV-36108](https://jira.mariadb.org/browse/MDEV-36108) as a full-time project.
@@ -90,18 +90,18 @@ Can be done together with [MDEV-36108](https://jira.mariadb.org/browse/MDEV-3610
 extend mysqltest language to support bash-like substitutions:
 
 
-* `<code>${var}</code>`
-* `<code>${parameter:offset:length}</code>`
-* `<code>${#parameter}</code>`
-* `<code>${parameter/pattern/string/flags}</code>`
-* may be `<code>${parameterˆ}</code>`, `<code>${parameterˆˆ}</code>`, `<code>${parameter,}</code>`, `<code>${parameter<sub>}</sub></code>`
-* may be `<code>${parameter@function}</code>` with functions like `<code>u</code>`, `<code>U</code>`, `<code>Q</code>`, etc
+* `${var}`
+* `${parameter:offset:length}`
+* `${#parameter}`
+* `${parameter/pattern/string/flags}`
+* may be `${parameterˆ}`, `${parameterˆˆ}`, `${parameter,}`, `${parameter<sub>}</sub>`
+* may be `${parameter@function}` with functions like `u`, `U`, `Q`, etc
 
 
 recursive expansion:
 
 
-* `<code>${${var}}</code>`
+* `${${var}}`
 
 
 Can be done together with [MDEV-36107](https://jira.mariadb.org/browse/MDEV-36107) as a full-time project.

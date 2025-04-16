@@ -1,13 +1,13 @@
 
 # mysql.innodb_table_stats
 
-The `<code>mysql.innodb_table_stats</code>` table stores data related to [InnoDB Persistent Statistics](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md), and contains one row per table.
+The `mysql.innodb_table_stats` table stores data related to [InnoDB Persistent Statistics](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md), and contains one row per table.
 
 
 This table, along with the related [mysql.innodb_index_stats](mysql-innodb_index_stats.md) table, can be manually updated in order to force or test differing query optimization plans. After updating, [FLUSH TABLE innodb_table_stats](../../flush-commands/flush-tables-for-export.md) is required to load the changes.
 
 
-`<code>mysql.innodb_table_stats</code>` is not replicated, although any [ANALYZE TABLE](../../../table-statements/analyze-table.md) statements on the table will be by default.
+`mysql.innodb_table_stats` is not replicated, although any [ANALYZE TABLE](../../../table-statements/analyze-table.md) statements on the table will be by default.
 
 
 It contains the following fields:

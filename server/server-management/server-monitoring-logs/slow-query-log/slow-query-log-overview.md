@@ -17,7 +17,7 @@ The number of rows affected by the slow query are also recorded in the slow quer
 The slow query log is disabled by default.
 
 
-To enable the slow query log, set the [slow_query_log](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log) system variable (or, from [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), [log_slow_query](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query)) to `<code>1</code>`. It can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+To enable the slow query log, set the [slow_query_log](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log) system variable (or, from [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), [log_slow_query](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query)) to `1`. It can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
 
 
 ```
@@ -36,7 +36,7 @@ slow_query_log
 ## Configuring the Slow Query Log Filename
 
 
-By default, the slow query log is written to `<code>${hostname}-slow.log</code>` in the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory. However, this can be changed.
+By default, the slow query log is written to `${hostname}-slow.log` in the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory. However, this can be changed.
 
 
 One way to configure the slow query log filename is to set the [slow_query_log_file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file) system variable (or, from [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), [log_slow_query_file](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query_file)). It can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
@@ -69,7 +69,7 @@ slow_query_log
 slow_query_log_file=/var/log/mysql/mariadb-slow.log
 ```
 
-Another way to configure the slow query log filename is to set the [log-basename](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-log-basename) option, which configures MariaDB to use a common prefix for all log files (e.g. slow query log, [general query log](../general-query-log.md), [error log](../error-log.md), [binary logs](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), etc.). The slow query log filename will be built by adding `<code>-slow.log</code>` to this prefix. This option cannot be set dynamically. It can be set in a server [option group](../../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+Another way to configure the slow query log filename is to set the [log-basename](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-log-basename) option, which configures MariaDB to use a common prefix for all log files (e.g. slow query log, [general query log](../general-query-log.md), [error log](../error-log.md), [binary logs](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), etc.). The slow query log filename will be built by adding `-slow.log` to this prefix. This option cannot be set dynamically. It can be set in a server [option group](../../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 
 ```
@@ -91,7 +91,7 @@ The slow query log can either be written to a file on disk, or it can be written
 ### Writing the Slow Query Log to a File
 
 
-The slow query log is output to a file by default. However, it can be explicitly chosen by setting the [log_output](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable to `<code>FILE</code>`. It can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+The slow query log is output to a file by default. However, it can be explicitly chosen by setting the [log_output](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable to `FILE`. It can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
 
 
 ```
@@ -112,7 +112,7 @@ slow_query_log_file=slow-queries.log
 ### Writing the Slow Query Log to a Table
 
 
-The slow query log can either be written to the [slow_log](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) table in the [mysql](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database by setting the [log_output](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable to `<code>TABLE</code>`. It can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+The slow query log can either be written to the [slow_log](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) table in the [mysql](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database by setting the [log_output](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable to `TABLE`. It can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
 
 
 ```
@@ -157,7 +157,7 @@ See [Writing logs into tables](../writing-logs-into-tables.md) for more informat
 ## Disabling the Slow Query Log for a Session
 
 
-A user can disable logging to the slow query log for a connection by setting the [slow_query_log](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log) system variable (or, from [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), [log_slow_query](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query)) to `<code>0</code>`. For example:
+A user can disable logging to the slow query log for a connection by setting the [slow_query_log](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log) system variable (or, from [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), [log_slow_query](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query)) to `0`. For example:
 
 
 ```
@@ -182,7 +182,7 @@ log_slow_disabled_statements='admin,call,slave,sp'
 ## Configuring the Slow Query Log Time
 
 
-The time that defines a slow query can be configured by setting the [long_query_time](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#long_query_time) system variable (or, from [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), [log_slow_query_time](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query_time)). It uses a units of seconds, with an optional milliseconds component. The default value is `<code>10</code>`. It can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+The time that defines a slow query can be configured by setting the [long_query_time](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#long_query_time) system variable (or, from [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), [log_slow_query_time](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query_time)). It uses a units of seconds, with an optional milliseconds component. The default value is `10`. It can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
 
 
 ```

@@ -1,10 +1,10 @@
 
 # mariadb-slap
 
-`<code>mariadb-slap</code>` is a tool for load-testing MariaDB. It allows you to emulate multiple concurrent connections, and run a set of queries multiple times.
+`mariadb-slap` is a tool for load-testing MariaDB. It allows you to emulate multiple concurrent connections, and run a set of queries multiple times.
 
 
-Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysqlslap</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqlslap`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 It returns a benchmark including the following information:
@@ -20,7 +20,7 @@ It returns a benchmark including the following information:
 ## Using mariadb-slap
 
 
-The command to use `<code>mariadb-slap</code>` and the general syntax is:
+The command to use `mariadb-slap` and the general syntax is:
 
 
 ```
@@ -30,7 +30,7 @@ mariadb-slap [options]
 ### Options
 
 
-`<code>mariadb-slap</code>` supports the following options:
+`mariadb-slap` supports the following options:
 
 
 
@@ -107,7 +107,7 @@ mariadb-slap [options]
 ### Option Files
 
 
-In addition to reading options from the command-line, `<code>mariadb-slap</code>` can also read options from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `<code>mariadb-slap</code>` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadb-slap` can also read options from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-slap` in an option file, then it is ignored.
 
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
@@ -125,13 +125,13 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-`<code>mariadb-slap</code>` is linked with [MariaDB Connector/C](../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+`mariadb-slap` is linked with [MariaDB Connector/C](../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 
 #### Option Groups
 
 
-`<code>mariadb-slap</code>` reads options from the following [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
+`mariadb-slap` reads options from the following [option groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
 
 
 

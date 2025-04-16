@@ -6,7 +6,7 @@
 The metadata_locks table was introduced in [MariaDB 10.5.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
 
 
-The `<code>metadata_locks</code>` table contains [metadata lock](../../../../transactions/metadata-locking.md) information.
+The `metadata_locks` table contains [metadata lock](../../../../transactions/metadata-locking.md) information.
 
 
 To enable metadata lock instrumention, at runtime:

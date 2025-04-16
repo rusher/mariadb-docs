@@ -51,8 +51,8 @@ The hintfilter does not support routing hints in prepared statements
 
 
 The client connection will need to have comments enabled. For example the
-`<code>mariadb</code>` and `<code>mysql</code>` command line clients have comments disabled by default and
-they need to be enabled by passing the `<code>--comments</code>` or `<code>-c</code>` option to it. Most,
+`mariadb` and `mysql` command line clients have comments disabled by default and
+they need to be enabled by passing the `--comments` or `-c` option to it. Most,
 if not all, connectors keep all comments intact in executed queries.
 
 
@@ -64,18 +64,18 @@ mariadb --comments -u my-user -psecret -e "SELECT @@hostname -- maxscale route t
 
 
 
-For comment types, use either `<code>--</code>` (notice the whitespace after the double
-hyphen) or `<code>#</code>` after the semicolon or `<code>/* ... */</code>` before the semicolon.
+For comment types, use either `--` (notice the whitespace after the double
+hyphen) or `#` after the semicolon or `/* ... */` before the semicolon.
 
 
-Inline comment blocks, i.e. `<code>/* .. */</code>`, do not require a whitespace character
+Inline comment blocks, i.e. `/* .. */`, do not require a whitespace character
 after the start tag or before the end tag but adding the whitespace is advised.
 
 
 ## Hint body
 
 
-All hints must start with the `<code>maxscale</code>` tag.
+All hints must start with the `maxscale` tag.
 
 
 
@@ -113,7 +113,7 @@ server.
 
 
 
-A `<code>master</code>` value in a routing hint will route the query to a master server. This
+A `master` value in a routing hint will route the query to a master server. This
 can be used to direct read queries to a master server for a up-to-date result
 with no replication lag.
 
@@ -128,7 +128,7 @@ with no replication lag.
 
 
 
-A `<code>slave</code>` value will route the query to a slave server. Please note that the
+A `slave` value will route the query to a slave server. Please note that the
 hints will override any decisions taken by the routers which means that it is
 possible to force writes to a slave server.
 
@@ -143,8 +143,8 @@ possible to force writes to a slave server.
 
 
 
-A `<code>server</code>` value will route the query to a named server. The value of
-`<code><server name></code>` needs to be the same as the server section name in
+A `server` value will route the query to a named server. The value of
+`<server name>` needs to be the same as the server section name in
 maxscale.cnf. If the server is not used by the service, the hint is ignored.
 
 
@@ -158,7 +158,7 @@ maxscale.cnf. If the server is not used by the service, the hint is ignored.
 
 
 
-A `<code>last</code>` value will route the query to the server that processed the last
+A `last` value will route the query to the server that processed the last
 query. This hint can be used to force certain queries to be grouped to the same
 server.
 
@@ -175,7 +175,7 @@ server.
 
 These control the behavior and affect the routing decisions made by the
 router. Currently the only accepted parameter is the readwritesplit parameter
-`<code>max_slave_replication_lag</code>`. This will route the query to a server with a lower
+`max_slave_replication_lag`. This will route the query to a server with a lower
 replication lag than this parameter's value.
 
 
@@ -240,7 +240,7 @@ they are on the stack:
 # Examples
 
 
-## Routing `<code>SELECT</code>` queries to master
+## Routing `SELECT` queries to master
 
 
 In this example, MariaDB MaxScale is configured with the readwritesplit router

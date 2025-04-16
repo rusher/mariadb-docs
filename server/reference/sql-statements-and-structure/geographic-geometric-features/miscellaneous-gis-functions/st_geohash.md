@@ -20,13 +20,13 @@ ST_GeoHash(point, max_length)
 Returns the geohash corresponding to the input values, or NULL if any argument is NULL. Geohashes encode latitude and longitude coordinates into a text string made up only of numeric and lowercase latin letter characters.
 
 
-The `<code>longitude</code>` parameter is a numeric value in the interval [180, -180]. `<code>latitude</code>` is a numeric value in the interval [90, -90].
+The `longitude` parameter is a numeric value in the interval [180, -180]. `latitude` is a numeric value in the interval [90, -90].
 
 
-In the case of `<code>point</code>`, the x coordinate is treated as the latitude and the y coordinate is treated as the latitude. The same constraints apply.
+In the case of `point`, the x coordinate is treated as the latitude and the y coordinate is treated as the latitude. The same constraints apply.
 
 
-The `<code>max_length</code>` parameter is the upper limit on the resulting string size and cannot exceed 100.
+The `max_length` parameter is the upper limit on the resulting string size and cannot exceed 100.
 
 
 The [ST_LatFromGeoHash](st_latfromgeohash.md) function decodes a given geohash and returns the latitude.

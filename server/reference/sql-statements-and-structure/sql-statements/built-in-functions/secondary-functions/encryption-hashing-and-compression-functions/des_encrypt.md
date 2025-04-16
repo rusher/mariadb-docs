@@ -21,21 +21,21 @@ This function works only if MariaDB has been configured with [TLS support](../..
 
 
 The encryption key to use is chosen based on the second argument to
-`<code>DES_ENCRYPT()</code>`, if one was given. With no argument, the first key from
-the DES key file is used. With a *`<code>key_num</code>`* argument, the given key 
-number (0-9) from the DES key file is used. With a *`<code>key_str</code>`* argument,
-the given key string is used to encrypt *`<code>str</code>`*.
+`DES_ENCRYPT()`, if one was given. With no argument, the first key from
+the DES key file is used. With a *`key_num`* argument, the given key 
+number (0-9) from the DES key file is used. With a *`key_str`* argument,
+the given key string is used to encrypt *`str`*.
 
 
-The key file can be specified with the `<code>--des-key-file</code>` server option.
+The key file can be specified with the `--des-key-file` server option.
 
 
 The return string is a binary string where the first character is 
-`<code>CHAR(128 | key_num)</code>`. If an error occurs, `<code>DES_ENCRYPT()</code>` returns `<code>NULL</code>`.
+`CHAR(128 | key_num)`. If an error occurs, `DES_ENCRYPT()` returns `NULL`.
 
 
 The 128 is added to make it easier to recognize an encrypted key. If
-you use a string key, *`<code>key_num</code>`* is 127.
+you use a string key, *`key_num`* is 127.
 
 
 The string length for the result is given by this formula:
@@ -52,11 +52,11 @@ Each line in the DES key file has the following format:
 key_num des_key_str
 ```
 
-Each *`<code>key_num</code>`* value must be a number in the range from 0 to 9. Lines in
-the file may be in any order. *`<code>des_key_str</code>`* is the string that is used
+Each *`key_num`* value must be a number in the range from 0 to 9. Lines in
+the file may be in any order. *`des_key_str`* is the string that is used
 to encrypt the message. There should be at least one space between the
 number and the key. The first key is the default key that is used if
-you do not specify any key argument to `<code>DES_ENCRYPT()</code>`.
+you do not specify any key argument to `DES_ENCRYPT()`.
 
 
 You can tell MariaDB to read new key values from the key file with the

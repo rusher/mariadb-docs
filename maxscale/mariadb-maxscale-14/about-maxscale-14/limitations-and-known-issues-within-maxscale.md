@@ -51,7 +51,7 @@ Read queries are routed to the master server in the following situations:
 * in case of prepared statement execution
 * statement includes a stored procedure, or an UDF call
 * if there are multiple statements inside one query e.g.
- `<code>INSERT INTO ... ; SELECT LAST_INSERT_ID();</code>`
+ `INSERT INTO ... ; SELECT LAST_INSERT_ID();`
 
 
 ### Limitations in multi-statement handling
@@ -63,7 +63,7 @@ configuration, all queries after a multi-statement query will be routed to
 the master to prevent possible reads of false data.
 
 
-You can override this behavior with the `<code>strict_multi_stmt=false</code>` router
+You can override this behavior with the `strict_multi_stmt=false` router
 option. In this mode, the multi-statement queries will still be routed to
 the master but individual statements are routed normally. If you use
 multi-statements and you know they don't modify the session state in any
@@ -86,8 +86,8 @@ routed to the master.
 
 
 Some of the queries that client sends are routed to all backends instead
-of sending them just to one of server. These queries include `<code>USE <db
-name></code>` and `<code>SET autocommit=0</code>` among many others. Readwritesplit sends a
+of sending them just to one of server. These queries include `USE <db
+name>` and `SET autocommit=0` among many others. Readwritesplit sends a
 copy of these queries to each backend server and forwards the master's
 reply to the client. Below is a list of MySQL commands which are
 classified as session commands :
@@ -130,7 +130,7 @@ SET autocommit=1|0
 
 
 
-There is a possibility for misbehavior; if `<code>USE mytable</code>` was executed in
+There is a possibility for misbehavior; if `USE mytable` was executed in
 one of the slaves and it failed, it may be due to replication lag rather
 than the fact it didn’t exist. Thus the same command may end up with
 different result among backend servers. The slaves which fail to execute a
@@ -140,7 +140,7 @@ that are in use by the session.
 
 
 The above-mentioned behavior can be partially controller with the
-`<code>use_sql_variables_in</code>` configuration parameter.
+`use_sql_variables_in` configuration parameter.
 
 
 
@@ -158,8 +158,8 @@ and prepared statements are routed to all nodes always.
 **WARNING**
 
 
-If a SELECT query modifies a user variable when the `<code>use_sql_variables_in</code>`
-parameter is set to `<code>all</code>`, it will not be routed and the client will receive
+If a SELECT query modifies a user variable when the `use_sql_variables_in`
+parameter is set to `all`, it will not be routed and the client will receive
 an error. A log message is written into the log further explaining the reason
 for the error. Here is an example use of a SELECT query which modifies a user
 variable and how MaxScale responds to it.
@@ -177,7 +177,7 @@ ERROR 1064 (42000): Routing query to backend failed. See the error log for furth
 
 
 You allow user variable modification in SELECT queries by setting the
-value of `<code>use_sql_variables_in</code>` to `<code>master</code>`. This will route all queries
+value of `use_sql_variables_in` to `master`. This will route all queries
 that use user variables to the master.
 
 
@@ -224,7 +224,7 @@ and routed. Here is a list of the current limitations.
 
 
 * Cross-database queries (e.g.
- `<code>SELECT column FROM database1.table UNION select column FROM database2.table</code>`)
+ `SELECT column FROM database1.table UNION select column FROM database2.table`)
  are not supported and are routed either to the first explicit database
  in the query, the current database in use or to the first available
  database, if none of the previous conditions are met.
@@ -233,7 +233,7 @@ and routed. Here is a list of the current limitations.
  means that, for example when creating a new database, queries should
  be done directly on the node or the router should be equipped with
  the hint filter and a routing hint should be used. Queries that
- modify the session state e.g. `<code>SET autocommit=1</code>` will be routed
+ modify the session state e.g. `SET autocommit=1` will be routed
  to all servers regardless of the default database.
 * SELECT queries that modify session variables are not currently supported
  because uniform results can not be guaranteed. If such a query is

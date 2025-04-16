@@ -71,7 +71,7 @@ done
 
 
 See the [General Principles](../buildbot-setup-for-virtual-machines-general-principles.md)
-article for how to make the '`<code>my.seed</code>`' and '`<code>sources.append</code>`' files.
+article for how to make the '`my.seed`' and '`sources.append`' files.
 
 
 ```

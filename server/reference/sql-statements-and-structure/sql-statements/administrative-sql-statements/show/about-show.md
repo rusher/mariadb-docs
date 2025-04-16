@@ -1,7 +1,7 @@
 
 # About SHOW
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW</code>` has many forms that provide information about
+`SHOW` has many forms that provide information about
 databases, tables, columns, or status information about the server. These include:
 
 
@@ -67,14 +67,14 @@ like_or_where:
   | WHERE expr
 ```
 
-If the syntax for a given `<code class="highlight fixed" style="white-space:pre-wrap">SHOW</code>` statement includes a
-`<code class="highlight fixed" style="white-space:pre-wrap">LIKE 'pattern'</code>` part, `<code class="highlight fixed" style="white-space:pre-wrap">'pattern'</code>` is a
-string that can contain the SQL "`<code class="highlight fixed" style="white-space:pre-wrap">%</code>`" and
-"`<code class="highlight fixed" style="white-space:pre-wrap">_</code>`" wildcard characters. The pattern is useful for
+If the syntax for a given `SHOW` statement includes a
+`LIKE 'pattern'` part, `'pattern'` is a
+string that can contain the SQL "`%`" and
+"`_`" wildcard characters. The pattern is useful for
 restricting statement output to matching values.
 
 
-Several `<code class="highlight fixed" style="white-space:pre-wrap">SHOW</code>` statements also accept a
-`<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` clause that provides more flexibility in specifying
+Several `SHOW` statements also accept a
+`WHERE` clause that provides more flexibility in specifying
 which rows to display. See [Extended Show](extended-show.md).
 

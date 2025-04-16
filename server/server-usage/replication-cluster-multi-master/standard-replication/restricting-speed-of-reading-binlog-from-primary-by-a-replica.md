@@ -22,16 +22,16 @@ much limit in the speed of the replica.
 The option **read_binlog_speed_limit** is available starting from [MariaDB 10.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md).
 
 
-#### `<code>read_binlog_speed_limit</code>`
+#### `read_binlog_speed_limit`
 
 
 * Description: Maximum speed(KB/s) to read binlog from primary.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--read-binlog-speed-limit[=#]</code>`
+* Commandline: `--read-binlog-speed-limit[=#]`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>0</code>`
-* Range: `<code>0</code>` to `<code>4294967295</code>`
+* Data Type: `numeric`
+* Default Value: `0`
+* Range: `0` to `4294967295`
 * Introduced: [MariaDB 10.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md)
 
 

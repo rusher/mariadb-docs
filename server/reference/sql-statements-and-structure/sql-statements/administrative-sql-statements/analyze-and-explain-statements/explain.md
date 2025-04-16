@@ -20,35 +20,35 @@ EXPLAIN [EXTENDED | PARTITIONS | FORMAT=JSON]
 ## Description
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">EXPLAIN</code>` statement can be used either as a synonym for
+The `EXPLAIN` statement can be used either as a synonym for
 [DESCRIBE](../describe.md) or as a way to obtain information about how MariaDB
-executes a `<code class="highlight fixed" style="white-space:pre-wrap">SELECT</code>`, `<code>UPDATE</code>` or `<code>DELETE</code>` statement:
+executes a `SELECT`, `UPDATE` or `DELETE` statement:
 
 
-* `<code class="highlight fixed" style="white-space:pre-wrap">'EXPLAIN tbl_name'</code>` is synonymous with 
- `<code class="highlight fixed" style="white-space:pre-wrap">'[DESCRIBE](../describe.md) tbl_name'</code>` or 
- `<code class="highlight fixed" style="white-space:pre-wrap">'[SHOW COLUMNS](../show/show-columns.md) FROM tbl_name'</code>`.
-* When you precede a `<code class="highlight fixed" style="white-space:pre-wrap">SELECT</code>`, `<code>UPDATE</code>` or a `<code>DELETE</code>` statement with the keyword 
- `<code class="highlight fixed" style="white-space:pre-wrap">EXPLAIN</code>`, MariaDB displays information from the optimizer
+* `'EXPLAIN tbl_name'` is synonymous with 
+ `'[DESCRIBE](../describe.md) tbl_name'` or 
+ `'[SHOW COLUMNS](../show/show-columns.md) FROM tbl_name'`.
+* When you precede a `SELECT`, `UPDATE` or a `DELETE` statement with the keyword 
+ `EXPLAIN`, MariaDB displays information from the optimizer
  about the query execution plan. That is, MariaDB explains how it would
- process the `<code class="highlight fixed" style="white-space:pre-wrap">SELECT</code>`, `<code>UPDATE</code>` or `<code>DELETE</code>`, including information about how tables
- are joined and in which order. `<code class="highlight fixed" style="white-space:pre-wrap">EXPLAIN EXTENDED</code>` can be
+ process the `SELECT`, `UPDATE` or `DELETE`, including information about how tables
+ are joined and in which order. `EXPLAIN EXTENDED` can be
  used to provide additional information.
-* `<code class="highlight fixed" style="white-space:pre-wrap">EXPLAIN PARTITIONS</code>` is useful only when examining queries involving partitioned tables. For details, see [Partition pruning and selection](../../../../../server-management/partitioning-tables/partition-pruning-and-selection.md).
+* `EXPLAIN PARTITIONS` is useful only when examining queries involving partitioned tables. For details, see [Partition pruning and selection](../../../../../server-management/partitioning-tables/partition-pruning-and-selection.md).
 * [ANALYZE statement](analyze-statement.md) performs the query as well as producing EXPLAIN output, and provides actual as well as estimated statistics.
-* `<code>EXPLAIN</code>` output can be printed in the [slow query log](../../../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md). See [EXPLAIN in the Slow Query Log](../../../../../server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log.md) for details.
+* `EXPLAIN` output can be printed in the [slow query log](../../../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md). See [EXPLAIN in the Slow Query Log](../../../../../server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log.md) for details.
 
 
-[SHOW EXPLAIN](../show/show-explain.md) shows the output of a running statement. In some cases, its output can be closer to reality than `<code>EXPLAIN</code>`.
+[SHOW EXPLAIN](../show/show-explain.md) shows the output of a running statement. In some cases, its output can be closer to reality than `EXPLAIN`.
 
 
 The [ANALYZE statement](analyze-statement.md) runs a statement and returns information about its execution plan. It also shows additional columns, to check how much the optimizer's estimation about filtering and found rows are close to reality.
 
 
-There is an online [EXPLAIN Analyzer](../../../../../clients-and-utilities/explain-analyzer-api.md) that you can use to share `<code>EXPLAIN</code>` and `<code>EXPLAIN EXTENDED</code>` output with others.
+There is an online [EXPLAIN Analyzer](../../../../../clients-and-utilities/explain-analyzer-api.md) that you can use to share `EXPLAIN` and `EXPLAIN EXTENDED` output with others.
 
 
-`<code>EXPLAIN</code>` can acquire metadata locks in the same way that `<code>SELECT</code>` does, as it needs to know table metadata and, sometimes, data as well.
+`EXPLAIN` can acquire metadata locks in the same way that `SELECT` does, as it needs to know table metadata and, sometimes, data as well.
 
 
 ### Columns in EXPLAIN ... SELECT
@@ -71,13 +71,13 @@ There is an online [EXPLAIN Analyzer](../../../../../clients-and-utilities/expla
 
 
 
-Here are descriptions of the values for some of the more complex columns in `<code>EXPLAIN ... SELECT</code>`:
+Here are descriptions of the values for some of the more complex columns in `EXPLAIN ... SELECT`:
 
 
 #### "Select_type" Column
 
 
-The `<code>select_type</code>` column can have the following values:
+The `select_type` column can have the following values:
 
 
 
@@ -134,29 +134,29 @@ This column consists of one or more of the following values, separated by ';'
 *Note that some of these values are detected after the optimization phase.*
 
 
-The optimization phase can do the following changes to the `<code>WHERE</code>` clause:
+The optimization phase can do the following changes to the `WHERE` clause:
 
 
-* Add the expressions from the `<code>ON</code>` and `<code>USING</code>` clauses to the `<code>WHERE</code>`
+* Add the expressions from the `ON` and `USING` clauses to the `WHERE`
  clause.
-* Constant propagation: If there is `<code>column=constant</code>`, replace all column
+* Constant propagation: If there is `column=constant`, replace all column
  instances with this constant.
-* Replace all columns from '`<code>const</code>`' tables with their values.
-* Remove the used key columns from the `<code>WHERE</code>` (as this will be tested as
+* Replace all columns from '`const`' tables with their values.
+* Remove the used key columns from the `WHERE` (as this will be tested as
  part of the key lookup).
 * Remove impossible constant sub expressions.
- For example `<code>WHERE '(a=1 and a=2) OR b=1'</code>` becomes `<code>'b=1'</code>`.
+ For example `WHERE '(a=1 and a=2) OR b=1'` becomes `'b=1'`.
 * Replace columns with other columns that has identical values:
- Example: `<code>WHERE</code>` `<code>a=b</code>` and `<code>a=c</code>` may be treated
- as `<code>'WHERE a=b and a=c and b=c'</code>`.
+ Example: `WHERE` `a=b` and `a=c` may be treated
+ as `'WHERE a=b and a=c and b=c'`.
 * Add extra conditions to detect impossible row conditions earlier. This
- happens mainly with `<code>OUTER JOIN</code>` where we in some cases add detection
- of `<code>NULL</code>` values in the `<code>WHERE</code>` (Part of '`<code>Not exists</code>`' optimization).
- This can cause an unexpected '`<code>Using where</code>`' in the Extra column.
+ happens mainly with `OUTER JOIN` where we in some cases add detection
+ of `NULL` values in the `WHERE` (Part of '`Not exists`' optimization).
+ This can cause an unexpected '`Using where`' in the Extra column.
 * For each table level we remove expressions that have already been tested when
- we read the previous row. Example: When joining tables `<code>t1</code>` with `<code>t2</code>`
- using the following `<code>WHERE 't1.a=1 and t1.a=t2.b'</code>`, we don't have to
- test `<code>'t1.a=1'</code>` when checking rows in `<code>t2</code>` as we already know that this
+ we read the previous row. Example: When joining tables `t1` with `t2`
+ using the following `WHERE 't1.a=1 and t1.a=t2.b'`, we don't have to
+ test `'t1.a=1'` when checking rows in `t2` as we already know that this
  expression is true.
 
 
@@ -200,16 +200,16 @@ The optimization phase can do the following changes to the `<code>WHERE</code>` 
 ### EXPLAIN EXTENDED
 
 
-The `<code>EXTENDED</code>` keyword adds another column, *filtered*, to the output. This is a percentage estimate of the table rows that will be filtered by the condition.
+The `EXTENDED` keyword adds another column, *filtered*, to the output. This is a percentage estimate of the table rows that will be filtered by the condition.
 
 
-An `<code>EXPLAIN EXTENDED</code>` will always throw a warning, as it adds extra *Message* information to a subsequent `<code>[SHOW WARNINGS](../show/show-warnings.md)</code>` statement. This includes what the `<code>SELECT</code>` query would look like after optimizing and rewriting rules are applied and how the optimizer qualifies columns and tables.
+An `EXPLAIN EXTENDED` will always throw a warning, as it adds extra *Message* information to a subsequent `[SHOW WARNINGS](../show/show-warnings.md)` statement. This includes what the `SELECT` query would look like after optimizing and rewriting rules are applied and how the optimizer qualifies columns and tables.
 
 
 ## Examples
 
 
-As synonym for `<code>DESCRIBE</code>` or `<code>SHOW COLUMNS FROM</code>`:
+As synonym for `DESCRIBE` or `SHOW COLUMNS FROM`:
 
 
 ```
@@ -225,7 +225,7 @@ DESCRIBE city;
 +------------+----------+------+-----+---------+----------------+
 ```
 
-A simple set of examples to see how `<code>EXPLAIN</code>` can identify poor index usage:
+A simple set of examples to see how `EXPLAIN` can identify poor index usage:
 
 
 ```
@@ -262,7 +262,7 @@ SHOW INDEXES FROM employees_example;
 +-------------------+------------+---------------+--------------+---------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
 ```
 
-`<code>SELECT</code>` on a primary key:
+`SELECT` on a primary key:
 
 
 ```
@@ -303,7 +303,7 @@ SHOW EXPLAIN FOR 1;
 1 row in set, 1 warning (0.00 sec)
 ```
 
-### Example of `<code class="highlight fixed" style="white-space:pre-wrap">ref_or_null</code>` Optimization
+### Example of `ref_or_null` Optimization
 
 
 ```
@@ -311,7 +311,7 @@ SELECT * FROM table_name
   WHERE key_column=expr OR key_column IS NULL;
 ```
 
-`<code class="highlight fixed" style="white-space:pre-wrap">ref_or_null</code>` is something that often happens when you use subqueries with `<code class="highlight fixed" style="white-space:pre-wrap">NOT IN</code>` as then one has to do an extra check for `<code>NULL</code>` values if the first value didn't have a matching row.
+`ref_or_null` is something that often happens when you use subqueries with `NOT IN` as then one has to do an extra check for `NULL` values if the first value didn't have a matching row.
 
 
 ## See Also

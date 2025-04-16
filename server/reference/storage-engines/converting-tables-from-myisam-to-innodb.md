@@ -6,7 +6,7 @@
 
 
 You have decided to change one or more tables from [MyISAM](myisam-storage-engine/myisam-system-variables.md) to [InnoDB](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md). That should be
-as simple as `<code>ALTER TABLE foo ENGINE=InnoDB</code>`. But you have heard that there might
+as simple as `ALTER TABLE foo ENGINE=InnoDB`. But you have heard that there might
 be some subtle issues.
 
 
@@ -129,7 +129,7 @@ UNIQUE(id)
 *Recommendation.* Keep the PRIMARY KEY short. If you have Secondary keys,
 remember that they include the fields of the PK. A long PK would make the
 Secondary keys bulky. Well, maybe not — if the is a
-lot of overlap in fields. Example: `<code>PRIMARY KEY(a,b,c), INDEX(c,b,a)</code>`
+lot of overlap in fields. Example: `PRIMARY KEY(a,b,c), INDEX(c,b,a)`
 — no extra bulk.
 
 
@@ -172,8 +172,8 @@ ERROR 1071 (42000): Specified key was too long; max key length is 767 bytes
 ```
 
 *Fact.* The PRIMARY KEY is included in the data. Hence, SHOW TABLE STATUS
-will show and `<code>Index_length</code>` of 0 bytes (or 16KB) for a table with no
-secondary indexes. Otherwise, `<code>Index_length</code>` is the total size for the
+will show and `Index_length` of 0 bytes (or 16KB) for a table with no
+secondary indexes. Otherwise, `Index_length` is the total size for the
 secondary keys.
 
 
@@ -224,7 +224,7 @@ id but COMMITs before the first finishes.
 
 
 *Same as MyISAM.* "Prefix" indexing is usually bad in both InnoDB and
-MyISAM. Example: `<code>INDEX(foo(30))</code>`
+MyISAM. Example: `INDEX(foo(30))`
 
 
 ## Non-INDEX Issues

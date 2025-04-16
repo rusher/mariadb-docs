@@ -4,7 +4,7 @@
 ## Description
 
 
-The `<code>setup_objects</code>` table determines whether objects are monitored by the performance schema or not. By default limited to 100 rows, this can be changed by setting the [performance_schema_setup_objects_size](../performance-schema-system-variables.md#performance_schema_setup_objects_size) system variable when the server starts.
+The `setup_objects` table determines whether objects are monitored by the performance schema or not. By default limited to 100 rows, this can be changed by setting the [performance_schema_setup_objects_size](../performance-schema-system-variables.md#performance_schema_setup_objects_size) system variable when the server starts.
 
 
 It contains the following columns:
@@ -22,8 +22,8 @@ It contains the following columns:
 
 
 
-When the Performance Schema looks for matches in the `<code>setup_objects</code>`, there may be more than one row matching, with different `<code>ENABLED</code>` and `<code>TIMED</code>` values. It looks for the most specific matches first, that is, it will first look for the specific database and table name combination, then the specific database, only then falling back to a wildcard for both.
+When the Performance Schema looks for matches in the `setup_objects`, there may be more than one row matching, with different `ENABLED` and `TIMED` values. It looks for the most specific matches first, that is, it will first look for the specific database and table name combination, then the specific database, only then falling back to a wildcard for both.
 
 
-Rows can be added or removed from the table, while for existing rows, only the `<code>TIMED</code>` and `<code>ENABLED</code>` columns can be updated. By default, all tables except those in the `<code>performance_schema</code>`, `<code>information_schema</code>` and `<code>mysql</code>` databases are instrumented.
+Rows can be added or removed from the table, while for existing rows, only the `TIMED` and `ENABLED` columns can be updated. By default, all tables except those in the `performance_schema`, `information_schema` and `mysql` databases are instrumented.
 

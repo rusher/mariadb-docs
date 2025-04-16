@@ -18,7 +18,7 @@ MariaDB uses int16 for indexes, which gives 15 bits to store the value, rather t
 ## Creating
 
 
-Vectors can be defined using `<code>VECTOR INDEX</code>` for the index definition, and using the [VECTOR data type](vector-functions/vector-functions-vec_distance.md) in the [CREATE TABLE](create-table-with-vectors.md) statement.
+Vectors can be defined using `VECTOR INDEX` for the index definition, and using the [VECTOR data type](vector-functions/vector-functions-vec_distance.md) in the [CREATE TABLE](create-table-with-vectors.md) statement.
 
 
 ```
@@ -29,7 +29,7 @@ CREATE TABLE v (
 );
 ```
 
-The distance function used to build the vector index can be `<code>euclidean</code>` (the default), or `<code>cosine</code>`. An additional option, `<code>M</code>`, can also be used to configure the vector index. Larger values mean slower SELECTs and INSERTs, larger index size and higher memory consumption but more accurate results. The valid range is from 3 to 200.
+The distance function used to build the vector index can be `euclidean` (the default), or `cosine`. An additional option, `M`, can also be used to configure the vector index. Larger values mean slower SELECTs and INSERTs, larger index size and higher memory consumption but more accurate results. The valid range is from 3 to 200.
 
 
 ```
@@ -60,7 +60,7 @@ INSERT INTO v VALUES
      (10,x'6ca1d43e9df91b3fe580da3e1c247d3f147cf33e');
 ```
 
-Alternatively one can use `<code>VEC_FromText()</code>` function:
+Alternatively one can use `VEC_FromText()` function:
 
 
 ```
@@ -80,7 +80,7 @@ INSERT INTO v VALUES
 ## Querying
 
 
-For vector indexes built with the `<code>euclidean</code>` function, [VEC_DISTANCE_EUCLIDEAN](vector-functions/vec_distance_euclidean.md) can be used. It calculates a Euclidean (L2) distance between two points.
+For vector indexes built with the `euclidean` function, [VEC_DISTANCE_EUCLIDEAN](vector-functions/vec_distance_euclidean.md) can be used. It calculates a Euclidean (L2) distance between two points.
 
 
 ```
@@ -116,7 +116,7 @@ SELECT id FROM v
 +----+
 ```
 
-For vector indexes built with the `<code>cosine</code>` function, [VEC_DISTANCE_COSINE](vector-functions/vec_distance_cosine.md) can be used. It calculates a [Cosine distance](https://en.wikipedia.org/wiki/Cosine_similarity#Cosine_distance) between two vectors
+For vector indexes built with the `cosine` function, [VEC_DISTANCE_COSINE](vector-functions/vec_distance_cosine.md) can be used. It calculates a [Cosine distance](https://en.wikipedia.org/wiki/Cosine_similarity#Cosine_distance) between two vectors
 
 
 ```

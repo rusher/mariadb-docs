@@ -26,7 +26,7 @@ This document describes the version 1 of the MaxScale REST API.
 
 
 Although JSON does not define a syntax for comments, some of the JSON examples
-have C-style inline comments in them. These comments use `<code>//</code>` to mark the start
+have C-style inline comments in them. These comments use `//` to mark the start
 of the comment and extend to the end of the current line.
 
 
@@ -42,7 +42,7 @@ section of the configuration guide for more details on how to configure the REST
 
 The MaxScale REST API uses [HTTP Basic Access](https://tools.ietf.org/html/rfc2617#section-2)
 authentication with the MaxScale administrative interface users. The default
-user is `<code>admin:mariadb</code>`, the same as the MaxAdmin network user.
+user is `admin:mariadb`, the same as the MaxAdmin network user.
 
 
 It is highly recommended to enable HTTPS on the MaxScale REST API to make the
@@ -74,15 +74,15 @@ the [JSON API](https://jsonapi.org/format/) specification.
 
 
 In addition to the named resources, the REST API will respond with a HTTP 200 OK
-response to GET requests on the root resource (`<code>/</code>`) as well as the namespace
-root resource (`<code>/v1/</code>`). These can be used for HTTP health checks to determine
+response to GET requests on the root resource (`/`) as well as the namespace
+root resource (`/v1/`). These can be used for HTTP health checks to determine
 whether MaxScale is running.
 
 
 ## API Versioning
 
 
-All of the current resources are in the `<code>/v1/</code>` namespace of the MaxScale REST
+All of the current resources are in the `/v1/` namespace of the MaxScale REST
 API. Further additions to the namespace can be added that do not break backwards
 compatibility of any existing resources. What this means in practice is that:
 
@@ -114,21 +114,21 @@ The following lists the resources and the types of links each resource can have
 in addition to the *self* link.
 
 
-* `<code>services</code>` - Service resource
-* `<code>servers</code>`
+* `services` - Service resource
+* `servers`
 List of servers used by the service
-* `<code>filters</code>`
+* `filters`
 List of filters used by the service
-* `<code>monitors</code>` - Monitor resource
-* `<code>servers</code>`
+* `monitors` - Monitor resource
+* `servers`
 List of servers used by the monitor
-* `<code>filters</code>` - Filter resource
-* `<code>services</code>`
+* `filters` - Filter resource
+* `services`
 List of services that use this filter
-* `<code>servers</code>` - Server resource
-* `<code>services</code>`
+* `servers` - Server resource
+* `services`
 List of services that use this server
-* `<code>monitors</code>`
+* `monitors`
 List of monitors that use this server
 
 
@@ -139,12 +139,12 @@ All the resources that return JSON content also support the following
 parameters.
 
 
-* `<code>pretty</code>`
+* `pretty`
 * Pretty-print output.
-If this parameter is set to `<code>true</code>` then the returned objects are formatted
-in a more human readable format. If the parameter is set to `<code>false</code>` then the
+If this parameter is set to `true` then the returned objects are formatted
+in a more human readable format. If the parameter is set to `false` then the
 returned objects are formatted in a compact format. All resources support
-this parameter. The default value for this parameter is `<code>true</code>`.
+this parameter. The default value for this parameter is `true`.
 
 
 ## HTTP Headers
@@ -163,7 +163,7 @@ by this API.
 
 Credentials for authentication. This header should consist of a HTTP Basic
 Access authentication type payload which is the base64 encoded value of the
-username and password joined by a colon e.g. `<code>Base64("maxuser:maxpwd")</code>`. The
+username and password joined by a colon e.g. `Base64("maxuser:maxpwd")`. The
 REST API uses the same users as the MaxAdmin network interface. For more details
 about MaxScale administrative users, refer to the
 [MaxAdmin](../maxscale-23-reference/mariadb-maxscale-23-maxadmin-admin-interface.md) documentation.
@@ -172,9 +172,9 @@ about MaxScale administrative users, refer to the
 #### Content-Type
 
 
-All PUT and POST requests must use the `<code>Content-Type: application/json</code>` media
+All PUT and POST requests must use the `Content-Type: application/json` media
 type and the request body must be a complete and valid JSON representation of a
-resource. All PATCH requests must use the `<code>Content-Type: application/json</code>` media
+resource. All PATCH requests must use the `Content-Type: application/json` media
 type and the request body must be a JSON document containing a partial
 definition of the modified resource.
 
@@ -193,7 +193,7 @@ server. This field should be used with PATCH requests to prevent concurrent
 updates to the same resource.
 
 
-The value of this header must be a value from the `<code>ETag</code>` header retrieved from
+The value of this header must be a value from the `ETag` header retrieved from
 the same resource at an earlier point in time.
 
 
@@ -217,7 +217,7 @@ the content has changed the server responds with a 200 status code and the
 requested resource.
 
 
-The value of this header must be a value from the `<code>ETag</code>` header retrieved from
+The value of this header must be a value from the `ETag` header retrieved from
 the same resource at an earlier point in time.
 
 
@@ -236,9 +236,9 @@ The value of this header must be a date value in the
 
 
 Some clients only support GET and PUT requests. By providing the string value of
-the intended method in the `<code>X-HTTP-Method-Override</code>` header, a client can, for
+the intended method in the `X-HTTP-Method-Override` header, a client can, for
 example, perform a POST, PATCH or DELETE request with the PUT method
-(e.g. `<code>X-HTTP-Method-Override: PATCH</code>`).
+(e.g. `X-HTTP-Method-Override: PATCH`).
 
 
 If this header is defined in the request, the current method of the request is
@@ -253,14 +253,14 @@ must be one of the methods that the requested resource supports.
 
 
 All resources return the Allow header with the supported HTTP methods. For
-example the resource `<code>/services</code>` will always return the `<code>Accept: GET, PATCH, PUT</code>`
+example the resource `/services` will always return the `Accept: GET, PATCH, PUT`
 header.
 
 
 #### Accept-Patch
 
 
-All PATCH capable resources return the `<code>Accept-Patch: application/json-patch</code>`
+All PATCH capable resources return the `Accept-Patch: application/json-patch`
 header.
 
 
@@ -280,8 +280,8 @@ an internal MaxScale event (e.g. server changing state or statistics being
 updated) causes a change.
 
 
-When the client sends the `<code>If-Match</code>` or `<code>If-None-Match</code>` header, the provided
-value should be the value of the `<code>ETag</code>` header of an earlier GET.
+When the client sends the `If-Match` or `If-None-Match` header, the provided
+value should be the value of the `ETag` header of an earlier GET.
 
 
 #### Last-Modified
@@ -294,14 +294,14 @@ The date when the resource was last modified in "HTTP-date" format.
 
 
 If an out of date resource location is requested, a HTTP return code of 3XX with
-the `<code>Location</code>` header is returned. The value of the header contains the new
+the `Location` header is returned. The value of the header contains the new
 location of the requested resource as a relative URI.
 
 
 #### WWW-Authenticate
 
 
-The requested authentication method. For example, `<code>WWW-Authenticate: Basic</code>`
+The requested authentication method. For example, `WWW-Authenticate: Basic`
 would require basic HTTP authentication.
 
 
@@ -411,7 +411,7 @@ contains a more detailed version of the error message.
 * The resource that is being accessed is locked.
 * 428 Precondition Required
 * The origin server requires the request to be conditional. This error code is
- returned when none of the `<code>Modified-Since</code>` or `<code>Match</code>` type headers are used.
+ returned when none of the `Modified-Since` or `Match` type headers are used.
 * 431 Request Header Fields Too Large
 * The server is unwilling to process the request because either an individual
  header field, or all the header fields collectively, are too large.

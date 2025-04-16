@@ -50,24 +50,24 @@ CREATE TABLE IF NOT EXISTS my_table (
 
 
 
-The payload of the message is inserted into the `<code>data</code>` field from which the `<code>id</code>`
+The payload of the message is inserted into the `data` field from which the `id`
 field is calculated. The payload must be a valid JSON object and it must either
-contain a unique `<code>_id</code>` field or it must not exist or the value must be a JSON
-null. This is similar to the MongoDB document format where the `<code>_id</code>` field is
+contain a unique `_id` field or it must not exist or the value must be a JSON
+null. This is similar to the MongoDB document format where the `_id` field is
 the primary key of the document collection.
 
 
 If a message is read from Kafka and the insertion into the table fails due to a
 violation of one of the constraints, the message is ignored. Similarly, messages
-with duplicate `<code>_id</code>` value are also ignored: this is done to avoid inserting the
+with duplicate `_id` value are also ignored: this is done to avoid inserting the
 same document multiple times whenever the connection to either Kafka or MariaDB
 is lost.
 
 
 The limitations on the data can be removed by either creating the table before
-the KafkaImporter is started, in which case the `<code>CREATE TABLE IF NOT EXISTS</code>`
+the KafkaImporter is started, in which case the `CREATE TABLE IF NOT EXISTS`
 does nothing, or by altering the structure of the existing table. The minimum
-requirement that must be met is that the table contains the `<code>data</code>` field to
+requirement that must be met is that the table contains the `data` field to
 which string values can be inserted into.
 
 
@@ -78,8 +78,8 @@ MariaDB server where the data is to be inserted.
 
 
 In MaxScale versions 21.06.18, 22.08.15, 23.02.12, 23.08.8, 24.02.4 and 24.08.2
-the `<code>_id</code>` field is not required to be present. Older versions of MaxScale used
-the following SQL where the `<code>_id</code>` field was mandatory:
+the `_id` field is not required to be present. Older versions of MaxScale used
+the following SQL where the `_id` field was mandatory:
 
 
 
@@ -97,14 +97,14 @@ CREATE TABLE IF NOT EXISTS my_table (
 ### Required Grants
 
 
-The user defined by the `<code>user</code>` parameter of the service must have `<code>INSERT</code>` and
-`<code>CREATE</code>` privileges on all tables that are created.
+The user defined by the `user` parameter of the service must have `INSERT` and
+`CREATE` privileges on all tables that are created.
 
 
 ## Parameters
 
 
-### `<code>bootstrap_servers</code>`
+### `bootstrap_servers`
 
 
 * Type: string
@@ -112,10 +112,10 @@ The user defined by the `<code>user</code>` parameter of the service must have `
 * Dynamic: Yes
 
 
-The list of Kafka brokers as a CSV list in `<code>host:port</code>` format.
+The list of Kafka brokers as a CSV list in `host:port` format.
 
 
-### `<code>topics</code>`
+### `topics`
 
 
 * Type: stringlist
@@ -126,13 +126,13 @@ The list of Kafka brokers as a CSV list in `<code>host:port</code>` format.
 The comma separated list of topics to subscribe to.
 
 
-### `<code>batch_size</code>`
+### `batch_size`
 
 
 * Type: count
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>100</code>`
+* Default: `100`
 
 
 Maximum number of uncommitted records. The KafkaImporter will buffer records
@@ -141,105 +141,105 @@ by this parameter) or when the KafkaImporter goes idle. Any uncommitted records
 will be read again if a reconnection to either Kafka or MariaDB occurs.
 
 
-### `<code>kafka_sasl_mechanism</code>`
+### `kafka_sasl_mechanism`
 
 
 * Type: [enum](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>PLAIN</code>`, `<code>SCRAM-SHA-256</code>`, `<code>SCRAM-SHA-512</code>`
-* Default: `<code>PLAIN</code>`
+* Values: `PLAIN`, `SCRAM-SHA-256`, `SCRAM-SHA-512`
+* Default: `PLAIN`
 
 
 SASL mechanism to use. The Kafka broker must be configured with the same
 authentication scheme.
 
 
-### `<code>kafka_sasl_user</code>`
+### `kafka_sasl_user`
 
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 SASL username used for authentication. If this parameter is defined,
-`<code>kafka_sasl_password</code>` must also be provided.
+`kafka_sasl_password` must also be provided.
 
 
-### `<code>kafka_sasl_password</code>`
+### `kafka_sasl_password`
 
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
-SASL password for the user. If this parameter is defined, `<code>kafka_sasl_user</code>` must
+SASL password for the user. If this parameter is defined, `kafka_sasl_user` must
 also be provided.
 
 
-### `<code>kafka_ssl</code>`
+### `kafka_ssl`
 
 
 * Type: [boolean](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 Enable SSL for Kafka connections.
 
 
-### `<code>kafka_ssl_ca</code>`
+### `kafka_ssl_ca`
 
 
 * Type: path
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 SSL Certificate Authority file in PEM format. If this parameter is not
 defined, the system default CA certificate is used.
 
 
-### `<code>kafka_ssl_cert</code>`
+### `kafka_ssl_cert`
 
 
 * Type: path
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 SSL public certificate file in PEM format. If this parameter is defined,
-`<code>kafka_ssl_key</code>` must also be provided.
+`kafka_ssl_key` must also be provided.
 
 
-### `<code>kafka_ssl_key</code>`
+### `kafka_ssl_key`
 
 
 * Type: path
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 SSL private key file in PEM format. If this parameter is defined,
-`<code>kafka_ssl_cert</code>` must also be provided.
+`kafka_ssl_cert` must also be provided.
 
 
-### `<code>table_name_in</code>`
+### `table_name_in`
 
 
 * Type: [enum](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>topic</code>`, `<code>key</code>`
-* Default: `<code>topic</code>`
+* Values: `topic`, `key`
+* Default: `topic`
 
 
 The Kafka message part that is used to locate the table to insert the data into.
@@ -248,16 +248,16 @@ The Kafka message part that is used to locate the table to insert the data into.
 Enumeration Values:
 
 
-* `<code>topic</code>`: The topic named is used as the fully qualified table name.
-* `<code>key</code>`: The message key is used as the fully qualified table name. If the Kafka
+* `topic`: The topic named is used as the fully qualified table name.
+* `key`: The message key is used as the fully qualified table name. If the Kafka
  message does not have a key, the message is ignored.
 
 
-For example, all messages with a fully qualified table name of `<code>my_db.my_table</code>`
-will be inserted into the table `<code>my_table</code>` located in the `<code>my_db</code>` database. If
+For example, all messages with a fully qualified table name of `my_db.my_table`
+will be inserted into the table `my_table` located in the `my_db` database. If
 the table or database names have special characters that must be escaped to make
 them valid identifiers, the name must also contain those escape characters. For
-example, to insert into a table named `<code>my table</code>` in the database `<code>my database</code>`,
+example, to insert into a table named `my table` in the database `my database`,
 the name would be:
 
 
@@ -268,13 +268,13 @@ the name would be:
 
 
 
-### `<code>timeout</code>`
+### `timeout`
 
 
 * Type: [duration](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>5000ms</code>`
+* Default: `5000ms`
 
 
 Timeout for both Kafka and MariaDB network communication.

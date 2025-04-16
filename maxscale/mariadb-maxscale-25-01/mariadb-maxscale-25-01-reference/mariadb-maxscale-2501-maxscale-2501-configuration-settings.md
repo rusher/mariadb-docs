@@ -703,7 +703,7 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>GET</code>`, `<code>PUT</code>`, `<code>POST</code>`, `<code>PATCH</code>`, `<code>DELETE</code>`, `<code>HEAD</code>`, `<code>OPTIONS</code>`, `<code>CONNECT</code>`, `<code>TRACE</code>`
+* Values: `GET`, `PUT`, `POST`, `PATCH`, `DELETE`, `HEAD`, `OPTIONS`, `CONNECT`, `TRACE`
 * Default: No exclusions
 
 
@@ -713,7 +713,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>/var/log/maxscale/admin_audit.csv</code>`
+* Default: `/var/log/maxscale/admin_audit.csv`
 
 
 ##### [admin_auth](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -722,7 +722,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [admin_enabled](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -731,7 +731,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [admin_gui](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -740,7 +740,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [admin_host](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -749,7 +749,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>"127.0.0.1"</code>`
+* Default: `"127.0.0.1"`
 
 
 ##### [admin_jwt_algorithm](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -758,8 +758,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>auto</code>`, `<code>HS256</code>`, `<code>HS384</code>`, `<code>HS512</code>`, `<code>RS256</code>`, `<code>RS384</code>`, `<code>RS512</code>`, `<code>PS256</code>`, `<code>PS384</code>`, `<code>PS512</code>`, `<code>ES256</code>`, `<code>ES384</code>`, `<code>ES512</code>`, `<code>ED25519</code>`, `<code>ED448</code>`
-* Default: `<code>auto</code>`
+* Values: `auto`, `HS256`, `HS384`, `HS512`, `RS256`, `RS384`, `RS512`, `PS256`, `PS384`, `PS512`, `ES256`, `ES384`, `ES512`, `ED25519`, `ED448`
+* Default: `auto`
 
 
 ##### [admin_jwt_issuer](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -768,7 +768,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>maxscale</code>`
+* Default: `maxscale`
 
 
 ##### [admin_jwt_key](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -777,7 +777,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [admin_jwt_max_age](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -786,7 +786,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>24h</code>`
+* Default: `24h`
 
 
 ##### [admin_log_auth_failures](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -795,7 +795,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [admin_oidc_url](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -804,7 +804,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [admin_pam_readonly_service](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -813,7 +813,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [admin_pam_readwrite_service](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -822,7 +822,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [admin_port](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -831,7 +831,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>8989</code>`
+* Default: `8989`
 
 
 ##### [admin_readwrite_hosts](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -840,7 +840,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>%</code>`
+* Default: `%`
 
 
 ##### [admin_secure_gui](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -849,7 +849,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [admin_ssl_ca](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -858,7 +858,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [admin_ssl_cert](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -867,7 +867,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [admin_ssl_cipher](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -884,7 +884,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [admin_ssl_version](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -893,8 +893,8 @@
 * Type: [enum_mask](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>MAX</code>`, `<code>TLSv1.0</code>`, `<code>TLSv1.1</code>`, `<code>TLSv1.2</code>`, `<code>TLSv1.3</code>`, `<code>TLSv10</code>`, `<code>TLSv11</code>`, `<code>TLSv12</code>`, `<code>TLSv13</code>`
-* Default: `<code>MAX</code>`
+* Values: `MAX`, `TLSv1.0`, `TLSv1.1`, `TLSv1.2`, `TLSv1.3`, `TLSv10`, `TLSv11`, `TLSv12`, `TLSv13`
+* Default: `MAX`
 
 
 ##### [admin_verify_url](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -903,7 +903,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [auth_connect_timeout](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -912,14 +912,14 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>10s</code>`
+* Default: `10s`
 
 
 ##### [auto_tune](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 
 
 * Type: string list
-* Values: `<code>all</code>` or list of auto tunable parameters, separated by `<code>,</code>`
+* Values: `all` or list of auto tunable parameters, separated by `,`
 * Default: No
 * Mandatory: No
 * Dynamic: No
@@ -931,7 +931,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>/var/cache/maxscale</code>`
+* Default: `/var/cache/maxscale`
 
 
 ##### [config_sync_cluster](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -949,7 +949,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>mysql</code>`
+* Default: `mysql`
 
 
 ##### [config_sync_interval](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -958,7 +958,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>5s</code>`
+* Default: `5s`
 
 
 ##### [config_sync_password](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -976,7 +976,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>10s</code>`
+* Default: `10s`
 
 
 ##### [config_sync_user](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1011,7 +1011,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>/var/lib/maxscale</code>`
+* Default: `/var/lib/maxscale`
 
 
 ##### [debug](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1020,7 +1020,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [dump_last_statements](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1029,8 +1029,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>on_close</code>`, `<code>on_error</code>`, `<code>never</code>`
-* Default: `<code>never</code>`
+* Values: `on_close`, `on_error`, `never`
+* Default: `never`
 
 
 ##### [execdir](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1039,7 +1039,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>/usr/bin</code>`
+* Default: `/usr/bin`
 
 
 ##### [host_cache_size](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1055,8 +1055,8 @@
 
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Dynamic: Yes
-* Values: `<code>none</code>`, `<code>file</code>`, `<code>kmip</code>`, `<code>vault</code>`
-* Default: `<code>none</code>`
+* Values: `none`, `file`, `kmip`, `vault`
+* Default: `none`
 
 
 ##### [language](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1065,7 +1065,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>/var/lib/maxscale/</code>`
+* Default: `/var/lib/maxscale/`
 
 
 ##### [libdir](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1083,7 +1083,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [local_address](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1092,7 +1092,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [log_augmentation](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1101,7 +1101,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0</code>`
+* Default: `0`
 
 
 ##### [log_debug](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1110,7 +1110,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [log_info](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1119,7 +1119,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [log_notice](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1128,7 +1128,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [log_throttling](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1137,7 +1137,7 @@
 * Type: number, [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md), [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>10, 1000ms, 10000ms</code>`
+* Default: `10, 1000ms, 10000ms`
 
 
 ##### [log_warn_super_user](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1146,7 +1146,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [log_warning](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1155,7 +1155,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [logdir](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1164,7 +1164,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>/var/log/maxscale</code>`
+* Default: `/var/log/maxscale`
 
 
 ##### [max_auth_errors_until_block](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1173,7 +1173,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>10</code>`
+* Default: `10`
 
 
 ##### [maxlog](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1182,7 +1182,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [module_configdir](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1191,7 +1191,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>/etc/maxscale.modules.d/</code>`
+* Default: `/etc/maxscale.modules.d/`
 
 
 ##### [ms_timestamp](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1200,7 +1200,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [passive](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1209,7 +1209,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [persist_runtime_changes](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1226,7 +1226,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>/var/lib/maxscale/maxscale.cnf.d/</code>`
+* Default: `/var/lib/maxscale/maxscale.cnf.d/`
 
 
 ##### [piddir](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1235,7 +1235,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>/run/maxscale</code>`
+* Default: `/run/maxscale`
 
 
 ##### [query_classifier_cache_size](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1253,7 +1253,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>1</code>`
+* Default: `1`
 
 
 ##### [query_retry_timeout](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1262,7 +1262,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>10s</code>`
+* Default: `10s`
 
 
 ##### [rebalance_period](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1271,7 +1271,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0s</code>`
+* Default: `0s`
 
 
 ##### [rebalance_threshold](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1280,7 +1280,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>20</code>`
+* Default: `20`
 
 
 ##### [rebalance_window](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1289,7 +1289,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>10</code>`
+* Default: `10`
 
 
 ##### [retain_last_statements](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1298,7 +1298,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0</code>`
+* Default: `0`
 
 
 ##### [secretsdir](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1307,7 +1307,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [session_trace](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1316,7 +1316,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0</code>`
+* Default: `0`
 
 
 ##### [session_trace_match](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1334,7 +1334,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>/usr/share/maxscale</code>`
+* Default: `/usr/share/maxscale`
 
 
 ##### [skip_name_resolve](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1343,7 +1343,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [sql_mode](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1352,8 +1352,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>default</code>`, `<code>oracle</code>`
-* Default: `<code>default</code>`
+* Values: `default`, `oracle`
+* Default: `default`
 
 
 ##### [substitute_variables](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1362,7 +1362,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [syslog](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1371,16 +1371,16 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [threads](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 
 
-* Type: number or `<code>auto</code>`
+* Type: number or `auto`
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>auto</code>`
+* Default: `auto`
 
 
 ##### [threads_max](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1413,7 +1413,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0s</code>`
+* Default: `0s`
 
 
 ##### [users_refresh_time](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1422,7 +1422,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>30s</code>`
+* Default: `30s`
 
 
 ##### [writeq_high_water](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1431,7 +1431,7 @@
 * Type: [size](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>65536</code>`
+* Default: `65536`
 
 
 ##### [writeq_low_water](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1440,7 +1440,7 @@
 * Type: [size](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>1024</code>`
+* Default: `1024`
 
 
 #### Listener
@@ -1452,7 +1452,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>"::"</code>`
+* Default: `"::"`
 
 
 ##### [authenticator](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1461,7 +1461,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [authenticator_options](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1470,7 +1470,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [connection_init_sql_file](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1479,14 +1479,14 @@
 * Type: path
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [connection_metadata](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 
 
 * Type: stringlist
-* Default: `<code>character_set_client=auto,character_set_connection=auto,character_set_results=auto,max_allowed_packet=auto,system_time_zone=auto,time_zone=auto,tx_isolation=auto,maxscale=auto</code>`
+* Default: `character_set_client=auto,character_set_connection=auto,character_set_results=auto,max_allowed_packet=auto,system_time_zone=auto,time_zone=auto,tx_isolation=auto,maxscale=auto`
 * Dynamic: Yes
 * Mandatory: No
 
@@ -1495,9 +1495,9 @@
 
 
 * Type: number
-* Mandatory: Yes, if `<code>socket</code>` is not provided.
+* Mandatory: Yes, if `socket` is not provided.
 * Dynamic: No
-* Default: `<code>0</code>`
+* Default: `0`
 
 
 ##### [protocol](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1506,7 +1506,7 @@
 * Type: protocol
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>mariadb</code>`
+* Default: `mariadb`
 
 
 ##### [service](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1521,9 +1521,9 @@
 
 
 * Type: string
-* Mandatory: Yes, if `<code>port</code>` is not provided.
+* Mandatory: Yes, if `port` is not provided.
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [sql_mode](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1532,8 +1532,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>default</code>`, `<code>oracle</code>`
-* Default: `<code>default</code>`
+* Values: `default`, `oracle`
+* Default: `default`
 
 
 ##### [user_mapping_file](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1542,7 +1542,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 #### Server
@@ -1552,9 +1552,9 @@
 
 
 * Type: string
-* Mandatory: Yes, if `<code>socket</code>` is not provided.
+* Mandatory: Yes, if `socket` is not provided.
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [disk_space_threshold](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1572,7 +1572,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0</code>`
+* Default: `0`
 
 
 ##### [max_routing_connections](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1581,7 +1581,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0</code>`
+* Default: `0`
 
 
 ##### [monitorpw](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1608,7 +1608,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0s</code>`
+* Default: `0s`
 
 
 ##### [persistpoolmax](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1617,7 +1617,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0</code>`
+* Default: `0`
 
 
 ##### [port](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1626,7 +1626,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>3306</code>`
+* Default: `3306`
 
 
 ##### [priority](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1644,7 +1644,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [proxy_protocol](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1653,7 +1653,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [rank](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1662,8 +1662,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>primary</code>`, `<code>secondary</code>`
-* Default: `<code>primary</code>`
+* Values: `primary`, `secondary`
+* Default: `primary`
 
 
 ##### [replication_custom_options](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1678,9 +1678,9 @@
 
 
 * Type: string
-* Mandatory: Yes, if `<code>address</code>` is not provided.
+* Mandatory: Yes, if `address` is not provided.
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 #### Service
@@ -1692,7 +1692,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [cluster](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1710,7 +1710,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>300s</code>`
+* Default: `300s`
 * Auto tune: [Yes](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 
 
@@ -1720,7 +1720,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [enable_root_user](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1729,7 +1729,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [filters](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1747,7 +1747,7 @@
 * Type: boolean
 * Mandatory No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [idle_session_pool_time](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1756,7 +1756,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>-1s</code>`
+* Default: `-1s`
 
 
 ##### [log_auth_warnings](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1765,7 +1765,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [log_debug](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1774,7 +1774,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [log_info](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1783,7 +1783,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [log_notice](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1792,7 +1792,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [log_warning](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1801,7 +1801,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [max_connections](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1810,7 +1810,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0</code>`
+* Default: `0`
 
 
 ##### [max_sescmd_history](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1819,7 +1819,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>50</code>`
+* Default: `50`
 
 
 ##### [multiplex_timeout](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1828,7 +1828,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>60s</code>`
+* Default: `60s`
 
 
 ##### [net_write_timeout](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1837,7 +1837,7 @@
 * Type: [durations](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory No
 * Dynamic: Yes
-* Default: `<code>0s</code>`
+* Default: `0s`
 
 
 ##### [password](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1854,7 +1854,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [retain_last_statements](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1863,7 +1863,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>-1</code>`
+* Default: `-1`
 
 
 ##### [router](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1889,7 +1889,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [strip_db_esc](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1898,7 +1898,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [targets](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1924,7 +1924,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [user_accounts_file_usage](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1933,8 +1933,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>add_when_load_ok</code>`, `<code>file_only_always</code>`
-* Default: `<code>add_when_load_ok</code>`
+* Values: `add_when_load_ok`, `file_only_always`
+* Default: `add_when_load_ok`
 
 
 ##### [version_string](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -1952,7 +1952,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0s</code>`
+* Default: `0s`
 * Auto tune: [Yes](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 
 
@@ -1974,7 +1974,7 @@
 
 
 * Type: path
-* Default: `<code>""</code>`
+* Default: `""`
 * Dynamic: Yes
 
 
@@ -1982,7 +1982,7 @@
 
 
 * Type: string
-* Default: `<code>localhost</code>`
+* Default: `localhost`
 * Dynamic: Yes
 
 
@@ -1990,7 +1990,7 @@
 
 
 * Type: string
-* Default: `<code>secret</code>`
+* Default: `secret`
 * Dynamic: Yes
 
 
@@ -1998,7 +1998,7 @@
 
 
 * Type: integer
-* Default: `<code>8200</code>`
+* Default: `8200`
 * Dynamic: Yes
 
 
@@ -2033,7 +2033,7 @@
 
 
 * Type: path
-* Default: `<code>""</code>`
+* Default: `""`
 * Dynamic: Yes
 
 
@@ -2087,7 +2087,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [ssl_cert](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -2096,7 +2096,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [ssl_cert_verify_depth](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -2105,7 +2105,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>9</code>`
+* Default: `9`
 
 
 ##### [ssl_cipher](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -2114,7 +2114,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [ssl_crl](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -2123,7 +2123,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [ssl_key](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -2132,7 +2132,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [ssl_verify_peer_certificate](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -2141,7 +2141,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [ssl_verify_peer_host](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -2150,7 +2150,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [ssl_version](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -2159,8 +2159,8 @@
 * Type: [enum_mask](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>MAX</code>`, `<code>TLSv1.0</code>`, `<code>TLSv1.1</code>`, `<code>TLSv1.2</code>`, `<code>TLSv1.3</code>`, `<code>TLSv10</code>`, `<code>TLSv11</code>`, `<code>TLSv12</code>`, `<code>TLSv13</code>`
-* Default: `<code>MAX</code>`
+* Values: `MAX`, `TLSv1.0`, `TLSv1.1`, `TLSv1.2`, `TLSv1.3`, `TLSv10`, `TLSv11`, `TLSv12`, `TLSv13`
+* Default: `MAX`
 
 
 ## Authenticators
@@ -2178,7 +2178,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>0</code>`
+* Default: `0`
 
 
 ##### [match_host](../mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-authentication-modules.md)
@@ -2187,7 +2187,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [skip_authentication](../mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-authentication-modules.md)
@@ -2196,7 +2196,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ### [GSSAPI-Authenticator](../mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-gssapi-client-authenticator.md)
@@ -2220,7 +2220,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>mariadb/localhost.localdomain</code>`
+* Default: `mariadb/localhost.localdomain`
 
 
 ### [MySQL-Authenticator](../mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-mariadbmysql-authenticator.md)
@@ -2235,7 +2235,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ### [PAM-Authenticator](../mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-pam-authenticator.md)
@@ -2250,8 +2250,8 @@
 * Type: [enumeration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>none</code>`, `<code>mariadb</code>`
-* Default: `<code>none</code>`
+* Values: `none`, `mariadb`
+* Default: `none`
 
 
 ##### [pam_mapped_pw_file](../mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-pam-authenticator.md)
@@ -2269,8 +2269,8 @@
 * Type: [enumeration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>password</code>`, `<code>password_2FA</code>`, `<code>suid</code>`
-* Default: `<code>password</code>`
+* Values: `password`, `password_2FA`, `suid`
+* Default: `password`
 
 
 ##### [pam_use_cleartext_plugin](../mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-pam-authenticator.md)
@@ -2279,7 +2279,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ## Filters
@@ -2339,7 +2339,7 @@
 * Type: count
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0</code>`
+* Default: `0`
 
 
 ##### [global](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-consistent-critical-read-filter.md)
@@ -2348,7 +2348,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [ignore](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-consistent-critical-read-filter.md)
@@ -2357,7 +2357,7 @@
 * Type: [regex](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [match](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-consistent-critical-read-filter.md)
@@ -2366,7 +2366,7 @@
 * Type: [regex](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [options](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-consistent-critical-read-filter.md)
@@ -2375,8 +2375,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>ignorecase</code>`, `<code>case</code>`, `<code>extended</code>`
-* Default: `<code>ignorecase</code>`
+* Values: `ignorecase`, `case`, `extended`
+* Default: `ignorecase`
 
 
 ##### [time](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-consistent-critical-read-filter.md)
@@ -2385,7 +2385,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>60s</code>`
+* Default: `60s`
 
 
 ### [Cache](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2400,8 +2400,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>never</code>`, `<code>read_only_transactions</code>`, `<code>all_transactions</code>`
-* Default: `<code>all_transactions</code>`
+* Values: `never`, `read_only_transactions`, `all_transactions`
+* Default: `all_transactions`
 
 
 ##### [cached_data](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2410,8 +2410,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>shared</code>`, `<code>thread_specific</code>`
-* Default: `<code>thread_specific</code>`
+* Values: `shared`, `thread_specific`
+* Default: `thread_specific`
 
 
 ##### [clear_cache_on_parse_errors](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2420,7 +2420,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [debug](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2429,7 +2429,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0</code>`
+* Default: `0`
 
 
 ##### [enabled](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2438,7 +2438,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [hard_ttl](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2447,7 +2447,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>0s</code>` (no limit)
+* Default: `0s` (no limit)
 
 
 ##### [invalidate](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2456,8 +2456,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>never</code>`, `<code>current</code>`
-* Default: `<code>never</code>`
+* Values: `never`, `current`
+* Default: `never`
 
 
 ##### [max_count](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2466,7 +2466,7 @@
 * Type: count
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>0</code>` (no limit)
+* Default: `0` (no limit)
 
 
 ##### [max_resultset_rows](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2475,7 +2475,7 @@
 * Type: count
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>0</code>` (no limit)
+* Default: `0` (no limit)
 
 
 ##### [max_resultset_size](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2484,7 +2484,7 @@
 * Type: [size](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>0</code>` (no limit)
+* Default: `0` (no limit)
 
 
 ##### [max_size](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2493,7 +2493,7 @@
 * Type: [size](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>0</code>` (no limit)
+* Default: `0` (no limit)
 
 
 ##### [rules](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2502,7 +2502,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>` (no rules)
+* Default: `""` (no rules)
 
 
 ##### [selects](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2511,8 +2511,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>assume_cacheable</code>`, `<code>verify_cacheable</code>`
-* Default: `<code>assume_cacheable</code>`
+* Values: `assume_cacheable`, `verify_cacheable`
+* Default: `assume_cacheable`
 
 
 ##### [soft_ttl](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2521,7 +2521,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>0s</code>` (no limit)
+* Default: `0s` (no limit)
 
 
 ##### [storage](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2530,7 +2530,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>storage_inmemory</code>`
+* Default: `storage_inmemory`
 
 
 ##### [storage_options](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2548,7 +2548,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>5s</code>`
+* Default: `5s`
 
 
 ##### [users](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2557,11 +2557,11 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>mixed</code>`, `<code>isolated</code>`
-* Default: `<code>mixed</code>`
+* Values: `mixed`, `isolated`
+* Default: `mixed`
 
 
-#### `<code>storage_memcached</code>`
+#### `storage_memcached`
 
 
 ##### [max_value_size](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2576,12 +2576,12 @@
 ##### [server](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
 
 
-* Type: The Memcached server address specified as `<code>host[:port]</code>`
+* Type: The Memcached server address specified as `host[:port]`
 * Mandatory: Yes
 * Dynamic: No
 
 
-#### `<code>storage_redis</code>`
+#### `storage_redis`
 
 
 ##### [password](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2590,13 +2590,13 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [server](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
 
 
-* Type: The Redis server address specified as `<code>host[:port]</code>`
+* Type: The Redis server address specified as `host[:port]`
 * Mandatory: Yes
 * Dynamic: No
 
@@ -2607,7 +2607,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [ssl_ca](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2616,7 +2616,7 @@
 * Type: Path to existing readable file.
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [ssl_cert](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2625,7 +2625,7 @@
 * Type: Path to existing readable file.
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [ssl_key](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2634,7 +2634,7 @@
 * Type: Path to existing readable file.
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [username](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -2643,7 +2643,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ### [Comment](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-comment-filter.md)
@@ -2672,7 +2672,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>s3.amazonaws.com</code>`
+* Default: `s3.amazonaws.com`
 
 
 ##### [key](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-ldi-filter.md)
@@ -2717,7 +2717,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>us-east-1</code>`
+* Default: `us-east-1`
 
 
 ##### [secret](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-ldi-filter.md)
@@ -2749,7 +2749,7 @@
 * Type: [bool](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [check_unions](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-masking.md)
@@ -2758,7 +2758,7 @@
 * Type: [bool](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [check_user_variables](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-masking.md)
@@ -2767,7 +2767,7 @@
 * Type: [bool](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [large_payload](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-masking.md)
@@ -2776,8 +2776,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>ignore</code>`, `<code>abort</code>`
-* Default: `<code>abort</code>`
+* Values: `ignore`, `abort`
+* Default: `abort`
 
 
 ##### [prevent_function_usage](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-masking.md)
@@ -2786,7 +2786,7 @@
 * Type: [bool](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [require_fully_parsed](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-masking.md)
@@ -2795,7 +2795,7 @@
 * Type: [bool](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [rules](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-masking.md)
@@ -2812,7 +2812,7 @@
 * Type: [bool](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [warn_type_mismatch](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-masking.md)
@@ -2821,8 +2821,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>never</code>`, `<code>always</code>`
-* Default: `<code>never</code>`
+* Values: `never`, `always`
+* Default: `never`
 
 
 ### [Maxrows](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-maxrows.md)
@@ -2837,7 +2837,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0</code>`
+* Default: `0`
 
 
 ##### [max_resultset_return](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-maxrows.md)
@@ -2846,8 +2846,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>empty</code>`, `<code>error</code>`, `<code>ok</code>`
-* Default: `<code>empty</code>`
+* Values: `empty`, `error`, `ok`
+* Default: `empty`
 
 
 ##### [max_resultset_rows](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-maxrows.md)
@@ -2865,7 +2865,7 @@
 * Type: [size](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>64Ki</code>`
+* Default: `64Ki`
 
 
 ### [Named-Server-Filter](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-named-server-filter.md)
@@ -2889,8 +2889,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>ignorecase</code>`, `<code>case</code>`, `<code>extended</code>`
-* Default: `<code>ignorecase</code>`
+* Values: `ignorecase`, `case`, `extended`
+* Default: `ignorecase`
 
 
 ##### [source](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-named-server-filter.md)
@@ -2932,7 +2932,7 @@
 * Type: [bool](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [duration_unit](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-query-log-all-filter.md)
@@ -2941,7 +2941,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>milliseconds</code>`
+* Default: `milliseconds`
 
 
 ##### [exclude](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-query-log-all-filter.md)
@@ -2967,7 +2967,7 @@
 * Type: [bool](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [log_data](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-query-log-all-filter.md)
@@ -2976,8 +2976,8 @@
 * Type: [enum_mask](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>service</code>`, `<code>session</code>`, `<code>date</code>`, `<code>user</code>`, `<code>reply_time</code>`, `<code>total_reply_time</code>`, `<code>query</code>`, `<code>default_db</code>`, `<code>num_rows</code>`, `<code>reply_size</code>`, `<code>transaction</code>`, `<code>transaction_time</code>`, `<code>num_warnings</code>`, `<code>error_msg</code>`
-* Default: `<code>date, user, query</code>`
+* Values: `service`, `session`, `date`, `user`, `reply_time`, `total_reply_time`, `query`, `default_db`, `num_rows`, `reply_size`, `transaction`, `transaction_time`, `num_warnings`, `error_msg`
+* Default: `date, user, query`
 
 
 ##### [log_type](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-query-log-all-filter.md)
@@ -2986,8 +2986,8 @@
 * Type: [enum_mask](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>session</code>`, `<code>unified</code>`, `<code>stdout</code>`
-* Default: `<code>session</code>`
+* Values: `session`, `unified`, `stdout`
+* Default: `session`
 
 
 ##### [match](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-query-log-all-filter.md)
@@ -3005,7 +3005,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>" "</code>`
+* Default: `" "`
 
 
 ##### [options](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-query-log-all-filter.md)
@@ -3014,8 +3014,8 @@
 * Type: [enum_mask](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>case</code>`, `<code>ignorecase</code>`, `<code>extended</code>`
-* Default: `<code>case</code>`
+* Values: `case`, `ignorecase`, `extended`
+* Default: `case`
 
 
 ##### [separator](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-query-log-all-filter.md)
@@ -3024,7 +3024,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>","</code>`
+* Default: `","`
 
 
 ##### [source](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-query-log-all-filter.md)
@@ -3033,7 +3033,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [source_exclude](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-query-log-all-filter.md)
@@ -3058,7 +3058,7 @@
 * Type: [bool](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [user](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-query-log-all-filter.md)
@@ -3067,7 +3067,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [user_exclude](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-query-log-all-filter.md)
@@ -3124,8 +3124,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>ignorecase</code>`, `<code>case</code>`, `<code>extended</code>`
-* Default: `<code>ignorecase</code>`
+* Values: `ignorecase`, `case`, `extended`
+* Default: `ignorecase`
 
 
 ##### [replace](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-regex-filter.md)
@@ -3185,7 +3185,7 @@
 * Mandatory: No
 * Dynamic: Yes
 * Default: Native
-* Values: `<code>Native</code>`, `<code>ECMAScript</code>`, `<code>Posix</code>`, `<code>EPosix</code>`, `<code>Awk</code>`, `<code>Grep</code>`, `<code>EGrep</code>`
+* Values: `Native`, `ECMAScript`, `Posix`, `EPosix`, `Awk`, `Grep`, `EGrep`
 
 
 ##### [template_file](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-rewrite-filter.md)
@@ -3225,7 +3225,7 @@
 
 
 * Type: string
-* Values: `<code>Native</code>`, `<code>ECMAScript</code>`, `<code>Posix</code>`, `<code>EPosix</code>`, `<code>Awk</code>`, `<code>Grep</code>`, `<code>EGrep</code>`
+* Values: `Native`, `ECMAScript`, `Posix`, `EPosix`, `Awk`, `Grep`, `EGrep`
 * Default: From maxscale.cnf
 
 
@@ -3266,8 +3266,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>ignorecase</code>`, `<code>case</code>`, `<code>extended</code>`
-* Default: `<code>ignorecase</code>`
+* Values: `ignorecase`, `case`, `extended`
+* Default: `ignorecase`
 
 
 ##### [service](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-tee-filter.md)
@@ -3294,7 +3294,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [target](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-tee-filter.md)
@@ -3367,7 +3367,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>10</code>`
+* Default: `10`
 
 
 ##### [exclude](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-top-filter.md)
@@ -3402,8 +3402,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>ignorecase</code>`, `<code>case</code>`, `<code>extended</code>`
-* Default: `<code>case</code>`
+* Values: `ignorecase`, `case`, `extended`
+* Default: `case`
 
 
 ##### [source](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-top-filter.md)
@@ -3535,7 +3535,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [cooperative_monitoring_locks](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3544,8 +3544,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>none</code>`, `<code>majority_of_all</code>`, `<code>majority_of_running</code>`
-* Default: `<code>none</code>`
+* Values: `none`, `majority_of_all`, `majority_of_running`
+* Default: `none`
 
 
 ##### [enforce_read_only_servers](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3554,7 +3554,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [enforce_read_only_slaves](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3563,7 +3563,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [enforce_writable_master](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3572,7 +3572,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [failcount](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3581,7 +3581,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>5</code>`
+* Default: `5`
 
 
 ##### [maintenance_on_low_disk_space](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3590,7 +3590,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [master_conditions](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3599,8 +3599,8 @@
 * Type: [enum_mask](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>none</code>`, `<code>connecting_slave</code>`, `<code>connected_slave</code>`, `<code>running_slave</code>`, `<code>primary_monitor_master</code>`, `<code>disk_space_ok</code>`
-* Default: `<code>primary_monitor_master, disk_space_ok</code>`
+* Values: `none`, `connecting_slave`, `connected_slave`, `running_slave`, `primary_monitor_master`, `disk_space_ok`
+* Default: `primary_monitor_master, disk_space_ok`
 
 
 ##### [script_max_replication_lag](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3609,7 +3609,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>-1</code>`
+* Default: `-1`
 
 
 ##### [slave_conditions](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3618,8 +3618,8 @@
 * Type: [enum_mask](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>none</code>`, `<code>linked_master</code>`, `<code>running_master</code>`, `<code>writable_master</code>`, `<code>primary_monitor_master</code>`
-* Default: `<code>none</code>`
+* Values: `none`, `linked_master`, `running_master`, `writable_master`, `primary_monitor_master`
+* Default: `none`
 
 
 #### Settings for Backup operations
@@ -3649,7 +3649,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>4444</code>`
+* Default: `4444`
 
 
 ##### [ssh_check_host_key](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3658,7 +3658,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [ssh_keyfile](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3676,7 +3676,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>22</code>`
+* Default: `22`
 
 
 ##### [ssh_timeout](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3685,7 +3685,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>10s</code>`
+* Default: `10s`
 
 
 ##### [ssh_user](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3706,8 +3706,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>true</code>`, `<code>on</code>`, `<code>yes</code>`, `<code>1</code>`, `<code>false</code>`, `<code>off</code>`, `<code>no</code>`, `<code>0</code>`, `<code>safe</code>`
-* Default: `<code>false</code>`
+* Values: `true`, `on`, `yes`, `1`, `false`, `off`, `no`, `0`, `safe`
+* Default: `false`
 
 
 ##### [auto_rejoin](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3716,7 +3716,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [demotion_sql_file](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3734,7 +3734,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [failover_timeout](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3743,7 +3743,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>90s</code>`
+* Default: `90s`
 
 
 ##### [handle_events](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3752,7 +3752,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [master_failure_timeout](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3761,7 +3761,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>10s</code>`
+* Default: `10s`
 
 
 ##### [promotion_sql_file](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3779,7 +3779,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [replication_password](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3815,7 +3815,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [switchover_timeout](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3824,7 +3824,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>90s</code>`
+* Default: `90s`
 
 
 ##### [verify_master_failure](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
@@ -3833,7 +3833,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 #### Settings for Primary server write test
@@ -3843,8 +3843,8 @@
 
 
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
-* Default: `<code>log</code>`
-* Values: `<code>log</code>`, `<code>failover</code>`
+* Default: `log`
+* Values: `log`, `failover`
 * Dynamic: Yes
 
 
@@ -3861,7 +3861,7 @@
 
 * Type: string
 * Dynamic: Yes
-* Default: `<code>mxs.maxscale_write_test</code>`
+* Default: `mxs.maxscale_write_test`
 
 
 ### [Monitor-Common](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md)
@@ -3876,7 +3876,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>1</code>`
+* Default: `1`
 
 
 ##### [backend_connect_timeout](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md)
@@ -3885,7 +3885,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>3s</code>`
+* Default: `3s`
 
 
 ##### [backend_read_timeout](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md)
@@ -3894,7 +3894,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>3s</code>`
+* Default: `3s`
 
 
 ##### [backend_write_timeout](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md)
@@ -3903,7 +3903,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>3s</code>`
+* Default: `3s`
 
 
 ##### [disk_space_check_interval](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md)
@@ -3912,7 +3912,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0s</code>`
+* Default: `0s`
 
 
 ##### [disk_space_threshold](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md)
@@ -3930,7 +3930,7 @@
 * Type: enum
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>master_down</code>`, `<code>master_up</code>`, `<code>slave_down</code>`, `<code>slave_up</code>`, `<code>server_down</code>`, `<code>server_up</code>`, `<code>lost_master</code>`, `<code>lost_slave</code>`, `<code>new_master</code>`, `<code>new_slave</code>`
+* Values: `master_down`, `master_up`, `slave_down`, `slave_up`, `server_down`, `server_up`, `lost_master`, `lost_slave`, `new_master`, `new_slave`
 * Default: All events
 
 
@@ -3940,7 +3940,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>28800s</code>`
+* Default: `28800s`
 
 
 ##### [module](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md)
@@ -3957,7 +3957,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>2s</code>`
+* Default: `2s`
 
 
 ##### [password](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md)
@@ -3983,7 +3983,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>90s</code>`
+* Default: `90s`
 
 
 ##### [servers](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md)
@@ -4031,7 +4031,7 @@
 
 * Type: string
 * Mandatory: No
-* Default: `<code>"NoSQL"</code>`
+* Default: `"NoSQL"`
 
 
 ##### [authentication_key_id](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
@@ -4039,7 +4039,7 @@
 
 * Type: string
 * Mandatory: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [authentication_password](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
@@ -4047,7 +4047,7 @@
 
 * Type: string
 * Mandatory: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [authentication_required](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
@@ -4055,7 +4055,7 @@
 
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [authentication_shared](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
@@ -4063,14 +4063,14 @@
 
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [authentication_user](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
 
 
 * Type: string
-* Mandatory: Yes, if `<code>authentication_shared</code>` is true.
+* Mandatory: Yes, if `authentication_shared` is true.
 
 
 ##### [authorization_enabled](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
@@ -4078,7 +4078,7 @@
 
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [auto_create_databases](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
@@ -4086,7 +4086,7 @@
 
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [auto_create_tables](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
@@ -4094,7 +4094,7 @@
 
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [cursor_timeout](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
@@ -4102,7 +4102,7 @@
 
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
-* Default: `<code>60s</code>`
+* Default: `60s`
 
 
 ##### [debug](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
@@ -4110,8 +4110,8 @@
 
 * Type: [enum_mask](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
-* Values: `<code>none</code>`, `<code>in</code>`, `<code>out</code>`, `<code>back</code>`
-* Default: `<code>none</code>`
+* Values: `none`, `in`, `out`, `back`
+* Default: `none`
 
 
 ##### [host](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
@@ -4119,7 +4119,7 @@
 
 * Type: string
 * Mandatory: No
-* Default: `<code>"%"</code>`
+* Default: `"%"`
 
 
 ##### [id_length](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
@@ -4127,8 +4127,8 @@
 
 * Type: count
 * Mandatory: No
-* Range: `<code>[35, 2048]</code>`
-* *Default: `<code>35</code>`
+* Range: `[35, 2048]`
+* *Default: `35`
 
 
 ##### [internal_cache](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
@@ -4144,7 +4144,7 @@
 
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [on_unknown_command](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
@@ -4152,8 +4152,8 @@
 
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
-* Values: `<code>return_error</code>`, `<code>return_empty</code>`
-* Default: `<code>return_error</code>`
+* Values: `return_error`, `return_empty`
+* Default: `return_error`
 
 
 ##### [ordered_insert_behavior](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
@@ -4161,8 +4161,8 @@
 
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
-* Values: `<code>atomic</code>`, `<code>default</code>`
-* Default: `<code>default</code>`
+* Values: `atomic`, `default`
+* Default: `default`
 
 
 ##### [password](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
@@ -4170,7 +4170,7 @@
 
 * Type: string
 * Mandatory: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [user](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
@@ -4178,7 +4178,7 @@
 
 * Type: string
 * Mandatory: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ## Routers
@@ -4196,7 +4196,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>/var/lib/maxscale/</code>`
+* Default: `/var/lib/maxscale/`
 
 
 ##### [binlogdir](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
@@ -4205,7 +4205,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>/var/lib/maxscale/</code>`
+* Default: `/var/lib/maxscale/`
 
 
 ##### [codec](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
@@ -4214,8 +4214,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>null</code>`, `<code>deflate</code>`
-* Default: `<code>null</code>`
+* Values: `null`, `deflate`
+* Default: `null`
 
 
 ##### [cooperative_replication](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
@@ -4224,7 +4224,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [exclude](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
@@ -4233,7 +4233,7 @@
 * Type: [regex](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [filestem](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
@@ -4242,7 +4242,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>mysql-bin</code>`
+* Default: `mysql-bin`
 
 
 ##### [gtid_start_pos](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
@@ -4251,7 +4251,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [match](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
@@ -4260,7 +4260,7 @@
 * Type: [regex](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [server_id](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
@@ -4269,7 +4269,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>1234</code>`
+* Default: `1234`
 
 
 ##### [start_index](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
@@ -4278,7 +4278,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>1</code>`
+* Default: `1`
 
 
 #### Settings for Avro File
@@ -4290,7 +4290,7 @@
 * Type: [size](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>16KiB</code>`
+* Default: `16KiB`
 
 
 ##### [group_rows](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
@@ -4299,7 +4299,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>1000</code>`
+* Default: `1000`
 
 
 ##### [group_trx](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
@@ -4308,7 +4308,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>1</code>`
+* Default: `1`
 
 
 ##### [max_data_age](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
@@ -4350,8 +4350,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>none</code>`, `<code>zstandard</code>`
-* Default: `<code>none</code>`
+* Values: `none`, `zstandard`
+* Default: `none`
 
 
 ##### [datadir](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md)
@@ -4360,7 +4360,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>/var/lib/maxscale/binlogs</code>`
+* Default: `/var/lib/maxscale/binlogs`
 
 
 ##### [ddl_only](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md)
@@ -4378,8 +4378,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>AES_CBC</code>`, `<code>AES_CTR</code>`, `<code>AES_GCM</code>`
-* Default: `<code>AES_GCM</code>`
+* Values: `AES_CBC`, `AES_CTR`, `AES_GCM`
+* Default: `AES_GCM`
 
 
 ##### [encryption_key_id](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md)
@@ -4388,7 +4388,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [expiration_mode](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md)
@@ -4396,8 +4396,8 @@
 
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Dynamic: No
-* Values: `<code>purge</code>`, `<code>archive</code>`
-* Default: `<code>purge</code>`
+* Values: `purge`, `archive`
+* Default: `purge`
 
 
 ##### [expire_log_duration](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md)
@@ -4406,7 +4406,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>0s</code>`
+* Default: `0s`
 
 
 ##### [expire_log_minimum_files](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md)
@@ -4415,7 +4415,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>2</code>`
+* Default: `2`
 
 
 ##### [net_timeout](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md)
@@ -4424,7 +4424,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>10s</code>`
+* Default: `10s`
 
 
 ##### [number_of_noncompressed_files](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md)
@@ -4433,7 +4433,7 @@
 * Type: count
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>2</code>`
+* Default: `2`
 
 
 ##### [rpl_semi_sync_slave_enabled](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md)
@@ -4451,7 +4451,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [server_id](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md)
@@ -4460,7 +4460,7 @@
 * Type: count
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>1234</code>`
+* Default: `1234`
 
 
 ### [Diff](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-diff-router-for-comparing-servers.md)
@@ -4475,8 +4475,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>none</code>`, `<code>other</code>`, `both'
-* Default: `<code>both</code>`
+* Values: `none`, `other`, `both'
+* Default: `both`
 
 
 ##### [explain_entries](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-diff-router-for-comparing-servers.md)
@@ -4520,8 +4520,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>close</code>`, `<code>ignore</code>`
-* Default: `<code>ignore</code>`
+* Values: `close`, `ignore`
+* Default: `ignore`
 
 
 ##### [percentile](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-diff-router-for-comparing-servers.md)
@@ -4550,8 +4550,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>always</code>`, `<code>on_discrepancy</code>`, `<code>never</code>`
-* Default: `<code>on_discrepancy</code>`
+* Values: `always`, `on_discrepancy`, `never`
+* Default: `on_discrepancy`
 
 
 ##### [reset_replication](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-diff-router-for-comparing-servers.md)
@@ -4560,7 +4560,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [retain_faster_statements](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-diff-router-for-comparing-servers.md)
@@ -4619,7 +4619,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [enable_idempotence](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md)
@@ -4628,7 +4628,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [exclude](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md)
@@ -4637,7 +4637,7 @@
 * Type: [regex](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [gtid](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md)
@@ -4646,7 +4646,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [kafka_sasl_mechanism](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md)
@@ -4655,8 +4655,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>PLAIN</code>`, `<code>SCRAM-SHA-256</code>`, `<code>SCRAM-SHA-512</code>`
-* Default: `<code>PLAIN</code>`
+* Values: `PLAIN`, `SCRAM-SHA-256`, `SCRAM-SHA-512`
+* Default: `PLAIN`
 
 
 ##### [kafka_sasl_password](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md)
@@ -4665,7 +4665,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [kafka_sasl_user](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md)
@@ -4674,7 +4674,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [kafka_ssl](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md)
@@ -4683,7 +4683,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [kafka_ssl_ca](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md)
@@ -4692,7 +4692,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [kafka_ssl_cert](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md)
@@ -4701,7 +4701,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [kafka_ssl_key](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md)
@@ -4710,7 +4710,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [match](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md)
@@ -4719,7 +4719,7 @@
 * Type: [regex](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [read_gtid_from_kafka](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md)
@@ -4728,7 +4728,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 ##### [send_schema](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md)
@@ -4746,7 +4746,7 @@
 * Type: number
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>1234</code>`
+* Default: `1234`
 
 
 ##### [timeout](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md)
@@ -4755,7 +4755,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>10s</code>`
+* Default: `10s`
 
 
 ##### [topic](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md)
@@ -4778,7 +4778,7 @@
 * Type: count
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>100</code>`
+* Default: `100`
 
 
 ##### [bootstrap_servers](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkaimporter.md)
@@ -4793,7 +4793,7 @@
 
 
 * Type: string
-* Default: `<code>InnoDB</code>`
+* Default: `InnoDB`
 * Mandatory: No
 * Dynamic: Yes
 
@@ -4804,8 +4804,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>PLAIN</code>`, `<code>SCRAM-SHA-256</code>`, `<code>SCRAM-SHA-512</code>`
-* Default: `<code>PLAIN</code>`
+* Values: `PLAIN`, `SCRAM-SHA-256`, `SCRAM-SHA-512`
+* Default: `PLAIN`
 
 
 ##### [kafka_sasl_password](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkaimporter.md)
@@ -4814,7 +4814,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [kafka_sasl_user](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkaimporter.md)
@@ -4823,7 +4823,7 @@
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [kafka_ssl](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkaimporter.md)
@@ -4832,7 +4832,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [kafka_ssl_ca](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkaimporter.md)
@@ -4841,7 +4841,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [kafka_ssl_cert](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkaimporter.md)
@@ -4850,7 +4850,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [kafka_ssl_key](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkaimporter.md)
@@ -4859,7 +4859,7 @@
 * Type: path
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [table_name_in](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkaimporter.md)
@@ -4868,8 +4868,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>topic</code>`, `<code>key</code>`
-* Default: `<code>topic</code>`
+* Values: `topic`, `key`
+* Default: `topic`
 
 
 ##### [timeout](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkaimporter.md)
@@ -4878,7 +4878,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>5000ms</code>`
+* Default: `5000ms`
 
 
 ##### [topics](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkaimporter.md)
@@ -4901,7 +4901,7 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: Yes
 * Dynamic: Yes
-* Values: `<code>log</code>`, `<code>file</code>`, `<code>kafka</code>`
+* Values: `log`, `file`, `kafka`
 
 
 ##### [file](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-mirror.md)
@@ -4943,20 +4943,20 @@
 
 
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
-* Default: `<code>ignore</code>`
+* Default: `ignore`
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>ignore</code>`, `<code>close</code>`
+* Values: `ignore`, `close`
 
 
 ##### [report](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-mirror.md)
 
 
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
-* Default: `<code>always</code>`
+* Default: `always`
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>always</code>`, `<code>on_conflict</code>`
+* Values: `always`, `on_conflict`
 
 
 ### [ReadConnRoute](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readconnroute.md)
@@ -4989,8 +4989,8 @@
 * Type: [enum_mask](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>master</code>`, `<code>slave</code>`, `<code>synced</code>`, `<code>running</code>`
-* Default: `<code>running</code>`
+* Values: `master`, `slave`, `synced`, `running`
+* Default: `running`
 
 
 ### [ReadWriteSplit](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readwritesplit.md)
@@ -5005,8 +5005,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>none</code>`, `<code>local</code>`, `<code>global</code>`, `<code>fast</code>`, `<code>fast_global</code>`, `<code>universal</code>`, `<code>fast_universal</code>`
-* Default: `<code>none</code>`
+* Values: `none`, `local`, `global`, `fast`, `fast_global`, `universal`, `fast_universal`
+* Default: `none`
 
 
 ##### [causal_reads_timeout](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readwritesplit.md)
@@ -5060,8 +5060,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>fail_instantly</code>`, `<code>fail_on_write</code>`, `<code>error_on_write</code>`
-* Default: `<code>fail_on_write</code>` (MaxScale 23.08: `<code>fail_instantly</code>`)
+* Values: `fail_instantly`, `fail_on_write`, `error_on_write`
+* Default: `fail_on_write` (MaxScale 23.08: `fail_instantly`)
 
 
 ##### [master_reconnection](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readwritesplit.md)
@@ -5115,8 +5115,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>least_current_operations</code>`, `<code>adaptive_routing</code>`, `<code>least_behind_master</code>`, `<code>least_router_connections</code>`, `<code>least_global_connections</code>`
-* Default: `<code>least_current_operations</code>`
+* Values: `least_current_operations`, `adaptive_routing`, `least_behind_master`, `least_router_connections`, `least_global_connections`
+* Default: `least_current_operations`
 
 
 ##### [strict_multi_stmt](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readwritesplit.md)
@@ -5170,8 +5170,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>full</code>`, `<code>result_only</code>`, `<code>no_insert_id</code>`
-* Default: `<code>full</code>`
+* Values: `full`, `result_only`, `no_insert_id`
+* Default: `full`
 
 
 ##### [transaction_replay_max_size](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readwritesplit.md)
@@ -5225,8 +5225,8 @@
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>master</code>`, `<code>all</code>`
-* Default: `<code>all</code>`
+* Values: `master`, `all`
+* Default: `all`
 
 
 ### [SchemaRouter](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-schemarouter-simple-sharding-with-two-servers.md)
@@ -5250,7 +5250,7 @@
 * Type: stringlist
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [ignore_tables_regex](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-schemarouter-simple-sharding-with-two-servers.md)
@@ -5259,7 +5259,7 @@
 * Type: [regex](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 ##### [max_staleness](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-schemarouter-simple-sharding-with-two-servers.md)
@@ -5277,7 +5277,7 @@
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 ##### [refresh_interval](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-schemarouter-simple-sharding-with-two-servers.md)
@@ -5286,7 +5286,7 @@
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>300s</code>`
+* Default: `300s`
 
 
 ### [SmartRouter](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-smartrouter.md)

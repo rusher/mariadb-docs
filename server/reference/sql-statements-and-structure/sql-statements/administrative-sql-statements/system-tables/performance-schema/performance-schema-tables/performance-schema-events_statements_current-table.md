@@ -1,7 +1,7 @@
 
 # Performance Schema events_statements_current Table
 
-The `<code>events_statements_current</code>` table contains current statement events, with each row being a record of a thread and its most recent statement event.
+The `events_statements_current` table contains current statement events, with each row being a record of a thread and its most recent statement event.
 
 
 The table contains the following columns:
@@ -54,7 +54,7 @@ The table contains the following columns:
 
 
 
-It is possible to empty this table with a `<code>TRUNCATE TABLE</code>` statement.
+It is possible to empty this table with a `TRUNCATE TABLE` statement.
 
 
 The related tables, [events_statements_history](performance-schema-events_statements_history-table.md) and [events_statements_history_long](performance-schema-events_statements_history_long-table.md) derive their values from the current events table.

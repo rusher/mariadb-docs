@@ -7,10 +7,10 @@ MariaDB has a number of error messages. If the meaning is not clear, use the fol
 ## Can't lock aria control file, error 11
 
 
-`<code>[ERROR] mysqld: Can't lock aria control file '/var/lib/mysql/aria_log_control' for exclusive use, error: 11. Will retry for 30 seconds</code>`
+`[ERROR] mysqld: Can't lock aria control file '/var/lib/mysql/aria_log_control' for exclusive use, error: 11. Will retry for 30 seconds`
 
 
-The `<code>perror 11</code>` is 'Resource temporarily unavailable'. This is an indication that an operating system lock couldn't be obtained on the ariia_log_control file. This is a strong indication that an existing MariaDB server is already running on the datadir.
+The `perror 11` is 'Resource temporarily unavailable'. This is an indication that an operating system lock couldn't be obtained on the ariia_log_control file. This is a strong indication that an existing MariaDB server is already running on the datadir.
 
 
 Look at the operating system process list. Identify if the existing mysqld/mariadbd process is shutting down (look at the logs, and if its listening to new connections). MariaDB will stop accepting new SQL connections immediately once the shutdown starts.
@@ -25,10 +25,10 @@ If it completing the shutdown, take two [how-to-produce-a-full-stack-trace-for-m
 ## Can't create/write/read to file .... .. Errcode X
 
 
-`<code>[ERROR] mariadbd: Can't create/write to file '/var/run/mariadb/mariadb.pid' (Errcode: 2 "No such file or directory")</code>`.
+`[ERROR] mariadbd: Can't create/write to file '/var/run/mariadb/mariadb.pid' (Errcode: 2 "No such file or directory")`.
 
 
-The errcode can be look up with `<code>[perror](../../../../../server/clients-and-utilities/perror.md) X</code>` to return a text description of the code if not already there. In may cases there are directly the same as operating system errors. Common ones are:
+The errcode can be look up with `[perror](../../../../../server/clients-and-utilities/perror.md) X` to return a text description of the code if not already there. In may cases there are directly the same as operating system errors. Common ones are:
 
 
 * Error 2 - No such file or directory. MariaDB is expecting to read/write/create a file somewhere and it doesn't exist. If creating, the directory doesn't exist.

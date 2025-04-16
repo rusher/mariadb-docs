@@ -43,9 +43,9 @@ SET DEBUG_SYNC= 'after_open_tables SIGNAL opened WAIT_FOR flushed';
 ```
 
 This activates the sync point
-`<code class="highlight fixed" style="white-space:pre-wrap">'after_open_tables'</code>`. It requests it to emit the
-signal `<code class="highlight fixed" style="white-space:pre-wrap">'opened'</code>` and wait for another thread to emit
-the signal `<code class="highlight fixed" style="white-space:pre-wrap">'flushed'</code>` when the thread's execution
+`'after_open_tables'`. It requests it to emit the
+signal `'opened'` and wait for another thread to emit
+the signal `'flushed'` when the thread's execution
 runs through the sync point.
 
 
@@ -67,25 +67,25 @@ send INSERT INTO t1 VALUES(1);
     FLUSH TABLE t1;
 ```
 
-When `<code class="highlight fixed" style="white-space:pre-wrap">conn1</code>` runs through the
-`<code class="highlight fixed" style="white-space:pre-wrap">INSERT</code>` statement, it hits the sync point
-`<code class="highlight fixed" style="white-space:pre-wrap">'after_open_tables'</code>`. It notices that it is active
+When `conn1` runs through the
+`INSERT` statement, it hits the sync point
+`'after_open_tables'`. It notices that it is active
 and executes its action. It emits the signal
-`<code class="highlight fixed" style="white-space:pre-wrap">'opened'</code>` and waits for another thread to emit the
-signal `<code class="highlight fixed" style="white-space:pre-wrap">'flushed'</code>`.
+`'opened'` and waits for another thread to emit the
+signal `'flushed'`.
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">conn2</code>` waits immediately at the special sync point `<code class="highlight fixed" style="white-space:pre-wrap">'now'</code>` for another thread to emit the `<code class="highlight fixed" style="white-space:pre-wrap">'opened'</code>` signal.
+`conn2` waits immediately at the special sync point `'now'` for another thread to emit the `'opened'` signal.
 
 
 A signal remains in effect until it is overwritten. If
-`<code class="highlight fixed" style="white-space:pre-wrap">conn1</code>` signals `<code class="highlight fixed" style="white-space:pre-wrap">'opened'</code>` before
-`<code class="highlight fixed" style="white-space:pre-wrap">conn2</code>` reaches `<code class="highlight fixed" style="white-space:pre-wrap">'now'</code>`,
-`<code class="highlight fixed" style="white-space:pre-wrap">conn2</code>` will still find the
-`<code class="highlight fixed" style="white-space:pre-wrap">'opened'</code>` signal. It does not wait in this case.
+`conn1` signals `'opened'` before
+`conn2` reaches `'now'`,
+`conn2` will still find the
+`'opened'` signal. It does not wait in this case.
 
 
-When `<code class="highlight fixed" style="white-space:pre-wrap">conn2</code>` reaches `<code class="highlight fixed" style="white-space:pre-wrap">'after_abort_locks'</code>`, it signals `<code class="highlight fixed" style="white-space:pre-wrap">'flushed'</code>`, which lets `<code class="highlight fixed" style="white-space:pre-wrap">conn1</code>` awake.
+When `conn2` reaches `'after_abort_locks'`, it signals `'flushed'`, which lets `conn1` awake.
 
 
 Normally the activation of a sync point is cleared when it has been
@@ -114,11 +114,11 @@ timeout, but it can be overridden:
 SET DEBUG_SYNC= 'name WAIT_FOR sig TIMEOUT 10 EXECUTE 2';
 ```
 
-`<code class="highlight fixed" style="white-space:pre-wrap">TIMEOUT 0</code>` is special: If the signal is not present,
+`TIMEOUT 0` is special: If the signal is not present,
 the wait times out immediately.
 
 
-When a wait timed out (even on `<code class="highlight fixed" style="white-space:pre-wrap">TIMEOUT 0</code>`), a
+When a wait timed out (even on `TIMEOUT 0`), a
 warning is generated so that it shows up in the test result.
 
 
@@ -196,7 +196,7 @@ With a [MariaDB for debug build](../../../general-resources/learning-and-trainin
 --debug-sync-timeout[=default_wait_timeout_value_in_seconds]
 ```
 
-`<code class="highlight fixed" style="white-space:pre-wrap">'default_wait_timeout_value_in_seconds'</code>` is the default timeout for the `<code class="highlight fixed" style="white-space:pre-wrap">WAIT_FOR</code>` action. If set to zero, the facility stays disabled.
+`'default_wait_timeout_value_in_seconds'` is the default timeout for the `WAIT_FOR` action. If set to zero, the facility stays disabled.
 
 
 The facility is enabled by default in the test suite, but can be
@@ -220,17 +220,17 @@ The command line option influences the readable value of the [debug_sync](../../
 * If the facility is not compiled in, the system variable does not exist.
 
 
-* If `<code class="highlight fixed" style="white-space:pre-wrap">--debug-sync-timeout=0</code>` the value of the variable reads as `<code class="highlight fixed" style="white-space:pre-wrap">"OFF"</code>`.
+* If `--debug-sync-timeout=0` the value of the variable reads as `"OFF"`.
 
 
-* Otherwise the value reads as `<code class="highlight fixed" style="white-space:pre-wrap">"ON - current signal: "</code>` followed by the current signal string, which can be empty.
+* Otherwise the value reads as `"ON - current signal: "` followed by the current signal string, which can be empty.
 
 
 The readable variable value is the same, regardless if read as a global
 or session value.
 
 
-Setting the [debug_sync](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#debug_sync) system variable requires the `<code class="highlight fixed" style="white-space:pre-wrap">'SUPER'</code>` privilege. You can never read back the
+Setting the [debug_sync](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#debug_sync) system variable requires the `'SUPER'` privilege. You can never read back the
 string that you assigned to the variable, unless you assign the value
 that the variable already has. But that would give a parse
 error. A syntactically correct string is parsed into a debug sync
@@ -253,7 +253,7 @@ The sync point performs a binary search in a sorted array of actions
 for this thread.
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">SET DEBUG_SYNC</code>` statement adds a requested
+The `SET DEBUG_SYNC` statement adds a requested
 action to the array or overwrites an existing action for the same sync
 point. When it adds a new action, the array is sorted again.
 
@@ -280,26 +280,26 @@ thd->exit_cond(old_message);
 Here are some explanations:
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">thd->enter_cond()</code>` is used to register the condition
-variable and the mutex in `<code class="highlight fixed" style="white-space:pre-wrap">thd->mysys_var</code>`. This is
+`thd->enter_cond()` is used to register the condition
+variable and the mutex in `thd->mysys_var`. This is
 done to allow the thread to be interrupted (killed) from its
 sleep. Another thread can find the condition variable to signal and
-mutex to use for synchronization in this thread's `<code class="highlight fixed" style="white-space:pre-wrap">THD::mysys_var</code>`.
+mutex to use for synchronization in this thread's `THD::mysys_var`.
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">thd->enter_cond()</code>` requires the mutex to be acquired
+`thd->enter_cond()` requires the mutex to be acquired
 in advance.
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">thd->exit_cond()</code>` unregisters the condition variable
+`thd->exit_cond()` unregisters the condition variable
 and mutex and releases the mutex.
 
 
 If you want to have a Debug Sync point with the wait, please place it
-behind `<code class="highlight fixed" style="white-space:pre-wrap">enter_cond()</code>`. Only then you can safely
+behind `enter_cond()`. Only then you can safely
 decide, if the wait will be taken. Also you will have
-`<code class="highlight fixed" style="white-space:pre-wrap">THD::proc_info</code>` correct when the sync point emits a
-signal. `<code class="highlight fixed" style="white-space:pre-wrap">DEBUG_SYNC</code>` sets its own proc_info, but
+`THD::proc_info` correct when the sync point emits a
+signal. `DEBUG_SYNC` sets its own proc_info, but
 restores the previous one before releasing its internal mutex. As soon
 as another thread sees the signal, it does also see the proc_info from
 before entering the sync point. In this case it will be "new_message",
@@ -332,18 +332,18 @@ while (!thd->killed && !end_of_wait_condition)
 ```
 
 Note that it is important to repeat the test for thd->killed after
-`<code class="highlight fixed" style="white-space:pre-wrap">enter_cond()</code>`. Otherwise the killing thread may kill
-this thread after it tested `<code class="highlight fixed" style="white-space:pre-wrap">thd->killed</code>` in the loop
+`enter_cond()`. Otherwise the killing thread may kill
+this thread after it tested `thd->killed` in the loop
 condition and before it registered the condition variable and mutex in
-`<code class="highlight fixed" style="white-space:pre-wrap">enter_cond()</code>`. In this case, the killing thread does
+`enter_cond()`. In this case, the killing thread does
 not know that this thread is going to wait on a condition variable. It
-would just set `<code class="highlight fixed" style="white-space:pre-wrap">THD::killed</code>`. But if we would not
+would just set `THD::killed`. But if we would not
 test it again, we would go asleep though we are killed. If the killing
 thread would kill us when we are after the second test, but still
 before sleeping, we hold the mutex, which is registered in mysys_var.
 The killing thread would try to acquire the mutex before signaling the
 condition variable. Since the mutex is only released implicitly in
-`<code class="highlight fixed" style="white-space:pre-wrap">mysql_cond_wait()</code>`, the signaling happens at the
+`mysql_cond_wait()`, the signaling happens at the
 right place. We have a safe synchronization.
 
 
@@ -351,7 +351,7 @@ right place. We have a safe synchronization.
 
 
 When running the MariaDB test suite with the
-`<code class="highlight fixed" style="white-space:pre-wrap">--debug-dbug</code>` command line option, the Debug Sync
+`--debug-dbug` command line option, the Debug Sync
 Facility writes trace messages to the DBUG trace. The following shell
 commands proved very useful in extracting relevant information:
 
@@ -366,21 +366,21 @@ synchronization points.
 
 Sometimes it is also useful to see, which synchronization points have
 been run through (hit) with or without executing actions. Then add
-`<code class="highlight fixed" style="white-space:pre-wrap">"|debug_sync_point:"</code>` to the egrep pattern.
+`"|debug_sync_point:"` to the egrep pattern.
 
 
 ### Synchronizing DEBUG_SYNC Actions
 
 
 Tests may need additional synchronization mechanisms between
-`<code class="highlight fixed" style="white-space:pre-wrap">DEBUG_SYNC</code>` actions, because certain combinations
+`DEBUG_SYNC` actions, because certain combinations
 of actions can result in lost signals. More specifically, once a
-`<code class="highlight fixed" style="white-space:pre-wrap">SIGNAL</code>` action is issued, it is stored in a global variable
+`SIGNAL` action is issued, it is stored in a global variable
 for any waiting threads to determine if they are depending on that signal for
 continuing. However, if a subsequent action overwrites that variable before a
 waiting thread is able to check against it, the original signal is lost. Examples
 of actions which would change the variable state are another
-`<code class="highlight fixed" style="white-space:pre-wrap">SIGNAL</code>` or a `<code class="highlight fixed" style="white-space:pre-wrap">RESET</code>`. Therefore,
+`SIGNAL` or a `RESET`. Therefore,
 before issuing these commands, the test writer should verify the previous
 signal has been acknowledged. The following code snippets show an
 example of a problematic pattern and a potential solution.

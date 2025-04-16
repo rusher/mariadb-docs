@@ -23,7 +23,7 @@ TRUNCATE TABLE tbl_name [WAIT n|NOWAIT]
 ## Description
 
 
-The lock wait timeout can be explicitly set in the statement by using either `<code>WAIT n</code>` (to set the wait in seconds) or `<code>NOWAIT</code>`, in which case the statement will immediately fail if the lock cannot be obtained. `<code>WAIT 0</code>` is equivalent to `<code>NOWAIT</code>`.
+The lock wait timeout can be explicitly set in the statement by using either `WAIT n` (to set the wait in seconds) or `NOWAIT`, in which case the statement will immediately fail if the lock cannot be obtained. `WAIT 0` is equivalent to `NOWAIT`.
 
 
 ## See Also

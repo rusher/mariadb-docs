@@ -12,7 +12,7 @@ NAME_CONST(name,value)
 
 
 Returns the given value. When used to produce a result set column,
- `<code class="highlight fixed" style="white-space:pre-wrap">NAME_CONST()</code>` causes the column to have the given name. The
+ `NAME_CONST()` causes the column to have the given name. The
 arguments should be constants.
 
 

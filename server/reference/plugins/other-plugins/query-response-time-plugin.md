@@ -1,7 +1,7 @@
 
 # Query Response Time Plugin
 
-The `<code>query_response_time</code>` plugin creates the [QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION_SCHEMA](../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database. The plugin also adds the [SHOW QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-query_response_time.md) and [FLUSH QUERY_RESPONSE_TIME*](#flushing-plugin-data) statements.
+The `query_response_time` plugin creates the [QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION_SCHEMA](../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database. The plugin also adds the [SHOW QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-query_response_time.md) and [FLUSH QUERY_RESPONSE_TIME*](#flushing-plugin-data) statements.
 
 
 The [slow query log](../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md) provides exact information about queries that take a long time to execute. However, sometimes there are a large number of queries that each take a very short amount of time to execute. This feature provides a tool for analyzing that information by counting and displaying the number of queries according to the the length of time they took to execute.
@@ -17,8 +17,8 @@ This feature is based on Percona's [Response Time Distribution](https://www.perc
 This shared library actually consists of a number of different plugins. Prior to [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md):
 
 
-* `<code>QUERY_RESPONSE_TIME</code>` - An INFORMATION_SCHEMA plugin that exposes statistics.
-* `<code>QUERY_RESPONSE_TIME_AUDIT</code>` - audit plugin, collects statistics.
+* `QUERY_RESPONSE_TIME` - An INFORMATION_SCHEMA plugin that exposes statistics.
+* `QUERY_RESPONSE_TIME_AUDIT` - audit plugin, collects statistics.
 
 
 Both plugins need to be installed to get meaningful statistics.
@@ -27,9 +27,9 @@ Both plugins need to be installed to get meaningful statistics.
 From [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md), there are the following additional plugins:
 
 
-* `<code>QUERY_RESPONSE_TIME_READ</code>`
-* `<code>QUERY_RESPONSE_TIME_READ_WRITE</code>`
-* `<code>QUERY_RESPONSE_TIME_WRITE</code>`
+* `QUERY_RESPONSE_TIME_READ`
+* `QUERY_RESPONSE_TIME_READ_WRITE`
+* `QUERY_RESPONSE_TIME_WRITE`
 
 
 Although the plugin's shared library is distributed with MariaDB by default, the plugins are not actually installed by MariaDB by default. There are two methods that can be used to install the plugins with MariaDB.
@@ -207,7 +207,7 @@ FROM INFORMATION_SCHEMA.QUERY_RESPONSE_TIME as c
   WHERE c.count > 0;
 ```
 
-Note: If [query_response_time_stats](#query_response_time_stats) is set to `<code>ON</code>`, then the execution times for these two SELECT queries will also be collected.
+Note: If [query_response_time_stats](#query_response_time_stats) is set to `ON`, then the execution times for these two SELECT queries will also be collected.
 
 
 ### Using the SHOW Statement
@@ -244,7 +244,7 @@ Setting the [query_response_time_flush](#query_response_time_flush) system varia
 SET GLOBAL query_response_time_flush=1;
 ```
 
-From [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md), it is possible to specify flushing read and/or write statements with the `<code>FLUSH QUERY_RESPONSE_TIME_READ</code>`, `<code>FLUSH QUERY_RESPONSE_TIME_WRITE</code>` and `<code>FLUSH QUERY_RESPONSE_TIME_READ_WRITE</code>` statements.
+From [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md), it is possible to specify flushing read and/or write statements with the `FLUSH QUERY_RESPONSE_TIME_READ`, `FLUSH QUERY_RESPONSE_TIME_WRITE` and `FLUSH QUERY_RESPONSE_TIME_READ_WRITE` statements.
 
 
 ## Versions
@@ -263,32 +263,32 @@ From [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-m
 ## System Variables
 
 
-### `<code>query_response_time_flush</code>`
+### `query_response_time_flush`
 
 
 * Description: Updating this variable flushes the statistics and re-reads [query_response_time_range_base](#query_response_time_range_base).
 * Commandline: None
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>boolean</code>`
-* Default Value: `<code>OFF</code>`
+* Data Type: `boolean`
+* Default Value: `OFF`
 
 
 
-### `<code>query_response_time_range_base</code>`
+### `query_response_time_range_base`
 
 
-* Description: Select base of log for `<code>QUERY_RESPONSE_TIME</code>` ranges. WARNING: variable change takes affect only after flush.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--query-response-time-range-base=#</code>`
+* Description: Select base of log for `QUERY_RESPONSE_TIME` ranges. WARNING: variable change takes affect only after flush.
+* Commandline: `--query-response-time-range-base=#`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>10</code>`
-* Range: `<code>2</code>` to `<code>1000</code>`
+* Data Type: `numeric`
+* Default Value: `10`
+* Range: `2` to `1000`
 
 
 
-### `<code>query_response_time_exec_time_debug</code>`
+### `query_response_time_exec_time_debug`
 
 
 * Description: Pretend queries take this many microseconds. When 0 (the default) use the actual execution time. 
@@ -296,75 +296,75 @@ From [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-m
   * This system variable is only available when the plugin is a [debug build](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging.md).
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>0</code>`
-* Range: `<code>0</code>` to `<code>31536000</code>`
+* Data Type: `numeric`
+* Default Value: `0`
+* Range: `0` to `31536000`
 
 
 
-### `<code>query_response_time_session_stats</code>`
+### `query_response_time_session_stats`
 
 
 * Description: Controls query response time statistics collection for the current session: ON - enable, OFF - disable, GLOBAL (default) - use [query_response_time_stats](#query_response_time_stats) value.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">query-response-time-session-stats=val]</code>`
+* Commandline: `query-response-time-session-stats=val]`
 * Scope: Global, Session
 * Dynamic: Yes
-* Data Type: `<code>enum</code>`
-* Default Value: `<code>GLOBAL</code>`
-* Valid Values: `<code>GLOBAL</code>`, `<code>ON</code>`, `<code>OFF</code>`
+* Data Type: `enum`
+* Default Value: `GLOBAL`
+* Valid Values: `GLOBAL`, `ON`, `OFF`
 * Introduced: [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
 
 
 
-### `<code>query_response_time_stats</code>`
+### `query_response_time_stats`
 
 
 * Description: Enable or disable query response time statistics collecting.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">query-response-time-stats[={0|1}]</code>`
+* Commandline: `query-response-time-stats[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>boolean</code>`
-* Default Value: `<code>OFF</code>`
+* Data Type: `boolean`
+* Default Value: `OFF`
 
 
 
 ## Options
 
 
-### `<code>query_response_time</code>`
+### `query_response_time`
 
 
 * Description: Controls how the server should treat the plugin when the server starts up.
 
   * Valid values are:
 
-    * `<code>OFF</code>` - Disables the plugin without removing it from the [mysql.plugins](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
-    * `<code>ON</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
-    * `<code>FORCE</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `<code>FORCE_PLUS_PERMANENT</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
+    * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--query-response-time=value</code>`
-* Data Type: `<code>enumerated</code>`
-* Default Value: `<code>ON</code>`
-* Valid Values: `<code>OFF</code>`, `<code>ON</code>`, `<code>FORCE</code>`, `<code>FORCE_PLUS_PERMANENT</code>`
+* Commandline: `--query-response-time=value`
+* Data Type: `enumerated`
+* Default Value: `ON`
+* Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
 
 
 
-### `<code>query_response_time_audit</code>`
+### `query_response_time_audit`
 
 
 * Description: Controls how the server should treat the plugin when the server starts up.
 
   * Valid values are:
 
-    * `<code>OFF</code>` - Disables the plugin without removing it from the [mysql.plugins](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
-    * `<code>ON</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
-    * `<code>FORCE</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `<code>FORCE_PLUS_PERMANENT</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
+    * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--query-response-time-audit=value</code>`
-* Data Type: `<code>enumerated</code>`
-* Default Value: `<code>ON</code>`
-* Valid Values: `<code>OFF</code>`, `<code>ON</code>`, `<code>FORCE</code>`, `<code>FORCE_PLUS_PERMANENT</code>`
+* Commandline: `--query-response-time-audit=value`
+* Data Type: `enumerated`
+* Default Value: `ON`
+* Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
 
 

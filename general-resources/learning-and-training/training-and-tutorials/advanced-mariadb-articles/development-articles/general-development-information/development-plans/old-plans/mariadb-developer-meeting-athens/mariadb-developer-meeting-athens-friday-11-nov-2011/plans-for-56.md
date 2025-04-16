@@ -109,7 +109,7 @@ Features which will not be added to [MariaDB 5.6](/en/what-is-mariadb-56/).
 
 * Community Request: prevent full scans from running at all above a certain table size;
 
-  * is existing `<code>max-join-size</code>` variable sufficient or more granula control is needed?
+  * is existing `max-join-size` variable sufficient or more granula control is needed?
 * Optimizer: Implement UNION ALL without usage of a temporary table (nice to have) (wait for sponsor)
 * Federated: Generic query pushdown
 * Federated: Apply it to federated
@@ -179,7 +179,7 @@ Features which have not been categorized into the above categories.
 ### Replication
 
 
-* Replication filters, like `<code class="fixed" style="white-space:pre-wrap">--replicate-do-db</code>` and friends, need to be possible to change dynamically, without having to restart the server. Having to stop the slave should ideally also not be needed, but is less of a problem.
+* Replication filters, like `--replicate-do-db` and friends, need to be possible to change dynamically, without having to restart the server. Having to stop the slave should ideally also not be needed, but is less of a problem.
 * Transactional storage of slave state, rather than file-based master.info and relay-log.info . So the slave can recover consistently after a crash.
 * Support in global transaction ID for master_pos_wait()
 * Hooks around rotation of the binlog, so user can configure shell commands

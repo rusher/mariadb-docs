@@ -4,18 +4,18 @@
 # Optimistic Transaction Execution Filter
 
 
-The `<code>optimistictrx</code>` filter implements optimistic transaction execution. The
+The `optimistictrx` filter implements optimistic transaction execution. The
 filter is designed for a use-case where most of the transactions are read-only
 and writes happen rarely but each set of read-only statements is still grouped
-into a read-write transaction (i.e. `<code>START TRANSACTION</code>`, `<code>BEGIN</code>` or
-`<code>SET autocommit=0</code>`).
+into a read-write transaction (i.e. `START TRANSACTION`, `BEGIN` or
+`SET autocommit=0`).
 
 
-This filter will replace the `<code>BEGIN</code>` and `<code>START TRANSACTION</code>` SQL commands with
-`<code>START TRANSACTION READ ONLY</code>`. If the transaction is fully read-only, the
+This filter will replace the `BEGIN` and `START TRANSACTION` SQL commands with
+`START TRANSACTION READ ONLY`. If the transaction is fully read-only, the
 transaction completes normally. However, if a write happens in the middle of a
-transaction, the filter issues a `<code>ROLLBACK</code>` command and then replays the
-read-only part of the transaction, including the original `<code>BEGIN</code>` statement. If
+transaction, the filter issues a `ROLLBACK` command and then replays the
+read-only part of the transaction, including the original `BEGIN` statement. If
 the results of the replayed read-only part of the transaction is identical to
 the one that was returned to the client, the transaction proceeds normally. If
 the result checksum does not match, the connection is closed to prevent a write
@@ -26,7 +26,7 @@ with the wrong transaction state from happening.
 
 
 To add the filter to a service, define an instance of the filter and then add it
-to a service's `<code>filters</code>` list:
+to a service's `filters` list:
 
 
 

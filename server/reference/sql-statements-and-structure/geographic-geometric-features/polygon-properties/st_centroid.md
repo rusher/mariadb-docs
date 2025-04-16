@@ -15,7 +15,7 @@ Centroid(mpoly)
 Returns a point reflecting the mathematical centroid (geometric center) for the [MultiPolygon](../geometry-constructors/multipolygon.md) *mpoly*. The resulting point will not necessarily be on the MultiPolygon.
 
 
-`<code>ST_Centroid()</code>` and `<code>Centroid()</code>` are synonyms.
+`ST_Centroid()` and `Centroid()` are synonyms.
 
 
 ## Examples

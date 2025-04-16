@@ -1,7 +1,7 @@
 
 # Information Schema KEY_COLUMN_USAGE Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>KEY_COLUMN_USAGE</code>` table shows which key columns have constraints.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `KEY_COLUMN_USAGE` table shows which key columns have constraints.
 
 
 It contains the following columns:

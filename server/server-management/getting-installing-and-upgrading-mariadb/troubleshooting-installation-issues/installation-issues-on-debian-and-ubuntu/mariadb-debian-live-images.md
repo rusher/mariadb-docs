@@ -5,7 +5,7 @@
 
 
 
-A member of the MariaDB community, Mark `<code><ms (at) it-infrastrukturen (dot) org></code>`,
+A member of the MariaDB community, Mark `<ms (at) it-infrastrukturen (dot) org>`,
 has created some Debian "squeeze" 6.0.4 based, live iso images with [MariaDB 5.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md)
 or 5.3 pre-installed on them and some Debian "squeeze" 6.0.5 based, live iso images with [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) pre-installed on them.
 
@@ -41,51 +41,51 @@ for 64-bit (amd64) systems, and one with both.
 
 1. [MariaDB 5.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md) Live iso images (text) for i386, amd64 or multi architectures.
 
-  * `<code>[binary-hybrid-squeeze-i386-mariadb52-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb52-text.iso)</code>`
-  * `<code>[binary-hybrid-squeeze-amd64-mariadb52-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb52-text.iso)</code>`
-  * `<code>[binary-hybrid-squeeze-i386-amd64-mariadb52-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb52-text.iso)</code>`
+  * `[binary-hybrid-squeeze-i386-mariadb52-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb52-text.iso)`
+  * `[binary-hybrid-squeeze-amd64-mariadb52-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb52-text.iso)`
+  * `[binary-hybrid-squeeze-i386-amd64-mariadb52-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb52-text.iso)`
 
 
 1. [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) Live iso images (text) for i386, amd64 or multi architectures.
 
-  * `<code>[binary-hybrid-squeeze-i386-mariadb53-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb53-text.iso)</code>`
-  * `<code>[binary-hybrid-squeeze-amd64-mariadb53-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb53-text.iso)</code>`
-  * `<code>[binary-hybrid-squeeze-i386-amd64-mariadb53-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb53-text.iso)</code>`
+  * `[binary-hybrid-squeeze-i386-mariadb53-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb53-text.iso)`
+  * `[binary-hybrid-squeeze-amd64-mariadb53-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb53-text.iso)`
+  * `[binary-hybrid-squeeze-i386-amd64-mariadb53-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb53-text.iso)`
 
 
 1. [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) Live iso images with LXDE for i386, amd64 or multi architectures.
 
-  * `<code>[binary-hybrid-squeeze-i386-mariadb53-lxde.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb53-lxde.iso)</code>`
-  * `<code>[binary-hybrid-squeeze-amd64-mariadb53-lxde.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb53-lxde.iso)</code>`
-  * `<code>[binary-hybrid-squeeze-i386-amd64-mariadb53-lxde.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb53-lxde.iso)</code>`
+  * `[binary-hybrid-squeeze-i386-mariadb53-lxde.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb53-lxde.iso)`
+  * `[binary-hybrid-squeeze-amd64-mariadb53-lxde.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb53-lxde.iso)`
+  * `[binary-hybrid-squeeze-i386-amd64-mariadb53-lxde.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb53-lxde.iso)`
 
 
 1. [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) Live iso images with Gnome for i386, amd64 or multi architectures.
 
-  * `<code>[binary-hybrid-squeeze-i386-mariadb53-gnome.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb53-gnome.iso)</code>`
-  * `<code>[binary-hybrid-squeeze-amd64-mariadb53-gnome.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb53-gnome.iso)</code>`
-  * `<code>[binary-hybrid-squeeze-i386-amd64-mariadb53-gnome.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb53-gnome.iso)</code>`
+  * `[binary-hybrid-squeeze-i386-mariadb53-gnome.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb53-gnome.iso)`
+  * `[binary-hybrid-squeeze-amd64-mariadb53-gnome.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb53-gnome.iso)`
+  * `[binary-hybrid-squeeze-i386-amd64-mariadb53-gnome.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb53-gnome.iso)`
 
 
 1. [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) Live images
 
-  * `<code>[binary-hybrid-squeeze-amd64-mariadb55-text-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-text-bpo.iso)</code>`
-  * `<code>[binary-hybrid-squeeze-amd64-mariadb55-lxde-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-lxde-bpo.iso)</code>`
-  * `<code>[binary-hybrid-squeeze-amd64-mariadb55-gnome-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-gnome-bpo.iso)</code>`
-  * `<code>[binary-hybrid-squeeze-amd64-mariadb55-awesome-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-awesome-bpo.iso)</code>`
+  * `[binary-hybrid-squeeze-amd64-mariadb55-text-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-text-bpo.iso)`
+  * `[binary-hybrid-squeeze-amd64-mariadb55-lxde-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-lxde-bpo.iso)`
+  * `[binary-hybrid-squeeze-amd64-mariadb55-gnome-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-gnome-bpo.iso)`
+  * `[binary-hybrid-squeeze-amd64-mariadb55-awesome-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-awesome-bpo.iso)`
 
 
 1. [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) Live images demonstration video
 
-  * `<code>[README-mariadb-video.txt](https://rsync.it-infrastrukturen.org/public-mariadb/README-mariadb-video.txt)</code>`
-  * `<code>[video-mariadb5.5-live-images-on-USB.ogv](https://rsync.it-infrastrukturen.org/public-mariadb/video-mariadb5.5-live-images-on-USB.ogv)</code>`
-  * `<code>[video-mariadb5.5-live-images-on-USB.mp4](https://rsync.it-infrastrukturen.org/public-mariadb/video-mariadb5.5-live-images-on-USB.mp4)</code>`
+  * `[README-mariadb-video.txt](https://rsync.it-infrastrukturen.org/public-mariadb/README-mariadb-video.txt)`
+  * `[video-mariadb5.5-live-images-on-USB.ogv](https://rsync.it-infrastrukturen.org/public-mariadb/video-mariadb5.5-live-images-on-USB.ogv)`
+  * `[video-mariadb5.5-live-images-on-USB.mp4](https://rsync.it-infrastrukturen.org/public-mariadb/video-mariadb5.5-live-images-on-USB.mp4)`
 
 
-The LXDE and Gnome images contain documentation under `<code>/srv/PDF</code>`. Including
+The LXDE and Gnome images contain documentation under `/srv/PDF`. Including
 instructions on how to create your own Debian live images in live mode (you
 need 16GB RAM or more to be able to do this). See the README, README.live, and
-live-manual.en.pdf files under `<code>/srv/PDF</code>` for details.
+live-manual.en.pdf files under `/srv/PDF` for details.
 
 
 **Note:** Some HP notebooks are not able to boot binary hybrid iso images from a USB stick.
@@ -110,7 +110,7 @@ or just use the links above (or go to: [](https://rsync.it-infrastrukturen.org/p
 A USB stick or CD/DVD can be used as bootable media. The preferred way is a USB stick.
 
 
-* for Linux: `<code>dd if=./<image_name_as_above.iso> of=/dev/<USB-stick-ID_like_sdb_or_sdc></code>`
+* for Linux: `dd if=./<image_name_as_above.iso> of=/dev/<USB-stick-ID_like_sdb_or_sdc>`
 * for other systems: cygwin includes dd and some other linux/Unix tools.
 
 
@@ -132,19 +132,19 @@ for example, the installation of additional packages from a local repository on
 the image or assigning a static IP address and running sshd.
 
 
-1. To configure a static IP use "`<code>ip=</code>`". For example:
- "`<code>ip=eth0:192.168.1.53:255.255.255.0:192.168.1.1</code>`"
+1. To configure a static IP use "`ip=`". For example:
+ "`ip=eth0:192.168.1.53:255.255.255.0:192.168.1.1`"
 
-  * The full format of "`<code>ip=</code>`" is: "`<code>ip=[interface]:[IP_address]:[netmask]:[gateway]</code>`"
+  * The full format of "`ip=`" is: "`ip=[interface]:[IP_address]:[netmask]:[gateway]`"
 
 
-1. If you use an empty "`<code>ip=</code>`" value the content of `<code>/etc/network/interfaces</code>`
- and `<code>/etc/resolv.conf</code>` will be used. Without the "`<code>ip=</code>`" option, dhcp
+1. If you use an empty "`ip=`" value the content of `/etc/network/interfaces`
+ and `/etc/resolv.conf` will be used. Without the "`ip=`" option, dhcp
  will be used to get an IP address.
 
 
 1. For installing and running sshd (so that the image can act as a server in a
- test environment) use: "`<code>sshd=on</code>`"
+ test environment) use: "`sshd=on`"
 
   * The live user is "sql" and the password is "live". Please change the
  password immediately after first login!
@@ -155,8 +155,8 @@ the image or assigning a static IP address and running sshd.
  after first login!
 
 
-1. Run `<code>repo-off-line.sh</code>` to activate local repositories on the image for
- apt-get (for off-line installations) or `<code>repo-on-line.sh</code>` for internet
+1. Run `repo-off-line.sh` to activate local repositories on the image for
+ apt-get (for off-line installations) or `repo-on-line.sh` for internet
  repositories.
 
 
@@ -168,5 +168,5 @@ the image or assigning a static IP address and running sshd.
 Send any feedback or suggestions related to these images to:
 
 
-* Mark `<code><ms (at) it-infrastrukturen (dot) org></code>`
+* Mark `<ms (at) it-infrastrukturen (dot) org>`
 

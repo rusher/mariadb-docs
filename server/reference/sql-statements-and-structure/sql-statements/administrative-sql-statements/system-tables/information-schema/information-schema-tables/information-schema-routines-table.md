@@ -1,7 +1,7 @@
 
 # Information Schema ROUTINES Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>ROUTINES</code>` table stores information about [stored procedures](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [stored functions](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md).
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `ROUTINES` table stores information about [stored procedures](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [stored functions](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md).
 
 
 It contains the following columns:
@@ -45,10 +45,10 @@ It contains the following columns:
 
 
 
-It provides information similar to, but more complete, than the `<code>[SHOW PROCEDURE STATUS](../../../show/show-procedure-status.md)</code>` and `<code>[SHOW FUNCTION STATUS](../../../show/show-function-status.md)</code>` statements.
+It provides information similar to, but more complete, than the `[SHOW PROCEDURE STATUS](../../../show/show-procedure-status.md)` and `[SHOW FUNCTION STATUS](../../../show/show-function-status.md)` statements.
 
 
-For information about the parameters accepted by the routine, you can query the `<code>[information_schema.PARAMETERS](information-schema-parameters-table.md)</code>` table.
+For information about the parameters accepted by the routine, you can query the `[information_schema.PARAMETERS](information-schema-parameters-table.md)` table.
 
 
 ## See also

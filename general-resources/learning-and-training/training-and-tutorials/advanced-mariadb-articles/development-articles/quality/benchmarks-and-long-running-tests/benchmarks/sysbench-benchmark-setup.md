@@ -2,7 +2,7 @@
 # sysbench Benchmark Setup
 
 For our automated MariaDB/MySQL sysbench benchmark tests, we use sysbench from
-`<code>lp:sysbench</code>`. This page describes the basic parameters and configuration we
+`lp:sysbench`. This page describes the basic parameters and configuration we
 use.
 
 

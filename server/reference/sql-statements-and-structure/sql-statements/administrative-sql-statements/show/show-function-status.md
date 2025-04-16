@@ -13,17 +13,17 @@ SHOW FUNCTION STATUS
 
 
 This statement is similar to 
-`<code class="highlight fixed" style="white-space:pre-wrap">[SHOW PROCEDURE STATUS](show-procedure-status.md)</code>` but for
+`[SHOW PROCEDURE STATUS](show-procedure-status.md)` but for
 [stored functions](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md).
 
 
 The LIKE clause, if present on its own, indicates which function names to match.
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 
-The `<code>[information_schema.ROUTINES](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)</code>` table contains more detailed information.
+The `[information_schema.ROUTINES](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)` table contains more detailed information.
 
 
 ## Examples

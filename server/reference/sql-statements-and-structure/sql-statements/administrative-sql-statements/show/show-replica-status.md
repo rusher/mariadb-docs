@@ -30,24 +30,24 @@ This statement requires the [SUPER](../../account-management-sql-commands/grant.
 ### Multi-Source
 
 
-The `<code>ALL</code>` and `<code>"connection_name"</code>` options allow you to connect to [many primaries at the same time](../../../../../server-usage/replication-cluster-multi-master/standard-replication/multi-source-replication.md).
+The `ALL` and `"connection_name"` options allow you to connect to [many primaries at the same time](../../../../../server-usage/replication-cluster-multi-master/standard-replication/multi-source-replication.md).
 
 
-`<code>ALL SLAVES</code>` (or `<code>ALL REPLICAS</code>` from [MariaDB 10.5.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md)) gives you a list of all connections to the primary nodes.
+`ALL SLAVES` (or `ALL REPLICAS` from [MariaDB 10.5.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md)) gives you a list of all connections to the primary nodes.
 
 
-The rows will be sorted according to `<code>Connection_name</code>`.
+The rows will be sorted according to `Connection_name`.
 
 
-If you specify a `<code>connection_name</code>`, you only get the information about that
-connection. If `<code>connection_name</code>` is not used, then the name set by `<code>default_master_connection</code>` is used. If the connection name doesn't exist you will get an error:
-`<code>There is no master connection for 'xxx'</code>`.
+If you specify a `connection_name`, you only get the information about that
+connection. If `connection_name` is not used, then the name set by `default_master_connection` is used. If the connection name doesn't exist you will get an error:
+`There is no master connection for 'xxx'`.
 
 
 
 ##### MariaDB starting with [10.7.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md)
-The `<code>FOR CHANNEL</code>` keyword was added for MySQL compatibility. This is identical to
-using the channel_name directly after `<code>SHOW SLAVE</code>`.
+The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical to
+using the channel_name directly after `SHOW SLAVE`.
 
 
 ### Column Descriptions
@@ -58,7 +58,7 @@ The order in which the columns appear depends on the MariaDB version. This means
 
 
 ##### MariaDB starting with [11.6.0](/kb/en/mariadb-1160-release-notes/)
-These columns can also be viewed/extracted from the `<code>[INFORMATION_SCHEMA.SLAVE_STATUS](../system-tables/information-schema/information-schema-tables/information-schema-slave_status-table.md)</code>` table
+These columns can also be viewed/extracted from the `[INFORMATION_SCHEMA.SLAVE_STATUS](../system-tables/information-schema/information-schema-tables/information-schema-slave_status-table.md)` table
 
 
 
@@ -141,7 +141,7 @@ These columns can also be viewed/extracted from the `<code>[INFORMATION_SCHEMA.S
 
 
 If you issue this statement using the [mariadb](../../../../../clients-and-utilities/mariadb-client/README.md) client,
-you can use a `<code><code>\G</code></code>` statement terminator rather than a semicolon to
+you can use a `<code>\G</code>` statement terminator rather than a semicolon to
 obtain a more readable vertical layout.
 
 

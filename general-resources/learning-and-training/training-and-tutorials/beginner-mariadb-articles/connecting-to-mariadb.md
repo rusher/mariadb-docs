@@ -20,8 +20,8 @@ mariadb
 In this case, the following defaults apply:
 
 
-* The host name is `<code>localhost</code>`.
-* The user name is either your Unix login name, or `<code>ODBC</code>` on Windows.
+* The host name is `localhost`.
+* The user name is either your Unix login name, or `ODBC` on Windows.
 * No password is sent.
 * The client will connect to the server with the default socket, but not any particular database on the server.
 
@@ -36,10 +36,10 @@ mariadb -h 166.78.144.191 -u username -ppassword database_name
 In this case:
 
 
-* `<code>-h</code>` specifies a host. Instead of using `<code>localhost</code>`, the IP `<code>166.78.144.191</code>` is used.
-* `<code>-u</code>` specifies a user name, in this case `<code>username</code>`
-* `<code>-p</code>` specifies a password, `<code>password</code>`. Note that for passwords, unlike the other parameters, there cannot be a space between the option (`<code>-p</code>`) and the value (`<code>password</code>`). It is also not secure to use a password in this way, as other users on the system can see it as part of the command that has been run. If you include the `<code>-p</code>` option, but leave out the password, you will be prompted for it, which is more secure.
-* The database name is provided as the first argument after all the options, in this case `<code>database_name</code>`.
+* `-h` specifies a host. Instead of using `localhost`, the IP `166.78.144.191` is used.
+* `-u` specifies a user name, in this case `username`
+* `-p` specifies a password, `password`. Note that for passwords, unlike the other parameters, there cannot be a space between the option (`-p`) and the value (`password`). It is also not secure to use a password in this way, as other users on the system can see it as part of the command that has been run. If you include the `-p` option, but leave out the password, you will be prompted for it, which is more secure.
+* The database name is provided as the first argument after all the options, in this case `database_name`.
 * It will connect with the default tcp_ip port, 3306
 
 
@@ -54,7 +54,7 @@ In this case:
 -h name
 ```
 
-Connect to the MariaDB server on the given host. The default host is `<code>localhost</code>`. By default, MariaDB does not permit remote logins - see [Configuring MariaDB for Remote Client Access](../basic-mariadb-articles/configuring-mariadb-for-remote-client-access.md).
+Connect to the MariaDB server on the given host. The default host is `localhost`. By default, MariaDB does not permit remote logins - see [Configuring MariaDB for Remote Client Access](../basic-mariadb-articles/configuring-mariadb-for-remote-client-access.md).
 
 
 ### password
@@ -65,7 +65,7 @@ Connect to the MariaDB server on the given host. The default host is `<code>loca
 -p[passwd]
 ```
 
-The password of the MariaDB account. It is generally not secure to enter the password on the command line, as other users on the system can see it as part of the command that has been run. If you include the `<code>-p</code>` or `<code>--password</code>` option, but leave out the password, you will be prompted for it, which is more secure.
+The password of the MariaDB account. It is generally not secure to enter the password on the command line, as other users on the system can see it as part of the command that has been run. If you include the `-p` or `--password` option, but leave out the password, you will be prompted for it, which is more secure.
 
 
 ### pipe
@@ -76,7 +76,7 @@ The password of the MariaDB account. It is generally not secure to enter the pas
 -W
 ```
 
-On Windows systems that have been started with the `<code>--enable-named-pipe</code>` option, use this option to connect to the server using a named pipe.
+On Windows systems that have been started with the `--enable-named-pipe` option, use this option to connect to the server using a named pipe.
 
 
 ### port
@@ -87,7 +87,7 @@ On Windows systems that have been started with the `<code>--enable-named-pipe</c
 -P num
 ```
 
-The TCP/IP port number to use for the connection. The default is `<code>3306</code>`.
+The TCP/IP port number to use for the connection. The default is `3306`.
 
 
 ### protocol
@@ -97,13 +97,13 @@ The TCP/IP port number to use for the connection. The default is `<code>3306</co
 --protocol=name
 ```
 
-Specifies the protocol to be used for the connection for the connection. It can be one of `<code>TCP</code>`, `<code>SOCKET</code>`, `<code>PIPE</code>` or `<code>MEMORY</code>` (case-insensitive). Usually you would not want to change this from the default. For example on Unix, a Unix socket file (`<code>SOCKET</code>`) is the default protocol, and usually results in the quickest connection.
+Specifies the protocol to be used for the connection for the connection. It can be one of `TCP`, `SOCKET`, `PIPE` or `MEMORY` (case-insensitive). Usually you would not want to change this from the default. For example on Unix, a Unix socket file (`SOCKET`) is the default protocol, and usually results in the quickest connection.
 
 
-* `<code>TCP</code>`: A TCP/IP connection to a server (either local or remote). Available on all operating systems.
-* `<code>SOCKET</code>`: A Unix socket file connection, available to the local server on Unix systems only. If socket is not specified with --socket, in a config file or with the environment variable `<code>MYSQL_UNIX_PORT</code>` then the default `<code>/tmp/mysql.sock</code>` will be used.
-* `<code>PIPE</code>`. A named-pipe connection (either local or remote). Available on Windows only.
-* `<code>MEMORY</code>`. Shared-memory connection to the local server on Windows systems only.
+* `TCP`: A TCP/IP connection to a server (either local or remote). Available on all operating systems.
+* `SOCKET`: A Unix socket file connection, available to the local server on Unix systems only. If socket is not specified with --socket, in a config file or with the environment variable `MYSQL_UNIX_PORT` then the default `/tmp/mysql.sock` will be used.
+* `PIPE`. A named-pipe connection (either local or remote). Available on Windows only.
+* `MEMORY`. Shared-memory connection to the local server on Windows systems only.
 
 
 ### shared-memory-base-name
@@ -113,7 +113,7 @@ Specifies the protocol to be used for the connection for the connection. It can 
 --shared-memory-base-name=name
 ```
 
-Only available on Windows systems in which the server has been started with the `<code>--shared-memory</code>` option, this specifies the shared-memory name to use for connecting to a local server. The value is case-sensitive, and defaults to `<code>MARIADB</code>`.
+Only available on Windows systems in which the server has been started with the `--shared-memory` option, this specifies the shared-memory name to use for connecting to a local server. The value is case-sensitive, and defaults to `MARIADB`.
 
 
 ### socket
@@ -124,7 +124,7 @@ Only available on Windows systems in which the server has been started with the 
 -S name
 ```
 
-For connections to localhost, this specifies either the Unix socket file to use (default `<code>/tmp/mysql.sock</code>`), or, on Windows where the server has been started with the `<code>--enable-named-pipe</code>` option, the name (case-insensitive) of the named pipe to use (default `<code>MARIADB</code>`).
+For connections to localhost, this specifies either the Unix socket file to use (default `/tmp/mysql.sock`), or, on Windows where the server has been started with the `--enable-named-pipe` option, the name (case-insensitive) of the named pipe to use (default `MARIADB`).
 
 
 ### TLS Options
@@ -140,7 +140,7 @@ A brief listing is provided below. See [Secure Connections Overview](../../../..
 --ssl
 ```
 
-Enable TLS for connection (automatically enabled with other TLS flags). Disable with '`<code>--skip-ssl</code>`'
+Enable TLS for connection (automatically enabled with other TLS flags). Disable with '`--skip-ssl`'
 
 
 #### ssl-ca
@@ -150,7 +150,7 @@ Enable TLS for connection (automatically enabled with other TLS flags). Disable 
 --ssl-ca=name
 ```
 
-CA file in PEM format (check OpenSSL docs, implies `<code>--ssl</code>`).
+CA file in PEM format (check OpenSSL docs, implies `--ssl`).
 
 
 #### ssl-capath
@@ -172,7 +172,7 @@ CA file in PEM format (check OpenSSL docs, implies `<code>--ssl</code>`).
 --ssl-cert=name
 ```
 
-X509 cert in PEM format (implies `<code>--ssl</code>`).
+X509 cert in PEM format (implies `--ssl`).
 
 
 #### ssl-cipher
@@ -182,7 +182,7 @@ X509 cert in PEM format (implies `<code>--ssl</code>`).
 --ssl-cipher=name
 ```
 
-TLS cipher to use (implies `<code>--ssl</code>`).
+TLS cipher to use (implies `--ssl`).
 
 
 #### ssl-key
@@ -192,7 +192,7 @@ TLS cipher to use (implies `<code>--ssl</code>`).
 --ssl-key=name
 ```
 
-X509 key in PEM format (implies `<code>--ssl</code>`).
+X509 key in PEM format (implies `--ssl`).
 
 
 #### ssl-crl
@@ -202,7 +202,7 @@ X509 key in PEM format (implies `<code>--ssl</code>`).
 --ssl-crl=name
 ```
 
-Certificate revocation list (implies `<code>--ssl</code>`).
+Certificate revocation list (implies `--ssl`).
 
 
 #### ssl-crlpath
@@ -212,7 +212,7 @@ Certificate revocation list (implies `<code>--ssl</code>`).
 --ssl-crlpath=name
 ```
 
-Certificate revocation list path (implies `<code>--ssl</code>`).
+Certificate revocation list path (implies `--ssl`).
 
 
 #### ssl-verify-server-cert
@@ -233,13 +233,13 @@ Verify server's "Common Name" in its cert against hostname used when connecting.
 -u name
 ```
 
-The MariaDB user name to use when connecting to the server. The default is either your Unix login name, or `<code>ODBC</code>` on Windows. See the [GRANT](../../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) command for details on creating MariaDB user accounts.
+The MariaDB user name to use when connecting to the server. The default is either your Unix login name, or `ODBC` on Windows. See the [GRANT](../../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) command for details on creating MariaDB user accounts.
 
 
 ## Option Files
 
 
-It's also possible to use option files (or configuration files) to set these options. Most clients read option files. Usually, starting a client with the `<code>--help</code>` option will display which files it looks for as well as which option groups it recognizes.
+It's also possible to use option files (or configuration files) to set these options. Most clients read option files. Usually, starting a client with the `--help` option will display which files it looks for as well as which option groups it recognizes.
 
 
 ## See Also
@@ -249,5 +249,5 @@ It's also possible to use option files (or configuration files) to set these opt
 * [mariadb client](../../../../server/clients-and-utilities/mariadb-client/README.md)
 * [Clients and Utilities](../../../../server/clients-and-utilities/README.md)
 * [Configuring MariaDB for Remote Client Access](../basic-mariadb-articles/configuring-mariadb-for-remote-client-access.md)
-* [--skip-grant-tables](../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) allows you to start MariaDB without `<code>GRANT</code>`. This is useful if you lost your root password.
+* [--skip-grant-tables](../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) allows you to start MariaDB without `GRANT`. This is useful if you lost your root password.
 

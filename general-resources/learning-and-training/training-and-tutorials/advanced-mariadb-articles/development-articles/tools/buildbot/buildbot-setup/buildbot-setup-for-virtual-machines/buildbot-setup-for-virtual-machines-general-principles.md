@@ -54,7 +54,7 @@ To configure for serial console, the following two files are referenced below,
 and should be prepared in advance:
 
 
-### `<code>ttyS0</code>`
+### `ttyS0`
 
 
 ```
@@ -76,7 +76,7 @@ respawn
 exec /sbin/getty 115200 ttyS0
 ```
 
-### `<code>ttyS0.conf</code>`
+### `ttyS0.conf`
 
 
 ```

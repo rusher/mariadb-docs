@@ -11,7 +11,7 @@ All nodes have been running a mysqlslap client attached to the local spider node
 /usr/local/skysql/mysql-client/bin/mysqlslap --user=skysql --password=skyvodka --host=192.168.0.201 --port=5012 -i1000000 -c32 -q "insert into test(c) values('0-31091-138522330')" --create-schema=test
 ```
 
-`<code>spider_conn_recycle_mode=1;</code>`
+`spider_conn_recycle_mode=1;`
 
 
 ![spbench4](../../../.gitbook/assets/spider-benchmarks/+image/spbench4.png "spbench4")

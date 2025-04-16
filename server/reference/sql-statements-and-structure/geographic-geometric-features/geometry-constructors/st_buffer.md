@@ -12,7 +12,7 @@ BUFFER(g1,r)
 ## Description
 
 
-Returns a geometry that represents all points whose distance from geometry *`<code>g1</code>`* is less than or equal to distance, or radius, *`<code>r</code>`*.
+Returns a geometry that represents all points whose distance from geometry *`g1`* is less than or equal to distance, or radius, *`r`*.
 
 
 Uses for this function could include creating for example a new geometry representing a buffer zone around an island.

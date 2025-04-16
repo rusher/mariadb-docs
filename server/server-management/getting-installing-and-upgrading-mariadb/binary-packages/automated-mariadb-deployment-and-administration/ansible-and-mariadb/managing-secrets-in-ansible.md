@@ -11,13 +11,13 @@ Let's see how we can manage secrets.
 ## The SSH Password or Keys
 
 
-Most of the times, Ansible connects to the target hosts via SSH. It is common to use the system username and the SSH keys installed in `<code>/.ssh</code>`, which is the SSH clients default. In this case, nothing has to be done on the clients to be able to allow Ansible to use SSH, as long as they are already able to connect to the target hosts.
+Most of the times, Ansible connects to the target hosts via SSH. It is common to use the system username and the SSH keys installed in `/.ssh`, which is the SSH clients default. In this case, nothing has to be done on the clients to be able to allow Ansible to use SSH, as long as they are already able to connect to the target hosts.
 
 
-It is also possible to specify a different username as `<code>[ANSIBLE_REMOTE_USER](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_REMOTE_USER)</code>` and an SSH configuration file as `<code>[ANSIBLE_NETCONF_SSH_CONFIG](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_NETCONF_SSH_CONFIG)</code>`. These settings can be specified in Ansible configuration file or as environment variables.
+It is also possible to specify a different username as `[ANSIBLE_REMOTE_USER](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_REMOTE_USER)` and an SSH configuration file as `[ANSIBLE_NETCONF_SSH_CONFIG](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_NETCONF_SSH_CONFIG)`. These settings can be specified in Ansible configuration file or as environment variables.
 
 
-`<code>[ANSIBLE_ASK_PASS](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_ASK_PASS)</code>` can be specified. If this is the case, Ansible will prompt the user asking to type an SSH password.
+`[ANSIBLE_ASK_PASS](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_ASK_PASS)` can be specified. If this is the case, Ansible will prompt the user asking to type an SSH password.
 
 
 ## Avoiding Sharing Secrets
@@ -29,7 +29,7 @@ As a general rule, any configuration that implies communicating sensible informa
 Once Ansible is able to connect remote hosts, it can also be used to install the public keys of some users to grant them access. Sharing these keys implies no risk. Sharing private keys is never necessary, and must be avoided.
 
 
-MariaDB has a [UNIX_SOCKET](../../../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) plugin that can be used to let some users avoid entering a password, as far as they're logged in the operating system. This authentication method is used by default for the root user. This is a good way to avoid having one more password and possibly writing to a `<code>.my.cnf</code>` file so that the user doesn't have to type it.
+MariaDB has a [UNIX_SOCKET](../../../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) plugin that can be used to let some users avoid entering a password, as far as they're logged in the operating system. This authentication method is used by default for the root user. This is a good way to avoid having one more password and possibly writing to a `.my.cnf` file so that the user doesn't have to type it.
 
 
 Even for users who connect remotely, it is normally not necessary to insert passwords in an Ansible file. When we create a user with a password, a hash of the original password is stored in MariaDB. That hash can be found in the [mysql.user table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md). To know the hash of a password without even creating a user, we can use the [PASSWORD()](../../../../../reference/plugins/password-validation-plugins/password-reuse-check-plugin.md) function:
@@ -52,7 +52,7 @@ CREATE USER user@host IDENTIFIED BY PASSWORD '*54958E764CE10E50764C2EECBB71D01F0
 Even if you try to avoid sharing secrets, it's likely you'll have to keep some in Ansible. For example, MariaDB users that connect remotely have passwords, and if we want Ansible to create and manage those users, the hashes must be placed somewhere in our Ansible repository. While a hash cannot be converted back to a password, treating hashes as secrets is usually a good idea. Ansible provides a native way to handle secrets: [ansible-vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html).
 
 
-In the simplest case, we can manage all our passwords with a single ansible-vault password. When we add or change a new password in some file (typically a file in `<code>host_vars</code>` or `<code>group_vars</code>`) we'll use ansible-vault to crypt this password. While doing so, we'll be asked to insert our ansible-vault password. When we apply a role and Ansible needs to decrypt this password, it will ask us to enter again our ansible-vault password.
+In the simplest case, we can manage all our passwords with a single ansible-vault password. When we add or change a new password in some file (typically a file in `host_vars` or `group_vars`) we'll use ansible-vault to crypt this password. While doing so, we'll be asked to insert our ansible-vault password. When we apply a role and Ansible needs to decrypt this password, it will ask us to enter again our ansible-vault password.
 
 
 ansible-vault can use more than one password. Each password can manage a different set of secrets. So, for example, some users may have the password to manage regular MariaDB users passwords, and only one may have the password that is needed to manage the root user.

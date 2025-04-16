@@ -4,7 +4,7 @@
 This is a description of the different stages in Mariabackup, what they do and why they are needed.
 
 
-Note that a few items are marked with `<code>TODO</code>`; these are things we are working on and will be in next version of Mariabackup.
+Note that a few items are marked with `TODO`; these are things we are working on and will be in next version of Mariabackup.
 
 
 ## Execution Stages
@@ -14,7 +14,7 @@ Note that a few items are marked with `<code>TODO</code>`; these are things we a
 
 
 * Connect to mysqld instance, find out important variables (datadir ,InnoDB pagesize, encryption keys, encryption plugin etc)
-* Scan the database directory, `<code>datadir</code>`, looking for InnoDB tablespaces, load the tablespaces (basically, it is an “open” in InnoDB sense)
+* Scan the database directory, `datadir`, looking for InnoDB tablespaces, load the tablespaces (basically, it is an “open” in InnoDB sense)
 * If --lock-ddl-per-table is used:
 
   * Do MDL locks, for InnoDB tablespaces that we want to copy. This is to ensure that there are no ALTER, RENAME , TRUNCATE or DROP TABLE on any of the tables that we want to copy.
@@ -33,7 +33,7 @@ SELECT 1 from <table> LIMIT 0
 ### Redo Log Handling
 
 
-Start a dedicated thread in Mariabackup to copy InnoDB redo log (`<code>ib_logfile*</code>`).
+Start a dedicated thread in Mariabackup to copy InnoDB redo log (`ib_logfile*`).
 
 
 * This is needed to record all changes done while the backup is running. (The redo log logically is a single circular file, split into [innodb_log_files_in_group](../../../reference/storage-engines/innodb/innodb-system-variables.md) files.)
@@ -54,15 +54,15 @@ Start a dedicated thread in Mariabackup to copy InnoDB redo log (`<code>ib_logfi
 ### Create a Consistent Backup Point
 
 
-* Execute [FLUSH TABLE WITH READ LOCK](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md). This is default, but may be omitted with the `<code>-–no-lock</code>` parameter. The reason why `<code>FLUSH</code>` is needed is to ensure that all tables are in a consistent state at the exact same point in time, independent of storage engine.
-* If `<code>--lock-ddl-per-table</code>` is used and there is a user query waiting for MDL, the user query will be killed to resolve a deadlock. Note that these are only queries of type ALTER, DROP, TRUNCATE or RENAME TABLE. ([MDEV-15636](https://jira.mariadb.org/browse/MDEV-15636))
+* Execute [FLUSH TABLE WITH READ LOCK](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md). This is default, but may be omitted with the `-–no-lock` parameter. The reason why `FLUSH` is needed is to ensure that all tables are in a consistent state at the exact same point in time, independent of storage engine.
+* If `--lock-ddl-per-table` is used and there is a user query waiting for MDL, the user query will be killed to resolve a deadlock. Note that these are only queries of type ALTER, DROP, TRUNCATE or RENAME TABLE. ([MDEV-15636](https://jira.mariadb.org/browse/MDEV-15636))
 
 
 ### Last Copy Phase
 
 
-* Copy `<code>.frm</code>`, `<code>MyISAM</code>`, `<code>Aria</code>` and other storage engine files
-* If `<code>MyRocks</code>` is used, create rocksdb checkpoint via "set rocksdb_create_checkpoint=$rocksdb_data_dir/mariabackup_rocksdb_checkpoint " command. The result of it is a directory with hardlinks to MyRocks files. Copy the checkpoint directory to the backup (or create hardlinks in backup directory is on the same partition as data directory). Remove the checkpoint directory.
+* Copy `.frm`, `MyISAM`, `Aria` and other storage engine files
+* If `MyRocks` is used, create rocksdb checkpoint via "set rocksdb_create_checkpoint=$rocksdb_data_dir/mariabackup_rocksdb_checkpoint " command. The result of it is a directory with hardlinks to MyRocks files. Copy the checkpoint directory to the backup (or create hardlinks in backup directory is on the same partition as data directory). Remove the checkpoint directory.
 * Copy tables that were created while the backup was running and do rename files that were changed during backup (since [MDEV-16791](https://jira.mariadb.org/browse/MDEV-16791))
 * Copy the rest of InnoDB redo log, stop redo-log-copy thread
 * Copy changes to Aria log files (They are append only, so this is easy to do) (TODO)
@@ -74,10 +74,10 @@ Start a dedicated thread in Mariabackup to copy InnoDB redo log (`<code>ib_logfi
 
 * If [FLUSH TABLE WITH READ LOCK](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) was done:
 
-  * execute: `<code>UNLOCK TABLES</code>`
-* If `<code>--lock-ddl-per-table</code>` was done:
+  * execute: `UNLOCK TABLES`
+* If `--lock-ddl-per-table` was done:
 
-  * execute `<code>COMMIT</code>`
+  * execute `COMMIT`
 
 
 ### Handle Log Tables (TODO)

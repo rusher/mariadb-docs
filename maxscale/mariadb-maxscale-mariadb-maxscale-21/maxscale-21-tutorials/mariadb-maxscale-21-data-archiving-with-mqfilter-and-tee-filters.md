@@ -83,8 +83,8 @@ sudo systemctl start rabbitmq-server
 
 
 
-We need to create the `<code>msguser</code>` account which we will use to relay the messages
-to the broker. This can be done with the `<code>rabbitmqctl</code>` command.
+We need to create the `msguser` account which we will use to relay the messages
+to the broker. This can be done with the `rabbitmqctl` command.
 
 
 
@@ -95,8 +95,8 @@ sudo rabbitmqctl set_permissions "msguser" ".*" ".*" ".*"
 
 
 
-This creates the `<code>msguser</code>` account with `<code>msgpwd</code>` as the password and grants read, write and configurations
-permissions on the default virtual host `<code>/</code>`.
+This creates the `msguser` account with `msgpwd` as the password and grants read, write and configurations
+permissions on the default virtual host `/`.
 
 
 ## Configuration file creation
@@ -123,7 +123,7 @@ protocol=MySQLBackend
 
 
 
-After we have defined the `<code>production-1</code>` and `<code>archive-1</code>` servers, we need a monitor
+After we have defined the `production-1` and `archive-1` servers, we need a monitor
 module for those servers. This module will detect if connectivity to the servers
 is lost and notify MariaDB MaxScale of the changed server states.
 
@@ -141,11 +141,11 @@ monitor_interval=5000
 
 
 
-The monitor will use the user `<code>maxuser</code>` with the password `<code>maxpwd</code>` to connect to
-the servers and query them for their state. In the `<code>servers</code>` parameter we have
-listed both of the `<code>production-1</code>` and `<code>archive-1</code>` servers. All objects in the
+The monitor will use the user `maxuser` with the password `maxpwd` to connect to
+the servers and query them for their state. In the `servers` parameter we have
+listed both of the `production-1` and `archive-1` servers. All objects in the
 MariaDB MaxScale configuration file are referred by their section names. Here the section
-names of the servers are used in the `<code>servers</code>` parameter. The `<code>monitor_interval</code>`
+names of the servers are used in the `servers` parameter. The `monitor_interval`
 parameter controls how often the monitor will poll the servers for status. For
 this tutorial, we've set it to 5000 milliseconds.
 
@@ -175,12 +175,12 @@ filters=MQ Filter
 
 
 
-The `<code>filters</code>` parameters for the services refer to the filters we will be creating next.
+The `filters` parameters for the services refer to the filters we will be creating next.
 The Production service will use the Tee filter to duplicate INSERT, UPDATE and DELETE
 statements to the Archive service. The statements passed to the Archive service will
 use the MQ Filter to send the canonical versions of the statements to the RabbitMQ broker.
-The Production service will use the `<code>production-1</code>` server and the Archive service will
-use the `<code>archive-1</code>` server. Both services user the `<code>maxuser</code>` user with the `<code>maxpwd</code>` password.
+The Production service will use the `production-1` server and the Archive service will
+use the `archive-1` server. Both services user the `maxuser` user with the `maxpwd` password.
 
 
 Next we will configure the listeners for these two services.
@@ -203,8 +203,8 @@ port=4001
 
 
 
-The `<code>port</code>` parameter controls which port the listener will listen on and where the client
-connections should be made. The `<code>service</code>` parameter tells which listener belongs to which
+The `port` parameter controls which port the listener will listen on and where the client
+connections should be made. The `service` parameter tells which listener belongs to which
 service.
 
 
@@ -223,8 +223,8 @@ match=\(insert\)\|\(update\)\|\(delete\)
 
 
 
-The `<code>service</code>` parameter controls which service we want to duplicate the statements to.
-This needs to be set to the section name of the archive service: `<code>Archive</code>`. The `<code>match</code>`
+The `service` parameter controls which service we want to duplicate the statements to.
+This needs to be set to the section name of the archive service: `Archive`. The `match`
 parameter is a regular expression which, if matched, cause the statement to be duplicated.
 Here we will want a regular expression which will match the INSERT, UPDATE and DELETE
 statements.
@@ -250,11 +250,11 @@ key=MaxScale
 
 
 
-The `<code>hostname</code>` is the address and the `<code>port</code>` is the port of the RabbitMQ server. For
-`<code>username</code>` and `<code>password</code>` we will use the `<code>msguser</code>` and `<code>msgpwd</code>` credentials we
-created earlier. The `<code>exchange</code>` is the name of the RabbitMQ exchange we're using and
-the `<code>key</code>` is the key used for all the sent messages. The messages will be stored
-in the `<code>mxs-queue-1</code>` queue.
+The `hostname` is the address and the `port` is the port of the RabbitMQ server. For
+`username` and `password` we will use the `msguser` and `msgpwd` credentials we
+created earlier. The `exchange` is the name of the RabbitMQ exchange we're using and
+the `key` is the key used for all the sent messages. The messages will be stored
+in the `mxs-queue-1` queue.
 
 
 The last thing to add is the administration interface.
@@ -276,7 +276,7 @@ socket=default
 
 
 Now we have created the MariaDB MaxScale configuration file and all we need to do is to save
-it in `<code>/etc/maxscale.cnf</code>`, start MariaDB MaxScale and test that it works. The testing will
+it in `/etc/maxscale.cnf`, start MariaDB MaxScale and test that it works. The testing will
 be done in the next section.
 
 
@@ -438,7 +438,7 @@ Rows matched: 2  Changed: 2  Warnings: 0
 
 
 
-On the RabbitMQ server we can see the new queue `<code>msg-queue-1</code>` with three new messages in it.
+On the RabbitMQ server we can see the new queue `msg-queue-1` with three new messages in it.
 
 
 

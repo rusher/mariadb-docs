@@ -9,10 +9,10 @@ These [Sys Schema](sys-schema-views-host_summary_by_statement_latency-and-xhost_
 ## Description
 
 
-The `<code>io_by_thread_by_latency</code>` and `<code>x$io_by_thread_by_latency</code>` view summarize I/O consumers to display time waiting for I/O, grouped by thread. Rows are sorted by descending total I/O latency by default.
+The `io_by_thread_by_latency` and `x$io_by_thread_by_latency` view summarize I/O consumers to display time waiting for I/O, grouped by thread. Rows are sorted by descending total I/O latency by default.
 
 
-The `<code>io_by_thread_by_latency</code>` view is intended to be easier for human reading, while the `<code>x$io_by_thread_by_latency</code>` view provides the data in raw form, intended for tools that process the data.
+The `io_by_thread_by_latency` view is intended to be easier for human reading, while the `x$io_by_thread_by_latency` view provides the data in raw form, intended for tools that process the data.
 
 
 They contain the following columns:

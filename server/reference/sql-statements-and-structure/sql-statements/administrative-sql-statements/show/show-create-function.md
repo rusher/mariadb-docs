@@ -15,7 +15,7 @@ This statement is similar to [SHOW CREATE PROCEDURE](show-create-procedure.md) b
 [stored functions](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md).
 
 
-`<code>SHOW CREATE FUNCTION</code>` quotes identifiers according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable. Prior to [MariaDB 10.6.5](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1065-release-notes.md), [MariaDB 10.5.13](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10513-release-notes.md) and [MariaDB 10.4.22](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10422-release-notes.md), the output of this statement was unreliably affected by the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
+`SHOW CREATE FUNCTION` quotes identifiers according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable. Prior to [MariaDB 10.6.5](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1065-release-notes.md), [MariaDB 10.5.13](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10513-release-notes.md) and [MariaDB 10.4.22](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10422-release-notes.md), the output of this statement was unreliably affected by the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
 
 
 ## Example
@@ -42,5 +42,5 @@ collation_connection: utf8_general_ci
 
 
 * [Stored Functions](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md)
-* `<code class="highlight fixed" style="white-space:pre-wrap">[CREATE FUNCTION](../../data-definition/create/create-function.md)</code>`
+* `[CREATE FUNCTION](../../data-definition/create/create-function.md)`
 

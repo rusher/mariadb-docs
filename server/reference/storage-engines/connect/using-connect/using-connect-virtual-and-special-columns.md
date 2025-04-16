@@ -68,7 +68,7 @@ Existing special columns are listed in the following table:
 
 
 **Note:** CONNECT does not currently support auto incremented columns. However,
-a `<code>ROWID</code>` special column will do the job of a column auto incremented by 1.
+a `ROWID` special column will do the job of a column auto incremented by 1.
 
 
 

@@ -7,7 +7,7 @@ This question is outdated. [MariaDB 5.5](../../../../../release-notes/mariadb-co
 As of the current writing, [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) based on MySQL 5.5 is not released yet. You may have an environment where you have upgraded to MySQL 5.5 or are currently using MySQL 5.5 but you want to now run [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md). For this to work, you need to downgrade your installation as [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)/5.2/5.1 is based on MySQL 5.1.
 
 
-The MySQL Reference Manual talks about [downgrading MySQL](https://dev.mysql.com/doc/refman/5.5/en/downgrading.html). Note the change in `<code>mysql.proc.comment</code>`. The table is seen to be corrupt and in need of repair. You might want to run `<code>[mysql_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md)</code>` in MariaDB or a user left a comment to perform:
+The MySQL Reference Manual talks about [downgrading MySQL](https://dev.mysql.com/doc/refman/5.5/en/downgrading.html). Note the change in `mysql.proc.comment`. The table is seen to be corrupt and in need of repair. You might want to run `[mysql_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md)` in MariaDB or a user left a comment to perform:
 
 
 ```

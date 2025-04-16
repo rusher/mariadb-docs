@@ -103,7 +103,7 @@ It is possible to create a new partitioned table using [CREATE TABLE](../../refe
 ADD PARTITION [IF NOT EXISTS] (partition_definition)
 ```
 
-`<code>[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... ADD PARTITION</code>` can be used to add partitions to an existing table:
+`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... ADD PARTITION` can be used to add partitions to an existing table:
 
 
 ```
@@ -145,7 +145,7 @@ You can work around this by using REORGANIZE PARTITION to split the partition in
 COALESCE PARTITION number
 ```
 
-`<code>[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... COALESCE PARTITION</code>` is used to reduce the number of HASH or KEY partitions by the specified number. For example, given the following table with 5 partitions:
+`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... COALESCE PARTITION` is used to reduce the number of HASH or KEY partitions by the specified number. For example, given the following table with 5 partitions:
 
 
 ```
@@ -171,7 +171,7 @@ ALTER TABLE t1 COALESCE PARTITION 2;
 CONVERT PARTITION partition_name TO TABLE tbl_name
 CONVERT TABLE normal_table TO partition_definition
 ```
-`<code>[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... CONVERT PARTITION</code>` can, from [MariaDB 10.7](../../../release-notes/mariadb-community-server/what-is-mariadb-107.md), be used to convert partitions in an existing table to a standalone table:
+`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... CONVERT PARTITION` can, from [MariaDB 10.7](../../../release-notes/mariadb-community-server/what-is-mariadb-107.md), be used to convert partitions in an existing table to a standalone table:
 
 ```
 CREATE OR REPLACE TABLE t1 (
@@ -232,7 +232,7 @@ Create Table: CREATE TABLE `t2` (
   `dt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci
 ```
-`<code>CONVERT TABLE</code>` does the reverse, converting a table into a partition:
+`CONVERT TABLE` does the reverse, converting a table into a partition:
 
 ```
 ALTER TABLE t1 CONVERT TABLE t2 to PARTITION p3 VALUES LESS THAN (2016);
@@ -270,15 +270,15 @@ Create Table: CREATE TABLE `t1` (
 
 ##### MariaDB starting with [11.4](../../../release-notes/mariadb-community-server/what-is-mariadb-114.md)
 When converting tables to a partition, validation is performed on each row to ensure it meets the partition requirements. This can be very slow in the case of larger tables. 
-From [MariaDB 11.4](../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), it is possible to disable this validation by specifying the `<code>WITHOUT VALIDATION</code>` option.
+From [MariaDB 11.4](../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), it is possible to disable this validation by specifying the `WITHOUT VALIDATION` option.
 
 ```
 CONVERT TABLE normal_table TO partition_definition [{WITH | WITHOUT} VALIDATION]
 ```
-`<code>WITH VALIDATION</code>` will result in the validation being performed, and is the default behaviour.
+`WITH VALIDATION` will result in the validation being performed, and is the default behaviour.
 
 
-An alternative (and the only method prior to [MariaDB 10.7](../../../release-notes/mariadb-community-server/what-is-mariadb-107.md)) to convert partitions to tables is to use `<code>[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... EXCHANGE PARTITION</code>`. This requires having to manually do the following steps:
+An alternative (and the only method prior to [MariaDB 10.7](../../../release-notes/mariadb-community-server/what-is-mariadb-107.md)) to convert partitions to tables is to use `[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... EXCHANGE PARTITION`. This requires having to manually do the following steps:
 
 
 * create an empty table with the same structure as the partition
@@ -355,7 +355,7 @@ Create Table: CREATE TABLE `t2` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci
 ```
 
-Similarly, to do the reverse and convert a table into a partition `<code>[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... EXCHANGE PARTITION</code>` can also be used, with the following manual steps required:
+Similarly, to do the reverse and convert a table into a partition `[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... EXCHANGE PARTITION` can also be used, with the following manual steps required:
 
 
 * create the partition
@@ -402,7 +402,7 @@ Create Table: CREATE TABLE `t1` (
 DROP PARTITION [IF EXISTS] partition_names
 ```
 
-`<code>[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... DROP PARTITION</code>` can be used to drop specific partitions (and discard all data within the specified partitions) for [RANGE](partitioning-types/range-partitioning-type.md) and [LIST](partitioning-types/list-partitioning-type.md) partitions. It cannot be used on [HASH](partitioning-types/hash-partitioning-type.md) or [KEY](partitioning-types/key-partitioning-type.md) partitions. To rather remove all partitioning, while leaving the data unaffected, see [Removing Partitioning](#removing-partitioning).
+`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... DROP PARTITION` can be used to drop specific partitions (and discard all data within the specified partitions) for [RANGE](partitioning-types/range-partitioning-type.md) and [LIST](partitioning-types/list-partitioning-type.md) partitions. It cannot be used on [HASH](partitioning-types/hash-partitioning-type.md) or [KEY](partitioning-types/key-partitioning-type.md) partitions. To rather remove all partitioning, while leaving the data unaffected, see [Removing Partitioning](#removing-partitioning).
 
 
 ```
@@ -449,7 +449,7 @@ EXCHANGE PARTITION partition_name WITH TABLE tbl_name
 EXCHANGE PARTITION partition_name WITH TABLE tbl_name [{WITH | WITHOUT} VALIDATION]
 ```
 
-`<code>[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) t1 EXCHANGE PARTITION p1 WITH TABLE t2</code>` permits one to exchange a partition or subpartition with another table.
+`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) t1 EXCHANGE PARTITION p1 WITH TABLE t2` permits one to exchange a partition or subpartition with another table.
 
 
 ```
@@ -510,13 +510,13 @@ The following requirements must be met:
 * Table t1 must be partitioned, and table t2 cannot be partitioned
 * Table t2 cannot be a temporary table
 * Table t1 and t2 must otherwise be identica
-* Any existing row in t2 must match the conditions for storage in the exchanged partition p1 unless, from [MariaDB 11.4](../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), the `<code>WITHOUT VALIDATION</code>` option is specified.
+* Any existing row in t2 must match the conditions for storage in the exchanged partition p1 unless, from [MariaDB 11.4](../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), the `WITHOUT VALIDATION` option is specified.
 
 
 MariaDB will by default perform the validation to see that each row meets the partition requirements, and the statement will fail if a row does not fit.
 
 
-This attempted exchange fails, as the value already in t2, `<code>2015-05-05</code>` is outside of the partition conditions:
+This attempted exchange fails, as the value already in t2, `2015-05-05` is outside of the partition conditions:
 
 
 ```
@@ -548,13 +548,13 @@ ERROR 1526 (HY000): Table has no partition for value 0
 
 ##### MariaDB starting with [11.4](../../../release-notes/mariadb-community-server/what-is-mariadb-114.md)
 This validation is performed for each row, and can be very slow in the case of larger tables. 
-From [MariaDB 11.4](../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), it is possible to disable this validation by specifying the `<code>WITHOUT VALIDATION</code>` option.
+From [MariaDB 11.4](../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), it is possible to disable this validation by specifying the `WITHOUT VALIDATION` option.
 
 ```
 ALTER TABLE t1 EXCHANGE PARTITION p1 with TABLE t2 WITHOUT VALIDATION;
 Query OK, 0 rows affected (0.048 sec)
 ```
-`<code>WITH VALIDATION</code>` will result in the validation being performed, and is the default behaviour.
+`WITH VALIDATION` will result in the validation being performed, and is the default behaviour.
 
 
 ### Removing Partitioning
@@ -564,7 +564,7 @@ Query OK, 0 rows affected (0.048 sec)
 REMOVE PARTITIONING
 ```
 
-`<code>[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... REMOVE PARTITIONING</code>` will remove all partitioning from the table, while leaving the data unaffected. To rather drop a particular partition (and discard all of its data), see [Dropping Partitions](#dropping-partitions).
+`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... REMOVE PARTITIONING` will remove all partitioning from the table, while leaving the data unaffected. To rather drop a particular partition (and discard all of its data), see [Dropping Partitions](#dropping-partitions).
 
 
 ```
@@ -712,7 +712,7 @@ ALTER TABLE t1 REORGANIZE PARTITION p3 INTO (
 TRUNCATE PARTITION partition_names
 ```
 
-`<code>[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... TRUNCATE PARTITION</code>` will remove all data from the specified partition/s, leaving the table and partition structure unchanged. Partitions don't need to be contiguous.
+`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... TRUNCATE PARTITION` will remove all data from the specified partition/s, leaving the table and partition structure unchanged. Partitions don't need to be contiguous.
 
 
 ```
@@ -785,7 +785,7 @@ ALTER TABLE t1 CHECK PARTITION p1,p3;
 +---------+-------+----------+----------+
 ```
 
-The `<code>ALL</code>` keyword can be used in place of the list of partition names, and the check operation will be performed on all partitions.
+The `ALL` keyword can be used in place of the list of partition names, and the check operation will be performed on all partitions.
 
 
 ### Repairing Partitions
@@ -807,13 +807,13 @@ ALTER TABLE t1 REPAIR PARTITION p0,p3;
 +---------+--------+----------+----------+
 ```
 
-As with [REPAIR TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md), the `<code>QUICK</code>` and `<code>EXTENDED</code>` options are available. However, the `<code>USE_FRM</code>` option cannot be used with this statement on a partitioned table.
+As with [REPAIR TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md), the `QUICK` and `EXTENDED` options are available. However, the `USE_FRM` option cannot be used with this statement on a partitioned table.
 
 
-`<code>REPAIR PARTITION</code>` will fail if there are duplicate key errors. `<code>ALTER IGNORE TABLE ... REPAIR PARTITION</code>` can be used in this case.
+`REPAIR PARTITION` will fail if there are duplicate key errors. `ALTER IGNORE TABLE ... REPAIR PARTITION` can be used in this case.
 
 
-The `<code>ALL</code>` keyword can be used in place of the list of partition names, and the repair operation will be performed on all partitions.
+The `ALL` keyword can be used in place of the list of partition names, and the repair operation will be performed on all partitions.
 
 
 ### Optimizing Partitions
@@ -835,10 +835,10 @@ ALTER TABLE t1 OPTIMIZE PARTITION p0,p3;
 +---------+----------+----------+----------+
 ```
 
-`<code>OPTIMIZE PARTITION</code>` does not support per-partition optimization on InnoDB tables, and will issue a warning and cause the entire table to rebuilt and analyzed. `<code>ALTER TABLE ... REBUILD PARTITION</code>` and `<code>ALTER TABLE ... ANALYZE PARTITION</code>` can be used instead.
+`OPTIMIZE PARTITION` does not support per-partition optimization on InnoDB tables, and will issue a warning and cause the entire table to rebuilt and analyzed. `ALTER TABLE ... REBUILD PARTITION` and `ALTER TABLE ... ANALYZE PARTITION` can be used instead.
 
 
-The `<code>ALL</code>` keyword can be used in place of the list of partition names, and the optimize operation will be performed on all partitions.
+The `ALL` keyword can be used in place of the list of partition names, and the optimize operation will be performed on all partitions.
 
 
 ### Partitioning for Specific Storage Engines

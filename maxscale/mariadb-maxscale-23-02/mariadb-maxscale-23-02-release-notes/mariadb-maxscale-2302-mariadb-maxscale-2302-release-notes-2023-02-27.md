@@ -21,25 +21,25 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 ### MariaDBMonitor
 
 
-MariaDBMonitor now preserves the `<code>MASTER_USE_GTID</code>`-setting of a replica when
+MariaDBMonitor now preserves the `MASTER_USE_GTID`-setting of a replica when
 redirecting one during switchover and failover. When starting a new
-replication connection on a previous replica, `<code>Slave_Pos</code>` is used. When starting
-a new replication connection on a previous primary, `<code>Current_Pos</code>` is used.
+replication connection on a previous replica, `Slave_Pos` is used. When starting
+a new replication connection on a previous primary, `Current_Pos` is used.
 
 
 ## Dropped Features
 
 
-### The `<code>csmon</code>` monitor has been dropped.
+### The `csmon` monitor has been dropped.
 
 
 Was deprecated in 22.08.2.
 
 
-### The `<code>auroramon</code>` monitor has been dropped.
+### The `auroramon` monitor has been dropped.
 
 
-### `<code>maxctrl cluster</code>` commands have been removed.
+### `maxctrl cluster` commands have been removed.
 
 
 Was deprecated in 22.08.2.
@@ -54,9 +54,9 @@ Was deprecated in 22.08.2.
 #### ODBC Type SQL Connections
 
 
-The `<code>POST /sql</code>` REST-API endpoint can now use an ODBC driver to connect to an
+The `POST /sql` REST-API endpoint can now use an ODBC driver to connect to an
 external data source. To make the use of these new ODBC connections easier, a
-new endpoint for canceling active queries was added. The `<code>POST /sql/:id/cancel</code>`
+new endpoint for canceling active queries was added. The `POST /sql/:id/cancel`
 endpoint will interrupt the ongoing operation on the given connection.
 
 
@@ -68,20 +68,20 @@ connections, refer to the SQL resource
 #### Asynchronous Query API
 
 
-The `<code>POST /sql/:id/queries</code>` now supports the `<code>async=true</code>` request option. When
+The `POST /sql/:id/queries` now supports the `async=true` request option. When
 enabled, the results of the query will be delivered asynchronously via the newly
-added `<code>GET /sql/:id/queries/:query_id</code>` endpoint.
+added `GET /sql/:id/queries/:query_id` endpoint.
 
 
 To make the use of the API easier, the latest asynchronous query result can be
 retrieved multiple times. Results can also be explicitly discarded with the new
-`<code>DELETE /sql/:id/queries/:query_id</code>` endpoint.
+`DELETE /sql/:id/queries/:query_id` endpoint.
 
 
 #### [MXS-2709](https://jira.mariadb.org/browse/MXS-2709) ETL/Data Migration Service
 
 
-The newly added ODBC type connections can be used with the new `<code>/sql/:id/etl</code>`
+The newly added ODBC type connections can be used with the new `/sql/:id/etl`
 endpoints to perform data migration operations from external ODBC data sources
 into MariaDB. The initial version supports MariaDB-to-MariaDB and
 PostgreSQL-to-MariaDB migrations as well as generic migrations done via the ODBC
@@ -152,7 +152,7 @@ cache. See
 ### [MXS-4182](https://jira.mariadb.org/browse/MXS-4182) Session load indicator
 
 
-`<code>maxctrl (list|show) sessions</code>` and *MaxGUI* now show for each session an
+`maxctrl (list|show) sessions` and *MaxGUI* now show for each session an
 *i/o activity* number that gives an indication of the load of a particular
 session. The number is the count of I/O operations performed for the session
 during the previous 30 seconds.
@@ -168,7 +168,7 @@ MariaDB Server ed25519 authentication plugin support added. See
 ### [MXS-4320](https://jira.mariadb.org/browse/MXS-4320) Let maxctrl show datetime values using local client timezone
 
 
-The maxctrl `<code>list</code>` and `<code>show</code>` commands now display timestamps using the
+The maxctrl `list` and `show` commands now display timestamps using the
 locale and timezone of the client computer.
 
 
@@ -214,7 +214,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platfor
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

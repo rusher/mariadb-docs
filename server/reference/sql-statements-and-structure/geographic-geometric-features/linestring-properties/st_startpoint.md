@@ -13,10 +13,10 @@ StartPoint(ls)
 
 
 Returns the [Point](../geometry-constructors/point.md) that is the start point of the
-[LineString](../geometry-constructors/linestring.md) value `<code>ls</code>`.
+[LineString](../geometry-constructors/linestring.md) value `ls`.
 
 
-`<code>ST_StartPoint()</code>` and `<code>StartPoint()</code>` are synonyms.
+`ST_StartPoint()` and `StartPoint()` are synonyms.
 
 
 ## Examples

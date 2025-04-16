@@ -41,11 +41,11 @@ INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
 ```
 
 
-The `<code>INSERT</code>` statement is used to insert new rows into an existing table. The `<code>INSERT ... VALUES</code>`
-and `<code>INSERT ... SET</code>` forms of the statement insert rows based on explicitly specified values. The `<code>INSERT ... SELECT</code>` form inserts rows selected from another table or tables. `<code>INSERT ... SELECT</code>` is discussed further in the `<code>[INSERT ... SELECT](insert-select.md)</code>` article.
+The `INSERT` statement is used to insert new rows into an existing table. The `INSERT ... VALUES`
+and `INSERT ... SET` forms of the statement insert rows based on explicitly specified values. The `INSERT ... SELECT` form inserts rows selected from another table or tables. `INSERT ... SELECT` is discussed further in the `[INSERT ... SELECT](insert-select.md)` article.
 
 
-The table name can be specified in the form `<code>db_name</code>`.`<code>tbl_name</code>` or, if a default database is selected, in the form `<code>tbl_name</code>` (see [Identifier Qualifiers](../../../sql-language-structure/identifier-qualifiers.md)). This allows to use [INSERT ... SELECT](insert-select.md) to copy rows between different databases.
+The table name can be specified in the form `db_name`.`tbl_name` or, if a default database is selected, in the form `tbl_name` (see [Identifier Qualifiers](../../../sql-language-structure/identifier-qualifiers.md)). This allows to use [INSERT ... SELECT](insert-select.md) to copy rows between different databases.
 
 
 The PARTITION clause can be used in both the INSERT and the SELECT part. See [Partition Pruning and Selection](../../../../../server-management/partitioning-tables/partition-pruning-and-selection.md) for details.
@@ -59,22 +59,22 @@ The RETURNING clause was introduced in [MariaDB 10.5](../../../../../../release-
 The columns list is optional. It specifies which values are explicitly inserted, and in which order. If this clause is not specified, all values must be explicitly specified, in the same order they are listed in the table definition.
 
 
-The list of value follow the `<code>VALUES</code>` or `<code>VALUE</code>` keyword (which are interchangeable, regardless how much values you want to insert), and is wrapped by parenthesis. The values must be listed in the same order as the columns list. It is possible to specify more than one list to insert more than one rows with a single statement. If many rows are inserted, this is a speed optimization.
+The list of value follow the `VALUES` or `VALUE` keyword (which are interchangeable, regardless how much values you want to insert), and is wrapped by parenthesis. The values must be listed in the same order as the columns list. It is possible to specify more than one list to insert more than one rows with a single statement. If many rows are inserted, this is a speed optimization.
 
 
-For one-row statements, the `<code>SET</code>` clause may be more simple, because you don't need to remember the columns order. All values are specified in the form `<code>col</code>` = `<code>expr</code>`.
+For one-row statements, the `SET` clause may be more simple, because you don't need to remember the columns order. All values are specified in the form `col` = `expr`.
 
 
-Values can also be specified in the form of a SQL expression or subquery. However, the subquery cannot access the same table that is named in the `<code>INTO</code>` clause.
+Values can also be specified in the form of a SQL expression or subquery. However, the subquery cannot access the same table that is named in the `INTO` clause.
 
 
-If you use the `<code>LOW_PRIORITY</code>` keyword, execution of the `<code>INSERT</code>` is delayed until no other clients are reading from the table. If you use the `<code>HIGH_PRIORITY</code>` keyword, the statement has the same priority as `<code>SELECT</code>`s. This affects only storage engines that use only table-level locking (MyISAM, MEMORY, MERGE). However, if one of these keywords is specified, [concurrent inserts](concurrent-inserts.md) cannot be used. See [HIGH_PRIORITY and LOW_PRIORITY clauses](../changing-deleting-data/high_priority-and-low_priority.md) for details.
+If you use the `LOW_PRIORITY` keyword, execution of the `INSERT` is delayed until no other clients are reading from the table. If you use the `HIGH_PRIORITY` keyword, the statement has the same priority as `SELECT`s. This affects only storage engines that use only table-level locking (MyISAM, MEMORY, MERGE). However, if one of these keywords is specified, [concurrent inserts](concurrent-inserts.md) cannot be used. See [HIGH_PRIORITY and LOW_PRIORITY clauses](../changing-deleting-data/high_priority-and-low_priority.md) for details.
 
 
 ## INSERT DELAYED
 
 
-For more details on the `<code>DELAYED</code>` option, see [INSERT DELAYED](insert-delayed.md).
+For more details on the `DELAYED` option, see [INSERT DELAYED](insert-delayed.md).
 
 
 ## HIGH PRIORITY and LOW PRIORITY
@@ -118,7 +118,7 @@ Inserting more than 1 row at a time:
 INSERT INTO tbl_name VALUES (1, "row 1"), (2, "row 2");
 ```
 
-Using the `<code>SET</code>` clause:
+Using the `SET` clause:
 
 
 ```
@@ -138,7 +138,7 @@ See [INSERT ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md) and [INS
 ## INSERT ... RETURNING
 
 
-`<code>INSERT ... RETURNING</code>` returns a resultset of the inserted rows.
+`INSERT ... RETURNING` returns a resultset of the inserted rows.
 This returns the listed columns for all the rows that are inserted, or alternatively, the specified SELECT expression. Any SQL expressions which can be calculated can be used in the select expression for the RETURNING clause, including virtual columns and aliases, expressions which use various operators such as bitwise, logical and arithmetic operators, string functions, date-time functions, numeric functions, control flow functions, secondary functions and stored functions. Along with this, statements which have subqueries and prepared statements can also be used.
 
 

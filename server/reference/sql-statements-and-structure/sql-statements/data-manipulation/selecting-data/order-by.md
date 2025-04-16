@@ -5,9 +5,9 @@
 ## Description
 
 
-Use the `<code>ORDER BY</code>` clause to order a resultset, such as that are returned from a [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
+Use the `ORDER BY` clause to order a resultset, such as that are returned from a [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
 statement. You can specify just a column or use any expression with functions. If you are
-using the `<code>GROUP BY</code>` clause, you can use grouping functions in `<code>ORDER BY</code>`.
+using the `GROUP BY` clause, you can use grouping functions in `ORDER BY`.
 Ordering is done after grouping.
 
 
@@ -16,7 +16,7 @@ the first expression, then by the second expression if they have the same value 
 first, and so on.
 
 
-You can use the keywords `<code>ASC</code>` and `<code>DESC</code>` after each ordering expression to
+You can use the keywords `ASC` and `DESC` after each ordering expression to
 force that ordering to be ascending or descending, respectively. Ordering is ascending
 by default.
 
@@ -26,17 +26,17 @@ the results will be ordered by the *n*th column in the select expression.
 
 
 When string values are compared, they are compared as if by the [STRCMP](../../built-in-functions/string-functions/strcmp.md)
-function. `<code>STRCMP</code>` ignores trailing whitespace and may normalize
+function. `STRCMP` ignores trailing whitespace and may normalize
 characters and ignore case, depending on the [collation](../../../../data-types/string-data-types/character-sets/README.md) in use.
 
 
-Duplicated entries in the `<code>ORDER BY</code>` clause are removed.
+Duplicated entries in the `ORDER BY` clause are removed.
 
 
-`<code>ORDER BY</code>` can also be used to order the activities of a [DELETE](../changing-deleting-data/delete.md) or [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) statement (usually with the [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clause).
+`ORDER BY` can also be used to order the activities of a [DELETE](../changing-deleting-data/delete.md) or [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) statement (usually with the [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clause).
 
 
-Until [MariaDB 10.3.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md), it was not possible to use `<code>ORDER BY</code>` (or [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md)) in a multi-table [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) statement. This restriction was lifted in [MariaDB 10.3.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md).
+Until [MariaDB 10.3.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md), it was not possible to use `ORDER BY` (or [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md)) in a multi-table [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) statement. This restriction was lifted in [MariaDB 10.3.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md).
 
 
 
@@ -103,7 +103,7 @@ SELECT * FROM seq;
 +------+------+
 ```
 
-From [MariaDB 10.3.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md), `<code>ORDER BY</code>` can be used in a multi-table update:
+From [MariaDB 10.3.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md), `ORDER BY` can be used in a multi-table update:
 
 
 ```

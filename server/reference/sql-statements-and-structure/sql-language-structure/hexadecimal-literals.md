@@ -4,24 +4,24 @@
 Hexadecimal literals can be written using any of the following syntaxes:
 
 
-* x'`<code>value</code>`'
-* X'`<code>value</code>`' (SQL standard)
-* 0x`<code>value</code>` (ODBC)
+* x'`value`'
+* X'`value`' (SQL standard)
+* 0x`value` (ODBC)
 
 
-`<code>value</code>` is a sequence of hexadecimal digits (from `<code>0</code>` to `<code>9</code>` and from `<code>A</code>` to `<code>F</code>`). The case of the digits does not matter. With the first two syntaxes, `<code>value</code>` must consist of an even number of digits. With the last syntax, digits can be even, and they are treated as if they had an extra 0 at the beginning.
+`value` is a sequence of hexadecimal digits (from `0` to `9` and from `A` to `F`). The case of the digits does not matter. With the first two syntaxes, `value` must consist of an even number of digits. With the last syntax, digits can be even, and they are treated as if they had an extra 0 at the beginning.
 
 
 Normally, hexadecimal literals are interpreted as binary string, where each pair of digits represents a character. When used in a numeric context, they are interpreted as integers. (See the example below). In no case can a hexadecimal literal be a decimal number.
 
 
-The first two syntaxes; `<code>X'value'</code>` and x'`<code>value</code>`, follow the SQL standard, and behave as a string in all contexts in MariaDB since [MariaDB 10.0.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1003-release-notes.md) and [MariaDB 5.5.31](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5531-release-notes.md) (fixing [MDEV-4489](https://jira.mariadb.org/browse/MDEV-4489)). The latter syntax, 0x`<code>value</code>`, is a MySQL/MariaDB extension for hex hybrids and behaves as a string or as a number depending on context. MySQL treats all syntaxes the same, so there may be different results in MariaDB and MySQL (see below).
+The first two syntaxes; `X'value'` and x'`value`, follow the SQL standard, and behave as a string in all contexts in MariaDB since [MariaDB 10.0.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1003-release-notes.md) and [MariaDB 5.5.31](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5531-release-notes.md) (fixing [MDEV-4489](https://jira.mariadb.org/browse/MDEV-4489)). The latter syntax, 0x`value`, is a MySQL/MariaDB extension for hex hybrids and behaves as a string or as a number depending on context. MySQL treats all syntaxes the same, so there may be different results in MariaDB and MySQL (see below).
 
 
 ## Examples
 
 
-Representing the `<code>a</code>` character with the three syntaxes explained above:
+Representing the `a` character with the three syntaxes explained above:
 
 
 ```

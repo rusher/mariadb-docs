@@ -89,7 +89,7 @@ for this.
 
 
 It is also a good idea to test your rsync command before adding it to a cron
-job by adding the `<code>-v --dry-run</code>` flags to the command temporarily so you can
+job by adding the `-v --dry-run` flags to the command temporarily so you can
 see what it will do (without actually doing anything).
 
 
@@ -141,7 +141,7 @@ to (mirror (at) mariadb [dot] org) with the following information:
  Texas, USA") of the mirror (we use geolocation to try and send people to a
  mirror close to them).
 1. The base public URL for the mirror
- (e.g. `<code>'<code>http://mirror.example.net/pub/mariadb</code>'</code>`).
+ (e.g. `'<code>http://mirror.example.net/pub/mariadb</code>'`).
 1. The mirror you are using to rsync from
 
 

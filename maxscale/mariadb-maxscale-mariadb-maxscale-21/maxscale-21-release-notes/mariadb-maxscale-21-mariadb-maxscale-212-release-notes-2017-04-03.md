@@ -53,8 +53,8 @@ hostname. All of the addresses use port 3306.
 ### Cache
 
 
-* The storage `<code>storage_inmemory</code>` is now the default, so the parameter
- `<code>storage</code>` no longer need to be set explicitly.
+* The storage `storage_inmemory` is now the default, so the parameter
+ `storage` no longer need to be set explicitly.
 
 
 ### Improved Wildcard Matching
@@ -68,7 +68,7 @@ as well as hostnames.
 
 
 The Connector-C used by MaxScale can now be configured to load authentication
-plugins from a specific directory with the new `<code>connector_plugindir</code>`
+plugins from a specific directory with the new `connector_plugindir`
 parameter. Read the [Configuration Guide](../maxscale-21-getting-started/mariadb-maxscale-21-mariadb-maxscale-configuration-usage-scenarios.md)
 for more details about this new parameter.
 

@@ -5,10 +5,10 @@
 ## Basics
 
 
-Off (0) by default, when enabling this optimization, MariaDB will consider a join order that may shorten query execution time based on the `<code>ORDER BY ... LIMIT n</code>` clause. For small values of `<code>n</code>`, this may improve performance.
+Off (0) by default, when enabling this optimization, MariaDB will consider a join order that may shorten query execution time based on the `ORDER BY ... LIMIT n` clause. For small values of `n`, this may improve performance.
 
 
-Set the value of `<code>optimizer_join_limit_pref_ratio</code>` to a non-zero value to enable this option (higher values are more conservative, recommended value is 100), or set to 0 (the default value) to disable it.
+Set the value of `optimizer_join_limit_pref_ratio` to a non-zero value to enable this option (higher values are more conservative, recommended value is 100), or set to 0 (the default value) to disable it.
 
 
 ## Detailed description
@@ -35,7 +35,7 @@ limit 10
 ```
 
 The two possible plans are:
-`<code>customer->orders</code>`:
+`customer->orders`:
 
 
 ```
@@ -47,7 +47,7 @@ The two possible plans are:
 +------+-------------+----------+------+---------------+---------------+---------+---------------+------+----------------------------------------------+
 ```
 
-and `<code>orders->customer</code>`:
+and `orders->customer`:
 
 
 ```
@@ -59,10 +59,10 @@ and `<code>orders->customer</code>`:
 +------+-------------+----------+-------+---------------+------------+---------+----------------------+------+-------------+
 ```
 
-The `<code>customer->orders</code>` plan computes a join between all customers and orders, saves that result into a temporary table, and then uses filesort to get the 10 most recent orders. This query plan doesn't benefit from the fact that just 10 orders are needed.
+The `customer->orders` plan computes a join between all customers and orders, saves that result into a temporary table, and then uses filesort to get the 10 most recent orders. This query plan doesn't benefit from the fact that just 10 orders are needed.
 
 
-However, in contrast, the `<code>orders->customers</code>` plan uses an index to read rows in the ORDER BY order. The query can stop execution once it finds 10 `<code>order-and-customer</code>` combinations. This is much faster than computing the entire join. Under this plan, and when this new optimization, we can leverage ORDER BY ... LIMIT to stop early, when we have the 10 combinations.
+However, in contrast, the `orders->customers` plan uses an index to read rows in the ORDER BY order. The query can stop execution once it finds 10 `order-and-customer` combinations. This is much faster than computing the entire join. Under this plan, and when this new optimization, we can leverage ORDER BY ... LIMIT to stop early, when we have the 10 combinations.
 
 
 ### Plans with LIMIT shortcuts are difficult to estimate
@@ -84,8 +84,8 @@ limit 10
 ```
 
 Suppose we know beforehand that 50% of orders are shipped by air. 
-Assuming there's no correlation between date and shipping method, `<code>orders->customer</code>` plan will need to scan 20 orders before we find 10 that are shipped by air.
-But if there is correlation, then we may need to scan up to `<code>(total_orders*0.5 + 10)</code>` before we find first 10 orders that are shipped by air. Scanning about 50% of all orders can be expensive.
+Assuming there's no correlation between date and shipping method, `orders->customer` plan will need to scan 20 orders before we find 10 that are shipped by air.
+But if there is correlation, then we may need to scan up to `(total_orders*0.5 + 10)` before we find first 10 orders that are shipped by air. Scanning about 50% of all orders can be expensive.
 
 
 This situation worsens when the query has constructs whose selectivity is not known. For example, suppose the WHERE condition was
@@ -114,7 +114,7 @@ Do consider the query plan using LIMIT short-cutting
 and prefer it if it promises at least X times speedup.
 ```
 
-The value of `<code>X</code>` is given to the optimizer via `<code>optimizer_join_limit_pref_ratio</code>` setting.
+The value of `X` is given to the optimizer via `optimizer_join_limit_pref_ratio` setting.
 Higher values carry less risk. The recommended value is 100: prefer the LIMIT join order if it 
 promises at least 100x speedup.
 

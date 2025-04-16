@@ -61,8 +61,8 @@ GRANT SHOW DATABASES ON *.* TO 'maxscale'@'%';
 
 
 
-MariaDB versions 10.2.2 to 10.2.10 also require `<code>GRANT SELECT ON mysql.* TO
-'maxscale'@'%';</code>`
+MariaDB versions 10.2.2 to 10.2.10 also require `GRANT SELECT ON mysql.* TO
+'maxscale'@'%';`
 
 
 ## Creating client user accounts
@@ -89,7 +89,7 @@ CREATE USER 'jdoe'@'maxscale-host' IDENTIFIED BY 'my_secret_password';
 
 
 
-Then do a `<code>SHOW GRANTS</code>` query:
+Then do a `SHOW GRANTS` query:
 
 
 
@@ -105,7 +105,7 @@ MariaDB [(none)]> SHOW GRANTS FOR 'jdoe'@'client-host';
 
 
 
-Then copy the same grants to the `<code>'jdoe'@'maxscale-host'</code>` user.
+Then copy the same grants to the `'jdoe'@'maxscale-host'` user.
 
 
 

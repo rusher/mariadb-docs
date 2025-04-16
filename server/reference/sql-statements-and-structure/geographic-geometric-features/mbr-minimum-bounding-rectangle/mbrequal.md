@@ -15,7 +15,7 @@ MBREquals(g1,g2)
 Returns 1 or 0 to indicate whether the [Minimum Bounding Rectangles](mbr-definition.md) of the two geometries g1 and g2 are the same.
 
 
-`<code>MBREquals</code>` is a synonym.
+`MBREquals` is a synonym.
 
 
 ## Examples

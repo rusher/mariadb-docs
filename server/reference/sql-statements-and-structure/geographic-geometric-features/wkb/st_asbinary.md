@@ -17,7 +17,7 @@ AsWKB(g)
 Converts a value in internal geometry format to its [WKB](well-known-binary-wkb-format.md) representation and returns the binary result.
 
 
-`<code>ST_AsBinary()</code>`, `<code>AsBinary()</code>`, `<code>ST_AsWKB()</code>` and `<code>AsWKB()</code>` are synonyms,
+`ST_AsBinary()`, `AsBinary()`, `ST_AsWKB()` and `AsWKB()` are synonyms,
 
 
 ## Examples

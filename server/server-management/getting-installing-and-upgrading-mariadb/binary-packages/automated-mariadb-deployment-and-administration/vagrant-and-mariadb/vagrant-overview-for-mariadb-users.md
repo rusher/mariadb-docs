@@ -50,7 +50,7 @@ The following diagram should make the example clear:
 A Vagrantfile is a file that describes how to create one or more Vagrant machines. Vagrantfiles use the Ruby language, as well as objects provided by Vagrant itself.
 
 
-A Vagrantfile is often based on a box, which is usually an operating system in which we are going to install our software. For example, one can create a MariaDB Vagrantfile based on the `<code>ubuntu/trusty64</code>` box. A Vagrantfile can describe a box with a single server, like MariaDB, but it can also contain a whole environment, like LAMP. For most practical use cases, having the whole environment in a single box is more convenient.
+A Vagrantfile is often based on a box, which is usually an operating system in which we are going to install our software. For example, one can create a MariaDB Vagrantfile based on the `ubuntu/trusty64` box. A Vagrantfile can describe a box with a single server, like MariaDB, but it can also contain a whole environment, like LAMP. For most practical use cases, having the whole environment in a single box is more convenient.
 
 
 Boxes can be searched in [Vagrant Cloud](https://app.vagrantup.com/boxes/search). Most of their Vagrantfiles are available on GitHub. Searches can be made, among other things, by keyword to find a specific technology, and by provider.
@@ -62,8 +62,8 @@ Boxes can be searched in [Vagrant Cloud](https://app.vagrantup.com/boxes/search)
 A provider adds support for creating a specific type of machines. Vagrant comes with several providers, for example:
 
 
-* `<code>VirtualBox</code>` allows one to create virtual machines with VirtualBox.
-* `<code>Microsoft-Hyper-V</code>` allows one to create virtual machines with Microsoft Hyper-V.
+* `VirtualBox` allows one to create virtual machines with VirtualBox.
+* `Microsoft-Hyper-V` allows one to create virtual machines with Microsoft Hyper-V.
 * [Docker](../docker-and-mariadb/README.md) allows one to create Docker containers. On non-Linux systems, Vagrant will create a VM to run Docker.
 
 
@@ -89,13 +89,13 @@ If you need to create machines with different technologies, or deploy them to un
 A provisioner is a technology used to deploy software to the newly created machines.
 
 
-The simplest provisioner is `<code>shell</code>`, which runs a shell file inside the Vagrant machine. `<code>powershell</code>` is also available.
+The simplest provisioner is `shell`, which runs a shell file inside the Vagrant machine. `powershell` is also available.
 
 
 Other providers use automation software to provision the machine. There are provisioners that allow one to use [Ansible](../ansible-and-mariadb/README.md), [Puppet](../automated-mariadb-deployment-and-administration-puppet-and-mariadb/README.md), Chef or Salt. Where relevant, there are different provisioners allowing the use of these technologies in a distributed way (for example, using Puppet apply) or in a centralized way (for example, using a Puppet server).
 
 
-It is interesting to note that there is both a Docker provider and a Docker provisioner. This means that a Vagrant machine can be a Docker container, thanks to the `<code>docker</code>` provisioner. Or it could be any virtualisation technology with Docker running in it, thanks to the `<code>docker</code>` provisioner. In this case, Docker pulls images and starts containers to run the software that should be running in the Vagrant machine.
+It is interesting to note that there is both a Docker provider and a Docker provisioner. This means that a Vagrant machine can be a Docker container, thanks to the `docker` provisioner. Or it could be any virtualisation technology with Docker running in it, thanks to the `docker` provisioner. In this case, Docker pulls images and starts containers to run the software that should be running in the Vagrant machine.
 
 
 If you need to use an unsupported provisioning method, you can develop a custom provisioner in Ruby language. See [Plugin Development: Provisioners](https://www.vagrantup.com/docs/plugins/provisioners) in Vagrant documentation.

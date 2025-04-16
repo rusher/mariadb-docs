@@ -16,16 +16,16 @@ Download the MaxScale package from the MariaDB Downloads page:
 Select your operating system and download either the RPM or the DEB package.
 
 
-* For RHEL/CentOS variants, use `<code>yum</code>` to install the downloaded RPM
-* For SLES, use `<code>zypper</code>`
-* For Debian/Ubuntu systems, install the package with `<code>dpkg -i</code>` and run `<code>apt-get install</code>`
+* For RHEL/CentOS variants, use `yum` to install the downloaded RPM
+* For SLES, use `zypper`
+* For Debian/Ubuntu systems, install the package with `dpkg -i` and run `apt-get install`
  after it to install the dependencies
 
 
 You can also use
 [the MariaDB package repository](../../../server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md)
 to install MaxScale by first configuring the repository and then
-installing the `<code>maxscale</code>` package via your package manager.
+installing the `maxscale` package via your package manager.
 
 
 ## Install MariaDB MaxScale Using a Tarball
@@ -56,23 +56,23 @@ MaxScale assumes that memory allocations always succeed and in general does
 not check for memory allocation failures. This assumption is compatible with
 the Linux kernel parameter
 [vm.overcommit_memory](https://www.kernel.org/doc/Documentation/vm/overcommit-accounting)
-having the value `<code>0</code>`, which is also the default on most systems.
+having the value `0`, which is also the default on most systems.
 
 
-With `<code>vm.overcommit_memory</code>` being `<code>0</code>`, memory *allocations* made by an
+With `vm.overcommit_memory` being `0`, memory *allocations* made by an
 application never fail, but instead the application may be killed by the
 so-called OOM (out-of-memory) killer if, by the time the application
 actually attempts to *use* the allocated memory, there is not available
 free memory on the system.
 
 
-If the value is `<code>2</code>`, then a memory allocation made by an application may
+If the value is `2`, then a memory allocation made by an application may
 fail and unless the application is prepared for that possibility, it will
 likely crash with a SIGSEGV. As MaxScale is not prepared to handle memory
 allocation failures, it will crash in this situation.
 
 
-The current value of `<code>vm.overcommit_memory</code>` can be checked with
+The current value of `vm.overcommit_memory` can be checked with
 
 
 

@@ -11,8 +11,8 @@ ST_CROSSES(g1,g2)
 ## Description
 
 
-Returns `<code>1</code>` if geometry *`<code>g1</code>`* spatially crosses geometry *`<code>g2</code>`*. Returns `<code>NULL</code>` if `<code>g1</code>` is a [Polygon](../geometry-constructors/polygon.md) or a [MultiPolygon](../geometry-constructors/multipolygon.md), or if `<code>g2</code>` is a
-[Point](../geometry-constructors/point.md) or a [MultiPoint](../geometry-constructors/multipoint.md). Otherwise, returns `<code>0</code>`.
+Returns `1` if geometry *`g1`* spatially crosses geometry *`g2`*. Returns `NULL` if `g1` is a [Polygon](../geometry-constructors/polygon.md) or a [MultiPolygon](../geometry-constructors/multipolygon.md), or if `g2` is a
+[Point](../geometry-constructors/point.md) or a [MultiPoint](../geometry-constructors/multipoint.md). Otherwise, returns `0`.
 
 
 The term spatially crosses denotes a spatial relation between two

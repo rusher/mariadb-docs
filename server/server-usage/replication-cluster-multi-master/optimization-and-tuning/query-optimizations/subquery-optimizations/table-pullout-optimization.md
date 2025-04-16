@@ -19,7 +19,7 @@ where City.Country in (select Country.Code
                        where Country.Population < 100*1000);
 ```
 
-If we know that there can be, at most, one country with a given value of `<code>Country.Code</code>` (we can tell that if we see that table Country has a primary key or unique index over that column), we can re-write this query as:
+If we know that there can be, at most, one country with a given value of `Country.Code` (we can tell that if we see that table Country has a primary key or unique index over that column), we can re-write this query as:
 
 
 ```
@@ -47,7 +47,7 @@ MySQL [world]> explain select * from City where City.Country in (select Country.
 2 rows in set (0.00 sec)
 ```
 
-It shows that the optimizer is going to do a full scan on table `<code>City</code>`, and for each city it will do a lookup in table `<code>Country</code>`.
+It shows that the optimizer is going to do a full scan on table `City`, and for each city it will do a lookup in table `Country`.
 
 
 If one runs the same query in [MariaDB 5.3](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md), they will get this plan:
@@ -67,7 +67,7 @@ MariaDB [world]> explain select * from City where City.Country in (select Countr
 The interesting parts are:
 
 
-* Both tables have `<code class="fixed" style="white-space:pre-wrap">select_type=PRIMARY</code>`, and `<code class="fixed" style="white-space:pre-wrap">id=1</code>` as if they were in one join.
+* Both tables have `select_type=PRIMARY`, and `id=1` as if they were in one join.
 * The `Country` table is first, followed by the `City` table.
 
 
@@ -108,14 +108,14 @@ as opposed to the single choice of
 which we had before the optimization.
 
 
-In the above example, the choice produces a better query plan. Without pullout, the query plan with a subquery would read `<code>(4079 + 1*4079)=8158</code>` table records. With table pullout, the join plan would read `<code>(37 + 37 * 18) = 703</code>` rows. Not all row reads are equal, but generally, reading `<code>10</code>` times fewer table records is faster.
+In the above example, the choice produces a better query plan. Without pullout, the query plan with a subquery would read `(4079 + 1*4079)=8158` table records. With table pullout, the join plan would read `(37 + 37 * 18) = 703` rows. Not all row reads are equal, but generally, reading `10` times fewer table records is faster.
 
 
 ## Table pullout fact sheet
 
 
 * Table pullout is possible only in semi-join subqueries.
-* Table pullout is based on `<code>UNIQUE</code>`/`<code>PRIMARY</code>` key definitions.
+* Table pullout is based on `UNIQUE`/`PRIMARY` key definitions.
 * Doing table pullout does not cut off any possible query plans, so MariaDB will always try to pull out as much as possible.
 * Table pullout is able to pull individual tables out of subqueries to their parent selects. If all tables in a subquery have been pulled out, the subquery (i.e. its semi-join) is removed completely.
 * One common bit of advice for optimizing MySQL has been "If possible, rewrite your subqueries as joins". Table pullout does exactly that, so manual rewrites are no longer necessary.
@@ -125,5 +125,5 @@ In the above example, the choice produces a better query plan. Without pullout, 
 
 
 There is no separate @@optimizer_switch flag for table pullout. Table pullout can be disabled by switching off all semi-join optimizations with 
-`<code class="fixed" style="white-space:pre-wrap">SET @@optimizer_switch='semijoin=off'</code>` command.
+`SET @@optimizer_switch='semijoin=off'` command.
 

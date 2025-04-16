@@ -11,8 +11,8 @@ Disjoint(g1,g2)
 ## Description
 
 
-Returns `<code>1</code>` or `<code>0</code>` to indicate whether `<code>g1</code>` is spatially disjoint from
-(does not intersect) `<code>g2</code>`.
+Returns `1` or `0` to indicate whether `g1` is spatially disjoint from
+(does not intersect) `g2`.
 
 
 DISJOINT() tests the opposite relationship to [INTERSECTS()](intersects.md).

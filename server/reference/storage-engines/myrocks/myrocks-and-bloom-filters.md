@@ -15,8 +15,8 @@ Bloom filters are used to reduce read amplification. Bloom filters can be set on
 ### Computing Prefix Length
 
 
-* It's 4 bytes for `<code>index_nr</code>`
-* Then, for fixed-size columns (integer, date[time], decimal) it is key_length as shown by `<code>EXPLAIN</code>`. For VARCHAR columns, determining the length is tricky (It depends on the values stored in the table. Note that MyRocks encodes VARCHARs with "Variable-Length Space-Padded Encoding" format).
+* It's 4 bytes for `index_nr`
+* Then, for fixed-size columns (integer, date[time], decimal) it is key_length as shown by `EXPLAIN`. For VARCHAR columns, determining the length is tricky (It depends on the values stored in the table. Note that MyRocks encodes VARCHARs with "Variable-Length Space-Padded Encoding" format).
 
 
 ## Configuring Bloom Filter
@@ -72,6 +72,6 @@ show status like '%bloom%';
 Other useful variables are:
 
 
-* `<code>rocksdb_force_flush_memtable_now</code>` - bloom filter is only used when reading data from disk. If you are doing testing, flush the data to disk first.
-* `<code>rocksdb_skip_bloom_filter_on_read</code>` - skip using the bloom filter (default is FALSE).
+* `rocksdb_force_flush_memtable_now` - bloom filter is only used when reading data from disk. If you are doing testing, flush the data to disk first.
+* `rocksdb_skip_bloom_filter_on_read` - skip using the bloom filter (default is FALSE).
 

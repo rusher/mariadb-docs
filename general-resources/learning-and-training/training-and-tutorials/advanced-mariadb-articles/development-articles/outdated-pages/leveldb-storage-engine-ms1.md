@@ -33,7 +33,7 @@ except blobs. (Blobs will require special storage convention because they
 store a char* pointer in table->record[0]).
 
 
-We will need to support blobs because table `<code>nodetable</code>` has a `<code>mediumtext</code>` field.
+We will need to support blobs because table `nodetable` has a `mediumtext` field.
 
 
 ### Secondary indexes
@@ -122,10 +122,10 @@ MS1 will only implement the variant with locking DELETE.
 ### C.4 SELECT
 
 
-SELECT statements will use a read snapshot. They will not put (or check) whether there are any locks for records they are reading. This is similar to the definition of `<code>read-committed</code>` isolation level.
+SELECT statements will use a read snapshot. They will not put (or check) whether there are any locks for records they are reading. This is similar to the definition of `read-committed` isolation level.
 
 
-We will also support `<code>SELECT FOR UPDATE</code>`. In this mode, the read records will be locked with a write lock until the end of the transaction.
+We will also support `SELECT FOR UPDATE`. In this mode, the read records will be locked with a write lock until the end of the transaction.
 
 
 ### C.5 Locking mechanism

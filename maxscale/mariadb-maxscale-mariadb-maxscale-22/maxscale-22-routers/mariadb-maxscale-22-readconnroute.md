@@ -27,7 +27,7 @@ For more details about the standard service parameters, refer to the
 ### Router Options
 
 
-**`<code>router_options</code>`** can contain a comma separated list of valid server
+**`router_options`** can contain a comma separated list of valid server
 roles. These roles are used as the valid types of servers the router will
 form connections to when new sessions are created.
 
@@ -43,7 +43,7 @@ router_options=master,slave
 
 
 
-Here is a list of all possible values for the `<code>router_options</code>`.
+Here is a list of all possible values for the `router_options`.
 
 
 | Role | Description |
@@ -56,9 +56,9 @@ Here is a list of all possible values for the `<code>router_options</code>`.
 | running | A server that is up and running. All servers that MariaDB MaxScale can connect to are labeled as running. |
 
 
-If no `<code>router_options</code>` parameter is configured in the service definition,
-the router will use the default value of `<code>running</code>`. This means that it will
-load balance connections across all running servers defined in the `<code>servers</code>`
+If no `router_options` parameter is configured in the service definition,
+the router will use the default value of `running`. This means that it will
+load balance connections across all running servers defined in the `servers`
 parameter of the service.
 
 
@@ -99,7 +99,7 @@ router_options=slave
 
 
 
-Here the `<code>router_options</code>` designates slaves as the only valid server
+Here the `router_options` designates slaves as the only valid server
 type. With this configuration, the queries are load balanced across the
 slave servers.
 

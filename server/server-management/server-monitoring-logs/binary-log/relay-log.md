@@ -24,10 +24,10 @@ New relay log files are created by the replica at the following times:
 ## Relay Log Names
 
 
-By default, the relay log will be given a name `<code>host_name-relay-bin.nnnnnn</code>`, with `<code>host_name</code>` referring to the server's host name, and #nnnnnn`<code> the sequence number.</code>`
+By default, the relay log will be given a name `host_name-relay-bin.nnnnnn`, with `host_name` referring to the server's host name, and #nnnnnn` the sequence number.`
 
 
-This will cause problems if the replica's host name changes, returning the error `<code>Failed to open the relay log</code>` and `<code>Could not find target log during relay log initialization</code>`. To prevent this, you can specify the relay log file name by setting the [relay_log](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) and [relay_log_index](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) system variables.
+This will cause problems if the replica's host name changes, returning the error `Failed to open the relay log` and `Could not find target log during relay log initialization`. To prevent this, you can specify the relay log file name by setting the [relay_log](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) and [relay_log_index](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) system variables.
 
 
 If you need to overcome this issue while replication is already underway,you can stop the replica, prepend the old relay log index file to the new relay log index file, and restart the replica.
@@ -50,7 +50,7 @@ The [SHOW RELAYLOG EVENTS](../../../reference/sql-statements-and-structure/sql-s
 ## Removing Old Relay Logs
 
 
-Old relay logs are automatically removed once all events have been implemented on the replica, and the relay log file is no longer needed. This behavior can be changed by adjusting the [relay_log_purge](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) system variable from its default of `<code>1</code>` to `<code>0</code>`, in which case the relay logs will be left on the server.
+Old relay logs are automatically removed once all events have been implemented on the replica, and the relay log file is no longer needed. This behavior can be changed by adjusting the [relay_log_purge](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) system variable from its default of `1` to `0`, in which case the relay logs will be left on the server.
 
 
 Relay logs are also removed by the [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement unless a [relay log option](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#relay_log_options) is used.

@@ -4,9 +4,9 @@
 ## Description
 
 
-MariaDB supports the following `<code class="fixed" style="white-space:pre-wrap">JOIN</code>` syntaxes for
-the `<code>table_references</code>` part of `<code>[SELECT](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)</code>` statements and
-multiple-table `<code>[DELETE](../../../changing-deleting-data/delete.md)</code>` and `<code>[UPDATE](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)</code>` statements:
+MariaDB supports the following `JOIN` syntaxes for
+the `table_references` part of `[SELECT](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)` statements and
+multiple-table `[DELETE](../../../changing-deleting-data/delete.md)` and `[UPDATE](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)` statements:
 
 
 ```
@@ -72,11 +72,11 @@ index_list:
 A table reference is also known as a join expression.
 
 
-Each table can also be specified as `<code>db_name</code>`.`<code>tabl_name</code>`. This allows to write queries which involve multiple databases. See [Identifier Qualifiers](../../../../../sql-language-structure/identifier-qualifiers.md) for syntax details.
+Each table can also be specified as `db_name`.`tabl_name`. This allows to write queries which involve multiple databases. See [Identifier Qualifiers](../../../../../sql-language-structure/identifier-qualifiers.md) for syntax details.
 
 
-The syntax of `<code class="fixed" style="white-space:pre-wrap">table_factor</code>` is extended in comparison with the
-SQL Standard. The latter accepts only `<code class="fixed" style="white-space:pre-wrap">table_reference</code>`, not a
+The syntax of `table_factor` is extended in comparison with the
+SQL Standard. The latter accepts only `table_reference`, not a
 list of them inside a pair of parentheses.
 
 
@@ -97,10 +97,10 @@ SELECT * FROM t1 LEFT JOIN (t2 CROSS JOIN t3 CROSS JOIN t4)
                  ON (t2.a=t1.a AND t3.b=t1.b AND t4.c=t1.c)
 ```
 
-In MariaDB, `<code class="fixed" style="white-space:pre-wrap">CROSS JOIN</code>` is a syntactic equivalent to
-`<code class="fixed" style="white-space:pre-wrap">INNER JOIN</code>` (they can replace each other). In standard SQL,
-they are not equivalent. `<code class="fixed" style="white-space:pre-wrap">INNER JOIN</code>` is used with an
-`<code class="fixed" style="white-space:pre-wrap">ON</code>` clause, `<code class="fixed" style="white-space:pre-wrap">CROSS JOIN</code>` is used otherwise.
+In MariaDB, `CROSS JOIN` is a syntactic equivalent to
+`INNER JOIN` (they can replace each other). In standard SQL,
+they are not equivalent. `INNER JOIN` is used with an
+`ON` clause, `CROSS JOIN` is used otherwise.
 
 
 In general, parentheses can be ignored in join expressions containing only
@@ -135,7 +135,7 @@ See also [Subqueries in a FROM Clause (Derived Tables)#Correlation Column List](
 
 
 See [System-versioned tables](../../../../../temporal-tables/system-versioned-tables.md) for more information
-about `<code>FOR SYSTEM_TIME</code>` syntax.
+about `FOR SYSTEM_TIME` syntax.
 
 
 ### Index Hints

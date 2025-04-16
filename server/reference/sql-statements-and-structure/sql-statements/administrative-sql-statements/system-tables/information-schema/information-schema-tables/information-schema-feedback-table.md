@@ -1,7 +1,7 @@
 
 # Information Schema FEEDBACK Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>FEEDBACK</code>` table is created when the [Feedback Plugin](../../../../../../plugins/other-plugins/feedback-plugin.md) is enabled, and contains the complete contents submitted by the plugin.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `FEEDBACK` table is created when the [Feedback Plugin](../../../../../../plugins/other-plugins/feedback-plugin.md) is enabled, and contains the complete contents submitted by the plugin.
 
 
 It contains two columns:
@@ -16,15 +16,15 @@ It contains two columns:
 
 
 
-It is possible to disable automatic collection, by setting the `<code>[feedback_url](../../../../../../plugins/other-plugins/feedback-plugin.md#feedback_url)</code>` variable to an empty string, and to submit the contents manually, as follows:
+It is possible to disable automatic collection, by setting the `[feedback_url](../../../../../../plugins/other-plugins/feedback-plugin.md#feedback_url)` variable to an empty string, and to submit the contents manually, as follows:
 
 
 ```
 $ mysql -e 'SELECT * FROM information_schema.FEEDBACK' > report.txt
 ```
 
-Then you can send it by opening `<code>[post](https://mariadb.org/feedback_plugin/post)</code>` in your
-browser, and uploading your generated `<code>report.txt</code>`. Or you can do it from the
+Then you can send it by opening `[post](https://mariadb.org/feedback_plugin/post)` in your
+browser, and uploading your generated `report.txt`. Or you can do it from the
 command line with (for example):
 
 
@@ -33,7 +33,7 @@ $ curl -F data=@report.txt https://mariadb.org/feedback_plugin/post
 ```
 
 Manual uploading allows you to be absolutely
-sure that we receive only the data shown in the `<code>information_schema.FEEDBACK</code>`
+sure that we receive only the data shown in the `information_schema.FEEDBACK`
 table and that no private or sensitive information is being sent.
 
 

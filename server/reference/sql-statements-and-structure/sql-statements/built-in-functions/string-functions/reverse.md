@@ -11,7 +11,7 @@ REVERSE(str)
 ## Description
 
 
-Returns the string `<code>str</code>` with the order of the characters reversed.
+Returns the string `str` with the order of the characters reversed.
 
 
 ## Examples

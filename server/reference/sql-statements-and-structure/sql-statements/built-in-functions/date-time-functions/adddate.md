@@ -11,11 +11,11 @@ ADDDATE(date,INTERVAL expr unit), ADDDATE(expr,days)
 ## Description
 
 
-When invoked with the `<code>INTERVAL</code>` form of the second argument, `<code>ADDDATE()</code>`
-is a synonym for `<code>[DATE_ADD()](date_add.md)</code>`. The related function
-`<code>[SUBDATE()](subdate.md)</code>` is a synonym for `<code>[DATE_SUB()](date_sub.md)</code>`. For
-information on the `<code>INTERVAL</code>` unit argument, see the discussion for
-`<code>[DATE_ADD()](date_add.md)</code>`.
+When invoked with the `INTERVAL` form of the second argument, `ADDDATE()`
+is a synonym for `[DATE_ADD()](date_add.md)`. The related function
+`[SUBDATE()](subdate.md)` is a synonym for `[DATE_SUB()](date_sub.md)`. For
+information on the `INTERVAL` unit argument, see the discussion for
+`[DATE_ADD()](date_add.md)`.
 
 
 When invoked with the days form of the second argument, MariaDB treats it as an

@@ -411,12 +411,12 @@ This description has been done for [COM_STMT_EXECUTE](3-binary-protocol-prepared
 *Since [MariaDB 10.1.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md)*
 
 
-Setting a timeout for all commands can be set using `<code class="fixed" style="white-space:pre-wrap"><span class="k">SET</span> <span class="n">max_statement_time</span><span class="o">=</span><span class="n">XXX</span>
-</code>` with XXX in seconds.
+Setting a timeout for all commands can be set using `<span class="k">SET</span> <span class="n">max_statement_time</span><span class="o">=</span><span class="n">XXX</span>
+` with XXX in seconds.
 
 
-Setting it for a specific query can be done using `<code class="fixed" style="white-space:pre-wrap"><span class="k">SET</span> <span class="k">STATEMENT</span> <span class="n">max_statement_time</span><span class="o">=</span><span class="n">XXX</span> <span class="k">FOR</span> <span class="p">...</span>
-</code>`
+Setting it for a specific query can be done using `<span class="k">SET</span> <span class="k">STATEMENT</span> <span class="n">max_statement_time</span><span class="o">=</span><span class="n">XXX</span> <span class="k">FOR</span> <span class="p">...</span>
+`
 
 
 ### Collations
@@ -425,9 +425,9 @@ Setting it for a specific query can be done using `<code class="fixed" style="wh
 Connectors don't care about collations, but normally want to ensure charset in connection exchanges.
 
 
-The only good solution is to use `<code class="fixed" style="white-space:pre-wrap"><span class="k">SET</span> <span class="k">NAMES</span> <span class="n">utf8mb4</span>
-</code>` or `<code class="fixed" style="white-space:pre-wrap"><span class="k">SET</span> <span class="k">NAMES</span> <span class="n">utf8mb4</span> <span class="k">COLLATE</span> <span class="n">someUtf8mb4collation</span>
-</code>`
+The only good solution is to use `<span class="k">SET</span> <span class="k">NAMES</span> <span class="n">utf8mb4</span>
+` or `<span class="k">SET</span> <span class="k">NAMES</span> <span class="n">utf8mb4</span> <span class="k">COLLATE</span> <span class="n">someUtf8mb4collation</span>
+`
 
 
 If supporting session tracking, connectors can check if charset of initial tracked variable 'character_set_connection' corresponds to the expected value, then permit skipping this SET NAMES command.

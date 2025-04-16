@@ -78,9 +78,9 @@ Some SphinxSE applications include:
 
 
 To search via SphinxSE, you would need to create a special
-`<code class="highlight fixed" style="white-space:pre-wrap">ENGINE=SPHINX</code>` "search table", and then
-`<code class="highlight fixed" style="white-space:pre-wrap">SELECT</code>` from it with full text query put into the
-`<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` clause for query column.
+`ENGINE=SPHINX` "search table", and then
+`SELECT` from it with full text query put into the
+`WHERE` clause for query column.
 
 
 Here is an example create statement and search query:
@@ -99,38 +99,38 @@ CREATE TABLE t1
 SELECT * FROM t1 WHERE query='test it;mode=any';
 ```
 
-The first three columns of the search table must have a type of `<code class="highlight fixed" style="white-space:pre-wrap">BIGINT</code>` for the 1st column (document id),
-`<code class="highlight fixed" style="white-space:pre-wrap">INTEGER</code>` or `<code class="highlight fixed" style="white-space:pre-wrap">BIGINT</code>` for the 2nd column
-(match weight), and `<code class="highlight fixed" style="white-space:pre-wrap">VARCHAR</code>` or `<code class="highlight fixed" style="white-space:pre-wrap">TEXT</code>` for
+The first three columns of the search table must have a type of `BIGINT` for the 1st column (document id),
+`INTEGER` or `BIGINT` for the 2nd column
+(match weight), and `VARCHAR` or `TEXT` for
 the 3rd column (your query), respectively. This mapping is fixed; you cannot
 omit any of these three required columns, or move them around, or change types.
 Also, the query column must be indexed; all the others must be kept unindexed.
 Column names are ignored so you can use arbitrary ones.
 
 
-Additional columns must be either `<code class="highlight fixed" style="white-space:pre-wrap">INTEGER</code>`,
-`<code class="highlight fixed" style="white-space:pre-wrap">TIMESTAMP</code>`, `<code class="highlight fixed" style="white-space:pre-wrap">BIGINT</code>`,
-`<code class="highlight fixed" style="white-space:pre-wrap">VARCHAR</code>`, or `<code class="highlight fixed" style="white-space:pre-wrap">FLOAT</code>`. They will be bound to
+Additional columns must be either `INTEGER`,
+`TIMESTAMP`, `BIGINT`,
+`VARCHAR`, or `FLOAT`. They will be bound to
 the attributes provided in the Sphinx result set by name, so their names must
-match the attribute names specified in `<code class="highlight fixed" style="white-space:pre-wrap">sphinx.conf</code>`. If
+match the attribute names specified in `sphinx.conf`. If
 there's no such attribute name in the Sphinx search results, the additional
-columns will have `<code class="highlight fixed" style="white-space:pre-wrap">NULL</code>` values.
+columns will have `NULL` values.
 
 
 Special "virtual" attribute names can also be bound to SphinxSE columns.
-`<code class="highlight fixed" style="white-space:pre-wrap">_sph_</code>` needs to be used instead of `<code class="highlight fixed" style="white-space:pre-wrap">@</code>` for
-that. For instance, to obtain the values of '`<code class="highlight fixed" style="white-space:pre-wrap">@groupby</code>`',
-'`<code class="highlight fixed" style="white-space:pre-wrap">@count</code>`', or '`<code class="highlight fixed" style="white-space:pre-wrap">@distinct</code>`' virtual
-attributes, use '`<code class="highlight fixed" style="white-space:pre-wrap">_sph_groupby</code>`',
-'`<code class="highlight fixed" style="white-space:pre-wrap">_sph_count</code>`' or '`<code class="highlight fixed" style="white-space:pre-wrap">_sph_distinct</code>`' column
+`_sph_` needs to be used instead of `@` for
+that. For instance, to obtain the values of '`@groupby`',
+'`@count`', or '`@distinct`' virtual
+attributes, use '`_sph_groupby`',
+'`_sph_count`' or '`_sph_distinct`' column
 names, respectively.
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">CONNECTION</code>` string parameter is used to specify the
-default `<code class="highlight fixed" style="white-space:pre-wrap">searchd</code>` host, port, and indexes for queries issued
-using this table. If no connection string is specified in `<code class="highlight fixed" style="white-space:pre-wrap">CREATE
-TABLE</code>`, index name '`<code class="highlight fixed" style="white-space:pre-wrap">*</code>`' (ie. search all indexes) and
-'`<code class="highlight fixed" style="white-space:pre-wrap">127.0.0.1:9312</code>`' are assumed. The connection string syntax
+The `CONNECTION` string parameter is used to specify the
+default `searchd` host, port, and indexes for queries issued
+using this table. If no connection string is specified in `CREATE
+TABLE`, index name '`*`' (ie. search all indexes) and
+'`127.0.0.1:9312`' are assumed. The connection string syntax
 is as follows:
 
 
@@ -155,9 +155,9 @@ You can also override all these parameters per-query.
 
 
 As seen in the example above, both query text and search options should be put
-into the '`<code class="fixed" style="white-space:pre-wrap">WHERE</code>`' clause of the search query column (i.e. the
-3rd column); the options are separated by semicolons ('`<code class="fixed" style="white-space:pre-wrap">;</code>`') and
-separate names from values using an equals sign ('`<code class="fixed" style="white-space:pre-wrap">=</code>`'). Any
+into the '`WHERE`' clause of the search query column (i.e. the
+3rd column); the options are separated by semicolons ('`;`') and
+separate names from values using an equals sign ('`=`'). Any
 number of options can be specified. Available options are:
 
 
@@ -269,14 +269,14 @@ number of options can be specified. Available options are:
 
 It is much more efficient to allow Sphinx to perform sorting,
 filtering, and slicing of the result set than to raise max matches count and
-use '`<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>`', '`<code class="highlight fixed" style="white-space:pre-wrap">ORDER BY</code>`', and
-'`<code class="highlight fixed" style="white-space:pre-wrap">LIMIT</code>`' clauses on the MariaDB side. This is for two
+use '`WHERE`', '`ORDER BY`', and
+'`LIMIT`' clauses on the MariaDB side. This is for two
 reasons:
 
 
 1. Sphinx does a number of optimizations and performs better than
  MariaDB/MySQL on these tasks.
-1. Less data would need to be packed by `<code class="highlight fixed" style="white-space:pre-wrap">searchd</code>`, and
+1. Less data would need to be packed by `searchd`, and
  transferred and unpacked by SphinxSE.
 <</style>>
 
@@ -285,7 +285,7 @@ reasons:
 
 
 Starting with version 0.9.9-rc1, additional query info besides the result set
-can be retrieved with the '`<code class="highlight fixed" style="white-space:pre-wrap">SHOW ENGINE SPHINX STATUS</code>`'
+can be retrieved with the '`SHOW ENGINE SPHINX STATUS`'
 statement:
 
 
@@ -319,7 +319,7 @@ SHOW STATUS LIKE 'sphinx_%';
 ### JOINs with SphinxSE
 
 
-You can perform `<code class="highlight fixed" style="white-space:pre-wrap">JOIN</code>`s on a SphinxSE search table and tables using
+You can perform `JOIN`s on a SphinxSE search table and tables using
 other engines. Here's an example with "documents" from example.sql:
 
 
@@ -353,7 +353,7 @@ the
 API call but is accessible through MariaDB+SphinxSE.
 
 
-The function name must be '`<code class="highlight fixed" style="white-space:pre-wrap">sphinx_snippets</code>`', you can not use an
+The function name must be '`sphinx_snippets`', you can not use an
 arbitrary name. Function arguments are as follows:
 
 

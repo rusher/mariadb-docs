@@ -71,8 +71,8 @@ Packages can be downloaded [here](https://mariadb.com/resources/downloads).
 
 
 The source code of MaxScale is tagged at GitHub with a tag, which is derived
-from the version of MaxScale. For instance, the tag of version `<code>X.Y.Z</code>` of MaxScale
-is `<code>maxscale-X.Y.Z</code>`.
+from the version of MaxScale. For instance, the tag of version `X.Y.Z` of MaxScale
+is `maxscale-X.Y.Z`.
 
 
 The source code is available [here](https://github.com/mariadb-corporation/MaxScale).

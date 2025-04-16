@@ -14,12 +14,12 @@ There are four **new main features in 10.4** relating to authentication:
 
 
 * It is possible to use more than one [authentication plugin](../../reference/plugins/authentication-plugins/README.md) for each user account. For example, this can be useful to slowly migrate users to the more secure [ed25519](../../reference/plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin over time, while allowing the old [mysql_native_password](../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication plugin as an alternative for the transitional period.
-* The `<code>root@localhost</code>` user account created by [mariadb-install-db](../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md) is created with the ability to use two [authentication plugins](../../reference/plugins/authentication-plugins/README.md).
+* The `root@localhost` user account created by [mariadb-install-db](../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md) is created with the ability to use two [authentication plugins](../../reference/plugins/authentication-plugins/README.md).
 
-  * First, it is configured to try to use the [unix_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin. This allows the `<code>root@localhost</code>` user to login without a password via the local Unix socket file defined by the [socket](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#socket) system variable, as long as the login is attempted from a process owned by the operating system `<code>root</code>` user account.
+  * First, it is configured to try to use the [unix_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin. This allows the `root@localhost` user to login without a password via the local Unix socket file defined by the [socket](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#socket) system variable, as long as the login is attempted from a process owned by the operating system `root` user account.
   * Second, if authentication fails with the [unix_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin, then it is configured to try to use the [mysql_native_password](../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication plugin. However, an invalid password is initially set, so in order to authenticate this way, a password must be set with [SET PASSWORD](../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md).
   * However, just using the [unix_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin may be fine for many users, and it is very secure. You may want to try going without password authentication to see how well it works for you. Remember, the best way to keep your password safe is not to have one!
-* All user accounts, passwords, and global privileges are now stored in the [mysql.global_priv](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table. The [mysql.user](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table still exists and has exactly the same set of columns as before, but it’s now a view that references the [mysql.global_priv](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table. Tools that analyze the [mysql.user](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table should continue to work as before. From [MariaDB 10.4.13](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md), the dedicated `<code>mariadb.sys</code>` user is created as the definer of this view. Previously `<code>root</code>` was the definer, which resulted in privilege problems when this username was changed.
+* All user accounts, passwords, and global privileges are now stored in the [mysql.global_priv](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table. The [mysql.user](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table still exists and has exactly the same set of columns as before, but it’s now a view that references the [mysql.global_priv](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table. Tools that analyze the [mysql.user](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table should continue to work as before. From [MariaDB 10.4.13](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md), the dedicated `mariadb.sys` user is created as the definer of this view. Previously `root` was the definer, which resulted in privilege problems when this username was changed.
 * [MariaDB 10.4](../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) adds supports for [User Password Expiry](user-password-expiry.md), which is not active by default.
 
 
@@ -76,10 +76,10 @@ $ sudo dnf install MariaDB-server
 $ sudo mariadb
 ```
 
-Note that it implies you are connecting via the unix socket, not tcp. If you happen to have `<code>protocol=tcp</code>` in a system-wide `<code>/etc/my.cnf</code>` file, use `<code>sudo mariadb --protocol=socket</code>`.
+Note that it implies you are connecting via the unix socket, not tcp. If you happen to have `protocol=tcp` in a system-wide `/etc/my.cnf` file, use `sudo mariadb --protocol=socket`.
 
 
-After installing MariaDB locally you’ve also used to connect to the unprotected root account using `<code>mariadb -uroot</code>`. This will not work either, simply use `<code>mariadb</code>` without specifying a username.
+After installing MariaDB locally you’ve also used to connect to the unprotected root account using `mariadb -uroot`. This will not work either, simply use `mariadb` without specifying a username.
 
 
 If you've forgotten your root password, no problem — you can still connect using sudo and change the password. And if you've also removed unix_socket authentication, to restore access do as follows:
@@ -87,7 +87,7 @@ If you've forgotten your root password, no problem — you can still connect usi
 
 * restart MariaDB with [--skip-grant-tables](https://mariadb.com/kb/en/mariadb-options/#-skip-grant-tables)
 * login into the unprotected server
-* run [FLUSH PRIVILEGES](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) (note, before 10.4 this would’ve been the last step, not anymore). This disables `<code>--skip-grant-tables</code>` and allows you to change the stored authentication method
+* run [FLUSH PRIVILEGES](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) (note, before 10.4 this would’ve been the last step, not anymore). This disables `--skip-grant-tables` and allows you to change the stored authentication method
 * run [SET PASSWORD](../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md) FOR root@localhost to change the root password.
 
 
@@ -101,16 +101,16 @@ select concat(user, '@', host, ' => ', json_detailed(priv)) from mysql.global_pr
 ## Reverting to the Previous Authentication Method for root@localhost
 
 
-If you don't want the `<code>root@localhost</code>` user account created by [mariadb-install-db](../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md) to use [unix_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication by default, then there are a few ways to revert to the previous [mysql_native_password](../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication method for this user account.
+If you don't want the `root@localhost` user account created by [mariadb-install-db](../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md) to use [unix_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication by default, then there are a few ways to revert to the previous [mysql_native_password](../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication method for this user account.
 
 
 ### Configuring mariadb-install-db to Revert to the Previous Authentication Method
 
 
-One way to revert to the previous [mysql_native_password](../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication method for the `<code>root@localhost</code>` user account is to execute [mariadb-install-db](../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md) with a special option. If [mariadb-install-db](../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md) is executed while `<code>--auth-root-authentication-method=normal</code>` is specified, then it will create the default user accounts using the default behavior of [MariaDB 10.3](../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and before.
+One way to revert to the previous [mysql_native_password](../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication method for the `root@localhost` user account is to execute [mariadb-install-db](../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md) with a special option. If [mariadb-install-db](../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md) is executed while `--auth-root-authentication-method=normal` is specified, then it will create the default user accounts using the default behavior of [MariaDB 10.3](../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and before.
 
 
-This means that the `<code>root@localhost</code>` user account will use [mysql_native_password](../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication by default. There are some other differences as well. See [mariadb-install-db: User Accounts Created by Default](../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md#user-accounts-created-by-default) for more information.
+This means that the `root@localhost` user account will use [mysql_native_password](../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication by default. There are some other differences as well. See [mariadb-install-db: User Accounts Created by Default](../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md#user-accounts-created-by-default) for more information.
 
 
 For example, the option can be set on the command-line while running [mariadb-install-db](../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md):
@@ -134,7 +134,7 @@ If the option is set in an [option file](../../server-management/getting-install
 ### Altering the User Account to Revert to the Previous Authentication Method
 
 
-If you have already installed MariaDB, and if the `<code>root@localhost</code>` user account is already using [unix_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication, then you can revert to the old [mysql_native_password](../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication method for the user account by executing the following:
+If you have already installed MariaDB, and if the `root@localhost` user account is already using [unix_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication, then you can revert to the old [mysql_native_password](../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication method for the user account by executing the following:
 
 
 ```

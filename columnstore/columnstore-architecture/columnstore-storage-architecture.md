@@ -20,10 +20,10 @@ Each column in the table is stored independently in a logical measure of 8,388,6
 Extents are physically stored as a collection of blocks. Each block is 8KB. Every database block is uniquely identified by its Logical Block Identifier, or LBID.
 
 
-The physical file ColumnStore writes to disk is called a segment file. Once segment files reach the maximum number of extents, ColumnStore automatically creates a new segment file. You can set the maximum number of extents in a segment file using `<code>ExtentsPreSegmentFile</code>` in the `<code>ColumnStore.xml</code>` file. It should be set to a multiple of the number of DB Roots. The default value is 2.
+The physical file ColumnStore writes to disk is called a segment file. Once segment files reach the maximum number of extents, ColumnStore automatically creates a new segment file. You can set the maximum number of extents in a segment file using `ExtentsPreSegmentFile` in the `ColumnStore.xml` file. It should be set to a multiple of the number of DB Roots. The default value is 2.
 
 
-Collectively, all of a column's segment files for one or more extents for a partition. This is the horizontal partitioning in ColumnStore. Partitions are stored in hierarchical structures organized by segments, (that is, folders). ColumnStore meta-stores maps file structure and location to the DB schema as well as in the `<code>FilesPerColumnPartition</code>` in the `<code>ColumnStore.xml</code>` file. The default value is 4. Additionally, by default, ColumnStore compresses data.
+Collectively, all of a column's segment files for one or more extents for a partition. This is the horizontal partitioning in ColumnStore. Partitions are stored in hierarchical structures organized by segments, (that is, folders). ColumnStore meta-stores maps file structure and location to the DB schema as well as in the `FilesPerColumnPartition` in the `ColumnStore.xml` file. The default value is 4. Additionally, by default, ColumnStore compresses data.
 
 
 ### Extent Maps
@@ -62,7 +62,7 @@ In columnar storage, similar data is stored within each column file, which allow
 ColumnStore optimizes its compression strategy for read performance from disk. It is tuned to accelerate the decompression rate, maximizing the performance benefits when reading from disk. This allows systems that are I/O bound to improve performance on disk reads.
 
 
-By default, compression is turned on in ColumnStore. In addition, you can enable or disable it at the table-level or column-level, or control it at the session-level by setting the `<code>[infinidb_compression_type](../columnstore-system-variables.md#compression-mode)</code>` system variable. When enabled, ColumnStore uses snappy compression.
+By default, compression is turned on in ColumnStore. In addition, you can enable or disable it at the table-level or column-level, or control it at the session-level by setting the `[infinidb_compression_type](../columnstore-system-variables.md#compression-mode)` system variable. When enabled, ColumnStore uses snappy compression.
 
 
 ## Version Buffer
@@ -83,7 +83,7 @@ All statements in ColumnStore run at a particular version (or, snapshot) of the 
 The Version Buffer uses in-memory hash tables to supply memory access to in-flight transaction information. It starts at 4MB with the memory region growing from that amount to handle blocks that are being modified by a transaction. Each entry in the hash table is a 40-byte reference to the 8KB block being modified.
 
 
-The limiting factor of the Version Buffer is not the number of rows being updated, but rather the number of disk blocks. You can increase the size, but use caution, since increasing the number of disk blocks means that `<code>[UPDATE](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)</code>` and `<code>[DELETE](../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)</code>` statements that run for long periods of time can take even longer in the event that you need to roll back the changes.
+The limiting factor of the Version Buffer is not the number of rows being updated, but rather the number of disk blocks. You can increase the size, but use caution, since increasing the number of disk blocks means that `[UPDATE](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)` and `[DELETE](../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)` statements that run for long periods of time can take even longer in the event that you need to roll back the changes.
 
 
 ## Transaction Log

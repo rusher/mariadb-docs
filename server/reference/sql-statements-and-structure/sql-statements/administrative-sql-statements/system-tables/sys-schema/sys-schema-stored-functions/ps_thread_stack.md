@@ -11,10 +11,10 @@ sys.ps_thread_stack(thread_id, verbose)
 ## Description
 
 
-`<code>ps_thread_stack</code>` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md) that, for a given *thread_id*, returns all statements, stages, and events within the Performance Schema, as a JSON formatted stack.
+`ps_thread_stack` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md) that, for a given *thread_id*, returns all statements, stages, and events within the Performance Schema, as a JSON formatted stack.
 
 
-The boolean *verbose* argument specifies whether or not to include `<code>file:lineno</code>` information in the events.
+The boolean *verbose* argument specifies whether or not to include `file:lineno` information in the events.
 
 
 ## Examples

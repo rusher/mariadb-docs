@@ -15,8 +15,8 @@ TIMESTAMP(expr), TIMESTAMP(expr1,expr2)
 
 
 With a single argument, this function returns the date or datetime
-expression `<code>expr</code>` as a datetime value. With two arguments, it adds the
-time expression `<code>expr2</code>` to the date or datetime expression `<code>expr1</code>` and
+expression `expr` as a datetime value. With two arguments, it adds the
+time expression `expr2` to the date or datetime expression `expr1` and
 returns the result as a datetime value.
 
 

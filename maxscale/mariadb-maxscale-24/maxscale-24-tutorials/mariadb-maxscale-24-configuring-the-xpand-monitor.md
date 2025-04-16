@@ -67,17 +67,17 @@ list of servers to use for bootstrapping and the username and password to use
 when connecting to the servers.
 
 
-The `<code>monitor_interval</code>` parameter specifies how frequently the monitor should
-ping the health check port of each server and the `<code>cluster_monitor_interval</code>`
+The `monitor_interval` parameter specifies how frequently the monitor should
+ping the health check port of each server and the `cluster_monitor_interval`
 specifies how frequently the monitor should do a complete cluster check, that
-is, access the `<code>system</code>` tables of the Cluster for checking the Cluster
-configuration. The default values are `<code>2000</code>` and `<code>60000</code>`, that is, 2 seconds
+is, access the `system` tables of the Cluster for checking the Cluster
+configuration. The default values are `2000` and `60000`, that is, 2 seconds
 and 1 minute, respectively.
 
 
 For each detected Xpand node a corresponding MaxScale server object will be
-created, whose name is `<code>@@<Monitor-Name>:node-<id>, where _Monitor-Name_
-is the name of the monitor, in this example</code>`Xpand` and *id* is the node id
+created, whose name is `@@<Monitor-Name>:node-<id>, where _Monitor-Name_
+is the name of the monitor, in this example`Xpand` and *id* is the node id
 of the Xpand node. So, with a cluster of three nodes, the created servers
 might be named like.
 
@@ -109,9 +109,9 @@ cluster=Xpand
 
 
 
-Instead of listing the servers of the service explicitly using the `<code>servers</code>`
+Instead of listing the servers of the service explicitly using the `servers`
 parameter as usually is the case, the service refers to the Xpand monitor
-using the `<code>cluster</code>` parameter. This will cause the service to use the Xpand
+using the `cluster` parameter. This will cause the service to use the Xpand
 nodes that the Xpand monitor discovers at runtime.
 
 

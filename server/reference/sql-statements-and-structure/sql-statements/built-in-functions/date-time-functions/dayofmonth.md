@@ -11,8 +11,8 @@ DAYOFMONTH(date)
 ## Description
 
 
-Returns the day of the month for date, in the range `<code>1</code>` to `<code>31</code>`, or `<code>0</code>`
-for dates such as `<code>'0000-00-00'</code>` or `<code>'2008-00-00'</code>` which have a zero day
+Returns the day of the month for date, in the range `1` to `31`, or `0`
+for dates such as `'0000-00-00'` or `'2008-00-00'` which have a zero day
 part.
 
 

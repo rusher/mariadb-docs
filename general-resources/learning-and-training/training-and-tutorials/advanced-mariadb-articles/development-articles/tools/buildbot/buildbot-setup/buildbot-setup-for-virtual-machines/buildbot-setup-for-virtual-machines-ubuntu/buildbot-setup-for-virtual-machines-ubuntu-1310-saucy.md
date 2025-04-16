@@ -125,7 +125,7 @@ done
 ## VMs for install testing.
 
 
-See [Buildbot Setup for Virtual Machines - General Principles](../buildbot-setup-for-virtual-machines-general-principles.md) for how to obtain `<code>my.seed</code>` and `<code>sources.append</code>`.
+See [Buildbot Setup for Virtual Machines - General Principles](../buildbot-setup-for-virtual-machines-general-principles.md) for how to obtain `my.seed` and `sources.append`.
 
 
 ```

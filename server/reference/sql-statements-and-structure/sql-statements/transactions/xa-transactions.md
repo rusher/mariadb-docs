@@ -35,7 +35,7 @@ XA transactions are an overloaded term in MariaDB. If a [storage engine](../../.
 * It supports MariaDB's internal two-phase commit API. This is transparent to the user. Sometimes this is called "internal XA", since MariaDB's internal [transaction coordinator log](../../../../server-management/server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md) can handle coordinating these transactions.
 
 
-* It supports XA transactions, with the `<code>XA START</code>`, `<code>XA PREPARE</code>`, `<code>XA COMMIT</code>`, etc. statements. Sometimes this is called "external XA", since it requires the use of an external transaction coordinator to use this feature properly.
+* It supports XA transactions, with the `XA START`, `XA PREPARE`, `XA COMMIT`, etc. statements. Sometimes this is called "external XA", since it requires the use of an external transaction coordinator to use this feature properly.
 
 
 ## Transaction Coordinator Log
@@ -76,7 +76,7 @@ XA RECOVER [FORMAT=['RAW'|'SQL']]
 xid: gtrid [, bqual [, formatID ]]
 ```
 
-The interface to XA transactions is a set of SQL statements starting with `<code>XA</code>`. Each statement changes a transaction's state, determining which actions it can perform. A transaction which does not exist is in the `<code>NON-EXISTING</code>` state.
+The interface to XA transactions is a set of SQL statements starting with `XA`. Each statement changes a transaction's state, determining which actions it can perform. A transaction which does not exist is in the `NON-EXISTING` state.
 
 
 When trying to execute an operation which is not allowed for the transaction's current state, an error is produced:
@@ -97,13 +97,13 @@ ERROR 1399 (XAE07): XAER_RMFAIL: The command cannot be executed when global tran
 XA {START|BEGIN} xid [JOIN|RESUME]
 ```
 
-`<code>XA START</code>` (or `<code>BEGIN</code>`) starts a transaction and defines its `<code>xid</code>` (a transaction identifier). The new transaction will be in `<code>ACTIVE</code>` state.
+`XA START` (or `BEGIN`) starts a transaction and defines its `xid` (a transaction identifier). The new transaction will be in `ACTIVE` state.
 
 
-The `<code>xid</code>` can have 3 components, though only the first one is mandatory. `<code>gtrid</code>` is a quoted string representing a global transaction identifier. `<code>bqual</code>` is a quoted string representing a local transaction identifier. `<code>formatID</code>` is an unsigned integer indicating the format used for the first two components; if not specified, defaults to 1. MariaDB does not interpret in any way these components, and only uses them to identify a transaction. `<code>xid</code>`s of transactions in effect must be unique.
+The `xid` can have 3 components, though only the first one is mandatory. `gtrid` is a quoted string representing a global transaction identifier. `bqual` is a quoted string representing a local transaction identifier. `formatID` is an unsigned integer indicating the format used for the first two components; if not specified, defaults to 1. MariaDB does not interpret in any way these components, and only uses them to identify a transaction. `xid`s of transactions in effect must be unique.
 
 
-Using the `<code>JOIN</code>` or `<code>RESUME</code>` keywords will currently cause an error to be returned.
+Using the `JOIN` or `RESUME` keywords will currently cause an error to be returned.
 
 
 ```
@@ -113,7 +113,7 @@ MariaDB [test]> XA START 'test' JOIN;
 ERROR 1398 (XAE05): XAER_INVAL: Invalid arguments (or unsupported command)
 ```
 
-An exception to this is that `<code>XA START xid RESUME</code>` will resume the transaction if the `<code>xid</code>` is the same as the previous `<code>xid</code>` used in `<code>XA END xid</code>`. This simply undoes the `<code>XA END</code>` and moves it from the `<code>IDLE</code>` state back into `<code>ACTIVE</code>`.
+An exception to this is that `XA START xid RESUME` will resume the transaction if the `xid` is the same as the previous `xid` used in `XA END xid`. This simply undoes the `XA END` and moves it from the `IDLE` state back into `ACTIVE`.
 
 
 ```
@@ -134,7 +134,7 @@ XA COMMIT 'test';
 XA END xid [SUSPEND [FOR MIGRATE]]
 ```
 
-`<code>XA END</code>` declares that the specified `<code>ACTIVE</code>` transaction is finished and it changes its state to `<code>IDLE</code>`. `<code>SUSPEND [FOR MIGRATE]</code>` has no effect.
+`XA END` declares that the specified `ACTIVE` transaction is finished and it changes its state to `IDLE`. `SUSPEND [FOR MIGRATE]` has no effect.
 
 
 ### XA PREPARE
@@ -144,7 +144,7 @@ XA END xid [SUSPEND [FOR MIGRATE]]
 XA PREPARE xid
 ```
 
-`<code>XA PREPARE</code>` prepares an `<code>IDLE</code>` transaction for commit, changing its state to `<code>PREPARED</code>`. Prepared transactions are stored persistently and will survive disconnects and server crashes, and must be explicitly committed or rolled back.
+`XA PREPARE` prepares an `IDLE` transaction for commit, changing its state to `PREPARED`. Prepared transactions are stored persistently and will survive disconnects and server crashes, and must be explicitly committed or rolled back.
 
 
 
@@ -159,7 +159,7 @@ Before [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what
 XA COMMIT xid [ONE PHASE]
 ```
 
-`<code>XA COMMIT</code>` definitely commits and terminates a transaction which has already been `<code>PREPARED</code>`. If the `<code>ONE PHASE</code>` clause is specified, this statements performs a 1-phase commit on an `<code>IDLE</code>` transaction.
+`XA COMMIT` definitely commits and terminates a transaction which has already been `PREPARED`. If the `ONE PHASE` clause is specified, this statements performs a 1-phase commit on an `IDLE` transaction.
 
 
 ### XA ROLLBACK
@@ -169,7 +169,7 @@ XA COMMIT xid [ONE PHASE]
 XA ROLLBACK xid
 ```
 
-`<code>XA ROLLBACK</code>` rolls back and terminates an `<code>IDLE</code>` or `<code>PREPARED</code>` transaction.
+`XA ROLLBACK` rolls back and terminates an `IDLE` or `PREPARED` transaction.
 
 
 ### XA RECOVER
@@ -179,10 +179,10 @@ XA ROLLBACK xid
 XA RECOVER [FORMAT=['RAW'|'SQL']]
 ```
 
-The `<code>XA RECOVER</code>` statement shows information about all transactions which are in the `<code>PREPARED</code>` state. It does not matter which connection created the transaction: if it has been `<code>PREPARED</code>`, it appears. But this does not mean that a connection can commit or rollback a transaction which was started by another connection. Note that transactions using a 1-phase commit are never in the `<code>PREPARED</code>` state, so they cannot be shown by `<code>XA RECOVER</code>`.
+The `XA RECOVER` statement shows information about all transactions which are in the `PREPARED` state. It does not matter which connection created the transaction: if it has been `PREPARED`, it appears. But this does not mean that a connection can commit or rollback a transaction which was started by another connection. Note that transactions using a 1-phase commit are never in the `PREPARED` state, so they cannot be shown by `XA RECOVER`.
 
 
-`<code>XA RECOVER</code>` produces four columns:
+`XA RECOVER` produces four columns:
 
 
 ```
@@ -194,17 +194,17 @@ XA RECOVER;
 +----------+--------------+--------------+------+
 ```
 
-You can use `<code>XA RECOVER FORMAT='SQL'</code>` to get the data in a human readable
-form that can be directly copy-pasted into `<code>XA COMMIT</code>` or `<code>XA ROLLBACK</code>`. This is particularly useful for binary `<code>xid</code>` generated by some transaction coordinators.
+You can use `XA RECOVER FORMAT='SQL'` to get the data in a human readable
+form that can be directly copy-pasted into `XA COMMIT` or `XA ROLLBACK`. This is particularly useful for binary `xid` generated by some transaction coordinators.
 
 
-`<code>formatID</code>` is the `<code>formatID</code>` part of `<code>xid</code>`.
+`formatID` is the `formatID` part of `xid`.
 
 
-`<code>data</code>` are the `<code>gtrid</code>` and `<code>bqual</code>` parts of `<code>xid</code>`, concatenated.
+`data` are the `gtrid` and `bqual` parts of `xid`, concatenated.
 
 
-`<code>gtrid_length</code>` and `<code>bqual_length</code>` are the lengths of `<code>gtrid</code>` and `<code>bqual</code>`, respectevely.
+`gtrid_length` and `bqual_length` are the lengths of `gtrid` and `bqual`, respectevely.
 
 
 ## Examples
@@ -277,7 +277,7 @@ xa rollback X'31320d3334093637763738',X'6162630a646566',3;
 [MariaDB Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md) does not support XA transactions.
 
 
-However, [MariaDB Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md) builds include a built-in plugin called `<code>wsrep</code>`. Consequently, these [MariaDB Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md) builds have multiple XA-capable storage engines by default, even if the only "real" storage engine that supports external [XA transactions](xa-transactions.md) enabled on these builds by default is [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md). Therefore, when using one these builds MariaDB would be forced to use a [transaction coordinator log](../../../../server-management/server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md) by default, which could have performance implications.
+However, [MariaDB Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md) builds include a built-in plugin called `wsrep`. Consequently, these [MariaDB Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md) builds have multiple XA-capable storage engines by default, even if the only "real" storage engine that supports external [XA transactions](xa-transactions.md) enabled on these builds by default is [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md). Therefore, when using one these builds MariaDB would be forced to use a [transaction coordinator log](../../../../server-management/server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md) by default, which could have performance implications.
 
 
 See [Transaction Coordinator Log Overview: MariaDB Galera Cluster](../../../../server-management/server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md#mariadb-galera-cluster) for more information.
@@ -286,7 +286,7 @@ See [Transaction Coordinator Log Overview: MariaDB Galera Cluster](../../../../s
 ### Incompatibility with XA behaviour
 
 
-From [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), `<code>XA PREPARE</code>`
+From [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), `XA PREPARE`
 persists the XA transaction following the XA Specification. If an existing
 application relies on the previous behavior, upgrading to 10.5 or later can
 leave XA transactions in the PREPAREd state indefinitely after disconnect,

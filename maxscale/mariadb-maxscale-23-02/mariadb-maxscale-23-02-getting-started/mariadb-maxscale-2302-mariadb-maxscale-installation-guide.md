@@ -18,9 +18,9 @@ to install MaxScale. After enabling the repository by following the
 instructions, MaxScale can be installed with the following commands.
 
 
-* For RHEL/Rocky Linux/Alma Linux, use `<code>dnf install maxscale</code>`.
-* For Debian and Ubuntu, run `<code>apt update</code>` followed by `<code>apt install maxscale</code>`.
-* For SLES, use `<code>zypper install maxscale</code>`.
+* For RHEL/Rocky Linux/Alma Linux, use `dnf install maxscale`.
+* For Debian and Ubuntu, run `apt update` followed by `apt install maxscale`.
+* For SLES, use `zypper install maxscale`.
 
 
 ## Install MariaDB MaxScale From a RPM/DEB Package
@@ -32,9 +32,9 @@ page](https://mariadb.com/downloads/community/maxscale/). MaxScale can be
 installed with the following commands.
 
 
-* For RHEL/Rocky Linux/Alma Linux, use `<code>dnf install /path/to/maxscale-*.rpm</code>`
-* For Debian and Ubuntu, use `<code>apt install /path/to/maxscale-*.deb</code>`.
-* For SLES, use `<code>zypper install /path/to/maxscale-*.rpm</code>`.
+* For RHEL/Rocky Linux/Alma Linux, use `dnf install /path/to/maxscale-*.rpm`
+* For Debian and Ubuntu, use `apt install /path/to/maxscale-*.deb`.
+* For SLES, use `zypper install /path/to/maxscale-*.rpm`.
 
 
 ## Install MariaDB MaxScale Using a Tarball
@@ -65,23 +65,23 @@ MaxScale assumes that memory allocations always succeed and in general does
 not check for memory allocation failures. This assumption is compatible with
 the Linux kernel parameter
 [vm.overcommit_memory](https://www.kernel.org/doc/Documentation/vm/overcommit-accounting)
-having the value `<code>0</code>`, which is also the default on most systems.
+having the value `0`, which is also the default on most systems.
 
 
-With `<code>vm.overcommit_memory</code>` being `<code>0</code>`, memory *allocations* made by an
+With `vm.overcommit_memory` being `0`, memory *allocations* made by an
 application never fail, but instead the application may be killed by the
 so-called OOM (out-of-memory) killer if, by the time the application
 actually attempts to *use* the allocated memory, there is not available
 free memory on the system.
 
 
-If the value is `<code>2</code>`, then a memory allocation made by an application may
+If the value is `2`, then a memory allocation made by an application may
 fail and unless the application is prepared for that possiblity, it will
 likely crash with a SIGSEGV. As MaxScale is not prepared to handle memory
 allocation failures, it will crash in this situation.
 
 
-The current value of `<code>vm.overcommit_memory</code>` can be checked with
+The current value of `vm.overcommit_memory` can be checked with
 
 
 
@@ -139,20 +139,20 @@ covers the common administration tasks that need to be done with MariaDB MaxScal
 ## Copying or Backing Up MaxScale
 
 
-The main configuration file for MaxScale is in `<code>/etc/maxscale.cnf</code>` and
+The main configuration file for MaxScale is in `/etc/maxscale.cnf` and
 additional user-created configuration files are in
-`<code>/etc/maxscale.cnf.d/</code>`. Objects created or modified at runtime are stored in
-`<code>/var/lib/maxscale/maxscale.cnf.d/</code>`. Some modules also store internal data in
-`<code>/var/lib/maxscale/</code>` named after the module or the configuration object.
+`/etc/maxscale.cnf.d/`. Objects created or modified at runtime are stored in
+`/var/lib/maxscale/maxscale.cnf.d/`. Some modules also store internal data in
+`/var/lib/maxscale/` named after the module or the configuration object.
 
 
 The simplest way to back up the configuration and runtime data of a MaxScale
 installation is to create an archive from the following files and directories:
 
 
-* `<code>/etc/maxscale.cnf</code>`
-* `<code>/etc/maxscale.cnf.d/</code>`
-* `<code>/var/lib/maxscale/</code>`
+* `/etc/maxscale.cnf`
+* `/etc/maxscale.cnf.d/`
+* `/var/lib/maxscale/`
 
 
 This can be done with the following command:

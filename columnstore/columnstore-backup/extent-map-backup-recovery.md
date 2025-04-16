@@ -22,39 +22,39 @@ In the interim, we recommend that users of ColumnStore follow the following proc
 ### BACKUP OF MASTER COPY
 
 
-* `<code>$ mariadb -e "FLUSH TABLES WITH READ LOCK;"</code>`
-* `<code>$ save_brm</code>`
-* `<code>$ mkdir -p /extent_map_backup</code>`
-* `<code>$ cp -f /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_em /extent_map_backup</code>`
-* `<code>$ mariadb -e "UNLOCK TABLES;"</code>`
+* `$ mariadb -e "FLUSH TABLES WITH READ LOCK;"`
+* `$ save_brm`
+* `$ mkdir -p /extent_map_backup`
+* `$ cp -f /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_em /extent_map_backup`
+* `$ mariadb -e "UNLOCK TABLES;"`
 
 
 ### RECOVERY FOR SINGLE NODE SYSTEM
 
 
-* `<code>$ systemctl stop mariadb-columnstore</code>`
-* `<code>$ mv /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_em /tmp/BRM_saves_em.bad</code>`
-* `<code>$ cat /dev/null > /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vbbm</code>`
-* `<code>$ cat /dev/null > /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vss</code>`
-* `<code>$ cp -f /extent_map_backup/BRM_saves_em /var/lib/columnstore/data1/systemFiles/dbrm/</code>`
-* `<code>$ chown -R mysql:mysql /var/lib/columnstore/data1/systemFiles/dbrm/</code>`
-* `<code>$ systemctl start mariadb-columnstore</code>`
+* `$ systemctl stop mariadb-columnstore`
+* `$ mv /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_em /tmp/BRM_saves_em.bad`
+* `$ cat /dev/null > /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vbbm`
+* `$ cat /dev/null > /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vss`
+* `$ cp -f /extent_map_backup/BRM_saves_em /var/lib/columnstore/data1/systemFiles/dbrm/`
+* `$ chown -R mysql:mysql /var/lib/columnstore/data1/systemFiles/dbrm/`
+* `$ systemctl start mariadb-columnstore`
 
 
 ### RECOVERY FOR CLUSTERED SYSTEM
 
 
-* `<code>$ curl -s -X PUT https://127.0.0.1:8640/cmapi/0.4.0/cluster/shutdown --header 'Content-Type:application/json' --header 'x-api-key:somekey123' --data '{"timeout":60}' -k</code>`
-* `<code>$ mv /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_em /tmp/BRM_saves_em.bad</code>`
-* `<code>$ cat /dev/null > /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vbbm</code>`
-* `<code>$ cat /dev/null > /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vss</code>`
-* `<code>$ cp -f /extent_map_backup/BRM_saves_em /var/lib/columnstore/data1/systemFiles/dbrm/</code>`
-* `<code>$ chown -R mysql:mysql /var/lib/columnstore/data1/systemFiles/dbrm/</code>`
-* `<code>$ curl -s -X PUT https://127.0.0.1:8640/cmapi/0.4.0/cluster/start --header 'Content-Type:application/json' --header 'x-api-key:somekey123' --data '{"timeout":60}' -k </code>`
+* `$ curl -s -X PUT https://127.0.0.1:8640/cmapi/0.4.0/cluster/shutdown --header 'Content-Type:application/json' --header 'x-api-key:somekey123' --data '{"timeout":60}' -k`
+* `$ mv /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_em /tmp/BRM_saves_em.bad`
+* `$ cat /dev/null > /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vbbm`
+* `$ cat /dev/null > /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vss`
+* `$ cp -f /extent_map_backup/BRM_saves_em /var/lib/columnstore/data1/systemFiles/dbrm/`
+* `$ chown -R mysql:mysql /var/lib/columnstore/data1/systemFiles/dbrm/`
+* `$ curl -s -X PUT https://127.0.0.1:8640/cmapi/0.4.0/cluster/start --header 'Content-Type:application/json' --header 'x-api-key:somekey123' --data '{"timeout":60}' -k `
 
 
 ### AUTOMATION
 
 
-It might be a good idea to include a simple `<code>save_brm</code>` command to the end of any [cpimport](../columnstore-data-ingestion/columnstore-bulk-data-loading.md) scripting that you might current be using. Please see this GitHub link for a working example of a simple [backup script](https://raw.githubusercontent.com/mariadb-corporation/columnstore-extent-backup/main/copy_extents).
+It might be a good idea to include a simple `save_brm` command to the end of any [cpimport](../columnstore-data-ingestion/columnstore-bulk-data-loading.md) scripting that you might current be using. Please see this GitHub link for a working example of a simple [backup script](https://raw.githubusercontent.com/mariadb-corporation/columnstore-extent-backup/main/copy_extents).
 

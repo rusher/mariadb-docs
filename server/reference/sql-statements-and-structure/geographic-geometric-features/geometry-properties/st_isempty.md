@@ -15,8 +15,8 @@ IsEmpty(g)
 IsEmpty is a function defined by the OpenGIS specification, but is not fully implemented by MariaDB or MySQL.
 
 
-Since MariaDB and MySQL do not support GIS EMPTY values such as POINT EMPTY, as implemented it simply returns `<code>1</code>` if the geometry value *`<code>g</code>`* is invalid, `<code>0</code>` if it is valid, and `<code>NULL</code>` if the argument is `<code>NULL</code>`.
+Since MariaDB and MySQL do not support GIS EMPTY values such as POINT EMPTY, as implemented it simply returns `1` if the geometry value *`g`* is invalid, `0` if it is valid, and `NULL` if the argument is `NULL`.
 
 
-`<code>ST_IsEmpty()</code>` and `<code>IsEmpty()</code>` are synonyms.
+`ST_IsEmpty()` and `IsEmpty()` are synonyms.
 

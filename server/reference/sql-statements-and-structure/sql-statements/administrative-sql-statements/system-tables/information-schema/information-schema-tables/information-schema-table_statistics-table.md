@@ -1,7 +1,7 @@
 
 # Information Schema TABLE_STATISTICS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>TABLE_STATISTICS</code>` table shows statistics on table usage.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `TABLE_STATISTICS` table shows statistics on table usage.
 
 
 This is part of the [User Statistics](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md) feature, which is not enabled by default.

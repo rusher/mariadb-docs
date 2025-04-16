@@ -31,14 +31,14 @@ WHERE
 ...
 ```
 
-A non-recursive CTE is basically a query-local [VIEW](../../../../../../server-usage/programming-customizing-mariadb/views/README.md). There are several advantages and caveats to them. The syntax is more readable than nested `<code>FROM (SELECT ...)</code>`.
+A non-recursive CTE is basically a query-local [VIEW](../../../../../../server-usage/programming-customizing-mariadb/views/README.md). There are several advantages and caveats to them. The syntax is more readable than nested `FROM (SELECT ...)`.
 A CTE can refer to another and it can be referenced from multiple places.
 
 
 ### A CTE referencing Another CTE
 
 
-Using this format makes for a more readable SQL than a nested `<code>FROM(SELECT ...)</code>` clause. Below is an example of this:
+Using this format makes for a more readable SQL than a nested `FROM(SELECT ...)` clause. Below is an example of this:
 
 
 ```

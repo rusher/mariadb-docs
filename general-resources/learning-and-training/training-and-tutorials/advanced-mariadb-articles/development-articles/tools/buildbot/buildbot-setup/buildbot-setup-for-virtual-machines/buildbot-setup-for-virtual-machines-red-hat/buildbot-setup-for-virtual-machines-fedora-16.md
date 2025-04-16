@@ -217,7 +217,7 @@ Also:
 ## VMs for install testing.
 
 
-`<code>MariaDB.local.repo</code>` points at a local directory on the VM. `<code>MariaDB.repo</code>`
+`MariaDB.local.repo` points at a local directory on the VM. `MariaDB.repo`
 points at the real MariaDB YUM repository.
 
 

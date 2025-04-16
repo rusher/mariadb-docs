@@ -1,24 +1,24 @@
 
 # mariadb-install-db.exe
 
-The `<code>mariadb-install-db.exe</code>` utility is the Windows equivalent of [mariadb-install-db](mariadb-install-db-exe.md).
+The `mariadb-install-db.exe` utility is the Windows equivalent of [mariadb-install-db](mariadb-install-db-exe.md).
 
 
 ## Functionality
 
 
-The functionality of `<code>mariadb-install-db.exe</code>` is comparable with the shell
-script `<code>mariadb-install-db</code>` used on Unix, however it has been extended with
+The functionality of `mariadb-install-db.exe` is comparable with the shell
+script `mariadb-install-db` used on Unix, however it has been extended with
 both Windows specific functionality (creating a Windows service) and to
 generally useful functionality. For example, it can set the 'root' user
-password during database creation. It also creates the `<code>my.ini</code>` configuration
+password during database creation. It also creates the `my.ini` configuration
 file in the data directory and adds most important parameters to it (e.g port).
 
 
-`<code>mariadb-install-db.exe</code>` is used by the MariaDB installer for Windows if the
+`mariadb-install-db.exe` is used by the MariaDB installer for Windows if the
 "Database instance" feature is selected. It obsoletes similar utilities and
-scripts that were used in the past such as `<code>mysqld.exe</code>` `<code><code>--</code>install</code>`,
-`<code>mysql_install_db.pl</code>`, and `<code>mysql_secure_installation.pl</code>`.
+scripts that were used in the past such as `mysqld.exe` `<code>--</code>install`,
+`mysql_install_db.pl`, and `mysql_secure_installation.pl`.
 
 
 
@@ -42,7 +42,7 @@ scripts that were used in the past such as `<code>mysqld.exe</code>` `<code><cod
 
 
 
-**Note**: to create a Windows service, `<code>mariadb-install-db.exe</code>` should be run
+**Note**: to create a Windows service, `mariadb-install-db.exe` should be run
 by a user with full administrator privileges (which means elevated command
 prompt on systems with UAC).
 

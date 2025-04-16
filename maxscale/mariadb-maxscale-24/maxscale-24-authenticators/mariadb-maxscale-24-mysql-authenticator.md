@@ -17,12 +17,12 @@ needs no further configuration to work.
 
 
 The client authentication module, *MySQLAuth*, supports authenticator
-options. The `<code>authenticator_options</code>` parameter is supported by listeners
+options. The `authenticator_options` parameter is supported by listeners
 and servers and expects a comma-separated list of key-value pairs. The
 following options contain examples on how to define it.
 
 
-### `<code>skip_authentication</code>`
+### `skip_authentication`
 
 
 This option takes a boolean value which controls whether MaxScale will fully
@@ -34,10 +34,10 @@ gateway to the server. The authentication of users is offloaded to the backend
 server.
 
 
-For example, creating the user `<code>jdoe@%</code>` will allow the user *jdoe* to connect
+For example, creating the user `jdoe@%` will allow the user *jdoe* to connect
 from any IP address. This can be a problem if all traffic needs to go through
 MaxScale. By enabling this option and replacing the user with
-`<code>jdoe@maxscale-IP</code>`, the users can still connect from any client IP but will be
+`jdoe@maxscale-IP`, the users can still connect from any client IP but will be
 forced to go though MaxScale.
 
 
@@ -48,16 +48,16 @@ authenticator_options=skip_authentication=true
 
 
 
-### `<code>cache_dir</code>`
+### `cache_dir`
 
 
 The location where the user credential cache is stored. The default value
-for this is `<code><cache dir>/<service name>/<listener name>/cache/</code>` where
-`<code><cache dir></code>` by default is `<code>/var/cache</code>`.
+for this is `<cache dir>/<service name>/<listener name>/cache/` where
+`<cache dir>` by default is `/var/cache`.
 
 
-If *cache_dir* is defined, the user cache file is stored in `<code><cache
-dir>/</code>`. No additional directories are appended to the *cache_dir* value.
+If *cache_dir* is defined, the user cache file is stored in `<cache
+dir>/`. No additional directories are appended to the *cache_dir* value.
 
 
 Each listener has its own user cache where the user credential information
@@ -72,7 +72,7 @@ authenticator_options=cache_dir=/tmp
 
 
 
-### `<code>inject_service_user</code>`
+### `inject_service_user`
 
 
 Inject service credentials into the list of database users if loading of
@@ -97,7 +97,7 @@ authenticator_options=inject_service_user=false
 
 
 
-### `<code>lower_case_table_names</code>`
+### `lower_case_table_names`
 
 
 Enable case-insensitive identifier matching for authentication. This parameter
@@ -121,7 +121,7 @@ authenticator_options=lower_case_table_names=false
 
 
 
-### `<code>log_password_mismatch</code>`
+### `log_password_mismatch`
 
 
 This parameter takes a boolean value and is disabled by default. When enabled,

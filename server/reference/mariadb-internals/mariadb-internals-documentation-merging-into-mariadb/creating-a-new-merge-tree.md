@@ -20,7 +20,7 @@ cd pcre
 bzr init
 ```
 
-* download pcre source tarball of the same version that we have in the tree — `<code>pcre-8.34.tar.bz2</code>`
+* download pcre source tarball of the same version that we have in the tree — `pcre-8.34.tar.bz2`
 * unpack it in the same place where the files are in the source tree:
 
 
@@ -44,7 +44,7 @@ bzr commit -m pcre-8.34
 bzr push --remember lp:~maria-captains/maria/pcre-mergetree
 ```
 
-* Now null-merge that into your MariaDB tree. Note, that for the initial merge you need to specify the revision range `<code>0..1</code>`
+* Now null-merge that into your MariaDB tree. Note, that for the initial merge you need to specify the revision range `0..1`
 
 
 ```

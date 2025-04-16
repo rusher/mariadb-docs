@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_CMPMEM and INNODB_CMPMEM_RESET Tables
 
-The `<code>INNODB_CMPMEM</code>` and `<code>INNODB_CMPMEM_RESET</code>` tables contain status information on compressed pages in the [buffer pool](../../../../../../../storage-engines/innodb/innodb-buffer-pool.md) (see InnoDB [COMPRESSED](../../../../../../../storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md) format).
+The `INNODB_CMPMEM` and `INNODB_CMPMEM_RESET` tables contain status information on compressed pages in the [buffer pool](../../../../../../../storage-engines/innodb/innodb-buffer-pool.md) (see InnoDB [COMPRESSED](../../../../../../../storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md) format).
 
 
 The [PROCESS](../../../../../account-management-sql-commands/grant.md#global-privileges) privilege is required to query this table.
@@ -23,10 +23,10 @@ These tables contain the following columns:
 
 
 
-These tables can be used to measure the effectiveness of InnoDB table compression. When you have to decide a value for `<code>KEY_BLOCK_SIZE</code>`, you can create more than one version of the table (one for each candidate value) and run a realistic workload on them. Then, these tables can be used to see how the operations performed with different page sizes.
+These tables can be used to measure the effectiveness of InnoDB table compression. When you have to decide a value for `KEY_BLOCK_SIZE`, you can create more than one version of the table (one for each candidate value) and run a realistic workload on them. Then, these tables can be used to see how the operations performed with different page sizes.
 
 
-`<code>INNODB_CMPMEM</code>` and `<code>INNODB_CMPMEM_RESET</code>` have the same columns and always contain the same values, but when `<code>INNODB_CMPMEM_RESET</code>` is queried, the `<code>RELOCATION_TIME</code>` column from both the tables are cleared. `<code>INNODB_CMPMEM_RESET</code>` can be used, for example, if a script periodically logs the performances of compression in the last period of time. `<code>INNODB_CMPMEM</code>` can be used to see the cumulated statistics.
+`INNODB_CMPMEM` and `INNODB_CMPMEM_RESET` have the same columns and always contain the same values, but when `INNODB_CMPMEM_RESET` is queried, the `RELOCATION_TIME` column from both the tables are cleared. `INNODB_CMPMEM_RESET` can be used, for example, if a script periodically logs the performances of compression in the last period of time. `INNODB_CMPMEM` can be used to see the cumulated statistics.
 
 
 ## Example

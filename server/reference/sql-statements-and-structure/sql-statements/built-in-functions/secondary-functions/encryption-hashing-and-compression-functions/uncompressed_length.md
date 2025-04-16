@@ -12,13 +12,13 @@ UNCOMPRESSED_LENGTH(compressed_string)
 
 
 Returns the length that the compressed string had before being
-compressed with `<code>[COMPRESS()](compress.md)</code>`.
+compressed with `[COMPRESS()](compress.md)`.
 
 
-`<code>UNCOMPRESSED_LENGTH()</code>` returns `<code>NULL</code>` or an incorrect result if the string is not compressed.
+`UNCOMPRESSED_LENGTH()` returns `NULL` or an incorrect result if the string is not compressed.
 
 
-Until [MariaDB 10.3.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md), returns `<code>MYSQL_TYPE_LONGLONG</code>`, or [bigint(10)](../../../../../data-types/data-types-numeric-data-types/bigint.md), in all cases. From [MariaDB 10.3.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md), returns `<code>MYSQL_TYPE_LONG</code>`, or [int(10)](../../../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md), when the result would fit within 32-bits.
+Until [MariaDB 10.3.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md), returns `MYSQL_TYPE_LONGLONG`, or [bigint(10)](../../../../../data-types/data-types-numeric-data-types/bigint.md), in all cases. From [MariaDB 10.3.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md), returns `MYSQL_TYPE_LONG`, or [int(10)](../../../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md), when the result would fit within 32-bits.
 
 
 ## Examples

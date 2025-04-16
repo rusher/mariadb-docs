@@ -12,7 +12,7 @@ SELECT ... INTO DUMPFILE 'file_path'
 ## Description
 
 
-`<code>SELECT ... INTO DUMPFILE</code>` is a [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) clause which writes the resultset into a single unformatted row, without any separators, in a file. The results will not be returned to the client.
+`SELECT ... INTO DUMPFILE` is a [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) clause which writes the resultset into a single unformatted row, without any separators, in a file. The results will not be returned to the client.
 
 
 *file_path* can be an absolute path, or a relative path starting from the data directory. It can only be specified as a [string literal](../../../sql-language-structure/string-literals.md), not as a variable. However, the statement can be dynamically composed and executed as a prepared statement to work around this limitation.

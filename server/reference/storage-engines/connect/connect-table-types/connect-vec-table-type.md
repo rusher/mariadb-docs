@@ -5,7 +5,7 @@
 Warning: Avoid using this table type in production applications. This file format is specific to CONNECT and may not be supported in future versions.
 
 
-Tables of type `<code>VEC</code>` are binary files that in some cases can provide good
+Tables of type `VEC` are binary files that in some cases can provide good
 performance on read-intensive query workloads. CONNECT organizes their data on
 disk as columns of values from the same attribute, as opposed to storing it as
 rows of tabular records. This organization means that when a query needs to
@@ -37,9 +37,9 @@ be only one open and close to do. However, the size of the table cannot be
 calculated from the file size because of the eventual unused space in the file.
 It must be kept in a header containing the maximum number of rows and the
 current number of valid rows in the table. To achieve this, specify the option
-Header=*n* when creating the table. If `<code>n=1</code>` the header will be placed at
-the beginning of the file, if `<code>n=2</code>` it will be a separate file with the type
-‘.blk’, and if `<code>n=3</code>` the header will be place at the end of the file. This
+Header=*n* when creating the table. If `n=1` the header will be placed at
+the beginning of the file, if `n=2` it will be a separate file with the type
+‘.blk’, and if `n=3` the header will be place at the end of the file. This
 last value is provided because batch inserting is sometimes slower when the
 header is at the beginning of the file. If not specified, the header option
 will default to 2 for this table type.

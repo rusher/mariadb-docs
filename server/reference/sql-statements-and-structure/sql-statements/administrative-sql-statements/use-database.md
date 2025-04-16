@@ -18,10 +18,10 @@ USE DATABASE db_name;
 ## Description
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">'USE db_name'</code>` statement tells MariaDB to use the
-`<code class="highlight fixed" style="white-space:pre-wrap">db_name</code>` database as the default (current) database for
+The `'USE db_name'` statement tells MariaDB to use the
+`db_name` database as the default (current) database for
 subsequent statements. The database remains the default until the end of the
-session or another `<code class="highlight fixed" style="white-space:pre-wrap">USE</code>` statement is issued:
+session or another `USE` statement is issued:
 
 
 ```
@@ -37,7 +37,7 @@ The [DATABASE()](../../../../../general-resources/learning-and-training/training
 Another way to set the default database is specifying its name at [mariadb](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) command line client startup.
 
 
-One cannot use `<code>USE DATABASE</code>` to a database one has no privileges to. The reason is that
+One cannot use `USE DATABASE` to a database one has no privileges to. The reason is that
 a user with no privileges to a database should not be able to know if a database exists or not.
 
 

@@ -17,7 +17,7 @@ Inserts a value into a JSON document, returning the modified document, or NULL i
 Evaluation is performed from left to right, with the resulting document from the previous pair becoming the new value against which the next pair is evaluated.
 
 
-If the `<code>json_doc</code>` is not a valid JSON document, or if any of the paths are not valid, or contain a `<code>*</code>` or `<code>**</code>` wildcard, an error is returned.
+If the `json_doc` is not a valid JSON document, or if any of the paths are not valid, or contain a `*` or `**` wildcard, an error is returned.
 
 
 ## Examples

@@ -83,7 +83,7 @@ database listeners. *port* defines the network port to listen on.
 
 The optional *address*-parameter defines the local address the listener should bind to.
 This may be required when the host machine has multiple network interfaces. The
-default behavior is to listen on all network interfaces (the IPv6 address `<code>::</code>`).
+default behavior is to listen on all network interfaces (the IPv6 address `::`).
 
 
 ## Starting MariaDB MaxScale

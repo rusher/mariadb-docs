@@ -1,7 +1,7 @@
 
 # Performance Schema events_statements_history_long Table
 
-The `<code>events_statements_history_long</code>` table by default contains the ten thousand most recent completed statement events. This number can be adjusted by setting the [performance_schema_events_statements_history_long_size](../performance-schema-system-variables.md#performance_schema_events_statements_history_long_size) system variable when the server starts up.
+The `events_statements_history_long` table by default contains the ten thousand most recent completed statement events. This number can be adjusted by setting the [performance_schema_events_statements_history_long_size](../performance-schema-system-variables.md#performance_schema_events_statements_history_long_size) system variable when the server starts up.
 
 
 The table structure is identical to the [events_statements_current](performance-schema-events_statements_current-table.md) table structure, and contains the following columns:
@@ -54,7 +54,7 @@ The table structure is identical to the [events_statements_current](performance-
 
 
 
-It is possible to empty this table with a `<code>TRUNCATE TABLE</code>` statement.
+It is possible to empty this table with a `TRUNCATE TABLE` statement.
 
 
 [events_statements_current](performance-schema-events_statements_current-table.md) and [events_statements_history](performance-schema-events_statements_history-table.md) are related tables.

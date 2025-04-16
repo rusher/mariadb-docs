@@ -15,7 +15,7 @@ Y(p)
 Returns the Y-coordinate value for the point p as a double-precision number.
 
 
-`<code>ST_Y()</code>` and `<code>Y()</code>` are synonyms.
+`ST_Y()` and `Y()` are synonyms.
 
 
 ## Examples

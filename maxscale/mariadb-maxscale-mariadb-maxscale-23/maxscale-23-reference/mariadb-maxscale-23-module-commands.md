@@ -9,8 +9,8 @@ commands. They allow the modules to expand beyond the capabilities of the module
 API. Currently, only MaxAdmin implements an interface to the module commands.
 
 
-All registered module commands can be shown with `<code>maxadmin list commands</code>` and
-they can be executed with `<code>maxadmin call command <module> <name> ARGS...</code>` where
+All registered module commands can be shown with `maxadmin list commands` and
+they can be executed with `maxadmin call command <module> <name> ARGS...` where
 *<module>* is the name of the module and *<name>* is the name of the command.
 *ARGS* is a command specific list of arguments.
 

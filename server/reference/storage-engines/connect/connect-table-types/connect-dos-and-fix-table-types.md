@@ -33,18 +33,18 @@ engine=CONNECT table_type=DOS file_name='dept.dat';
 
 Here the flag column option represents the offset of this column inside the
 records. If the offset of a column is not specified, it defaults to the end of
-the previous column and defaults to 0 for the first one. The *`<code>lrecl</code>`*
+the previous column and defaults to 0 for the first one. The *`lrecl`*
 parameter that represents the maximum size of a record is calculated by default
 as the end of the rightmost column and can be unspecified except when some
 trailing information exists after the rightmost column.
 
 
 **Note:** A special case is files having an encoding such as UTF-8 (for
-instance specifying `<code>charset=UTF8</code>`) in which some characters may be
+instance specifying `charset=UTF8`) in which some characters may be
 represented with several bytes. Unlike the type size that MariaDB interprets as
-a number of characters, the `<code>lrecl</code>` value is the record size in bytes and the
+a number of characters, the `lrecl` value is the record size in bytes and the
 flag value represents the offset of the field in the record in bytes. If the
-flag and/or the `<code>lrecl</code>` value are not specified, they will be calculated by
+flag and/or the `lrecl` value are not specified, they will be calculated by
 the number of characters in the fields multiplied by a value that is the
 maximum size in bytes of a character for the corresponding charset. For UTF-8
 this value is 3 which is often far too much as there are very few characters
@@ -61,13 +61,13 @@ floating point according to its contents.
 
 Sometimes, as in the *number* column of the above *department* table, you
 have the choice of the type, numeric or characters. This will modify how the
-column is internally handled — in characters `<code>0021</code>`
-is different from `<code>21</code>` but not in numeric — as well
+column is internally handled — in characters `0021`
+is different from `21` but not in numeric — as well
 as how it is displayed.
 
 
 If the last field has fixed length, the table should be referred as having the
-type `<code>FIX</code>`. For instance, to create a table on the file *boys.txt*:
+type `FIX`. For instance, to create a table on the file *boys.txt*:
 
 
 ```
@@ -99,7 +99,7 @@ depends on the format and cannot be calculated by default. For fixed files,
 the *lrecl* option is the physical length of the record including the line
 ending character(s). It is calculated by adding to the end of the last field 2
 bytes under Windows (CRLF) or 1 byte under UNIX. If the file is imported from
-another operating system, the `<code>ENDING</code>` option will have to be specified with
+another operating system, the `ENDING` option will have to be specified with
 the proper value.
 
 
@@ -128,7 +128,7 @@ This table is displayed as:
 Whenever possible, the fixed format should be preferred to the varying one
 because it is much faster to deal with fixed tables than with variable tables.
 Sure enough, instead of being read or written record by record, FIX tables are
-processed by blocks of `<code>BLOCK_SIZE</code>` records, resulting in far less
+processed by blocks of `BLOCK_SIZE` records, resulting in far less
 input/output operations to execute. The block size defaults to 100 if not
 specified in the Create Table statement.
 
@@ -181,7 +181,7 @@ is not specified, it defaults to the MySQL default type length.
 Some files have specific format for their numeric fields. For instance, the
 decimal point is absent and/or the field should be filled with leading zeros.
 To deal with such files, as well in reading as in writing, the format can be
-specified in the `<code>CREATE TABLE</code>` column definition. The syntax of the field
+specified in the `CREATE TABLE` column definition. The syntax of the field
 format specification is:
 
 
@@ -278,6 +278,6 @@ result.
 **Note:** For columns internally using double precision floating-point numbers,
 MariaDB limits the decimal precision of any calculation to the column
 precision. The declared column precision should be at least the number of
-decimals of the format to avoid a loss of decimals as it happened for `<code>col3</code>`
+decimals of the format to avoid a loss of decimals as it happened for `col3`
 of the above example.
 

@@ -11,7 +11,7 @@ ST_OVERLAPS(g1,g2)
 ## Description
 
 
-Returns `<code>1</code>` or `<code>0</code>` to indicate whether geometry *`<code>g1</code>`* spatially overlaps geometry *`<code>g2</code>`*.
+Returns `1` or `0` to indicate whether geometry *`g1`* spatially overlaps geometry *`g2`*.
 
 
 The term spatially overlaps is used if two geometries of equal dimensions intersect and their

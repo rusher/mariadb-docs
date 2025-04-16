@@ -1,10 +1,10 @@
 
 # Information Schema INNODB_FT_INDEX_CACHE Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>INNODB_FT_INDEX_CACHE</code>` table contains information about rows that have recently been inserted into an InnoDB [fulltext index](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md). To avoid re-organizing the fulltext index each time a change is made, which would be very expensive, new changes are stored separately and only integrated when an [OPTIMIZE TABLE](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) is run.
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_FT_INDEX_CACHE` table contains information about rows that have recently been inserted into an InnoDB [fulltext index](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md). To avoid re-organizing the fulltext index each time a change is made, which would be very expensive, new changes are stored separately and only integrated when an [OPTIMIZE TABLE](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) is run.
 
 
-The `<code>SUPER</code>` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table, and it also requires the [innodb_ft_aux_table](../../../../../../../storage-engines/innodb/innodb-system-variables.md) system variable to be set.
+The `SUPER` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table, and it also requires the [innodb_ft_aux_table](../../../../../../../storage-engines/innodb/innodb-system-variables.md) system variable to be set.
 
 
 It has the following columns:
@@ -23,7 +23,7 @@ It has the following columns:
 
 
 
-Note that for `<code>OPTIMIZE TABLE</code>` to process InnoDB fulltext index data, the [innodb_optimize_fulltext_only](../../../../../../../storage-engines/innodb/innodb-system-variables.md) system variable needs to be set to `<code>1</code>`. When this is done, and an `<code>OPTIMIZE TABLE</code>` statement run, the `<code>INNODB_FT_INDEX_CACHE</code>` table will be emptied, and the [INNODB_FT_INDEX_TABLE](information-schema-innodb_ft_index_table-table.md) table will be updated.
+Note that for `OPTIMIZE TABLE` to process InnoDB fulltext index data, the [innodb_optimize_fulltext_only](../../../../../../../storage-engines/innodb/innodb-system-variables.md) system variable needs to be set to `1`. When this is done, and an `OPTIMIZE TABLE` statement run, the `INNODB_FT_INDEX_CACHE` table will be emptied, and the [INNODB_FT_INDEX_TABLE](information-schema-innodb_ft_index_table-table.md) table will be updated.
 
 
 ## Examples
@@ -103,7 +103,7 @@ SELECT * FROM INNODB_FT_INDEX_CACHE;
 13 rows in set (0.00 sec)
 ```
 
-The `<code>OPTIMIZE TABLE</code>` statement has no effect, because the [innodb_optimize_fulltext_only](innodb-server-system-variables#innodb_optimize_fulltext_only) variable wasn't set:
+The `OPTIMIZE TABLE` statement has no effect, because the [innodb_optimize_fulltext_only](innodb-server-system-variables#innodb_optimize_fulltext_only) variable wasn't set:
 
 
 ```

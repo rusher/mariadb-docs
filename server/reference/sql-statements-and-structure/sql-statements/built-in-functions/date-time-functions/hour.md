@@ -12,11 +12,11 @@ HOUR(time)
 
 
 Returns the hour for time. The range of the return value is 0 to 23
-for time-of-day values. However, the range of `<code>TIME</code>` values actually is
+for time-of-day values. However, the range of `TIME` values actually is
 much larger, so HOUR can return values greater than 23.
 
 
-The return value is always positive, even if a negative `<code>TIME</code>` value is provided.
+The return value is always positive, even if a negative `TIME` value is provided.
 
 
 ## Examples
@@ -38,7 +38,7 @@ SELECT HOUR('272:59:59');
 +-------------------+
 ```
 
-Difference between `<code>[EXTRACT (HOUR FROM ...)](../../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/extract_schema_from_file_name.md)</code>` (>= [MariaDB 10.0.7](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes.md) and [MariaDB 5.5.35](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5535-release-notes.md)) and `<code>HOUR</code>`:
+Difference between `[EXTRACT (HOUR FROM ...)](../../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/extract_schema_from_file_name.md)` (>= [MariaDB 10.0.7](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes.md) and [MariaDB 5.5.35](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5535-release-notes.md)) and `HOUR`:
 
 
 ```

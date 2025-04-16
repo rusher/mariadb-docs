@@ -23,18 +23,18 @@ mysqld --log-output=table
 When you create a table using the CSV storage engine, three files are created:
 
 
-* `<code><table_name>.frm</code>`
-* `<code><table_name>.CSV</code>`
-* `<code><table_name>.CSM</code>`
+* `<table_name>.frm`
+* `<table_name>.CSV`
+* `<table_name>.CSM`
 
 
-The `<code>.frm</code>` file is the table format file.
+The `.frm` file is the table format file.
 
 
-The `<code>.CSV</code>` file is a plain text file. Data you enter into the table is stored as plain text in comma-separated-values format.
+The `.CSV` file is a plain text file. Data you enter into the table is stored as plain text in comma-separated-values format.
 
 
-The `<code>.CSM</code>` file stores metadata about the table such as the state and the number of rows in the table.
+The `.CSM` file stores metadata about the table such as the state and the number of rows in the table.
 
 
 ## Limitations

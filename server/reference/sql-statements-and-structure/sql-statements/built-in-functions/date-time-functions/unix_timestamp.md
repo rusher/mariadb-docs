@@ -14,19 +14,19 @@ UNIX_TIMESTAMP(date)
 
 
 If called with no argument, returns a Unix timestamp (seconds since
-'1970-01-01 00:00:00' [UTC](../../../../data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)) as an unsigned integer. If `<code>UNIX_TIMESTAMP()</code>`
+'1970-01-01 00:00:00' [UTC](../../../../data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)) as an unsigned integer. If `UNIX_TIMESTAMP()`
 is called with a date argument, it returns the value of the argument as seconds
-since '1970-01-01 00:00:00' UTC. date may be a `<code>[DATE](../../../sql-language-structure/date-and-time-literals.md)</code>` string, a
-`<code>[DATETIME](../../../../data-types/date-and-time-data-types/datetime.md)</code>` string, a `<code>[TIMESTAMP](timestamp-function.md)</code>`, or a number in
+since '1970-01-01 00:00:00' UTC. date may be a `[DATE](../../../sql-language-structure/date-and-time-literals.md)` string, a
+`[DATETIME](../../../../data-types/date-and-time-data-types/datetime.md)` string, a `[TIMESTAMP](timestamp-function.md)`, or a number in
 the format YYMMDD or YYYYMMDD. The server interprets date as a value in the
 current [time zone](../../../../data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md) and converts it to an internal value in [UTC](../../../../data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md). Clients can set
 their time zone as described in [time zones](../../../../data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md).
 
 
-The inverse function of `<code>UNIX_TIMESTAMP()</code>` is `<code>[FROM_UNIXTIME()](from_unixtime.md)</code>`
+The inverse function of `UNIX_TIMESTAMP()` is `[FROM_UNIXTIME()](from_unixtime.md)`
 
 
-`<code>UNIX_TIMESTAMP()</code>` supports [microseconds](microseconds-in-mariadb.md).
+`UNIX_TIMESTAMP()` supports [microseconds](microseconds-in-mariadb.md).
 
 
 Timestamps in MariaDB have a maximum value of 4294967295, equivalent to 2106-02-07 06:28:15. This is due to the underlying 32-bit limitation. Using the function on a timestamp beyond this will result in NULL being returned. Use [DATETIME](../../../../data-types/date-and-time-data-types/datetime.md) as a storage type if you require dates beyond this.
@@ -38,7 +38,7 @@ Before [MariaDB 11.5](../../../../../../release-notes/mariadb-community-server/w
 ### Error Handling
 
 
-Returns NULL for wrong arguments to `<code>UNIX_TIMESTAMP()</code>`. In MySQL and MariaDB before 5.3 wrong arguments to `<code>UNIX_TIMESTAMP()</code>` returned 0.
+Returns NULL for wrong arguments to `UNIX_TIMESTAMP()`. In MySQL and MariaDB before 5.3 wrong arguments to `UNIX_TIMESTAMP()` returned 0.
 
 
 ### Compatibility

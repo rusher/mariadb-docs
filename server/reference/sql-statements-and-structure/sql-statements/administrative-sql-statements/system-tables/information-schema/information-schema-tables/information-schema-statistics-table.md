@@ -1,7 +1,7 @@
 
 # Information Schema STATISTICS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>STATISTICS</code>` table provides information about table indexes.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `STATISTICS` table provides information about table indexes.
 
 
 It contains the following columns:
@@ -30,7 +30,7 @@ It contains the following columns:
 
 
 
-The `<code>[SHOW INDEX](../../../show/show-index.md)</code>` statement produces similar output.
+The `[SHOW INDEX](../../../show/show-index.md)` statement produces similar output.
 
 
 ## Example

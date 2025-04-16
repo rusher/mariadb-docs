@@ -34,7 +34,7 @@ The Regex filter is a filter module for MariaDB MaxScale that is able to rewrite
 For all details about the PCRE2 syntax, please read the [PCRE2 syntax documentation](https://www.pcre.org/current/doc/html/pcre2syntax.html).
 
 
-Please note that the PCRE2 library uses a different syntax to refer to capture groups in the replacement string. The main difference is the usage of the dollar character instead of the backslash character for references e.g. `<code>$1</code>` instead of `<code>\1</code>`. For more details about the replacement string differences, please read the [Creating a new string with substitutions](https://www.pcre.org/current/doc/html/pcre2api.html#SEC34) chapter in the PCRE2 manual.
+Please note that the PCRE2 library uses a different syntax to refer to capture groups in the replacement string. The main difference is the usage of the dollar character instead of the backslash character for references e.g. `$1` instead of `\1`. For more details about the replacement string differences, please read the [Creating a new string with substitutions](https://www.pcre.org/current/doc/html/pcre2api.html#SEC34) chapter in the PCRE2 manual.
 
 
 ## Configuration
@@ -68,7 +68,7 @@ filters=MyRegexfilter
 The Regex filter has two mandatory parameters: *match* and *replace*.
 
 
-### `<code>match</code>`, `<code>options</code>`
+### `match`, `options`
 
 
 *match* is a
@@ -78,7 +78,7 @@ which defines the text in the SQL statements that is replaced.
 
 The *options*-parameter affects how the patterns are compiled as
 [usual](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#standard-regular-expression-settings-for-filters).
-Regex filter does not support the `<code>extended</code>`-option.
+Regex filter does not support the `extended`-option.
 
 
 
@@ -89,7 +89,7 @@ options=case
 
 
 
-### `<code>replace</code>`
+### `replace`
 
 
 This is the text that should replace the part of the SQL-query matching the pattern
@@ -103,7 +103,7 @@ replace=ENGINE =
 
 
 
-### `<code>source</code>`
+### `source`
 
 
 The optional source parameter defines an address that is used to match against the address from which the client connection to MariaDB MaxScale originates. Only sessions that originate from this address will have the match and replacement applied to them.
@@ -116,7 +116,7 @@ source=127.0.0.1
 
 
 
-### `<code>user</code>`
+### `user`
 
 
 The optional user parameter defines a user name that is used to match against the user from which the client connection to MariaDB MaxScale originates. Only sessions that are connected using this username will have the match and replacement applied to them.
@@ -129,7 +129,7 @@ user=john
 
 
 
-### `<code>log_file</code>`
+### `log_file`
 
 
 The optional log_file parameter defines a log file in which the filter writes all queries that are not matched and matching queries with their replacement queries. All sessions will log to this file so this should only be used for diagnostic purposes.
@@ -142,7 +142,7 @@ log_file=/tmp/regexfilter.log
 
 
 
-### `<code>log_trace</code>`
+### `log_trace`
 
 
 The optional log_trace parameter toggles the logging of non-matching and

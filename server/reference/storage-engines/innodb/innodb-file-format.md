@@ -11,10 +11,10 @@ Prior to [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-
 In [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and before, the default file format for InnoDB tables can be chosen by setting the [innodb_file_format](innodb-system-variables.md#innodb_file_format).
 
 
-In [MariaDB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md) and before, the default file format is`<code>Antelope</code>`. In [MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md) and later, the default file format is `<code>Barracuda</code>` and `<code>Antelope</code>` is deprecated.
+In [MariaDB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md) and before, the default file format is`Antelope`. In [MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md) and later, the default file format is `Barracuda` and `Antelope` is deprecated.
 
 
-A table's tablespace is tagged with the lowest InnoDB file format that supports the table's [row format](innodb-row-formats/innodb-row-formats-overview.md). So, even if the `<code>Barracuda</code>` file format is enabled, tables that use the `<code>COMPACT</code>` or `<code>REDUNDANT</code>` row formats will be tagged with the `<code>Antelope</code>` file format in the [information_schema.INNODB_SYS_TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table.
+A table's tablespace is tagged with the lowest InnoDB file format that supports the table's [row format](innodb-row-formats/innodb-row-formats-overview.md). So, even if the `Barracuda` file format is enabled, tables that use the `COMPACT` or `REDUNDANT` row formats will be tagged with the `Antelope` file format in the [information_schema.INNODB_SYS_TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table.
 
 
 ## Supported File Formats
@@ -23,26 +23,26 @@ A table's tablespace is tagged with the lowest InnoDB file format that supports 
 The [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) storage engine supports two different file formats:
 
 
-* `<code>Antelope</code>`
-* `<code>Barracuda</code>`
+* `Antelope`
+* `Barracuda`
 
 
 ### Antelope
 
 
-In [MariaDB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md) and before, the default file format is `<code>Antelope</code>`. In [MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md) and later, the `<code>Antelope</code>` file format is deprecated.
+In [MariaDB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md) and before, the default file format is `Antelope`. In [MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md) and later, the `Antelope` file format is deprecated.
 
 
-`<code>Antelope</code>` is the original InnoDB file format. It supports the `<code>COMPACT</code>` and `<code>REDUNDANT</code>` row formats, but not the `<code>DYNAMIC</code>` or `<code>COMPRESSED</code>` row formats.
+`Antelope` is the original InnoDB file format. It supports the `COMPACT` and `REDUNDANT` row formats, but not the `DYNAMIC` or `COMPRESSED` row formats.
 
 
 ### Barracuda
 
 
-In [MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and before, the `<code>Barracuda</code>` file format is only supported if the [innodb_file_per_table](innodb-system-variables.md#innodb_file_per_table) system variable is set to `<code>ON</code>`. In [MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md) and later, the default file format is `<code>Barracuda</code>` and `<code>Antelope</code>` is deprecated.
+In [MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and before, the `Barracuda` file format is only supported if the [innodb_file_per_table](innodb-system-variables.md#innodb_file_per_table) system variable is set to `ON`. In [MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md) and later, the default file format is `Barracuda` and `Antelope` is deprecated.
 
 
-`<code>Barracuda</code>` is a newer InnoDB file format. It supports the `<code>COMPACT</code>`, `<code>REDUNDANT</code>`, `<code>DYNAMIC</code>` and `<code>COMPRESSED</code>` row formats. Tables with large BLOB or TEXT columns in particular could benefit from the dynamic row format.
+`Barracuda` is a newer InnoDB file format. It supports the `COMPACT`, `REDUNDANT`, `DYNAMIC` and `COMPRESSED` row formats. Tables with large BLOB or TEXT columns in particular could benefit from the dynamic row format.
 
 
 ### Future Formats
@@ -57,7 +57,7 @@ InnoDB might use new file formats in the future. Each format will have an identi
 The [information_schema.INNODB_SYS_TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table can be queried to see the file format used by a table.
 
 
-A table's tablespace is tagged with the lowest InnoDB file format that supports the table's [row format](innodb-row-formats/innodb-row-formats-overview.md). So, even if the `<code>Barracuda</code>` file format is enabled, tables that use the `<code>COMPACT</code>` or `<code>REDUNDANT</code>` row formats will be tagged with the `<code>Antelope</code>` file format in the [information_schema.INNODB_SYS_TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table.
+A table's tablespace is tagged with the lowest InnoDB file format that supports the table's [row format](innodb-row-formats/innodb-row-formats-overview.md). So, even if the `Barracuda` file format is enabled, tables that use the `COMPACT` or `REDUNDANT` row formats will be tagged with the `Antelope` file format in the [information_schema.INNODB_SYS_TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table.
 
 
 ## Compatibility
@@ -69,7 +69,7 @@ Each tablespace is tagged with the id of the most recent file format used by one
 This check can be skipped via the [innodb_file_format_check](innodb-system-variables.md#innodb_file_format_check) variable. Beware that, is InnoDB tries to repair a table in an unknown format, the table will be corrupted! This happens on restart if innodb_file_format_check is disabled and the server crashed, or it was closed with fast shutdown.
 
 
-To downgrade a table from the Barracuda format to Antelope, the table's `<code>ROW_FORMAT</code>` can be set to a value supported by Antelope, via an [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement. This recreates the indexes.
+To downgrade a table from the Barracuda format to Antelope, the table's `ROW_FORMAT` can be set to a value supported by Antelope, via an [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement. This recreates the indexes.
 
 
 The Antelope format can be used to make sure that tables work on MariaDB and MySQL servers which are older than 5.5.

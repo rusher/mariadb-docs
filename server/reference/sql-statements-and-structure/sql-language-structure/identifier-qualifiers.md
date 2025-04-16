@@ -10,7 +10,7 @@ Qualifiers can be composed by one or more [identifiers](identifier-names.md), wh
 * For a database, only the database identifier needs to be specified.
 * For objects which are contained in a database (like tables, views, functions, etc) the database identifier can be specified. If no database is specified, the current database is assumed (see [USE](../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md) and [DATABASE()](../../../../general-resources/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/database-normalization/database-normalization-2nd-normal-form.md) for more details). If there is no default database and no database is specified, an error is issued.
 * For column names, the table and the database are generally obvious from the context of the statement. It is however possible to specify the table identifier, or the database identifier plus the table identifier.
-* An identifier is fully-qualified if it contains all possible qualifiers, for example, the following column is fully qualified: `<code>db_name.tbl_name.col_name</code>`.
+* An identifier is fully-qualified if it contains all possible qualifiers, for example, the following column is fully qualified: `db_name.tbl_name.col_name`.
 
 
 If a qualifier is composed by more than one identifier, a dot (.) must be used as a separator. All identifiers can be quoted individually. Extra spacing (including new lines and tabs) is allowed.

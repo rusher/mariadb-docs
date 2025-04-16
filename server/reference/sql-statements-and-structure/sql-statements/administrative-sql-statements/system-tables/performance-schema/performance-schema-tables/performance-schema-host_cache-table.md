@@ -1,7 +1,7 @@
 
 # Performance Schema host_cache Table
 
-The `<code>host_cache</code>` table contains host and IP information from the host_cache, used for avoiding DNS lookups for new client connections.
+The `host_cache` table contains host and IP information from the host_cache, used for avoiding DNS lookups for new client connections.
 
 
 The host_cache table contains the following columns:
@@ -43,5 +43,5 @@ The host_cache table contains the following columns:
 
 
 
-The `<code>host_cache</code>` table, along with the `<code>host_cache</code>`, is cleared with [FLUSH HOSTS](../../../flush-commands/flush-tables-for-export.md), [TRUNCATE TABLE](../../../../table-statements/truncate-table.md) `<code>host_cache</code>` or by setting the [host_cache_size](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#host_cache_size) system variable at runtime.
+The `host_cache` table, along with the `host_cache`, is cleared with [FLUSH HOSTS](../../../flush-commands/flush-tables-for-export.md), [TRUNCATE TABLE](../../../../table-statements/truncate-table.md) `host_cache` or by setting the [host_cache_size](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#host_cache_size) system variable at runtime.
 

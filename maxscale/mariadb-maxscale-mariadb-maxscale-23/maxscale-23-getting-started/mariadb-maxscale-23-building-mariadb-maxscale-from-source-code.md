@@ -25,7 +25,7 @@ core package.
 ## Quickstart
 
 
-This installs MaxScale as if it was installed from a package. Install `<code>git</code>` before running the following commands.
+This installs MaxScale as if it was installed from a package. Install `git` before running the following commands.
 
 
 
@@ -57,7 +57,7 @@ The tests and other parts of the build can be controlled via CMake arguments.
 
 Here is a small table with the names of the most common parameters and what
 they control. These should all be given as parameters to the -D switch in
-*NAME*=*VALUE* format (e.g. `<code>-DBUILD_TESTS=Y</code>`).
+*NAME*=*VALUE* format (e.g. `-DBUILD_TESTS=Y`).
 
 
 | Argument Name | Explanation |
@@ -75,15 +75,15 @@ they control. These should all be given as parameters to the -D switch in
 list of the CMake variables.
 
 
-## `<code>make test</code>` and Other Useful Targets
+## `make test` and Other Useful Targets
 
 
-To run the MaxScale unit test suite, configure the build with `<code>-DBUILD_TESTS=Y</code>`,
-compile and then run the `<code>make test</code>` command.
+To run the MaxScale unit test suite, configure the build with `-DBUILD_TESTS=Y`,
+compile and then run the `make test` command.
 
 
-Other useful targets for Make are `<code>documentation</code>`, which generates the Doxygen documentation,
-and `<code>uninstall</code>` which uninstall MariaDB MaxScale binaries after an install.
+Other useful targets for Make are `documentation`, which generates the Doxygen documentation,
+and `uninstall` which uninstall MariaDB MaxScale binaries after an install.
 
 
 **Note**: If you configure CMake multiple times, it's possible that you will run
@@ -95,19 +95,19 @@ and `<code>uninstall</code>` which uninstall MariaDB MaxScale binaries after an 
 # Building MariaDB MaxScale packages
 
 
-If you wish to build packages, just add `<code>-DPACKAGE=Y</code>` to the CMake invocation
-and build the package with `<code>make package</code>` instead of installing MaxScale with
-`<code>make install</code>`. This process will create a RPM/DEB package depending on your
+If you wish to build packages, just add `-DPACKAGE=Y` to the CMake invocation
+and build the package with `make package` instead of installing MaxScale with
+`make install`. This process will create a RPM/DEB package depending on your
 system.
 
 
-To build a tarball, add `<code>-DTARBALL=Y</code>` to the cmake invokation. This will create
+To build a tarball, add `-DTARBALL=Y` to the cmake invokation. This will create
 a *maxscale-x.y.z.tar.gz* file where *x.y.z* is the version number.
 
 
-Some Debian and Ubuntu systems suffer from a bug where `<code>make package</code>` fails
-with errors from dpkg-shlibdeps. This can be fixed by running `<code>make</code>` before
-`<code>make package</code>` and adding the path to the libmaxscale-common.so library to
+Some Debian and Ubuntu systems suffer from a bug where `make package` fails
+with errors from dpkg-shlibdeps. This can be fixed by running `make` before
+`make package` and adding the path to the libmaxscale-common.so library to
 the LD_LIBRARY_PATH environment variable.
 
 

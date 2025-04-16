@@ -67,13 +67,13 @@ It is obvious that Step #1 is very inefficient: we compute totals for all custom
 
 
 Lateral Derived optimization addresses this case. It turns the computation of OCT_TOTALS into what SQL Standard refers to as "LATERAL subquery": a subquery that may have dependencies on the outside tables.
-This allows pushing the equality `<code>customer.customer_id=OCT_TOTALS.customer_id</code>` down into the derived table/view, where it can be used to limit the computation to compute totals only for the customer of interest.
+This allows pushing the equality `customer.customer_id=OCT_TOTALS.customer_id` down into the derived table/view, where it can be used to limit the computation to compute totals only for the customer of interest.
 
 
 The query plan will look as follows:
 
 
-1. Scan table `<code>customer</code>` and find `<code>customer_id</code>` for Customer#1 and Customer#2.
+1. Scan table `customer` and find `customer_id` for Customer#1 and Customer#2.
 1. For each customer_id, compute the October totals, for this specific customer.
 
 
@@ -90,10 +90,10 @@ The EXPLAIN output will look like so:
 +------+-----------------+------------+-------+---------------+-----------+---------+---------------------------+------+--------------------------+
 ```
 
-Note the line with `<code>id=2</code>`: select_type is `<code>LATERAL DERIVED</code>`. And table customer uses ref access referring to `<code>customer.customer_id</code>`, which is normally not allowed for derived tables.
+Note the line with `id=2`: select_type is `LATERAL DERIVED`. And table customer uses ref access referring to `customer.customer_id`, which is normally not allowed for derived tables.
 
 
-In `<code>EXPLAIN FORMAT=JSON</code>` output, the optimization is shown like so:
+In `EXPLAIN FORMAT=JSON` output, the optimization is shown like so:
 
 
 ```
@@ -106,7 +106,7 @@ In `<code>EXPLAIN FORMAT=JSON</code>` output, the optimization is shown like so:
             "lateral": 1,
 ```
 
-Note the `<code>"lateral": 1</code>` member.
+Note the `"lateral": 1` member.
 
 
 ## Controlling the Optimization

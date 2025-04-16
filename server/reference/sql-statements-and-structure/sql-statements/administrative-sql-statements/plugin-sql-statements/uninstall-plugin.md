@@ -15,22 +15,22 @@ UNINSTALL PLUGIN [IF EXISTS] plugin_name
 This statement removes a single installed [plugin](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md). To uninstall the whole library which contains the plugin, use [UNINSTALL SONAME](uninstall-soname.md). You cannot uninstall a plugin if any table that uses it is open.
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">plugin_name</code>` must be the name of some plugin that is listed
+`plugin_name` must be the name of some plugin that is listed
 in the [mysql.plugin](../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table. The server executes the plugin's deinitialization
-function and removes the row for the plugin from the `<code>mysql.plugin</code>`
+function and removes the row for the plugin from the `mysql.plugin`
 table, so that subsequent server restarts will not load and initialize
-the plugin. `<code class="highlight fixed" style="white-space:pre-wrap">UNINSTALL PLUGIN</code>` does not remove the plugin's
+the plugin. `UNINSTALL PLUGIN` does not remove the plugin's
 shared library file.
 
 
-To use `<code class="highlight fixed" style="white-space:pre-wrap">UNINSTALL PLUGIN</code>`, you must have the
+To use `UNINSTALL PLUGIN`, you must have the
 [DELETE](../../account-management-sql-commands/grant.md) privilege for the [mysql.plugin](../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
 
 
 #### IF EXISTS
 
 
-If the `<code>IF EXISTS</code>` clause is used, MariaDB will return a note instead of an error if the plugin does not exist. See [SHOW WARNINGS](../show/show-warnings.md).
+If the `IF EXISTS` clause is used, MariaDB will return a note instead of an error if the plugin does not exist. See [SHOW WARNINGS](../show/show-warnings.md).
 
 
 ## Examples

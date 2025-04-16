@@ -12,11 +12,11 @@ mariadb-setpermission [options]
 ## Description
 
 
-`<code>mariadb-setpermission</code>` is a Perl script that was originally written and contributed by Luuk de Boer. It requires the DBI and DBD::mysql Perl modules to be installed.
-`<code>mariadb-setpermission</code>` can help you add users or databases or change passwords in MariaDB.
+`mariadb-setpermission` is a Perl script that was originally written and contributed by Luuk de Boer. It requires the DBI and DBD::mysql Perl modules to be installed.
+`mariadb-setpermission` can help you add users or databases or change passwords in MariaDB.
 
 
-Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysql_setpermission</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysql_setpermission`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 It interactively sets permissions in the MariaDB grant tables, but does not check permissions which have already been set in MariaDB. So if you can't connect to MariaDB using the permission you just added, take a look at the permissions which have already been set in MariaDB.
@@ -25,7 +25,7 @@ It interactively sets permissions in the MariaDB grant tables, but does not chec
 The account used when you connect determines which permissions you have when attempting to modify existing permissions in the grant tables.
 
 
-`<code>mariadb-setpermission</code>` also reads options from the [client] and [perl] groups in the .my.cnf file in your home directory, if the file exists.
+`mariadb-setpermission` also reads options from the [client] and [perl] groups in the .my.cnf file in your home directory, if the file exists.
 
 
 The following options are available:

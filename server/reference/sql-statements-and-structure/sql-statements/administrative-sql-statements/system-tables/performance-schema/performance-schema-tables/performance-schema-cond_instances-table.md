@@ -4,7 +4,7 @@
 ## Description
 
 
-The `<code>cond_instances</code>` table lists all conditions while the server is executing. A condition, or instrumented condition object, is an internal code mechanism used for signalling that a specific event has occurred so that any threads waiting for this condition can continue.
+The `cond_instances` table lists all conditions while the server is executing. A condition, or instrumented condition object, is an internal code mechanism used for signalling that a specific event has occurred so that any threads waiting for this condition can continue.
 
 
 The maximum number of conditions stored in the performance schema is determined by the [performance_schema_max_cond_instances](../performance-schema-system-variables.md#performance_schema_max_cond_instances) system variable.

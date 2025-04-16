@@ -17,7 +17,7 @@ INET4
 ## Description
 
 
-`<code>INET4</code>` is a data type to store IPv4 addresses, as 4-byte binary strings.
+`INET4` is a data type to store IPv4 addresses, as 4-byte binary strings.
 
 
 From [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md), casting from [INET4](inet4.md) data types to INET6 is permitted, allowing for example comparisons between the two data types, and for INET 4 values to be inserted into INET6 columns.

@@ -15,7 +15,7 @@ FIRST_VALUE(expr) OVER (
 ## Description
 
 
-`<code>FIRST_VALUE</code>` returns the first result from an ordered set, or NULL if no such result exists.
+`FIRST_VALUE` returns the first result from an ordered set, or NULL if no such result exists.
 
 
 ## Examples

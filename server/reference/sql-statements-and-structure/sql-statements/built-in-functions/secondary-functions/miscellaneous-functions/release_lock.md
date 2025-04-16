@@ -12,17 +12,17 @@ RELEASE_LOCK(str)
 ## Description
 
 
-Releases the lock named by the string `<code>str</code>` that was obtained with [GET_LOCK()](get_lock.md). Returns 1 if the lock was released, 0 if the lock was not established by this thread (in which case the lock is not
-released), and `<code>NULL</code>` if the named lock did not exist. The lock does not exist if it was never obtained by a call to `<code>GET_LOCK()</code>` or if it has previously been released.
+Releases the lock named by the string `str` that was obtained with [GET_LOCK()](get_lock.md). Returns 1 if the lock was released, 0 if the lock was not established by this thread (in which case the lock is not
+released), and `NULL` if the named lock did not exist. The lock does not exist if it was never obtained by a call to `GET_LOCK()` or if it has previously been released.
 
 
-`<code>str</code>` is case insensitive. If `<code>str</code>` is an empty string or `<code>NULL</code>`, `<code>RELEASE_LOCK()</code>` returns `<code>NULL</code>` and does nothing.
+`str` is case insensitive. If `str` is an empty string or `NULL`, `RELEASE_LOCK()` returns `NULL` and does nothing.
 
 
-Statements using the `<code>RELEASE_LOCK</code>` function are not [safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
+Statements using the `RELEASE_LOCK` function are not [safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 
-The [DO statement](../../../../../../../general-resources/company-and-community/contributing-participating/donate-to-the-foundation.md) is convenient to use with `<code>RELEASE_LOCK()</code>`.
+The [DO statement](../../../../../../../general-resources/company-and-community/contributing-participating/donate-to-the-foundation.md) is convenient to use with `RELEASE_LOCK()`.
 
 
 ## Examples

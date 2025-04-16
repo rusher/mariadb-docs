@@ -1,7 +1,7 @@
 
 # Performance Schema table_io_waits_summary_by_table Table
 
-The `<code>table_io_waits_summary_by_table</code>` table records table I/O waits by table.
+The `table_io_waits_summary_by_table` table records table I/O waits by table.
 
 
 

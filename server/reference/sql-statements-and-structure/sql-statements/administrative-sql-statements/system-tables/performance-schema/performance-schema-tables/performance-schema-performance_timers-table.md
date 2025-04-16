@@ -4,7 +4,7 @@
 ## Description
 
 
-The `<code>performance_timers</code>` table lists available event timers.
+The `performance_timers` table lists available event timers.
 
 
 It contains the following columns:
@@ -21,7 +21,7 @@ It contains the following columns:
 
 
 
-Any `<code>NULL</code>` values indicate that that particular timer is not available on your platform, Any timer names with a non-NULL value can be used in the [setup_timers](performance-schema-setup_timers-table.md) table.
+Any `NULL` values indicate that that particular timer is not available on your platform, Any timer names with a non-NULL value can be used in the [setup_timers](performance-schema-setup_timers-table.md) table.
 
 
 ## Example

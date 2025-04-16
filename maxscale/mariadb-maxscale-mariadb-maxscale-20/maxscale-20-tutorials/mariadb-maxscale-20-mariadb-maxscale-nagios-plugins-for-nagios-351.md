@@ -97,7 +97,7 @@ cfg_file=/etc/nagios/objects/server1.cfg
 * MariaDB MaxScale server must be reachable via ssh with identity file: i.e:
 
 
-`<code>ssh -i /identity_files/maxscale_host.rsa user@mascale_host maxadmin ...</code>`
+`ssh -i /identity_files/maxscale_host.rsa user@mascale_host maxadmin ...`
 
 
 * The default maxadmin executable path is /usr/bin/maxadmin can be changed by -m option

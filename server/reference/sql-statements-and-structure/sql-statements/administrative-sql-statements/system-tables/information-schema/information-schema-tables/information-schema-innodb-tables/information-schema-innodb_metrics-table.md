@@ -1,10 +1,10 @@
 
 # Information Schema INNODB_METRICS Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>INNODB_METRICS</code>` table contains a list of useful InnoDB performance metrics. Each row in the table represents an instrumented counter that can be stopped, started and reset, and which can be grouped together by module.
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_METRICS` table contains a list of useful InnoDB performance metrics. Each row in the table represents an instrumented counter that can be stopped, started and reset, and which can be grouped together by module.
 
 
-The `<code>PROCESS</code>` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
 
 
 It has the following columns:
@@ -34,7 +34,7 @@ It has the following columns:
 
 
 
-Note: In [MariaDB 10.4](../../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) and earlier the `<code>ENABLED</code>` column was called `<code>STATUS</code>`.
+Note: In [MariaDB 10.4](../../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) and earlier the `ENABLED` column was called `STATUS`.
 
 
 ## Enabling and Disabling Counters
@@ -47,7 +47,7 @@ Most of the counters are disabled by default. To enable them, use the [innodb_mo
 SET GLOBAL innodb_monitor_enable = icp_match;
 ```
 
-or enable a number of counters grouped by module. The `<code>SUBSYSTEM</code>` field indicates which counters are grouped together, but the following module names need to be used:
+or enable a number of counters grouped by module. The `SUBSYSTEM` field indicates which counters are grouped together, but the following module names need to be used:
 
 
 
@@ -74,7 +74,7 @@ or enable a number of counters grouped by module. The `<code>SUBSYSTEM</code>` f
 
 
 
-There are four counters in the `<code>icp</code>` subsystem:
+There are four counters in the `icp` subsystem:
 
 
 ```
@@ -89,14 +89,14 @@ SELECT NAME, SUBSYSTEM FROM INNODB_METRICS WHERE SUBSYSTEM='icp';
 +------------------+-----------+
 ```
 
-To enable them all, use the associated module name from the table above, `<code>module_icp</code>`.
+To enable them all, use the associated module name from the table above, `module_icp`.
 
 
 ```
 SET GLOBAL innodb_monitor_enable = module_icp;
 ```
 
-The `<code>%</code>` wildcard, used to represent any number of characters, can also be used when naming counters, for example:
+The `%` wildcard, used to represent any number of characters, can also be used when naming counters, for example:
 
 
 ```
@@ -106,13 +106,13 @@ SET GLOBAL innodb_monitor_enable = 'buffer%'
 To disable counters, use the [innodb_monitor_disable](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_disable) system variable, using the same naming rules as described above for enabling.
 
 
-Counter status is not persistent, and will be reset when the server restarts. It is possible to use the options on the command line, or the `<code>innodb_monitor_enable</code>` option only in a configuration file.
+Counter status is not persistent, and will be reset when the server restarts. It is possible to use the options on the command line, or the `innodb_monitor_enable` option only in a configuration file.
 
 
 ## Resetting Counters
 
 
-Counters can also be reset. Resetting sets all the `<code>*_COUNT_RESET</code>` values to zero, while leaving the `<code>*_COUNT</code>` values, which perform counts since the counter was enabled, untouched. Resetting is performed with the [innodb_monitor_reset](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset) (for individual counters) and [innodb_monitor_reset_all](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset_all) (for all counters) system variables.
+Counters can also be reset. Resetting sets all the `*_COUNT_RESET` values to zero, while leaving the `*_COUNT` values, which perform counts since the counter was enabled, untouched. Resetting is performed with the [innodb_monitor_reset](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset) (for individual counters) and [innodb_monitor_reset_all](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset_all) (for all counters) system variables.
 
 
 ## Simplifying from [MariaDB 10.6](../../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)

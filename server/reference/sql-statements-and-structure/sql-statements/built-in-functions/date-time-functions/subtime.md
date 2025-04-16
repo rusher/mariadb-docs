@@ -11,8 +11,8 @@ SUBTIME(expr1,expr2)
 ## Description
 
 
-SUBTIME() returns `<code>expr1</code>` - `<code>expr2</code>` expressed as a value in the same
-format as `<code>expr1</code>`. `<code>expr1</code>` is a time or datetime expression, and expr2 is
+SUBTIME() returns `expr1` - `expr2` expressed as a value in the same
+format as `expr1`. `expr1` is a time or datetime expression, and expr2 is
 a time expression.
 
 

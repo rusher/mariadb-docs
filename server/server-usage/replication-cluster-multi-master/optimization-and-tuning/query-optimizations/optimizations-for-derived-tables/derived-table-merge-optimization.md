@@ -5,7 +5,7 @@
 ## Background
 
 
-Users of "big" database systems are used to using `<code>FROM</code>` subqueries as a way
+Users of "big" database systems are used to using `FROM` subqueries as a way
 to structure their queries. For example, if one's first thought was to select cities with population greater than 10,000 people, and then that
 from these cities to select those that are located in Germany, one
 could write this SQL:
@@ -44,17 +44,17 @@ It plans to do the following actions:
 From left to right:
 
 
-1. Execute the subquery: `<code>(SELECT * FROM City WHERE Population > 1*1000)</code>`,
+1. Execute the subquery: `(SELECT * FROM City WHERE Population > 1*1000)`,
  exactly as it was written in the query.
 1. Put result of the subquery into a temporary table.
-1. Read back, and apply a `<code>WHERE</code>` condition from the upper
- select, `<code>big_city.Country='DEU'</code>`
+1. Read back, and apply a `WHERE` condition from the upper
+ select, `big_city.Country='DEU'`
 
 
 Executing a subquery like this is very inefficient, because the
-highly-selective condition from the parent select, (`<code>Country='DEU'</code>`) is not
-used when scanning the base table `<code>City</code>`. We read too many records from the
-`<code>City</code>` table, and then we have to write them into a temporary table and read
+highly-selective condition from the parent select, (`Country='DEU'`) is not
+used when scanning the base table `City`. We read too many records from the
+`City` table, and then we have to write them into a temporary table and read
 them back again, before finally filtering them out.
 
 
@@ -79,9 +79,9 @@ From the above, one can see that:
 
 
 1. The output has only one line. This means that the subquery has been merged
- into the top-level `<code>SELECT</code>`.
-1. Table `<code>City</code>` is accessed through an index on the `<code>Country</code>` column.
- Apparently, the `<code>Country='DEU'</code>` condition was used to construct `<code>ref</code>`
+ into the top-level `SELECT`.
+1. Table `City` is accessed through an index on the `Country` column.
+ Apparently, the `Country='DEU'` condition was used to construct `ref`
  access on the table.
 1. The query will read about 90 rows, which is a big improvement over the 4079
  row reads plus 4068 temporary table reads/writes we had before.
@@ -90,20 +90,20 @@ From the above, one can see that:
 ## Factsheet
 
 
-* Derived tables (subqueries in the `<code>FROM</code>` clause) can be merged into their
+* Derived tables (subqueries in the `FROM` clause) can be merged into their
  parent select when they have no grouping, aggregates,
- or `<code>ORDER BY ... LIMIT</code>` clauses. These requirements are the same as
- requirements for `<code>VIEW</code>`s to allow `<code>algorithm=merge</code>`.
+ or `ORDER BY ... LIMIT` clauses. These requirements are the same as
+ requirements for `VIEW`s to allow `algorithm=merge`.
 * The optimization is enabled by default. It can be disabled
  with: 
 ```
 set @@optimizer_switch='derived_merge=OFF'
 ```
 * Versions of MySQL and MariaDB which do not have support for this optimization
- will execute subqueries even when running `<code>EXPLAIN</code>`. This can result in a
- well-known problem (see e.g. [MySQL Bug #44802](https://bugs.mysql.com/bug.php?id=44802)) of `<code>EXPLAIN</code>` statements taking a
- very long time. Starting from [MariaDB 5.3](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)+ and MySQL 5.6+ `<code>EXPLAIN</code>`
- commands execute instantly, regardless of the `<code>derived_merge</code>` setting.
+ will execute subqueries even when running `EXPLAIN`. This can result in a
+ well-known problem (see e.g. [MySQL Bug #44802](https://bugs.mysql.com/bug.php?id=44802)) of `EXPLAIN` statements taking a
+ very long time. Starting from [MariaDB 5.3](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)+ and MySQL 5.6+ `EXPLAIN`
+ commands execute instantly, regardless of the `derived_merge` setting.
 
 
 ## See Also

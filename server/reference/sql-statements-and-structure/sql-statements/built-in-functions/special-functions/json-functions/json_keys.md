@@ -20,7 +20,7 @@ Excludes keys from nested sub-objects in the top level value. The resulting arra
 Returns NULL if any of the arguments are null, a given path does not locate an object, or if the json_doc argument is not an object.
 
 
-An error will occur if JSON document is invalid, the path is invalid or if the path contains a `<code>*</code>` or `<code>**</code>` wildcard.
+An error will occur if JSON document is invalid, the path is invalid or if the path contains a `*` or `**` wildcard.
 
 
 ## Examples

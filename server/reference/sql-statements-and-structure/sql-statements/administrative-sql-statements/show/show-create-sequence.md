@@ -12,10 +12,10 @@ SHOW CREATE SEQUENCE sequence_name;
 ## Description
 
 
-Shows the [CREATE SEQUENCE](../../../sequences/create-sequence.md) statement that creates the given [sequence](../../../sequences/README.md). The statement requires the `<code>SELECT</code>` privilege for the table.
+Shows the [CREATE SEQUENCE](../../../sequences/create-sequence.md) statement that creates the given [sequence](../../../sequences/README.md). The statement requires the `SELECT` privilege for the table.
 
 
-`<code>SHOW CREATE SEQUENCE</code>` quotes identifiers according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
+`SHOW CREATE SEQUENCE` quotes identifiers according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
 
 
 ## Example
@@ -33,8 +33,8 @@ Create Table: CREATE SEQUENCE `s1` start with 50 minvalue 1 maxvalue 92233720368
 ## Notes
 
 
-If you want to see the underlying table structure used for the `<code>SEQUENCE</code>`
-you can use [SHOW CREATE TABLE](show-create-table.md) on the `<code>SEQUENCE</code>`. You can also use `<code>SELECT</code>` to read the current recorded state of the `<code>SEQUENCE</code>`:
+If you want to see the underlying table structure used for the `SEQUENCE`
+you can use [SHOW CREATE TABLE](show-create-table.md) on the `SEQUENCE`. You can also use `SELECT` to read the current recorded state of the `SEQUENCE`:
 
 
 ```

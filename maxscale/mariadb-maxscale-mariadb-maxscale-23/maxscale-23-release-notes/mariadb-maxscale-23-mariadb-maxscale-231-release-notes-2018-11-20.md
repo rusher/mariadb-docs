@@ -29,11 +29,11 @@ is due to an unknown global parameter.
 ### REST-API
 
 
-#### `<code>/v1/sessions</code>`
+#### `/v1/sessions`
 
 
 The response will, if the feature has been enabled with the
-`<code>retain_last_statements</code>` parameter, either globally or specifically
+`retain_last_statements` parameter, either globally or specifically
 for a service, contain information about the last queries executed
 by a session.
 
@@ -46,12 +46,12 @@ based replication is used. Earlier it was possible only in conjunction
 with GTID based replication.
 
 
-### `<code>mmmon</code>` and `<code>ndbclustermon</code>`
+### `mmmon` and `ndbclustermon`
 
 
 Both of these modules have been deprecated and will be removed in a future
-release. The functionality in `<code>mmmon</code>` has been largely obsoleted by the
-advancements in `<code>mariadbmon</code>`. The `<code>ndbclustermon</code>` is largely obsolete due to the
+release. The functionality in `mmmon` has been largely obsoleted by the
+advancements in `mariadbmon`. The `ndbclustermon` is largely obsolete due to the
 fact that there are virtually no users who use it.
 
 
@@ -65,15 +65,15 @@ be removed in 2.4.
 #### Global section
 
 
-* `<code>non_blocking_polls</code>`, ignored.
-* `<code>poll_sleep</code>`, ignored.
-* `<code>thread_stack_size</code>`, ignored.
+* `non_blocking_polls`, ignored.
+* `poll_sleep`, ignored.
+* `thread_stack_size`, ignored.
 
 
 #### Services and Monitors
 
 
-* `<code>passwd</code>`, replaced with `<code>password</code>`.
+* `passwd`, replaced with `password`.
 
 
 ### MaxAdmin
@@ -83,20 +83,20 @@ MaxAdmin has been deprecated in favor of the REST API and MaxCtrl. It will be
 removed in a later release.
 
 
-In addition to this the commands `<code>set pollsleep</code>` and `<code>set nbpolls</code>` have been
+In addition to this the commands `set pollsleep` and `set nbpolls` have been
 deprecated and will be removed already in 2.4.
 
 
 ### MaxInfo
 
 
-The `<code>maxinfo</code>` router has been deprecated and will be removed in a later release.
+The `maxinfo` router has been deprecated and will be removed in a later release.
 
 
 ### Debugcli
 
 
-The `<code>debugcli</code>` module has been deprecated and will be removed in 2.4.
+The `debugcli` module has been deprecated and will be removed in 2.4.
 
 
 ## New Features
@@ -105,10 +105,10 @@ The `<code>debugcli</code>` module has been deprecated and will be removed in 2.
 ### ColumnStore Monitor
 
 
-The new `<code>csmon</code>` monitor can be used to monitor ColumnStore clusters where the
+The new `csmon` monitor can be used to monitor ColumnStore clusters where the
 primary UM will be assigned as the master and secondary UMs as slaves. Automatic
 detection of the primary UM is supported with ColumnStore versions 1.2.1 and
-newer. For older versions the primary UM must be designated with the `<code>primary</code>`
+newer. For older versions the primary UM must be designated with the `primary`
 parameter of the monitor.
 
 
@@ -119,7 +119,7 @@ information on how to use it.
 ### MaxCtrl
 
 
-There is now a new command `<code>classify <statement></code>` using which it can
+There is now a new command `classify <statement>` using which it can
 be checked if and how MaxScale classifies a specific statement. This
 feature can be used for debugging, if there is suspicion that MaxScale
 sends a particular statement to the wrong server (e.g. to a slave when it
@@ -129,7 +129,7 @@ should be sent to the master).
 ### Services
 
 
-The global configuration parameter `<code>retain_last_statements</code>` can now
+The global configuration parameter `retain_last_statements` can now
 also be specified separately for individual services.
 
 
@@ -201,7 +201,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/mariadb-tx/maxsc
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

@@ -9,7 +9,7 @@ The [Sys Schema](sys-schema-views-host_summary_by_statement_latency-and-xhost_su
 ## Description
 
 
-The `<code>metrics</code>` view contains global status variables (as found in the [Performance Schema global_status Table](../../performance-schema/performance-schema-tables/performance-schema-global_status-table.md)), [InnoDB](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) metrics (as found in the [Information Schema INNODB_METRICS Table](../../information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md), current and total memory allocation, based on the Performance Schema memory instrumentation, as well the current time in human readable and Unix timestamp formats.
+The `metrics` view contains global status variables (as found in the [Performance Schema global_status Table](../../performance-schema/performance-schema-tables/performance-schema-global_status-table.md)), [InnoDB](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) metrics (as found in the [Information Schema INNODB_METRICS Table](../../information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md), current and total memory allocation, based on the Performance Schema memory instrumentation, as well the current time in human readable and Unix timestamp formats.
 
 
 It contains the following columns:

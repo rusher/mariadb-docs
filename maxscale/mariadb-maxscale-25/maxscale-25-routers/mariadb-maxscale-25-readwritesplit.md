@@ -92,7 +92,7 @@ Write-Master node, where all write queries are routed, and spreading the read
 load over all the nodes.
 
 
-## Interaction with servers in `<code>Maintenance</code>` and `<code>Draining</code>` state
+## Interaction with servers in `Maintenance` and `Draining` state
 
 
 When a server that readwritesplit uses is put into maintenance mode, any ongoing
@@ -110,10 +110,10 @@ maxctrl set server <server> maintenance --force
 
 
 
-If a server is put into the `<code>Draining</code>` state while a connection is open, the
+If a server is put into the `Draining` state while a connection is open, the
 connection will be used normally. Whenever a new connection needs to be created,
 whether that be due to a network error or when a new session being opened, only
-servers that are neither `<code>Draining</code>` nor `<code>Drained</code>` will be used.
+servers that are neither `Draining` nor `Drained` will be used.
 
 
 ## Configuration
@@ -129,17 +129,17 @@ For more details about the standard service parameters, refer to the
 
 
 Starting with 2.3, all router parameters can be configured at runtime. Use
-`<code>maxctrl alter service</code>` to modify them. The changed configuration will only be
+`maxctrl alter service` to modify them. The changed configuration will only be
 taken into use by new sessions.
 
 
 ## Parameters
 
 
-### `<code>max_slave_connections</code>`
+### `max_slave_connections`
 
 
-`<code>max_slave_connections</code>` sets the maximum number of slaves a router session uses
+`max_slave_connections` sets the maximum number of slaves a router session uses
 at any moment. The default is to use at most 255 slave connections per client
 connection. In older versions the default was to use all available slaves with
 no limit.
@@ -155,12 +155,12 @@ than one was given.
 
 
 Starting with MaxScale 2.5.0, the use of percentage values in
-`<code>max_slave_connections</code>` is deprecated. The support for percentages will be
+`max_slave_connections` is deprecated. The support for percentages will be
 removed in a future release.
 
 
 For example, if you have configured MaxScale with one master and three slaves
-and set `<code>max_slave_connections=2</code>`, for each client connection a connection to
+and set `max_slave_connections=2`, for each client connection a connection to
 the master and two slave connections would be opened. The read query load
 balancing is then done between these two slaves and writes are sent to the
 master.
@@ -168,35 +168,35 @@ master.
 
 By tuning this parameter, you can control how dynamic the load balancing is at
 the cost of extra created connections. With a lower value of
-`<code>max_slave_connections</code>`, less connections per session are created and the set of
+`max_slave_connections`, less connections per session are created and the set of
 possible slave servers is smaller. With a higher value in
-`<code>max_slave_connections</code>`, more connections are created which requires more
+`max_slave_connections`, more connections are created which requires more
 resources but load balancing will almost always give the best single query
 response time and performance. Longer sessions are less affected by a high
-`<code>max_slave_connections</code>` as the relative cost of opening a connection is lower.
+`max_slave_connections` as the relative cost of opening a connection is lower.
 
 
-### `<code>slave_connections</code>`
+### `slave_connections`
 
 
 This parameter controls how many slave connections each new session starts
 with. The default value is 255 which is the same as the default value of
-`<code>max_slave_connections</code>`.
+`max_slave_connections`.
 
 
-In contrast to `<code>max_slave_connections</code>`, `<code>slave_connections</code>` serves as a
+In contrast to `max_slave_connections`, `slave_connections` serves as a
 soft limit on how many slave connections are created. The number of slave
-connections can exceed `<code>slave_connections</code>` if the load balancing algorithm
+connections can exceed `slave_connections` if the load balancing algorithm
 finds an unconnected slave server better than all other slaves.
 
 
 Setting this parameter to 1 allows faster connection creation and improved
 resource usage due to the smaller amount of initial backend
-connections. It is recommended to use `<code>slave_connections=1</code>` when the
+connections. It is recommended to use `slave_connections=1` when the
 lifetime of the client connections is short.
 
 
-### `<code>max_slave_replication_lag</code>`
+### `max_slave_replication_lag`
 
 
 Specify how many seconds a slave is allowed to be behind the master. The lag of
@@ -204,10 +204,10 @@ a slave must be less than the configured value in order for it to be used for
 routing. If set to 0 (the default value), the feature is disabled.
 
 
-In MaxScale 2.5.0, the slave lag must be less than `<code>max_slave_replication_lag</code>`
+In MaxScale 2.5.0, the slave lag must be less than `max_slave_replication_lag`
 whereas in older versions the slave lag had to be less than or equal to
-`<code>max_slave_replication_lag</code>`. This means that in MaxScale 2.5.0 it is possible to
-define, with `<code>max_slave_replication_lag=1</code>`, that all slaves must be up to date
+`max_slave_replication_lag`. This means that in MaxScale 2.5.0 it is possible to
+define, with `max_slave_replication_lag=1`, that all slaves must be up to date
 in order for them to be used for routing.
 
 
@@ -235,11 +235,11 @@ is logged. These messages are only logged when a query is being routed and the
 replication state changes.
 
 
-### `<code>use_sql_variables_in</code>`
+### `use_sql_variables_in`
 
 
-**`<code>use_sql_variables_in</code>`** specifies where should queries, which read session
-variable, be routed. The syntax for `<code>use_sql_variable_in</code>` is:
+**`use_sql_variables_in`** specifies where should queries, which read session
+variable, be routed. The syntax for `use_sql_variable_in` is:
 
 
 ```
@@ -250,7 +250,7 @@ use_sql_variables_in=[master|all]
 The default is to use SQL variables in all servers.
 
 
-When value `<code>all</code>` is used, queries reading session variables can be routed to any
+When value `all` is used, queries reading session variables can be routed to any
 available slave (depending on selection criteria). Queries modifying session
 variables are routed to all backend servers by default, excluding write queries
 with embedded session variable modifications, such as:
@@ -262,7 +262,7 @@ INSERT INTO test.t1 VALUES (@myid:=@myid+1)
 
 
 In above-mentioned case the user-defined variable would only be updated in the
-master where the query would be routed to due to the `<code>INSERT</code>` statement.
+master where the query would be routed to due to the `INSERT` statement.
 
 
 
@@ -279,7 +279,7 @@ master_failure_mode=fail_on_write
 
 
 
-### `<code>connection_keepalive</code>`
+### `connection_keepalive`
 
 
 **Note:** This parameter has been moved into the MaxScale core. For the
@@ -294,12 +294,12 @@ versions the feature was disabled by default. This parameter was converted into
 a service parameter in MaxScale 2.5.0.
 
 
-### `<code>master_reconnection</code>`
+### `master_reconnection`
 
 
 Allow the master server to change mid-session. This feature was introduced in
 MaxScale 2.3.0 and is disabled by default. This feature requires that
-`<code>disable_sescmd_history</code>` is not used.
+`disable_sescmd_history` is not used.
 
 
 When a readwritesplit session starts, it will pick a master server as the
@@ -307,39 +307,39 @@ current master server of that session. By default, when this master server is
 lost or changes to another server, the connection will be closed.
 
 
-When `<code>master_reconnection</code>` is enabled, readwritesplit can sometimes recover a
+When `master_reconnection` is enabled, readwritesplit can sometimes recover a
 lost connection to the master server. This largely depends on the value of
-`<code>master_failure_mode</code>`.
+`master_failure_mode`.
 
 
-With `<code>master_failure_mode=fail_instantly</code>`, the master server is only allowed to
+With `master_failure_mode=fail_instantly`, the master server is only allowed to
 change to another server. This change must happen without a loss of the master
 server.
 
 
-With `<code>master_failure_mode=fail_on_write</code>`, the loss of the master server is no
+With `master_failure_mode=fail_on_write`, the loss of the master server is no
 longer a fatal error: if a replacement master server appears before any write
 queries are received, readwritesplit will transparently reconnect to the new
 master server.
 
 
 In both cases the change in the master server can only take place if
-`<code>prune_sescmd_history</code>` is enabled or `<code>max_sescmd_history</code>` has not yet
+`prune_sescmd_history` is enabled or `max_sescmd_history` has not yet
 been exceeded and the session does not have an open transaction.
 
 
-The recommended configuration is to use `<code>master_reconnection=true</code>` and
-`<code>master_failure_mode=fail_on_write</code>`. This provides improved fault tolerance
+The recommended configuration is to use `master_reconnection=true` and
+`master_failure_mode=fail_on_write`. This provides improved fault tolerance
 without any risk to the consistency of the database.
 
 
-### `<code>slave_selection_criteria</code>`
+### `slave_selection_criteria`
 
 
 This option controls how the readwritesplit router chooses the slaves it
 connects to and how the load balancing is done. The default behavior is to route
 read queries to the slave server with the lowest amount of ongoing queries i.e.
-`<code>LEAST_CURRENT_OPERATIONS</code>`.
+`LEAST_CURRENT_OPERATIONS`.
 
 
 The option syntax:
@@ -352,26 +352,26 @@ slave_selection_criteria=<criteria>
 
 
 
-Where `<code><criteria></code>` is one of the following values.
+Where `<criteria>` is one of the following values.
 
 
-* `<code>LEAST_GLOBAL_CONNECTIONS</code>`, the slave with least connections from MariaDB MaxScale
-* `<code>LEAST_ROUTER_CONNECTIONS</code>`, the slave with least connections from this service
-* `<code>LEAST_BEHIND_MASTER</code>`, the slave with smallest replication lag
-* `<code>LEAST_CURRENT_OPERATIONS</code>` (default), the slave with least active operations
-* `<code>ADAPTIVE_ROUTING</code>`, based on server average response times. See below.
+* `LEAST_GLOBAL_CONNECTIONS`, the slave with least connections from MariaDB MaxScale
+* `LEAST_ROUTER_CONNECTIONS`, the slave with least connections from this service
+* `LEAST_BEHIND_MASTER`, the slave with smallest replication lag
+* `LEAST_CURRENT_OPERATIONS` (default), the slave with least active operations
+* `ADAPTIVE_ROUTING`, based on server average response times. See below.
 
 
-The `<code>LEAST_GLOBAL_CONNECTIONS</code>` and `<code>LEAST_ROUTER_CONNECTIONS</code>` use the
+The `LEAST_GLOBAL_CONNECTIONS` and `LEAST_ROUTER_CONNECTIONS` use the
 connections from MariaDB MaxScale to the server, not the amount of connections
 reported by the server itself.
 
 
-`<code>LEAST_BEHIND_MASTER</code>` and `<code>ADAPTIVE_ROUTING</code>` do not take server weights into account
+`LEAST_BEHIND_MASTER` and `ADAPTIVE_ROUTING` do not take server weights into account
 when choosing a server.
 
 
-`<code>ADAPTIVE_ROUTING</code>` Measures average server response times. The server averages
+`ADAPTIVE_ROUTING` Measures average server response times. The server averages
 are used as proxies of server load conditions. At selection time the averages
 are copied and modified to favor faster servers, while at the same time
 guaranteeing at lest some traffic to the slowest servers. The server selection
@@ -380,12 +380,12 @@ is probabilistic based on roulette wheel selection.
 
 Starting with MaxScale versions 2.5.29, 6.4.11, 22.08.9, 23.02.5 and 23.08.1,
 lowercase versions of the values are also accepted. For example,
-`<code>slave_selection_criteria=LEAST_CURRENT_OPERATIONS</code>` and
-`<code>slave_selection_criteria=least_current_operations</code>` are both accepted as valid
+`slave_selection_criteria=LEAST_CURRENT_OPERATIONS` and
+`slave_selection_criteria=least_current_operations` are both accepted as valid
 values.
 
 
-#### Server Weights and `<code>slave_selection_criteria</code>`
+#### Server Weights and `slave_selection_criteria`
 
 
 NOTE: Server Weights have been deprecated in MaxScale 2.3 and will be removed
@@ -393,7 +393,7 @@ at a later time.
 
 
 The following formula is used to calculate a score for a server when the
-`<code>weightby</code>` parameter is defined.
+`weightby` parameter is defined.
 
 
 
@@ -403,8 +403,8 @@ score = x / w
 
 
 
-`<code>x</code>` is the absolute value of the chosen metric (queries, connections) and
-`<code>w</code>` is the weight of the server. The value of `<code>w</code>` is the relative weight
+`x` is the absolute value of the chosen metric (queries, connections) and
+`w` is the weight of the server. The value of `w` is the relative weight
 of the server in relation to all the servers configured for the
 service. The server with the highest score that fulfills all other
 criteria is chosen as the target server.
@@ -414,36 +414,36 @@ Read the [configuration guide](../maxscale-25-getting-started/mariadb-maxscale-2
 for a more detailed example on how the weights are calculated.
 
 
-For `<code>LEAST_CURRENT_OPERATIONS</code>`, the metric is number of active queries on
-the candidate server, for `<code>LEAST_GLOBAL_CONNECTIONS</code>` and
-`<code>LEAST_ROUTER_CONNECTIONS</code>` it is the number of open connections and for
-`<code>LEAST_BEHIND_MASTER</code>` it is the number of seconds a server is behind the
+For `LEAST_CURRENT_OPERATIONS`, the metric is number of active queries on
+the candidate server, for `LEAST_GLOBAL_CONNECTIONS` and
+`LEAST_ROUTER_CONNECTIONS` it is the number of open connections and for
+`LEAST_BEHIND_MASTER` it is the number of seconds a server is behind the
 master.
 
 
-#### Interaction Between `<code>slave_selection_criteria</code>` and `<code>max_slave_connections</code>`
+#### Interaction Between `slave_selection_criteria` and `max_slave_connections`
 
 
-Depending on the value of `<code>max_slave_connections</code>`, the slave selection criteria
+Depending on the value of `max_slave_connections`, the slave selection criteria
 behave in different ways. Here are a few example cases of how the different
 criteria work with different amounts of slave connections.
 
 
-* With `<code>slave_selection_criteria=LEAST_GLOBAL_CONNECTIONS</code>` and
-`<code>max_slave_connections=1</code>`, each session picks one slave and one master
-* With `<code>slave_selection_criteria=LEAST_CURRENT_OPERATIONS</code>` and
-`<code>max_slave_connections=100%</code>`, each session picks one master and as many slaves
+* With `slave_selection_criteria=LEAST_GLOBAL_CONNECTIONS` and
+`max_slave_connections=1`, each session picks one slave and one master
+* With `slave_selection_criteria=LEAST_CURRENT_OPERATIONS` and
+`max_slave_connections=100%`, each session picks one master and as many slaves
 as possible
-* With `<code>slave_selection_criteria=LEAST_CURRENT_OPERATIONS</code>` each read is load
+* With `slave_selection_criteria=LEAST_CURRENT_OPERATIONS` each read is load
 balanced based on how many queries are active on a particular slave
-* With `<code>slave_selection_criteria=LEAST_GLOBAL_CONNECTIONS</code>` each read is sent to
+* With `slave_selection_criteria=LEAST_GLOBAL_CONNECTIONS` each read is sent to
 the slave with the least amount of connections
 
 
-### `<code>max_sescmd_history</code>`
+### `max_sescmd_history`
 
 
-**`<code>max_sescmd_history</code>`** sets a limit on how many distinct session commands each
+**`max_sescmd_history`** sets a limit on how many distinct session commands each
 session can execute before the session command history is disabled. The default
 is 50 session commands starting with MaxScale 2.3.0. In older versions, the
 session command history was disabled by default.
@@ -473,7 +473,7 @@ consumption. This might be useful if connection pooling is used and the sessions
 use large amounts of session commands.
 
 
-### `<code>disable_sescmd_history</code>`
+### `disable_sescmd_history`
 
 
 This option disables the session command history. This way no history is stored
@@ -483,7 +483,7 @@ without causing a constant growth in the memory consumption.
 
 
 This option is only intended to be enabled if the value of
-`<code>max_slave_connections</code>` is lowered below the default value. This will allow a
+`max_slave_connections` is lowered below the default value. This will allow a
 failed slave to be replaced with a standby slave server.
 
 
@@ -501,11 +501,11 @@ disable_sescmd_history=true
 
 
 
-### `<code>prune_sescmd_history</code>`
+### `prune_sescmd_history`
 
 
 This option prunes the session command history when it exceeds the value
-configured in `<code>max_sescmd_history</code>`. When this option is enabled, only a set
+configured in `max_sescmd_history`. When this option is enabled, only a set
 number of statements are stored in the history. This limits the per-session
 memory use while still allowing safe reconnections. This parameter was added in
 MaxScale 2.3.4 and is disabled by default.
@@ -533,23 +533,23 @@ and the risk of inconsistent session state is relatively low.
 
 
 In case the default history length is too short for safe pruning, set the value
-of `<code>max_sescmd_history</code>` to the total number of commands that affect the session
+of `max_sescmd_history` to the total number of commands that affect the session
 state plus a safety margin of 10. The safety margin reserves some extra space
 for new commands that might be executed due to changes in the client side
 application.
 
 
-### `<code>master_accept_reads</code>`
+### `master_accept_reads`
 
 
-**`<code>master_accept_reads</code>`** allows the master server to be used for reads. This is
+**`master_accept_reads`** allows the master server to be used for reads. This is
 a useful option to enable if you are using a small number of servers and wish to
 use the master for reads as well.
 
 
 By default, no reads are sent to the master as long as there is a valid slave
 server available. If no slaves are available, reads are sent to the master
-regardless of the value of `<code>master_accept_reads</code>`.
+regardless of the value of `master_accept_reads`.
 
 
 
@@ -560,7 +560,7 @@ master_accept_reads=true
 
 
 
-### `<code>strict_multi_stmt</code>`
+### `strict_multi_stmt`
 
 
 This option is disabled by default since MaxScale 2.2.1. In older versions, this
@@ -589,19 +589,19 @@ strict_multi_stmt=true
 
 
 
-### `<code>strict_sp_calls</code>`
+### `strict_sp_calls`
 
 
-Similar to `<code>strict_multi_stmt</code>`, this option allows all queries after a CALL
+Similar to `strict_multi_stmt`, this option allows all queries after a CALL
 operation on a stored procedure to be routed to the master. This option is
 disabled by default and was added in MaxScale 2.1.9.
 
 
-All warnings and restrictions that apply to `<code>strict_multi_stmt</code>` also apply to
-`<code>strict_sp_calls</code>`.
+All warnings and restrictions that apply to `strict_multi_stmt` also apply to
+`strict_sp_calls`.
 
 
-### `<code>master_failure_mode</code>`
+### `master_failure_mode`
 
 
 This option controls how the failure of a master server is handled. By default,
@@ -621,11 +621,11 @@ loss of a master server.
 
 
 These also apply to new sessions created after the master has failed. This means
-that in `<code>fail_on_write</code>` or `<code>error_on_write</code>` mode, connections are accepted as
+that in `fail_on_write` or `error_on_write` mode, connections are accepted as
 long as slave servers are available.
 
 
-When configured with `<code>fail_on_write</code>` or `<code>error_on_write</code>`, sessions that are idle
+When configured with `fail_on_write` or `error_on_write`, sessions that are idle
 will not be closed even if all backend connections for that session have
 failed. This is done in the hopes that before the next query from the idle
 session arrives, a reconnection to one of the slaves is made. However, this can
@@ -635,14 +635,14 @@ them. To prevent this, use the
 parameter.
 
 
-**Note:** If `<code>master_failure_mode</code>` is set to `<code>error_on_write</code>` and the connection
+**Note:** If `master_failure_mode` is set to `error_on_write` and the connection
 to the master is lost, by default, clients will not be able to execute write
 queries without reconnecting to MariaDB MaxScale once a new master is
 available. If [master_reconnection](#master_reconnection) is enabled, the
 session can recover if one of the slaves is promoted as the master.
 
 
-### `<code>retry_failed_reads</code>`
+### `retry_failed_reads`
 
 
 This option controls whether autocommit selects are retried in case of failure.
@@ -655,7 +655,7 @@ retry the read on a replacement server. This makes the failure of a slave
 transparent to the client.
 
 
-### `<code>delayed_retry</code>`
+### `delayed_retry`
 
 
 Retry queries over a period of time. This parameter takes a boolean value, was
@@ -671,7 +671,7 @@ candidates are found and the timeout is exceeded, the router returns to normal
 behavior and returns an error.
 
 
-When combined with the `<code>master_reconnection</code>` parameter, failures of writes done
+When combined with the `master_reconnection` parameter, failures of writes done
 outside of transactions can be hidden from the client connection. This allows a
 master to be replaced while a write is in progress.
 
@@ -686,15 +686,15 @@ Duplicate execution of a statement can occur if the connection to the server is
 lost or the server crashes but the server comes back up before the timeout for
 the retrying is exceeded. At this point, if the server managed to read the
 client's statement, it will be executed. For this reason, it is recommended to
-only enable `<code>delayed_retry</code>` when the possibility of duplicate statement
+only enable `delayed_retry` when the possibility of duplicate statement
 execution is an acceptable risk.
 
 
-### `<code>delayed_retry_timeout</code>`
+### `delayed_retry_timeout`
 
 
 The duration to wait until an error is returned to the client when
-`<code>delayed_retry</code>` is enabled. The default value is 10 seconds.
+`delayed_retry` is enabled. The default value is 10 seconds.
 
 
 The timeout is specified as documented
@@ -705,12 +705,12 @@ of the timeout is seconds, a timeout specified in milliseconds will be rejected,
 even if the duration is longer than a second.
 
 
-### `<code>transaction_replay</code>`
+### `transaction_replay`
 
 
 Replay interrupted transactions. This parameter was added in MaxScale 2.3.0 and
-is disabled by default. Enabling this parameter enables both `<code>delayed_retry</code>` and
-`<code>master_reconnection</code>` and sets `<code>master_failure_mode</code>` to `<code>fail_on_write</code>`, thereby
+is disabled by default. Enabling this parameter enables both `delayed_retry` and
+`master_reconnection` and sets `master_failure_mode` to `fail_on_write`, thereby
 overriding any configured values for these parameters.
 
 
@@ -720,7 +720,7 @@ failure of a master node without any visible effects to the client.
 
 
 If no replacement node becomes available before the timeout controlled by
-`<code>delayed_retry_timeout</code>` is exceeded, the client connection is closed.
+`delayed_retry_timeout` is exceeded, the client connection is closed.
 
 
 Please refer to the
@@ -729,13 +729,13 @@ a more detailed explanation of what should and should not be done with
 transaction replay.
 
 
-### `<code>transaction_replay_max_size</code>`
+### `transaction_replay_max_size`
 
 
 The limit on transaction size for transaction replay in bytes. Any transaction
 that exceeds this limit will not be replayed. The default value is 1 MiB. This
 limit applies at a session level which means that the total peak memory
-consumption can be `<code>transaction_replay_max_size</code>` times the number of client
+consumption can be `transaction_replay_max_size` times the number of client
 connections.
 
 
@@ -748,7 +748,7 @@ Read [the configuration guide](../maxscale-25-getting-started/mariadb-maxscale-2
 for more details on size type parameters in MaxScale.
 
 
-### `<code>transaction_replay_attempts</code>`
+### `transaction_replay_attempts`
 
 
 The upper limit on how many times a transaction replay is attempted before
@@ -762,7 +762,7 @@ tolerates. If a transaction is replayed successfully, the counter for failed
 attempts is reset.
 
 
-### `<code>transaction_replay_retry_on_deadlock</code>`
+### `transaction_replay_retry_on_deadlock`
 
 
 Enable automatic retrying of transactions that end up in a deadlock. This
@@ -772,19 +772,19 @@ transactions.
 
 
 If this feature is enabled and a transaction returns a deadlock error
-(e.g. `<code>SQLSTATE 40001: Deadlock found when trying to get lock; try restarting transaction</code>`),
+(e.g. `SQLSTATE 40001: Deadlock found when trying to get lock; try restarting transaction`),
 the transaction is automatically retried. If the retrying of the transaction
 results in another deadlock error, it is retried until it either succeeds or a
 transaction checksum error is encountered.
 
 
-### `<code>optimistic_trx</code>`
+### `optimistic_trx`
 
 
 Enable optimistic transaction execution. This parameter controls whether normal
-transactions (i.e. `<code>START TRANSACTION</code>` or `<code>BEGIN</code>`) are load balanced across
+transactions (i.e. `START TRANSACTION` or `BEGIN`) are load balanced across
 slaves. This feature is disabled by default and enabling it implicitly enables
-`<code>transaction_replay</code>`, `<code>delayed_retry</code>` and `<code>master_reconnection</code>` parameters.
+`transaction_replay`, `delayed_retry` and `master_reconnection` parameters.
 
 
 When this mode is enabled, all transactions are first attempted on slave
@@ -795,52 +795,52 @@ is initiated the moment a data modifying statement is intercepted by
 readwritesplit so only read-only statements are executed on slave servers.
 
 
-As with `<code>transaction_replay</code>` and transactions that are replayed, if the results
+As with `transaction_replay` and transactions that are replayed, if the results
 returned by the master server are not identical to the ones returned by the
 slave up to the point where the first data modifying statement was executed, the
 connection is closed. If the execution of ROLLBACK statement on the slave fails,
 the connection to that slave is closed.
 
 
-All limitations that apply to `<code>transaction_replay</code>` also apply to
-`<code>optimistic_trx</code>`.
+All limitations that apply to `transaction_replay` also apply to
+`optimistic_trx`.
 
 
-### `<code>causal_reads</code>`
+### `causal_reads`
 
 
 Enable causal reads. This parameter is disabled by default and was introduced in
 MaxScale 2.3.0.
 
 
-If a client connection modifies the database and `<code>causal_reads</code>` is enabled, any
+If a client connection modifies the database and `causal_reads` is enabled, any
 subsequent reads performed on slave servers will be done in a manner that
 prevents replication lag from affecting the results. This only applies to the
 modifications done by the client itself.
 
 
 **Note:** This feature requires MariaDB 10.2.16 or newer to function. In
- addition to this, the `<code>session_track_system_variables</code>` parameter must include
- `<code>last_gtid</code>` in its list of tracked system variables.
+ addition to this, the `session_track_system_variables` parameter must include
+ `last_gtid` in its list of tracked system variables.
 
 
 The possible values for this parameter are:
 
 
-* `<code>none</code>` (default)
+* `none` (default)
 * Read causality is disabled.
-* `<code>local</code>`
+* `local`
 * Writes are locally visible. Writes are guaranteed to be visible only to the
  connection that does it. Unrelated modifications done by other connections
  are not visible. This mode improves read scalability at the cost of latency
  and reduces the overall load placed on the master server without breaking
  causality guarantees.
-* `<code>global</code>`
+* `global`
 * Writes are globally visible. If one connection writes a value, all
  connections to the same service will see it. In general this mode is slower
- than the `<code>local</code>` mode due to the extra synchronization it has to do. This
+ than the `local` mode due to the extra synchronization it has to do. This
  guarantees global happens-before ordering of reads when all transactions are
- inside a single GTID domain.This mode gives similar benefits as the `<code>local</code>`
+ inside a single GTID domain.This mode gives similar benefits as the `local`
  mode in that it improves read scalability at the cost of latency.
 With MaxScale versions 2.5.14 and older, multi-domain use of causal_reads
 could cause non-causal reads to occur. Starting with MaxScale 2.5.15, this
@@ -850,31 +850,31 @@ GTID coordinates will never be reset: if replication is reset and and GTID
 coordinates go "backwards", readwritesplit will not consider these as being
 newer than the ones already stored. To reset the stored GTID coordinates in
 readwritesplit, MaxScale must be restarted.
-* `<code>fast</code>`
-* This mode is similar to the `<code>local</code>` mode where it will only affect the
- connection that does the write but where the `<code>local</code>` mode waits for a slave
- server to catch up, the `<code>fast</code>` mode will only use servers that are known to
+* `fast`
+* This mode is similar to the `local` mode where it will only affect the
+ connection that does the write but where the `local` mode waits for a slave
+ server to catch up, the `fast` mode will only use servers that are known to
  have replicated the write. This means that if no slave has replicated the
  write, the master where the write was done will be used. The value of
- `<code>causal_reads_timeout</code>` is ignored in this mode. Currently the replication
+ `causal_reads_timeout` is ignored in this mode. Currently the replication
  state is only updated by the mariadbmon monitor whenever the servers are
- monitored. This means that a smaller `<code>monitor_interval</code>` provides faster
+ monitored. This means that a smaller `monitor_interval` provides faster
  replication state updates and possibly better overall usage of servers.
-This mode is the inverse of the `<code>local</code>` mode in the sense that it improves
+This mode is the inverse of the `local` mode in the sense that it improves
 read latency at the cost of read scalability while still retaining the
 causality guarantees for reads. This functionality can also be considered an
 improved version of the functionality that the
 [CCRFilter](../maxscale-25-filters/mariadb-maxscale-25-consistent-critical-read-filter.md) module provides.
 
 
-Before MaxScale 2.5.0, the `<code>causal_reads</code>` parameter was a boolean
-parameter. False values translated to `<code>none</code>` and true values translated to
-`<code>local</code>`. The use of boolean parameters is deprecated but still accepted in
+Before MaxScale 2.5.0, the `causal_reads` parameter was a boolean
+parameter. False values translated to `none` and true values translated to
+`local`. The use of boolean parameters is deprecated but still accepted in
 MaxScale 2.5.0.
 
 
 A practical example can be given by the following set of SQL commands executed
-with `<code>autocommit=1</code>`.
+with `autocommit=1`.
 
 
 
@@ -914,7 +914,7 @@ SELECT * FROM test.t1 WHERE id = 1;
 
 
 
-The `<code>SET</code>` command will synchronize the slave to a certain logical point in
+The `SET` command will synchronize the slave to a certain logical point in
 the replication stream (see
 [MASTER_GTID_WAIT](../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md)
 for more details).
@@ -926,7 +926,7 @@ when the slave timed out.
 
 
 Starting with MaxScale 2.5.17, a failed causal read inside of a read-only
-transaction started with `<code>START TRANSACTION READ ONLY</code>` will return the following
+transaction started with `START TRANSACTION READ ONLY` will return the following
 error:
 
 
@@ -950,7 +950,7 @@ server which would cause the connection to be closed and a warning to be logged.
  statements executed individually (inside a COM_QUERY packet) can be handled by
  the causal read mechanism.
 * This feature does not work with Galera or any other non-standard
- replication mechanisms. As Galera does not update the `<code>gtid_slave_pos</code>`
+ replication mechanisms. As Galera does not update the `gtid_slave_pos`
  variable when events are replicated via the Galera library, the
  [MASTER_GTID_WAIT](../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md)
  function used by MaxScale to synchronize reads will wait until the
@@ -961,10 +961,10 @@ server which would cause the connection to be closed and a warning to be logged.
  the causal read will not be attempted and a non-causal read is done instead.
 
 
-### `<code>causal_reads_timeout</code>`
+### `causal_reads_timeout`
 
 
-The timeout for the slave synchronization done by `<code>causal_reads</code>`. The
+The timeout for the slave synchronization done by `causal_reads`. The
 default value is 10 seconds.
 
 
@@ -976,7 +976,7 @@ of the timeout is seconds, a timeout specified in milliseconds will be rejected,
 even if the duration is longer than a second.
 
 
-### `<code>lazy_connect</code>`
+### `lazy_connect`
 
 
 Lazy connection creation causes connections to backend servers to be opened only
@@ -987,7 +987,7 @@ and is disabled by default.
 
 By default readwritesplit opens as many connections as it can when the session
 is first opened. This makes the execution of the first query faster when all
-available connections are already created. When `<code>lazy_connect</code>` is enabled, this
+available connections are already created. When `lazy_connect` is enabled, this
 initial connection creation is skipped. If the client executes only read
 queries, no connection to the master is made. If only write queries are made,
 only the master connection is used.
@@ -996,25 +996,25 @@ only the master connection is used.
 ## Router Diagnostics
 
 
-The `<code>router_diagnostics</code>` output for a readwritesplit service contains the
+The `router_diagnostics` output for a readwritesplit service contains the
 following fields.
 
 
-* `<code>queries</code>`: Number of queries executed through this service.
-* `<code>route_master</code>`: Number of writes routed to master.
-* `<code>route_slave</code>`: Number of reads routed to slaves.
-* `<code>route_all</code>`: Number of session commands routed to all servers.
-* `<code>rw_transactions</code>`: Number of explicit read-write transactions.
-* `<code>ro_transactions</code>`: Number of explicit read-only transactions.
-* `<code>replayed_transactions</code>`: Number of replayed transactions.
-* `<code>server_query_statistics</code>`: Statistics for each configured and used server consisting of the following fields.
-* `<code>id</code>`: Name of the server
-* `<code>total</code>`: Total number of queries.
-* `<code>read</code>`: Total number of reads.
-* `<code>write</code>`: Total number of writes.
-* `<code>avg_sess_duration</code>`: Average duration of a client session to this server.
-* `<code>avg_sess_active_pct</code>`: Average percentage of time client sessions were active. 0% means connections were opened but never used.
-* `<code>avg_selects_per_session</code>`: Average number of selects per session.
+* `queries`: Number of queries executed through this service.
+* `route_master`: Number of writes routed to master.
+* `route_slave`: Number of reads routed to slaves.
+* `route_all`: Number of session commands routed to all servers.
+* `rw_transactions`: Number of explicit read-write transactions.
+* `ro_transactions`: Number of explicit read-only transactions.
+* `replayed_transactions`: Number of replayed transactions.
+* `server_query_statistics`: Statistics for each configured and used server consisting of the following fields.
+* `id`: Name of the server
+* `total`: Total number of queries.
+* `read`: Total number of reads.
+* `write`: Total number of writes.
+* `avg_sess_duration`: Average duration of a client session to this server.
+* `avg_sess_active_pct`: Average percentage of time client sessions were active. 0% means connections were opened but never used.
+* `avg_selects_per_session`: Average number of selects per session.
 
 
 ## Server Ranks
@@ -1030,7 +1030,7 @@ rules govern how readwritesplit behaves with servers that have different ranks.
  as the secondary master is available.
 * All slave connections will use the same rank as the master connection. Any
  stale connections with a different rank than the master will be discarded.
-* If no master connection is available and `<code>master_reconnection</code>` is enabled, a
+* If no master connection is available and `master_reconnection` is enabled, a
  connection to the best master is created. If the new master has a different
  priority than existing connections have, the connections with a different rank
  will be discarded.
@@ -1079,16 +1079,16 @@ writes are written to binlog and thus become replicated to slaves.
 The following operations are routed to master:
 
 
-* DML statements (`<code>INSERT</code>`, `<code>UPDATE</code>`, `<code>DELETE</code>` etc.)
-* DDL statements (`<code>DROP</code>`, `<code>CREATE</code>`, `<code>ALTER</code>` etc.)
+* DML statements (`INSERT`, `UPDATE`, `DELETE` etc.)
+* DDL statements (`DROP`, `CREATE`, `ALTER` etc.)
 * All statements within an open read-write transaction
 * Stored procedure calls
 * User-defined function calls
-* Statements that use `<code>LAST_INSERT_ID()</code>`
+* Statements that use `LAST_INSERT_ID()`
 
 
 In addition to these, if the **readwritesplit** service is configured with the
-`<code>max_slave_replication_lag</code>` parameter, and if all slaves suffer from too much
+`max_slave_replication_lag` parameter, and if all slaves suffer from too much
 replication lag, then statements will be routed to the *Master*. (There might be
 other similar configuration parameters in the future which limit the number of
 statements that will be routed to slaves.)
@@ -1101,8 +1101,8 @@ Use of the SERIALIZABLE transaction isolation level with readwritesplit is not
 recommended as it somewhat goes against the goals of load balancing.
 
 
-If either `<code>session_track_transaction_info=CHARACTERISTICS</code>` or
-`<code>session_track_system_variables=tx_isolation</code>` is configured for the MariaDB
+If either `session_track_transaction_info=CHARACTERISTICS` or
+`session_track_system_variables=tx_isolation` is configured for the MariaDB
 server, readwritesplit will track the transaction isolation level and lock the
 session to the master when the isolation level is set to serializable. This
 retains the correctness of the isolation level which can otherwise cause
@@ -1127,9 +1127,9 @@ Queries which can be routed to slaves must be auto committed and belong to one
 of the following group:
 
 
-* Read-only statements (i.e. `<code>SELECT</code>`) that only use read-only built-in functions
-* All statements within an explicit read-only transaction (`<code>START TRANSACTION READ ONLY</code>`)
-* `<code>SHOW</code>` statements except `<code>SHOW MASTER STATUS</code>`
+* Read-only statements (i.e. `SELECT`) that only use read-only built-in functions
+* All statements within an explicit read-only transaction (`START TRANSACTION READ ONLY`)
+* `SHOW` statements except `SHOW MASTER STATUS`
 
 
 The list of supported built-in fuctions can be found
@@ -1149,14 +1149,14 @@ servers that could execute statements on behalf of this client.
 Session commands include for example:
 
 
-* Commands that modify the session state (`<code>SET</code>`, `<code>USE</code>`, `<code>CHANGE USER</code>`)
-* Text protocol `<code>PREPARE</code>` statements
+* Commands that modify the session state (`SET`, `USE`, `CHANGE USER`)
+* Text protocol `PREPARE` statements
 * Binary protocol prepared statements
 * Other miscellaneous commands (COM_QUIT, COM_PING etc.)
 
 
 **NOTE**: if variable assignment is embedded in a write statement it is routed
-to *Master* only. For example, `<code>INSERT INTO t1 values(@myvar:=5, 7)</code>` would be
+to *Master* only. For example, `INSERT INTO t1 values(@myvar:=5, 7)` would be
 routed to *Master* only.
 
 
@@ -1166,7 +1166,7 @@ can be repeated on that new slave. This means that the router stores each
 executed session command for the duration of the session. Applications that use
 long-running sessions might cause MariaDB MaxScale to consume a growing amount
 of memory unless the sessions are closed. This can be solved by adjusting the
-value of `<code>max_sescmd_history</code>`.
+value of `max_sescmd_history`.
 
 
 ### Routing to previous target
@@ -1177,9 +1177,9 @@ query was executed. If no previous target is found, the query is routed to the
 current master.
 
 
-* If a query uses the `<code>FOUND_ROWS()</code>` function, it will be routed to the server
+* If a query uses the `FOUND_ROWS()` function, it will be routed to the server
  where the last query was executed. This is done with the assumption that a
- query with `<code>SQL_CALC_FOUND_ROWS</code>` was previously executed.
+ query with `SQL_CALC_FOUND_ROWS` was previously executed.
 * COM_STMT_FETCH_ROWS will always be routed to the same server where the
  COM_STMT_EXECUTE was routed.
 
@@ -1193,7 +1193,7 @@ Read queries are routed to the master server in the following situations:
 * Query is executed inside an open read-write transaction
 * Statement includes a stored procedure or an UDF call
 * If there are multiple statements inside one query e.g.
- `<code>INSERT INTO ... ; SELECT LAST_INSERT_ID();</code>`
+ `INSERT INTO ... ; SELECT LAST_INSERT_ID();`
 
 
 ### Prepares Statement Limitations
@@ -1209,17 +1209,17 @@ closed (MXS-1816).
 
 If the results from the replacement server are not identical when the
 transaction is replayed, the client connection is closed. This means that any
-transaction with a server specific result (e.g. `<code>NOW()</code>`, `<code>@@server_id</code>`) cannot
+transaction with a server specific result (e.g. `NOW()`, `@@server_id`) cannot
 be replayed successfully but it will still be attempted.
 
 
 If a transaction reads data before updating it, the rows should be locked by
-using `<code>SELECT ... FOR UPDATE</code>`. This will prevent overlapping transactions when
+using `SELECT ... FOR UPDATE`. This will prevent overlapping transactions when
 multiple transactions are being replayed that modify the same set of rows.
 
 
 If the connection to the server where the transaction is being executed is
-lost when the final `<code>COMMIT</code>` is being executed, it is impossible to know
+lost when the final `COMMIT` is being executed, it is impossible to know
 whether the transaction was successfully committed. This means that there
 is a possibility for duplicate transaction execution which can result in
 data duplication in certain cases. Data duplication can happen if the
@@ -1227,8 +1227,8 @@ transaction consists of the following statement types:
 
 
 * INSERT of rows into a table that does not have an auto-increment primary key
-* A "blind update" of one or more rows e.g. `<code>UPDATE t SET c = c + 1 WHERE id = 123</code>`
-* A "blind delete" e.g. `<code>DELETE FROM t LIMIT 100</code>`
+* A "blind update" of one or more rows e.g. `UPDATE t SET c = c + 1 WHERE id = 123`
+* A "blind delete" e.g. `DELETE FROM t LIMIT 100`
 
 
 This is not an exhaustive list and any operations that do not check the row
@@ -1236,12 +1236,12 @@ contents before performing the operation on them might face this problem.
 
 
 In all cases the problem of duplicate transaction execution can be avoided by
-including a `<code>SELECT ... FOR UPDATE</code>` in the statement. This will guarantee that
+including a `SELECT ... FOR UPDATE` in the statement. This will guarantee that
 in the case that the transaction fails when it is being committed, the row is
 only modified if it matches the expected contents.
 
 
-Similarly, a connection loss during `<code>COMMIT</code>` can also result in transaction
+Similarly, a connection loss during `COMMIT` can also result in transaction
 replay failure. This happens due to the same reason as duplicate transaction
 execution but the retried transaction will not be committed. This can be
 considered a success case as the transaction replay detected that the results of
@@ -1253,7 +1253,7 @@ Statements that result in an implicit commit do not reset the transaction when
 transaction_replay is enabled. This means that if the transaction is replayed,
 the transaction will be committed twice due to the implicit commit being
 present. The exception to this are the transaction management statements such as
-`<code>BEGIN</code>` and `<code>START TRANSACTION</code>`: they are detected and will cause the
+`BEGIN` and `START TRANSACTION`: they are detected and will cause the
 transaction to be correctly reset.
 
 
@@ -1303,7 +1303,7 @@ error instead of the result we expected leading to a transaction replay failure.
 
 
 In a service-to-service configuration (i.e. a service using another service in
-its `<code>targets</code>` list ), if the topmost service starts a transaction, all
+its `targets` list ), if the topmost service starts a transaction, all
 lower-level readwritesplit services will also behave as if a transaction is
 open. If a connection to a backend database fails during this, it can result in
 unnecessary transaction replays which in turn can end up with checksum
@@ -1345,7 +1345,7 @@ statement.
 
 
 Some of the queries that a client sends are routed to all backends instead of
-just to one. These queries include `<code>USE <db name></code>` and `<code>SET autocommit=0</code>`, among
+just to one. These queries include `USE <db name>` and `SET autocommit=0`, among
 many others. Readwritesplit sends a copy of these queries to each backend server
 and forwards the master's reply to the client. Below is a list of MySQL commands
 which are classified as session commands.
@@ -1377,7 +1377,7 @@ Prior to MaxScale 2.3.0, session commands that were 2²⁴ - 1 bytes or longer w
 not supported and caused the session to be closed.
 
 
-There is a possibility for misbehavior. If `<code>USE mytable</code>` is executed in one of
+There is a possibility for misbehavior. If `USE mytable` is executed in one of
 the slaves and fails, it may be due to replication lag rather than the database
 not existing. Thus, the same command may produce different result in different
 backend servers. The slaves which fail to execute a session command will be
@@ -1388,7 +1388,7 @@ session.
 
 
 The above-mentioned behavior for user variables can be partially controlled with
-the configuration parameter `<code>use_sql_variables_in</code>`:
+the configuration parameter `use_sql_variables_in`:
 
 
 
@@ -1401,8 +1401,8 @@ use_sql_variables_in=[master|all] (default: all)
 **WARNING**
 
 
-If a SELECT query modifies a user variable when the `<code>use_sql_variables_in</code>`
-parameter is set to `<code>all</code>`, it will not be routed and the client will receive an
+If a SELECT query modifies a user variable when the `use_sql_variables_in`
+parameter is set to `all`, it will not be routed and the client will receive an
 error. A log message is written into the log further explaining the reason for
 the error. Here is an example use of a SELECT query which modifies a user
 variable and how MariaDB MaxScale responds to it.
@@ -1420,5 +1420,5 @@ ERROR 1064 (42000): Routing query to backend failed. See the error log for furth
 
 
 Allow user variable modification in SELECT queries by setting
-`<code>use_sql_variables_in=master</code>`. This will route all queries that use user
+`use_sql_variables_in=master`. This will route all queries that use user
 variables to the master.

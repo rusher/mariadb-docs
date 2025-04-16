@@ -12,7 +12,7 @@
 ## Description
 
 
-Not equal operator. Evaluates both SQL expressions and returns 1 if they are not equal and 0 if they are equal, or `<code>NULL</code>` if either expression is NULL. If the expressions return different data types, (for instance, a number and a string), performs type conversion.
+Not equal operator. Evaluates both SQL expressions and returns 1 if they are not equal and 0 if they are equal, or `NULL` if either expression is NULL. If the expressions return different data types, (for instance, a number and a string), performs type conversion.
 
 
 When used in row comparisons these two queries return the same results:

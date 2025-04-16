@@ -85,7 +85,7 @@ CREATE TRIGGER ... BEFORE SHUTDOWN ...
 CREATE TRIGGER ... ON SCHEDULE ...
 ```
 
-the latter being a synonym for `<code>CREATE EVENT</code>`.
+the latter being a synonym for `CREATE EVENT`.
 
 
 * should STARTUP/SHUTDOWN triggers run exclusively? that is, STARTUP trigger is run before any connection is allowed or in parallel with them? Same for SHUTDOWN.
@@ -102,34 +102,34 @@ the latter being a synonym for `<code>CREATE EVENT</code>`.
 **Part-time project 175h**
 
 
-`<code>my_vsnprintf()</code>` is used internally in the server as a portable `<code>printf</code>` replacement. And it's also exported to plugins as a service.
+`my_vsnprintf()` is used internally in the server as a portable `printf` replacement. And it's also exported to plugins as a service.
 
 
-It supports a subset of `<code>printf</code>` formats and three extensions:
+It supports a subset of `printf` formats and three extensions:
 
 
-* `<code>%`s</code>` means that a string should be quoted like an `identifier`
-* `<code>%b</code>` means that it's a binary string, not zero-terminated; printing won't stop at \0, so one should always specify the field width (like %.100b)
-* `<code>%M</code>` is used in error messages and prints the integer (errno) and the corresponding strerror() for it
-* `<code>%T</code>` takes string and print it like `<code>%s</code>` but if the string should be truncated puts "..." at the end
+* `%`s` means that a string should be quoted like an `identifier`
+* `%b` means that it's a binary string, not zero-terminated; printing won't stop at \0, so one should always specify the field width (like %.100b)
+* `%M` is used in error messages and prints the integer (errno) and the corresponding strerror() for it
+* `%T` takes string and print it like `%s` but if the string should be truncated puts "..." at the end
 
 
-`<code>gcc</code>` knows `<code>printf</code>` formats and check whether actual arguments match the format string and issue a warning if they don't. Unfortunately there seems to be no easy way to teach `<code>gcc</code>` our extensions, so for now we have to disable `<code>printf</code>` format checks.
+`gcc` knows `printf` formats and check whether actual arguments match the format string and issue a warning if they don't. Unfortunately there seems to be no easy way to teach `gcc` our extensions, so for now we have to disable `printf` format checks.
 
 
-An better approach would be to use `<code>gcc</code>` compatible format extensions, like Linux kernel does. We should migrate to a different syntax for our extensions
+An better approach would be to use `gcc` compatible format extensions, like Linux kernel does. We should migrate to a different syntax for our extensions
 
 
-* `<code>%sI</code>` to mean "print as an identifier"
-* `<code>%sB</code>` to mean "print a binary string"
-* `<code>%uE</code>` to mean "print an errno"
-* `<code>%sT</code>` to put a "..." as truncation indicator
+* `%sI` to mean "print as an identifier"
+* `%sB` to mean "print a binary string"
+* `%uE` to mean "print an errno"
+* `%sT` to put a "..." as truncation indicator
 
 
 old formats can still be supported or they can be removed and in the latter case the major version of the service should be increased to signal an incompatible change.
 
 
-All error messages and all usages of `<code>my_vsnprintf</code>` should be changed to use the new syntax. One way to do it is to disable old syntax conditionally, only in debug builds. All `<code>gcc</code>` `<code>printf</code>` format checks should be enabled.
+All error messages and all usages of `my_vsnprintf` should be changed to use the new syntax. One way to do it is to disable old syntax conditionally, only in debug builds. All `gcc` `printf` format checks should be enabled.
 
 
 **Skills needed:** Understanding of C development.

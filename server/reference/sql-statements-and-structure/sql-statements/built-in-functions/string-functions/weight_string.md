@@ -18,7 +18,7 @@ Returns a binary string representing the string's sorting and comparison value. 
 WEIGHT_STRING() is particularly useful when adding new collations, for testing purposes.
 
 
-If `<code>str</code>` is a non-binary string ([CHAR](../secondary-functions/information-functions/charset.md), [VARCHAR](../../../../data-types/string-data-types/varchar.md) or [TEXT](../../../../data-types/string-data-types/text.md)), WEIGHT_STRING returns the string's collation weight. If `<code>str</code>` is a binary string ([BINARY](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), [VARBINARY](../../../../data-types/string-data-types/varbinary.md) or [BLOB](../../../../data-types/string-data-types/blob.md)), the return value is simply the input value, since the weight for each byte in a binary string is the byte value.
+If `str` is a non-binary string ([CHAR](../secondary-functions/information-functions/charset.md), [VARCHAR](../../../../data-types/string-data-types/varchar.md) or [TEXT](../../../../data-types/string-data-types/text.md)), WEIGHT_STRING returns the string's collation weight. If `str` is a binary string ([BINARY](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), [VARBINARY](../../../../data-types/string-data-types/varbinary.md) or [BLOB](../../../../data-types/string-data-types/blob.md)), the return value is simply the input value, since the weight for each byte in a binary string is the byte value.
 
 
 WEIGHT_STRING() returns NULL if given a NULL input.
@@ -36,7 +36,7 @@ AS CHAR(N) measures the length in characters, and right pads with spaces to the 
 N has a minimum value of 1, and if it is less than the length of the input string, the string is truncated without warning.
 
 
-The optional LEVEL clause specifies that the return value should contain weights for specific collation levels. The `<code>levels</code>` specifier can either be a single integer, a comma-separated list of integers, or a range of integers separated by a dash (whitespace is ignored). Integers can range from 1 to a maximum of 6, dependent on the collation, and need to be listed in ascending order.
+The optional LEVEL clause specifies that the return value should contain weights for specific collation levels. The `levels` specifier can either be a single integer, a comma-separated list of integers, or a range of integers separated by a dash (whitespace is ignored). Integers can range from 1 to a maximum of 6, dependent on the collation, and need to be listed in ascending order.
 
 
 If the LEVEL clause is no provided, a default of 1 to the maximum for the collation is assumed.
@@ -45,13 +45,13 @@ If the LEVEL clause is no provided, a default of 1 to the maximum for the collat
 If the LEVEL is specified without using a range, an optional modifier is permitted.
 
 
-`<code>ASC</code>`, the default, returns the weights without any modification.
+`ASC`, the default, returns the weights without any modification.
 
 
-`<code>DESC</code>` returns bitwise-inverted weights.
+`DESC` returns bitwise-inverted weights.
 
 
-`<code>REVERSE</code>` returns the weights in reverse order.
+`REVERSE` returns the weights in reverse order.
 
 
 ## Examples

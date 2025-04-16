@@ -4,7 +4,7 @@
 # Cat
 
 
-The `<code>cat</code>` router is a special router that concatenates result sets.
+The `cat` router is a special router that concatenates result sets.
 
 
 *Note:* This module is experimental and must be built from source. The
@@ -16,20 +16,20 @@ The `<code>cat</code>` router is a special router that concatenates result sets.
 
 
 The router has no special parameters. To use it, define a service with
-`<code>router=cat</code>` and add the servers you want to use.
+`router=cat` and add the servers you want to use.
 
 
 ## Behavior
 
 
 The order the servers are defined in is the order in which the servers are
-queried. This means that the results are ordered based on the `<code>servers</code>`
+queried. This means that the results are ordered based on the `servers`
 parameter of the service. The result will only be completed once all servers
 have executed this.
 
 
 All commands executed via this router will be executed on all servers. This
-means that an INSERT through the `<code>cat</code>` router will send it to all servers. In
+means that an INSERT through the `cat` router will send it to all servers. In
 the case of commands that do not return resultsets, the response of the last
 server is sent to the client. This means that if one of the earlier servers
 returns a different result, the client will not see it.

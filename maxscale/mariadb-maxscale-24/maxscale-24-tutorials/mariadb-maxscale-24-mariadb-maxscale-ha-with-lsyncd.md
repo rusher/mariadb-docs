@@ -40,7 +40,7 @@ If you already have a SSH key generated, you can skip this next step and go to t
 ### Generating keys
 
 
-To generate a new set of SSH keys, we will use `<code>ssh-keygen</code>`.
+To generate a new set of SSH keys, we will use `ssh-keygen`.
 
 
 
@@ -76,10 +76,10 @@ The keys will be generated in the .ssh folder and will automatically be used by 
 ### Copying keys
 
 
-To copy the SSH keys to the remote host we will use `<code>ssh-copy-id</code>`.
+To copy the SSH keys to the remote host we will use `ssh-copy-id`.
 
 
-Use the username and host of the remote server you wish to synchronize MariaDB MaxScale's configuration files to. For example, if the server's address is 192.168.122.100 and the user we use for synchronization us `<code>user</code>` we can use the following command.
+Use the username and host of the remote server you wish to synchronize MariaDB MaxScale's configuration files to. For example, if the server's address is 192.168.122.100 and the user we use for synchronization us `user` we can use the following command.
 
 
 
@@ -167,16 +167,16 @@ rsync={
 
 
 
-The most important part is the `<code>sync</code>` section which defines a target for synchronization. The `<code>default.rsyncssh</code>` tells lsyncd to synchronize files using SSH.
+The most important part is the `sync` section which defines a target for synchronization. The `default.rsyncssh` tells lsyncd to synchronize files using SSH.
 
 
-The `<code>source</code>` parameter tells lsyncd where to read the files from. This should be the location of the maxscale.cnf file. The `<code>host</code>` parameter defines the host where the files should be synchronized to and the user account lsyncd should use when synchronizing the files. The `<code>targetdir</code>` parameter defines the local directory on the remote target where the files should be synchronized to. This value should be the location on the remote host where the maxscale.cnf file is searched from. By default, this is the `<code>/etc</code>` folder.
+The `source` parameter tells lsyncd where to read the files from. This should be the location of the maxscale.cnf file. The `host` parameter defines the host where the files should be synchronized to and the user account lsyncd should use when synchronizing the files. The `targetdir` parameter defines the local directory on the remote target where the files should be synchronized to. This value should be the location on the remote host where the maxscale.cnf file is searched from. By default, this is the `/etc` folder.
 
 
-The optional `<code>ssh</code>` parameter and its sub-parameter `<code>port</code>`define a custom port for the SSH connection. Most users do not need this parameter. The `<code>rsycn</code>` parameter contains an array of options that are passed to the rsycn executable. These should not be changed unless you specifically know what you are doing. For more information on the options passed to rsync read the rsync(1) manpage.
+The optional `ssh` parameter and its sub-parameter `port`define a custom port for the SSH connection. Most users do not need this parameter. The `rsycn` parameter contains an array of options that are passed to the rsycn executable. These should not be changed unless you specifically know what you are doing. For more information on the options passed to rsync read the rsync(1) manpage.
 
 
-You can add multiple remote targets by defining multiple `<code>sync</code>` sections. Here is an example with two sync sections defining different hosts that have MariaDB MaxScale installed and whose configuration files should be kept in sync.
+You can add multiple remote targets by defining multiple `sync` sections. Here is an example with two sync sections defining different hosts that have MariaDB MaxScale installed and whose configuration files should be kept in sync.
 
 
 
@@ -219,10 +219,10 @@ rsync={
 ## Starting Lsyncd
 
 
-Starting lsyncd can be done from the command line or through a init script. To start lsyncd from the command like, execute the `<code>lsyncd</code>` command and pass the configuration file as the only parameter.
+Starting lsyncd can be done from the command line or through a init script. To start lsyncd from the command like, execute the `lsyncd` command and pass the configuration file as the only parameter.
 
 
-By default lsyncd will search for the configuration file in `<code>/etc/lsyncd.conf</code>`. By placing the configuration file we created in the `<code>/etc</code>` folder, we can start lsyncd with the following command.
+By default lsyncd will search for the configuration file in `/etc/lsyncd.conf`. By placing the configuration file we created in the `/etc` folder, we can start lsyncd with the following command.
 
 
 
@@ -232,7 +232,7 @@ service lsyncd start
 
 
 
-Here is an example which start lsyncd and reads the configuration options from the `<code>lsyncd.cnf</code>` file.
+Here is an example which start lsyncd and reads the configuration options from the `lsyncd.cnf` file.
 
 
 

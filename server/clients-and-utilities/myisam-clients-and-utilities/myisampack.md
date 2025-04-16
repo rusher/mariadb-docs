@@ -1,7 +1,7 @@
 
 # myisampack
 
-`<code>myisampack</code>` is a tool for compressing [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables. The resulting tables
+`myisampack` is a tool for compressing [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables. The resulting tables
 are read-only, and usually about 40% to 70% smaller. It is run as follows:
 
 
@@ -9,7 +9,7 @@ are read-only, and usually about 40% to 70% smaller. It is run as follows:
 myisampack [options] file_name [file_name2...]
 ```
 
-The `<code>file_name</code>` is the `<code>.MYI</code>` index file. The extension can be omitted,
+The `file_name` is the `.MYI` index file. The extension can be omitted,
 although keeping it permits wildcards, such as:
 
 
@@ -20,16 +20,16 @@ myisampack *.MYI
 ...to compress all the files.
 
 
-`<code>myisampack</code>` compresses each column separately, and, when the resulting data
+`myisampack` compresses each column separately, and, when the resulting data
 is read, only the individual rows and columns required need to be decompressed,
 allowing for quicker reading.
 
 
-Once a table has been packed, use `<code>[myisamchk -rq](myisamchk-table-information.md)</code>` (the quick
+Once a table has been packed, use `[myisamchk -rq](myisamchk-table-information.md)` (the quick
 and recover options) to rebuild its indexes.
 
 
-`<code>myisampack</code>` does not support partitioned tables.
+`myisampack` does not support partitioned tables.
 
 
 Do not run myisampack if the tables could be updated during the operation, and
@@ -41,7 +41,7 @@ been set.
 
 
 The following variables can be set while passed as commandline options to
-`<code>myisampack</code>`, or set with a `<code>[myisampack]</code>` section in your
+`myisampack`, or set with a `[myisampack]` section in your
 [my.cnf](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) file.
 
 
@@ -69,8 +69,8 @@ The following variables can be set while passed as commandline options to
 ## Uncompressing
 
 
-To uncompress a table compressed with `<code>myisampack</code>`, use the
-`<code>[myisamchk -u](myisamchk-table-information.md)</code>` option.
+To uncompress a table compressed with `myisampack`, use the
+`[myisamchk -u](myisamchk-table-information.md)` option.
 
 
 ## Examples

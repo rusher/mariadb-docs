@@ -8,7 +8,7 @@ MariaDB, since [MariaDB 5.5](../../../../../../release-notes/mariadb-community-s
 ### Event Header Changes
 
 
-If the user variable `<code>@rpl_semi_sync_slave</code>` is set, 2 exta bytes are added after the status byte of a [binlog network stream](3-binlog-network-stream.md) and before the normal binlog event header.
+If the user variable `@rpl_semi_sync_slave` is set, 2 exta bytes are added after the status byte of a [binlog network stream](3-binlog-network-stream.md) and before the normal binlog event header.
 
 
 
@@ -17,10 +17,10 @@ If the user variable `<code>@rpl_semi_sync_slave</code>` is set, 2 exta bytes ar
 
 
 
-**Note** : The packet size, as in the network protocol header, is then: `<code>event_size + 1 byte status + 2 bytes semi-sync replication</code>`.
+**Note** : The packet size, as in the network protocol header, is then: `event_size + 1 byte status + 2 bytes semi-sync replication`.
 
 
-The MariaDB server sets the user variable whenever it is starting replication. For MariaDB Connector/C , the following query must be executed before the call to `<code>mariadb_rpl_open()</code>` is made to enable semi-sync replication.
+The MariaDB server sets the user variable whenever it is starting replication. For MariaDB Connector/C , the following query must be executed before the call to `mariadb_rpl_open()` is made to enable semi-sync replication.
 
 
 ```

@@ -11,10 +11,10 @@ CONCAT_WS(separator,str1,str2,...)
 ## Description
 
 
-`<code>CONCAT_WS()</code>` stands for Concatenate With Separator and is a special form of `<code>[CONCAT()](concat_ws.md)</code>`. The first argument is the separator for the rest of the arguments. The separator is added between the strings to be concatenated. The separator can be a string, as can the rest of the arguments.
+`CONCAT_WS()` stands for Concatenate With Separator and is a special form of `[CONCAT()](concat_ws.md)`. The first argument is the separator for the rest of the arguments. The separator is added between the strings to be concatenated. The separator can be a string, as can the rest of the arguments.
 
 
-If the separator is `<code>NULL</code>`, the result is `<code>NULL</code>`; all other `<code>NULL</code>` values are skipped. This makes `<code>CONCAT_WS()</code>` suitable when you want to concatenate some values and avoid losing all information if one of them is `<code>NULL</code>`.
+If the separator is `NULL`, the result is `NULL`; all other `NULL` values are skipped. This makes `CONCAT_WS()` suitable when you want to concatenate some values and avoid losing all information if one of them is `NULL`.
 
 
 ## Examples
@@ -51,7 +51,7 @@ SELECT CONCAT_WS(', ', @a, @b, @c);
 +-----------------------------+
 ```
 
-Using `<code>CONCAT_WS()</code>` to handle `<code>NULL</code>`s:
+Using `CONCAT_WS()` to handle `NULL`s:
 
 
 ```

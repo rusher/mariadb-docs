@@ -5,7 +5,7 @@
 ## Optimization Description
 
 
-When `<code>n</code>` is sufficiently small, the optimizer will use a [priority queue](https://en.wikipedia.org/wiki/Priority_queue) for sorting. Before the optimization's porting to [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), the alternative was, roughly speaking, to sort the entire output and then pick only first `<code>n</code>` rows.
+When `n` is sufficiently small, the optimizer will use a [priority queue](https://en.wikipedia.org/wiki/Priority_queue) for sorting. Before the optimization's porting to [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), the alternative was, roughly speaking, to sort the entire output and then pick only first `n` rows.
 
 
 NOTE: The problem of choosing which index to use for query with ORDER BY ... LIMIT is a different problem, see [optimizer_join_limit_pref_ratio-optimization](optimizer_join_limit_pref_ratio-optimization.md).
@@ -40,10 +40,10 @@ SET timestamp=1405348239;SET timestamp=1405348239;
 select * from t1 where col1 between 10 and 20 order by col2 limit 100;
 ```
 
-Note the "Priority_queue: Yes" on the last comment line. (`<code>pt-query-digest</code>` is able to parse slow query logs with the Priority_queue field)
+Note the "Priority_queue: Yes" on the last comment line. (`pt-query-digest` is able to parse slow query logs with the Priority_queue field)
 
 
-As for `<code>EXPLAIN</code>`, it will give no indication whether filesort uses priority queue or the generic quicksort and merge algorithm. `<code>Using filesort</code>` will be shown in both cases, by both MariaDB and MySQL.
+As for `EXPLAIN`, it will give no indication whether filesort uses priority queue or the generic quicksort and merge algorithm. `Using filesort` will be shown in both cases, by both MariaDB and MySQL.
 
 
 ## See Also

@@ -64,7 +64,7 @@ The MaxAdmin client application may be run in two different modes, either as an 
 # Working With Administration Interface Users
 
 
-A default installation of MaxScale allows connection to the administration interface using the username of `<code>admin</code>` and the password `<code>mariadb</code>`. This username and password stay in effect as long as no other users have been created for the administration interface. As soon as the first user is added the use of `<code>admin/mariadb</code>` as login credentials will be disabled.
+A default installation of MaxScale allows connection to the administration interface using the username of `admin` and the password `mariadb`. This username and password stay in effect as long as no other users have been created for the administration interface. As soon as the first user is added the use of `admin/mariadb` as login credentials will be disabled.
 
 
 ## What Users Have Been Defined?

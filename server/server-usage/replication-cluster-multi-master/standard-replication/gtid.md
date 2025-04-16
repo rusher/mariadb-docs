@@ -39,8 +39,8 @@ making it easy to uniquely identify the same binlog events on different
 servers that replicate each other. GTIDs are generated for all event groups,
 independent of
 [binlog_format](replication-and-binary-log-system-variables.md#binlog_format)
-(i.e. `<code class="fixed" style="white-space:pre-wrap">ROW</code>`, `<code class="fixed" style="white-space:pre-wrap">STATEMENT</code>`, and
-`<code class="fixed" style="white-space:pre-wrap">MIXED</code>` formats are all supported).
+(i.e. `ROW`, `STATEMENT`, and
+`MIXED` formats are all supported).
 
 
 ## Benefits
@@ -88,7 +88,7 @@ A global transaction ID, or GTID for short, consists of three numbers
 separated with dashes '-'. For example:
 
 
-`<code class="fixed" style="white-space:pre-wrap">0-1-10</code>`
+`0-1-10`
 
 
 * The first number 0 is the domain ID, which is specific for global transaction ID (more on this below). It is a 32-bit unsigned integer.
@@ -105,7 +105,7 @@ globally unique.
 
 Using a 64-bit number provides ample range that there should be no risk of it
 overflowing in the foreseeable future. However, one should not artificially
-(by setting `<code class="fixed" style="white-space:pre-wrap">gtid_seq_no</code>`) inject a GTID with a very high
+(by setting `gtid_seq_no`) inject a GTID with a very high
 sequence number close to the limit of 64-bit.
 
 
@@ -184,10 +184,10 @@ old-style filename/offset to decide where in the primary binlogs to start
 replicating from. To use global transaction ID, use the [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) *master_use_gtid* option:
 
 
-`<code class="fixed" style="white-space:pre-wrap">CHANGE MASTER TO master_use_gtid = { slave_pos | current_pos | no }</code>`
+`CHANGE MASTER TO master_use_gtid = { slave_pos | current_pos | no }`
 
 
-A replica is configured to use GTID by `<code class="fixed" style="white-space:pre-wrap">CHANGE MASTER TO master_use_gtid=slave_pos</code>`.
+A replica is configured to use GTID by `CHANGE MASTER TO master_use_gtid=slave_pos`.
 When the replica connects to the primary, it will start replication at the
 position of the last GTID replicated to the replica, which can be seen in the
 variable [gtid_slave_pos](#gtid_slave_pos).
@@ -205,13 +205,13 @@ replica.
 Since A was never a replica before, it does not have any prior replicated GTIDs,
 and [gtid_slave_pos](#gtid_slave_pos) will be empty.
 To allow A to be added as a replica automatically,
-`<code class="fixed" style="white-space:pre-wrap">master_use_gtid=current_pos</code>` can be used. This will connect
+`master_use_gtid=current_pos` can be used. This will connect
 using the value of the variable [gtid_current_pos](#gtid_current_pos) instead of
 [gtid_slave_pos](#gtid_slave_pos), which also takes into account GTIDs written
 into the binlog when the server was a primary.
 
 
-When using `<code>master_use_gtid=current_pos</code>` there is no need to consider whether a server was a primary or a replica prior to using [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md). But care must be taken not to
+When using `master_use_gtid=current_pos` there is no need to consider whether a server was a primary or a replica prior to using [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md). But care must be taken not to
 inject extra transactions into the binlog on the replica server that are not
 intended to be replicated to other servers. If such an extra transaction
 is the most recent when the replica starts, it will be used as the
@@ -221,7 +221,7 @@ server to go into the binlog, set [sql_log_bin](replication-and-binary-log-syste
 
 
 If it is undesirable that changes to the binlog on the replica affects the
-GTID replication position, then `<code class="fixed" style="white-space:pre-wrap">master_use_gtid=slave_pos</code>`
+GTID replication position, then `master_use_gtid=slave_pos`
 should be used. Then the replica will always connect to the primary at the
 position of the last replicated GTID. This may avoid some surprises for users
 that expect behavior consistent with traditional replication, where the
@@ -229,30 +229,30 @@ replication position is never changed by local changes done on a server.
 
 
 When [GTID strict mode](#gtid_strict_mode) is enabled (by setting
-`<code class="fixed" style="white-space:pre-wrap">@@GLOBAL.gtid_strict_mode</code>` to 1), it is normally best to use
-`<code class="fixed" style="white-space:pre-wrap">current_pos</code>`. In strict mode, extra transactions on the Replica are
+`@@GLOBAL.gtid_strict_mode` to 1), it is normally best to use
+`current_pos`. In strict mode, extra transactions on the Replica are
 disallowed as they would generate a local gtid. The local gtid would contain the current seqno the Replica is at incremented by 1, at the next transaction that will come from the Primary, the Replica would find such seqno already used by its own local transaction and it will stop replicating for safety until the situation is assessed.
 
 
 If a replica is configured with the binlog disabled,
-`<code class="fixed" style="white-space:pre-wrap">current_pos</code>` and `<code class="fixed" style="white-space:pre-wrap">slave_pos</code>` are equivalent.
+`current_pos` and `slave_pos` are equivalent.
 
 
 Even when a replica is configured to connect with the old-style binlog filename
-and offset (`<code class="fixed" style="white-space:pre-wrap">CHANGE MASTER TO master_log_file=..., master_log_pos=...</code>`), it will
-still keep track of the current GTID position in `<code class="fixed" style="white-space:pre-wrap">@@GLOBAL.gtid_slave_pos</code>`. This
+and offset (`CHANGE MASTER TO master_log_file=..., master_log_pos=...`), it will
+still keep track of the current GTID position in `@@GLOBAL.gtid_slave_pos`. This
 means that an existing replica previously configured and running can be changed
 to connect with GTID (to the same or a new master) simply with:
 
 
-`<code class="fixed" style="white-space:pre-wrap">CHANGE MASTER TO master_use_gtid = slave_pos</code>`
+`CHANGE MASTER TO master_use_gtid = slave_pos`
 
 
-The replica remembers that `<code class="fixed" style="white-space:pre-wrap">master_use_gtid=slave_pos|master_pos</code>`
+The replica remembers that `master_use_gtid=slave_pos|master_pos`
 was specified and will use it also
 for subsequent connects, until it is explicitly changed by specifying
-`<code class="fixed" style="white-space:pre-wrap">master_log_file/pos=...</code>` or
-`<code class="fixed" style="white-space:pre-wrap">master_use_gtid=no</code>`.
+`master_log_file/pos=...` or
+`master_use_gtid=no`.
 The current value can be seen as the field Using_Gtid of SHOW SLAVE STATUS:
 
 
@@ -263,7 +263,7 @@ Using_Gtid: Slave_pos
 ```
 
 The replica server internally uses the [mysql.gtid_slave_pos table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) to store the
-GTID position (and so preserve the value of `<code class="fixed" style="white-space:pre-wrap">@@GLOBAL.gtid_slave_pos</code>` across
+GTID position (and so preserve the value of `@@GLOBAL.gtid_slave_pos` across
 server restarts). After upgrading a server to 10.0, it is necessary to run
 [mysql_upgrade](../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md) (as always) to get the table created.
 
@@ -276,7 +276,7 @@ make it transactional on a system configured with [MyISAM](../../../reference/st
 storage engine, for example), use [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md):
 
 
-`<code class="fixed" style="white-space:pre-wrap">ALTER TABLE mysql.gtid_slave_pos ENGINE = InnoDB</code>`
+`ALTER TABLE mysql.gtid_slave_pos ENGINE = InnoDB`
 
 
 The [mysql.gtid_slave_pos table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) should not be modified in any other way. In
@@ -284,7 +284,7 @@ particular, do not try to update the rows in the table to change the replica's
 idea of the current GTID position; instead use
 
 
-`<code class="fixed" style="white-space:pre-wrap">SET GLOBAL gtid_slave_pos = '0-1-1'</code>`
+`SET GLOBAL gtid_slave_pos = '0-1-1'`
 
 
 Starting from [MariaDB 10.3.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md), the server variable [gtid_pos_auto_engines](#gtid_pos_auto_engines) can
@@ -292,19 +292,19 @@ preferably be set to make the server handle this automatically. See the
 description of the [mysql.gtid_slave_pos table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) for details.
 
 
-### Using `<code>current_pos</code>` vs. `<code>slave_pos</code>`
+### Using `current_pos` vs. `slave_pos`
 
 
-When setting the [MASTER_USE_GTID](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid) replication parameter, you have the option of enabling Global Transaction IDs to use either the `<code>current_pos</code>` or `<code>slave_pos</code>` values.
+When setting the [MASTER_USE_GTID](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid) replication parameter, you have the option of enabling Global Transaction IDs to use either the `current_pos` or `slave_pos` values.
 
 
-Using the value `<code>current_pos</code>` causes the replica to set its position based on the [gtid_current_pos](#gtid_current_pos) system variable, which is a union of [gtid_binlog_pos](#gtid_binlog_pos) and [gtid_slave_pos](#gtid_slave_pos). Using the value `<code>slave_pos</code>` causes the replica to instead set its position based on the [gtid_slave_pos](#gtid_slave_pos) system variable.
+Using the value `current_pos` causes the replica to set its position based on the [gtid_current_pos](#gtid_current_pos) system variable, which is a union of [gtid_binlog_pos](#gtid_binlog_pos) and [gtid_slave_pos](#gtid_slave_pos). Using the value `slave_pos` causes the replica to instead set its position based on the [gtid_slave_pos](#gtid_slave_pos) system variable.
 
 
-You may run into issues when you use the value `<code>current_pos</code>` if you write any local transactions on the replica. For instance, if you issue an [INSERT](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) statement or otherwise write to a table while the [replica threads](replication-threads.md#threads-on-the-slave) are stopped, then new local GTIDs may be generated in [gtid_binlog_pos](#gtid_binlog_pos), which will affect the replica's value of [gtid_current_pos](#gtid_current_pos). This may cause errors when the [replica threads](replication-threads.md#threads-on-the-slave) are restarted, since the local GTIDs will be absent from the primary.
+You may run into issues when you use the value `current_pos` if you write any local transactions on the replica. For instance, if you issue an [INSERT](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) statement or otherwise write to a table while the [replica threads](replication-threads.md#threads-on-the-slave) are stopped, then new local GTIDs may be generated in [gtid_binlog_pos](#gtid_binlog_pos), which will affect the replica's value of [gtid_current_pos](#gtid_current_pos). This may cause errors when the [replica threads](replication-threads.md#threads-on-the-slave) are restarted, since the local GTIDs will be absent from the primary.
 
 
-You can correct this issue by setting the [MASTER_USE_GTID](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid) replication parameter to `<code>slave_pos</code>` instead of `<code>current_pos</code>`. For example:
+You can correct this issue by setting the [MASTER_USE_GTID](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid) replication parameter to `slave_pos` instead of `current_pos`. For example:
 
 
 ```
@@ -353,13 +353,13 @@ the start of the primary's binlogs. But if the replica was used for other
 purposes before, the initial position can be explicitly set to empty first:
 
 
-`<code class="fixed" style="white-space:pre-wrap">SET GLOBAL gtid_slave_pos = "";</code>`
+`SET GLOBAL gtid_slave_pos = "";`
 
 
 Next, point the replica to the master with [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md). Specify master_host
 etc. as usual. But instead of specifying master_log_file and master_log_pos
-manually, use `<code class="fixed" style="white-space:pre-wrap">master_use_gtid=current_pos</code>` (or
-`<code class="fixed" style="white-space:pre-wrap">slave_pos</code>` to have GTID do it automatically:
+manually, use `master_use_gtid=current_pos` (or
+`slave_pos` to have GTID do it automatically:
 
 
 ```
@@ -645,14 +645,14 @@ SET gtid_slave_pos="<position with domains removed>"
 ### CHANGE MASTER
 
 
-[CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) has an option, `<code>master_use_gtid=[current_pos|slave_pos|no]</code>`. When enabled (set to
+[CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) has an option, `master_use_gtid=[current_pos|slave_pos|no]`. When enabled (set to
 *current_pos* or *slave_pos*), the replica will connect to the master using the GTID position. When
 disabled (set to "no"), the old-style binlog filename/offset position is used to decide
 where to start replicating when connecting. Unlike in the old-style, when GTID is enabled, the values of the [MASTER_LOG_FILE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_file) and [MASTER_LOG_POS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_pos) options
 are not updated per received event in [master_info_file](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) file.
 
 
-The value of `<code class="fixed" style="white-space:pre-wrap">master_use_gtid</code>` is saved across server restarts (in
+The value of `master_use_gtid` is saved across server restarts (in
 master.info). The current value can be seen as the field Using_Gtid in the
 output of SHOW SLAVE STATUS.
 
@@ -671,7 +671,7 @@ position is reached, the replica will stop.
 The syntax for this is:
 
 
-`<code class="fixed" style="white-space:pre-wrap"> START SLAVE UNTIL master_gtid_pos = <GTID position></code>`
+` START SLAVE UNTIL master_gtid_pos = <GTID position>`
 
 
 The replica will start replication from the current GTID position, run up to
@@ -685,7 +685,7 @@ If multiple GTIDs are specified, then they must be with distinct replication
 domain ID, for example:
 
 
-`<code class="fixed" style="white-space:pre-wrap"> START SLAVE UNTIL master_gtid_pos = "1-11-100,2-21-50"</code>`
+` START SLAVE UNTIL master_gtid_pos = "1-11-100,2-21-50"`
 
 
 With multiple domains in the UNTIL condition, each domain runs only up to and
@@ -699,7 +699,7 @@ the domain is stopped immediately, nothing is replicated from that domain. In
 particular, specifying the empty string will stop the replica immediately.
 
 
-When using `<code class="fixed" style="white-space:pre-wrap">START SLAVE UNTIL master_gtid_pos = XXX</code>`, if the UNTIL position is
+When using `START SLAVE UNTIL master_gtid_pos = XXX`, if the UNTIL position is
 present in the primary's binlog then it is permissible for the start position
 to be missing on the primary. In this case, replication for the associated
 domains stop immediately.
@@ -707,12 +707,12 @@ domains stop immediately.
 
 Both replica threads must be already stopped when using UNTIL master_gtid_pos,
 otherwise an error occurs. It is also an error if the replica is not configured
-to use GTID (`<code class="fixed" style="white-space:pre-wrap">CHANGE MASTER TO master_use_gtid=current_pos|slave_pos</code>`). And both threads must be
-started at the same time, the `<code class="fixed" style="white-space:pre-wrap">IO_THREAD</code>` or `<code class="fixed" style="white-space:pre-wrap">SQL_THREAD</code>` options can not be used
+to use GTID (`CHANGE MASTER TO master_use_gtid=current_pos|slave_pos`). And both threads must be
+started at the same time, the `IO_THREAD` or `SQL_THREAD` options can not be used
 to start only one of them.
 
 
-`<code class="fixed" style="white-space:pre-wrap">START SLAVE UNTIL master_gtid_pos=XXX</code>` is particularly useful for promoting a
+`START SLAVE UNTIL master_gtid_pos=XXX` is particularly useful for promoting a
 new primary among a set of replicas when the old master goes away and replicas may
 have reached different positions in the old primary's binlog. The new primary
 needs to be ahead of all the other replicas to avoid losing events. This can be
@@ -738,7 +738,7 @@ set to replicate from it.
 
 #### SQL_BEFORE_GTIDS|SQL_AFTER_GTIDS
 
-[MariaDB 11.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-113.md) extended the START SLAVE UNTIL command with the options `<code>SQL_BEFORE_GTIDS</code>` and `<code>SQL_AFTER_GTIDS</code>` to allow control of whether the replica stops before or after a provided GTID state. Its
+[MariaDB 11.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-113.md) extended the START SLAVE UNTIL command with the options `SQL_BEFORE_GTIDS` and `SQL_AFTER_GTIDS` to allow control of whether the replica stops before or after a provided GTID state. Its
 syntax is:
 
 ```
@@ -759,8 +759,8 @@ If a primary server has a binary log consisting of the following GTIDs:
 * 0-1-3
 * 1-1-3
 
-If a fresh replica (i.e. one with an empty GTID position, @@gtid_slave_pos='') is started with `<code>SQL_BEFORE_GTIDS</code>`, i.e. `<code>START SLAVE UNTIL SQL_BEFORE_GTIDS=”1-1-2”</code>`, the resulting gtid_slave_pos of the replica will be “0-1-2,1-1-1”. This is because the replica will execute all events until it sees the transaction with GTID 1-1-2 and immediately stop without executing it.
-However, if a replica is started with `<code>SQL_AFTER_GTIDS</code>`, i.e. `<code>START SLAVE UNTIL SQL_AFTER_GTIDS=”1-1-2”</code>` then the resulting gtid_slave_pos of the replica will be “1-1-2”. This is because it will only execute events from domain 1 until it has executed the provided GTID.
+If a fresh replica (i.e. one with an empty GTID position, @@gtid_slave_pos='') is started with `SQL_BEFORE_GTIDS`, i.e. `START SLAVE UNTIL SQL_BEFORE_GTIDS=”1-1-2”`, the resulting gtid_slave_pos of the replica will be “0-1-2,1-1-1”. This is because the replica will execute all events until it sees the transaction with GTID 1-1-2 and immediately stop without executing it.
+However, if a replica is started with `SQL_AFTER_GTIDS`, i.e. `START SLAVE UNTIL SQL_AFTER_GTIDS=”1-1-2”` then the resulting gtid_slave_pos of the replica will be “1-1-2”. This is because it will only execute events from domain 1 until it has executed the provided GTID.
 
 
 ### BINLOG_GTID_POS().
@@ -783,7 +783,7 @@ The [MASTER_GTID_WAIT](../../../reference/sql-statements-and-structure/sql-state
 ##### MariaDB starting with [11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md)
 Prior to [MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), when a replica connects, MariaDB needs to scan [binlog](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) files from the beginning in order to find the place to start replicating. If replica reconnects are frequent, this can be slow.
 [MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md) introduces indexing on the binlog files, allowing GTIDs to be quickly found. This also detects if old-style replication tries to connect at an incorrect file offset (eg. in the middle of an event), avoiding sending potentially corrupted events.
-The feature is enabled by default. The size of the binlog index file (`<code>.idx</code>`) is generally less than 1% the size of the binlog, so should not have any negative impacts and should not normally need tuning. However, the feature can be disabled or managed with the following system variables:
+The feature is enabled by default. The size of the binlog index file (`.idx`) is generally less than 1% the size of the binlog, so should not have any negative impacts and should not normally need tuning. However, the feature can be disabled or managed with the following system variables:
 
 * [binlog_gtid_index](replication-and-binary-log-system-variables.md#binlog_gtid_index) - enable/disable the feature
 * [binlog_gtid_index_page_size](replication-and-binary-log-system-variables.md#binlog_gtid_index_page_size) - adjust the size of the pages
@@ -799,31 +799,31 @@ There are two status variables that can be used to monitor the effectiveness of 
 ## System Variables
 
 
-#### `<code>[binlog_gtid_index](replication-and-binary-log-system-variables.md#binlog_gtid_index)</code>`
+#### `[binlog_gtid_index](replication-and-binary-log-system-variables.md#binlog_gtid_index)`
 
 
 Enables/disables [binlog indexing](#binlog-indexing).
 
 
-#### `<code>[binlog_gtid_index_page_size](replication-and-binary-log-system-variables.md#binlog_gtid_index_page_size)</code>`
+#### `[binlog_gtid_index_page_size](replication-and-binary-log-system-variables.md#binlog_gtid_index_page_size)`
 
 
 Adjusts the size of the pages
 
 
-#### `<code>[binlog_gtid_index_span_min](replication-and-binary-log-system-variables.md#binlog_gtid_index_span_min)</code>`
+#### `[binlog_gtid_index_span_min](replication-and-binary-log-system-variables.md#binlog_gtid_index_span_min)`
 
 
 Adjusts the sparseness of the index
 
 
-#### `<code>gtid_slave_pos</code>`
+#### `gtid_slave_pos`
 
 
 This system variable contains the GTID of the last transaction applied to the database by the server's [replica threads](replication-threads.md#threads-on-the-slave) for each replication domain. This system variable's value is automatically updated whenever a [replica thread](replication-threads.md#threads-on-the-slave) applies an event group. This system variable's value can also be manually changed by users, so that the user can change the GTID position of the [replica threads](replication-threads.md#threads-on-the-slave).
 
 
-When using [multi-source replication](multi-source-replication.md), the same GTID position is shared by all replica connections. In this case, different primaries should use different replication domains by configuring different [gtid_domain_id](#gtid_domain_id) values. If one primary was using a [gtid_domain_id](#gtid_domain_id) value of `<code>1</code>`, and if another primary was using a [gtid_domain_id](#gtid_domain_id) value of `<code>2</code>`, then any replicas replicating from both primaries would have GTIDs with both [gtid_domain_id](#gtid_domain_id) values in `<code>gtid_slave_pos</code>`.
+When using [multi-source replication](multi-source-replication.md), the same GTID position is shared by all replica connections. In this case, different primaries should use different replication domains by configuring different [gtid_domain_id](#gtid_domain_id) values. If one primary was using a [gtid_domain_id](#gtid_domain_id) value of `1`, and if another primary was using a [gtid_domain_id](#gtid_domain_id) value of `2`, then any replicas replicating from both primaries would have GTIDs with both [gtid_domain_id](#gtid_domain_id) values in `gtid_slave_pos`.
 
 
 This system variable's value can be manually changed by executing [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session), but all replica threads to be stopped with [STOP SLAVE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) first. For example:
@@ -842,10 +842,10 @@ This system variable's value can be reset by manually changing its value to the 
 SET GLOBAL gtid_slave_pos = '';
 ```
 
-The GTID position defined by `<code>gtid_slave_pos</code>` can be used as a replica's starting replication position by setting [MASTER_USE_GTID=slave_pos](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid) when the replica is configured with the [CHANGE MASTER TO](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement. As an alternative, the [gtid_current_pos](#gtid_current_pos) system variable can also be used as a replica's starting replication position.
+The GTID position defined by `gtid_slave_pos` can be used as a replica's starting replication position by setting [MASTER_USE_GTID=slave_pos](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid) when the replica is configured with the [CHANGE MASTER TO](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement. As an alternative, the [gtid_current_pos](#gtid_current_pos) system variable can also be used as a replica's starting replication position.
 
 
-If a user sets the value of the `<code>gtid_slave_pos</code>` system variable, and [gtid_binlog_pos](#gtid_binlog_pos) contains later GTIDs for certain replication domains, then [gtid_current_pos](#gtid_current_pos) will contain the GTIDs from [gtid_binlog_pos](#gtid_binlog_pos) for those replication domains. To protect users in this scenario, if a user sets the `<code>gtid_slave_pos</code>` system variable to a GTID position that is behind the GTID position in [gtid_binlog_pos](#gtid_binlog_pos), then the server will give the user a warning.
+If a user sets the value of the `gtid_slave_pos` system variable, and [gtid_binlog_pos](#gtid_binlog_pos) contains later GTIDs for certain replication domains, then [gtid_current_pos](#gtid_current_pos) will contain the GTIDs from [gtid_binlog_pos](#gtid_binlog_pos) for those replication domains. To protect users in this scenario, if a user sets the `gtid_slave_pos` system variable to a GTID position that is behind the GTID position in [gtid_binlog_pos](#gtid_binlog_pos), then the server will give the user a warning.
 
 
 This can help protect the user when the replica is configured to use [gtid_current_pos](#gtid_current_pos) as its replication position. This can also help protect the user when a server has been rolled back to restart replication from an earlier point in time, but the user has forgotten to reset [gtid_binlog_pos](#gtid_binlog_pos) with [RESET MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master.md).
@@ -857,12 +857,12 @@ The [mysql.gtid_slave_pos](../../../reference/sql-statements-and-structure/sql-s
 * Commandline: None
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>string</code>`
+* Data Type: `string`
 * Default: Null
 
 
 
-#### `<code>gtid_binlog_pos</code>`
+#### `gtid_binlog_pos`
 
 
 This variable is the GTID of the last event group written to the binary log,
@@ -872,22 +872,22 @@ for each replication domain.
 Note that when the binlog is empty (such as on a fresh install
 with [--skip-test-db](../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md#not-creating-the-test-database-and-anonymous-user),
 or after [RESET MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master.md)), there are no event groups written in any replication domain, so in
-this case the value of `<code>gtid_binlog_pos</code>` will be the empty string.
+this case the value of `gtid_binlog_pos` will be the empty string.
 
 
 The value is read-only, but it is updated whenever a DML or DDL statement is
-written to the binary log. The value can be reset by executing [RESET MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master.md), which will also delete all binary logs. However, note that [RESET MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master.md) does not also reset [gtid_slave_pos](#gtid_slave_pos). Since [gtid_current_pos](#gtid_current_pos) is the union of [gtid_slave_pos](#gtid_slave_pos) and `<code>gtid_binlog_pos</code>`, that means that new GTIDs added to `<code>gtid_binlog_pos</code>` can lag behind those in [gtid_current_pos](#gtid_current_pos) if [gtid_slave_pos](#gtid_slave_pos) contains GTIDs in the same domain with higher sequence numbers. If you want to reset [gtid_current_pos](#gtid_current_pos) for a specific GTID domain in cases like this, then you will also have to change [gtid_slave_pos](#gtid_slave_pos) in addition to executing [RESET MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master.md). See [gtid_slave_pos](#gtid_slave_pos) for notes on how to change its value.
+written to the binary log. The value can be reset by executing [RESET MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master.md), which will also delete all binary logs. However, note that [RESET MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master.md) does not also reset [gtid_slave_pos](#gtid_slave_pos). Since [gtid_current_pos](#gtid_current_pos) is the union of [gtid_slave_pos](#gtid_slave_pos) and `gtid_binlog_pos`, that means that new GTIDs added to `gtid_binlog_pos` can lag behind those in [gtid_current_pos](#gtid_current_pos) if [gtid_slave_pos](#gtid_slave_pos) contains GTIDs in the same domain with higher sequence numbers. If you want to reset [gtid_current_pos](#gtid_current_pos) for a specific GTID domain in cases like this, then you will also have to change [gtid_slave_pos](#gtid_slave_pos) in addition to executing [RESET MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master.md). See [gtid_slave_pos](#gtid_slave_pos) for notes on how to change its value.
 
 
 * Commandline: None
 * Scope: Global
 * Dynamic: Read-only
-* Data Type: `<code>string</code>`
+* Data Type: `string`
 * Default: Null
 
 
 
-#### `<code>gtid_binlog_state</code>`
+#### `gtid_binlog_state`
 
 
 The variable gtid_binlog_state holds the internal state of the binlog. The
@@ -934,12 +934,12 @@ as if RESET MASTER had been run.
 * Commandline: None
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>string</code>`
+* Data Type: `string`
 * Default: Null
 
 
 
-#### `<code>gtid_current_pos</code>`
+#### `gtid_current_pos`
 
 
 This system variable contains the GTID of the last transaction applied to the database for each replication domain.
@@ -956,32 +956,32 @@ For each replication domain, if the [server_id](replication-and-binary-log-syste
 [gtid_slave_pos](#gtid_slave_pos) will be used for that domain.
 
 
-GTIDs from [gtid_binlog_pos](#gtid_binlog_pos) in which the [server_id](replication-and-binary-log-system-variables.md#server_id) of the GTID is **not** equal to the server's own [server_id](replication-and-binary-log-system-variables.md#server_id) are effectively ignored. If [gtid_binlog_pos](#gtid_binlog_pos) contains a GTID for a given replication domain, but the [server_id](replication-and-binary-log-system-variables.md#server_id) of the GTID is **not** equal to the server's own [server_id](replication-and-binary-log-system-variables.md#server_id), and [gtid_slave_pos](#gtid_slave_pos) does **not** contain a GTID for that given replication domain, then `<code>gtid_current_pos</code>` will **not** contain any GTID for that replication domain.
+GTIDs from [gtid_binlog_pos](#gtid_binlog_pos) in which the [server_id](replication-and-binary-log-system-variables.md#server_id) of the GTID is **not** equal to the server's own [server_id](replication-and-binary-log-system-variables.md#server_id) are effectively ignored. If [gtid_binlog_pos](#gtid_binlog_pos) contains a GTID for a given replication domain, but the [server_id](replication-and-binary-log-system-variables.md#server_id) of the GTID is **not** equal to the server's own [server_id](replication-and-binary-log-system-variables.md#server_id), and [gtid_slave_pos](#gtid_slave_pos) does **not** contain a GTID for that given replication domain, then `gtid_current_pos` will **not** contain any GTID for that replication domain.
 
 
-Thus, `<code>gtid_current_pos</code>` contains the most recent GTID
+Thus, `gtid_current_pos` contains the most recent GTID
 executed on the server, whether this was done as a primary or as a replica.
 
 
-The GTID position defined by `<code>gtid_current_pos</code>` can be used as a replica's starting replication position by setting [MASTER_USE_GTID=current_pos](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid) when the replica is configured with the [CHANGE MASTER TO](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement. As an alternative, the [gtid_slave_pos](#gtid_slave_pos) system variable can also be used as a replica's starting replication position.
+The GTID position defined by `gtid_current_pos` can be used as a replica's starting replication position by setting [MASTER_USE_GTID=current_pos](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid) when the replica is configured with the [CHANGE MASTER TO](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement. As an alternative, the [gtid_slave_pos](#gtid_slave_pos) system variable can also be used as a replica's starting replication position.
 
 
-The value of `<code>gtid_current_pos</code>` is read-only, but it is updated whenever a transaction is
+The value of `gtid_current_pos` is read-only, but it is updated whenever a transaction is
 written to the binary log and/or replicated by a replica thread, and that transaction's GTID is considered *newer* than the current GTID for that domain. See above for the rules on how to determine if a GTID would be considered *newer*.
 
 
-If you need to reset the value, see the notes on resetting [gtid_slave_pos](#gtid_slave_pos) and [gtid_binlog_pos](#gtid_binlog_pos), since `<code>gtid_current_pos</code>` is formed from the values of those variables.
+If you need to reset the value, see the notes on resetting [gtid_slave_pos](#gtid_slave_pos) and [gtid_binlog_pos](#gtid_binlog_pos), since `gtid_current_pos` is formed from the values of those variables.
 
 
 * Commandline: None
 * Scope: Global
 * Dynamic: Read-only
-* Data Type: `<code>string</code>`
+* Data Type: `string`
 * Default: Null
 
 
 
-#### `<code>gtid_strict_mode</code>`
+#### `gtid_strict_mode`
 
 
 The GTID strict mode is an optional setting that can be used to help the DBA
@@ -995,7 +995,7 @@ servers in a replication hierarchy:
 
 
 1. If a replica server tries to replicate a GTID with a sequence number lower than what is already in the binlog for that replication domain, the SQL thread stops with an error (this indicates an extra transaction in the replica binlog not present on the primary).
-1. Similarly, an attempt to manually binlog a GTID with a lower sequence number (by setting `<code class="fixed" style="white-space:pre-wrap">@@SESSION.gtid_seq_no</code>`) is rejected with an error.
+1. Similarly, an attempt to manually binlog a GTID with a lower sequence number (by setting `@@SESSION.gtid_seq_no`) is rejected with an error.
 1. If the replica tries to connect starting at a GTID that is missing in the primary's binlog, this is an error in GTID strict mode even if a GTID exists with a higher sequence number (this indicates a GTID on the replica missing on the primary). Note that this error is controlled by the setting of GTID strict mode on the connecting replica server.
 
 
@@ -1015,41 +1015,41 @@ problem is encountered. This allows the DBA to become aware of the problem and
 take corrective actions to avoid similar issues in the future. One way to
 recover from such an error is to temporarily disable GTID strict mode on the
 offending replica, to be able to replicate past the problem point (perhaps using
-`<code class="fixed" style="white-space:pre-wrap">START SLAVE UNTIL master_gtid_pos=XXX</code>`).
+`START SLAVE UNTIL master_gtid_pos=XXX`).
 
 
-* Commandline: `<code>--gtid-strict-mode[={0|1}]</code>`
+* Commandline: `--gtid-strict-mode[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>boolean</code>`
-* Default: `<code>Off</code>`
+* Data Type: `boolean`
+* Default: `Off`
 
 
 
-#### `<code>gtid_domain_id</code>`
+#### `gtid_domain_id`
 
 
 * Description: This variable is used to decide which replication domain new GTIDs are logged in for a primary server. See [Use with multi-source replication and other multi-primary setups](#use-with-multi-source-replication-and-other-multi-primary-setups) for details. This variable can also be set on the session level by a user with the SUPER privilege. This is used by [mariadb-binlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) to preserve the domain ID of GTID events.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--gtid-domain-id=#</code>`
+* Commandline: `--gtid-domain-id=#`
 * Scope: Global, Session
 * Dynamic: Yes
-* Data Type: `<code>numeric (32-bit unsigned integer)</code>`
-* Default Value: `<code>0</code>`
-* Range: `<code>0</code>` to `<code>4294967295</code>`
+* Data Type: `numeric (32-bit unsigned integer)`
+* Default Value: `0`
+* Range: `0` to `4294967295`
 
 
 
-#### `<code>last_gtid</code>`
+#### `last_gtid`
 
 
 * Description: Holds the GTID that was assigned to the last transaction, or statement that was logged to the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). If the binary log is disabled, or if no transaction or statement was executed in the session yet, then the value is an empty string.
 * Scope: Session
 * Dynamic: Read-only
-* Data Type: `<code>string</code>`
+* Data Type: `string`
 
 
 
-#### `<code>server_id</code>`
+#### `server_id`
 
 
 * Description: Server_id can be set on the session level to change which server_id value is logged in binlog events (both GTID and other events). This is used by mariadb-binlog to preserve the server ID of GTID events.
@@ -1059,32 +1059,32 @@ offending replica, to be able to replicate past the problem point (perhaps using
 
 
 
-#### `<code>gtid_seq_no</code>`
+#### `gtid_seq_no`
 
 
 * Description: gtid_seq_no can be set on the session level to change which sequence number is logged in the following GTID event. The variable, along with [@@gtid_domain_id](#gtid_domain_id) and [@@server_id](#server_id), is typically used by [mariadb-binlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) to set up the gtid value of the transaction being decoded into the output.
 * Commandline: None
 * Scope: Session
 * Dynamic: Yes
-* Data Type: `<code>numeric (64-bit unsigned integer)</code>`
+* Data Type: `numeric (64-bit unsigned integer)`
 * Default: Null
 
 
 
-#### `<code>gtid_ignore_duplicates</code>`
+#### `gtid_ignore_duplicates`
 
 
 * Description: When set, different primary connections in multi-source replication are allowed to receive and process event groups with the same GTID (when using GTID mode). Only one will be applied, any others will be ignored. Within a given replication domain, just the sequence number will be used to decide whether a given GTID has been already applied; this means it is the responsibility of the user to ensure that GTID sequence numbers are strictly increasing. With gtid_ignore_duplicates=OFF, a duplicate event based on domain id and sequence number, will be executed. When --gtid-ignore-duplicate is set, a replica is allowed to connect at a GTID position that does not exist on the primary. The replica will start receiving
 events once a GTID with a higher sequence number is available on the primary (within that domain). This can be used to allow a replica to connect at a GTID position that was filtered on the primary, eg. using [--replicate-ignore-table](replication-and-binary-log-system-variables.md#replicate_ignore_table). See also [Multiple Redundant Replication Paths](#multiple-redundant-replication-paths)
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--gtid-ignore-duplicates=#</code>`
+* Commandline: `--gtid-ignore-duplicates=#`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>boolean</code>`
-* Default: `<code>OFF</code>`
+* Data Type: `boolean`
+* Default: `OFF`
 
 
 
-#### `<code>gtid_pos_auto_engines</code>`
+#### `gtid_pos_auto_engines`
 
 
 This variable is used to enable multiple versions of the [mysql.gtid_slave_pos](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) table, one for each transactional storage engine in use. This can improve replication performance if a server is using multiple different storage engines in different transactions.
@@ -1107,24 +1107,24 @@ possible to specify engines that are not enabled in the server. The server will 
 Removing a storage engine from the variable will have no effect once the new tables have been created - as long as these tables are detected, they will be used.
 
 
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--gtid-pos-auto-engines=value</code>`
+* Commandline: `--gtid-pos-auto-engines=value`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>string</code>` (comma-separated list of engine names)
+* Data Type: `string` (comma-separated list of engine names)
 * Default: empty
 
 
 
-#### `<code>gtid_cleanup_batch_size</code>`
+#### `gtid_cleanup_batch_size`
 
 
 * Description: Normally does not need tuning. How many old rows must accumulate in the [mysql.gtid_slave_pos table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) before a background job will be run to delete them. Can be increased to reduce number of commits if using many different engines with [gtid_pos_auto_engines](#gtid_pos_auto_engines), or to reduce CPU overhead if using a huge number of different [gtid_domain_ids](#gtid_domain_id). Can be decreased to reduce number of old rows in the table.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--gtid-cleanup-batch-size=#</code>`
+* Commandline: `--gtid-cleanup-batch-size=#`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default: `<code>64</code>`
-* Range: `<code>0</code>` to `<code>2147483647</code>`
+* Data Type: `numeric`
+* Default: `64`
+* Range: `0` to `2147483647`
 * Introduced: [MariaDB 10.4.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1041-release-notes.md)
 
 

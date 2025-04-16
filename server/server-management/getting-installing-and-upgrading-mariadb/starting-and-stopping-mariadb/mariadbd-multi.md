@@ -5,54 +5,54 @@ Before using mariadbd-multi be sure that you understand the meanings of the opti
 
 
 
-The `<code>mariadbd-multi</code>` startup script is in MariaDB distributions on Linux and Unix. It is a wrapper that is designed to manage several `<code>mariadbd</code>` processes running on the same host.
+The `mariadbd-multi` startup script is in MariaDB distributions on Linux and Unix. It is a wrapper that is designed to manage several `mariadbd` processes running on the same host.
 
 
-Prior to [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysqld_multi</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqld_multi`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
-In order for multiple `<code>mariadbd</code>` processes to work on the same host, these processes must:
+In order for multiple `mariadbd` processes to work on the same host, these processes must:
 
 
 * Use different Unix socket files for local connections.
 * Use different TCP/IP ports for network connections.
 * Use different data directories.
-* Use different process ID files (specified by the `<code>--pid-file</code>` option) if using `<code>[mariadbd-safe](mariadbd-safe.md)</code>` to start `<code>mariadbd</code>`.
+* Use different process ID files (specified by the `--pid-file` option) if using `[mariadbd-safe](mariadbd-safe.md)` to start `mariadbd`.
 
 
-`<code>mariadbd-multi</code>` can start or stop servers, or report their current status.
+`mariadbd-multi` can start or stop servers, or report their current status.
 
 
 ## Using mariadbd-multi
 
 
-The command to use `<code>mariadbd-multi</code>` and the general syntax is:
+The command to use `mariadbd-multi` and the general syntax is:
 
 
 ```
 mariadbd-multi [options] {start|stop|report} [GNR[,GNR] ...]
 ```
 
-`<code>start</code>`, `<code>stop</code>`, and `<code>report</code>` indicate which operation to perform.
+`start`, `stop`, and `report` indicate which operation to perform.
 
 
-You can specify which servers to perform the operation on by providing one or more `<code>GNR</code>` values. `<code>GNR</code>` refers to an option group number, and it is explained more in the [option groups](#option-groups) section below. If there is no `<code>GNR</code>` list, then `<code>mariadbd-multi</code>` performs the operation for all `<code>GNR</code>` values found in its option files.
+You can specify which servers to perform the operation on by providing one or more `GNR` values. `GNR` refers to an option group number, and it is explained more in the [option groups](#option-groups) section below. If there is no `GNR` list, then `mariadbd-multi` performs the operation for all `GNR` values found in its option files.
 
 
-Multiple `<code>GNR</code>` values can be specified as a comma-separated list. `<code>GNR</code>` values can also be specified as a range by separating the numbers by a dash. There must not be any whitespace characters in the `<code>GNR</code>` list.
+Multiple `GNR` values can be specified as a comma-separated list. `GNR` values can also be specified as a range by separating the numbers by a dash. There must not be any whitespace characters in the `GNR` list.
 
 
 For example:
 
 
-This command starts a single server using option group `<code>[mariadbd17]</code>`:
+This command starts a single server using option group `[mariadbd17]`:
 
 
 ```
 mariadbd-multi start 17
 ```
 
-This command stops several servers, using option groups `<code>[mariadbd8]</code>` and `<code>[mariadbd10]</code>` through `<code>[mariadbd13]</code>`:
+This command stops several servers, using option groups `[mariadbd8]` and `[mariadbd10]` through `[mariadbd13]`:
 
 
 ```
@@ -62,7 +62,7 @@ mariadbd-multi stop 8,10-13
 ### Options
 
 
-`<code>mariadbd-multi</code>` supports the following options:
+`mariadbd-multi` supports the following options:
 
 
 
@@ -88,7 +88,7 @@ mariadbd-multi stop 8,10-13
 ### Option Files
 
 
-In addition to reading options from the command-line, `<code>mariadbd-multi</code>` can also read options from [option files](../configuring-mariadb-with-option-files.md). If an unknown option is provided to `<code>mariadbd-multi</code>` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadbd-multi` can also read options from [option files](../configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadbd-multi` in an option file, then it is ignored.
 
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
@@ -109,7 +109,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 #### Option Groups
 
 
-`<code>mariadbd-multi</code>` reads options from the following [option groups](../configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb-with-option-files.md):
+`mariadbd-multi` reads options from the following [option groups](../configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb-with-option-files.md):
 
 
 
@@ -120,7 +120,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-`<code>mariadbd-multi</code>` also searches [option files](../configuring-mariadb-with-option-files.md) for [option groups](../configuring-mariadb-with-option-files.md#option-groups) with names like `<code>[mariadbdN]</code>`, where `<code>N</code>` can be any positive integer. This number is referred to in the following discussion as the option group number, or `<code>GNR</code>`:
+`mariadbd-multi` also searches [option files](../configuring-mariadb-with-option-files.md) for [option groups](../configuring-mariadb-with-option-files.md#option-groups) with names like `[mariadbdN]`, where `N` can be any positive integer. This number is referred to in the following discussion as the option group number, or `GNR`:
 
 
 
@@ -131,13 +131,13 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-`<code>GNR</code>` values distinguish option groups from one another and are used as arguments to `<code>mariadbd-multi</code>` to specify which servers you want to start, stop, or obtain a status report for. The `<code>GNR</code>` value should be the number at the end of the option group name in the option file. For example, the `<code>GNR</code>` for an option group named `<code>[mariadbd17]</code>` is `<code>17</code>`.
+`GNR` values distinguish option groups from one another and are used as arguments to `mariadbd-multi` to specify which servers you want to start, stop, or obtain a status report for. The `GNR` value should be the number at the end of the option group name in the option file. For example, the `GNR` for an option group named `[mariadbd17]` is `17`.
 
 
-Options listed in these option groups are the same that you would use in the regular server option groups used for configuring `<code>mariadbd</code>`. However, when using multiple servers, it is necessary that each one use its own value for options such as the Unix socket file and TCP/IP port number.
+Options listed in these option groups are the same that you would use in the regular server option groups used for configuring `mariadbd`. However, when using multiple servers, it is necessary that each one use its own value for options such as the Unix socket file and TCP/IP port number.
 
 
-The `<code>[mariadbd-multi]</code>` option group can be used for options that are needed for `<code>mariadbd-multi</code>` itself. `<code>[mariadbdN]</code>` option groups can be used for options passed to specific `<code>mariadbd</code>` instances.
+The `[mariadbd-multi]` option group can be used for options that are needed for `mariadbd-multi` itself. `[mariadbdN]` option groups can be used for options passed to specific `mariadbd` instances.
 
 
 The regular server [option groups](../configuring-mariadb-with-option-files.md#option-groups) can also be used for common options that are read by all instances:
@@ -167,7 +167,7 @@ mariadbd-multi --example
 ### Authentication and Privileges
 
 
-Make sure that the MariaDB account used for stopping the `<code>mariadbd</code>` processes (with the [mariadb-admin](../../../clients-and-utilities/mariadb-admin.md) utility) has the same user name and password for each server. Also, make sure that the account has the `<code>SHUTDOWN</code>` privilege. If the servers that you want to manage have different user names or passwords for the administrative accounts, you might want to create an account on each server that has the same user name and password. For example, you might set up a common `<code>multi_admin</code>` account by executing the following commands for each server:
+Make sure that the MariaDB account used for stopping the `mariadbd` processes (with the [mariadb-admin](../../../clients-and-utilities/mariadb-admin.md) utility) has the same user name and password for each server. Also, make sure that the account has the `SHUTDOWN` privilege. If the servers that you want to manage have different user names or passwords for the administrative accounts, you might want to create an account on each server that has the same user name and password. For example, you might set up a common `multi_admin` account by executing the following commands for each server:
 
 
 ```
@@ -177,16 +177,16 @@ mysql> GRANT SHUTDOWN ON *.*
  -> TO ´multi_admin´@´localhost´ IDENTIFIED BY ´multipass´;
 ```
 
-Change the connection parameters appropriately when connecting to each one. Note that the host name part of the account name must allow you to connect as `<code>multi_admin</code>` from the host where you want to run `<code>mariadbd-multi</code>`.
+Change the connection parameters appropriately when connecting to each one. Note that the host name part of the account name must allow you to connect as `multi_admin` from the host where you want to run `mariadbd-multi`.
 
 
 ## User Account
 
 
-Make sure that the data directory for each server is fully accessible to the Unix account that the specific `<code>mariadbd</code>` process is started as. If you run the `<code>mariadbd-multi</code>` script as the Unix `<code>root</code>` account, and if you want the `<code>mariadbd</code>` process to be started with another Unix account, then you can use use the `<code>--user</code>` option with `<code>mariadbd</code>`. If you specify the `<code>--user</code>` option in an option file, and if you did not run the `<code>mariadbd-multi</code>` script as the Unix `<code>root</code>` account, then it will just log a warning and the `<code>mariadbd</code>` processes are started under the original Unix account.
+Make sure that the data directory for each server is fully accessible to the Unix account that the specific `mariadbd` process is started as. If you run the `mariadbd-multi` script as the Unix `root` account, and if you want the `mariadbd` process to be started with another Unix account, then you can use use the `--user` option with `mariadbd`. If you specify the `--user` option in an option file, and if you did not run the `mariadbd-multi` script as the Unix `root` account, then it will just log a warning and the `mariadbd` processes are started under the original Unix account.
 
 
-Do not run the `<code>mariadbd</code>` process as the Unix `<code>root</code>` account, unless you know what you are doing.
+Do not run the `mariadbd` process as the Unix `root` account, unless you know what you are doing.
 
 
 ## Example

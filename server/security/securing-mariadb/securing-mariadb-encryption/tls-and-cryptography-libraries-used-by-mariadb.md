@@ -14,7 +14,7 @@ When a MariaDB client or client library is compiled with TLS and cryptography su
 Dynamically linking MariaDB to the system's TLS and cryptography library can often be beneficial, since this allows you to fix bugs in the system's TLS and cryptography library independently of MariaDB. For example, when information on the [Heartbleed Bug](https://heartbleed.com/) in [OpenSSL](https://www.openssl.org/) was released in 2014, the bug could be mitigated by simply updating your system to use a fixed version of the [OpenSSL](https://www.openssl.org/) library, and then restarting the MariaDB Server.
 
 
-You can verify that `<code>mysqld</code>` is in fact dynamically linked to the [OpenSSL](https://www.openssl.org/) shared library on your system by using the `<code>[ldd](https://linux.die.net/man/1/ldd)</code>` command:
+You can verify that `mysqld` is in fact dynamically linked to the [OpenSSL](https://www.openssl.org/) shared library on your system by using the `[ldd](https://linux.die.net/man/1/ldd)` command:
 
 
 ```
@@ -23,13 +23,13 @@ $ ldd $(which mysqld) | grep -E '(libssl|libcrypto)'
         libcrypto.so.10 => /lib64/libcrypto.so.10 (0x00007f8735f25000)
 ```
 
-If the command does not return any results, then either your `<code>mysqld</code>` is statically linked to the TLS and cryptography library on your system or your `<code>mysqld</code>` is not built with TLS and cryptography support at all.
+If the command does not return any results, then either your `mysqld` is statically linked to the TLS and cryptography library on your system or your `mysqld` is not built with TLS and cryptography support at all.
 
 
 ## Checking If the Server Uses OpenSSL
 
 
-If you aren't sure whether your server is linked with [OpenSSL](https://www.openssl.org/) or the bundled TLS library, then you can check the value of the `<code>[have_openssl](data-in-transit-encryption/ssltls-system-variables.md)</code>` system variable. For example:
+If you aren't sure whether your server is linked with [OpenSSL](https://www.openssl.org/) or the bundled TLS library, then you can check the value of the `[have_openssl](data-in-transit-encryption/ssltls-system-variables.md)` system variable. For example:
 
 
 ```
@@ -44,7 +44,7 @@ SHOW GLOBAL VARIABLES LIKE 'have_openssl';
 ## Checking the Server's OpenSSL Version
 
 
-If you want to see what version of [OpenSSL](https://www.openssl.org/) your server is using, then you can check the value of the `<code>[version_ssl_library](data-in-transit-encryption/ssltls-system-variables.md)</code>` system variable. For example:
+If you want to see what version of [OpenSSL](https://www.openssl.org/) your server is using, then you can check the value of the `[version_ssl_library](data-in-transit-encryption/ssltls-system-variables.md)` system variable. For example:
 
 
 ```
@@ -135,7 +135,7 @@ MariaDB Server is statically linked with the bundled [wolfSSL](https://www.wolfs
 ##### MariaDB Server in DEB Packages
 
 
-MariaDB Server is dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in `<code>[.deb](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md)</code>` packages.
+MariaDB Server is dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in `[.deb](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md)` packages.
 
 
 See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) for more information.
@@ -144,7 +144,7 @@ See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/g
 ##### MariaDB Server in RPM Packages
 
 
-MariaDB Server is dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in `<code>[.rpm](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md)</code>` packages.
+MariaDB Server is dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in `[.rpm](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md)` packages.
 
 
 ### MariaDB Clients and Utilities
@@ -173,7 +173,7 @@ MariaDB's [clients and utilities](/en/clients-utilities/) and [MariaDB Connector
 ##### MariaDB Clients and Utilities in DEB Packages
 
 
-MariaDB's [clients and utilities](/en/clients-utilities/), [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html), and [MariaDB Connector/C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md) are dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in `<code>[.deb](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md)</code>` packages.
+MariaDB's [clients and utilities](/en/clients-utilities/), [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html), and [MariaDB Connector/C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md) are dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in `[.deb](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md)` packages.
 
 
 See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) for more information.
@@ -182,7 +182,7 @@ See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/g
 ##### MariaDB Clients and Utilities in RPM Packages
 
 
-MariaDB's [clients and utilities](/en/clients-utilities/), [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html), and [MariaDB Connector/C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md) are dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in `<code>[.rpm](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md)</code>` packages.
+MariaDB's [clients and utilities](/en/clients-utilities/), [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html), and [MariaDB Connector/C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md) are dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in `[.rpm](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md)` packages.
 
 
 ## Updating Dynamically Linked OpenSSL Libraries on Linux
@@ -194,7 +194,7 @@ When the MariaDB Server or clients and utilities are dynamically linked to the s
 ### Updating Dynamically Linked OpenSSL Libraries with yum/dnf
 
 
-On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to update the libraries using `<code>[yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md)</code>` or `<code>[dnf](https://en.wikipedia.org/wiki/DNF_(software))</code>`. Starting with RHEL 8 and Fedora 22, `<code>yum</code>` has been replaced by `<code>dnf</code>`, which is the next major version of `<code>yum</code>`. However, `<code>yum</code>` commands still work on many systems that use `<code>dnf</code>`. For example:
+On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to update the libraries using `[yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md)` or `[dnf](https://en.wikipedia.org/wiki/DNF_(software))`. Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
 
 
 Update the package by executing the following command:
@@ -210,7 +210,7 @@ And then [restart](https://mariadb.com/kb/en/) MariaDB server and any clients or
 ### Updating Dynamically Linked OpenSSL Libraries with apt-get
 
 
-On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to recommended to update the libraries using `<code>[apt-get](https://wiki.debian.org/apt-get)</code>`. For example:
+On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to recommended to update the libraries using `[apt-get](https://wiki.debian.org/apt-get)`. For example:
 
 
 First update the package cache by executing the following command:
@@ -233,7 +233,7 @@ And then [restart](https://mariadb.com/kb/en/) MariaDB server and any clients or
 ### Updating Dynamically Linked OpenSSL Libraries with zypper
 
 
-On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to recommended to update the libraries using `<code>[zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md)</code>`. For example:
+On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to recommended to update the libraries using `[zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md)`. For example:
 
 
 Update the package by executing the following command:

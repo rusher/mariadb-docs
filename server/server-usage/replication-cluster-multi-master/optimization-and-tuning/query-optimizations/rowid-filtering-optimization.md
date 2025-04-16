@@ -30,7 +30,7 @@ WHERE
   o_totalprice between 200000 and 230000;
 ```
 
-Suppose the condition on `<code>l_shipdate</code>` is very restrictive, which means lineitem table should go first in the join order. Then, the optimizer can use `<code>o_orderkey=l_orderkey</code>` equality to do an index lookup to get the order the line item is from. On the other hand `<code>o_totalprice between ...</code>` can also be rather selective.
+Suppose the condition on `l_shipdate` is very restrictive, which means lineitem table should go first in the join order. Then, the optimizer can use `o_orderkey=l_orderkey` equality to do an index lookup to get the order the line item is from. On the other hand `o_totalprice between ...` can also be rather selective.
 
 
 With filtering, the query plan would be:
@@ -61,7 +61,7 @@ possible_keys: PRIMARY,i_o_totalprice
         Extra: Using where; Using rowid filter
 ```
 
-Note that table `<code>orders</code>` has "Using rowid filter". The `<code>type</code>` column has `<code>"|filter"</code>`, the `<code>key</code>` column shows the index that is used to construct the filter. `<code>rows</code>` column shows the expected filter selectivity, it is 5%.
+Note that table `orders` has "Using rowid filter". The `type` column has `"|filter"`, the `key` column shows the index that is used to construct the filter. `rows` column shows the expected filter selectivity, it is 5%.
 
 
 ANALYZE FORMAT=JSON output for table orders will show
@@ -90,7 +90,7 @@ ANALYZE FORMAT=JSON output for table orders will show
       }
 ```
 
-Note the `<code>rowid_filter</code>` element. It has a `<code>range</code>` element inside it. `<code>selectivity_pct</code>` is the expected selectivity, accompanied by the `<code>r_selectivity_pct</code>` showing the actual observed selectivity.
+Note the `rowid_filter` element. It has a `range` element inside it. `selectivity_pct` is the expected selectivity, accompanied by the `r_selectivity_pct` showing the actual observed selectivity.
 
 
 ## Details
@@ -110,5 +110,5 @@ Note the `<code>rowid_filter</code>` element. It has a `<code>range</code>` elem
 ## Control
 
 
-Rowid filtering can be switched on/off using `<code>rowid_filter</code>` flag in the [optimizer_switch](../system-variables/server-system-variables.md#optimizer_switch) variable. By default, the optimization is enabled.
+Rowid filtering can be switched on/off using `rowid_filter` flag in the [optimizer_switch](../system-variables/server-system-variables.md#optimizer_switch) variable. By default, the optimization is enabled.
 

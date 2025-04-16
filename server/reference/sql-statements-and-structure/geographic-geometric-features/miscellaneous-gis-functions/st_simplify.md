@@ -16,10 +16,10 @@ ST_Simplify(g, max_distance)
 ## Description
 
 
-Takes as input a geometry (g) and a double (max_distance). It applies the [Ramer–Douglas–Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) on `<code>g</code>` and returns the resulting geometry.
+Takes as input a geometry (g) and a double (max_distance). It applies the [Ramer–Douglas–Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) on `g` and returns the resulting geometry.
 
 
-The goal of the Douglas-Peucker algorithm is to provide generalized simplifications by returning a geometry that is similar to `<code>g</code>` but uses only a subset of points. To perform the simplification, all the vertices that are shorter than `<code>max_distance</code>` are removed.
+The goal of the Douglas-Peucker algorithm is to provide generalized simplifications by returning a geometry that is similar to `g` but uses only a subset of points. To perform the simplification, all the vertices that are shorter than `max_distance` are removed.
 
 
 The algorithm may produce self-intersections and therefore result in invalid geometries. [ST_IsValid](st_isvalid.md) can be used to test validity of the result.

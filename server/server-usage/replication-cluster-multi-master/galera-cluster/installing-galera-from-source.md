@@ -62,7 +62,7 @@ git checkout 10.5-galera
 ### Building the Database Server
 
 
-The standard and Galera cluster database servers are the same, except that for Galera Cluster, the wsrep API patch is included. Enable the patch with the CMake configuration options `<code>WITH_WSREP</code>` and `<code>WITH_INNODB_DISALLOW_WRITES</code>`. To build the database server, run the following commands:
+The standard and Galera cluster database servers are the same, except that for Galera Cluster, the wsrep API patch is included. Enable the patch with the CMake configuration options `WITH_WSREP` and `WITH_INNODB_DISALLOW_WRITES`. To build the database server, run the following commands:
 
 
 ```
@@ -116,7 +116,7 @@ Run:
 git clone -b mariadb-4.x https://github.com/MariaDB/galera.git
 ```
 
-After this, the source files for the Galera provider will be in the `<code>galera</code>` directory.
+After this, the source files for the Galera provider will be in the `galera` directory.
 
 
 ### Building the Galera Provider
@@ -133,10 +133,10 @@ mkdir /usr/lib64/galera
 cp libgalera_smm.so /usr/lib64/galera
 ```
 
-The path to `<code>libgalera_smm.so</code>` needs to be defined in the *my.cnf* configuration file.
+The path to `libgalera_smm.so` needs to be defined in the *my.cnf* configuration file.
 
 
-Building Galera Replication Plugin from source on FreeBSD runs into issues due to Linux dependencies. To overcome these, either install the binary package: `<code>pkg install galera</code>`, or use the ports build available at `<code>/usr/ports/databases/galera</code>`.
+Building Galera Replication Plugin from source on FreeBSD runs into issues due to Linux dependencies. To overcome these, either install the binary package: `pkg install galera`, or use the ports build available at `/usr/ports/databases/galera`.
 
 
 ## Configuration

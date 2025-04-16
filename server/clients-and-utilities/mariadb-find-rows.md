@@ -1,10 +1,10 @@
 
 # mariadb-find-rows
 
-`<code>mariadb-find-rows</code>` reads files containing SQL statements and extracts statements that match a given regular expression or that contain [USE db_name](../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md) or [SET](../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) statements.
+`mariadb-find-rows` reads files containing SQL statements and extracts statements that match a given regular expression or that contain [USE db_name](../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md) or [SET](../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) statements.
 
 
-Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysql_find_rows</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysql_find_rows`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 The utility was written for use with update log files (as used prior to MySQL 5.0) and as such expects statements to be terminated with semicolon (;) characters. It may be useful with other files that contain SQL statements as long as statements are terminated with semicolons.

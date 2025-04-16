@@ -8,8 +8,8 @@
 
 
 This filter is designed to extract queries and transform them into a canonical
-form e.g. `<code>INSERT INTO database.table VALUES ("John Doe", "Downtown",100,50.0);</code>`
-turns into `<code>INSERT INTO database.table VALUES ("?", "?",?,?);</code>`. The filter
+form e.g. `INSERT INTO database.table VALUES ("John Doe", "Downtown",100,50.0);`
+turns into `INSERT INTO database.table VALUES ("?", "?",?,?);`. The filter
 pushes these canonized queries and their replies into a RabbitMQ broker where
 they can later be retrieved from. The retrieval can be done with a custom
 application or the [RabbitMQ Consumer Client](mariadb-maxscale-23-rabbitmq-consumer-client.md)

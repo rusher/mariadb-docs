@@ -13,9 +13,9 @@ Catalog support is planned for 12.0.
 ### catalog()
 
 
-`<code>catalog()
+`catalog()
 
-# returns the name of the current catalog.</code>`
+# returns the name of the current catalog.`
 
 
 ```

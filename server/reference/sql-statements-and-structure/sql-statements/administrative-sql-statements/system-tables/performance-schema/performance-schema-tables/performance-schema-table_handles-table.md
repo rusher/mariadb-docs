@@ -3,10 +3,10 @@
 
 
 ##### MariaDB starting with [10.5.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
-The `<code>table_handles</code>` table was added in [MariaDB 10.5.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
+The `table_handles` table was added in [MariaDB 10.5.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
 
 
-The `<code>table_handles</code>` table contains table lock information. It uses the `<code>wait/lock/table/sql/handler</code>` instrument, which is enabled by default.
+The `table_handles` table contains table lock information. It uses the `wait/lock/table/sql/handler` instrument, which is enabled by default.
 
 
 Information includes which table handles are open, which sessions are holding the locks, and how they are locked.

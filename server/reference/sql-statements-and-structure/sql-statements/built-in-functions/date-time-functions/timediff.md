@@ -11,8 +11,8 @@ TIMEDIFF(expr1,expr2)
 ## Description
 
 
-TIMEDIFF() returns `<code>expr1</code>` - `<code>expr2</code>` expressed as a time value. `<code>expr1</code>` and
-`<code>expr2</code>` are time or date-and-time expressions, but both must be of the
+TIMEDIFF() returns `expr1` - `expr2` expressed as a time value. `expr1` and
+`expr2` are time or date-and-time expressions, but both must be of the
 same type.
 
 

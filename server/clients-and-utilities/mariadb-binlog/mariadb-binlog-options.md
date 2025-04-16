@@ -5,7 +5,7 @@
 [mariadb-binlog](../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) is a utility included with MariaDB for processing [binary log](../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and [relay log](../../server-management/server-monitoring-logs/binary-log/relay-log.md) files.
 
 
-Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysqlbinlog</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqlbinlog`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 ## Options
@@ -96,7 +96,7 @@ the command line or in option files:
 ## Option Files
 
 
-In addition to reading options from the command-line, `<code>mariadb-binlog</code>` can also read options from [option files](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `<code>mariadb-binlog</code>` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadb-binlog` can also read options from [option files](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-binlog` in an option file, then it is ignored.
 
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
@@ -114,13 +114,13 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-In [MariaDB 10.2](../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, `<code>mariadb-binlog</code>` is linked with [MariaDB Connector/C](../../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+In [MariaDB 10.2](../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, `mariadb-binlog` is linked with [MariaDB Connector/C](../../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 
 ### Option Groups
 
 
-`<code>mariadb-binlog</code>` reads options from the following [option groups](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
+`mariadb-binlog` reads options from the following [option groups](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
 
 
 
@@ -135,7 +135,7 @@ In [MariaDB 10.2](../../../release-notes/mariadb-community-server/what-is-mariad
 
 
 
-`<code>mariadb-binlog</code>` is linked with [MariaDB Connector/C](../../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+`mariadb-binlog` is linked with [MariaDB Connector/C](../../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 
 ## See Also

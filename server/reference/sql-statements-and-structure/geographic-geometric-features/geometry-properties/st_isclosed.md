@@ -15,7 +15,7 @@ IsClosed(g)
 Returns 1 if a given [LINESTRING's](../geometry-constructors/linestring.md) start and end points are the same, or 0 if they are not the same. Before [MariaDB 10.1.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes.md), returns NULL if not given a LINESTRING. After [MariaDB 10.1.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes.md), returns -1.
 
 
-`<code>ST_IsClosed()</code>` and `<code>IsClosed()</code>` are synonyms.
+`ST_IsClosed()` and `IsClosed()` are synonyms.
 
 
 ## Examples

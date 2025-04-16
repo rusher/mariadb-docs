@@ -17,17 +17,17 @@ git checkout merge-innodb-5.6
 1. delete everything in the branch
 1. download the latest released source tarball, unpack it, copy files into the repository:
 
-  * for InnoDB-5.6: use the content of the `<code>storage/innobase/</code>` of the latest MySQL 5.6 source release tarball.
-  * for performance schema 5.6: use `<code>storage/perfschema</code>`, `<code>include/mysql/psi</code>`, `<code>mysql-test/suite/perfschema</code>`, and `<code>mysql-test/suite/perfschema_stress</code>` from the latest MySQL 5.6 source release tarball.
-  * for SphinxSE: use `<code>mysqlse/</code>` subdirectory from the latest Sphinx source release tarball.
-  * for XtraDB: use the content of the `<code>storage/innobase/</code>` of the latest Percona-Server source release tarball (5.5 or 5.6 as appropriate).
-  * for pcre: simply unpack the latest pcre release source tarball into the repository, rename `<code>pcre-X-XX/</code>` to `<code>pcre</code>`.
-1. Now `<code>git add .</code>`, `<code>git commit</code>` (use the tarball version as a comment), `<code>git push</code>`
+  * for InnoDB-5.6: use the content of the `storage/innobase/` of the latest MySQL 5.6 source release tarball.
+  * for performance schema 5.6: use `storage/perfschema`, `include/mysql/psi`, `mysql-test/suite/perfschema`, and `mysql-test/suite/perfschema_stress` from the latest MySQL 5.6 source release tarball.
+  * for SphinxSE: use `mysqlse/` subdirectory from the latest Sphinx source release tarball.
+  * for XtraDB: use the content of the `storage/innobase/` of the latest Percona-Server source release tarball (5.5 or 5.6 as appropriate).
+  * for pcre: simply unpack the latest pcre release source tarball into the repository, rename `pcre-X-XX/` to `pcre`.
+1. Now `git add .`, `git commit` (use the tarball version as a comment), `git push`
 1. merge this branch into MariaDB
 1. Sometimes after a merge, some changes may be needed:
 
-  * for performance schema 5.6: update `<code>storage/perfschema/ha_perfschema.cc</code>`, plugin version under `<code>maria_declare_plugin</code>`.
-  * for InnoDB-5.6: update `<code>storage/innobase/include/univ.i</code>`, setting `<code>INNODB_VERSION_MAJOR</code>`, `<code>INNODB_VERSION_MINOR</code>`, `<code>INNODB_VERSION_BUGFIX</code>` to whatever MySQL version you were merging from.
-  * for XtraDB-5.5: update `<code>storage/xtradb/include/univ.i</code>`, setting `<code>PERCONA_INNODB_VERSION</code>`, `<code>INNODB_VERSION_STR</code>` to whatever Percona-Server version you were merging from.
-  * for XtraDB-5.6: update `<code>storage/xtradb/include/univ.i</code>`, setting `<code>PERCONA_INNODB_VERSION</code>`, `<code>INNODB_VERSION_MAJOR</code>`, `<code>INNODB_VERSION_MINOR</code>`, `<code>INNODB_VERSION_BUGFIX</code>` to whatever Percona-Server version you were merging from.
+  * for performance schema 5.6: update `storage/perfschema/ha_perfschema.cc`, plugin version under `maria_declare_plugin`.
+  * for InnoDB-5.6: update `storage/innobase/include/univ.i`, setting `INNODB_VERSION_MAJOR`, `INNODB_VERSION_MINOR`, `INNODB_VERSION_BUGFIX` to whatever MySQL version you were merging from.
+  * for XtraDB-5.5: update `storage/xtradb/include/univ.i`, setting `PERCONA_INNODB_VERSION`, `INNODB_VERSION_STR` to whatever Percona-Server version you were merging from.
+  * for XtraDB-5.6: update `storage/xtradb/include/univ.i`, setting `PERCONA_INNODB_VERSION`, `INNODB_VERSION_MAJOR`, `INNODB_VERSION_MINOR`, `INNODB_VERSION_BUGFIX` to whatever Percona-Server version you were merging from.
 

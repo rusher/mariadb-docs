@@ -14,11 +14,11 @@ ENCODE(str,pass_str)
 ENCODE is not considered cryptographically secure, and should not be used for password encryption.
 
 
-Encrypt `<code>str</code>` using `<code>pass_str</code>` as the password. To decrypt the result, use
-`<code>[DECODE()](decode.md)</code>`.
+Encrypt `str` using `pass_str` as the password. To decrypt the result, use
+`[DECODE()](decode.md)`.
 
 
-The result is a binary string of the same length as `<code>str</code>`.
+The result is a binary string of the same length as `str`.
 
 
 The strength of the encryption is based on how good the random generator is.

@@ -51,7 +51,7 @@ One may want to have a setup where a replica has triggers that are not present o
 If one uses statement-based replication, they can just create the required triggers on the replica. The replica will run the statements from the binary log, which will cause the triggers to be invoked.
 
 
-However, there are cases where you have to use row-based replication. It could be because the master runs non-deterministic statements, or the master could be a node in a Galera cluster. In that case, you would want row-based events to invoke triggers on the replica. This is what the `<code>slave_run_triggers_for_rbr</code>` option is for. Setting the option to `<code>YES</code>` will cause the SQL replica thread to invoke triggers for row-based events; setting it to `<code>LOGGING</code>` will also cause the changes made by the triggers to be written into the binary log.
+However, there are cases where you have to use row-based replication. It could be because the master runs non-deterministic statements, or the master could be a node in a Galera cluster. In that case, you would want row-based events to invoke triggers on the replica. This is what the `slave_run_triggers_for_rbr` option is for. Setting the option to `YES` will cause the SQL replica thread to invoke triggers for row-based events; setting it to `LOGGING` will also cause the changes made by the triggers to be written into the binary log.
 
 
 The following triggers are invoked:

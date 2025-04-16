@@ -12,16 +12,16 @@ by AWS to replicate changes.
 # How Aurora Is Monitored
 
 
-Each node in an Aurora cluster has the variable `<code>@@aurora_server_id</code>` which is
+Each node in an Aurora cluster has the variable `@@aurora_server_id` which is
 the unique identifier for that node. An Aurora replica stores information
-relevant to replication in the `<code>information_schema.replica_host_status</code>`
+relevant to replication in the `information_schema.replica_host_status`
 table. The table contains information about the status of all replicas in the
-cluster. The `<code>server_id</code>` column in this table holds the values of
-`<code>@@aurora_server_id</code>` variables from all nodes. The `<code>session_id</code>` column contains
+cluster. The `server_id` column in this table holds the values of
+`@@aurora_server_id` variables from all nodes. The `session_id` column contains
 an unique string for all read-only replicas. For the master node, this value
-will be `<code>MASTER_SESSION_ID</code>`. By executing the following query, we are able to
-retrieve the `<code>@@aurora_server_id</code>` of the master node along with the
-`<code>@@aurora_server_id</code>` of the current node.
+will be `MASTER_SESSION_ID`. By executing the following query, we are able to
+retrieve the `@@aurora_server_id` of the master node along with the
+`@@aurora_server_id` of the current node.
 
 
 
@@ -36,9 +36,9 @@ nodes are read-only replicas and will be labeled as slave servers.
 
 
 In addition to replica status information, the
-`<code>information_schema.replica_host_status</code>` table contains information about
+`information_schema.replica_host_status` table contains information about
 replication lag between the master and the read-only nodes. This value is stored
-in the `<code>replica_lag_in_milliseconds</code>` column. This can be used to detect read
+in the `replica_lag_in_milliseconds` column. This can be used to detect read
 replicas that are lagging behind the master node. This information can then be
 used by the routing modules to route reads to up-to-date nodes.
 

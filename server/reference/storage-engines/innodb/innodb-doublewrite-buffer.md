@@ -13,5 +13,5 @@ Whenever InnoDB flushes a page to disk, it is first written to the double write 
 ## Doublewrite Buffer Settings
 
 
-To turn off the doublewrite buffer, set the [innodb_doublewrite](innodb-system-variables.md#innodb_doublewrite) system variable to `<code>0</code>`. This is safe on filesystems that write pages atomically - that is, a page write fully succeeds or fails. But with other filesystems, it is not recommended for production systems. An alternative option is atomic writes. See [atomic write support](../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/atomic-write-support.md) for more details.
+To turn off the doublewrite buffer, set the [innodb_doublewrite](innodb-system-variables.md#innodb_doublewrite) system variable to `0`. This is safe on filesystems that write pages atomically - that is, a page write fully succeeds or fails. But with other filesystems, it is not recommended for production systems. An alternative option is atomic writes. See [atomic write support](../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/atomic-write-support.md) for more details.
 

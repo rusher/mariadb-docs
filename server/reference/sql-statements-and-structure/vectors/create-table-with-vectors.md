@@ -16,7 +16,7 @@ CREATE TABLE embeddings (
 );
 ```
 
-To have a fast vector search one needs to index the vector column, creating a `<code>VECTOR</code>` index:
+To have a fast vector search one needs to index the vector column, creating a `VECTOR` index:
 
 
 ```
@@ -27,14 +27,14 @@ CREATE TABLE embeddings (
 );
 ```
 
-Note that there can be only one vector index in the table and the indexed vector column must be `<code>NOT NULL</code>`.
+Note that there can be only one vector index in the table and the indexed vector column must be `NOT NULL`.
 
 
 There are two options that can be used to configure the vector index.
 
 
-* `<code>M</code>` — Larger values mean slower SELECTs and INSERTs, larger index size and higher memory consumption but more accurate results. The valid range is from `<code>3</code>` to `<code>200</code>`.
-* `<code>DISTANCE</code>` — Distance function to build the vector index for. Searches using a different distance function will not be able to use a vector index. Valid values are `<code>cosine</code>` and `<code>euclidean</code>` (the default).
+* `M` — Larger values mean slower SELECTs and INSERTs, larger index size and higher memory consumption but more accurate results. The valid range is from `3` to `200`.
+* `DISTANCE` — Distance function to build the vector index for. Searches using a different distance function will not be able to use a vector index. Valid values are `cosine` and `euclidean` (the default).
 For example,
 
 

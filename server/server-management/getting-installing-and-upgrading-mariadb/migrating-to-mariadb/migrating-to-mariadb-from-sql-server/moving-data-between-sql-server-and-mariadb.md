@@ -28,7 +28,7 @@ DDL statements are affected by some server system variables.
 [innodb_strict_mode](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode) enables the so-called InnoDB strict mode. Normally some errors in the [CREATE TABLE](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) options are ignored. When InnoDB strict mode is enabled, the creation of InnoDB tables will fail with an error when certain mistakes are made.
 
 
-[updatable_views_with_limit](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#updatable_views_with_limit) determines whether view updates can be made with an [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statement with a `<code>LIMIT</code>` clause if the view does not contain all primary or not null unique key columns from the underlying table.
+[updatable_views_with_limit](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#updatable_views_with_limit) determines whether view updates can be made with an [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statement with a `LIMIT` clause if the view does not contain all primary or not null unique key columns from the underlying table.
 
 
 ### Dumps and sys.sql_modules
@@ -37,7 +37,7 @@ DDL statements are affected by some server system variables.
 SQL Server Management Studio allows one to create a working SQL script to recreate a database - something that MariaDB users refer to as a *dump*. Several options allow fine-tuning the generated syntax. It could be necessary to adjust some of these options to make the output compatible with MariaDB. It is possible to export schemas, data or both. One can create a single global file, or one file for each exported object. Normally, producing a single file is more practical.
 
 
-Alternatively, the [sp_helptext()](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-helptext-transact-sql) procedure returns information about how to recreate a certain object. Similar information is also present in the [sql_modules](https://docs.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-sql-modules-transact-sql) table (`<code>definition</code>` column), in the `<code>sys</code>` schema. Such information, however, is not a ready-to-use set of SQL statements.
+Alternatively, the [sp_helptext()](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-helptext-transact-sql) procedure returns information about how to recreate a certain object. Similar information is also present in the [sql_modules](https://docs.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-sql-modules-transact-sql) table (`definition` column), in the `sys` schema. Such information, however, is not a ready-to-use set of SQL statements.
 
 
 Remember however that [MariaDB does not support schemas](understanding-mariadb-architecture.md#databases). An SQL Server schema is approximately a MariaDB database.
@@ -53,16 +53,16 @@ Provided that a dump file contains syntax that is valid in MariaDB, it can be ex
 mariadb --show-warnings < dump.sql
 ```
 
-`<code>--show-warnings</code>` tells MariaDB to output any warnings produced by the statements contained in the dump. Without this option, warnings will not appear on screen. Warnings don't stop the dump execution.
+`--show-warnings` tells MariaDB to output any warnings produced by the statements contained in the dump. Without this option, warnings will not appear on screen. Warnings don't stop the dump execution.
 
 
-Errors will appear on screen. Errors will stop the dump execution, unless the `<code>--force</code>` option (or just `<code>-f</code>`) is specified.
+Errors will appear on screen. Errors will stop the dump execution, unless the `--force` option (or just `-f`) is specified.
 
 
-For other `<code>mariadb</code>` options, see [mariadb Command-line Client Options](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md#options).
+For other `mariadb` options, see [mariadb Command-line Client Options](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md#options).
 
 
-Another way to achieve the same purpose is to start the `<code>mariadb</code>` client in interactive mode first, and then run the `<code>source</code>` command. For example:
+Another way to achieve the same purpose is to start the `mariadb` client in interactive mode first, and then run the `source` command. For example:
 
 
 ```
@@ -80,10 +80,10 @@ Show warnings enabled.
 MariaDB [(none)]> source dump.sql
 ```
 
-In this case, to show warnings we used the `<code>\W</code>` command, where "w" is uppercase. To hide warnings (which is the default), we can use `<code>\w</code>` (lowercase).
+In this case, to show warnings we used the `\W` command, where "w" is uppercase. To hide warnings (which is the default), we can use `\w` (lowercase).
 
 
-For other `<code>mariadb</code>` commands, see [mariadb Commands](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md#mariadb-commands).
+For other `mariadb` commands, see [mariadb Commands](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md#mariadb-commands).
 
 
 ### CSV Data
@@ -95,7 +95,7 @@ If the table structures are already in MariaDB, we need only to import table dat
 SQL Server Management Studio and several other Microsoft tools allow one to export CSV files.
 
 
-MariaDB allows importing CSV files with the [LOAD DATA INFILE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement, which is essentially the MariaDB equivalent of `<code>BULK INSERT</code>`.
+MariaDB allows importing CSV files with the [LOAD DATA INFILE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement, which is essentially the MariaDB equivalent of `BULK INSERT`.
 
 
 It can happen that we don't want to import the whole data, but some filtered or transformed version of it. In that case, we may prefer to use the [CONNECT](../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) storage engine to access CSV files and query them. The results of a query can be inserted into a table using [INSERT SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select.md).
@@ -115,13 +115,13 @@ There are several ways to move data from MariaDB to SQL Server:
 ### Using a Dump (Structure)
 
 
-[mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) can be used to generate dumps of all databases, a specified database, or a set of tables. It is even possible to only dump a set of rows by specifying the `<code>WHERE</code>` clause.
+[mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) can be used to generate dumps of all databases, a specified database, or a set of tables. It is even possible to only dump a set of rows by specifying the `WHERE` clause.
 
 
-By specifying the `<code>--no-data</code>` option we can dump the table structures without data.
+By specifying the `--no-data` option we can dump the table structures without data.
 
 
-`<code>--compatible=mssql</code>` will produce an output that should be usable in SQL Server.
+`--compatible=mssql` will produce an output that should be usable in SQL Server.
 
 
 ### Using a Dump (Data)
@@ -130,16 +130,16 @@ By specifying the `<code>--no-data</code>` option we can dump the table structur
 mariadb-dump by default produces an output with both data and structure.
 
 
-`<code>--no-create-info</code>` can be used to skip the [CREATE TABLE](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statements.
+`--no-create-info` can be used to skip the [CREATE TABLE](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statements.
 
 
-`<code>--compatible=mssql</code>` will produce an output that should be usable in SQL Server.
+`--compatible=mssql` will produce an output that should be usable in SQL Server.
 
 
-`<code>--single-transaction</code>` should be specified to select the source data in a single transaction, so that a consistent dump is produced.
+`--single-transaction` should be specified to select the source data in a single transaction, so that a consistent dump is produced.
 
 
-`<code>--quick</code>` speeds up the dump process when dumping big tables.
+`--quick` speeds up the dump process when dumping big tables.
 
 
 ### Using a CSV File
@@ -150,7 +150,7 @@ CSV files can also be used to export data to SQL Server. There are several ways 
 
 * The [SELECT INTO OUTFILE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile.md) statement.
 * The [CONNECT](../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) storage engine, with the [CSV table type](../../../../reference/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types.md).
-* The [CSV](../../../../reference/storage-engines/csv/csv-overview.md) storage engine (note that it doesn't support `<code>NULL</code>` and indexes).
+* The [CSV](../../../../reference/storage-engines/csv/csv-overview.md) storage engine (note that it doesn't support `NULL` and indexes).
 
 
 ### Using CONNECT Tables
@@ -164,13 +164,13 @@ The [CONNECT](../../../../../connectors/mariadb-connector-nodejs/connector-nodej
 * Some [special data sources](../../../../reference/storage-engines/connect/connect-table-types/connect-table-types-special-virtual-tables.md).
 
 
-`<code>CONNECT</code>` was mentioned previously because it could allow one to read a CSV file and query it in SQL, filtering and transforming the data that we want to move into regular MariaDB tables.
+`CONNECT` was mentioned previously because it could allow one to read a CSV file and query it in SQL, filtering and transforming the data that we want to move into regular MariaDB tables.
 
 
-However, `<code>CONNECT</code>` can also access remote SQL Server tables. We can read data from it, or even write data.
+However, `CONNECT` can also access remote SQL Server tables. We can read data from it, or even write data.
 
 
-To enable `<code>CONNECT</code>` to work with SQL Server, we need to fulfill these requirements:
+To enable `CONNECT` to work with SQL Server, we need to fulfill these requirements:
 
 
 * Install the ODBC driver, downloadable form [Microsoft](https://microsoft.com/) website. The driver is also available for Linux and MacOS.
@@ -178,7 +178,7 @@ To enable `<code>CONNECT</code>` to work with SQL Server, we need to fulfill the
 * [Install CONNECT](../../../../reference/storage-engines/connect/installing-the-connect-storage-engine.md) (unless it is already installed).
 
 
-Here is an example of a `<code>CONNECT</code>` table that points to a SQL Server table:
+Here is an example of a `CONNECT` table that points to a SQL Server table:
 
 
 ```
@@ -196,13 +196,13 @@ CREATE TABLE city (
 The key points here are:
 
 
-* `<code>ENGINE=CONNECT</code>` tells MariaDB that we want to create a `<code>CONNECT</code>` table.
-* `<code>TABLE_TYPE</code>` must be 'ODBC', so `<code>CONNECT</code>` knows what type of data source it has to use.
-* `<code>CONNECTION</code>` is the connection string to use, including server address, username and password.
-* `<code>TABNAME</code>` tells `<code>CONNECT</code>` what the remote table is called. The local name could be different.
+* `ENGINE=CONNECT` tells MariaDB that we want to create a `CONNECT` table.
+* `TABLE_TYPE` must be 'ODBC', so `CONNECT` knows what type of data source it has to use.
+* `CONNECTION` is the connection string to use, including server address, username and password.
+* `TABNAME` tells `CONNECT` what the remote table is called. The local name could be different.
 
 
-`<code>CONNECT</code>` is able to query SQL Server to find out the remote table structure. We can use this feature to avoid specifying the column names and types:
+`CONNECT` is able to query SQL Server to find out the remote table structure. We can use this feature to avoid specifying the column names and types:
 
 
 ```
@@ -219,7 +219,7 @@ However, we may prefer to manually specify the MariaDB types, sizes and characte
 ### Linked Server
 
 
-Instead of using MariaDB `<code>CONNECT</code>`, it is possible to use SQL Server Linked Server functionality. This will allow one to read data from a remote MariaDB database and copy it into local SQL Server tables. However, note that `<code>CONNECT</code>` allows more control on [types and character sets](sql-server-and-mariadb-types-comparison.md) mapping.
+Instead of using MariaDB `CONNECT`, it is possible to use SQL Server Linked Server functionality. This will allow one to read data from a remote MariaDB database and copy it into local SQL Server tables. However, note that `CONNECT` allows more control on [types and character sets](sql-server-and-mariadb-types-comparison.md) mapping.
 
 
 Refer to [Linked Servers](https://docs.microsoft.com/en-us/sql/relational-databases/linked-servers/linked-servers-database-engine?view=sql-server-ver15) section in Microsoft documentation.

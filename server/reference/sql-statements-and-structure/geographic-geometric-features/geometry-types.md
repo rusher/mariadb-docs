@@ -11,7 +11,7 @@ Currently, spatial columns are supported for [MyISAM](../../storage-engines/myis
 tables. See also [SPATIAL INDEX](spatial-index.md).
 
 
-The basic geometry type is `<code>GEOMETRY</code>`. But the type can be more specific. The following types are supported:
+The basic geometry type is `GEOMETRY`. But the type can be more specific. The following types are supported:
 
 
 

@@ -11,12 +11,12 @@ WEEKDAY(date)
 ## Description
 
 
-Returns the weekday index for `<code>date</code>` 
-(`<code>0</code>` = Monday, `<code>1</code>` = Tuesday, ... `<code>6</code>` = Sunday).
+Returns the weekday index for `date` 
+(`0` = Monday, `1` = Tuesday, ... `6` = Sunday).
 
 
-This contrasts with `<code>[DAYOFWEEK()](dayofweek.md)</code>` which follows the ODBC standard
-(`<code>1</code>` = Sunday, `<code>2</code>` = Monday, ..., `<code>7</code>` = Saturday).
+This contrasts with `[DAYOFWEEK()](dayofweek.md)` which follows the ODBC standard
+(`1` = Sunday, `2` = Monday, ..., `7` = Saturday).
 
 
 ## Examples

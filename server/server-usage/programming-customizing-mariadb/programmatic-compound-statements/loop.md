@@ -14,15 +14,15 @@ END LOOP [end_label]
 ## Description
 
 
-`<code>LOOP</code>` implements a simple loop construct, enabling repeated execution
+`LOOP` implements a simple loop construct, enabling repeated execution
 of the statement list, which consists of one or more statements, each
-terminated by a semicolon (i.e., `<code>;</code>`) statement delimiter. The statements
+terminated by a semicolon (i.e., `;`) statement delimiter. The statements
 within the loop are repeated until the loop is exited; usually this is
 accomplished with a [LEAVE](leave.md) statement.
 
 
-A `<code>LOOP</code>` statement can be [labeled](labels.md). `<code>end_label</code>` cannot be given unless
-`<code>begin_label</code>` also is present. If both are present, they must be the
+A `LOOP` statement can be [labeled](labels.md). `end_label` cannot be given unless
+`begin_label` also is present. If both are present, they must be the
 same.
 
 

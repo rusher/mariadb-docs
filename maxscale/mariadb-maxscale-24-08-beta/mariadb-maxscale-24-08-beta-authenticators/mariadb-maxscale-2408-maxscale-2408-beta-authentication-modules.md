@@ -98,14 +98,14 @@ GRANT ALL ON infinidb_vtable.* TO 'maxscale'@'maxscalehost';
 When a client logs in to MaxScale, MaxScale sees the client's IP address. When
 MaxScale then connects the client to backends (using the client's username and
 password), the backends see the connection coming from the IP address of
-MaxScale. If the client user account is to a wildcard host (`<code>'alice'@'%'</code>`), this
-is not an issue. If the host is restricted (`<code>'alice'@'123.123.123.123'</code>`),
+MaxScale. If the client user account is to a wildcard host (`'alice'@'%'`), this
+is not an issue. If the host is restricted (`'alice'@'123.123.123.123'`),
 authentication to backends will fail.
 
 
 There are two primary ways to deal with this:
 1. Duplicate user accounts. For every user account with a restricted hostname an
-equivalent user account for MaxScale is added (`<code>'alice'@'maxscale-ip'</code>`).
+equivalent user account for MaxScale is added (`'alice'@'maxscale-ip'`).
 2. Use [proxy protocol](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md).
 
 
@@ -122,13 +122,13 @@ for additional information on how to solve authentication issues.
 ### Wildcard database grants
 
 
-MaxScale supports wildcards `<code>_</code>` and `<code>%</code>` for database-level grants. As with
-MariaDB Server, `<code>grant select on test_.* to 'alice'@'%';</code>` gives access to
+MaxScale supports wildcards `_` and `%` for database-level grants. As with
+MariaDB Server, `grant select on test_.* to 'alice'@'%';` gives access to
 *test_* as well as *test1*, *test2* and so on. If the GRANT command escapes the
-wildcard (`<code>grant select on `test\_`.* to 'alice'@'%';</code>`) both MaxScale and the
-MariaDB Server interpret it as only allowing access to *test_*. `<code>_</code>` and `<code>%</code>`
+wildcard (`grant select on `test\_`.* to 'alice'@'%';`) both MaxScale and the
+MariaDB Server interpret it as only allowing access to *test_*. `_` and `%`
 are only interpreted as wildcards when the grant is to a database:
-`<code>grant select on `test_`.t1 to 'alice'@'%';</code>` only grants access to the
+`grant select on `test_`.t1 to 'alice'@'%';` only grants access to the
 *test_.t1*-table, not to *test1.t1*.
 
 
@@ -149,7 +149,7 @@ authenticator_options=skip_authentication=true,lower_case_table_names=1
 
 
 
-### `<code>skip_authentication</code>`
+### `skip_authentication`
 
 
 Boolean, default value is "false". If enabled, MaxScale will not check the
@@ -178,7 +178,7 @@ authenticator_options=skip_authentication=true
 
 
 
-### `<code>match_host</code>`
+### `match_host`
 
 
 Boolean, default value is "true". If disabled, MaxScale does not require that a
@@ -201,7 +201,7 @@ authenticator_options=match_host=false
 
 
 
-### `<code>lower_case_table_names</code>`
+### `lower_case_table_names`
 
 
 Integer, default value is 0. Controls database name matching for authentication
@@ -214,10 +214,10 @@ and should be set to the value used by the backends.
 The setting accepts the values 0, 1 or 2:
 
 
-* `<code>0</code>`: case-sensitive matching (default)
-* `<code>1</code>`: convert the requested database name to lower case before using case-insensitive
+* `0`: case-sensitive matching (default)
+* `1`: convert the requested database name to lower case before using case-insensitive
 matching. Assumes that database names on the server are stored in lower case.
-* `<code>2</code>`: use case-insensitive matching.
+* `2`: use case-insensitive matching.
 
 
 *true* and *false* are also accepted for backwards compatibility. These map to 1
@@ -229,10 +229,10 @@ non-ASCII characters will retain their case-sensitivity.
 
 
 Starting with MaxScale versions 2.5.25, 6.4.6, 22.08.5 and 23.02.2, the behavior
-of `<code>lower_case_table_names=1</code>` is identical with how the MariaDB server
+of `lower_case_table_names=1` is identical with how the MariaDB server
 behaves. In older releases the comparisons were done in a case-sensitive manner
 after the requested database name was converted into lowercase. Using
-`<code>lower_case_table_names=2</code>` will behave identically in all versions which makes
+`lower_case_table_names=2` will behave identically in all versions which makes
 it a safe alternative to use when a mix of older and newer MaxScale versions is
 being used.
 

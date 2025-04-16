@@ -31,8 +31,8 @@ not explicitly read only, but only until the first statement that modifies
 the database is encountered.
 * SELECT statements that refer to user or system variables are not cached.
 * SELECT statements using functions whose result depend upon the current
-user or context are not cached. Examples of such functions are `<code>USER()</code>`,
-`<code>RAND()</code>` or `<code>CURRENT_TIME()</code>`.
+user or context are not cached. Examples of such functions are `USER()`,
+`RAND()` or `CURRENT_TIME()`.
 
 
 ### Firewall Filter
@@ -54,17 +54,17 @@ user or context are not cached. Examples of such functions are `<code>USER()</co
 The following deprecated commands have been removed:
 
 
-* `<code>enable log [debug|trace|message]</code>`
-* `<code>disable log [debug|trace|message]</code>`
-* `<code>enable sessionlog [debug|trace|message]</code>`
-* `<code>disable sessionlog [debug|trace|message]</code>`
+* `enable log [debug|trace|message]`
+* `disable log [debug|trace|message]`
+* `enable sessionlog [debug|trace|message]`
+* `disable sessionlog [debug|trace|message]`
 
 
 The following commands have been deprecated:
 
 
-* `<code>enable sessionlog-priority <session-id> [debug|info|notice|warning]</code>`
-* `<code>disable sessionlog-priority <session-id> [debug|info|notice|warning]</code>`
+* `enable sessionlog-priority <session-id> [debug|info|notice|warning]`
+* `disable sessionlog-priority <session-id> [debug|info|notice|warning]`
 
 
 The commands can be issued, but have no effect.
@@ -76,7 +76,7 @@ The commands can be issued, but have no effect.
 ### Failover Recovery for MySQL Monitor
 
 
-The `<code>failover_recovery</code>` option allows the failed nodes to rejoin the cluster
+The `failover_recovery` option allows the failed nodes to rejoin the cluster
 after a failover has been triggered. This makes it possible for external actors
 to recover the failed nodes without having to manually clear the maintenance
 mode.

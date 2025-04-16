@@ -34,7 +34,7 @@ The conversion rules are as follows: if the identifier is made up only of basic 
 Code Range values are UCS-2.
 
 
-All of this encoding happens transparently at the filesystem level with one exception. Until MySQL 5.1.6, an old encoding was used. Identifiers created in a version before MySQL 5.1.6, and which haven't been updated to the new encoding, the server prefixes `<code>mysql50</code>` to their name.
+All of this encoding happens transparently at the filesystem level with one exception. Until MySQL 5.1.6, an old encoding was used. Identifiers created in a version before MySQL 5.1.6, and which haven't been updated to the new encoding, the server prefixes `mysql50` to their name.
 
 
 ### Examples

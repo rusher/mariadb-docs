@@ -210,7 +210,7 @@ Advice? Avoid Case 1; too messy. Case 2 is ok if the extra rows are not too comm
 ## Averages, etc.
 
 
-When summarizing, include `<code>COUNT(*) AS ct and SUM(foo) AS sum_foo</code>`. When reporting, the "average" is computed as SUM(sum_foo) / SUM(ct). That is mathematically correct.
+When summarizing, include `COUNT(*) AS ct and SUM(foo) AS sum_foo`. When reporting, the "average" is computed as SUM(sum_foo) / SUM(ct). That is mathematically correct.
 
 
 Exception... Let's say you are looking at weather temperatures. And you monitoring station gets the temp periodically, but unreliably. That is, the number of readings for a day varies. Further, you decide that the easiest way to compensate for the inconsistency is to do something like: Compute the avg temp for each day, then average those across the month (or other timeframe).

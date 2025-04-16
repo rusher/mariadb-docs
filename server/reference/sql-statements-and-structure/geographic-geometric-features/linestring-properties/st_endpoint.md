@@ -13,10 +13,10 @@ EndPoint(ls)
 
 
 Returns the [Point](../geometry-constructors/point.md) that is the endpoint of the
-[LineString](../geometry-constructors/linestring.md) value `<code>ls</code>`.
+[LineString](../geometry-constructors/linestring.md) value `ls`.
 
 
-`<code>ST_EndPoint()</code>` and `<code>EndPoint()</code>` are synonyms.
+`ST_EndPoint()` and `EndPoint()` are synonyms.
 
 
 ## Examples

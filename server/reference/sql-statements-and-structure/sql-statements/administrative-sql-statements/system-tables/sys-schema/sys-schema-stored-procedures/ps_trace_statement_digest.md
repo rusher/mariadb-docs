@@ -11,7 +11,7 @@ ps_trace_statement_digest(in_digest, in_runtime, in_interval, in_start_fresh, in
 ## Description
 
 
-`<code>ps_trace_statement_digest</code>` is a [stored procedure](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md).
+`ps_trace_statement_digest` is a [stored procedure](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md).
 
 
 Parameters:

@@ -231,7 +231,7 @@ The protocol used by slaves for connection to MaxScale is the same *MySQLClient*
 # MaxScale replication diagnostics
 
 
-The binlog router module of MaxScale produces diagnostic output that can be viewed via the `<code>maxadmin</code>` client application. Running the maxadmin command and issuing a show service command will produce a considerable amount of output that will show both the master connection status and statistics and also a block for each of the slaves currently connected.
+The binlog router module of MaxScale produces diagnostic output that can be viewed via the `maxadmin` client application. Running the maxadmin command and issuing a show service command will produce a considerable amount of output that will show both the master connection status and statistics and also a block for each of the slaves currently connected.
 
 
 

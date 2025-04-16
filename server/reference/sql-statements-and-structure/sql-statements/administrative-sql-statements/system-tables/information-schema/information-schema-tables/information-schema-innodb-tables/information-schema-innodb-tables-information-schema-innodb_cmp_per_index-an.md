@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_CMP_PER_INDEX and INNODB_CMP_PER_INDEX_RESET Tables
 
-The `<code>INNODB_CMP_PER_INDEX</code>` and `<code>INNODB_CMP_PER_INDEX_RESET</code>` tables contain status information on compression operations related to [compressed XtraDB/InnoDB tables](../../../../../../../storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md), grouped by individual indexes. These tables are only populated if the [innodb_cmp_per_index_enabled](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_cmp_per_index_enabled) system variable is set to `<code>ON</code>`.
+The `INNODB_CMP_PER_INDEX` and `INNODB_CMP_PER_INDEX_RESET` tables contain status information on compression operations related to [compressed XtraDB/InnoDB tables](../../../../../../../storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md), grouped by individual indexes. These tables are only populated if the [innodb_cmp_per_index_enabled](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_cmp_per_index_enabled) system variable is set to `ON`.
 
 
 The [PROCESS](../../../../../account-management-sql-commands/grant.md#global-privileges) privilege is required to query this table.
@@ -25,10 +25,10 @@ These tables contains the following columns:
 
 
 
-These tables can be used to measure the effectiveness of XtraDB/InnoDB compression, per table or per index. The values in these tables show which tables perform better with index compression, and which tables cause too many *compression failures* or perform too many compression/uncompression operations. When compression performs badly for a table, this might mean that you should change its `<code>KEY_BLOCK_SIZE</code>`, or that the table should not be compressed.
+These tables can be used to measure the effectiveness of XtraDB/InnoDB compression, per table or per index. The values in these tables show which tables perform better with index compression, and which tables cause too many *compression failures* or perform too many compression/uncompression operations. When compression performs badly for a table, this might mean that you should change its `KEY_BLOCK_SIZE`, or that the table should not be compressed.
 
 
-`<code>INNODB_CMP_PER_INDEX</code>` and `<code>INNODB_CMP_PER_INDEX_RESET</code>` have the same columns and always contain the same values, but when `<code>INNODB_CMP_PER_INDEX_RESET</code>` is queried, both the tables are cleared. `<code>INNODB_CMP_PER_INDEX_RESET</code>` can be used, for example, if a script periodically logs the performances of compression in the last period of time. `<code>INNODB_CMP_PER_INDEX</code>` can be used to see the cumulated statistics.
+`INNODB_CMP_PER_INDEX` and `INNODB_CMP_PER_INDEX_RESET` have the same columns and always contain the same values, but when `INNODB_CMP_PER_INDEX_RESET` is queried, both the tables are cleared. `INNODB_CMP_PER_INDEX_RESET` can be used, for example, if a script periodically logs the performances of compression in the last period of time. `INNODB_CMP_PER_INDEX` can be used to see the cumulated statistics.
 
 
 ## See Also

@@ -10,7 +10,7 @@ engine.
 The list of the columns of the TBL table may not necessarily include all the
 columns of the tables of the list. If the name of some columns is different in
 the sub-tables, the column to use can be specified by its position given by the
-`<code>FLAG</code>` option of the column. If the `<code>ACCEPT</code>` option is set to true (Y or 1)
+`FLAG` option of the column. If the `ACCEPT` option is set to true (Y or 1)
 columns that do not exist in some of the sub-tables are accepted and their
 value will be null or
 pseudo-null (this depends on the nullability of the column) for
@@ -45,8 +45,8 @@ table_list='employe,db2.employee' option_list='Accept=1';
 ```
 
 The search for columns in sub tables is done by name and, if they exist with a
-different name, by their position given by a not null `<code>FLAG</code>` option.
-Column *sex* exists only in the English table (`<code>FLAG</code>` is `<code>0</code>`). Its values
+different name, by their position given by a not null `FLAG` option.
+Column *sex* exists only in the English table (`FLAG` is `0`). Its values
 will null value for the French table.
 
 
@@ -92,9 +92,9 @@ value. They would have 0 if the sex column had been created NOT NULL.
 ### Sub-tables of not CONNECT engines
 
 
-Sub-tables are accessed as `<code>[PROXY](connect-proxy-table-type.md)</code>`
+Sub-tables are accessed as `[PROXY](connect-proxy-table-type.md)`
 tables. For not CONNECT sub-tables that are accessed via the MySQL API, it is
-possible like with `<code>PROXY</code>` to change the MYSQL default options. Of course,
+possible like with `PROXY` to change the MYSQL default options. Of course,
 this will apply to all not CONNECT tables of the list.
 
 
@@ -106,7 +106,7 @@ and to restrict the access to only some of the sub-tables.
 
 
 Let us see the following example where t1 and t2 are MyISAM tables similar to
-the ones given in the `<code>MERGE</code>` description:
+the ones given in the `MERGE` description:
 
 
 ```
@@ -181,7 +181,7 @@ Additional options available for this table type:
 
 
 
-These options can be specified in the `<code>OPTION_LIST</code>`.
+These options can be specified in the `OPTION_LIST`.
 
 
 

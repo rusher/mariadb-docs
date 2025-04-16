@@ -71,8 +71,8 @@ MariaDB [test]> show global status like "Aria%";
 +-----------------------------------+-------+
 ```
 
-If `<code>Aria_pagecache_reads</code>` is much smaller than `<code>Aria_pagecache_read_request</code>` and
- `<code>Aria_pagecache_writes</code>` is much smaller than Aria_pagecache_write_request#, then your setup is good. If the [aria_pagecache_buffer_size](../../../reference/storage-engines/aria/aria-system-variables.md) is big enough, the two variables should be 0, like above.
+If `Aria_pagecache_reads` is much smaller than `Aria_pagecache_read_request` and
+ `Aria_pagecache_writes` is much smaller than Aria_pagecache_write_request#, then your setup is good. If the [aria_pagecache_buffer_size](../../../reference/storage-engines/aria/aria-system-variables.md) is big enough, the two variables should be 0, like above.
 
 
 ## [MyISAM](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
@@ -102,8 +102,8 @@ MariaDB [test]> show global status like "Created%tables%";
 +-------------------------+-------+
 ```
 
-`<code>Created_tmp_tables</code>` is the total number of internal temporary tables created as part of executing queries like SELECT.
-`<code>Created_tmp_disk_tables</code>` shows how many of these did hit the storage.
+`Created_tmp_tables` is the total number of internal temporary tables created as part of executing queries like SELECT.
+`Created_tmp_disk_tables` shows how many of these did hit the storage.
 
 
 You can increase the storage for internal temporary tables by setting [max_heap_table_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_heap_table_size) and [tmp_memory_table_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#tmp_memory_table_size) high enough. These values are per connection.
@@ -116,7 +116,7 @@ You can increase the storage for internal temporary tables by setting [max_heap_
 
 
 * If you are doing a lot of fast connections / disconnects, you should increase [back_log](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#back_log) and if you are running [MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) or below [thread_cache_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#thread_cache_size).
-* If you have a lot (> 128) of simultaneous running fast queries, you should consider setting [thread_handling](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) to `<code class="highlight fixed" style="white-space:pre-wrap">pool_of_threads</code>`.
+* If you have a lot (> 128) of simultaneous running fast queries, you should consider setting [thread_handling](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) to `pool_of_threads`.
 
 
 ### Connecting From a Lot of Different Machines

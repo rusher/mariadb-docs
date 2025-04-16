@@ -9,10 +9,10 @@ The dgcov tool helps you check the coverage for new code. The dgcov.pl script is
 
 The dgcov program runs gcov for code coverage analysis, aggregates the coverage data,
 and (optionally) reports coverage only for those lines that are changed by the commit(s).
-Commits are specified in the `<code class="fixed" style="white-space:pre-wrap">git diff</code>` format.
+Commits are specified in the `git diff` format.
 
 
-If no commits are specified, the default is to work on all uncommitted changes, if any, otherwise on the last commit (in other words, on `<code class="fixed" style="white-space:pre-wrap">git diff HEAD</code>` or `<code class="fixed" style="white-space:pre-wrap">git diff HEAD^</code>`).
+If no commits are specified, the default is to work on all uncommitted changes, if any, otherwise on the last commit (in other words, on `git diff HEAD` or `git diff HEAD^`).
 
 
 It's recommended that a developer [runs dgcov on their new code](code-coverage.md) before pushing it into a MariaDB repository.
@@ -60,9 +60,9 @@ for all lines modified in the specified commits.
 
 
 Output .dgcov files have a conventional gcov format:
-lines not covered are prefixed with `<code class="fixed" style="white-space:pre-wrap">#####</code>`, lines without generated code are
-prefixed with `<code class="fixed" style="white-space:pre-wrap">-</code>`, and other lines are prefixed with the number of times they
-were executed. See `<code class="fixed" style="white-space:pre-wrap">info gcov</code>` for more information.
+lines not covered are prefixed with `#####`, lines without generated code are
+prefixed with `-`, and other lines are prefixed with the number of times they
+were executed. See `info gcov` for more information.
 
 
 The patch-like coverage for commits uses gcov format (as above) for lines, changed in these commits, and no prefix at all for lines that were not changed.
@@ -99,7 +99,7 @@ dgcov.pl 1234567^ 1234567
 ./mtr --gcov
 ```
 
-in the latter case the coverate for the uncommitted changes (or the last commit) will be not printed to the stdout, but will be put into `<code>var/last_changes.dgcov</code>` file.
+in the latter case the coverate for the uncommitted changes (or the last commit) will be not printed to the stdout, but will be put into `var/last_changes.dgcov` file.
 
 
 ## Caveats

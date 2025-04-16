@@ -33,7 +33,7 @@ report at [Jira](https://jira.mariadb.org).
  need to have their state set manually.
 
 
-### `<code>connection_keepalive</code>`
+### `connection_keepalive`
 
 
 Previously this feature was a readwritesplit feature. In MaxScale 2.5.0 it has
@@ -48,9 +48,9 @@ idle connections alive (MXS-2505).
 The default timeout values for user loading have been changed.
 
 
-* `<code>auth_connect_timeout</code>` changed from 3 to 10 second
-* `<code>auth_read_timeout</code>` deprecated and ignored
-* `<code>auth_write_timeout</code>` deprecated and ignored
+* `auth_connect_timeout` changed from 3 to 10 second
+* `auth_read_timeout` deprecated and ignored
+* `auth_write_timeout` deprecated and ignored
 
 
 ### Setting a server to maintenance or draining mode
@@ -64,9 +64,9 @@ draining mode, but a switchover must be performed first.
 ### MariaDB-Monitor deprecated settings
 
 
-The settings `<code>detect_stale_master</code>`, `<code>detect_standalone_master</code>` and
-`<code>detect_stale_slave</code>` are replaced by the more flexible `<code>master_conditions</code>` and
-`<code>slave_conditions</code>`. The old settings may still be used, but will be removed in
+The settings `detect_stale_master`, `detect_standalone_master` and
+`detect_stale_slave` are replaced by the more flexible `master_conditions` and
+`slave_conditions`. The old settings may still be used, but will be removed in
 a later version.
 
 
@@ -75,7 +75,7 @@ a later version.
 
 The encrypted passwords feature has been updated to be more secure. Users are
 recommended to generate a new encryption key and and re-encrypt their passwords
-using the `<code>maxkeys</code>` and `<code>maxpasswd</code>` utilities. Old passwords still work.
+using the `maxkeys` and `maxpasswd` utilities. Old passwords still work.
 
 
 ### Authenticator options
@@ -115,10 +115,10 @@ MaxScale administrators.
 The following deprecated parameters have been removed.
 
 
-* `<code>non_blocking_polls</code>`
-* `<code>poll_sleep</code>`
-* `<code>log_trace</code>` and `<code>log_messages</code>` that were synonyms for `<code>log_info</code>` and
- `<code>log_notice</code>` respectively.
+* `non_blocking_polls`
+* `poll_sleep`
+* `log_trace` and `log_messages` that were synonyms for `log_info` and
+ `log_notice` respectively.
 
 
 ### Removed modules
@@ -130,22 +130,22 @@ The following deprecated parameters have been removed.
 ## Deprecated Features
 
 
-* Server parameters `<code>protocol</code>` and `<code>authenticator</code>` have been deprecated. Any
+* Server parameters `protocol` and `authenticator` have been deprecated. Any
  definitions are ignored.
 
 
 ### Readwritesplit
 
 
-* The use of percentage values in `<code>max_slave_connections</code>` has been deprecated.
+* The use of percentage values in `max_slave_connections` has been deprecated.
 
 
 ## New Features
 
 
 * The timeout to maxctrl can now be specified using duration suffixes, e.g.
- `<code>--timeout 5s</code>`.
-* The new `<code>targets</code>` parameter for services can be used to list
+ `--timeout 5s`.
+* The new `targets` parameter for services can be used to list
  both servers and other services as routing targets. This allows
  complex setups to be used where one service routes the query to
  another service.
@@ -157,7 +157,7 @@ The following deprecated parameters have been removed.
 
 
 MaxGUI is a new browser based configuration and management tool for
-MaxScale that complements the command line tool `<code>maxctrl</code>`.
+MaxScale that complements the command line tool `maxctrl`.
 
 
 Please see the
@@ -276,7 +276,7 @@ for more details.
 ### Mirror Router
 
 
-* The `<code>mirror</code>` router is a new router designed for data
+* The `mirror` router is a new router designed for data
  consistency and database behavior verification during system
  upgrades. It can export the measured data as JSON into either a
  file or into a Kafka broker.

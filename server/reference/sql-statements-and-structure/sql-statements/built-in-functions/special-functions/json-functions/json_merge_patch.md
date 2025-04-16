@@ -14,7 +14,7 @@ JSON_MERGE_PATCH(json_doc, json_doc[, json_doc] ...)
 Merges the given JSON documents, returning the merged result, or NULL if any argument is NULL.
 
 
-`<code>JSON_MERGE_PATCH</code>` is an RFC 7396-compliant replacement for [JSON_MERGE](json_merge.md), which has been deprecated.
+`JSON_MERGE_PATCH` is an RFC 7396-compliant replacement for [JSON_MERGE](json_merge.md), which has been deprecated.
 
 
 Unlike [JSON_MERGE_PRESERVE](json_merge_preserve.md), members with duplicate keys are not preserved.

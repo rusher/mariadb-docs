@@ -11,7 +11,7 @@ COLUMN_CHECK(dyncol_blob);
 ## Description
 
 
-Check if `<code>dyncol_blob</code>` is a valid packed dynamic columns blob. Return value of 1 means the blob is valid, return value of 0 means it is not.
+Check if `dyncol_blob` is a valid packed dynamic columns blob. Return value of 1 means the blob is valid, return value of 0 means it is not.
 
 
 **Rationale:**

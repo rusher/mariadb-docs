@@ -55,7 +55,7 @@ With an inventory of this type, it will be possible to run Bolt actions against 
 bolt ... --nodes mariadb-staging
 ```
 
-In the examples in the rest of the page, the `<code>--targets</code>` parameter will be indicated in this way, for simplicity: `<code>--targets <targets></code>`.
+In the examples in the rest of the page, the `--targets` parameter will be indicated in this way, for simplicity: `--targets <targets>`.
 
 
 ## Running Commands on Targets

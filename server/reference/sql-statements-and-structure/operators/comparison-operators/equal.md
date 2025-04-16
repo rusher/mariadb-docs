@@ -12,7 +12,7 @@ left_expr = right_expr
 ## Description
 
 
-Equal operator. Evaluates both SQL expressions and returns 1 if they are equal, 0 if they are not equal, or `<code>[NULL](../../../data-types/null-values.md)</code>` if either expression is NULL. If the expressions return different data types (for example, a number and a string), a type conversion is performed.
+Equal operator. Evaluates both SQL expressions and returns 1 if they are equal, 0 if they are not equal, or `[NULL](../../../data-types/null-values.md)` if either expression is NULL. If the expressions return different data types (for example, a number and a string), a type conversion is performed.
 
 
 When used in row comparisons these two queries are synonymous and return the same results:
@@ -24,10 +24,10 @@ SELECT (t1.a, t1.b) = (t2.x, t2.y) FROM t1 INNER JOIN t2;
 SELECT (t1.a = t2.x) AND (t1.b = t2.y) FROM t1 INNER JOIN t2;
 ```
 
-To perform a NULL-safe comparison, use the `<code>[<=>](null-safe-equal.md)</code>` operator.
+To perform a NULL-safe comparison, use the `[<=>](null-safe-equal.md)` operator.
 
 
-`<code>=</code>` can also be used as an [assignment operator](../assignment-operators/assignment-operators-assignment-operator.md).
+`=` can also be used as an [assignment operator](../assignment-operators/assignment-operators-assignment-operator.md).
 
 
 ## Examples

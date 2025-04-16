@@ -45,7 +45,7 @@ threads=8
 
 
 
-After this we configure two servers we will use to shard our database. The `<code>accounts_east</code>` server will hold one schema and the `<code>accounts_west</code>` will hold another schema. We will use these two servers to create our sharded database.
+After this we configure two servers we will use to shard our database. The `accounts_east` server will hold one schema and the `accounts_west` will hold another schema. We will use these two servers to create our sharded database.
 
 
 
@@ -63,7 +63,7 @@ port=3306
 
 
 
-The next step is to configure the service which the users connect to. This section defines which router to use, which servers to connect to and the credentials to use. The router we use in this tutorial is the `<code>schemarouter</code>`.
+The next step is to configure the service which the users connect to. This section defines which router to use, which servers to connect to and the credentials to use. The router we use in this tutorial is the `schemarouter`.
 
 
 
@@ -113,13 +113,13 @@ After this we have a fully working configuration and we can move on to starting 
 ## Starting MariaDB MaxScale
 
 
-Upon completion of the configuration process MariaDB MaxScale is ready to be started . This may either be done manually by running the maxscale command or via the service interface. The service scripts are located in the `<code>/etc/init.d/</code>` folder and are accessible through both the `<code>service</code>` and `<code>systemctl</code>` commands.
+Upon completion of the configuration process MariaDB MaxScale is ready to be started . This may either be done manually by running the maxscale command or via the service interface. The service scripts are located in the `/etc/init.d/` folder and are accessible through both the `service` and `systemctl` commands.
 
 
 MariaDB MaxScale is now ready to start accepting client connections and routing them. Queries are routed to the right servers based on the database they target and switching between the shards is seamless since MariaDB MaxScale keeps the session state intact between servers.
 
 
-If MariaDB MaxScale fails to start, check the error log in `<code>/var/log/maxscale</code>` to see what sort of errors were detected.
+If MariaDB MaxScale fails to start, check the error log in `/var/log/maxscale` to see what sort of errors were detected.
 
 
 **Note:** As the sharding solution in MaxScale is relatively simple, cross-database queries between two or more shards are not supported.

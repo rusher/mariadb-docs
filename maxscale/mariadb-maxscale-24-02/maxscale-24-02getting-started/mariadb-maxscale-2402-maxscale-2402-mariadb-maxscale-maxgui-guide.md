@@ -37,17 +37,17 @@
 # Enabling MaxGUI
 
 
-To enable MaxGUI in a testing mode, add `<code>admin_host=0.0.0.0</code>` and
-`<code>admin_secure_gui=false</code>` under the `<code>[maxscale]</code>` section of the MaxScale
+To enable MaxGUI in a testing mode, add `admin_host=0.0.0.0` and
+`admin_secure_gui=false` under the `[maxscale]` section of the MaxScale
 configuration file. Once enabled, MaxGUI will be available on port 8989:
-`<code>http://127.0.0.1:8989/</code>`
+`http://127.0.0.1:8989/`
 
 
 ## Securing the GUI
 
 
-To make MaxGUI secure, set `<code>admin_secure_gui=true</code>` and configure both the
-`<code>admin_ssl_key</code>` and `<code>admin_ssl_cert</code>` parameters.
+To make MaxGUI secure, set `admin_secure_gui=true` and configure both the
+`admin_ssl_key` and `admin_ssl_cert` parameters.
 
 
 See [Configuration Guide](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) and
@@ -58,8 +58,8 @@ for instructions on how to harden your MaxScale installation for production use.
 # Authentication
 
 
-MaxGUI uses the same credentials as `<code>maxctrl</code>`. The default username is `<code>admin</code>`
-with `<code>mariadb</code>` as the password.
+MaxGUI uses the same credentials as `maxctrl`. The default username is `admin`
+with `mariadb` as the password.
 
 
 Internally, MaxGUI uses [JSON Web Tokens](https://jwt.io/introduction/) as the
@@ -106,7 +106,7 @@ This page visualizes MaxScale configuration and clusters.
 * Configuration: Visualizing MaxScale configuration.
 * Cluster: Visualizing a replication cluster into a tree graph and provides
  manual cluster manipulation operations such as
- `<code>switchover, reset-replication, release-locks, failover, rejoin</code>` . At the
+ `switchover, reset-replication, release-locks, failover, rejoin` . At the
  moment, it supports only servers monitored by Monitor using
  [mariadbmon](../maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md) module.
 

@@ -21,7 +21,7 @@ YYYY format, but allows you to assign values to YEAR columns using
 either strings or numbers.
 
 
-Inserting numeric zero has a different result for YEAR(4) and YEAR(2). For YEAR(2), the value `<code>00</code>` reflects the year 2000. For YEAR(4), the value `<code>0000</code>` reflects the year zero. This only applies to numeric zero. String zero always reflects the year 2000.
+Inserting numeric zero has a different result for YEAR(4) and YEAR(2). For YEAR(2), the value `00` reflects the year 2000. For YEAR(4), the value `0000` reflects the year zero. This only applies to numeric zero. String zero always reflects the year 2000.
 
 
 ## Examples

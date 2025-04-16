@@ -50,7 +50,7 @@ For information on how to install the package, see Eperi's documentation at the 
 ## Installing the Plugin
 
 
-Even after the package that contains the plugin's shared library is installed on the operating system, the plugin is not actually installed by MariaDB by default. The plugin can be installed by providing the `<code>[--plugin-load](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` or the `<code>[--plugin-load-add](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` options. This can be specified as a command-line argument to `<code>[mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` or it can be specified in a relevant server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+Even after the package that contains the plugin's shared library is installed on the operating system, the plugin is not actually installed by MariaDB by default. The plugin can be installed by providing the `[--plugin-load](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or the `[--plugin-load-add](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` options. This can be specified as a command-line argument to `[mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or it can be specified in a relevant server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 
 ```
@@ -65,14 +65,14 @@ plugin_load_add = eperi_key_management_plugin
 Before you uninstall the plugin, you should ensure that [data-at-rest encryption](../data-at-rest-encryption-overview.md) is completely disabled, and that MariaDB no longer needs the plugin to decrypt tables or other files.
 
 
-You can uninstall the plugin dynamically by executing `<code>[UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)</code>` or `<code>[UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)</code>`. For example:
+You can uninstall the plugin dynamically by executing `[UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)`. For example:
 
 
 ```
 UNINSTALL SONAME 'eperi_key_management_plugin';
 ```
 
-If you installed the plugin by providing the `<code>[--plugin-load](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` or the `<code>[--plugin-load-add](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` options in a relevant server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the `[--plugin-load](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or the `[--plugin-load-add](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` options in a relevant server [option group](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 
 ## Configuring the Eperi Key Management Plugin
@@ -91,7 +91,7 @@ Once the Eperi Key Management Plugin is enabled, you can use it by creating an e
 CREATE TABLE t (i int) ENGINE=InnoDB ENCRYPTED=YES
 ```
 
-Now, table `<code>t</code>` will be encrypted using the encryption key from the key server.
+Now, table `t` will be encrypted using the encryption key from the key server.
 
 
 For more information on how to use encryption, see [Data at Rest Encryption](../data-at-rest-encryption-overview.md).
@@ -129,113 +129,113 @@ The Eperi Key Management plugin supports [key rotation](encryption-key-managemen
 ## System Variables
 
 
-### `<code>eperi_key_management_plugin_databaseId</code>`
+### `eperi_key_management_plugin_databaseId`
 
 
 * Description: Determines the database ID which is processed in the eperi Gateway.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--eperi-key-management-plugin-databaseid=value</code>`
+* Commandline: `--eperi-key-management-plugin-databaseid=value`
 * Scope: Global
 * Dynamic: No
-* Data Type: `<code>integer</code>`
-* Default Value: `<code>1</code>`
+* Data Type: `integer`
+* Default Value: `1`
 
 
 
-### `<code>eperi_key_management_plugin_encryption_algorithm</code>`
+### `eperi_key_management_plugin_encryption_algorithm`
 
 
 * Description: This system variable is used to determine which algorithm the plugin will use to encrypt data.
 
-  * The recommended algorithm is `<code>AES_CTR</code>`, but this algorithm is only available when MariaDB is built with recent versions of [OpenSSL](https://www.openssl.org/). If the server is built with [wolfSSL](https://www.wolfssl.com/products/wolfssl/) or [yaSSL](https://www.wolfssl.com/products/yassl/), then this algorithm is not available. See [TLS and Cryptography Libraries Used by MariaDB](../../tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--eperi-key-management-plugin-encryption-algorithm=value</code>`
+  * The recommended algorithm is `AES_CTR`, but this algorithm is only available when MariaDB is built with recent versions of [OpenSSL](https://www.openssl.org/). If the server is built with [wolfSSL](https://www.wolfssl.com/products/wolfssl/) or [yaSSL](https://www.wolfssl.com/products/yassl/), then this algorithm is not available. See [TLS and Cryptography Libraries Used by MariaDB](../../tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms.
+* Commandline: `--eperi-key-management-plugin-encryption-algorithm=value`
 * Scope: Global
 * Dynamic: No
-* Data Type: `<code>enumerated</code>`
-* Default Value: `<code>AES_CBC</code>`
-* Valid Values: `<code>AES_CBC</code>`, `<code>AES_CTR</code>`
+* Data Type: `enumerated`
+* Default Value: `AES_CBC`
+* Valid Values: `AES_CBC`, `AES_CTR`
 
 
 
-### `<code>eperi_key_management_plugin_encryption_mode</code>`
+### `eperi_key_management_plugin_encryption_mode`
 
 
 * Description: Encryption mode.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--eperi-key-management-plugin-encryption-mode=value</code>`
+* Commandline: `--eperi-key-management-plugin-encryption-mode=value`
 * Scope: Global
 * Dynamic: No
-* Data Type: `<code>enumerated</code>`
-* Default Value: `<code>database</code>`
-* Valid Values: `<code>database</code>`, `<code>gateway</code>`
+* Data Type: `enumerated`
+* Default Value: `database`
+* Valid Values: `database`, `gateway`
 
 
 
-### `<code>eperi_key_management_plugin_osslmt</code>`
+### `eperi_key_management_plugin_osslmt`
 
 
 * Description: Determines, whether the plugin should register callback functions for OpenSSL thread support.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--eperi-key-management-plugin-osslmt=value</code>`
+* Commandline: `--eperi-key-management-plugin-osslmt=value`
 * Scope: Global
 * Dynamic: No
-* Data Type: `<code>boolean</code>`
-* Default Value: `<code>0</code>` (Linux), `<code>1</code>` (Windows)
+* Data Type: `boolean`
+* Default Value: `0` (Linux), `1` (Windows)
 
 
 
-### `<code>eperi_key_management_plugin_port</code>`
+### `eperi_key_management_plugin_port`
 
 
 * Description: Listener port for plugin.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--eperi-key-management-plugin-port=value</code>`
+* Commandline: `--eperi-key-management-plugin-port=value`
 * Scope: Global
 * Dynamic: No
-* Data Type: `<code>integer</code>`
-* Default Value: `<code>14332</code>`
+* Data Type: `integer`
+* Default Value: `14332`
 
 
 
-### `<code>eperi_key_management_plugin_url</code>`
+### `eperi_key_management_plugin_url`
 
 
 * Description: URL to key server. The expected format of the URL is <host>:<port>. The port number is optional, and the port number defaults to 14333 if it is not specified.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--eperi-key-management-plugin-url=value</code>`
+* Commandline: `--eperi-key-management-plugin-url=value`
 * Scope: Global
 * Dynamic: No
-* Data Type: `<code>string</code>`
-* Default Value: `<code>NULL</code>`
+* Data Type: `string`
+* Default Value: `NULL`
 
 
 
-### `<code>eperi_key_management_plugin_url_check_disabled</code>`
+### `eperi_key_management_plugin_url_check_disabled`
 
 
 * Description: Determines, whether the connection between plugin and eperi Gateway is tested at server startup.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--eperi-key-management-plugin-url-check-disabled=value</code>`
+* Commandline: `--eperi-key-management-plugin-url-check-disabled=value`
 * Scope: Global
 * Dynamic: No
-* Data Type: `<code>boolean</code>`
-* Default Value: `<code>1</code>`
+* Data Type: `boolean`
+* Default Value: `1`
 
 
 
 ## Options
 
 
-### `<code>eperi_key_management_plugin</code>`
+### `eperi_key_management_plugin`
 
 
 * Description: Controls how the server should treat the plugin when the server starts up.
 
   * Valid values are:
 
-    * `<code>OFF</code>` - Disables the plugin without removing it from the `<code>[mysql.plugins](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md)</code>` table.
-    * `<code>ON</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
-    * `<code>FORCE</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `<code>FORCE_PLUS_PERMANENT</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with `<code>[UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)</code>` or `<code>[UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)</code>` while the server is running.
+    * `OFF` - Disables the plugin without removing it from the `[mysql.plugins](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md)` table.
+    * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
+    * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with `[UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)` while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../../../../reference/plugins/plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--eperi-key-management-plugin=value</code>`
-* Data Type: `<code>enumerated</code>`
-* Default Value: `<code>ON</code>`
-* Valid Values: `<code>OFF</code>`, `<code>ON</code>`, `<code>FORCE</code>`, `<code>FORCE_PLUS_PERMANENT</code>`
+* Commandline: `--eperi-key-management-plugin=value`
+* Data Type: `enumerated`
+* Default Value: `ON`
+* Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
 
 
 

@@ -61,7 +61,7 @@ Now, if we run a query on this view, as follows:
 SELECT * FROM view_name;
 ```
 
-to execute the view `<code>view_name</code>` becomes the underlying table, `<code>table_name</code>`, the `<code>*</code>` becomes the fields `<code>view_field1</code>` and `<code>view_field2</code>`, corresponding to `<code>field1</code>` and `<code>field2</code>` and the WHERE clause, `<code>WHERE field3 > 100</code>` is added, so the actual query executed is:
+to execute the view `view_name` becomes the underlying table, `table_name`, the `*` becomes the fields `view_field1` and `view_field2`, corresponding to `field1` and `field2` and the WHERE clause, `WHERE field3 > 100` is added, so the actual query executed is:
 
 
 ```
@@ -78,7 +78,7 @@ Given the same view as above, if we run the query:
 SELECT * FROM view_name WHERE view_field < 8000;
 ```
 
-everything occurs as it does in the previous example, but `<code>view_field < 8000</code>` takes the corresponding field name and becomes `<code>field1 < 8000</code>`, connected with `<code>AND</code>` to the `<code>field3 > '2013-06-01'</code>` part of the query.
+everything occurs as it does in the previous example, but `view_field < 8000` takes the corresponding field name and becomes `field1 < 8000`, connected with `AND` to the `field3 > '2013-06-01'` part of the query.
 
 
 So the resulting query is:
@@ -88,5 +88,5 @@ So the resulting query is:
 SELECT field1, field2 FROM table_name WHERE (field3 > '2013-06-01') AND (field1 < 8000);
 ```
 
-When connecting with `<code>AND</code>`, parentheses are added to make sure the correct precedence is used.
+When connecting with `AND`, parentheses are added to make sure the correct precedence is used.
 

@@ -11,7 +11,7 @@ TO_SECONDS(expr)
 ## Description
 
 
-Returns the number of seconds from year 0 till `<code>expr</code>`, or NULL if `<code>expr</code>` is not a valid date or [datetime](../../../../data-types/date-and-time-data-types/datetime.md).
+Returns the number of seconds from year 0 till `expr`, or NULL if `expr` is not a valid date or [datetime](../../../../data-types/date-and-time-data-types/datetime.md).
 
 
 ## Examples

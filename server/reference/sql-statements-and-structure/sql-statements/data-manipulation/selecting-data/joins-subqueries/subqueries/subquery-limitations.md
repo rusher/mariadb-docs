@@ -72,7 +72,7 @@ expr op {ALL|ANY|SOME} subquery,
 must be scalar and the subquery can only return a single column.
 
 
-However, because of the way `<code>IN</code>` is implemented (it is rewritten as a sequence of `<code>=</code>` comparisons and `<code>AND</code>`), the expression in
+However, because of the way `IN` is implemented (it is rewritten as a sequence of `=` comparisons and `AND`), the expression in
 
 
 ```

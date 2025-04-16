@@ -71,13 +71,13 @@ use.
 ### MariaDB 10.2
 
 
-The parser of MaxScale correctly parses `<code>WITH</code>` statements, but fails to
-collect columns, functions and tables used in the `<code>SELECT</code>` defining the
-`<code>WITH</code>` clause.
+The parser of MaxScale correctly parses `WITH` statements, but fails to
+collect columns, functions and tables used in the `SELECT` defining the
+`WITH` clause.
 
 
-Consequently, the database firewall will **not** block `<code>WITH</code>` statements
-where the `<code>SELECT</code>` of the `<code>WITH</code>` clause refers to forbidden columns.
+Consequently, the database firewall will **not** block `WITH` statements
+where the `SELECT` of the `WITH` clause refers to forbidden columns.
 
 
 ## MariaDB Default Values
@@ -87,8 +87,8 @@ MaxScale assumes that certain configuration parameters in MariaDB are set to
 their default values. These include but are not limited to:
 
 
-* `<code>autocommit</code>`: Autocommit is enabled for all new connections.
-* `<code>tx_read_only</code>`: Transactions use `<code>READ WRITE</code>` permissions by default.
+* `autocommit`: Autocommit is enabled for all new connections.
+* `tx_read_only`: Transactions use `READ WRITE` permissions by default.
 
 
 ## Query Classification
@@ -166,23 +166,23 @@ transaction or change the autocommit mode using a prepared statement.
 
 
 * Compression is not included in the server handshake.
-* If a `<code>KILL [CONNECTION] <ID></code>` statement is executed, MaxScale will intercept
+* If a `KILL [CONNECTION] <ID>` statement is executed, MaxScale will intercept
  it. If the ID matches a MaxScale session ID, it will be closed by sending
- modified `<code>KILL</code>` commands of the same type to all backend server to which the
+ modified `KILL` commands of the same type to all backend server to which the
  session in question is connected to. This results in behavior that is similar
- to how MariaDB does it. If the `<code>KILL CONNECTION USER <user></code>` form is given,
+ to how MariaDB does it. If the `KILL CONNECTION USER <user>` form is given,
  all connections with a matching username will be closed instead.
-* MariaDB MaxScale does not support `<code>KILL QUERY ID <query_id></code>` type
+* MariaDB MaxScale does not support `KILL QUERY ID <query_id>` type
  statements. If a query by a query ID is to be killed, it needs to be done
  directly on the backend databases.
-* Any `<code>KILL</code>` commands executed using a prepared statement are ignored by
+* Any `KILL` commands executed using a prepared statement are ignored by
  MaxScale. If any are executed, it is highly likely that the wrong connection
  ends up being killed.
-* If a `<code>KILL</code>` connection kills a session that is connected to a readwritesplit
- service that has `<code>transaction_replay</code>` or `<code>delayed_retry</code>` enabled, it is
+* If a `KILL` connection kills a session that is connected to a readwritesplit
+ service that has `transaction_replay` or `delayed_retry` enabled, it is
  possible that the query is retried even if the connection is killed. To avoid
- this, use `<code>KILL QUERY</code>` instead.
-* A `<code>KILL</code>` on one service can cause a connection from another service to be
+ this, use `KILL QUERY` instead.
+* A `KILL` on one service can cause a connection from another service to be
  closed even if it uses a different protocol.
 * The change user command (COM_CHANGE_USER) only works with standard
  authentication.

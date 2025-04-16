@@ -71,10 +71,10 @@ MaxScale's address. This usually means that you must create two sets of grants
 for each user.
 
 
-For example, if you have the `<code>'jdoe'@'client-host'</code>` user and MaxScale is located
-at `<code>maxscale-host</code>`, the `<code>'jdoe'@'maxscale-host'</code>` user must be created with the
-same password as `<code>'jdoe'@'client-host'</code>` and given the same grants that
-`<code>'jdoe'@'client-host'</code>` has.
+For example, if you have the `'jdoe'@'client-host'` user and MaxScale is located
+at `maxscale-host`, the `'jdoe'@'maxscale-host'` user must be created with the
+same password as `'jdoe'@'client-host'` and given the same grants that
+`'jdoe'@'client-host'` has.
 
 
 The quickest way to do this is to first create the new user:
@@ -87,7 +87,7 @@ CREATE USER 'jdoe'@'maxscale-host' IDENTIFIED BY 'my_secret_password';
 
 
 
-Then do a `<code>SHOW GRANTS</code>` query:
+Then do a `SHOW GRANTS` query:
 
 
 
@@ -103,7 +103,7 @@ MariaDB [(none)]> SHOW GRANTS FOR 'jdoe'@'client-host';
 
 
 
-Followed by copying grant the same grants to the `<code>'jdoe'@'maxscale-host'</code>` user.
+Followed by copying grant the same grants to the `'jdoe'@'maxscale-host'` user.
 
 
 

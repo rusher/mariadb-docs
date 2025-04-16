@@ -39,7 +39,7 @@ systemctl stop maxscale
 
 
 
-The MaxScale service file is located in `<code>/lib/systemd/system/maxscale.service</code>`.
+The MaxScale service file is located in `/lib/systemd/system/maxscale.service`.
 
 
 ### SysV
@@ -69,9 +69,9 @@ service maxscale stop
 
 
 Additional command line arguments can be passed to MariaDB MaxScale with a
-configuration file placed at `<code>/etc/sysconfig/maxscale</code>` on RPM installations and
-`<code>/etc/default/maxscale</code>` file on DEB installations. Set the arguments in a
-variable called `<code>MAXSCALE_OPTIONS</code>` and remember to surround the arguments with
+configuration file placed at `/etc/sysconfig/maxscale` on RPM installations and
+`/etc/default/maxscale` file on DEB installations. Set the arguments in a
+variable called `MAXSCALE_OPTIONS` and remember to surround the arguments with
 quotes. The file should only contain environment variable declarations.
 
 
@@ -147,18 +147,18 @@ When clients who are accessing a database system through MariaDB MaxScale make
 frequent short connections, there may be a benefit in using persistent
 connections. This feature is controlled by two configuration values that are
 specified per server in the relevant server section of the configuration file.
-The configuration options are `<code>persistpoolmax</code>` and `<code>persistmaxtime</code>`.
+The configuration options are `persistpoolmax` and `persistmaxtime`.
 
 
 Normally, when a client connection is terminated, all the related back end
-database connections are also terminated. If the `<code>persistpoolmax</code>` options is set
+database connections are also terminated. If the `persistpoolmax` options is set
 to a non-zero integer, then up to that number of connections will be kept in a
 pool for that server. When a new connection is requested by the system to handle
 a client session, then a connection from the pool will be used if possible.
 
 
 The connection will only be taken from the pool if it has been there for no more
-than `<code>persistmaxtime</code>` seconds. The connection will also be discarded if it has
+than `persistmaxtime` seconds. The connection will also be discarded if it has
 been disconnectedby the back end server. Connections will be selected so that
 they match the user name and protocol for the new request.
 
@@ -280,7 +280,7 @@ If 'root' user is no longer available for maxadmin connection and for example
 'user1' is one of the allowed users, the maxadmin command should be run as:
 
 
-`<code>su - user1 -c '/usr/bin/maxadmin flush logs'</code>`
+`su - user1 -c '/usr/bin/maxadmin flush logs'`
 
 
 If listening socket is not the default one, /tmp/maxadmin.sock, use -S option.

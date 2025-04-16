@@ -12,15 +12,15 @@ SUBSTRING_INDEX(str,delim,count)
 ## Description
 
 
-Returns the substring from string *`<code>str</code>`* before count occurrences of the
-delimiter *`<code>delim</code>`*. If *`<code>count</code>`* is positive, everything to the left
-of the final delimiter (counting from the left) is returned. If *`<code>count</code>`*
+Returns the substring from string *`str`* before count occurrences of the
+delimiter *`delim`*. If *`count`* is positive, everything to the left
+of the final delimiter (counting from the left) is returned. If *`count`*
 is negative, everything to the right of the final delimiter (counting from the
-right) is returned. `<code>SUBSTRING_INDEX()</code>` performs a case-sensitive match when
-searching for *`<code>delim</code>`*.
+right) is returned. `SUBSTRING_INDEX()` performs a case-sensitive match when
+searching for *`delim`*.
 
 
-If any argument is `<code>NULL</code>`, returns `<code>NULL</code>`.
+If any argument is `NULL`, returns `NULL`.
 
 
 For example

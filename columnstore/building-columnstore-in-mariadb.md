@@ -49,7 +49,7 @@ cd /usr/local/mariadb/columnstore/bin/
 ## Configure
 
 
-Make sure you do NOT have `<code>/etc/my.cnf</code>` or `<code>/.my.cnf</code>`.
+Make sure you do NOT have `/etc/my.cnf` or `/.my.cnf`.
 
 
 ```
@@ -63,7 +63,7 @@ Answer "Enter" to all questions, except:
 Select the type of System Server install [1=single, 2=multi] (2) >
 ```
 
-Here, answer `<code>1</code>`.
+Here, answer `1`.
 
 
 Access the server

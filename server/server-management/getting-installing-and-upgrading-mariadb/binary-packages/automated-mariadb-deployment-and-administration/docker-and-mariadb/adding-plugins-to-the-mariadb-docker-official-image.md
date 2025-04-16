@@ -1,7 +1,7 @@
 
 # Adding Plugins to the MariaDB Docker Official Image
 
-MariaDB has many plugins. Most are not enabled by default, some are in the `<code>mariadb</code>` container, while others need to be installed from additional packages.
+MariaDB has many plugins. Most are not enabled by default, some are in the `mariadb` container, while others need to be installed from additional packages.
 
 
 The following methods summarize [Installing plugins in the MariaDB Docker Library Container](https://mariadb.org/installing-plugins-in-the-mariadb-docker-library-container/) (mariadb.org blog post) on this topic.
@@ -70,7 +70,7 @@ $ docker run --rm mariadb:latest sh -c 'apt-get update -qq && apt-cache search m
 ### Creating an Image With Plugins From Additional Packages
 
 
-A new image needs to be created when using additional packages. The `<code>mariadb</code>` image can however be used as a base:
+A new image needs to be created when using additional packages. The `mariadb` image can however be used as a base:
 
 
 In the following, the [CONNECT Storage Engine](../../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) is installed:

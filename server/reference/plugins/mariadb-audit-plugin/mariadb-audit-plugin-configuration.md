@@ -34,14 +34,14 @@ SHOW GLOBAL VARIABLES LIKE 'server_audit%';
 +-------------------------------+-----------------------+
 ```
 
-The values of these variables can be changed by an administrator with the `<code>SUPER</code>` privilege, using the [SET](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) statement. Below is an example of how to disable audit logging:
+The values of these variables can be changed by an administrator with the `SUPER` privilege, using the [SET](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) statement. Below is an example of how to disable audit logging:
 
 
 ```
 SET GLOBAL server_audit_logging=OFF;
 ```
 
-Although it is possible to change all of the variables shown above, some of them may be reset when the server restarts. Therefore, you may want set them in the configuration file (e.g., `<code>/etc/my.cnf.d/server.cnf</code>`) to ensure the values are the same after a restart:
+Although it is possible to change all of the variables shown above, some of them may be reset when the server restarts. Therefore, you may want set them in the configuration file (e.g., `/etc/my.cnf.d/server.cnf`) to ensure the values are the same after a restart:
 
 
 ```

@@ -324,7 +324,7 @@ utility.
 /usr/local/mariadb/columnstore/bin/cpimport mcs idbtest idbtest.tbl
 ```
 
-#### `<code>Configuring_to_use_UTF-8_Character_sets</code>`
+#### `Configuring_to_use_UTF-8_Character_sets`
 
 
 ## Configuring to use UTF-8 Character sets

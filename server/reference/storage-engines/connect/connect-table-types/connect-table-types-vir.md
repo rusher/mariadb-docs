@@ -13,7 +13,7 @@ CREATE TABLE name [coldef] ENGINE=CONNECT TABLE_TYPE=VIR
 [BLOCK_SIZE=n];
 ```
 
-The optional `<code>BLOCK_SIZE</code>` option gives the size of the table, defaulting to 1 if not specified. When its columns are not specified, it is almost equivalent to a [SEQUENCE](../../sequence-storage-engine.md) table “seq_1_to_Size”.
+The optional `BLOCK_SIZE` option gives the size of the table, defaulting to 1 if not specified. When its columns are not specified, it is almost equivalent to a [SEQUENCE](../../sequence-storage-engine.md) table “seq_1_to_Size”.
 
 
 ### Displaying constants or expressions

@@ -8,10 +8,10 @@ This page helps to map each SQL Server type to the matching MariaDB type.
 ## Numbers
 
 
-In MariaDB, numeric types can be declared as `<code>SIGNED</code>` or `<code>UNSIGNED</code>`. By default, numeric columns are `<code>SIGNED</code>`, so not specifying either will not break compatibility with SQL Server.
+In MariaDB, numeric types can be declared as `SIGNED` or `UNSIGNED`. By default, numeric columns are `SIGNED`, so not specifying either will not break compatibility with SQL Server.
 
 
-When using `<code>UNSIGNED</code>` values, there is a potential problem with subtractions. When subtracting an `<code>UNSIGNED</code>` valued from another, the result is usually of an `<code>UNSIGNED</code>` type. But if the result is negative, this will cause an error. To solve this problem, we can enable the [NO_UNSIGNED_SUBTRACTION](../../../variables-and-modes/sql-mode.md#no_unsigned_subtraction) flag in sql_mode.
+When using `UNSIGNED` values, there is a potential problem with subtractions. When subtracting an `UNSIGNED` valued from another, the result is usually of an `UNSIGNED` type. But if the result is negative, this will cause an error. To solve this problem, we can enable the [NO_UNSIGNED_SUBTRACTION](../../../variables-and-modes/sql-mode.md#no_unsigned_subtraction) flag in sql_mode.
 
 
 For more information see [Numeric Data Type Overview](../../../../reference/data-types/data-types-numeric-data-types/numeric-data-type-overview.md).
@@ -44,7 +44,7 @@ For more information see [Numeric Data Type Overview](../../../../reference/data
 
 
 
-MariaDB supports an alternative syntax: `<code>FLOAT(M, D)</code>`. M is the total number of digits, and D is the number of digits after the decimal point.
+MariaDB supports an alternative syntax: `FLOAT(M, D)`. M is the total number of digits, and D is the number of digits after the decimal point.
 
 
 See also: [Floating-point Accuracy](../../../../reference/data-types/data-types-numeric-data-types/floating-point-accuracy.md).
@@ -53,13 +53,13 @@ See also: [Floating-point Accuracy](../../../../reference/data-types/data-types-
 #### Aliases
 
 
-In SQL Server `<code>real</code>` is an alias for `<code>float(24)</code>`.
+In SQL Server `real` is an alias for `float(24)`.
 
 
-In MariaDB [DOUBLE](../../../../reference/data-types/data-types-numeric-data-types/double.md), and [DOUBLE PRECISION](../../../../reference/data-types/data-types-numeric-data-types/double-precision.md) are aliases for `<code>FLOAT(24-53)</code>`.
+In MariaDB [DOUBLE](../../../../reference/data-types/data-types-numeric-data-types/double.md), and [DOUBLE PRECISION](../../../../reference/data-types/data-types-numeric-data-types/double-precision.md) are aliases for `FLOAT(24-53)`.
 
 
-Normally, `<code>REAL</code>` is also a synonym for `<code>FLOAT(24-53)</code>`. However, the [sql_mode](../../../variables-and-modes/sql-mode.md) variable can be set with the `<code>REAL_AS_FLOAT</code>` flag to make `<code>REAL</code>` a synonym for `<code>FLOAT(0-23)</code>`.
+Normally, `REAL` is also a synonym for `FLOAT(24-53)`. However, the [sql_mode](../../../variables-and-modes/sql-mode.md) variable can be set with the `REAL_AS_FLOAT` flag to make `REAL` a synonym for `FLOAT(0-23)`.
 
 
 ### Real Numbers (Exact)
@@ -73,22 +73,22 @@ Normally, `<code>REAL</code>` is also a synonym for `<code>FLOAT(24-53)</code>`.
 
 
 
-MariaDB supports this syntax: `<code>DECIMAL(M, D)</code>`. M and D are both optional. M is the total number of digits (10 by default), and D is the number of digits after the decimal point (0 by default). In SQL Server, defaults are 18 and 0, respectively. The reason for this difference is that SQL standard imposes a default of 0 for D, but it leaves the implementation free to choose any default for M.
+MariaDB supports this syntax: `DECIMAL(M, D)`. M and D are both optional. M is the total number of digits (10 by default), and D is the number of digits after the decimal point (0 by default). In SQL Server, defaults are 18 and 0, respectively. The reason for this difference is that SQL standard imposes a default of 0 for D, but it leaves the implementation free to choose any default for M.
 
 
-SQL Server `<code>DECIMAL</code>` is equivalent to MariaDB `<code>DECIMAL(18)</code>`.
+SQL Server `DECIMAL` is equivalent to MariaDB `DECIMAL(18)`.
 
 
 #### Aliases
 
 
-The following [aliases](../../../../reference/data-types/data-types-numeric-data-types/dec-numeric-fixed.md) for `<code>DECIMAL</code>` are recognized in both SQL Server and MariaDB: `<code>DEC</code>`, `<code>NUMERIC</code>`. MariaDB also allows one to use `<code>FIXED</code>`.
+The following [aliases](../../../../reference/data-types/data-types-numeric-data-types/dec-numeric-fixed.md) for `DECIMAL` are recognized in both SQL Server and MariaDB: `DEC`, `NUMERIC`. MariaDB also allows one to use `FIXED`.
 
 
 ### Money
 
 
-SQL Server `<code>money</code>` and `<code>smallmoney</code>` types represent real numbers guaranteeing a very low level of approximation (five decimal digits are accurate), optionally associated with one of the supported currencies.
+SQL Server `money` and `smallmoney` types represent real numbers guaranteeing a very low level of approximation (five decimal digits are accurate), optionally associated with one of the supported currencies.
 
 
 MariaDB doesn't have monetary types. To represent amounts of money:
@@ -101,21 +101,21 @@ MariaDB doesn't have monetary types. To represent amounts of money:
   * An integer type is faster for calculations. It is possible to store, for example, the amount of money multiplied by 100.
 
 
-There is a small incompatibility that users should be aware about. `<code>money</code>` and `<code>smallmoney</code>` are accurate to about 4 decimal digits. This means that, if you use enough decimal digits, operations on these types may produce different results than the results they would produce on MariaDB types.
+There is a small incompatibility that users should be aware about. `money` and `smallmoney` are accurate to about 4 decimal digits. This means that, if you use enough decimal digits, operations on these types may produce different results than the results they would produce on MariaDB types.
 
 
 ### Bits
 
 
-The [BIT](../../../../reference/sql-statements-and-structure/temporal-tables/bitemporal-tables.md) type is supported in MariaDB. Its maximum size is `<code>BIT(64)</code>`. The `<code>BIT</code>` type has a fixed length. If we insert a value which requires less bits than the ones that are allocated, zero-bits are padded on the left.
+The [BIT](../../../../reference/sql-statements-and-structure/temporal-tables/bitemporal-tables.md) type is supported in MariaDB. Its maximum size is `BIT(64)`. The `BIT` type has a fixed length. If we insert a value which requires less bits than the ones that are allocated, zero-bits are padded on the left.
 
 
 In MariaDB, binary values can be written in one of the following ways:
 
 
-* `<code>b'value'</code>`
-* `<code>0value</code>`
-where `<code>value</code>` is a sequence of 0 and 1 digits. Hexadecimal syntax can also be used. For more details, see [Binary Literals](../../../../reference/sql-statements-and-structure/sql-language-structure/binary-literals.md) and [Hexadecimal Literals](../../../../reference/sql-statements-and-structure/sql-language-structure/hexadecimal-literals.md).
+* `b'value'`
+* `0value`
+where `value` is a sequence of 0 and 1 digits. Hexadecimal syntax can also be used. For more details, see [Binary Literals](../../../../reference/sql-statements-and-structure/sql-language-structure/binary-literals.md) and [Hexadecimal Literals](../../../../reference/sql-statements-and-structure/sql-language-structure/hexadecimal-literals.md).
 
 
 MariaDB and SQL Server have different sets of bitwise operators. See [Bit Functions and Operators](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/README.md).
@@ -124,13 +124,13 @@ MariaDB and SQL Server have different sets of bitwise operators. See [Bit Functi
 ## BOOLEAN Pseudo-Type
 
 
-In SQL Server, it is common to use `<code>bit</code>` to represent boolean values. In MariaDB it is possible to do the same, but this is not a common practice.
+In SQL Server, it is common to use `bit` to represent boolean values. In MariaDB it is possible to do the same, but this is not a common practice.
 
 
-A column can also be defined as [BOOLEAN](../../../../reference/data-types/data-types-numeric-data-types/boolean.md) or `<code>BOOL</code>`, which is just a synonym for [TINYINT](../../../../reference/data-types/data-types-numeric-data-types/tinyint.md). `<code>TRUE</code>` and `<code>FALSE</code>` keywords also exist, but they are synonyms for 1 and 0. To understand what this implies, see [Boolean Literals](../../../../reference/sql-statements-and-structure/sql-language-structure/sql-language-structure-boolean-literals.md).
+A column can also be defined as [BOOLEAN](../../../../reference/data-types/data-types-numeric-data-types/boolean.md) or `BOOL`, which is just a synonym for [TINYINT](../../../../reference/data-types/data-types-numeric-data-types/tinyint.md). `TRUE` and `FALSE` keywords also exist, but they are synonyms for 1 and 0. To understand what this implies, see [Boolean Literals](../../../../reference/sql-statements-and-structure/sql-language-structure/sql-language-structure-boolean-literals.md).
 
 
-In MariaDB `<code>'True'</code>` and `<code>'False'</code>` are always strings.
+In MariaDB `'True'` and `'False'` are always strings.
 
 
 ## Date and Time
@@ -152,26 +152,26 @@ In MariaDB `<code>'True'</code>` and `<code>'False'</code>` are always strings.
 You may also consider the following MariaDB types:
 
 
-* [TIMESTAMP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) has little to do with SQL Server's `<code>timestamp</code>`. In MariaDB it is the number of seconds elapsed since the beginning of 1970-01-01, with a decimal precision up to 6 digits (0 by default). The maximum allowed value is '2038-01-19 03:14:07'. Values are always stored in UTC. A TIMESTAMP column can optionally be automatically set to the current timestamp on insert, on update, or both. It is not meant to be a unique row identifier. Also, in MariaDB the range of TIMESTAMP values is
+* [TIMESTAMP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) has little to do with SQL Server's `timestamp`. In MariaDB it is the number of seconds elapsed since the beginning of 1970-01-01, with a decimal precision up to 6 digits (0 by default). The maximum allowed value is '2038-01-19 03:14:07'. Values are always stored in UTC. A TIMESTAMP column can optionally be automatically set to the current timestamp on insert, on update, or both. It is not meant to be a unique row identifier. Also, in MariaDB the range of TIMESTAMP values is
 * [YEAR](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/year.md) is a 1-byte type representing years between 1901 and 2155, as well as 0000.
 
 
 ### Zero Values
 
 
-MariaDB allows a special value where all the parts of a date are zeroes: `<code>'0000-00-00'</code>`. This can be disallowed by setting [sql_mode=NO_ZERO_DATE](../../../variables-and-modes/sql-mode.md#no_zero_date).
+MariaDB allows a special value where all the parts of a date are zeroes: `'0000-00-00'`. This can be disallowed by setting [sql_mode=NO_ZERO_DATE](../../../variables-and-modes/sql-mode.md#no_zero_date).
 
 
-It is also possible to use values where only some date parts are zeroes, for example `<code>'1994-01-00'</code>` or `<code>'1994-00-00'</code>`. These values can be disallowed by setting [sql_mode=NO_ZERO_IN_DATE](../../../variables-and-modes/sql-mode.md#no_zero_in_date). They are not affected by `<code>NO_ZERO_DATE</code>`.
+It is also possible to use values where only some date parts are zeroes, for example `'1994-01-00'` or `'1994-00-00'`. These values can be disallowed by setting [sql_mode=NO_ZERO_IN_DATE](../../../variables-and-modes/sql-mode.md#no_zero_in_date). They are not affected by `NO_ZERO_DATE`.
 
 
 ### Syntax
 
 
-Several different date formats are understood. Typically used formats are `<code>'YYYY-MM-DD'</code>` and `<code>YYYYMMDD</code>`. Several separators are accepted.
+Several different date formats are understood. Typically used formats are `'YYYY-MM-DD'` and `YYYYMMDD`. Several separators are accepted.
 
 
-The syntax defined in standard SQL and ODBC are understood - for example, `<code>DATE '1994-01-01'</code>` and `<code>{d '1994-01-01'} </code>`. Using these eliminates possible ambiguities in contexts where a temporal value could be interpreted as a string or as an integer.
+The syntax defined in standard SQL and ODBC are understood - for example, `DATE '1994-01-01'` and `{d '1994-01-01'} `. Using these eliminates possible ambiguities in contexts where a temporal value could be interpreted as a string or as an integer.
 
 
 See [Date and Time Literals](../../../../reference/sql-statements-and-structure/sql-language-structure/date-and-time-literals.md) for the details.
@@ -199,10 +199,10 @@ For temporal types that include a day time, MariaDB allows a precision from 0 to
 
 
 
-The `<code>VARBINARY</code>` type is similar to `<code>VARCHAR</code>`, but stores binary byte strings, just like SQL Server `<code>binary</code>` does.
+The `VARBINARY` type is similar to `VARCHAR`, but stores binary byte strings, just like SQL Server `binary` does.
 
 
-For large binary strings, MariaDB has four `<code>BLOB</code>` types, with different sizes. See [BLOB and TEXT Data Types](../../../../reference/data-types/string-data-types/blob-and-text-data-types.md) for more information.
+For large binary strings, MariaDB has four `BLOB` types, with different sizes. See [BLOB and TEXT Data Types](../../../../reference/data-types/string-data-types/blob-and-text-data-types.md) for more information.
 
 
 ### Character Strings
@@ -236,10 +236,10 @@ To create a MariaDB table that is identical to a SQL Server table, **it may be n
 2) [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) has a maximum row length of 65,535 bytes. [TEXT](../../../../reference/data-types/string-data-types/blob-and-text-data-types.md) columns do not contribute to the row size, because they are stored separately (except for the first 12 bytes).
 
 
-3) In SQL Server, UTF-16 is used if data contains Supplementary Characters, otherwise UCS-2 is used. If not sure, use `<code>utf16</code>` in MariaDB.
+3) In SQL Server, UTF-16 is used if data contains Supplementary Characters, otherwise UCS-2 is used. If not sure, use `utf16` in MariaDB.
 
 
-4) In SQL Server, the value of `<code>ANSI_PADDING</code>` determines if `<code>char</code>` values should be padded with spaces to their maximum length. In MariaDB, this depends on the [PAD_CHAR_TO_FULL_LENGTH](../../../variables-and-modes/sql-mode.md#pad_char_to_full_length) sql_mode flag.
+4) In SQL Server, the value of `ANSI_PADDING` determines if `char` values should be padded with spaces to their maximum length. In MariaDB, this depends on the [PAD_CHAR_TO_FULL_LENGTH](../../../variables-and-modes/sql-mode.md#pad_char_to_full_length) sql_mode flag.
 
 
 5) See JSON, below.
@@ -251,10 +251,10 @@ To create a MariaDB table that is identical to a SQL Server table, **it may be n
 ### rowversion
 
 
-MariaDB does not have the `<code>rowversion</code>` type.
+MariaDB does not have the `rowversion` type.
 
 
-If the only purpose is to check if a row has been modified since its last read, a [TIMESTAMP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) column can be used instead. Its default value should be `<code>ON UPDATE CURRENT_TIMESTAMP</code>`. In this way, the timestamp will be updated whenever the column is modified.
+If the only purpose is to check if a row has been modified since its last read, a [TIMESTAMP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) column can be used instead. Its default value should be `ON UPDATE CURRENT_TIMESTAMP`. In this way, the timestamp will be updated whenever the column is modified.
 
 
 A way to preserve much more information is to use a [temporal table](../../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md). Past versions of the row will be preserved.
@@ -263,31 +263,31 @@ A way to preserve much more information is to use a [temporal table](../../../..
 ### sql_variant
 
 
-MariaDB does not support the `<code>sql_variant</code>` type.
+MariaDB does not support the `sql_variant` type.
 
 
-MariaDB is quite flexible about implicit and explicit [type conversions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/type-conversion.md). Therefore, for most cases storing the values as a string should be equivalent to using `<code>sql_variant</code>`.
+MariaDB is quite flexible about implicit and explicit [type conversions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/type-conversion.md). Therefore, for most cases storing the values as a string should be equivalent to using `sql_variant`.
 
 
-Be aware that the maximum length of an `<code>sql_variant</code>` value is 8,000 bytes. In MariaDB, you may need to use `<code>TINYBLOB</code>`.
+Be aware that the maximum length of an `sql_variant` value is 8,000 bytes. In MariaDB, you may need to use `TINYBLOB`.
 
 
 ### uniqueidentifier
 
 
-While MariaDB does not support the `<code>uniqueidentifier</code>` type, the [UUID](../../../../reference/data-types/string-data-types/uuid-data-type.md) type can typically be used for the same purpose.
+While MariaDB does not support the `uniqueidentifier` type, the [UUID](../../../../reference/data-types/string-data-types/uuid-data-type.md) type can typically be used for the same purpose.
 
 
-`<code>uniqueidentifier</code>` columns contain 16-bit GUIDs. MariaDB UUID columns store UUIDv1 values (128 bits).
+`uniqueidentifier` columns contain 16-bit GUIDs. MariaDB UUID columns store UUIDv1 values (128 bits).
 
 
-The UUID type was implemented in [MariaDB 10.7](../../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md). On older versions, you can generate unique values with the [UUID()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid.md) or [UUID_SHORT()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid_short.md) functions, and store them in `<code>BIT(128)</code>` or `<code>BIT(64)</code>` columns, respectively.
+The UUID type was implemented in [MariaDB 10.7](../../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md). On older versions, you can generate unique values with the [UUID()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid.md) or [UUID_SHORT()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid_short.md) functions, and store them in `BIT(128)` or `BIT(64)` columns, respectively.
 
 
 ### xml
 
 
-MariaDB does not support the `<code>xml</code>` type.
+MariaDB does not support the `xml` type.
 
 
 XML data can be stored in string columns. MariaDB supports several XML functions.
@@ -296,10 +296,10 @@ XML data can be stored in string columns. MariaDB supports several XML functions
 ### JSON
 
 
-With SQL Server, typically JSON documents are stored in `<code>nvarchar</code>` columns in a text form.
+With SQL Server, typically JSON documents are stored in `nvarchar` columns in a text form.
 
 
-MariaDB has a [JSON](../../../../reference/storage-engines/connect/json-sample-files.md) pseudo-type that maps to [LONGTEXT](../../../../reference/data-types/string-data-types/longtext.md). However, from [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) the `<code>JSON</code>` pseudo-type also checks that the value is valid a JSON document.
+MariaDB has a [JSON](../../../../reference/storage-engines/connect/json-sample-files.md) pseudo-type that maps to [LONGTEXT](../../../../reference/data-types/string-data-types/longtext.md). However, from [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) the `JSON` pseudo-type also checks that the value is valid a JSON document.
 
 
 MariaDB supports different JSON functions than SQL Server. MariaDB currently has more functions, and SQL Server syntax will not work. See [JSON functions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/README.md) for more information.

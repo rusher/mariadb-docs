@@ -21,8 +21,8 @@ report at [Jira](https://jira.mariadb.org).
 ### Process identity
 
 
-By default, MaxScale can no longer be run as `<code>root</code>`, but must be run as some
-other user. However, it is possible to start MaxScale as `<code>root</code>`, as long as
+By default, MaxScale can no longer be run as `root`, but must be run as some
+other user. However, it is possible to start MaxScale as `root`, as long as
 the user to run MaxScale as is provided as a command line argument:
 
 
@@ -48,15 +48,15 @@ root@host:~# maxscale --user=root ...
 ### Binlog server
 
 
-* The `<code>mariadb10_slave_gtid</code>` parameter was removed and slave connections can now
+* The `mariadb10_slave_gtid` parameter was removed and slave connections can now
  always register with MariaDB 10 GTID.
  This means the gtid_maps SQLite database is always updated.
-* The `<code>binlog_structure</code>` parameter was removed and the binlogs are stored
- automatically in 'tree' mode when `<code>mariadb10_master_gtid</code>` is enabled
+* The `binlog_structure` parameter was removed and the binlogs are stored
+ automatically in 'tree' mode when `mariadb10_master_gtid` is enabled
  (GTID registration to master).
-* If `<code>mariadb10_master_gtid</code>` is enabled, the `<code>transaction_safety</code>` is
- automatically enabled. In MaxScale 2.2.0, if `<code>transaction_safety</code>` was disabled
- when `<code>mariadb10_master_gtid</code>` was enabled MaxScale would refuse to start.
+* If `mariadb10_master_gtid` is enabled, the `transaction_safety` is
+ automatically enabled. In MaxScale 2.2.0, if `transaction_safety` was disabled
+ when `mariadb10_master_gtid` was enabled MaxScale would refuse to start.
 * The binlogrouter can accept GTID slave registration from MariaDB 10.X slaves
  and can also register to Master server MariaDB 10.x using GTID.
 
@@ -87,9 +87,9 @@ router=ReadWriteSplit
 
 
 The shared object implementing the client protocol has been renamed
-from `<code>libMySQLClient.so</code>` to `<code>libmaridbclient.so</code>`. In practice this means
-that, in the MaxScale configuration file, `<code>MySQLClient</code>` should be replaced
-with `<code>mariadbclient</code>` or, e.g., `<code>MariaDBClient</code>`, as module names are matched
+from `libMySQLClient.so` to `libmaridbclient.so`. In practice this means
+that, in the MaxScale configuration file, `MySQLClient` should be replaced
+with `mariadbclient` or, e.g., `MariaDBClient`, as module names are matched
 in a case insensitive manner.
 
 
@@ -119,16 +119,16 @@ protocol=MariaDBClient
 
 
 
-*NOTE* Using `<code>MySQLClient</code>` is still supported, but has been deprecated.
+*NOTE* Using `MySQLClient` is still supported, but has been deprecated.
 
 
 ### MySQL Backend Protocol
 
 
 The shared object implementing the backend protocol has been renamed
-from `<code>libMySQLBackend.so</code>` to `<code>libmaridbbackend.so</code>`. In practice this means
-that, in the MaxScale configuration file, `<code>MySQLBackend</code>` should be replaced
-with `<code>mariadbbackend</code>` or, e.g., `<code>MariaDBBackend</code>`, as module names are matched
+from `libMySQLBackend.so` to `libmaridbbackend.so`. In practice this means
+that, in the MaxScale configuration file, `MySQLBackend` should be replaced
+with `mariadbbackend` or, e.g., `MariaDBBackend`, as module names are matched
 in a case insensitive manner.
 
 
@@ -158,7 +158,7 @@ protocol=MariaDBBackend
 
 
 
-*NOTE* Using `<code>MySQLBackend</code>` is still supported, but has been deprecated.
+*NOTE* Using `MySQLBackend` is still supported, but has been deprecated.
 
 
 ### MySQL Monitor
@@ -194,31 +194,31 @@ module=mariadbmon
 
 
 
-The name `<code>mysqlmon</code>` has been deprecated but can still be used, although it will
+The name `mysqlmon` has been deprecated but can still be used, although it will
 cause a warning to be logged.
 
 
 ### MariaDB Monitor
 
 
-The default value of the configuration parameter `<code>detect_standalone_master</code>` has
-been changed from `<code>false</code>` to `<code>true</code>`.
+The default value of the configuration parameter `detect_standalone_master` has
+been changed from `false` to `true`.
 
 
 ### ReadWritesplit
 
 
-The default value of `<code>strict_multi_stmt</code>` was changed to `<code>false</code>` to make
+The default value of `strict_multi_stmt` was changed to `false` to make
 usage of atomic compound statements and multi-statement queries less
-restrictive and to align it with the default value of `<code>strict_sp_calls</code>`.
+restrictive and to align it with the default value of `strict_sp_calls`.
 
 
-Most cases where the functionality of `<code>strict_multi_stmt</code>` was triggered
+Most cases where the functionality of `strict_multi_stmt` was triggered
 were cases where the added safety of locking a session to the master did
 more harm than it did good.
 
 
-The only case where `<code>strict_multi_stmt</code>` should be enabled is when a
+The only case where `strict_multi_stmt` should be enabled is when a
 multi-statement or a compound statement modifies the state of the
 session. This is not a good practice and a change in the client side
 behavior is advised.
@@ -234,7 +234,7 @@ names of the log file names.
 ### MaxCtrl
 
 
-The `<code>-h, --hosts</code>` argument was changed to accept a list of hostnames separated
+The `-h, --hosts` argument was changed to accept a list of hostnames separated
 by commas instead of spaces. This prevents commands from accidentally being
 interpreted as hostnames.
 
@@ -261,7 +261,7 @@ activate automatically. For more information, see the
 
 
 The *servers*, *monitors* and *services* types now support direct updating of
-relationships via the `<code>relationships</code>` endpoints. This conforms to the JSON API
+relationships via the `relationships` endpoints. This conforms to the JSON API
 specification on updating resource relationships.
 
 
@@ -285,8 +285,8 @@ This functionality was available already in MaxScale 2.2.0.
 ### Environment Variables in the configuration file
 
 
-If the global configuration entry `<code>substitute_variables</code>` is set to true,
-then if the first character of a value in the configuration file is a `<code>$</code>`
+If the global configuration entry `substitute_variables` is set to true,
+then if the first character of a value in the configuration file is a `$`
 then everything following that is interpreted as an environment variable
 and the configuration value is replaced with the value of the environment
 variable. For more information please consult the

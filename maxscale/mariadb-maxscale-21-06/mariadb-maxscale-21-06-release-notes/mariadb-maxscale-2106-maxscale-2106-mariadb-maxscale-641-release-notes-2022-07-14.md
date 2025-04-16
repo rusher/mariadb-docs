@@ -30,9 +30,9 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-4177](https://jira.mariadb.org/browse/MXS-4177) maxctrl call command leaves stale errors
 * [MXS-4172](https://jira.mariadb.org/browse/MXS-4172) Hang in RWSplitSession::correct_packet_sequence
 * [MXS-4171](https://jira.mariadb.org/browse/MXS-4171) Unmodifiable parameters aren't prevented from being modified
-* [MXS-4170](https://jira.mariadb.org/browse/MXS-4170) Bad `<code>create monitor</code>` command leaves a ghost monitor
+* [MXS-4170](https://jira.mariadb.org/browse/MXS-4170) Bad `create monitor` command leaves a ghost monitor
 * [MXS-4169](https://jira.mariadb.org/browse/MXS-4169) Listeners created at runtime require ssl_ca_cert when it should not be required
-* [MXS-4166](https://jira.mariadb.org/browse/MXS-4166) Filter diagnostics are not shown in `<code>maxctrl show filters</code>`
+* [MXS-4166](https://jira.mariadb.org/browse/MXS-4166) Filter diagnostics are not shown in `maxctrl show filters`
 * [MXS-4165](https://jira.mariadb.org/browse/MXS-4165) Servers with priority=0 are selected as Master
 * [MXS-4164](https://jira.mariadb.org/browse/MXS-4164) Debug assertion when cat session ends
 * [MXS-4160](https://jira.mariadb.org/browse/MXS-4160) Galeramon doesn't work with max_slave_replication_lag
@@ -60,7 +60,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platfor
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

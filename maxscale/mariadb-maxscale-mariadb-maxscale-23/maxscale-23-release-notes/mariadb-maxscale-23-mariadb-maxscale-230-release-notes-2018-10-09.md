@@ -18,26 +18,26 @@ report at [Jira](https://jira.mariadb.org).
 ## Changed Features
 
 
-### maxadmin `<code>list threads</code>`
+### maxadmin `list threads`
 
 
-Maxadmin `<code>list threads</code>` now shows the descriptor counts and load of
+Maxadmin `list threads` now shows the descriptor counts and load of
 the MaxScale worker threads. For details, please consult the
 maxadmin [documentation](../maxscale-23-reference/mariadb-maxscale-23-maxadmin-admin-interface.md).
 
 
-### MaxCtrl `<code>create monitor</code>`
+### MaxCtrl `create monitor`
 
 
-The `<code>create monitor</code>` command now accepts a list of key-value parameters that are
+The `create monitor` command now accepts a list of key-value parameters that are
 passed to the monitor as the last argument. This allows creation and
 configuration of monitors in one command.
 
 
-### `<code>query_retries</code>`
+### `query_retries`
 
 
-The default value of `<code>query_retries</code>` was changed from 0 to 1. This turns
+The default value of `query_retries` was changed from 0 to 1. This turns
 on failure tolerant queries for monitors and authenticators which prevents
 failures due to network problems. A single reconnection attempt is made to
 keep responsiveness high even with default values.
@@ -61,7 +61,7 @@ command. This way the history is compressed into a compact representation while
 still retaining the relative order of each command.
 
 
-To keep the old functionality, add `<code>disable_sescmd_history=true</code>` to the service
+To keep the old functionality, add `disable_sescmd_history=true` to the service
 definition.
 
 
@@ -81,27 +81,27 @@ conjuction with columns that should be masked. Please see the
 [Masking Filter](../maxscale-23-filters/mariadb-maxscale-23-masking.md) documentation for details.
 
 
-### `<code>router_options</code>` in Binlogrouter
+### `router_options` in Binlogrouter
 
 
-The use of `<code>router_options</code>` with the binlogrouter module is deprecated in
+The use of `router_options` with the binlogrouter module is deprecated in
 MaxScale 2.3 and will be removed in a subsequent release. The
-`<code>router_options</code>` should be converted into separate parameters.
+`router_options` should be converted into separate parameters.
 
 
-### `<code>thread_stack_size</code>`
+### `thread_stack_size`
 
 
-The `<code>thread_stack_size</code>` configuration parameter is ignored and has been
+The `thread_stack_size` configuration parameter is ignored and has been
 deprecated. If you need to explicitly set the stack size, do so using
-`<code>ulimit -s</code>` before starting MaxScale.
+`ulimit -s` before starting MaxScale.
 
 
-### `<code>ssl</code>` for Servers and Listeners
+### `ssl` for Servers and Listeners
 
 
-The `<code>ssl</code>` parameter now accepts boolean values ìn addition to the old `<code>required</code>`
-and `<code>disabled</code>` values.
+The `ssl` parameter now accepts boolean values ìn addition to the old `required`
+and `disabled` values.
 
 
 ### MariaDBMonitor
@@ -185,54 +185,54 @@ for more information.
 
 
 The following parameters are unused and are ignored if set:
-- `<code>mysql51_replication</code>` MySQL5.1 is no longer supported.
-- `<code>multimaster</code>` The monitor now always detects multimaster setups.
-- `<code>allow_cluster_recovery</code>` Now always on.
-- `<code>detect_replication_lag</code>` Lag detection no longer writes to databases so it is
+- `mysql51_replication` MySQL5.1 is no longer supported.
+- `multimaster` The monitor now always detects multimaster setups.
+- `allow_cluster_recovery` Now always on.
+- `detect_replication_lag` Lag detection no longer writes to databases so it is
 always on.
 
 
 ## Dropped Features
 
 
-### `<code>log_to_shm</code>` parameter and `<code>--log=shm</code>` option
+### `log_to_shm` parameter and `--log=shm` option
 
 
 The following commands no longer create the log files in shared memory and will
-be ignored. MaxScale will behave as if `<code>--log=file</code>` was provided when
-`<code>--log=shm</code>` is used. The `<code>log_to_shm</code>` parameter is ignored. Both the parameter
+be ignored. MaxScale will behave as if `--log=file` was provided when
+`--log=shm` is used. The `log_to_shm` parameter is ignored. Both the parameter
 and the optino value are deprecated and will be removed in a later relesae.
 
 
-Logs can still be created in shared memory by pointing `<code>logdir</code>` to `<code>/dev/shm</code>`.
+Logs can still be created in shared memory by pointing `logdir` to `/dev/shm`.
 
 
 ### Configuration Reloading
 
 
-The deprecated `<code>maxadmin reload config</code>` command has been removed.
+The deprecated `maxadmin reload config` command has been removed.
 
 
-### `<code>router_options</code>` in Avrorouter
+### `router_options` in Avrorouter
 
 
-The use of `<code>router_options</code>` with avrorouter was deprecated in MaxScale 2.1. In
-MaxScale 2.3, the use of `<code>router_options</code>` is no longer supported and the options
+The use of `router_options` with avrorouter was deprecated in MaxScale 2.1. In
+MaxScale 2.3, the use of `router_options` is no longer supported and the options
 should be given as parameters instead.
 
 
-### `<code>router_options</code>` in readwritesplit
+### `router_options` in readwritesplit
 
 
-The use of `<code>router_options</code>` with readwritesplit, which was deprecated in
+The use of `router_options` with readwritesplit, which was deprecated in
 MaxScale 2.2.0, has been removed in MaxScale 2.3.0.
 
 
-### `<code>QUERY-LAST-TRANSACTION</code>` and `<code>QUERY-TRANSACTION</code>` CDC commands
+### `QUERY-LAST-TRANSACTION` and `QUERY-TRANSACTION` CDC commands
 
 
-The CDC protocol no longer accepts the `<code>QUERY-LAST-TRANSACTION</code>` and
-`<code>QUERY-TRANSACTION</code>` commands. They were removed due to the addition of the REST
+The CDC protocol no longer accepts the `QUERY-LAST-TRANSACTION` and
+`QUERY-TRANSACTION` commands. They were removed due to the addition of the REST
 API that provides the same information in a more easy to process format.
 
 
@@ -253,14 +253,14 @@ for details.
 ### Hints
 
 
-There is now a new hint `<code>last</code>` that will cause a query to be routed to the
+There is now a new hint `last` that will cause a query to be routed to the
 same server the previous query was routed to.
 
 
 ### Backend Connection IDs
 
 
-The backend connection IDs are now shown in the `<code>show sessions</code>` output of
+The backend connection IDs are now shown in the `show sessions` output of
 MaxCtrl.
 
 
@@ -289,7 +289,7 @@ configure it.
 ### Runtime Configuration of the Cache
 
 
-With the variables `<code>@maxscale.cache.use</code>` and `<code>@maxscale.cache.populate</code>`
+With the variables `@maxscale.cache.use` and `@maxscale.cache.populate`
 it is now possible for a client to specify whether the cache should be
 used and/or populated. Please see the
 [Cache](../maxscale-23-filters/mariadb-maxscale-23-cache.md) documentation for details.
@@ -307,7 +307,7 @@ for details.
 ### Named Server Filter
 
 
-The `<code>source</code>` parameter can now contain a list of comma separated addresses.
+The `source` parameter can now contain a list of comma separated addresses.
 
 
 ### Table Family Sharding
@@ -330,7 +330,7 @@ functionality of [the Database Firewall filter](../maxscale-23-filters/mariadb-m
 A set of new features have been added to readwritesplit.
 
 
-#### `<code>transaction_replay</code>`
+#### `transaction_replay`
 
 
 The [transaction_replay](../maxscale-23-routers/mariadb-maxscale-23-readwritesplit.md#transaction_replay)
@@ -339,7 +339,7 @@ mid-transaction. This allows transparent replacement of master servers with a
 minimal amount of failed transactions.
 
 
-#### `<code>master_reconnection</code>`
+#### `master_reconnection`
 
 
 With the
@@ -349,26 +349,26 @@ changes, readwritesplit can now reconnect seamlessly to the master server
 without losing the session state.
 
 
-#### `<code>delayed_retry</code>`
+#### `delayed_retry`
 
 
 The [delayed_retry](../maxscale-23-routers/mariadb-maxscale-23-readwritesplit.md#delayed_retry) parameter
 allows queries to be automatically retried if their execution is interrupted.
 
 
-#### `<code>causal_reads</code>`
+#### `causal_reads`
 
 
 The [causal_reads](../maxscale-23-routers/mariadb-maxscale-23-readwritesplit.md#causal_reads) parameter
 enables distributed consistent reads with MariaDB version 10.2 and newer.
 
 
-#### `<code>optimistic_trx</code>`
+#### `optimistic_trx`
 
 
 The [optimistic_trx](../maxscale-23-routers/mariadb-maxscale-23-readwritesplit.md#optimistic_trx) parameter
 enables optimistic transaction execution. This parameter controls whether normal
-transactions (i.e. `<code>START TRANSACTION</code>` or `<code>BEGIN</code>`) are load balanced across
+transactions (i.e. `START TRANSACTION` or `BEGIN`) are load balanced across
 slaves. If the transaction tries to modify a row, it is migrated to the master
 and rolled back on the slave.
 
@@ -386,7 +386,7 @@ is optimal on all servers.
 
 
 For more detailed information about the features of MaxCtrl, see the
-[documentation](../maxscale-23-reference/mariadb-maxscale-23-maxctrl.md) or the output of `<code>maxctrl help</code>`.
+[documentation](../maxscale-23-reference/mariadb-maxscale-23-maxctrl.md) or the output of `maxctrl help`.
 
 
 #### Interactive Mode for MaxCtrl
@@ -400,17 +400,17 @@ they are cached for the duration of the session.
 #### Draining Server Connections
 
 
-The new `<code>drain server</code>` drains the server of connections by first removing it
+The new `drain server` drains the server of connections by first removing it
 from all services after which it waits until all connections are closed. When
-all connections are closed, the server is put into the `<code>maintenance</code>` state and
+all connections are closed, the server is put into the `maintenance` state and
 added back to all the services where it was removed from.
 
 
 ### Resultset Concatenation Router
 
 
-A new experimental router module, `<code>cat</code>`, was added to the
-`<code>maxscale-experimental</code>` package. The `<code>cat</code>` router is a special router that
+A new experimental router module, `cat`, was added to the
+`maxscale-experimental` package. The `cat` router is a special router that
 concatenates result sets. For more information and an explanation on how the
 router works, read the [cat documentation](../../../server/security/user-account-management/catalogs/catalog-specific-functions-and-variables.md).
 
@@ -437,7 +437,7 @@ the readwritesplit router implements this feature.
 ### Binlog Filtering
 
 
-The `<code>binlogfilter</code>` is a filter module that allows the client side stream of
+The `binlogfilter` is a filter module that allows the client side stream of
 binlogs to be filtered. It is designed to be used with the binlogrouter.
 
 

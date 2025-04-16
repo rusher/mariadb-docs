@@ -12,18 +12,18 @@ LOCATE(substr,str), LOCATE(substr,str,pos)
 
 
 The first syntax returns the position of the first occurrence of
-substring `<code>substr</code>` in string `<code>str</code>`. The second syntax returns the position
-of the first occurrence of substring `<code>substr</code>` in string `<code>str</code>`, starting at
-position `<code>pos</code>`. Returns 0 if `<code>substr</code>` is not in `<code>str</code>`.
+substring `substr` in string `str`. The second syntax returns the position
+of the first occurrence of substring `substr` in string `str`, starting at
+position `pos`. Returns 0 if `substr` is not in `str`.
 
 
-`<code>LOCATE()</code>` performs a case-insensitive search.
+`LOCATE()` performs a case-insensitive search.
 
 
-If any argument is `<code>NULL</code>`, returns `<code>NULL.</code>`
+If any argument is `NULL`, returns `NULL.`
 
 
-[INSTR()](instr.md) is the same as the two-argument form of `<code>LOCATE()</code>`, except that the order of the arguments is reversed.
+[INSTR()](instr.md) is the same as the two-argument form of `LOCATE()`, except that the order of the arguments is reversed.
 
 
 ## Examples

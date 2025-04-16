@@ -85,7 +85,7 @@ DBRoot IDs unassigned = 3, 4
 ### Assign DBRoots to Performance Module
 
 
-After adding a DBRoot, it must be assigned to a [Performance Module](../../columnstore-architecture/columnstore-performance-module.md) before it can be used. Use the `<code>mcsadmin assignDbrootPmConfig</code>` command to do so.
+After adding a DBRoot, it must be assigned to a [Performance Module](../../columnstore-architecture/columnstore-performance-module.md) before it can be used. Use the `mcsadmin assignDbrootPmConfig` command to do so.
 Note: The [Performance Module](../../columnstore-architecture/columnstore-performance-module.md) that the DBRoot is being assigned to must to Manually Offline. The system must be in a STOPPED state
 
 
@@ -141,7 +141,7 @@ Once completed, start the system back up with the [startsystem](columnstore-syst
 ### Unassign DBRoots to Performance Module
 
 
-You can also unassign DBRoot from a [Performance Module](../../columnstore-architecture/columnstore-performance-module.md). Use the `<code>mcsadmin unassignDbrootPmConfig</code>` command to do so.
+You can also unassign DBRoot from a [Performance Module](../../columnstore-architecture/columnstore-performance-module.md). Use the `mcsadmin unassignDbrootPmConfig` command to do so.
 
 
 Note: The [Performance Module](../../columnstore-architecture/columnstore-performance-module.md) that the DBRoot is being unassigned from must to Manually Offline. The system must be in a STOPPED state

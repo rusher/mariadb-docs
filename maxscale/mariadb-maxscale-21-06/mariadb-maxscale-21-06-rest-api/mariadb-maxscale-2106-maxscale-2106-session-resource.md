@@ -45,7 +45,7 @@ Get a single session. *:id* must be a valid session ID. The session ID is the
 same that is exposed to the client as the connection ID.
 
 
-This endpoint also supports the `<code>rdns=true</code>` parameter, which instructs MaxScale to
+This endpoint also supports the `rdns=true` parameter, which instructs MaxScale to
 perform reverse DNS on the client IP address. As this requires communicating with
 an external server, the operation may be expensive.
 
@@ -53,7 +53,7 @@ an external server, the operation may be expensive.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -135,7 +135,7 @@ Get all sessions.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -214,10 +214,10 @@ PATCH /v1/sessions/:id
 
 
 The request body must be a JSON object which represents the new configuration of
-the session. The `<code>:id</code>` must be a valid session ID that is active.
+the session. The `:id` must be a valid session ID that is active.
 
 
-The `<code>log_debug</code>`, `<code>log_info</code>`, `<code>log_notice</code>`, `<code>log_warning</code>` and `<code>log_error</code>` boolean
+The `log_debug`, `log_info`, `log_notice`, `log_warning` and `log_error` boolean
 parameters control whether the associated logging level is enabled:
 
 
@@ -270,4 +270,4 @@ similar to how the filter relationship for services behaves.
 Session is modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`

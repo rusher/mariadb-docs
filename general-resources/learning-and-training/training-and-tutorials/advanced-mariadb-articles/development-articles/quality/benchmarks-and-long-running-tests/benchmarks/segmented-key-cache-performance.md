@@ -8,10 +8,10 @@
 We used [SysBench v0.5](https://launchpad.net/sysbench) from Launchpad to test the [segmented key cache](segmented-key-cache-performance.md) performance for the MyISAM storage engine of [MariaDB 5.2.2](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-522-release-notes.md)-gamma.
 
 
-As wrapper scripts for automated running of SysBench we used the `<code>sysbench/</code>` directory from [MariaDB Tools](https://launchpad.net/mariadb-tools).
+As wrapper scripts for automated running of SysBench we used the `sysbench/` directory from [MariaDB Tools](https://launchpad.net/mariadb-tools).
 
 
-To test that splitting the key cache's global mutex into several mutex helps under multi user load, we wrote a new SysBench test called `<code>select_random_points.lua</code>`. We used one big table and selected random points with increasing number of concurrent users.
+To test that splitting the key cache's global mutex into several mutex helps under multi user load, we wrote a new SysBench test called `select_random_points.lua`. We used one big table and selected random points with increasing number of concurrent users.
 
 
 ## Main testing outcomes
@@ -169,7 +169,7 @@ SELECT id, k, c, pad
     WHERE k IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 ```
 
-The `<code>?</code>` parameters were replaced by random numbers when running the SysBench test. We used 10, 50, and 100 random points in our tests.
+The `?` parameters were replaced by random numbers when running the SysBench test. We used 10, 50, and 100 random points in our tests.
 
 
 We inserted 20 million rows using random data, which gave us a data and index file size of:
@@ -317,7 +317,7 @@ and adding a line like
 # End of file
 ```
 
-Your `<code>ulimit -a</code>` output should look like this afterwards:
+Your `ulimit -a` output should look like this afterwards:
 
 
 ```

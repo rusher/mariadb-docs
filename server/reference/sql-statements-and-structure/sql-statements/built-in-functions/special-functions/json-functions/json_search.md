@@ -20,8 +20,8 @@ A warning will occur if the JSON document is not valid, any of the path argument
 *return_arg* can be one of two values:
 
 
-* `<code>'one</code>`: Terminates after finding the first match, so will return one path string. If there is more than one match, it is undefined which is considered first.
-* `<code>all</code>`: Returns all matching path strings, without duplicates. Multiple strings are autowrapped as an array. The order is undefined.
+* `'one`: Terminates after finding the first match, so will return one path string. If there is more than one match, it is undefined which is considered first.
+* `all`: Returns all matching path strings, without duplicates. Multiple strings are autowrapped as an array. The order is undefined.
 
 
 ## Examples

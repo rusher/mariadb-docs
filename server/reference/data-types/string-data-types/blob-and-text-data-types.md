@@ -4,8 +4,8 @@
 ## Description
 
 
-A `<code>BLOB</code>` is a binary large object that can hold a variable amount of
-data. The four `<code>BLOB</code>` types are
+A `BLOB` is a binary large object that can hold a variable amount of
+data. The four `BLOB` types are
 
 
 * [TINYBLOB](tinyblob.md),
@@ -17,7 +17,7 @@ data. The four `<code>BLOB</code>` types are
 These differ only in the maximum length of the values they can hold.
 
 
-The `<code>TEXT</code>` types are
+The `TEXT` types are
 
 
 * [TINYTEXT](tinytext.md),
@@ -27,11 +27,11 @@ The `<code>TEXT</code>` types are
 * [JSON](../../storage-engines/connect/json-sample-files.md) (alias for LONGTEXT)
 
 
-These correspond to the four `<code>BLOB</code>` types and have the same
+These correspond to the four `BLOB` types and have the same
 maximum lengths and [storage requirements](../data-type-storage-requirements.md).
 
 
-`<code>BLOB</code>` and `<code>TEXT</code>` columns can have a `<code>DEFAULT</code>` value.
+`BLOB` and `TEXT` columns can have a `DEFAULT` value.
 
 
 

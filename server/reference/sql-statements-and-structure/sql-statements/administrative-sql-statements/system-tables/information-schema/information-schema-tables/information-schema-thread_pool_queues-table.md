@@ -3,7 +3,7 @@
 
 
 ##### MariaDB starting with [10.5](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>THREAD_POOL_QUEUES</code>` table was introduced in [MariaDB 10.5.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md).
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `THREAD_POOL_QUEUES` table was introduced in [MariaDB 10.5.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md).
 
 
 The table provides information about [thread pool](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53.md) queues, and contains the following columns:

@@ -16,17 +16,17 @@ SELECT ...
 ### Description
 
 
-The `<code>WITH</code>` keyword signifies a [Common Table Expression](README.md) (CTE). It allows you to refer to a subquery expression many times in a query, as if having a temporary table that only exists for the duration of a query.
+The `WITH` keyword signifies a [Common Table Expression](README.md) (CTE). It allows you to refer to a subquery expression many times in a query, as if having a temporary table that only exists for the duration of a query.
 
 
 There are two kinds of CTEs:
 
 
 * [Non-Recursive](non-recursive-common-table-expressions-overview.md)
-* [Recursive](recursive-common-table-expressions-overview.md) (signified by the `<code>RECURSIVE</code>` keyword, supported since [MariaDB 10.2.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md))
+* [Recursive](recursive-common-table-expressions-overview.md) (signified by the `RECURSIVE` keyword, supported since [MariaDB 10.2.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md))
 
 
-You can use `<code>table_reference</code>` as any normal table in the external `<code>SELECT</code>` part. You can also use `<code>WITH</code>` in subqueries, as well as with [EXPLAIN](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) and [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md).
+You can use `table_reference` as any normal table in the external `SELECT` part. You can also use `WITH` in subqueries, as well as with [EXPLAIN](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) and [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md).
 
 
 Poorly-formed recursive CTEs can in theory cause infinite loops. The [max_recursive_iterations](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_recursive_iterations) system variable limits the number of recursions.
@@ -58,13 +58,13 @@ WITH RECURSIVE ... (
 )
 CYCLE <cycle column list> RESTRICT
 ```
-With the use of `<code>CYCLE ... RESTRICT</code>` it makes no difference whether the CTE uses `<code>UNION ALL</code>` or `<code>UNION DISTINCT</code>` anymore. `<code>UNION ALL</code>` means "all rows, but without cycles", which is exactly what the `<code>CYCLE</code>` clause enables. And `<code>UNION DISTINCT</code>` means all rows should be different, which, again, is what will happen — as uniqueness is enforced over a subset of columns, complete rows will automatically all be different.
+With the use of `CYCLE ... RESTRICT` it makes no difference whether the CTE uses `UNION ALL` or `UNION DISTINCT` anymore. `UNION ALL` means "all rows, but without cycles", which is exactly what the `CYCLE` clause enables. And `UNION DISTINCT` means all rows should be different, which, again, is what will happen — as uniqueness is enforced over a subset of columns, complete rows will automatically all be different.
 
 
 ### Examples
 
 
-Below is an example with the `<code>WITH</code>` at the top level:
+Below is an example with the `WITH` at the top level:
 
 
 ```
@@ -72,7 +72,7 @@ WITH t AS (SELECT a FROM t1 WHERE b >= 'c')
   SELECT * FROM t2, t WHERE t2.c = t.a;
 ```
 
-The example below uses `<code>WITH</code>` in a subquery:
+The example below uses `WITH` in a subquery:
 
 
 ```

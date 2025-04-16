@@ -25,7 +25,7 @@ independent queries in parallel at the same time, to speed up operation
 compared to running them sequentially one after the other. This could be
 multiple queries against a single server (to better utilize multiple CPU cores
 and/or a high-capacity I/O system on the server), or it could be queries
-against multiple servers (e.g. `<code>[SHOW STATUS](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md)</code>` against all
+against multiple servers (e.g. `[SHOW STATUS](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md)` against all
 running servers for monitoring, or a map/reduce-like operation against a big
 sharded database).
 
@@ -47,7 +47,7 @@ or because the data needs to travel over the network from the server, or even
 because the first part of a large request needs to be sent out on the network
 before local socket buffers can accept the last part. Whenever such a wait is
 necessary, control returns to the application. The application will then run
-`<code>select()</code>` or `<code>poll()</code>` (or something similar) to detect when any wait
+`select()` or `poll()` (or something similar) to detect when any wait
 condition is satisfied, and then call back into the library to continue
 processing.
 
@@ -59,7 +59,7 @@ An example program is available in the MariaDB source tree:
 tests/async_queries.c
 ```
 
-It uses `<code>libevent</code>` to run a set of queries in parallel from within a single
+It uses `libevent` to run a set of queries in parallel from within a single
 thread / event loop. This is a good example of how to integrate non-blocking
 query processing into an event-based framework.
 
@@ -71,5 +71,5 @@ there any significant performance penalty for having support for non-blocking
 operations in the library for applications which do not use them.
 
 
-The library internally uses co-routines, and requires a co-routine implementation to work. Native implementations are included for i386, amd64, and (since Connector/C version 3.3.12) aarch64 architectures. For other architectures, a fallback to `<code>ucontext</code>` is automatically used if available. An alternate fallback `<code>boost::context</code>` can also be used instead of `<code>ucontext</code>` by building with `<code>-DWITH_BOOST_CONTEXT=ON</code>` (`<code>boost::context</code>` is not used by default). If no co-routine implementation is available the non-blocking operations are disabled and will not work.
+The library internally uses co-routines, and requires a co-routine implementation to work. Native implementations are included for i386, amd64, and (since Connector/C version 3.3.12) aarch64 architectures. For other architectures, a fallback to `ucontext` is automatically used if available. An alternate fallback `boost::context` can also be used instead of `ucontext` by building with `-DWITH_BOOST_CONTEXT=ON` (`boost::context` is not used by default). If no co-routine implementation is available the non-blocking operations are disabled and will not work.
 

@@ -66,14 +66,14 @@ towards an optimised mysqldump facility than towards an easy-to-use facility to
 back up a complete MySQL server:
 
 
-* The `<code>BACKUP</code>` command only allows to backup selected (or all)
+* The `BACKUP` command only allows to backup selected (or all)
  databases/schemas.
 * There seems to be no facility to backup the binary log
-* There seems to be no facility to backup `<code>GRANT</code>`s or other server-global
+* There seems to be no facility to backup `GRANT`s or other server-global
  configuration, using [mysqldump](../../../../../../../../server/clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) on the "mysql" schema/database is
  suggested
 * Restoring a new server from scratch seems to involve setting up a new server,
- including running [mysql_install_db](../../../../../../../../server/clients-and-utilities/legacy-clients-and-utilities/mysql_install_db.md) and adding `<code>GRANT</code>`s, and only then
+ including running [mysql_install_db](../../../../../../../../server/clients-and-utilities/legacy-clients-and-utilities/mysql_install_db.md) and adding `GRANT`s, and only then
  restoring tables and other schema objects
 
 

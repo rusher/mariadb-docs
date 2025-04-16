@@ -17,7 +17,7 @@ UNLOCK TABLES;
 ```
 
 The table files can be found in [datadir](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)/databasename (you can execute
-`<code>SELECT @@datadir</code>` to find the correct directory).
+`SELECT @@datadir` to find the correct directory).
 When copying the files, you should copy all files with the same
 table_name + various extensions. For example, for an Aria table of
 name foo, you will have files foo.frm, foo.MAI, foo.MAD and possibly
@@ -36,7 +36,7 @@ block size on both servers.
 ## Copying Tables When the MariaDB Server is Down
 
 
-The following storage engines support export without `<code>FLUSH TABLES ... FOR EXPORT</code>`, assuming the source server is down and the receiving server is not accessing the files during the copy.
+The following storage engines support export without `FLUSH TABLES ... FOR EXPORT`, assuming the source server is down and the receiving server is not accessing the files during the copy.
 
 
 
@@ -57,7 +57,7 @@ The following storage engines support export without `<code>FLUSH TABLES ... FOR
 For all of the above storage engines (Archive, Aria, CSV, MyISAM and MERGE), one can copy tables even from a live server under the following circumstances:
 
 
-* You have done a `<code>FLUSH TABLES</code>` or `<code>FLUSH TABLE table_name</code>` for the specific table.
+* You have done a `FLUSH TABLES` or `FLUSH TABLE table_name` for the specific table.
 * The server is not accessing the tables during the copy process.
 
 
@@ -75,8 +75,8 @@ their MariaDB server, you can do the following:
 
 
 First let's create the table we want to export. To speed up things, we
-create this without any indexes. We use `<code>TRANSACTIONAL=0
-ROW_FORMAT=DYNAMIC</code>` for Aria to use the smallest possible row format.
+create this without any indexes. We use `TRANSACTIONAL=0
+ROW_FORMAT=DYNAMIC` for Aria to use the smallest possible row format.
 
 
 ```
@@ -120,7 +120,7 @@ State updated
 ```
 
 The procedure for MyISAM tables is identical, except that
-[myisamchk](../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) doesn't have the `<code>--ignore-control-file</code>` option.
+[myisamchk](../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) doesn't have the `--ignore-control-file` option.
 
 
 ## Copying InnoDB's Transportable Tablespaces
@@ -132,7 +132,7 @@ InnoDB's file-per-table tablespaces are transportable, which means that you can 
 ## Importing Tables
 
 
-Tables that use most storage engines are immediately usable when their files are copied to the new `<code>[datadir](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)</code>`.
+Tables that use most storage engines are immediately usable when their files are copied to the new `[datadir](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`.
 
 
 However, this is not true for tables that use [InnoDB](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md). InnoDB tables have to be imported with [ALTER TABLE ... IMPORT TABLESPACE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#import-tablespace). See [Copying Transportable Tablespaces](../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) for more information.
@@ -145,5 +145,5 @@ However, this is not true for tables that use [InnoDB](../../general-resources/l
 * [FLUSH TABLES](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
 * [myisampack](../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) - Compressing the MyISAM data file for easier distribution.
 * [aria_pack](../clients-and-utilities/aria-clients-and-utilities/aria_pack.md) - Compressing the Aria data file for easier distribution
-* [mariadb-dump](../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) - Copying tables to other SQL servers. You can use the `<code>--tab</code>` to create a CSV file of your table content.
+* [mariadb-dump](../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) - Copying tables to other SQL servers. You can use the `--tab` to create a CSV file of your table content.
 

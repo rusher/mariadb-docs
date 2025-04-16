@@ -11,10 +11,10 @@ When we want to automate MariaDB, creating an image with MariaDB and the desired
 ## Images Architecture
 
 
-One "source code" of an image is a Dockerfile. A Dockerfile is written in Docker specific language, and can be compiled into an image by the `<code>docker</code>` binary, using the `<code>docker build</code>` command. It can also be compiled by `<code>[buildah](https://buildah.io/)</code>` using `<code>buildah bud</code>`.
+One "source code" of an image is a Dockerfile. A Dockerfile is written in Docker specific language, and can be compiled into an image by the `docker` binary, using the `docker build` command. It can also be compiled by `[buildah](https://buildah.io/)` using `buildah bud`.
 
 
-Most images are based on another image. The base image is specified at the beginning of the Dockerfile, with the `<code>FROM</code>` directive. If the base image is not present in the local system, it is downloaded from the repository specified, or if not specified, from the default repository of the build program. This is often Docker Hub. For example, we can build a `<code>mariadb-rocksdb:10.5</code>` image starting from the `<code>debian:13</code>` image. In this way, we'll have all the software included in a standard Debian image, and we'll add MariaDB and its configuration upon that image.
+Most images are based on another image. The base image is specified at the beginning of the Dockerfile, with the `FROM` directive. If the base image is not present in the local system, it is downloaded from the repository specified, or if not specified, from the default repository of the build program. This is often Docker Hub. For example, we can build a `mariadb-rocksdb:10.5` image starting from the `debian:13` image. In this way, we'll have all the software included in a standard Debian image, and we'll add MariaDB and its configuration upon that image.
 
 
 All the following Dockerfile directives are compiled into a new Docker image, identified by an SHA256 string. Each of these images is based on the image compiled from the previous directive. A physical compiled image can serve as a base for any number of images. This mechanism saves a lot of disk space, download time and build time.
@@ -52,25 +52,25 @@ CMD ["mariadbd"]
 This example is not very good for practical purposes, but it shows what a Dockerfile looks like.
 
 
-First, we declare that the base image to use is `<code>ubuntu:20.04</code>`.
+First, we declare that the base image to use is `ubuntu:20.04`.
 
 
 Then we run some commands to install MariaDB from the Ubuntu default repositories and stop the MariaDB service.
 
 
-We define some metadata about the image with `<code>LABEL</code>`. Any label is valid.
+We define some metadata about the image with `LABEL`. Any label is valid.
 
 
 We declare that the port 3306 (MariaDB default port) should be exposed. However, this has no effect if the port is not exposed at container creation.
 
 
-We also define a healthcheck. This is a command that is run to check if the container is healthy. If the return code is 0 the healthcheck succeeds, if it's 1 it fails. In the MariaDB specific case, we want to check that it's running and able to answer a simple query. This is better than just checking that MariaDB process is running, because MariaDB could be running but unable to respond, for example because [max_connections](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_connections) was reached or data si corrupted. We read a system variable, because we should not assume that any user-created table exists. We also specify `<code>--start-period</code>` to allow some time for MariaDB to start, keeping in mind that restarting it may take some time if some data is corrupted. Note that there can be only one healthcheck: if the command is specified multiple times, only the last occurrence will take effect.
+We also define a healthcheck. This is a command that is run to check if the container is healthy. If the return code is 0 the healthcheck succeeds, if it's 1 it fails. In the MariaDB specific case, we want to check that it's running and able to answer a simple query. This is better than just checking that MariaDB process is running, because MariaDB could be running but unable to respond, for example because [max_connections](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_connections) was reached or data si corrupted. We read a system variable, because we should not assume that any user-created table exists. We also specify `--start-period` to allow some time for MariaDB to start, keeping in mind that restarting it may take some time if some data is corrupted. Note that there can be only one healthcheck: if the command is specified multiple times, only the last occurrence will take effect.
 
 
 Finally, we start the container command: [mariadbd](../../../starting-and-stopping-mariadb/mariadbd-options.md). This command is run when a container based on this image starts. When the process stops or crashes, the container will immediately stop.
 
 
-Note that, in a container, we normally run mariadbd directly or in an entrypoint script `<code>exec mariadbd</code>`, rather than running [mysqld_safe](../../../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) or running MariaDB as a service. Containers restart can be handled by the container service. See [automatic restart](installing-and-using-mariadb-via-docker.md#automatic-restart).
+Note that, in a container, we normally run mariadbd directly or in an entrypoint script `exec mariadbd`, rather than running [mysqld_safe](../../../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) or running MariaDB as a service. Containers restart can be handled by the container service. See [automatic restart](installing-and-using-mariadb-via-docker.md#automatic-restart).
 
 
 See the documentation links below to learn the syntax allowed in a Dockerfile.
@@ -95,7 +95,7 @@ ARG MARIADB_CONFIG_FILE
 ENTRYPOINT mariadbd --defaults-file=$MARIADB_CONFIG_FILE
 ```
 
-Here `<code>ARG</code>` is used after the `<code>FROM</code>` directive, thus the variable cannot be used in `<code>FROM</code>`. It is also possible to declare a variable before `<code>FROM</code>`, so we can use a variable to select the base image to use or its tag, but in this case the variable cannot be used after the `<code>FROM</code>` directive, unless `<code>ARG</code>` is re-declared after the `<code>FROM</code>`. Here is an example:
+Here `ARG` is used after the `FROM` directive, thus the variable cannot be used in `FROM`. It is also possible to declare a variable before `FROM`, so we can use a variable to select the base image to use or its tag, but in this case the variable cannot be used after the `FROM` directive, unless `ARG` is re-declared after the `FROM`. Here is an example:
 
 
 ```
@@ -153,25 +153,25 @@ repository/maintainer/technology
 It doesn't matter if the maintainer is an individual or an organization. For images available on Docker Hub, the maintainer is the name of a Docker Hub account.
 
 
-Official images maintained by the Docker Library maintainers have the implicit name of `<code>library</code>` filled in by the container fetching tool. For example, the official MariaDB image is called `<code>mariadb</code>` which is an alias for `<code>docker.io/library/mariadb</code>`.
+Official images maintained by the Docker Library maintainers have the implicit name of `library` filled in by the container fetching tool. For example, the official MariaDB image is called `mariadb` which is an alias for `docker.io/library/mariadb`.
 
 
-All images have a tag, which identifies the version or the variant of an image. For example, all MariaDB versions available on Docker are used as image tags. [MariaDB 10.11](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md) is called `<code>mariadb:10.11</code>`.
+All images have a tag, which identifies the version or the variant of an image. For example, all MariaDB versions available on Docker are used as image tags. [MariaDB 10.11](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md) is called `mariadb:10.11`.
 
 
-By conversion, tags form a hierarchy. So for example, there is a `<code>10.1.1</code>` tag whose meaning will not change over time. `<code>10.5</code>` will always identify the latest stable version in the 10.5 branch. For some time it was `<code>10.5.1</code>`, then it became `<code>10.5.2</code>`, and so on.
+By conversion, tags form a hierarchy. So for example, there is a `10.1.1` tag whose meaning will not change over time. `10.5` will always identify the latest stable version in the 10.5 branch. For some time it was `10.5.1`, then it became `10.5.2`, and so on.
 
 
-When we pull an image without specifying a tag (ie, `<code>docker pull mariadb</code>`), we are implicitly requiring the image with the `<code>latest</code>` tag. This is even more mutable: at different periods of time, it pointed to the latest `<code>10.0</code>` version, to the latest `<code>10.1</code>` version, and so on.
+When we pull an image without specifying a tag (ie, `docker pull mariadb`), we are implicitly requiring the image with the `latest` tag. This is even more mutable: at different periods of time, it pointed to the latest `10.0` version, to the latest `10.1` version, and so on.
 
 
-In production, it is always better to know for sure which version we are installing. Therefore it is better to specify a tag whose meaning won't change over time, like `<code>10.5.21</code>`. To keep to a latest LTS version, the `<code>lts</code>` can be used.
+In production, it is always better to know for sure which version we are installing. Therefore it is better to specify a tag whose meaning won't change over time, like `10.5.21`. To keep to a latest LTS version, the `lts` can be used.
 
 
 ### Pushing and Pulling Images
 
 
-To pull an image from Docker Hub or a self-hosted registry, we use the `<code>docker pull</code>` command. For example:
+To pull an image from Docker Hub or a self-hosted registry, we use the `docker pull` command. For example:
 
 
 ```
@@ -207,12 +207,12 @@ Docker has a feature called Docker Content Trust (DCT). It is a system used to d
 ## Good Practices and Caveats
 
 
-As mentioned, a Dockerfile is built by creating a new image for each directive that follows `<code>FROM</code>`. This leads to some considerations.
+As mentioned, a Dockerfile is built by creating a new image for each directive that follows `FROM`. This leads to some considerations.
 
 
-* Sometimes it can be a good idea to run several shell commands in a single `<code>RUN</code>` directive to avoid creating images that are not useful.
+* Sometimes it can be a good idea to run several shell commands in a single `RUN` directive to avoid creating images that are not useful.
 * Modifying a directive means that all subsequent directives also need to be rebuilt. When possible, directives that are expected to change often should follow directives that will change seldom.
-* Directives like `<code>LABEL</code>` or `<code>EXPOSE</code>` should be placed close to the end of Dockerfiles. In this way they will be rebuilt often, but this operation is cheap. On the other side, changing a label should not trigger a long rebuild process.
+* Directives like `LABEL` or `EXPOSE` should be placed close to the end of Dockerfiles. In this way they will be rebuilt often, but this operation is cheap. On the other side, changing a label should not trigger a long rebuild process.
 * Variables should be used to avoid Dockerfiles proliferation. But if a variable is used, changing its value should be tested. So, be sure not to use variables without a good reason.
 * Writing logic into a Dockerfile is impossible or very hard. Call shell scripts instead, and write your logic into them. For example, in a shell script it is easy to perform a certain operation only if a variable is set to a certain value.
 * If you need MariaDB containers with different configurations or different sets of plugins, use the method explained above. Do not create several Dockerfiles, with different tags, for each desired configuration or plugin set. This may lead to undesired code duplication and increased maintenance costs.

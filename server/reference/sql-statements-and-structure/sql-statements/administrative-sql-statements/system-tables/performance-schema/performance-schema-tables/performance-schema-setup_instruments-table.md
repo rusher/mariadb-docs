@@ -1,7 +1,7 @@
 
 # Performance Schema setup_instruments Table
 
-The `<code>setup_instruments</code>` table contains a list of instrumented object classes for which it is possible to collect events. There is one row for each instrument in the source code. When an instrument is enabled and executed, instances are created which are then stored in the [cond_instances](performance-schema-cond_instances-table.md), [file_instances](performance-schema-file_instances-table.md), [mutex_instances](performance-schema-mutex_instances-table.md), [rwlock_instances](performance-schema-rwlock_instances-table.md) or [socket_instance](performance-schema-socket_instances-table.md) tables.
+The `setup_instruments` table contains a list of instrumented object classes for which it is possible to collect events. There is one row for each instrument in the source code. When an instrument is enabled and executed, instances are created which are then stored in the [cond_instances](performance-schema-cond_instances-table.md), [file_instances](performance-schema-file_instances-table.md), [mutex_instances](performance-schema-mutex_instances-table.md), [rwlock_instances](performance-schema-rwlock_instances-table.md) or [socket_instance](performance-schema-socket_instances-table.md) tables.
 
 
 It contains the following columns:

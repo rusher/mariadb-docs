@@ -13,7 +13,7 @@ option = {FOR UPGRADE | QUICK | FAST | MEDIUM | EXTENDED | CHANGED}
 ## Description
 
 
-`<code>CHECK TABLE</code>` checks a table or tables for errors. `<code>CHECK TABLE</code>` works for
+`CHECK TABLE` checks a table or tables for errors. `CHECK TABLE` works for
 [Archive](../../../storage-engines/archive/README.md), [Aria](../../../storage-engines/s3-storage-engine/aria_s3_copy.md), [CSV](../../../storage-engines/csv/csv-overview.md), [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) and [MyISAM](../../../storage-engines/myisam-storage-engine/myisam-system-variables.md) tables. For Aria and MyISAM tables, the
 key statistics are updated as well. For CSV, see also [Checking and Repairing CSV Tables](../../../storage-engines/csv/checking-and-repairing-csv-tables.md).
 
@@ -24,12 +24,12 @@ As an alternative, [myisamchk](../../../../clients-and-utilities/myisam-clients-
 For checking [dynamic columns](../../nosql/dynamic-columns-api.md) integrity, [COLUMN_CHECK()](../../nosql/dynamic-columns-from-mariadb-10.md) can be used.
 
 
-`<code>CHECK TABLE</code>` can also check views for problems, such as tables
+`CHECK TABLE` can also check views for problems, such as tables
 that are referenced in the view definition that no longer exist.
 
 
-`<code>CHECK TABLE</code>` is also supported for partitioned tables. You can
-use `<code class="highlight fixed" style="white-space:pre-wrap">[ALTER TABLE](../data-definition/alter/alter-tablespace.md) ... CHECK PARTITION</code>` 
+`CHECK TABLE` is also supported for partitioned tables. You can
+use `[ALTER TABLE](../data-definition/alter/alter-tablespace.md) ... CHECK PARTITION` 
 to check one or more partitions.
 
 
@@ -49,7 +49,7 @@ storage engines:
 
 
 
-For most cases running `<code>CHECK TABLE</code>` without options or `<code>MEDIUM</code>` should be
+For most cases running `CHECK TABLE` without options or `MEDIUM` should be
 good enough.
 
 
@@ -63,13 +63,13 @@ at [CHECKSUM TABLE](checksum-table.md).
 ## InnoDB
 
 
-If `<code>CHECK TABLE</code>` finds an error in an InnoDB table, MariaDB might shutdown to prevent the error propagation. In this case, the problem will be reported in the error log. Otherwise the table or an index might be marked as corrupted, to prevent use. This does not happen with some minor problems, like a wrong number of entries in a secondary index. Those problems are reported in the output of `<code>CHECK TABLE</code>`.
+If `CHECK TABLE` finds an error in an InnoDB table, MariaDB might shutdown to prevent the error propagation. In this case, the problem will be reported in the error log. Otherwise the table or an index might be marked as corrupted, to prevent use. This does not happen with some minor problems, like a wrong number of entries in a secondary index. Those problems are reported in the output of `CHECK TABLE`.
 
 
 Each tablespace contains a header with metadata. This header is not checked by this statement.
 
 
-During the execution of `<code>CHECK TABLE</code>`, other threads may be blocked.
+During the execution of `CHECK TABLE`, other threads may be blocked.
 
 
 ## Examples

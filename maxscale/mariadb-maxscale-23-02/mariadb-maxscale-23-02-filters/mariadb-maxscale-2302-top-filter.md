@@ -66,11 +66,11 @@ filters=MyLogFilter
 ### Filter Parameters
 
 
-The top filter has one mandatory parameter, `<code>filebase</code>`, and a number of optional
+The top filter has one mandatory parameter, `filebase`, and a number of optional
 parameters.
 
 
-#### `<code>filebase</code>`
+#### `filebase`
 
 
 * Type: string
@@ -94,13 +94,13 @@ via the filter option is superseded by the parameter. If both are set the
 parameter setting will be used and the filter option ignored.
 
 
-#### `<code>count</code>`
+#### `count`
 
 
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>10</code>`
+* Default: `10`
 
 
 The number of SQL statements to store and report upon.
@@ -113,7 +113,7 @@ count=30
 
 
 
-#### `<code>match</code>`
+#### `match`
 
 
 * Type: [regex](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#regular-expressions)
@@ -135,7 +135,7 @@ options=case,extended
 
 
 
-#### `<code>exclude</code>`
+#### `exclude`
 
 
 * Type: [regex](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#regular-expressions)
@@ -148,21 +148,21 @@ options=case,extended
 the queries logged by the filter.
 
 
-#### `<code>options</code>`
+#### `options`
 
 
 * Type: [enum](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>ignorecase</code>`, `<code>case</code>`, `<code>extended</code>`
-* Default: `<code>case</code>`
+* Values: `ignorecase`, `case`, `extended`
+* Default: `case`
 
 
 [Regular expression options](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#standard-regular-expression-settings-for-filters)
-for `<code>match</code>` and `<code>exclude</code>`.
+for `match` and `exclude`.
 
 
-#### `<code>source</code>`
+#### `source`
 
 
 * Type: string
@@ -183,7 +183,7 @@ source=127.0.0.1
 
 
 
-#### `<code>user</code>`
+#### `user`
 
 
 * Type: string

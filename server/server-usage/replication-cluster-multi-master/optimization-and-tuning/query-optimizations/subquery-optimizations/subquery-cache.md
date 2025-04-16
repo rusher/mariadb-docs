@@ -10,7 +10,7 @@ in the cache.
 ## Administration
 
 
-The cache is on by default. One can switch it off using the [optimizer_switch](../../system-variables/server-system-variables.md#optimizer_switch) `<code>subquery_cache</code>` setting, like so:
+The cache is on by default. One can switch it off using the [optimizer_switch](../../system-variables/server-system-variables.md#optimizer_switch) `subquery_cache` setting, like so:
 
 
 ```
@@ -33,8 +33,8 @@ for caching. It cannot grow more than the minimum of the above variables values
 ## Visibility
 
 
-Your usage of the cache is visible in `<code>EXTENDED EXPLAIN</code>` output (warnings) as
-`<code class="fixed" style="white-space:pre-wrap">"<expr_cache><//list of parameters//>(//cached expression//)"</code>`.
+Your usage of the cache is visible in `EXTENDED EXPLAIN` output (warnings) as
+`"<expr_cache><//list of parameters//>(//cached expression//)"`.
 For example:
 
 
@@ -58,7 +58,7 @@ SHOW WARNINGS;
 ```
 
 In the example above the presence of
-`<code class="fixed" style="white-space:pre-wrap">"<expr_cache><`test`.`t1`.`a`>(...)"</code>` is how you know you are
+`"<expr_cache><`test`.`t1`.`a`>(...)"` is how you know you are
 using the subquery cache.
 
 
@@ -69,7 +69,7 @@ Every subquery cache creates a temporary table where the results and all
 parameters are stored. It has a unique index over all parameters. First the
 cache is created in a [MEMORY](../../../../../reference/storage-engines/memory-storage-engine.md) table (if doing this is impossible the cache becomes
 disabled for that expression). When the table grows up to the minimum of
-`<code>tmp_table_size</code>` and `<code>max_heap_table_size</code>`, the hit rate will be checked:
+`tmp_table_size` and `max_heap_table_size`, the hit rate will be checked:
 
 
 * if the hit rate is really small (<0.2) the cache will be disabled.

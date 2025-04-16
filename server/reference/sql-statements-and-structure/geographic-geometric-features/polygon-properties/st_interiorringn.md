@@ -12,10 +12,10 @@ InteriorRingN(poly,N)
 ## Description
 
 
-Returns the N-th interior ring for the Polygon value `<code>poly</code>` as a LineString. Rings are numbered beginning with 1.
+Returns the N-th interior ring for the Polygon value `poly` as a LineString. Rings are numbered beginning with 1.
 
 
-`<code>ST_InteriorRingN()</code>` and `<code>InteriorRingN()</code>` are synonyms.
+`ST_InteriorRingN()` and `InteriorRingN()` are synonyms.
 
 
 ## Examples

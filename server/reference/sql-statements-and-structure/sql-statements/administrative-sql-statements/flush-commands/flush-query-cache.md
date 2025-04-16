@@ -5,7 +5,7 @@
 
 
 You can defragment [the query cache](../../../../plugins/other-plugins/query-cache-information-plugin.md) to better utilize its memory with
-the `<code>FLUSH QUERY CACHE</code>` statement. The statement does not remove any queries from the cache.
+the `FLUSH QUERY CACHE` statement. The statement does not remove any queries from the cache.
 
 
 The [RESET QUERY CACHE](../replication-statements/reset-master.md) statement removes all query results from the query cache.

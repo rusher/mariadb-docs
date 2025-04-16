@@ -54,7 +54,7 @@ Pattern matching as described with the LIKE condition allows you to use “_” 
 OR Processing has the following restrictions:
 
 
-* Only column comparisons against a literal are allowed in conjunction with an OR. The following query would be allowed since all comparisons are against literals. `<code>SELECT count(*) from lineitem WHERE l_partkey < 100 OR l_linestatus =‘F‘;</code>`
+* Only column comparisons against a literal are allowed in conjunction with an OR. The following query would be allowed since all comparisons are against literals. `SELECT count(*) from lineitem WHERE l_partkey < 100 OR l_linestatus =‘F‘;`
 * ColumnStore binds AND’s more tightly than OR’s, just like any other SQLparser. Therefore you must enclose OR-relations in parentheses, just like in any other SQL parser.
 
 

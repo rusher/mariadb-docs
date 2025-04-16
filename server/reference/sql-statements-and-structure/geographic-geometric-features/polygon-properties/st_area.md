@@ -12,10 +12,10 @@ Area(poly)
 ## Description
 
 
-Returns as a double-precision number the area of the Polygon value `<code>poly</code>`, as measured in its spatial reference system.
+Returns as a double-precision number the area of the Polygon value `poly`, as measured in its spatial reference system.
 
 
-`<code>ST_Area()</code>` and `<code>Area()</code>` are synonyms.
+`ST_Area()` and `Area()` are synonyms.
 
 
 ## Examples

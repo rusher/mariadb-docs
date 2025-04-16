@@ -91,7 +91,7 @@ indexes containing null values.
 
 The way CONNECT handles indexing is very specific. All table modifications are
 done regardless of indexing. Only after a table has been modified, or when an
-`<code>OPTIMIZE TABLE</code>` command is sent are the indexes made. If an error occurs,
+`OPTIMIZE TABLE` command is sent are the indexes made. If an error occurs,
 the corresponding index is not made. However, CONNECT being a non-transactional
 engine, it is unable to roll back the changes made to the table. The main
 causes of indexing errors are:
@@ -248,5 +248,5 @@ index. This is unfortunate because it takes time.
 ## Virtual Indexing
 
 
-It applies only to the virtual tables of type [VIR](../connect-table-types/connect-table-types-vir.md) and must be made on a column specifying `<code>SPECIAL=ROWID</code>` or `<code>SPECIAL=ROWNUM</code>`.
+It applies only to the virtual tables of type [VIR](../connect-table-types/connect-table-types-vir.md) and must be made on a column specifying `SPECIAL=ROWID` or `SPECIAL=ROWNUM`.
 

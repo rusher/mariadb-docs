@@ -42,12 +42,12 @@ details, please consult the
 documentation.
 
 
-### [MXS-3499](https://jira.mariadb.org/browse/MXS-3499) `<code>causal_reads</code>` and Prepared Statements
+### [MXS-3499](https://jira.mariadb.org/browse/MXS-3499) `causal_reads` and Prepared Statements
 
 
-The `<code>causal_reads</code>` feature now supports binary protocol prepared statements. For
+The `causal_reads` feature now supports binary protocol prepared statements. For
 more information, refer to the
-[documentation](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-readwritesplit.md) for `<code>causal_reads</code>`.
+[documentation](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-readwritesplit.md) for `causal_reads`.
 
 
 ### [MXS-2838](https://jira.mariadb.org/browse/MXS-2838) Hintfilter and Prepared Statements
@@ -63,7 +63,7 @@ statements. For more information, refer to the hintfilter
 
 The servers monitored by a galeramon will now also display extra status
 information in the REST API output regarding the server state. MaxCtrl will
-automatically combine this for the output of `<code>maxctrl list servers</code>`.
+automatically combine this for the output of `maxctrl list servers`.
 
 
 ### [MXS-1245](https://jira.mariadb.org/browse/MXS-1245) Readwritesplit Statement Pipelining
@@ -82,20 +82,20 @@ runtime. Previously the parameters were only modifiable when the object was
 being created.
 
 
-### [MXS-3537](https://jira.mariadb.org/browse/MXS-3537) Default Value of `<code>threads</code>`
+### [MXS-3537](https://jira.mariadb.org/browse/MXS-3537) Default Value of `threads`
 
 
-The default value of `<code>threads</code>` was changed from 1 to `<code>auto</code>`.
+The default value of `threads` was changed from 1 to `auto`.
 
 
 ## Dropped Features
 
 
-### `<code>ssl=required</code>` and `<code>ssl=disabled</code>`
+### `ssl=required` and `ssl=disabled`
 
 
-The `<code>required</code>` and `<code>disabled</code>` values for the `<code>ssl</code>` parameter have been
-removed. Replace them with `<code>ssl=true</code>` and `<code>ssl=false</code>`.
+The `required` and `disabled` values for the `ssl` parameter have been
+removed. Replace them with `ssl=true` and `ssl=false`.
 
 
 ## Deprecated Features
@@ -118,7 +118,7 @@ is deprecated and will be removed in MaxScale 22.08.
 ## New Features
 
 
-### [MXS-2646](https://jira.mariadb.org/browse/MXS-2646) `<code>nosqlprotocol</code>` protocol module
+### [MXS-2646](https://jira.mariadb.org/browse/MXS-2646) `nosqlprotocol` protocol module
 
 
 This module implements a subset of the MongoDB® wire protocol and
@@ -127,15 +127,15 @@ statements that subsequently are executed on a MariaDB server. This
 allows client applications utilizing some MongoDB client library to
 use a MariaDB server as backend. As the conversion is performed in
 the protocol module, this functionality can be used together with
-all MaxScale routers and filters. Please see the `<code>nosqlprotocol</code>`
+all MaxScale routers and filters. Please see the `nosqlprotocol`
 [documentation](../mariadb-maxscale-21-06-protocols/mariadb-maxscale-2106-maxscale-2106-nosql-protocol-module.md) for more information.
 
 
-### [MXS-3482](https://jira.mariadb.org/browse/MXS-3482) Defaults can be specified for `<code>maxctrl</code>`
+### [MXS-3482](https://jira.mariadb.org/browse/MXS-3482) Defaults can be specified for `maxctrl`
 
 
-If the file `<code>~/.maxctrl.cnf</code>` exists, maxctrl will use any values in the section
-`<code>[maxctrl]</code>` as defaults for command line arguments. Please see the `<code>maxctrl</code>`
+If the file `~/.maxctrl.cnf` exists, maxctrl will use any values in the section
+`[maxctrl]` as defaults for command line arguments. Please see the `maxctrl`
 [documentation](../mariadb-maxscale-21-06-reference/mariadb-maxscale-2106-maxscale-2106-maxctrl.md) for details.
 
 
@@ -161,9 +161,9 @@ API [documentation](../mariadb-maxscale-21-06-rest-api/mariadb-maxscale-2106-max
 ### [MXS-3108](https://jira.mariadb.org/browse/MXS-3108) Session Alteration
 
 
-The logging options for filters can be changed at runtime with `<code>maxctrl alter
-filter</code>` and the filters of a session can be modified with `<code>maxctrl alter
-session-filters</code>`. For more information, refer to the MaxCtrl
+The logging options for filters can be changed at runtime with `maxctrl alter
+filter` and the filters of a session can be modified with `maxctrl alter
+session-filters`. For more information, refer to the MaxCtrl
 [documentation](../mariadb-maxscale-21-06-reference/mariadb-maxscale-2106-maxscale-2106-maxctrl.md) as well as the REST API
 [documentation](../mariadb-maxscale-21-06-rest-api/mariadb-maxscale-2106-maxscale-2106-session-resource.md).
 
@@ -171,8 +171,8 @@ session-filters</code>`. For more information, refer to the MaxCtrl
 ### [MXS-2806](https://jira.mariadb.org/browse/MXS-2806) Stopping of Individual Listeners
 
 
-Individual listeners can now be stopped with the `<code>maxctrl stop listener</code>`
-command. The new `<code>--force</code>` option added to the `<code>stop</code>` commands can be used to
+Individual listeners can now be stopped with the `maxctrl stop listener`
+command. The new `--force` option added to the `stop` commands can be used to
 force all open connections to be closed when the associated object is stopped.
 
 
@@ -182,7 +182,7 @@ force all open connections to be closed when the associated object is stopped.
 A new configuration synchronization feature has been added to MaxScale. This
 feature allows multiple MaxScale instances to share a configuration file that is
 synchronized via the database cluster monitored by MaxScale. For more
-information, refer to the `<code>config_sync_cluster</code>`
+information, refer to the `config_sync_cluster`
 [documentation](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md).
 
 
@@ -200,7 +200,7 @@ MariaDB. For more information, refer to the KafkaImporter
 Readwritesplit is now capable of caching prepared statements for individual
 sessions. For more information, refer to the
 [documentation](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-readwritesplit.md) for the
-`<code>reuse_prepared_statements</code>` parameter.
+`reuse_prepared_statements` parameter.
 
 
 ### [MXS-1687](https://jira.mariadb.org/browse/MXS-1687) KafkaCDC and Avrorouter Failover
@@ -217,8 +217,8 @@ cluster. For more information, refer to the
 
 
 Readwritesplit statistics now has two new entries:
-`<code>avg_sescmd_history_length</code>` and `<code>max_sescmd_history_length</code>`.
-These are helpful when tuning `<code>max_sescmd_history</code>` to avoid session command history
+`avg_sescmd_history_length` and `max_sescmd_history_length`.
+These are helpful when tuning `max_sescmd_history` to avoid session command history
 to be too short, leading to potential inconsistencies, or to become too large,
 leading to wasted memory.
 
@@ -226,8 +226,8 @@ leading to wasted memory.
 ### [MXS-3091](https://jira.mariadb.org/browse/MXS-3091) Restrict RCR reads to slaves
 
 
-Readconnroute has a new option `<code>master_accept_reads</code>` similar to the one in Readwritesplit.
-When `<code>master_accept_reads=false</code>` RCR will not route reads to the current master.
+Readconnroute has a new option `master_accept_reads` similar to the one in Readwritesplit.
+When `master_accept_reads=false` RCR will not route reads to the current master.
 
 
 ### [MXS-3257](https://jira.mariadb.org/browse/MXS-3257) SQL queries tool
@@ -300,7 +300,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platfor
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

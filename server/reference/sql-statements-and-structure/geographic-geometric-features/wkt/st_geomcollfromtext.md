@@ -18,7 +18,7 @@ Constructs a [GEOMETRYCOLLECTION](../geometry-constructors/geometrycollection.md
 representation and [SRID](../geometry-properties/st_srid.md).
 
 
-`<code>ST_GeomCollFromText()</code>`, `<code>ST_GeometryCollectionFromText()</code>`, `<code>GeomCollFromText()</code>` and `<code>GeometryCollectionFromText()</code>` are all synonyms.
+`ST_GeomCollFromText()`, `ST_GeometryCollectionFromText()`, `GeomCollFromText()` and `GeometryCollectionFromText()` are all synonyms.
 
 
 ## Example

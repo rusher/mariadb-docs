@@ -13,10 +13,10 @@ NumPoints(ls)
 
 
 Returns the number of [Point](../geometry-constructors/point.md) objects in the [LineString](../geometry-constructors/linestring.md)
-value `<code>ls</code>`.
+value `ls`.
 
 
-`<code>ST_NumPoints()</code>` and `<code>NumPoints()</code>` are synonyms.
+`ST_NumPoints()` and `NumPoints()` are synonyms.
 
 
 ## Examples

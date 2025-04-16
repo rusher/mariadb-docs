@@ -49,10 +49,10 @@ For details about the standard service parameters, refer to the
 [Configuration Guide](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md).
 
 
-### `<code>master</code>`
+### `master`
 
 
-One of the clusters must be designated as the **`<code>master</code>`**. All writes go to the
+One of the clusters must be designated as the **`master`**. All writes go to the
 master cluster, which for all practical purposes should be a master-slave
 ReadWriteSplit. This document does not go into details about setting up
 master-slave clusters, but suffice to say, that when setting up the ColumnStore
@@ -103,7 +103,7 @@ socket=/tmp/rws-row.sock
 
 
 
-That is, that service can be accessed using the socket `<code>/tmp/rws-row.sock</code>`.
+That is, that service can be accessed using the socket `/tmp/rws-row.sock`.
 
 
 A server section that would expose that service as a server, looks like this:
@@ -118,8 +118,8 @@ socket=/tmp/rws-row.sock
 
 
 
-Assuming we have defined `<code>RWS-Column</code>`, `<code>RWS-Column-Listener</code>` and
-`<code>RWS-Column-as-a-server</code>` similarly, we can define the SmartQuery
+Assuming we have defined `RWS-Column`, `RWS-Column-Listener` and
+`RWS-Column-as-a-server` similarly, we can define the SmartQuery
 service as follows:
 
 
@@ -203,7 +203,7 @@ SmartRouter.
 ## Limitations
 
 
-* `<code>LOAD DATA LOCAL INFILE</code>` is not supported.
+* `LOAD DATA LOCAL INFILE` is not supported.
 * The performance data is not persisted. The measurements have to be performed
 anew after each startup.
 

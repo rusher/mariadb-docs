@@ -12,7 +12,7 @@ ENVELOPE(g)
 ## Description
 
 
-Returns the Minimum Bounding Rectangle (MBR) for the geometry value `<code>g</code>`. The result is returned as a Polygon value.
+Returns the Minimum Bounding Rectangle (MBR) for the geometry value `g`. The result is returned as a Polygon value.
 
 
 The polygon is defined by the corner points of the bounding box:
@@ -22,7 +22,7 @@ The polygon is defined by the corner points of the bounding box:
 POLYGON((MINX MINY, MAXX MINY, MAXX MAXY, MINX MAXY, MINX MINY))
 ```
 
-`<code>ST_ENVELOPE()</code>` and `<code>ENVELOPE()</code>` are synonyms.
+`ST_ENVELOPE()` and `ENVELOPE()` are synonyms.
 
 
 ## Examples

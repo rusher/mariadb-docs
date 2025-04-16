@@ -11,13 +11,13 @@ OCTET_LENGTH(str)
 ## Description
 
 
-`<code>OCTET_LENGTH()</code>` returns the length of the given string, in octets (bytes). This is a synonym for [LENGTHB()](lengthb.md), and, when [Oracle mode from MariaDB 10.3](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md#functions) is not set, a synonym for [LENGTH()](lengthb.md).
+`OCTET_LENGTH()` returns the length of the given string, in octets (bytes). This is a synonym for [LENGTHB()](lengthb.md), and, when [Oracle mode from MariaDB 10.3](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md#functions) is not set, a synonym for [LENGTH()](lengthb.md).
 
 
-A multi-byte character counts as multiple bytes. This means that for a string containing five two-byte characters, `<code>OCTET_LENGTH()</code>` returns 10, whereas [CHAR_LENGTH()](char_length.md) returns 5.
+A multi-byte character counts as multiple bytes. This means that for a string containing five two-byte characters, `OCTET_LENGTH()` returns 10, whereas [CHAR_LENGTH()](char_length.md) returns 5.
 
 
-If `<code>str</code>` is not a string value, it is converted into a string. If `<code>str</code>` is `<code>NULL</code>`, the function returns `<code>NULL</code>`.
+If `str` is not a string value, it is converted into a string. If `str` is `NULL`, the function returns `NULL`.
 
 
 ## Examples

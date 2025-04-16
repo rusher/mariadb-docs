@@ -47,7 +47,7 @@ SELECT *, MATCH(copy) AGAINST('wicked') AS score FROM ft_mroonga
 ## Parser
 
 
-Mroonga permits you to set a different parser for searching by specifying the parser in the `<code>CREATE TABLE</code>` statement as a comment or, in older versions, changing the value of the [mroonga_default_parser](mroonga-system-variables.md#mroonga_default_parser) system variable.
+Mroonga permits you to set a different parser for searching by specifying the parser in the `CREATE TABLE` statement as a comment or, in older versions, changing the value of the [mroonga_default_parser](mroonga-system-variables.md#mroonga_default_parser) system variable.
 
 
 For example:
@@ -94,7 +94,7 @@ The following parser settings are available:
 #### TokenBigram vs TokenBigramSplitSymbol
 
 
-`<code>TokenBigram</code>` failing to match partial symbols which `<code>TokenBigramSplitSymbol</code>` matches, since `<code>TokenBigramSplitSymbol</code>` does not treat continuous symbols as a token.
+`TokenBigram` failing to match partial symbols which `TokenBigramSplitSymbol` matches, since `TokenBigramSplitSymbol` does not treat continuous symbols as a token.
 
 
 ```

@@ -26,7 +26,7 @@ Note, that using compound statements this way is subject to following limitation
 
 
 * Only [BEGIN](begin-end.md), [IF](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/ifnull.md), [CASE](case-statement.md), [LOOP](loop.md), [WHILE](while.md), [REPEAT](repeat-loop.md) statements may start a compound statement outside of stored programs.
-* [BEGIN](begin-end.md) must use the `<code>BEGIN NOT ATOMIC</code>` syntax (otherwise it'll be confused with [BEGIN](../../../reference/sql-statements-and-structure/sql-statements/transactions/start-transaction.md) that starts a transaction).
+* [BEGIN](begin-end.md) must use the `BEGIN NOT ATOMIC` syntax (otherwise it'll be confused with [BEGIN](../../../reference/sql-statements-and-structure/sql-statements/transactions/start-transaction.md) that starts a transaction).
 * A compound statement might not start with a label.
 * A compound statement is parsed completely—note "2 warnings" in the above example, even if the condition was false (InnoDB was, indeed, disabled), and the [CREATE TABLE](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statement was not executed, it was still parsed and the parser produced "Unknown storage engine" warning.
 
@@ -43,14 +43,14 @@ BEGIN NOT ATOMIC
     END|
 ```
 
-Example how to use `<code>IF</code>`:
+Example how to use `IF`:
 
 
 ```
 IF (1>0) THEN BEGIN NOT ATOMIC SELECT 1; END ; END IF;;
 ```
 
-Example of how to use `<code>WHILE</code>` loop:
+Example of how to use `WHILE` loop:
 
 
 ```

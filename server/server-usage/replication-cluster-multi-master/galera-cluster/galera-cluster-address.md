@@ -12,16 +12,16 @@ URL's in [Galera](../../../reference/sql-statements-and-structure/sql-statements
 ## Schema
 
 
-* `<code>gcomm</code>` - This is the option to use for a working implementation.
-* `<code>dummy</code>` - Used for running tests and profiling, does not do any actual replication, and all following parameters are ignored.
+* `gcomm` - This is the option to use for a working implementation.
+* `dummy` - Used for running tests and profiling, does not do any actual replication, and all following parameters are ignored.
 
 
 ## Cluster address
 
 
-* The cluster address shouldn't be empty like `<code>gcomm://</code>`. This should never be hardcoded into any configuration files.
+* The cluster address shouldn't be empty like `gcomm://`. This should never be hardcoded into any configuration files.
 * To connect the node to an existing cluster, the cluster address should contain the address of any member of the cluster you want to join.
-* The cluster address can also contain a comma-separated list of multiple members of the cluster. It is good practice to list all possible members of the cluster, for example `<code>gcomm:<em><node1 name or ip>,<node2 name or ip2>,<node3 name or ip></em></code>`. Alternately if multicast is use put the multicast address instead of the list of nodes. Each member address or multicast address can specify `<code><node name or ip>:<port></code>` if a non-default port is used.
+* The cluster address can also contain a comma-separated list of multiple members of the cluster. It is good practice to list all possible members of the cluster, for example `gcomm:<em><node1 name or ip>,<node2 name or ip2>,<node3 name or ip></em>`. Alternately if multicast is use put the multicast address instead of the list of nodes. Each member address or multicast address can specify `<node name or ip>:<port>` if a non-default port is used.
 
 
 ## Option list
@@ -30,7 +30,7 @@ URL's in [Galera](../../../reference/sql-statements-and-structure/sql-statements
 * The [wsrep_provider_options](galera-cluster-system-variables.md#wsrep_provider_options) variable is used to set a [list of options](wsrep_provider_options.md). These parameters can also be provided (and overridden) as part of the URL. Unlike options provided in a configuration file, they will not endure, and need to be resubmitted with each connection.
 
 
-A useful option to set is `<code>pc.wait_prim=no</code>` to ensure the server will start running even if it can't determine a primary node. This is useful if all members go down at the same time.
+A useful option to set is `pc.wait_prim=no` to ensure the server will start running even if it can't determine a primary node. This is useful if all members go down at the same time.
 
 
 ## Port

@@ -61,21 +61,21 @@ runvm --port=2222 ubuntu-hardy-i386.qcow2 \
   "cd mariadb-5.1.41-rc && make"
 ```
 
-In this example, `<code class="fixed" style="white-space:pre-wrap">ubuntu-hardy-amd64.qcow2</code>` is a KVM image already
+In this example, `ubuntu-hardy-amd64.qcow2` is a KVM image already
 installed with compilers and set up for password-less ssh access (using public
 key authentication). Port 2222 on the host side is forwarded to the ssh service
-(port 22) on the guest side (so by specifying different `<code class="fixed" style="white-space:pre-wrap">--port</code>`
-options it is easy to run multiple `<code class="fixed" style="white-space:pre-wrap">runvm</code>` invocations in parallel;
+(port 22) on the guest side (so by specifying different `--port`
+options it is easy to run multiple `runvm` invocations in parallel;
 in our Buildbot setup we run 3 builds in parallel this way).
 
 
-Note the use of the `<code class="fixed" style="white-space:pre-wrap">scp</code>` command, prefixed with an equals sign 
-"`<code class="fixed" style="white-space:pre-wrap">=</code>`" Commands prefixed in this way are run on the host side rather
+Note the use of the `scp` command, prefixed with an equals sign 
+"`=`" Commands prefixed in this way are run on the host side rather
 than the guest side; this is a convenient way to copy data in or results out of
-the virtual machine while the `<code class="fixed" style="white-space:pre-wrap">runvm</code>` session is running.
+the virtual machine while the `runvm` session is running.
 
 
-Using `<code class="fixed" style="white-space:pre-wrap">runvm</code>` in this way we are able to easily and flexibly manage
+Using `runvm` in this way we are able to easily and flexibly manage
 a large number of virtual machines for automated builds with very little
 overhead and complexity. In fact we have around 70 distinct virtual machines!
 The only resource they take is a little disk space (around 37 GByte). And the
@@ -102,7 +102,7 @@ image, run the build, and throw away the temporary image after the build. This
 avoids any possibility of a previous build influencing a following build in any
 way (and thus also simplifies the build setup, as we can install stuff freely
 without any need to do cleanup). It also avoids having to fix a broken image,
-like needing to manually run `<code class="fixed" style="white-space:pre-wrap">fsck</code>` after a crash or similar issue. We use this technique for most of our binary package builds in Buildbot.
+like needing to manually run `fsck` after a crash or similar issue. We use this technique for most of our binary package builds in Buildbot.
 
 
 To use this copy-and-discard technique with runvm, the --base-image option is useful:
@@ -116,10 +116,10 @@ runvm --port=2222 --base-image=ubuntu-hardy-i386.qcow2 tmp.qcow2 \
   "cd mariadb-5.1.41-rc && make"
 ```
 
-This will run the build in a temporary copy `<code class="fixed" style="white-space:pre-wrap">tmp.qcow2</code>` of the
-reference image `<code class="fixed" style="white-space:pre-wrap">ubuntu-hardy-i386.qcow2</code>`, without modifying the
+This will run the build in a temporary copy `tmp.qcow2` of the
+reference image `ubuntu-hardy-i386.qcow2`, without modifying the
 reference image in any way. This uses the copy-on-write feature of the qcow2
-image format (see `<code class="fixed" style="white-space:pre-wrap">qemu-img(1)</code>`), so it even takes only very little
+image format (see `qemu-img(1)`), so it even takes only very little
 time (fraction of a second) and minimal space (only changed blocks are written
 to the new image).
 
@@ -132,13 +132,13 @@ setup is done. There are some further details of course, like more options for
 the build commmands and extra care to get logfiles out to debug problems; the
 full details are available in our 
 [Buildbot configuration file](https://bazaar.launchpad.net/~maria-captains/mariadb-tools/trunk/annotate/head%3A/buildbot/maria-master.cfg). 
-But the basic principle is just a number of `<code class="fixed" style="white-space:pre-wrap">runvm</code>` commands like the examples above.
+But the basic principle is just a number of `runvm` commands like the examples above.
 
 
 ## Getting runvm
 
 
-The `<code class="fixed" style="white-space:pre-wrap">runvm</code>` tool is available under GPL on Lauchpad in the project 
+The `runvm` tool is available under GPL on Lauchpad in the project 
 [Tools for MariaDB](https://launchpad.net/mariadb-tools). In the bzr repository
 it is found as 
 [buildbot/runvm](https://bazaar.launchpad.net/~maria-captains/mariadb-tools/trunk/annotate/head%3A/buildbot/runvm). 
@@ -236,5 +236,5 @@ Available options:
                       with any modifications done during the runvm session.
 ```
 
-*This page is based on a [blog post](https://kristiannielsen.livejournal.com/11007.html) by Kristian Nielsen, the primary developer of* `<code class="fixed" style="white-space:pre-wrap">runvm</code>`.
+*This page is based on a [blog post](https://kristiannielsen.livejournal.com/11007.html) by Kristian Nielsen, the primary developer of* `runvm`.
 

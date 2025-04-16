@@ -4,7 +4,7 @@
 The MariaDB server's [binary log](../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is a set of files containing "events" which represent modifications to the contents of a MariaDB database.
 
 
-Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysqlbinlog</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.These events are written in a binary (i.e. non-human-readable) format. The *mariadb-binlog* utility is used to view these events in plain text.
+Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqlbinlog`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.These events are written in a binary (i.e. non-human-readable) format. The *mariadb-binlog* utility is used to view these events in plain text.
 
 
 Run [mariadb-binlog](../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) from a command-line like this:
@@ -17,7 +17,7 @@ shell> mariadb-binlog [options] log_file ...
 See [mariadb-binlog Options](mariadb-binlog-options.md) for details on the available options.
 
 
-Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysqlbinlog</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqlbinlog`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 As an example, here is how you could display the contents of a [binary log](../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file
@@ -58,7 +58,7 @@ shell> mariadb -u root -p < filename
 ```
 
 Be careful to process multiple log files in a single connection, especially if
-one or more of them have any `<code class="fixed" style="white-space:pre-wrap">CREATE TEMPORARY TABLE ...</code>`
+one or more of them have any `CREATE TEMPORARY TABLE ...`
 statements. Temporary tables are dropped when the mariadb client terminates, so
 if you are processing multiple log files one at a time (i.e. multiple
 connections) and one log file creates a temporary table and then a subsequent

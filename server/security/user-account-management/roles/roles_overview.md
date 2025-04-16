@@ -52,7 +52,7 @@ GRANT SHOW DATABASES ON *.* TO journalist;
 GRANT journalist to hulda;
 ```
 
-Note, that hulda has no `<code>SHOW DATABASES</code>` privilege, even though she was granted the journalist role. She needs to **set** the role first:
+Note, that hulda has no `SHOW DATABASES` privilege, even though she was granted the journalist role. She needs to **set** the role first:
 
 
 ```
@@ -141,7 +141,7 @@ SHOW TABLES FROM data;
 
 
 When a user sets a role, he, in a sense, has two identities with two associated sets of privileges.
-But a view (or a stored routine) can have only one definer. So, when a view (or a stored routine) is created with the `<code>SQL SECURITY DEFINER</code>`, one can specify whether the definer should be `<code>CURRENT_USER</code>` (and the view will have none of the privileges of the user's role) or `<code>CURRENT_ROLE</code>` (in this case, the view will use role's privileges, but none of the user's privileges). As a result, sometimes one can create a view that is impossible to use.
+But a view (or a stored routine) can have only one definer. So, when a view (or a stored routine) is created with the `SQL SECURITY DEFINER`, one can specify whether the definer should be `CURRENT_USER` (and the view will have none of the privileges of the user's role) or `CURRENT_ROLE` (in this case, the view will use role's privileges, but none of the user's privileges). As a result, sometimes one can create a view that is impossible to use.
 
 
 ```

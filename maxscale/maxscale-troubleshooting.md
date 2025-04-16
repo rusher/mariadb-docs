@@ -5,7 +5,7 @@
 # SystemD Watchdog Kills MaxScale
 
 
-This can occur if a reverse DNS name lookup takes a long time. To disable reverse name lookups of client IPs to client hostnames, add [skip_name_resolve=true](https://mariadb.com/kb/en/mariadb-maxscale-2208-mariadb-maxscale-configuration-guide/#skip_name_resolve) under the `<code>[maxscale]</code>` section.
+This can occur if a reverse DNS name lookup takes a long time. To disable reverse name lookups of client IPs to client hostnames, add [skip_name_resolve=true](https://mariadb.com/kb/en/mariadb-maxscale-2208-mariadb-maxscale-configuration-guide/#skip_name_resolve) under the `[maxscale]` section.
 
 
 # High Memory Usage
@@ -16,13 +16,13 @@ This can occur if a reverse DNS name lookup takes a long time. To disable revers
 The default value of writeq_high_water was lowered to 64KiB to reduce excessive memory usage. This change should result in a net decrease in memory usage and possibly a small improvement in performance.
 
 
-Set [writeq_high_water](https://mariadb.com/kb/en/mariadb-maxscale-2208-mariadb-maxscale-configuration-guide/#writeq_high_water) and [writeq_low_water](https://mariadb.com/kb/en/mariadb-maxscale-2208-mariadb-maxscale-configuration-guide/#writeq_low_water) to lower values, for example `<code>writeq_high_water=512</code>` and `<code>writeq_low_water=128</code>`. The default is to buffer a maximum of 16MB in memory before network throttling begins which under intensive loads can result in a large amount of memory being used per client.
+Set [writeq_high_water](https://mariadb.com/kb/en/mariadb-maxscale-2208-mariadb-maxscale-configuration-guide/#writeq_high_water) and [writeq_low_water](https://mariadb.com/kb/en/mariadb-maxscale-2208-mariadb-maxscale-configuration-guide/#writeq_low_water) to lower values, for example `writeq_high_water=512` and `writeq_low_water=128`. The default is to buffer a maximum of 16MB in memory before network throttling begins which under intensive loads can result in a large amount of memory being used per client.
 
 
 The query classifier cache in MaxScale by default takes up to 15% of memory to cache query classification data. This value can be lowered using the [query_classifier_cache_size](https://mariadb.com/kb/en/mariadb-maxscale-2208-mariadb-maxscale-configuration-guide/#query_classifier_cache_size) parameter.
 
 
-The [retain_last_statements](https://mariadb.com/kb/en/mariadb-maxscale-2208-mariadb-maxscale-configuration-guide/#retain_last_statements) and [session_trace](https://mariadb.com/kb/en/mariadb-maxscale-2208-mariadb-maxscale-configuration-guide/#session_trace) debugging parameters can cause memory usage to increase. Disabling them under intensive loads is recommended if they are not needed. Note that the `<code>maxctrl list queries</code>` requires that `<code>retain_last_statements=1</code>` is set.
+The [retain_last_statements](https://mariadb.com/kb/en/mariadb-maxscale-2208-mariadb-maxscale-configuration-guide/#retain_last_statements) and [session_trace](https://mariadb.com/kb/en/mariadb-maxscale-2208-mariadb-maxscale-configuration-guide/#session_trace) debugging parameters can cause memory usage to increase. Disabling them under intensive loads is recommended if they are not needed. Note that the `maxctrl list queries` requires that `retain_last_statements=1` is set.
 
 
 ## Profiling Memory Usage
@@ -43,7 +43,7 @@ If a problem in memory usage is identified and it appears to be due to a bug in 
 The easiest option is to install the MaxScale debug binaries which are built with [AddressSanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizer) and [LeakSanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizerLeakSanitizer) enabled. These are low-impact instrumentation tools that detect memory access errors as well as memory leaks.
 
 
-Once installed, make sure that the `<code>maxlog</code>` parameter is not disabled and then start MaxScale. Let it run until the memory usage grows beyond normal limits and then shut MaxScale down with `<code>systemctl stop maxscale.service</code>`. The MaxScale log should contain a verbose explanation of where memory leaks occurred, if any were found.
+Once installed, make sure that the `maxlog` parameter is not disabled and then start MaxScale. Let it run until the memory usage grows beyond normal limits and then shut MaxScale down with `systemctl stop maxscale.service`. The MaxScale log should contain a verbose explanation of where memory leaks occurred, if any were found.
 
 
 ### Profiling Release Mode Binaries
@@ -52,10 +52,10 @@ Once installed, make sure that the `<code>maxlog</code>` parameter is not disabl
 The instructions on the [profiling-memory-usage](../server/reference/bug-tracking/profiling-memory-usage.md) page that are for the MariaDB server also apply to MaxScale. The following modifications to the commands must be done in order for them to work with MaxScale.
 
 
-* Replace `<code>/usr/sbin/mariadbd</code>` with `<code>/usr/bin/maxscale</code>`
-* Replace `<code>/var/lib/mysql/</code>` with `<code>/var/log/maxscale/</code>`
-* Replace `<code>pidof mariadbd</code>` with `<code>pidof maxscale</code>`
-* Replace `<code>mariadb.service</code>` with `<code>maxscale.service</code>`
+* Replace `/usr/sbin/mariadbd` with `/usr/bin/maxscale`
+* Replace `/var/lib/mysql/` with `/var/log/maxscale/`
+* Replace `pidof mariadbd` with `pidof maxscale`
+* Replace `mariadb.service` with `maxscale.service`
 
 
 ### Valgrind
@@ -64,7 +64,7 @@ The instructions on the [profiling-memory-usage](../server/reference/bug-trackin
 Valgrind can be used to analyze memory usage problems but usually it is left as the last resort due to the heavy performance penalty that it incurs. However, the use of Valgrind is simple as it is widely available and can be used with existing MaxScale binaries.
 
 
-To use `<code>valgrind</code>` for memory leak detection, edit the systemd service file with `<code>systemctl edit maxscale.service</code>` and add the following values to it:
+To use `valgrind` for memory leak detection, edit the systemd service file with `systemctl edit maxscale.service` and add the following values to it:
 
 
 ```
@@ -73,13 +73,13 @@ ExecStart=valgrind --leak-check=full /usr/bin/maxscale -d
 Type=simple
 ```
 
-Then restart the MaxScale process with `<code>systemctl restart maxscale.service</code>`. Once the memory problem is confirmed, stop the MaxScale process with `<code>systemctl stop maxscale.service</code>`. Valgrind will print the leak report into the system journal that can be viewed with `<code>journalctl -u maxscale</code>`.
+Then restart the MaxScale process with `systemctl restart maxscale.service`. Once the memory problem is confirmed, stop the MaxScale process with `systemctl stop maxscale.service`. Valgrind will print the leak report into the system journal that can be viewed with `journalctl -u maxscale`.
 
 
 # Authentication Errors
 
 
-## `<code>Access Denied</code>`
+## `Access Denied`
 
 
 If you are receiving authentication errors like this:
@@ -90,7 +90,7 @@ ERROR 1045 (28000): Access denied for user 'bob'@'office' (using password: YES)
 ```
 
 
-Make sure you create users for both `<code>'bob'@'office'</code>` and `<code>'bob'@'maxscale'</code>`. The host `<code>'office'</code>` is where the client is attempting to connect from and `<code>'maxscale'</code>` is the host where MaxScale is installed.
+Make sure you create users for both `'bob'@'office'` and `'bob'@'maxscale'`. The host `'office'` is where the client is attempting to connect from and `'maxscale'` is the host where MaxScale is installed.
 
 
 If you do not want to create a second set of users, you can enable [proxy_protocol](https://mariadb.com/kb/en/mariadb-maxscale-2208-mariadb-maxscale-configuration-guide/#proxy_protocol) in MaxScale and configure the MariaDB server to [allow proxied connections](../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#proxy_protocol_networks) from the MaxScale host.
@@ -140,7 +140,7 @@ The monitor user requires different grants than the service user and each monito
 ## Other Errors
 
 
-For all authentication and permission related errors, add `<code>debug=enable-statement-logging</code>` under the `<code>[maxscale]</code>` section of your MaxScale configuration file. This will cause all SQL statements to be logged on the notice level which will help you figure out what the problem is.
+For all authentication and permission related errors, add `debug=enable-statement-logging` under the `[maxscale]` section of your MaxScale configuration file. This will cause all SQL statements to be logged on the notice level which will help you figure out what the problem is.
 
 
 ## Access denied errors for user root!
@@ -169,7 +169,7 @@ If you got a grant containing a escaped underscore, you can add the [strip_db_es
 # System Errors
 
 
-## `<code>Failed to write message: 11, Resource temporarily unavailable</code>`
+## `Failed to write message: 11, Resource temporarily unavailable`
 
 
 
@@ -183,7 +183,7 @@ Older MaxScale versions suffer from a bug ([MXS-4474](https://jira.mariadb.org/b
 Starting with MaxScale 6.4.5 and 2.5.25, the size is 24 bytes as expected which causes the maximum limit to be the expected 43690 messages. The problem still theoretically exists under extreme workloads where there are more than 43k concurrent clients but in practice the problem should almost never occur.
 
 
-The MaxScale can log the `<code>Failed to write message: 11, Resource temporarily unavailable</code>` message under extremely intensive workloads (see [MXS-1983](https://jira.mariadb.org/browse/MXS-1983) and [MXS-4474](https://jira.mariadb.org/browse/MXS-4474)).
+The MaxScale can log the `Failed to write message: 11, Resource temporarily unavailable` message under extremely intensive workloads (see [MXS-1983](https://jira.mariadb.org/browse/MXS-1983) and [MXS-4474](https://jira.mariadb.org/browse/MXS-4474)).
 
 
 The first action to take when these messages are encountered is to upgrade your MaxScale installation to the latest version. Whenever this message is seen, it means that something is causing the internal message queue in MaxScale to fill up. More often than not it is a sign of a possible bug in MaxScale and most likely has been fixed in the most recent release of MaxScale.
@@ -212,13 +212,13 @@ This is a common error when system limits for open files is too low. The fix to 
 ### Systemd
 
 
-Edit or add `<code>LimitNOFILE=<number of files></code>` under the `<code>[Service]</code>` section in `<code>/usr/lib/systemd/system/maxscale.service</code>`.
+Edit or add `LimitNOFILE=<number of files>` under the `[Service]` section in `/usr/lib/systemd/system/maxscale.service`.
 
 
 # MaxCtrl
 
 
-## `<code>Error: ENOENT: no such file or directory, uv_cwd</code>`
+## `Error: ENOENT: no such file or directory, uv_cwd`
 
 
 If MaxCtrl fails to start and throws the following error, it means that the current working directory no longer exists. Moving into a directory that does exist fixes the problem.
@@ -248,10 +248,10 @@ Error: ENOENT: no such file or directory, uv_cwd
 }
 ```
 
-## `<code>Pkg: Error reading from file.</code>`
+## `Pkg: Error reading from file.`
 
 
-If MaxCtrl fails to start and throws this error, it most likely means that the `<code>maxctrl</code>` executable has been stripped of symbols. To fix this problem, reinstall the MaxScale package.
+If MaxCtrl fails to start and throws this error, it most likely means that the `maxctrl` executable has been stripped of symbols. To fix this problem, reinstall the MaxScale package.
 
 
 # Binlogrouter
@@ -273,26 +273,26 @@ For most problems, resetting the conversion state is the solution. If the conver
 
 
 * Stop MaxScale
-* Remove the `<code>avro.index</code>` and `<code>avro-conversion.ini</code>` files along with any generated `<code>.avro</code>` files from the director where the Avro files are stored
+* Remove the `avro.index` and `avro-conversion.ini` files along with any generated `.avro` files from the director where the Avro files are stored
 * Start MaxScale
 
 
 ## Binlog files are not found
 
 
-Make sure the `<code>start_index</code>` parameter is set to the lowest binlog file number. For example, to start from `<code>mariadb-bin-000005</code>`, set `<code>start_index=5</code>`.
+Make sure the `start_index` parameter is set to the lowest binlog file number. For example, to start from `mariadb-bin-000005`, set `start_index=5`.
 
 
 ## Access denied to CDC interface
 
 
-Create the user with `<code>maxadmin call command cdc add_user <service name> <user> <password></code>` or `<code>maxctrl call command cdc add_user <service name> <user> <password></code>`.
+Create the user with `maxadmin call command cdc add_user <service name> <user> <password>` or `maxctrl call command cdc add_user <service name> <user> <password>`.
 
 
 # Coredumps Are Not Being Generated
 
 
-Check that `<code>sysctl kernel.core_pattern</code>` is set to forward coredupms to systemd-coredump:
+Check that `sysctl kernel.core_pattern` is set to forward coredupms to systemd-coredump:
 
 
 ```

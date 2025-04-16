@@ -51,7 +51,7 @@ filters=MyComment
 The Comment filter requires one mandatory parameter to be defined.
 
 
-### `<code>inject</code>`
+### `inject`
 
 
 * Type: string

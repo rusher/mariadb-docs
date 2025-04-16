@@ -48,14 +48,14 @@ For reference, the "perro" and "work" systems were configured as follows:
 * select_100_random_points.lua result on perro with key_cache_partitions off and 32, OO.org spreadsheet: [Sysbench_v0.5_select_100_random_points.ods](https://askmonty.org/sysbench-results/Sysbench_v0.5_select_100_random_points.ods)
 
 
-* `<code class="fixed" style="white-space:pre-wrap">select_random_points.lua --random-points=50</code>` result on perro with key_cache_partitions off and 32, OO.org spreadsheet: [Sysbench_v0.5_select_50_random_points.ods](https://askmonty.org/sysbench-results/Sysbench_v0.5_select_50_random_points.ods)
+* `select_random_points.lua --random-points=50` result on perro with key_cache_partitions off and 32, OO.org spreadsheet: [Sysbench_v0.5_select_50_random_points.ods](https://askmonty.org/sysbench-results/Sysbench_v0.5_select_50_random_points.ods)
 
 
-* `<code class="fixed" style="white-space:pre-wrap">select_random_points.lua --random-points=10</code>` result on perro with key_cache_partitions off and 32, OO.org spreadsheet: [Sysbench_v0.5_select_10_random_points.ods](https://askmonty.org/sysbench-results/Sysbench_v0.5_select_10_random_points.ods)
+* `select_random_points.lua --random-points=10` result on perro with key_cache_partitions off and 32, OO.org spreadsheet: [Sysbench_v0.5_select_10_random_points.ods](https://askmonty.org/sysbench-results/Sysbench_v0.5_select_10_random_points.ods)
 
 
-* `<code class="fixed" style="white-space:pre-wrap">select_random_points.lua --random-points=10, 50, and 100</code>` results on perro with key_cache_segments off, 32, and 64 OO.org spreadsheet: [Sysbench_v0.5_select_random_points_10_50_100_perro.ods](https://askmonty.org/sysbench-results/Sysbench_v0.5_select_random_points_10_50_100_perro.ods)
+* `select_random_points.lua --random-points=10, 50, and 100` results on perro with key_cache_segments off, 32, and 64 OO.org spreadsheet: [Sysbench_v0.5_select_random_points_10_50_100_perro.ods](https://askmonty.org/sysbench-results/Sysbench_v0.5_select_random_points_10_50_100_perro.ods)
 
 
-* `<code class="fixed" style="white-space:pre-wrap">select_random_points.lua --random-points=10, 50, and 100</code>` results on pitbull with key_cache_segments off, 32, and 64 OO.org spreadsheet: [Sysbench_v0.5_select_random_points_10_50_100_pitbull.ods](https://askmonty.org/sysbench-results/Sysbench_v0.5_select_random_points_10_50_100_pitbull.ods)
+* `select_random_points.lua --random-points=10, 50, and 100` results on pitbull with key_cache_segments off, 32, and 64 OO.org spreadsheet: [Sysbench_v0.5_select_random_points_10_50_100_pitbull.ods](https://askmonty.org/sysbench-results/Sysbench_v0.5_select_random_points_10_50_100_pitbull.ods)
 

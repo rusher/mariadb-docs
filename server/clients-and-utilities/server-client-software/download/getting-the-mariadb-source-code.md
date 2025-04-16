@@ -151,13 +151,13 @@ tar -zxvf ${downloadsdir}/mariadb-shared-repo.tgz
 ```
 1. After the untar step you will have a bzr shared repository, but not
 a working tree. While in the shared repository directory, use the
-`<code class="fixed" style="white-space:pre-wrap"> bzr branch </code>` command to branch the MariaDB trees you are
+` bzr branch ` command to branch the MariaDB trees you are
 interested in. For example:
 
-  * `<code class="fixed" style="white-space:pre-wrap"> bzr branch lp:maria/5.2 
-</code>`
-  * `<code class="fixed" style="white-space:pre-wrap"> bzr branch lp:maria 
-</code>`
+  * ` bzr branch lp:maria/5.2 
+`
+  * ` bzr branch lp:maria 
+`
 1. Thanks to the repository, either of the above commands will complete very fast.
 1. Before working with the code, make sure you pull down the latest version of the source code: 
 ```

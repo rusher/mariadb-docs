@@ -1,7 +1,7 @@
 
 # INT3
 
-`<code>INT3</code>` is a synonym for [MEDIUMINT](mediumint.md).
+`INT3` is a synonym for [MEDIUMINT](mediumint.md).
 
 
 ```

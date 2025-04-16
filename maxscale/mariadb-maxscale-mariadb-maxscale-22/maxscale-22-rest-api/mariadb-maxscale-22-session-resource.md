@@ -28,7 +28,7 @@ GET /v1/sessions/:id
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -85,7 +85,7 @@ GET /v1/sessions
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 

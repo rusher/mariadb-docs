@@ -39,7 +39,7 @@ traditional primary-replica clusters.
 
 
 By default, the Galera Monitor will choose the node with the lowest
-`<code>wsrep_local_index</code>` value as the primary. This will mean that two MaxScales
+`wsrep_local_index` value as the primary. This will mean that two MaxScales
 running on different servers will choose the same server as the primary.
 
 
@@ -47,20 +47,20 @@ running on different servers will choose the same server as the primary.
 
 
 The following WSREP variables are inspected by galeramon to see whether a node is
-usable. If the node is not usable, it loses the `<code>Master</code>` and `<code>Slave</code>` labels and
-will be in the `<code>Running</code>` state.
+usable. If the node is not usable, it loses the `Master` and `Slave` labels and
+will be in the `Running` state.
 
 
-* If `<code>wsrep_ready=0</code>`, the WSREP system is not yet ready and the Galera node
+* If `wsrep_ready=0`, the WSREP system is not yet ready and the Galera node
  cannot accept queries.
-* If `<code>wsrep_desync=1</code>` is set, the node is desynced and is not participating in
+* If `wsrep_desync=1` is set, the node is desynced and is not participating in
  the Galera replication.
-* If `<code>wsrep_reject_queries=[ALL|ALL_KILL]</code>` is set, queries are refused and the
+* If `wsrep_reject_queries=[ALL|ALL_KILL]` is set, queries are refused and the
  node is unusable.
-* With `<code>wsrep_sst_donor_rejects_queries=1</code>`, donor nodes reject
- queries. Galeramon treats this the same as if `<code>wsrep_reject_queries=ALL</code>` was
+* With `wsrep_sst_donor_rejects_queries=1`, donor nodes reject
+ queries. Galeramon treats this the same as if `wsrep_reject_queries=ALL` was
  set.
-* If `<code>wsrep_local_state</code>` is not 4 (or 2 with `<code>available_when_donor=true</code>`), the
+* If `wsrep_local_state` is not 4 (or 2 with `available_when_donor=true`), the
  node is not in the correct state and is not used.
 
 
@@ -69,7 +69,7 @@ will be in the `<code>Running</code>` state.
 
 MaxScale 2.4.0 added support for replicas replicating off of Galera nodes. If a
 non-Galera server monitored by galeramon is replicating from a Galera node also
-monitored by galeramon, it will be assigned the `<code>Slave, Running</code>` status as long
+monitored by galeramon, it will be assigned the `Slave, Running` status as long
 as the replication works. This allows read-scaleout with Galera servers without
 increasing the size of the Galera cluster.
 
@@ -77,7 +77,7 @@ increasing the size of the Galera cluster.
 ## Required Grants
 
 
-The Galera Monitor requires the `<code>REPLICA MONITOR</code>` grant to work:
+The Galera Monitor requires the `REPLICA MONITOR` grant to work:
 
 
 
@@ -88,7 +88,7 @@ GRANT REPLICA MONITOR ON *.* TO 'maxscale-user'@'maxscalehost';
 
 
 
-With MariaDB Server 10.4 and earlier, `<code>REPLICATION CLIENT</code>` is required instead.
+With MariaDB Server 10.4 and earlier, `REPLICATION CLIENT` is required instead.
 
 
 
@@ -98,7 +98,7 @@ GRANT REPLICATION CLIENT ON *.* TO 'maxscale-user'@'maxscalehost';
 
 
 
-If `<code>set_donor_nodes</code>` is configured, the `<code>SUPER</code>` grant is required:
+If `set_donor_nodes` is configured, the `SUPER` grant is required:
 
 
 
@@ -141,7 +141,7 @@ For a list of optional parameters that all monitors support, read the
 These are optional parameters specific to the Galera Monitor.
 
 
-### `<code>disable_master_failback</code>`
+### `disable_master_failback`
 
 
 * Type: boolean
@@ -154,11 +154,11 @@ status is assigned to another node MaxScale will normally return the primary
 status to the original node after it comes back up. With this option enabled, if
 the primary status is assigned to a new node it will not be reassigned to the
 original node for as long as the new primary node is running. In this case the
-`<code>Master Stickiness</code>` status bit is set which will be visible in the
-`<code>maxctrl list servers</code>` output.
+`Master Stickiness` status bit is set which will be visible in the
+`maxctrl list servers` output.
 
 
-### `<code>available_when_donor</code>`
+### `available_when_donor`
 
 
 * Type: boolean
@@ -168,23 +168,23 @@ original node for as long as the new primary node is running. In this case the
 
 This option allows Galera nodes to be used normally when they are donors in an
 SST operation when the SST method is non-blocking
-(e.g. `<code>wsrep_sst_method=mariabackup</code>`).
+(e.g. `wsrep_sst_method=mariabackup`).
 
 
-Normally when an SST is performed, both participating nodes lose their `<code>Synced</code>`,
-`<code>Master</code>` or `<code>Slave</code>` statuses. When this option is enabled, the donor is treated as
-if it was a normal member of the cluster (i.e. `<code>wsrep_local_state = 4</code>`). This is
+Normally when an SST is performed, both participating nodes lose their `Synced`,
+`Master` or `Slave` statuses. When this option is enabled, the donor is treated as
+if it was a normal member of the cluster (i.e. `wsrep_local_state = 4`). This is
 especially useful if the cluster drops down to one node and an SST is required
 to increase the cluster size.
 
 
 The current list of non-blocking SST
-methods are `<code>xtrabackup</code>`, `<code>xtrabackup-v2</code>` and `<code>mariabackup</code>`. Read the
+methods are `xtrabackup`, `xtrabackup-v2` and `mariabackup`. Read the
 [wsrep_sst_method](../../../server/server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md)
 documentation for more details.
 
 
-### `<code>disable_master_role_setting</code>`
+### `disable_master_role_setting`
 
 
 * Type: boolean
@@ -197,7 +197,7 @@ nodes. If this option is enabled, Synced is the only status assigned by this
 monitor.
 
 
-### `<code>use_priority</code>`
+### `use_priority`
 
 
 * Type: boolean
@@ -210,7 +210,7 @@ deterministically pick the write node for the monitored Galera cluster and will
 allow for controlled node replacement.
 
 
-### `<code>root_node_as_master</code>`
+### `root_node_as_master`
 
 
 * Type: boolean
@@ -229,15 +229,15 @@ of 0. Based on this information, multiple MaxScale instances can always pick the
 same node for writes.
 
 
-If the `<code>root_node_as_master</code>` option is disabled for galeramon, the node with the
+If the `root_node_as_master` option is disabled for galeramon, the node with the
 lowest index will always be chosen as the primary. If it is enabled, only the
 node with a a *wsrep_local_index* value of 0 can be chosen as the primary.
 
 
-This parameter can work with `<code>disable_master_failback</code>` but using them together
-is not advisable: the intention of `<code>root_node_as_master</code>` is to make sure that
+This parameter can work with `disable_master_failback` but using them together
+is not advisable: the intention of `root_node_as_master` is to make sure that
 all MaxScale instances that are configured to use the same Galera cluster will
-send writes to the same node. If `<code>disable_master_failback</code>` is enabled, this is
+send writes to the same node. If `disable_master_failback` is enabled, this is
 no longer true if the Galera cluster reorganizes itself in a way that a
 different node gets the node index 0, writes would still be going to the old
 node that previously had the node index 0. A restart of one of the MaxScales or
@@ -246,7 +246,7 @@ node, thus resulting in an increasing the rate of deadlock errors and
 sub-optimal performance.
 
 
-### `<code>set_donor_nodes</code>`
+### `set_donor_nodes`
 
 
 * Type: boolean
@@ -285,13 +285,13 @@ This option is disabled by default and was introduced in MaxScale 2.1.0.
 ## Interaction with Server Priorities
 
 
-If the `<code>use_priority</code>` option is set and a server is configured with the
-`<code>priority=<int></code>` parameter, galeramon will use that as the basis on which the
-primary node is chosen. This requires the `<code>disable_master_role_setting</code>` to be
+If the `use_priority` option is set and a server is configured with the
+`priority=<int>` parameter, galeramon will use that as the basis on which the
+primary node is chosen. This requires the `disable_master_role_setting` to be
 undefined or disabled. The server with the lowest positive value of *priority*
 will be chosen as the primary node when a replacement Galera node is promoted to
 a primary server inside MaxScale. If all candidate servers have the same
-priority, the order of the servers in the `<code>servers</code>` parameter dictates which is
+priority, the order of the servers in the `servers` parameter dictates which is
 chosen as the primary.
 
 
@@ -299,7 +299,7 @@ Nodes with a negative value (*priority* < 0) will never be chosen as the
 primary. This allows you to mark some servers as permanent replicas by assigning a
 non-positive value into *priority*. Nodes with the default priority of 0 are
 only selected if no nodes with higher priority are present and the normal node
-selection rules apply to them (i.e. selection is based on `<code>wsrep_local_index</code>`).
+selection rules apply to them (i.e. selection is based on `wsrep_local_index`).
 
 
 Here is an example.
@@ -334,10 +334,10 @@ priority=-1
 
 
 
-In this example `<code>node-1</code>` is always used as the primary if available. If `<code>node-1</code>`
+In this example `node-1` is always used as the primary if available. If `node-1`
 is not available, then the next node with the highest priority rank is used. In
-this case it would be `<code>node-3</code>`. If both `<code>node-1</code>` and `<code>node-3</code>` were down, then
-`<code>node-2</code>` would be used. Because `<code>node-4</code>` has a value of -1 in *priority*, it
+this case it would be `node-3`. If both `node-1` and `node-3` were down, then
+`node-2` would be used. Because `node-4` has a value of -1 in *priority*, it
 will never be the primary. Nodes without *priority* parameter are considered as
 having a priority of 0 and will be used only if all nodes with a positive
 *priority* value are not available.

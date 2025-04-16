@@ -16,7 +16,7 @@ There are five memory summary tables in the Performance Schema that share a numb
 * [memory_global_by_event_name](performance-schema-memory_summary_global_by_event_name-table.md)
 
 
-The `<code>memory_summary_by_host_by_event_name</code>` table contains memory usage statistics aggregated by host and event.
+The `memory_summary_by_host_by_event_name` table contains memory usage statistics aggregated by host and event.
 
 
 The table contains the following columns:

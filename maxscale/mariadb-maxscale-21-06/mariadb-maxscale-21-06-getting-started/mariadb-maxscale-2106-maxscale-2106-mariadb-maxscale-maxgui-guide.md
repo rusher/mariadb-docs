@@ -43,17 +43,17 @@
 # Enabling MaxGUI
 
 
-To enable MaxGUI in a testing mode, add `<code>admin_host=0.0.0.0</code>` and
-`<code>admin_secure_gui=false</code>` under the `<code>[maxscale]</code>` section of the MaxScale
+To enable MaxGUI in a testing mode, add `admin_host=0.0.0.0` and
+`admin_secure_gui=false` under the `[maxscale]` section of the MaxScale
 configuration file. Once enabled, MaxGUI will be available on port 8989:
-`<code>http://127.0.0.1:8989/</code>`
+`http://127.0.0.1:8989/`
 
 
 ## Securing the GUI
 
 
-To make MaxGUI secure, set `<code>admin_secure_gui=true</code>` and configure both the
-`<code>admin_ssl_key</code>` and `<code>admin_ssl_cert</code>` parameters.
+To make MaxGUI secure, set `admin_secure_gui=true` and configure both the
+`admin_ssl_key` and `admin_ssl_cert` parameters.
 
 
 Check the [Configuration Guide](mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md) for the parameter
@@ -66,8 +66,8 @@ how to harden your MaxScale installation for production use.
 
 
 MaxGUI cannot be used without providing credentials. MaxGUI uses
-the same credentials as `<code>maxctrl</code>`, so by default, the username is
-`<code>admin</code>` and the password is `<code>mariadb</code>`.
+the same credentials as `maxctrl`, so by default, the username is
+`admin` and the password is `mariadb`.
 
 
 MaxGUI uses [JSON Web Tokens](https://jwt.io/introduction/) as the
@@ -164,8 +164,8 @@ The list is fetched when needed and provided with
 dedicated options which can be accessed by clicking the more
 options (...) icon.
 For example, for table, it has options to *Preview Data*
-and *View Details* which internally executes `<code>SELECT * FROM database.table_name</code>`
-and `<code>DESCRIBE database.table_name</code>`, respectively.
+and *View Details* which internally executes `SELECT * FROM database.table_name`
+and `DESCRIBE database.table_name`, respectively.
 
 
 ### SQL editor
@@ -190,7 +190,7 @@ the results of *Preview Data* and *View Details*, respectively.
 
 
 Result tables can be filtered, sorted (only when total rows <= 10000), exported,
-and grouped. The result can be exported as `<code>json</code>`, `<code>csv</code>` with a custom delimiter.
+and grouped. The result can be exported as `json`, `csv` with a custom delimiter.
 
 
 The table result can be converted to the vertical mode by clicking the *transform* icon
@@ -206,7 +206,7 @@ bar graphs. In order to see the graph, simply click the *graph* icon next to
 the *gear* icon in the task bar, then fill in the inputs.
 
 
-The graph can be resized by clicking the border of the pane and exported as `<code>jpeg</code>`
+The graph can be resized by clicking the border of the pane and exported as `jpeg`
 format with same ratio.
 
 
@@ -224,7 +224,7 @@ A connection is bound to a worksheet, so sessions querying of a connection is
 not yet supported.
 The hard limit rows of each result are set to 10000 rows which means
 MaxScale returns 10000 rows regardless value of the LIMIT clause. In addition,
-`<code>LIMIT</code>` is not automatically injected into statements written in the SQL editor.
+`LIMIT` is not automatically injected into statements written in the SQL editor.
 
 
 ## Logs Viewer

@@ -58,7 +58,7 @@ GRANT REPLICATION SLAVE ON *.* TO 'replication_user'@'%';
 ### Example Enabling Replication for MySQL
 
 
-If you want to enable replication from MySQL 5.7 or earlier to MariaDB, you can do it in almost the same way as between MariaDB servers. The main difference is that MySQL doesn't support `<code>log-basename</code>`.
+If you want to enable replication from MySQL 5.7 or earlier to MariaDB, you can do it in almost the same way as between MariaDB servers. The main difference is that MySQL doesn't support `log-basename`.
 
 
 ```
@@ -76,7 +76,7 @@ For replication from MySQL 8.0 to MariaDB [requires slight more configurations](
 There are a number of options that may impact or break replication. Check the following settings to avoid problems.
 
 
-* [skip-networking](../optimization-and-tuning/system-variables/server-system-variables.md#skip_networking). If `<code>skip-networking=1</code>`, the server will limit connections to localhost only, and prevent all remote slaves from connecting.
+* [skip-networking](../optimization-and-tuning/system-variables/server-system-variables.md#skip_networking). If `skip-networking=1`, the server will limit connections to localhost only, and prevent all remote slaves from connecting.
 * [bind-address](../optimization-and-tuning/system-variables/server-system-variables.md#bind_address). Similarly, if the address the server listens for TCP/IP connections is 127.0.0.1 (localhost), remote slaves connections will fail.
 
 
@@ -92,8 +92,8 @@ There are a number of options that may impact or break replication. Check the fo
 Now you need prevent any changes to the data while you view the binary log position. You'll use this to tell the slave at exactly which point it should start replicating from.
 
 
-* On the master, flush and lock all tables by running `<code class="fixed" style="white-space:pre-wrap">FLUSH TABLES WITH READ LOCK</code>`. Keep this session running - exiting it will release the lock.
-* Get the current position in the binary log by running `<code>[SHOW MASTER STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md)</code>`:
+* On the master, flush and lock all tables by running `FLUSH TABLES WITH READ LOCK`. Keep this session running - exiting it will release the lock.
+* Get the current position in the binary log by running `[SHOW MASTER STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md)`:
 
 
 ```
@@ -132,13 +132,13 @@ CHANGE MASTER TO
   MASTER_CONNECT_RETRY=10;
 ```
 
-If you are starting a slave against a fresh master that was configured for replication from the start, then you don't have to specify `<code>MASTER_LOG_FILE</code>` and `<code>MASTER_LOG_POS</code>`.
+If you are starting a slave against a fresh master that was configured for replication from the start, then you don't have to specify `MASTER_LOG_FILE` and `MASTER_LOG_POS`.
 
 
 ### Use Global Transaction Id (GTID)
 
 
-It is generally recommended to use (GTIDs), as it has a number of benefits. All that is needed is to add the `<code>MASTER_USE_GTID</code>` option to the `<code>CHANGE MASTER</code>` statement, for example:
+It is generally recommended to use (GTIDs), as it has a number of benefits. All that is needed is to add the `MASTER_USE_GTID` option to the `CHANGE MASTER` statement, for example:
 
 
 ```
@@ -163,7 +163,7 @@ START SLAVE;
 SHOW SLAVE STATUS \G
 ```
 
-* If replication is working correctly, both the values of `<code>Slave_IO_Running</code>` and `<code>Slave_SQL_Running</code>` should be `<code>Yes</code>`:
+* If replication is working correctly, both the values of `Slave_IO_Running` and `Slave_SQL_Running` should be `Yes`:
 
 
 ```

@@ -17,13 +17,13 @@ Usage:
 aria_read_log OPTIONS
 ```
 
-You need to use one of `<code>-d</code>` or `<code>-a</code>`.
+You need to use one of `-d` or `-a`.
 
 
 ## Options
 
 
-The following variables can be set while passed as commandline options to aria_read_log, or set in the `<code>[aria_read_log]</code>` section in your [my.cnf](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) file.
+The following variables can be set while passed as commandline options to aria_read_log, or set in the `[aria_read_log]` section in your [my.cnf](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) file.
 
 
 

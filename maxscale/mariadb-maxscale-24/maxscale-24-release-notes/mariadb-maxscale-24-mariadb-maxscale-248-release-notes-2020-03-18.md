@@ -18,7 +18,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 ## Bug fixes
 
 
-* [MXS-2921](https://jira.mariadb.org/browse/MXS-2921) Memory leak in `<code>alter maxscale</code>`
+* [MXS-2921](https://jira.mariadb.org/browse/MXS-2921) Memory leak in `alter maxscale`
 * [MXS-2919](https://jira.mariadb.org/browse/MXS-2919) max_slave_replication_lag uses servers with unknown replication lag
 * [MXS-2917](https://jira.mariadb.org/browse/MXS-2917) qc_sqlite leaks memory with complex CREATE TABLE query
 * [MXS-2907](https://jira.mariadb.org/browse/MXS-2907) Logrotate warnings when PID file does not exist
@@ -54,7 +54,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platfor
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

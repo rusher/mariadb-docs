@@ -26,8 +26,8 @@ Once running you can connect to the VNC server from your local host with:
 vncviewer -via ${remote_host} localhost
 ```
 
-Replace `<code class="fixed" style="white-space:pre-wrap"><span class="si">${</span><span class="nv">remote_host</span><span class="si">}</span>
-</code>` with the host the
+Replace `<span class="si">${</span><span class="nv">remote_host</span><span class="si">}</span>
+` with the host the
 vm is running on.
 
 
@@ -46,7 +46,7 @@ Install, picking default options mostly, with the following notes:
 
   * Accept the default partitioning (Finish then Commit)
 * Archive Extraction: ...wait while installer installs the OS...
-* Network Configuration: choose `<code>vtnet0</code>`
+* Network Configuration: choose `vtnet0`
 
   * configure ipv4 w/ DHCP
   * do not configure ipv6
@@ -58,11 +58,11 @@ Install, picking default options mostly, with the following notes:
 * Final Configuration: Apply configuration and exit
 * Manual Configuration: yes to opening a shell
 
-  * `<code class="fixed" style="white-space:pre-wrap"><span class="nb">echo</span> <span class="s1">'console="comconsole"'</span> >> /boot/loader.conf
-</code>`
+  * `<span class="nb">echo</span> <span class="s1">'console="comconsole"'</span> >> /boot/loader.conf
+`
   * Edit /etc/ttys and change off to on and dialup to vt100 for the ttyu0 entry.
-  * `<code class="fixed" style="white-space:pre-wrap">shutdown -p now
-</code>`
+  * `shutdown -p now
+`
 
 
 Now that the VM is installed, it's time to configure it.

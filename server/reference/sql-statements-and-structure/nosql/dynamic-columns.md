@@ -126,11 +126,11 @@ COLUMN_CREATE(column_name, value [as type], [column_name, value
   * further modification with other dynamic columns functions
 
 
- The **`<code>as type</code>`** part allows one to specify the value type. In most cases,
+ The **`as type`** part allows one to specify the value type. In most cases,
  this is redundant because MariaDB will be able to deduce the type of the
  value. Explicit type specification may be needed when the type of the value is
- not apparent. For example, a literal `<code>'2012-12-01'</code>` has a CHAR type by
- default, one will need to specify `<code>'2012-12-01' AS DATE</code>` to have it stored as
+ not apparent. For example, a literal `'2012-12-01'` has a CHAR type by
+ default, one will need to specify `'2012-12-01' AS DATE` to have it stored as
  a date. See the [Datatypes](#Datatypes) section for further details. Note also [MDEV-597](https://jira.mariadb.org/browse/MDEV-597).
 
 
@@ -161,10 +161,10 @@ COLUMN_ADD(dyncol_blob, column_name, value [as type],
 
 
 * 
-  * `<code>dyncol_blob</code>` must be either a valid dynamic columns blob (for example, `<code>COLUMN_CREATE</code>` returns such blob), or an empty string.
-  * `<code>column_name</code>` specifies the name of the column to be added. If `<code>dyncol_blob</code>` already has a column with this name, it will be overwritten.
-  * `<code>value</code>` specifies the new value for the column. Passing a NULL value will cause the column to be deleted.
-  * `<code>as type</code>` is optional. See [#datatypes](#datatypes) section for a discussion about types.
+  * `dyncol_blob` must be either a valid dynamic columns blob (for example, `COLUMN_CREATE` returns such blob), or an empty string.
+  * `column_name` specifies the name of the column to be added. If `dyncol_blob` already has a column with this name, it will be overwritten.
+  * `value` specifies the new value for the column. Passing a NULL value will cause the column to be deleted.
+  * `as type` is optional. See [#datatypes](#datatypes) section for a discussion about types.
 
 
  The return value is a dynamic column blob after the modifications.
@@ -184,10 +184,10 @@ UPDATE t1 SET dyncol_blob=COLUMN_ADD(dyncol_blob, "column_name", "value")
   WHERE id=1;
 ```
 
- Note: `<code>COLUMN_ADD()</code>` is a regular function (just like
- `<code>[CONCAT()](../sql-statements/built-in-functions/string-functions/concat_ws.md)</code>`), hence, in order to update the value in the table
- you have to use the `<code>UPDATE ... SET dynamic_col=COLUMN_ADD(dynamic_col,
- ....) </code>` pattern.
+ Note: `COLUMN_ADD()` is a regular function (just like
+ `[CONCAT()](../sql-statements/built-in-functions/string-functions/concat_ws.md)`), hence, in order to update the value in the table
+ you have to use the `UPDATE ... SET dynamic_col=COLUMN_ADD(dynamic_col,
+ ....) ` pattern.
 
 
 
@@ -200,11 +200,11 @@ COLUMN_GET(dyncol_blob, column_name as type);
 ```
 
  Get the value of a dynamic column by its name. If no column with the given
- name exists, `<code>NULL</code>` will be returned.
+ name exists, `NULL` will be returned.
 
 
 
- **`<code>column_name as type</code>`** requires that one specify the datatype of the
+ **`column_name as type`** requires that one specify the datatype of the
  dynamic column they are reading. 
 
 
@@ -218,7 +218,7 @@ COLUMN_GET(dyncol_blob, column_name as type);
  The answer is: SQL is a statically-typed language. The SQL interpreter needs
  to know the datatypes of all expressions before the query is run (for
  example, when one is using prepared statements and runs
- `<code>"select COLUMN_GET(...)"</code>`, the prepared statement API requires the server
+ `"select COLUMN_GET(...)"`, the prepared statement API requires the server
  to inform the client about the datatype of the column being read before the
  query is executed and the server can see what datatype the column actually
  has).
@@ -254,8 +254,8 @@ COLUMN_EXISTS(dyncol_blob, column_nr);
 COLUMN_EXISTS(dyncol_blob, column_name);
 ```
 
- Check if a column with name `<code>column_name</code>` exists in `<code>dyncol_blob</code>`. If
- yes, return `<code>1</code>`, otherwise return `<code>0</code>`.
+ Check if a column with name `column_name` exists in `dyncol_blob`. If
+ yes, return `1`, otherwise return `0`.
 
 
 
@@ -287,14 +287,14 @@ SELECT column_list(column_create('col1','val1','col2','val2'));
 COLUMN_CHECK(dyncol_blob);
 ```
 
- Check if `<code>dyncol_blob</code>` is a valid packed dynamic columns blob. Return value
+ Check if `dyncol_blob` is a valid packed dynamic columns blob. Return value
  of 1 means the blob is valid, return value of 0 means it is not.
 
 
 
  **Rationale:**
  Normally, one works with valid dynamic column blobs. Functions like
- `<code>COLUMN_CREATE</code>`, `<code>COLUMN_ADD</code>`, `<code>COLUMN_DELETE</code>` always return valid
+ `COLUMN_CREATE`, `COLUMN_ADD`, `COLUMN_DELETE` always return valid
  dynamic column blobs. However, if a dynamic column blob is accidentally
  truncated, or transcoded from one character set to another, it will be
  corrupted. This function can be used to check if a value in a blob field is a
@@ -314,7 +314,7 @@ COLUMN_CHECK(dyncol_blob);
 COLUMN_JSON(dyncol_blob);
 ```
 
- Return a JSON representation of data in `<code>dyncol_blob</code>`.
+ Return a JSON representation of data in `dyncol_blob`.
 
 
 
@@ -332,7 +332,7 @@ SELECT item_name, COLUMN_JSON(dynamic_cols) FROM assets;
 +-----------------+----------------------------------------+
 ```
 
- Limitation: `<code>COLUMN_JSON</code>` will decode nested dynamic columns at a nesting
+ Limitation: `COLUMN_JSON` will decode nested dynamic columns at a nesting
  level of not more than 10 levels deep. Dynamic columns that are nested deeper
  than 10 levels will be shown as BINARY string, without encoding.
 
@@ -342,7 +342,7 @@ SELECT item_name, COLUMN_JSON(dynamic_cols) FROM assets;
 
 
 It is possible to use nested dynamic columns by putting one dynamic column blob
-inside another. The `<code>COLUMN_JSON</code>` function will display nested columns.
+inside another. The `COLUMN_JSON` function will display nested columns.
 
 
 ```
@@ -386,7 +386,7 @@ particular dynamic column value is stored together with its datatype.
 
 
 The set of possible datatypes is mostly the same as that used by the SQL
-`<code>[CAST](../sql-statements/built-in-functions/string-functions/cast.md)</code>` and `<code>[CONVERT](../../storage-engines/converting-tables-from-myisam-to-innodb.md)</code>` functions. However, note that there are currently some differences - see [MDEV-597](https://jira.mariadb.org/browse/MDEV-597).
+`[CAST](../sql-statements/built-in-functions/string-functions/cast.md)` and `[CONVERT](../../storage-engines/converting-tables-from-myisam-to-innodb.md)` functions. However, note that there are currently some differences - see [MDEV-597](https://jira.mariadb.org/browse/MDEV-597).
 
 
 
@@ -416,13 +416,13 @@ If you're running queries like
 SELECT COLUMN_GET(blob, 'colname' as CHAR) ...
 ```
 
-without specifying a maximum length (i.e. using #as CHAR#, not `<code>as CHAR(n)</code>`),
+without specifying a maximum length (i.e. using #as CHAR#, not `as CHAR(n)`),
 MariaDB will report the maximum length of the resultset column to be
-`<code>53,6870,911</code>` (bytes or characters?) for [MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)-10.0.0 and
-`<code>16,777,216</code>` for [MariaDB 10.0.1](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1001-release-notes.md)+. This may cause excessive memory usage in
+`53,6870,911` (bytes or characters?) for [MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)-10.0.0 and
+`16,777,216` for [MariaDB 10.0.1](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1001-release-notes.md)+. This may cause excessive memory usage in
 some client libraries, because they try to pre-allocate a buffer of maximum
-resultset width. If you suspect you're hitting this problem, use `<code>CHAR(n)</code>`
-whenever you're using `<code>COLUMN_GET</code>` in the select list.
+resultset width. If you suspect you're hitting this problem, use `CHAR(n)`
+whenever you're using `COLUMN_GET` in the select list.
 
 
 ### [MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) vs [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
@@ -434,7 +434,7 @@ The dynamic columns feature was introduced into MariaDB in two steps:
 1. [MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) was the first version to support dynamic columns. Only numbers
  could be used as column names in this version.
 1. In [MariaDB 10.0.1](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1001-release-notes.md), column names can be either numbers or strings.
- Also, the `<code>COLUMN_JSON</code>` and `<code>COLUMN_CHECK</code>` functions were added.
+ Also, the `COLUMN_JSON` and `COLUMN_CHECK` functions were added.
 
 
 See also [Dynamic Columns in MariaDB 10](dynamic-columns-from-mariadb-10.md).
@@ -443,7 +443,7 @@ See also [Dynamic Columns in MariaDB 10](dynamic-columns-from-mariadb-10.md).
 ### Client-side API
 
 
-It is also possible to create or parse dynamic columns blobs on the client side. `<code>libmysql</code>` client library now includes an API for writing/reading dynamic column blobs. See [dynamic-columns-api](dynamic-columns-api.md) for details.
+It is also possible to create or parse dynamic columns blobs on the client side. `libmysql` client library now includes an API for writing/reading dynamic column blobs. See [dynamic-columns-api](dynamic-columns-api.md) for details.
 
 
 ### Limitations

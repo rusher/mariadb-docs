@@ -54,14 +54,14 @@ From 2.3.0 onwards, SchemaRouter is capable of limited table family sharding.
 ## Routing Logic
 
 
-If a command line client is used, i.e. `<code>mysql</code>`, and a direct connection to
+If a command line client is used, i.e. `mysql`, and a direct connection to
 the database is initialized without a default database, the router starts
 with no default server where the queries are routed. This means that each
 query that doesn't specify a database is routed to the first available
 server.
 
 
-If a `<code>USE <database></code>` query is executed or a default database is defined
+If a `USE <database>` query is executed or a default database is defined
 when connecting to MariaDB MaxScale, all queries without explicitly stated
 databases will be routed to the server which has this database. If multiple
 servers have the same database and the user connecting to MariaDB MaxScale
@@ -77,7 +77,7 @@ configuration in the next chapter.
 
 
 To check how databases and tables map to servers, execute the special query
-`<code>SHOW SHARDS</code>`. The query does not support any modifiers such as `<code>LIKE</code>`.
+`SHOW SHARDS`. The query does not support any modifiers such as `LIKE`.
 
 
 
@@ -100,7 +100,7 @@ The schemarouter maps each of the servers to know where each database and table
 is located. As each user has access to a different set of tables and databases,
 the result is unique to the username and the set of servers that the service
 uses. These results are cached by the schemarouter. The lifetime of the cached
-result is controlled by the `<code>refresh_interval</code>` parameter.
+result is controlled by the `refresh_interval` parameter.
 
 
 When a server needs to be mapped, the schemarouter will route a query to each of
@@ -143,15 +143,15 @@ the databases that need be sharded.
 
 If you are connecting directly to a database or have different users on some
 of the servers, you need to get the authentication data from all the
-servers. You can control this with the `<code>auth_all_servers</code>` parameter. With
+servers. You can control this with the `auth_all_servers` parameter. With
 this parameter, MariaDB MaxScale forms a union of all the users and their
 grants from all the servers. By default, the schemarouter will fetch the
 authentication data from all servers.
 
 
-For example, if two servers have the database `<code>shard</code>` and the following
+For example, if two servers have the database `shard` and the following
 rights are granted only on one server, all queries targeting the database
-`<code>shard</code>` would be routed to the server where the grants were given.
+`shard` would be routed to the server where the grants were given.
 
 
 
@@ -175,13 +175,13 @@ MaxScale's hostname.
 ## Router Parameters
 
 
-### `<code>ignore_tables</code>`
+### `ignore_tables`
 
 
 List of full table names (e.g. db1.t1) to ignore when checking for duplicate tables.
 
 
-### `<code>ignore_tables_regex</code>`
+### `ignore_tables_regex`
 
 
 A
@@ -189,8 +189,8 @@ A
 that is matched against database names when checking for duplicate databases.
 
 
-The following configuration ignores duplicate tables in the databases `<code>db1</code>` and `<code>db2</code>`,
-and all tables starting with "t" in `<code>db3</code>`.
+The following configuration ignores duplicate tables in the databases `db1` and `db2`,
+and all tables starting with "t" in `db3`.
 
 
 
@@ -206,7 +206,7 @@ ignore_tables_regex=^db1|^db2|^db3\.t
 
 
 
-### `<code>preferred_server</code>`
+### `preferred_server`
 
 
 The name of a server in MaxScale which will be used as the preferred server
@@ -239,13 +239,13 @@ refresh_interval=60
 
 
 
-### `<code>ignore_databases</code>`
+### `ignore_databases`
 
 
 This parameter has been deprecated, use [ignore_tables](#ignore_tables) instead.
 
 
-### `<code>ignore_databases_regex</code>`
+### `ignore_databases_regex`
 
 
 This parameter has been deprecated, use [ignore_tables_regex](#ignore_tables_regex) instead.
@@ -262,10 +262,10 @@ tables in each server, SchemaRouter is capable of routing queries to the right s
 depending on which table is being addressed.
 
 
-As an example, suppose the database `<code>db</code>` exists on servers *server1* and *server2*, but
-that the database on *server1* contains the table `<code>tbl1</code>` and on *server2* contains the
-table `<code>tbl2</code>`. The query `<code>SELECT * FROM db.tbl1</code>` will be routed to *server1* and the query
-`<code>SELECT * FROM db.tbl2</code>` will be routed to *server2*. As in the example queries, the table
+As an example, suppose the database `db` exists on servers *server1* and *server2*, but
+that the database on *server1* contains the table `tbl1` and on *server2* contains the
+table `tbl2`. The query `SELECT * FROM db.tbl1` will be routed to *server1* and the query
+`SELECT * FROM db.tbl2` will be routed to *server2*. As in the example queries, the table
 names must be qualified with the database names for table-level sharding to work.
 Specifically, the query series below is not supported.
 
@@ -284,19 +284,19 @@ SELECT * FROM tbl1; // May be routed to an incorrect backend if using table shar
 **Note:** Router options for the Schemarouter were deprecated in MaxScale 2.1.
 
 
-The following options are options for the `<code>router_options</code>` parameter of the
+The following options are options for the `router_options` parameter of the
 service. Multiple router options are given as a comma separated list of key
 value pairs.
 
 
-### `<code>max_sescmd_history</code>`
+### `max_sescmd_history`
 
 
 Set a limit on the number of session modifying commands a session can execute.
 This sets an effective cap on the memory consumption of the session.
 
 
-### `<code>disable_sescmd_history</code>`
+### `disable_sescmd_history`
 
 
 Disable the session command history. This will prevent growing memory consumption
@@ -305,7 +305,7 @@ The drawback of this is the fact that if a server goes down, the session state
 will not be consistent anymore.
 
 
-### `<code>refresh_databases</code>`
+### `refresh_databases`
 
 
 **Note:** This parameter does nothing in 2.4 and newer versions. The
@@ -315,10 +315,10 @@ will not be consistent anymore.
 
 
 Enable database map refreshing mid-session. These are triggered by a failure to
-change the database i.e. `<code>USE ...</code>` queries.
+change the database i.e. `USE ...` queries.
 
 
-### `<code>refresh_interval</code>`
+### `refresh_interval`
 
 
 The minimum interval between database map refreshes in seconds.
@@ -335,35 +335,35 @@ even if the duration is longer than a second.
 ## Router Diagnostics
 
 
-The `<code>router_diagnostics</code>` output for a schemarouter service contains the
+The `router_diagnostics` output for a schemarouter service contains the
 following fields.
 
 
-* `<code>queries</code>`: Number of queries executed through this service.
-* `<code>sescmd_percentage</code>`: The percentage of queries that were session commands.
-* `<code>longest_sescmd_chain</code>`: The largest amount of session commands executed by one client session.
-* `<code>times_sescmd_limit_exceeded</code>`: Number of times the session command history limit was exceeded.
-* `<code>longest_session</code>`: The longest client session in seconds.
-* `<code>shortest_session</code>`: The shortest client session in seconds.
-* `<code>average_session</code>`: The average client session duration in seconds.
-* `<code>shard_map_hits</code>`: Cache hits for the shard map cache.
-* `<code>shard_map_misses</code>`: Cache misses for the shard map cache.
+* `queries`: Number of queries executed through this service.
+* `sescmd_percentage`: The percentage of queries that were session commands.
+* `longest_sescmd_chain`: The largest amount of session commands executed by one client session.
+* `times_sescmd_limit_exceeded`: Number of times the session command history limit was exceeded.
+* `longest_session`: The longest client session in seconds.
+* `shortest_session`: The shortest client session in seconds.
+* `average_session`: The average client session duration in seconds.
+* `shard_map_hits`: Cache hits for the shard map cache.
+* `shard_map_misses`: Cache misses for the shard map cache.
 
 
 ## Limitations
 
 
-1. Cross-database queries (e.g. `<code>SELECT column FROM database1.table UNION select column
-FROM database2.table</code>`) are not properly supported. Such queries are routed either to the
+1. Cross-database queries (e.g. `SELECT column FROM database1.table UNION select column
+FROM database2.table`) are not properly supported. Such queries are routed either to the
 first explicit database in the query, the current database in use or to the first
 available database, depending on which succeeds.
 
 
 * Without a default database, queries without explicit databases that do not modify the
 session state will be routed to the first available server. This includes queries such as
-`<code>CREATE DATABASE db1</code>`. Such queries should be done directly on the node or the router
+`CREATE DATABASE db1`. Such queries should be done directly on the node or the router
 should be equipped with the hint filter and a routing hint should be used. Queries that
-modify the session state (e.g. `<code>SET autocommit=1</code>`) will be routed to all servers
+modify the session state (e.g. `SET autocommit=1`) will be routed to all servers
 regardless of the default database.
 * SELECT queries that modify session variables are not supported because uniform results
 can not be guaranteed. If such a query is executed, the behavior of the router is
@@ -374,16 +374,16 @@ error about database rights instead of a missing database.
 * Prepared statement support is limited. PREPARE, EXECUTE and DEALLOCATE are routed to the
 correct backend if the statement is known and only requires one backend server. EXECUTE
 IMMEADIATE is not supported and is routed to the first available backend and may give
-wrong results. Similarly, preparing a statement from a variable (e.g. `<code>PREPARE stmt FROM
-@a</code>`) is not supported and may be routed wrong.
-* `<code>SHOW DATABASES</code>` is handled by the router instead of routed to a server. The router only
-answers correctly to the basic version of the query. Any modifiers such as `<code>LIKE</code>` are
+wrong results. Similarly, preparing a statement from a variable (e.g. `PREPARE stmt FROM
+@a`) is not supported and may be routed wrong.
+* `SHOW DATABASES` is handled by the router instead of routed to a server. The router only
+answers correctly to the basic version of the query. Any modifiers such as `LIKE` are
 ignored.
-* `<code>SHOW TABLES</code>` is routed to the server with the current database. If using table-level
-sharding, the results will be incomplete. Similarly, `<code>SHOW TABLES FROM db1</code>` is routed to
-the server with database `<code>db1</code>`, ignoring table sharding. Use `<code>SHOW SHARDS</code>` to get results
+* `SHOW TABLES` is routed to the server with the current database. If using table-level
+sharding, the results will be incomplete. Similarly, `SHOW TABLES FROM db1` is routed to
+the server with database `db1`, ignoring table sharding. Use `SHOW SHARDS` to get results
 from the router itself.
-* `<code>USE db1</code>` is routed to the server with `<code>db1</code>`. If the database is divided to multiple
+* `USE db1` is routed to the server with `db1`. If the database is divided to multiple
 servers, only one server will get the command.
 
 

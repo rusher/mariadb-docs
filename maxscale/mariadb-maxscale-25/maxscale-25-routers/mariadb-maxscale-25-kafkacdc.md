@@ -32,8 +32,8 @@ The KafkaCDC module reads data changes in MariaDB via replication and converts
 them into JSON objects that are then streamed to a Kafka broker.
 
 
-DDL events (`<code>CREATE TABLE</code>`, `<code>ALTER TABLE</code>`) are streamed as JSON objects in the
-following format (example created by `<code>CREATE TABLE test.t1(id INT)</code>`):
+DDL events (`CREATE TABLE`, `ALTER TABLE`) are streamed as JSON objects in the
+following format (example created by `CREATE TABLE test.t1(id INT)`):
 
 
 
@@ -96,26 +96,26 @@ following format (example created by `<code>CREATE TABLE test.t1(id INT)</code>`
 
 
 
-The `<code>domain</code>`, `<code>server_id</code>` and `<code>sequence</code>` fields contain the GTID that this event
-belongs to. The `<code>event_number</code>` field is the sequence number of events inside the
-transaction starting from 1. The `<code>timestamp</code>` field is the UNIX timestamp when
-the event occurred. The `<code>event_type</code>` field contains the type of the event, one
+The `domain`, `server_id` and `sequence` fields contain the GTID that this event
+belongs to. The `event_number` field is the sequence number of events inside the
+transaction starting from 1. The `timestamp` field is the UNIX timestamp when
+the event occurred. The `event_type` field contains the type of the event, one
 of:
 
 
-* `<code>insert</code>`: the event is the data that was added to MariaDB
-* `<code>delete</code>`: the event is the data that was removed from MariaDB
-* `<code>update_before</code>`: the event contains the data before an update statement modified it
-* `<code>update_after</code>`: the event contains the data after an update statement modified it
+* `insert`: the event is the data that was added to MariaDB
+* `delete`: the event is the data that was removed from MariaDB
+* `update_before`: the event contains the data before an update statement modified it
+* `update_after`: the event contains the data after an update statement modified it
 
 
 All remaining fields contains data from the table. In the example event this
-would be the fields `<code>id</code>` and `<code>data</code>`.
+would be the fields `id` and `data`.
 
 
-DML events (`<code>INSERT</code>`, `<code>UPDATE</code>`, `<code>DELETE</code>`) are streamed as JSON objects that
+DML events (`INSERT`, `UPDATE`, `DELETE`) are streamed as JSON objects that
 follow the format specified in the DDL event. The objects are in the following
-format (example created by `<code>INSERT INTO test.t1 VALUES (1)</code>`):
+format (example created by `INSERT INTO test.t1 VALUES (1)`):
 
 
 
@@ -135,12 +135,12 @@ format (example created by `<code>INSERT INTO test.t1 VALUES (1)</code>`):
 
 
 
-The `<code>table_name</code>` and `<code>table_schema</code>` fields were added in MaxScale 2.5.3. These
+The `table_name` and `table_schema` fields were added in MaxScale 2.5.3. These
 contain the table name and schema the event targets.
 
 
 The router stores table metadata in the MaxScale data directory. The
-default value is `<code>/var/lib/maxscale/<service name></code>`. If data for a table
+default value is `/var/lib/maxscale/<service name>`. If data for a table
 is replicated before a DDL event for it is replicated, the CREATE TABLE
 will be queried from the master server.
 
@@ -152,11 +152,11 @@ seconds if the network is slow or there are network problems.
 ## Configuration
 
 
-The `<code>servers</code>` parameter defines the set of servers where the data is replicated
+The `servers` parameter defines the set of servers where the data is replicated
 from. The replication will be done from the first master server that is found.
 
 
-The `<code>user</code>` and `<code>password</code>` of the service will be used to connect to the
+The `user` and `password` of the service will be used to connect to the
 master. This user requires the REPLICATION SLAVE grant.
 
 
@@ -167,21 +167,21 @@ configured, all attempts to start a session will fail.
 ## Parameters
 
 
-### `<code>bootstrap_servers</code>`
+### `bootstrap_servers`
 
 
-The list of Kafka brokers to use in `<code>host:port</code>` format. Multiple values
+The list of Kafka brokers to use in `host:port` format. Multiple values
 can be separated with commas. This is a mandatory parameter.
 
 
-### `<code>topic</code>`
+### `topic`
 
 
 The Kafka topic where the replicated events will be sent. This is a
 mandatory parameter.
 
 
-### `<code>enable_idempotence</code>`
+### `enable_idempotence`
 
 
 Enable idempotent producer mode. This feature requires Kafka version 0.11 or
@@ -209,14 +209,14 @@ acks=all, queuing.strategy=fifo.
 
 
 
-### `<code>timeout</code>`
+### `timeout`
 
 
 The connection and read timeout for the replication stream. The default
 value is 10 seconds.
 
 
-### `<code>gtid</code>`
+### `gtid`
 
 
 The initial GTID position from where the replication is started. By default the
@@ -225,7 +225,7 @@ used if no previously replicated events with GTID positions can be retrieved
 from Kafka.
 
 
-#### `<code>server_id</code>`
+#### `server_id`
 
 
 The

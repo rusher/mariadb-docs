@@ -59,7 +59,7 @@ threads=8
 
 
 
-After this we configure two servers we will use to shard our database. The `<code>accounts_east</code>` server will hold one schema and the `<code>accounts_west</code>` will hold another schema. We will use these two servers to create our sharded database.
+After this we configure two servers we will use to shard our database. The `accounts_east` server will hold one schema and the `accounts_west` will hold another schema. We will use these two servers to create our sharded database.
 
 
 
@@ -77,7 +77,7 @@ port=3306
 
 
 
-The next step is to configure the service which the users connect to. This section defines which router to use, which servers to connect to and the credentials to use. The router we use in this tutorial is the `<code>schemarouter</code>`.
+The next step is to configure the service which the users connect to. This section defines which router to use, which servers to connect to and the credentials to use. The router we use in this tutorial is the `schemarouter`.
 
 
 
@@ -128,7 +128,7 @@ After this we have a fully working configuration and we can move on to starting 
 ## Starting MariaDB MaxScale
 
 
-Upon completion of the configuration process MariaDB MaxScale is ready to be started . This may either be done manually by running the maxscale command or via the service interface. The service scripts are located in the `<code>/etc/init.d/</code>` folder and are accessible through both the `<code>service</code>` and `<code>systemctl</code>` commands.
+Upon completion of the configuration process MariaDB MaxScale is ready to be started . This may either be done manually by running the maxscale command or via the service interface. The service scripts are located in the `/etc/init.d/` folder and are accessible through both the `service` and `systemctl` commands.
 
 
 After starting MariaDB MaxScale check the error log in /var/log/maxscale to see if any errors are detected in the configuration file. Also the maxadmin command may be used to confirm that MariaDB MaxScale is running and the services, listeners etc have been correctly configured.

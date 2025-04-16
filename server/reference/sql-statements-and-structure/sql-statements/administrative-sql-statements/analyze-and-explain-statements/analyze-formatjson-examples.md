@@ -67,5 +67,5 @@ EXPLAIN: {
 }
 ```
 
-`<code>ANALYZE</code>` shows that 39.2 seconds were spent in the subquery, which was executed 150K times (for every row of outer table).
+`ANALYZE` shows that 39.2 seconds were spent in the subquery, which was executed 150K times (for every row of outer table).
 

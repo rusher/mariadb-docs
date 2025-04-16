@@ -7,7 +7,7 @@ The terms *master* and *slave* have historically been used in replication, and M
 MariaDB includes a feature to include a checksum in [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) events.
 
 
-Checksums are enabled with the [binlog_checksum option](replication-and-binary-log-system-variables.md). Until [MariaDB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md), this was disabled by default. From [MariaDB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md), the option is set to `<code>CRC32</code>`.
+Checksums are enabled with the [binlog_checksum option](replication-and-binary-log-system-variables.md). Until [MariaDB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md), this was disabled by default. From [MariaDB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md), the option is set to `CRC32`.
 
 
 The variable can be changed dynamically without restarting the server. Setting
@@ -42,34 +42,34 @@ From [MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-m
 checksum computation outside of holding LOCK_log, improving scalability. See [MDEV-31273](https://jira.mariadb.org/browse/MDEV-31273).
 
 
-`<code>master_verify_checksum</code>`
+`master_verify_checksum`
 
 
 * Description: Verify binlog checksums when reading events from the binlog on the primary.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--master_verify_checksum=[0|1]</code>`
+* Commandline: `--master_verify_checksum=[0|1]`
 * Scope: Global
 * Access Type: Can be changed dynamically
-* Data Type: `<code>bool</code>`
-* Default Value: `<code>OFF (0)</code>`
+* Data Type: `bool`
+* Default Value: `OFF (0)`
 
 
-`<code>slave_sql_verify_checksum</code>`
+`slave_sql_verify_checksum`
 
 
 * Description: Verify binlog checksums when the replica SQL thread reads events from the relay log.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--slave_sql_verify_checksum=[0|1]</code>`
+* Commandline: `--slave_sql_verify_checksum=[0|1]`
 * Scope: Global
 * Access Type: Can be changed dynamically
-* Data Type: `<code>bool</code>`
-* Default Value: `<code>ON (1)</code>`
+* Data Type: `bool`
+* Default Value: `ON (1)`
 
 
-The [mariadb-binlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) client program by default does not verify checksums when reading a binlog file, however it can be instructed to do so with the option `<code>verify-binlog-checksum</code>`:
+The [mariadb-binlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) client program by default does not verify checksums when reading a binlog file, however it can be instructed to do so with the option `verify-binlog-checksum`:
 
 
-* Variable Name: `<code>verify-binlog-checksum</code>`
-* Data Type: `<code>bool</code>`
-* Default Value: `<code>OFF</code>`
+* Variable Name: `verify-binlog-checksum`
+* Data Type: `bool`
+* Default Value: `OFF`
 
 
 ## See Also

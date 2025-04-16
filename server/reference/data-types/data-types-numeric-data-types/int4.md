@@ -1,7 +1,7 @@
 
 # INT4
 
-`<code>INT4</code>` is a synonym for [INT](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md).
+`INT4` is a synonym for [INT](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md).
 
 
 ```

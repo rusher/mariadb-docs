@@ -40,7 +40,7 @@ the client and send the copies to another service within MariaDB MaxScale.
 
 **Please Note:** Starting with MaxScale 2.2.0, any client that connects to a
  service which uses a tee filter will require a grant for the loopback address,
- i.e. `<code>127.0.0.1</code>`.
+ i.e. `127.0.0.1`.
 
 
 ## Configuration
@@ -76,7 +76,7 @@ The tee filter requires a mandatory parameter to define the service to replicate
 statements to and accepts a number of optional parameters.
 
 
-### `<code>target</code>`
+### `target`
 
 
 The target where the filter will duplicate all queries. The target can be either
@@ -84,15 +84,15 @@ a service or a server. The duplicate connection that is created to this target
 will be referred to as the "branch target" in this document.
 
 
-### `<code>service</code>`
+### `service`
 
 
 The service where the filter will duplicate all queries. This parameter is
-deprecated in favor of the `<code>target</code>` parameter and will be removed in a future
-release. Both `<code>target</code>` and `<code>service</code>` cannot be defined.
+deprecated in favor of the `target` parameter and will be removed in a future
+release. Both `target` and `service` cannot be defined.
 
 
-### `<code>match</code>`, `<code>exclude</code>` and `<code>options</code>`
+### `match`, `exclude` and `options`
 
 
 These [regular expression settings](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -108,7 +108,7 @@ options=case,extended
 
 
 
-### `<code>source</code>`
+### `source`
 
 
 The optional source parameter defines an address that is used to match against
@@ -123,7 +123,7 @@ source=127.0.0.1
 
 
 
-### `<code>user</code>`
+### `user`
 
 
 The optional user parameter defines a user name that is used to match against
@@ -138,17 +138,17 @@ user=john
 
 
 
-### `<code>sync</code>`
+### `sync`
 
 
 Enable synchronous routing mode. This boolean parameter was added in MaxScale
 6.2.0 and is disabled by default.
 
 
-When configured with `<code>sync=true</code>`, the filter will queue new queries until the
+When configured with `sync=true`, the filter will queue new queries until the
 response from both the main and the branch target has been received. This means
-that for `<code>n</code>` executed queries, `<code>n - 1</code>` queries are guaranteed to be
-synchronized. Adding one extra statement (e.g. `<code>SELECT 1</code>`) to a batch of
+that for `n` executed queries, `n - 1` queries are guaranteed to be
+synchronized. Adding one extra statement (e.g. `SELECT 1`) to a batch of
 statements guarantees that all previous SQL statements have been successfully
 executed on both targets.
 
@@ -163,16 +163,16 @@ client session to be closed.
 * All statements that are executed on the branch target are done in an
  asynchronous manner. This means that when the client receives the response
  there is no guarantee that the statement has completed on the branch
- target. The `<code>sync</code>` feature provides some synchronization guarantees that can
+ target. The `sync` feature provides some synchronization guarantees that can
  be used to verify successful execution on both targets.
 * Any errors on the branch target will cause the connection to it to be
- closed. If `<code>target</code>` is a service, it is up to the router to decide whether the
+ closed. If `target` is a service, it is up to the router to decide whether the
  connection is closed. For direct connections to servers, any network errors
  cause the connection to be closed. When the connection is closed, no new
  queries will be routed to the branch target.
 
 
-With `<code>sync=true</code>`, a failure of the branch target will cause the whole session
+With `sync=true`, a failure of the branch target will cause the whole session
  to be closed.
 
 
@@ -186,14 +186,14 @@ details about module commands.
 The tee filter supports the following module commands.
 
 
-### `<code>tee disable [FILTER]</code>`
+### `tee disable [FILTER]`
 
 
 This command disables a tee filter instance. A disabled tee filter will not send
 any queries to the target service.
 
 
-### `<code>tee enable [FILTER]</code>`
+### `tee enable [FILTER]`
 
 
 Enable a disabled tee filter. This resumes the sending of queries to the target

@@ -26,16 +26,16 @@ The compatibility between different versions and technologies is achieved by usi
 Logical backups are usually taken with [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (previously called mysqldump).
 
 
-mariadb-dump allows one to dump all databases, a single database, or a set of tables from a database. It is even possible to specify a `<code>WHERE</code>` clause, which under certain circumstances allows to obtain incremental dumps.
+mariadb-dump allows one to dump all databases, a single database, or a set of tables from a database. It is even possible to specify a `WHERE` clause, which under certain circumstances allows to obtain incremental dumps.
 
 
-For consistency reasons, when using the default storage engine [InnoDB](understanding-mariadb-architecture.md#innodb), it is important to use the `<code>--single-transaction</code>` option. This will read all data in a single transaction. It's important however to understand that long transactions may have a big impact on performance.
+For consistency reasons, when using the default storage engine [InnoDB](understanding-mariadb-architecture.md#innodb), it is important to use the `--single-transaction` option. This will read all data in a single transaction. It's important however to understand that long transactions may have a big impact on performance.
 
 
-The `<code>--master-data</code>` option adds the statements to setup a slave to the dump.
+The `--master-data` option adds the statements to setup a slave to the dump.
 
 
-MariaDB also supports statements which make easy to write applications to obtain custom types of dumps. For most `<code>CREATE <object_type></code>` statement, a corresponding `<code>SHOW CREATE <object_type></code>` exists. For example, [SHOW CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) returns the `<code>CREATE TABLE</code>` statement that can be used to recreate a certain table, without data.
+MariaDB also supports statements which make easy to write applications to obtain custom types of dumps. For most `CREATE <object_type>` statement, a corresponding `SHOW CREATE <object_type>` exists. For example, [SHOW CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) returns the `CREATE TABLE` statement that can be used to recreate a certain table, without data.
 
 
 ### mydumper
@@ -97,11 +97,11 @@ As mentioned [here](understanding-mariadb-architecture.md#the-binary-log), Maria
 The page [Using mariadb-binlog](../../../../clients-and-utilities/mariadb-binlog/using-mariadb-binlog.md) shows how to use the mariadb-binlog utility to replay a binary log file.
 
 
-The page also shows how to edit the binary log before replaying it. This allows one to undo an SQL statement that was executed by mistake, for example a `<code>DROP TABLE</code>` against a wrong table. The high level procedure is the following:
+The page also shows how to edit the binary log before replaying it. This allows one to undo an SQL statement that was executed by mistake, for example a `DROP TABLE` against a wrong table. The high level procedure is the following:
 
 
 * Restore a backup that is older than the SQL statement to undo.
-* Use `<code>mariadb-binlog</code>` to generate a file with the SQL statements that were executed after the backup.
+* Use `mariadb-binlog` to generate a file with the SQL statements that were executed after the backup.
 * Edit the SQL file, erasing the unwanted statement.
 * Run the SQL file.
 
@@ -136,10 +136,10 @@ With the [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/my
 For more information, see [InnoDB File-Per-Table Tablespaces](../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md).
 
 
-By default. all table files are located in the *data directory*, which is defined by the system variable [datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir). There may be exceptions, because a table's files can be located elsewhere using the [DATA DIRECTORY and INDEX DIRECTORY](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#data-directoryindex-directory) options in `<code>CREATE TABLE</code>`.
+By default. all table files are located in the *data directory*, which is defined by the system variable [datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir). There may be exceptions, because a table's files can be located elsewhere using the [DATA DIRECTORY and INDEX DIRECTORY](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#data-directoryindex-directory) options in `CREATE TABLE`.
 
 
-Regardless of the storage engine used, each table's structure is generally stored in a file with the `<code>.frm</code>` extension.
+Regardless of the storage engine used, each table's structure is generally stored in a file with the `.frm` extension.
 
 
 The files used for [partitioned tables](../../../partitioning-tables/README.md) are different from the files used for non-partitioned tables. See [Partitions Files](../../../partitioning-tables/partitions-files.md) for details.

@@ -22,14 +22,14 @@ report at [Jira](https://jira.mariadb.org).
 ## Changed default values
 
 
-### `<code>strip_db_esc</code>`
+### `strip_db_esc`
 
 
 The service parameter [strip_db_esc](../maxscale-20-getting-started/mariadb-maxscale-20-mariadb-maxscale-configuration-usage-scenarios.md#strip_db_esc)
 now defaults to true.
 
 
-### `<code>detect_stale_master</code>`
+### `detect_stale_master`
 
 
 The [stale master detection](../maxscale-20-monitors/mariadb-maxscale-20-mysql-monitor.md#detect_stale_master)
@@ -42,7 +42,7 @@ feature is now enabled by default.
 ### Starting MariaDB MaxScale
 
 
-There is now a new command line parameter `<code>--basedir=PATH</code>` that will
+There is now a new command line parameter `--basedir=PATH` that will
 cause all directory paths and the location of the configuration file
 to be defined relative to that path.
 
@@ -75,8 +75,8 @@ $ maxscale --config=/path/maxscale/etc/maxscale.cnf
 
 
 In the configuration entry for a *service* or *monitor*, the value of
-the password to be used can now be specified using `<code>password</code>` in addition
-to `<code>passwd</code>`. The use of the latter will be deprecated and removed in later
+the password to be used can now be specified using `password` in addition
+to `passwd`. The use of the latter will be deprecated and removed in later
 releases of MaxScale.
 
 
@@ -205,8 +205,8 @@ Packages can be downloaded [here](https://mariadb.com/resources/downloads).
 
 
 The source code of MaxScale is tagged at GitHub with a tag, which is derived
-from the version of MaxScale. For instance, the tag of version `<code>X.Y.Z</code>` of MaxScale
-is `<code>maxscale-X.Y.Z</code>`.
+from the version of MaxScale. For instance, the tag of version `X.Y.Z` of MaxScale
+is `maxscale-X.Y.Z`.
 
 
 The source code is available [here](https://github.com/mariadb-corporation/MaxScale).

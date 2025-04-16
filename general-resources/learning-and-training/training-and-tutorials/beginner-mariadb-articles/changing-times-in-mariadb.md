@@ -41,10 +41,10 @@ SEC_TO_TIME(TIME_TO_SEC(CURTIME()) + 7200),
 SEC_TO_TIME((TIME_TO_SEC(CURTIME()) + 7200) - 86400)));
 ```
 
-The first element in the IF clause is the test. The second piece is the value used if the test passes. The third is the value if the test fails. So, if the total seconds is less than 86,400 (i.e., the number of seconds in one day), then the total seconds of the current time, converted to the time format is to be used. Otherwise, the total seconds of the current time minus 86,400 seconds, converted to the time format is to be used. Incidentally, there's an extra closing parenthesis at the end of this SQL statement excerpt because there was an opening one as part of the `<code>VALUES</code>` clause that's not shown here. Although the statement above works, it's a bit excessive and can be accomplished a little more succinctly if one reconsiders the purpose of the IF clause.
+The first element in the IF clause is the test. The second piece is the value used if the test passes. The third is the value if the test fails. So, if the total seconds is less than 86,400 (i.e., the number of seconds in one day), then the total seconds of the current time, converted to the time format is to be used. Otherwise, the total seconds of the current time minus 86,400 seconds, converted to the time format is to be used. Incidentally, there's an extra closing parenthesis at the end of this SQL statement excerpt because there was an opening one as part of the `VALUES` clause that's not shown here. Although the statement above works, it's a bit excessive and can be accomplished a little more succinctly if one reconsiders the purpose of the IF clause.
 
 
-What we're trying to determine in the IF clause is the number of seconds into the day in which the work was promised to be done, meaning the excess amount of time of the day (i.e., one hour). For such a calculation, the modulo division operator (i.e., the `<code>%</code>`) can be used. The modulo division operator will give the remainder of a division. For instance, the result of `<code>SELECT 14 % 5;</code>` is `<code>4</code>`. That is to say, 5 goes into 14 two complete times with 4 left over. As another example, the result of `<code>SELECT 3 % 5;</code>` is 3; that is to say, 5 goes into 3 zero times with 3 left over. Using this arithmetic operator in the time formula above, we can eliminate the IF clause and use the following to accomplish our task:
+What we're trying to determine in the IF clause is the number of seconds into the day in which the work was promised to be done, meaning the excess amount of time of the day (i.e., one hour). For such a calculation, the modulo division operator (i.e., the `%`) can be used. The modulo division operator will give the remainder of a division. For instance, the result of `SELECT 14 % 5;` is `4`. That is to say, 5 goes into 14 two complete times with 4 left over. As another example, the result of `SELECT 3 % 5;` is 3; that is to say, 5 goes into 3 zero times with 3 left over. Using this arithmetic operator in the time formula above, we can eliminate the IF clause and use the following to accomplish our task:
 
 
 ```
@@ -96,7 +96,7 @@ DATE_ADD(NOW(), INTERVAL 2 HOUR));
 First notice that the field ticket_date was eliminated and [CURTIME()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/curtime.md) was replaced with [NOW( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/now.md), which provides the date and time in one. In the last line we see [DATE_ADD( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add.md): an interval of two hours is added to the date and time now (or rather when the record is created). If the time rolls into the next day, then the date is advanced by one and the correct hour is set accordingly.
 
 
-The [DATE_ADD( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add.md) function will also allow for the addition of minutes. The directive `<code>HOUR</code>` would be replaced with `<code>MINUTE</code>`. To add both hours and minutes (e.g., two hours and thirty minutes), the last line of the SQL statement above could read like this:
+The [DATE_ADD( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add.md) function will also allow for the addition of minutes. The directive `HOUR` would be replaced with `MINUTE`. To add both hours and minutes (e.g., two hours and thirty minutes), the last line of the SQL statement above could read like this:
 
 
 ```
@@ -144,7 +144,7 @@ The function [DATE_ADD( )](../../../../server/reference/sql-statements-and-struc
 DATE_ADD(NOW(), INTERVAL '1 2' YEAR_MONTH));
 ```
 
-This increases the year by one and the month by two. These intervals have no effect on time or day values, though. So, if the value of [NOW( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/now.md) is `<code>2017-09-15 23:00</code>`, then the value of promised would become 2018-11-15 23:00, regardless of whether next year is a leap year and regardless of the number of days in each intervening month.
+This increases the year by one and the month by two. These intervals have no effect on time or day values, though. So, if the value of [NOW( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/now.md) is `2017-09-15 23:00`, then the value of promised would become 2018-11-15 23:00, regardless of whether next year is a leap year and regardless of the number of days in each intervening month.
 
 
 ##### Stepping Back

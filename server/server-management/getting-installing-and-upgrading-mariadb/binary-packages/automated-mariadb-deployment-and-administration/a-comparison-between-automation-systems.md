@@ -56,16 +56,16 @@ The architecture of the various systems is different. Their architectures determ
 ### Ansible Architecture
 
 
-Ansible architecture is simple. Ansible can run from any host, and can apply its playbooks on remote hosts. To do this, it runs commands via SSH. In practice, in most cases the commands will be run as superuser via `<code>sudo</code>`, though this is not always necessary.
+Ansible architecture is simple. Ansible can run from any host, and can apply its playbooks on remote hosts. To do this, it runs commands via SSH. In practice, in most cases the commands will be run as superuser via `sudo`, though this is not always necessary.
 
 
 Inventories can be dynamic. In this case, when we apply a playbook Ansible connects to remote services to discover hosts.
 
 
-Ansible playbooks are applied via the `<code>ansible-playbook</code>` binary. Changes to playbooks are only applied when we perform this operation.
+Ansible playbooks are applied via the `ansible-playbook` binary. Changes to playbooks are only applied when we perform this operation.
 
 
-To recap, Ansible does not need to be installed on the server is administers. It needs an SSH access, and normally its user needs to be able to run `<code>sudo</code>`. It is also possible to configure a dynamic inventory, and a remote service to be used for this purpose.
+To recap, Ansible does not need to be installed on the server is administers. It needs an SSH access, and normally its user needs to be able to run `sudo`. It is also possible to configure a dynamic inventory, and a remote service to be used for this purpose.
 
 
 ### Puppet Architecture
@@ -128,7 +128,7 @@ Automation software communities are very important, because they make available 
 Ansible is open source, released under the terms of the GNU GPL. It is produced by RedHat. RedHat has a page about [Red Hat Ansible Automation Platform Partners](https://www.ansible.com/partners), who can provide support and consulting.
 
 
-[Ansible Galaxy](https://galaxy.ansible.com/) is a big repository of Ansible roles produced by both the vendor and the community. Ansible comes with `<code>ansible-galaxy</code>`, a tool that can be used to create roles and upload them to Ansible Galaxy.
+[Ansible Galaxy](https://galaxy.ansible.com/) is a big repository of Ansible roles produced by both the vendor and the community. Ansible comes with `ansible-galaxy`, a tool that can be used to create roles and upload them to Ansible Galaxy.
 
 
 At the time of this writing, Ansible does not have specific MariaDB official modules. MySQL official modules can be used. However, be careful not try to use features that only apply to MySQL. There are several community-maintained MariaDB roles.

@@ -22,13 +22,13 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-`<code>Vagrant.configure("2")</code>` returns the Vagrant configuration object for the new box. In the block, we'll use the `<code>config</code>` alias to refer this object. We are going to use version 2 of Vagrant API.
+`Vagrant.configure("2")` returns the Vagrant configuration object for the new box. In the block, we'll use the `config` alias to refer this object. We are going to use version 2 of Vagrant API.
 
 
-`<code>vm.box</code>` is the base box that we are going to use. It is Ubuntu BionicBeaver (18.04 LTS), 64-bit version, provided by HashiCorp. The schema for box names is simple: the maintainer account in [Vagrant Cloud](https://app.vagrantup.com/boxes/search) followed by the box name.
+`vm.box` is the base box that we are going to use. It is Ubuntu BionicBeaver (18.04 LTS), 64-bit version, provided by HashiCorp. The schema for box names is simple: the maintainer account in [Vagrant Cloud](https://app.vagrantup.com/boxes/search) followed by the box name.
 
 
-We use `<code>vm.provision</code>` to specify the name of the file that is going to be executed at the machine creation, to provision the machine. `<code>bootstrap.sh</code>` is the conventional name used in most cases.
+We use `vm.provision` to specify the name of the file that is going to be executed at the machine creation, to provision the machine. `bootstrap.sh` is the conventional name used in most cases.
 
 
 To create new Vagrant machines from the Vagrantfile, move to the directory that contains the Vagrant project and run:
@@ -93,13 +93,13 @@ This mechanism is useful for at least a couple of reasons:
 ## Provisioners
 
 
-We can use different methods for provisioning. The simplest provisioner is `<code>shell</code>`, that allows one to run a Bash file to provision a machine. Other provisioners allow setting up the machines using automation software, including Ansible, Puppet, Chef and Salt.
+We can use different methods for provisioning. The simplest provisioner is `shell`, that allows one to run a Bash file to provision a machine. Other provisioners allow setting up the machines using automation software, including Ansible, Puppet, Chef and Salt.
 
 
 To find out how to develop a new provisioner, see [Plugin Development: Provisioners](https://www.vagrantup.com/docs/plugins/provisioners).
 
 
-### The `<code>shell</code>` Provisioner
+### The `shell` Provisioner
 
 
 In the example above, the [shell](https://www.vagrantup.com/docs/provisioning/shell) provisioner runs boostrap.sh inside the Vagrant machine to provision it. A simple bootstrap.sh may look like the following:
@@ -118,13 +118,13 @@ To find out the steps to install MariaDB on your system of choice, see the [Gett
 You may also want to restore a database backup in the new Vagrant machine. In this way, you can have the database needed by the application you are developing. To find out how to do it, see [Backup and Restore Overview](../../../../backing-up-and-restoring-databases/backup-and-restore-overview.md). The most flexible type of backup (meaning that it works between different MariaDB versions, and in some cases even between MariaDB and different DBMSs) is a [dump](../../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md).
 
 
-On Linux machines, the `<code>shell</code>` provisioner uses the default shell. On Windows machines, it uses PowerShell.
+On Linux machines, the `shell` provisioner uses the default shell. On Windows machines, it uses PowerShell.
 
 
 ### Uploading Files
 
 
-If we use the `<code>shell</code>` provisioner, we need a way to upload files to the new machine when it is created. We could use the `<code>file</code>` provisioner, but it works by connecting the machine via ssh, and the default user doesn't have permissions for any directory except for the synced folders. We could change the target directory owner, or we could add the default user to a group with the necessary privileges, but these are not considered good practices.
+If we use the `shell` provisioner, we need a way to upload files to the new machine when it is created. We could use the `file` provisioner, but it works by connecting the machine via ssh, and the default user doesn't have permissions for any directory except for the synced folders. We could change the target directory owner, or we could add the default user to a group with the necessary privileges, but these are not considered good practices.
 
 
 Instead, we can just put the file we need to upload somewhere in the synced folder, and then copy it with a shell command:
@@ -149,7 +149,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-With the [Ansible provisioner](https://www.vagrantup.com/docs/provisioning/ansible), Ansible runs in the host system and applies a playbook in the guest system. In this example, it runs a playbook called `<code>vagrant.yml</code>`. The [Ansible Local provisioner](https://www.vagrantup.com/docs/provisioning/ansible_local) runs the playbook in the vagrant machine.
+With the [Ansible provisioner](https://www.vagrantup.com/docs/provisioning/ansible), Ansible runs in the host system and applies a playbook in the guest system. In this example, it runs a playbook called `vagrant.yml`. The [Ansible Local provisioner](https://www.vagrantup.com/docs/provisioning/ansible_local) runs the playbook in the vagrant machine.
 
 
 For more information, see [Using Vagrant and Ansible](https://docs.ansible.com/ansible/2.3/guide_vagrant.html) in the Ansible documentation. For an introduction to Ansible for MariaDB users, see [Ansible and MariaDB](../ansible-and-mariadb/README.md).
@@ -171,13 +171,13 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-In this example, Puppet Apply runs in the host system and no Puppet Server is needed. Puppet expects to find a `<code>manifests</code>` directory in the project directory. It expects it to contain `<code>default.pp</code>`, which will be used as an entry point. Note that `<code>puppet.manifests_path</code>` and `<code>puppet.manifest_file</code>` are set to their default values.
+In this example, Puppet Apply runs in the host system and no Puppet Server is needed. Puppet expects to find a `manifests` directory in the project directory. It expects it to contain `default.pp`, which will be used as an entry point. Note that `puppet.manifests_path` and `puppet.manifest_file` are set to their default values.
 
 
 Puppet needs to be installed in the guest machine.
 
 
-To use a Puppet server, the `<code>puppet_server</code>` provisioner can be used:
+To use a Puppet server, the `puppet_server` provisioner can be used:
 
 
 ```
@@ -201,7 +201,7 @@ For an introduction to Puppet for MariaDB users, see [Puppet and MariaDB](../aut
 To restore a backup into MariaDB, in most cases we need to be able to copy it from the host system to the box. We may also want to occasionally copy MariaDB logs from the box to the host system, to be able to investigate problems.
 
 
-The project directory (the one that contains the Vagrantfile) by default is shared with the virtual machine and mapped to the `<code>/vagrant</code>` directory (the synced folder). It is a good practice to put there all files that should be shared with the box when it is started. Those files should normally be versioned.
+The project directory (the one that contains the Vagrantfile) by default is shared with the virtual machine and mapped to the `/vagrant` directory (the synced folder). It is a good practice to put there all files that should be shared with the box when it is started. Those files should normally be versioned.
 
 
 The synced folder can be changed. In the above example, we could simply add one line:

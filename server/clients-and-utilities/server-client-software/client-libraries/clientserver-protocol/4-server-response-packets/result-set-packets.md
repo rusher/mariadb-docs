@@ -11,19 +11,19 @@ A resultset consists of different packets:
   * 1 [Column count packet](#column-count-packet)
 
 
-* if not (`<code>MARIADB_CLIENT_CACHE_METADATA</code>` capability set) OR (send metadata == 1)
+* if not (`MARIADB_CLIENT_CACHE_METADATA` capability set) OR (send metadata == 1)
 
   * for each column (i.e column_count times) 
 
     * [Column Definition packet](#column-definition-packet)
-* if not (`<code>CLIENT_DEPRECATE_EOF</code>` capability set) [EOF_Packet](eof_packet.md)
+* if not (`CLIENT_DEPRECATE_EOF` capability set) [EOF_Packet](eof_packet.md)
 * n [resultset row](resultset-row.md)
 * if error 
 
   * [ERR_Packet](err_packet.md)
 * else 
 
-  * if `<code>CLIENT_DEPRECATE_EOF</code>` capability 
+  * if `CLIENT_DEPRECATE_EOF` capability 
 
     * [OK_Packet](ok_packet.md) with a 0xFE header
   * else [EOF_Packet](eof_packet.md)
@@ -44,16 +44,16 @@ The column count packet describes the number of columns in the result set. It us
 
 
 * [int<lenenc>](../protocol-data-types.md#length-encoded-integers) column count
-* if (`<code>MARIADB_CLIENT_CACHE_METADATA</code>` capability set)
+* if (`MARIADB_CLIENT_CACHE_METADATA` capability set)
 
   * int<1> metadata follows (0 / 1)
 
 
 
-The metadata indicator byte is only present if both the client and the server declare the `<code>MARIADB_CLIENT_CACHE_METADATA</code>` capability.
+The metadata indicator byte is only present if both the client and the server declare the `MARIADB_CLIENT_CACHE_METADATA` capability.
 
 
-If the metadata byte is set to 1, the normal metadata will follow the column definitions. If the metadata byte is set to 0, the Column Count Packet is immediately followed by the second [EOF packet (EOF_Packet)](eof_packet.md) or the resultset rows if the `<code>CLIENT_DEPRECATE_EOF</code>` capability is set.
+If the metadata byte is set to 1, the normal metadata will follow the column definitions. If the metadata byte is set to 0, the Column Count Packet is immediately followed by the second [EOF packet (EOF_Packet)](eof_packet.md) or the resultset rows if the `CLIENT_DEPRECATE_EOF` capability is set.
 
 
 ## Column Definition Packet
@@ -69,7 +69,7 @@ A column definition packet describes a column in the result set. It uses the fol
 * [string<lenenc>](../protocol-data-types.md#length-encoded-strings) table
 * [string<lenenc>](../protocol-data-types.md#length-encoded-strings) column alias
 * [string<lenenc>](../protocol-data-types.md#length-encoded-strings) column
-* if extended type supported (see `<code>MARIADB_CLIENT_EXTENDED_METADATA </code>` ) 
+* if extended type supported (see `MARIADB_CLIENT_EXTENDED_METADATA ` ) 
 
   * [string<lenenc>](../protocol-data-types.md#length-encoded-strings) [extended metadata](#extended-metadata)
 * [int<lenenc>](../protocol-data-types.md#length-encoded-integers) length of fixed fields (=0xC)
@@ -157,8 +157,8 @@ It is a bitmask with the following flags:
 
 
 
-The `<code>BLOB</code>` flag cannot be used to determine if a column has binary data, because `<code>[BINARY](../../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)</code>` and `<code>[VARBINARY](../../../../../reference/data-types/string-data-types/varbinary.md)</code>` columns are treated as strings, instead of blobs.
-The `<code>BINARY_COLLATION</code>` flag can be used to determine if a string column has binary data.
+The `BLOB` flag cannot be used to determine if a column has binary data, because `[BINARY](../../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)` and `[VARBINARY](../../../../../reference/data-types/string-data-types/varbinary.md)` columns are treated as strings, instead of blobs.
+The `BINARY_COLLATION` flag can be used to determine if a string column has binary data.
 
 
 ### Extended metadata
@@ -170,8 +170,8 @@ This extended column type information can be used to find out more specific deta
 For example:
 
 
-* For a `<code>[POINT](../../../../../reference/sql-statements-and-structure/geographic-geometric-features/geometry-constructors/point.md)</code>` column, the column type field will be `<code>MYSQL_TYPE_GEOMETRY</code>`, but the extended type will indicate 'point'.
-* For a `<code>[JSON](../../../../../reference/storage-engines/connect/json-sample-files.md)</code>` column, the column type field will be `<code>MYSQL_TYPE_STRING</code>`, but the extended type will indicate 'json'.
+* For a `[POINT](../../../../../reference/sql-statements-and-structure/geographic-geometric-features/geometry-constructors/point.md)` column, the column type field will be `MYSQL_TYPE_GEOMETRY`, but the extended type will indicate 'point'.
+* For a `[JSON](../../../../../reference/storage-engines/connect/json-sample-files.md)` column, the column type field will be `MYSQL_TYPE_STRING`, but the extended type will indicate 'json'.
 
 
 

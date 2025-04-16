@@ -11,7 +11,7 @@ TIME(expr)
 ## Description
 
 
-Extracts the time part of the time or datetime expression `<code>expr</code>` and
+Extracts the time part of the time or datetime expression `expr` and
 returns it as a string.
 
 

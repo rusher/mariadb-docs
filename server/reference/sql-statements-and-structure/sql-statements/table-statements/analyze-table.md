@@ -17,7 +17,7 @@ ANALYZE [NO_WRITE_TO_BINLOG | LOCAL] TABLE tbl_name [,tbl_name ...]
 ## Description
 
 
-`<code>ANALYZE TABLE</code>` analyzes and stores the key distribution for a
+`ANALYZE TABLE` analyzes and stores the key distribution for a
 table ([index statistics](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/index-statistics.md)). This statement works with [MyISAM](../../../storage-engines/myisam-storage-engine/myisam-system-variables.md), [Aria](../../../storage-engines/s3-storage-engine/aria_s3_copy.md) and [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables. During the analysis, InnoDB will allow reads/writes, and MyISAM/Aria reads/inserts. For MyISAM tables, this statement is equivalent to using [myisamchk --analyze](../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md).
 
 
@@ -34,21 +34,21 @@ which indexes to use for a specific table within a query.
 This statement requires [SELECT and INSERT privileges](../account-management-sql-commands/grant.md) for the table.
 
 
-By default, ANALYZE TABLE statements are written to the [binary log](../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and will be [replicated](../administrative-sql-statements/replication-statements/README.md). The `<code>NO_WRITE_TO_BINLOG</code>` keyword (`<code>LOCAL</code>` is an alias) will ensure the statement is not written to the binary log.
+By default, ANALYZE TABLE statements are written to the [binary log](../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and will be [replicated](../administrative-sql-statements/replication-statements/README.md). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
 
 
-From [MariaDB 10.3.19](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10319-release-notes.md), `<code>ANALYZE TABLE</code>` statements are not logged to the binary log if [read_only](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_only) is set. See also [Read-Only Replicas](../../../../server-usage/replication-cluster-multi-master/standard-replication/read-only-replicas.md).
+From [MariaDB 10.3.19](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10319-release-notes.md), `ANALYZE TABLE` statements are not logged to the binary log if [read_only](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_only) is set. See also [Read-Only Replicas](../../../../server-usage/replication-cluster-multi-master/standard-replication/read-only-replicas.md).
 
 
-From [MariaDB 10.6.16](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes.md) `<code>ANALYZE TABLE</code>` is non-blocking and non-intrusive. A connection will start using new statistics for the query following the completion of the `<code>ANALYZE TABLE</code>`.
+From [MariaDB 10.6.16](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes.md) `ANALYZE TABLE` is non-blocking and non-intrusive. A connection will start using new statistics for the query following the completion of the `ANALYZE TABLE`.
 
 
-`<code>ANALYZE TABLE</code>` is also supported for partitioned tables. You
-can use `<code>[ALTER TABLE](../data-definition/alter/alter-tablespace.md) ... ANALYZE PARTITION</code>` to analyze one or
+`ANALYZE TABLE` is also supported for partitioned tables. You
+can use `[ALTER TABLE](../data-definition/alter/alter-tablespace.md) ... ANALYZE PARTITION` to analyze one or
 more partitions.
 
 
-The [Aria](../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine supports [progress reporting](../../../mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for the `<code>ANALYZE TABLE</code>` statement.
+The [Aria](../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine supports [progress reporting](../../../mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for the `ANALYZE TABLE` statement.
 
 
 ## Performance Impact
@@ -72,13 +72,13 @@ ANALYZE isn’t useful for table columns of type UNIQUE, PRIMARY KEY, TIME, or C
 ## Engine-Independent Statistics / PERSISTENT FOR
 
 
-`<code>ANALYZE TABLE</code>` supports [engine-independent statistics](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md). See [Engine-Independent Table Statistics: Collecting Statistics with the ANALYZE TABLE Statement](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md#collecting-statistics-with-the-analyze-table-statement) for more information.
+`ANALYZE TABLE` supports [engine-independent statistics](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md). See [Engine-Independent Table Statistics: Collecting Statistics with the ANALYZE TABLE Statement](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md#collecting-statistics-with-the-analyze-table-statement) for more information.
 
 
 Engine-independent statistics can be controlled (enabled and disabled) using the [use_stat_tables variable](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#use_stat_tables) and the [optimizer_use_condition_selectivity variable](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_use_condition_selectivity). InnoDB-persistent statistics are controlled with the [innodb_stats_persistent variable](../../../storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent). Combining both kinds of statistics is possible.
 
 
-The server relies on InnoDB statistics by default. That way, it can use some statistics even if `<code>ANALYZE TABLE</code>` is never run (or not often enough). This gives good enough results for the majority of queries. Some queries, however, need more statistical data so the optimizer can create a good plan. Slow queries indicate there aren't enough statistical data. Those queries can be accelerated by running `<code>ANALYZE TABLE tbl PERSISTENT FOR ...</code>`, where `<code>tbl</code>` indicates a table used by a slow query. You can also run `<code>ANALYZE TABLE ... PERSISTENT FOR ALL</code>`, but that has a significant performance impact.
+The server relies on InnoDB statistics by default. That way, it can use some statistics even if `ANALYZE TABLE` is never run (or not often enough). This gives good enough results for the majority of queries. Some queries, however, need more statistical data so the optimizer can create a good plan. Slow queries indicate there aren't enough statistical data. Those queries can be accelerated by running `ANALYZE TABLE tbl PERSISTENT FOR ...`, where `tbl` indicates a table used by a slow query. You can also run `ANALYZE TABLE ... PERSISTENT FOR ALL`, but that has a significant performance impact.
 
 
 ## Useful Variables

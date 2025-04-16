@@ -4,8 +4,8 @@
 ## Description
 
 
-The `<code>CHAR BYTE</code>` data type is an alias for the 
-`<code>[BINARY](../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)</code>` data type. This is a
+The `CHAR BYTE` data type is an alias for the 
+`[BINARY](../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)` data type. This is a
 compatibility feature.
 
 

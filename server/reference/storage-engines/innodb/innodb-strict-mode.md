@@ -81,7 +81,7 @@ SHOW WARNINGS;
 3 rows in set (0.000 sec)
 ```
 
-* The [KEY_BLOCK_SIZE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#key_block_size) table option is set to a non-zero value, but the configured value is larger than either `<code>16</code>` or the value of the [innodb_page_size](innodb-system-variables.md#innodb_page_size) system variable, whichever is smaller.
+* The [KEY_BLOCK_SIZE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#key_block_size) table option is set to a non-zero value, but the configured value is larger than either `16` or the value of the [innodb_page_size](innodb-system-variables.md#innodb_page_size) system variable, whichever is smaller.
 
 
 ```
@@ -105,7 +105,7 @@ SHOW WARNINGS;
 3 rows in set (0.000 sec)
 ```
 
-* The [KEY_BLOCK_SIZE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#key_block_size) table option is set to a non-zero value, but the [innodb_file_per_table](innodb-system-variables.md#innodb_file_per_table) system variable is not set to `<code>ON</code>`.
+* The [KEY_BLOCK_SIZE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#key_block_size) table option is set to a non-zero value, but the [innodb_file_per_table](innodb-system-variables.md#innodb_file_per_table) system variable is not set to `ON`.
 
 
 ```
@@ -154,7 +154,7 @@ SHOW WARNINGS;
 3 rows in set (0.000 sec)
 ```
 
-* The [ROW_FORMAT](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format) table option is set to the [COMPRESSED](innodb-row-formats/innodb-compressed-row-format.md) row format, but the [innodb_file_per_table](innodb-system-variables.md#innodb_file_per_table) system variable is not set to `<code>ON</code>`.
+* The [ROW_FORMAT](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format) table option is set to the [COMPRESSED](innodb-row-formats/innodb-compressed-row-format.md) row format, but the [innodb_file_per_table](innodb-system-variables.md#innodb_file_per_table) system variable is not set to `ON`.
 
 
 ```
@@ -203,7 +203,7 @@ SHOW WARNINGS;
 3 rows in set (0.000 sec)
 ```
 
-* Either the [KEY_BLOCK_SIZE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#key_block_size) table option is set to a non-zero value or the [ROW_FORMAT](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format) table option is set to the [COMPRESSED](innodb-row-formats/innodb-compressed-row-format.md) row format, but the [innodb_page_size](innodb-system-variables.md#innodb_page_size) system variable is set to a value greater than `<code>16k</code>`.
+* Either the [KEY_BLOCK_SIZE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#key_block_size) table option is set to a non-zero value or the [ROW_FORMAT](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format) table option is set to the [COMPRESSED](innodb-row-formats/innodb-compressed-row-format.md) row format, but the [innodb_page_size](innodb-system-variables.md#innodb_page_size) system variable is set to a value greater than `16k`.
 
 
 ```
@@ -227,7 +227,7 @@ SHOW WARNINGS;
 3 rows in set (0.00 sec)
 ```
 
-* The [DATA DIRECTORY](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#data-directoryindex-directory) table option is set, but the [innodb_file_per_table](innodb-system-variables.md#innodb_file_per_table) system variable is not set to `<code>ON</code>`.
+* The [DATA DIRECTORY](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#data-directoryindex-directory) table option is set, but the [innodb_file_per_table](innodb-system-variables.md#innodb_file_per_table) system variable is not set to `ON`.
 
 
 ```
@@ -300,7 +300,7 @@ SHOW WARNINGS;
 3 rows in set (0.000 sec)
 ```
 
-* The [PAGE_COMPRESSED](#page_compressed) table option is set to `<code>1</code>`, so [InnoDB page compression](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md) is enabled, but the [ROW_FORMAT](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format) table option is set to some row format other than the [COMPACT](innodb-row-formats/innodb-compact-row-format.md) or [DYNAMIC](innodb-row-formats/innodb-dynamic-row-format.md) row formats.
+* The [PAGE_COMPRESSED](#page_compressed) table option is set to `1`, so [InnoDB page compression](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md) is enabled, but the [ROW_FORMAT](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format) table option is set to some row format other than the [COMPACT](innodb-row-formats/innodb-compact-row-format.md) or [DYNAMIC](innodb-row-formats/innodb-dynamic-row-format.md) row formats.
 
 
 ```
@@ -325,7 +325,7 @@ SHOW WARNINGS;
 3 rows in set (0.000 sec)
 ```
 
-* The [PAGE_COMPRESSED](#page_compressed) table option is set to `<code>1</code>`, so [InnoDB page compression](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md) is enabled, but the [innodb_file_per_table](innodb-system-variables.md#innodb_file_per_table) system variable is not set to `<code>ON</code>`.
+* The [PAGE_COMPRESSED](#page_compressed) table option is set to `1`, so [InnoDB page compression](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md) is enabled, but the [innodb_file_per_table](innodb-system-variables.md#innodb_file_per_table) system variable is not set to `ON`.
 
 
 ```
@@ -350,7 +350,7 @@ SHOW WARNINGS;
 3 rows in set (0.000 sec)
 ```
 
-* The [PAGE_COMPRESSED](#page_compressed) table option is set to `<code>1</code>`, so [InnoDB page compression](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md) is enabled, but the [KEY_BLOCK_SIZE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#key_block_size) table option is also specified.
+* The [PAGE_COMPRESSED](#page_compressed) table option is set to `1`, so [InnoDB page compression](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md) is enabled, but the [KEY_BLOCK_SIZE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#key_block_size) table option is also specified.
 
 
 ```
@@ -376,7 +376,7 @@ SHOW WARNINGS;
 ```
 
 * The [PAGE_COMPRESSION_LEVEL](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#page_compression_level) table option is set, but 
- the [PAGE_COMPRESSED](#page_compressed) table option is set to `<code>0</code>`, so [InnoDB page compression](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md) is disabled.
+ the [PAGE_COMPRESSED](#page_compressed) table option is set to `0`, so [InnoDB page compression](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md) is disabled.
 
 
 ```

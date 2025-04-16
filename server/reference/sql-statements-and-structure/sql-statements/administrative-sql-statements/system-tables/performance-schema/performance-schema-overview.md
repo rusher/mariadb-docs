@@ -21,10 +21,10 @@ SHOW ENGINES;
 +--------------------+---------+----------------------------------+--------------+------+------------+
 ```
 
-However, `<code>performance_schema</code>` is not a regular storage engine for storing data, it's a mechanism for implementing the Performance Schema feature.
+However, `performance_schema` is not a regular storage engine for storing data, it's a mechanism for implementing the Performance Schema feature.
 
 
-The storage engine contains a database called `<code>performance_schema</code>`, which in turn consists of a number of tables that can be queried with regular SQL statements, returning specific performance information.
+The storage engine contains a database called `performance_schema`, which in turn consists of a number of tables that can be queried with regular SQL statements, returning specific performance information.
 
 
 ```
@@ -61,7 +61,7 @@ SHOW VARIABLES LIKE 'performance_schema';
 +--------------------+-------+
 ```
 
-The performance schema cannot be activated at runtime - it must be set when the server starts by adding the following line in your `<code>my.cnf</code>` configuration file.
+The performance schema cannot be activated at runtime - it must be set when the server starts by adding the following line in your `my.cnf` configuration file.
 
 
 ```
@@ -82,8 +82,8 @@ UPDATE performance_schema.setup_consumers SET ENABLED = 'YES';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'YES';
 ```
 
-You can decide what to enable/disable with `<code>WHERE NAME like "%what_to_enable"</code>`;
-You can disable instrumentations by setting `<code>ENABLED</code>` to `<code>"NO"</code>`.
+You can decide what to enable/disable with `WHERE NAME like "%what_to_enable"`;
+You can disable instrumentations by setting `ENABLED` to `"NO"`.
 
 
 You can also do this in your my.cnf file.
@@ -146,8 +146,8 @@ column_comment: Open handles on the file. A value of greater than zero means
 
 * [Performance schema options](../../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)
 * [SHOW ENGINE STATUS](../../show/show-engine-innodb-status.md)
-* [SHOW PROFILE](../../show/show-profile.md)`<code>
-</code>`
+* [SHOW PROFILE](../../show/show-profile.md)`
+`
 * [ANALYZE STATEMENT](../../analyze-and-explain-statements/analyze-statement.md)
 * [Performance schema in MySQL 5.6](https://dev.mysql.com/doc/refman/5.6/en/performance-schema.html). All things here should also work for MariaDB.
 

@@ -16,7 +16,7 @@ the [= operator](../../geographic-geometric-features/geometry-relations/equals.m
 NULL, and 0 rather than NULL if one operand is NULL.
 
 
-`<code>a <=> b</code>` is equivalent to `<code>a = b OR (a IS NULL AND b IS NULL)</code>`.
+`a <=> b` is equivalent to `a = b OR (a IS NULL AND b IS NULL)`.
 
 
 When used in row comparisons these two queries return the same results:

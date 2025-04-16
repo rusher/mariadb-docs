@@ -12,7 +12,7 @@ SET GLOBAL sql_slave_skip_counter = N
 ## Description
 
 
-This statement skips the next `<code><em>N</em></code>` events from the primary. This is useful
+This statement skips the next `<em>N</em>` events from the primary. This is useful
 for recovering from [replication](README.md) stops caused by a statement.
 
 
@@ -51,7 +51,7 @@ START SLAVE;
 ## Multiple Replication Domains
 
 
-`<code>sql_slave_skip_counter</code>` can't be used to skip transactions on a replica if [GTID replication](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) is in use and if [gtid_slave_pos](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_slave_pos) contains multiple [gtid_domain_id](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_domain_id) values. In that case, you'll get an error like the following:
+`sql_slave_skip_counter` can't be used to skip transactions on a replica if [GTID replication](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) is in use and if [gtid_slave_pos](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_slave_pos) contains multiple [gtid_domain_id](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_domain_id) values. In that case, you'll get an error like the following:
 
 
 ```

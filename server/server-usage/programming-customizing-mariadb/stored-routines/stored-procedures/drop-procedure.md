@@ -13,12 +13,12 @@ DROP PROCEDURE [IF EXISTS] sp_name
 
 
 This statement is used to drop a [stored procedure](README.md). That is, the
-specified routine is removed from the server along with all privileges specific to the [procedure](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md). You must have the `<code>ALTER ROUTINE</code>` privilege for the routine. If the `<code>[automatic_sp_privileges](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges)</code>` server system variable is set, that privilege and `<code>EXECUTE</code>` are granted automatically to the routine creator - see [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md).
+specified routine is removed from the server along with all privileges specific to the [procedure](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md). You must have the `ALTER ROUTINE` privilege for the routine. If the `[automatic_sp_privileges](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges)` server system variable is set, that privilege and `EXECUTE` are granted automatically to the routine creator - see [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md).
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">IF EXISTS</code>` clause is a MySQL/MariaDB extension. It
+The `IF EXISTS` clause is a MySQL/MariaDB extension. It
 prevents an error from occurring if the procedure or function does not exist. A
-`<code>NOTE</code>` is produced that can be viewed with `<code>[SHOW WARNINGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md)</code>`.
+`NOTE` is produced that can be viewed with `[SHOW WARNINGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md)`.
 
 
 While this statement takes effect immediately, threads which are executing a procedure can continue execution.

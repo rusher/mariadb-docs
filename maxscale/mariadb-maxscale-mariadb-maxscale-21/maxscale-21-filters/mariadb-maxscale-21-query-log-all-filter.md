@@ -57,18 +57,18 @@ options=case,extended
 
 
 
-**Note**: older the version of the QLA filter in 0.7 of MariaDB MaxScale used the `<code>options</code>`
+**Note**: older the version of the QLA filter in 0.7 of MariaDB MaxScale used the `options`
 to define the location of the log files. This functionality is not supported
-anymore and the `<code>filebase</code>` parameter should be used instead.
+anymore and the `filebase` parameter should be used instead.
 
 
 ## Filter Parameters
 
 
-The QLA filter has one mandatory parameter, `<code>filebase</code>`, and a number of optional parameters. These were introduced in the 1.0 release of MariaDB MaxScale.
+The QLA filter has one mandatory parameter, `filebase`, and a number of optional parameters. These were introduced in the 1.0 release of MariaDB MaxScale.
 
 
-### `<code>filebase</code>`
+### `filebase`
 
 
 The basename of the output file created for each session. A session index is added to the filename for each file written. This is a mandatory parameter.
@@ -84,7 +84,7 @@ filebase=/tmp/SqlQueryLog
 The filebase may also be set as the filter option, the mechanism to set the filebase via the filter option is superseded by the parameter. If both are set the parameter setting will be used and the filter option ignored.
 
 
-### `<code>match</code>`
+### `match`
 
 
 An optional parameter that can be used to limit the queries that will be logged by the QLA filter. The parameter value is a regular expression that is used to match against the SQL text. Only SQL statements that matches the text passed as the value of this parameter will be logged.
@@ -100,7 +100,7 @@ match=select.*from.*customer.*where
 All regular expressions are evaluated with the option to ignore the case of the text, therefore a match option of select will match both select, SELECT and any form of the word with upper or lowercase characters.
 
 
-### `<code>exclude</code>`
+### `exclude`
 
 
 An optional parameter that can be used to limit the queries that will be logged by the QLA filter. The parameter value is a regular expression that is used to match against the SQL text. SQL statements that match the text passed as the value of this parameter will be excluded from the log output.
@@ -116,7 +116,7 @@ exclude=where
 All regular expressions are evaluated with the option to ignore the case of the text, therefore an exclude option of select will exclude statements that contain both select, SELECT or any form of the word with upper or lowercase characters.
 
 
-### `<code>source</code>`
+### `source`
 
 
 The optional source parameter defines an address that is used to match against the address from which the client connection to MariaDB MaxScale originates. Only sessions that originate from this address will be logged.
@@ -129,7 +129,7 @@ source=127.0.0.1
 
 
 
-### `<code>user</code>`
+### `user`
 
 
 The optional user parameter defines a user name that is used to match against the user from which the client connection to MariaDB MaxScale originates. Only sessions that are connected using this username are logged.
@@ -147,7 +147,7 @@ user=john
 
 
 
-### `<code>log_type</code>`
+### `log_type`
 
 
 The type of log file to use. The default value is *session*.
@@ -167,7 +167,7 @@ log_type=session
 
 
 
-### `<code>log_data</code>`
+### `log_data`
 
 
 Type of data to log in the log files. Parameter value is a comma separated list
@@ -192,7 +192,7 @@ log_data=date, user, query
 
 
 
-### `<code>flush</code>`
+### `flush`
 
 
 Flush log files after every write. The default is false.
@@ -205,7 +205,7 @@ flush=true
 
 
 
-### `<code>append</code>`
+### `append`
 
 
 Append new entries to log files instead of overwriting them. The default is false.
@@ -248,7 +248,7 @@ filters=ProductsSelectLogger
 
 
 The result of then putting this filter into the service used by the application would be a log file of all select queries that mentioned the table but did not mention the PRODUCT_ID primary key in the predicates for the query.
-Executing `<code>SELECT * FROM PRODUCTS</code>` would log the following into `<code>/var/logs/qla/SelectProducts</code>`:
+Executing `SELECT * FROM PRODUCTS` would log the following into `/var/logs/qla/SelectProducts`:
 
 
 

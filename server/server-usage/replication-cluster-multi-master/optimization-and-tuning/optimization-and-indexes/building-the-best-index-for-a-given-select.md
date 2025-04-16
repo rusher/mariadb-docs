@@ -85,10 +85,10 @@ Think about this example as I talk about "=" versus "range" in the Algorithm, be
 ## Algorithm, step 1 (WHERE "column = const")
 
 
-* `<code>WHERE aaa = 123 AND ...</code>` : an INDEX starting with aaa is good.
-* `<code>WHERE aaa = 123 AND bbb = 456 AND ...</code>` : an INDEX starting with aaa and bbb is good. In this case, it does not matter whether aaa or bbb comes first in the INDEX.
-* `<code>xxx IS NULL</code>` : this acts like "= const" for this discussion.
-* `<code>WHERE t1.aa = 123 AND t2.bb = 456</code>` -- You must only consider columns in the current table.
+* `WHERE aaa = 123 AND ...` : an INDEX starting with aaa is good.
+* `WHERE aaa = 123 AND bbb = 456 AND ...` : an INDEX starting with aaa and bbb is good. In this case, it does not matter whether aaa or bbb comes first in the INDEX.
+* `xxx IS NULL` : this acts like "= const" for this discussion.
+* `WHERE t1.aa = 123 AND t2.bb = 456` -- You must only consider columns in the current table.
 
 
 Note that the expression must be of the form of `column_name` = (constant). These do not apply to this step in the Algorithm: DATE(dt) = '...', LOWER(s) = '...', CAST(s ...) = '...', x='...' COLLATE...
@@ -112,10 +112,10 @@ In some cases it is optimal to do step 1 (all equals) plus step 2c (ORDER BY).
 A "range" shows up as
 
 
-* `<code>aaa >= 123</code>` -- any of <, <=, >=, >; but not <>, !=
-* `<code>aaa BETWEEN 22 AND 44</code>`
-* `<code>sss LIKE 'blah%'</code>` -- but not `<code>sss LIKE '%blah'</code>`
-* `<code>xxx IS NOT NULL</code>`
+* `aaa >= 123` -- any of <, <=, >=, >; but not <>, !=
+* `aaa BETWEEN 22 AND 44`
+* `sss LIKE 'blah%'` -- but not `sss LIKE '%blah'`
+* `xxx IS NOT NULL`
 Add the column in the range to your putative INDEX.
 
 
@@ -125,11 +125,11 @@ If there are more parts to the WHERE clause, you must stop now.
 Complete examples (assume nothing else comes after the snippet)
 
 
-* `<code>WHERE aaa >= 123 AND bbb = 1 ⇒ INDEX(bbb, aaa)</code>` (WHERE order does not matter; INDEX order does)
-* `<code>WHERE aaa >= 123 ⇒ INDEX(aaa)</code>`
-* `<code>WHERE aaa >= 123 AND ccc > 'xyz' ⇒ INDEX(aaa) or INDEX(ccc)</code>` (only one range)
-* `<code>WHERE aaa >= 123 ORDER BY aaa ⇒ INDEX(aaa)</code>` -- Bonus: The ORDER BY will use the INDEX.
-* `<code>WHERE aaa >= 123 ORDER BY aaa ⇒ INDEX(aaa) DESC</code>` -- Same Bonus.
+* `WHERE aaa >= 123 AND bbb = 1 ⇒ INDEX(bbb, aaa)` (WHERE order does not matter; INDEX order does)
+* `WHERE aaa >= 123 ⇒ INDEX(aaa)`
+* `WHERE aaa >= 123 AND ccc > 'xyz' ⇒ INDEX(aaa) or INDEX(ccc)` (only one range)
+* `WHERE aaa >= 123 ORDER BY aaa ⇒ INDEX(aaa)` -- Bonus: The ORDER BY will use the INDEX.
+* `WHERE aaa >= 123 ORDER BY aaa ⇒ INDEX(aaa) DESC` -- Same Bonus.
 
 
 ## Algorithm, step 2b (GROUP BY)
@@ -144,10 +144,10 @@ If you are GROUPing BY an expression (including function calls), you cannot use 
 Complete examples (assume nothing else comes after the snippet)
 
 
-* `<code>WHERE aaa = 123 AND bbb = 1 GROUP BY ccc ⇒ INDEX(bbb, aaa, ccc) or INDEX(aaa, bbb, ccc)</code>` (='s first, in any order; then the GROUP BY)
-* `<code>WHERE aaa >= 123 GROUP BY xxx ⇒ INDEX(aaa)</code>` (You should have stopped with Step 2a)
-* `<code>GROUP BY x,y ⇒ INDEX(x,y)</code>` (no WHERE)
-* `<code>WHERE aaa = 123 GROUP BY xxx, (a+b) ⇒ INDEX(aaa)</code>` -- expression in GROUP BY, so no use including even xxx.
+* `WHERE aaa = 123 AND bbb = 1 GROUP BY ccc ⇒ INDEX(bbb, aaa, ccc) or INDEX(aaa, bbb, ccc)` (='s first, in any order; then the GROUP BY)
+* `WHERE aaa >= 123 GROUP BY xxx ⇒ INDEX(aaa)` (You should have stopped with Step 2a)
+* `GROUP BY x,y ⇒ INDEX(x,y)` (no WHERE)
+* `WHERE aaa = 123 GROUP BY xxx, (a+b) ⇒ INDEX(aaa)` -- expression in GROUP BY, so no use including even xxx.
 
 
 ## Algorithm, step 2c (ORDER BY)
@@ -165,18 +165,18 @@ If you are ORDERing BY an expression (including function calls), you cannot use 
 Complete examples (assume nothing else comes after the snippet)
 
 
-* `<code>WHERE aaa = 123 GROUP BY ccc ORDER BY ddd ⇒ INDEX(aaa, ccc)</code>` -- should have stopped with Step 2b
-* `<code>WHERE aaa = 123 GROUP BY ccc ORDER BY ccc ⇒ INDEX(aaa, ccc)</code>` -- the ccc will be used for both GROUP BY and ORDER BY
-* `<code>WHERE aaa = 123 ORDER BY xxx ASC, yyy DESC ⇒ INDEX(aaa)</code>` -- mixture of ASC and DESC.
+* `WHERE aaa = 123 GROUP BY ccc ORDER BY ddd ⇒ INDEX(aaa, ccc)` -- should have stopped with Step 2b
+* `WHERE aaa = 123 GROUP BY ccc ORDER BY ccc ⇒ INDEX(aaa, ccc)` -- the ccc will be used for both GROUP BY and ORDER BY
+* `WHERE aaa = 123 ORDER BY xxx ASC, yyy DESC ⇒ INDEX(aaa)` -- mixture of ASC and DESC.
 
 
 The following are especially good. Normally a LIMIT cannot be applied until after lots of rows are gathered and then sorted according to the ORDER BY. But, if the INDEX gets all they way through the ORDER BY, only (OFFSET + LIMIT) rows need to be gathered. So, in these cases, you win the lottery with your new index:
 
 
-* `<code>WHERE aaa = 123 GROUP BY ccc ORDER BY ccc LIMIT 10 ⇒ INDEX(aaa, ccc)</code>`
-* `<code>WHERE aaa = 123 ORDER BY ccc LIMIT 10 ⇒ INDEX(aaa, ccc)</code>`
-* `<code>ORDER BY ccc LIMIT 10 ⇒ INDEX(ccc)</code>`
-* `<code>WHERE ccc > 432 ORDER BY ccc LIMIT 10 ⇒ INDEX(ccc)</code>` -- This "range" is compatible with ORDER BY
+* `WHERE aaa = 123 GROUP BY ccc ORDER BY ccc LIMIT 10 ⇒ INDEX(aaa, ccc)`
+* `WHERE aaa = 123 ORDER BY ccc LIMIT 10 ⇒ INDEX(aaa, ccc)`
+* `ORDER BY ccc LIMIT 10 ⇒ INDEX(ccc)`
+* `WHERE ccc > 432 ORDER BY ccc LIMIT 10 ⇒ INDEX(ccc)` -- This "range" is compatible with ORDER BY
 
 
 (It does not make much sense to have a LIMIT without an ORDER BY, so I do not discuss that case.)
@@ -246,7 +246,7 @@ Changing to INDEX(z) would make for less work for the UPDATE, but might hurt som
 ## Flags and low cardinality
 
 
-`<code>INDEX(flag)</code>` is almost never useful if `flag` has very few values. More specifically, when you say WHERE flag = 1 and "1" occurs more than 20% of the time, such an index will be shunned. The Optimizer would prefer to scan the table instead of bouncing back and forth between the index and the data for more than 20% of the rows.
+`INDEX(flag)` is almost never useful if `flag` has very few values. More specifically, when you say WHERE flag = 1 and "1" occurs more than 20% of the time, such an index will be shunned. The Optimizer would prefer to scan the table instead of bouncing back and forth between the index and the data for more than 20% of the rows.
 
 
 ("20%" is really somewhere between 10% and 30%, depending on the phase of the moon.)
@@ -266,9 +266,9 @@ Mini-cookbook:
 Examples:
 
 
-* `<code>SELECT x FROM t WHERE y = 5; ⇒ INDEX(y,x)</code>` -- The algorithm said just INDEX(y)
-* `<code>SELECT x,z FROM t WHERE y = 5 AND q = 7; ⇒ INDEX(y,q,x,z)</code>` -- y and q in either order (Algorithm), then x and z in either order (covering).
-* `<code>SELECT x FROM t WHERE y > 5 AND q > 7; ⇒ INDEX(y,q,x)</code>` -- y or q first (that's as far as the Algorithm goes), then the other two fields afterwards.
+* `SELECT x FROM t WHERE y = 5; ⇒ INDEX(y,x)` -- The algorithm said just INDEX(y)
+* `SELECT x,z FROM t WHERE y = 5 AND q = 7; ⇒ INDEX(y,q,x,z)` -- y and q in either order (Algorithm), then x and z in either order (covering).
+* `SELECT x FROM t WHERE y > 5 AND q > 7; ⇒ INDEX(y,q,x)` -- y or q first (that's as far as the Algorithm goes), then the other two fields afterwards.
 
 
 The speedup you get might be minor, or it might be spectacular; it is hard to predict.
@@ -294,8 +294,8 @@ If you have lots of SELECTs and they generate lots of INDEXes, this may cause a 
 Notice in the cookbook how it says "in any order" in a few places. If, for example, you have both of these (in different SELECTs):
 
 
-* `<code>WHERE a=1 AND b=2</code>` begs for either INDEX(a,b) or INDEX(b,a)
-* `<code>WHERE a>1 AND b=2</code>` begs only for INDEX(b,a)
+* `WHERE a=1 AND b=2` begs for either INDEX(a,b) or INDEX(b,a)
+* `WHERE a>1 AND b=2` begs only for INDEX(b,a)
 Include only INDEX(b,a) since it handles both cases with only one INDEX.
 
 
@@ -327,9 +327,9 @@ What should you do? If you think the "little filtering" is likely, then create a
 Cases...
 
 
-* `<code>WHERE a=1 OR a=2</code>` -- This is turned into WHERE a IN (1,2) and optimized that way.
-* `<code>WHERE a=1 OR b=2</code>` usually cannot be optimized.
-* `<code>WHERE x.a=1 OR y.b=2</code>` This is even worse because of using two different tables.
+* `WHERE a=1 OR a=2` -- This is turned into WHERE a IN (1,2) and optimized that way.
+* `WHERE a=1 OR b=2` usually cannot be optimized.
+* `WHERE x.a=1 OR y.b=2` This is even worse because of using two different tables.
 
 
 A workaround is to use UNION. Each part of the UNION is optimized separately. For the second case:
@@ -389,9 +389,9 @@ DATE, DATETIME, etc. are tricky to compare against.
 Some tempting, but inefficient, techniques:
 
 
-`<code>date_col LIKE '2016-01%'</code>` -- must convert date_col to a string, so acts like a function
- `<code>LEFT(date_col, 4) = '2016-01'</code>` -- hiding the column in function
- `<code>DATE(date_col) = 2016</code>` -- hiding the column in function
+`date_col LIKE '2016-01%'` -- must convert date_col to a string, so acts like a function
+ `LEFT(date_col, 4) = '2016-01'` -- hiding the column in function
+ `DATE(date_col) = 2016` -- hiding the column in function
 
 
 All must do a full scan. (On the other hand, it can handy to use GROUP BY LEFT(date_col, 7) for monthly grouping, but that is not an INDEX issue.)
@@ -417,7 +417,7 @@ Perform EXPLAIN SELECT... (and EXPLAIN FORMAT=JSON SELECT... if you have 5.6.5).
 ## IN
 
 
-`<code>IN (1,99,3)</code>` is sometimes optimized as efficiently as "=", but not always. Older versions of MySQL did not optimize it as well as newer versions. (5.6 is possibly the main turning point.)
+`IN (1,99,3)` is sometimes optimized as efficiently as "=", but not always. Older versions of MySQL did not optimize it as well as newer versions. (5.6 is possibly the main turning point.)
 
 
 IN ( SELECT ... )
@@ -621,7 +621,7 @@ always(?) uses the FULLTEXT index first. That is, the whole Algorithm is invalid
 * No PRIMARY KEY
 * Redundant indexes (especially blatant is PRIMARY KEY(id), KEY(id))
 * Most or all columns individually indexes ("But I indexed everything")
-* "Commajoin" -- That is `<code>FROM a, b WHERE a.x=b.x</code>` instead of `<code>FROM a JOIN b ON a.x=b.x</code>`
+* "Commajoin" -- That is `FROM a, b WHERE a.x=b.x` instead of `FROM a JOIN b ON a.x=b.x`
 
 
 ## Speeding up wp_postmeta

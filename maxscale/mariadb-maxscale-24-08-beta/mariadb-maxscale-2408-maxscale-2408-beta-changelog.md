@@ -7,14 +7,14 @@
 ## MariaDB MaxScale 24.08
 
 
-* The functionality that was enabled by the `<code>reuse_prepared_statements</code>`
+* The functionality that was enabled by the `reuse_prepared_statements`
  parameter in readwritesplit has been moved into the
- [PsReuse](mariadb-maxscale-24-08-beta-filters/mariadb-maxscale-2408-maxscale-2408-beta-psreuse.md) filter module. The `<code>reuse_prepared_statements</code>`
+ [PsReuse](mariadb-maxscale-24-08-beta-filters/mariadb-maxscale-2408-maxscale-2408-beta-psreuse.md) filter module. The `reuse_prepared_statements`
  parameter has been removed from readwritesplit.
-* The functionality that was enabled by the `<code>optimistic_trx</code>` parameter in
+* The functionality that was enabled by the `optimistic_trx` parameter in
  readwritesplit has been moved into the
  [OptimisticTrx](mariadb-maxscale-24-08-beta-filters/mariadb-maxscale-2408-maxscale-2408-beta-optimistic-transaction-execution-filter.md) filter module. The
- `<code>optimistic_trx</code>` parameter has been removed from readwritesplit.
+ `optimistic_trx` parameter has been removed from readwritesplit.
 * Added a safe-option to MariaDB Monitor auto-failover. safe does not
  perform failover if data loss is certain. Equivalent manual command added.
  See [monitor documentation](mariadb-maxscale-2408-beta-maxscale-24-08-beta-monitors/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-monitor.md)
@@ -28,7 +28,7 @@
  for more information.
 * Allowed REST-API TLS ciphers can be tuned with the global setting
  [admin_ssl_cipher](mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md).
-* The `<code>transaction_replay_safe_commit</code>` parameter in readwritesplit now
+* The `transaction_replay_safe_commit` parameter in readwritesplit now
  also disables the replaying of all writes done when autocommit is
  enabled. This means that transaction replay will never replay a
  statement that may commit a transaction.
@@ -42,8 +42,8 @@
  for more information. However, the dedicated SQL editor (opened via "Create Function",
  "Alter Function", "Create Trigger" etc., in the schema tree explorer) does not require
  delimiter changes as it handles SQL as a single statement.
-* MaxGUI Query Editor now automatically injects a `<code>LIMIT</code>` clause with a
- default limit of 10000 into every `<code>SELECT</code>` statement.
+* MaxGUI Query Editor now automatically injects a `LIMIT` clause with a
+ default limit of 10000 into every `SELECT` statement.
 
 
 For more details, please refer to:
@@ -59,13 +59,13 @@ For more details, please refer to:
  new default values are:
 
 
-  * `<code>master_reconnection=true</code>`
-  * `<code>master_failure_mode=fail_on_write</code>`
-  * `<code>strict_tmp_tables=true</code>`
-  * `<code>transaction_replay_timeout=30s</code>`
+  * `master_reconnection=true`
+  * `master_failure_mode=fail_on_write`
+  * `strict_tmp_tables=true`
+  * `transaction_replay_timeout=30s`
 * MariaDB-Monitor now requires MariaDB Server 10.4 or newer for failover/
  switchover. Server 10.3 is end of life.
-* Server setting `<code>private_address</code>` added. Used for detecting and setting up
+* Server setting `private_address` added. Used for detecting and setting up
  replication. See
  [MariaDB Monitor documentation](mariadb-maxscale-2408-beta-maxscale-24-08-beta-monitors/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-monitor.md)
  for more information.
@@ -75,16 +75,16 @@ For more details, please refer to:
  for more information.
 * Pam authentication now always checks account status. Previously, this check
  was not performed if MaxScale was configured for username mapping
- (`<code>authenticator_options=pam_backend_mapping=mariadb</code>`). This means that if
+ (`authenticator_options=pam_backend_mapping=mariadb`). This means that if
  username mapping is configured in the OS pam service config, the final
  username must be a valid user. This is similar to MariaDB Server behavior.
 * Support for the legacy SysV and Upstart system managers has been removed. In
  practice this change will not affect anything as all supported operating
  systems use SystemD as the system manager and MaxScale has long preferred it
  over the legacy systems.
-* The output of `<code>maxctrl show service</code>` now includes the statistics for
+* The output of `maxctrl show service` now includes the statistics for
  the services.
-* The `<code>max_sescmd_history_length</code>` and `<code>avg_sescmd_history_length</code>` statistics in
+* The `max_sescmd_history_length` and `avg_sescmd_history_length` statistics in
  readwritesplit were moved into the core as service statistics. The session
  command history was moved into the MaxScale core in MaxScale 6 but the
  statistics were not updated to match this.
@@ -93,29 +93,29 @@ For more details, please refer to:
  been removed if they were irrelevant.
 
 
-  * `<code>longest_sescmd_chain</code>` replaced by `<code>max_sescmd_history_length</code>`.
-  * `<code>queries</code>` replaced with `<code>routed_packets</code>`.
-  * `<code>times_sescmd_limit_exceeded</code>` has been removed.
-  * `<code>sescmd_percentage</code>` has been removed.
-  * `<code>longest_session</code>` replaced with `<code>max_session_lifetime</code>`.
-  * `<code>average_session</code>` replaced with `<code>avg_session_lifetime</code>`.
-  * `<code>shortest_session</code>` has been removed.
-* `<code>admin_readwrite_hosts</code>` and `<code>admin_readonly_hosts</code>` added. These settings limit
+  * `longest_sescmd_chain` replaced by `max_sescmd_history_length`.
+  * `queries` replaced with `routed_packets`.
+  * `times_sescmd_limit_exceeded` has been removed.
+  * `sescmd_percentage` has been removed.
+  * `longest_session` replaced with `max_session_lifetime`.
+  * `average_session` replaced with `avg_session_lifetime`.
+  * `shortest_session` has been removed.
+* `admin_readwrite_hosts` and `admin_readonly_hosts` added. These settings limit
  the allowed source addresses for admin (REST-API) connections. See
  [here](mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
  for more information.
-* The `<code>alter</code>` commands in MaxCtrl now allow modifications to the
- `<code>targets</code>`, `<code>servers</code>`, `<code>filters</code>` and `<code>cluster</code>` parameters for monitors
+* The `alter` commands in MaxCtrl now allow modifications to the
+ `targets`, `servers`, `filters` and `cluster` parameters for monitors
  and services. This makes it easier to define the exact set of servers
  that is to be used by a monitor or a service.
 * The [causal_reads](mariadb-maxscale-24-08-beta-routers/mariadb-maxscale-2408-maxscale-2408-beta-readwritesplit.md) feature no longer
- requires modifying `<code>session_track_system_variables</code>` on
- the server. MaxScale adds `<code>last_gtid</code>` to the variable automatically
+ requires modifying `session_track_system_variables` on
+ the server. MaxScale adds `last_gtid` to the variable automatically
  for each session. Clients should not modify it manually.
 * The [qlafilter](mariadb-maxscale-24-08-beta-filters/mariadb-maxscale-2408-maxscale-2408-beta-query-log-all-filter.md) now logs the execution of the
  binary protocol statements as text. This makes it so that for all execution of
- SQL, the `<code>query</code>` value in `<code>log_data</code>` will produce output.
-* The `<code>auth_all_servers</code>` parameter has been deprecated as it is now
+ SQL, the `query` value in `log_data` will produce output.
+* The `auth_all_servers` parameter has been deprecated as it is now
  obsolete: the functionality that it enabled is automatically enabled
  by the schemarouter whenever it is used.
 
@@ -131,49 +131,49 @@ For more details, please refer to:
 ## MariaDB MaxScale 23.08
 
 
-* The global setting `<code>skip_permission_checks</code>` has been deprecated and is
+* The global setting `skip_permission_checks` has been deprecated and is
  ignored. Monitors start regardless of monitor user permissions.
-* The uppercase versions of the `<code>slave_selection_criteria</code>` parameter in
+* The uppercase versions of the `slave_selection_criteria` parameter in
  readwritesplit have been deprecated. All runtime modifications to the
  parameters are now saved using the lowercase versions.
 * By default, readwritesplit will not replay transactions that are about to
- commit when `<code>transaction_replay</code>` is enabled. To retain the old behavior where
- transactions were always replayed, disable `<code>transaction_replay_safe_commit</code>`.
+ commit when `transaction_replay` is enabled. To retain the old behavior where
+ transactions were always replayed, disable `transaction_replay_safe_commit`.
 * Readwritesplit will now retry queries with partially returned results if they
- are done inside a transaction and `<code>transaction_replay</code>` is enabled.
-* `<code>prune_sescmd_history</code>` now also performs history simplification by removing
+ are done inside a transaction and `transaction_replay` is enabled.
+* `prune_sescmd_history` now also performs history simplification by removing
  redundant executions of the same statement. This will reduce memory usage in
  the case when history repeats a small cycle of commands. One example of this
  is connection pools that prepare the connection with a small set of commands
- like `<code>SET NAMES</code>` and `<code>SET SQL_MODE</code>`.
+ like `SET NAMES` and `SET SQL_MODE`.
 * Common configuration settings can now be specified in a separate section,
  to be included by other sections.
 * When changing the service password, the previous password will be retained
  and continue to be used if the new does not work.
 * Embedded newlines are removed from logged messages.
-* Schemarouter database map caches can be cleared with `<code>maxctrl call command
- schemarouter clear <service></code>` where `<code><service></code>` is a service that uses the
+* Schemarouter database map caches can be cleared with `maxctrl call command
+ schemarouter clear <service>` where `<service>` is a service that uses the
  schemarouter.
 * Schemarouter now allows stale cache entries to be used while the database map
  cache is being updated. By default the entries are usable for 150 seconds
  after they have gone stale. This limit can be configured with the
- `<code>max_staleness</code>` parameter.
+ `max_staleness` parameter.
 * Added switchover-force command to MariaDB Monitor. This command performs a
  switchover even if primary server is unresponsive.
 * Switchover now uses a longer command timeout on the old master. This should
- remove the need for adjusting monitor setting `<code>backend_read_timeout</code>` to get
+ remove the need for adjusting monitor setting `backend_read_timeout` to get
  switchover to work.
 * The NoSQL protocol now provides internal caching.
 * Additional metadata is sent in the connection handshake. For more information,
  refer to the
  [parameter](mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
  documentation.
-* The `<code>connection_timeout</code>` parameter was renamed to `<code>wait_timeout</code>` to make the
+* The `connection_timeout` parameter was renamed to `wait_timeout` to make the
  naming of the parameters the same in MaxScale and MariaDB server. The old
- `<code>connection_timeout</code>` parameter is now an alias to `<code>wait_timeout</code>` and its use
+ `connection_timeout` parameter is now an alias to `wait_timeout` and its use
  has been deprecated. If used, a warning will be logged that the parameter is
  deprecated.
-* The `<code>strip_db_esc</code>` parameter has been deprecated. The default behavior of
+* The `strip_db_esc` parameter has been deprecated. The default behavior of
  stripping the escape characters is in all known cases the correct thing to
  do. Only broken legacy versions where the grants would be returned without
  backslash escaping would require this parameter to work.
@@ -181,12 +181,12 @@ For more details, please refer to:
 * Passthrough authentication mode added to MariaDBAuth-module. See
  [authenticator documentation](mariadb-maxscale-24-08-beta-authenticators/mariadb-maxscale-2408-maxscale-2408-beta-mariadbmysql-authenticator.md) for more
  information.
-* Added `<code>pam_mode=suid</code>` option to PamAuth module. This option separates the
+* Added `pam_mode=suid` option to PamAuth module. This option separates the
  pam system library calls to a separate executable. See
  [authenticator documentation](mariadb-maxscale-24-08-beta-authenticators/mariadb-maxscale-2408-maxscale-2408-beta-pam-authenticator.md)
  for more information. test_pam_login tool updated to support this mode.
-* Added `<code>disk_space_ok</code>` option to MariaDB Monitor settings `<code>master_conditions</code>`
- and `<code>slave_conditions</code>`. Enabled by default in `<code>master_conditions</code>`. See
+* Added `disk_space_ok` option to MariaDB Monitor settings `master_conditions`
+ and `slave_conditions`. Enabled by default in `master_conditions`. See
  [monitor documentation](../mariadb-maxscale-21-06/README.md)
  for more information. Only available in MaxScale 23.08.5, 24.02.1 and later.
 
@@ -216,24 +216,24 @@ For more details, please refer to:
  redirecting one during switchover and failover. When starting a new
  replication connection on a previous replica, Slave_Pos is used. When starting
  a new replication connection on a previous primary, Current_Pos is used.
-* Added `<code>replication_custom_options</code>`-setting to both MariaDB Monitor and server.
+* Added `replication_custom_options`-setting to both MariaDB Monitor and server.
  This setting enables e.g. setting SSL certificates for replication
  connections. See [MariaDB Monitor documentation](mariadb-maxscale-2408-beta-maxscale-24-08-beta-monitors/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-monitor.md)
  for more information.
 * Create-Backup and Restore-From-Backup commands added to MariaDBMonitor.
-* The `<code>csmon</code>` and `<code>auroramon</code>` monitors that were deprecated in 22.08.2
+* The `csmon` and `auroramon` monitors that were deprecated in 22.08.2
  have been removed.
-* The obsolete `<code>maxctrl drain</code>` command has been removed. Use `<code>maxctrl set server
- <name> drain</code>` to use the built-in draining mechanism.
-* The `<code>maxctrl cluster</code>` commands have been removed. Use the built-in
+* The obsolete `maxctrl drain` command has been removed. Use `maxctrl set server
+ <name> drain` to use the built-in draining mechanism.
+* The `maxctrl cluster` commands have been removed. Use the built-in
  [configuration synchronization](mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
  to synchronize the configurations of multiple MaxScale instances.
-* The REST-API is now supports ODBC-type connections in the `<code>/sql</code>`
+* The REST-API is now supports ODBC-type connections in the `/sql`
  endpoints. For more information, refer to the SQL resource
  [documentation](mariadb-maxscale-24-08-beta-rest-api/mariadb-maxscale-2408-maxscale-2408-beta-sql-resource.md#open-sql-connection-to-server).
 * The REST-API query endpoint now supports asynchronous query execution
- using the `<code>async=true</code>` option.
-* The new `<code>/sql/:id/etl</code>` endpoints allow ETL operations to be done from
+ using the `async=true` option.
+* The new `/sql/:id/etl` endpoints allow ETL operations to be done from
  ODBC data sources into MariaDB servers. For more information on the
  new API functions, refer to the SQL resource
  [documentation](mariadb-maxscale-24-08-beta-rest-api/mariadb-maxscale-2408-maxscale-2408-beta-sql-resource.md#prepare-etl-operation).
@@ -252,10 +252,10 @@ For more details, please refer to:
 * MaxGUI Query Editor has been renamed to "Workspace," and its internal storage
  key has been modified. As a result, the query history, snippets, and user
  preferences settings are restored to their default values.
-* The redundant options for `<code>create server</code>` and `<code>create listener</code>` that were
+* The redundant options for `create server` and `create listener` that were
  deprecated in 22.08 have been removed in MaxScale 23.02. The use of explicit
- options has been superseded by the use of `<code>key=value</code>` parameters in all
- `<code>create</code>` commands.
+ options has been superseded by the use of `key=value` parameters in all
+ `create` commands.
 
 
 For more details, please refer to:
@@ -281,28 +281,28 @@ For more details, please refer to:
 * Sessions can now be killed using maxctrl.
 * MariaDBMonitor can use Mariabackup to clone the contents of a server.
 * MariaDBMonitor can issue ColumnStore commands similar to CSMon
-* MariaDBMonitor settings `<code>ignore_external_masters</code>`, `<code>detect_replication_lag</code>`
-`<code>detect_standalone_master</code>`, `<code>detect_stale_master</code>` and `<code>detect_stale_slave</code>`
+* MariaDBMonitor settings `ignore_external_masters`, `detect_replication_lag`
+`detect_standalone_master`, `detect_stale_master` and `detect_stale_slave`
  have been removed. The first two were ineffective, the latter three are
- replaced by `<code>master_conditions</code>` and `<code>slave_conditions</code>`.
+ replaced by `master_conditions` and `slave_conditions`.
 * A new Query Rewrite filter, using which queries can be rewritten based
  upon a template, has been added.
 * MaxScale no longer logs to both the SystemD journal and MaxScale log by
- default: the default value of `<code>syslog</code>` was changed from `<code>true</code>` to `<code>false</code>` to
+ default: the default value of `syslog` was changed from `true` to `false` to
  reduce the amount of redundant log messages that are logged. To retain the old
  behavior of logging to both MaxScale's own files and to the SystemD journal,
- add `<code>syslog=true</code>` under the `<code>[maxscale]</code>` section.
-* The `<code>dbfwfilter</code>` module that was deprecated in version 6 has now been removed.
+ add `syslog=true` under the `[maxscale]` section.
+* The `dbfwfilter` module that was deprecated in version 6 has now been removed.
 * MaxGUI Query Editor has changed the type of browser storage from local storage
  to IndexedDB. As the result, query history, favorite, and configuration are reset.
  Apart from that, query favorite was renamed to query snippets allowing to quickly
  insert the query to the editor by typing its prefix. See MaxGUI tutorial
  [Using-MaxGUI-Tutorial](mariadb-maxscale-24-08-beta-tutorials/mariadb-maxscale-2408-maxscale-2408-beta-using-maxgui-tutorial.md)
 * The Xpand monitor now handles group change explicitly.
-* The `<code>Maintenance|Drain</code>` state of a server is now synchronized between multiple
+* The `Maintenance|Drain` state of a server is now synchronized between multiple
  MaxScale instances if configuration synchronization is enabled.
 * Causal reads now supported in a multi-MaxScale setup.
-* The `<code>csmon</code>` and `<code>auroramon</code>` monitors are deprecated in 22.08.2 and will be
+* The `csmon` and `auroramon` monitors are deprecated in 22.08.2 and will be
  removed in 23.02.0.
 
 
@@ -334,9 +334,9 @@ change is to make the versioning scheme used by all MaxScale series
 identical. 21.06 denotes the year and month when the first 6 release was made.
 
 
-* Added `<code>multiplex_timeout</code>`. It sets the time a session can wait
+* Added `multiplex_timeout`. It sets the time a session can wait
  for a backend connection to become available when using connection sharing
- (i.e. `<code>idle_session_pool_time</code>`).
+ (i.e. `idle_session_pool_time`).
 
 
 For more details, please refer to:
@@ -389,7 +389,7 @@ For more details, please refer to:
 * Transaction Performance Monitoring Filter functionality moved to Qlafilter
 * Most filters can now be reconfigured at runtime
 * Synchronous mode for the Tee filter
-* New `<code>list queries</code>` command for MaxCtrl that lists all active queries
+* New `list queries` command for MaxCtrl that lists all active queries
 * MaxScale can read client user accounts from a file and map them to backend
  users. See service setting
  [user_accounts_file](mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -412,7 +412,7 @@ For more details, please refer to:
 
 
 * The versioning scheme has changed; earlier this would have been version 2.6.
-* A `<code>nosqlprotocol</code>` protocol module that implements the MongoDB® wire protocol
+* A `nosqlprotocol` protocol module that implements the MongoDB® wire protocol
  has been introduced.
 * The Columnstore monitor is now exclusively intended for Columnstore version 1.5.
 * The Columnstore monitor can now automatically adapt to changes in the cluster
@@ -421,16 +421,16 @@ For more details, please refer to:
 * If extra_port is defined for a server, it's used by default for monitor and
 user account manager connections. Normal port is used if the extra-port
 connection fails due to too low extra_max_connections-setting on the backend.
-* The deprecated `<code>required</code>` and `<code>disabled</code>` values for the `<code>ssl</code>` parameter have been removed.
+* The deprecated `required` and `disabled` values for the `ssl` parameter have been removed.
 * Backend connection multiplexing added. See
 [idle_session_pool_time](mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
 for more information.
-* Defaults for `<code>maxctrl</code>` can now be specified in the file `<code>~/maxctrl.cnf</code>`
+* Defaults for `maxctrl` can now be specified in the file `~/maxctrl.cnf`
 * PAM Authenticator can map PAM users to MariaDB users.
 * MariaDB-Monitor can launch monitor script when slave server exceeds replication
-lag limit (`<code>script_max_replication_lag</code>`).
+lag limit (`script_max_replication_lag`).
 * MariaDB-Monitor can disable read_only on master server
-(`<code>enforce_writable_master</code>`).
+(`enforce_writable_master`).
 * A graphical user interface SQL queries tool for writing, running SQL queries and visualizing
 the results has been introduced.
 
@@ -476,9 +476,9 @@ For more details, please refer to:
  and be specific to a particular user.
 * A completely new binlog router implementation.
 * New routers, [mirror](mariadb-maxscale-24-08-beta-routers/mariadb-maxscale-2408-maxscale-2408-beta-mirror.md) and [kafkacdc](mariadb-maxscale-24-08-beta-routers/mariadb-maxscale-2408-maxscale-2408-beta-kafkacdc.md).
-* Service-to-service routing is now possible with the `<code>targets</code>` parameter.
+* Service-to-service routing is now possible with the `targets` parameter.
 * TLS CRL and peer host verification support.
-* Multiple modes of operation for `<code>causal_reads</code>`.
+* Multiple modes of operation for `causal_reads`.
 
 
 For more details, please refer to:
@@ -524,18 +524,18 @@ For more details, please refer to:
  backends depending on the characteristics of the query has been added.
 * Transaction replaying is now performed also in conjunction with server
  initiated transaction rollbacks.
-* Names starting with `<code>@@</code>` are reserved for use by MaxScale.
+* Names starting with `@@` are reserved for use by MaxScale.
 * Names can no longer contain whitespace.
 * Servers can now be drained.
 * The servers of a service can now be defined using a monitor.
 * Durations can now be specified as hours, minutes, seconds or milliseconds.
-* MaxCtrl commands `<code>list sessions</code>`, `<code>show sessions</code>` and `<code>show session <id></code>`
+* MaxCtrl commands `list sessions`, `show sessions` and `show session <id>`
  support reverse DNS lookup of client addresses. The conversion is activated
- by adding the `<code>--rdns</code>`-option to the command.
+ by adding the `--rdns`-option to the command.
 * The following MariaDB-Monitor settings have been removed and cause a startup error
- if defined: `<code>mysql51_replication</code>`, `<code>multimaster</code>` and `<code>allow_cluster_recovery</code>`. The
- setting `<code>detect_replication_lag</code>` is deprecated and ignored.
-* `<code>enforce_simple_topology</code>`-setting added to MariaDB-Monitor.
+ if defined: `mysql51_replication`, `multimaster` and `allow_cluster_recovery`. The
+ setting `detect_replication_lag` is deprecated and ignored.
+* `enforce_simple_topology`-setting added to MariaDB-Monitor.
 * The mqfilter has been deprecated.
 
 
@@ -569,15 +569,15 @@ For more details, please refer to:
 
 * Runtime Configuration of the Cache
 * User Specified Syslog Facility and Level for Authentication Errors
-* `<code>config reload</code>` removed from MaxAdmin (was deprecated in 2.2)
+* `config reload` removed from MaxAdmin (was deprecated in 2.2)
 * MariaDBMonitor features added, modified and removed
 * A Comment filter has been added.
 * Services and filters can be created at runtime via the REST API
 * Runtime router reconfiguration is now possible
 * New Throttle filter that replaces and extends on the limit_queries functionality
 * MaxCtrl
-* The `<code>create monitor</code>` command now accepts a list of key-value parameters
-* The new `<code>drain server</code>` drains the server of connections
+* The `create monitor` command now accepts a list of key-value parameters
+* The new `drain server` drains the server of connections
 * A new interactive input mode was added
 * Readwritesplit
 * Automatic transaction replay allows transactions to be migrated between servers
@@ -587,13 +587,13 @@ For more details, please refer to:
 * Transaction load balancing for normal transactions
 * Support for runtime router reconfiguration
 * A new load balancing method: ADAPTIVE_ROUTING
-* Experimental resultset concatenation router, `<code>cat</code>`
+* Experimental resultset concatenation router, `cat`
 * The schema router is now capable of table family sharding.
 * The binlog router can now automatically switch to secondary masters
  when replicating from a Galera cluster in case the primary master
  goes down.
 * MaxScale now has a systemd compatible watchdog.
-* Server setting `<code>authenticator_options</code>` is no longer used and any value is
+* Server setting `authenticator_options` is no longer used and any value is
  ignored.
 
 
@@ -754,7 +754,7 @@ For more details, please refer to:
 
 
 * Authentication now allows table level resolution of grants. MaxScale service
- users will now need SELECT privileges on `<code>mysql.tables_priv</code>` to be able to
+ users will now need SELECT privileges on `mysql.tables_priv` to be able to
  authenticate users at the database and table level.
 * Firewall filter allows whitelisting.
 * Client side SSL works.
@@ -797,7 +797,7 @@ For more details, please refer to [MariaDB MaxScale 1.3 Release Notes](Release-N
 ## MariaDB MaxScale 1.1
 
 
-**NOTE:** MariaDB MaxScale default installation directory has changed to `<code>/usr/local/mariadb-maxscale</code>` and the default password for MaxAdmin is now ´mariadb´.
+**NOTE:** MariaDB MaxScale default installation directory has changed to `/usr/local/mariadb-maxscale` and the default password for MaxAdmin is now ´mariadb´.
 
 
 * New modules added
@@ -817,4 +817,4 @@ For more details, please refer to [MariaDB MaxScale 1.3 Release Notes](Release-N
 * Nagios plugins added.
 * Notification service added.
 * Readconnrouter has a new "running" router_option. This allows it to use any running server as a valid backend server.
-* Database names can be stripped of escape characters with the `<code>strip_db_esc</code>` service parameter.
+* Database names can be stripped of escape characters with the `strip_db_esc` service parameter.

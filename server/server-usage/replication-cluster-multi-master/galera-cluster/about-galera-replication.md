@@ -21,7 +21,7 @@ asynchronous replication:
 
 * Clusters utilizing synchronous replication are always highly available. If one of the nodes crashed, then there would be no data loss. Additionally, all cluster nodes are always consistent.
 * Clusters utilizing synchronous replication allow transactions to be executed on all nodes in parallel.
-* Clusters utilizing synchronous replication can guarantee causality across the whole cluster. This means that if a `<code>SELECT</code>` is executed on one cluster node after a transaction is executed on a cluster node, it should see the effects of that transaction.
+* Clusters utilizing synchronous replication can guarantee causality across the whole cluster. This means that if a `SELECT` is executed on one cluster node after a transaction is executed on a cluster node, it should see the effects of that transaction.
 
 
 However, in practice, synchronous database replication has traditionally been
@@ -101,10 +101,10 @@ Although the **Galera provider** certifies the write set associated with a trans
 The number of Galera slave threads can be configured with the [wsrep_slave_threads](galera-cluster-system-variables.md#wsrep_slave_threads) system variable.
 
 
-The Galera slave threads are able to determine which write sets are safe to apply in parallel. However, if your cluster nodes seem to have frequent consistency problems, then setting the value to `<code>1</code>` will probably fix the problem.
+The Galera slave threads are able to determine which write sets are safe to apply in parallel. However, if your cluster nodes seem to have frequent consistency problems, then setting the value to `1` will probably fix the problem.
 
 
-When a cluster node's state, as seen by [wsrep_local_state_comment](galera-cluster-status-variables.md#wsrep_local_state_comment), is `<code>JOINED</code>`, then increasing the number of slave threads may help the cluster node catch up with the cluster more quickly. In this case, it may be useful to set the number of threads to twice the number of CPUs on the system.
+When a cluster node's state, as seen by [wsrep_local_state_comment](galera-cluster-status-variables.md#wsrep_local_state_comment), is `JOINED`, then increasing the number of slave threads may help the cluster node catch up with the cluster more quickly. In this case, it may be useful to set the number of threads to twice the number of CPUs on the system.
 
 
 ## Streaming Replication

@@ -187,8 +187,8 @@ matches any value, and if a match exists, the result of IN is NULL. Consider
 the following example:
 
 
-If the left argument of IN is the row: `<code class="fixed" style="white-space:pre-wrap"><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="k">NULL</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-</code>`,
+If the left argument of IN is the row: `<span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="k">NULL</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+`,
 and the result of the right subquery operand of IN is the table:
 
 
@@ -198,8 +198,8 @@ and the result of the right subquery operand of IN is the table:
 (7, 11, 9)
 ```
 
-The the IN predicate matches the row `<code class="fixed" style="white-space:pre-wrap"><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-</code>`,
+The the IN predicate matches the row `<span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+`,
 and the result of IN is NULL. Matches where the differing values on either
 side of the IN arguments are matched by a NULL in the other IN argument, are
 called *partial matches*.

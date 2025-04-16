@@ -68,7 +68,7 @@ filename=/tmp/SqlQueryLog
 ### Source
 
 
-The optional `<code>source</code>` parameter defines an address that is used
+The optional `source` parameter defines an address that is used
 to match against the address from which the client connection
 to MaxScale originates. Only sessions that originate from this
 address will be logged.
@@ -84,7 +84,7 @@ source=127.0.0.1
 ### User
 
 
-The optional `<code>user</code>` parameter defines a user name that is used
+The optional `user` parameter defines a user name that is used
 to match against the user from which the client connection to
 MaxScale originates. Only sessions that are connected using
 this username are logged.
@@ -100,8 +100,8 @@ user=john
 ### Delimiter
 
 
-The optional `<code>delimiter</code>` parameter defines a delimiter that is used to
-distinguish columns in the log. The default delimiter is **`<code>:::</code>`**.
+The optional `delimiter` parameter defines a delimiter that is used to
+distinguish columns in the log. The default delimiter is **`:::`**.
 
 
 
@@ -114,9 +114,9 @@ delimiter=:::
 ### Query_delimiter
 
 
-The optional `<code>query_delimiter</code>` defines a delimiter that is used to
+The optional `query_delimiter` defines a delimiter that is used to
 distinguish different SQL statements in a transaction.
-The default query delimiter is **`<code>@@@</code>`**.
+The default query delimiter is **`@@@`**.
 
 
 
@@ -129,11 +129,11 @@ query_delimiter=@@@
 ### Named_pipe
 
 
-**`<code>named_pipe</code>`** is the path to a named pipe, which TPM filter uses to
+**`named_pipe`** is the path to a named pipe, which TPM filter uses to
 communicate with 3rd-party applications (e.g., [DBSeer](https://dbseer.org)).
 Logging is enabled when the router receives the character '1' and logging is
 disabled when the router receives the character '0' from this named pipe.
-The default named pipe is **`<code>/tmp/tpmfilter</code>`** and logging is **disabled** by default.
+The default named pipe is **`/tmp/tpmfilter`** and logging is **disabled** by default.
 
 
 ```

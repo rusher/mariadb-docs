@@ -20,22 +20,22 @@ SUBSTR(str FROM pos FOR len)
 ## Description
 
 
-The forms without a *`<code>len</code>`* argument return a substring from string *`<code>str</code>`* starting at position *`<code>pos</code>`*.
+The forms without a *`len`* argument return a substring from string *`str`* starting at position *`pos`*.
 
 
-The forms with a *`<code>len</code>`* argument return a substring *`<code>len</code>`* characters long from string *`<code>str</code>`*, starting at position *`<code>pos</code>`*.
+The forms with a *`len`* argument return a substring *`len`* characters long from string *`str`*, starting at position *`pos`*.
 
 
-The forms that use *`<code>FROM</code>`* are standard SQL syntax.
+The forms that use *`FROM`* are standard SQL syntax.
 
 
-It is also possible to use a negative value for *`<code>pos</code>`*. In this case, the beginning of the substring is *`<code>pos</code>`* characters from the end of the string, rather than the beginning. A negative value may be used for *`<code>pos</code>`* in any of the forms of this function.
+It is also possible to use a negative value for *`pos`*. In this case, the beginning of the substring is *`pos`* characters from the end of the string, rather than the beginning. A negative value may be used for *`pos`* in any of the forms of this function.
 
 
 By default, the position of the first character in the string from which the substring is to be extracted is reckoned as 1. For [Oracle-compatibility](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), from [MariaDB 10.3.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md), when sql_mode is set to 'oracle', position zero is treated as position 1 (although the first character is still reckoned as 1).
 
 
-If any argument is `<code>NULL</code>`, returns `<code>NULL</code>`.
+If any argument is `NULL`, returns `NULL`.
 
 
 Prior to [MariaDB 11.8](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md), the optimizer could not take advantage of queries of the format [SUBSTR(col, 1, n) = const_str](substring.md).

@@ -3,7 +3,7 @@
 
 
 ##### MariaDB starting with [10.6.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md)
-`<code>MINUS</code>` was introduced as a synonym for [EXCEPT](except.md) from [MariaDB 10.6.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) when [SQL_MODE=ORACLE](../../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set.
+`MINUS` was introduced as a synonym for [EXCEPT](except.md) from [MariaDB 10.6.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) when [SQL_MODE=ORACLE](../../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set.
 
 
 ```

@@ -8,13 +8,13 @@
 MS1 code needs to use two databases, because
 
 
-* `<code>leveldb</code>` database uses type-aware key comparison. This means, one must have knowledge about types of values in indexes before the database can be opened.
+* `leveldb` database uses type-aware key comparison. This means, one must have knowledge about types of values in indexes before the database can be opened.
 
 
-* `<code>leveldb-ddl</code>` stores information about 
+* `leveldb-ddl` stores information about 
 
   * datatypes used by various indexes.
-  * Mapping from `<code>dbname.tablename.index_no</code>` to `<code>index_number</code>`.
+  * Mapping from `dbname.tablename.index_no` to `index_number`.
 
 
 The database itself uses default key comparison function, so one can open it without any knowledge.
@@ -24,7 +24,7 @@ It is possible to switch to having one database, if the keys can use the default
 
 
 * table/index data
-* Mapping from `<code>dbname.tablename.index_no</code>` to `<code>index_number</code>`.
+* Mapping from `dbname.tablename.index_no` to `index_number`.
 
 
 It seems, it is possible to convert MySQL field values into values comparable with memcmp() by using Field::make_sort_key() function.
@@ -39,8 +39,8 @@ Index-only scans require that it is possible to restore key value from its memcm
 In general, it is not possible. For some particular datatypes, it is possible. We want to target the following types:
 
 
-* `<code>INT</code>`, `<code>BIGINT</code>`, `<code>TINYINT</code>`, and their `<code>UNSIGNED</code>` variants (i.e., all INT-based types)
-* `<code>CHAR(n) COLLATE latin1_bin</code>`, `<code>VARCHAR(n) COLLATE latin1_bin</code>`, possibly support `<code>utf8_bin</code>`.
+* `INT`, `BIGINT`, `TINYINT`, and their `UNSIGNED` variants (i.e., all INT-based types)
+* `CHAR(n) COLLATE latin1_bin`, `VARCHAR(n) COLLATE latin1_bin`, possibly support `utf8_bin`.
 
 
 #### INT-based types
@@ -76,7 +76,7 @@ Consider a [VAR]CHAR(n) type. The mem-comparable form must have the same length 
 In MySQL charset functions, mem-comparable form does have a fixed length. Fixed length is achieved by end-padding the value with spaces (more precisely, with mem-comparable images of spaces). This raises a question of, how do we get rid of these spaces when we're decoding the value back?
 
 
-For `<code>CHAR(n)</code>` fields, the problem doesn't exist, because MySQL strips all trailing spaces:
+For `CHAR(n)` fields, the problem doesn't exist, because MySQL strips all trailing spaces:
 
 
 ```
@@ -116,10 +116,10 @@ When we try to decode a string from its mem-comparable form, we will not know ho
 We will avoid the problem of upper-casing by supporting index-only reads when used collations do not map two different characters to the same mem-comparable value. The following collations are ok:
 
 
-* `<code>BINARY</code>` - characters are not transformed
-* `<code>latin1_bin</code>` - characters are not transformed
-* `<code>utf8_bin</code>` - characters are transformed into 2-byte images with `<code>my_utf8_uni()</code>` and can be restored with `<code>my_uni_utf8()</code>`. The functions are stored in `<code>cs->cset->mb_wc</code>` and `<code>cs->cset->wc_mb</code>`.
-* `<code>utf8mb4_bin</code>` - characters are transformed into 3-byte images with `<code>my_mb_wc_utf8mb4()</code>` and can be restored with `<code>my_wc_mb_utf8mb4()</code>`
+* `BINARY` - characters are not transformed
+* `latin1_bin` - characters are not transformed
+* `utf8_bin` - characters are transformed into 2-byte images with `my_utf8_uni()` and can be restored with `my_uni_utf8()`. The functions are stored in `cs->cset->mb_wc` and `cs->cset->wc_mb`.
+* `utf8mb4_bin` - characters are transformed into 3-byte images with `my_mb_wc_utf8mb4()` and can be restored with `my_wc_mb_utf8mb4()`
 
 
 ##### Solution for end-spaces
@@ -180,7 +180,7 @@ A truly transactional MySQL engine needs to support two kinds of rollback
 1. Rollback a transaction
 
 
-If a statement fails inside a transaction, the engine will need to rollback the statement, but not the transaction. Currently, leveldb SE is unable to do so, because transaction's changes and statement's changes are stored in a single `<code>leveldb::WriteBatch</code>` object.
+If a statement fails inside a transaction, the engine will need to rollback the statement, but not the transaction. Currently, leveldb SE is unable to do so, because transaction's changes and statement's changes are stored in a single `leveldb::WriteBatch` object.
 
 
 The solution will be to keep transaction's changes and statement's changes separate, and put statement's changes into transaction's changes on statement end.

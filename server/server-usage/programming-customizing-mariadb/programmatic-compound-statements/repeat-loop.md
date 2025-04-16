@@ -11,13 +11,13 @@ UNTIL search_condition
 END REPEAT [end_label]
 ```
 
-The statement list within a `<code>REPEAT</code>` statement is repeated until the
-search_condition is true. Thus, a `<code>REPEAT</code>` always enters the loop at
+The statement list within a `REPEAT` statement is repeated until the
+search_condition is true. Thus, a `REPEAT` always enters the loop at
 least once. statement_list consists of one or more statements, each
-terminated by a semicolon (i.e., `<code>;</code>`) statement delimiter.
+terminated by a semicolon (i.e., `;`) statement delimiter.
 
 
-A `<code>REPEAT</code>` statement can be [labeled](labels.md). end_label cannot be given unless
+A `REPEAT` statement can be [labeled](labels.md). end_label cannot be given unless
 begin_label also is present. If both are present, they must be the
 same.
 

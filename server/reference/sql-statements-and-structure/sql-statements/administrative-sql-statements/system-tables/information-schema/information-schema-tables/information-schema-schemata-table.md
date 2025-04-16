@@ -1,7 +1,7 @@
 
 # Information Schema SCHEMATA Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>SCHEMATA</code>` table stores information about databases on the server.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `SCHEMATA` table stores information about databases on the server.
 
 
 It contains the following columns:

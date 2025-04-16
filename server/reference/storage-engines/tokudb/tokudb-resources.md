@@ -35,10 +35,10 @@ These were discontinued and redirected to [Percona's MySQL and MariaDB forum](ht
 ## IRC
 
 
-Tokutek has a `<code> #tokutek</code>` [IRC](/kb/en/irc/) channel on [Freenode](https://freenode.net).
+Tokutek has a ` #tokutek` [IRC](/kb/en/irc/) channel on [Freenode](https://freenode.net).
 
 
-The following link will take you to the `<code> #tokutek</code>` channel using Freenode's web IRC client:
+The following link will take you to the ` #tokutek` channel using Freenode's web IRC client:
 
 
 * [?randomnick=1&channels=tokutek&prompt=1](https://webchat.freenode.net/?randomnick=1&channels=tokutek&prompt=1)

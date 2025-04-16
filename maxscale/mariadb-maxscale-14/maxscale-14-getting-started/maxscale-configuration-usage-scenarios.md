@@ -56,10 +56,10 @@ in a number of places.
 
 
 1. Location given with the --configdir=<path> command line argument
-1. MaxScale will look for a configuration file called `<code>maxscale.cnf</code>` in the directory `<code>/etc/maxscale.cnf</code>`
+1. MaxScale will look for a configuration file called `maxscale.cnf` in the directory `/etc/maxscale.cnf`
 
 
-An explicit path to a configuration file can be passed by using the `<code>-f</code>` option to MaxScale.
+An explicit path to a configuration file can be passed by using the `-f` option to MaxScale.
 
 
 The configuration file itself is based on the ".ini" file format and consists of various sections that are used to build the configuration; these sections define services, servers, listeners, monitors and global settings. Parameters, which expect a comma-separated list of values can be defined on multiple lines. The following is an example of a multi-line definition.
@@ -83,10 +83,10 @@ The values of the parameter that are not on the first line need to have at least
 ### Global Settings
 
 
-The global settings, in a section named `<code>[MaxScale]</code>`, allow various parameters that affect MaxScale as a whole to be tuned.
+The global settings, in a section named `[MaxScale]`, allow various parameters that affect MaxScale as a whole to be tuned.
 
 
-#### `<code>threads</code>`
+#### `threads`
 
 
 This parameter controls the number of worker threads that are handling the
@@ -98,7 +98,7 @@ it, and can consume resources needlessly.
 
 
 You can enable automatic configuration of this value by setting the value to
-`<code>auto</code>`. This way MaxScale will detect the number of available processors and
+`auto`. This way MaxScale will detect the number of available processors and
 set the amount of threads to be equal to that number. This should only be used
 for systems dedicated for running MaxScale.
 
@@ -117,25 +117,25 @@ threads=1
 It should be noted that additional threads will be created to execute other internal services within MaxScale. This setting is used to configure the number of threads that will be used to manage the user connections.
 
 
-#### `<code>auth_connect_timeout</code>`
+#### `auth_connect_timeout`
 
 
 The connection timeout in seconds for the MySQL connections to the backend server when user authentication data is fetched. Increasing the value of this parameter will cause MaxScale to wait longer for a response from the backend server before aborting the authentication process. The default is 3 seconds.
 
 
-#### `<code>auth_read_timeout</code>`
+#### `auth_read_timeout`
 
 
 The read timeout in seconds for the MySQL connection to the backend database when user authentication data is fetched. Increasing the value of this parameter will cause MaxScale to wait longer for a response from the backend server when user data is being actively fetched. If the authentication is failing and you either have a large number of database users and grants or the connection to the backend servers is slow, it is a good idea to increase this value. The default is 1 second.
 
 
-#### `<code>auth_write_timeout</code>`
+#### `auth_write_timeout`
 
 
 The write timeout in seconds for the MySQL connection to the backend database when user authentication data is fetched. Currently MaxScale does not write or modify the data in the backend server. The default is 2 seconds.
 
 
-#### `<code>ms_timestamp</code>`
+#### `ms_timestamp`
 
 
 Enable or disable the high precision timestamps in logfiles. Enabling this adds millisecond precision to all logfile timestamps.
@@ -150,7 +150,7 @@ ms_timestamp=1
 
 
 
-#### `<code>syslog</code>`
+#### `syslog`
 
 
 Enable to disable to logging of messages to *syslog*.
@@ -172,7 +172,7 @@ To enable logging to syslog use the value 1 and to disable use
 the value 0.
 
 
-#### `<code>maxlog</code>`
+#### `maxlog`
 
 
 Enable to disable to logging of messages to MaxScale's log file.
@@ -194,11 +194,11 @@ To enable logging to the MaxScale log file use the value 1 and to
 disable use the value 0.
 
 
-#### `<code>log_to_shm</code>`
+#### `log_to_shm`
 
 
 Enable or disable the writing of the *maxscale.log* file to shared memory.
-If enabled, then the actual log file will be created under `<code>/dev/shm</code>` and
+If enabled, then the actual log file will be created under `/dev/shm` and
 a symbolic link to that file will be created in the *MaxScale* log directory.
 
 
@@ -233,7 +233,7 @@ To enable logging to shared memory use the value 1 and to disable use
 the value 0.
 
 
-#### `<code>log_warning</code>`
+#### `log_warning`
 
 
 Enable or disable the logging of messages whose syslog priority is *warning*.
@@ -252,7 +252,7 @@ log_warning=0
 To disable these messages use the value 0 and to enable them use the value 1.
 
 
-#### `<code>log_notice</code>`
+#### `log_notice`
 
 
 Enable or disable the logging of messages whose syslog priority is *notice*.
@@ -272,7 +272,7 @@ log_notice=0
 To disable these messages use the value 0 and to enable them use the value 1.
 
 
-#### `<code>log_info</code>`
+#### `log_info`
 
 
 Enable or disable the logging of messages whose syslog priority is *info*.
@@ -295,7 +295,7 @@ log_info=1
 To disable these messages use the value 0 and to enable them use the value 1.
 
 
-#### `<code>log_debug</code>`
+#### `log_debug`
 
 
 Enable or disable the logging of messages whose syslog priority is *debug*. This kind of messages are intended for development purposes and are disabled by default.
@@ -313,19 +313,19 @@ log_debug=1
 To disable these messages use the value 0 and to enable them use the value 1.
 
 
-#### `<code>log_messages</code>`
+#### `log_messages`
 
 
 **Deprecated** Use *log_notice* instead.
 
 
-#### `<code>log_trace</code>`
+#### `log_trace`
 
 
 **Deprecated** Use *log_info* instead.
 
 
-#### `<code>log_augmentation</code>`
+#### `log_augmentation`
 
 
 Enable or disable the augmentation of messages. If this is enabled, then each logged message is appended with the name of the function where the message was logged. This is primarily for development purposes and hence is disabled by default.
@@ -343,7 +343,7 @@ log_augmentation=1
 To disable the augmentation use the value 0 and to enable it use the value 1.
 
 
-#### `<code>logdir</code>`
+#### `logdir`
 
 
 Set the directory where the logfiles are stored. The folder needs to be both readable and writable by the user running MaxScale.
@@ -356,7 +356,7 @@ logdir=/tmp/
 
 
 
-#### `<code>datadir</code>`
+#### `datadir`
 
 
 Set the directory where the data files used by MaxScale are stored. Modules can write to this directory and for example the binlogrouter uses this folder as the default location for storing binary logs.
@@ -369,7 +369,7 @@ datadir=/home/user/maxscale_data/
 
 
 
-#### `<code>libdir</code>`
+#### `libdir`
 
 
 Set the directory where MaxScale looks for modules. The library directory is the only directory that MaxScale uses when it searches for modules. If you have custom modules for MaxScale, make sure you have them in this folder.
@@ -382,7 +382,7 @@ libdir=/home/user/lib64/
 
 
 
-#### `<code>cachedir</code>`
+#### `cachedir`
 
 
 Configure the directory MaxScale uses to store cached data. An example of cached data is the authentication data fetched from the backend servers. MaxScale stores this in case a connection to the backend server is not possible.
@@ -395,7 +395,7 @@ cachedir=/tmp/maxscale_cache/
 
 
 
-#### `<code>piddir</code>`
+#### `piddir`
 
 
 Configure the directory for the PID file for MaxScale. This file contains the Process ID for the running MaxScale process.
@@ -408,7 +408,7 @@ piddir=/tmp/maxscale_cache/
 
 
 
-#### `<code>execdir</code>`
+#### `execdir`
 
 
 Configure the directory where the executable files reside. All internal processes which are launched will use this directory to look for executable files.
@@ -421,7 +421,7 @@ execdir=/usr/local/bin/
 
 
 
-#### `<code>language</code>`
+#### `language`
 
 
 Set the folder where the errmsg.sys file is located in. MaxScale will look for the errmsg.sys file installed with MaxScale from this folder.
@@ -460,7 +460,7 @@ type=service
 In order for MaxScale to forward any requests it must have at least one service defined within the configuration file. The definition of a service alone is not enough to allow MaxScale to forward requests however, the service is merely present to link together the other configuration elements.
 
 
-#### `<code>router</code>`
+#### `router`
 
 
 The router parameter of a service defines the name of the router module that will be used to implement the routing algorithm between the client of MaxScale and the backend databases. Additionally routers may also be passed a comma separated list of options that are used to control the behavior of the routing algorithm. The two parameters that control the routing choice are router and router_options. The router options are specific to a particular router and are used to modify the behavior of the router. The read connection router can be passed options of master, slave or synced, an example of configuring a service to use this router and limiting the choice of servers to those in slave state would be as follows.
@@ -488,7 +488,7 @@ router_options=master,slave
 A more complete description of router options and what is available for a given router is included with the documentation of the router itself.
 
 
-#### `<code>filters</code>`
+#### `filters`
 
 
 The filters option allow a set of filters to be defined for a service; requests from the client are passed through these filters before being sent to the router for dispatch to the backend server. The filters parameter takes one or more filter names, as defined within the filter definition section of the configuration file. Multiple filters are separated using the | character.
@@ -504,7 +504,7 @@ filters=counter | QLA
 The requests pass through the filters from left to right in the order defined in the configuration parameter.
 
 
-#### `<code>servers</code>`
+#### `servers`
 
 
 The servers parameter in a service definition provides a comma separated list of the backend servers that comprise the service. The server names are those used in the name section of a block with a type parameter of server (see below).
@@ -517,7 +517,7 @@ servers=server1,server2,server3
 
 
 
-#### `<code>user</code>`
+#### `user`
 
 
 The user parameter, along with the passwd parameter are used to define the credentials used to connect to the backend servers to extract the list of database users from the backend database that is used for the client authentication.
@@ -557,7 +557,7 @@ Query OK, 0 rows affected (0.00 sec)
 
 
 
-Additionally, `<code>SELECT</code>` privileges on the `<code>mysql.db</code>` and `<code>mysql.tables_priv</code>` tables and `<code>SHOW DATABASES</code>` privileges are required in order to load databases name and grants suitable for database name authorization.
+Additionally, `SELECT` privileges on the `mysql.db` and `mysql.tables_priv` tables and `SHOW DATABASES` privileges are required in order to load databases name and grants suitable for database name authorization.
 
 
 
@@ -597,25 +597,25 @@ SELECT DISTINCT
 
 
 
-#### `<code>passwd</code>`
+#### `passwd`
 
 
 The passwd parameter provides the password information for the above user and may be either a plain text password or it may be an encrypted password. See the section on encrypting passwords for use in the maxscale.cnf file. This user must be capable of connecting to the backend database and executing these SQL statements to load database names and grants from the backends:
 
 
-* `<code>SELECT user, host, password,Select_priv FROM mysql.user</code>`.
-* `<code>SELECT user, host, db FROM mysql.db</code>`
-* `<code>SELECT * FROM INFORMATION_SCHEMA.SCHEMATA</code>`
-* `<code>SELECT GRANTEE,PRIVILEGE_TYPE FROM INFORMATION_SCHEMA.USER_PRIVILEGES</code>`
+* `SELECT user, host, password,Select_priv FROM mysql.user`.
+* `SELECT user, host, db FROM mysql.db`
+* `SELECT * FROM INFORMATION_SCHEMA.SCHEMATA`
+* `SELECT GRANTEE,PRIVILEGE_TYPE FROM INFORMATION_SCHEMA.USER_PRIVILEGES`
 
 
-#### `<code>enable_root_user</code>`
+#### `enable_root_user`
 
 
 This parameter controls the ability of the root user to connect to MaxScale and hence onwards to the backend servers via MaxScale.
 
 
-The default value is `<code>0</code>`, disabling the ability of the root user to connect to MaxScale.
+The default value is `0`, disabling the ability of the root user to connect to MaxScale.
 
 
 Example for enabling root user:
@@ -628,7 +628,7 @@ enable_root_user=1
 
 
 
-Values of `<code>on</code>` or `<code>true</code>` may also be given to enable the root user and `<code>off</code>` or `<code>false</code>` may be given to disable the use of the root user.
+Values of `on` or `true` may also be given to enable the root user and `off` or `false` may be given to disable the use of the root user.
 
 
 
@@ -638,13 +638,13 @@ enable_root_user=true
 
 
 
-#### `<code>localhost_match_wildcard_host</code>`
+#### `localhost_match_wildcard_host`
 
 
-This parameter enables matching of "127.0.0.1" (localhost) against "%" wildcard host for MySQL protocol authentication. The default value is `<code>0</code>`, so in order to authenticate a connection from the same machine as the one on which MaxScale is running, an explicit user@localhost entry will be required in the MySQL user table.
+This parameter enables matching of "127.0.0.1" (localhost) against "%" wildcard host for MySQL protocol authentication. The default value is `0`, so in order to authenticate a connection from the same machine as the one on which MaxScale is running, an explicit user@localhost entry will be required in the MySQL user table.
 
 
-#### `<code>version_string</code>`
+#### `version_string`
 
 
 This parameter sets a custom version string that is sent in the MySQL Handshake from MaxScale to clients.
@@ -663,7 +663,7 @@ version_string=5.5.37-MariaDB-RWsplit
 If not set, the default value is the server version of the embedded MySQL/MariaDB library. Example: 5.5.35-MariaDB
 
 
-#### `<code>weightby</code>`
+#### `weightby`
 
 
 The weightby parameter is used in conjunction with server parameters in order to
@@ -684,7 +684,7 @@ serversize=10
 
 
 
-The service would then have the parameter `<code>weightby=serversize</code>`. If there are 4
+The service would then have the parameter `weightby=serversize`. If there are 4
 servers defined in the service (serverA, serverB, serverC and serverD) with the
 serversize set as shown in the table below, the connections would balanced
 using the percentages in this table.
@@ -699,7 +699,7 @@ using the percentages in this table.
 | serverD | 20 | 36% |
 
 
-Here is an excerpt from an example configuration with the `<code>serv_weight</code>` parameter
+Here is an excerpt from an example configuration with the `serv_weight` parameter
 used as the weighting parameter.
 
 
@@ -740,40 +740,40 @@ the server's own weighting parameter divided by the sum of all weighting
 parameters in all the configured servers.
 
 
-If we use the previous configuration as an example, the sum of the `<code>serv_weight</code>`
-parameter is 4. *Server1* would receive a weight of `<code>3/4=75%</code>` and *server2* would get
-`<code>1/4=25%</code>`. This means that *server1* would get 75% of the connections and *server2*
+If we use the previous configuration as an example, the sum of the `serv_weight`
+parameter is 4. *Server1* would receive a weight of `3/4=75%` and *server2* would get
+`1/4=25%`. This means that *server1* would get 75% of the connections and *server2*
 would get 25% of the connections.
 
 
-#### `<code>auth_all_servers</code>`
+#### `auth_all_servers`
 
 
 This parameter controls whether only a single server or all of the servers are used when loading the users from the backend servers. This takes a boolean value and when enabled, creates a union of all the users and grants on all the servers.
 
 
-#### `<code>strip_db_esc</code>`
+#### `strip_db_esc`
 
 
 The strip_db_esc parameter strips escape characters from database names of grants when loading the users from the backend server. Some visual database management tools automatically escape some characters and this might cause conflicts when MaxScale tries to authenticate users.
 
 
-This parameter takes a boolean value and when enabled, will strip all `<code>\</code>` characters from the database names.
+This parameter takes a boolean value and when enabled, will strip all `\` characters from the database names.
 
 
-#### `<code>optimize_wildcard</code>`
+#### `optimize_wildcard`
 
 
 Enabling this feature will transform wildcard grants to individual database grants. This will consume more memory but authentication in MaxScale will be done faster. The parameter takes a boolean value.
 
 
-#### `<code>retry_on_failure</code>`
+#### `retry_on_failure`
 
 
 The retry_on_failure parameter controls whether MaxScale will try to restart failed services and accepts a boolean value. This functionality is enabled by default to prevent services being permanently disabled if the starting of the service failed due to a network outage. Disabling the restarting of the failed services will cause them to be permanently disabled if the services can't be started when MaxScale is started.
 
 
-#### `<code>log_auth_warnings</code>`
+#### `log_auth_warnings`
 
 
 Enable or disable the logging of authentication failures and warnings. This parameter takes a boolean value.
@@ -782,7 +782,7 @@ Enable or disable the logging of authentication failures and warnings. This para
 MaxScale normally suppresses warning messages about failed authentication. Enabling this option will log those messages into the message log with details about who tried to connect to MaxScale and from where.
 
 
-#### `<code>connection_timeout</code>`
+#### `connection_timeout`
 
 
 The connection_timeout parameter is used to disconnect sessions to MaxScale that have been idle for too long. The session timeouts are disabled by default. To enable them, define the timeout in seconds in the service's configuration section.
@@ -816,25 +816,25 @@ protocol=MySQLBackend
 
 
 
-#### `<code>address</code>`
+#### `address`
 
 
 The IP address or hostname of the machine running the database server that is being defined. MaxScale will use this address to connect to the backend database server.
 
 
-#### `<code>port</code>`
+#### `port`
 
 
 The port on which the database listens for incoming connections. MaxScale will use this port to connect to the database server.
 
 
-#### `<code>protocol</code>`
+#### `protocol`
 
 
 The name for the protocol module to use to connect MaxScale to the database. Currently only one backend protocol is supported, the MySQLBackend module.
 
 
-#### `<code>monitoruser</code>`
+#### `monitoruser`
 
 
 The monitor has a username and password that is used to connect to all servers for monitoring purposes, this may be overridden by supplying a monitoruser statement for each individual server
@@ -847,7 +847,7 @@ monitoruser=mymonitoruser
 
 
 
-#### `<code>monitorpw</code>`
+#### `monitorpw`
 
 
 The monitor has a username and password that is used to connect to all servers for monitoring purposes, this may be overridden by supplying a monpasswd statement for the individual servers
@@ -863,20 +863,20 @@ monitorpw=mymonitorpasswd
 The monpasswd parameter may be either a plain text password or it may be an encrypted password. See the section on encrypting passwords for use in the maxscale.cnf file.
 
 
-#### `<code>persistpoolmax</code>`
+#### `persistpoolmax`
 
 
-The `<code>persistpoolmax</code>` parameter defaults to zero but can be set to an integer value for a back end server.
+The `persistpoolmax` parameter defaults to zero but can be set to an integer value for a back end server.
 If it is non zero, then when a DCB connected to a back end server is discarded by the
 system, it will be held in a pool for reuse, remaining connected to the back end server.
-If the number of DCBs in the pool has reached the value given by `<code>persistpoolmax</code>` then
+If the number of DCBs in the pool has reached the value given by `persistpoolmax` then
 any further DCB that is discarded will not be retained, but disconnected and discarded.
 
 
-#### `<code>persistmaxtime</code>`
+#### `persistmaxtime`
 
 
-The `<code>persistmaxtime</code>` parameter defaults to zero but can be set to an integer value
+The `persistmaxtime` parameter defaults to zero but can be set to an integer value
 indicating a number of seconds. A DCB placed in the persistent pool for a server will
 only be reused if the elapsed time since it joined the pool is less than the given
 value. Otherwise, the DCB will be discarded and the connection closed.
@@ -904,34 +904,34 @@ socket=<Socket path>
 
 
 
-#### `<code>service</code>`
+#### `service`
 
 
 The service to which the listener is associated. This is the name of a service that is defined elsewhere in the configuration file.
 
 
-#### `<code>protocol</code>`
+#### `protocol`
 
 
 The name of the protocol module that is used for the communication between the client and MaxScale itself.
 
 
-#### `<code>address</code>`
+#### `address`
 
 
 The address option sets the address that will be used to bind the listening socket. The address may be specified as an IP address in 'dot notation' or as a hostname. If the address option is not included in the listener definition the listener will bind to all network interfaces.
 
 
-#### `<code>port</code>`
+#### `port`
 
 
 The port to use to listen for incoming connections to MaxScale from the clients. If the port is omitted from the configuration a default port for the protocol will be used.
 
 
-#### `<code>socket</code>`
+#### `socket`
 
 
-The `<code>socket</code>` option may be included in a listener definition, this configures the listener to use Unix domain sockets to listen for incoming connections. The parameter value given is the name of the socket to use.
+The `socket` option may be included in a listener definition, this configures the listener to use Unix domain sockets to listen for incoming connections. The parameter value given is the name of the socket to use.
 
 
 If a socket option and an address option is given then the listener will listen on both the specific IP address and the Unix socket.
@@ -943,31 +943,31 @@ If a socket option and an address option is given then the listener will listen 
 The protocols supported by MaxScale are implemented as external modules that are loaded dynamically into the MaxScale core. They allow MaxScale to communicate in various protocols both on the client side and the backend side. Each of the protocols can be either a client protocol or a backend protocol. Client protocols are used for client-MaxScale communication and backend protocols are for MaxScale-database communication.
 
 
-##### `<code>MySQLClient</code>`
+##### `MySQLClient`
 
 
 This is the implementation of the MySQL protocol that is used by clients of MaxScale to connect to MaxScale.
 
 
-##### `<code>MySQLBackend</code>`
+##### `MySQLBackend`
 
 
 The MySQLBackend protocol module is the implementation of the protocol that MaxScale uses to connect to the backend MySQL, MariaDB and Percona Server databases. This implementation is tailored for the MaxScale to MySQL Database traffic and is not a general purpose implementation of the MySQL protocol.
 
 
-##### `<code>telnetd</code>`
+##### `telnetd`
 
 
 The telnetd protocol module is used for connections to MaxScale itself for the purposes of creating interactive user sessions with the MaxScale instance itself. Currently this is used in conjunction with a special router implementation, the debugcli.
 
 
-##### `<code>maxscaled</code>`
+##### `maxscaled`
 
 
 The protocol used used by the maxadmin client application in order to connect to MaxScale and access the command line interface.
 
 
-##### `<code>HTTPD</code>`
+##### `HTTPD`
 
 
 This protocol module is currently still under development, it provides a means to create HTTP connections to MaxScale for use by web browsers or RESTful API clients.
@@ -976,34 +976,34 @@ This protocol module is currently still under development, it provides a means t
 ### Listener and SSL
 
 
-This section describes configuration parameters for listeners that control the SSL/TLS encryption method and the various certificate files involved in it. To enable SSL, you must configure the `<code>ssl</code>` parameter to the value `<code>required</code>` and provide the three files for `<code>ssl_cert</code>`, `<code>ssl_key</code>` and `<code>ssl_ca_cert</code>`. After this, MySQL connections to this listener will be encrypted with SSL. Attempts to connect to the listener with a non-SSL client will fail. Note that the same service can have an SSL listener and a non-SSL listener if you wish, although they must be on different ports.
+This section describes configuration parameters for listeners that control the SSL/TLS encryption method and the various certificate files involved in it. To enable SSL, you must configure the `ssl` parameter to the value `required` and provide the three files for `ssl_cert`, `ssl_key` and `ssl_ca_cert`. After this, MySQL connections to this listener will be encrypted with SSL. Attempts to connect to the listener with a non-SSL client will fail. Note that the same service can have an SSL listener and a non-SSL listener if you wish, although they must be on different ports.
 
 
-#### `<code>ssl</code>`
+#### `ssl`
 
 
-This enables SSL connections to the listener, when set to `<code>required</code>`. If that is done, the three certificate files mentioned below must also be supplied. Client connections to this listener will then be encrypted with SSL. Non-SSL connections will get an error when they try to connect to the listener.
+This enables SSL connections to the listener, when set to `required`. If that is done, the three certificate files mentioned below must also be supplied. Client connections to this listener will then be encrypted with SSL. Non-SSL connections will get an error when they try to connect to the listener.
 
 
-#### `<code>ssl_key</code>`
+#### `ssl_key`
 
 
 A string giving a file path that identifies an existing readable file. The file must be the SSL private key the listener should use. This will be the private key that is used as the server side private key during a client-server SSL handshake. This is a required parameter for SSL enabled listeners.
 
 
-#### `<code>ssl_cert</code>`
+#### `ssl_cert`
 
 
 A string giving a file path that identifies an existing readable file. The file must be the SSL certificate the listener should use. This will be the public certificate that is used as the server side certificate during a client-server SSL handshake. This is a required parameter for SSL enabled listeners. The certificate must be compatible with the key defined above.
 
 
-#### `<code>ssl_ca_cert</code>`
+#### `ssl_ca_cert`
 
 
 A string giving a file path that identifies an existing readable file. The file must be the SSL Certificate Authority (CA) certificate for the CA that signed the server certificate referred to in the previous parameter. It will be used to verify that the server certificate is valid. This is a required parameter for SSL enabled listeners.
 
 
-#### `<code>ssl_version</code>`
+#### `ssl_version`
 
 
 This parameter controls the level of encryption used. Accepted values are:
@@ -1013,13 +1013,13 @@ This parameter controls the level of encryption used. Accepted values are:
  * MAX
 
 
-`<code>MAX</code>` is the maximum available TLS version which at the time of writing is TLSv1.2.
+`MAX` is the maximum available TLS version which at the time of writing is TLSv1.2.
 
 
-#### `<code>ssl_cert_verification_depth</code>`
+#### `ssl_cert_verification_depth`
 
 
-The maximum length of the certificate authority chain that will be accepted. Legal values are positive integers. Note that if the client is to submit an SSL certificate, the `<code>ssl_cert_verification_depth</code>` parameter must not be 0. If no value is specified, the default is 9.
+The maximum length of the certificate authority chain that will be accepted. Legal values are positive integers. Note that if the client is to submit an SSL certificate, the `ssl_cert_verification_depth` parameter must not be 0. If no value is specified, the default is 9.
 
 
 
@@ -1129,7 +1129,7 @@ The [Filter Tutorial](../maxscale-14-tutorials/tutorials-maxscale-filters.md) do
 ## Reloading Configuration
 
 
-The current MaxScale configuration may be updated by editing the configuration file and then forcing MaxScale to reread the configuration file. To force MaxScale to reread the configuration file, send a SIGHUP signal to the MaxScale process or execute `<code>reload config</code>` in the `<code>maxadmin</code>` client.
+The current MaxScale configuration may be updated by editing the configuration file and then forcing MaxScale to reread the configuration file. To force MaxScale to reread the configuration file, send a SIGHUP signal to the MaxScale process or execute `reload config` in the `maxadmin` client.
 
 
 Some changes in configuration can not be dynamically applied and require a complete restart of MaxScale, whilst others will take some time to be applied.
@@ -1156,7 +1156,7 @@ MySQL uses username, passwords and the client host in order to authenticate a us
 It is important to understand, however, that when MaxScale itself makes connections to the backend servers the backend server will see all connections as originating from the host that runs MaxScale and not the original host from which the client connected to MaxScale. Therefore the backend servers should be configured to allow connections from the MaxScale host for every user that can connect from any host. Since there is only a single password within the database server for a given host, this limits the configuration such that a given user name must have the same password for every host from which they can connect.
 
 
-To clarify, if a user *X* is defined as using password *pass1* from host *a* and *pass2* from host *b* then there must be an entry in the `<code>user</code>` table for user *X* from the MaxScale host, say *pass1*.
+To clarify, if a user *X* is defined as using password *pass1* from host *a* and *pass2* from host *b* then there must be an entry in the `user` table for user *X* from the MaxScale host, say *pass1*.
 
 
 This would result in rows in the user table as follows
@@ -1228,7 +1228,7 @@ Note that currently wildcards are only supported in conjunction with IP-addresse
 ## Error Reporting
 
 
-MaxScale is designed to be executed as a service, therefore all error reports, including configuration errors, are written to the MaxScale error log file. By default, MaxScale will log to a file in `<code>/var/log/maxscale</code>`, the only exception to this is if the log directory is not writable, in which case a message is sent to the standard error descriptor.
+MaxScale is designed to be executed as a service, therefore all error reports, including configuration errors, are written to the MaxScale error log file. By default, MaxScale will log to a file in `/var/log/maxscale`, the only exception to this is if the log directory is not writable, in which case a message is sent to the standard error descriptor.
 
 
 ### Troubleshooting
@@ -1260,4 +1260,4 @@ socket=/servers/maxscale/galera.sock
 TCP/IP Traffic must be permitted to 192.168.3.33 port 4408
 
 
-For Unix socket, the socket file path (example: `<code>/servers/maxscale/galera.sock</code>`) must be writable by the Unix user MaxScale runs as.
+For Unix socket, the socket file path (example: `/servers/maxscale/galera.sock`) must be writable by the Unix user MaxScale runs as.

@@ -52,7 +52,7 @@ A USER_VAR_EVENT is written every time a statement uses a user defined variable.
 
 
 
-#### Example for `<code>SET @foo:="bar"</code>`from mysqlbinlog Utility, CRC32
+#### Example for `SET @foo:="bar"`from mysqlbinlog Utility, CRC32
 
 
 ```

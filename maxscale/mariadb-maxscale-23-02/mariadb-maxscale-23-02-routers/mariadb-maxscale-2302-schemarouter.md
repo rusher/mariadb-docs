@@ -25,18 +25,18 @@ ERROR 5000 (DUPDB): Error: duplicate tables found on two different shards.
 
 
 
-The exception to this rule are the system tables `<code>mysql</code>`, `<code>information_schema</code>`,
-`<code>performance_schema</code>`, `<code>sys</code>` that are never treated as duplicates.
+The exception to this rule are the system tables `mysql`, `information_schema`,
+`performance_schema`, `sys` that are never treated as duplicates.
 
 
 If duplicate tables are expected, use the
 [ignore_tables_regex](#ignore_tables_regex) parameter to controls which
 duplicate tables are allowed. To disable the duplicate database detection, use
-`<code>ignore_tables_regex=.*</code>`.
+`ignore_tables_regex=.*`.
 
 
 Schemarouter compares table and database names case-insensitively. This means
-that the tables `<code>test.t1</code>` and `<code>test.T1</code>` are assumed to refer to the same table.
+that the tables `test.t1` and `test.T1` are assumed to refer to the same table.
 
 
 The main limitation of SchemaRouter is that aside from session variable writes
@@ -51,9 +51,9 @@ From 2.3.0 onwards, SchemaRouter is capable of limited table family sharding.
 ## Changes in Version 6
 
 
-* The `<code>auth_all_servers</code>` parameter is no longer automatically enabled by the
+* The `auth_all_servers` parameter is no longer automatically enabled by the
  schemarouter. To retain the old behavior that was present in 2.5, explicitly
- define `<code>auth_all_servers=true</code>` for all schemarouter services.
+ define `auth_all_servers=true` for all schemarouter services.
 
 
 
@@ -86,11 +86,11 @@ From 2.3.0 onwards, SchemaRouter is capable of limited table family sharding.
 
 
 * If a command modifies the session state by modifying any session or user
- variables, the query is routed to all nodes. These statements include `<code>SET</code>`
+ variables, the query is routed to all nodes. These statements include `SET`
  statements as well as any other statements that modify the behavior of the
  client.
-* If a client changes the default database after connecting, either with a `<code>USE
- <db></code>` query or a `<code>COM_INIT_DB</code>` command, the query is routed to all servers
+* If a client changes the default database after connecting, either with a `USE
+ <db>` query or a `COM_INIT_DB` command, the query is routed to all servers
  that contain the database. This same logic applies when a client connects with
  a default database: the default database is set only on servers that actually
  contain it.
@@ -102,7 +102,7 @@ From 2.3.0 onwards, SchemaRouter is capable of limited table family sharding.
  doesn't define the database it is in, it is assumed to be located on the
  default database of the connection.
 * If a query targets a table or a database that is present on all nodes
- (e.g. `<code>information_schema</code>`) and the connection is using a default database,
+ (e.g. `information_schema`) and the connection is using a default database,
  the query is routed based on the default database. This makes it possible to
  control where queries that do match a specifc node are routed. If the
  connection is not using a default database, the query is routed based solely
@@ -121,12 +121,12 @@ This means that all administrative commands, replication related command as
  hints to direct where these statements should go.
 
 
-* Starting with MaxScale 6.4.5, transaction control commands (`<code>BEGIN</code>`, `<code>COMMIT</code>`
- and `<code>ROLLBACK</code>`) are routed to all nodes. Older versions of MaxScale routed the
+* Starting with MaxScale 6.4.5, transaction control commands (`BEGIN`, `COMMIT`
+ and `ROLLBACK`) are routed to all nodes. Older versions of MaxScale routed the
  queries to the first available backend. This means that cross-shard
  transactions are technically possible but, without external synchronization,
  the transactions are not guaranteed to be globally consistent.
-* `<code>LOAD DATA LOCAL INFILE</code>` commands are routed to the first available server
+* `LOAD DATA LOCAL INFILE` commands are routed to the first available server
  that contains the tables listed in the query.
 
 
@@ -134,7 +134,7 @@ This means that all administrative commands, replication related command as
 
 
 To check how databases and tables map to servers, execute the special query
-`<code>SHOW SHARDS</code>`. The query does not support any modifiers such as `<code>LIKE</code>`.
+`SHOW SHARDS`. The query does not support any modifiers such as `LIKE`.
 
 
 
@@ -150,7 +150,7 @@ db2.t1   |MyServer2    |
 
 
 
-The schemarouter will also intercept the `<code>SHOW DATABASES</code>` command and generate
+The schemarouter will also intercept the `SHOW DATABASES` command and generate
 it based on its internal data. This means that newly created databases will not
 show up immediately and will only be visible when the cached data has been
 updated.
@@ -163,7 +163,7 @@ The schemarouter maps each of the servers to know where each database and table
 is located. As each user has access to a different set of tables and databases,
 the result is unique to the username and the set of servers that the service
 uses. These results are cached by the schemarouter. The lifetime of the cached
-result is controlled by the `<code>refresh_interval</code>` parameter.
+result is controlled by the `refresh_interval` parameter.
 
 
 When a server needs to be mapped, the schemarouter will route a query to each of
@@ -206,15 +206,15 @@ the databases that need be sharded.
 
 If you are connecting directly to a database or have different users on some
 of the servers, you need to get the authentication data from all the
-servers. You can control this with the `<code>auth_all_servers</code>` parameter. With
+servers. You can control this with the `auth_all_servers` parameter. With
 this parameter, MariaDB MaxScale forms a union of all the users and their
 grants from all the servers. By default, the schemarouter will fetch the
 authentication data from all servers.
 
 
-For example, if two servers have the database `<code>shard</code>` and the following
+For example, if two servers have the database `shard` and the following
 rights are granted only on one server, all queries targeting the database
-`<code>shard</code>` would be routed to the server where the grants were given.
+`shard` would be routed to the server where the grants were given.
 
 
 
@@ -238,29 +238,29 @@ MaxScale's hostname.
 ## Router Parameters
 
 
-### `<code>ignore_tables</code>`
+### `ignore_tables`
 
 
 * Type: stringlist
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 List of full table names (e.g. db1.t1) to ignore when checking for duplicate
 tables. By default no tables are ignored.
 
 
-This parameter was once called `<code>ignore_databases</code>`.
+This parameter was once called `ignore_databases`.
 
 
-### `<code>ignore_tables_regex</code>`
+### `ignore_tables_regex`
 
 
 * Type: [regex](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 A [PCRE2 regular expression](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#regular-expressions)
@@ -268,8 +268,8 @@ that is matched against database names when checking for duplicate databases.
 By default no tables are ignored.
 
 
-The following configuration ignores duplicate tables in the databases `<code>db1</code>` and `<code>db2</code>`,
-and all tables starting with "t" in `<code>db3</code>`.
+The following configuration ignores duplicate tables in the databases `db1` and `db2`,
+and all tables starting with "t" in `db3`.
 
 
 
@@ -285,10 +285,10 @@ ignore_tables_regex=^db1|^db2|^db3\.t
 
 
 
-This parameter was once called `<code>ignore_databases_regex</code>`.
+This parameter was once called `ignore_databases_regex`.
 
 
-### `<code>max_sescmd_history</code>`
+### `max_sescmd_history`
 
 
 This parameter has been moved to
@@ -296,7 +296,7 @@ This parameter has been moved to
 in MaxScale 6.0.
 
 
-### `<code>disable_sescmd_history</code>`
+### `disable_sescmd_history`
 
 
 This parameter has been moved to
@@ -304,17 +304,17 @@ This parameter has been moved to
 in MaxScale 6.0.
 
 
-### `<code>refresh_databases</code>`
+### `refresh_databases`
 
 
 * Type: [boolean](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 Enable database map refreshing mid-session. These are triggered by a failure to
-change the database i.e. `<code>USE ...</code>` queries. This feature is disabled by default.
+change the database i.e. `USE ...` queries. This feature is disabled by default.
 
 
 Before MaxScale 6.2.0, this parameter did nothing. Starting with the 6.2.0
@@ -322,13 +322,13 @@ release of MaxScale this parameter now works again but it is disabled by default
 to retain the same behavior as in older releases.
 
 
-### `<code>refresh_interval</code>`
+### `refresh_interval`
 
 
 * Type: [duration](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>300s</code>`
+* Default: `300s`
 
 
 The minimum interval between database map refreshes in seconds. The default
@@ -354,10 +354,10 @@ tables in each server, SchemaRouter is capable of routing queries to the right s
 depending on which table is being addressed.
 
 
-As an example, suppose the database `<code>db</code>` exists on servers *server1* and *server2*, but
-that the database on *server1* contains the table `<code>tbl1</code>` and on *server2* contains the
-table `<code>tbl2</code>`. The query `<code>SELECT * FROM db.tbl1</code>` will be routed to *server1* and the query
-`<code>SELECT * FROM db.tbl2</code>` will be routed to *server2*. As in the example queries, the table
+As an example, suppose the database `db` exists on servers *server1* and *server2*, but
+that the database on *server1* contains the table `tbl1` and on *server2* contains the
+table `tbl2`. The query `SELECT * FROM db.tbl1` will be routed to *server1* and the query
+`SELECT * FROM db.tbl2` will be routed to *server2*. As in the example queries, the table
 names must be qualified with the database names for table-level sharding to work.
 Specifically, the query series below is not supported.
 
@@ -373,39 +373,39 @@ SELECT * FROM tbl1; // May be routed to an incorrect backend if using table shar
 ## Router Diagnostics
 
 
-The `<code>router_diagnostics</code>` output for a schemarouter service contains the
+The `router_diagnostics` output for a schemarouter service contains the
 following fields.
 
 
-* `<code>queries</code>`: Number of queries executed through this service.
-* `<code>sescmd_percentage</code>`: The percentage of queries that were session commands.
-* `<code>longest_sescmd_chain</code>`: The largest amount of session commands executed by one client session.
-* `<code>times_sescmd_limit_exceeded</code>`: Number of times the session command history limit was exceeded.
-* `<code>longest_session</code>`: The longest client session in seconds.
-* `<code>shortest_session</code>`: The shortest client session in seconds.
-* `<code>average_session</code>`: The average client session duration in seconds.
-* `<code>shard_map_hits</code>`: Cache hits for the shard map cache.
-* `<code>shard_map_misses</code>`: Cache misses for the shard map cache.
+* `queries`: Number of queries executed through this service.
+* `sescmd_percentage`: The percentage of queries that were session commands.
+* `longest_sescmd_chain`: The largest amount of session commands executed by one client session.
+* `times_sescmd_limit_exceeded`: Number of times the session command history limit was exceeded.
+* `longest_session`: The longest client session in seconds.
+* `shortest_session`: The shortest client session in seconds.
+* `average_session`: The average client session duration in seconds.
+* `shard_map_hits`: Cache hits for the shard map cache.
+* `shard_map_misses`: Cache misses for the shard map cache.
 
 
 ## Limitations
 
 
-* Cross-database queries (e.g. `<code>SELECT column FROM database1.table UNION select column
-FROM database2.table</code>`) are not properly supported. Such queries are routed either to the
+* Cross-database queries (e.g. `SELECT column FROM database1.table UNION select column
+FROM database2.table`) are not properly supported. Such queries are routed either to the
 first explicit database in the query, the current database in use or to the first
 available database, depending on which succeeds.
 * Without a default database, queries that do not use fully qualified table
-names and which do not modify the session state (e.g. `<code>SELECT * FROM t1</code>`) will
+names and which do not modify the session state (e.g. `SELECT * FROM t1`) will
 be routed to the first available server. This includes queries such as explicit
-transaction commands (`<code>BEGIN</code>`, `<code>COMMIT</code>`, `<code>ROLLBACK</code>`), all non-table `<code>CREATE</code>`
-commands (`<code>CREATE DATABASE</code>`, `<code>CREATE SEQUENCE</code>`) as well as any `<code>SELECT</code>`
-statements that do not directly refer to a table. `<code>CREATE</code>` commands should be
+transaction commands (`BEGIN`, `COMMIT`, `ROLLBACK`), all non-table `CREATE`
+commands (`CREATE DATABASE`, `CREATE SEQUENCE`) as well as any `SELECT`
+statements that do not directly refer to a table. `CREATE` commands should be
 done directly on the node or the router should be equipped with the hint filter
 and a routing hint should be used. Queries that modify the session state
-(e.g. `<code>SET autocommit=1</code>`) will be routed to all servers regardless of the
-default database. For explicit transactions, the recommended way is to use `<code>SET
-autocommit=0</code>` to start a transaction and `<code>SET autocommit=1</code>` to commit it,
+(e.g. `SET autocommit=1`) will be routed to all servers regardless of the
+default database. For explicit transactions, the recommended way is to use `SET
+autocommit=0` to start a transaction and `SET autocommit=1` to commit it,
 otherwise routing hints are required to correctly route the transaction control
 commands. [MXS-4467](https://jira.mariadb.org/browse/MXS-4467) changed the
 routing of transaction control commands to route them to all servers used by the
@@ -419,17 +419,17 @@ error about database rights instead of a missing database.
 * Prepared statement support is limited. PREPARE, EXECUTE and DEALLOCATE are routed to the
 correct backend if the statement is known and only requires one backend server. EXECUTE
 IMMEADIATE is not supported and is routed to the first available backend and may give
-wrong results. Similarly, preparing a statement from a variable (e.g. `<code>PREPARE stmt FROM
-@a</code>`) is not supported and may be routed wrong.
-* `<code>SHOW DATABASES</code>` is handled by the router instead of routed to a server. The router only
-answers correctly to the basic version of the query. Any modifiers such as `<code>LIKE</code>` are
+wrong results. Similarly, preparing a statement from a variable (e.g. `PREPARE stmt FROM
+@a`) is not supported and may be routed wrong.
+* `SHOW DATABASES` is handled by the router instead of routed to a server. The router only
+answers correctly to the basic version of the query. Any modifiers such as `LIKE` are
 ignored. Starting with MaxScale 22.08, the database names will always be in lowercase.
-* `<code>SHOW TABLES</code>` is routed to the server with the current database. If using
-table-level sharding, the results will be incomplete. Similarly, `<code>SHOW TABLES
-FROM db1</code>` is routed to the server with database `<code>db1</code>`, ignoring table
-sharding. Use `<code>SHOW SHARDS</code>` to get results from the router itself. Starting with
+* `SHOW TABLES` is routed to the server with the current database. If using
+table-level sharding, the results will be incomplete. Similarly, `SHOW TABLES
+FROM db1` is routed to the server with database `db1`, ignoring table
+sharding. Use `SHOW SHARDS` to get results from the router itself. Starting with
 MaxScale 22.08, the database names will always be in lowercase.
-* `<code>USE db1</code>` is routed to the server with `<code>db1</code>`. If the database is divided to multiple
+* `USE db1` is routed to the server with `db1`. If the database is divided to multiple
 servers, only one server will get the command.
 
 

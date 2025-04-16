@@ -11,7 +11,7 @@ SHA1(str), SHA(str)
 ## Description
 
 
-Calculates an SHA-1 160-bit checksum for the string *`<code>str</code>`*, as described in
+Calculates an SHA-1 160-bit checksum for the string *`str`*, as described in
 RFC 3174 (Secure Hash Algorithm).
 
 

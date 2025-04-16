@@ -39,16 +39,16 @@ You can find some benchmark results comparing various settings on the [Segmented
 
 
 New global variable: [key_cache_segments](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_segments). This variable sets the number of segments in a key cache. Valid values for this variable are whole
-numbers between `<code>0</code>` and `<code>64</code>`. If the number of segments is set to a number
-greater than `<code>64</code>` the number of segments will be truncated to 64 and a warning will be issued.
+numbers between `0` and `64`. If the number of segments is set to a number
+greater than `64` the number of segments will be truncated to 64 and a warning will be issued.
 
 
-A value of `<code>0</code>` means the key cache is a regular (i.e. non-segmented)
-key cache. This is the default. If `<code>key_cache_segments</code>` is 
-`<code>1</code>` (or higher) then the new key cache segmentation code is used. In
+A value of `0` means the key cache is a regular (i.e. non-segmented)
+key cache. This is the default. If `key_cache_segments` is 
+`1` (or higher) then the new key cache segmentation code is used. In
 practice there is no practical use of a single-segment segmented key cache except
 for testing purposes, and setting 
-`<code class="fixed" style="white-space:pre-wrap">key_cache_segments = 1</code>` should be slower than any other option and 
+`key_cache_segments = 1` should be slower than any other option and 
 should not be used in production.
 
 

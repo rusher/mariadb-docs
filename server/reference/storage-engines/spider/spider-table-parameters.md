@@ -1,64 +1,64 @@
 
 # Spider Table Parameters
 
-When a table uses the [Spider](spider-functions/spider_copy_tables.md) storage engine, the following Spider table parameters can be set in the `<code>COMMENT</code>` clause of the [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md) statement. Many Spider table parameters have corresponding system variables, so they can be set for all Spider tables on the node. For additional information, see the [Spider System Variables](spider-system-variables.md) page.
+When a table uses the [Spider](spider-functions/spider_copy_tables.md) storage engine, the following Spider table parameters can be set in the `COMMENT` clause of the [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md) statement. Many Spider table parameters have corresponding system variables, so they can be set for all Spider tables on the node. For additional information, see the [Spider System Variables](spider-system-variables.md) page.
 
 
-From [MariaDB 11.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-113.md), many table parameters can be set using dedicated Spider table options, see the Table Option Name fields below. From [MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), using the `<code>COMMENT</code>` clause is deprecated, as well as table parameters that do not have corresponding table options.
+From [MariaDB 11.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-113.md), many table parameters can be set using dedicated Spider table options, see the Table Option Name fields below. From [MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), using the `COMMENT` clause is deprecated, as well as table parameters that do not have corresponding table options.
 
 
 
-#### `<code>access_balances</code>`
+#### `access_balances`
 
 
 * Description: Connection load balancing integer weight.
-* Default Table Value: `<code>0</code>`
-* DSN Parameter Name: `<code>abl</code>`
+* Default Table Value: `0`
+* DSN Parameter Name: `abl`
 * Deprecated: [MariaDB 11.4.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes.md)
 
 
-#### `<code>active_link_count</code>`
+#### `active_link_count`
 
 
 * Description: Number of active remote servers, for use in load balancing read connections
-* Default Table Value: `<code>all backends</code>`
-* DSN Parameter Name: `<code>alc</code>`
+* Default Table Value: `all backends`
+* DSN Parameter Name: `alc`
 * Deprecated: [MariaDB 11.4.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes.md)
 
 
-#### `<code>auto_increment_mode</code>`
+#### `auto_increment_mode`
 
 
 * Description: The table level value of [spider_auto_increment_mode](spider-system-variables.md#spider_auto_increment_mode)
-* Table Option Name: `<code>AUTO_INCREMENT_MODE</code>`
+* Table Option Name: `AUTO_INCREMENT_MODE`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>bgs_mode</code>`
+#### `bgs_mode`
 
 
 * Description: The table level value of [spider_bgs_mode](spider-system-variables.md#spider_bgs_mode).
-* Table Option Name: `<code>BGS_MODE</code>`
+* Table Option Name: `BGS_MODE`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>bulk_size</code>`
+#### `bulk_size`
 
 
 * Description: The table level value of [spider_bulk_size](spider-system-variables.md#spider_bulk_size).
-* Table Option Name: `<code>BULK_SIZE</code>`
+* Table Option Name: `BULK_SIZE`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>bulk_update_size</code>`
+#### `bulk_update_size`
 
 
 * Description: The table level value of [spider_bulk_update_size](spider-system-variables.md#spider_bulk_update_size).
-* Table Option Name: `<code>BULK_UPDATE_SIZE</code>`
+* Table Option Name: `BULK_UPDATE_SIZE`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>casual_read</code>`
+#### `casual_read`
 
 
 * Description:
@@ -68,395 +68,395 @@ From [MariaDB 11.3](../../../../release-notes/mariadb-community-server/what-is-m
 * Deprecated: [MariaDB 11.4.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes.md)
 
 
-#### `<code>connect_timeout</code>`
+#### `connect_timeout`
 
 
 * Description: The table level value of [spider_connect_timeout](spider-system-variables.md#spider_connect_timeout).
-* Table Option Name: `<code>CONNECT_TIMEOUT</code>`
+* Table Option Name: `CONNECT_TIMEOUT`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>database</code>`
+#### `database`
 
 
 * Description: Database name for reference table that exists on remote backend server.
-* Default Table Value: `<code>local table database</code>`
-* DSN Parameter Name: `<code>database</code>`
-* Table Option Name: `<code>REMOTE_DATABASE</code>`
+* Default Table Value: `local table database`
+* DSN Parameter Name: `database`
+* Table Option Name: `REMOTE_DATABASE`
 * Table Option Introduced: [MariaDB 10.8.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes.md)
 
 
-#### `<code>default_file</code>`
+#### `default_file`
 
 
-* Description: Configuration file used when connecting to remote servers. When the `<code>[default_group](#default_group)</code>` table variable is set, this variable defaults to the values of the `<code>--defaults-extra-file</code>` or `<code>--defaults-file</code>` options. When the `<code>[default_group](#default_group)</code>` table variable is not set, it defaults to `<code>none</code>`.
-* Default Table Value: `<code>none</code>`
-* DSN Parameter Name: `<code>dff</code>`
-* Table Option Name: `<code>DEFAULT_FILE</code>`
+* Description: Configuration file used when connecting to remote servers. When the `[default_group](#default_group)` table variable is set, this variable defaults to the values of the `--defaults-extra-file` or `--defaults-file` options. When the `[default_group](#default_group)` table variable is not set, it defaults to `none`.
+* Default Table Value: `none`
+* DSN Parameter Name: `dff`
+* Table Option Name: `DEFAULT_FILE`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>default_group</code>`
+#### `default_group`
 
 
 * Description: Group name in configuration file used when connecting to remote servers.
-* Default Table Value: `<code>none</code>`
-* DSN Parameter Name: `<code>dfg</code>`
-* Table Option Name: `<code>DEFAULT_GROUP</code>`
+* Default Table Value: `none`
+* DSN Parameter Name: `dfg`
+* Table Option Name: `DEFAULT_GROUP`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>delete_all_rows_type</code>`
+#### `delete_all_rows_type`
 
 
 * Description: The table level value of [spider_delete_all_rows_type](spider-system-variables.md#spider_delete_all_rows_type).
 * Introduced: Spider 3.2
-* Table Option Name: `<code>DELETE_ALL_ROWS_TYPE</code>`
+* Table Option Name: `DELETE_ALL_ROWS_TYPE`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>force_bulk_delete</code>`
+#### `force_bulk_delete`
 
 
 * Description:
 * Introduced: [MariaDB 10.0.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes.md)
-* Table Option Name: `<code>FORCE_BULK_DELETE</code>`
+* Table Option Name: `FORCE_BULK_DELETE`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>force_bulk_update</code>`
+#### `force_bulk_update`
 
 
 * Description:
 * Introduced: [MariaDB 10.0.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes.md)
-* Table Option Name: `<code>FORCE_BULK_UPDATE</code>`
+* Table Option Name: `FORCE_BULK_UPDATE`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>host</code>`
+#### `host`
 
 
 * Description: Host name of remote server.
-* Default Table Value: `<code>localhost</code>`
-* DSN Parameter Name: `<code>host</code>`
-* Table Option Name: `<code>REMOTE_HOST</code>`
+* Default Table Value: `localhost`
+* DSN Parameter Name: `host`
+* Table Option Name: `REMOTE_HOST`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>idx000</code>`
+#### `idx000`
 
 
-* Description: When using an index on Spider tables for searching, Spider uses this hint to search the remote table. The remote table index is related to the Spider table index by this hint. The number represented by `<code>000</code>` is the index ID, which is the number of the index shown by the `<code>[SHOW CREATE TABLE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md)</code>` statement. `<code>000</code>` is the Primary Key. For instance, `<code>idx000 "force index(PRIMARY)"</code>` (in abbreviated format `<code>idx000 "f PRIMARY"</code>`).
+* Description: When using an index on Spider tables for searching, Spider uses this hint to search the remote table. The remote table index is related to the Spider table index by this hint. The number represented by `000` is the index ID, which is the number of the index shown by the `[SHOW CREATE TABLE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md)` statement. `000` is the Primary Key. For instance, `idx000 "force index(PRIMARY)"` (in abbreviated format `idx000 "f PRIMARY"`).
 
-  * `<code>f</code>` force index
-  * `<code>u</code>` use index
-  * `<code>ig</code>` ignore index
-* Default Table Value: `<code>none</code>`
-* Table Option Name: `<code>IDX</code>`
+  * `f` force index
+  * `u` use index
+  * `ig` ignore index
+* Default Table Value: `none`
+* Table Option Name: `IDX`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>link_status</code>`
+#### `link_status`
 
 
 * Description: Change status of the remote backend server link.
 
-  * `<code>0</code>` Doesn't change status.
-  * `<code>1</code>` Changes status to `<code>OK</code>`.
-  * `<code>2</code>` Changes status to `<code>RECOVERY</code>`.
-  * `<code>3</code>` Changes status to no more in group communication.
-* Default Table Value: `<code>0</code>`
-* DSN Parameter Name: `<code>lst</code>`
+  * `0` Doesn't change status.
+  * `1` Changes status to `OK`.
+  * `2` Changes status to `RECOVERY`.
+  * `3` Changes status to no more in group communication.
+* Default Table Value: `0`
+* DSN Parameter Name: `lst`
 * Deprecated: [MariaDB 11.4.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes.md)
 
 
-#### `<code>monitoring_bg_interval</code>`
+#### `monitoring_bg_interval`
 
 
 * Description: Interval of background monitoring in microseconds.
-* Default Table Value: `<code>10000000</code>`
-* DSN Parameter Name: `<code>mbi</code>`
+* Default Table Value: `10000000`
+* DSN Parameter Name: `mbi`
 * Deprecated: [MariaDB 11.4.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes.md)
 
 
-#### `<code>monitoring_bg_kind</code>`
+#### `monitoring_bg_kind`
 
 
 * Description: Kind of background monitoring to use.
 
-  * `<code>0</code>` Disables background monitoring.
-  * `<code>1</code>` Monitors connection state.
-  * `<code>2</code>` Monitors state of table without `<code>WHERE</code>` clause.
-  * `<code>3</code>` Monitors state of table with `<code>WHERE</code>` clause (currently unsupported).
-* Default Table Value: `<code>0</code>`
-* DSN Parameter Name: `<code>mbk</code>`
+  * `0` Disables background monitoring.
+  * `1` Monitors connection state.
+  * `2` Monitors state of table without `WHERE` clause.
+  * `3` Monitors state of table with `WHERE` clause (currently unsupported).
+* Default Table Value: `0`
+* DSN Parameter Name: `mbk`
 * Deprecated: [MariaDB 11.4.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes.md)
 
 
-#### `<code>monitoring_kind</code>`
+#### `monitoring_kind`
 
 
 * Description: Kind of monitoring.
 
-  * `<code>0</code>` Disables monitoring
-  * `<code>1</code>` Monitors connection state.
-  * `<code>2</code>` Monitors state of table without `<code>WHERE</code>` clause.
-  * `<code>3</code>` Monitors state of table with `<code>WHERE</code>` clause (currently unsupported).
-* Default Table Value: `<code>0</code>`
-* DSN Parameter Name: `<code>mkd</code>`
+  * `0` Disables monitoring
+  * `1` Monitors connection state.
+  * `2` Monitors state of table without `WHERE` clause.
+  * `3` Monitors state of table with `WHERE` clause (currently unsupported).
+* Default Table Value: `0`
+* DSN Parameter Name: `mkd`
 * Deprecated: [MariaDB 11.4.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes.md)
 
 
-#### `<code>monitoring_limit</code>`
+#### `monitoring_limit`
 
 
-* Description: Limits the number of records in the monitoring table. This is only effective when Spider monitors the state of a table, which occurs when the `<code>[monitoring_kind](#monitoring_kind)</code>` table variable is set to a value greater than `<code>1</code>`.
-* Default Table Value: `<code>1</code>`
-* Range: `<code>0</code>` upwards
-* DSN Parameter Name: `<code>mlt</code>`
+* Description: Limits the number of records in the monitoring table. This is only effective when Spider monitors the state of a table, which occurs when the `[monitoring_kind](#monitoring_kind)` table variable is set to a value greater than `1`.
+* Default Table Value: `1`
+* Range: `0` upwards
+* DSN Parameter Name: `mlt`
 * Deprecated: [MariaDB 11.4.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes.md)
 
 
-#### `<code>monitoring_server_id</code>`
+#### `monitoring_server_id`
 
 
-* Description: Preferred monitoring `<code>@@server_id</code>` for each backend failure. You can use this to geo-localize backend servers and set the first Spider monitoring node to contact for failover. In the event that this monitor fails, other monitoring nodes are contacted. For multiple copy backends, you can set a lazy configuration with a single MSI instead of one per backend.
-* Default Table Value: `<code>server_id</code>`
-* DSN Parameter Name: `<code>msi</code>`
+* Description: Preferred monitoring `@@server_id` for each backend failure. You can use this to geo-localize backend servers and set the first Spider monitoring node to contact for failover. In the event that this monitor fails, other monitoring nodes are contacted. For multiple copy backends, you can set a lazy configuration with a single MSI instead of one per backend.
+* Default Table Value: `server_id`
+* DSN Parameter Name: `msi`
 * Deprecated: [MariaDB 11.4.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes.md)
 
 
-#### `<code>multi_split_read</code>`
+#### `multi_split_read`
 
 
 * Description: The table level value of [spider_multi_split_read](spider-system-variables.md#spider_multi_split_read).
-* Table Option Name: `<code>MULTI_SPLIT_READ</code>`
+* Table Option Name: `MULTI_SPLIT_READ`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>net_read_timeout</code>`
+#### `net_read_timeout`
 
 
 * Description: The table level value of [spider_net_read_timeout](spider-system-variables.md#spider_net_read_timeout).
-* Table Option Name: `<code>NET_READ_TIMEOUT</code>`
+* Table Option Name: `NET_READ_TIMEOUT`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>net_write_timeout</code>`
+#### `net_write_timeout`
 
 
 * Description: The table level value of [spider_net_write_timeout](spider-system-variables.md#spider_net_write_timeout).
-* Table Option Name: `<code>NET_WRITE_TIMEOUT</code>`
+* Table Option Name: `NET_WRITE_TIMEOUT`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>password</code>`
+#### `password`
 
 
 * Description: Remote server password.
-* Default Table Value: `<code>none</code>`
-* DSN Parameter Name: `<code>password</code>`
-* Table Option Name: `<code>REMOTE_PASSWORD</code>`
+* Default Table Value: `none`
+* DSN Parameter Name: `password`
+* Table Option Name: `REMOTE_PASSWORD`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>port</code>`
+#### `port`
 
 
 * Description: Remote server port.
-* Default Table Value: `<code>3306</code>`
-* DSN Parameter Name: `<code>port</code>`
-* Table Option Name: `<code>REMOTE_PORT</code>`
+* Default Table Value: `3306`
+* DSN Parameter Name: `port`
+* Table Option Name: `REMOTE_PORT`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>priority</code>`
+#### `priority`
 
 
 * Description: Priority. Used to define the order of execution. For instance, Spider uses priority when deciding the order in which to lock tables on a remote server.
-* Default Table Value: `<code>1000000</code>`
-* DSN Parameter Name: `<code>prt</code>`
-* Table Option Name: `<code>PRIORITY</code>`
+* Default Table Value: `1000000`
+* DSN Parameter Name: `prt`
+* Table Option Name: `PRIORITY`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>query_cache</code>`
+#### `query_cache`
 
 
-* Description: Uses the option for the [Query Cache](../../plugins/other-plugins/query-cache-information-plugin.md) when issuing `<code>[SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)</code>` statements to the remote server.
+* Description: Uses the option for the [Query Cache](../../plugins/other-plugins/query-cache-information-plugin.md) when issuing `[SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)` statements to the remote server.
 
-  * `<code>0</code>` No option used.
-  * `<code>1</code>` Uses the `<code>[SQL_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache)</code>` option.
-  * `<code>2</code>` Uses the `<code>[SQL_NO_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache)</code>` option.
-* Default Table Value: `<code>0</code>`
-* DSN Parameter Name: `<code>qch</code>`
-* Table Option Name: `<code>QUERY_CACHE</code>`
+  * `0` No option used.
+  * `1` Uses the `[SQL_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache)` option.
+  * `2` Uses the `[SQL_NO_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache)` option.
+* Default Table Value: `0`
+* DSN Parameter Name: `qch`
+* Table Option Name: `QUERY_CACHE`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>query_cache_sync</code>`
+#### `query_cache_sync`
 
 
-* Description: A two-bit bitmap. Whether to pass the option for the [Query Cache](../../plugins/other-plugins/query-cache-information-plugin.md) (if any) when issuing `<code>[SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)</code>` statements to the remote server.
+* Description: A two-bit bitmap. Whether to pass the option for the [Query Cache](../../plugins/other-plugins/query-cache-information-plugin.md) (if any) when issuing `[SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)` statements to the remote server.
 
-  * `<code>0</code>` No option passed.
-  * `<code>1</code>` Passes the `<code>[SQL_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache)</code>` option, if specified in the query to the spider table.
-  * `<code>2</code>` Passes the `<code>[SQL_NO_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache)</code>` option, if specified in the query to the spider table.
-  * `<code>3</code>` Passes both the `<code>[SQL_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache)</code>` option and the `<code>[SQL_NO_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache)</code>` option, if specified in the query to the spider table.
-* Default Table Value: `<code>3</code>`
-* Table Option Name: `<code>QUERY_CACHE_SYNC</code>`
+  * `0` No option passed.
+  * `1` Passes the `[SQL_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache)` option, if specified in the query to the spider table.
+  * `2` Passes the `[SQL_NO_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache)` option, if specified in the query to the spider table.
+  * `3` Passes both the `[SQL_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache)` option and the `[SQL_NO_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache)` option, if specified in the query to the spider table.
+* Default Table Value: `3`
+* Table Option Name: `QUERY_CACHE_SYNC`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>read_rate</code>`
+#### `read_rate`
 
 
 * Description: Rate used to calculate the amount of time Spider requires when executing index scans.
-* Default Table Value: `<code>0.0002</code>`
-* DSN Parameter Name: `<code>rrt</code>`
+* Default Table Value: `0.0002`
+* DSN Parameter Name: `rrt`
 * Deprecated: [MariaDB 11.4.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes.md)
 
 
-#### `<code>scan_rate</code>`
+#### `scan_rate`
 
 
 * Description: Rate used to calculate the amount of time Spider requires when scanning tables.
-* Default Table Value: `<code> 0.0001</code>`
-* DSN Parameter Name: `<code>srt</code>`
+* Default Table Value: ` 0.0001`
+* DSN Parameter Name: `srt`
 * Deprecated: [MariaDB 11.4.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes.md)
 
 
-#### `<code>server</code>`
+#### `server`
 
 
-* Description: Server name. Used when generating connection information with `<code>[CREATE SERVER](../../sql-statements-and-structure/sql-statements/data-definition/create/create-server.md)</code>` statements.
-* Default Table Value: `<code>none</code>`
-* DSN Parameter Name: `<code>srv</code>`
-* Table Option Name: `<code>REMOTE_SERVER</code>`
+* Description: Server name. Used when generating connection information with `[CREATE SERVER](../../sql-statements-and-structure/sql-statements/data-definition/create/create-server.md)` statements.
+* Default Table Value: `none`
+* DSN Parameter Name: `srv`
+* Table Option Name: `REMOTE_SERVER`
 * Table Option Introduced: [MariaDB 10.8.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes.md)
 
 
-#### `<code>skip_parallel_search</code>`
+#### `skip_parallel_search`
 
 
 * Description: The table level value of [spider_skip_parallel_search](spider-system-variables.md#spider_skip_parallel_search).
-* Table Option Name: `<code>SKIP_PARALLEL_SEARCH</code>`
+* Table Option Name: `SKIP_PARALLEL_SEARCH`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>socket</code>`
+#### `socket`
 
 
 * Description: Remote server socket.
-* Default Table Value: `<code>none</code>`
-* DSN Parameter Name: `<code>socket</code>`
-* Table Option Name: `<code>REMOTE_SOCKET</code>`
+* Default Table Value: `none`
+* DSN Parameter Name: `socket`
+* Table Option Name: `REMOTE_SOCKET`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>ssl_ca</code>`
+#### `ssl_ca`
 
 
 * Description: Path to the Certificate Authority file.
-* Default Table Value: `<code>none</code>`
-* DSN Parameter Name: `<code>sca</code>`
-* Table Option Name: `<code>SSL_CA</code>`
+* Default Table Value: `none`
+* DSN Parameter Name: `sca`
+* Table Option Name: `SSL_CA`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>ssl_capath</code>`
+#### `ssl_capath`
 
 
 * Description: Path to directory containing trusted TLS CA certificates in PEM format.
-* Default Table Value: `<code>none</code>`
-* DSN Parameter Name: `<code>scp</code>`
-* Table Option Name: `<code>SSL_CAPATH</code>`
+* Default Table Value: `none`
+* DSN Parameter Name: `scp`
+* Table Option Name: `SSL_CAPATH`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>ssl_cert</code>`
+#### `ssl_cert`
 
 
 * Description: Path to the certificate file.
-* Default Table Value: `<code>none</code>`
-* DSN Parameter Name: `<code>scr</code>`
-* Table Option Name: `<code>SSL_CERT</code>`
+* Default Table Value: `none`
+* DSN Parameter Name: `scr`
+* Table Option Name: `SSL_CERT`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>ssl_cipher</code>`
+#### `ssl_cipher`
 
 
 * Description: List of allowed ciphers to use with [TLS encryption](../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md).
-* Default Table Value: `<code>none</code>`
-* DSN Parameter Name: `<code>sch</code>`
-* Table Option Name: `<code>SSL_CIPHER</code>`
+* Default Table Value: `none`
+* DSN Parameter Name: `sch`
+* Table Option Name: `SSL_CIPHER`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>ssl_key</code>`
+#### `ssl_key`
 
 
 * Description: Path to the key file.
-* Default Table Value: `<code>none</code>`
-* DSN Parameter Name: `<code>sky</code>`
-* Table Option Name: `<code>SSL_KEY</code>`
+* Default Table Value: `none`
+* DSN Parameter Name: `sky`
+* Table Option Name: `SSL_KEY`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>ssl_verify_server_cert</code>`
+#### `ssl_verify_server_cert`
 
 
 * Description: Enables verification of the server's Common Name value in the certificate against the host name used when connecting to the server.
 
-  * `<code>0</code>` Disables verification.
-  * `<code>1</code>` Enables verification.
-* Default Table Value: `<code>0</code>`
-* DSN Parameter Name: `<code>svc</code>`
-* Table Option Name: `<code>SSL_VSC</code>`
+  * `0` Disables verification.
+  * `1` Enables verification.
+* Default Table Value: `0`
+* DSN Parameter Name: `svc`
+* Table Option Name: `SSL_VSC`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>table</code>`
+#### `table`
 
 
 * Description: Destination table name.
-* Default Table Value: `<code>Same table name</code>`
-* DSN Parameter Name: `<code>tbl</code>`
-* Table Option Name: `<code>REMOTE_TABLE</code>`
+* Default Table Value: `Same table name`
+* DSN Parameter Name: `tbl`
+* Table Option Name: `REMOTE_TABLE`
 * Table Option Introduced: [MariaDB 10.8.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes.md)
 
 
-#### `<code>table_count_mode</code>`
+#### `table_count_mode`
 
 
 * Description: for setting table flags HA_STATS_RECORDS_IS_EXACT and HA_HAS_RECORDS.
-* Default Table Value: `<code>0</code>`
-* Table Option Name: `<code>TABLE_COUNT_MODE</code>`
+* Default Table Value: `0`
+* Table Option Name: `TABLE_COUNT_MODE`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>username</code>`
+#### `username`
 
 
 * Description: user name for the data node.
-* Default Table Value: `<code>Same user name</code>`
-* Table Option Name: `<code>REMOTE_USERNAME</code>`
+* Default Table Value: `Same user name`
+* Table Option Name: `REMOTE_USERNAME`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>use_pushdown_udf</code>`
+#### `use_pushdown_udf`
 
 
 * Description: The table level value of [spider_use_pushdown_udf](spider-system-variables.md#spider_use_pushdown_udf).
-* Table Option Name: `<code>USE_PUSHDOWN_UDF</code>`
+* Table Option Name: `USE_PUSHDOWN_UDF`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 
 
-#### `<code>wrapper</code>`
+#### `wrapper`
 
 
 * Description: wrapper for the data node.
-* Table Option Name: `<code>WRAPPER</code>`
+* Table Option Name: `WRAPPER`
 * Table Option Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
 

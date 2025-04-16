@@ -1,7 +1,7 @@
 
 # MariaDB Server Docker Official Image Environment Variables
 
-When you start the image, you can adjust the initialization of the MariaDB Server instance by passing one or more environment variables on the docker run command line. Do note that all of the variables below, except `<code>MARIADB_AUTO_UPGRADE</code>`, will have no effect if you start the container with a data directory that already contains a database: any pre-existing database will always be left untouched on container startup.
+When you start the image, you can adjust the initialization of the MariaDB Server instance by passing one or more environment variables on the docker run command line. Do note that all of the variables below, except `MARIADB_AUTO_UPGRADE`, will have no effect if you start the container with a data directory that already contains a database: any pre-existing database will always be left untouched on container startup.
 
 
 From tag 10.2.38, 10.3.29, 10.4.19, 10.5.10 onwards, and all 10.6 and later tags, the MARIADB_* equivalent variables are provided. MARIADB_* variants will always be used in preference to MYSQL_* variants.
@@ -19,7 +19,7 @@ This specifies the password that will be set for the MariaDB root superuser acco
 ### MARIADB_ALLOW_EMPTY_ROOT_PASSWORD / MYSQL_ALLOW_EMPTY_PASSWORD
 
 
-Set to a non-empty value, like `<code>1</code>`, to allow the container to be started with a blank password for the root user. NOTE: Setting this variable to yes is not recommended unless you really know what you are doing, since this will leave your MariaDB instance completely unprotected, allowing anyone to gain complete superuser access.
+Set to a non-empty value, like `1`, to allow the container to be started with a blank password for the root user. NOTE: Setting this variable to yes is not recommended unless you really know what you are doing, since this will leave your MariaDB instance completely unprotected, allowing anyone to gain complete superuser access.
 
 
 ### MARIADB_RANDOM_ROOT_PASSWORD / MYSQL_RANDOM_ROOT_PASSWORD
@@ -55,16 +55,16 @@ Do not use this mechanism to create the root superuser, that user gets created b
 Set MARIADB_MYSQL_LOCALHOST_USER to a non-empty value to create the mysql@locahost database user. This user is especially useful for a variety of health checks and backup scripts.
 
 
-The mysql@localhost user gets `<code>[USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#usage)</code>` privileges by default. If more access is required, additional global privileges in the form of a comma separated list can be provided. If you are sharing a volume containing MariaDB's unix socket (/var/run/mysqld by default), privileges beyond `<code>[USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#usage)</code>` can result in confidentiality, integrity and availability risks, so use a minimal set. Its also possible to use for [Mariadb-backup](../../../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md). The [healthcheck.sh](using-healthcheck-sh.md) script also documents the required privileges for each health check test.
+The mysql@localhost user gets `[USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#usage)` privileges by default. If more access is required, additional global privileges in the form of a comma separated list can be provided. If you are sharing a volume containing MariaDB's unix socket (/var/run/mysqld by default), privileges beyond `[USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#usage)` can result in confidentiality, integrity and availability risks, so use a minimal set. Its also possible to use for [Mariadb-backup](../../../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md). The [healthcheck.sh](using-healthcheck-sh.md) script also documents the required privileges for each health check test.
 
 
 ### MARIADB_HEALTHCHECK_GRANTS
 
 
-Set MARIADB_HEALTHCHECK_GRANTS to the grants required to be given to the `<code>healthcheck@localhost</code>`, `<code>healthcheck@127.0.0.1</code>`, `<code>healthcheck@::1</code>`, users. When not specified the default grant is `<code>[USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#usage)</code>`.
+Set MARIADB_HEALTHCHECK_GRANTS to the grants required to be given to the `healthcheck@localhost`, `healthcheck@127.0.0.1`, `healthcheck@::1`, users. When not specified the default grant is `[USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#usage)`.
 
 
-The main value used here will be `<code>[REPLICA MONITOR](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replica-monitor) for the [healthcheck --replication](using-healthcheck-sh.md) test.</code>`
+The main value used here will be `[REPLICA MONITOR](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replica-monitor) for the [healthcheck --replication](using-healthcheck-sh.md) test.`
 
 
 ### MARIADB_INITDB_SKIP_TZINFO / MYSQL_INITDB_SKIP_TZINFO
@@ -82,8 +82,8 @@ Set MARIADB_AUTO_UPGRADE to a non-empty value to have the entrypoint check wheth
 Before the upgrade, a backup of the system database is created in the top of the datadir with the name system_mysql_backup_*.sql.zst. This backup process can be disabled with by setting MARIADB_DISABLE_UPGRADE_BACKUP to a non-empty value.
 
 
-If `<code>MARIADB_AUTO_UPGRADE</code>` is set, and the `<code>.my-healthcheck.cnf</code>` file is missing, the `<code>healthcheck</code>` users are recreated if they don't exist, `<code>MARIADB_HEALTHCHECK_GRANTS
-</code>` grants are given, the passwords of the `<code>healthcheck</code>` users are reset to a random value and the `<code>.my-healthcheck.cnf</code>` file is recreated with the new password populated.
+If `MARIADB_AUTO_UPGRADE` is set, and the `.my-healthcheck.cnf` file is missing, the `healthcheck` users are recreated if they don't exist, `MARIADB_HEALTHCHECK_GRANTS
+` grants are given, the passwords of the `healthcheck` users are reset to a random value and the `.my-healthcheck.cnf` file is recreated with the new password populated.
 
 
 ### MARIADB_MASTER_HOST

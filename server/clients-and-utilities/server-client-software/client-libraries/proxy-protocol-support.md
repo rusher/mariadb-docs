@@ -29,7 +29,7 @@ To enable use of the proxy protocol, it is necessary to specify subnetworks that
 [proxy-protocol-networks](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#proxy_protocol_networks) is a either comma-separated list of [(sub)networks](https://en.wikipedia.org/wiki/Subnetwork) or IP addresses. One also can use 'localhost' in this list, which means Unix domain socket/named pipe/shared memory connections are allowed as well. Or, proxy-protocol-networks can be set to *, meaning that proxy headers are allowed from any client.
 
 
-Note that a client running on a host within an allowed proxy network or an IP address can itself pretend as being connected from any IP address whatsoever and thus can possibly impersonate other users. Generally, you should limit shell access to proxy hosts to a minimum. And remember, with `<code>proxy-protocol-networks=*</code>` every host is a proxy host.
+Note that a client running on a host within an allowed proxy network or an IP address can itself pretend as being connected from any IP address whatsoever and thus can possibly impersonate other users. Generally, you should limit shell access to proxy hosts to a minimum. And remember, with `proxy-protocol-networks=*` every host is a proxy host.
 
 
 Example in my.ini/my.cnf
@@ -52,7 +52,7 @@ Since the functionality is suited only to very specific proxy-like programs, mos
 mysql_optionsv(mysql, MARIADB_OPT_PROXY_HEADER, header,  header_size)
 ```
 
-prior to [mysql_real_connect()](../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_real_connect.md) or mysql_connect(), to send the header. In the call above `<code>_header_</code>` is the proxy header with the type `<code>void *</code>`, and `<code>_header_size_</code>` is its size in bytes (type is `<code>size_t</code>`).
+prior to [mysql_real_connect()](../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_real_connect.md) or mysql_connect(), to send the header. In the call above `_header_` is the proxy header with the type `void *`, and `_header_size_` is its size in bytes (type is `size_t`).
 
 
 ### Example
@@ -70,7 +70,7 @@ If you want to use proxy protocol with MaxScale:
 
 
 * Add the IP address of the MaxScale server to [proxy-protocol-networks](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#proxy_protocol_networks)
-* In `<code>maxscale.cnf</code>`, add the [proxy_protocol](../../../../maxscale/mariadb-maxscale-25/maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#proxy_protocol) parameter for all configured servers
+* In `maxscale.cnf`, add the [proxy_protocol](../../../../maxscale/mariadb-maxscale-25/maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#proxy_protocol) parameter for all configured servers
 
 
 Once configured, MaxScale will proxy the credentials from the client to the server.

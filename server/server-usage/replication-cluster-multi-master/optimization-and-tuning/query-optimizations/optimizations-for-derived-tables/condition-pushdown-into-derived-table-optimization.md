@@ -35,7 +35,7 @@ The naive way to execute the above is to
 This is obviously inefficient, if there are 1000 customers, then one will be doing up to 1000 times more work than necessary.
 
 
-However, the optimizer can take the condition `<code>customer_id=1</code>` and push it down into the OCT_TOTALS view.
+However, the optimizer can take the condition `customer_id=1` and push it down into the OCT_TOTALS view.
 
 
 (TODO: elaborate here)
@@ -46,7 +46,7 @@ However, the optimizer can take the condition `<code>customer_id=1</code>` and p
 
 * Condition Pushdown has been available since [MariaDB 10.2](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md).
 * The Jira task for it was [MDEV-9197](https://jira.mariadb.org/browse/MDEV-9197).
-* The optimization is enabled by default. One can disable it by setting `<code>@@optimizer_switch</code>` flag `<code>condition_pushdown_for_derived</code>` to OFF.
+* The optimization is enabled by default. One can disable it by setting `@@optimizer_switch` flag `condition_pushdown_for_derived` to OFF.
 
 
 ## See Also

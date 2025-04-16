@@ -1,7 +1,7 @@
 
 # INT2
 
-`<code>INT2</code>` is a synonym for [SMALLINT](smallint.md).
+`INT2` is a synonym for [SMALLINT](smallint.md).
 
 
 ```

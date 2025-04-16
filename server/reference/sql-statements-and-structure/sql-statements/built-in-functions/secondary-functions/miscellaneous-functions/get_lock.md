@@ -12,7 +12,7 @@ GET_LOCK(str,timeout)
 ## Description
 
 
-Tries to obtain a lock with a name given by the string `<code>str</code>`, using a timeout of `<code>timeout</code>` seconds. Returns `<code>1</code>` if the lock was obtained successfully, `<code>0</code>` if the attempt timed out (for example, because another client has previously locked the name), or `<code>NULL</code>` if an error occurred (such as running out of memory or the thread was killed with [mariadb-admin kill](https://mariadb.com/kb/en/mariadb-admin_kill)).
+Tries to obtain a lock with a name given by the string `str`, using a timeout of `timeout` seconds. Returns `1` if the lock was obtained successfully, `0` if the attempt timed out (for example, because another client has previously locked the name), or `NULL` if an error occurred (such as running out of memory or the thread was killed with [mariadb-admin kill](https://mariadb.com/kb/en/mariadb-admin_kill)).
 
 
 A lock is released with [RELEASE_LOCK()](release_lock.md), when the connection terminates (either normally or abnormally). A connection can hold multiple locks at the same time, so a lock that is no longer needed needs to be explicitly released.
@@ -21,22 +21,22 @@ A lock is released with [RELEASE_LOCK()](release_lock.md), when the connection t
 The [IS_FREE_LOCK](is_free_lock.md) function returns whether a specified lock a free or not, and the [IS_USED_LOCK](is_used_lock.md) whether the function is in use or not.
 
 
-Locks obtained with `<code>GET_LOCK()</code>` do not interact with transactions. That is, committing a transaction does not release any such locks obtained during the transaction.
+Locks obtained with `GET_LOCK()` do not interact with transactions. That is, committing a transaction does not release any such locks obtained during the transaction.
 
 
-It is also possible to recursively set the same lock. If a lock with the same name is set `<code>n</code>` times, it needs to be released `<code>n</code>` times as well.
+It is also possible to recursively set the same lock. If a lock with the same name is set `n` times, it needs to be released `n` times as well.
 
 
-`<code>str</code>` is case insensitive for `<code>GET_LOCK()</code>` and related functions. If `<code>str</code>` is an empty string or `<code>NULL</code>`, `<code>GET_LOCK()</code>` returns `<code>NULL</code>` and does nothing. `<code>timeout</code>` supports microseconds.
+`str` is case insensitive for `GET_LOCK()` and related functions. If `str` is an empty string or `NULL`, `GET_LOCK()` returns `NULL` and does nothing. `timeout` supports microseconds.
 
 
 If the [metadata_lock_info](../../../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin is installed, locks acquired with this function are visible in the [Information Schema](../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) [METADATA_LOCK_INFO](../../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table.md) table.
 
 
-This function can be used to implement application locks or to simulate record locks. Names are locked on a server-wide basis. If a name has been locked by one client, `<code>GET_LOCK()</code>` blocks any request by another client for a lock with the same name. This allows clients that agree on a given lock name to use the name to perform cooperative advisory locking. But be aware that it also allows a client that is not among the set of cooperating clients to lock a name, either inadvertently or deliberately, and thus prevent any of the cooperating clients from locking that name. One way to reduce the likelihood of this is to use lock names that are database-specific or application-specific. For example, use lock names of the form `<code>db_name.str</code>` or `<code>app_name.str</code>`.
+This function can be used to implement application locks or to simulate record locks. Names are locked on a server-wide basis. If a name has been locked by one client, `GET_LOCK()` blocks any request by another client for a lock with the same name. This allows clients that agree on a given lock name to use the name to perform cooperative advisory locking. But be aware that it also allows a client that is not among the set of cooperating clients to lock a name, either inadvertently or deliberately, and thus prevent any of the cooperating clients from locking that name. One way to reduce the likelihood of this is to use lock names that are database-specific or application-specific. For example, use lock names of the form `db_name.str` or `app_name.str`.
 
 
-Statements using the `<code>GET_LOCK</code>` function are [not safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
+Statements using the `GET_LOCK` function are [not safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 
 The patch to permit multiple locks was [contributed by Konstantin "Kostja" Osipov](https://kostja-osipov.livejournal.com/46410.html) ([MDEV-3917](https://jira.mariadb.org/browse/MDEV-3917)).

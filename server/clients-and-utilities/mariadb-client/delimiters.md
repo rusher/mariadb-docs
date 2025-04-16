@@ -16,7 +16,7 @@ BEGIN
 END;
 ```
 
-If you enter the above line by line, the mariadb client will treat the first semicolon, at the end of the `<code class="fixed" style="white-space:pre-wrap">DECLARE x TINYINT</code>` line, as the end of the statement. Since that's only a partial definition, it will throw a syntax error, as follows:
+If you enter the above line by line, the mariadb client will treat the first semicolon, at the end of the `DECLARE x TINYINT` line, as the end of the statement. Since that's only a partial definition, it will throw a syntax error, as follows:
 
 
 ```
@@ -28,7 +28,7 @@ check the manual that corresponds to your MariaDB server version
  for the right syntax to use near '' at line 3
 ```
 
-The solution is to specify a distinct delimiter for the duration of the process, using the DELIMITER command. The delimiter can be any set of characters you choose, but it needs to be a distinctive set of characters that won't cause further confusion. `<code>//</code>` is a common choice, and used throughout the Knowledge Base.
+The solution is to specify a distinct delimiter for the duration of the process, using the DELIMITER command. The delimiter can be any set of characters you choose, but it needs to be a distinctive set of characters that won't cause further confusion. `//` is a common choice, and used throughout the Knowledge Base.
 
 
 Here's how the function could be successfully entered from the mariadb client with the new delimiter.
@@ -49,5 +49,5 @@ END
 DELIMITER ;
 ```
 
-At the end, the delimiter is restored to the default semicolon. The `<code>\g</code>` and `<code>\G</code>` delimiters can always be used, even when a custom delimiter is specified.
+At the end, the delimiter is restored to the default semicolon. The `\g` and `\G` delimiters can always be used, even when a custom delimiter is specified.
 

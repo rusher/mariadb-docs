@@ -5,10 +5,10 @@
 Compiling MariaDB with full debug information includes all code symbols and also new code to do internal testing of structures and allow one to trace MariaDB execution. A full debug binary will be notably slower than a normal binary (30%).
 
 
-## Compiling MariaDB for Debugging Using the `<code>CMAKE_BUILD_TYPE</code>` Option
+## Compiling MariaDB for Debugging Using the `CMAKE_BUILD_TYPE` Option
 
 
-On Unix systems, you can build a debug build by executing `<code>cmake</code>` and by setting the `<code>CMAKE_BUILD_TYPE</code>` option to `<code>Debug</code>`. For example:
+On Unix systems, you can build a debug build by executing `cmake` and by setting the `CMAKE_BUILD_TYPE` option to `Debug`. For example:
 
 
 ```
@@ -59,9 +59,9 @@ cd current
 ./BUILD/compile-pentium64-debug-max
 ```
 
-The last command will produce a debug version of `<code class="highlight fixed" style="white-space:pre-wrap">sql/mysqld</code>`.
+The last command will produce a debug version of `sql/mysqld`.
 If you have a system other than 64 bit Intel/AMD on Linux you can use a
-different `<code class="highlight fixed" style="white-space:pre-wrap">BUILD/...-debug-max</code>` file. If this fails, you can
+different `BUILD/...-debug-max` file. If this fails, you can
 try with:
 
 
@@ -73,10 +73,10 @@ make -j4
 ## Building Optimized Build With Debug Symbols
 
 
-To build MariaDB with symbols, to get better stack traces and to be able to debug the binary with `<code>gdb</code>`, you need to supply the `<code>-g3</code>` option to the `<code>gcc</code>` compiler.
+To build MariaDB with symbols, to get better stack traces and to be able to debug the binary with `gdb`, you need to supply the `-g3` option to the `gcc` compiler.
 
 
-Just compiling with `<code>-g3</code>` will make the binary much bigger but the slowdown of the server should be negligible.
+Just compiling with `-g3` will make the binary much bigger but the slowdown of the server should be negligible.
 
 
 One way to do this is to edit the script
@@ -86,7 +86,7 @@ One way to do this is to edit the script
 BUILD/compile-pentium64-max
 ```
 
-and add the -g3 last on the line with `<code>extra_flags</code>`, like this:
+and add the -g3 last on the line with `extra_flags`, like this:
 
 
 ```
@@ -120,31 +120,31 @@ This binary can directly replace the one provided by the binary package that is 
 ### Temporarily Installing your Debug Build
 
 
-The commands shown below replace the release `<code>mysqld</code>` binary with the debug `<code>mysqld</code>` binary that you compiled. Most importantly, they replace the binary in a way which makes it trivial to revert back to the
-original release `<code>mysqld</code>` binary.
+The commands shown below replace the release `mysqld` binary with the debug `mysqld` binary that you compiled. Most importantly, they replace the binary in a way which makes it trivial to revert back to the
+original release `mysqld` binary.
 
 
 First, [stop MariaDB](https://mariadb.com/kb/en/).
 
 
-Then, use the `<code>mv</code>` utility to rename the release `<code>mysqld</code>` binary:
+Then, use the `mv` utility to rename the release `mysqld` binary:
 
 
 ```
 sudo mv /usr/sbin/mysqld /usr/sbin/mysqld-orig
 ```
 
-Note: Do not use the `<code>cp</code>` utility because that will change the file modification timestamp.
+Note: Do not use the `cp` utility because that will change the file modification timestamp.
 
 
-Then, install the debug `<code>mysqld</code>` binary from your source tree:
+Then, install the debug `mysqld` binary from your source tree:
 
 
 ```
 sudo install ~/mariadb-10.3.14/sql/mysqld /usr/sbin/mysqld-debug
 ```
 
-Then, link the `<code>mysqld</code>` path to the path of your debug `<code>mysqld</code>` binary:
+Then, link the `mysqld` path to the path of your debug `mysqld` binary:
 
 
 ```
@@ -154,13 +154,13 @@ sudo ln -s /usr/sbin/mysqld-debug /usr/sbin/mysqld
 Then, [start MariaDB](https://mariadb.com/kb/en/).
 
 
-Be sure to replace `<code>/usr/sbin/mysqld</code>` with the path to your `<code>mysqld</code>` binary and to also replace `<code><code>~</code>/mariadb-10.3.14/sql/mysqld</code>` with the path to your debug `<code>mysqld</code>` binary.
+Be sure to replace `/usr/sbin/mysqld` with the path to your `mysqld` binary and to also replace `<code>~</code>/mariadb-10.3.14/sql/mysqld` with the path to your debug `mysqld` binary.
 
 
 ### Reinstalling your Release Build
 
 
-If you want to restore your original `<code>mysqld</code>` binary, you can do it with the following process::
+If you want to restore your original `mysqld` binary, you can do it with the following process::
 
 
 First, [stop MariaDB](https://mariadb.com/kb/en/).
@@ -173,7 +173,7 @@ Then, execute the following command to delete the symbolic link:
 sudo rm /usr/sbin/mysqld
 ```
 
-Then, execute the following command to move the original `<code>mysqld</code>` release binary back into place:
+Then, execute the following command to move the original `mysqld` release binary back into place:
 
 
 ```
@@ -183,10 +183,10 @@ sudo mv /usr/sbin/mysqld-orig /usr/sbin/mysqld
 Then, [start MariaDB](https://mariadb.com/kb/en/).
 
 
-Be sure to replace `<code>/usr/sbin/mysqld</code>` with the path to your `<code>mysqld</code>` binary
+Be sure to replace `/usr/sbin/mysqld` with the path to your `mysqld` binary
 
 
-Notice that the debug `<code>mysqld</code>` binary located at `<code>/usr/sbin/mysqld-debug</code>` was not deleted. Only the symbolic link to this file was deleted. The debug `<code>mysqld</code>` binary is still present if it is needed again in the future.
+Notice that the debug `mysqld` binary located at `/usr/sbin/mysqld-debug` was not deleted. Only the symbolic link to this file was deleted. The debug `mysqld` binary is still present if it is needed again in the future.
 
 
 ## Different Compilation Options
@@ -199,7 +199,7 @@ A debug binary has lots of code checks and asserts, that are not checked in prod
 In some cases, when one is trying to find a hard-to-repeat bug, it could be beneficial to have these checks in production builds too.
 
 
-Compiling with `<code>-DDBUG_ASSERT_AS_PRINTF</code>` will change DBUG_ASSERT() to print any failed check to the [error log](../../../../../../server/server-management/server-monitoring-logs/error-log.md).
+Compiling with `-DDBUG_ASSERT_AS_PRINTF` will change DBUG_ASSERT() to print any failed check to the [error log](../../../../../../server/server-management/server-monitoring-logs/error-log.md).
 
 
 ```
@@ -210,8 +210,8 @@ Enabling the above option should not have any notable impact on performance (pro
 This is achieved by grouping asserts in MariaDB server code into two groups:
 
 
-* Fast checks, using `<code>DBUG_ASSERT()</code>`: These are converted to printing to error log.
-* Slow checks, using `<code>DBUG_SLOW_ASSERT()</code>`. These will always be removed in production builds.
+* Fast checks, using `DBUG_ASSERT()`: These are converted to printing to error log.
+* Slow checks, using `DBUG_SLOW_ASSERT()`. These will always be removed in production builds.
 
 
 ## See Also

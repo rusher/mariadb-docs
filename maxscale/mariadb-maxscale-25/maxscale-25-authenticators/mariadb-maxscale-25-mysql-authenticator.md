@@ -16,7 +16,7 @@ The following settings may be given in the *authenticator_options* of the
 listener.
 
 
-### `<code>log_password_mismatch</code>`
+### `log_password_mismatch`
 
 
 Boolean, default value is "false". The service setting *log_auth_warnings* must
@@ -26,13 +26,13 @@ be useful when diagnosing authentication issues. It should only be enabled on a
 secure system as the logging of password hashes may be a security risk.
 
 
-### `<code>cache_dir</code>`
+### `cache_dir`
 
 
 Deprecated and ignored.
 
 
-### `<code>inject_service_user</code>`
+### `inject_service_user`
 
 
 Deprecated and ignored.

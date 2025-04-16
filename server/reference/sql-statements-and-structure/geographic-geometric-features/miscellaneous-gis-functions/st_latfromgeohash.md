@@ -16,7 +16,7 @@ ST_LatFromGeoHash(geohash)
 ## Description
 
 
-Decodes a given `<code>geohash</code>` string and returns the latitude in the interval [90, -90].
+Decodes a given `geohash` string and returns the latitude in the interval [90, -90].
 
 
 If the argument is NULL, the return value is NULL. If the argument is invalid, an ER_INCORRECT_TYPE error is thrown.

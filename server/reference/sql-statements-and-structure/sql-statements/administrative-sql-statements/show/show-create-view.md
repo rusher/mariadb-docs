@@ -15,7 +15,7 @@ This statement shows a [CREATE VIEW](../../../../../server-usage/programming-cus
 also works with views.
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW CREATE VIEW</code>` quotes table, column and stored function names according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) server system variable.
+`SHOW CREATE VIEW` quotes table, column and stored function names according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) server system variable.
 
 
 ## Examples

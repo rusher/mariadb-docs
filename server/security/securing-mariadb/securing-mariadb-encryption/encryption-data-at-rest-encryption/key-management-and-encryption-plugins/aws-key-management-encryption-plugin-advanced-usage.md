@@ -14,13 +14,13 @@ Theoretically, a superuser can read the memory of the MariaDB server process to 
 ## Managing AWS credentials
 
 
-Putting the AWS credentials in a file inside the MariaDB home directory is not ideal. By default, any user with the FILE privilege can read any files that the MariaDB server has permission to read, which would include the credentials file. To protect against this, you should set `<code>secure_file_priv</code>` to restrict the location the server will allow a user to read from when executing `<code>LOAD DATA INFILE</code>` or the `<code>LOAD_FILE()</code>` function.
+Putting the AWS credentials in a file inside the MariaDB home directory is not ideal. By default, any user with the FILE privilege can read any files that the MariaDB server has permission to read, which would include the credentials file. To protect against this, you should set `secure_file_priv` to restrict the location the server will allow a user to read from when executing `LOAD DATA INFILE` or the `LOAD_FILE()` function.
 
 
-But putting them in other locations requires passing additional data to the server, which in the case of CentOS 7 requires customizing the systemd startup procedure. This is most easily done by creating a "drop-in" file in /etc/systemd/system/mariadb.service.d/. The file should end in ".conf" but can otherwise be named whatever you like. After making any changes to systemd files, execute `<code>systemctl daemon-reload</code>` and then start (or restart) the service as usual.
+But putting them in other locations requires passing additional data to the server, which in the case of CentOS 7 requires customizing the systemd startup procedure. This is most easily done by creating a "drop-in" file in /etc/systemd/system/mariadb.service.d/. The file should end in ".conf" but can otherwise be named whatever you like. After making any changes to systemd files, execute `systemctl daemon-reload` and then start (or restart) the service as usual.
 
 
-You can place the credentials file in a location of your choosing and then refer to that file by setting the `<code>AWS_CREDENTIAL_PROFILES_FILE</code>` environment variable in the drop-in file:
+You can place the credentials file in a location of your choosing and then refer to that file by setting the `AWS_CREDENTIAL_PROFILES_FILE` environment variable in the drop-in file:
 
 
 ```
@@ -41,7 +41,7 @@ Environment=AWS_ACCESS_KEY_ID=AKIAIRSG2XYZATCJLZ4A
 Environment=AWS_SECRET_ACCESS_KEY=ux91LZIxCp4ZXabcdefgIViQNtTan42QAmJqJVqV
 ```
 
-However, any OS user can read this information from systemd, which could be considered a security risk. Another solution is to put the credentials in a separate file that is only readable by root and then refer to that file using an `<code>EnvironmentFile</code>` directive in a drop-in systemd file.
+However, any OS user can read this information from systemd, which could be considered a security risk. Another solution is to put the credentials in a separate file that is only readable by root and then refer to that file using an `EnvironmentFile` directive in a drop-in systemd file.
 
 
 ```
@@ -90,8 +90,8 @@ To restrict API access from only a specific IP address or range of IP addresses,
 1. Click "Encryption Keys" in the left-hand sidebar.
 1. Click the name of your encryption key to view its details.
 1. Click the link labeled "Switch to policy view", to the right of the heading of the "Key Policy" section.
-1. Locate the section that contains `<code>"Sid": "Allow use of the key"</code>`.
-1. Add this text below the `<code>"Sid"</code>` line:
+1. Locate the section that contains `"Sid": "Allow use of the key"`.
+1. Add this text below the `"Sid"` line:
 ```
 "Condition": {
  "IpAddress": {
@@ -102,7 +102,7 @@ To restrict API access from only a specific IP address or range of IP addresses,
  },
 ```
 
-... replacing `<code>10.1.2.3/32</code>` above with an IP address or range of IP addresses in CIDR format. For example, a single address would be `<code>192.168.12.34/32</code>`, while a range of addresses might be `<code>192.168.0.0/24</code>`.
+... replacing `10.1.2.3/32` above with an IP address or range of IP addresses in CIDR format. For example, a single address would be `192.168.12.34/32`, while a range of addresses might be `192.168.0.0/24`.
 1. Click "Save Changes".
 1. Click "Proceed" if prompted with a warning about using the default view in the future.
 
@@ -123,8 +123,8 @@ To require an MFA token for users of the key, you'll need to manually edit the k
 1. Click "Encryption Keys" in the left-hand sidebar.
 1. Click the name of your encryption key to view its details.
 1. Click the link labeled "Switch to policy view", to the right of the heading of the "Key Policy" section.
-1. Locate the section that contains `<code>"Sid": "Allow use of the key"</code>`.
-1. Add this text below the `<code>"Sid"</code>` line:
+1. Locate the section that contains `"Sid": "Allow use of the key"`.
+1. Add this text below the `"Sid"` line:
 ```
 "Condition": {
  "Bool": {
@@ -151,15 +151,15 @@ Now, set up the wrapper program.
 
 
 1. Copy the iam-kms-wrapper file to /usr/local/bin/, and ensure that it is executable.
-1. Create a drop-in systemd config file in `<code>/etc/systemd/system/mariadb.service.d/</code>`:
+1. Create a drop-in systemd config file in `/etc/systemd/system/mariadb.service.d/`:
 ```
 [Service]
 EnvironmentFile=/etc/systemd/system/mariadb.service.d/aws-kms.env
 ExecStart=
 ExecStart=/usr/local/bin/iam-kms-wrapper --config=/etc/my.cnf.d/iam-kms-wrapper.config /usr/sbin/mysqld $MYSQLD_OPTS
 ```
-1. Execute `<code>systemctl daemon-reload</code>`.
-1. Create a file at `<code>/etc/my.cnf.d/iam-kms-wrapper.config</code>` with these contents, using the ARN for your MFA device as the value for `<code>kms_mfa_id</code>`:
+1. Execute `systemctl daemon-reload`.
+1. Create a file at `/etc/my.cnf.d/iam-kms-wrapper.config` with these contents, using the ARN for your MFA device as the value for `kms_mfa_id`:
 ```
 [kms]
 kms_mfa_id = arn:aws:iam::551888187628:mfa/MDBEnc
@@ -167,10 +167,10 @@ kms_mfa_socket = /tmp/kms_mfa_socket
 ```
 
 
-When you start the MariaDB service now, the wrapper will temporarily create a socket file at the location given by the `<code>kms_mfa_socket</code>` option. The wrapper will read the MFA code from the socket and will use it to authenticate to KMS. To give the MFA code, simply write the digits to the socket file using `<code>echo</code>`: `<code>echo 111676 > /tmp/kms_mfa_socket</code>`.
+When you start the MariaDB service now, the wrapper will temporarily create a socket file at the location given by the `kms_mfa_socket` option. The wrapper will read the MFA code from the socket and will use it to authenticate to KMS. To give the MFA code, simply write the digits to the socket file using `echo`: `echo 111676 > /tmp/kms_mfa_socket`.
 
 
-The `<code>systemctl</code>` command will block until MariaDB starts, so you will need to write the code to the socket file via a separate terminal.
+The `systemctl` command will block until MariaDB starts, so you will need to write the code to the socket file via a separate terminal.
 
 
 Note that the temporary credentials put into the environment of the MariaDB process will expire after a period of time defined by the request to the AWS Security Token Service (STS). In the example below, they will expire after 900 seconds. After that time, MariaDB may be unable to generate new encrypted data keys, which means that, for example, an attempt to create a table with a previously-unused key ID would fail.
@@ -179,7 +179,7 @@ Note that the temporary credentials put into the environment of the MariaDB proc
 #### Wrapper program example
 
 
-Here's an example wrapper program written in go. Build this into an executable named `<code>iam-kms-wrapper</code>` and use it as instructed above. This could of course be written in any language for which an appropriate AWS SDK exists, but go has the benefit of compiling to a static binary, which means you do not have to worry about interpreter versions or installing complex dependencies on the host that runs your MariaDB server.
+Here's an example wrapper program written in go. Build this into an executable named `iam-kms-wrapper` and use it as instructed above. This could of course be written in any language for which an appropriate AWS SDK exists, but go has the benefit of compiling to a static binary, which means you do not have to worry about interpreter versions or installing complex dependencies on the host that runs your MariaDB server.
 
 
 ```
@@ -293,7 +293,7 @@ First, create a new user.
 1. Click "Create New Users".
 1. Enter a new user name. (The examples will use "MDBEncAdmin".)
 1. Click "Show User Security Credentials".
-1. Copy the credentials and put them in a `<code>credentials</code>` file with this structure:
+1. Copy the credentials and put them in a `credentials` file with this structure:
 ```
 [MDBEncAdmin]
 aws_access_key_id=AKIAJMPPNO7EBKABCDEF
@@ -311,7 +311,7 @@ Now, give the new user permission to perform API operations on your key.
 1. Click "Encryption Keys" in the left-hand sidebar.
 1. Click the name of your key to open the details view.
 1. Click "Switch to policy view" if it is not already open. (The "policy view" is a large text field that contains JSON describing the key policy.)
-1. Create a new item in the `<code>Statement</code>` array with this structure:
+1. Create a new item in the `Statement` array with this structure:
 ```
 {
  "Sid": "Allow Enable and Disable of the key",

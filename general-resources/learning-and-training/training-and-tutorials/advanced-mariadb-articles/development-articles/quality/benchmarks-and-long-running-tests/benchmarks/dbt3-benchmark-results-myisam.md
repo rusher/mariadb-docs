@@ -14,7 +14,7 @@ This page shows the results for benchmarking the following configuration:
 * MySQL 5.6.4 + MyISAM
 
 
-The test is performed using the automation script `<code>/mariadb-tools/dbt3_benchmark/launcher.pl</code>`.
+The test is performed using the automation script `/mariadb-tools/dbt3_benchmark/launcher.pl`.
 
 
 Details about this automation script can be found on the [DBT3 automation scripts](dbt3-automation-scripts.md) page.
@@ -23,7 +23,7 @@ Details about this automation script can be found on the [DBT3 automation script
 ## Hardware
 
 
-The tests were performed on our `<code>facebook-maria1</code>` machine. It has the following parameters:
+The tests were performed on our `facebook-maria1` machine. It has the following parameters:
 
 
 * CPU: 16 Intel® Xeon® CPU L5520 @ 2.27GHz
@@ -45,7 +45,7 @@ This test was performed with the following parameters:
 * Available memory: 16 GB
 
 
-**NOTE:** The available memory is controlled by a parameter `<code>mem=16G</code>` added to the file `<code>/boot/grub/menu.lst</code>`
+**NOTE:** The available memory is controlled by a parameter `mem=16G` added to the file `/boot/grub/menu.lst`
 
 
 ### Steps to reproduce
@@ -272,10 +272,10 @@ Here are the actual results in seconds (smaller is better):
 
 **NOTE:** The columns named "*Ratio*" are calculated values of the ratio between the
 current value compared to the value in the first test configuration. The
-formula for it is `<code>(current_value/value_in_first_row)</code>`. For example if [MariaDB
+formula for it is `(current_value/value_in_first_row)`. For example if [MariaDB
 5.3.2](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes.md) (the first column) handles a query for 100 seconds and MySQL 5.6.4 (the last
 configuration) handles the same query for 120 seconds, the ratio will be
-`<code>120/100 = 1.20</code>`. This means that it takes MySQL 5.6.4 20% more time to handle
+`120/100 = 1.20`. This means that it takes MySQL 5.6.4 20% more time to handle
 the same query.
 
 

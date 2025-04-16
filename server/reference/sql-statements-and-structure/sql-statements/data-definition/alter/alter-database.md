@@ -23,15 +23,15 @@ alter_specification:
 ## Description
 
 
-`<code>ALTER DATABASE</code>` enables you to change the overall characteristics of a
-database. These characteristics are stored in the `<code>db.opt</code>` file in the
-database directory. To use `<code>ALTER DATABASE</code>`, you need the `<code>ALTER</code>`
-privilege on the database. `<code>ALTER SCHEMA</code>` is a synonym for ALTER
+`ALTER DATABASE` enables you to change the overall characteristics of a
+database. These characteristics are stored in the `db.opt` file in the
+database directory. To use `ALTER DATABASE`, you need the `ALTER`
+privilege on the database. `ALTER SCHEMA` is a synonym for ALTER
 DATABASE.
 
 
-The `<code>CHARACTER SET</code>` clause changes the default database character set.
-The `<code>COLLATE</code>` clause changes the default database collation. See [Character Sets and Collations](../../../../data-types/string-data-types/character-sets/README.md) for more.
+The `CHARACTER SET` clause changes the default database character set.
+The `COLLATE` clause changes the default database collation. See [Character Sets and Collations](../../../../data-types/string-data-types/character-sets/README.md) for more.
 
 
 You can see what character sets and collations are available using,
@@ -45,7 +45,7 @@ The database name can be omitted from the first syntax, in which case
 the statement applies to the default database.
 
 
-The syntax that includes the `<code>UPGRADE DATA DIRECTORY NAME</code>` clause was
+The syntax that includes the `UPGRADE DATA DIRECTORY NAME` clause was
 added in MySQL 5.1.23. It updates the name of the directory associated
 with the database to use the encoding implemented in MySQL 5.1 for
 mapping database names to database directory names (see
@@ -70,7 +70,7 @@ older version,the server displays a name such as a-b-c (which is in
 the old format) as #mysql50#a-b-c, and you must refer to the name
 using the #mysql50
 
-# prefix. Use `<code>UPGRADE DATA DIRECTORY NAME</code>` in this
+# prefix. Use `UPGRADE DATA DIRECTORY NAME` in this
 
 case to explicitly tell the server to re-encode the database directory
 name to the current encoding format:

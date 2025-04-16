@@ -4,10 +4,10 @@
 ## Description
 
 
-Each user that connects to the server is stored as a row in the `<code>users</code>` table, along with current and total connections.
+Each user that connects to the server is stored as a row in the `users` table, along with current and total connections.
 
 
-The table size is determined at startup by the value of the [performance_schema_users_size](../performance-schema-system-variables.md#performance_schema_users_size) system variable. If this is set to `<code>0</code>`, user statistics will be disabled.
+The table size is determined at startup by the value of the [performance_schema_users_size](../performance-schema-system-variables.md#performance_schema_users_size) system variable. If this is set to `0`, user statistics will be disabled.
 
 
 

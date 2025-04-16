@@ -83,8 +83,8 @@ ERROR HY000: The MariaDB server is running with the --strict-password-validation
 ## Plugin API
 
 
-Password validation plugin API is very simple. A plugin must implement only one method — `<code>validate_password()</code>`. This method takes two arguments — user name and the plain-text password. And it returns 0 when the password has passed the validation and 1 otherwise,
+Password validation plugin API is very simple. A plugin must implement only one method — `validate_password()`. This method takes two arguments — user name and the plain-text password. And it returns 0 when the password has passed the validation and 1 otherwise,
 
 
-See also `<code>mysql/plugin_password_validation.h</code>` and password validation plugins in `<code>plugin/simple_password_check/</code>` and `<code>plugins/cracklib_password_check/</code>`.
+See also `mysql/plugin_password_validation.h` and password validation plugins in `plugin/simple_password_check/` and `plugins/cracklib_password_check/`.
 

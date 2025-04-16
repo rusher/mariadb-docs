@@ -44,10 +44,10 @@ The previous examples show how to run an Ansible module on remote servers. But i
 ansible -i production-mariadb all -a 'echo $PATH'
 ```
 
-This command shows the value of `<code>$PATH</code>` on all servers in the inventory "production-mariadb".
+This command shows the value of `$PATH` on all servers in the inventory "production-mariadb".
 
 
-We can also run commands as root by adding the `<code>-b</code>` (or `<code>--become</code>`) option:
+We can also run commands as root by adding the `-b` (or `--become`) option:
 
 
 ```
@@ -78,7 +78,7 @@ Let's see what changed:
 If we call ansible-playbook with no additional arguments, we will apply all applicable roles to all the servers mentioned in the play.
 
 
-To only apply roles to certain servers, we can use the `<code>-l</code>` parameter to specify a group, an individual host, or a pattern:
+To only apply roles to certain servers, we can use the `-l` parameter to specify a group, an individual host, or a pattern:
 
 
 ```
@@ -111,7 +111,7 @@ We should always test our playbooks and roles on test servers before applying th
 Ansible has a *check mode* that is meant to greatly reduce the chances of a failure. When run in check mode, ansible-playbook will read the inventory, the play and roles; it will figure out which tasks need to be applied; then it will connect to target hosts, read facts, and value all the relevant variables. If all these steps succeed, it is unlikely that running ansible-playbook without check mode will fail.
 
 
-To run ansible-playbook in check mode, just add the `<code>--check</code>` (or `<code>-C</code>`) parameter.
+To run ansible-playbook in check mode, just add the `--check` (or `-C`) parameter.
 
 
 ## References

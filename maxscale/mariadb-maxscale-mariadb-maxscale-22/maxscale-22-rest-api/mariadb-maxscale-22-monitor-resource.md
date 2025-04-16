@@ -28,7 +28,7 @@ GET /v1/monitors/:name
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -140,7 +140,7 @@ GET /v1/monitors
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -241,9 +241,9 @@ GET /v1/monitors
 ### Create a monitor
 
 
-Create a new monitor. The request body must define the `<code>/data/id</code>`
-field with the name of the monitor, the `<code>/data/type</code>` field with the
-value of `<code>monitors</code>` and the `<code>/data/attributes/module</code>` field with the
+Create a new monitor. The request body must define the `/data/id`
+field with the name of the monitor, the `/data/type` field with the
+value of `monitors` and the `/data/attributes/module` field with the
 monitor module for this monitor. All of the monitor parameters can
 be defined at creation time.
 
@@ -298,7 +298,7 @@ a custom value for the *monitor_interval* parameter.
 Monitor is created:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Update a monitor
@@ -341,13 +341,13 @@ modified. Refer to the monitor module documentation for details on these paramet
 Monitor is modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Invalid request body:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ### Update monitor relationships
@@ -408,13 +408,13 @@ PATCH /v1/monitors/my-monitor/relationships/servers
 Monitor relationships modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Invalid JSON body:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ### Destroy a monitor
@@ -438,13 +438,13 @@ DELETE /v1/monitors/:name/stop
 Monitor is deleted:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Monitor could not be deleted:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ### Stop a monitor
@@ -466,7 +466,7 @@ PUT /v1/monitors/:name/stop
 Monitor is stopped:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Start a monitor
@@ -488,4 +488,4 @@ PUT /v1/monitors/:name/start
 Monitor is started:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`

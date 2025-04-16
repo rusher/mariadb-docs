@@ -8,22 +8,22 @@ The [old_mode](../../server-usage/replication-cluster-multi-master/optimization-
 MariaDB supports several different modes which allow you to tune it to suit your needs.
 
 
-The most important ways for doing this are with [SQL_MODE](sql-mode.md) and `<code>OLD_MODE</code>`.
+The most important ways for doing this are with [SQL_MODE](sql-mode.md) and `OLD_MODE`.
 
 
-[SQL_MODE](sql-mode.md) is used for getting MariaDB to emulate behavior from other SQL servers, while `<code class="fixed" style="white-space:pre-wrap">OLD_MODE</code>` is used for emulating behavior from older MariaDB or MySQL versions.
+[SQL_MODE](sql-mode.md) is used for getting MariaDB to emulate behavior from other SQL servers, while `OLD_MODE` is used for emulating behavior from older MariaDB or MySQL versions.
 
 
-`<code class="fixed" style="white-space:pre-wrap">OLD_MODE</code>` is a string with different options separated by commas ('`<code>,</code>`') without spaces. The options are case insensitive.
+`OLD_MODE` is a string with different options separated by commas ('`,`') without spaces. The options are case insensitive.
 
 
-Normally `<code class="fixed" style="white-space:pre-wrap">OLD_MODE</code>` should be empty. It's mainly used to get old behavior when switching to MariaDB or to a new major version of MariaDB, until you have time to fix your application.
+Normally `OLD_MODE` should be empty. It's mainly used to get old behavior when switching to MariaDB or to a new major version of MariaDB, until you have time to fix your application.
 
 
-Between major versions of MariaDB various options supported by `<code class="fixed" style="white-space:pre-wrap">OLD_MODE</code>` may be removed. This is intentional as we assume that the application will be fixed to conform with the new MariaDB behavior between releases.
+Between major versions of MariaDB various options supported by `OLD_MODE` may be removed. This is intentional as we assume that the application will be fixed to conform with the new MariaDB behavior between releases.
 
 
-In other words, `<code class="fixed" style="white-space:pre-wrap">OLD_MODE</code>` options are by design deprecated from the day they were added and will eventually be removed [as any other deprecated feature](../../../release-notes/mariadb-feature-deprecation-policy.md).
+In other words, `OLD_MODE` options are by design deprecated from the day they were added and will eventually be removed [as any other deprecated feature](../../../release-notes/mariadb-feature-deprecation-policy.md).
 
 
 You can check the variable's local and global value with:
@@ -33,9 +33,9 @@ You can check the variable's local and global value with:
 SELECT @@OLD_MODE, @@GLOBAL.OLD_MODE;
 ```
 
-You can set the `<code class="fixed" style="white-space:pre-wrap"><span class="n">OLD_MODE</span>
-</code>` either from the
-[command line](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) (option `<code class="fixed" style="white-space:pre-wrap">--old-mode</code>`) or by setting the [old_mode](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_mode) system variable.
+You can set the `<span class="n">OLD_MODE</span>
+` either from the
+[command line](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) (option `--old-mode`) or by setting the [old_mode](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_mode) system variable.
 
 
 Non-default old mode features are deprecated by design, and from [MariaDB 11.3](../../../release-notes/mariadb-community-server/what-is-mariadb-113.md), a warning will be issued when set.
@@ -44,13 +44,13 @@ Non-default old mode features are deprecated by design, and from [MariaDB 11.3](
 ## Modes
 
 
-The different values of `<code>OLD_MODE</code>` are:
+The different values of `OLD_MODE` are:
 
 
 ### COMPAT_5_1_CHECKSUM
 
 
-From [MariaDB 10.9](../../../release-notes/mariadb-community-server/what-is-mariadb-109.md), the [--old option](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old) is deprecated. This option allows behaviour of the --old option for enabling the old-style checksum for `<code>CHECKSUM TABLE</code>` that MySQL 5.1 supports
+From [MariaDB 10.9](../../../release-notes/mariadb-community-server/what-is-mariadb-109.md), the [--old option](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old) is deprecated. This option allows behaviour of the --old option for enabling the old-style checksum for `CHECKSUM TABLE` that MySQL 5.1 supports
 
 
 ### IGNORE_INDEX_ONLY_FOR_JOIN
@@ -98,22 +98,22 @@ From [MariaDB 11.7](../../../release-notes/mariadb-community-server/what-is-mari
 ### UTF8_IS_UTF8MB3
 
 
-From [MariaDB 10.6.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), the main name of the previous 3 byte `<code>utf</code>` [character set](../../reference/data-types/string-data-types/character-sets/README.md) has been changed to `<code>utf8mb3</code>`. If set, the default, `<code>utf8</code>` is an alias for `<code>utf8mb3</code>`. If not set, `<code>utf8</code>` would be an alias for `<code>utf8mb4</code>`.
+From [MariaDB 10.6.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), the main name of the previous 3 byte `utf` [character set](../../reference/data-types/string-data-types/character-sets/README.md) has been changed to `utf8mb3`. If set, the default, `utf8` is an alias for `utf8mb3`. If not set, `utf8` would be an alias for `utf8mb4`.
 
 
 ### ZERO_DATE_TIME_CAST
 
 
-When a [TIME](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) value is cast to a [DATETIME](../../reference/data-types/date-and-time-data-types/datetime.md), the date part will be `<code>0000-00-00</code>`, not [CURRENT_DATE](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/curdate.md) (as dictated by the SQL standard).
+When a [TIME](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) value is cast to a [DATETIME](../../reference/data-types/date-and-time-data-types/datetime.md), the date part will be `0000-00-00`, not [CURRENT_DATE](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/curdate.md) (as dictated by the SQL standard).
 
 
 ## OLD_MODE and Stored Programs
 
 
-In contrast to [SQL_MODE](sql-mode.md), [stored programs](../../server-usage/programming-customizing-mariadb/stored-routines/README.md) use the current user's `<code class="fixed" style="white-space:pre-wrap">OLD_MODE</code>`value.
+In contrast to [SQL_MODE](sql-mode.md), [stored programs](../../server-usage/programming-customizing-mariadb/stored-routines/README.md) use the current user's `OLD_MODE`value.
 
 
-Changes to `<code class="fixed" style="white-space:pre-wrap">OLD_MODE</code>` are not sent to replicas.
+Changes to `OLD_MODE` are not sent to replicas.
 
 
 ## Examples

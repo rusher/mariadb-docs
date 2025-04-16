@@ -24,7 +24,7 @@ If you have a problem with a mysqld process that keeps on growing, you can use t
 what is allocating memory:
 
 
-Depending on the system you have to install the `<code>tcmalloc</code>` (OpenSuse) or the `<code>google-perftools-lib</code>` (RedHat, Centos) package.
+Depending on the system you have to install the `tcmalloc` (OpenSuse) or the `google-perftools-lib` (RedHat, Centos) package.
 
 
 The following set of commands starts mysqld with memory profiling and if you kill it with SIGABRT, you will get a core dump that you can examine:
@@ -45,7 +45,7 @@ LD_PRELOAD=/usr/lib64/libtcmalloc.so.4 HEAPPROFILE=/tmp/mysqld.prof /usr/sbin/my
 You can of course add other [mysqld options](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) to the end of the above line.
 
 
-Now start your client/application that uses MariaDB. You can find where memory is allocated in the `<code>/tmp/mysqld.prof</code>` file. If you find any memory issues, please report this in the [MariaDB bug tracker](https://jira.mariadb.org/secure/Dashboard.jspa)!
+Now start your client/application that uses MariaDB. You can find where memory is allocated in the `/tmp/mysqld.prof` file. If you find any memory issues, please report this in the [MariaDB bug tracker](https://jira.mariadb.org/secure/Dashboard.jspa)!
 
 
 ### ptrace Protection and Attaching GDB to a mysqld Instance
@@ -64,7 +64,7 @@ More details are available in the [Ubuntu Wiki](https://wiki.ubuntu.com/Security
 
 
 To allow GDB to attach, one needs to edit the value of the
-`<code>/proc/sys/kernel/yama/ptrace_scope</code>` sysctl value.
+`/proc/sys/kernel/yama/ptrace_scope` sysctl value.
 
 
 * To change it temporarily, open a root shell and issue:
@@ -75,7 +75,7 @@ echo 0 > /proc/sys/kernel/yama/ptrace_scope
 ```
 /etc/sysctl.d/10-ptrace.conf
 ```
- and set the value to `<code>0</code>`.
+ and set the value to `0`.
 
 
 ### Debugging a Server That Hangs
@@ -113,5 +113,5 @@ set logging on
 thread apply all backtrace full
 ```
 
-After the above, you have a full backtrace, including all local variables, in the `<code>mysqld.log</code>` file. Note that you will only get all variables if the server is not stripped.
+After the above, you have a full backtrace, including all local variables, in the `mysqld.log` file. Note that you will only get all variables if the server is not stripped.
 

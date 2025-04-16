@@ -39,7 +39,7 @@ systemctl stop maxscale
 
 
 
-The MaxScale service file is located in `<code>/lib/systemd/system/maxscale.service</code>`.
+The MaxScale service file is located in `/lib/systemd/system/maxscale.service`.
 
 
 ### SysV
@@ -69,9 +69,9 @@ service maxscale stop
 
 
 Additional command line arguments can be passed to MariaDB MaxScale with a
-configuration file placed at `<code>/etc/sysconfig/maxscale</code>` on RPM installations and
-`<code>/etc/default/maxscale</code>` file on DEB installations. Set the arguments in a
-variable called `<code>MAXSCALE_OPTIONS</code>` and remember to surround the arguments with
+configuration file placed at `/etc/sysconfig/maxscale` on RPM installations and
+`/etc/default/maxscale` file on DEB installations. Set the arguments in a
+variable called `MAXSCALE_OPTIONS` and remember to surround the arguments with
 quotes. The file should only contain environment variable declarations.
 
 
@@ -89,7 +89,7 @@ Note that this is only supported on legacy SysV systems.
 
 
 It is possible to use the maxctrl command to obtain statistics about the
-services that are running within MaxScale. The maxctrl command `<code>list services</code>`
+services that are running within MaxScale. The maxctrl command `list services`
 will give very basic information regarding services. This command may be either
 run in interactive mode or passed on the maxctrl command line.
 
@@ -126,18 +126,18 @@ When clients who are accessing a database system through MariaDB MaxScale make
 frequent short connections, there may be a benefit in using persistent
 connections. This feature is controlled by two configuration values that are
 specified per server in the relevant server section of the configuration file.
-The configuration options are `<code>persistpoolmax</code>` and `<code>persistmaxtime</code>`.
+The configuration options are `persistpoolmax` and `persistmaxtime`.
 
 
 Normally, when a client connection is terminated, all the related back end
-database connections are also terminated. If the `<code>persistpoolmax</code>` options is set
+database connections are also terminated. If the `persistpoolmax` options is set
 to a non-zero integer, then up to that number of connections will be kept in a
 pool for that server. When a new connection is requested by the system to handle
 a client session, then a connection from the pool will be used if possible.
 
 
 The connection will only be taken from the pool if it has been there for no more
-than `<code>persistmaxtime</code>` seconds. The connection will also be discarded if it has
+than `persistmaxtime` seconds. The connection will also be discarded if it has
 been disconnected by the back end server. Connections will be selected so that
 they match the user name and protocol for the new request.
 
@@ -170,7 +170,7 @@ values in each server section.
 
 
 To determine what client are currently connected to MariaDB MaxScale, you can
-use the `<code>list sessions</code>` command within maxctrl. This will give you IP address
+use the `list sessions` command within maxctrl. This will give you IP address
 and the ID of the session for that connection. As with any maxctrl
 command this can be passed on the command line or typed interactively in
 maxctrl.
@@ -203,7 +203,7 @@ The name of the log file is maxscale.log. When the log is rotated, MaxScale
 closes the current log file and opens a new one using the same name.
 
 
-Log file rotation is achieved by use of the `<code>rotate logs</code>` command
+Log file rotation is achieved by use of the `rotate logs` command
 in maxctrl.
 
 
@@ -279,7 +279,7 @@ cluster, this allows for planned, temporary removal of a database from the
 cluster within the need to change the MariaDB MaxScale configuration.
 
 
-To achieve the removal of a database server you can use the `<code>set server</code>` command
+To achieve the removal of a database server you can use the `set server` command
 in maxctrl to set the maintenance mode flag for the server. This
 may be done interactively within maxctrl or by passing the command on the
 command line.

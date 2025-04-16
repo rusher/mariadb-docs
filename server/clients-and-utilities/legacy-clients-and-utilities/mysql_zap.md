@@ -51,5 +51,5 @@ mysql     4258  3.3 15.7 939740 81236 ?        Sl   08:51  30:18 /usr/sbin/mysql
 *pkill* can be used as an alternative to *mysql_zap*, although an important distinction between pkill and mysql_zap is that mysql_zap kills the server 'gently' first (with signal 15) and only if the server doesn't die in a limited time then tries -9.
 
 
-To use pkill in the same way, one must run it twice; `<code>pkill --signal 15 mysqld ; sleep(10) ; pkill -f --signal 9 pattern</code>`
+To use pkill in the same way, one must run it twice; `pkill --signal 15 mysqld ; sleep(10) ; pkill -f --signal 9 pattern`
 

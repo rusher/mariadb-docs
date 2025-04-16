@@ -29,7 +29,7 @@ is a good example on how to set it up.
 The next step is to copy the keytab file from the server where MariaDB is
 installed to the server where MaxScale is located. The keytab file must be
 placed in the configured default location which almost always is
-`<code>/etc/krb5.keytab</code>`.
+`/etc/krb5.keytab`.
 
 
 The location of the keytab file can be changed with the KRB5_KTNAME environment
@@ -69,7 +69,7 @@ principal name that MaxScale sends to the client. The backend authenticator
 module has no options.
 
 
-### `<code>principal_name</code>`
+### `principal_name`
 
 
 The service principal name to send to the client. This parameter is a string
@@ -93,7 +93,7 @@ details on how authentication modules work in MaxScale.
 
 The GSSAPI plugin authentication starts when the database server sends the
 service principal name in the AuthSwitchRequest packet. The principal name will
-usually be in the form `<code>service@REALM.COM</code>`.
+usually be in the form `service@REALM.COM`.
 
 
 The client will then request a token for this service from the GSSAPI server and

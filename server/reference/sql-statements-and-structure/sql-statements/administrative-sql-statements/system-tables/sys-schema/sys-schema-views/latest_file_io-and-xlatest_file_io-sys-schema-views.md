@@ -9,10 +9,10 @@ These [Sys Schema](sys-schema-views-host_summary_by_statement_latency-and-xhost_
 ## Description
 
 
-The `<code>latest_file_io</code>` and `<code>x$latest_file_io</code>` views summarize file I/O activity, grouped by file and thread. Rows are sorted by most recent I/O by default.
+The `latest_file_io` and `x$latest_file_io` views summarize file I/O activity, grouped by file and thread. Rows are sorted by most recent I/O by default.
 
 
-The `<code>latest_file_io</code>` view is intended to be easier for human reading, while the `<code>x$latest_file_io</code>` view provides the data in raw form, intended for tools that process the data.
+The `latest_file_io` view is intended to be easier for human reading, while the `x$latest_file_io` view provides the data in raw form, intended for tools that process the data.
 
 
 They contain the following columns:

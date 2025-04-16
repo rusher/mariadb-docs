@@ -3,7 +3,7 @@
 
 
 ##### MariaDB starting with [10.6.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
-The `<code>replication_applier_status_by_worker</code>` table was added in [MariaDB 10.6.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md).
+The `replication_applier_status_by_worker` table was added in [MariaDB 10.6.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md).
 
 
 The [Performance Schema](performance-schema-table_handles-table.md) replication_applier_status_by_worker table displays replica worker thread specific information.

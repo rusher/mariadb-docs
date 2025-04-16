@@ -12,28 +12,28 @@ BIGINT[(M)] [SIGNED | UNSIGNED | ZEROFILL]
 ## Description
 
 
-A large integer. The signed range is `<code>-9223372036854775808</code>` to
-`<code>9223372036854775807</code>`. The unsigned range is `<code>0</code>` to
-`<code>18446744073709551615</code>`.
+A large integer. The signed range is `-9223372036854775808` to
+`9223372036854775807`. The unsigned range is `0` to
+`18446744073709551615`.
 
 
 If a column has been set to ZEROFILL, all values will be prepended by zeros so that the BIGINT value contains a number of M digits.
 
 
-**Note:** If the `<code>ZEROFILL</code>` attribute has been specified, the column will automatically become `<code>UNSIGNED</code>`.
+**Note:** If the `ZEROFILL` attribute has been specified, the column will automatically become `UNSIGNED`.
 
 
 For more details on the attributes, see [Numeric Data Type Overview](numeric-data-type-overview.md).
 
 
-`<code>SERIAL</code>` is an alias for:
+`SERIAL` is an alias for:
 
 
 ```
 BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE
 ```
 
-`<code>INT8</code>` is a synonym for `<code>BIGINT</code>`.
+`INT8` is a synonym for `BIGINT`.
 
 
 ## EXAMPLES
@@ -113,7 +113,7 @@ INSERT INTO bigint_unsigned_example VALUES
 ### Out-of-Range
 
 
-A value is considered "out-of-range" when it is too small or too large to be stored in a data type. When `<code>sql_mode=STRICT_TRANS_TABLES</code>` (the default) is set, an out-of-range value generates an error. If strict mode is not in effect, the value is rounded to the nearest valid value and a warning is generated (which might be hidden, depending on your warning settings).
+A value is considered "out-of-range" when it is too small or too large to be stored in a data type. When `sql_mode=STRICT_TRANS_TABLES` (the default) is set, an out-of-range value generates an error. If strict mode is not in effect, the value is rounded to the nearest valid value and a warning is generated (which might be hidden, depending on your warning settings).
 
 
 An example of non-strict out-of-range behavior:
@@ -166,10 +166,10 @@ SELECT * FROM bigint_unsigned_example;
 ### BIGINT ZEROFILL
 
 
-A special type of `<code>BIGINT UNSIGNED is BIGINT ZEROFILL</code>`, which pads out the values with leading zeros in SELECT results. The number of leading zeros are just enough to pad the field out to the length of the type's maximum unsigned value, but the zeros are not included in an expression result or in a `<code>UNION SELECT</code>` column.
+A special type of `BIGINT UNSIGNED is BIGINT ZEROFILL`, which pads out the values with leading zeros in SELECT results. The number of leading zeros are just enough to pad the field out to the length of the type's maximum unsigned value, but the zeros are not included in an expression result or in a `UNION SELECT` column.
 
 
-Using `<code>BIGINT ZEROFILL</code>` works the same way as `<code>BIGINT UNSIGNED</code>` for most operations except a simple `<code>SELECT</code>`. For example, with the following test table setup:
+Using `BIGINT ZEROFILL` works the same way as `BIGINT UNSIGNED` for most operations except a simple `SELECT`. For example, with the following test table setup:
 
 
 ```

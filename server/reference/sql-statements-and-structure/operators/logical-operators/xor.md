@@ -43,7 +43,7 @@ SELECT 1 XOR NULL;
 +------------+
 ```
 
-In the following example, the right `<code>1 XOR 1</code>` is evaluated first, and returns `<code>0</code>`. Then, `<code>1 XOR 0</code>` is evaluated, and `<code>1</code>` is returned.
+In the following example, the right `1 XOR 1` is evaluated first, and returns `0`. Then, `1 XOR 0` is evaluated, and `1` is returned.
 
 
 ```

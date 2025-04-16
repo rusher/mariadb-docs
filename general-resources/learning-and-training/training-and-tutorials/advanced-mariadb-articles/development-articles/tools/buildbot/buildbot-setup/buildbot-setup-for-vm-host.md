@@ -13,7 +13,7 @@ section.
 1. Add host to DNS
 
 
-1. Apply updates (replace `<code><host></code>` with hostname)
+1. Apply updates (replace `<host>` with hostname)
 
 
 ```
@@ -39,10 +39,10 @@ sudo apt-get install tree renameutils vim-nox
 vi /etc/rsyncd.conf
 ```
 
-1. make a `<code>/kvm/</code>` dir and rsync it with the VM master above. The dir often
- resides at `<code>/home/kvm/</code>` (or wherever the storage drive is) and is then
- linked to `<code>/kvm/</code>`. The VMs rely on the `<code>/kvm/vms/</code>` path, so
- the `<code>/kvm/</code>` location is required.
+1. make a `/kvm/` dir and rsync it with the VM master above. The dir often
+ resides at `/home/kvm/` (or wherever the storage drive is) and is then
+ linked to `/kvm/`. The VMs rely on the `/kvm/vms/` path, so
+ the `/kvm/` location is required.
 
 
 ```
@@ -56,7 +56,7 @@ screen
 rsync --delete --exclude=deprecated --exclude=iso --exclude=lost+found -avPL ${vm_master}::kvm/ /home/kvm/
 ```
 
-1. detatch from screen session with `<code>Ctrl+a d</code>`
+1. detatch from screen session with `Ctrl+a d`
 
 
 1. Configure vim.basic as the default editor (optional)
@@ -88,7 +88,7 @@ done
 1. logout then back in as the default user and change the password
 
 
-1. set up the `<code>/.ssh/authorized_keys</code>` file so you can login that way
+1. set up the `/.ssh/authorized_keys` file so you can login that way
 
 
 1. create other standard users and set up their ssh keys (optional)
@@ -131,9 +131,9 @@ sudo adduser buildbot tty
 ```
 
 1. A buildbot admin will need to add this builder
- to the `<code>maria-master-private.cfg</code>` file on the `<code>${buildmaster}</code>` and
- also add it to the `<code>c['slaves']</code>` array in `<code>maria-master.cfg</code>` then
- create the buildslave using the hostname and whatever `<code>${password}</code>` was
+ to the `maria-master-private.cfg` file on the `${buildmaster}` and
+ also add it to the `c['slaves']` array in `maria-master.cfg` then
+ create the buildslave using the hostname and whatever `${password}` was
  agreed upon by you and the buildbot admin:
 
 
@@ -141,7 +141,7 @@ sudo adduser buildbot tty
 sudo buildslave create-slave /var/lib/buildbot/slaves/maria buildbot.askmonty.org ${host} ${password}
 ```
 
-1. add the following to `<code>/etc/default/buildslave</code>` (replace `<code>${hostname}</code>`
+1. add the following to `/etc/default/buildslave` (replace `${hostname}`
  with the name of the host)
 
 
@@ -176,11 +176,11 @@ sudo chmod -v 700 .ssh
 sudo chmod -Rv go-r .ssh
 ```
 
-1. Edit /etc/passwd and change the buildbot user's shell from `<code>/bin/false</code>`
- to `<code>/bin/bash</code>`
+1. Edit /etc/passwd and change the buildbot user's shell from `/bin/false`
+ to `/bin/bash`
 
 
-1. su to the buildbot user and copy in the `<code>/etc/skel</code>` files
+1. su to the buildbot user and copy in the `/etc/skel` files
 
 
 ```
@@ -190,14 +190,14 @@ cp -v /etc/skel/.profile .
 exit
 ```
 
-1. change ownership of the `<code>buildbot/slaves</code>` dir to `<code>buildbot:buildbot</code>`
+1. change ownership of the `buildbot/slaves` dir to `buildbot:buildbot`
 
 
 ```
 sudo chown -Rv buildbot:buildbot ~buildbot/slaves
 ```
 
-1. move the `<code>/var/lib/buildbot</code>` directory to `<code>/home</code>` (or whatever
+1. move the `/var/lib/buildbot` directory to `/home` (or whatever
  location you want to use to store things) and then link it back
 
 
@@ -205,7 +205,7 @@ sudo chown -Rv buildbot:buildbot ~buildbot/slaves
 sudo mv -vi /var/lib/buildbot /home/;cd /var/lib/;sudo ln -sv /home/buildbot ./
 ```
 
-1. update `<code>/etc/default/locale</code>` and change it to: `<code>LANG=en_US.UTF-8</code>`
+1. update `/etc/default/locale` and change it to: `LANG=en_US.UTF-8`
 
 
 ```
@@ -248,15 +248,15 @@ sudo /etc/init.d/buildslave start
 tail -f ~buildbot/slaves/maria/twistd.log
 ```
 
-1. ssh to `<code>${buildmaster}</code>` and add this new host to `<code>kvm_slaves</code>` in
- the `<code>maria-master.cfg</code>` file
+1. ssh to `${buildmaster}` and add this new host to `kvm_slaves` in
+ the `maria-master.cfg` file
 
 
 ```
 sudo vi /etc/buildbot/maria-master.cfg
 ```
 
-1. still on `<code>${buildmaster}</code>`, test and then reload buildbot
+1. still on `${buildmaster}`, test and then reload buildbot
 
 
 ```

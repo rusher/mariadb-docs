@@ -15,7 +15,7 @@ MultiPolygonFromText(wkt[,srid])
 Constructs a [MULTIPOLYGON](../geometry-constructors/multipolygon.md) value using its [WKT](wkt-definition.md) representation and [SRID](../geometry-properties/st_srid.md).
 
 
-`<code>MPolyFromText()</code>` and `<code>MultiPolygonFromText()</code>` are synonyms.
+`MPolyFromText()` and `MultiPolygonFromText()` are synonyms.
 
 
 ## Examples

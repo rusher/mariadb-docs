@@ -14,7 +14,7 @@ See [MariaDB Error Codes](../reference/mariadb-internals/using-mariadb-with-your
 perror [OPTIONS] [ERRORCODE [ERRORCODE...]]
 ```
 
-If you need to describe a negative error code, use `<code>--</code>` before the first error code to end the options.
+If you need to describe a negative error code, use `--` before the first error code to end the options.
 
 
 ## Options

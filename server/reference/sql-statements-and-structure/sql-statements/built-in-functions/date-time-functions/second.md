@@ -11,7 +11,7 @@ SECOND(time)
 ## Description
 
 
-Returns the second for a given `<code>time</code>` (which can include [microseconds](microseconds-in-mariadb.md)), in the range 0 to 59, or `<code>NULL</code>` if not given a valid time value.
+Returns the second for a given `time` (which can include [microseconds](microseconds-in-mariadb.md)), in the range 0 to 59, or `NULL` if not given a valid time value.
 
 
 ## Examples

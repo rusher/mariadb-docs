@@ -18,7 +18,7 @@ This article contains information on known problems and limitations of MariaDB G
 * All tables should have a primary key (multi-column primary keys are supported). [DELETE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) operations are unsupported on tables without a primary key. Also, rows in tables without a primary key may appear in a different order on different nodes.
 
 
-* The [general query log](../../../server-management/server-monitoring-logs/general-query-log.md) and the [slow query log](../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md) cannot be directed to a table. If you enable these logs, then you must forward the log to a file by setting `<code>[log_output=FILE](../optimization-and-tuning/system-variables/server-system-variables.md#log_output)</code>`.
+* The [general query log](../../../server-management/server-monitoring-logs/general-query-log.md) and the [slow query log](../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md) cannot be directed to a table. If you enable these logs, then you must forward the log to a file by setting `[log_output=FILE](../optimization-and-tuning/system-variables/server-system-variables.md#log_output)`.
 
 
 * [XA transactions](../../../reference/sql-statements-and-structure/sql-statements/transactions/xa-transactions.md) are not supported.
@@ -66,7 +66,7 @@ This article contains information on known problems and limitations of MariaDB G
  [managing-auto-increments-with-multi.html](https://codership.blogspot.com/2009/02/managing-auto-increments-with-multi.html)
 
 
-* A command may fail with `<code class="fixed" style="white-space:pre-wrap">ER_UNKNOWN_COM_ERROR</code>` producing 'WSREP has not yet prepared node for application use' (or 'Unknown command' in older versions) error message. It happens when a cluster is suspected to be split and the node is in a smaller part — for example, during a network glitch, when nodes temporarily lose each other. It can also occur during state transfer. The node takes this measure to prevent data inconsistency. Its usually a temporary state which can be detected by checking [wsrep_ready](galera-cluster-status-variables.md#wsrep_ready) value. The node, however, allows SHOW and SET command during this period.
+* A command may fail with `ER_UNKNOWN_COM_ERROR` producing 'WSREP has not yet prepared node for application use' (or 'Unknown command' in older versions) error message. It happens when a cluster is suspected to be split and the node is in a smaller part — for example, during a network glitch, when nodes temporarily lose each other. It can also occur during state transfer. The node takes this measure to prevent data inconsistency. Its usually a temporary state which can be detected by checking [wsrep_ready](galera-cluster-status-variables.md#wsrep_ready) value. The node, however, allows SHOW and SET command during this period.
 
 
 * After a temporary split, if the 'good' part of the cluster was still
@@ -108,10 +108,10 @@ This article contains information on known problems and limitations of MariaDB G
 * Flashback isn't supported in Galera due to incompatible binary log format.
 
 
-* `<code class="fixed" style="white-space:pre-wrap">FLUSH PRIVILEGES</code>` is not replicated.
+* `FLUSH PRIVILEGES` is not replicated.
 
 
-* The [query cache](../../../reference/plugins/other-plugins/query-cache-information-plugin.md) needed to be disabled by setting `<code>[query_cache_size=0](../optimization-and-tuning/system-variables/server-system-variables.md#query_cache_size)</code>` prior to MariaDB Galera Cluster 5.5.40, MariaDB Galera Cluster 10.0.14, and [MariaDB 10.1.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md)..
+* The [query cache](../../../reference/plugins/other-plugins/query-cache-information-plugin.md) needed to be disabled by setting `[query_cache_size=0](../optimization-and-tuning/system-variables/server-system-variables.md#query_cache_size)` prior to MariaDB Galera Cluster 5.5.40, MariaDB Galera Cluster 10.0.14, and [MariaDB 10.1.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md)..
 
 
 * In an asynchronous replication setup where a master replicates to a galera node acting as slave, parallel replication (slave-parallel-threads > 1) on slave is currently not supported (see [MDEV-6860](https://jira.mariadb.org/browse/MDEV-6860)).

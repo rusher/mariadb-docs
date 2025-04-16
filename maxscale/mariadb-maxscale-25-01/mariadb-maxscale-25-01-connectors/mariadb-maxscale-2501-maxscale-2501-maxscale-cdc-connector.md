@@ -18,22 +18,22 @@ easily embedded into existing applications.
 To start using the connector, either download it from the
 [MariaDB website](https://mariadb.com/downloads/mariadb-tx/connector) or
 [configure the MaxScale repository](../../../server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md)
-and install the `<code>maxscale-cdc-connector</code>` package.
+and install the `maxscale-cdc-connector` package.
 
 
 ## API Overview
 
 
-A CDC connection object is prepared by instantiating the `<code>CDC::Connection</code>`
-class. To create the actual connection, call the `<code>CDC::Connection::connect</code>`
+A CDC connection object is prepared by instantiating the `CDC::Connection`
+class. To create the actual connection, call the `CDC::Connection::connect`
 method of the class.
 
 
-After the connection has been created, call the `<code>CDC::Connection::read</code>` method
-to get a row of data. The `<code>CDC::Row::length</code>` method tells how many values a row
-has and `<code>CDC::Row::value</code>` is used to access that value. The field name of a
-value can be extracted with the `<code>CDC::Row::key</code>` method and the current GTID of a
-row of data is retrieved with the `<code>CDC::Row::gtid</code>` method.
+After the connection has been created, call the `CDC::Connection::read` method
+to get a row of data. The `CDC::Row::length` method tells how many values a row
+has and `CDC::Row::value` is used to access that value. The field name of a
+value can be extracted with the `CDC::Row::key` method and the current GTID of a
+row of data is retrieved with the `CDC::Row::gtid` method.
 
 
 To close the connection, destroy the instantiated object.
@@ -104,5 +104,5 @@ sudo zypper install -y libjansson-devel openssl-devel cmake make gcc-c++ git
 
 
 To build and package the connector as a library, follow MaxScale build
-instructions with the exception of adding `<code>-DTARGET_COMPONENT=devel</code>` to the
+instructions with the exception of adding `-DTARGET_COMPONENT=devel` to the
 CMake call.

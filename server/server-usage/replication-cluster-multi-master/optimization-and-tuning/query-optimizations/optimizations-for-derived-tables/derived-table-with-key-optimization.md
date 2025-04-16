@@ -49,9 +49,9 @@ The EXPLAIN output for it will show:
 One can see here that
 
 
-* table `<code><derived2></code>` is accessed through `<code>key0</code>`.
-* `<code>ref</code>` column shows `<code>world.Country.Code</code>`
-* if we look that up in the original query, we find the equality that was used to construct `<code>ref</code>` access: `<code>Country.Code=cities_in_country.Country</code>`.
+* table `<derived2>` is accessed through `key0`.
+* `ref` column shows `world.Country.Code`
+* if we look that up in the original query, we find the equality that was used to construct `ref` access: `Country.Code=cities_in_country.Country`.
 
 
 ## Factsheet

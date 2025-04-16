@@ -28,7 +28,7 @@ The authentication string, stored by the server, is
 concat('P', conv(log2(iterations)-10, 10, 62), ':', base64(salt), ':', base64(hash))
 ```
 
-for example `<code>P0:WW9sXaaL/o:vubFBzIrapbfHct1/J72dnUryz5VS7lA6XHH8sIx4TI</code>`
+for example `P0:WW9sXaaL/o:vubFBzIrapbfHct1/J72dnUryz5VS7lA6XHH8sIx4TI`
 
 
 * it consists of colon-separated fields

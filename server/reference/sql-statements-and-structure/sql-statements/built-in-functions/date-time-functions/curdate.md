@@ -13,12 +13,12 @@ CURRENT_DATE()
 ## Description
 
 
-`<code>CURDATE</code>` returns the current date as a value in 'YYYY-MM-DD' or YYYYMMDD
+`CURDATE` returns the current date as a value in 'YYYY-MM-DD' or YYYYMMDD
 format, depending on whether the function is used in a string or
 numeric context.
 
 
-`<code>CURRENT_DATE</code>` and `<code>CURRENT_DATE()</code>` are synonyms.
+`CURRENT_DATE` and `CURRENT_DATE()` are synonyms.
 
 
 ## Examples

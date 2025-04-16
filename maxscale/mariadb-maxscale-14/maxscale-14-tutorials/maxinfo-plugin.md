@@ -98,7 +98,7 @@ Uptime: 72  Threads: 1  Sessions: 11
 The SQL command used to interact with maxinfo is the show command, a variety of show commands are available and will be described in the following sections.
 
 
-Maxinfo also supports the `<code>FLUSH LOGS</code>`, `<code>SET SERVER <name> <status></code>` and `<code>CLEAR SERVER <name> <status></code>` commands. These behave the same as their MaxAdmin counterpart.
+Maxinfo also supports the `FLUSH LOGS`, `SET SERVER <name> <status>` and `CLEAR SERVER <name> <status>` commands. These behave the same as their MaxAdmin counterpart.
 
 
 ## Show variables

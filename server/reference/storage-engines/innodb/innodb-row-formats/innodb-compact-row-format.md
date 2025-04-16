@@ -4,23 +4,23 @@
 
 #### Note
 
-`<code>COMPACT</code>` was the default row format in prior versions of MariaDB. MariaDB has since transitioned to `<code>DYNAMIC</code>` as the default row format. 
+`COMPACT` was the default row format in prior versions of MariaDB. MariaDB has since transitioned to `DYNAMIC` as the default row format. 
 
 
 
-The `<code>COMPACT</code>` row format is similar to the `<code>REDUNDANT</code>` row format, but it stores data in a more compact manner that requires about 20% less storage.
+The `COMPACT` row format is similar to the `REDUNDANT` row format, but it stores data in a more compact manner that requires about 20% less storage.
 
 
-## Using the `<code>COMPACT</code>` Row Format
+## Using the `COMPACT` Row Format
 
 
-The easiest way to create an InnoDB table that uses the `<code>COMPACT</code>` row format is by setting the [ROW_FORMAT](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format) table option to `<code>COMPACT</code>` in a [CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md) or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement.
+The easiest way to create an InnoDB table that uses the `COMPACT` row format is by setting the [ROW_FORMAT](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format) table option to `COMPACT` in a [CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md) or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement.
 
 
-It is recommended to set the [innodb_strict_mode](../innodb-system-variables.md#innodb_strict_mode) system variable to `<code>ON</code>` when using this row format.
+It is recommended to set the [innodb_strict_mode](../innodb-system-variables.md#innodb_strict_mode) system variable to `ON` when using this row format.
 
 
-The `<code>COMPACT</code>` row format is supported by both the `<code>Antelope</code>` and the `<code>Barracuda</code>` [file formats](../innodb-file-format.md), so tables with this row format can be created regardless of the value of the [innodb_file_format](../innodb-system-variables.md#innodb_file_format) system variable.
+The `COMPACT` row format is supported by both the `Antelope` and the `Barracuda` [file formats](../innodb-file-format.md), so tables with this row format can be created regardless of the value of the [innodb_file_format](../innodb-system-variables.md#innodb_file_format) system variable.
 
 
 For example:
@@ -35,19 +35,19 @@ CREATE TABLE tab (
 ) ENGINE=InnoDB ROW_FORMAT=COMPACT;
 ```
 
-## Index Prefixes with the `<code>COMPACT</code>` Row Format
+## Index Prefixes with the `COMPACT` Row Format
 
 
-The `<code>COMPACT</code>` row format supports index prefixes up to 767 bytes.
+The `COMPACT` row format supports index prefixes up to 767 bytes.
 
 
-## Overflow Pages with the `<code>COMPACT</code>` Row Format
+## Overflow Pages with the `COMPACT` Row Format
 
 
 All InnoDB row formats can store certain kinds of data in overflow pages. This allows for the maximum row size of an InnoDB table to be larger than the maximum amount of data that can be stored in the row's main data page. See [Maximum Row Size](#maximum-row-size) for more information about the other factors that can contribute to the maximum row size for InnoDB tables.
 
 
-In the `<code>COMPACT</code>` row format variable-length columns, such as columns using the [VARBINARY](../../../data-types/string-data-types/varbinary.md), [VARCHAR](../../../data-types/string-data-types/varchar.md), [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) data types, can be partially stored in overflow pages.
+In the `COMPACT` row format variable-length columns, such as columns using the [VARBINARY](../../../data-types/string-data-types/varbinary.md), [VARCHAR](../../../data-types/string-data-types/varchar.md), [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) data types, can be partially stored in overflow pages.
 
 
 InnoDB only considers using overflow pages if the table's row size is greater than half of [innodb_page_size](../innodb-system-variables.md#innodb_page_size). If the row size is greater than this, then InnoDB chooses variable-length columns to be stored on overflow pages until the row size is less than half of [innodb_page_size](../innodb-system-variables.md#innodb_page_size).
@@ -56,7 +56,7 @@ InnoDB only considers using overflow pages if the table's row size is greater th
 For [VARBINARY](../../../data-types/string-data-types/varbinary.md), [VARCHAR](../../../data-types/string-data-types/varchar.md), [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) columns, only values longer than 767 bytes are considered for storage on overflow pages. Bytes that are stored to track a value's length do not count towards this limit. This limit is only based on the length of the actual column's data.
 
 
-Fixed-length columns greater than 767 bytes are encoded as variable-length columns, so they can also be stored in overflow pages if the table's row size is greater than half of [innodb_page_size](../innodb-system-variables.md#innodb_page_size). Even though a column using the [CHAR](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) data type can hold at most 255 characters, a [CHAR](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) column can still exceed 767 bytes in some cases. For example, a `<code>char(255)</code>` column can exceed 767 bytes if the [character set](../../../data-types/string-data-types/character-sets/README.md) is `<code>utf8mb4</code>`.
+Fixed-length columns greater than 767 bytes are encoded as variable-length columns, so they can also be stored in overflow pages if the table's row size is greater than half of [innodb_page_size](../innodb-system-variables.md#innodb_page_size). Even though a column using the [CHAR](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) data type can hold at most 255 characters, a [CHAR](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) column can still exceed 767 bytes in some cases. For example, a `char(255)` column can exceed 767 bytes if the [character set](../../../data-types/string-data-types/character-sets/README.md) is `utf8mb4`.
 
 
 If a column is chosen to be stored on overflow pages, then the first 767 bytes of the column's value and a 20-byte pointer to the column's first overflow page are stored on the main page. Each overflow page is the size of [innodb_page_size](../innodb-system-variables.md#innodb_page_size). If a column is too large to be stored on a single overflow page, then it is stored on multiple overflow pages. Each overflow page contains part of the data and a 20-byte pointer to the next overflow page, if a next page exists.

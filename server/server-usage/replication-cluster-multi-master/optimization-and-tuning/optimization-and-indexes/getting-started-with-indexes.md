@@ -47,7 +47,7 @@ ALTER TABLE Employees ADD PRIMARY KEY(ID);
 ### Finding Tables Without Primary Keys
 
 
-Tables in the `<code>[information_schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tablespaces-table.md)</code>` database can be queried to find tables that do not have primary keys. For example, here is a query using the [TABLES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) and [KEY_COLUMN_USAGE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md) tables that can be used:
+Tables in the `[information_schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tablespaces-table.md)` database can be queried to find tables that do not have primary keys. For example, here is a query using the [TABLES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) and [KEY_COLUMN_USAGE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md) tables that can be used:
 
 
 ```
@@ -141,7 +141,7 @@ SELECT * FROM t1;
 +---+------+
 ```
 
-The fact that a `<code>UNIQUE</code>` constraint can be `<code>NULL</code>` is often overlooked. In SQL any `<code>NULL</code>` is never equal to anything, not even to another `<code>NULL</code>`. Consequently, a `<code>UNIQUE</code>` constraint will not prevent one from storing duplicate rows if they contain null values:
+The fact that a `UNIQUE` constraint can be `NULL` is often overlooked. In SQL any `NULL` is never equal to anything, not even to another `NULL`. Consequently, a `UNIQUE` constraint will not prevent one from storing duplicate rows if they contain null values:
 
 
 ```
@@ -195,7 +195,7 @@ If a unique index consists of a column where trailing pad characters are strippe
 
 
 ##### MariaDB starting with [10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)
-For some engines, like InnoDB, `<code>UNIQUE</code>` can be used with any type of columns or any number of columns.
+For some engines, like InnoDB, `UNIQUE` can be used with any type of columns or any number of columns.
 
 ```
 create table t1 (a int primary key,
@@ -213,7 +213,7 @@ unique key `b` (b),
 unique key `all_c` (c1,c2,c3,c4,c6,c7,c8,c9)) engine=myisam;
 ```
 If the key length is longer than the max key length supported by the engine, a HASH key will be created.
-This can be seen with `<code>SHOW CREATE TABLE table_name</code>` or `<code>SHOW INDEX FROM table_name</code>`:
+This can be seen with `SHOW CREATE TABLE table_name` or `SHOW INDEX FROM table_name`:
 
 ```
 show create table t1\G
@@ -277,7 +277,7 @@ than your buffer sizes the indexes will start to speed things up dramatically.
 Using the [EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) statement on your queries can help you decide which columns need indexing.
 
 
-If you query contains something like `<code class="fixed" style="white-space:pre-wrap">LIKE '%word%'</code>`, without a fulltext index you are using a full table scan every time, which is very slow.
+If you query contains something like `LIKE '%word%'`, without a fulltext index you are using a full table scan every time, which is very slow.
 
 
 If your table has a large number of reads and writes, consider using delayed
@@ -299,7 +299,7 @@ and remove the index overhead during inserts.
 You can view which indexes are present on a table, as well as details about them, with the [SHOW INDEX](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index.md) statement.
 
 
-If you want to know how to re-create an index, run `<code>[SHOW CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md)</code>`.
+If you want to know how to re-create an index, run `[SHOW CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md)`.
 
 
 ## When to Remove an Index
@@ -312,7 +312,7 @@ and UPDATE performance.
 If [user statistics](../query-optimizations/statistics-for-optimizing-queries/user-statistics.md) are enabled, the [Information Schema](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) [INDEX_STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-index_statistics-table.md) table stores the index usage.
 
 
-If the [slow query log](../../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md) is enabled and the `<code>[log_queries_not_using_indexes](../system-variables/server-system-variables.md#log_queries_not_using_indexes)</code>` server system variable is `<code>ON</code>`, the queries which do not use indexes are logged.
+If the [slow query log](../../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md) is enabled and the `[log_queries_not_using_indexes](../system-variables/server-system-variables.md#log_queries_not_using_indexes)` server system variable is `ON`, the queries which do not use indexes are logged.
 
 
 *The initial version of this article was copied, with permission, from [Proper_Indexing_Strategy](https://hashmysql.org/wiki/Proper_Indexing_Strategy) on 2012-10-30.*

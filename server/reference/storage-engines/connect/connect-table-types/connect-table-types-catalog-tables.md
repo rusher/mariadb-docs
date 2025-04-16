@@ -2,7 +2,7 @@
 # CONNECT Table Types - Catalog Tables
 
 A catalog table is one that returns information about another table, or data
-source. It is similar to what MariaDB commands such as `<code>DESCRIBE</code>` or `<code>SHOW</code>`
+source. It is similar to what MariaDB commands such as `DESCRIBE` or `SHOW`
 do. Applied to local tables, this just duplicates what these commands do, with
 the noticeable difference that they are tables and can be used inside queries
 as joined tables or inside sub-selects.
@@ -215,18 +215,18 @@ The options used in this definition are the same as the one used later for
 the actual CUSTOMERS data tables except that:
 
 
-1. The `<code>TABNAME</code>` option is mandatory here to specify what the queried table
+1. The `TABNAME` option is mandatory here to specify what the queried table
  name is.
-1. The `<code>CATFUNC</code>` option was added both to indicate that this is a catalog
+1. The `CATFUNC` option was added both to indicate that this is a catalog
  table, and to specify that we want column information.
 
 
-**Note:** If the `<code>TABNAME</code>` option had not been specified, this table would
+**Note:** If the `TABNAME` option had not been specified, this table would
 have returned the columns of all the tables defined in the connected data
 source.
 
 
-Currently the available `<code>CATFUNC</code>` are:
+Currently the available `CATFUNC` are:
 
 
 
@@ -243,7 +243,7 @@ Currently the available `<code>CATFUNC</code>` are:
 **Note:** Only the bold part of the function name specification is required.
 
 
-The `<code>DATASOURCE</code>` and `<code>DRIVERS</code>` functions respectively return the list of
+The `DATASOURCE` and `DRIVERS` functions respectively return the list of
 available data sources and ODBC drivers available on the system.
 
 

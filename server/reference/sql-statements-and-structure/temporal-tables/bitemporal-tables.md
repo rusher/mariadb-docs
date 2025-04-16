@@ -22,7 +22,7 @@ CREATE TABLE test.t3 (
 WITH SYSTEM VERSIONING;
 ```
 
-Note that, while `<code>system_time</code>` here is also a time period, it cannot be used in `<code>DELETE FOR PORTION</code>` or `<code>UPDATE FOR PORTION</code>` statements.
+Note that, while `system_time` here is also a time period, it cannot be used in `DELETE FOR PORTION` or `UPDATE FOR PORTION` statements.
 
 
 ```

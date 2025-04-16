@@ -11,13 +11,13 @@ LENGTHB(str)
 ## Description
 
 
-`<code>LENGTHB()</code>` returns the length of the given string, in bytes. When [Oracle mode](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is not set, this is a synonym for [LENGTH](lengthb.md).
+`LENGTHB()` returns the length of the given string, in bytes. When [Oracle mode](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is not set, this is a synonym for [LENGTH](lengthb.md).
 
 
-A multi-byte character counts as multiple bytes. This means that for a string containing five two-byte characters, `<code>LENGTHB()</code>` returns 10, whereas [CHAR_LENGTH()](char_length.md) returns 5.
+A multi-byte character counts as multiple bytes. This means that for a string containing five two-byte characters, `LENGTHB()` returns 10, whereas [CHAR_LENGTH()](char_length.md) returns 5.
 
 
-If `<code>str</code>` is not a string value, it is converted into a string. If `<code>str</code>` is `<code>NULL</code>`, the function returns `<code>NULL</code>`.
+If `str` is not a string value, it is converted into a string. If `str` is `NULL`, the function returns `NULL`.
 
 
 ## Examples

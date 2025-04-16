@@ -44,16 +44,16 @@ The following endpoints provide a simple REST API interface for executing
 SQL queries on servers and services in MaxScale.
 
 
-This document uses the `<code>:id</code>` value in the URL to represent a connection ID and
-the `<code>:query_id</code>` to represent a query ID. These values do not need to be manually
+This document uses the `:id` value in the URL to represent a connection ID and
+the `:query_id` to represent a query ID. These values do not need to be manually
 added as the relevant links are returned in the request body of each endpoint.
 
 
 The endpoints use JSON Web Tokens to uniquely identify open SQL connections. A
-connection token can be acquired with a `<code>POST /v1/sql</code>` request and can be used
-with the `<code>POST /v1/sql/:id/query</code>`, `<code>GET /v1/sql/:id/results/:query_id</code>` and
-`<code>DELETE /v1/sql</code>` endpoints. All of these endpoints accept a connection token in
-the `<code>token</code>` parameter of the request:
+connection token can be acquired with a `POST /v1/sql` request and can be used
+with the `POST /v1/sql/:id/query`, `GET /v1/sql/:id/results/:query_id` and
+`DELETE /v1/sql` endpoints. All of these endpoints accept a connection token in
+the `token` parameter of the request:
 
 
 
@@ -65,18 +65,18 @@ POST /v1/sql/query?token=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZG1pbiIsImV4cCI6MTU4Mz
 
 In addition to request parameters, the token can be stored in cookies in which
 case they are automatically used by the REST API. For more information about
-token storage in cookies, see the documentation for `<code>POST /v1/sql</code>`.
+token storage in cookies, see the documentation for `POST /v1/sql`.
 
 
 ## Request Parameters
 
 
 All of the endpoints that operate on a single connection support the following
-request parameters. The `<code>GET /v1/sql</code>` and `<code>GET /v1/sql/:id</code>` endpoints are an
+request parameters. The `GET /v1/sql` and `GET /v1/sql/:id` endpoints are an
 exception as they ignore the current connection token.
 
 
-* `<code>token</code>`
+* `token`
 * The connection token to use for the request. If provided, the value is
  unconditionally used even if a cookie with a valid token exists.
 
@@ -97,7 +97,7 @@ GET /v1/sql/:id
 Response contains the requested resource.
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -138,7 +138,7 @@ GET /v1/sql
 Response contains a resource collection with all the open SQL connections.
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -183,18 +183,18 @@ POST /v1/sql
 The request body must be a JSON object consisting of the following fields:
 
 
-* `<code>target</code>`
+* `target`
 * The object in MaxScale to connect to. This is a mandatory value and the
  given value must be the name of a valid server, service or listener in
  MaxScale.
-* `<code>user</code>`
+* `user`
 * The username to use when creating the connection. This is a mandatory value.
-* `<code>password</code>`
+* `password`
 * The password for the user. This is a mandatory value.
-* `<code>db</code>`
+* `db`
 * The default database for the connection. By default the connection will have
  no default database.
-* `<code>timeout</code>`
+* `timeout`
 * Connection timeout in seconds. The default connection timeout is 10
  seconds. This controls how long the SQL connection creation can take before
  an error is returned.
@@ -217,19 +217,19 @@ Here is an example request body:
 
 
 The response will contain the new connection with the token stored at
-`<code>meta.token</code>`. If the request uses the `<code>persist=yes</code>` request parameter, the token
+`meta.token`. If the request uses the `persist=yes` request parameter, the token
 is stored in cookies instead of the metadata object and the response body will
 not contain the token.
 
 
-The location of the newly created connection will be stored at `<code>links.self</code>` in
-the response body as well as in the `<code>Location</code>` header.
+The location of the newly created connection will be stored at `links.self` in
+the response body as well as in the `Location` header.
 
 
 The token must be given to all subsequent requests that use the connection. It
-must be either given in the `<code>token</code>` parameter of a request or it must be stored
-in the cookies. If both a `<code>token</code>` parameter and a cookie exist at the same time,
-the `<code>token</code>` parameter will be used instead of the cookie.
+must be either given in the `token` parameter of a request or it must be stored
+in the cookies. If both a `token` parameter and a cookie exist at the same time,
+the `token` parameter will be used instead of the cookie.
 
 
 #### Request Parameters
@@ -238,19 +238,19 @@ the `<code>token</code>` parameter will be used instead of the cookie.
 This endpoint supports the following request parameters.
 
 
-* `<code>persist</code>`
+* `persist`
 * Store the connection token in cookies instead of returning it as the response body.
-This parameter expects only one value, `<code>yes</code>`, as its argument. When
-`<code>persist=yes</code>` is set, the token is stored in two cookies,
-`<code>conn_id_body_<id></code>` and `<code>conn_id_sig_<id></code>` where the `<code><id></code>` part is replaced
+This parameter expects only one value, `yes`, as its argument. When
+`persist=yes` is set, the token is stored in two cookies,
+`conn_id_body_<id>` and `conn_id_sig_<id>` where the `<id>` part is replaced
 by the ID of the connection.
-The `<code>conn_id_body_<id></code>` cookie contains the JWT header and claims sections
-and contains the connection ID in the `<code>aud</code>` value. This can be used to
+The `conn_id_body_<id>` cookie contains the JWT header and claims sections
+and contains the connection ID in the `aud` value. This can be used to
 retrieve the connection ID from the cookies if the browser session is
 closed.
-* `<code>max-age</code>`
+* `max-age`
 * Sets the connection token maximum age in seconds. The default is
- `<code>max-age=28800</code>`. Only positive values are accepted and if a non-positive or
+ `max-age=28800`. Only positive values are accepted and if a non-positive or
  a non-integer value is found, the parameter is ignored. Once the token age
  exceeds the configured maximum value, the token can no longer be used and a
  new connection must be created.
@@ -262,7 +262,7 @@ closed.
 Connection was opened:
 
 
-`<code>Status: 201 Created</code>`
+`Status: 201 Created`
 
 
 
@@ -291,7 +291,7 @@ Connection was opened:
 Missing or invalid payload:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ### Close an opened SQL connection
@@ -310,13 +310,13 @@ DELETE /v1/sql/:id
 Connection was closed:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Missing or invalid connection token:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ### Reconnect an opened SQL connection
@@ -333,8 +333,8 @@ Reconnects an existing connection. This can also be used if the connection to
 the backend server was lost due to a network error.
 
 
-The connection will use the same credentials that were passed to the `<code>POST
-/v1/sql</code>` endpoint. The new connection will still have the same ID in the REST
+The connection will use the same credentials that were passed to the `POST
+/v1/sql` endpoint. The new connection will still have the same ID in the REST
 API but will be treated as a new connection by the database. A reconnection
 re-initializes the connection and resets the session state. Reconnections cannot
 take place while a transaction is open.
@@ -346,19 +346,19 @@ take place while a transaction is open.
 Reconnection was successful:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Reconnection failed or connection is already in use:
 
 
-`<code>Status: 503 Service Unavailable</code>`
+`Status: 503 Service Unavailable`
 
 
 Missing or invalid connection token:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ### Execute SQL query
@@ -371,7 +371,7 @@ POST /v1/sql/:id/queries
 
 
 
-The request body must be a JSON object with the value of the `<code>sql</code>` field set to
+The request body must be a JSON object with the value of the `sql` field set to
 the SQL to be executed:
 
 
@@ -388,28 +388,28 @@ the SQL to be executed:
 The request body must be a JSON object consisting of the following fields:
 
 
-* `<code>sql</code>`
+* `sql`
 * The SQL to be executed. If the SQL contain multiple statements, multiple
  results are returned in the response body.
-* `<code>max_rows</code>`
+* `max_rows`
 * The maximum number of rows returned in the response. By default this is 1000
  rows. Setting the value to 0 means no limit. Any extra rows in the result
  will be discarded.
 
 
 By default, the complete result is returned in the response body. If the SQL
-query returns more than one result, the `<code>results</code>` array will contain all the
+query returns more than one result, the `results` array will contain all the
 results.
 
 
-The `<code>results</code>` array can have three types of objects: resultsets, errors, and OK
+The `results` array can have three types of objects: resultsets, errors, and OK
 responses.
 
 
-* A resultset consists of the `<code>data</code>` field with the result data stored as a two
+* A resultset consists of the `data` field with the result data stored as a two
  dimensional array. The names of the fields are stored in an array in the
- `<code>fields</code>` field. These types of results will be returned for any operation that
- returns rows (i.e. `<code>SELECT</code>` statements)
+ `fields` field. These types of results will be returned for any operation that
+ returns rows (i.e. `SELECT` statements)
 
 
 
@@ -448,9 +448,9 @@ responses.
 
 
 
-* An error consists of an object with the `<code>errno</code>` field set to the MariaDB error
- code, the `<code>message</code>` field set to the human-readable error message and the
- `<code>sqlstate</code>` field set to the current SQLSTATE of the connection.
+* An error consists of an object with the `errno` field set to the MariaDB error
+ code, the `message` field set to the human-readable error message and the
+ `sqlstate` field set to the current SQLSTATE of the connection.
 
 
 
@@ -479,9 +479,9 @@ responses.
 
 
 * An OK response is returned for any result that completes successfully but not
- return rows (e.g. an `<code>INSERT</code>` or `<code>UPDATE</code>` statement). The `<code>affected_rows</code>`
+ return rows (e.g. an `INSERT` or `UPDATE` statement). The `affected_rows`
  field contains the number of rows affected by the operation, the
- `<code>last_insert_id</code>` contains the auto-generated ID and the `<code>warnings</code>` field
+ `last_insert_id` contains the auto-generated ID and the `warnings` field
  contains the number of warnings raised by the operation.
 
 
@@ -522,7 +522,7 @@ result was generated by the server.
 Query successfully executed:
 
 
-`<code>Status: 201 Created</code>`
+`Status: 201 Created`
 
 
 
@@ -553,15 +553,15 @@ Query successfully executed:
 Invalid payload or missing connection token:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 Fatal connection error:
 
 
-`<code>Status: 503 Service Unavailable</code>`
+`Status: 503 Service Unavailable`
 
 
 * If the API returns this response, the connection to the database server was
  lost. The only valid action to take at this point is to close it with the
- `<code>DELETE /v1/sql/:id</code>` endpoint.
+ `DELETE /v1/sql/:id` endpoint.

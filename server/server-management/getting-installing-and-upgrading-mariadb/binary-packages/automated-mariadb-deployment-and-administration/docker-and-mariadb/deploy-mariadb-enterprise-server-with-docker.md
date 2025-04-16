@@ -81,7 +81,7 @@ To retrieve the customer download token for your account:
 ### Step 2: Log In to Docker Registry
 
 
-Log in to the MariaDB Enterprise Docker Registry by executing `<code>docker login</code>`:
+Log in to the MariaDB Enterprise Docker Registry by executing `docker login`:
 
 
 ```
@@ -117,10 +117,10 @@ $ cat ~/.docker/config.json
 ### Step 3: Choose an Image Tag
 
 
-The `<code>enterprise-server</code>` repository in the MariaDB Enterprise Docker Registry contains images for different MariaDB Enterprise Server releases using specific tags. Before continuing, you will need to decide which tag to use.
+The `enterprise-server` repository in the MariaDB Enterprise Docker Registry contains images for different MariaDB Enterprise Server releases using specific tags. Before continuing, you will need to decide which tag to use.
 
 
-To deploy a container using the most recent image for the latest MariaDB Enterprise Server release series (currently 11.4), use the `<code>latest</code>` tag.
+To deploy a container using the most recent image for the latest MariaDB Enterprise Server release series (currently 11.4), use the `latest` tag.
 
 
 For additional information, see "MariaDB Enterprise Docker Registry: Supported Tags".
@@ -129,7 +129,7 @@ For additional information, see "MariaDB Enterprise Docker Registry: Supported T
 ### Step 4: Pull Docker Image
 
 
-Pull the Docker image with the chosen tag by executing `<code>docker pull</code>`:
+Pull the Docker image with the chosen tag by executing `docker pull`:
 
 
 ```
@@ -144,7 +144,7 @@ Status: Downloaded newer image for docker.mariadb.com/enterprise-server:latest
 docker.mariadb.com/enterprise-server:latest
 ```
 
-Confirm the Docker image has been pulled by executing `<code>docker images</code>`:
+Confirm the Docker image has been pulled by executing `docker images`:
 
 
 ```
@@ -160,7 +160,7 @@ docker.mariadb.com/enterprise-server   latest    dd17291aa340   3 months ago   4
 ### Step 5: Create a Container
 
 
-Create a container using the pulled Docker image by executing `<code>docker run</code>`:
+Create a container using the pulled Docker image by executing `docker run`:
 
 
 ```
@@ -177,16 +177,16 @@ $ docker run --detach \
 3082ab69e565be21c6157bb5a3d8c849ec03a2c51576778ac417a8a3aa9e7537
 ```
 
-* Configure the container and set the root password using environment variables by setting the `<code>--env</code>` command-line option.
+* Configure the container and set the root password using environment variables by setting the `--env` command-line option.
 
 
-* Configure TCP port bindings for the container by setting the `<code>--publish</code>` or `<code>--publish-all</code>` command-line options.
+* Configure TCP port bindings for the container by setting the `--publish` or `--publish-all` command-line options.
 
 
 * Configure MariaDB Enterprise Server by setting mariadbd command-line options.
 
 
-Confirm the container is running by executing `<code>docker ps</code>`:
+Confirm the container is running by executing `docker ps`:
 
 
 ```
@@ -231,7 +231,7 @@ Variable_name: version
         Value: 11.4.4-2-MariaDB-enterprise-log
 ```
 
-Exit the container using `<code>exit</code>`:
+Exit the container using `exit`:
 
 
 ```
@@ -245,7 +245,7 @@ Bye
 ### Step 7: Stop Container
 
 
-Stop a Docker container using `<code>docker stop</code>`:
+Stop a Docker container using `docker stop`:
 
 
 ```
@@ -256,7 +256,7 @@ $ docker stop mariadb-es-latest
 mariadb-es-latest
 ```
 
-Confirm the container is stopped by executing `<code>docker ps</code>`:
+Confirm the container is stopped by executing `docker ps`:
 
 
 ```
@@ -273,7 +273,7 @@ CONTAINER ID   IMAGE                                         COMMAND            
 ### Step 8: Remove Container
 
 
-Remove a Docker container using `<code>docker rm</code>`:
+Remove a Docker container using `docker rm`:
 
 
 ```

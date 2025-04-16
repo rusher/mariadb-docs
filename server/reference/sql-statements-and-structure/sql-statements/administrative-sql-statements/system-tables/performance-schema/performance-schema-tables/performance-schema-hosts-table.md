@@ -4,7 +4,7 @@
 ## Description
 
 
-The `<code>hosts</code>` table contains a row for each host used by clients to connect to the server, containing current and total connections.
+The `hosts` table contains a row for each host used by clients to connect to the server, containing current and total connections.
 
 
 The size is determined by the [performance_schema_hosts_size](../performance-schema-system-variables.md#performance_schema_hosts_size) system variable, which, if set to zero, will disable connection statistics in the hosts table.

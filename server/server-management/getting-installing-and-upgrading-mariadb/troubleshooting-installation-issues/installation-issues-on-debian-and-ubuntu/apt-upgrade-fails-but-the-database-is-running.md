@@ -1,7 +1,7 @@
 
 # apt-upgrade Fails, But the Database is Running
 
-After running `<code>apt-upgrade mariadb</code>`, it's possible that apt shows a fail in trying to start the server, but in fact the database is up and running, which then provokes apt to remain in a non finished state.
+After running `apt-upgrade mariadb`, it's possible that apt shows a fail in trying to start the server, but in fact the database is up and running, which then provokes apt to remain in a non finished state.
 
 
 For example:

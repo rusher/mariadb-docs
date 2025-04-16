@@ -73,9 +73,9 @@ Let us start from the file “biblio3.json” that is the JSON equivalent of the
 This file contains the different items existing in JSON.
 
 
-* `<code>Arrays</code>`: They are enclosed in square brackets and contain a list of comma separated values.
-* `<code>Objects</code>`: They are enclosed in curly brackets. They contain a comma separated list of pairs, each pair composed of a key name between double quotes, followed by a ‘:’ character and followed by a value.
-* `<code>Values</code>`: Values can be an array or an object. They also can be a string between double quotes, an integer or float number, a Boolean value or a null value.
+* `Arrays`: They are enclosed in square brackets and contain a list of comma separated values.
+* `Objects`: They are enclosed in curly brackets. They contain a comma separated list of pairs, each pair composed of a key name between double quotes, followed by a ‘:’ character and followed by a value.
+* `Values`: Values can be an array or an object. They also can be a string between double quotes, an integer or float number, a Boolean value or a null value.
 The simplest way for CONNECT to locate a table in such a file is by an array containing a list of objects (this is what MongoDB calls a collection of documents). Each array value will be a table row and each pair of the row objects will represent a column, the key being the column name and the value the column value.
 
 
@@ -337,10 +337,10 @@ Note 2: An alternative way to indicate what is to be expanded is to use the expa
 OPTION_LIST='Expand=AUTHOR'
 ```
 
-`<code>AUTHOR</code>` is here the key of the pair that has the array as a value (case sensitive). Expand is limited to only one branch (expanded arrays must be under the same object).
+`AUTHOR` is here the key of the pair that has the array as a value (case sensitive). Expand is limited to only one branch (expanded arrays must be under the same object).
 
 
-Let us take as an example the file `<code>expense.json</code>` ([found here](../json-sample-files.md)).
+Let us take as an example the file `expense.json` ([found here](../json-sample-files.md)).
 The table jexpall expands all under and including the week array:
 
 
@@ -411,7 +411,7 @@ engine=CONNECT table_type=JSON File_name='expense.json';
 
 
 
-The table `<code>jexpw</code>` shows what was bought and the sum and average of amounts for each person and week:
+The table `jexpw` shows what was bought and the sum and average of amounts for each person and week:
 
 
 From Connect 1.07.0002
@@ -469,7 +469,7 @@ engine=CONNECT table_type=JSON File_name='expense.json';
 
 
 
-Let us see what the table `<code>jexpz</code>` does:
+Let us see what the table `jexpz` does:
 
 
 From Connect 1.6:
@@ -544,7 +544,7 @@ For all persons:
 * Column 8 calculates the average expense by person.
 
 
-It would be very difficult, if even possible, to obtain this result from table `<code>jexpall</code>` using an SQL query.
+It would be very difficult, if even possible, to obtain this result from table `jexpall` using an SQL query.
 
 
 ## Handling of NULL Values
@@ -721,7 +721,7 @@ CREATE TABLE `sjr0` (
   `OPTION_LIST`='Pretty=0,Depth=1,Accept=1' `LRECL`=128;
 ```
 
-The column “grades” was added because of the void array in line 2. Now this column is skipped and does not appear anymore (unless the option `<code>Accept=1</code>` is added in the option list).
+The column “grades” was added because of the void array in line 2. Now this column is skipped and does not appear anymore (unless the option `Accept=1` is added in the option list).
 
 
 ## JSON Catalogue Tables
@@ -924,7 +924,7 @@ Because some string values contain a date representation, the corresponding colu
 The Jpath of the object option has the same syntax as the column Jpath but of course all array steps must be specified using the [n] (until Connect 1.5) or n (from Connect 1.6) format.
 
 
-Note: This applies to the whole document for tables having `<code>PRETTY = 2</code>` (see below). Otherwise, it applies to the document objects of each file records.
+Note: This applies to the whole document for tables having `PRETTY = 2` (see below). Otherwise, it applies to the document objects of each file records.
 
 
 ## JSON File Formats
@@ -1190,7 +1190,7 @@ Concerning objects, the same problems exist that we have already seen with the X
 New problems are raised when trying to modify the values of an array. Only updates can be done on the original table. First of all, for the values of the array to be distinct values, all update operations concerning array values must be done using a table expanding this array.
 
 
-For instance, to modify the authors of the `<code>biblio.json</code>` based table, the `<code>jsampex</code>` table must be used. Doing so, updating and deleting authors is possible using standard SQL commands. For example, to change the first name of Knab from François to John:
+For instance, to modify the authors of the `biblio.json` based table, the `jsampex` table must be used. Doing so, updating and deleting authors is possible using standard SQL commands. For example, to change the first name of Knab from François to John:
 
 
 ```
@@ -1287,7 +1287,7 @@ This will display:
 Note: If this table were a big table with many books, it would be difficult to know what the order of a specific book is in the table. This can be found by adding a special ROWID column in the table.
 
 
-However, an alternate way to do it is by using direct JSON column representation as in the `<code>JSAMPLE2</code>` table. This can be done by:
+However, an alternate way to do it is by using direct JSON column representation as in the `JSAMPLE2` table. This can be done by:
 
 
 ```
@@ -3010,7 +3010,7 @@ Some, such as Bson_Item_Delete, are new and some fix bugs found in their Json co
 ## Converting Tables to JSON
 
 
-The JSON UDF’s and the direct Jpath “*” facility are powerful tools to convert table and files to the JSON format. For instance, the file `<code>biblio3.json</code>` we used previously can be obtained by converting the `<code>xsample.xml file</code>`. This can be done like this:
+The JSON UDF’s and the direct Jpath “*” facility are powerful tools to convert table and files to the JSON format. For instance, the file `biblio3.json` we used previously can be obtained by converting the `xsample.xml file`. This can be done like this:
 
 
 From Connect 1.07.0002
@@ -3043,7 +3043,7 @@ from xsampall2 group by isbn;
 The xj1 table rows will directly receive the Json object made by the select statement used in the insert statement and the table file will be made as shown (xj1 is pretty=2 by default) Its mode is Jmode=2 because the values inserted are strings even if they denote json objects.
 
 
-Another way to do this is to create a table describing the file format we want before the `<code>biblio3.json</code>` file existed:
+Another way to do this is to create a table describing the file format we want before the `biblio3.json` file existed:
 
 
 From Connect 1.07.0002
@@ -3093,7 +3093,7 @@ and to populate it by:
 insert into jsampall3 select * from xsampall;
 ```
 
-This is a simpler method. However, the issue is that this method cannot handle the multiple column values. This is why we inserted from `<code>xsampall</code>` not from `<code>xsampall2</code>`. How can we add the missing multiple authors in this table? Here again we must create a utility table able to handle JSON strings.
+This is a simpler method. However, the issue is that this method cannot handle the multiple column values. This is why we inserted from `xsampall` not from `xsampall2`. How can we add the missing multiple authors in this table? Here again we must create a utility table able to handle JSON strings.
 From Connect 1.07.0002
 
 

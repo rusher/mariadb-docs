@@ -68,13 +68,13 @@ It can have one or many of the following options:
 
 
 
-One can also set `<code>note_verbosity</code>` to the value of `<code>all</code>` to set all options.
+One can also set `note_verbosity` to the value of `all` to set all options.
 
 
 ## Enabling Warnings and Notes for the Slow Query Log
 
 
-One can get the note about incompatible keys also in the slow query log by adding the option `<code>warnings</code>` in the `<code>log_slow_verbosity</code>` option/variable. It will automatically be enabled if one uses `<code>log_slow_verbosity=all</code>`.
+One can get the note about incompatible keys also in the slow query log by adding the option `warnings` in the `log_slow_verbosity` option/variable. It will automatically be enabled if one uses `log_slow_verbosity=all`.
 
 
 ```

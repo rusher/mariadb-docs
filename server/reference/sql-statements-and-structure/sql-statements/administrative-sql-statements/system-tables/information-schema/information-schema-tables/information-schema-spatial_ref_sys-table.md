@@ -4,7 +4,7 @@
 ## Description
 
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>SPATIAL_REF_SYS</code>` table stores information on each spatial reference system used in the database.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `SPATIAL_REF_SYS` table stores information on each spatial reference system used in the database.
 
 
 It contains the following columns:

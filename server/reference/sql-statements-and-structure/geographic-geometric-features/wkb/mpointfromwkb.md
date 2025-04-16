@@ -15,7 +15,7 @@ MultiPointFromWKB(wkb[,srid])
 Constructs a [MULTIPOINT](../geometry-constructors/multipoint.md) value using its [WKB](well-known-binary-wkb-format.md) representation and [SRID](../geometry-properties/st_srid.md).
 
 
-`<code>MPointFromWKB()</code>` and `<code>MultiPointFromWKB()</code>` are synonyms.
+`MPointFromWKB()` and `MultiPointFromWKB()` are synonyms.
 
 
 ## Examples

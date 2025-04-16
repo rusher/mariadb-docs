@@ -19,6 +19,6 @@ up.
 # Removed Features
 
 
-* The `<code>csmon</code>` and `<code>auroramon</code>` monitors have been removed.
-* The obsolete `<code>maxctrl drain</code>` command has been removed.
-* The `<code>maxctrl cluster</code>` commands have been removed.
+* The `csmon` and `auroramon` monitors have been removed.
+* The obsolete `maxctrl drain` command has been removed.
+* The `maxctrl cluster` commands have been removed.

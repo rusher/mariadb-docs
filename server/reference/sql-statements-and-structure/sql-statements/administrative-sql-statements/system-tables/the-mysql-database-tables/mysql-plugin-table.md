@@ -5,7 +5,7 @@
 
 
 
-The `<code>mysql.plugin</code>` table can be queried to get information about installed [plugins](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md).
+The `mysql.plugin` table can be queried to get information about installed [plugins](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md).
 
 
 This table only contains information about [plugins](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md) that have been installed via the following methods:
@@ -30,7 +30,7 @@ This table only contains enough information to reload the plugin when the server
 This table uses the [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine.
 
 
-The `<code>mysql.plugin</code>` table contains the following fields:
+The `mysql.plugin` table contains the following fields:
 
 
 

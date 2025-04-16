@@ -23,27 +23,27 @@ The suggested upgrade procedure is:
   * On Debian, Ubuntu, and other similar Linux distributions, see [Updating the MariaDB APT repository to a New Major Release](../../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#updating-the-mariadb-apt-repository-to-a-new-major-release) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Updating the MariaDB YUM repository to a New Major Release](../../binary-packages/rpm/yum.md#updating-the-mariadb-yum-repository-to-a-new-major-release) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Updating the MariaDB ZYpp repository to a New Major Release](../../binary-packages/rpm/installing-mariadb-with-zypper.md#updating-the-mariadb-zypp-repository-to-a-new-major-release) for more information.
-1. [Stop MariaDB](../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md). The server should be cleanly shut down, with no incomplete transactions remaining. [innodb_fast_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) must be set to `<code>0</code>` or `<code>1</code>` and [innodb_force_recovery](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery) must be less than `<code>3</code>`.
+1. [Stop MariaDB](../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md). The server should be cleanly shut down, with no incomplete transactions remaining. [innodb_fast_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) must be set to `0` or `1` and [innodb_force_recovery](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery) must be less than `3`.
 1. Uninstall the old version of MariaDB.
 
   * On Debian, Ubuntu, and other similar Linux distributions, execute the following: 
-`<code class="fixed" style="white-space:pre-wrap">sudo apt-get remove mariadb-server</code>`
+`sudo apt-get remove mariadb-server`
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, execute the following: 
-`<code class="fixed" style="white-space:pre-wrap">sudo yum remove MariaDB-server</code>`
+`sudo yum remove MariaDB-server`
   * On SLES, OpenSUSE, and other similar Linux distributions, execute the following: 
-`<code class="fixed" style="white-space:pre-wrap">sudo zypper remove MariaDB-server</code>`
+`sudo zypper remove MariaDB-server`
 1. Install the new version of MariaDB.
 
   * On Debian, Ubuntu, and other similar Linux distributions, see [Installing MariaDB Packages with APT](../../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-packages-with-apt) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](../../binary-packages/rpm/yum.md#installing-mariadb-packages-with-yum) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](../../binary-packages/rpm/installing-mariadb-with-zypper.md#installing-mariadb-packages-with-zypp) for more information.
-1. Make any desired changes to configuration options in [option files](../../configuring-mariadb-with-option-files.md), such as `<code>my.cnf</code>`. This includes removing any options that are no longer supported.
+1. Make any desired changes to configuration options in [option files](../../configuring-mariadb-with-option-files.md), such as `my.cnf`. This includes removing any options that are no longer supported.
 1. [Start MariaDB](../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md).
-1. Run `<code>[mysql_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md)</code>`.
+1. Run `[mysql_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md)`.
 
-  * `<code>mysql_upgrade</code>` does two things:
+  * `mysql_upgrade` does two things:
 
-    1. Ensures that the system tables in the `<code>[mysq](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)l</code>` database are fully compatible with the new version.
+    1. Ensures that the system tables in the `[mysq](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)l` database are fully compatible with the new version.
     1. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 
 
@@ -130,7 +130,7 @@ The following options should be removed or renamed if you use them in your [opti
 #### mysqldump
 
 
-* [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) in [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) includes logic to cater for the [mysql.transaction_registry table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md). `<code>mysqldump</code>` from an earlier MariaDB release cannot be used on [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and beyond.
+* [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) in [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) includes logic to cater for the [mysql.transaction_registry table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md). `mysqldump` from an earlier MariaDB release cannot be used on [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and beyond.
 
 
 #### MariaDB Backup and Percona XtraBackup
@@ -142,7 +142,7 @@ The following options should be removed or renamed if you use them in your [opti
 #### Privileges
 
 
-* If a user has the [SUPER privilege](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) but not the `<code>DELETE HISTORY</code>` privilege, running [mysql_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md) will grant `<code>DELETE HISTORY</code>` as well.
+* If a user has the [SUPER privilege](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) but not the `DELETE HISTORY` privilege, running [mysql_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md) will grant `DELETE HISTORY` as well.
 
 
 ### Major New Features To Consider

@@ -25,8 +25,8 @@ over the network.
 
 
 The primary server where we will be replicating from needs to have binary logging
-enabled, `<code>binlog_format</code>` set to `<code>row</code>` and `<code>binlog_row_image</code>` set to
-`<code>full</code>`. These can be enabled by adding the two following lines to the *my.cnf*
+enabled, `binlog_format` set to `row` and `binlog_row_image` set to
+`full`. These can be enabled by adding the two following lines to the *my.cnf*
 file of the primary.
 
 
@@ -87,17 +87,17 @@ port=4001
 
 
 
-The `<code>source</code>` parameter in the *avro-service* points to the *replication-service*
+The `source` parameter in the *avro-service* points to the *replication-service*
 we defined before. This service will be the data source for the avrorouter. The
 *filestem* is the prefix in the binlog files and *start_index* is the binlog
 number to start from. With these parameters, the avrorouter will start reading
-events from binlog `<code>binlog.000015</code>`.
+events from binlog `binlog.000015`.
 
 
 Note that the *filestem* and *start_index* must point to the file that is the
 first binlog that the binlogrouter will replicate. For example, if the first
-file you are replicating is `<code>my-binlog-file.001234</code>`, set the parameters to
-`<code>filestem=my-binlog-file</code>` and `<code>start_index=1234</code>`.
+file you are replicating is `my-binlog-file.001234`, set the parameters to
+`filestem=my-binlog-file` and `start_index=1234`.
 
 
 For more information on the avrorouter options, read the [Avrorouter
@@ -109,7 +109,7 @@ Documentation](../maxscale-24-02routers/mariadb-maxscale-2402-maxscale-2402-avro
 
 Before starting the MaxScale process, we need to make sure that the binary logs
 of the primary server contain the DDL statements that define the table
-layouts. What this means is that the `<code>CREATE TABLE</code>` statements need to be in the
+layouts. What this means is that the `CREATE TABLE` statements need to be in the
 binary logs before the conversion process is started.
 
 
@@ -130,8 +130,8 @@ created. There are multiple ways to do this:
 If you used the schema generator scripts, all Avro schema files for tables that
 are not created in the binary logs need to be in the location pointed to by the
 *avrodir* parameter. The files use the following naming:
-`<code><database>.<table>.<schema_version>.avsc</code>`. For example, the schema file name of
-the *test.t1* table would be `<code>test.t1.0000001.avsc</code>`.
+`<database>.<table>.<schema_version>.avsc`. For example, the schema file name of
+the *test.t1* table would be `test.t1.0000001.avsc`.
 
 
 # Starting MariaDB MaxScale
@@ -162,7 +162,7 @@ START SLAVE;
 
 This will start the replication of binary logs from the primary server at
 172.18.0.1 listening on port 3000. The first file that the binlogrouter
-replicates is `<code>binlog.000015</code>`. This is the same file that was configured as the
+replicates is `binlog.000015`. This is the same file that was configured as the
 starting file in the avrorouter.
 
 
@@ -201,7 +201,7 @@ maxctrl call command cdc add_user avro-service maxuser maxpwd
 
 
 This will create the *maxuser:maxpwd* credentials which can then be used to
-request a JSON data stream of the `<code>test.t1</code>` table that was created earlier.
+request a JSON data stream of the `test.t1` table that was created earlier.
 
 
 

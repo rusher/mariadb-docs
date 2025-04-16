@@ -3,15 +3,15 @@
 
 Most of the tables processed by CONNECT are just plain DOS or UNIX data files,
 logically regarded as tables thanks to the description given when creating
-the table. This description comes from the `<code>[CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md)</code>`
+the table. This description comes from the `[CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md)`
 statement. Depending on the application, these tables can already exist as data
 files, used as is by CONNECT, or can have been physically made by CONNECT as
-the result of a `<code>CREATE TABLE ... SELECT ...</code>` and/or INSERT statement(s).
+the result of a `CREATE TABLE ... SELECT ...` and/or INSERT statement(s).
 
 
-The file *path/name* is given by the `<code>FILE_NAME</code>` option. If it is a
+The file *path/name* is given by the `FILE_NAME` option. If it is a
 relative path/name, it will be relative to the database directory, the one
-containing the table `<code>.FRM</code>` file.
+containing the table `.FRM` file.
 
 
 Unless specified, the maturity of file table types is stable.
@@ -28,7 +28,7 @@ different sources (such as cash register log files) or made at different time
 periods (such as bank monthly reports) regarded as one table. Note that the
 operations on such files are restricted to sequential Select and Update; and
 that VEC multiple tables are not supported by CONNECT. The file list depends on
-the setting of the **multiple** option of the `<code>CREATE TABLE</code>` statement for
+the setting of the **multiple** option of the `CREATE TABLE` statement for
 that table.
 
 
@@ -46,7 +46,7 @@ four values:
 
 
 
-The `<code>FILEID</code>` special column, described
+The `FILEID` special column, described
 [here](../using-connect/using-connect-virtual-and-special-columns.md), allows query pruning by filtering the file
 list or doing some grouping on the files that make a multiple table.
 
@@ -74,9 +74,9 @@ For file-based tables of reasonable size, processing time can be greatly
 enhanced under Windows(TM) and some flavors of UNIX or Linux by using the
 technique of “file mapping”, in which a file is processed as if it were
 entirely in memory. Mapping is specified when creating the table by the use of
-the `<code>MAPPED=YES</code>` option. This does not apply to tables not handled by system
-I/O functions (`<code>[XML](https://mariadb.com/kb/en/%5B%5Bconnect-xml-table-type)</code>` and
-`<code> [INI](connect-ini-table-type.md)</code>`).
+the `MAPPED=YES` option. This does not apply to tables not handled by system
+I/O functions (`[XML](https://mariadb.com/kb/en/%5B%5Bconnect-xml-table-type)` and
+` [INI](connect-ini-table-type.md)`).
 
 
 ## Big File Tables
@@ -88,7 +88,7 @@ standard functions. For some table types, CONNECT can deal with files that are
 larger than 2GB, or prone to become larger than this limit. These are the [FIX](connect-dos-and-fix-table-types.md),
 [BIN](connect-bin-table-type.md) and [VEC](connect-vec-table-type.md) types. To tell
 connect to use input/output functions dealing with big files, specify the
-option `<code>huge=1</code>` or `<code>huge=YES</code>` for that table. Note however that CONNECT
+option `huge=1` or `huge=YES` for that table. Note however that CONNECT
 cannot randomly access tables having more than 2G records.
 
 

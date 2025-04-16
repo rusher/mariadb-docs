@@ -15,7 +15,7 @@ PointFromText(wkt[,srid])
 Constructs a [POINT](../geometry-constructors/point.md) value using its [WKT](wkt-definition.md) representation and [SRID](../geometry-properties/st_srid.md).
 
 
-`<code>ST_PointFromText()</code>` and `<code>PointFromText()</code>` are synonyms.
+`ST_PointFromText()` and `PointFromText()` are synonyms.
 
 
 ## Examples

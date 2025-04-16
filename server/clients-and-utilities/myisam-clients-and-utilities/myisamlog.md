@@ -1,10 +1,10 @@
 
 # myisamlog
 
-`<code>myisamlog</code>` processes and returns the contents of a [MyISAM log file](../../server-management/server-monitoring-logs/myisam-log.md).
+`myisamlog` processes and returns the contents of a [MyISAM log file](../../server-management/server-monitoring-logs/myisam-log.md).
 
 
-Invoke `<code>myisamlog</code>` like this:
+Invoke `myisamlog` like this:
 
 
 ```
@@ -12,14 +12,14 @@ shell> myisamlog [options] [log_file [tbl_name] ...]
 shell> isamlog [options] [log_file [tbl_name] ...]
 ```
 
-The default operation is update (`<code>-u</code>`). If a recovery is done (`<code>-r</code>`), all
+The default operation is update (`-u`). If a recovery is done (`-r`), all
 writes and possibly updates and deletes are done and errors are only counted.
-The default log file name is `<code>myisam.log</code>` for `<code>myisamlog</code>` and `<code>isam.log</code>`
-for `<code>isamlog</code>` if no `<code>log_file</code>` argument is given. If tables are named on
+The default log file name is `myisam.log` for `myisamlog` and `isam.log`
+for `isamlog` if no `log_file` argument is given. If tables are named on
 the command line, only those tables are updated.
 
 
-`<code>myisamlog</code>` supports the following options:
+`myisamlog` supports the following options:
 
 
 

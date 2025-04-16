@@ -14,10 +14,10 @@ BIT_AND(expr) [over_clause]
 Returns the bitwise AND of all bits in *expr*. The calculation is performed with 64-bit ([BIGINT](../../../../data-types/data-types-numeric-data-types/bigint.md)) precision. It is an [aggregate function](../special-functions/window-functions/aggregate-functions-as-window-functions.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
 
 
-If no rows match, `<code>BIT_AND</code>` will return a value with all bits set to 1. NULL values have no effect on the result unless all results are NULL, which is treated as no match.
+If no rows match, `BIT_AND` will return a value with all bits set to 1. NULL values have no effect on the result unless all results are NULL, which is treated as no match.
 
 
-`<code>BIT_AND</code>` can be used as a [window function](../special-functions/window-functions/window-functions-overview.md) with the addition of the *over_clause*.
+`BIT_AND` can be used as a [window function](../special-functions/window-functions/window-functions-overview.md) with the addition of the *over_clause*.
 
 
 ## Examples

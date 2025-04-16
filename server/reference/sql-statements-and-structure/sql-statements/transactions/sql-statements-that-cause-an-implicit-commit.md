@@ -63,10 +63,10 @@ STOP SLAVE
 TRUNCATE TABLE
 ```
 
-`<code>SET autocommit = 1</code>` causes an implicit commit if the value was 0.
+`SET autocommit = 1` causes an implicit commit if the value was 0.
 
 
-All these statements cause an implicit commit before execution. This means that, even if the statement fails with an error, the transaction is committed. Some of them, like `<code>CREATE TABLE ... SELECT</code>`, also cause a commit immediatly after execution. Such statements couldn't be rollbacked in any case.
+All these statements cause an implicit commit before execution. This means that, even if the statement fails with an error, the transaction is committed. Some of them, like `CREATE TABLE ... SELECT`, also cause a commit immediatly after execution. Such statements couldn't be rollbacked in any case.
 
 
 If you are not sure whether a statement has implicitly committed the current transaction, you can query the [in_transaction](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#in_transaction) server system variable.
@@ -81,7 +81,7 @@ Note that when a transaction starts (not in autocommit mode), all locks acquired
 These statements do not cause an implicit commit in the following cases:
 
 
-* [CREATE TABLE](../../vectors/create-table-with-vectors.md) and [DROP TABLE](../data-definition/drop/drop-tablespace.md), when the `<code>TEMPORARY</code>` keyword is used.
+* [CREATE TABLE](../../vectors/create-table-with-vectors.md) and [DROP TABLE](../data-definition/drop/drop-tablespace.md), when the `TEMPORARY` keyword is used.
 
   * However, [TRUNCATE TABLE](../table-statements/truncate-table.md) causes an implicit commit even when used on a temporary table.
 * [CREATE FUNCTION](../data-definition/create/create-function.md) and [DROP FUNCTION](../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/drop-function.md), when used to create a UDF (instead of a stored function). However, [CREATE INDEX](../data-definition/create/create-index.md) and [DROP INDEX](../data-definition/drop/drop-index.md) cause commits even when used with temporary tables.

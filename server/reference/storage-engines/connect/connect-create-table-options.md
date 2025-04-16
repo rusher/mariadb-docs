@@ -2,7 +2,7 @@
 # CONNECT Create Table Options
 
 Create Table statements for “CONNECT” tables are standard MariaDB create statements specifying
-`<code>engine=CONNECT</code>`. There are a few additional table and column options specific to CONNECT.
+`engine=CONNECT`. There are a few additional table and column options specific to CONNECT.
 
 
 ### Table Options
@@ -53,7 +53,7 @@ All integers in the above table are unsigned big integers.
 
 
 Because CONNECT handles many table types; many table type specific options are
-not in the above list and must be entered using the `<code>OPTION_LIST</code>` option. The
+not in the above list and must be entered using the `OPTION_LIST` option. The
 syntax to use is:
 
 
@@ -61,10 +61,10 @@ syntax to use is:
 ... option_list='opname1=opvalue1,opname2=opvalue2...'
 ```
 
-Be aware that until Connect 1.5.5, no blanks should be inserted before or after the '`<code>=</code>`' and
-'`<code>,</code>`' characters. The option name is all that is between the start of the
-string or the last '`<code>,</code>`' character and the next '`<code>=</code>`' character, and the
-option value is all that is between this '`<code>=</code>`' character and the next '`<code>,</code>`'
+Be aware that until Connect 1.5.5, no blanks should be inserted before or after the '`=`' and
+'`,`' characters. The option name is all that is between the start of the
+string or the last '`,`' character and the next '`=`' character, and the
+option value is all that is between this '`=`' character and the next '`,`'
 or end of string. For instance:
 
 
@@ -72,9 +72,9 @@ or end of string. For instance:
 option_list='name=TABLE,coltype=HTML,attribute=border=1;cellpadding=5,headattr=bgcolor=yellow';
 ```
 
-This defines four options, '`<code>name</code>`', '`<code>coltype</code>`', '`<code>attribute</code>`', and
-'`<code>headattr</code>`'; with values '`<code>TABLE</code>`', '`<code>HTML</code>`',
-'`<code>border=1;cellpadding=5</code>`', and '`<code>bgcolor=yellow</code>`', respectively. The only
+This defines four options, '`name`', '`coltype`', '`attribute`', and
+'`headattr`'; with values '`TABLE`', '`HTML`',
+'`border=1;cellpadding=5`', and '`bgcolor=yellow`', respectively. The only
 restriction is that values cannot contain commas, but they can contain equal
 signs.
 
@@ -98,7 +98,7 @@ signs.
 
 
 
-* The `<code>MAX_DIST</code>` and `<code>DISTRIB</code>` column options are used for block indexing.
+* The `MAX_DIST` and `DISTRIB` column options are used for block indexing.
 * All integers in the above table are unsigned big integers.
 * JPATH and XPATH were added to make CREATE TABLE statements more readable, but they do the same thing as FIELD_FORMAT and any of them can be used with the same result.
 
@@ -121,12 +121,12 @@ commands or by the “AS select statement” of the [CREATE TABLE](../../sql-sta
 command. Unlike the CSV engine, CONNECT easily permits the creation of tables
 based on already existing files, for instance files made by other applications.
 However, if the file name is not specified, a file with a name defaulting to
-`<code>tablename.tabletype</code>` will be created in the data directory ([“inward”](connect-table-types/inward-and-outward-tables.md#inward-tables) table).
+`tablename.tabletype` will be created in the data directory ([“inward”](connect-table-types/inward-and-outward-tables.md#inward-tables) table).
 
 
 **Note 2:** Dropping a CONNECT table is done with a standard DROP statement.
 For [outward tables](connect-table-types/inward-and-outward-tables.md#inward-tables), this drops only the CONNECT table definition but does not
-erase the corresponding data file and index files. Use `<code>DELETE</code>` or
-`<code>TRUNCATE</code>` to do so. This is contrary to data and index files of [inward
+erase the corresponding data file and index files. Use `DELETE` or
+`TRUNCATE` to do so. This is contrary to data and index files of [inward
 tables](connect-table-types/inward-and-outward-tables.md#inward-tables) are erased on DROP like for other MariaDB engines.
 

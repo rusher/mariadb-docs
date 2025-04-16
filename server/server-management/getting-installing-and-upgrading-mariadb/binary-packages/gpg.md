@@ -13,9 +13,9 @@ Our repositories for Debian "Sid" and the Ubuntu 16.04 and beyond "Xenial" use t
 Information about this key:
 
 
-* The short Key ID is: `<code>0xC74CD1D8</code>`
-* The long Key ID is: `<code>0xF1656F24C74CD1D8</code>`
-* The full fingerprint of the key is: `<code>177F 4010 FE56 CA33 3630 0305 F165 6F24 C74C D1D8</code>`
+* The short Key ID is: `0xC74CD1D8`
+* The long Key ID is: `0xF1656F24C74CD1D8`
+* The full fingerprint of the key is: `177F 4010 FE56 CA33 3630 0305 F165 6F24 C74C D1D8`
 * The key can be added on Debian-based systems using the following command:
 
 
@@ -23,7 +23,7 @@ Information about this key:
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
 ```
 
-* Usage of the `<code>apt-key</code>` command is deprecated in the latest versions of Debian and Ubuntu, and the replacement method is to download the keyring file to the `<code>/etc/apt/trusted.gpg.d/</code>` directory. This can be done with the following:
+* Usage of the `apt-key` command is deprecated in the latest versions of Debian and Ubuntu, and the replacement method is to download the keyring file to the `/etc/apt/trusted.gpg.d/` directory. This can be done with the following:
 
 
 ```
@@ -53,7 +53,7 @@ sudo rpmkeys --import https://supplychain.mariadb.com/MariaDB-Server-GPG-KEY
 ## RPM / Source key pre-2023
 
 
-The GPG Key ID of the MariaDB signing key we used for yum/dnf/zypper repositories and to sign our source code tarballs until the end of 2022 was `<code>0xCBCB082A1BB943DB</code>`. The short form of the id is `<code>0x1BB943DB</code>` and the full key fingerprint is:
+The GPG Key ID of the MariaDB signing key we used for yum/dnf/zypper repositories and to sign our source code tarballs until the end of 2022 was `0xCBCB082A1BB943DB`. The short form of the id is `0x1BB943DB` and the full key fingerprint is:
 
 
 ```
@@ -76,7 +76,7 @@ sudo rpmkeys --import https://supplychain.mariadb.com/MariaDB-Server-GPG-KEY
 ## Configuring Repositories
 
 
-See the [this page](../../../../connectors/mariadb-connector-r2dbc/using-the-spring-data-framework-with-mariadb-connector-r2dbc/repositories-with-mariadb-connector-r2dbc-spring-data.md#configure-mariadb-repository) for details on using the `<code>mariadb_repo_setup</code>` script to configure repositories that use these keys.
+See the [this page](../../../../connectors/mariadb-connector-r2dbc/using-the-spring-data-framework-with-mariadb-connector-r2dbc/repositories-with-mariadb-connector-r2dbc-spring-data.md#configure-mariadb-repository) for details on using the `mariadb_repo_setup` script to configure repositories that use these keys.
 
 
 See the [this page](https://downloads.mariadb.org/mariadb/repositories/) for details on configuring MariaDB Foundation repositories that use these keys.

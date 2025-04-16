@@ -62,7 +62,7 @@ Regular Expression syntax.
 
 MaxScale now allows users with only table level access to connect with
 a default database. The service users will require SELECT privileges on
-the `<code>mysql.tables_priv</code>` table:
+the `mysql.tables_priv` table:
 
 
 
@@ -81,8 +81,8 @@ For more information, refer to the configuration guide:
 
 MaxScale 1.4.0 uses the MD5 version of the crypt function which is more secure
 than the non-MD5 version. This means that a new password file needs to be
-created with `<code>maxkeys</code>`. The configuration file should be updated to use the new
-passwords. This can be done with the help of the `<code>maxpasswd</code>` utility. For more
+created with `maxkeys`. The configuration file should be updated to use the new
+passwords. This can be done with the help of the `maxpasswd` utility. For more
 details about how to do this, please refer to the installation guide:
 [MariaDB MaxScale Installation Guide](../maxscale-14-getting-started/mariadb-maxscale-installation-guide.md)
 
@@ -91,7 +91,7 @@ details about how to do this, please refer to the installation guide:
 
 
 * MaxScale no longer supports SSLv3.
-* The `<code>enabled</code>` mode, which allows both SSL and non-SSL connections on the same port, has been removed.
+* The `enabled` mode, which allows both SSL and non-SSL connections on the same port, has been removed.
 
 
 ## Bug fixes

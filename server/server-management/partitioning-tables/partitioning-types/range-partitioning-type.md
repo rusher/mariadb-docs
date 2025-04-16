@@ -25,13 +25,13 @@ PARTITION BY RANGE (partitioning_expression)
 PARTITION BY RANGE indicates that the partitioning type is RANGE.
 
 
-The `<code>partitioning_expression</code>` is an SQL expression that returns a value from each row. In the simplest cases, it is a column name. This value is used to determine which partition should contain a row.
+The `partitioning_expression` is an SQL expression that returns a value from each row. In the simplest cases, it is a column name. This value is used to determine which partition should contain a row.
 
 
-`<code>partition_name</code>` is the name of a partition.
+`partition_name` is the name of a partition.
 
 
-`<code>value</code>` indicates the upper bound for that partition. The values must be ascending. For the first partition, the lower limit is NULL. When trying to insert a row, if its value is higher than the upper limit of the last partition, the row will be rejected (with an error, if the [IGNORE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/ignore.md) keyword is not used).
+`value` indicates the upper bound for that partition. The values must be ascending. For the first partition, the lower limit is NULL. When trying to insert a row, if its value is higher than the upper limit of the last partition, the row will be rejected (with an error, if the [IGNORE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/ignore.md) keyword is not used).
 
 
 As a catchall, MAXVALUE can be specified as a value for the last partition. Note however that in order to append a new partition, it is not possible to use [ADD PARTITION](../partitioning-overview.md#adding-partitions); rather [REORGANIZE PARTITION](../partitioning-overview.md#splitting-partitions) must be used.

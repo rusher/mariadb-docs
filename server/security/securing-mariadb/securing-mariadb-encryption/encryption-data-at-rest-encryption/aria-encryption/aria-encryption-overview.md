@@ -11,7 +11,7 @@ For encryption with the InnoDB and XtraDB storage engines, see [Encrypting Data 
 ## Basic Configuration
 
 
-In order to enable encryption for tables using the [Aria storage engine](../../../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md), there are a couple server system variables that you need to set and configure. Most users will want to set `<code>[aria_encrypt_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)</code>` and `<code>[encrypt_tmp_disk_tables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_disk_tables)</code>`.
+In order to enable encryption for tables using the [Aria storage engine](../../../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md), there are a couple server system variables that you need to set and configure. Most users will want to set `[aria_encrypt_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)` and `[encrypt_tmp_disk_tables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_disk_tables)`.
 
 
 Users of data-at-rest encryption will also need to have a [key management and encryption plugin](../key-management-and-encryption-plugins/encryption-key-management.md) configured. Some examples are [File Key Management Plugin](../key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) and [AWS Key Management Plugin](../key-management-and-encryption-plugins/aws-key-management-encryption-plugin-setup-guide.md).
@@ -54,7 +54,7 @@ SELECT * FROM db1.aria_tab LIMIT 1;
 1 row in set (0.00 sec
 ```
 
-Then, we could search the data file that belongs to `<code>db1.aria_tab</code>` for `<code>str1</code>` using a command-line tool, such as [strings](https://linux.die.net/man/1/strings):
+Then, we could search the data file that belongs to `db1.aria_tab` for `str1` using a command-line tool, such as [strings](https://linux.die.net/man/1/strings):
 
 
 ```

@@ -99,7 +99,7 @@ accounts.
 
 
 Note that if the socket path or port are changed, then MaxAdmin has to be
-invoked with `<code>-S</code>` or `<code>-P</code>` respectively.
+invoked with `-S` or `-P` respectively.
 
 
 # Running MaxAdmin
@@ -137,12 +137,12 @@ MaxScale>
 
 
 When internet sockets are enabled, initially it is possible to connect using
-the username `<code>admin</code>` and the password `<code>mariadb</code>`. These remain in effect as long
+the username `admin` and the password `mariadb`. These remain in effect as long
 as no other users have been created. As soon as the first user is added, the use
-of `<code>admin/mariadb</code>` as login credentials is disabled.
+of `admin/mariadb` as login credentials is disabled.
 
 
-If Unix domain sockets are used, then initially only `<code>root</code>` has access. MaxAdmin
+If Unix domain sockets are used, then initially only `root` has access. MaxAdmin
 usage can subsequently be enabled for other Linux users.
 
 
@@ -171,7 +171,7 @@ MaxScale>
 
 
 
-Please note that `<code>root</code>` will not be shown.
+Please note that `root` will not be shown.
 
 
 ## Enabling a Linux account
@@ -220,7 +220,7 @@ restricted to MaxAdmin users connecting over a Unix domain socket.
 
 
 Note that it is possible to disable the current user, but that will only affect
-the next attempt to use MaxAdmin. `<code>root</code>` cannot be removed.
+the next attempt to use MaxAdmin. `root` cannot be removed.
 
 
 ## Add A New User
@@ -268,7 +268,7 @@ the next attempt to use MaxAdmin.
 
 
 The MaxAdmin command accepts a number of options. See the output of
-`<code>maxadmin --help</code>` for more details.
+`maxadmin --help` for more details.
 
 
 ## Interactive Operation
@@ -402,22 +402,22 @@ other command in the Linux shell.
 
 
 MaxAdmin supports a mechanism to set defaults for the command line switches via
-a file in the home directory of the user. If a file named `<code>.maxadmin</code>` exists, it
+a file in the home directory of the user. If a file named `.maxadmin` exists, it
 will be read and parameters set according to the entries in that file.
 
 
 This mechanism can be used to provide defaults to the command line options. If a
 command line option is provided, it will still override the value in the
-`<code>.maxadmin</code>` file.
+`.maxadmin` file.
 
 
 The parameters than can be set are:
- * `<code>1.4</code>`: *hostname*, *port*, *user* and *passwd*
- * `<code>2.0.0</code>` and `<code>2.0.1</code>`: *socket*
- * `<code>2.0.2</code>` onwards: *socket*, *hostname*, *port*, *user* and *passwd* (and as synonym *password*)
+ * `1.4`: *hostname*, *port*, *user* and *passwd*
+ * `2.0.0` and `2.0.1`: *socket*
+ * `2.0.2` onwards: *socket*, *hostname*, *port*, *user* and *passwd* (and as synonym *password*)
 
 
-An example of a `<code>.maxadmin</code>` file that will alter the default socket path is:
+An example of a `.maxadmin` file that will alter the default socket path is:
 
 
 
@@ -427,14 +427,14 @@ socket=/somepath/maxadmin.socket
 
 
 
-Note that if in `<code>2.0.2</code>` or later, a value for *socket* as well as any of the
-internet socket related options, such as *hostname*, is provided in `<code>.maxadmin</code>`,
+Note that if in `2.0.2` or later, a value for *socket* as well as any of the
+internet socket related options, such as *hostname*, is provided in `.maxadmin`,
 then *socket* takes precedence. In that case, provide at least one internet
 socket related option on the command line to force MaxAdmin to use an internet
-socket and thus the internet socket related options from `<code>.maxadmin</code>`.
+socket and thus the internet socket related options from `.maxadmin`.
 
 
-The `<code>.maxadmin</code>` file may be made read only to protect any passwords written to
+The `.maxadmin` file may be made read only to protect any passwords written to
 that file.
 
 
@@ -443,7 +443,7 @@ that file.
 
 A help system is available that describes the commands available via the
 administration interface. To obtain a list of all commands available simply type
-the command `<code>help</code>`.
+the command `help`.
 
 
 
@@ -1653,7 +1653,7 @@ can be created, altered and removed at runtime.
 
 
 In order to add new servers into MaxScale, they must first be created. They can
-be created with the `<code>create server</code>` command. Any runtime configuration changes
+be created with the `create server` command. Any runtime configuration changes
 to servers are persisted meaning that they will still be in effect even after a
 restart.
 
@@ -1682,7 +1682,7 @@ Example: create server my-db-1 192.168.0.102 3306
 ### Adding Servers to Services and Monitors
 
 
-To add a server to a service or a monitor, use the `<code>add server</code>` command. Any
+To add a server to a service or a monitor, use the `add server` command. Any
 changes to the servers of a service or a monitor are persisted meaning that they
 will still be in effect even after a restart.
 
@@ -1712,9 +1712,9 @@ Example: add server my-db my-service "Cluster Monitor"
 ### Removing Servers from Services and Monitors
 
 
-To remove servers from a service or a monitor, use the `<code>remove server</code>`
-command. The same rules about server usage for services that apply to `<code>add
-server</code>` also apply to `<code>remove server</code>`. The servers will only be removed from new
+To remove servers from a service or a monitor, use the `remove server`
+command. The same rules about server usage for services that apply to `add
+server` also apply to `remove server`. The servers will only be removed from new
 sessions created after the command is executed.
 
 
@@ -1738,13 +1738,13 @@ Example: remove server my-db my-service "Cluster Monitor"
 ### Altering Servers
 
 
-You can alter server parameters with the `<code>alter server</code>` command. Any changes to
+You can alter server parameters with the `alter server` command. Any changes to
 the address or port of the server will take effect for new connections
 only. Changes to other parameters will take effect immediately.
 
 
 Please note that in order for SSL to be enabled for a created server, all of the
-required SSL parameters (`<code>ssl</code>`, `<code>ssl_key</code>`, `<code>ssl_cert</code>` and `<code>ssl_ca_cert</code>`) must be
+required SSL parameters (`ssl`, `ssl_key`, `ssl_cert` and `ssl_ca_cert`) must be
 given in the same command.
 
 
@@ -1782,8 +1782,8 @@ Example: alter server my-db-1 address=192.168.0.202 port=3307
 ### Destroying Servers
 
 
-You can destroy created servers with the `<code>destroy server</code>` command. Only servers
-created with the `<code>create server</code>` command should be destroyed. A server can only
+You can destroy created servers with the `destroy server` command. Only servers
+created with the `create server` command should be destroyed. A server can only
 be destroyed once it has been removed from all services and monitors.
 
 
@@ -1807,14 +1807,14 @@ Example: destroy server my-db-1
 ### Creating New Listeners
 
 
-To create a new listener for a service, use the `<code>create listener</code>` command. This
+To create a new listener for a service, use the `create listener` command. This
 will create and start a new listener for a service which will immediately start
 listening for new connections on the specified port.
 
 
 Please note that in order for SSL to be enabled for a created listeners, all of
-the required SSL parameters (`<code>ssl</code>`, `<code>ssl_key</code>`, `<code>ssl_cert</code>` and `<code>ssl_ca_cert</code>`)
-must be given. All the `<code>create listener</code>` parameters do not need to be defined in
+the required SSL parameters (`ssl`, `ssl_key`, `ssl_cert` and `ssl_ca_cert`)
+must be given. All the `create listener` parameters do not need to be defined in
 order for SSL to be enabled. The *default* parameter can be used to signal that
 MaxScale should use a default value for the parameter in question.
 
@@ -1852,7 +1852,7 @@ Example: create listener my-service my-new-listener 192.168.0.101 4006
 ### Destroying Listeners
 
 
-You can destroy created listeners with the `<code>destroy listener</code>` command. This will
+You can destroy created listeners with the `destroy listener` command. This will
 remove the persisted configuration and it will not be created on the next
 startup. The listener is stopped but it will remain a part of the runtime
 configuration until the next restart.
@@ -1880,9 +1880,9 @@ Example: destroy listener my-listener
 ### Creating New Monitors
 
 
-The `<code>create monitor</code>` command creates a new monitor that is initially
-stopped. Configure the monitor with the `<code>alter monitor</code>` command and then start
-it with the `<code>restart monitor</code>` command. The *user* and *password* parameters of
+The `create monitor` command creates a new monitor that is initially
+stopped. Configure the monitor with the `alter monitor` command and then start
+it with the `restart monitor` command. The *user* and *password* parameters of
 the monitor must be defined before the monitor is started.
 
 
@@ -1904,7 +1904,7 @@ Example: create monitor my-monitor mysqlmon
 ### Altering Monitors
 
 
-To alter a monitor, use the `<code>alter monitor</code>` command. Module specific parameters
+To alter a monitor, use the `alter monitor` command. Module specific parameters
 can also be altered.
 
 
@@ -1937,7 +1937,7 @@ Example: alter monitor my-monitor user=maxuser password=maxpwd
 ### Destroying Monitors
 
 
-To destroy a monitor, use the `<code>destroy monitor</code>` command. All servers need to be
+To destroy a monitor, use the `destroy monitor` command. All servers need to be
 removed from the monitor before it can be destroyed. Only created monitors
 should be destroyed and they will remain a part of the runtime configuration
 until the next restart.
@@ -1966,7 +1966,7 @@ Modules can implement custom commands called *module commands*. These are
 intended to allow modules to perform very specific tasks.
 
 
-To list all module commands, execute `<code>list commands</code>` in maxadmin. This shows all
+To list all module commands, execute `list commands` in maxadmin. This shows all
 commands that the modules have exposed. It also explains what they do and what
 sort of arguments they take.
 
@@ -1990,10 +1990,10 @@ If no module commands are registered, no output will be generated. Refer to the
 module specific documentation for more details about module commands.
 
 
-To call a module commands, execute `<code>call command <module> <command></code>` in
+To call a module commands, execute `call command <module> <command>` in
 maxadmin. The *<module>* is the name of the module and ** is the
 command that should be called. The commands take a variable amount of arguments
-which are explained in the output of `<code>list commands</code>`.
+which are explained in the output of `list commands`.
 
 
 
@@ -2014,7 +2014,7 @@ Example: call command my-module my-command hello world!
 
 
 
-An example of this is the `<code>dbfwfilter</code>` module that implements a rule reloading
+An example of this is the `dbfwfilter` module that implements a rule reloading
 mechanism as a module command. This command takes a filter name as a parameter.
 
 
@@ -2026,7 +2026,7 @@ maxadmin call command dbfwfilter rules/reload my-firewall-filter /home/user/rule
 
 
 Here the name of the filter is *my-firewall-filter* and the optional rule file
-path is `<code>/home/user/rules.txt</code>`.
+path is `/home/user/rules.txt`.
 
 
 # Tuning MariaDB MaxScale

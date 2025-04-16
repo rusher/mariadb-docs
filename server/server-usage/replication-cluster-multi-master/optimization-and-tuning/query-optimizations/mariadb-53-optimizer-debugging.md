@@ -16,8 +16,8 @@ optimizer debugging enabled.
 The patch adds two system variables:
 
 
-* `<code>@@debug_optimizer_prefer_join_prefix</code>`
-* `<code>@@debug_optimizer_dupsweedout_penalized</code>`
+* `@@debug_optimizer_prefer_join_prefix`
+* `@@debug_optimizer_dupsweedout_penalized`
 
 
 the variables are present as session/global variables, and are also settable
@@ -37,7 +37,7 @@ set debug_optimizer_prefer_join_prefix='tbl1,tbl2,tbl3';
 
 The optimizer will try its best to build a join plan which matches the
 specified join prefix. It does this by comparing join prefixes it is
-considering with `<code>@@debug_optimizer_prefer_join_prefix</code>`, and multiplying cost
+considering with `@@debug_optimizer_prefer_join_prefix`, and multiplying cost
 by a million if the plan doesn't match the prefix.
 
 
@@ -128,9 +128,9 @@ Semi-join materialization is a somewhat special case, because "join prefix" is
 not exactly what you see in the EXPLAIN output. For semi-join materialization:
 
 
-* don't put "`<code><subqueryN></code>`" into `<code>@@debug_optimizer_prefer_join_prefix</code>`
+* don't put "`<subqueryN>`" into `@@debug_optimizer_prefer_join_prefix`
 * instead, put all of the materialization tables into the place where you want
- the `<code><subqueryN></code>` line.
+ the `<subqueryN>` line.
 * Attempts to control the join order inside the materialization nest will be
  unsuccessful. Example: we want A-C-B-AA:
 
@@ -161,33 +161,33 @@ but we get A-B-C-AA.
 There are four semi-join execution strategies:
 
 
-1. `<code>FirstMatch</code>`
-1. `<code>Materialization</code>`
-1. `<code>LooseScan</code>`
-1. `<code>DuplicateWeedout</code>`
+1. `FirstMatch`
+1. `Materialization`
+1. `LooseScan`
+1. `DuplicateWeedout`
 
 
 The first three strategies have flags in @@optimizer_switch that can be used to
-disable them. The `<code>DuplicateWeedout</code>` strategy does not have a flag. This was
+disable them. The `DuplicateWeedout` strategy does not have a flag. This was
 done for a reason, as that strategy is the catch-all strategy and it can handle
 all kinds of subqueries, in all kinds of join orders. (We're slowly moving to
-the point where it will be possible to run with `<code>FirstMatch</code>` enabled and
+the point where it will be possible to run with `FirstMatch` enabled and
 everything else disabled but we are not there yet.)
 
 
-Since `<code>DuplicateWeedout</code>` cannot be disabled, there are cases where it "gets
+Since `DuplicateWeedout` cannot be disabled, there are cases where it "gets
 in the way" by being chosen over the strategy you need. This is what
-`<code>debug_optimizer_dupsweedout_penalized</code>` is for. if you set:
+`debug_optimizer_dupsweedout_penalized` is for. if you set:
 
 
 ```
 MariaDB [test]> set debug_optimizer_dupsweedout_penalized=TRUE;
 ```
 
-...the costs of query plans that use `<code>DuplicateWeedout</code>` will be multiplied by
-a millon. This doesn't mean that you will get rid of `<code>DuplicateWeedout</code>`
+...the costs of query plans that use `DuplicateWeedout` will be multiplied by
+a millon. This doesn't mean that you will get rid of `DuplicateWeedout`
 — due to [Bug #898747](https://bugs.launchpad.net/bugs/898747) it is still possible to have
-`<code>DuplicateWeedout</code>` used even if a cheaper plan exits. A partial remedy to this
+`DuplicateWeedout` used even if a cheaper plan exits. A partial remedy to this
 is to run with
 
 
@@ -195,8 +195,8 @@ is to run with
 MariaDB [test]> set optimizer_prune_level=0;
 ```
 
-It is possible to use both `<code>debug_optimizer_dupsweedout_penalized</code>` and
-`<code>debug_optimizer_prefer_join_prefix</code>` at the same time. This should give you
+It is possible to use both `debug_optimizer_dupsweedout_penalized` and
+`debug_optimizer_prefer_join_prefix` at the same time. This should give you
 the desired strategy and join order.
 
 

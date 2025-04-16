@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_TABLESPACES_ENCRYPTION Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>INNODB_TABLESPACES_ENCRYPTION</code>` table contains metadata about [encrypted InnoDB tablespaces](../../../../../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-overview.md). When you [enable encryption for an InnoDB tablespace](../../../../../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-overview.md), an entry for the tablespace is added to this table. If you later [disable encryption for the InnoDB tablespace](../../../../../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-overview.md), then the row still remains in this table, but the `<code>ENCRYPTION_SCHEME</code>` and `<code>CURRENT_KEY_VERSION</code>` columns will be set to `<code>0</code>`.
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_TABLESPACES_ENCRYPTION` table contains metadata about [encrypted InnoDB tablespaces](../../../../../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-overview.md). When you [enable encryption for an InnoDB tablespace](../../../../../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-overview.md), an entry for the tablespace is added to this table. If you later [disable encryption for the InnoDB tablespace](../../../../../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-overview.md), then the row still remains in this table, but the `ENCRYPTION_SCHEME` and `CURRENT_KEY_VERSION` columns will be set to `0`.
 
 
 Viewing this table requires the [PROCESS](../../../../../account-management-sql-commands/grant.md#global-privileges) privilege, although a bug in versions before [MariaDB 10.4.14](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10414-release-notes.md) and [MariaDB 10.5.5](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md) mean the [SUPER](../../../../../account-management-sql-commands/grant.md#global-privileges) privilege was required ([MDEV-23003](https://jira.mariadb.org/browse/MDEV-23003)).
@@ -27,7 +27,7 @@ It contains the following columns:
 
 
 
-When the [InnoDB system tablespace](../../../../../../../storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) is encrypted, it is represented in this table with the special name: `<code>innodb_system</code>`.
+When the [InnoDB system tablespace](../../../../../../../storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) is encrypted, it is represented in this table with the special name: `innodb_system`.
 
 
 ## Example

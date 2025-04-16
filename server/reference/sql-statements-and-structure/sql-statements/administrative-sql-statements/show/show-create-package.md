@@ -12,10 +12,10 @@ SHOW CREATE PACKAGE  [ db_name . ] package_name
 ## Description
 
 
-The `<code>SHOW CREATE PACKAGE</code>` statement can be used when [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set. It shows the `<code>CREATE</code>` statement that creates the given package specification.
+The `SHOW CREATE PACKAGE` statement can be used when [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set. It shows the `CREATE` statement that creates the given package specification.
 
 
-`<code>SHOW CREATE PACKAGE</code>` quotes identifiers according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
+`SHOW CREATE PACKAGE` quotes identifiers according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
 
 
 ## Examples

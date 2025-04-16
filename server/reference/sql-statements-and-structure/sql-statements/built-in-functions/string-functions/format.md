@@ -11,10 +11,10 @@ FORMAT(num, decimal_position[, locale])
 ## Description
 
 
-Formats the given number for display as a string, adding separators to appropriate position and rounding the results to the given decimal position. For instance, it would format `<code>15233.345</code>` to `<code>15,233.35</code>`.
+Formats the given number for display as a string, adding separators to appropriate position and rounding the results to the given decimal position. For instance, it would format `15233.345` to `15,233.35`.
 
 
-If the given decimal position is `<code>0</code>`, it rounds to return no decimal point or fractional part. You can optionally specify a [locale](../../../../data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) value to format numbers to the pattern appropriate for the given region.
+If the given decimal position is `0`, it rounds to return no decimal point or fractional part. You can optionally specify a [locale](../../../../data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) value to format numbers to the pattern appropriate for the given region.
 
 
 ## Examples

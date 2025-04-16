@@ -17,23 +17,23 @@ SHOW ANALYZE [FORMAT=JSON] FOR <connection_id>;
 ## Description
 
 
-`<code>SHOW ANALYZE</code>` allows one to retrieve [ANALYZE](../analyze-and-explain-statements/analyze-statement.md)-like output from a currently running statement. The command
+`SHOW ANALYZE` allows one to retrieve [ANALYZE](../analyze-and-explain-statements/analyze-statement.md)-like output from a currently running statement. The command
 
 
 ```
 SHOW ANALYZE [FORMAT=JSON] FOR <connection_id>;
 ```
 
-connects to the query running in connection `<code>connection_id</code>`, gets information about the query plan it is executing, *also gets information about the runtime statistics of the execution so far* and returns it in a format similar to `<code>ANALYZE [FORMAT=JSON]</code>` output.
+connects to the query running in connection `connection_id`, gets information about the query plan it is executing, *also gets information about the runtime statistics of the execution so far* and returns it in a format similar to `ANALYZE [FORMAT=JSON]` output.
 
 
-This is similar to the [SHOW EXPLAIN](show-explain.md) command, the difference being that `<code>SHOW ANALYZE</code>` also produces runtime statistics information.
+This is similar to the [SHOW EXPLAIN](show-explain.md) command, the difference being that `SHOW ANALYZE` also produces runtime statistics information.
 
 
 ## Intended Usage
 
 
-Imagine you're trying to troubleshoot a query that never finishes. Since it doesn't finish, it is not possible to get [ANALYZE](../analyze-and-explain-statements/analyze-statement.md) output for it. With `<code>SHOW ANALYZE</code>`, you can get the runtime statistics without waiting for the query to finish.
+Imagine you're trying to troubleshoot a query that never finishes. Since it doesn't finish, it is not possible to get [ANALYZE](../analyze-and-explain-statements/analyze-statement.md) output for it. With `SHOW ANALYZE`, you can get the runtime statistics without waiting for the query to finish.
 
 
 ## Examples
@@ -42,7 +42,7 @@ Imagine you're trying to troubleshoot a query that never finishes. Since it does
 ### Example 1: Row Counts
 
 
-Consider the tables `<code>orders</code>` and `<code>customer</code>` and a join query finding the total amount of orders from customers with Gold status:
+Consider the tables `orders` and `customer` and a join query finding the total amount of orders from customers with Gold status:
 
 
 ```
@@ -67,7 +67,7 @@ The EXPLAIN for this query looks like this:
 ```
 
 We run the SELECT, and it has been running for 30 seconds.
-Let's try `<code>SHOW ANALYZE</code>`:
+Let's try `SHOW ANALYZE`:
 
 
 ```
@@ -94,7 +94,7 @@ show analyze format=json for 3;
           "r_rows": 110544,
 ```
 
-^ `<code>rows</code>` shows the number of rows expected. `<code>r_rows</code>` in this example shows how many rows were processed so far (110K out of expected 200K). `<code>r_loops</code>` above shows we're doing the first table scan (which is obvious for this query plan).
+^ `rows` shows the number of rows expected. `r_rows` in this example shows how many rows were processed so far (110K out of expected 200K). `r_loops` above shows we're doing the first table scan (which is obvious for this query plan).
 
 
 ```
@@ -117,7 +117,7 @@ show analyze format=json for 3;
           "r_rows": 99.99222307,
 ```
 
-^ here, `<code>rows: 1</code>` shows the optimizer was expecting 1 order per customer. But `<code>r_rows: 99.9</code>` shows that execution has found on average 100 orders per customer. This may be the reason the query is slower than expected!
+^ here, `rows: 1` shows the optimizer was expecting 1 order per customer. But `r_rows: 99.9` shows that execution has found on average 100 orders per customer. This may be the reason the query is slower than expected!
 
 
 The final chunk of the output doesn't have anything interesting but here it is:
@@ -136,7 +136,7 @@ The final chunk of the output doesn't have anything interesting but here it is:
 ### Example 2: Timing Information
 
 
-Regular SELECT queries collect row count information, so `<code>SHOW ANALYZE</code>` can display it. However, detailed timing information is not collected, as collecting it may have CPU overhead. But if the target query is collecting timing information, `<code>SHOW ANALYZE</code>` will display it. How does one get the target query to collect timing information? Currently there is one way: if the target is running `<code>ANALYZE</code>`, it IS collecting timing information. 
+Regular SELECT queries collect row count information, so `SHOW ANALYZE` can display it. However, detailed timing information is not collected, as collecting it may have CPU overhead. But if the target query is collecting timing information, `SHOW ANALYZE` will display it. How does one get the target query to collect timing information? Currently there is one way: if the target is running `ANALYZE`, it IS collecting timing information. 
 Re-running the previous example:
 
 
@@ -165,7 +165,7 @@ ANALYZE
           "r_other_time_ms": 46.355,
 ```
 
-^ Now, `<code>ANALYZE</code>` prints timing information in members named `<code>r_..._time_ms</code>`.
+^ Now, `ANALYZE` prints timing information in members named `r_..._time_ms`.
 One can see that so far, out of 30 seconds, only 232 millisecond were spent in reading the customer table. The bottleneck is elsewhere...
 
 

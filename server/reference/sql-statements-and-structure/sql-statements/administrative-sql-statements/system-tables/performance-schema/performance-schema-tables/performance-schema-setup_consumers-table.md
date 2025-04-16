@@ -4,7 +4,7 @@
 Lists the types of consumers for which event information is available.
 
 
-The `<code>setup_consumers</code>` table contains the following columns:
+The `setup_consumers` table contains the following columns:
 
 
 

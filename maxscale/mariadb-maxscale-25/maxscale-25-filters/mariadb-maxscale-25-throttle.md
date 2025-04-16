@@ -74,7 +74,7 @@ immediate, i.e. a session will only be allowed very short bursts of high
 frequency querying.
 
 
-When a session has been continuously throttled for `<code>throttling_duration</code>`
+When a session has been continuously throttled for `throttling_duration`
 milliseconds, or 60 seconds in this example, MaxScale will disconnect the
 session.
 
@@ -82,7 +82,7 @@ session.
 ### Allowing high frequency bursts
 
 
-The two parameters `<code>max_qps</code>` and `<code>sampling_duration</code>` together define how a
+The two parameters `max_qps` and `sampling_duration` together define how a
 session is throttled.
 
 
@@ -103,7 +103,7 @@ If the client continues to query at high speed and throttling duration is set to
 ### Filter Parameters
 
 
-#### `<code>max_qps</code>`
+#### `max_qps`
 
 
 *Maximum queries per second*. Required parameter.
@@ -111,10 +111,10 @@ If the client continues to query at high speed and throttling duration is set to
 
 This is the frequency to which a session will be limited over a given time
 period. QPS is not measured as an instantaneous value but over a configurable
-sampling duration (see `<code>sampling_duration</code>`).
+sampling duration (see `sampling_duration`).
 
 
-#### `<code>throttling_duration</code>`
+#### `throttling_duration`
 
 
 Required parameter.
@@ -130,7 +130,7 @@ If no explicit unit is provided, the value is interpreted as milliseconds
 in MaxScale 2.4. In subsequent versions a value without a unit may be rejected.
 
 
-### `<code>sampling_duration</code>`
+### `sampling_duration`
 
 
 Optional parameter. Default 250 milliseconds.
@@ -155,7 +155,7 @@ If no explicit unit is provided, the value is interpreted as milliseconds
 in MaxScale 2.4. In subsequent versions a value without a unit may be rejected.
 
 
-### `<code>continuous_duration</code>`
+### `continuous_duration`
 
 
 Optional parameter. Default 2000 milliseconds or 2 seconds.
@@ -163,7 +163,7 @@ Optional parameter. Default 2000 milliseconds or 2 seconds.
 
 This value defines what continuous throttling means. Continuous throttling
 starts as soon as the filter throttles the frequency. Continuous throttling ends
-when no throttling has been performed in the past `<code>continuous_duration</code>` time.
+when no throttling has been performed in the past `continuous_duration` time.
 
 
 The value is specified as documented

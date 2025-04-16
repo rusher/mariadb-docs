@@ -12,18 +12,18 @@ TEXT[(M)] [CHARACTER SET charset_name] [COLLATE collation_name]
 ## Description
 
 
-A `<code>TEXT</code>` column with a maximum length of `<code>65,535</code>` (`<code>2<sup>16</sup> - 1</code>`)
+A `TEXT` column with a maximum length of `65,535` (`2<sup>16</sup> - 1`)
 characters. The effective maximum length is less if the value contains
-multi-byte characters. Each `<code>TEXT</code>` value is stored using a two-byte length
+multi-byte characters. Each `TEXT` value is stored using a two-byte length
 prefix that indicates the number of bytes in the value. If you need a bigger storage, consider using [MEDIUMTEXT](mediumtext.md) instead.
 
 
-An optional length `<code>M</code>` can be given for this type. If this is done, MariaDB
-creates the column as the smallest `<code>TEXT</code>` type large enough to hold values
-`<code>M</code>` characters long.
+An optional length `M` can be given for this type. If this is done, MariaDB
+creates the column as the smallest `TEXT` type large enough to hold values
+`M` characters long.
 
 
-`<code>BLOB</code>` and `<code>TEXT</code>` columns can be assigned a [DEFAULT](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#default) value.
+`BLOB` and `TEXT` columns can be assigned a [DEFAULT](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#default) value.
 
 
 ## Examples
@@ -110,7 +110,7 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 ## Indexing
 
 
-A [unique index](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#unique-index) can be created on a `<code>TEXT</code>` column. This was not possible prior to [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md)
+A [unique index](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#unique-index) can be created on a `TEXT` column. This was not possible prior to [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md)
 
 
 Internally, this uses hash indexing to quickly check the values and if a hash collision is found, the actual stored values are compared in order to retain the uniqueness.
@@ -119,7 +119,7 @@ Internally, this uses hash indexing to quickly check the values and if a hash co
 ## Difference between [VARCHAR](varchar.md) and TEXT
 
 
-* [VARCHAR](varchar.md) columns can be fully indexed. `<code>TEXT</code>` columns can only be indexed over a specified length.
+* [VARCHAR](varchar.md) columns can be fully indexed. `TEXT` columns can only be indexed over a specified length.
 * Using TEXT or [BLOB](blob.md) in a [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) query that uses temporary tables for storing intermediate results will force the temporary table to be disk based (using the [Aria storage engine](../../storage-engines/aria/aria-storage-engine.md) instead of the [memory storage engine](../../storage-engines/memory-storage-engine.md), which is a bit slower. This is not that bad as the [Aria storage engine](../../storage-engines/aria/aria-storage-engine.md) caches the rows in memory. To get the benefit of this, one should ensure that the [aria_pagecache_buffer_size](../../storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size) variable is big enough to hold most of the row and index data for temporary tables.
 
 
@@ -127,7 +127,7 @@ Internally, this uses hash indexing to quickly check the values and if a hash co
 
 
 * Internally the full length of the [VARCHAR](varchar.md) column is allocated inside each TABLE objects record[] structure. As there are three such buffers, each open table will allocate 3 times max-length-to-store-varchar bytes of memory.
-* `<code>TEXT</code>` and `<code>BLOB</code>` columns are stored with a pointer (4 or 8 bytes) + a 1-4 bytes length. The `<code>TEXT</code>` data is only stored once. This means that internally `<code>TEXT</code>` uses less memory for each open table but instead has the additional overhead that each `<code>TEXT</code>` object needs to be allocated and freed for each row access (with some caching in between).
+* `TEXT` and `BLOB` columns are stored with a pointer (4 or 8 bytes) + a 1-4 bytes length. The `TEXT` data is only stored once. This means that internally `TEXT` uses less memory for each open table but instead has the additional overhead that each `TEXT` object needs to be allocated and freed for each row access (with some caching in between).
 
 
 ## See Also

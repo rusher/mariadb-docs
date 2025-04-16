@@ -11,10 +11,10 @@ TO_BASE64(str)
 ## Description
 
 
-Converts the string argument `<code>str</code>` to its base-64 encoded form, returning the result as a character string in the connection character set and collation.
+Converts the string argument `str` to its base-64 encoded form, returning the result as a character string in the connection character set and collation.
 
 
-The argument `<code>str</code>` will be converted to string first if it is not a string. A NULL argument will return a NULL result.
+The argument `str` will be converted to string first if it is not a string. A NULL argument will return a NULL result.
 
 
 The reverse function, [FROM_BASE64()](from_base64.md), decodes an encoded base-64 string.

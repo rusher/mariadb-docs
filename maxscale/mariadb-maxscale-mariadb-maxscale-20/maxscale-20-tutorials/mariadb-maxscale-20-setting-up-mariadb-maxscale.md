@@ -67,7 +67,7 @@ MariaDB [(none)]> grant SELECT on mysql.user to '*username*'@'*maxscalehost*';
 
 
 
-Additionally, `<code>SELECT</code>` privileges on the `<code>mysql.db</code>` and `<code>mysql.tables_priv</code>` tables and `<code>SHOW DATABASES</code>` privileges are required in order to load databases name and grants suitable for database name authorization.
+Additionally, `SELECT` privileges on the `mysql.db` and `mysql.tables_priv` tables and `SHOW DATABASES` privileges are required in order to load databases name and grants suitable for database name authorization.
 
 
 
@@ -112,13 +112,13 @@ If you wish to use two different usernames for the two different roles of monito
 Because MariaDB MaxScale sits between the clients and the backend databases, the backend databases will see all clients as if they were connecting from MariaDB MaxScale's address. This usually requires users to create additional grants for MariaDB MaxScale's hostname. The best way to describe this process is with an example.
 
 
-User `<code>'jdoe'@'192.168.0.200</code>` has the following grant on the cluster: `<code>GRANT SELECT, INSERT, UPDATE, DELETE ON *.* TO 'jdoe'@'192.168.0.200'</code>`. When the user connects directly to the server it will see it as `<code>'jdoe'@'192.168.0.200</code>` connecting to the server and it will match the grant for `<code>'jdoe'@'192.168.0.200</code>`.
+User `'jdoe'@'192.168.0.200` has the following grant on the cluster: `GRANT SELECT, INSERT, UPDATE, DELETE ON *.* TO 'jdoe'@'192.168.0.200'`. When the user connects directly to the server it will see it as `'jdoe'@'192.168.0.200` connecting to the server and it will match the grant for `'jdoe'@'192.168.0.200`.
 
 
-If MariaDB MaxScale is at the address `<code>192.168.0.101</code>` and the user `<code>jdoe</code>` connects to this MariaDB MaxScale, the backend server will see the connection as `<code>'jdoe'@'192.168.0.101'</code>`. Since the backend server has no grants for `<code>'jdoe'@'192.168.0.101'</code>`, the connection from MariaDB MaxScale to the server will be refused.
+If MariaDB MaxScale is at the address `192.168.0.101` and the user `jdoe` connects to this MariaDB MaxScale, the backend server will see the connection as `'jdoe'@'192.168.0.101'`. Since the backend server has no grants for `'jdoe'@'192.168.0.101'`, the connection from MariaDB MaxScale to the server will be refused.
 
 
-We can fix this by either creating a matching grant for user `<code>jdoe</code>` from the MariaDB MaxScale address or by using a wildcard to cover both addresses.
+We can fix this by either creating a matching grant for user `jdoe` from the MariaDB MaxScale address or by using a wildcard to cover both addresses.
 
 
 The quickest way to do this is by doing a SHOW GRANTS query:
@@ -137,7 +137,7 @@ MariaDB [(none)]> SHOW GRANTS FOR 'jdoe'@'192.168.0.200';
 
 
 
-Then creating the user `<code>'jdoe'@'192.168.0.101'</code>` and giving it the same grants:
+Then creating the user `'jdoe'@'192.168.0.101'` and giving it the same grants:
 
 
 

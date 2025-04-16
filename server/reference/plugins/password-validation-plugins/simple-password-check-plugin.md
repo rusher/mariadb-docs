@@ -1,10 +1,10 @@
 
 # Simple Password Check Plugin
 
-`<code>simple_password_check</code>` is a [password validation](README.md) plugin. It can check whether a password contains at least a certain number of characters of a specific type. When first installed, a password is required to be at least eight characters, and requires at least one digit, one uppercase character, one lowercase character, and one character that is neither a digit nor a letter.
+`simple_password_check` is a [password validation](README.md) plugin. It can check whether a password contains at least a certain number of characters of a specific type. When first installed, a password is required to be at least eight characters, and requires at least one digit, one uppercase character, one lowercase character, and one character that is neither a digit nor a letter.
 
 
-Note that passwords can be directly set as a hash, bypassing the password validation, if the [strict_password_validation](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) variable is `<code>OFF</code>` (it is `<code>ON</code>` by default).
+Note that passwords can be directly set as a hash, bypassing the password validation, if the [strict_password_validation](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) variable is `OFF` (it is `ON` by default).
 
 
 
@@ -14,14 +14,14 @@ Note that passwords can be directly set as a hash, bypassing the password valida
 Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing `<code>[INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)</code>` or `<code>[INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)</code>`. For example:
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing `[INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)` or `[INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)`. For example:
 
 
 ```
 INSTALL SONAME 'simple_password_check';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the `<code>[--plugin-load](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` or the `<code>[--plugin-load-add](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` options. This can be specified as a command-line argument to `<code>[mysqld](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` or it can be specified in a relevant server [option group](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the `[--plugin-load](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or the `[--plugin-load-add](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` options. This can be specified as a command-line argument to `[mysqld](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or it can be specified in a relevant server [option group](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 
 ```
@@ -33,14 +33,14 @@ plugin_load_add = simple_password_check
 ## Uninstalling the Plugin
 
 
-You can uninstall the plugin dynamically by executing `<code>[UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)</code>` or `<code>[UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)</code>`. For example:
+You can uninstall the plugin dynamically by executing `[UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)`. For example:
 
 
 ```
 UNINSTALL SONAME 'simple_password_check';
 ```
 
-If you installed the plugin by providing the `<code>[--plugin-load](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` or the `<code>[--plugin-load-add](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` options in a relevant server [option group](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the `[--plugin-load](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or the `[--plugin-load-add](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` options in a relevant server [option group](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 
 ## Example
@@ -60,7 +60,7 @@ ERROR 1819 (HY000): Your password does not satisfy the current policy requiremen
 ### Issues with PAM Authentication Plugin
 
 
-Prior to [MariaDB 10.4.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1040-release-notes.md), all [password validation plugins](README.md) are incompatible with the `<code>[pam](../authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md)</code>` authentication plugin. See [Authentication Plugin - PAM: Conflicts with Password Validation](../authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#conflicts-with-password-validation) for more information.
+Prior to [MariaDB 10.4.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1040-release-notes.md), all [password validation plugins](README.md) are incompatible with the `[pam](../authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md)` authentication plugin. See [Authentication Plugin - PAM: Conflicts with Password Validation](../authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#conflicts-with-password-validation) for more information.
 
 
 ## Versions
@@ -80,77 +80,77 @@ Prior to [MariaDB 10.4.0](../../../../release-notes/mariadb-community-server/rel
 ## System Variables
 
 
-#### `<code>simple_password_check_digits</code>`
+#### `simple_password_check_digits`
 
 
 * Description: A password must contain at least this many digits.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--simple-password-check-digits=#</code>`
+* Commandline: `--simple-password-check-digits=#`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>1</code>`
-* Range: `<code>0</code>` to `<code>1000</code>`
+* Data Type: `numeric`
+* Default Value: `1`
+* Range: `0` to `1000`
 
 
 
-#### `<code>simple_password_check_letters_same_case</code>`
+#### `simple_password_check_letters_same_case`
 
 
 * Description: A password must contain at least this many upper-case and this many lower-case letters.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--simple-password-check-letters-same-case=#</code>`
+* Commandline: `--simple-password-check-letters-same-case=#`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>1</code>`
-* Range: `<code>0</code>` to `<code>1000</code>`
+* Data Type: `numeric`
+* Default Value: `1`
+* Range: `0` to `1000`
 
 
 
-#### `<code>simple_password_check_minimal_length</code>`
+#### `simple_password_check_minimal_length`
 
 
 * Description: A password must contain at least this many characters.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--simple-password-check-minimal-length=#</code>`
+* Commandline: `--simple-password-check-minimal-length=#`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>8</code>`
-* Range: `<code>0</code>` to `<code>1000</code>`
+* Data Type: `numeric`
+* Default Value: `8`
+* Range: `0` to `1000`
 
 
 
-#### `<code>simple_password_check_other_characters</code>`
+#### `simple_password_check_other_characters`
 
 
 * Description: A password must contain at least this many characters that are neither digits nor letters.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--simple-password-check-other-characters=#</code>`
+* Commandline: `--simple-password-check-other-characters=#`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>1</code>`
-* Range: `<code>0</code>` to `<code>1000</code>`
+* Data Type: `numeric`
+* Default Value: `1`
+* Range: `0` to `1000`
 
 
 
 ## Options
 
 
-#### `<code>simple_password_check</code>`
+#### `simple_password_check`
 
 
 * Description: Controls how the server should treat the plugin when the server starts up.
 
   * Valid values are:
 
-    * `<code>OFF</code>` - Disables the plugin without removing it from the `<code>[mysql.plugins](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md)</code>` table.
-    * `<code>ON</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
-    * `<code>FORCE</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `<code>FORCE_PLUS_PERMANENT</code>` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with `<code>[UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)</code>` or `<code>[UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)</code>` while the server is running.
+    * `OFF` - Disables the plugin without removing it from the `[mysql.plugins](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md)` table.
+    * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
+    * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with `[UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)` while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--simple-password-check=value</code>`
-* Data Type: `<code>enumerated</code>`
-* Default Value: `<code>ON</code>`
-* Valid Values: `<code>OFF</code>`, `<code>ON</code>`, `<code>FORCE</code>`, `<code>FORCE_PLUS_PERMANENT</code>`
+* Commandline: `--simple-password-check=value`
+* Data Type: `enumerated`
+* Default Value: `ON`
+* Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
 
 
 

@@ -18,7 +18,7 @@ create_specification:
 ## Description
 
 
-`<code>CREATE DATABASE</code>` creates a database with the given name. To use this statement, you need the [CREATE privilege](../../account-management-sql-commands/grant.md) for the database. `<code>CREATE SCHEMA</code>` is a synonym for `<code>CREATE DATABASE</code>`.
+`CREATE DATABASE` creates a database with the given name. To use this statement, you need the [CREATE privilege](../../account-management-sql-commands/grant.md) for the database. `CREATE SCHEMA` is a synonym for `CREATE DATABASE`.
 
 
 For valid identifiers to use as database names, see [Identifier Names](../../../sql-language-structure/identifier-names.md).
@@ -27,7 +27,7 @@ For valid identifiers to use as database names, see [Identifier Names](../../../
 #### OR REPLACE
 
 
-If the optional `<code>OR REPLACE</code>` clause is used, it acts as a shortcut for:
+If the optional `OR REPLACE` clause is used, it acts as a shortcut for:
 
 
 ```
@@ -38,7 +38,7 @@ CREATE DATABASE db_name ...;
 #### IF NOT EXISTS
 
 
-When the `<code>IF NOT EXISTS</code>` clause is used, MariaDB will return a warning instead of an error if the specified database already exists.
+When the `IF NOT EXISTS` clause is used, MariaDB will return a warning instead of an error if the specified database already exists.
 
 
 #### COMMENT

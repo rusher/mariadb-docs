@@ -28,8 +28,8 @@ The former alternative is still available but has been *deprecated*.
 
 If no arguments are given to MaxAdmin, it will attempt to connect to
 MariaDB MaxScale using a Unix domain socket. After the upgrade you will
-need to provide at least one internet socket related flag - `<code>-h</code>`, `<code>-P</code>`,
-`<code>-u</code>` or `<code>-p</code>` - to force MaxAdmin to use the internet socket approach.
+need to provide at least one internet socket related flag - `-h`, `-P`,
+`-u` or `-p` - to force MaxAdmin to use the internet socket approach.
 
 
 E.g.

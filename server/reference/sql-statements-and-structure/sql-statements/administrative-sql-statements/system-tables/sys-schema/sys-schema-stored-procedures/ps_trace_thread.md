@@ -11,7 +11,7 @@ ps_trace_thread(thread_id, outfile, max_runtime, interval, start_fresh, auto_set
 ## Description
 
 
-`<code>ps_trace_thread</code>` is a [stored procedure](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md).
+`ps_trace_thread` is a [stored procedure](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md).
 
 
 Parameters:

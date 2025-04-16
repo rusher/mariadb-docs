@@ -7,9 +7,9 @@ The [MyISAM](../../../../storage-engines/myisam-storage-engine/myisam-system-var
 Whether concurrent inserts can be used or not depends on the value of the [concurrent_insert](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#concurrent_insert) server system variable:
 
 
-* `<code>NEVER</code>` (0) disables concurrent inserts.
-* `<code>AUTO</code>` (1) allows concurrent inserts only when the target table has no free blocks (no data in the middle of the table has been deleted after the last [OPTIMIZE TABLE](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md)). This is the default.
-* `<code>ALWAYS</code>` (2) always enables concurrent inserts, in which case new rows are added at the end of a table if the table is being used by another thread.
+* `NEVER` (0) disables concurrent inserts.
+* `AUTO` (1) allows concurrent inserts only when the target table has no free blocks (no data in the middle of the table has been deleted after the last [OPTIMIZE TABLE](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md)). This is the default.
+* `ALWAYS` (2) always enables concurrent inserts, in which case new rows are added at the end of a table if the table is being used by another thread.
 
 
 If the [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is used, [CREATE TABLE ... SELECT](../../../vectors/create-table-with-vectors.md#create-table-select) and [INSERT ... SELECT](insert-select.md) statements cannot use concurrent inserts. These statements acquire a read lock on the table, so concurrent inserts will need to wait. This way the log can be safely used to restore data.
@@ -21,10 +21,10 @@ Concurrent inserts are not used by replicas with the row based [replication](../
 If an [INSERT](../../built-in-functions/string-functions/insert-function.md) statement contain the [HIGH_PRIORITY](../changing-deleting-data/high_priority-and-low_priority.md) clause, concurrent inserts cannot be used. [INSERT ... DELAYED](insert-delayed.md) is usually unneeded if concurrent inserts are enabled.
 
 
-[LOAD DATA INFILE](load-data-into-tables-or-index/load-data-infile.md) uses concurrent inserts if the `<code>CONCURRENT</code>` keyword is specified and [concurrent_insert](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#concurrent_insert) is not `<code>NEVER</code>`. This makes the statement slower (even if no other sessions access the table) but reduces contention.
+[LOAD DATA INFILE](load-data-into-tables-or-index/load-data-infile.md) uses concurrent inserts if the `CONCURRENT` keyword is specified and [concurrent_insert](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#concurrent_insert) is not `NEVER`. This makes the statement slower (even if no other sessions access the table) but reduces contention.
 
 
-[LOCK TABLES](../../transactions/lock-tables.md) allows non-conflicting concurrent inserts if a `<code>READ LOCAL</code>` lock is used. Concurrent inserts are not allowed if the `<code>LOCAL</code>` keyword is omitted.
+[LOCK TABLES](../../transactions/lock-tables.md) allows non-conflicting concurrent inserts if a `READ LOCAL` lock is used. Concurrent inserts are not allowed if the `LOCAL` keyword is omitted.
 
 
 ## Notes

@@ -17,7 +17,7 @@ ADD_MONTHS(date, months)
 ## Description
 
 
-`<code>ADD_MONTHS</code>` adds an integer *months* to a given *date* ([DATE](../../../sql-language-structure/date-and-time-literals.md), [DATETIME](../../../../data-types/date-and-time-data-types/datetime.md) or [TIMESTAMP](timestamp-function.md)), returning the resulting date.
+`ADD_MONTHS` adds an integer *months* to a given *date* ([DATE](../../../sql-language-structure/date-and-time-literals.md), [DATETIME](../../../../data-types/date-and-time-data-types/datetime.md) or [TIMESTAMP](timestamp-function.md)), returning the resulting date.
 
 
 *months* can be positive or negative. If months is not a whole number, then it will be rounded to the nearest whole number (not truncated).

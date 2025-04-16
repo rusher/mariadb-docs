@@ -11,11 +11,11 @@ SOUNDEX(str)
 ## Description
 
 
-Returns a soundex string from *`<code>str</code>`*. Two strings that sound almost the
+Returns a soundex string from *`str`*. Two strings that sound almost the
 same should have identical soundex strings. A standard soundex string is four
-characters long, but the `<code>SOUNDEX()</code>` function returns an arbitrarily long
-string. You can use `<code>SUBSTRING()</code>` on the result to get a standard soundex
-string. All non-alphabetic characters in *`<code>str</code>`* are ignored. All
+characters long, but the `SOUNDEX()` function returns an arbitrarily long
+string. You can use `SUBSTRING()` on the result to get a standard soundex
+string. All non-alphabetic characters in *`str`* are ignored. All
 international alphabetic characters outside the A-Z range are treated as
 vowels.
 

@@ -1,15 +1,15 @@
 
 # mariadb-test and mariadb-test-embedded
 
-The `<code>mariadb-test</code>` program runs a test case against a MariaDB or MySQL
+The `mariadb-test` program runs a test case against a MariaDB or MySQL
 server and optionally compares the output with a result file. This program
 reads input written in a special test language. Typically, you invoke
-*mariadb-test* via `<code>[mariadb-test-run.pl](https://mariadb.com/kb/en/mariadb-test-runpl)</code>` rather than invoking
+*mariadb-test* via `[mariadb-test-run.pl](https://mariadb.com/kb/en/mariadb-test-runpl)` rather than invoking
 it directly.
 
 
-`<code>mariadb-test_embedded</code>` is similar but is built with support for
-the `<code>libmariadbd</code>` embedded server.
+`mariadb-test_embedded` is similar but is built with support for
+the `libmariadbd` embedded server.
 
 
 Features of mariadb-test:
@@ -35,7 +35,7 @@ shell> mariadb-test **[options] [db_name]** < //test_file//
 ```
 
 You can also name the test case file with a
-`<code>--test-file=<em>file_name</em></code>` option.
+`--test-file=<em>file_name</em>` option.
 
 
 The exit value from mariadb-test is 0 for success, 1 for failure, and 62 if it

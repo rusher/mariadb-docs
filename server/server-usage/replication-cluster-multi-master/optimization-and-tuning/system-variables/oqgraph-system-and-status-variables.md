@@ -8,14 +8,14 @@ This page documents system and status variables related to the [OQGRAPH storage 
 ## System Variables
 
 
-#### `<code>oqgraph_allow_create_integer_latch</code>`
+#### `oqgraph_allow_create_integer_latch`
 
 
-* Description: Created when the [OQGRAPH](../../../../reference/storage-engines/oqgraph-storage-engine/oqgraph-examples.md) storage engine is installed, if set to `<code>1</code>` (`<code>0</code>` is default), permits the `<code>latch</code>` field to be an integer (see [OQGRAPH Overview](../../../../reference/storage-engines/oqgraph-storage-engine/oqgraph-overview.md#creating-a-table)). This deprecated feature was removed in [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md).
+* Description: Created when the [OQGRAPH](../../../../reference/storage-engines/oqgraph-storage-engine/oqgraph-examples.md) storage engine is installed, if set to `1` (`0` is default), permits the `latch` field to be an integer (see [OQGRAPH Overview](../../../../reference/storage-engines/oqgraph-storage-engine/oqgraph-overview.md#creating-a-table)). This deprecated feature was removed in [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md).
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>boolean</code>`
-* Default Value: `<code>0</code>`
+* Data Type: `boolean`
+* Default Value: `0`
 * Removed: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md).
 
 
@@ -23,29 +23,29 @@ This page documents system and status variables related to the [OQGRAPH storage 
 ## Status Variables
 
 
-#### `<code>Oqgraph_boost_version</code>`
+#### `Oqgraph_boost_version`
 
 
 * Description: [OQGRAPH](../../../../reference/storage-engines/oqgraph-storage-engine/oqgraph-examples.md) boost version.
 * Scope: Global, Session
-* Data Type: `<code>string</code>`
+* Data Type: `string`
 
 
 
-#### `<code>Oqgraph_compat_mode</code>`
+#### `Oqgraph_compat_mode`
 
 
 * Description: Whether or not legacy tables with integer latches are supported.
 * Scope: Global, Session
-* Data Type: `<code>string</code>`
+* Data Type: `string`
 
 
 
-#### `<code>Oqgraph_verbose_debug</code>`
+#### `Oqgraph_verbose_debug`
 
 
 * Description: Whether or not verbose debugging is enabled. If it is, performance may be adversely impacted
 * Scope: Global, Session
-* Data Type: `<code>string</code>`
+* Data Type: `string`
 
 

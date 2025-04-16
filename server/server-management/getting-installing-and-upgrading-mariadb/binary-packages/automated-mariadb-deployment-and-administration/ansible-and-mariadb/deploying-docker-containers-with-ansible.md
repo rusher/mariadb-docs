@@ -20,7 +20,7 @@ A dynamic inventory plugin for Docker exists. It retrieves the list of existing 
 Docker modules and the Docker inventory plugin communicate with Docker using its API. The connection to the API can use a TSL connection and supports key authenticity verification.
 
 
-To communicate with Docker API, Ansible needs a proper Python module installed on the Ansible node (`<code>docker</code>` or `<code>docker-py</code>`).
+To communicate with Docker API, Ansible needs a proper Python module installed on the Ansible node (`docker` or `docker-py`).
 
 
 Several roles exist to deploy Docker and configure it. They can be found in Ansible Galaxy.

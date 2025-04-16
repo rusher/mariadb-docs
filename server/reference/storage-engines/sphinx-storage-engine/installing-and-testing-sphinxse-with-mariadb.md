@@ -13,10 +13,10 @@ Complete Sphinx documentation is available on the [Sphinx website](https://sphin
 ### libexpat
 
 
-One library we know you will need on Linux before you can install Sphinx is `<code>libexpat</code>`. If it is not installed, you will get the 
-warning `<code class="fixed" style="white-space:pre-wrap">checking for libexpat... not found</code>`.
-On Suse the package is called `<code>libexpat-devel</code>`,
-on Ubuntu the package is called `<code>libexpat1-dev</code>`.
+One library we know you will need on Linux before you can install Sphinx is `libexpat`. If it is not installed, you will get the 
+warning `checking for libexpat... not found`.
+On Suse the package is called `libexpat-devel`,
+on Ubuntu the package is called `libexpat1-dev`.
 
 
 ### MariaDB detection
@@ -32,7 +32,7 @@ following options:
  --with-mysql-libs       path to MySQL libraries
 ```
 
-The above will tell the `<code>configure</code>` script where your MySQL/MariaDB
+The above will tell the `configure` script where your MySQL/MariaDB
 installation is.
 
 
@@ -48,7 +48,7 @@ cd installation-dir/mysql-test
 ./mysql-test-run --suite=sphinx
 ```
 
-If the above test doesn't pass, check the logs in the `<code>'var'</code>` directory.
+If the above test doesn't pass, check the logs in the `'var'` directory.
 If there is a problem with the sphinx installation, the reason can probably
-be found in the log file at: `<code>var/log/sphinx.sphinx/searchd/sphinx.log</code>`.
+be found in the log file at: `var/log/sphinx.sphinx/searchd/sphinx.log`.
 

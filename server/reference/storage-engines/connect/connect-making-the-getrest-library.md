@@ -99,7 +99,7 @@ int restGetFile(char *m, bool xt, PCSZ http, PCSZ uri, PCSZ fn)
 } // end of restGetFile
 ```
 
-This file exists in the source of CONNECT as `<code>restget.cpp</code>`. If you have no access to the source, use your favorite editor to make it by copy/pasting from the above.
+This file exists in the source of CONNECT as `restget.cpp`. If you have no access to the source, use your favorite editor to make it by copy/pasting from the above.
 
 
 Then, on Linux, compile the GetRest.so library:
@@ -109,13 +109,13 @@ Then, on Linux, compile the GetRest.so library:
 g++ -o GetRest.so -O3 -Wall -std=c++11 -fPIC -shared restget.cpp -lcpprest
 ```
 
-Note: You can replace `<code>-O3</code>` by `<code>-g</code>` to make a debug version.
+Note: You can replace `-O3` by `-g` to make a debug version.
 
 
-This library should be placed where it can be accessed. A good place is the directory where the `<code>libcpprest.so</code>` is, for instance `<code>/usr/lib64</code>`. You can move or copy it there.
+This library should be placed where it can be accessed. A good place is the directory where the `libcpprest.so` is, for instance `/usr/lib64`. You can move or copy it there.
 
 
-On windows, using Visual Studio, make an empty win32 dll project named GetRest and add it the above file. Also add it the module definition file `<code>restget.def</code>`:
+On windows, using Visual Studio, make an empty win32 dll project named GetRest and add it the above file. Also add it the module definition file `restget.def`:
 
 
 ```
@@ -127,7 +127,7 @@ EXPORTS
 Important: This file must be specified in the property linker input page.
 
 
-Once compiled, the release or debug versions can be copied in the `<code>cpprestsdk</code>` corresponding directories, bin or debug\bin.
+Once compiled, the release or debug versions can be copied in the `cpprestsdk` corresponding directories, bin or debug\bin.
 
 
 That is all. It is a once-off job. Once done, it will work with all new MariaDB versions featuring CONNECT version 1.07.

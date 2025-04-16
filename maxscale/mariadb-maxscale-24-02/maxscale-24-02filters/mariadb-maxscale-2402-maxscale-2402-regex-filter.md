@@ -37,8 +37,8 @@ regular expressions use the
 
 PCRE2 library uses a different syntax than POSIX to refer to capture
 groups in the replacement string. The main difference is the usage of the dollar
-character instead of the backslash character for references e.g. `<code>$1</code>` instead of
-`<code>\1</code>`. For more details about the replacement string differences, please read the
+character instead of the backslash character for references e.g. `$1` instead of
+`\1`. For more details about the replacement string differences, please read the
 [Creating a new string with substitutions](https://www.pcre.org/current/doc/html/pcre2api.html#SEC34)
 chapter in the PCRE2 manual.
 
@@ -74,7 +74,7 @@ filters=MyRegexfilter
 The Regex filter has two mandatory parameters: *match* and *replace*.
 
 
-### `<code>match</code>`
+### `match`
 
 
 * Type: [regex](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
@@ -93,21 +93,21 @@ options=case
 
 
 
-### `<code>options</code>`
+### `options`
 
 
 * Type: [enum](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>ignorecase</code>`, `<code>case</code>`, `<code>extended</code>`
-* Default: `<code>ignorecase</code>`
+* Values: `ignorecase`, `case`, `extended`
+* Default: `ignorecase`
 
 
 The *options*-parameter affects how the patterns are compiled as
 [usual](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md).
 
 
-### `<code>replace</code>`
+### `replace`
 
 
 * Type: string
@@ -126,7 +126,7 @@ replace=ENGINE =
 
 
 
-### `<code>source</code>`
+### `source`
 
 
 * Type: string
@@ -148,7 +148,7 @@ source=127.0.0.1
 
 
 
-### `<code>user</code>`
+### `user`
 
 
 * Type: string
@@ -170,7 +170,7 @@ user=john
 
 
 
-### `<code>log_file</code>`
+### `log_file`
 
 
 * Type: string
@@ -192,7 +192,7 @@ log_file=/tmp/regexfilter.log
 
 
 
-### `<code>log_trace</code>`
+### `log_trace`
 
 
 * Type: string

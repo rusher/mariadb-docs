@@ -25,7 +25,7 @@ backwards compatibility and allows only one regular expression and one server
 name in the configuration. In indexed mode, up to 25 regex-server pairs are
 allowed in the form *match01* - *target01*, *match02* - *target02* and so on.
 Also, in indexed mode, the server names (targets) may contain a list of names or
-special tags `<code>->master</code>` or `<code>->slave</code>`.
+special tags `->master` or `->slave`.
 
 
 Below is a configuration example for the filter in indexed-mode. The legacy mode
@@ -66,7 +66,7 @@ filters=NamedServerFilter
 The NamedServerFilter requires two mandatory parameters.
 
 
-### `<code>matchXY</code>`
+### `matchXY`
 
 
 Regular expression the SQL-query is matched against. XY must be a number in the
@@ -81,7 +81,7 @@ match01=^SELECT
 
 
 
-### `<code>targetXY</code>`
+### `targetXY`
 
 
 This is the hint which will be attached to the queries matching the regex. If a
@@ -89,12 +89,12 @@ compatible router is used in the service the query will be routed accordingly.
 The target can be one of the following:
 
 
-* a server name (adds a `<code>HINT_ROUTE_TO_NAMED_SERVER</code>` hint)
+* a server name (adds a `HINT_ROUTE_TO_NAMED_SERVER` hint)
 * a list of server names, comma-separated (adds several
- `<code>HINT_ROUTE_TO_NAMED_SERVER</code>` hints)
-* `<code>->master</code>` (adds a `<code>HINT_ROUTE_TO_MASTER</code>` hint)
-* `<code>->slave</code>` (adds a `<code>HINT_ROUTE_TO_SLAVE</code>` hint)
-* `<code>->all</code>` (adds a `<code>HINT_ROUTE_TO_ALL</code>` hint)
+ `HINT_ROUTE_TO_NAMED_SERVER` hints)
+* `->master` (adds a `HINT_ROUTE_TO_MASTER` hint)
+* `->slave` (adds a `HINT_ROUTE_TO_SLAVE` hint)
+* `->all` (adds a `HINT_ROUTE_TO_ALL` hint)
 
 
 
@@ -104,7 +104,7 @@ target01=MyServer2
 
 
 
-### `<code>source</code>`
+### `source`
 
 
 This optional parameter defines an IP address or mask which a connecting
@@ -135,7 +135,7 @@ source=192.168.10.%
 Note that using source=% to match any IP is not allowed.
 
 
-### `<code>user</code>`
+### `user`
 
 
 This optional parameter defines a user name the connecting client username is
@@ -205,12 +205,12 @@ probability.
 ### Example 1 - Route queries targeting a specific table to a server
 
 
-This will route all queries matching the regular expression `<code>*from *users</code>` to
+This will route all queries matching the regular expression `*from *users` to
 the server named *server2*. The filter will ignore character case in queries.
 
 
-A query like `<code>SELECT * FROM users</code>` would be routed to server2 where as a query
-like `<code>SELECT * FROM accounts</code>` would be routed according to the normal rules of
+A query like `SELECT * FROM users` would be routed to server2 where as a query
+like `SELECT * FROM accounts` would be routed according to the normal rules of
 the router.
 
 

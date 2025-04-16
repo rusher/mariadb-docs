@@ -35,5 +35,5 @@ filestem=repl-bin
 
 
 
-Additionally, the option `<code>servers=masterdb</code>` in the service definition is no
+Additionally, the option `servers=masterdb` in the service definition is no
 longer required.

@@ -29,20 +29,20 @@ See the specific articles for detailed information on each.
 ## SIGNED, UNSIGNED and ZEROFILL
 
 
-Most numeric types can be defined as `<code>SIGNED</code>`, `<code>UNSIGNED</code>` or `<code>ZEROFILL</code>`, for example:
+Most numeric types can be defined as `SIGNED`, `UNSIGNED` or `ZEROFILL`, for example:
 
 
 ```
 TINYINT[(M)] [SIGNED | UNSIGNED | ZEROFILL]
 ```
 
-If `<code>SIGNED</code>`, or no attribute, is specified, a portion of the numeric type will be reserved for the sign (plus or minus). For example, a TINYINT SIGNED can range from -128 to 127.
+If `SIGNED`, or no attribute, is specified, a portion of the numeric type will be reserved for the sign (plus or minus). For example, a TINYINT SIGNED can range from -128 to 127.
 
 
-If `<code>UNSIGNED</code>` is specified, no portion of the numeric type is reserved for the sign, so for integer types range can be larger. For example, a TINYINT UNSIGNED can range from 0 to 255. Floating point and fixed-point types also can be `<code>UNSIGNED</code>`, but this only prevents negative values from being stored and doesn't alter the range.
+If `UNSIGNED` is specified, no portion of the numeric type is reserved for the sign, so for integer types range can be larger. For example, a TINYINT UNSIGNED can range from 0 to 255. Floating point and fixed-point types also can be `UNSIGNED`, but this only prevents negative values from being stored and doesn't alter the range.
 
 
-If `<code>ZEROFILL</code>` is specified, the column will be set to UNSIGNED and the spaces used by default to pad the field are replaced with zeros. `<code>ZEROFILL</code>` is ignored in expressions or as part of a [UNION](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md). `<code>ZEROFILL</code>` is a non-standard MySQL and MariaDB enhancement.
+If `ZEROFILL` is specified, the column will be set to UNSIGNED and the spaces used by default to pad the field are replaced with zeros. `ZEROFILL` is ignored in expressions or as part of a [UNION](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md). `ZEROFILL` is a non-standard MySQL and MariaDB enhancement.
 
 
 Note that although the preferred syntax indicates that the attributes are exclusive, more than one attribute can be specified.
@@ -51,21 +51,21 @@ Note that although the preferred syntax indicates that the attributes are exclus
 Until [MariaDB 10.2.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1027-release-notes.md) ([MDEV-8659](https://jira.mariadb.org/browse/MDEV-8659)), any combination of the attributes could be used in any order, with duplicates. In this case:
 
 
-* the presence of `<code>ZEROFILL</code>` makes the column `<code>UNSIGNED ZEROFILL</code>`.
-* the presence of `<code>UNSIGNED</code>` makes the column `<code>UNSIGNED</code>`.
+* the presence of `ZEROFILL` makes the column `UNSIGNED ZEROFILL`.
+* the presence of `UNSIGNED` makes the column `UNSIGNED`.
 
 
 From [MariaDB 10.2.8](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1028-release-notes.md), only the following combinations are supported:
 
 
-* `<code>SIGNED</code>`
-* `<code>UNSIGNED</code>`
-* `<code>ZEROFILL</code>`
-* `<code>UNSIGNED ZEROFILL</code>`
-* `<code>ZEROFILL UNSIGNED</code>`
+* `SIGNED`
+* `UNSIGNED`
+* `ZEROFILL`
+* `UNSIGNED ZEROFILL`
+* `ZEROFILL UNSIGNED`
 
 
-The latter two should be replaced with simply `<code>ZEROFILL</code>`, but are still accepted by the parser.
+The latter two should be replaced with simply `ZEROFILL`, but are still accepted by the parser.
 
 
 ### Examples
@@ -159,5 +159,5 @@ SELECT * FROM ranges;
 ## Auto_increment
 
 
-The `<code>AUTO_INCREMENT</code>` attribute can be used to generate a unique identity for new rows. For more details, see [auto_increment](../../storage-engines/innodb/auto_increment-handling-in-innodb.md).
+The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. For more details, see [auto_increment](../../storage-engines/innodb/auto_increment-handling-in-innodb.md).
 

@@ -49,7 +49,7 @@ between the SQL thread and the worker thread, but with just a single worker
 thread events can not be applied in parallel anyway.
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">slave-parallel-threads=#</code>` is a dynamic variable that can be changed without restarting mysqld. All replicas connections must however be stopped when changing the value.
+`slave-parallel-threads=#` is a dynamic variable that can be changed without restarting mysqld. All replicas connections must however be stopped when changing the value.
 
 
 ## Configuring the Replica Parallel Mode
@@ -81,7 +81,7 @@ is part of the GTID.
 Optimistic mode of in-order parallel replication provides a lot of opportunities for parallel apply on the replica while still preserving exact transaction semantics from the point of view of applications. It is the default mode from [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md).
 
 
-Optimistic mode of in-order parallel replication can be configured by setting the [slave_parallel_mode](replication-and-binary-log-system-variables.md) system variable to `<code>optimistic</code>` on the replica.
+Optimistic mode of in-order parallel replication can be configured by setting the [slave_parallel_mode](replication-and-binary-log-system-variables.md) system variable to `optimistic` on the replica.
 
 
 Any transactional DML (INSERT/UPDATE/DELETE) is allowed to run in parallel, up
@@ -145,7 +145,7 @@ primary (the "waited" keyword).
 Aggressive mode of in-order parallel replication is very similar to optimistic mode. The main difference is that the replica does not consider whether transactions conflicted on the primary when deciding whether to apply the transactions in parallel.
 
 
-Aggressive mode of in-order parallel replication can be configured by setting the [slave_parallel_mode](replication-and-binary-log-system-variables.md) system variable to `<code>aggressive</code>` on the replica.
+Aggressive mode of in-order parallel replication can be configured by setting the [slave_parallel_mode](replication-and-binary-log-system-variables.md) system variable to `aggressive` on the replica.
 
 
 #### Conservative Mode of In-Order Parallel Replication
@@ -154,7 +154,7 @@ Aggressive mode of in-order parallel replication can be configured by setting th
 Conservative mode of in-order parallel replication uses the [group commit](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) on the primary to discover potential for parallel apply of events on the replica. If two transactions commit together in a [group commit](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) on the primary, they are written into the binlog with the same commit id. Such events are certain to not conflict with each other, and they can be scheduled by the parallel replication to run in different worker threads.
 
 
-Conservative mode of in-order parallel replication is the default mode until [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md), but it can also be configured by setting the [slave_parallel_mode](replication-and-binary-log-system-variables.md) system variable to `<code>conservative</code>` on the replica.
+Conservative mode of in-order parallel replication is the default mode until [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md), but it can also be configured by setting the [slave_parallel_mode](replication-and-binary-log-system-variables.md) system variable to `conservative` on the replica.
 
 
 Two transactions that were committed separately on the primary can potentially
@@ -190,10 +190,10 @@ if more transactions are committed in a [group commit](../../../server-managemen
 using the [binlog_commit_wait_count](replication-and-binary-log-system-variables.md) and
 [binlog_commit_wait_usec](replication-and-binary-log-system-variables.md) variables. If for example the
 application can tolerate up to 50 milliseconds extra delay for transactions on
-the primary, one can set `<code class="highlight fixed" style="white-space:pre-wrap">binlog_commit_wait_usec=50000</code>` and
-`<code class="highlight fixed" style="white-space:pre-wrap">binlog_commit_wait_count=20</code>` to get up to 20 transactions at
+the primary, one can set `binlog_commit_wait_usec=50000` and
+`binlog_commit_wait_count=20` to get up to 20 transactions at
 a time available for replication in parallel. Care must however be taken to
-not set `<code class="highlight fixed" style="white-space:pre-wrap">binlog_commit_wait_usec</code>` too high, as this could
+not set `binlog_commit_wait_usec` too high, as this could
 cause significant slowdown for applications that run a lot of small
 transactions serially one after the other.
 
@@ -213,7 +213,7 @@ Minimal mode of in-order parallel replication *only*allows the commit step of
 transactions to be applied in parallel; all other steps are applied serially.
 
 
-Minimal mode of in-order parallel replication can be configured by setting the [slave_parallel_mode](replication-and-binary-log-system-variables.md) system variable to `<code>minimal</code>` on the replica.
+Minimal mode of in-order parallel replication can be configured by setting the [slave_parallel_mode](replication-and-binary-log-system-variables.md) system variable to `minimal` on the replica.
 
 
 ### Out-of-Order Parallel Replication
@@ -221,7 +221,7 @@ Minimal mode of in-order parallel replication can be configured by setting the [
 
 Out-of-order parallel replication happens (only) when using GTID mode, when
 GTIDs with different replication domains are used. The replication domain is
-set by the DBA/application using the variable `<code class="highlight fixed" style="white-space:pre-wrap">gtid_domain_id</code>`.
+set by the DBA/application using the variable `gtid_domain_id`.
 
 
 Two transactions having GTIDs with different domain_id are scheduled to
@@ -267,7 +267,7 @@ with events received from M2. If we now have a third-level replica S2 that
 replicates from S1 as primary, we want S2 to also be able to apply events that
 originated on M1 in parallel with events that originated on M2. This can be
 achieved with out-of-order parallel replication, by setting
-`<code class="highlight fixed" style="white-space:pre-wrap">gtid_domain_id</code>` different on M1 and M2.
+`gtid_domain_id` different on M1 and M2.
 
 
 Note that there are no special restrictions on what operations can be
@@ -281,7 +281,7 @@ When using out-of-order parallel replication, the current replica position in
 the primary's binlog becomes multi-dimensional - each replication domain can
 have reached a different point in the primary binlog at any one time. The
 current position can be seen from the variable
-`<code class="highlight fixed" style="white-space:pre-wrap">gtid_slave_pos</code>`. When the replica is stopped, restarted, or
+`gtid_slave_pos`. When the replica is stopped, restarted, or
 switched to replicate from a different primary using CHANGE MASTER, MariaDB
 automatically handles restarting each replication domain at the appropriate
 point in the binlog.
@@ -323,7 +323,7 @@ replication: [18435.html](https://kristiannielsen.livejournal.com/18435.html).
 
 
 The [slave_parallel_max_queued](replication-and-binary-log-system-variables.md) system variable can be used to configure the maximum size of the parallel replica queue. This system variable is only meaningful when parallel
-replication is configured (i.e. when [slave_parallel_threads](replication-and-binary-log-system-variables.md) > `<code>0</code>`).
+replication is configured (i.e. when [slave_parallel_threads](replication-and-binary-log-system-variables.md) > `0`).
 
 
 When parallel replication is used, the [SQL thread](replication-threads.md#slave-sql-thread) will read ahead in the relay logs, queueing events in memory while looking for opportunities for executing events in parallel. The [slave_parallel_max_queued](replication-and-binary-log-system-variables.md) system variable sets a
@@ -340,7 +340,7 @@ If this value is set too high, and the replica is far (eg. gigabytes of binlog)
 behind the primary, then the [SQL thread](replication-threads.md#slave-sql-thread) can quickly read all of that and fill up memory with huge amounts of binlog events faster than the [worker threads](replication-threads.md#worker-threads) can consume them.
 
 
-On the other hand, if set too low, the [SQL thread](replication-threads.md#slave-sql-thread) might not have sufficient space for queuing enough events to keep the worker threads busy, which could reduce performance. In this case, the [SQL thread](replication-threads.md#slave-sql-thread) will have the [thread state](../optimization-and-tuning/buffers-caches-and-threads/thread-states/README.md) that states `<code>Waiting for room in worker thread event queue</code>`. For example:
+On the other hand, if set too low, the [SQL thread](replication-threads.md#slave-sql-thread) might not have sufficient space for queuing enough events to keep the worker threads busy, which could reduce performance. In this case, the [SQL thread](replication-threads.md#slave-sql-thread) will have the [thread state](../optimization-and-tuning/buffers-caches-and-threads/thread-states/README.md) that states `Waiting for room in worker thread event queue`. For example:
 
 
 ```
@@ -380,13 +380,13 @@ will have to wait for a worker thread to become free.
 
 This can be avoided by setting
 [slave_domain_parallel_threads](replication-and-binary-log-system-variables.md) to a number that is lower
-than `<code class="highlight fixed" style="white-space:pre-wrap">slave_parallel_threads</code>`. When set different from zero,
+than `slave_parallel_threads`. When set different from zero,
 each replication domain in one primary connection can reserve at most that many
 worker threads at any one time, leaving the rest (up to the value of
 [slave_parallel_threads](replication-and-binary-log-system-variables.md)) free for other primary connections or replication domains to use in parallel.
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">slave_domain_parallel_threads</code>` variable is dynamic and
+The `slave_domain_parallel_threads` variable is dynamic and
 can be changed without restarting the server; all replicas must be stopped while
 changing it, though.
 

@@ -69,7 +69,7 @@ SELECT * /*M! , @in_transaction */ FROM tab;
 DELETE FROM user WHERE id = 100 /*!M100005 RETURNING email */;
 ```
 
-As explained in the [Understanding MariaDB Architecture](understanding-mariadb-architecture.md) page, MariaDB was initially forked from MySQL. At that time, executable comments were already supported by MySQL. This is why the `<code>/*! ... */</code>` syntax is supported by both MariaDB and MySQL. But because MariaDB also supports specific syntax not supported by MySQL, it added the `<code>/*M! ... */</code>` syntax.
+As explained in the [Understanding MariaDB Architecture](understanding-mariadb-architecture.md) page, MariaDB was initially forked from MySQL. At that time, executable comments were already supported by MySQL. This is why the `/*! ... */` syntax is supported by both MariaDB and MySQL. But because MariaDB also supports specific syntax not supported by MySQL, it added the `/*M! ... */` syntax.
 
 
 ## Generic Syntax
@@ -84,17 +84,17 @@ Here we discuss some differences between MariaDB and SQL Server syntax that may 
 SQL Server uses two different terminators:
 
 
-* The batch terminator is the `<code>go</code>` command. It tells Microsoft clients to send the text we typed to SQL Server.
-* The query terminator is a semicolon (`<code>;</code>`) and it tells SQL Server where a query ends.
+* The batch terminator is the `go` command. It tells Microsoft clients to send the text we typed to SQL Server.
+* The query terminator is a semicolon (`;`) and it tells SQL Server where a query ends.
 
 
-It is rarely necessary to use `<code>;</code>` in SQL Server. It is required for certain common table expressions, for example.
+It is rarely necessary to use `;` in SQL Server. It is required for certain common table expressions, for example.
 
 
-But the same doesn't apply to MariaDB. **Normally, with MariaDB you only use `<code>;</code>`.**
+But the same doesn't apply to MariaDB. **Normally, with MariaDB you only use `;`.**
 
 
-However, MariaDB also has some situations where you want to use a `<code>;</code>` but you don't want the [mariadb](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) command-line client to send the query yet. This can be done in any situation, but it is particularly useful when creating [stored routines](../../../../server-usage/programming-customizing-mariadb/stored-routines/README.md) or using [BEGIN NOT ATOMIC](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/begin-end.md).
+However, MariaDB also has some situations where you want to use a `;` but you don't want the [mariadb](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) command-line client to send the query yet. This can be done in any situation, but it is particularly useful when creating [stored routines](../../../../server-usage/programming-customizing-mariadb/stored-routines/README.md) or using [BEGIN NOT ATOMIC](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/begin-end.md).
 
 
 The reason is better explained with an example:
@@ -108,10 +108,10 @@ BEGIN
 END;
 ```
 
-If we enter this procedure in this way in the `<code>mariadb</code>` client, as soon as we type the first `<code>;</code>` (after the first `<code>SELECT</code>`) and press enter, the statement will be sent. MariaDB will try to parse it, and will return an error.
+If we enter this procedure in this way in the `mariadb` client, as soon as we type the first `;` (after the first `SELECT`) and press enter, the statement will be sent. MariaDB will try to parse it, and will return an error.
 
 
-To avoid this, `<code>mariadb</code>` implements the [DELIMITER](../../../../clients-and-utilities/mariadb-client/delimiters.md) statement. This client statement is never sent to MariaDB. Instead, the client uses it to find out when the typed query should be sent. Let's correct the above example:
+To avoid this, `mariadb` implements the [DELIMITER](../../../../clients-and-utilities/mariadb-client/delimiters.md) statement. This client statement is never sent to MariaDB. Instead, the client uses it to find out when the typed query should be sent. Let's correct the above example:
 
 
 ```
@@ -138,13 +138,13 @@ By default, MariaDB names are case-sensitive if the operating system has case-se
 When migrating a SQL Server database to MariaDB on Linux, to avoid problems you may want to set the [lower_case_table_names](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lower_case_table_names) system variable to 1, making table names, database names and aliases case-insensitive.
 
 
-Names can be quoted inside backtick characters (`<code>`</code>`). This character can be used in names, in which case it should be doubled. By default this is the only way to quote names.
+Names can be quoted inside backtick characters (```). This character can be used in names, in which case it should be doubled. By default this is the only way to quote names.
 
 
-To also enable the use of double quotes (`<code>"</code>`), modify sql_mode adding the `<code>ANSI_QUOTES</code>` flag. This is the equivalent of setting [QUOTED_IDENTIFIER](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-quoted-identifier-transact-sql?view=sql-server-ver15) ON in SQL Server.
+To also enable the use of double quotes (`"`), modify sql_mode adding the `ANSI_QUOTES` flag. This is the equivalent of setting [QUOTED_IDENTIFIER](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-quoted-identifier-transact-sql?view=sql-server-ver15) ON in SQL Server.
 
 
-To also enable the use of SQL Server style quotes (`<code>[</code>` and `<code>]</code>`), modify sql_mode adding the `<code>MSSQL</code>` flag.
+To also enable the use of SQL Server style quotes (`[` and `]`), modify sql_mode adding the `MSSQL` flag.
 
 
 The case-sensitivity of stored procedures and functions is never a problem, as they are case-insensitive in SQL Server.
@@ -153,10 +153,10 @@ The case-sensitivity of stored procedures and functions is never a problem, as t
 ### Quoting Strings
 
 
-In SQL Server, by default strings can only be quoted with single-quotes (`<code>'</code>`), and to use a double quote in a string it should be doubled (`<code>''</code>`). This also works by default in MariaDB.
+In SQL Server, by default strings can only be quoted with single-quotes (`'`), and to use a double quote in a string it should be doubled (`''`). This also works by default in MariaDB.
 
 
-SQL Server also allows to use double quotes (`<code>"</code>`) to quote strings. This works by default in MariaDB, but as mentioned before it won't work if sql_mode contains the `<code>ANSI_QUOTES</code>` flag.
+SQL Server also allows to use double quotes (`"`) to quote strings. This works by default in MariaDB, but as mentioned before it won't work if sql_mode contains the `ANSI_QUOTES` flag.
 
 
 ### NULL
@@ -171,16 +171,16 @@ However, SQL Server allows one to change it globally with [SET ANSI_NULLS OFF](h
 There is no way to achieve exactly the same result in MariaDB. To perform NULL-safe comparisons in MariaDB, one should replace the [=](../../../../reference/sql-statements-and-structure/geographic-geometric-features/geometry-relations/equals.md) operator with the [<=>](../../../../reference/sql-statements-and-structure/operators/comparison-operators/null-safe-equal.md) operator.
 
 
-Also, note that MariaDB doesn't support the `<code>UNKNOWN</code>` pseudo-value. An expression like `<code>NULL OR 0</code>` returns `<code>NULL</code>` in MariaDB.
+Also, note that MariaDB doesn't support the `UNKNOWN` pseudo-value. An expression like `NULL OR 0` returns `NULL` in MariaDB.
 
 
 ### LIKE
 
 
-In MariaDB, [LIKE](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md) expressions only have two characters with special meanings: `<code>%</code>` and `<code>_</code>`. These two characters have the same meanings they have in SQL Server.
+In MariaDB, [LIKE](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md) expressions only have two characters with special meanings: `%` and `_`. These two characters have the same meanings they have in SQL Server.
 
 
-The additional characters recognized by SQL Server (`<code>[</code>`, `<code>]</code>` and `<code>^</code>`) are part of regular expressions. MariaDB supports the [REGEXP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/regular-expressions-functions/regexp.md) operator, that supports the full regular expressions syntax.
+The additional characters recognized by SQL Server (`[`, `]` and `^`) are part of regular expressions. MariaDB supports the [REGEXP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/regular-expressions-functions/regexp.md) operator, that supports the full regular expressions syntax.
 
 
 ## Data Definition Language
@@ -201,17 +201,17 @@ Altering tables online can be a problem, especially when the tables are big and 
 MariaDB offers the following solutions to help:
 
 
-* The [ALTER TABLE ... ALGORITHM](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#algorithm) clause allows one to specify which algorithm should be used to run a certain operation. For example `<code>INPLACE</code>` tells MariaDB not to create a table copy (perhaps because we don't have enough disk space), and `<code>INSTANT</code>` tells MariaDB to execute the operation instantaneously. Not all algorithms are supported for certain operations. If the algorithm we've chosen cannot be used, the [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement will fail with an error.
-* The [ALTER TABLE ... LOCK](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#alock) clause allows one to specify which lock type should be used. For example `<code>NONE</code>` tells MariaDB to avoid any lock on the table, and `<code>SHARED</code>` only allows one to acquire a share lock. If the operation requires a lock that is more strict than the one we are requesting, the [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement will fail with an error. Sometimes this happens because the `<code>LOCK</code>` level we want is not available for the specified `<code>ALGORITHM</code>`.
+* The [ALTER TABLE ... ALGORITHM](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#algorithm) clause allows one to specify which algorithm should be used to run a certain operation. For example `INPLACE` tells MariaDB not to create a table copy (perhaps because we don't have enough disk space), and `INSTANT` tells MariaDB to execute the operation instantaneously. Not all algorithms are supported for certain operations. If the algorithm we've chosen cannot be used, the [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement will fail with an error.
+* The [ALTER TABLE ... LOCK](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#alock) clause allows one to specify which lock type should be used. For example `NONE` tells MariaDB to avoid any lock on the table, and `SHARED` only allows one to acquire a share lock. If the operation requires a lock that is more strict than the one we are requesting, the [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement will fail with an error. Sometimes this happens because the `LOCK` level we want is not available for the specified `ALGORITHM`.
 
 
 To find out which operations require a table copy and which lock levels are necessary, see [InnoDB Online DDL Overview](../../../../reference/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md).
 
 
-An `<code>ALTER TABLE</code>` can be queued because a long-running statement (even a `<code>SELECT</code>`) required a [metadata lock](../../../../reference/sql-statements-and-structure/sql-statements/transactions/metadata-locking.md). Since this may cause troubles, sometimes we want the operation to simply fail if the wait is too long. This can be achieved with the [WAIT and NOWAIT](../../../../reference/sql-statements-and-structure/sql-statements/transactions/wait-and-nowait.md) clauses, whose syntax is a bit different from SQL Server.
+An `ALTER TABLE` can be queued because a long-running statement (even a `SELECT`) required a [metadata lock](../../../../reference/sql-statements-and-structure/sql-statements/transactions/metadata-locking.md). Since this may cause troubles, sometimes we want the operation to simply fail if the wait is too long. This can be achieved with the [WAIT and NOWAIT](../../../../reference/sql-statements-and-structure/sql-statements/transactions/wait-and-nowait.md) clauses, whose syntax is a bit different from SQL Server.
 
 
-SQL Server `<code>WITH ONLINE = ON</code>` is equivalent to MariaDB `<code>LOCK = NONE</code>`. However, note that [most ALTER TABLE statements](../../../../reference/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) support `<code>ALGORITHM = INSTANT</code>`, which is non-blocking and much faster (almost instantaneous, as the syntax suggests).
+SQL Server `WITH ONLINE = ON` is equivalent to MariaDB `LOCK = NONE`. However, note that [most ALTER TABLE statements](../../../../reference/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) support `ALGORITHM = INSTANT`, which is non-blocking and much faster (almost instantaneous, as the syntax suggests).
 
 
 ### IF EXISTS, IF NOT EXISTS, OR REPLACE
@@ -220,9 +220,9 @@ SQL Server `<code>WITH ONLINE = ON</code>` is equivalent to MariaDB `<code>LOCK 
 Most DDL statements, including [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), support the following syntax:
 
 
-* `<code>DROP IF EXISTS</code>`: A warning (not an error) is produced if the object does not exist.
-* `<code>OR REPLACE</code>`: If the object exists, it is dropped and recreated; otherwise it is created. This operation is atomic, so at no point in time does the object not exist.
-* `<code>CREATE IF NOT EXISTS</code>`: If the object already exists, a warning (not an error) is produced. The object will not be replaced.
+* `DROP IF EXISTS`: A warning (not an error) is produced if the object does not exist.
+* `OR REPLACE`: If the object exists, it is dropped and recreated; otherwise it is created. This operation is atomic, so at no point in time does the object not exist.
+* `CREATE IF NOT EXISTS`: If the object already exists, a warning (not an error) is produced. The object will not be replaced.
 
 
 These statements are functionally similar (but less verbose) than SQL Server snippets similar to the following:
@@ -243,25 +243,25 @@ go
 ### Altering Columns
 
 
-With SQL Server, the only syntax to alter a table column is `<code>ALTER TABLE ... ALTER COLUMN</code>`. MariaDB provides more [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) commands to obtain the same result:
+With SQL Server, the only syntax to alter a table column is `ALTER TABLE ... ALTER COLUMN`. MariaDB provides more [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) commands to obtain the same result:
 
 
 * [CHANGE COLUMN](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#change-column) allows one to perform any change by specifying a new column definition, including the name.
 * [MODIFY COLUMN](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#modify-column) allows any change, except renaming the column. This is a slightly simpler syntax that we can use when we don't want to change a column name.
-* [ALTER COLUMN](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#alter-column) allows one to change or drop the `<code>DEFAULT</code>` value.
+* [ALTER COLUMN](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#alter-column) allows one to change or drop the `DEFAULT` value.
 * [RENAME COLUMN](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#rename-column) allows one to only change the column name.
 
 
-Using a more specific syntax is less error-prone. For example, by using `<code>ALTER TABLE ... ALTER COLUMN</code>` we will not accidentally change the data type.
+Using a more specific syntax is less error-prone. For example, by using `ALTER TABLE ... ALTER COLUMN` we will not accidentally change the data type.
 
 
-The word `<code>COLUMN</code>` is usually optional, except in the case of `<code>RENAME COLUMN</code>`.
+The word `COLUMN` is usually optional, except in the case of `RENAME COLUMN`.
 
 
 ### SHOW Statements
 
 
-MariaDB supports [SHOW](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-procedure-code.md) statements to quickly list all objects of a certain type (tables, views, triggers...). Most `<code>SHOW</code>` statements support a `<code>LIKE</code>` clause to filter data. For example, to list the tables in the current database whose name begins with 'wp_':
+MariaDB supports [SHOW](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-procedure-code.md) statements to quickly list all objects of a certain type (tables, views, triggers...). Most `SHOW` statements support a `LIKE` clause to filter data. For example, to list the tables in the current database whose name begins with 'wp_':
 
 
 ```
@@ -280,16 +280,16 @@ SELECT TABLE_SCHEMA, TABLE_NAME
 ### SHOW CREATE Statements
 
 
-In general, for each `<code>CREATE</code>` statement MariaDB also supports a `<code>SHOW CREATE</code>` statement. For example there is a [SHOW CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) that returns the [CREATE TABLE](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statement that can be used to recreate a table.
+In general, for each `CREATE` statement MariaDB also supports a `SHOW CREATE` statement. For example there is a [SHOW CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) that returns the [CREATE TABLE](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statement that can be used to recreate a table.
 
 
-Though SQL Server has no way to show the DDL statement to recreate an object, `<code>SHOW CREATE</code>` statements are functionally similar to `<code>sp_helptext()</code>`.
+Though SQL Server has no way to show the DDL statement to recreate an object, `SHOW CREATE` statements are functionally similar to `sp_helptext()`.
 
 
 ### Database Comments
 
 
-MariaDB does not support extended properties. Instead, it supports a `<code>COMMENT</code>` clause for most [CREATE](../../../../reference/sql-statements-and-structure/sequences/create-sequence.md) and [ALTER](../../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/altering-tables-in-mariadb.md) statements.
+MariaDB does not support extended properties. Instead, it supports a `COMMENT` clause for most [CREATE](../../../../reference/sql-statements-and-structure/sequences/create-sequence.md) and [ALTER](../../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/altering-tables-in-mariadb.md) statements.
 
 
 For example, to create and then change a table comment:
@@ -305,7 +305,7 @@ ALTER TABLE counter COMMENT
     'Counter. It can contain many values, we only care about the max';
 ```
 
-Comments can be seen with `<code>SHOW CREATE</code>` statements, or by querying `<code>information_schema</code>` tables. For example:
+Comments can be seen with `SHOW CREATE` statements, or by querying `information_schema` tables. For example:
 
 
 ```
@@ -328,9 +328,9 @@ MariaDB [SHOW ERRORS](../../../../reference/sql-statements-and-structure/sql-sta
 Instead, inside stored procedures you can:
 
 
-* Use the [GET DIAGNOSTICS](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) command to assign error properties to variables. This is the equivalent of using SQL Server functions like `<code>ERROR_NUMBER()</code>` or `<code>ERROR_STATE()</code>`.
-* Add a [DECLARE HANDLER](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/declare-handler.md) block to handle all errors, a class of errors, or a specific error. This is the equivalent of SQL Server `<code>TRY ... CATCH</code>`.
-* An error or warning can be generated on purpose using [SIGNAL](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/signal.md). Inside a `<code>DECLARE HANDLER</code>` block, [RESIGNAL](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/resignal.md) can be used to issue the error again, and interrupt the execution of the block. These are the equivalents of SQL Server `<code>RAISERROR()</code>`.
+* Use the [GET DIAGNOSTICS](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) command to assign error properties to variables. This is the equivalent of using SQL Server functions like `ERROR_NUMBER()` or `ERROR_STATE()`.
+* Add a [DECLARE HANDLER](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/declare-handler.md) block to handle all errors, a class of errors, or a specific error. This is the equivalent of SQL Server `TRY ... CATCH`.
+* An error or warning can be generated on purpose using [SIGNAL](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/signal.md). Inside a `DECLARE HANDLER` block, [RESIGNAL](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/resignal.md) can be used to issue the error again, and interrupt the execution of the block. These are the equivalents of SQL Server `RAISERROR()`.
 
 
 ## Administration
@@ -339,14 +339,14 @@ Instead, inside stored procedures you can:
 Administration and maintenance commands in MariaDB use different syntax to SQL Server.
 
 
-* [OPTIMIZE TABLE](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) rebuilds table data and indexes. It can be considered as the MariaDB equivalent of SQL Server's `<code>ALTER INDEX REBUILD</code>`. See [Defragmenting InnoDB Tablespaces](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md) for more information. This statement is always locking. It supports [WAIT and NOWAIT](../../../../reference/sql-statements-and-structure/sql-statements/transactions/wait-and-nowait.md) syntax,
-* MariaDB has an [ANALYZE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) command, which is an equivalent of `<code>UPDATE STATISTICS</code>`.
+* [OPTIMIZE TABLE](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) rebuilds table data and indexes. It can be considered as the MariaDB equivalent of SQL Server's `ALTER INDEX REBUILD`. See [Defragmenting InnoDB Tablespaces](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md) for more information. This statement is always locking. It supports [WAIT and NOWAIT](../../../../reference/sql-statements-and-structure/sql-statements/transactions/wait-and-nowait.md) syntax,
+* MariaDB has an [ANALYZE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) command, which is an equivalent of `UPDATE STATISTICS`.
 
 
 ## BULK INSERT
 
 
-MariaDB has no `<code>BULK INSERT</code>` statement. Instead, it supports:
+MariaDB has no `BULK INSERT` statement. Instead, it supports:
 
 
 * [LOAD DATA INFILE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) to load data from files in CSV or similar formats;

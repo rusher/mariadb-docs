@@ -31,7 +31,7 @@ This is available since [MariaDB 10.5.2](../../../../../release-notes/mariadb-co
 ## Memleak
 
 
-`<code>memleak</code>` is a BPF program for Linux that is frequently packaged like bcc-tools or similar ([bpfcc-tools](https://packages.debian.org/stable/bpfcc-tools) on Debian).
+`memleak` is a BPF program for Linux that is frequently packaged like bcc-tools or similar ([bpfcc-tools](https://packages.debian.org/stable/bpfcc-tools) on Debian).
 
 
 The upstream documentation provides [this example](https://github.com/iovisor/bcc/blob/master/tools/memleak_example.txt).
@@ -40,7 +40,7 @@ The upstream documentation provides [this example](https://github.com/iovisor/bc
 The important aspect on measurement is to let MariaDB startup, and commence an normal workload before measurement. Starting too early or before the caches are populated is likely to result in false recording of memory allocations that will be eventually released.
 
 
-Increasing the time interval of `<code>memleak</code>` is important to run longer than the usual query. If your memory is leaking over hours, then a high interval of 10 minutes so will reduce memory temporary allocated for a query. Recording for a longer time or multiple times should provide enough information to narrow down the location of the leak.
+Increasing the time interval of `memleak` is important to run longer than the usual query. If your memory is leaking over hours, then a high interval of 10 minutes so will reduce memory temporary allocated for a query. Recording for a longer time or multiple times should provide enough information to narrow down the location of the leak.
 
 
 Note: Very old Linux kernels like Centos/RHEL 7 might not have sufficient hooks to measure this correctly.

@@ -1,7 +1,7 @@
 
 # Information Schema TABLES Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) table shows information about the various tables (until [MariaDB 11.2.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md), only non-`<code>TEMPORARY</code>` tables, except for tables from the `<code>Information Schema</code>` database) and [views](../../../../../../../server-usage/programming-customizing-mariadb/views/README.md) on the server.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) table shows information about the various tables (until [MariaDB 11.2.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md), only non-`TEMPORARY` tables, except for tables from the `Information Schema` database) and [views](../../../../../../../server-usage/programming-customizing-mariadb/views/README.md) on the server.
 
 
 It contains the following columns:
@@ -37,7 +37,7 @@ It contains the following columns:
 
 
 
-Although the table is standard in the Information Schema, all but `<code>TABLE_CATALOG</code>`, `<code>TABLE_SCHEMA</code>`, `<code>TABLE_NAME</code>`, `<code>TABLE_TYPE</code>`, `<code>ENGINE</code>` and `<code>VERSION</code>` are MySQL and MariaDB extensions.
+Although the table is standard in the Information Schema, all but `TABLE_CATALOG`, `TABLE_SCHEMA`, `TABLE_NAME`, `TABLE_TYPE`, `ENGINE` and `VERSION` are MySQL and MariaDB extensions.
 
 
 [SHOW TABLES](../../../show/show-tables.md) lists all tables in a database.

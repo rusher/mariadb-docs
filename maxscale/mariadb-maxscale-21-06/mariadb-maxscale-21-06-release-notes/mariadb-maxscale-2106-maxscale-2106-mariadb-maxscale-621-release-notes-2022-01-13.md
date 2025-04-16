@@ -43,7 +43,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-3927](https://jira.mariadb.org/browse/MXS-3927) Some log messages do not contain the session ID
 * [MXS-3924](https://jira.mariadb.org/browse/MXS-3924) Session commands are not retried with delayed_retry
 * [MXS-3920](https://jira.mariadb.org/browse/MXS-3920) Can't connect to MaxScale when schema uses utf8mb4 chars >= U0080
-* [MXS-3917](https://jira.mariadb.org/browse/MXS-3917) Crash during `<code>set server maintenance --force</code>`
+* [MXS-3917](https://jira.mariadb.org/browse/MXS-3917) Crash during `set server maintenance --force`
 * [MXS-3915](https://jira.mariadb.org/browse/MXS-3915) Autocommit tracking doesn't work correctly
 * [MXS-3911](https://jira.mariadb.org/browse/MXS-3911) Monitor parameters table is not modifiable (GUI)
 * [MXS-3909](https://jira.mariadb.org/browse/MXS-3909) Skip http_proxy when address is localhost
@@ -79,7 +79,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platfor
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

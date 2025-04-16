@@ -17,7 +17,7 @@ that of the [TIME data type](../../administrative-sql-statements/system-tables/i
 corresponds to a value outside that range.
 
 
-The time will be returned in the format `<code>hh:mm:ss</code>`, or `<code>hhmmss</code>` if used in a numeric calculation.
+The time will be returned in the format `hh:mm:ss`, or `hhmmss` if used in a numeric calculation.
 
 
 ## Examples

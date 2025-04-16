@@ -12,7 +12,7 @@ GLength(ls)
 
 
 Returns as a double-precision number the length of the
-[LineString](../geometry-constructors/linestring.md) value *`<code>ls</code>`* in its associated spatial reference.
+[LineString](../geometry-constructors/linestring.md) value *`ls`* in its associated spatial reference.
 
 
 ## Examples

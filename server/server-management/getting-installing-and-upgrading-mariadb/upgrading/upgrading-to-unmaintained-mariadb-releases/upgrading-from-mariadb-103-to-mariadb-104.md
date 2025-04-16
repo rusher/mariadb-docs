@@ -27,23 +27,23 @@ The suggested upgrade procedure is:
 1. Uninstall the old version of MariaDB.
 
   * On Debian, Ubuntu, and other similar Linux distributions, execute the following: 
-`<code class="fixed" style="white-space:pre-wrap">sudo apt-get remove mariadb-server</code>`
+`sudo apt-get remove mariadb-server`
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, execute the following: 
-`<code class="fixed" style="white-space:pre-wrap">sudo yum remove MariaDB-server</code>`
+`sudo yum remove MariaDB-server`
   * On SLES, OpenSUSE, and other similar Linux distributions, execute the following: 
-`<code class="fixed" style="white-space:pre-wrap">sudo zypper remove MariaDB-server</code>`
+`sudo zypper remove MariaDB-server`
 1. Install the new version of MariaDB.
 
   * On Debian, Ubuntu, and other similar Linux distributions, see [Installing MariaDB Packages with APT](../../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-packages-with-apt) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](../../binary-packages/rpm/yum.md#installing-mariadb-packages-with-yum) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](../../binary-packages/rpm/installing-mariadb-with-zypper.md#installing-mariadb-packages-with-zypp) for more information.
-1. Make any desired changes to configuration options in [option files](../../configuring-mariadb-with-option-files.md), such as `<code>my.cnf</code>`. This includes removing any options that are no longer supported.
+1. Make any desired changes to configuration options in [option files](../../configuring-mariadb-with-option-files.md), such as `my.cnf`. This includes removing any options that are no longer supported.
 1. [Start MariaDB](../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md).
-1. Run `<code>[mysql_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md)</code>`.
+1. Run `[mysql_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md)`.
 
-  * `<code>mysql_upgrade</code>` does two things:
+  * `mysql_upgrade` does two things:
 
-    1. Ensures that the system tables in the `<code>[mysq](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)l</code>` database are fully compatible with the new version.
+    1. Ensures that the system tables in the `[mysq](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)l` database are fully compatible with the new version.
     1. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 
 

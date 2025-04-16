@@ -64,7 +64,7 @@ The Maxrows filter has no mandatory parameters.
 Optional parameters are:
 
 
-#### `<code>max_resultset_rows</code>`
+#### `max_resultset_rows`
 
 
 * Type: number
@@ -87,13 +87,13 @@ max_resultset_rows=1000
 
 
 
-#### `<code>max_resultset_size</code>`
+#### `max_resultset_size`
 
 
 * Type: [size](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>64Ki</code>`
+* Default: `64Ki`
 
 
 Specifies the maximum size a resultset can have in order
@@ -108,14 +108,14 @@ max_resultset_size=128Ki
 
 
 
-#### `<code>max_resultset_return</code>`
+#### `max_resultset_return`
 
 
 * Type: [enum](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>empty</code>`, `<code>error</code>`, `<code>ok</code>`
-* Default: `<code>empty</code>`
+* Values: `empty`, `error`, `ok`
+* Default: `empty`
 
 
 Specifies what the filter sends to the client when the
@@ -138,13 +138,13 @@ ERROR 1415 (0A000): Row limit/size exceeded for query: select * from test.t4
 
 
 
-#### `<code>debug</code>`
+#### `debug`
 
 
 * Type: number
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>0</code>`
+* Default: `0`
 
 
 An integer value, using which the level of debug logging made by the Maxrows
@@ -152,12 +152,12 @@ filter can be controlled. The value is actually a bitfield with different bits
 denoting different logging.
 
 
-* `<code>0</code>` (`<code>0b00000</code>`) No logging is made.
-* `<code>1</code>` (`<code>0b00001</code>`) A decision to handle data form server is logged.
-* `<code>2</code>` (`<code>0b00010</code>`) Reached max_resultset_rows or max_resultset_size is logged.
+* `0` (`0b00000`) No logging is made.
+* `1` (`0b00001`) A decision to handle data form server is logged.
+* `2` (`0b00010`) Reached max_resultset_rows or max_resultset_size is logged.
 
 
-To log everything, give `<code>debug</code>` a value of `<code>3</code>`.
+To log everything, give `debug` a value of `3`.
 
 
 

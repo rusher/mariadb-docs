@@ -85,7 +85,7 @@ The [copy module](https://docs.ansible.com/ansible/latest/collections/ansible/bu
     dest: /etc/mysql/my.cnf
 ```
 
-As you can see, the local name and the name on remote host don't need to match. This is convenient, because it makes it easy to use different configuration files with different servers. By default, files to copy are located in a `<code>files</code>` subdirectory in the role.
+As you can see, the local name and the name on remote host don't need to match. This is convenient, because it makes it easy to use different configuration files with different servers. By default, files to copy are located in a `files` subdirectory in the role.
 
 
 However, typically the content of a configuration file should vary based on the target host, the group and various variables. To do this, we can use the [template](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html) module, which compiles and copies templates written in [Jinja](https://jinja.palletsprojects.com/en/2.11.x/).
@@ -101,7 +101,7 @@ A simple template task:
     dest: /etc/mysql/my.cnf
 ```
 
-Again, the local and the remote names don't have to match. By default, Jinja templates are located in a `<code>templates</code>` subdirectory in the role, and by convention they have the `<code>.j2</code>` extension. This is because Ansible uses Jinja version 2 for templating, at the time writing.
+Again, the local and the remote names don't have to match. By default, Jinja templates are located in a `templates` subdirectory in the role, and by convention they have the `.j2` extension. This is because Ansible uses Jinja version 2 for templating, at the time writing.
 
 
 A simple template example:

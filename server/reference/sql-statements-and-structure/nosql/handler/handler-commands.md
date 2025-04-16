@@ -19,17 +19,17 @@ HANDLER tbl_name CLOSE
 ## Description
 
 
-The `<code>HANDLER</code>` statement provides direct access to table
+The `HANDLER` statement provides direct access to table
 storage engine interfaces for key lookups and key or table scans. It is available for at least [Aria](../../../storage-engines/s3-storage-engine/aria_s3_copy.md), [Memory](../../../storage-engines/memory-storage-engine.md), [MyISAM](../../../storage-engines/myisam-storage-engine/README.md) and [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables (and should work with most 'normal' storage engines, but not with system tables, [MERGE](../../../storage-engines/merge.md) or [views](../../../../server-usage/programming-customizing-mariadb/views/README.md)).
 
 
-`<code>HANDLER ... OPEN</code>` opens a table, allowing it to be accessible to subsequent `<code>HANDLER ... READ</code>` statements. The table can either be opened using an alias, or a table name. If opened with an alias, references to this table by further HANDLER statements must use this alias, and not the table name. If opened with a table name qualified by database name, further references to this table must use the unqualified table name. For example, if a table is opened with `<code>db1.t1</code>`, further references must use `<code>t1</code>`.
+`HANDLER ... OPEN` opens a table, allowing it to be accessible to subsequent `HANDLER ... READ` statements. The table can either be opened using an alias, or a table name. If opened with an alias, references to this table by further HANDLER statements must use this alias, and not the table name. If opened with a table name qualified by database name, further references to this table must use the unqualified table name. For example, if a table is opened with `db1.t1`, further references must use `t1`.
 
 
-The table object is only closed when `<code>HANDLER ... CLOSE</code>` is called by the session, or the session closes, and is not shared by other sessions.
+The table object is only closed when `HANDLER ... CLOSE` is called by the session, or the session closes, and is not shared by other sessions.
 
 
-[Prepared statements](../../sql-statements/prepared-statements/README.md) work with `<code>HANDLER READ</code>`, which gives a much higher performance (50% speedup) as there is no parsing and all data is transformed in binary (without conversions to text, as with the normal protocol).
+[Prepared statements](../../sql-statements/prepared-statements/README.md) work with `HANDLER READ`, which gives a much higher performance (50% speedup) as there is no parsing and all data is transformed in binary (without conversions to text, as with the normal protocol).
 
 
 The HANDLER command does not work with [partitioned tables](../../../../server-management/partitioning-tables/README.md).
@@ -114,13 +114,13 @@ You may also find rows committed since the scan originally started.
 ### Invisible Columns
 
 
-`<code>HANDLER ... READ</code>` also reads the data of [invisible-columns](../../sql-statements/data-definition/create/invisible-columns.md).
+`HANDLER ... READ` also reads the data of [invisible-columns](../../sql-statements/data-definition/create/invisible-columns.md).
 
 
 ### System-Versioned Tables
 
 
-`<code>HANDLER ... READ</code>` reads everything from [system-versioned tables](../../temporal-tables/system-versioned-tables.md), and so includes `<code>row_start</code>` and `<code>row_end</code>` fields, as well as all rows that have since been deleted or changed, including when history partitions are used.
+`HANDLER ... READ` reads everything from [system-versioned tables](../../temporal-tables/system-versioned-tables.md), and so includes `row_start` and `row_end` fields, as well as all rows that have since been deleted or changed, including when history partitions are used.
 
 
 ### Other Limitations

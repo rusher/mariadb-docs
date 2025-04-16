@@ -84,7 +84,7 @@ The InnoDB storage engine does not maintain internal row counts. Transactions is
 ### Auto-incrementing Columns
 
 
-* When defining an index on an auto-incrementing column, it must be defined in a way that allows the equivalent of `<code>SELECT MAX(col)</code>` lookups on the table.
+* When defining an index on an auto-incrementing column, it must be defined in a way that allows the equivalent of `SELECT MAX(col)` lookups on the table.
 * Restarting MariaDB may cause InnoDB to reuse old auto-increment values, such as in the case of a transaction that was rolled back.
 * When auto-incrementing columns run out of values, [INSERT](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) statements generate duplicate-key errors.
 

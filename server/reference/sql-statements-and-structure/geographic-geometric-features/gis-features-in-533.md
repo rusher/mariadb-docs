@@ -34,7 +34,7 @@ requirements. One thing missed in previous versions is that the functions
 which check spatial relations didn't consider the actual shape of an object,
 instead they operate only on their bounding rectangles. These legacy functions
 have been left as they are and new, properly-working functions are named with
-an '`<code>ST_</code>`' prefix, in accordance with the latest OpenGIS requirements. Also,
+an '`ST_`' prefix, in accordance with the latest OpenGIS requirements. Also,
 operations over geometry features were added.
 
 

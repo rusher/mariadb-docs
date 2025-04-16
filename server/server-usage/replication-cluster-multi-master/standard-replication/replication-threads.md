@@ -21,7 +21,7 @@ If [semisynchronous replication](../optimization-and-tuning/system-variables/sem
 ### Binary Log Dump Thread
 
 
-The binary log dump thread runs on the primary and dumps the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to the replica. This thread can be identified by running the [SHOW PROCESSLIST](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) statement and finding the thread where the [thread command](../optimization-and-tuning/buffers-caches-and-threads/thread-command-values.md) is `<code>"Binlog Dump"</code>`.
+The binary log dump thread runs on the primary and dumps the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to the replica. This thread can be identified by running the [SHOW PROCESSLIST](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) statement and finding the thread where the [thread command](../optimization-and-tuning/buffers-caches-and-threads/thread-command-values.md) is `"Binlog Dump"`.
 
 
 The primary creates a separate binary log dump thread for each replica connected to the primary. You can identify which replicas are connected to the primary by executing the [SHOW SLAVE HOSTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) statement.
@@ -36,14 +36,14 @@ When a primary server is shutdown and it goes through the normal shutdown proces
 In [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) and later, this problem can be solved by shutting down the server using either the [mariadb-admin](../../../clients-and-utilities/mariadb-admin.md) utility or the [SHUTDOWN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md) command, and providing a special option.
 
 
-For example, this problem can be solved by shutting down the server with the [mariadb-admin](../../../clients-and-utilities/mariadb-admin.md) utility and by providing the `<code>--wait-for-all-slaves</code>` option to the utility and by executing the `<code>shutdown</code>` command with the utility:
+For example, this problem can be solved by shutting down the server with the [mariadb-admin](../../../clients-and-utilities/mariadb-admin.md) utility and by providing the `--wait-for-all-slaves` option to the utility and by executing the `shutdown` command with the utility:
 
 
 ```
 mariadb-admin --wait-for-all-slaves shutdown
 ```
 
-Or this problem can be solved by shutting down the server with the [SHUTDOWN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md) command and by providing the `<code>WAIT FOR ALL SLAVES</code>` option to the command:
+Or this problem can be solved by shutting down the server with the [SHUTDOWN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md) command and by providing the `WAIT FOR ALL SLAVES` option to the command:
 
 
 ```
@@ -83,13 +83,13 @@ The replica's I/O thread receives the [binary log](../../../reference/storage-en
 #### Binary Log Position
 
 
-The [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position of the replica's I/O thread can be checked by executing the [SHOW SLAVE STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) statement. It will be shown as the `<code>Master_Log_File</code>` and `<code>Read_Master_Log_Pos</code>` columns.
+The [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position of the replica's I/O thread can be checked by executing the [SHOW SLAVE STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) statement. It will be shown as the `Master_Log_File` and `Read_Master_Log_Pos` columns.
 
 
 The [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position of the replica's I/O thread can be set by setting the [MASTER_LOG_FILE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_file) and [MASTER_LOG_POS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_pos) options with the [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement.
 
 
-The [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position of the replica's I/O thread and the values of most other [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) options are written to either the default `<code>master.info</code>` file or the file that is configured by the [master_info_file](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option. The replica's I/O thread keeps this [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position updated as it downloads events only when the [MASTER_USE_GTID](#master_use_gtid) option is set to `<code>NO</code>`. Otherwise the file is not updated on a per event basis. See [CHANGE MASTER TO: Option Persistence](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence) for more information.
+The [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position of the replica's I/O thread and the values of most other [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) options are written to either the default `master.info` file or the file that is configured by the [master_info_file](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option. The replica's I/O thread keeps this [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position updated as it downloads events only when the [MASTER_USE_GTID](#master_use_gtid) option is set to `NO`. Otherwise the file is not updated on a per event basis. See [CHANGE MASTER TO: Option Persistence](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence) for more information.
 
 
 ### Replica SQL Thread
@@ -101,19 +101,19 @@ The replica's SQL thread reads events from the [relay log](../../../server-manag
 #### Relay Log Position
 
 
-The [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) position of the replica's SQL thread can be checked by executing the [SHOW SLAVE STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) statement. It will be shown as the `<code>Relay_Log_File</code>` and `<code>Relay_Log_Pos</code>` columns.
+The [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) position of the replica's SQL thread can be checked by executing the [SHOW SLAVE STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) statement. It will be shown as the `Relay_Log_File` and `Relay_Log_Pos` columns.
 
 
 The [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) position of the replica's SQL thread can be set by setting the [RELAY_LOG_FILE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#relay_log_file) and [RELAY_LOG_POS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#relay_log_pos) options with the [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement.
 
 
-The [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) position of the replica's SQL thread is written to either the default `<code>relay-log.info</code>` file or the file that is configured by the [relay_log_info_file](replication-and-binary-log-system-variables.md#relay_log_info_file) system variable. The replica's SQL thread keeps this [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) position updated as it applies events. See [CHANGE MASTER TO: Option Persistence](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence) for more information.
+The [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) position of the replica's SQL thread is written to either the default `relay-log.info` file or the file that is configured by the [relay_log_info_file](replication-and-binary-log-system-variables.md#relay_log_info_file) system variable. The replica's SQL thread keeps this [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) position updated as it applies events. See [CHANGE MASTER TO: Option Persistence](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence) for more information.
 
 
 #### Binary Log Position
 
 
-The corresponding [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position of the current [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) position of the replica's SQL thread can be checked by executing the [SHOW SLAVE STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) statement. It will be shown as the `<code>Relay_Master_Log_File</code>` and `<code>Exec_Master_Log_Pos</code>` columns.
+The corresponding [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position of the current [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) position of the replica's SQL thread can be checked by executing the [SHOW SLAVE STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) statement. It will be shown as the `Relay_Master_Log_File` and `Exec_Master_Log_Pos` columns.
 
 
 #### GTID Position

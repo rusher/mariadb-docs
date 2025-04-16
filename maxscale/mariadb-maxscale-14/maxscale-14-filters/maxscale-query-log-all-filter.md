@@ -57,15 +57,15 @@ options=case,extended
 
 
 
-**Note**: older the version of the QLA filter in 0.7 of MaxScale used the `<code>options</code>`
+**Note**: older the version of the QLA filter in 0.7 of MaxScale used the `options`
 to define the location of the log files. This functionality is not supported
-anymore and the `<code>filebase</code>` parameter should be used instead.
+anymore and the `filebase` parameter should be used instead.
 
 
 ## Filter Parameters
 
 
-The QLA filter has one mandatory parameter, `<code>filebase</code>`, and a number of optional parameters. These were introduced in the 1.0 release of MaxScale.
+The QLA filter has one mandatory parameter, `filebase`, and a number of optional parameters. These were introduced in the 1.0 release of MaxScale.
 
 
 ### Filebase
@@ -172,7 +172,7 @@ filters=ProductsSelectLogger
 
 
 The result of then putting this filter into the service used by the application would be a log file of all select queries that mentioned the table but did not mention the PRODUCT_ID primary key in the predicates for the query.
-Executing `<code>SELECT * FROM PRODUCTS</code>` would log the following into `<code>/var/logs/qla/SelectProducts</code>`:
+Executing `SELECT * FROM PRODUCTS` would log the following into `/var/logs/qla/SelectProducts`:
 
 
 

@@ -79,24 +79,24 @@ B----maria------A0-------A1
 Here,
 
 
-* `<code class="highlight fixed" style="white-space:pre-wrap">'B'</code>` is the base revision when MariaDB was originally 
+* `'B'` is the base revision when MariaDB was originally 
  branched from MySQL.
-* `<code class="highlight fixed" style="white-space:pre-wrap">'A0'</code>` is the result of the last MySQL merge, eg. 
- `<code class="highlight fixed" style="white-space:pre-wrap">tag:mariadb-merge-mysql-5.1.38</code>`.
-* `<code class="highlight fixed" style="white-space:pre-wrap">'Y0'</code>` is the MySQL revision that was last merged, eg. 
- `<code class="highlight fixed" style="white-space:pre-wrap">tag:mysql-5.1.38</code>`.
-* `<code class="highlight fixed" style="white-space:pre-wrap">'Y1'</code>` is the MySQL revision to be merged in the new merge, 
- eg. `<code class="highlight fixed" style="white-space:pre-wrap">tag:mysql-5.1.39</code>`.
-* `<code class="highlight fixed" style="white-space:pre-wrap">'A1'</code>` is the result of committing the new merge, to be 
- tagged as eg. `<code class="highlight fixed" style="white-space:pre-wrap">tag:mariadb-merge-mysql-5.1.39</code>`.
+* `'A0'` is the result of the last MySQL merge, eg. 
+ `tag:mariadb-merge-mysql-5.1.38`.
+* `'Y0'` is the MySQL revision that was last merged, eg. 
+ `tag:mysql-5.1.38`.
+* `'Y1'` is the MySQL revision to be merged in the new merge, 
+ eg. `tag:mysql-5.1.39`.
+* `'A1'` is the result of committing the new merge, to be 
+ tagged as eg. `tag:mariadb-merge-mysql-5.1.39`.
 
 
 Then, these diffs can be useful:
 
 
-* `<code class="highlight fixed" style="white-space:pre-wrap">'bzr diff -rY0..before:A1'</code>` - this is the MariaDB side of changes to be merged.
-* `<code class="highlight fixed" style="white-space:pre-wrap">'bzr diff -rY0..Y1'</code>` - this is the MySQL side of changes to be merged.
-* `<code class="highlight fixed" style="white-space:pre-wrap">'bzr diff -rA0..before:A1'</code>` - these are the new changes on the MariaDB side to be merged; this can be useful do separate them from other MariaDB-specific changes that have already been resolved against conflicting MySQL changes.
+* `'bzr diff -rY0..before:A1'` - this is the MariaDB side of changes to be merged.
+* `'bzr diff -rY0..Y1'` - this is the MySQL side of changes to be merged.
+* `'bzr diff -rA0..before:A1'` - these are the new changes on the MariaDB side to be merged; this can be useful do separate them from other MariaDB-specific changes that have already been resolved against conflicting MySQL changes.
 
 
 ### Merging documentation from MySQL source tarballs
@@ -147,5 +147,5 @@ bzr commit -m"Imported MySQL documentation files from $T"
 bzr push lp:~maria-captains/maria/mysql-docs-merge-base
 ```
 
-* Now do a normal merge from `<code class="highlight fixed" style="white-space:pre-wrap">lp:maria-captains/maria/mysql-docs-merge-base</code>` into `<code class="highlight fixed" style="white-space:pre-wrap">lp:maria</code>`
+* Now do a normal merge from `lp:maria-captains/maria/mysql-docs-merge-base` into `lp:maria`
 

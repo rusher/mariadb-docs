@@ -42,7 +42,7 @@ Get a single session. *:id* must be a valid session ID. The session ID is the
 same that is exposed to the client as the connection ID.
 
 
-This endpoint also supports the `<code>rdns=true</code>` parameter, which instructs MaxScale to
+This endpoint also supports the `rdns=true` parameter, which instructs MaxScale to
 perform reverse DNS on the client IP address. As this requires communicating with
 an external server, the operation may be expensive.
 
@@ -50,7 +50,7 @@ an external server, the operation may be expensive.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -126,7 +126,7 @@ Get all sessions.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 

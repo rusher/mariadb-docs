@@ -7,7 +7,7 @@ The Open Query GRAPH computation engine, or OQGRAPH as the engine itself is call
 ## Installation
 
 
-The OQGRAPH storage engine exists as a separate package in the repositories for [MariaDB 10.0.7](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes.md) and later. On Ubuntu and Debian the package is called `<code>mariadb-oqgraph-engine-10.0</code>` or `<code>mariadb-plugin-oqgraph</code>`. On Red Hat, CentOS, and Fedora the package is called `<code>MariaDB-oqgraph-engine</code>`. To install the plugin, first install the appropriate package and then install the plugin using the [INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) commands.
+The OQGRAPH storage engine exists as a separate package in the repositories for [MariaDB 10.0.7](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes.md) and later. On Ubuntu and Debian the package is called `mariadb-oqgraph-engine-10.0` or `mariadb-plugin-oqgraph`. On Red Hat, CentOS, and Fedora the package is called `MariaDB-oqgraph-engine`. To install the plugin, first install the appropriate package and then install the plugin using the [INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) commands.
 
 
 ### Debian and Ubuntu
@@ -48,7 +48,7 @@ sudo yum install MariaDB-oqgraph-engine
 ### Installing the Plugin
 
 
-On either system you can then launch the `<code>mysql</code>` command-line client and install the plugin in MariaDB as follows:
+On either system you can then launch the `mysql` command-line client and install the plugin in MariaDB as follows:
 
 
 ```

@@ -51,10 +51,10 @@ $ /etc/init.d/maxscale start
 It is also possible to start MariaDB MaxScale by executing the maxscale command itself. Running the executable /usr/bin/maxscale will result in MariaDB MaxScale running as a daemon process, unattached to the terminal in which it was started and using configuration files that it finds in the /etc directory.
 
 
-Options may be passed to the MariaDB MaxScale binary that alter this default behavior. For a full list of all parameters, refer to the MariaDB MaxScale help output by executing `<code>maxscale --help</code>`.
+Options may be passed to the MariaDB MaxScale binary that alter this default behavior. For a full list of all parameters, refer to the MariaDB MaxScale help output by executing `maxscale --help`.
 
 
-Additional command line arguments can be passed to MariaDB MaxScale with a configuration file placed at `<code>/etc/sysconfig/maxscale</code>` on RPM installations and `<code>/etc/default/maxscale</code>` file on DEB installations. Set the arguments in a variable called `<code>MAXSCALE_OPTIONS</code>` and remember to surround the arguments with quotes. The file should only contain environment variable declarations.
+Additional command line arguments can be passed to MariaDB MaxScale with a configuration file placed at `/etc/sysconfig/maxscale` on RPM installations and `/etc/default/maxscale` file on DEB installations. Set the arguments in a variable called `MAXSCALE_OPTIONS` and remember to surround the arguments with quotes. The file should only contain environment variable declarations.
 
 
 
@@ -161,18 +161,18 @@ Where the clients who are accessing a database system through MariaDB MaxScale m
 short connections, there may be a benefit from invoking the MariaDB MaxScale Persistent
 Connection feature. This is controlled by two configuration values that are specified
 per server in the relevant server section of the configuration file. The configuration
-options are `<code>persistpoolmax</code>` and `<code>persistmaxtime</code>`.
+options are `persistpoolmax` and `persistmaxtime`.
 
 
 Normally, when a client connection is terminated, all the related back end database
-connections are also terminated. If the `<code>persistpoolmax</code>` options is set to a non-zero
+connections are also terminated. If the `persistpoolmax` options is set to a non-zero
 integer, then up to that number of connections will be kept in a pool for that
 server. When a new connection is requested by the system to meet a new client request,
 then a connection from the pool will be used if possible.
 
 
 The connection will only be taken from the pool if it has been there for no more
-than `<code>persistmaxtime</code>` seconds. It was also be discarded if it has been disconnected
+than `persistmaxtime` seconds. It was also be discarded if it has been disconnected
 by the back end server. Connections will be selected that match the user name and
 protocol for the new request.
 
@@ -281,7 +281,7 @@ endscript
 
 **Note**:
 If 'root' user is no longer available for maxadmin connection and say 'user1' is one of the allowed users, the maxadmin command should be run this way:
-`<code>su - user1 -c '/usr/bin/maxadmin flush logs'</code>`
+`su - user1 -c '/usr/bin/maxadmin flush logs'`
 If listening socket is not the default one, /tmp/maxadmin.sock, use -S option.
 
 

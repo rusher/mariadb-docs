@@ -133,19 +133,19 @@ innodb_max_undo_log_size = 64M
 An InnoDB table's clustered index has three hidden system columns that are automatically generated. These hidden system columns are:
 
 
-* `<code>DB_ROW_ID</code>` - If the table has no other `<code>PRIMARY KEY</code>` or no other `<code>UNIQUE KEY</code>` defined as `<code>NOT NULL</code>` that can be promoted to the table's `<code>PRIMARY KEY</code>`, then InnoDB will use a hidden system column called `<code>DB_ROW_ID</code>`. InnoDB will automatically generated the value for the column from a global InnoDB-wide 48-bit sequence (instead of being table-local).
-* `<code>DB_TRX_ID</code>` - The transaction ID of either the transaction that last changed the row or the transaction that currently has the row locked.
-* `<code>DB_ROLL_PTR</code>` - A pointer to the [InnoDB undo log](innodb-undo-log.md) that contains the row's previous record. The value of `<code>DB_ROLL_PTR</code>` is only valid if `<code>DB_TRX_ID</code>` belongs to the current read view. The oldest valid read view is the purge view.
+* `DB_ROW_ID` - If the table has no other `PRIMARY KEY` or no other `UNIQUE KEY` defined as `NOT NULL` that can be promoted to the table's `PRIMARY KEY`, then InnoDB will use a hidden system column called `DB_ROW_ID`. InnoDB will automatically generated the value for the column from a global InnoDB-wide 48-bit sequence (instead of being table-local).
+* `DB_TRX_ID` - The transaction ID of either the transaction that last changed the row or the transaction that currently has the row locked.
+* `DB_ROLL_PTR` - A pointer to the [InnoDB undo log](innodb-undo-log.md) that contains the row's previous record. The value of `DB_ROLL_PTR` is only valid if `DB_TRX_ID` belongs to the current read view. The oldest valid read view is the purge view.
 
 
-If a row's last [InnoDB undo log](innodb-undo-log.md) record is purged, this can obviously effect the value of the row's `<code>DB_ROLL_PTR</code>` column, because there would no longer be any [InnoDB undo log](innodb-undo-log.md) record for the pointer to reference.
+If a row's last [InnoDB undo log](innodb-undo-log.md) record is purged, this can obviously effect the value of the row's `DB_ROLL_PTR` column, because there would no longer be any [InnoDB undo log](innodb-undo-log.md) record for the pointer to reference.
 
 
-In [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and before, the purge process wouldn't touch the value of the row's `<code>DB_TRX_ID</code>` column.
+In [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and before, the purge process wouldn't touch the value of the row's `DB_TRX_ID` column.
 
 
-However, in [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and later, the purge process will set a row's `<code>DB_TRX_ID</code>` column to `<code>0</code>` after all of the row's associated [InnoDB undo log](innodb-undo-log.md) records have been deleted. This change allows InnoDB to perform an optimization: if a query wants to read a row, and if the row's `<code>DB_TRX_ID</code>` column is set to `<code>0</code>`, then it knows that no other transaction has the row locked. Usually, InnoDB needs to lock the transaction system's mutex in order to safely check whether a row is locked, but this optimization allows InnoDB to confirm that the row can be safely read without any heavy internal locking.
+However, in [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and later, the purge process will set a row's `DB_TRX_ID` column to `0` after all of the row's associated [InnoDB undo log](innodb-undo-log.md) records have been deleted. This change allows InnoDB to perform an optimization: if a query wants to read a row, and if the row's `DB_TRX_ID` column is set to `0`, then it knows that no other transaction has the row locked. Usually, InnoDB needs to lock the transaction system's mutex in order to safely check whether a row is locked, but this optimization allows InnoDB to confirm that the row can be safely read without any heavy internal locking.
 
 
-This optimization can speed up reads, but it come at a noticeable cost at other times. For example, it can cause the purge process to use more I/O after inserting a lot of rows, since the value of each row's `<code>DB_TRX_ID</code>` column will have to be reset.
+This optimization can speed up reads, but it come at a noticeable cost at other times. For example, it can cause the purge process to use more I/O after inserting a lot of rows, since the value of each row's `DB_TRX_ID` column will have to be reset.
 

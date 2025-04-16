@@ -18,7 +18,7 @@ statement_performance_analyzer(in_action,in_table, in_views)
 ## Description
 
 
-`<code>statement_performance_analyzer</code>` is a [stored procedure](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md) which returns a report on running statements.
+`statement_performance_analyzer` is a [stored procedure](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md) which returns a report on running statements.
 
 
 The following options from the [sys_config](../sys-schema-sys_config-table.md) table impact the output:

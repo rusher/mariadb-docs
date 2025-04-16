@@ -3,13 +3,13 @@
 
 
 ##### MariaDB starting with [10.0.9](../../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1009-release-notes.md)
-The `<code>XTRADB_INTERNAL_HASH_TABLES</code>` table was added in [MariaDB 10.0.9](../../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1009-release-notes.md).
+The `XTRADB_INTERNAL_HASH_TABLES` table was added in [MariaDB 10.0.9](../../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1009-release-notes.md).
 
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>XTRADB_INTERNAL_HASH_TABLES</code>` table contains InnoDB/XtraDB hash table memory usage information.
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `XTRADB_INTERNAL_HASH_TABLES` table contains InnoDB/XtraDB hash table memory usage information.
 
 
-The `<code>PROCESS</code>` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
 
 
 It has the following columns:

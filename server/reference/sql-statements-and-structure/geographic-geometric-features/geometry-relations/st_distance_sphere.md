@@ -3,7 +3,7 @@
 
 
 ##### MariaDB starting with [10.5.10](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes.md)
-`<code>ST_DISTANCE_SPHERE</code>` was introduced in [MariaDB 10.2.38](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10238-release-notes.md), [MariaDB 10.3.29](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10329-release-notes.md), [MariaDB 10.4.19](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10419-release-notes.md) and [MariaDB 10.5.10](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes.md). 
+`ST_DISTANCE_SPHERE` was introduced in [MariaDB 10.2.38](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10238-release-notes.md), [MariaDB 10.3.29](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10329-release-notes.md), [MariaDB 10.4.19](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10419-release-notes.md) and [MariaDB 10.5.10](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes.md). 
 
 
 ## Syntax

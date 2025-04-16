@@ -13,7 +13,7 @@ LineString(pt1,pt2,...)
 
 WKB LineString from WKB Point coordinate data.
 Constructs a [WKB](../wkb/wkb-polyfromwkb.md) LineString value from a number of WKB [Point](point.md) arguments. If any argument is not a WKB Point, the return value is
-`<code>NULL</code>`. If the number of [Point](point.md) arguments is less than two, the return value is `<code>NULL</code>`.
+`NULL`. If the number of [Point](point.md) arguments is less than two, the return value is `NULL`.
 
 
 ## Examples

@@ -11,7 +11,7 @@ N % M
 ## Description
 
 
-Modulo operator. Returns the remainder of `<code>N</code>` divided by `<code>M</code>`. See also [MOD](../../sql-statements/built-in-functions/numeric-functions/mod.md).
+Modulo operator. Returns the remainder of `N` divided by `M`. See also [MOD](../../sql-statements/built-in-functions/numeric-functions/mod.md).
 
 
 ## Examples

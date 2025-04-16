@@ -4,7 +4,7 @@
 User-defined variables are variables which can be created by the user and exist in the session. This means that no one can access user-defined variables that have been set by another user, and when the session is closed these variables expire. However, these variables can be shared between several queries and [stored programs](../../../server-usage/programming-customizing-mariadb/stored-routines/README.md).
 
 
-User-defined variables names must be preceded by a single *at* character (`<code>@</code>`). While it is safe to use a reserved word as a user-variable name, the only allowed characters are ASCII letters, digits, dollar sign (`<code>$</code>`), underscore (`<code>_</code>`) and dot (`<code>.</code>`). If other characters are used, the name can be quoted in one of the following ways:
+User-defined variables names must be preceded by a single *at* character (`@`). While it is safe to use a reserved word as a user-variable name, the only allowed characters are ASCII letters, digits, dollar sign (`$`), underscore (`_`) and dot (`.`). If other characters are used, the name can be quoted in one of the following ways:
 
 
 * @`var_name`
@@ -72,7 +72,7 @@ SELECT a, b, c, (@var:=@var+1) AS counter FROM my_table;
 ## Viewing
 
 
-User-defined variables can be viewed by either querying the [USER_VARIABLES](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md), or by running `<code>SHOW USER_VARIABLES</code>`.
+User-defined variables can be viewed by either querying the [USER_VARIABLES](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md), or by running `SHOW USER_VARIABLES`.
 
 
 ## Flushing User-Defined Variables

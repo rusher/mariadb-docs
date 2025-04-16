@@ -14,7 +14,7 @@ var_name := expr
 Assignment operator for assigning a value. The value on the right is assigned to the variable on left.
 
 
-Unlike the [= operator](assignment-operators-assignment-operator.md), `<code>:=</code>` can always be used to assign a value to a variable.
+Unlike the [= operator](assignment-operators-assignment-operator.md), `:=` can always be used to assign a value to a variable.
 
 
 This operator works with both [user-defined variables](../../sql-language-structure/user-defined-variables.md) and [local variables](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/declare-variable.md).

@@ -14,7 +14,7 @@ The Global Transaction ID, [GTID](../../../../../server-usage/replication-cluste
 
 It's represented as three numbers separated with dashes '-'
 For example:
-`<code>1-1222-1011</code>`
+`1-1222-1011`
 
 
 It's usually written after the [Format Description Event](format_description_event.md), if binary log encryption is enabled it is written after the [Start Encryption Event](start_encryption_event.md).

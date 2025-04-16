@@ -24,11 +24,11 @@ Note that if you are using [MariaDB Galera Cluster](../../../server-usage/replic
 
 * Go through the individual version upgrade notes (listed below) to look for any major changes or configuration options that have changed.
 * Ensure that the target MariaDB version supports the storage engines you are using. For example, in 10.5 [TokuDB](../../../reference/storage-engines/tokudb/tokudb-resources.md) is not supported.
-* Back up the database (just in case). At least, take a copy of the `<code class="fixed" style="white-space:pre-wrap">mysql</code>` system database directory under the data directory with [mariadb-dump --add-drop-table mysql](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (called mysqldump in [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and earlier) as most of the upgrade changes are done there (adding new fields and new system tables etc).
+* Back up the database (just in case). At least, take a copy of the `mysql` system database directory under the data directory with [mariadb-dump --add-drop-table mysql](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (called mysqldump in [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and earlier) as most of the upgrade changes are done there (adding new fields and new system tables etc).
 * Cleanly shutdown the server. This is necessary because even if data files are compatible between versions, recovery logs may not be.
 
   * Ensure that the [innodb_fast_shutdown](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) variable is not 2 (fast crash shutdown). The default of this variable is 1.
-  * [innodb_force_recovery](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery) must be less than `<code>3</code>`.
+  * [innodb_force_recovery](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery) must be less than `3`.
 
 
 Note that rpms don't support upgrading between major versions, only minor like 10.4.1 to 10.4.2. If you are using rpms, you should de-install the old MariaDB rpms and install the new MariaDB rpms before running [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md). Note that when installing the new rpms, [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md) may be run automatically. There is no problem with running [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md) many times.
@@ -47,7 +47,7 @@ Note that rpms don't support upgrading between major versions, only minor like 1
 
 
 * Upgrade MariaDB binaries and libraries, preferably without starting MariaDB.
-* If the MariaDB server process, [mariadbd](../starting-and-stopping-mariadb/mariadbd-options.md) was not started as part of the upgrade, start it by executing `<code class="fixed" style="white-space:pre-wrap">mariadbd --skip-grant-tables</code>`. This may produce some warnings about some system tables not being up to date, but you can ignore these for now as [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md) will fix that.
+* If the MariaDB server process, [mariadbd](../starting-and-stopping-mariadb/mariadbd-options.md) was not started as part of the upgrade, start it by executing `mariadbd --skip-grant-tables`. This may produce some warnings about some system tables not being up to date, but you can ignore these for now as [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md) will fix that.
 * Run [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md)
 * Restart MariaDB server.
 
@@ -58,7 +58,7 @@ Note that rpms don't support upgrading between major versions, only minor like 1
 The main work done when upgrading is done by running [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md). The main things it does are:
 
 
-* Updating the system tables in the `<code class="fixed" style="white-space:pre-wrap">mysql</code>` database to the newest version. This is very quick.
+* Updating the system tables in the `mysql` database to the newest version. This is very quick.
 * [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md) also runs [mariadb-check --check-upgrade](../../../clients-and-utilities/mariadb-check.md) to check if there have been any collation changes between the major versions. This recreates indexes in old tables that are using any of the changed collations. This can take a bit of time if there are a lot of tables or there are many tables which used the changed collation. The last time a collation changed was in MariaDB/MySQL 5.1.23.
 
 
@@ -93,29 +93,29 @@ The common warnings/errors are:
 In the unlikely event something goes wrong, you can try the following:
 
 
-* Remove the InnoDB tables from the `<code class="fixed" style="white-space:pre-wrap">mysql</code>` data directory. They are:
+* Remove the InnoDB tables from the `mysql` data directory. They are:
 
   * gtid_slave_pos
   * innodb_table_stats
   * innodb_index_stats
   * transaction_registry
-* Move the `<code class="fixed" style="white-space:pre-wrap">mysql</code>` data directory to `<code class="fixed" style="white-space:pre-wrap">mysql-old</code>` and run [mariadb-install-db](../mariadb-install-db-exe.md) to generate a new one.
+* Move the `mysql` data directory to `mysql-old` and run [mariadb-install-db](../mariadb-install-db-exe.md) to generate a new one.
 * After the above, you have to add back your old users.
-* When done, delete the `<code class="fixed" style="white-space:pre-wrap">mysql-old</code>` data directory.
+* When done, delete the `mysql-old` data directory.
 
 
 ## Downgrading
 
 
-MariaDB server is not designed for downgrading. That said, in most cases, as long as you haven't run any [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) or [CREATE TABLE](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statements and you have a [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) of your old `<code class="fixed" style="white-space:pre-wrap">mysql</code>` database , you should be able to downgrade to your previous version by doing the following:
+MariaDB server is not designed for downgrading. That said, in most cases, as long as you haven't run any [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) or [CREATE TABLE](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statements and you have a [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) of your old `mysql` database , you should be able to downgrade to your previous version by doing the following:
 
 
 * Do a clean shutdown. For this special case you have to set [innodb_fast_shutdown](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) to 0,before taking down the new MariaDB server, to ensure there are no redo or undo logs that need to be applied on the downgraded server.
-* Delete the tables in the `<code class="fixed" style="white-space:pre-wrap">mysql</code>` database (if you didn't use the option `<code class="fixed" style="white-space:pre-wrap">--add-drop-table</code>` to [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md))
+* Delete the tables in the `mysql` database (if you didn't use the option `--add-drop-table` to [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md))
 * Delete the new MariaDB installation
 * Install the old MariaDB version
 * Start the server with [mariadbd --skip-grant-tables](../starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables)
-* Install the old `<code class="fixed" style="white-space:pre-wrap">mysql</code>` database
+* Install the old `mysql` database
 * Execute in the [mariadb client](../../../clients-and-utilities/mariadb-client/README.md) [FLUSH PRIVILEGES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
 
 

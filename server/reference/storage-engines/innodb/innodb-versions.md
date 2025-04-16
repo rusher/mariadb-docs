@@ -10,7 +10,7 @@ The default InnoDB implementation is based on InnoDB from MySQL 5.7. See [Why Ma
 
 #### Note
 
-XtraDB is a performance enhanced fork of InnoDB. For compatibility reasons, the [system variables](innodb-system-variables.md) still retain their original `<code>innodb</code>` prefixes. If the documentation says that something applies to InnoDB, then it usually also applies to the XtraDB fork, unless explicitly stated otherwise. In these versions, it is still possible to use InnoDB instead of XtraDB. See [Using InnoDB instead of XtraDB](innodb-unmaintained/using-innodb-instead-of-xtradb.md) for more information.
+XtraDB is a performance enhanced fork of InnoDB. For compatibility reasons, the [system variables](innodb-system-variables.md) still retain their original `innodb` prefixes. If the documentation says that something applies to InnoDB, then it usually also applies to the XtraDB fork, unless explicitly stated otherwise. In these versions, it is still possible to use InnoDB instead of XtraDB. See [Using InnoDB instead of XtraDB](innodb-unmaintained/using-innodb-instead-of-xtradb.md) for more information.
 
 
 ## Divergences

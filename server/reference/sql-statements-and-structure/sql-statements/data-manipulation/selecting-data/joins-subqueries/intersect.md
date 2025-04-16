@@ -1,7 +1,7 @@
 
 # INTERSECT
 
-The result of an intersect is the intersection of right and left `<code>SELECT</code>` results, i.e. only records that are present in both result sets will be included in the result of the operation.
+The result of an intersect is the intersection of right and left `SELECT` results, i.e. only records that are present in both result sets will be included in the result of the operation.
 
 
 ## Syntax
@@ -19,19 +19,19 @@ SELECT ...
 ## Description
 
 
-MariaDB has supported `<code>INTERSECT</code>` (as well as [EXCEPT](except.md)) in addition to [UNION](union.md) since [MariaDB 10.3](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md).
+MariaDB has supported `INTERSECT` (as well as [EXCEPT](except.md)) in addition to [UNION](union.md) since [MariaDB 10.3](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md).
 
 
-All behavior for naming columns, `<code class="fixed" style="white-space:pre-wrap">ORDER BY</code>` and `<code class="fixed" style="white-space:pre-wrap">LIMIT</code>` is the same as for [UNION](union.md).
+All behavior for naming columns, `ORDER BY` and `LIMIT` is the same as for [UNION](union.md).
 
 
-`<code>INTERSECT</code>` implicitly supposes a `<code>DISTINCT</code>` operation.
+`INTERSECT` implicitly supposes a `DISTINCT` operation.
 
 
-The result of an intersect is the intersection of right and left `<code>SELECT</code>` results, i.e. only records that are present in both result sets will be included in the result of the operation.
+The result of an intersect is the intersection of right and left `SELECT` results, i.e. only records that are present in both result sets will be included in the result of the operation.
 
 
-`<code>INTERSECT</code>` has higher precedence than `<code>UNION</code>` and `<code>EXCEPT</code>` (unless running [running in Oracle mode](../../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), in which case all three have the same precedence). If possible it will be executed linearly but if not it will be translated to a subquery in the `<code>FROM</code>` clause:
+`INTERSECT` has higher precedence than `UNION` and `EXCEPT` (unless running [running in Oracle mode](../../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), in which case all three have the same precedence). If possible it will be executed linearly but if not it will be translated to a subquery in the `FROM` clause:
 
 
 ```
@@ -72,7 +72,7 @@ Parentheses can be used to specify precedence. Prior to [MariaDB 10.4](../../../
 
 ### ALL/DISTINCT
 
-`<code>INTERSECT ALL</code>` and `<code>INTERSECT DISTINCT</code>` were introduced in [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md). The `<code>ALL</code>` operator leaves duplicates intact, while the `<code>DISTINCT</code>` operator removes duplicates. `<code>DISTINCT</code>` is the default behavior if neither operator is supplied, and the only behavior prior to [MariaDB 10.5](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md).  
+`INTERSECT ALL` and `INTERSECT DISTINCT` were introduced in [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md). The `ALL` operator leaves duplicates intact, while the `DISTINCT` operator removes duplicates. `DISTINCT` is the default behavior if neither operator is supplied, and the only behavior prior to [MariaDB 10.5](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md).  
 
 
 ## Examples
@@ -87,7 +87,7 @@ INTERSECT
 (SELECT c_name AS name, email FROM customers);
 ```
 
-Difference between [UNION](union.md), [EXCEPT](except.md) and INTERSECT. `<code>INTERSECT ALL</code>` and `<code>EXCEPT ALL</code>` are available from [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md).
+Difference between [UNION](union.md), [EXCEPT](except.md) and INTERSECT. `INTERSECT ALL` and `EXCEPT ALL` are available from [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md).
 
 
 ```

@@ -35,19 +35,19 @@ GROUP_CONCAT([DISTINCT] expr [,expr ...]
              [LIMIT {[offset,] row_count | row_count OFFSET offset}])
 ```
 
-`<code>DISTINCT</code>` eliminates duplicate values from the output string.
+`DISTINCT` eliminates duplicate values from the output string.
 
 
 [ORDER BY](../../data-manipulation/selecting-data/order-by.md) determines the order of returned values.
 
 
-`<code>SEPARATOR</code>` specifies a separator between the values. The default separator is a comma (`<code>,</code>`). It is possible to avoid using a separator by specifying an empty string.
+`SEPARATOR` specifies a separator between the values. The default separator is a comma (`,`). It is possible to avoid using a separator by specifying an empty string.
 
 
 ### LIMIT
 
 
-The [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clause can be used with `<code>GROUP_CONCAT</code>`. This was not possible prior to [MariaDB 10.3.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md).
+The [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clause can be used with `GROUP_CONCAT`. This was not possible prior to [MariaDB 10.3.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md).
 
 
 ## Examples
@@ -68,7 +68,7 @@ SELECT GROUP_CONCAT(DISTINCT User ORDER BY User SEPARATOR '\n')
    FROM mysql.user;
 ```
 
-In the former example, `<code>DISTINCT</code>` is used because the same user may occur more than once. The new line (`<code>\n</code>`) used as a `<code>SEPARATOR</code>` makes the results easier to read.
+In the former example, `DISTINCT` is used because the same user may occur more than once. The new line (`\n`) used as a `SEPARATOR` makes the results easier to read.
 
 
 Get a readable list of hosts from which each user can connect:
@@ -79,10 +79,10 @@ SELECT User, GROUP_CONCAT(Host ORDER BY Host SEPARATOR ', ')
    FROM mysql.user GROUP BY User ORDER BY User;
 ```
 
-The former example shows the difference between the `<code>GROUP_CONCAT</code>`'s [ORDER BY](../../data-manipulation/selecting-data/order-by.md) (which sorts the concatenated hosts), and the `<code>SELECT</code>`'s [ORDER BY](../../data-manipulation/selecting-data/order-by.md) (which sorts the rows).
+The former example shows the difference between the `GROUP_CONCAT`'s [ORDER BY](../../data-manipulation/selecting-data/order-by.md) (which sorts the concatenated hosts), and the `SELECT`'s [ORDER BY](../../data-manipulation/selecting-data/order-by.md) (which sorts the rows).
 
 
-From [MariaDB 10.3.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md), [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) can be used with `<code>GROUP_CONCAT</code>`, so, for example, given the following table:
+From [MariaDB 10.3.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md), [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) can be used with `GROUP_CONCAT`, so, for example, given the following table:
 
 
 ```

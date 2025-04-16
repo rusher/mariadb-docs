@@ -55,13 +55,13 @@ Xpand node will be named like
 
 
 
-where `<code><name-of-xpand-monitor></code>` is the name of the Xpand monitor
-instance, as defined in the MaxScale configuration file, and `<code><id></code>` is the
+where `<name-of-xpand-monitor>` is the name of the Xpand monitor
+instance, as defined in the MaxScale configuration file, and `<id>` is the
 id of the Xpand node.
 
 
 For instance, with the Xpand monitor defined as above and a Xpand
-cluster consisting of 3 nodes whose ids are `<code>1</code>`, `<code>2</code>` and `<code>3</code>` respectively,
+cluster consisting of 3 nodes whose ids are `1`, `2` and `3` respectively,
 the names of the created server objects will be:
 
 
@@ -77,12 +77,12 @@ the names of the created server objects will be:
 ### Grants
 
 
-Note that the monitor user *must* have `<code>SELECT</code>` grant on the following tables:
+Note that the monitor user *must* have `SELECT` grant on the following tables:
 
 
-* `<code>system.nodeinfo</code>`
-* `<code>system.membership</code>`
-* `<code>system.softfailed_nodes</code>`
+* `system.nodeinfo`
+* `system.membership`
+* `system.softfailed_nodes`
 
 
 You can give the necessary grants using the following commands:
@@ -98,7 +98,7 @@ GRANT SELECT ON system.membership TO 'myuser'@'%';
 
 
 Further, if you want be able to *softfail* and *unsoftfail* a node via MaxScale,
-then the monitor user must have `<code>SUPER</code>` privileges, which can be granted like:
+then the monitor user must have `SUPER` privileges, which can be granted like:
 
 
 
@@ -124,7 +124,7 @@ For a list of optional parameters that all monitors support, read the
 These are optional parameters specific to the Xpand Monitor.
 
 
-### `<code>cluster_monitor_interval</code>`
+### `cluster_monitor_interval`
 
 
 Defines, in milliseconds, how often the monitor checks the state of the
@@ -145,7 +145,7 @@ is provided, the value is interpreted as milliseconds in MaxScale 2.4. In subseq
 versions a value without a unit may be rejected.
 
 
-### `<code>health_check_threshold</code>`
+### `health_check_threshold`
 
 
 Defines how many times the health check may fail before the monitor
@@ -159,7 +159,7 @@ health_check_threshold=3
 
 
 
-### `<code>dynamic_node_detection</code>`
+### `dynamic_node_detection`
 
 
 By default, the Xpand monitor will only use the bootstrap nodes
@@ -194,17 +194,17 @@ dynamic_node_detection=false
 
 
 
-The default value of `<code>dynamic_node_detection</code>` is `<code>true</code>`.
+The default value of `dynamic_node_detection` is `true`.
 
 
 See also [health_check_port](#health_check_port).
 
 
-### `<code>health_check_port</code>`
+### `health_check_port`
 
 
 With this optional parameter it can be specified what health check
-port to use, if `<code>dynamic_node_detection</code>` has been disabled.
+port to use, if `dynamic_node_detection` has been disabled.
 
 
 
@@ -214,11 +214,11 @@ health_check_port=4711
 
 
 
-The default value is `<code>3581</code>`.
+The default value is `3581`.
 
 
-Note that this parameter is *ignored* unless `<code>dynamic_node_detection</code>`
-is `<code>false</code>`. Note also that the port must be the same for all nodes.
+Note that this parameter is *ignored* unless `dynamic_node_detection`
+is `false`. Note also that the port must be the same for all nodes.
 
 
 ## Commands
@@ -227,10 +227,10 @@ is `<code>false</code>`. Note also that the port must be the same for all nodes.
 The Xpand monitor supports the following module commands.
 
 
-### `<code>softfail</code>`
+### `softfail`
 
 
-With the `<code>softfail</code>` module command, a node can be *softfailed* via
+With the `softfail` module command, a node can be *softfailed* via
 MaxScale. The command requires as argument the name of the Xpand
 monitor instance (as defined in the configuration file) and the name
 of the node to be softfailed.
@@ -249,7 +249,7 @@ module=xpandmon
 
 
 
-then the node whose server name is `<code>@@TheXpandMonitor:node-1</code>` can
+then the node whose server name is `@@TheXpandMonitor:node-1` can
 be softfailed like
 
 
@@ -261,26 +261,26 @@ $ maxctrl call command xpandmon softfail TheXpandMonitor @@TheXpandMonitor:node-
 
 
 If the softfailing of a node is successfully initiated, then the status
-of the corresponding MaxScale server object will be set to `<code>Draining</code>`,
+of the corresponding MaxScale server object will be set to `Draining`,
 which will prevent new connections from being created to the node.
 
 
 When the number of connections through MaxScale to the node has dropped
-to 0, its state will change to `<code>Drained</code>`. Note that the state `<code>Drained</code>`
+to 0, its state will change to `Drained`. Note that the state `Drained`
 only tells that there are no connections to the node, not what the state
 of the softfailing operation is.
 
 
-### `<code>unsoftfail</code>`
+### `unsoftfail`
 
 
-With the `<code>unsoftfail</code>` module command, a node can be *unsoftfailed* via
+With the `unsoftfail` module command, a node can be *unsoftfailed* via
 MaxScale. The command requires as argument the name of the Xpand
 monitor instance (as defined in the configuration file) and the name
 of the node to be unsoftfailed.
 
 
-With a setup similar to the `<code>softfail</code>` case, a node can be unsoftfailed
+With a setup similar to the `softfail` case, a node can be unsoftfailed
 like:
 
 
@@ -291,7 +291,7 @@ $ maxctrl call command xpandmon unsoftfail TheXpandMonitor @@TheXpandMonitor:nod
 
 
 
-If a node is successfully softfailed, then a `<code>Draining</code>` status of
+If a node is successfully softfailed, then a `Draining` status of
 the corresponding MaxScale server object will be cleared.
 
 
@@ -299,23 +299,23 @@ the corresponding MaxScale server object will be cleared.
 
 
 During the cluster check, which is performed once per
-`<code>cluster_monitor_interval</code>`, the monitor will also check whether any
+`cluster_monitor_interval`, the monitor will also check whether any
 nodes are being softfailed. The status of the corresponding server
-object of a node being softfailed will be set to `<code>Draining</code>`,
+object of a node being softfailed will be set to `Draining`,
 which will prevent new connections from being created to that node.
 
 
 When the number of connections through MaxScale to the node has dropped
-to 0, its state will change to `<code>Drained</code>`. Note that the state `<code>Drained</code>`
+to 0, its state will change to `Drained`. Note that the state `Drained`
 only tells that there are no connections to the node, not what the state
 of the softfailing operation is.
 
 
-If a node that was softfailed is UNSOFTFAILed then the `<code>Draining</code>`
+If a node that was softfailed is UNSOFTFAILed then the `Draining`
 status will be cleared.
 
 
-If the softfailing and unsoftfailing is initiated using the `<code>softfail</code>`
-and `<code>unsoftfail</code>` commands of the Xpand monitor, then there will be
+If the softfailing and unsoftfailing is initiated using the `softfail`
+and `unsoftfail` commands of the Xpand monitor, then there will be
 no delay between the softfailing or unsoftfailing being initated and the
-`<code>Draining</code>` status being turned on/off.
+`Draining` status being turned on/off.

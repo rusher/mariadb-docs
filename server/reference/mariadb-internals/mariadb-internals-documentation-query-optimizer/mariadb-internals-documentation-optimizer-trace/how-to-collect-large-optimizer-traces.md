@@ -11,7 +11,7 @@ In order to collect a large trace, you need to perform the following steps (usin
 set global max_allowed_packet=128*1024*1024;
 ```
 
-Reconnect specifying `<code>--max-allowed-packet=128000000</code>` for the client as well.
+Reconnect specifying `--max-allowed-packet=128000000` for the client as well.
 
 
 ```

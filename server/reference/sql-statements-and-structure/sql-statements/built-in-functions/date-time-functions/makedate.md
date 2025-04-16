@@ -11,7 +11,7 @@ MAKEDATE(year,dayofyear)
 ## Description
 
 
-Returns a date, given `<code>year</code>` and `<code>day-of-year values</code>`. `<code>dayofyear</code>` must be
+Returns a date, given `year` and `day-of-year values`. `dayofyear` must be
 greater than 0 or the result is NULL.
 
 

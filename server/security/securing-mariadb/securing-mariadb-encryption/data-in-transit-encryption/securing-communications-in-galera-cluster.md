@@ -5,7 +5,7 @@
 By default, Galera Cluster replicates data between each node without encrypting it. This is generally acceptable when the cluster nodes runs on the same host or in networks where security is guaranteed through other means. However, in cases where the cluster nodes exist on separate networks or they are in a high-risk network, the lack of encryption does introduce security concerns as a malicious actor could potentially eavesdrop on the traffic or get a complete copy of the data by triggering an SST.
 
 
-To mitigate this concern, Galera Cluster allows you to encrypt data in transit as it is replicated between each cluster node using the Transport Layer Security (TLS) protocol. TLS was formerly known as Secure Socket Layer (SSL), but strictly speaking the SSL protocol is a predecessor to TLS and, that version of the protocol is now considered insecure. The documentation still uses the term SSL often and for compatibility reasons TLS-related server system and status variables still use the prefix `<code>ssl_</code>`, but internally, MariaDB only supports its secure successors.
+To mitigate this concern, Galera Cluster allows you to encrypt data in transit as it is replicated between each cluster node using the Transport Layer Security (TLS) protocol. TLS was formerly known as Secure Socket Layer (SSL), but strictly speaking the SSL protocol is a predecessor to TLS and, that version of the protocol is now considered insecure. The documentation still uses the term SSL often and for compatibility reasons TLS-related server system and status variables still use the prefix `ssl_`, but internally, MariaDB only supports its secure successors.
 
 
 In order to secure connections between the cluster nodes, you need to ensure that all servers were compiled with TLS support. See [Secure Connections Overview](secure-connections-overview.md) to determine how to check whether a server was compiled with TLS support.
@@ -20,10 +20,10 @@ For each cluster node, you also need a certificate, private key, and the Certifi
 In order to enable TLS for Galera Cluster's replication traffic, there are a number of [wsrep_provider_options](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md) that you need to set, such as:
 
 
-* You need to set the path to the server's certificate by setting the `<code>[socket.ssl_cert](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md#socketssl_cert)</code>` wsrep_provider_option.
-* You need to set the path to the server's private key by setting the `<code>[socket.ssl_key](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md#socketssl_key)</code>` wsrep_provider_option.
-* You need to set the path to the certificate authority (CA) chain that can verify the server's certificate by setting the `<code>[socket.ssl_ca](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md#socketssl_ca)</code>` wsrep_provider_option.
-* If you want to restrict the server to certain ciphers, then you also need to set the `<code>[socket.ssl_cipher](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md#socketssl_cipher)</code>` wsrep_provider_option.
+* You need to set the path to the server's certificate by setting the `[socket.ssl_cert](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md#socketssl_cert)` wsrep_provider_option.
+* You need to set the path to the server's private key by setting the `[socket.ssl_key](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md#socketssl_key)` wsrep_provider_option.
+* You need to set the path to the certificate authority (CA) chain that can verify the server's certificate by setting the `[socket.ssl_ca](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md#socketssl_ca)` wsrep_provider_option.
+* If you want to restrict the server to certain ciphers, then you also need to set the `[socket.ssl_cipher](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md#socketssl_cipher)` wsrep_provider_option.
 
 
 It is also a good idea to set MariaDB Server's regular TLS-related system variables, so that TLS will be enabled for regular client connections as well. See [Securing Connections for Client and Server](securing-connections-for-client-and-server.md) for information on how to do that.
@@ -50,7 +50,7 @@ By setting both MariaDB Server's TLS-related system variables and Galera Cluster
 ## Securing State Snapshot Transfers
 
 
-The method that you would use to enable TLS for [State Snapshot Transfers (SSTs)](../../../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) would depend on the value of `<code>[wsrep_sst_method](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_sst_method)</code>`.
+The method that you would use to enable TLS for [State Snapshot Transfers (SSTs)](../../../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) would depend on the value of `[wsrep_sst_method](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_sst_method)`.
 
 
 ### mariabackup
@@ -74,5 +74,5 @@ This SST method simply uses the [mariadb-dump](../../../../clients-and-utilities
 ### rsync
 
 
-This SST method supports encryption in transit via `<code>[stunnel](https://www.stunnel.org/)</code>`. See [Introduction to State Snapshot Transfers (SSTs): rsync](../../../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md#rsync) for more information.
+This SST method supports encryption in transit via `[stunnel](https://www.stunnel.org/)`. See [Introduction to State Snapshot Transfers (SSTs): rsync](../../../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md#rsync) for more information.
 

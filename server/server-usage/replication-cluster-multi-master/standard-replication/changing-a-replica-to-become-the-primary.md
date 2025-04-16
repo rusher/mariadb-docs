@@ -16,7 +16,7 @@ upgrade your primary to the new version.
 In MariaDB replication, a replica should be of a version same or newer than the primary. Because of this, one should first upgrades all replicas to the latest version before changing a replica to be a primary. In some cases one can have a replica to be of an older version than the primary, as long as one doesn't execute on the primary any SQL commands that the replica doesn't understand. This is however not guaranteed between all major MariaDB versions.
 
 
-Note that in the examples below, `<code class="fixed" style="white-space:pre-wrap">[connection_name]</code>` is used as the [name of the connection](multi-source-replication.md). If you are not using named connections you can ignore this.
+Note that in the examples below, `[connection_name]` is used as the [name of the connection](multi-source-replication.md). If you are not using named connections you can ignore this.
 
 
 ### Stopping the Original Master.
@@ -81,12 +81,12 @@ Gtid_IO_Pos          0-1-2              +
 +-------------------+-------------------+
 ```
 
-The most important information to watch are `<code>Master_Log_File</code>` and
-`<code>Exec_Master_Log_Pos</code>` as when this matches the primary, it signals
+The most important information to watch are `Master_Log_File` and
+`Exec_Master_Log_Pos` as when this matches the primary, it signals
 that all transactions have been committed on the replica.
 
 
-Note that `<code>Gtid_IO_Pos</code>` on replica can contain many different positions
+Note that `Gtid_IO_Pos` on replica can contain many different positions
 separated with ',' if the replica has been connected to many different
 primaries. What is important is that all the sequences that are on the
 primary is also on the replica.
@@ -104,7 +104,7 @@ SHUTDOWN;
 
 Stop all old connections to the old primary(s) and reset **read only
 mode**, if you had it enabled. You also want to save the values of
-[SHOW MASTER STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md) and `<code>gtid_binlog_pos</code>`, as
+[SHOW MASTER STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md) and `gtid_binlog_pos`, as
 you may need these to setup new replicas.
 
 
@@ -130,7 +130,7 @@ MASTER_LOG_FILE="XXX", MASTER_LOG_POS=XXX;
 START SLAVE;
 ```
 
-The `<code class="fixed" style="white-space:pre-wrap">XXX</code>` values for `<code>MASTER_LOG_FILE</code>` and `<code>MASTER_LOG_POS</code>` should be the values you got from the `<code>SHOW MASTER STATUS</code>` command you did when you finished setting up the replica.
+The `XXX` values for `MASTER_LOG_FILE` and `MASTER_LOG_POS` should be the values you got from the `SHOW MASTER STATUS` command you did when you finished setting up the replica.
 
 
 ### Changing the Old Primary to be a Replica
@@ -140,15 +140,15 @@ Now you can upgrade the old primary to a newer version of MariaDB and then
 follow the same procedure to connect it as a replica.
 
 
-When starting the original primary, it's good to start the `<code>mysqld</code>`
-executable with the `<code>--with-skip-slave-start</code>` and `<code>--read-only</code>`
+When starting the original primary, it's good to start the `mysqld`
+executable with the `--with-skip-slave-start` and `--read-only`
 options to ensure that no old replica configurations could cause any
 conflicts.
 
 
 For the same reason it's also good to execute the following commands
 on the old primary (same as for other replicas, but with some extra
-security). The `<code>read_only</code>` option below is there to ensure that old
+security). The `read_only` option below is there to ensure that old
 applications doesn't by accident try to update the old primary by mistake.
 It only affects normal connections to the replica, not changes from the
 new primary.

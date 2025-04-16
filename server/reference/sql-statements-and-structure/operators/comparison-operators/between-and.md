@@ -74,7 +74,7 @@ SELECT 1 BETWEEN 1 AND NULL;
 +----------------------+
 ```
 
-DATE, DATETIME and TIMESTAMP examples. Omitting the time component compares against `<code>00:00</code>`, so later times on the same date are not returned:
+DATE, DATETIME and TIMESTAMP examples. Omitting the time component compares against `00:00`, so later times on the same date are not returned:
 
 
 ```

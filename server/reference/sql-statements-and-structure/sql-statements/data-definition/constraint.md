@@ -91,8 +91,8 @@ Constraints are enforced. Before [MariaDB 10.2.1](../../../../../release-notes/m
 You can define constraints in 2 different ways:
 
 
-* `<code>CHECK(expression)</code>` given as part of a column definition.
-* `<code>CONSTRAINT [constraint_name] CHECK (expression)</code>`
+* `CHECK(expression)` given as part of a column definition.
+* `CONSTRAINT [constraint_name] CHECK (expression)`
 
 
 Before a row is inserted or updated, all constraints are evaluated in the order they are defined. If any constraint expression returns false, then the row will not be inserted or updated.
@@ -106,7 +106,7 @@ CREATE TABLE t1 (a INT CHECK (a>2), b INT CHECK (b>2), CONSTRAINT a_greater CHEC
 If you use the second format and you don't give a name to the constraint, then the constraint will get an automatically generated name. This is done so that you can later delete the constraint with [ALTER TABLE DROP constraint_name](alter/alter-tablespace.md).
 
 
-One can disable all constraint expression checks by setting the [check_constraint_checks](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#check_constraint_checks) variable to `<code>OFF</code>`. This is useful for example when loading a table that violates some constraints that you want to later find and fix in SQL.
+One can disable all constraint expression checks by setting the [check_constraint_checks](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#check_constraint_checks) variable to `OFF`. This is useful for example when loading a table that violates some constraints that you want to later find and fix in SQL.
 
 
 ### Replication
@@ -216,7 +216,7 @@ SHOW WARNINGS;
 +---------+------+----------------------------------------+
 ```
 
-Compare the definition of table *t2* to table *t3*. `<code>CHAR_LENGTH(name)>2</code>` is very different to `<code>CHAR_LENGTH(name>2)</code>` as the latter mistakenly performs a numeric comparison on the *name* field, leading to unexpected results.
+Compare the definition of table *t2* to table *t3*. `CHAR_LENGTH(name)>2` is very different to `CHAR_LENGTH(name>2)` as the latter mistakenly performs a numeric comparison on the *name* field, leading to unexpected results.
 
 
 ## See Also

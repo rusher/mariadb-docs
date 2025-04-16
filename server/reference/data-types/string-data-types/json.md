@@ -4,7 +4,7 @@
 The JSON alias was added to make it possible to use JSON columns in [statement based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based) [replication](../../../server-usage/replication-cluster-multi-master/standard-replication/README.md) from MySQL to MariaDB and to make it possible for MariaDB to read [mysqldumps](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) from MySQL.
 
 
-JSON is an alias for `<code>LONGTEXT COLLATE utf8mb4_bin</code>` introduced for compatibility reasons with MySQL's JSON data type. MariaDB implements this as a [LONGTEXT](longtext.md) rather, as the JSON data type contradicts the SQL:2016 standard, and MariaDB's benchmarks indicate that performance is at least equivalent.
+JSON is an alias for `LONGTEXT COLLATE utf8mb4_bin` introduced for compatibility reasons with MySQL's JSON data type. MariaDB implements this as a [LONGTEXT](longtext.md) rather, as the JSON data type contradicts the SQL:2016 standard, and MariaDB's benchmarks indicate that performance is at least equivalent.
 
 
 In order to ensure that a a valid json document is inserted, the [JSON_VALID](../../sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_valid.md) function can be used as a [CHECK constraint](../../sql-statements-and-structure/sql-statements/data-definition/constraint.md#check-constraint-expressions). This constraint is automatically included for types using the JSON alias.

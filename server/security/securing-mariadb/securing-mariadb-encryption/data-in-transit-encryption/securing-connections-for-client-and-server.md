@@ -8,7 +8,7 @@ Starting from 11.4 MariaDB encrypts the transmitted data between the server and 
 Before that the default behavior was to transmit the data unencrypted over the network introducing a security concerns as a malicious actor could potentially eavesdrop on the traffic as it is sent over the network between them.
 
 
-The data in transit are encrypted (by default or if enabled manually) using the Transport Layer Security (TLS) protocol. TLS was formerly known as Secure Socket Layer (SSL), but strictly speaking the SSL protocol is a predecessor to TLS and, that version of the protocol is now considered insecure. The documentation still uses the term SSL often and for compatibility reasons TLS-related server system and status variables still use the prefix `<code>ssl_</code>`, but internally, MariaDB only supports its secure successors.
+The data in transit are encrypted (by default or if enabled manually) using the Transport Layer Security (TLS) protocol. TLS was formerly known as Secure Socket Layer (SSL), but strictly speaking the SSL protocol is a predecessor to TLS and, that version of the protocol is now considered insecure. The documentation still uses the term SSL often and for compatibility reasons TLS-related server system and status variables still use the prefix `ssl_`, but internally, MariaDB only supports its secure successors.
 
 
 ## Enabling TLS
@@ -67,7 +67,7 @@ SHOW VARIABLES LIKE 'have_ssl';
 #### Reloading the Server's Certificates and Keys Dynamically
 
 
-The `<code>FLUSH SSL</code>` command can be used to dynamically reinitialize the server's [TLS](README.md) context.
+The `FLUSH SSL` command can be used to dynamically reinitialize the server's [TLS](README.md) context.
 
 
 See [FLUSH SSL](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md#flush-ssl) for more information.
@@ -149,7 +149,7 @@ $ mariadb -u myuser -p -h myserver.mydomain.com \
    --ssl-verify-server-cert
 ```
 
-Two-way SSL is required for an account if the `<code>REQUIRE X509</code>`, `<code>REQUIRE SUBJECT</code>`, and/or `<code>REQUIRE ISSUER</code>` clauses are specified for the account.
+Two-way SSL is required for an account if the `REQUIRE X509`, `REQUIRE SUBJECT`, and/or `REQUIRE ISSUER` clauses are specified for the account.
 
 
 ### Enabling TLS for MariaDB Connector/C Clients
@@ -198,7 +198,7 @@ From [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/rele
 You can set certain TLS-related restrictions for specific user accounts. For instance, you might use this with user accounts that require access to sensitive data while sending it across networks that you do not control. These restrictions can be enabled for a user account with the [CREATE USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md), [ALTER USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md), or [GRANT](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) statements. For example:
 
 
-* A user account must connect via TLS if the user account is defined with the `<code>REQUIRE SSL</code>` clause.
+* A user account must connect via TLS if the user account is defined with the `REQUIRE SSL` clause.
 
 
 ```
@@ -206,7 +206,7 @@ ALTER USER 'alice'@'%'
    REQUIRE SSL;
 ```
 
-* A user account must connect via TLS with a specific cipher if the user account is defined with the `<code>REQUIRE CIPHER</code>` clause.
+* A user account must connect via TLS with a specific cipher if the user account is defined with the `REQUIRE CIPHER` clause.
 
 
 ```
@@ -214,7 +214,7 @@ ALTER USER 'alice'@'%'
    REQUIRE CIPHER 'ECDH-RSA-AES256-SHA384';
 ```
 
-* A user account must connect via TLS with a valid client certificate if the user account is defined with the `<code>REQUIRE X509</code>` clause.
+* A user account must connect via TLS with a valid client certificate if the user account is defined with the `REQUIRE X509` clause.
 
 
 ```
@@ -222,7 +222,7 @@ ALTER USER 'alice'@'%'
    REQUIRE X509;
 ```
 
-* A user account must connect via TLS with a specific client certificate if the user account is defined with the `<code>REQUIRE SUBJECT</code>` clause.
+* A user account must connect via TLS with a specific client certificate if the user account is defined with the `REQUIRE SUBJECT` clause.
 
 
 ```
@@ -230,7 +230,7 @@ ALTER USER 'alice'@'%'
    REQUIRE SUBJECT '/CN=alice/O=My Dom, Inc./C=US/ST=Oregon/L=Portland';
 ```
 
-* A user account must connect via TLS with a client certificate that must be signed by a specific certificate authority if the user account is defined with the `<code>REQUIRE ISSUER</code>` clause.
+* A user account must connect via TLS with a client certificate that must be signed by a specific certificate authority if the user account is defined with the `REQUIRE ISSUER` clause.
 
 
 ```
@@ -255,5 +255,5 @@ CREATE USER 'alice'@'%'
    AND CIPHER 'ECDHE-ECDSA-AES256-SHA384';
 ```
 
-In the above example, the `<code>alice</code>` user account does not require TLS when logging in from localhost. However, when the `<code>alice</code>` user account logs in from any other host, they must use TLS with the given cipher, and they must provide a valid client certificate with the given subject that must have been signed by the given issuer.
+In the above example, the `alice` user account does not require TLS when logging in from localhost. However, when the `alice` user account logs in from any other host, they must use TLS with the given cipher, and they must provide a valid client certificate with the given subject that must have been signed by the given issuer.
 

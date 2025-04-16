@@ -11,7 +11,7 @@ However, these are by default set to a long wait period. In situations where tra
 
 
 * [idle_transaction_timeout](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#idle_transaction_timeout) (all transactions)
-* [idle_write_transaction_timeout](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#idle_write_transaction_timeout) (write transactions - called `<code>idle_readwrite_transaction_timeout</code>` until [MariaDB 10.3.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md))
+* [idle_write_transaction_timeout](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#idle_write_transaction_timeout) (write transactions - called `idle_readwrite_transaction_timeout` until [MariaDB 10.3.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md))
 * [idle_readonly_transaction_timeout](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#idle_readonly_transaction_timeout) (read transactions)
 
 

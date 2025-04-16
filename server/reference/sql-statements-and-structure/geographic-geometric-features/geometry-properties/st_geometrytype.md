@@ -13,11 +13,11 @@ GeometryType(g)
 
 
 Returns as a string the name of the geometry type of which the
-geometry instance `<code>g</code>` is a member. The name corresponds to one of the
+geometry instance `g` is a member. The name corresponds to one of the
 instantiable Geometry subclasses.
 
 
-`<code>ST_GeometryType()</code>` and `<code>GeometryType()</code>` are synonyms.
+`ST_GeometryType()` and `GeometryType()` are synonyms.
 
 
 ## Examples

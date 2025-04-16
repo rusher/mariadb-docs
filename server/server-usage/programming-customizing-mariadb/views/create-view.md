@@ -298,7 +298,7 @@ clause, see
 ### IF NOT EXISTS
 
 
-When the IF NOT EXISTS clause is used, MariaDB will return a warning instead of an error if the specified view already exists. Cannot be used together with the `<code>OR REPLACE</code>` clause.
+When the IF NOT EXISTS clause is used, MariaDB will return a warning instead of an error if the specified view already exists. Cannot be used together with the `OR REPLACE` clause.
 
 
 ### Atomic DDL
@@ -306,7 +306,7 @@ When the IF NOT EXISTS clause is used, MariaDB will return a warning instead of 
 
 
 ##### MariaDB starting with [10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md)
-[MariaDB 10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) supports [Atomic DDL](../../../reference/sql-statements-and-structure/sql-statements/data-definition/atomic-ddl.md) and `<code>CREATE VIEW</code>` is atomic.
+[MariaDB 10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) supports [Atomic DDL](../../../reference/sql-statements-and-structure/sql-statements/data-definition/atomic-ddl.md) and `CREATE VIEW` is atomic.
 
 
 ## Examples

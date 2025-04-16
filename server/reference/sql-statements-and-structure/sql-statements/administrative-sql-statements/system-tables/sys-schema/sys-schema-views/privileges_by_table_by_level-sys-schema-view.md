@@ -12,7 +12,7 @@ This [Sys Schema](sys-schema-views-host_summary_by_statement_latency-and-xhost_s
 Shows granted privileges broken down by table on which they allow access and level on which they were granted.
 
 
-For example, if a user `<code>x</code>` has `<code>SELECT</code>` privilege granted `<code>ON db.*</code>`, this view will list all tables in the `<code>db</code>` schema with the user `<code>x</code>` having `<code>SELECT</code>` privilege on them. This is different from [INFORMATION_SCHEMA.TABLE_PRIVILEGES](../../information-schema/information-schema-tables/information-schema-table_privileges-table.md), which only lists privileges granted on the table level.
+For example, if a user `x` has `SELECT` privilege granted `ON db.*`, this view will list all tables in the `db` schema with the user `x` having `SELECT` privilege on them. This is different from [INFORMATION_SCHEMA.TABLE_PRIVILEGES](../../information-schema/information-schema-tables/information-schema-table_privileges-table.md), which only lists privileges granted on the table level.
 
 
 

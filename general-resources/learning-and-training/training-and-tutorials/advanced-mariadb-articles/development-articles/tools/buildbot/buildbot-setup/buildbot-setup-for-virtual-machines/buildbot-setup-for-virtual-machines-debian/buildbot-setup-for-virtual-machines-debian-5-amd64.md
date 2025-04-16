@@ -89,7 +89,7 @@ sudo debconf-set-selections /tmp/my.seed
 ```
 
 See the [General
-Principles](../buildbot-setup-for-virtual-machines-general-principles.md) article for how to make the '`<code>my.seed</code>`' file.
+Principles](../buildbot-setup-for-virtual-machines-general-principles.md) article for how to make the '`my.seed`' file.
 
 
 ## VM for upgrade testing

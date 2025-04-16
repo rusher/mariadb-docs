@@ -16,7 +16,7 @@ CASE WHEN [condition] THEN result [WHEN [condition] THEN result ...]
 ## Description
 
 
-The first version returns the result for the first `<code>value=compare_value</code>` comparison that is true. The second version returns the result for the first condition that is true. If there was no matching result value, the result after ELSE is returned, or NULL if there is no ELSE part.
+The first version returns the result for the first `value=compare_value` comparison that is true. The second version returns the result for the first condition that is true. If there was no matching result value, the result after ELSE is returned, or NULL if there is no ELSE part.
 
 
 There is also a [CASE statement](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/case-statement.md), which differs from the CASE operator described here.

@@ -11,7 +11,7 @@ PERIOD_ADD(P,N)
 ## Description
 
 
-Adds `<code>N</code>` months to period `<code>P</code>`. `<code>P</code>` is in the format YYMM or YYYYMM, and is not a date value. If `<code>P</code>` contains a two-digit year, values from 00 to 69 are converted to from 2000 to 2069, while values from 70 are converted to 1970 upwards.
+Adds `N` months to period `P`. `P` is in the format YYMM or YYYYMM, and is not a date value. If `P` contains a two-digit year, values from 00 to 69 are converted to from 2000 to 2069, while values from 70 are converted to 1970 upwards.
 
 
 Returns a value in the format YYYYMM.

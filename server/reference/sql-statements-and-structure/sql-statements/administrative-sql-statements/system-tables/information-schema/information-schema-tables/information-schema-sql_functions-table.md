@@ -3,13 +3,13 @@
 
 
 ##### MariaDB starting with [10.5.12](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10512-release-notes.md)
-The `<code>SQL_FUNCTIONS</code>` table was added in [MariaDB 10.2.40](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10240-release-notes.md), [MariaDB 10.3.31](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10331-release-notes.md), [MariaDB 10.4.21](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10421-release-notes.md), [MariaDB 10.5.12](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10512-release-notes.md) and [MariaDB 10.6.3](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1063-release-notes.md).
+The `SQL_FUNCTIONS` table was added in [MariaDB 10.2.40](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10240-release-notes.md), [MariaDB 10.3.31](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10331-release-notes.md), [MariaDB 10.4.21](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10421-release-notes.md), [MariaDB 10.5.12](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10512-release-notes.md) and [MariaDB 10.6.3](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1063-release-notes.md).
 
 
 ## Description
 
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>SQL_FUNCTIONS</code>` table contains the list of [MariaDB functions](../../../../built-in-functions/README.md).
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `SQL_FUNCTIONS` table contains the list of [MariaDB functions](../../../../built-in-functions/README.md).
 
 
 It contains a single column:

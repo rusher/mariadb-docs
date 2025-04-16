@@ -3,7 +3,7 @@
 
 
 ##### MariaDB starting with [11.1](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-111.md)
-`<code>JSON_SCHEMA_VALID</code>` was introduced in [MariaDB 11.1](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-111.md).
+`JSON_SCHEMA_VALID` was introduced in [MariaDB 11.1](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-111.md).
 
 
 ### Syntax
@@ -17,7 +17,7 @@ JSON_SCHEMA_VALID(schema, json);
 ## Description
 
 
-`<code>JSON_SCHEMA_VALID</code>` allows MariaDB to support JSON schema validation. If a given json is valid against a schema it returns true. When JSON does not validate against the schema, it does not return a message about which keyword it failed against and only returns false.
+`JSON_SCHEMA_VALID` allows MariaDB to support JSON schema validation. If a given json is valid against a schema it returns true. When JSON does not validate against the schema, it does not return a message about which keyword it failed against and only returns false.
 
 
 The function supports [JSON Schema Draft 2020](https://json-schema.org/draft/2020-12/release-notes.html) with a few exceptions:

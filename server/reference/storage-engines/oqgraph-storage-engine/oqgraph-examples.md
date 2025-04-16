@@ -37,7 +37,7 @@ data_table='oq_backing' origid='origid' destid='destid';
 ## Creating a Table with Weight
 
 
-For the examples on this page, we'll create a second OQGRAPH table and backing table, this time with `<code>weight</code>` as well.
+For the examples on this page, we'll create a second OQGRAPH table and backing table, this time with `weight` as well.
 
 
 ```
@@ -73,7 +73,7 @@ data_table='oq2_backing' origid='origid' destid='destid' weight='weight';
 ## Shortest Path
 
 
-A `<code>latch</code>` value of `<code>'dijkstras'</code>` and an `<code>origid</code>` and `<code>destid</code>` is used for finding the shortest path between two nodes, for example:
+A `latch` value of `'dijkstras'` and an `origid` and `destid` is used for finding the shortest path between two nodes, for example:
 
 
 ```
@@ -108,7 +108,7 @@ SELECT GROUP_CONCAT(linkid ORDER BY seq) AS path FROM oq_graph
 +-------+
 ```
 
-Using the table `<code>oq2_graph</code>`, the shortest path is different:
+Using the table `oq2_graph`, the shortest path is different:
 
 
 ```
@@ -121,7 +121,7 @@ SELECT GROUP_CONCAT(linkid ORDER BY seq) AS path FROM oq2_graph
 +-------------+
 ```
 
-The reason is the weight between nodes 2 and 6 is `<code>10</code>` in `<code>oq_graph2</code>`, so the shortest path taking into account `<code>weight</code>` is now across more nodes.
+The reason is the weight between nodes 2 and 6 is `10` in `oq_graph2`, so the shortest path taking into account `weight` is now across more nodes.
 
 
 ## Possible Destinations
@@ -142,7 +142,7 @@ Note that this returns all possible destinations along the path, not just immedi
 ## Leaf Nodes
 
 
-MariaDB supports the `<code>leaves</code>` latch value. A `<code>latch</code>` value of `<code>'leaves'</code>` and either `<code>origid</code>` or `<code>destid</code>` is used for finding leaf nodes at the beginning or end of a graph.
+MariaDB supports the `leaves` latch value. A `latch` value of `'leaves'` and either `origid` or `destid` is used for finding leaf nodes at the beginning or end of a graph.
 
 
 ```
@@ -150,7 +150,7 @@ INSERT INTO oq_backing(origid, destid)
  VALUES (1,2), (2,3), (3,5), (4,5), (5,6), (6,7), (6,8), (2,8);
 ```
 
-For example, to find all reachable nodes from `<code>origid</code>` that only have incoming edges:
+For example, to find all reachable nodes from `origid` that only have incoming edges:
 
 
 ```
@@ -163,7 +163,7 @@ SELECT * FROM oq_graph WHERE latch='leaves' AND origid=2;
 +--------+--------+--------+--------+------+--------+
 ```
 
-And to find all nodes from which a path can be found to `<code>destid</code>` that only have outgoing edges:
+And to find all nodes from which a path can be found to `destid` that only have outgoing edges:
 
 
 ```

@@ -24,68 +24,68 @@ type:
 ## Description
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">SHOW PROFILE</code>` and 
-`<code class="highlight fixed" style="white-space:pre-wrap">[SHOW PROFILES](show-profiles.md)</code>` statements display profiling
+The `SHOW PROFILE` and 
+`[SHOW PROFILES](show-profiles.md)` statements display profiling
 information that indicates resource usage for statements executed during the
 course of the current session.
 
 
-Profiling is controlled by the [profiling](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#profiling) session variable, which has a default value of `<code>0</code>` (`<code>OFF</code>`). Profiling is enabled by setting profiling to `<code>1</code>` or `<code>ON</code>`:
+Profiling is controlled by the [profiling](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#profiling) session variable, which has a default value of `0` (`OFF`). Profiling is enabled by setting profiling to `1` or `ON`:
 
 
 ```
 SET profiling = 1;
 ```
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW PROFILES</code>` displays a list of the most recent statements
+`SHOW PROFILES` displays a list of the most recent statements
 sent to the master. The size of the list is controlled by the
-`<code>[profiling_history_size](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#profiling_history_size)</code>` session variable, which has a default value of `<code>15</code>`. The maximum value is `<code>100</code>`. Setting the value to `<code>0</code>` has the practical effect of disabling profiling.
+`[profiling_history_size](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#profiling_history_size)` session variable, which has a default value of `15`. The maximum value is `100`. Setting the value to `0` has the practical effect of disabling profiling.
 
 
-All statements are profiled except `<code class="highlight fixed" style="white-space:pre-wrap">SHOW PROFILES</code>` and 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW PROFILE</code>`, so you will find neither of those statements
+All statements are profiled except `SHOW PROFILES` and 
+`SHOW PROFILE`, so you will find neither of those statements
 in the profile list. Malformed statements are profiled. For example, 
- `<code class="highlight fixed" style="white-space:pre-wrap">SHOW PROFILING</code>` is an illegal statement, and a syntax error
+ `SHOW PROFILING` is an illegal statement, and a syntax error
 occurs if you try to execute it, but it will show up in the profiling list.
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW PROFILE</code>` displays detailed information about a single
-statement. Without the `<code class="highlight fixed" style="white-space:pre-wrap">FOR QUERY <em>n</em></code>` clause, the output
+`SHOW PROFILE` displays detailed information about a single
+statement. Without the `FOR QUERY <em>n</em>` clause, the output
 pertains to the most recently executed statement. If 
- `<code class="highlight fixed" style="white-space:pre-wrap">FOR QUERY <em>n</em></code>` is included,
- `<code class="highlight fixed" style="white-space:pre-wrap">SHOW PROFILE</code>` displays information for statement *n*. The
+ `FOR QUERY <em>n</em>` is included,
+ `SHOW PROFILE` displays information for statement *n*. The
 values of *n* correspond to
-the `<code class="highlight fixed" style="white-space:pre-wrap">Query_ID</code>` values displayed by `<code class="highlight fixed" style="white-space:pre-wrap">SHOW PROFILES</code>`.
+the `Query_ID` values displayed by `SHOW PROFILES`.
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">LIMIT <em>row_count</em></code>` clause may be given to limit the
-output to *row_count* rows. If `<code class="highlight fixed" style="white-space:pre-wrap">LIMIT</code>` is given, 
- `<code class="highlight fixed" style="white-space:pre-wrap">OFFSET <em>offset</em></code>` may be added to begin the output offset
+The `LIMIT <em>row_count</em>` clause may be given to limit the
+output to *row_count* rows. If `LIMIT` is given, 
+ `OFFSET <em>offset</em>` may be added to begin the output offset
 rows into the full set of rows.
 
 
-By default, `<code class="highlight fixed" style="white-space:pre-wrap">SHOW PROFILE</code>` displays Status and Duration
+By default, `SHOW PROFILE` displays Status and Duration
 columns. The Status values are like the State values displayed by [SHOW PROCESSLIST](show-processlist.md) (see [General Thread States](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-states/general-thread-states.md)), although there might be some minor differences in interpretation for the two statements for some status values.
 
 
 Optional type values may be specified to display specific additional types of information:
 
 
-* `<code class="highlight fixed" style="white-space:pre-wrap"><strong>ALL</strong></code>` displays all information
-* `<code class="highlight fixed" style="white-space:pre-wrap"><strong>BLOCK IO</strong></code>` displays counts for block input and output operations
-* `<code class="highlight fixed" style="white-space:pre-wrap"><strong>CONTEXT SWITCHES</strong></code>` displays counts for voluntary and involuntary context switches
-* `<code class="highlight fixed" style="white-space:pre-wrap"><strong>CPU</strong></code>` displays user and system CPU usage times
-* `<code class="highlight fixed" style="white-space:pre-wrap"><strong>IPC</strong></code>` displays counts for messages sent and received
-* `<code class="highlight fixed" style="white-space:pre-wrap"><strong>MEMORY</strong></code>` is not currently implemented
-* `<code class="highlight fixed" style="white-space:pre-wrap"><strong>PAGE FAULTS</strong></code>` displays counts for major and minor page faults
-* `<code class="highlight fixed" style="white-space:pre-wrap"><strong>SOURCE</strong></code>` displays the names of functions from the source code, together with the name and line number of the file in which the function occurs
-* `<code class="highlight fixed" style="white-space:pre-wrap"><strong>SWAPS</strong></code>` displays swap counts
+* `<strong>ALL</strong>` displays all information
+* `<strong>BLOCK IO</strong>` displays counts for block input and output operations
+* `<strong>CONTEXT SWITCHES</strong>` displays counts for voluntary and involuntary context switches
+* `<strong>CPU</strong>` displays user and system CPU usage times
+* `<strong>IPC</strong>` displays counts for messages sent and received
+* `<strong>MEMORY</strong>` is not currently implemented
+* `<strong>PAGE FAULTS</strong>` displays counts for major and minor page faults
+* `<strong>SOURCE</strong>` displays the names of functions from the source code, together with the name and line number of the file in which the function occurs
+* `<strong>SWAPS</strong>` displays swap counts
 
 
 Profiling is enabled per session. When a session ends, its profiling information is lost.
 
 
-The `<code>[information_schema.PROFILING](../system-tables/information-schema/information-schema-tables/information-schema-profiling-table.md) table contains similar information.</code>`
+The `[information_schema.PROFILING](../system-tables/information-schema/information-schema-tables/information-schema-profiling-table.md) table contains similar information.`
 
 
 ## Examples

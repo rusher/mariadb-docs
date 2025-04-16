@@ -4,13 +4,13 @@
 The relational database model uses certain terms to describe its components:
 
 
-* Data are the values kept in the database. On their own, the data means very little. `<code>CA 684-213</code>` is an example of data in a DMV (Division of Motor Vehicles) database.
-* Information is processed data. For example, `<code>CA 684-213</code>` is the car registration number of a car belonging to Lyndon Manson, in a DMV database.
+* Data are the values kept in the database. On their own, the data means very little. `CA 684-213` is an example of data in a DMV (Division of Motor Vehicles) database.
+* Information is processed data. For example, `CA 684-213` is the car registration number of a car belonging to Lyndon Manson, in a DMV database.
 * A database is a collection of tables, also called entities.
 * Each table is made up of records (the horizontal rows in the table, also called tuples). Each record should be unique, and can be stored in any order in the table.
 * Each record is made up of fields (which are the vertical columns of the table, also called attributes). Basically, a record is one fact (for example, one customer or one sale).
 * These fields can be of various types. MariaDB has many types (see [Data Types](../../../../../server/reference/data-types/data-types-overview/data-types-subcategory/data-types-dec.md) for a list), but generally types fall into three kinds: character, numeric, and date. For example, a customer name is a character field, a customer's birthday is a date field, and a customer's number of children is a numeric field.
-* The range of allowed values for a field is called the domain (also called a field specification). For example, a credit card field may be limited to only the values `<code>Mastercard</code>`, `<code>Visa</code>` and `<code>Amex</code>`.
+* The range of allowed values for a field is called the domain (also called a field specification). For example, a credit card field may be limited to only the values `Mastercard`, `Visa` and `Amex`.
 * A field is said to contain a null value when it contains nothing at all. Null fields can create complexities in calculations and have consequences for data accuracy. For this reason, many fields are specifically set not to contain null values.
 * A key accesses specific records in a table.
 * An index is a mechanism to improve the performance of a database. Indexes are often confused with keys. Indexes are, strictly speaking, part of the physical structure, and keys are part of the logical structure. You'll often see the terms used interchangeably, however, including throughout this Knowledge Base.

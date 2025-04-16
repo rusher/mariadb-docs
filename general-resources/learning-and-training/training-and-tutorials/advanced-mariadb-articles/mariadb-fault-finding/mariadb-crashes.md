@@ -21,7 +21,7 @@ For this its essential that a full backtrace of [how-to-produce-a-full-stack-tra
 ## Assertions
 
 
-These look like `<code>[ERROR] mariadbd got signal 6</code>`. There might be associated text in the error log like:
+These look like `[ERROR] mariadbd got signal 6`. There might be associated text in the error log like:
 
 
 ```
@@ -30,7 +30,7 @@ InnoDB: Failing assertion: cb->m_err == DB_SUCCESS
 ```
 
 
-On OSX it might show up as `<code>Exception Type: EXC_CRASH (SIGABRT)</code>`.
+On OSX it might show up as `Exception Type: EXC_CRASH (SIGABRT)`.
 
 
 There maybe a stack trace, and perhaps a user SQL query (depending on the location). These are usually program errors that MariaDB got into a state where the developers did not expect to happen. Occasionally like the above, there are operating system factors that the developers haven't written handling routines for. In all cases this should be reported as a bug.
@@ -42,13 +42,13 @@ There maybe a stack trace, and perhaps a user SQL query (depending on the locati
 A SEGV, or Segment Violation, is an operating system concept in this case MariaDB accessing a location in memory it doesn't own. It will occur in the logs like:
 
 
-`<code>[ERROR] mysqld got signal 11 ;</code>`
+`[ERROR] mysqld got signal 11 ;`
 
 
 A full stack trace from the [how-to-produce-a-full-stack-trace-for-mysqld/#analyzing-a-core-file-with-gdb-on-linux|core file generated] is needed to resolve this form of error.
 
 
-If there is a SQL query in the log file, include this in the bug report, along with `<code>EXPLAIN query</code>` and `<code>SHOW CREATE TABLE tblname</code>` for tables involved to enable a test case for this crash.
+If there is a SQL query in the log file, include this in the bug report, along with `EXPLAIN query` and `SHOW CREATE TABLE tblname` for tables involved to enable a test case for this crash.
 
 
 ## SIGBUS
@@ -57,7 +57,7 @@ If there is a SQL query in the log file, include this in the bug report, along w
 This occurs when the alignment of memory doesn't correspond to the code accessing it.
 
 
-`<code>[ERROR] mysqld got signal 7</code>`
+`[ERROR] mysqld got signal 7`
 
 
 Threat like SEGV.
@@ -78,16 +78,16 @@ MariaDB does use optimizations in a number of critical paths under feature detec
 ## SIGKILL
 
 
-This is an indicator that a user or OS killed of MariaDB. User invoked `<code>SIGKILL</code>` termination can be indirect using `<code>podman kill {container}</code>`.
+This is an indicator that a user or OS killed of MariaDB. User invoked `SIGKILL` termination can be indirect using `podman kill {container}`.
 
 
 The OS will kill MariaDB in an out of memory scenario in an attempt to regain memory. As MariaDB is a big memory user its usually fairly high on the list of processes killed by the OS.
 
 
-If MariaDB is shutting down, it might be possible under some service manager that if it takes too long, it will get a SIGKILL. The default MariaDB systemd service has `<code>SendSIGKILL=No</code>`.
+If MariaDB is shutting down, it might be possible under some service manager that if it takes too long, it will get a SIGKILL. The default MariaDB systemd service has `SendSIGKILL=No`.
 
 
-Galera SST scripts also have a `<code>kill -9</code>` in them.
+Galera SST scripts also have a `kill -9` in them.
 
 
 Generally the SIGKILL won't be a bug, however the slow time that resulted in a service manager taking this drastic step might be.

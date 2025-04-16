@@ -8,7 +8,7 @@ A [subquery](subqueries-and-all.md) can quite often, but not in all cases, be re
 ## Rewriting Subqueries as JOINS
 
 
-A subquery using `<code>IN</code>` can be rewritten with the `<code>DISTINCT</code>` keyword, for example:
+A subquery using `IN` can be rewritten with the `DISTINCT` keyword, for example:
 
 
 ```
@@ -22,7 +22,7 @@ can be rewritten as:
 SELECT DISTINCT table1.* FROM table1, table2 WHERE table1.col1=table2.col1;
 ```
 
-`<code>NOT IN</code>` or `<code>NOT EXISTS</code>` queries can also be rewritten. For example, these two queries returns the same result:
+`NOT IN` or `NOT EXISTS` queries can also be rewritten. For example, these two queries returns the same result:
 
 
 ```
@@ -46,13 +46,13 @@ Subqueries that can be rewritten as a LEFT JOIN are sometimes more efficient.
 There are some scenarios, though, which call for subqueries rather than joins:
 
 
-* When you want duplicates, but not false duplicates. Suppose `<code>Table_1</code>`
- has three rows — {`<code>1</code>`,`<code>1</code>`,`<code>2</code>`}
- — and `<code>Table_2</code>` has two rows
- — {`<code>1</code>`,`<code>2</code>`,`<code>2</code>`}. If you need to list the rows
- in `<code>Table_1</code>` which are also in `<code>Table_2</code>`, only this
- subquery-based `<code>SELECT</code>` statement will give the right answer
- (`<code>1</code>`,`<code>1</code>`,`<code>2</code>`):
+* When you want duplicates, but not false duplicates. Suppose `Table_1`
+ has three rows — {`1`,`1`,`2`}
+ — and `Table_2` has two rows
+ — {`1`,`2`,`2`}. If you need to list the rows
+ in `Table_1` which are also in `Table_2`, only this
+ subquery-based `SELECT` statement will give the right answer
+ (`1`,`1`,`2`):
 
 
 ```
@@ -72,7 +72,7 @@ FROM   Table_1,Table_2
 WHERE  Table_1.column_1 = Table_2.column_1;
 ```
 
-* because the result will be {`<code>1</code>`,`<code>1</code>`,`<code>2</code>`,`<code>2</code>`}
+* because the result will be {`1`,`1`,`2`,`2`}
  — and the duplication of 2 is an error. This SQL
  statement won't work either:
 
@@ -83,7 +83,7 @@ FROM   Table_1,Table_2
 WHERE  Table_1.column_1 = Table_2.column_1;
 ```
 
-* because the result will be {`<code>1</code>`,`<code>2</code>`} — and
+* because the result will be {`1`,`2`} — and
  the removal of the duplicated 1 is an error too.
 
 
@@ -143,6 +143,6 @@ WHERE  Bookcolumn_1.page_count >
  editions of Das Kapital (with different page counts), then the self-join
  example will return the books which are longer than the shortest edition
  of Das Kapital. That might be the wrong answer, since the original
- question didn't ask for "... longer than `<code>ANY</code>` book named Das Kapital"
+ question didn't ask for "... longer than `ANY` book named Das Kapital"
  (it seems to contain a false assumption that there's only one edition).
 

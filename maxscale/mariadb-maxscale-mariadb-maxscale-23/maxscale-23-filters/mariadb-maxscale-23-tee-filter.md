@@ -14,7 +14,7 @@ the client and send the copies to another service within MariaDB MaxScale.
 
 **Please Note:** Starting with MaxScale 2.2.0, any client that connects to a
  service which uses a tee filter will require a grant for the loopback address,
- i.e. `<code>127.0.0.1</code>`.
+ i.e. `127.0.0.1`.
 
 
 ## Configuration
@@ -50,7 +50,7 @@ The tee filter requires a mandatory parameter to define the service to replicate
 statements to and accepts a number of optional parameters.
 
 
-### `<code>match</code>`, `<code>exclude</code>` and `<code>options</code>`
+### `match`, `exclude` and `options`
 
 
 These [regular expression settings](../../mariadb-maxscale-21-06/README.md)
@@ -66,7 +66,7 @@ options=case,extended
 
 
 
-### `<code>source</code>`
+### `source`
 
 
 The optional source parameter defines an address that is used to match against
@@ -81,7 +81,7 @@ source=127.0.0.1
 
 
 
-### `<code>user</code>`
+### `user`
 
 
 The optional user parameter defines a user name that is used to match against
@@ -106,14 +106,14 @@ details about module commands.
 The tee filter supports the following module commands.
 
 
-### `<code>tee disable [FILTER]</code>`
+### `tee disable [FILTER]`
 
 
 This commmad disables a tee filter instance. A disabled tee filter will not send
 any queries to the target service.
 
 
-### `<code>tee enable [FILTER]</code>`
+### `tee enable [FILTER]`
 
 
 Enable a disabled tee filter. This resumes the sending of queries to the target

@@ -11,10 +11,10 @@ ST_WITHIN(g1,g2)
 ## Description
 
 
-Returns `<code>1</code>` or `<code>0</code>` to indicate whether geometry *`<code>g1</code>`* is spatially within geometry *`<code>g2</code>`*.
+Returns `1` or `0` to indicate whether geometry *`g1`* is spatially within geometry *`g2`*.
 
 
-This tests the opposite relationship as `<code>[ST_CONTAINS()](st-contains.md)</code>`.
+This tests the opposite relationship as `[ST_CONTAINS()](st-contains.md)`.
 
 
 ST_WITHIN() uses object shapes, while [WITHIN()](within.md), based on the original MySQL implementation, uses object bounding rectangles.

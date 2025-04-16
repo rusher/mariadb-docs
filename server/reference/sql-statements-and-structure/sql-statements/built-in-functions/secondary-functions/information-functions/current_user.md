@@ -17,10 +17,10 @@ determines your access privileges. The return value is a string in the
 utf8 [character set](../../../../../data-types/string-data-types/character-sets/README.md).
 
 
-The value of `<code>CURRENT_USER()</code>` can differ from the value of [USER()](../../../../../plugins/other-plugins/user-variables-plugin.md). [CURRENT_ROLE()](current_role.md) returns the current active role.
+The value of `CURRENT_USER()` can differ from the value of [USER()](../../../../../plugins/other-plugins/user-variables-plugin.md). [CURRENT_ROLE()](current_role.md) returns the current active role.
 
 
-Statements using the `<code>CURRENT_USER</code>` function are not [safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
+Statements using the `CURRENT_USER` function are not [safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 
 ## Examples
@@ -37,7 +37,7 @@ select user(),current_user();
 +---------------------+----------------+
 ```
 
-When calling `<code>CURRENT_USER()</code>` in a stored procedure, it returns the owner of the stored procedure, as defined with `<code>DEFINER</code>`.
+When calling `CURRENT_USER()` in a stored procedure, it returns the owner of the stored procedure, as defined with `DEFINER`.
 
 
 ## See Also

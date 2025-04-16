@@ -51,14 +51,14 @@ From [MariaDB 10.5.24](../../../../../../release-notes/mariadb-community-server/
 ## Notes
 
 
-* The idea is that the `<code>BACKUP LOCK</code>` should be held for as short a time as possible by the backup tool. The time to take an uncontested lock is very short! One can easily do 50,000 locks/unlocks per second on low end hardware.
-* One should use different connections for [BACKUP STAGE](backup-stage.md) commands and `<code>BACKUP LOCK</code>`.
+* The idea is that the `BACKUP LOCK` should be held for as short a time as possible by the backup tool. The time to take an uncontested lock is very short! One can easily do 50,000 locks/unlocks per second on low end hardware.
+* One should use different connections for [BACKUP STAGE](backup-stage.md) commands and `BACKUP LOCK`.
 
 
 ## Implementation
 
 
-* Internally, BACKUP LOCK is implemented by taking an `<code>MDLSHARED_HIGH_PRIO</code>` MDL lock on the table object, which protects the table from any DDL operations.
+* Internally, BACKUP LOCK is implemented by taking an `MDLSHARED_HIGH_PRIO` MDL lock on the table object, which protects the table from any DDL operations.
 
 
 ## See Also

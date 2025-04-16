@@ -25,15 +25,15 @@ create the configuration file for MariaDB MaxScale.
 ## Creating Your MariaDB MaxScale Configuration
 
 
-MariaDB MaxScale reads its configuration from `<code>/etc/maxscale.cnf</code>`. A template
+MariaDB MaxScale reads its configuration from `/etc/maxscale.cnf`. A template
 configuration is provided with the MaxScale installation.
 
 
-A global `<code>[maxscale]</code>` section is included in every MariaDB MaxScale
+A global `[maxscale]` section is included in every MariaDB MaxScale
 configuration file; this is used to set the values of various global parameters,
 perhaps the most important of these is the number of threads that MariaDB
 MaxScale will use to handle client requests. To automatically configure the
-thread count, use the `<code>threads=auto</code>` parameter.
+thread count, use the `threads=auto` parameter.
 
 
 
@@ -71,7 +71,7 @@ tutorial instead.
 After configuring the servers and the monitor, we create a Read/Write Splitter
 service configuration. Create the following section in your configuration
 file. The section name is the names of the service and should be meaningful to
-the administrator. For this tutorial, we use the `<code>Splitter-Service</code>` name for our
+the administrator. For this tutorial, we use the `Splitter-Service` name for our
 service.
 
 
@@ -87,7 +87,7 @@ password=maxscale_pw
 
 
 
-The router module we use for this service is `<code>readwritesplit</code>`.
+The router module we use for this service is `readwritesplit`.
 
 
 The services must be provided with the list of servers where queries
@@ -96,7 +96,7 @@ in the configuration file (to be defined later) and not the physical hostnames
 or addresses of the servers.
 
 
-The final part of the service configuration is the `<code>user</code>` and `<code>password</code>`
+The final part of the service configuration is the `user` and `password`
 parameters that define the credentials that the service will use to populate the
 user authentication data. These users were created at the start of the
 [MaxScale Tutorial](mariadb-maxscale-22-setting-up-mariadb-maxscale.md).
@@ -125,19 +125,19 @@ port=3306
 
 
 
-The `<code>service</code>` parameter tells to which service the listener connects to. For the
-`<code>Splitter-Listener</code>` we set it to `<code>Splitter-Service</code>`.
+The `service` parameter tells to which service the listener connects to. For the
+`Splitter-Listener` we set it to `Splitter-Service`.
 
 
 A listener must also define the protocol module it will use for the incoming
-network protocol (must be the `<code>MariaDBClient</code>` protocol for all database
+network protocol (must be the `MariaDBClient` protocol for all database
 listeners) as well as the the network port to listen on.
 
 
-Additionally, the `<code>address</code>` parameter may be given if the listener is required
+Additionally, the `address` parameter may be given if the listener is required
 to bind to a particular network interface when the host machine has multiple
 network interfaces. The default behavior is to listen on all network interfaces
-(the IPv6 address `<code>::</code>`).
+(the IPv6 address `::`).
 
 
 ## Configuring the Administrative Interface
@@ -172,8 +172,8 @@ sudo service maxscale start
 
 
 If MaxScale fails to start, check the error log in
-`<code>/var/log/maxscale/maxscale.log</code>` to see if any errors are detected in the
-configuration file. The `<code>maxadmin</code>` command may be used to confirm that MariaDB
+`/var/log/maxscale/maxscale.log` to see if any errors are detected in the
+configuration file. The `maxadmin` command may be used to confirm that MariaDB
 MaxScale is running and the services, listeners and servers have been correctly
 configured.
 
@@ -220,5 +220,5 @@ them to the cluster. More options may be found in the
 and in the [readwritesplit module documentation](../maxscale-22-routers/mariadb-maxscale-22-readwritesplit.md).
 
 
-More detail on the use of `<code>maxadmin</code>` can be found in the
+More detail on the use of `maxadmin` can be found in the
 [MaxAdmin](../maxscale-22-reference/mariadb-maxscale-22-maxadmin-admin-interface.md) document.

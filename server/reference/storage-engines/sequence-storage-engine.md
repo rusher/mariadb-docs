@@ -8,7 +8,7 @@ This article is about the Sequence storage engine. For details about sequence ob
 A **Sequence** engine allows the creation of ascending or descending sequences of numbers (positive integers) with a given starting value, ending value and increment.
 
 
-It creates completely virtual, ephemeral tables automatically when you need them. There is no way to create a Sequence table explicitly. Nor are they ever written to disk or create `<code>.frm</code>` files. They are read-only, [transactional](../../../connectors/mariadb-connector-cpp/transactions-with-mariadb-connector-cpp.md), and [support XA](../sql-statements-and-structure/sql-statements/transactions/xa-transactions.md).
+It creates completely virtual, ephemeral tables automatically when you need them. There is no way to create a Sequence table explicitly. Nor are they ever written to disk or create `.frm` files. They are read-only, [transactional](../../../connectors/mariadb-connector-cpp/transactions-with-mariadb-connector-cpp.md), and [support XA](../sql-statements-and-structure/sql-statements/transactions/xa-transactions.md).
 
 
 ## Installing
@@ -64,10 +64,10 @@ SELECT * FROM seq_1_to_5;
 +-----+
 ```
 
-To use a sequence in a statement, you select from the table named by a pattern **seq_**`<code>FROM</code>`**_to_**`<code>TO</code>` or **seq_**`<code>FROM</code>`**_to_**`<code>TO</code>`**_step_**`<code>STEP</code>`.
+To use a sequence in a statement, you select from the table named by a pattern **seq_**`FROM`**_to_**`TO` or **seq_**`FROM`**_to_**`TO`**_step_**`STEP`.
 
 
-In the case of an odd step, the sequence will commence with the `<code>FROM</code>`, and end at the final result before `<code>TO</code>`.
+In the case of an odd step, the sequence will commence with the `FROM`, and end at the final result before `TO`.
 
 
 ```
@@ -83,7 +83,7 @@ SELECT * FROM seq_1_to_15_step_3;
 +-----+
 ```
 
-A sequence can go backwards too. In this case the final value will always be the `<code>TO</code>` value, so that a descending sequence has the same values as an ascending sequence:
+A sequence can go backwards too. In this case the final value will always be the `TO` value, so that a descending sequence has the same values as an ascending sequence:
 
 
 ```
@@ -216,7 +216,7 @@ SELECT CAST(seq AS INT) - 5 x FROM seq_5_to_1;
 +----+
 ```
 
-[CAST](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/cast.md) is required to avoid a `<code>BIGINT UNSIGNED value is out of range</code>` error.
+[CAST](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/cast.md) is required to avoid a `BIGINT UNSIGNED value is out of range` error.
 
 
 Sequence tables, while virtual, are still tables, so they must be in a database. This means that a default database must be selected (for example, via the [USE](../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md) command) to be able to query a Sequence table. The [information_schema](../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database cannot be used as the default for a Sequence table.

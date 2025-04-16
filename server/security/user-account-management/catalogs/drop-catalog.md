@@ -23,7 +23,7 @@ Deletes a [catalog](catalogs-overview.md).
 Limitations:
 
 
-* `<code>DROP CATALOG</code>` can only be performed by a super user in the 'def' catalog.
+* `DROP CATALOG` can only be performed by a super user in the 'def' catalog.
 * The current catalog cannot be dropped.
 * The 'def' catalog cannot be dropped.
 

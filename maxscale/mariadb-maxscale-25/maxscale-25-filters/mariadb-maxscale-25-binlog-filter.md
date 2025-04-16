@@ -24,7 +24,7 @@ This filter was introduced in MariaDB MaxScale 2.3.0.
 ## Overview
 
 
-The `<code>binlogfilter</code>` can be combined with a `<code>binlogrouter</code>` service to selectively
+The `binlogfilter` can be combined with a `binlogrouter` service to selectively
 replicate the binary log events to slave servers.
 
 
@@ -49,7 +49,7 @@ that there are no ambiguities in the event filtering.
 ## Configuration
 
 
-### `<code>match</code>` and `<code>exclude</code>`
+### `match` and `exclude`
 
 
 Both the *match* and *exclude* parameters are optional and work mostly as other
@@ -63,7 +63,7 @@ more information.
 
 The two parameters are matched against the database and table name concatenated
 with a period. For example, the string the patterns are matched against for the
-database `<code>test</code>` and table `<code>t1</code>` is `<code>test.t1</code>`.
+database `test` and table `t1` is `test.t1`.
 
 
 For statement based replication, the pattern is matched against all the tables
@@ -72,18 +72,18 @@ is replicated. If any of the tables matches the *exclude* pattern, the event is
 not replicated.
 
 
-### `<code>rewrite_src</code>` and `<code>rewrite_dest</code>`
+### `rewrite_src` and `rewrite_dest`
 
 
 These two parameters control the statement rewriting of the binlogfilter. The
-`<code>rewrite_src</code>` parameter is a PCRE2 regular expression that is matched against
+`rewrite_src` parameter is a PCRE2 regular expression that is matched against
 the default database and the SQL of statement based replication events (query
-events). `<code>rewrite_dest</code>` is the replacement string which supports the normal
-PCRE2 backreferences (e.g the first capture group is `<code>$1</code>`, the second is `<code>$2</code>`,
+events). `rewrite_dest` is the replacement string which supports the normal
+PCRE2 backreferences (e.g the first capture group is `$1`, the second is `$2`,
 etc.).
 
 
-Both `<code>rewrite_src</code>` and `<code>rewrite_dest</code>` must be defined to enable statement rewriting.
+Both `rewrite_src` and `rewrite_dest` must be defined to enable statement rewriting.
 
 
 When statement rewriting is enabled
@@ -102,8 +102,8 @@ the inserted data and is never used as a constant value.
 ## Example Configuration
 
 
-With the following configuration, only events belonging to database `<code>customers</code>`
-are replicated. In addition to this, events for the table `<code>orders</code>` are excluded
+With the following configuration, only events belonging to database `customers`
+are replicated. In addition to this, events for the table `orders` are excluded
 and thus are not replicated.
 
 

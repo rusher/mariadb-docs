@@ -27,21 +27,21 @@ The suggested upgrade procedure is:
 1. Uninstall the old version of MariaDB.
 
   * On Debian, Ubuntu, and other similar Linux distributions, execute the following: 
-`<code class="fixed" style="white-space:pre-wrap">sudo apt-get remove mariadb-server</code>`
+`sudo apt-get remove mariadb-server`
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, execute the following: 
-`<code class="fixed" style="white-space:pre-wrap">sudo yum remove MariaDB-server</code>`
+`sudo yum remove MariaDB-server`
   * On SLES, OpenSUSE, and other similar Linux distributions, execute the following: 
-`<code class="fixed" style="white-space:pre-wrap">sudo zypper remove MariaDB-server</code>`
+`sudo zypper remove MariaDB-server`
 1. Install the new version of MariaDB.
 
   * On Debian, Ubuntu, and other similar Linux distributions, see [Installing MariaDB Packages with APT](../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-packages-with-apt) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](../binary-packages/rpm/yum.md#installing-mariadb-packages-with-yum) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](../binary-packages/rpm/installing-mariadb-with-zypper.md#installing-mariadb-packages-with-zypp) for more information.
-1. Make any desired changes to configuration options in [option files](../configuring-mariadb-with-option-files.md), such as `<code>my.cnf</code>`. This includes removing any options that are no longer supported.
+1. Make any desired changes to configuration options in [option files](../configuring-mariadb-with-option-files.md), such as `my.cnf`. This includes removing any options that are no longer supported.
 1. [Start MariaDB](../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md).
 1. Run [mysql_upgrade](../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md).
 
-  * `<code>mysql_upgrade</code>` does two things:
+  * `mysql_upgrade` does two things:
 
     1. Ensures that the system tables in the [mysql](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database are fully compatible with the new version.
     1. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
@@ -59,10 +59,10 @@ On most servers upgrading from 10.4 should be painless. However, there are some 
 All binaries previously beginning with mysql now begin with mariadb, with symlinks for the corresponding mysql command.
 
 
-Usually that shouldn't cause any changed behavior, but when starting the MariaDB server via [systemd](../starting-and-stopping-mariadb/systemd.md), or via the [mysqld_safe](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) script symlink, the server process will now always be started as `<code>mariadbd</code>`, not `<code>mysqld</code>`.
+Usually that shouldn't cause any changed behavior, but when starting the MariaDB server via [systemd](../starting-and-stopping-mariadb/systemd.md), or via the [mysqld_safe](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) script symlink, the server process will now always be started as `mariadbd`, not `mysqld`.
 
 
-So anything looking for the `<code>mysqld</code>` name in the system process list, like e.g. monitoring solutions, now needs for `<code>mariadbd</code>` instead when the server / service is not started directly, but via `<code>mysqld_safe</code>` or as a system service.
+So anything looking for the `mysqld` name in the system process list, like e.g. monitoring solutions, now needs for `mariadbd` instead when the server / service is not started directly, but via `mysqld_safe` or as a system service.
 
 
 #### GRANT PRIVILEGE changes
@@ -71,10 +71,10 @@ So anything looking for the `<code>mysqld</code>` name in the system process lis
 A number of statements changed the privileges that they require. The old privileges were historically inappropriately chosen in the upstream. 10.5.2 fixes this problem. Note, these changes are incompatible to previous versions. A number of GRANT commands might be needed after upgrade.
 
 
-* `<code>SHOW BINLOG EVENTS</code>` now requires the `<code>BINLOG MONITOR</code>` privilege (requred `<code>REPLICATION SLAVE</code>` prior to 10.5.2).
-* `<code>SHOW SLAVE HOSTS</code>` now requires the `<code>REPLICATION MASTER ADMIN</code>` privilege (required `<code>REPLICATION SLAVE</code>` prior to 10.5.2).
-* `<code>SHOW SLAVE STATUS</code>` now requires the `<code>REPLICATION SLAVE ADMIN</code>` or the `<code>SUPER</code>` privilege (required `<code>REPLICATION CLIENT</code>` or `<code>SUPER</code>` prior to 10.5.2).
-* `<code>SHOW RELAYLOG EVENTS</code>` now requires the `<code>REPLICATION SLAVE ADMIN</code>` privilege (required `<code>REPLICATION SLAVE</code>` prior to 10.5.2).
+* `SHOW BINLOG EVENTS` now requires the `BINLOG MONITOR` privilege (requred `REPLICATION SLAVE` prior to 10.5.2).
+* `SHOW SLAVE HOSTS` now requires the `REPLICATION MASTER ADMIN` privilege (required `REPLICATION SLAVE` prior to 10.5.2).
+* `SHOW SLAVE STATUS` now requires the `REPLICATION SLAVE ADMIN` or the `SUPER` privilege (required `REPLICATION CLIENT` or `SUPER` prior to 10.5.2).
+* `SHOW RELAYLOG EVENTS` now requires the `REPLICATION SLAVE ADMIN` privilege (required `REPLICATION SLAVE` prior to 10.5.2).
 
 
 #### Options That Have Changed Default Values

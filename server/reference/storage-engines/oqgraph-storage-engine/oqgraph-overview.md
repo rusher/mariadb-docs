@@ -84,7 +84,7 @@ data_table='oq_backing' origid='origid' destid='destid';
 ERROR 1005 (HY000): Can't create table `test`.`oq_old` (errno: 140 "Wrong create options")
 ```
 
-The old, deprecated format can still be used prior to [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md) if the value of the [oqgraph_allow_create_integer_latch](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md#oqgraph_allow_create_integer_latch) system variable is changed from its default, `<code>FALSE</code>`, to `<code>TRUE</code>`.
+The old, deprecated format can still be used prior to [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md) if the value of the [oqgraph_allow_create_integer_latch](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md#oqgraph_allow_create_integer_latch) system variable is changed from its default, `FALSE`, to `TRUE`.
 
 
 ```
@@ -115,7 +115,7 @@ SHOW WARNINGS;
 Data is only inserted into the backing table, not the OQGRAPH table.
 
 
-Now, having created the `<code>oq_graph</code>` table linked to a backing table, it is now possible to query the `<code>oq_graph</code>` table directly. The `<code>weight</code>` field, since it was not specified in this example, defaults to `<code>1</code>`.
+Now, having created the `oq_graph` table linked to a backing table, it is now possible to query the `oq_graph` table directly. The `weight` field, since it was not specified in this example, defaults to `1`.
 
 
 ```
@@ -138,7 +138,7 @@ The data here represents one-directional starting and ending nodes. So node 2 ha
 ## Manipulating Weight
 
 
-There are three fields which can be manipulated: `<code>origid</code>`, `<code>destid</code>` (the example above uses these two), as well as `<code>weight</code>`. To create a backing table with a `<code>weight</code>` field as well, the following syntax can be used:
+There are three fields which can be manipulated: `origid`, `destid` (the example above uses these two), as well as `weight`. To create a backing table with a `weight` field as well, the following syntax can be used:
 
 
 ```

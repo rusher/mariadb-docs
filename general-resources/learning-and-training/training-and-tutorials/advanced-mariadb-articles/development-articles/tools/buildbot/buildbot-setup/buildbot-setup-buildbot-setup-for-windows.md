@@ -8,11 +8,11 @@ This is the recipe for setting up a MariaDB Buildbot slave on Windows:
 1. Install [Python](https://www.python.org/download/), 32 bit. Twisted does not work on 64 bit and builtbot hasn't been tested properly with Python version 3.
 Note: As of June 2016, there is no fresh Twistd for 32-bit Python, so a 64-bit version has to be installed. Installed 2.7.11 64-bit, it seems to work.
 1. Install [pywin32](https://sourceforge.net/projects/pywin32/files). Make sure the version matches your Python version perfectly, and get the .exe file, not the zip file.
-Note: As of June 2016, used `<code>pywin32-220.win-amd64-py2.7.exe</code>`, it seems to work.
+Note: As of June 2016, used `pywin32-220.win-amd64-py2.7.exe`, it seems to work.
 1. Install [Twisted](https://twistedmatrix.com/trac/wiki/Downloads)
-Note: As of June 2016, used `<code>Twisted 16.2.0 for Python 2.7 64 bits</code>`
+Note: As of June 2016, used `Twisted 16.2.0 for Python 2.7 64 bits`
 1. Install [buildbot](https://buildbot.net): Get the zip file and unpack it. In an administrator shell, cd to the buildbot dir and run "python setup.py install". After that, the unpacked buildbot directory is no longer needed.
-Note: As of June 2016, used `<code>buildbot 0.8.12</code>`.
+Note: As of June 2016, used `buildbot 0.8.12`.
 
 
 When this has been done, you run these commands:
@@ -57,16 +57,16 @@ When buildbot is running in user session, and application that is started by bui
 ### Test hangs after trying to call cdb to print a backtrace.
 
 
-MTR attempts to call `<code>cdb</code>` via the Perl backticks operator, when mysqld.exe crashes. On the first run, cdb is downloading public Windows symbols from msdl.microsoft.com/download/symbols. The symbols are cached in C:\cdb_symbols, and following runs will be faster, however crashdump analysis on very first crash will typically take some time.
+MTR attempts to call `cdb` via the Perl backticks operator, when mysqld.exe crashes. On the first run, cdb is downloading public Windows symbols from msdl.microsoft.com/download/symbols. The symbols are cached in C:\cdb_symbols, and following runs will be faster, however crashdump analysis on very first crash will typically take some time.
 
 
-If you find this bothering, start the test with `<code class="fixed" style="white-space:pre-wrap">--mysqld=--gdb</code>` which will cause no crashdump files to be created and thus will prevent `<code>cdb</code>` from being called.
+If you find this bothering, start the test with `--mysqld=--gdb` which will cause no crashdump files to be created and thus will prevent `cdb` from being called.
 
 
-### Buildbot exception `<code>The process cannot access the file because it is being used by another process</code>`
+### Buildbot exception `The process cannot access the file because it is being used by another process`
 
 
-This is due to the fact that buildbot does not clean up any processes left over from a previous run, and those processes may hold locks on files that are needed for a new build to start. Current workaround is to use windows job objects that allow to terminate entire process trees. We use special "process launcher" utility called "`<code>dojob</code>` . This will also require changing buildbot configuration for the builder.
+This is due to the fact that buildbot does not clean up any processes left over from a previous run, and those processes may hold locks on files that are needed for a new build to start. Current workaround is to use windows job objects that allow to terminate entire process trees. We use special "process launcher" utility called "`dojob` . This will also require changing buildbot configuration for the builder.
 
 
 Download [dojob.cpp](https://bazaar.launchpad.net/~maria-captains/mariadb-tools/trunk/view/head:/buildbot/dojob.cpp), and compile it with
@@ -87,25 +87,25 @@ factory.addStep(Compile(
 ));
 ```
 
-### Buildbot exception `<code>ShellCommand.failed: command failed: SIGKILL failed to kill process</code>`
+### Buildbot exception `ShellCommand.failed: command failed: SIGKILL failed to kill process`
 
 
-(Seen very seldom?). This usually happens after retrying multiple failing tests multiple times. It appears that MTR's `<code class="fixed" style="white-space:pre-wrap">--retries=</code>` option is not safe to use on Windows. The solution is to run the test with no `<code class="fixed" style="white-space:pre-wrap">--retries</code>`.
+(Seen very seldom?). This usually happens after retrying multiple failing tests multiple times. It appears that MTR's `--retries=` option is not safe to use on Windows. The solution is to run the test with no `--retries`.
 
 
-### Buildbot exception `<code>Connection to the other side was lost in a non-clean fashion.</code>`
+### Buildbot exception `Connection to the other side was lost in a non-clean fashion.`
 
 
 This is a sympthom of intermittent network issues, which cause Buildbot to abort the current build altogether. The following workarounds are possible:
 
 
-* In your `<code>buildbot.tac</code>` file, specify a higher `<code>keepalive</code>` value, such as 60000.
+* In your `buildbot.tac` file, specify a higher `keepalive` value, such as 60000.
 Note: For the current versions (as of June 2016), the opposite solution worked: keepalive = 60. KeepAliveTime in the Windows registry has been set to 60000 as suggested below, but there is no proof it made any difference.
-* If you are running the Windows host inside VMWare, substitute the `<code>e1000</code>` network adapter with `<code>vmxnet3</code>`
+* If you are running the Windows host inside VMWare, substitute the `e1000` network adapter with `vmxnet3`
 * If your build host is behind a firewall, makes sure that the firewall does not time out any idle connections quickly. Configure at least a 24-hour timeout.
 * If your build host is behind a firewall, consider disabling the built-in Windows Firewall in order to avoid one potential point of failure.
-* Modify the Windows `<code>KeepAliveTime</code>` registry setting to a lower value, such as 60000 (equal to 60 seconds). For more information, see [TechNet](https://technet.microsoft.com/en-us/library/cc957549.aspx)
-* Make sure the buildbot master does not experience prolonged bouts of 100% CPU activity, as this may prevent keepalives from working. If the buildbot master `<code>twisted.log</code>` says that data is frequently being loaded from on-disk pickles, increase the `<code>buildCacheSize</code>` in the master configuration file to be more than the number of builds per builder that the log file reports are being loaded.
+* Modify the Windows `KeepAliveTime` registry setting to a lower value, such as 60000 (equal to 60 seconds). For more information, see [TechNet](https://technet.microsoft.com/en-us/library/cc957549.aspx)
+* Make sure the buildbot master does not experience prolonged bouts of 100% CPU activity, as this may prevent keepalives from working. If the buildbot master `twisted.log` says that data is frequently being loaded from on-disk pickles, increase the `buildCacheSize` in the master configuration file to be more than the number of builds per builder that the log file reports are being loaded.
 
 
 # Alternative Windows Buildbot setup (experimental)

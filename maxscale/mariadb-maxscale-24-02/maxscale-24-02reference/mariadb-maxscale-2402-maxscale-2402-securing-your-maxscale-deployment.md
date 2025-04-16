@@ -24,7 +24,7 @@ the key file permissions. Utilizing
 is an effective approach to generate a secure key file.
 
 
-This generates a keyfile in `<code>/var/lib/maxscale</code>`
+This generates a keyfile in `/var/lib/maxscale`
 
 
 
@@ -36,7 +36,7 @@ $ maxkeys
 
 See
 [Encrypting Passwords](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
-for more information about `<code>maxkeys</code>`.
+for more information about `maxkeys`.
 
 
 Once generated, this key file can be relocated to a secure location. This
@@ -45,7 +45,7 @@ facilitates MaxScale in decrypting those encrypted passwords.
 
 
 To maintain confidentiality, it is crucial to adjust the ownership and
-permissions of the key file appropriately using `<code>chown</code>`. This step ensures
+permissions of the key file appropriately using `chown`. This step ensures
 that the key file remains secure and inaccessible to unauthorized users.
 
 
@@ -90,9 +90,9 @@ password=96F99AA1315BDC3604B006F427DD9484
 
 
 To enhance the security of your MaxScale environment, it’s crucial to
-configure the GUI host address properly. The default setting, `<code>0.0.0.0</code>`,
+configure the GUI host address properly. The default setting, `0.0.0.0`,
 allows unrestricted access from any network, which poses a significant
-security risk. Instead, you should set the `<code>admin_host</code>` to a more secure
+security risk. Instead, you should set the `admin_host` to a more secure
 address. Additionally, you can change the default port (8989) to another
 port for added security. For example, you can restrict access to the
 localhost by setting:
@@ -144,7 +144,7 @@ transit. Follow these steps to configure SSL:
 #### 2. Update the MaxScale Configuration:
 
 
-* Enable secure connections by setting `<code>admin_secure_gui</code>` to `<code>true</code>`.
+* Enable secure connections by setting `admin_secure_gui` to `true`.
 * Specify the paths to the SSL certificate and key files in your CNF file:
 
 
@@ -162,7 +162,7 @@ admin_ssl_ca_cert=/certs/ca-cert.pem
 #### 3. Verify Encryption:
 
 
-* Use the `<code>Maxctrl</code>` command to verify that TLS encryption is functioning correctly:
+* Use the `Maxctrl` command to verify that TLS encryption is functioning correctly:
 
 
 
@@ -183,7 +183,7 @@ $ maxctrl --user=my_user --password=my_password --secure --tls-ca-cert=/certs/ca
 
 MaxScale allows you to manage user access to its GUI, offering different
 permission levels to suit various operational needs. Currently, MaxScale
-supports two primary roles: `<code>admin</code>` and `<code>basic</code>`. This functionality is
+supports two primary roles: `admin` and `basic`. This functionality is
 particularly useful for organizations with hierarchical structures or
 distinct departments, enabling you to grant status view access without
 allowing execution or manipulation capabilities.
@@ -192,7 +192,7 @@ allowing execution or manipulation capabilities.
 ### Creating and Deleting Users
 
 
-To create or delete users in the MaxScale GUI, you can use the `<code>maxctrl</code>`
+To create or delete users in the MaxScale GUI, you can use the `maxctrl`
 command. Here’s an example of creating a user with administrative
 privileges:
 
@@ -272,7 +272,7 @@ MaxScale.
 
 
 * Add the configuration lines to your MaxScale configuration file.
-* Verify the directory specified in `<code>admin_audit_file</code>` exists.
+* Verify the directory specified in `admin_audit_file` exists.
 
 
 #### 2. Audit File Management:
@@ -311,13 +311,13 @@ Steps to Configure SSL in MaxScale:
 ### 1. Enable SSL:
 
 
-* Add `<code>ssl=true</code>` to each server section in your MaxScale configuration file.
+* Add `ssl=true` to each server section in your MaxScale configuration file.
 
 
 ### 2. Verify Peer Certificates:
 
 
-* Add `<code>ssl_verify_peer_certificate=true</code>` to ensure that MaxScale verifies
+* Add `ssl_verify_peer_certificate=true` to ensure that MaxScale verifies
  the server’s SSL certificates, providing an additional layer of security.
 
 

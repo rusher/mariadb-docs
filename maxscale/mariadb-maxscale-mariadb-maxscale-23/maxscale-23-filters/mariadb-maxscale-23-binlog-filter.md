@@ -10,7 +10,7 @@ This filter was introduced in MariaDB MaxScale 2.3.0.
 ## Overview
 
 
-The `<code>binlogfilter</code>` can be combined with a `<code>binlogrouter</code>` service to selectively
+The `binlogfilter` can be combined with a `binlogrouter` service to selectively
 replicate the binary log events to slave servers.
 
 
@@ -28,7 +28,7 @@ that there are no ambiguities in the event filtering.
 ## Configuration
 
 
-### `<code>match</code>` and `<code>exclude</code>`
+### `match` and `exclude`
 
 
 Both the *match* and *exclude* parameters are optional and work mostly as other
@@ -42,7 +42,7 @@ more information.
 
 The two parameters are matched against the database and table name concatenated
 with a period. For example, the string the patterns are matched against for the
-database `<code>test</code>` and table `<code>t1</code>` is `<code>test.t1</code>`.
+database `test` and table `t1` is `test.t1`.
 
 
 For statement based replication, the pattern is matched against all the tables
@@ -54,8 +54,8 @@ not replicated.
 ## Example Configuration
 
 
-With the following configuration, only events belonging to database `<code>customers</code>`
-are replicated. In addition to this, events for the table `<code>orders</code>` are excluded
+With the following configuration, only events belonging to database `customers`
+are replicated. In addition to this, events for the table `orders` are excluded
 and thus are not replicated.
 
 

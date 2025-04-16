@@ -2,13 +2,13 @@
 # FirstMatch Strategy
 
 
-`<code>FirstMatch</code>` is an execution strategy for [Semi-join subqueries](../subquery-optimizations/semi-join-subquery-optimizations.md).
+`FirstMatch` is an execution strategy for [Semi-join subqueries](../subquery-optimizations/semi-join-subquery-optimizations.md).
 
 
 ## The idea
 
 
-It is very similar to how `<code>IN/EXISTS</code>` subqueries were executed in MySQL 5.x.
+It is very similar to how `IN/EXISTS` subqueries were executed in MySQL 5.x.
 
 
 Let's take the usual example of a search for countries with big cities:
@@ -28,7 +28,7 @@ Suppose, our execution plan is to find countries in Europe, and then, for each f
 ![firstmatch-inner-join](../../../../../.gitbook/assets/firstmatch-strategy/+image/firstmatch-inner-join.png "firstmatch-inner-join")
 
 
-Since Germany has two big cities (in this diagram), it will be put into the query output twice. This is not correct, `<code class="fixed" style="white-space:pre-wrap">SELECT ... FROM Country</code>` should not produce the same country record twice. The `<code>FirstMatch</code>` strategy avoids the production of duplicates by short-cutting execution as soon as the first genuine match is found:
+Since Germany has two big cities (in this diagram), it will be put into the query output twice. This is not correct, `SELECT ... FROM Country` should not produce the same country record twice. The `FirstMatch` strategy avoids the production of duplicates by short-cutting execution as soon as the first genuine match is found:
 
 
 ![firstmatch-firstmatch](../../../../../.gitbook/assets/firstmatch-strategy/+image/firstmatch-firstmatch.png "firstmatch-firstmatch")
@@ -40,7 +40,7 @@ Note that the short-cutting has to take place after "Using where" has been appli
 ## FirstMatch in action
 
 
-The `<code>EXPLAIN</code>` for the above query will look as follows:
+The `EXPLAIN` for the above query will look as follows:
 
 
 ```
@@ -56,10 +56,10 @@ MariaDB [world]> explain select * from Country where Country.code IN
 2 rows in set (0.00 sec)
 ```
 
-`<code class="fixed" style="white-space:pre-wrap">FirstMatch(Country)</code>` in the Extra column means that *as soon as we have produced one matching record combination, short-cut the execution and jump back to the Country* table.
+`FirstMatch(Country)` in the Extra column means that *as soon as we have produced one matching record combination, short-cut the execution and jump back to the Country* table.
 
 
-`<code>FirstMatch</code>`'s query plan is very similar to one you would get in MySQL:
+`FirstMatch`'s query plan is very similar to one you would get in MySQL:
 
 
 ```
@@ -81,24 +81,24 @@ and these two particular query plans will execute in the same time.
 ## Difference between FirstMatch and IN->EXISTS
 
 
-The general idea behind the `<code>FirstMatch</code>` strategy is the same as the one behind the `<code>IN->EXISTS</code>` transformation, however, `<code>FirstMatch</code>` has several advantages:
+The general idea behind the `FirstMatch` strategy is the same as the one behind the `IN->EXISTS` transformation, however, `FirstMatch` has several advantages:
 
 
-* Equality propagation works across semi-join bounds, but not subquery bounds. Therefore, converting a subquery to semi-join and using `<code>FirstMatch</code>` can still give a better execution plan. (TODO example)
+* Equality propagation works across semi-join bounds, but not subquery bounds. Therefore, converting a subquery to semi-join and using `FirstMatch` can still give a better execution plan. (TODO example)
 
 
-* There is only one way to apply the `<code>IN->EXISTS</code>` strategy and MySQL will do it unconditionally. With `<code>FirstMatch</code>`, the optimizer can make a choice between whether it should run the `<code>FirstMatch</code>` strategy as soon as all tables used in the subquery are in the join prefix, or at some later point in time. (TODO: example)
+* There is only one way to apply the `IN->EXISTS` strategy and MySQL will do it unconditionally. With `FirstMatch`, the optimizer can make a choice between whether it should run the `FirstMatch` strategy as soon as all tables used in the subquery are in the join prefix, or at some later point in time. (TODO: example)
 
 
 ## FirstMatch factsheet
 
 
-* The `<code>FirstMatch</code>` strategy works by executing the subquery and short-cutting its execution as soon as the first match is found.
+* The `FirstMatch` strategy works by executing the subquery and short-cutting its execution as soon as the first match is found.
 * This means, subquery tables must be after all of the parent select's tables that are referred from the subquery predicate.
-* `<code>EXPLAIN</code>` shows `<code>FirstMatch</code>` as "`<code>FirstMatch(tableN)</code>`".
+* `EXPLAIN` shows `FirstMatch` as "`FirstMatch(tableN)`".
 * The strategy can handle correlated subqueries.
-* But it cannot be applied if the subquery has meaningful `<code>GROUP BY</code>` and/or aggregate functions.
-* Use of the `<code>FirstMatch</code>` strategy is controlled with the `<code class="fixed" style="white-space:pre-wrap">firstmatch=on|off</code>` flag in the [optimizer_switch](../../system-variables/server-system-variables.md#optimizer_switch) variable.
+* But it cannot be applied if the subquery has meaningful `GROUP BY` and/or aggregate functions.
+* Use of the `FirstMatch` strategy is controlled with the `firstmatch=on|off` flag in the [optimizer_switch](../../system-variables/server-system-variables.md#optimizer_switch) variable.
 
 
 ## See Also

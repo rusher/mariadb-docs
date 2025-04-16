@@ -103,16 +103,16 @@ database firewall filter will be simplified.
 
 
 The masking filter can *only* be used for masking columns of the following
-types: `<code>BINARY</code>`, `<code>VARBINARY</code>`, `<code>CHAR</code>`, `<code>VARCHAR</code>`, `<code>BLOB</code>`, `<code>TINYBLOB</code>`,
-`<code>MEDIUMBLOB</code>`, `<code>LONGBLOB</code>`, `<code>TEXT</code>`, `<code>TINYTEXT</code>`, `<code>MEDIUMTEXT</code>`, `<code>LONGTEXT</code>`,
-`<code>ENUM</code>` and `<code>SET</code>`. If the type of the column is something else, then no
+types: `BINARY`, `VARBINARY`, `CHAR`, `VARCHAR`, `BLOB`, `TINYBLOB`,
+`MEDIUMBLOB`, `LONGBLOB`, `TEXT`, `TINYTEXT`, `MEDIUMTEXT`, `LONGTEXT`,
+`ENUM` and `SET`. If the type of the column is something else, then no
 masking will be performed.
 
 
 Currently, the masking filter can only work on packets whose payload is less
 than 16MB. If the masking filter encounters a packet whose payload is exactly
 that, thus indicating a situation where the payload is delivered in multiple
-packets, the value of the parameter `<code>large_payloads</code>` specifies how the masking
+packets, the value of the parameter `large_payloads` specifies how the masking
 filter should handle the situation.
 
 
@@ -141,10 +141,10 @@ filters=Mask-SSN
 ## Filter Parameters
 
 
-The masking filter has one mandatory parameter - `<code>rules</code>`.
+The masking filter has one mandatory parameter - `rules`.
 
 
-#### `<code>rules</code>`
+#### `rules`
 
 
 Specifies the path of the file where the masking rules are stored.
@@ -160,7 +160,7 @@ rules=/path/to/rules-file
 
 
 
-#### `<code>warn_type_mismatch</code>`
+#### `warn_type_mismatch`
 
 
 With this optional parameter the masking filter can be instructed to log
@@ -168,7 +168,7 @@ a warning if a masking rule matches a column that is not of one of the
 allowed types.
 
 
-The values that can be used are `<code>never</code>` and `<code>always</code>`, with `<code>never</code>` being
+The values that can be used are `never` and `always`, with `never` being
 the default.
 
 
@@ -179,18 +179,18 @@ warn_type_mismatch=always
 
 
 
-#### `<code>large_payload</code>`
+#### `large_payload`
 
 
 This optional parameter specifies how the masking filter should treat
-payloads larger than `<code>16MB</code>`, that is, payloads that are delivered in
+payloads larger than `16MB`, that is, payloads that are delivered in
 multiple MySQL protocol packets.
 
 
-The values that can be used are `<code>ignore</code>`, which means that columns in
-such payloads are not masked, and `<code>abort</code>`, which means that if such
+The values that can be used are `ignore`, which means that columns in
+such payloads are not masked, and `abort`, which means that if such
 payloads are encountered, the client connection is closed. The default
-is `<code>abort</code>`.
+is `abort`.
 
 
 Note that the aborting behaviour is applied only to resultsets that
@@ -211,7 +211,7 @@ large_payload=ignore
 The masking rules are expressed as a JSON object.
 
 
-The top-level object is expected to contain a key `<code>rules</code>` whose
+The top-level object is expected to contain a key `rules` whose
 value is an array of rule objects.
 
 
@@ -228,8 +228,8 @@ value is an array of rule objects.
 
 
 Each rule in the rules array is a JSON object, expected to
-contain the keys `<code>replace</code>`, `<code>with</code>`, `<code>applies_to</code>` and
-`<code>exempted</code>`. The two former ones are obligatory and the two
+contain the keys `replace`, `with`, `applies_to` and
+`exempted`. The two former ones are obligatory and the two
 latter ones optional.
 
 
@@ -249,19 +249,19 @@ latter ones optional.
 
 
 
-#### `<code>replace</code>`
+#### `replace`
 
 
 The value of this key is an object that specifies the column
 whose values should be masked. The object must contain the key
-`<code>column</code>` and may contain the keys `<code>table</code>` and `<code>database</code>`. The
+`column` and may contain the keys `table` and `database`. The
 value of these keys must be a string.
 
 
-If only `<code>column</code>` is specified, then a column with that name
-matches irrespective of the table and database. If `<code>table</code>`
+If only `column` is specified, then a column with that name
+matches irrespective of the table and database. If `table`
 is specified, then the column matches only if it is in a table
-with the specified name, and if `<code>database</code>` is specified when
+with the specified name, and if `database` is specified when
 the column matches only if it is in a database with the
 specified name.
 
@@ -286,23 +286,23 @@ specified name.
 
 
 
-#### `<code>with</code>`
+#### `with`
 
 
 The value of this key is an object that specifies what the value of the matched
 column should be replaced with. Currently, the object is expected to contain
-either the key `<code>value</code>` or the key `<code>fill</code>`. The value of both must be a string
-with length greater than zero. If both keys are specified, `<code>value</code>` takes
-precedence. If `<code>fill</code>` is not specified, the default `<code>X</code>` is used as its value.
+either the key `value` or the key `fill`. The value of both must be a string
+with length greater than zero. If both keys are specified, `value` takes
+precedence. If `fill` is not specified, the default `X` is used as its value.
 
 
-If `<code>value</code>` is specified, then its value is used to replace the actual value
+If `value` is specified, then its value is used to replace the actual value
 verbatim and the length of the specified value must match the actual returned
 value (from the server) exactly. If the lengths do not match, the value of
-`<code>fill</code>` is used to mask the actual value.
+`fill` is used to mask the actual value.
 
 
-When the value of `<code>fill</code>` (fill-value) is used for masking the returned value,
+When the value of `fill` (fill-value) is used for masking the returned value,
 the fill-value is used as many times as necessary to match the length of the
 return value. If required, only a part of the fill-value may be used in the end
 of the mask value to get the lengths to match.
@@ -349,12 +349,12 @@ of the mask value to get the lengths to match.
 
 
 
-#### `<code>applies_to</code>`
+#### `applies_to`
 
 
 With this *optional* key, whose value must be an array of strings,
 it can be specified what users the rule is applied to. Each string
-should be a MariaDB account string, that is, `<code>%</code>` is a wildcard.
+should be a MariaDB account string, that is, `%` is a wildcard.
 
 
 
@@ -374,15 +374,15 @@ should be a MariaDB account string, that is, `<code>%</code>` is a wildcard.
 
 
 If this key is not specified, then the masking is performed for all
-users, except the ones exempted using the key `<code>exempted</code>`.
+users, except the ones exempted using the key `exempted`.
 
 
-#### `<code>exempted</code>`
+#### `exempted`
 
 
 With this *optional* key, whose value must be an array of strings,
 it can be specified what users the rule is *not* applied to. Each
-string should be a MariaDB account string, that is, `<code>%</code>` is a wildcard.
+string should be a MariaDB account string, that is, `%` is a wildcard.
 
 
 
@@ -410,7 +410,7 @@ Read [Module Commands](../maxscale-21-reference/mariadb-maxscale-21-module-comma
 The masking filter supports the following module commands.
 
 
-### `<code>reload</code>`
+### `reload`
 
 
 Reload the rules from the rules file. The new rules are taken into use
@@ -424,7 +424,7 @@ MaxScale> call command masking reload MyMaskingFilter
 
 
 
-`<code>MyMaskingFilter</code>` refers to a particular filter section in the
+`MyMaskingFilter` refers to a particular filter section in the
 MariaDB MaxScale configuration file.
 
 
@@ -434,7 +434,7 @@ MariaDB MaxScale configuration file.
 In the following we configure a masking filter *MyMasking* that should always log a
 warning if a masking rule matches a column that is of a type that cannot be masked,
 and that should abort the client connection if a resultset package is larger than
-16MB. The rules for the masking filter are in the file `<code>masking_rules.json</code>`.
+16MB. The rules for the masking filter are in the file `masking_rules.json`.
 
 
 ### Configuration
@@ -457,10 +457,10 @@ filters=MyMasking
 
 
 
-### `<code>masking_rules.json</code>`
+### `masking_rules.json`
 
 
-The rules specify that the data of a column whose name is `<code>ssn</code>`, should
+The rules specify that the data of a column whose name is `ssn`, should
 be replaced with the string *012345-ABCD*. If the length of the data is
 not exactly the same as the length of the replacement value, then the
 data should be replaced with as many *X* characters as needed.

@@ -44,7 +44,7 @@ For large datasets, the backup file can be large, and the restore time lengthy.
 mariadb-dump dumps the data into SQL format (it can also dump into other formats, such as CSV or XML) which can then easily be imported into another database. The data can be imported into other versions of MariaDB, MySQL, or even another DBMS entirely, assuming there are no version or DBMS-specific statements in the dump.
 
 
-mariadb-dump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md), [views](../../server-usage/programming-customizing-mariadb/views/README.md), and [events](../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/events.md) are not, and need extra parameters to be recreated explicitly (for example, `<code>--routines</code>` and `<code>--events</code>`). [Procedures](../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [functions](functions) are however also part of the system tables (for example [mysql.proc](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table.md)).
+mariadb-dump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md), [views](../../server-usage/programming-customizing-mariadb/views/README.md), and [events](../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/events.md) are not, and need extra parameters to be recreated explicitly (for example, `--routines` and `--events`). [Procedures](../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [functions](functions) are however also part of the system tables (for example [mysql.proc](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table.md)).
 
 
 #### InnoDB Logical Backups
@@ -109,10 +109,10 @@ Some filesystems, like Veritas, support snapshots. During the snapshot, the tabl
 
 
 * From the mariadb client, execute [FLUSH TABLES WITH READ LOCK](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md). The client must remain open.
-* From a shell, execute `<code>mount vxfs snapshot</code>`
+* From a shell, execute `mount vxfs snapshot`
 * The client can execute [UNLOCK TABLES](../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md).
 * Copy the snapshot files.
-* From a shell, unmount the snapshot with `<code>umount snapshot</code>`.
+* From a shell, unmount the snapshot with `umount snapshot`.
 
 
 ### LVM

@@ -1,7 +1,7 @@
 
 # Information Schema COLLATIONS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>COLLATIONS</code>` table contains a list of supported [collations](../../../../../../data-types/string-data-types/character-sets/README.md).
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `COLLATIONS` table contains a list of supported [collations](../../../../../../data-types/string-data-types/character-sets/README.md).
 
 
 It contains the following columns:
@@ -39,13 +39,13 @@ SELECT * FROM information_schema.COLLATIONS
 WHERE CHARACTER_SET_NAME LIKE 'utf8mb3';
 ```
 
-In [MariaDB 10.5](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) and before, `<code>utf8</code>` should be specified instead of `<code>utf8mb3</code>`.
+In [MariaDB 10.5](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) and before, `utf8` should be specified instead of `utf8mb3`.
 
 
 ## NO PAD collations
 
 
-`<code>NO PAD</code>` collations regard trailing spaces as normal characters. You can get a list of all `<code>NO PAD</code>` collations as follows:
+`NO PAD` collations regard trailing spaces as normal characters. You can get a list of all `NO PAD` collations as follows:
 
 
 ```

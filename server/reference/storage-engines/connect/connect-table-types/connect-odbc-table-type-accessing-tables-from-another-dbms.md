@@ -47,7 +47,7 @@ create table Customer engine=connect table_type=ODBC
   Connection='DSN=MS Access Database;DBQ=C:/Program Files/Microsoft Office/Office/1033/FPNWIND.MDB;';
 ```
 
-The `<code>BLOCK_SIZE</code>` specification will be used later to set the RowsetSize when
+The `BLOCK_SIZE` specification will be used later to set the RowsetSize when
 retrieving rows from the ODBC table. A reasonably large RowsetSize can greatly
 accelerate the fetching process.
 
@@ -114,7 +114,7 @@ There are several ways to enable random (position) access to a CONNECT ODBC tabl
 
 
 
-`<code>*</code>` - To be specified in the option_list.
+`*` - To be specified in the option_list.
 
 
 When dealing with small tables, the simpler way to enable random access is to specify a rowset size equal or larger than the table size (or the result set size if a push down where clause is used). This means that the whole result is in memory on the first fetch and CONNECT will use it for further positional accesses.
@@ -400,7 +400,7 @@ insert into tolite values(1,'Toto',now(),'First'),
 (2,'Foo','2012-07-14','Second'),(4,'Machin','1968-05-30','Third');
 ```
 
-The function `<code>now()</code>` will be executed by MariaDB and it returned value sent
+The function `now()` will be executed by MariaDB and it returned value sent
 to the ODBC table.
 
 
@@ -705,7 +705,7 @@ Where character-string has zero or more characters; identifier has one or more
 characters; attribute- keyword is not case-sensitive; attribute-value may be
 case-sensitive; and the value of the DSN keyword does not consist solely of
 blanks. Due to the connection string grammar, keywords and attribute values
-that contain the characters `<code>[]{}(),;?*=!@</code>` should be avoided. The value of
+that contain the characters `[]{}(),;?*=!@` should be avoided. The value of
 the DSN keyword cannot consist only of blanks, and should not contain leading
 blanks. Because of the grammar of the system information, keywords and data
 source names cannot contain the backslash (\) character. Applications do not
@@ -1018,10 +1018,10 @@ Setx NLS_LANG GERMAN_GERMANY.WE8ISO8859P1 /m
 Note: For more detail about this, see [MDEV-17501](https://jira.mariadb.org/browse/MDEV-17501).
 
 
-## `<code>OPTION_LIST</code>` Values Supported by the ODBC Tables
+## `OPTION_LIST` Values Supported by the ODBC Tables
 
 
-The following options can be given as comma-separated string to the `<code>OPTION_LIST</code>` value in the `<code>CREATE TABLE</code>` statement.
+The following options can be given as comma-separated string to the `OPTION_LIST` value in the `CREATE TABLE` statement.
 
 
 

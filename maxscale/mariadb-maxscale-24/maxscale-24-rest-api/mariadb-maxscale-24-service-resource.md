@@ -28,7 +28,7 @@ all whitespace replaced with hyphens. The service names are case-insensitive.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -118,7 +118,7 @@ Get all services.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -264,36 +264,36 @@ Create a new service by defining the resource. The posted object must define at
 least the following fields.
 
 
-* `<code>data.id</code>`
+* `data.id`
 * Name of the service
-* `<code>data.type</code>`
-* Type of the object, must be `<code>services</code>`
-* `<code>data.attributes.router</code>`
+* `data.type`
+* Type of the object, must be `services`
+* `data.attributes.router`
 * The router module to use
-* `<code>data.attributes.parameters.user</code>`
+* `data.attributes.parameters.user`
 * The [user](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) to use
-* `<code>data.attributes.parameters.password</code>`
+* `data.attributes.parameters.password`
 * The [password](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) to use
 
 
-The `<code>data.attributes.parameters</code>` object is used to define router and service
+The `data.attributes.parameters` object is used to define router and service
 parameters. All configuration parameters that can be defined in the
 configuration file can also be added to the parameters object. The exceptions to
-this are the `<code>type</code>`, `<code>router</code>`, `<code>servers</code>` and `<code>filters</code>` parameters which must not
+this are the `type`, `router`, `servers` and `filters` parameters which must not
 be defined.
 
 
-As with other REST API resources, the `<code>data.relationships</code>` field defines the
+As with other REST API resources, the `data.relationships` field defines the
 relationships of the service to other resources. Services can have two types of
-relationships: `<code>servers</code>` and `<code>filters</code>` relationships.
+relationships: `servers` and `filters` relationships.
 
 
-If the request body defines a valid `<code>relationships</code>` object, the service is
+If the request body defines a valid `relationships` object, the service is
 linked to those resources. For servers, this is equivalent to adding the list of
 server names into the
 [servers](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) parameter. For
 filters, this is equivalent to adding the filters in the
-`<code>data.relationships.filters.data</code>` array to the
+`data.relationships.filters.data` array to the
 [filters](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) parameter in the
 order they appear.
 
@@ -345,7 +345,7 @@ relationship.
 Service is created:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Destroy a service
@@ -363,7 +363,7 @@ In the URI , the *:service* must map to a service that is destroyed.
 
 A service can only be destroyed if the service uses no servers or filters and
 all the listeners pointing to the service have been destroyed. This means that
-the `<code>data.relationships</code>` must be an empty object and `<code>data.attributes.listeners</code>`
+the `data.relationships` must be an empty object and `data.attributes.listeners`
 must be an empty array in order for the service to qualify for destruction.
 
 
@@ -384,7 +384,7 @@ the service is still open, it has not yet been destroyed.
 Service is destroyed:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Get service listeners
@@ -404,7 +404,7 @@ GET /v1/services/:name/listeners
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -449,7 +449,7 @@ replaced with hyphens.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -532,7 +532,7 @@ defined.
 Listener is created:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Destroy a listener
@@ -559,13 +559,13 @@ reuse.
 Listener is destroyed:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Listener cannot be deleted:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ### Update a service
@@ -593,7 +593,7 @@ documentation for more details on whether the router supports it and which
 parameters can be updated at runtime.
 
 
-The following example modifies a service by changing the `<code>user</code>` parameter to `<code>admin</code>`.
+The following example modifies a service by changing the `user` parameter to `admin`.
 
 
 
@@ -617,7 +617,7 @@ The following example modifies a service by changing the `<code>user</code>` par
 Service is modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Update service relationships
@@ -638,11 +638,11 @@ depending on which relationship is being modified.
 The request body must be a JSON object that defines only the *data* field. The
 value of the *data* field must be an array of relationship objects that define
 the *id* and *type* fields of the relationship. This object will replace the
-existing relationships of this type for the service. Both `<code>servers</code>` and
-`<code>filters</code>` relationships can be modified.
+existing relationships of this type for the service. Both `servers` and
+`filters` relationships can be modified.
 
 
-*Note:* The order of the values in the `<code>filters</code>` relationship will define the
+*Note:* The order of the values in the `filters` relationship will define the
  order the filters are set up in. The order in which the filters appear in the
  array will be the order in which the filters are applied to each query. Refer
  to the [filters](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) parameter
@@ -650,7 +650,7 @@ existing relationships of this type for the service. Both `<code>servers</code>`
 
 
 The following is an example request and request body that defines a single
-server relationship for a service that is equivalent to a `<code>servers=my-server</code>`
+server relationship for a service that is equivalent to a `servers=my-server`
 parameter.
 
 
@@ -668,7 +668,7 @@ PATCH /v1/services/my-rw-service/relationships/servers
 
 
 All relationships for a service can be deleted by sending an empty array or a
-`<code>null</code>` value as the *data* field value. The following example removes all
+`null` value as the *data* field value. The following example removes all
 servers from a service.
 
 
@@ -689,13 +689,13 @@ PATCH /v1/services/my-rw-service/relationships/servers
 Service relationships modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Invalid JSON body:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ### Stop a service
@@ -717,7 +717,7 @@ Stops a started service.
 Service is stopped:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Start a service
@@ -739,7 +739,7 @@ Starts a stopped service.
 Service is started:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Reload users of a service
@@ -761,4 +761,4 @@ Reloads the list of database users used for authentication.
 Users are reloaded:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`

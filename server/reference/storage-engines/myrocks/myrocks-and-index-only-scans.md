@@ -16,10 +16,10 @@ Secondary keys may or may not support index-only scans, depending on the datatyp
 ## Background: Mem-Comparable Keys
 
 
-MyRocks indexes store "mem-comparable keys" (that is, the key values are compared with `<code>memcmp</code>`). For some datatypes, it is easily possible to convert between the column value and its mem-comparable form, while for others the conversion is one-way.
+MyRocks indexes store "mem-comparable keys" (that is, the key values are compared with `memcmp`). For some datatypes, it is easily possible to convert between the column value and its mem-comparable form, while for others the conversion is one-way.
 
 
-For example, in case-insensitive collations capital and regular letters are considered identical, i.e. 'c' ='C'. For some datatypes, MyRocks stores some extra data which allows it to restore the original value back. (For the `<code>latin1_general_ci</code>` [collation](../../data-types/string-data-types/character-sets/README.md) and character 'c', for example, it will store one bit which says whether the original value was a small 'c' or a capital letter 'C'). This doesn't work for all datatypes, though.
+For example, in case-insensitive collations capital and regular letters are considered identical, i.e. 'c' ='C'. For some datatypes, MyRocks stores some extra data which allows it to restore the original value back. (For the `latin1_general_ci` [collation](../../data-types/string-data-types/character-sets/README.md) and character 'c', for example, it will store one bit which says whether the original value was a small 'c' or a capital letter 'C'). This doesn't work for all datatypes, though.
 
 
 ## Index-Only Support for Various Datatypes
@@ -31,9 +31,9 @@ Index-only scans are supported for numeric and date/time datatypes. For CHAR and
 Index-only scans are currently not supported for less frequently used datatypes, like
 
 
-* `<code>[BIT(n)](../../sql-statements-and-structure/temporal-tables/bitemporal-tables.md)</code>`
-* `<code>[SET(...)](../../data-types/string-data-types/set-data-type.md)</code>`
-* `<code>[ENUM(...)](../../data-types/string-data-types/enum.md)</code>`
+* `[BIT(n)](../../sql-statements-and-structure/temporal-tables/bitemporal-tables.md)`
+* `[SET(...)](../../data-types/string-data-types/set-data-type.md)`
+* `[ENUM(...)](../../data-types/string-data-types/enum.md)`
 It is actually possible to add support for those, feel free to write a patch or at least make a case why a particular datatype is important
 
 
@@ -46,7 +46,7 @@ As far as Index-only support is concerned, MyRocks distinguishes three kinds of 
 ### 1. Binary (Reversible) Collations
 
 
-These are `<code>binary</code>`, `<code>latin1_bin</code>`, and `<code>utf8_bin</code>`.
+These are `binary`, `latin1_bin`, and `utf8_bin`.
 
 
 For these collations, it is possible to convert a value back from its mem-comparable form. Hence, one can restore the original value back from its index record, and index-only scans are supported.
@@ -67,7 +67,7 @@ Criteria (from storage/rocksdb/rdb_datadic.cc, rdb_is_collation_supported()) are
 * PAD attribute
 
 
-The examples are: `<code>latin1_general_ci</code>`, `<code>latin1_general_cs</code>`, `<code>latin1_swedish_ci</code>`, etc.
+The examples are: `latin1_general_ci`, `latin1_general_cs`, `latin1_swedish_ci`, etc.
 
 
 Index-only scans are supported for these collations.

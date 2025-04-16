@@ -51,7 +51,7 @@ For a list of optional parameters that all monitors support, read the [Monitor C
 These are optional parameters specific to the MySQL Monitor.
 
 
-### `<code>detect_replication_lag</code>`
+### `detect_replication_lag`
 
 
 A boolean value which controls if replication lag between the master and the
@@ -72,7 +72,7 @@ maxscale_schema database. The monitor user will always try to create the databas
 and the table if they do not exist.
 
 
-### `<code>detect_stale_master</code>`
+### `detect_stale_master`
 
 
 Allow previous master to be available even in case of stopped or misconfigured
@@ -96,7 +96,7 @@ detect_stale_master=true
 
 
 
-### `<code>detect_stale_slave</code>`
+### `detect_stale_slave`
 
 
 Treat running slaves servers without a master server as valid slave servers.
@@ -122,7 +122,7 @@ detect_stale_slave=true
 
 
 
-### `<code>mysql51_replication</code>`
+### `mysql51_replication`
 
 
 Enable support for MySQL 5.1 replication monitoring. This is needed if a MySQL
@@ -136,7 +136,7 @@ mysql51_replication=true
 
 
 
-### `<code>multimaster</code>`
+### `multimaster`
 
 
 Detect multi-master replication topologies. This feature is disabled by default.
@@ -150,9 +150,9 @@ special group ID 0 is assigned to all servers which are not a part of a
 multi-master replication cycle.
 
 
-If one or more masters in a group has the `<code>@@read_only</code>` system variable set to
-`<code>ON</code>`, those servers will receive the Slave status even though they are in the
-multi-master group. Slave servers with `<code>@@read_only</code>` disabled will never receive
+If one or more masters in a group has the `@@read_only` system variable set to
+`ON`, those servers will receive the Slave status even though they are in the
+multi-master group. Slave servers with `@@read_only` disabled will never receive
 the master status.
 
 
@@ -160,8 +160,8 @@ By setting the servers into read-only mode, the user can control which
 server receive the master status. To do this:
 
 
-* Enable `<code>@@read_only</code>` on all servers (preferably through the configuration file)
-* Manually disable `<code>@@read_only</code>` on the server which should be the master
+* Enable `@@read_only` on all servers (preferably through the configuration file)
+* Manually disable `@@read_only` on the server which should be the master
 
 
 This functionality is similar to the [Multi-Master Monitor](mariadb-maxscale-21-multi-master-monitor.md)
@@ -169,7 +169,7 @@ functionality. The only difference is that the MySQL monitor will also detect
 traditional Master-Slave topologies.
 
 
-### `<code>ignore_external_masters</code>`
+### `ignore_external_masters`
 
 
 Ignore any servers that are not monitored by this monitor but are a part of the
@@ -178,23 +178,23 @@ by default.
 
 
 MaxScale detects if a master server replicates from an external server. When
-this is detected, the server is assigned the `<code>Slave</code>` and `<code>Slave of External
-Server</code>` labels and will be treated as a slave server. Most of the time this
+this is detected, the server is assigned the `Slave` and `Slave of External
+Server` labels and will be treated as a slave server. Most of the time this
 topology is used when MaxScale is used for read scale-out without master
 servers, a Galera cluster with read replicas being a prime example of this
 setup. Sometimes this is not the desired behavior and the external master server
 should be ignored. Most of the time this is due to multi-source replication.
 
 
-When this option is enabled, all servers that have the `<code>Master, Slave, Slave of
-External Server, Running</code>` labels will instead get the `<code>Master, Running</code>` labels.
+When this option is enabled, all servers that have the `Master, Slave, Slave of
+External Server, Running` labels will instead get the `Master, Running` labels.
 
 
-### `<code>detect_standalone_master</code>`
+### `detect_standalone_master`
 
 
 Detect standalone master servers. This feature takes a boolean parameter and is
-disabled by default. In MaxScale 2.1.0, this parameter was called `<code>failover</code>`.
+disabled by default. In MaxScale 2.1.0, this parameter was called `failover`.
 
 
 This parameter is intended to be used with simple, two node master-slave pairs
@@ -212,8 +212,8 @@ looking at the system variables of the server in question.
 
 
 By default, MaxScale will only attempt to deduce if the server can be used as a
-slave server (controlled by the `<code>detect_stale_slave</code>` parameter). When the
-`<code>detect_standalone_master</code>` mode is enabled, MaxScale will also attempt to deduce
+slave server (controlled by the `detect_stale_slave` parameter). When the
+`detect_standalone_master` mode is enabled, MaxScale will also attempt to deduce
 whether the server can be used as a master server. This is done by checking that
 the server is not in read-only mode and that it is not configured as a slave.
 
@@ -228,9 +228,9 @@ have been met:
 
 
 * Previous attempts to connect to other servers in the cluster have failed,
- controlled by the `<code>failcount</code>` parameter
+ controlled by the `failcount` parameter
 * There is only one running server among the monitored servers
-* The value of the `<code>@@read_only</code>` system variable is set to `<code>OFF</code>`
+* The value of the `@@read_only` system variable is set to `OFF`
 
 
 In 2.1.1, the following additional condition was added:
@@ -239,7 +239,7 @@ In 2.1.1, the following additional condition was added:
 * The last running server is not configured as a slave
 
 
-If the value of the `<code>allow_cluster_recovery</code>` parameter is set to false, the monitor
+If the value of the `allow_cluster_recovery` parameter is set to false, the monitor
 sets all other servers into maintenance mode. This is done to prevent accidental
 use of the failed servers if they came back online. If the failed servers come
 back up, the maintenance mode needs to be manually cleared once replication has
@@ -251,7 +251,7 @@ been set up.
  of acting as master servers.
 
 
-### `<code>failcount</code>`
+### `failcount`
 
 
 Number of failures that must occur on all failed servers before a standalone
@@ -259,22 +259,22 @@ server is labelled as a master. The default value is 5 failures.
 
 
 The monitor will attempt to contact all servers once per monitoring cycle. When
-`<code>detect_standalone_master</code>` is enabled, all of the failed servers must fail
+`detect_standalone_master` is enabled, all of the failed servers must fail
 *failcount* number of connection attempts before the last server is labeled as
 the master.
 
 
 The formula for calculating the actual number of milliseconds before the server
-is labelled as the master is `<code>monitor_interval * failcount</code>`.
+is labelled as the master is `monitor_interval * failcount`.
 
 
-### `<code>allow_cluster_recovery</code>`
+### `allow_cluster_recovery`
 
 
 Allow recovery after the cluster has dropped down to one server. This feature
 takes a boolean parameter is enabled by default. This parameter requires that
-`<code>detect_standalone_master</code>` is set to true. In MaxScale 2.1.0, this parameter was
-called `<code>failover_recovery</code>`.
+`detect_standalone_master` is set to true. In MaxScale 2.1.0, this parameter was
+called `failover_recovery`.
 
 
 When this parameter is disabled, if the last remaining server is labelled as the

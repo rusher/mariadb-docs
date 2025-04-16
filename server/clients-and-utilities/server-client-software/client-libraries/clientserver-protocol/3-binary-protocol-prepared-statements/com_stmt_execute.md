@@ -105,7 +105,7 @@ parameter type flag byte:
 The NULL-Bitmap indicates if parameters are null (one bit per parameter). If the parameter is NULL, the bit is set in the bitmap and the parameter value is not sent.
 
 
-The size in bytes of the NULL-bitmap can be calculated with: `<code>(parameter number + 7) / 8</code>`
+The size in bytes of the NULL-bitmap can be calculated with: `(parameter number + 7) / 8`
 
 
 ### Binary parameter encoding

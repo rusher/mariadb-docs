@@ -10,7 +10,7 @@
 ```
 
 Where the test case can be specified as:
-`<code>testcase[.test]</code>` Runs the test case named 'testcase' from all suits
+`testcase[.test]` Runs the test case named 'testcase' from all suits
 
 
 ```
@@ -21,8 +21,8 @@ path-to-testcase
 ### Examples
 
 
-`<code>alias</code>`
-`<code>main.alias</code>` 'main' is the name of the suite for the 't' directory.
+`alias`
+`main.alias` 'main' is the name of the suite for the 't' directory.
 
 ```
 rpl.rpl_invoked_features,mix,xtradb_plugin
@@ -146,7 +146,7 @@ suite/rpl/t/rpl.rpl_invoked_features
 ### Options For Debugging the Product
 
 
-In `<code>mariadb-test-run.pl</code>` there is a concept of a "debugger". A "debugger" is a tool that `<code>mariadb-test-run.pl</code>` will execute instead of `<code>mariadbd</code>`. This tool will then start `<code>mariadbd</code>` and can control its execution as it wants. The following "debuggers" are supported:
+In `mariadb-test-run.pl` there is a concept of a "debugger". A "debugger" is a tool that `mariadb-test-run.pl` will execute instead of `mariadbd`. This tool will then start `mariadbd` and can control its execution as it wants. The following "debuggers" are supported:
 
 
 

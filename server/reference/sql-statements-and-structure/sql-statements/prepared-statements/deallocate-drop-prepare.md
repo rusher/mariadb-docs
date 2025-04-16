@@ -11,12 +11,12 @@
 ## Description
 
 
-To deallocate a prepared statement produced with `<code>[PREPARE](prepare-statement.md)</code>`, use a
-`<code class="fixed" style="white-space:pre-wrap">DEALLOCATE PREPARE</code>` statement that refers to the prepared statement
+To deallocate a prepared statement produced with `[PREPARE](prepare-statement.md)`, use a
+`DEALLOCATE PREPARE` statement that refers to the prepared statement
 name.
 
 
-A prepared statement is implicitly deallocated when a new `<code>PREPARE</code>` command is issued. In that case, there is no need to use `<code>DEALLOCATE</code>`.
+A prepared statement is implicitly deallocated when a new `PREPARE` command is issued. In that case, there is no need to use `DEALLOCATE`.
 
 
 Attempting to execute a prepared statement after deallocating it

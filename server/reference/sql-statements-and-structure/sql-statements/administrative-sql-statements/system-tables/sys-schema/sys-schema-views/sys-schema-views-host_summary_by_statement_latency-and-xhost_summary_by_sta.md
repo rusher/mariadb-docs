@@ -9,7 +9,7 @@ These [Sys Schema](sys-schema-views-host_summary_by_statement_latency-and-xhost_
 ## Description
 
 
-The `<code>host_summary_by_statement_latency</code>` and `<code>x$host_summary_by_statement_latency</code>` views summarize statement statistics, grouped by host. Rows are sorted by descending total latency by default. The `<code>host_summary_by_statement_latency</code>` view is intended to be easier for human reading, while the `<code>x$host_summary_by_statement_latency</code>` view provides the data in raw form, intended for tools that process the data.
+The `host_summary_by_statement_latency` and `x$host_summary_by_statement_latency` views summarize statement statistics, grouped by host. Rows are sorted by descending total latency by default. The `host_summary_by_statement_latency` view is intended to be easier for human reading, while the `x$host_summary_by_statement_latency` view provides the data in raw form, intended for tools that process the data.
 
 
 They contain the following columns:

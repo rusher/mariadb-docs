@@ -11,15 +11,15 @@ expr REGEXP pat, expr RLIKE pat
 ## Description
 
 
-Performs a pattern match of a string expression `<code>expr</code>` against a pattern
-`<code>pat</code>`. The pattern can be an extended regular expression. See [Regular Expressions Overview](regular-expressions-overview.md) for details on the syntax for
+Performs a pattern match of a string expression `expr` against a pattern
+`pat`. The pattern can be an extended regular expression. See [Regular Expressions Overview](regular-expressions-overview.md) for details on the syntax for
 regular expressions (see also [PCRE Regular Expressions](pcre.md)).
 
 
-Returns `<code>1</code>` if `<code>expr</code>` matches `<code>pat</code>` or `<code>0</code>` if it doesn't match. If either `<code>expr</code>` or `<code>pat</code>` are NULL, the result is NULL.
+Returns `1` if `expr` matches `pat` or `0` if it doesn't match. If either `expr` or `pat` are NULL, the result is NULL.
 
 
-The negative form [NOT REGEXP](../not-regexp.md) also exists, as an alias for `<code>NOT (string REGEXP pattern)</code>`. RLIKE and NOT RLIKE are synonyms for REGEXP and NOT REGEXP, originally provided for mSQL compatibility.
+The negative form [NOT REGEXP](../not-regexp.md) also exists, as an alias for `NOT (string REGEXP pattern)`. RLIKE and NOT RLIKE are synonyms for REGEXP and NOT REGEXP, originally provided for mSQL compatibility.
 
 
 The pattern need not be a literal string. For example, it can be

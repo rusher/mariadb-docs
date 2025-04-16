@@ -10,112 +10,112 @@ See [Server System Variables](../../../server-usage/replication-cluster-multi-ma
 See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
 
 
-#### `<code>key_buffer_size</code>`
+#### `key_buffer_size`
 
 
 * Description: Size of the buffer for the index blocks used by MyISAM tables and shared for all threads. See [Optimizing key_buffer_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/optimizing-key_buffer_size.md) for more on selecting the best value.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--key-buffer-size=#</code>`
+* Commandline: `--key-buffer-size=#`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>134217728</code>`
-* Range: `<code>8</code>` upwards (upper limit determined by operating system per process limit)
+* Data Type: `numeric`
+* Default Value: `134217728`
+* Range: `8` upwards (upper limit determined by operating system per process limit)
 
 
 
-#### `<code>key_cache_age_threshold</code>`
+#### `key_cache_age_threshold`
 
 
 * Description: The lower the setting, the more quickly buffers move from the hot key cache sublist to the warm sublist.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--key-cache-age-threshold=#</code>`
+* Commandline: `--key-cache-age-threshold=#`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>300</code>`
-* Range: `<code>100</code>` to `<code>4294967295</code>`
+* Data Type: `numeric`
+* Default Value: `300`
+* Range: `100` to `4294967295`
 
 
 
-#### `<code>key_cache_block_size</code>`
+#### `key_cache_block_size`
 
 
 * Description: [MyISAM](myisam-system-variables.md) key cache block size in bytes .
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--key-cache-block-size=#</code>`
+* Commandline: `--key-cache-block-size=#`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>1024</code>`
-* Range: `<code>512</code>` to `<code>16384</code>`
+* Data Type: `numeric`
+* Default Value: `1024`
+* Range: `512` to `16384`
 
 
 
-#### `<code>key_cache_division_limit</code>`
+#### `key_cache_division_limit`
 
 
 * Description: Percentage to use for the warm key cache buffer list (the remainder is allocated between the hot and cold caches).
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--key-cache-division-limit=#</code>`
+* Commandline: `--key-cache-division-limit=#`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>100</code>`
-* Range: `<code>1</code>` to `<code>100</code>`
+* Data Type: `numeric`
+* Default Value: `100`
+* Range: `1` to `100`
 
 
 
-#### `<code>key_cache_file_hash_size</code>`
+#### `key_cache_file_hash_size`
 
 
 * Description: Number of hash buckets for open and changed files. If you have many MyISAM files open you should increase this for faster flushing of changes. A good value is probably 1/10th of the number of possible open MyISAM files.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--key-cache-file-hash-size=#</code>`
+* Commandline: `--key-cache-file-hash-size=#`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>512</code>`
-* Range: `<code>128</code>` to `<code>16384</code>`
+* Data Type: `numeric`
+* Default Value: `512`
+* Range: `128` to `16384`
 
 
 
-#### `<code>key_cache_segments</code>`
+#### `key_cache_segments`
 
 
 * Description: The number of segments in a key cache. See [Segmented Key Cache](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/segmented-key-cache-performance.md).
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--key-cache-segments=#</code>`
+* Commandline: `--key-cache-segments=#`
 * Scope: Global
 * Dynamic: Yes
 * Type: numeric
-* Default Value: `<code class="fixed" style="white-space:pre-wrap">0</code>` (non-segmented)
-* Range: `<code>0</code>` to `<code>64</code>`
+* Default Value: `0` (non-segmented)
+* Range: `0` to `64`
 
 
 
-#### `<code>myisam_block_size</code>`
+#### `myisam_block_size`
 
 
 * Description: Block size to be used for MyISAM index pages.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--myisam-block-size=
+* Commandline: `--myisam-block-size=
 
-# </code>`
+# `
 * Scope: Global
 * Dynamic: No
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>1024</code>`
+* Data Type: `numeric`
+* Default Value: `1024`
 
 
 
-#### `<code>myisam_data_pointer_size</code>`
+#### `myisam_data_pointer_size`
 
 
 * Description: Size in bytes of the default pointer, used in a [MyISAM](myisam-system-variables.md) [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md) with no MAX_ROWS option.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--myisam-data-pointer-size=#</code>`
+* Commandline: `--myisam-data-pointer-size=#`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>6</code>`
-* Range: `<code>2</code>` to `<code>7</code>`
+* Data Type: `numeric`
+* Default Value: `6`
+* Range: `2` to `7`
 
 
 
-#### `<code>myisam_max_extra_sort_file_size</code>`
+#### `myisam_max_extra_sort_file_size`
 
 
 * Description: Removed in MySQL 5.0.6, was used as a way to force long character keys in large tables to use the key cache method.
@@ -123,106 +123,106 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 
 
-#### `<code>myisam_max_sort_file_size</code>`
+#### `myisam_max_sort_file_size`
 
 
 * Description: Maximum size in bytes of the temporary file used while recreating a MyISAM index. If the this size is exceeded, the slower process of using the key cache is done instead.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--myisam-max-sort-file-size=#</code>`
+* Commandline: `--myisam-max-sort-file-size=#`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value - 32 bit: `<code>2147483648</code>`
-* Default Value - 64 bit: `<code>9223372036854775807</code>`
+* Data Type: `numeric`
+* Default Value - 32 bit: `2147483648`
+* Default Value - 64 bit: `9223372036854775807`
 
 
 
-#### `<code>myisam_mmap_size</code>`
+#### `myisam_mmap_size`
 
 
 * Description: Maximum memory in bytes that can be used for memory mapping compressed MyISAM files. Too high a value may result in swapping if there are many compressed MyISAM tables.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--myisam-mmap-size=#</code>`
+* Commandline: `--myisam-mmap-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value - 32 bit: `<code>4294967295</code>`
-* Default Value - 64 bit: `<code>18446744073709547520</code>`
-* Range - 32-bit: `<code>7</code>` to `<code>4294967295</code>`
-* Range - 64-bit: `<code>7</code>` to `<code>18446744073709547520</code>`
+* Data Type: `numeric`
+* Default Value - 32 bit: `4294967295`
+* Default Value - 64 bit: `18446744073709547520`
+* Range - 32-bit: `7` to `4294967295`
+* Range - 64-bit: `7` to `18446744073709547520`
 
 
 
-#### `<code>myisam_recover_options</code>`
+#### `myisam_recover_options`
 
 
-* Description: MyISAM recovery mode. Multiple options can be selected, comma-delimited. Using no argument is equivalent to specifying `<code>DEFAULT</code>`, while specifying "" is equivalent to `<code>OFF</code>`. If enabled each time the server opens a MyISAM table, it checks whether it has been marked as crashed, or wasn't closed properly. If so, mysqld will run a check and then attempt to repair the table, writing to the error log beforehand.
+* Description: MyISAM recovery mode. Multiple options can be selected, comma-delimited. Using no argument is equivalent to specifying `DEFAULT`, while specifying "" is equivalent to `OFF`. If enabled each time the server opens a MyISAM table, it checks whether it has been marked as crashed, or wasn't closed properly. If so, mysqld will run a check and then attempt to repair the table, writing to the error log beforehand.
 
   * OFF: No recovery.
   * BACKUP: If the data file is changed while recovering, saves a backup of the .MYD data file. t.MYD will be saved as t.MYD-datetime.BAK.
-  * BACKUP_ALL: Same as `<code>BACKUP</code>` but also backs up the .MYI index file. t.MYI will be saved as t.MYI-datetime.BAK.
+  * BACKUP_ALL: Same as `BACKUP` but also backs up the .MYI index file. t.MYI will be saved as t.MYI-datetime.BAK.
   * DEFAULT: Recovers without backing up, forcing, or quick checking.
   * FORCE: Runs the recovery even if it determines that more than one row from the data file will be lost.
   * QUICK: Does not check rows in the table if there are no delete blocks.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--myisam-recover-options[=name]</code>`
+* Commandline: `--myisam-recover-options[=name]`
 * Scope: Global
 * Dynamic: No
-* Data Type: `<code>enumeration</code>`
+* Data Type: `enumeration`
 * Default Value:
 
-  * `<code>BACKUP,QUICK</code>` (>= [MariaDB 10.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md))
-  * `<code>DEFAULT</code>` (<= [MariaDB 10.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md))
-  * `<code>OFF</code>`
-* Valid Values: `<code>OFF</code>`, `<code>DEFAULT</code>`, `<code>BACKUP</code>`, `<code>BACKUP_ALL</code>`, `<code>FORCE</code>` or `<code>QUICK</code>`
+  * `BACKUP,QUICK` (>= [MariaDB 10.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md))
+  * `DEFAULT` (<= [MariaDB 10.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md))
+  * `OFF`
+* Valid Values: `OFF`, `DEFAULT`, `BACKUP`, `BACKUP_ALL`, `FORCE` or `QUICK`
 
 
 
-#### `<code>myisam_repair_threads</code>`
+#### `myisam_repair_threads`
 
 
-* Description: If set to more than `<code>1</code>`, the default, MyISAM table indexes each have their own thread during repair and sorting. Increasing from the default will usually result in faster repair, but will use more CPU and memory.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--myisam-repair-threads=#</code>`
+* Description: If set to more than `1`, the default, MyISAM table indexes each have their own thread during repair and sorting. Increasing from the default will usually result in faster repair, but will use more CPU and memory.
+* Commandline: `--myisam-repair-threads=#`
 * Scope: Global, Session
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>1</code>`
-* Range - 32-bit: `<code>1</code>` to `<code>4294967295</code>`
-* Range - 64-bit: `<code>1</code>` to `<code>18446744073709547520</code>`
+* Data Type: `numeric`
+* Default Value: `1`
+* Range - 32-bit: `1` to `4294967295`
+* Range - 64-bit: `1` to `18446744073709547520`
 
 
 
-#### `<code>myisam_sort_buffer_size</code>`
+#### `myisam_sort_buffer_size`
 
 
 * Description: Size in bytes of the buffer allocated when creating or sorting indexes on a MyISAM table. Increase for better [myisamchk -r, --recover](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md#repairing-tables) performance.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--myisam-sort-buffer-size=#</code>`
+* Commandline: `--myisam-sort-buffer-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
-* Data Type: `<code>numeric</code>`
-* Default Value: `<code>134217720</code>` (128MB)
-* Range: `<code>4096</code>` to `<code>18446744073709547520</code>`
+* Data Type: `numeric`
+* Default Value: `134217720` (128MB)
+* Range: `4096` to `18446744073709547520`
 
 
 
-#### `<code>myisam_stats_method</code>`
+#### `myisam_stats_method`
 
 
-* Description: Determines how NULLs are treated for [MyISAM](myisam-system-variables.md) index statistics purposes. If set to `<code>nulls_equal</code>`, the default, all NULL index values are treated as a single group. This is usually fine, but if you have large numbers of NULLs the average group size is slanted higher, and the optimizer may miss using the index for ref accesses when it would be useful. If set to `<code>nulls_unequal</code>`, the opposite approach is taken, with each NULL forming its own group of one. Conversely, the average group size is slanted lower, and the optimizer may use the index for ref accesses when not suitable. Setting to `<code>nulls_ignored</code>` ignores NULLs altogether from index group calculations. See also [Index Statistics](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/index-statistics.md), [aria_stats_method](../aria/aria-system-variables.md), [innodb_stats_method](../innodb/innodb-system-variables.md).
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--myisam-stats-method=name</code>`
+* Description: Determines how NULLs are treated for [MyISAM](myisam-system-variables.md) index statistics purposes. If set to `nulls_equal`, the default, all NULL index values are treated as a single group. This is usually fine, but if you have large numbers of NULLs the average group size is slanted higher, and the optimizer may miss using the index for ref accesses when it would be useful. If set to `nulls_unequal`, the opposite approach is taken, with each NULL forming its own group of one. Conversely, the average group size is slanted lower, and the optimizer may use the index for ref accesses when not suitable. Setting to `nulls_ignored` ignores NULLs altogether from index group calculations. See also [Index Statistics](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/index-statistics.md), [aria_stats_method](../aria/aria-system-variables.md), [innodb_stats_method](../innodb/innodb-system-variables.md).
+* Commandline: `--myisam-stats-method=name`
 * Scope: Global, Session
 * Dynamic: Yes
-* Data Type: `<code>enumeration</code>`
-* Default Value: `<code>nulls_equal</code>`
-* Valid Values: `<code>nulls_equal</code>`, `<code>nulls_unequal</code>`, `<code>nulls_ignored</code>`
+* Data Type: `enumeration`
+* Default Value: `nulls_equal`
+* Valid Values: `nulls_equal`, `nulls_unequal`, `nulls_ignored`
 
 
 
-#### `<code>myisam_use_mmap</code>`
+#### `myisam_use_mmap`
 
 
-* Description: If set to `<code>1</code>` (0 is default), memory mapping will be used to reading and writing MyISAM tables.
-* Commandline: `<code class="fixed" style="white-space:pre-wrap">--myisam-use-mmap</code>`
+* Description: If set to `1` (0 is default), memory mapping will be used to reading and writing MyISAM tables.
+* Commandline: `--myisam-use-mmap`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `<code>boolean</code>`
-* Default Value: `<code>OFF</code>`
+* Data Type: `boolean`
+* Default Value: `OFF`
 
 

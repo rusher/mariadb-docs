@@ -8,7 +8,7 @@ optimizer to use another plan.
 
 
 You can examine the query plan for a [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) by writing
-[EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) before the statement. [SHOW EXPLAIN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-explain.md) shows the output of a running query. In some cases, its output can be closer to reality than `<code>EXPLAIN</code>`.
+[EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) before the statement. [SHOW EXPLAIN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-explain.md) shows the output of a running query. In some cases, its output can be closer to reality than `EXPLAIN`.
 
 
 For the following queries, we will use the world database for
@@ -46,7 +46,7 @@ the [SELECT](../../../../../general-resources/learning-and-training/training-and
 
 
 The simplest way to force the join order is to put the tables in the correct
-order in the `<code>FROM</code>` clause and use `<code>SELECT STRAIGHT_JOIN</code>` like so:
+order in the `FROM` clause and use `SELECT STRAIGHT_JOIN` like so:
 
 
 ```
@@ -55,8 +55,8 @@ City.CountryCode=Country.Code AND Country.HeadOfState="Volodymyr Zelenskyy";
 ```
 
 If you only want to force the join order for a few tables, use
-`<code>STRAIGHT_JOIN</code>` in the `<code>FROM</code>` clause. When this is done, only tables
-connected with `<code>STRAIGHT_JOIN</code>` will have their order forced. For example:
+`STRAIGHT_JOIN` in the `FROM` clause. When this is done, only tables
+connected with `STRAIGHT_JOIN` will have their order forced. For example:
 
 
 ```
@@ -64,8 +64,8 @@ SELECT SUM(City.Population) FROM Country STRAIGHT_JOIN City WHERE
 City.CountryCode=Country.Code AND Country.HeadOfState="Volodymyr Zelenskyy";
 ```
 
-In both of the above cases `<code>Country</code>` will be scanned first and for each
-matching country (one in this case) all rows in `<code>City</code>` will be checked for a
+In both of the above cases `Country` will be scanned first and for each
+matching country (one in this case) all rows in `City` will be checked for a
 match. As there is only one matching country this will be faster than the
 original query.
 
@@ -82,8 +82,8 @@ The output of [EXPLAIN](../../../../../general-resources/learning-and-training/t
 
 
 
-This is one of the few cases where `<code>ALL</code>` is ok, as the scan of the
-`<code>Country</code>` table will only find one matching row.
+This is one of the few cases where `ALL` is ok, as the scan of the
+`Country` table will only find one matching row.
 
 
 ## Forcing Usage of a Specific Index for the WHERE Clause
@@ -109,11 +109,11 @@ option.
 USE INDEX [{FOR {JOIN|ORDER BY|GROUP BY}] ([index_list])
 ```
 
-The default is '`<code>FOR JOIN</code>`', which means that the hint only affects how the
-`<code>WHERE</code>` clause is optimized.
+The default is '`FOR JOIN`', which means that the hint only affects how the
+`WHERE` clause is optimized.
 
 
-`<code>USE INDEX</code>` is used after the table name in the `<code>FROM</code>` clause.
+`USE INDEX` is used after the table name in the `FROM` clause.
 
 
 Example:
@@ -137,8 +137,8 @@ This produces:
 
 
 
-If we had not used [USE INDEX](use-index.md), the `<code>Name</code>` index would have been in
-`<code>possible keys</code>`.
+If we had not used [USE INDEX](use-index.md), the `Name` index would have been in
+`possible keys`.
 
 
 ### IGNORE INDEX: Don't Use a Particular Index
@@ -152,7 +152,7 @@ You can tell the optimizer to not consider some particular index with the
 IGNORE INDEX [{FOR {JOIN|ORDER BY|GROUP BY}] ([index_list])
 ```
 
-This is used after the table name in the `<code>FROM</code>` clause:
+This is used after the table name in the `FROM` clause:
 
 
 ```
@@ -173,7 +173,7 @@ This produces:
 
 
 
-The benefit of using `<code>IGNORE_INDEX</code>` instead of `<code>USE_INDEX</code>` is that it will
+The benefit of using `IGNORE_INDEX` instead of `USE_INDEX` is that it will
 not disable a new index which you may add later.
 
 
@@ -207,8 +207,8 @@ This produces:
 
 
 
-`<code>FORCE_INDEX</code>` works by only considering the given indexes (like with
-`<code>USE_INDEX</code>`) but in addition it tells the optimizer to regard a table scan as
+`FORCE_INDEX` works by only considering the given indexes (like with
+`USE_INDEX`) but in addition it tells the optimizer to regard a table scan as
 something very expensive. However if none of the 'forced' indexes can be used,
 then a table scan will be used anyway.
 
@@ -226,7 +226,7 @@ The optimizer will try to use indexes to resolve [ORDER BY](../../../../referenc
 
 
 You can use [USE INDEX](use-index.md), [IGNORE INDEX](ignore-index.md) and
-[FORCE INDEX](force-index.md) as in the `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` clause above
+[FORCE INDEX](force-index.md) as in the `WHERE` clause above
 to ensure that some specific index used:
 
 
@@ -234,7 +234,7 @@ to ensure that some specific index used:
 USE INDEX [{FOR {JOIN|ORDER BY|GROUP BY}] ([index_list])
 ```
 
-This is used after the table name in the `<code class="highlight fixed" style="white-space:pre-wrap">FROM</code>` clause.
+This is used after the table name in the `FROM` clause.
 
 
 Example:
@@ -259,7 +259,7 @@ This produces:
 
 
 Without the [FORCE INDEX](force-index.md) option we would have
-'`<code class="highlight fixed" style="white-space:pre-wrap">Using where; Using temporary; Using filesort</code>`' in the
+'`Using where; Using temporary; Using filesort`' in the
 'Extra' column, which means that the optimizer would created a temporary
 table and sort it.
 
@@ -288,7 +288,7 @@ and [ORDER BY](../../../../reference/sql-statements-and-structure/sql-statements
 * Use a temporary table for [ORDER BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md):
 
   * Create a temporary (in memory) table for the 'to-be-sorted' data. (If this
- gets bigger than `<code class="highlight fixed" style="white-space:pre-wrap">max_heap_table_size</code>` or contains blobs
+ gets bigger than `max_heap_table_size` or contains blobs
  then an [Aria](../../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) or [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) disk based table will be used)
   * Sort the keys + reference to row (with filesort)
   * Scan the table in sorted order
@@ -315,8 +315,8 @@ not from the first table in the [JOIN](../../../../../general-resources/learning
 Using an in-memory table (as described above) is usually the fastest option for
 [GROUP BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) if the result set is small. It is not optimal if
 the result set is very big. You can tell the optimizer this by using
-`<code class="highlight fixed" style="white-space:pre-wrap">SELECT SQL_SMALL_RESULT</code>`
-or `<code class="highlight fixed" style="white-space:pre-wrap">SELECT SQL_BIG_RESULT</code>`.
+`SELECT SQL_SMALL_RESULT`
+or `SELECT SQL_BIG_RESULT`.
 
 
 For example:
@@ -356,7 +356,7 @@ produces:
 
 
 
-The difference is that with `<code class="highlight fixed" style="white-space:pre-wrap">SQL_SMALL_RESULT</code>` a
+The difference is that with `SQL_SMALL_RESULT` a
 temporary table is used.
 
 
@@ -367,7 +367,7 @@ In some cases you may want to force the use of a temporary table for the result
 to free up the table/row locks for the used tables as quickly as possible.
 
 
-You can do this with the `<code class="highlight fixed" style="white-space:pre-wrap">SQL_BUFFER_RESULT</code>` option:
+You can do this with the `SQL_BUFFER_RESULT` option:
 
 
 ```
@@ -387,7 +387,7 @@ This produces:
 
 
 
-Without `<code class="highlight fixed" style="white-space:pre-wrap">SQL_BUFFER_RESULT</code>`, the above query would not use a
+Without `SQL_BUFFER_RESULT`, the above query would not use a
 temporary table for the result set.
 
 

@@ -11,7 +11,7 @@ LEFT(str,len)
 ## Description
 
 
-Returns the leftmost `<code>len</code>` characters from the string `<code>str</code>`, or NULL if
+Returns the leftmost `len` characters from the string `str`, or NULL if
 any argument is NULL.
 
 

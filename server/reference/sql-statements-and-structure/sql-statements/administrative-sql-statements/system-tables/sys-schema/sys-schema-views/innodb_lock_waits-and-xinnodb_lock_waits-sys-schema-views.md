@@ -9,10 +9,10 @@ These [Sys Schema](sys-schema-views-host_summary_by_statement_latency-and-xhost_
 ## Description
 
 
-The `<code>innodb_lock_waits</code>` and `<code>x$innodb_lock_waits</code>` views summarize InnoDB locks that transactions are waiting upon, by default sorted in descending buffer size.
+The `innodb_lock_waits` and `x$innodb_lock_waits` views summarize InnoDB locks that transactions are waiting upon, by default sorted in descending buffer size.
 
 
-The `<code>innodb_lock_waits</code>` view is intended to be easier for human reading, while the `<code>x$innodb_lock_waits</code>` view provides the data in raw form, intended for tools that process the data.
+The `innodb_lock_waits` view is intended to be easier for human reading, while the `x$innodb_lock_waits` view provides the data in raw form, intended for tools that process the data.
 
 
 They contain the following columns:

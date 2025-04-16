@@ -12,8 +12,8 @@ SLEEP(duration)
 
 
 Sleeps (pauses) for the number of seconds given by the duration argument, then
-returns `<code class="highlight fixed" style="white-space:pre-wrap">0</code>`. If `<code class="highlight fixed" style="white-space:pre-wrap">SLEEP()</code>` is interrupted, it
-returns `<code class="highlight fixed" style="white-space:pre-wrap">1</code>`. The duration may have a fractional part given in
+returns `0`. If `SLEEP()` is interrupted, it
+returns `1`. The duration may have a fractional part given in
 microseconds.
 
 

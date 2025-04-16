@@ -275,7 +275,7 @@ option that must have the proper group by format.
 
 
 As we have seen above, a proper Pivot Table is made from an internal
-intermediate table resulting from the execution of a `<code>GROUP BY</code>` statement. In
+intermediate table resulting from the execution of a `GROUP BY` statement. In
 many cases, it is simpler or desirable to directly specify this when creating
 the pivot table. This may be because the source is the result of a complex
 process including filtering and/or joining tables.

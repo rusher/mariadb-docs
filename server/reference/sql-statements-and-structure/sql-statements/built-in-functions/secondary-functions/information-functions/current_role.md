@@ -18,13 +18,13 @@ utf8 [character set](../../../../../data-types/string-data-types/character-sets/
 If there is no current role, NULL is returned.
 
 
-The output of `<code>SELECT CURRENT_ROLE</code>` is equivalent to the contents of the [ENABLED_ROLES](../../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-enabled_roles-table.md) Information Schema table.
+The output of `SELECT CURRENT_ROLE` is equivalent to the contents of the [ENABLED_ROLES](../../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-enabled_roles-table.md) Information Schema table.
 
 
 [USER()](../../../../../plugins/other-plugins/user-variables-plugin.md) returns the combination of user and host used to login. [CURRENT_USER()](current_user.md) returns the account used to determine current connection's privileges.
 
 
-Statements using the `<code>CURRENT_ROLE</code>` function are not [safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
+Statements using the `CURRENT_ROLE` function are not [safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 
 ## Examples

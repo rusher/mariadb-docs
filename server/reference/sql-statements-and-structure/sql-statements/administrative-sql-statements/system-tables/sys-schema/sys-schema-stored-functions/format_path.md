@@ -11,7 +11,7 @@ sys.format_path(path)
 ## Description
 
 
-`<code>format_path</code>` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md) that, given a path, returns a modified path after replacing subpaths matching the values of various system variables with the variable name.
+`format_path` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md) that, given a path, returns a modified path after replacing subpaths matching the values of various system variables with the variable name.
 
 
 The system variables that are matched are, in order:

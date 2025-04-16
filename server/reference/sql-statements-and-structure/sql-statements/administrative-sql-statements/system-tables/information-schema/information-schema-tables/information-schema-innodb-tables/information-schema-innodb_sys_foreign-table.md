@@ -1,10 +1,10 @@
 
 # Information Schema INNODB_SYS_FOREIGN Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>INNODB_SYS_FOREIGN</code>` table contains information about InnoDB [foreign keys](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/foreign-keys.md).
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_SYS_FOREIGN` table contains information about InnoDB [foreign keys](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/foreign-keys.md).
 
 
-The `<code>PROCESS</code>` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
 
 
 It has the following columns:
@@ -22,7 +22,7 @@ It has the following columns:
 
 
 
-The `<code>TYPE</code>` column provides a bit flag with information about the foreign key. This information is `<code>OR</code>`'ed together to read:
+The `TYPE` column provides a bit flag with information about the foreign key. This information is `OR`'ed together to read:
 
 
 

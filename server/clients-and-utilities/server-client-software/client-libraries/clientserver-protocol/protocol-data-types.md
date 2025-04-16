@@ -87,7 +87,7 @@ always the first byte (little-endian format).
 
 
 An int<4> with value 2 is stored as
-`<code>02 00 00 00</code>`
+`02 00 00 00`
 
 
 ### Length encoded integers

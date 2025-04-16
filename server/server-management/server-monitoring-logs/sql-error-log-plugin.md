@@ -1,7 +1,7 @@
 
 # SQL Error Log Plugin
 
-The `<code>SQL_ERROR_LOG</code>` plugin collects errors sent to clients in a log file defined by [sql_error_log_filename](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_filename), so that they can later be analyzed. The log file can be rotated if [sql_error_log_rotate](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_rotate) is set.
+The `SQL_ERROR_LOG` plugin collects errors sent to clients in a log file defined by [sql_error_log_filename](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_filename), so that they can later be analyzed. The log file can be rotated if [sql_error_log_rotate](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_rotate) is set.
 
 
 Errors are logged as they happen and an error will be logged even if it was handled by a [condition handler](../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/declare-handler.md) and was never technically *sent* to the client.
@@ -65,7 +65,7 @@ Starting from [MariaDB 10.11](../../../release-notes/mariadb-community-server/wh
 Time User Type Error_code: Error_message : Query
 ```
 
-Starting from [MariaDB 10.6.17](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-17-release-notes.md), [MariaDB 10.11.7](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-7-release-notes.md), [MariaDB 11.0.5](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-5-release-notes.md), [MariaDB 11.1.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-4-release-notes.md), [MariaDB 11.2.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-3-release-notes.md), [MariaDB 11.3.2](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-2-release-notes.md), and [MariaDB 11.4.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes.md), when the [sql_error_log_with_db_and_thread_info](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_with_db_and_thread_info) variable is enabled, the log also contains thread id and database name. If there is no database, `<code>NULL</code>` will be displayed.
+Starting from [MariaDB 10.6.17](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-17-release-notes.md), [MariaDB 10.11.7](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-7-release-notes.md), [MariaDB 11.0.5](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-5-release-notes.md), [MariaDB 11.1.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-4-release-notes.md), [MariaDB 11.2.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-3-release-notes.md), [MariaDB 11.3.2](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-2-release-notes.md), and [MariaDB 11.4.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes.md), when the [sql_error_log_with_db_and_thread_info](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_with_db_and_thread_info) variable is enabled, the log also contains thread id and database name. If there is no database, `NULL` will be displayed.
 
 
 ```
@@ -99,7 +99,7 @@ Each separated by a space or : as above
 2023-11-01 11:31:15 [monty] @ storm [192.168.0.12] ERROR 1051: Unknown table 'test.t1' : drop table t1
 ```
 
-With [sql_error_log_with_db_and_thread_info](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_with_db_and_thread_info) enabled (database `<code>test</code>` and thread id `<code>4</code>`):
+With [sql_error_log_with_db_and_thread_info](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_with_db_and_thread_info) enabled (database `test` and thread id `4`):
 
 
 ```

@@ -1,10 +1,10 @@
 
 # Information Schema INNODB_BUFFER_POOL_STATS Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>INNODB_BUFFER_POOL_STATS</code>` table contains information about pages in the [buffer pool](../../../../../../../storage-engines/innodb/innodb-buffer-pool.md), similar to what is returned with the `<code>[SHOW ENGINE INNODB STATUS](../../../../show/show-engine-innodb-status.md)</code>` statement.
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_BUFFER_POOL_STATS` table contains information about pages in the [buffer pool](../../../../../../../storage-engines/innodb/innodb-buffer-pool.md), similar to what is returned with the `[SHOW ENGINE INNODB STATUS](../../../../show/show-engine-innodb-status.md)` statement.
 
 
-The `<code>PROCESS</code>` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
 
 
 It has the following columns:

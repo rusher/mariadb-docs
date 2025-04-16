@@ -11,5 +11,5 @@ CHARACTER_LENGTH(str)
 ## Description
 
 
-`<code>CHARACTER_LENGTH()</code>` is a synonym for `<code>[CHAR_LENGTH()](char_length.md)</code>`.
+`CHARACTER_LENGTH()` is a synonym for `[CHAR_LENGTH()](char_length.md)`.
 

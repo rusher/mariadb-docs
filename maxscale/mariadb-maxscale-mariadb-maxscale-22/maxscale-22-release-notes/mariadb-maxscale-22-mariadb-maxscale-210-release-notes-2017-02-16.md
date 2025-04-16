@@ -28,10 +28,10 @@ For more information about MariaDB BSL 1.1, please refer to
 ## Changed Features
 
 
-### `<code>router_options</code>` to Parameters
+### `router_options` to Parameters
 
 
-The `<code>router_options</code>` values can also be given as parameters to the service for
+The `router_options` values can also be given as parameters to the service for
 the *readwritesplit*, *schemarouter* and *binlogrouter* modules.
 
 
@@ -74,9 +74,9 @@ disable_sescmd_history=false
 
 
 From 2.1.0 onwards MariaDB MaxScale supports hierarchical configuration
-files. When invoked with a configuration file, e.g. `<code>maxscale.cnf</code>`, MariaDB
-MaxScale looks for a directory `<code>maxscale.cnf.d</code>` in the same directory as the
-configuration file, and reads all `<code>.cnf</code>` files it finds in that directory
+files. When invoked with a configuration file, e.g. `maxscale.cnf`, MariaDB
+MaxScale looks for a directory `maxscale.cnf.d` in the same directory as the
+configuration file, and reads all `.cnf` files it finds in that directory
 hierarchy. All other files will be ignored.
 
 
@@ -85,13 +85,13 @@ Please see the
 for details.
 
 
-### Readwritesplit `<code>disable_sescmd_history</code>` option
+### Readwritesplit `disable_sescmd_history` option
 
 
-The default value for `<code>disable_sescmd_history</code>` is now true. This new default
+The default value for `disable_sescmd_history` is now true. This new default
 value will prevent the excessive memory use of long-lived connections. In
 addition to this, it was not optimal to enable this option while the default
-value for `<code>max_slave_connections</code>` was 100%, effectively making it useless.
+value for `max_slave_connections` was 100%, effectively making it useless.
 
 
 ### Module configurations
@@ -107,9 +107,9 @@ the module configuration directory. The default value is
 */etc/maxscale.modules.d*.
 
 
-For example, the `<code>dbfwfilter</code>` rule files could be stored in
+For example, the `dbfwfilter` rule files could be stored in
 */etc/maxscale.modules.d/my_rules.txt* and referred to with
-`<code>rules=my_rules.txt</code>`.
+`rules=my_rules.txt`.
 
 
 For more details, refer to the documentation of *module_configdir* in the
@@ -149,14 +149,14 @@ This behaviour is now compatible with logrotate(8).
 
 
 Further, if MaxScale is configured to use shared memory for the log file,
-the file is created into the directory `<code>/dev/shm/maxscale</code>`. Earlier the
-log file was created into the directory `<code>/dev/shm/maxscale.PID</code>`, where PID
+the file is created into the directory `/dev/shm/maxscale`. Earlier the
+log file was created into the directory `/dev/shm/maxscale.PID`, where PID
 was the pid of the MaxScale process.
 
 
 In addition, there is now a mechanism that prevents the flooding of the log, in
 case the same error occurs over and over again. That mechanism, which is enabled
-by default, is configured using the new global configuration entry `<code>log_throttling</code>`.
+by default, is configured using the new global configuration entry `log_throttling`.
 For more information about this configuration entry, please see
 [Global Settings](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#global-settings).
 
@@ -170,7 +170,7 @@ seamless slave failover and makes it transparent to the client.
 
 
 Read the [Readwritesplit documentation](../maxscale-22-routers/mariadb-maxscale-22-readwritesplit.md) on
-`<code>retry_failed_reads</code>` for more details.
+`retry_failed_reads` for more details.
 
 
 ### Persistent Connections
@@ -199,12 +199,12 @@ data caching.
 
 The user data loaded from the backend databases is now stored on a per listener
 basis instead of a per service basis. In earlier versions, each service had its own
-cache directory in `<code>/var/cache/maxscale</code>`. This directory contains cached user
+cache directory in `/var/cache/maxscale`. This directory contains cached user
 data which is used there is no connectivity to the backend cluster.
 
 
 In 2.1.0, each listener has its own sub-directory in the service cache
-directory. The old caches in `<code>/var/cache/maxscale</code>` will need to be manually
+directory. The old caches in `/var/cache/maxscale` will need to be manually
 removed if they are no longer used by older versions of MaxScale.
 
 
@@ -214,7 +214,7 @@ removed if they are no longer used by older versions of MaxScale.
 The galeramon monitor will only choose nodes with a *wsrep_local_index*
 value of 0 as the master. This allows multiple MaxScales to always choose
 the same node as the write master node for the cluster. The old behavior
-can be taken into use by disabling the new `<code>root_node_as_master</code>` option.
+can be taken into use by disabling the new `root_node_as_master` option.
 
 
 For more details, read the [Galeramon documentation](../maxscale-22-monitors/mariadb-maxscale-22-galera-monitor.md).
@@ -245,7 +245,7 @@ For more details, read the [Named Server Filter documentation](../maxscale-22-fi
 
 MaxScale 2.1 supports dynamic configuration of servers, monitors and
 listeners. A set of new commands were added to maxadmin. See output of
-`<code>maxadmin help</code>` and `<code>maxadmin help { create | destroy | alter | add | remove }</code>`
+`maxadmin help` and `maxadmin help { create | destroy | alter | add | remove }`
 for more details.
 
 
@@ -256,12 +256,12 @@ MaxScale can now change the servers of a service or a monitor at run-time. New
 servers can also be created and they will persisted even after a restart.
 
 
-* `<code>create server</code>`: Creates a new server
-* `<code>destroy server</code>`: Destroys a created server
-* `<code>add server</code>`: Adds a server to a service or a monitor
-* `<code>remove server</code>`: Removes a server from a service or a monitor
-* `<code>alter server</code>`: Alter server configuration
-* `<code>alter monitor</code>`: Alter monitor configuration
+* `create server`: Creates a new server
+* `destroy server`: Destroys a created server
+* `add server`: Adds a server to a service or a monitor
+* `remove server`: Removes a server from a service or a monitor
+* `alter server`: Alter server configuration
+* `alter monitor`: Alter monitor configuration
 
 
 With these new features, you can start MaxScale without the servers and define
@@ -275,8 +275,8 @@ New listeners for services can be created and destroyed at runtime. This allows
 the services to adapt to changes in client traffic.
 
 
-* `<code>create listener</code>`: Create a new listener
-* `<code>destroy listener</code>`: Destroy a created listener. The listener will stop
+* `create listener`: Create a new listener
+* `destroy listener`: Destroy a created listener. The listener will stop
  handling client requests and will be removed after the next restart of
  MaxScale.
 
@@ -284,8 +284,8 @@ the services to adapt to changes in client traffic.
 In addition to these commands, individual listeners can now be stopped and started.
 
 
-* `<code>shutdown listener</code>`: Stop a listener
-* `<code>restart listener</code>`: Restart a listener
+* `shutdown listener`: Stop a listener
+* `restart listener`: Restart a listener
 
 
 #### Dynamic monitor configuration
@@ -297,9 +297,9 @@ monitor parameters can also be changed at runtime making them more adaptive and
 allowing runtime tuning of parameters.
 
 
-* `<code>create monitor</code>`: Create a new monitor
-* `<code>destroy monitor</code>`: Destroy a created monitor
-* `<code>alter monitor</code>`: Alter monitor parameters
+* `create monitor`: Create a new monitor
+* `destroy monitor`: Destroy a created monitor
+* `alter monitor`: Alter monitor parameters
 
 
 ### Module commands
@@ -311,8 +311,8 @@ module API. Currently, only MaxAdmin implements an interface to the module
 commands.
 
 
-All registered module commands can be shown with `<code>maxadmin list commands</code>` and
-they can be executed with `<code>maxadmin call command <module> <name> ARGS...</code>` where
+All registered module commands can be shown with `maxadmin list commands` and
+they can be executed with `maxadmin call command <module> <name> ARGS...` where
 *<module>* is the name of the module and *<name>* is the name of the
 command. *ARGS* is a command specific list of arguments.
 
@@ -356,7 +356,7 @@ the [MySQL Monitor Documentation](/en/mariadb-maxscale-22-mysql-monitor/).
 ### Permissive authentication mode for MySQLAuth
 
 
-The MySQL authentication module supports the `<code>skip_authentication</code>` option which
+The MySQL authentication module supports the `skip_authentication` option which
 allows authentication to always succedd in MaxScale. This option offloads the
 actual authentication to the backend server and it can be used to implement a
 secure version of a wildcard user.
@@ -427,7 +427,7 @@ documentation.
 ### Galeramon Monitor new option
 
 
-The `<code>set_donor_nodes</code>` option allows the setting of *global variable* *wsrep_sst_donor* with a list the preferred donor nodes (among slave ones).
+The `set_donor_nodes` option allows the setting of *global variable* *wsrep_sst_donor* with a list the preferred donor nodes (among slave ones).
 
 
 For more details, read the [Galeramon documentation](../maxscale-22-monitors/mariadb-maxscale-22-galera-monitor.md).
@@ -436,7 +436,7 @@ For more details, read the [Galeramon documentation](../maxscale-22-monitors/mar
 ### Binlog Server encrypted binlogs
 
 
-The binlog server can optionally encrypt the events received from the master server: the setup requires MariaDB 10.1 master (with Encryption active) and the `<code>mariadb10-compatibility=1</code>` option set.
+The binlog server can optionally encrypt the events received from the master server: the setup requires MariaDB 10.1 master (with Encryption active) and the `mariadb10-compatibility=1` option set.
 
 
 For more details, read the [Binlogrouter documentation](../maxscale-22-routers/mariadb-maxscale-22-binlogrouter.md).

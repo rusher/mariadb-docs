@@ -12,5 +12,5 @@ ALTER LOGFILE GROUP logfile_group
     ENGINE [=] engine_name
 ```
 
-The `<code>ALTER LOGFILE GROUP</code>` statement is not supported by MariaDB. It was originally inherited from MySQL NDB Cluster. See [MDEV-19295](https://jira.mariadb.org/browse/MDEV-19295) for more information.
+The `ALTER LOGFILE GROUP` statement is not supported by MariaDB. It was originally inherited from MySQL NDB Cluster. See [MDEV-19295](https://jira.mariadb.org/browse/MDEV-19295) for more information.
 

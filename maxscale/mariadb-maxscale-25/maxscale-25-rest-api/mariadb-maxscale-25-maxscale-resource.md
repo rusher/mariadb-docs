@@ -73,7 +73,7 @@ file locations, configuration options and version information.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -175,7 +175,7 @@ PATCH /v1/maxscale
 
 
 Update MaxScale parameters. The request body must define updated values for the
-`<code>data.attributes.parameters</code>` object. The following parameters can be altered:
+`data.attributes.parameters` object. The following parameters can be altered:
 
 
 * [admin_auth](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#admin_auth)
@@ -192,13 +192,13 @@ Update MaxScale parameters. The request body must define updated values for the
 Parameters modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Invalid JSON body:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ## Get thread information
@@ -213,13 +213,13 @@ GET /v1/maxscale/threads/:id
 
 Get the information and statistics of a particular thread. The *:id* in
 the URI must map to a valid thread number between 0 and the configured
-value of `<code>threads</code>`.
+value of `threads`.
 
 
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -283,7 +283,7 @@ Get the information for all threads. Returns a collection of threads resources.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -588,7 +588,7 @@ location where the log files are stored.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -640,7 +640,7 @@ PATCH /v1/maxscale/logs
 
 
 Update logging parameters. The request body must define updated values for the
-`<code>data.attributes.parameters</code>` object. All logging parameters can be altered at runtime.
+`data.attributes.parameters` object. All logging parameters can be altered at runtime.
 
 
 #### Response
@@ -649,13 +649,13 @@ Update logging parameters. The request body must define updated values for the
 Parameters modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Invalid JSON body:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ## Flush and rotate log files
@@ -675,7 +675,7 @@ message is ignored.
 #### Response
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ## Get task schedule
@@ -694,7 +694,7 @@ Retrieve all pending tasks that are queued for execution.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -720,21 +720,21 @@ GET /v1/maxscale/modules/:name
 
 
 Retrieve information about a loaded module. The *:name* must be the name of a
-valid loaded module or either `<code>maxscale</code>` or `<code>servers</code>`.
+valid loaded module or either `maxscale` or `servers`.
 
 
-The `<code>maxscale</code>` module will display the global configuration options
-(i.e. everything under the `<code>[maxscale]</code>` section) as a module.
+The `maxscale` module will display the global configuration options
+(i.e. everything under the `[maxscale]` section) as a module.
 
 
-The `<code>servers</code>` module displays the server object type and the configuration
+The `servers` module displays the server object type and the configuration
 parameters it accepts as a module.
 
 
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -1058,15 +1058,15 @@ GET /v1/maxscale/modules
 Retrieve information about all loaded modules.
 
 
-This endpoint supports the `<code>load=all</code>` parameter. When defined, all modules
-located in the MaxScale module directory (`<code>libdir</code>`) will be loaded. This allows
+This endpoint supports the `load=all` parameter. When defined, all modules
+located in the MaxScale module directory (`libdir`) will be loaded. This allows
 one to see the parameters of a module before the object is created.
 
 
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -2962,9 +2962,9 @@ POST /v1/maxscale/modules/:module/:command
 
 
 Modules can expose commands that can be called via the REST API. The module
-resource lists all commands in the `<code>data.attributes.commands</code>` list. Each value
-is a command sub-resource identified by its `<code>id</code>` field and the HTTP method the
-command uses is defined by the `<code>attributes.method</code>` field.
+resource lists all commands in the `data.attributes.commands` list. Each value
+is a command sub-resource identified by its `id` field and the HTTP method the
+command uses is defined by the `attributes.method` field.
 
 
 The *:module* in the URI must be a valid name of a loaded module and *:command*
@@ -2989,7 +2989,7 @@ POST /v1/maxscale/modules/dbfwfilter/reload?my-dbfwfilter-instance&/path/to/file
 Command with output:
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -3010,7 +3010,7 @@ Command with output:
 
 
 
-The contents of the `<code>meta</code>` field will contain the output of the module
+The contents of the `meta` field will contain the output of the module
 command. This output depends on the command that is being executed. It can
 contain any valid JSON value.
 
@@ -3018,7 +3018,7 @@ contain any valid JSON value.
 Command with no output:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ## Classify a statement
@@ -3037,7 +3037,7 @@ Classify provided statement and return the result.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 

@@ -39,7 +39,7 @@ file { '/etc/motd':
 }
 ```
 
-This block describes a resource. The resource type is `<code>file</code>`, while the resource itself is `<code>/etc/motd</code>`. The description consists of a set of attributes. The most important is `<code>ensure</code>`, which in this case states that the file must exist. It is also common to use this resource to indicate that a file (probably created by a previous version of the manifest) doesn't exist.
+This block describes a resource. The resource type is `file`, while the resource itself is `/etc/motd`. The description consists of a set of attributes. The most important is `ensure`, which in this case states that the file must exist. It is also common to use this resource to indicate that a file (probably created by a previous version of the manifest) doesn't exist.
 
 
 These classes of resource types exist:
@@ -86,7 +86,7 @@ include Class['ssh_server']
 ### Defining Nodes
 
 
-Puppet has a **main manifest** that could be a `<code>site.pp</code>` file or a directory containing `<code>.pp</code>` files. For simple infrastructures, we can define the nodes here. For more complex infrastructures, we may prefer to import other files that define the nodes.
+Puppet has a **main manifest** that could be a `site.pp` file or a directory containing `.pp` files. For simple infrastructures, we can define the nodes here. For more complex infrastructures, we may prefer to import other files that define the nodes.
 
 
 Nodes are defined in this way:
@@ -99,7 +99,7 @@ node 'maria-1.example.com' {
 }
 ```
 
-The resource type is `<code>node</code>`. Then we specify a hostname that is used to match this node to an existing host. This can also be a list of hostnames, a regular expression that matches multiple nodes, or the `<code>default</code>` keyword that matches all hosts. To use a regular expression:
+The resource type is `node`. Then we specify a hostname that is used to match this node to an existing host. This can also be a list of hostnames, a regular expression that matches multiple nodes, or the `default` keyword that matches all hosts. To use a regular expression:
 
 
 ```
@@ -115,14 +115,14 @@ The most important Puppet concepts are the following:
 
 
 * Target: A host whose configuration is managed via Puppet.
-* Group: A logical group of targets. For example there may be a `<code>mariadb</code>` group, and several targets may be part of this group.
+* Group: A logical group of targets. For example there may be a `mariadb` group, and several targets may be part of this group.
 * Facts: Information collected from the targets, like the system name or system version. They're collected by a Ruby gem called [Facter](https://puppet.com/docs/puppet/latest/facter.html). They can be [core facts](https://puppet.com/docs/puppet/latest/core_facts.html) (collected by default) or [custom facts](https://puppet.com/docs/puppet/latest/custom_facts.html) (defined by the user).
 * Manifest: A description that can be applied to a target.
 * Catalog: A compiled manifest.
 * Apply: Modifying the state of a target so that it reflects its description in a manifest.
 * Module: A set of manifests.
 * Resource: A minimal piece of description. A manifest consists of a piece of resources, which describe components of a system, like a file or a service.
-* Resource type: Determines the class of a resource. For example there is a `<code>file</code>` resource type, and a manifest can contain any number of resources of this type, which describe different files.
+* Resource type: Determines the class of a resource. For example there is a `file` resource type, and a manifest can contain any number of resources of this type, which describe different files.
 * Attribute: It's a characteristic of a resource, like a file owner, or its mode.
 * Class: A group of resources that can be reused in several manifests.
 

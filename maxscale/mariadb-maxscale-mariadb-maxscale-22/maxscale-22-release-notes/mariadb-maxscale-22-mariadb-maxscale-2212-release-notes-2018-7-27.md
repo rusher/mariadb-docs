@@ -22,7 +22,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 
 
 The runtime configuration can now be dumped into a file with the
-`<code>--export-config</code>` command line option. This allows changes done at runtime to be
+`--export-config` command line option. This allows changes done at runtime to be
 collected into a single file for easier exporting.
 
 
@@ -56,7 +56,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/mariadb-tx/maxsc
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

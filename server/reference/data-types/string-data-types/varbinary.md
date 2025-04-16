@@ -12,7 +12,7 @@ VARBINARY(M)
 ## Description
 
 
-The VARBINARY type is similar to the [VARCHAR](varchar.md) type, but stores binary byte strings rather than non-binary character strings. `<code>M</code>` represents the maximum column length in bytes.
+The VARBINARY type is similar to the [VARCHAR](varchar.md) type, but stores binary byte strings rather than non-binary character strings. `M` represents the maximum column length in bytes.
 
 
 It contains no [character set](character-sets/README.md), and comparison and sorting are based on the numeric value of the bytes.
@@ -27,7 +27,7 @@ Unlike [BINARY](../../storage-engines/innodb/binary-log-group-commit-and-innodb-
 ### Oracle Mode
 
 
-In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `<code>RAW</code>` is a synonym for `<code>VARBINARY</code>`.
+In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `RAW` is a synonym for `VARBINARY`.
 
 
 ## Examples

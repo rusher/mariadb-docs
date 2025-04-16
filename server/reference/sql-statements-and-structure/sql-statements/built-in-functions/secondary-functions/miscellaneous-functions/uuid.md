@@ -16,7 +16,7 @@ Returns a Universally Unique Identifier (UUID) version 1. Functions to generate 
 
 
 A UUID is designed as a number that is globally unique in space and time. Two
-calls to `<code class="highlight fixed" style="white-space:pre-wrap">UUID()</code>` are expected to generate two different
+calls to `UUID()` are expected to generate two different
 values, even if these calls are performed on two separate computers that are
 not connected to each other.
 
@@ -25,7 +25,7 @@ UUID() results are intended to be unique, but cannot always be relied upon to be
 
 
 A UUID is a 128-bit number represented by a utf8 string of five
-hexadecimal numbers in `<code class="highlight fixed" style="white-space:pre-wrap">aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</code>`
+hexadecimal numbers in `aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`
 format:
 
 
@@ -67,7 +67,7 @@ SELECT UUID();
 * [UUIDv4](uuid_v4.md)
 * [UUIDv7](uuid_v7.md)
 * [UUID_SHORT()](uuid_short.md) - Return short (64 bit) Universal Unique Identifier
-* [SYS_GUID](sys_guid.md) - UUID without the `<code>-</code>` character for Oracle compatibility
+* [SYS_GUID](sys_guid.md) - UUID without the `-` character for Oracle compatibility
 * [UUID data type](../../../../../data-types/string-data-types/uuid-data-type.md)
 * [MDEV-11339](https://jira.mariadb.org/browse/MDEV-11339) (Support UUID v4 generation)
 * [MDEV-32637](https://jira.mariadb.org/browse/MDEV-32637) (Implement native UUID7 function)

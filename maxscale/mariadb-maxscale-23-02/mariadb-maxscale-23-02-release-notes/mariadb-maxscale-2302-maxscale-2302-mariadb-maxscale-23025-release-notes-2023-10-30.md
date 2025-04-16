@@ -71,7 +71,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-4686](https://jira.mariadb.org/browse/MXS-4686) Undefined behavior in ed25519 plugin
 * [MXS-4562](https://jira.mariadb.org/browse/MXS-4562) When MaxScalle is installed from tarball and starded without -d option --basedir=. is not parsed properly and full directory needs to be specified
 * [MXS-4538](https://jira.mariadb.org/browse/MXS-4538) No valid servers in cluster 'MariaDB-Monitor'
-* [MXS-4457](https://jira.mariadb.org/browse/MXS-4457) Duplicate values in `<code>servers</code>` are silently ignored
+* [MXS-4457](https://jira.mariadb.org/browse/MXS-4457) Duplicate values in `servers` are silently ignored
 
 
 ## Known Issues and Limitations
@@ -95,7 +95,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platfor
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

@@ -8,7 +8,7 @@
 The easiest way to understand a database is as a collection of related files. Imagine a file (either paper or digital) of sales orders in a shop. Then there's another file of products, containing stock records. To fulfil an order, you'd need to look up the product in the order file and then look up and adjust the stock levels for that particular product in the product file. A database and the software that controls the database, called a *database management system* (DBMS), helps with this kind of task.
 
 
-Most databases today are *relational* databases, named such because they deal with tables of data related by a common field. For example, Table 1 below shows the product table, and Table 2 shows the invoice table. As you can see, the relation between the two tables is based on the common field `<code>product_code</code>`. Any two tables can relate to each other simply by having a field in common.
+Most databases today are *relational* databases, named such because they deal with tables of data related by a common field. For example, Table 1 below shows the product table, and Table 2 shows the invoice table. As you can see, the relation between the two tables is based on the common field `product_code`. Any two tables can relate to each other simply by having a field in common.
 
 
 ### Table 1

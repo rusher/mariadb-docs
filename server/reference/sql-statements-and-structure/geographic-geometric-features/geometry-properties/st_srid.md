@@ -21,7 +21,7 @@ geometry value. All calculations are done assuming Euclidean (planar)
 geometry.
 
 
-`<code>ST_SRID()</code>` and `<code>SRID()</code>` are synonyms.
+`ST_SRID()` and `SRID()` are synonyms.
 
 
 ## Examples

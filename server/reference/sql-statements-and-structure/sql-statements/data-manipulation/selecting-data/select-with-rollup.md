@@ -11,13 +11,13 @@ See [SELECT](../../../../../../general-resources/learning-and-training/training-
 ## Description
 
 
-The `<code>WITH ROLLUP</code>` modifier adds extra rows to the resultset that represent super-aggregate summaries. The super-aggregated column is represented by a `<code>NULL</code>` value. Multiple aggregates over different columns will be added if there are multiple `<code>GROUP BY</code>` columns.
+The `WITH ROLLUP` modifier adds extra rows to the resultset that represent super-aggregate summaries. The super-aggregated column is represented by a `NULL` value. Multiple aggregates over different columns will be added if there are multiple `GROUP BY` columns.
 
 
-The [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clause can be used at the same time, and is applied after the `<code>WITH ROLLUP</code>` rows have been added.
+The [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clause can be used at the same time, and is applied after the `WITH ROLLUP` rows have been added.
 
 
-`<code>WITH ROLLUP</code>` cannot be used with [ORDER BY](order-by.md). Some sorting is still possible by using `<code>ASC</code>` or `<code>DESC</code>` clauses with the `<code>GROUP BY</code>` column, although the super-aggregate rows will always be added last.
+`WITH ROLLUP` cannot be used with [ORDER BY](order-by.md). Some sorting is still possible by using `ASC` or `DESC` clauses with the `GROUP BY` column, although the super-aggregate rows will always be added last.
 
 
 ## Examples
@@ -37,7 +37,7 @@ INSERT INTO booksales VALUES
   ('Paraguay','non-fiction',2014,8760), ('Paraguay','non-fiction',2015,9030);
 ```
 
-The addition of the `<code>WITH ROLLUP</code>` modifier in this example adds an extra row that aggregates both years:
+The addition of the `WITH ROLLUP` modifier in this example adds an extra row that aggregates both years:
 
 
 ```

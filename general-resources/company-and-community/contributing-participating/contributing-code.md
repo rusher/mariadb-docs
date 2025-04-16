@@ -102,7 +102,7 @@ Add code comments for anything that is not obvious. When possible, use assertion
 * Patches related to performance should be tested either by the developer (for simple commits) or by performance testers. The result should be put in Jira with a summary in the commit.
 * Complex patches and should be tested by QA in a bb- branch before pushing. The Jira entry should include information that this has been done and what kind of test has been run.
 
-  * Example: `<code class="fixed" style="white-space:pre-wrap">git push --force origin HEAD:bb-11.8-MDEV-1234</code>`
+  * Example: `git push --force origin HEAD:bb-11.8-MDEV-1234`
 * For anything not trivial, one should run either Valgrind or ASAN/MSAN on the new code. (Buildbot will do this for you if you can’t get valgrind or ASAN to work). At least the test case added should be tested by either. If the developer cannot do that for some reason, he should check the buildbot builders that do this and ensure that at least his test case doesn’t give any warnings about using not initialized memory or other failures.
 * For complex code the developer should preferably use gcov or some similar tool to ensure that at least not all not-error branches are executed. “mtr --gcov” or “dgcov.pl” can help you with this.
 

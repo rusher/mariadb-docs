@@ -29,7 +29,7 @@ same that is exposed to the client as the connection ID.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -86,7 +86,7 @@ Get all sessions.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 

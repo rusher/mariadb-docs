@@ -15,8 +15,8 @@ BINARY(M)
 ## Description
 
 
-The `<code>BINARY</code>` type is similar to the `<code>[CHAR](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md)</code>` type, but stores binary
-byte strings rather than non-binary character strings. `<code>M</code>` represents the
+The `BINARY` type is similar to the `[CHAR](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md)` type, but stores binary
+byte strings rather than non-binary character strings. `M` represents the
 column length in bytes.
 
 
@@ -26,7 +26,7 @@ It contains no character set, and comparison and sorting are based on the numeri
 If the maximum length is exceeded, and [SQL strict mode](../../../server-management/variables-and-modes/sql-mode.md) is not enabled , the extra characters will be dropped with a warning. If strict mode is enabled, an error will occur.
 
 
-BINARY values are right-padded with `<code>0x00</code>` (the zero byte) to the specified length when inserted. The padding is *not* removed on select, so this needs to be taken into account when sorting and comparing, where all bytes are significant. The zero byte, `<code>0x00</code>` is less than a space for comparison purposes.
+BINARY values are right-padded with `0x00` (the zero byte) to the specified length when inserted. The padding is *not* removed on select, so this needs to be taken into account when sorting and comparing, where all bytes are significant. The zero byte, `0x00` is less than a space for comparison purposes.
 
 
 ## Examples

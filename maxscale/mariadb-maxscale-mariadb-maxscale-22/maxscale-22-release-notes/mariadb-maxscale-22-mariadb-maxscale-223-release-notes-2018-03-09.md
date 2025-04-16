@@ -18,10 +18,10 @@ report at [Jira](https://jira.mariadb.org).
 ## Changed Features
 
 
-### GTID output in MaxCtrl `<code>list servers</code>`
+### GTID output in MaxCtrl `list servers`
 
 
-The output of the `<code>list servers</code>` command now has a GTID column. If a server is
+The output of the `list servers` command now has a GTID column. If a server is
 being monitored by the mariadbmon monitor, the current GTID position will be
 displayed in the newly added column. If no GTID is available, an empty value is
 returned.

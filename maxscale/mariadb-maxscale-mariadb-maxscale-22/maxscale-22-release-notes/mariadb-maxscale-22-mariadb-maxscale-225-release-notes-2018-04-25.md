@@ -63,10 +63,10 @@ done with the following command:
 * [MXS-1807](https://jira.mariadb.org/browse/MXS-1807) Module command domains are case sensitive
 * [MXS-1805](https://jira.mariadb.org/browse/MXS-1805) MaxScale may hang with multiple concurrent maxadmin calls.
 * [MXS-1803](https://jira.mariadb.org/browse/MXS-1803) MaxScale docker image does not work
-* [MXS-1787](https://jira.mariadb.org/browse/MXS-1787) Crash with mysql client test `<code>test_bug49972</code>`
+* [MXS-1787](https://jira.mariadb.org/browse/MXS-1787) Crash with mysql client test `test_bug49972`
 * [MXS-1786](https://jira.mariadb.org/browse/MXS-1786) Hang with COM_STATISTICS
 * [MXS-1785](https://jira.mariadb.org/browse/MXS-1785) request 16M-1 normal sql + 'select 1' core dump with debug mode
-* [MXS-1776](https://jira.mariadb.org/browse/MXS-1776) Hang with mysql test case `<code>test_basic_cursors</code>`
+* [MXS-1776](https://jira.mariadb.org/browse/MXS-1776) Hang with mysql test case `test_basic_cursors`
 * [MXS-1773](https://jira.mariadb.org/browse/MXS-1773) LOAD DATA LOCAL INFILE confuses readwritesplit
 * [MXS-1765](https://jira.mariadb.org/browse/MXS-1765) Internal client connections write data in wrong order
 * [MXS-1757](https://jira.mariadb.org/browse/MXS-1757) Problem while linking libavrorouter.so on Ubuntu 14.04

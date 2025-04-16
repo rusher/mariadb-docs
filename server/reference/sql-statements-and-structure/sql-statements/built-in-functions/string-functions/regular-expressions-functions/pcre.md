@@ -85,7 +85,7 @@ PCRE supports the following escape sequences to match special characters:
 
 
 
-Note, the backslash characters (here, and in all examples in the sections below) must be escaped with another backslash, unless you're using the [SQL_MODE](../../../../../../server-management/variables-and-modes/sql-mode.md) `<code>NO_BACKSLASH_ESCAPES</code>`.
+Note, the backslash characters (here, and in all examples in the sections below) must be escaped with another backslash, unless you're using the [SQL_MODE](../../../../../../server-management/variables-and-modes/sql-mode.md) `NO_BACKSLASH_ESCAPES`.
 
 
 This example tests if a character has hex code 0x61:
@@ -99,7 +99,7 @@ SELECT 'a' RLIKE '\\x{61}';
 ### Character Classes
 
 
-PCRE supports the standard POSIX character classes such as `<code>alnum</code>`, `<code>alpha</code>`, `<code>blank</code>`, `<code>cntrl</code>`, `<code>digit</code>`, `<code>graph</code>`, `<code>lower</code>`, `<code>print</code>`, `<code>punct</code>`, `<code>space</code>`, `<code>upper</code>`, `<code>xdigit</code>`, with the following additional classes:
+PCRE supports the standard POSIX character classes such as `alnum`, `alpha`, `blank`, `cntrl`, `digit`, `graph`, `lower`, `print`, `punct`, `space`, `upper`, `xdigit`, with the following additional classes:
 
 
 
@@ -155,10 +155,10 @@ SELECT 'abc' RLIKE '^\\w+$';
 ### Unicode Character Properties
 
 
-`<code>\p{xx}</code>` is a character with the `<code>xx</code>` property, and `<code>\P{xx}</code>` is a character without the `<code>xx</code>` property.
+`\p{xx}` is a character with the `xx` property, and `\P{xx}` is a character without the `xx` property.
 
 
-The property names represented by `<code>xx</code>` above are limited to the Unicode script names, the general category properties, and "Any", which matches any character (including newline). Those that are not part of an identified script are lumped together as "Common".
+The property names represented by `xx` above are limited to the Unicode script names, the general category properties, and "Any", which matches any character (including newline). Those that are not part of an identified script are lumped together as "Common".
 
 
 #### General Category Properties For \p and \P
@@ -232,7 +232,7 @@ SELECT '1¼①' RLIKE '^\\p{N}+$';
 
 
 
-The property `<code>Xuc</code>` matches any character that can be represented by a Universal Character Name (in C++ and other programming languages). These include `<code>$</code>`, `<code>@</code>`, `<code>`</code>`, and all characters with Unicode code points greater than `<code>U+00A0</code>`, excluding the surrogates `<code>U+D800</code>`..`<code>U+DFFF</code>`.
+The property `Xuc` matches any character that can be represented by a Universal Character Name (in C++ and other programming languages). These include `$`, `@`, ```, and all characters with Unicode code points greater than `U+00A0`, excluding the surrogates `U+D800`..`U+DFFF`.
 
 
 #### Script Names For \p and \P
@@ -252,10 +252,10 @@ SELECT 'ΣΦΩ' RLIKE '^\\p{Greek}+$';
 ### Extended Unicode Grapheme Sequence
 
 
-The `<code>\X</code>` escape sequence matches a character sequence that makes an "extended grapheme cluster", i.e. a composite character that consists of multiple Unicode code points.
+The `\X` escape sequence matches a character sequence that makes an "extended grapheme cluster", i.e. a composite character that consists of multiple Unicode code points.
 
 
-One of the examples of a composite character can be a letter followed by non-spacing accent marks. This example demonstrates that `<code>U+0045 LATIN CAPITAL LETTER E</code>` followed by `<code>U+0302 COMBINING CIRCUMFLEX ACCENT</code>` followed by `<code>U+0323 COMBINING DOT BELOW</code>` together form an extended grapheme cluster:
+One of the examples of a composite character can be a letter followed by non-spacing accent marks. This example demonstrates that `U+0045 LATIN CAPITAL LETTER E` followed by `U+0302 COMBINING CIRCUMFLEX ACCENT` followed by `U+0323 COMBINING DOT BELOW` together form an extended grapheme cluster:
 
 
 ```
@@ -269,7 +269,7 @@ See the [PCRE documentation](https://www.pcre.org) for the other types of extend
 ### Simple Assertions
 
 
-An assertion specifies a certain condition that must match at a particular point, but without consuming characters from the subject string. In addition to the standard POSIX simple assertions `<code>^</code>` (that matches at the beginning of a line) and `<code>$</code>` (that matches at the end of a line), PCRE supports a number of other assertions:
+An assertion specifies a certain condition that must match at a particular point, but without consuming characters from the subject string. In addition to the standard POSIX simple assertions `^` (that matches at the beginning of a line) and `$` (that matches at the end of a line), PCRE supports a number of other assertions:
 
 
 
@@ -293,10 +293,10 @@ SELECT REGEXP_SUBSTR('---abcd---xyz---', '\\b\\w{3}\\b');
 -> xyz
 ```
 
-Notice that the two `<code>\b</code>` assertions checked the word boundaries but did not get into the matching pattern.
+Notice that the two `\b` assertions checked the word boundaries but did not get into the matching pattern.
 
 
-The `<code>\b</code>` assertions work well in the beginning and the end of the subject string:
+The `\b` assertions work well in the beginning and the end of the subject string:
 
 
 ```
@@ -304,13 +304,13 @@ SELECT REGEXP_SUBSTR('xyz', '\\b\\w{3}\\b');
 -> xyz
 ```
 
-By default, the `<code>^</code>` and `<code>$</code>` assertions have the same meaning with `<code>\A</code>`, `<code>\Z</code>`, and `<code>\z</code>`. However, the meanings of `<code>^</code>` and `<code>$</code>` can change in multiline mode (see below). By contrast, the meanings of `<code>\A</code>`, `<code>\Z</code>`, and `<code>\z</code>` are always the same; they are independent of the multiline mode.
+By default, the `^` and `$` assertions have the same meaning with `\A`, `\Z`, and `\z`. However, the meanings of `^` and `$` can change in multiline mode (see below). By contrast, the meanings of `\A`, `\Z`, and `\z` are always the same; they are independent of the multiline mode.
 
 
 ### Option Setting
 
 
-A number of options that control the default match behavior can be changed within the pattern by a sequence of option letters enclosed between `<code>(?</code>` and `<code>)</code>`.
+A number of options that control the default match behavior can be changed within the pattern by a sequence of option letters enclosed between `(?` and `)`.
 
 
 
@@ -328,19 +328,19 @@ A number of options that control the default match behavior can be changed withi
 
 
 
-For example, `<code>(?im)</code>` sets case insensitive multiline matching.
+For example, `(?im)` sets case insensitive multiline matching.
 
 
-A hyphen followed by the option letters unset the options. For example, `<code>(?-im)</code>` means case sensitive single line match.
+A hyphen followed by the option letters unset the options. For example, `(?-im)` means case sensitive single line match.
 
 
-A combined setting and unsetting is also possible, e.g. `<code>(?im-sx)</code>`.
+A combined setting and unsetting is also possible, e.g. `(?im-sx)`.
 
 
 If an option is set outside of subpattern parentheses, the option applies to the remainder of the pattern that follows the option. If an option is set inside a subpattern, it applies to the part of this subpattern that follows the option.
 
 
-In this example the pattern `<code>(?i)m((?-i)aria)db</code>` matches the words `<code>MariaDB</code>`, `<code>Mariadb</code>`, `<code>mariadb</code>`, but not `<code>MARIADB</code>`:
+In this example the pattern `(?i)m((?-i)aria)db` matches the words `MariaDB`, `Mariadb`, `mariadb`, but not `MARIADB`:
 
 
 ```
@@ -357,7 +357,7 @@ SELECT 'MARIADB' RLIKE '(?i)m((?-i)aria)db';
 -> 0
 ```
 
-This example demonstrates that the `<code>(?x)</code>` option makes the regexp engine ignore all white spaces in the pattern (other than in a class).
+This example demonstrates that the `(?x)` option makes the regexp engine ignore all white spaces in the pattern (other than in a class).
 
 
 ```
@@ -371,7 +371,7 @@ Note, putting spaces into a pattern in combination with the (?x) option can be u
 ### Multiline Matching
 
 
-Multiline matching changes the meaning of `<code>^</code>` and `<code>$</code>` from "the beginning of the subject string" and "the end of the subject string" to "the beginning of any line in the subject string" and "the end of any line in the subject string" respectively.
+Multiline matching changes the meaning of `^` and `$` from "the beginning of the subject string" and "the end of the subject string" to "the beginning of any line in the subject string" and "the end of any line in the subject string" respectively.
 
 
 This example checks if the subject string contains two consequent lines that fully consist of digits:
@@ -382,7 +382,7 @@ SELECT 'abc\n123\n456\nxyz\n' RLIKE '(?m)^\\d+\\R\\d+$';
 -> 1
 ```
 
-Notice the `<code>(?m)</code>` option in the beginning of the pattern, which switches to the multiline matching mode.
+Notice the `(?m)` option in the beginning of the pattern, which switches to the multiline matching mode.
 
 
 ### Newline Conventions
@@ -391,9 +391,9 @@ Notice the `<code>(?m)</code>` option in the beginning of the pattern, which swi
 PCRE supports five line break conventions:
 
 
-* `<code>CR (\r)</code>` - a single carriage return character
-* `<code>LF (\n)</code>` - a single linefeed character
-* `<code>CRLF (\r\n)</code>` - a carriage return followed by a linefeed
+* `CR (\r)` - a single carriage return character
+* `LF (\n)` - a single linefeed character
+* `CRLF (\r\n)` - a carriage return followed by a linefeed
 * any of the previous three
 * any Unicode newline sequence
 
@@ -431,13 +431,13 @@ The newline convention can be set by starting a pattern with one of the followin
 
 
 
-The newline conversion affects the `<code>^</code>` and `<code>$</code>` assertions, the interpretation of the dot metacharacter, and the behavior of `<code>\N</code>`.
+The newline conversion affects the `^` and `$` assertions, the interpretation of the dot metacharacter, and the behavior of `\N`.
 
 
-Note, the new line convention does not affect the meaning of `<code>\R</code>`.
+Note, the new line convention does not affect the meaning of `\R`.
 
 
-This example demonstrates that the dot metacharacter matches `<code>\n</code>`, because it is not a newline sequence anymore:
+This example demonstrates that the dot metacharacter matches `\n`, because it is not a newline sequence anymore:
 
 
 ```
@@ -448,10 +448,10 @@ SELECT 'a\nb' RLIKE '(*CR)a.b';
 ### Newline Sequences
 
 
-By default, the escape sequence `<code>\R</code>` matches any Unicode newline sequences.
+By default, the escape sequence `\R` matches any Unicode newline sequences.
 
 
-The meaning of `<code>\R</code>` can be set by starting a pattern with one of the following sequences:
+The meaning of `\R` can be set by starting a pattern with one of the following sequences:
 
 
 
@@ -466,7 +466,7 @@ The meaning of `<code>\R</code>` can be set by starting a pattern with one of th
 ### Comments
 
 
-It's possible to include comments inside a pattern. Comments do not participate in the pattern matching. Comments start at the `<code>(?</code>`
+It's possible to include comments inside a pattern. Comments do not participate in the pattern matching. Comments start at the `(?`
 
 # sequence and continue up to the next closing parenthesis:
 
@@ -479,7 +479,7 @@ SELECT 'ab12' RLIKE 'ab(?#expect digits)12';
 ### Quoting
 
 
-POSIX uses the backslash to remove a special meaning from a character. PCRE introduces a syntax to remove special meaning from a sequence of characters. The characters inside `<code>\Q</code>` ... `<code>\E</code>` are treated literally, without their special meaning.
+POSIX uses the backslash to remove a special meaning from a character. PCRE introduces a syntax to remove special meaning from a sequence of characters. The characters inside `\Q` ... `\E` are treated literally, without their special meaning.
 
 
 This example checks if the string matches a dollar sign followed by a parenthesized name (a variable reference in some languages):
@@ -496,7 +496,7 @@ Note that the leftmost dollar sign and the parentheses are used literally, while
 ### Resetting the Match Start
 
 
-The escape sequence `<code>\K</code>` causes any previously matched characters to be excluded from the final matched sequence. For example, the pattern: `<code>(foo)\Kbar</code>` matches `<code>foobar</code>`, but reports that it has matched `<code>bar</code>`. This feature is similar to a look-behind assertion. However, in this case, the part of the subject before the real match does not have to be of fixed length:
+The escape sequence `\K` causes any previously matched characters to be excluded from the final matched sequence. For example, the pattern: `(foo)\Kbar` matches `foobar`, but reports that it has matched `bar`. This feature is similar to a look-behind assertion. However, in this case, the part of the subject before the real match does not have to be of fixed length:
 
 
 ```
@@ -507,7 +507,7 @@ SELECT REGEXP_SUBSTR('aaa123', '[a-z]*\\K[0-9]*');
 ### Non-Capturing Groups
 
 
-The question mark and the colon after the opening parenthesis create a non-capturing group: `<code>(?:...)</code>`.
+The question mark and the colon after the opening parenthesis create a non-capturing group: `(?:...)`.
 
 
 This example removes an optional article from a word, for example for better sorting of the results.
@@ -518,13 +518,13 @@ SELECT REGEXP_REPLACE('The King','(?:the|an|a)[^a-z]([a-z]+)','\\1');
 -> King
 ```
 
-Note that the articles are listed inside the left parentheses using the alternation operator `<code>|</code>` but they do not produce a captured subpattern, so the word followed by the article is referenced by `<code>'<br/>1'</code>` in the third argument to the function. Using non-capturing groups can be useful to save numbers on the sup-patterns that won't be used in the third argument of [REGEXP_REPLACE()](regexp_replace.md), as well as for performance purposes.
+Note that the articles are listed inside the left parentheses using the alternation operator `|` but they do not produce a captured subpattern, so the word followed by the article is referenced by `'<br/>1'` in the third argument to the function. Using non-capturing groups can be useful to save numbers on the sup-patterns that won't be used in the third argument of [REGEXP_REPLACE()](regexp_replace.md), as well as for performance purposes.
 
 
 ### Non-Greedy Quantifiers
 
 
-By default, the repetition quantifiers `<code>?</code>`, `<code>*</code>`, `<code>+</code>` and `<code>{n,m}</code>` are "greedy", that is, they try to match as much as possible. Adding a question mark after a repetition quantifier makes it "non-greedy", so the pattern matches the minimum number of times possible.
+By default, the repetition quantifiers `?`, `*`, `+` and `{n,m}` are "greedy", that is, they try to match as much as possible. Adding a question mark after a repetition quantifier makes it "non-greedy", so the pattern matches the minimum number of times possible.
 
 
 This example cuts C comments from a line:
@@ -535,16 +535,16 @@ SELECT REGEXP_REPLACE('/* Comment1 */ i+= 1; /* Comment2 */', '/[*].*?[*]/','');
 ->  i+= 1;
 ```
 
-The pattern without the non-greedy flag to the quantifier `<code>/[*].*[*]/</code>` would match the entire string between the leftmost `<code>/*</code>` and the rightmost `<code>*/</code>`.
+The pattern without the non-greedy flag to the quantifier `/[*].*[*]/` would match the entire string between the leftmost `/*` and the rightmost `*/`.
 
 
 ### Atomic Groups
 
 
-A sequence inside `<code>(?></code>`...`<code>)</code>` makes an atomic group. Backtracking inside an atomic group is prevented once it has matched; however, backtracking past to the previous items works normally.
+A sequence inside `(?>`...`)` makes an atomic group. Backtracking inside an atomic group is prevented once it has matched; however, backtracking past to the previous items works normally.
 
 
-Consider the pattern `<code>\d+foo</code>` applied to the subject string `<code>123bar</code>`. Once the engine scans `<code>123</code>` and fails on the letter `<code>b</code>`, it would normally backtrack to `<code>2</code>` and try to match again, then fail and backtrack to `<code>1</code>` and try to match and fail again, and finally fail the entire pattern. In case of an atomic group `<code>(?>\d+)foo</code>` with the same subject string `<code>123bar</code>`, the engine gives up immediately after the first failure to match `<code>foo</code>`. An atomic group with a quantifier can match all or nothing.
+Consider the pattern `\d+foo` applied to the subject string `123bar`. Once the engine scans `123` and fails on the letter `b`, it would normally backtrack to `2` and try to match again, then fail and backtrack to `1` and try to match and fail again, and finally fail the entire pattern. In case of an atomic group `(?>\d+)foo` with the same subject string `123bar`, the engine gives up immediately after the first failure to match `foo`. An atomic group with a quantifier can match all or nothing.
 
 
 Atomic groups produce faster false results (i.e. in case when a long subject string does not match the pattern), because the regexp engine saves performance on backtracking. However, don't hurry to put everything into atomic groups. This example demonstrates the difference between atomic and non-atomic match:
@@ -564,10 +564,10 @@ SELECT 'abc' RLIKE 'a(bc|b)c' AS non_atomic2;
 -> 1
 ```
 
-The non-atomic pattern matches both `<code>abbc</code>` and `<code>abc</code>`, while the atomic pattern matches `<code>abbc</code>` only.
+The non-atomic pattern matches both `abbc` and `abc`, while the atomic pattern matches `abbc` only.
 
 
-The atomic group `<code>(?>bc|b)</code>` in the above example can be "translated" as "if there is `<code>bc</code>`, then don't try to match as `<code>b</code>`". So `<code>b</code>` can match only if `<code>bc</code>` is not found.
+The atomic group `(?>bc|b)` in the above example can be "translated" as "if there is `bc`, then don't try to match as `b`". So `b` can match only if `bc` is not found.
 
 
 Atomic groups are not capturing. To make an atomic group capturing, put it into parentheses:
@@ -581,10 +581,10 @@ SELECT REGEXP_REPLACE('abcc','a((?>bc|b))c','\\1');
 ### Possessive quantifiers
 
 
-An atomic group which ends with a quantifier can be rewritten using a so called "possessive quantifier" syntax by putting an additional `<code>+</code>` sign following the quantifier.
+An atomic group which ends with a quantifier can be rewritten using a so called "possessive quantifier" syntax by putting an additional `+` sign following the quantifier.
 
 
-The pattern `<code>(?>\d+)foo</code>` from the previous section's example can be rewritten as `<code>\d++foo</code>`.
+The pattern `(?>\d+)foo` from the previous section's example can be rewritten as `\d++foo`.
 
 
 ### Absolute and Relative Numeric Backreferences
@@ -594,16 +594,16 @@ Backreferences match the same text as previously matched by a capturing group. B
 
 
 * a backslash followed by a digit
-* the `<code>\g</code>` escape sequence followed by a positive or negative number
-* the `<code>\g</code>` escape sequence followed by a positive or negative number enclosed in braces
+* the `\g` escape sequence followed by a positive or negative number
+* the `\g` escape sequence followed by a positive or negative number enclosed in braces
 
 
 The following backreferences are identical and refer to the first capturing group:
 
 
-* `<code>\1</code>`
-* `<code>\g1</code>`
-* `<code>\g{1}</code>`
+* `\1`
+* `\g1`
+* `\g{1}`
 
 
 This example demonstrates a pattern that matches "sense and sensibility" and "response and responsibility", but not "sense and responsibility":
@@ -626,10 +626,10 @@ SELECT REGEXP_REPLACE('using using the the regexp regexp',
 Note that all double words were removed, in the beginning, in the middle and in the end of the subject string.
 
 
-A negative number in a `<code>\g</code>` sequence means a relative reference. Relative references can be helpful in long patterns, and also in patterns that are created by joining fragments together that contain references within themselves. The sequence `<code>\g{-1}</code>` is a reference to the most recently started capturing subpattern before `<code>\g</code>`.
+A negative number in a `\g` sequence means a relative reference. Relative references can be helpful in long patterns, and also in patterns that are created by joining fragments together that contain references within themselves. The sequence `\g{-1}` is a reference to the most recently started capturing subpattern before `\g`.
 
 
-In this example `<code>\g{-1}</code>` is equivalent to `<code>\2</code>`:
+In this example `\g{-1}` is equivalent to `\2`:
 
 
 ```
@@ -646,10 +646,10 @@ SELECT 'abc123def123' RLIKE '(abc(123)def)\\2';
 Using numeric backreferences for capturing groups can be hard to track in a complicated regular expression. Also, the numbers can change if an expression is modified. To overcome these difficulties, PCRE supports named subpatterns.
 
 
-A subpattern can be named in one of three ways: `<code>(?<name></code>`...`<code>)</code>` or `<code>(?'name'</code>`...`<code>)</code>` as in Perl, or `<code>(?P<name></code>`...`<code>)</code>` as in Python. References to capturing subpatterns from other parts of the pattern, can be made by name as well as by number.
+A subpattern can be named in one of three ways: `(?<name>`...`)` or `(?'name'`...`)` as in Perl, or `(?P<name>`...`)` as in Python. References to capturing subpatterns from other parts of the pattern, can be made by name as well as by number.
 
 
-Backreferences to a named subpattern can be written using the .NET syntax `<code>\k{name}</code>`, the Perl syntax `<code>\k<name></code>` or `<code>\k'name'</code>` or `<code>\g{name}</code>`, or the Python syntax `<code>(?P=name)</code>`.
+Backreferences to a named subpattern can be written using the .NET syntax `\k{name}`, the Perl syntax `\k<name>` or `\k'name'` or `\g{name}`, or the Python syntax `(?P=name)`.
 
 
 This example tests if the string is a correct HTML tag:
@@ -741,25 +741,25 @@ SELECT '1+2-3+(+(4-1)+(-2)+(+1))' RLIKE  '^(([+-]?(\\d+|[(](?1)[)]))(([+-](?1))*
 -> 1
 ```
 
-The recursion is done using `<code>(?1)</code>` to call for the first parenthesized subpattern, which includes everything except the leading `<code>^</code>` and the trailing `<code>$</code>`.
+The recursion is done using `(?1)` to call for the first parenthesized subpattern, which includes everything except the leading `^` and the trailing `$`.
 
 
 The regular expression in the above example implements the following BNF grammar:
 
 
-1. `<code class="fixed" style="white-space:pre-wrap"><expression> ::= <term> [(<sign> <term>)...]</code>`
-1. `<code class="fixed" style="white-space:pre-wrap"><term> ::= [ <sign> ] <primary></code>`
-1. `<code class="fixed" style="white-space:pre-wrap"><primary> ::= <number> | <left paren> <expression> <right paren></code>`
-1. `<code class="fixed" style="white-space:pre-wrap"><sign> ::= <plus sign> | <minus sign></code>`
+1. `<expression> ::= <term> [(<sign> <term>)...]`
+1. `<term> ::= [ <sign> ] <primary>`
+1. `<primary> ::= <number> | <left paren> <expression> <right paren>`
+1. `<sign> ::= <plus sign> | <minus sign>`
 
 
 ### Defining Subpatterns For Use By Reference
 
 
-Use the `<code>(?(DEFINE)</code>`...`<code>)</code>` syntax to define subpatterns that can be referenced from elsewhere.
+Use the `(?(DEFINE)`...`)` syntax to define subpatterns that can be referenced from elsewhere.
 
 
-This example defines a subpattern with the name `<code>letters</code>` that matches one or more letters, which is further reused two times:
+This example defines a subpattern with the name `letters` that matches one or more letters, which is further reused two times:
 
 
 ```
@@ -787,7 +787,7 @@ There are two forms of conditional subpatterns:
 (?(condition)yes-pattern|no-pattern)
 ```
 
-The `<code>yes-pattern</code>` is used if the condition is satisfied, otherwise the `<code>no-pattern</code>` (if any) is used.
+The `yes-pattern` is used if the condition is satisfied, otherwise the `no-pattern` (if any) is used.
 
 
 #### Conditions With Subpattern References
@@ -804,7 +804,7 @@ SELECT REGEXP_SUBSTR('a(123)b', '([(])?[0-9]+(?(1)[)])');
 -> (123)
 ```
 
-The `<code>([(])?</code>` part makes a capturing subpattern that matches an optional opening parenthesis; the `<code>[0-9]+</code>` part matches a number, and the `<code>(?(1)[)])</code>` part matches a closing parenthesis, but only if the opening parenthesis has been previously found.
+The `([(])?` part makes a capturing subpattern that matches an optional opening parenthesis; the `[0-9]+` part matches a number, and the `(?(1)[)])` part matches a closing parenthesis, but only if the opening parenthesis has been previously found.
 
 
 #### Other Kinds of Conditions
@@ -824,7 +824,7 @@ SELECT 'a\0b' RLIKE '^a.b$';
 -> 1
 ```
 
-Zero bytes, however, are not supported literally in the pattern strings and should be escaped using the `<code>\xhh</code>` or `<code>\x{hh}</code>` syntax:
+Zero bytes, however, are not supported literally in the pattern strings and should be escaped using the `\xhh` or `\x{hh}` syntax:
 
 
 ```

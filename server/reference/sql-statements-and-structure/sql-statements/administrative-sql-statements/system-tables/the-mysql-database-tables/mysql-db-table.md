@@ -1,7 +1,7 @@
 
 # mysql.db Table
 
-The `<code>mysql.db</code>` table contains information about database-level privileges. The table can be queried and although it is possible to directly update it, it is best to use [GRANT](../../../account-management-sql-commands/grant.md) for setting privileges.
+The `mysql.db` table contains information about database-level privileges. The table can be queried and although it is possible to directly update it, it is best to use [GRANT](../../../account-management-sql-commands/grant.md) for setting privileges.
 
 
 Note that the MariaDB privileges occur at many levels. A user may not be granted a privilege at the database level, but may still have permission on a table level, for example. See [privileges](../../../account-management-sql-commands/grant.md) for a more complete view of the MariaDB privilege system.
@@ -10,7 +10,7 @@ Note that the MariaDB privileges occur at many levels. A user may not be granted
 This table uses the [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine.
 
 
-The `<code>mysql.db</code>` table contains the following fields:
+The `mysql.db` table contains the following fields:
 
 
 
@@ -43,5 +43,5 @@ The `<code>mysql.db</code>` table contains the following fields:
 
 
 
-The [Acl_database_grants](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_database_grants) status variable, added in [MariaDB 10.1.4](../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes.md), indicates how many rows the `<code>mysql.db</code>` table contains.
+The [Acl_database_grants](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_database_grants) status variable, added in [MariaDB 10.1.4](../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes.md), indicates how many rows the `mysql.db` table contains.
 

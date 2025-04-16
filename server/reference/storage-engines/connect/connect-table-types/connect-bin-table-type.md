@@ -102,7 +102,7 @@ NNNNCCCCCCCCCCIIIISSFFFFSS
 ```
 
 Here N represents numeric characters, C any characters, I integer bytes,
-S short integer bytes, and F float number bytes. The `<code>IIII</code>` field contains a
+S short integer bytes, and F float number bytes. The `IIII` field contains a
 date in numeric format.
 
 
@@ -126,7 +126,7 @@ Specifying the little-endian representation for binary values is not useful on m
 The field offsets and the file record length are calculated according the
 column internal format and eventually modified by the field format. It is not
 necessary to specify them for a packed binary file without line endings. If a line
-ending is desired, specify the ending option or specify the `<code>lrecl</code>` option adding the ending width. The table
+ending is desired, specify the ending option or specify the `lrecl` option adding the ending width. The table
 can be filled by:
 
 
@@ -165,7 +165,7 @@ returns:
 
 
 In binary files, numeric fields and record length can be aligned on 4-or-8-byte boundaries to optimize performance on certain processors. This can be
-modified in the OPTION_LIST with an "align" option ("packed" meaning `<code>align=1</code>` is the default).
+modified in the OPTION_LIST with an "align" option ("packed" meaning `align=1` is the default).
 
 
 

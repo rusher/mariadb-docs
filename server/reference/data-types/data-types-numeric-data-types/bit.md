@@ -12,11 +12,11 @@ BIT[(M)]
 ## Description
 
 
-A bit-field type. `<code>M</code>` indicates the number of bits per value, from `<code>1</code>` to
-`<code>64</code>`. The default is `<code>1</code>` if `<code>M</code>` is omitted.
+A bit-field type. `M` indicates the number of bits per value, from `1` to
+`64`. The default is `1` if `M` is omitted.
 
 
-Bit values can be inserted with `<code>b'value'</code>` notation, where `<code>value</code>` is the bit value in 0's and 1's.
+Bit values can be inserted with `b'value'` notation, where `value` is the bit value in 0's and 1's.
 
 
 Bit fields are automatically zero-padded from the left to the full length of the bit, so for example in a BIT(4) field, '10' is equivalent to '0010'.

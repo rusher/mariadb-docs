@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_MUTEXES Table
 
-The `<code>INNODB_MUTEXES</code>` table monitors mutex and rw locks waits. It has the following columns:
+The `INNODB_MUTEXES` table monitors mutex and rw locks waits. It has the following columns:
 
 
 
@@ -15,11 +15,11 @@ The `<code>INNODB_MUTEXES</code>` table monitors mutex and rw locks waits. It ha
 
 
 
-The `<code>CREATE_FILE</code>` and `<code>CREATE_LINE</code>` columns depend on the InnoDB/XtraDB version.
+The `CREATE_FILE` and `CREATE_LINE` columns depend on the InnoDB/XtraDB version.
 
 
 Note that since [MariaDB 10.2.2](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md), the table has only been providing information about
-rw_lock_t, not any mutexes. From [MariaDB 10.2.2](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md) until [MariaDB 10.2.32](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10232-release-notes.md), [MariaDB 10.3.23](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10323-release-notes.md), [MariaDB 10.4.13](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md) and [MariaDB 10.5.1](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md), the `<code>NAME</code>` column was not populated ([MDEV-21636](https://jira.mariadb.org/browse/MDEV-21636)).
+rw_lock_t, not any mutexes. From [MariaDB 10.2.2](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md) until [MariaDB 10.2.32](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10232-release-notes.md), [MariaDB 10.3.23](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10323-release-notes.md), [MariaDB 10.4.13](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md) and [MariaDB 10.5.1](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md), the `NAME` column was not populated ([MDEV-21636](https://jira.mariadb.org/browse/MDEV-21636)).
 
 
 The [SHOW ENGINE INNODB STATUS](../../../../show/show-engine-innodb-status.md#show-engine-innodb-mutex) statement provides similar information.

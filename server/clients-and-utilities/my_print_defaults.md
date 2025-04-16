@@ -1,7 +1,7 @@
 
 # my_print_defaults
 
-`<code>my_print_defaults</code>` displays the options from option groups of option files. It is useful to see which options a particular tool will use.
+`my_print_defaults` displays the options from option groups of option files. It is useful to see which options a particular tool will use.
 
 
 Output is one option per line, displayed in the form in which they would be specified on the command line.

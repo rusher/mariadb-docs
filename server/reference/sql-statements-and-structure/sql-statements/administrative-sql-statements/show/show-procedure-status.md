@@ -15,12 +15,12 @@ SHOW PROCEDURE STATUS
 This statement is a MariaDB extension. It returns characteristics of a stored
 procedure, such as the database, name, type, creator, creation and modification
 dates, and character set information. A similar statement, 
- `<code class="highlight fixed" style="white-space:pre-wrap">[SHOW FUNCTION STATUS](show-function-status.md)</code>`, displays
+ `[SHOW FUNCTION STATUS](show-function-status.md)`, displays
 information about stored functions.
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clause, if present, indicates which procedure or
-function names to match. The `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+The `LIKE` clause, if present, indicates which procedure or
+function names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 
 The [ROUTINES table](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION_SCHEMA database contains more detailed information.

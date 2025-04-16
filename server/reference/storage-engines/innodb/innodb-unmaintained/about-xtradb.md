@@ -6,7 +6,7 @@ useful in high performance environments.
 
 
 It is fully backwards compatible, and it identifies itself to MariaDB as
-"`<code>ENGINE=InnoDB</code>`" (just like InnoDB), and so can be used as a drop-in replacement
+"`ENGINE=InnoDB`" (just like InnoDB), and so can be used as a drop-in replacement
 for standard InnoDB.
 
 

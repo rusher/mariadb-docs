@@ -12,9 +12,9 @@ STDDEV(expr)
 ## Description
 
 
-Returns the population standard deviation of *`<code>expr</code>`*. This function is
+Returns the population standard deviation of *`expr`*. This function is
 provided for compatibility with Oracle. The standard SQL function
-`<code>[STDDEV_POP()](stddev_pop.md)</code>` can be used instead.
+`[STDDEV_POP()](stddev_pop.md)` can be used instead.
 
 
 It is an [aggregate function](../special-functions/window-functions/aggregate-functions-as-window-functions.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
@@ -23,7 +23,7 @@ It is an [aggregate function](../special-functions/window-functions/aggregate-fu
 STDDEV() can be used as a [window function](../special-functions/window-functions/window-functions-overview.md).
 
 
-This function returns `<code>NULL</code>` if there were no matching rows.
+This function returns `NULL` if there were no matching rows.
 
 
 ## Examples

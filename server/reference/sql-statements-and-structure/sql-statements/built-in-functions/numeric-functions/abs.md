@@ -12,7 +12,7 @@ ABS(X)
 ## Description
 
 
-Returns the absolute (non-negative) value of `<code>X</code>`. If `<code>X</code>` is not a number, it is converted to a numeric type.
+Returns the absolute (non-negative) value of `X`. If `X` is not a number, it is converted to a numeric type.
 
 
 ## Examples

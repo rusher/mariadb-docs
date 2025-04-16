@@ -17,7 +17,7 @@ Each MEDIUMBLOB value is stored using a three-byte length prefix that
 indicates the number of bytes in the value.
 
 
-`<code>LONG VARBINARY</code>` is a synonym for `<code>MEDIUMBLOB</code>`
+`LONG VARBINARY` is a synonym for `MEDIUMBLOB`
 
 
 ## EXAMPLES

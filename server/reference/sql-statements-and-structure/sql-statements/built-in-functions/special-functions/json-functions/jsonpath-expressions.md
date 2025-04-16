@@ -15,7 +15,7 @@ path : ['lax'] '$' [step]*
 The path starts with an optional *path mode*. At the moment, MariaDB supports only the "lax" mode, which is also the mode that is used when it is not explicitly specified.
 
 
-The `<code>$</code>` symbol represents the context item. The search always starts from the context item; because of that, the path always starts with `<code>$</code>`.
+The `$` symbol represents the context item. The search always starts from the context item; because of that, the path always starts with `$`.
 
 
 Then, it is followed by zero or more steps, which select element(s) in the JSON document. A step may be one of the following:
@@ -32,9 +32,9 @@ Then, it is followed by zero or more steps, which select element(s) in the JSON 
 To select member(s) in a JSON object, one can use one of the following:
 
 
-* `<code>.memberName</code>` selects the value of the member with name memberName.
-* `<code>."memberName"</code>` - the same as above but allows one to select a member with a name that's not a valid identifier (that is, has space, dot, and/or other characters)
-* `<code>.*</code>` - selects the values of all members of the object.
+* `.memberName` selects the value of the member with name memberName.
+* `."memberName"` - the same as above but allows one to select a member with a name that's not a valid identifier (that is, has space, dot, and/or other characters)
+* `.*` - selects the values of all members of the object.
 
 
 If the current item is an array (instead of an object), nothing will be selected.
@@ -46,8 +46,8 @@ If the current item is an array (instead of an object), nothing will be selected
 To select elements of an array, one can use one of the following:
 
 
-* `<code>[N]</code>` selects element number N in the array. The elements are counted from zero.
-* `<code>[*]</code>` selects all elements in the array.
+* `[N]` selects element number N in the array. The elements are counted from zero.
+* `[*]` selects all elements in the array.
 
 
 If the current item is an object (instead of an array), nothing will be selected.
@@ -56,9 +56,9 @@ If the current item is an object (instead of an array), nothing will be selected
 Starting from MariaDB server 10.9, JSON path also supports negative index in array, 'last' keyword and range notation ('to' keyword) for accessing array elements. Negative index starts from -1.
 
 
-* `<code>[-N]</code>` selects n th element from end.
-* `<code>[last-N]</code>` selects n th element from the last element.
-* `<code>[M to N]</code>` selects range of elements starting from index M to N.
+* `[-N]` selects n th element from end.
+* `[last-N]` selects n th element from the last element.
+* `[M to N]` selects range of elements starting from index M to N.
 
 
 Example:
@@ -130,7 +130,7 @@ SELECT JSON_EXTRACT(@json, '$[4 to 2]');
 ### Wildcard
 
 
-The wildcard step, `<code>**</code>`, recursively selects all child elements of the current element. Both array elements and object members are selected.
+The wildcard step, `**`, recursively selects all child elements of the current element. Both array elements and object members are selected.
 
 
 The wildcard step must not be the last step in the JSONPath expression. It must be followed by an array or object member selector step.
@@ -143,7 +143,7 @@ For example:
 select json_extract(@json_doc, '$**.price');
 ```
 
-will select all object members in the document that are named `<code>price</code>`, while
+will select all object members in the document that are named `price`, while
 
 
 ```
@@ -156,8 +156,8 @@ will select the second element in each of the arrays present in the document.
 ## Compatibility
 
 
-MariaDB's JSONPath syntax supports a subset of JSON Path's definition in the SQL Standard. The most notable things not supported are the `<code>strict</code>` mode and filters.
+MariaDB's JSONPath syntax supports a subset of JSON Path's definition in the SQL Standard. The most notable things not supported are the `strict` mode and filters.
 
 
-MariaDB's JSONPath is close to MySQL's JSONPath. The wildcard step ( `<code>**</code>` ) is a non-standard extension that has the same meaning as in MySQL. The difference between MariaDB and MySQL's JSONPath is: MySQL doesn't allow one to specify the mode explicitly (but uses `<code>lax </code>` mode implicitly).
+MariaDB's JSONPath is close to MySQL's JSONPath. The wildcard step ( `**` ) is a non-standard extension that has the same meaning as in MySQL. The difference between MariaDB and MySQL's JSONPath is: MySQL doesn't allow one to specify the mode explicitly (but uses `lax ` mode implicitly).
 

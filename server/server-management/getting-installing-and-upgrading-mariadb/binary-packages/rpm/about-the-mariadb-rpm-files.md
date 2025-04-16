@@ -52,9 +52,9 @@ The following RPMs are available in current versions of MariaDB:
 
 
 Preferably, you should install MariaDB RPM packages using the package manager
-of your Linux distribution, for example **`<code class="fixed" style="white-space:pre-wrap">yum</code>`** or
-**`<code class="fixed" style="white-space:pre-wrap">zypper</code>`**. But you can also use the lower-level
-**`<code class="fixed" style="white-space:pre-wrap">rpm</code>`** tool.
+of your Linux distribution, for example **`yum`** or
+**`zypper`**. But you can also use the lower-level
+**`rpm`** tool.
 
 
 ## Actions Performed by RPM Packages
@@ -63,7 +63,7 @@ of your Linux distribution, for example **`<code class="fixed" style="white-spac
 ### Users and Groups Created
 
 
-When the `<code>MariaDB-server</code>` RPM package is installed, it will create a user and group named `<code>mysql</code>`, if it does not already exist.
+When the `MariaDB-server` RPM package is installed, it will create a user and group named `mysql`, if it does not already exist.
 
 
 ## See Also

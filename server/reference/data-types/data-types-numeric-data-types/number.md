@@ -5,7 +5,7 @@
 NUMBER[(M[,D])] [SIGNED | UNSIGNED | ZEROFILL]
 ```
 
-In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md#synonyms-for-basic-sql-types), `<code>NUMBER</code>` is a synonym for [DECIMAL](decimal.md).
+In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md#synonyms-for-basic-sql-types), `NUMBER` is a synonym for [DECIMAL](decimal.md).
 
 
 ## EXAMPLES

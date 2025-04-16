@@ -19,7 +19,7 @@ This is a work in progress. The contents are not final
 ## RocksDB Data Location
 
 
-FB and Percona store RocksdDB files in $datadir/`<code>.rocksdb</code>`. MariaDB puts them in $datadir/`<code>#rocksdb</code>`. This is more friendly for packaging and OS scripts.
+FB and Percona store RocksdDB files in $datadir/`.rocksdb`. MariaDB puts them in $datadir/`#rocksdb`. This is more friendly for packaging and OS scripts.
 
 
 ## Compression Algorithms
@@ -30,24 +30,24 @@ FB and Percona store RocksdDB files in $datadir/`<code>.rocksdb</code>`. MariaDB
 
 * In MariaDB, available compression algorithms can be seen in the [rocksdb_supported_compression_types](myrocks-system-variables.md#rocksdb_supported_compression_types) variable. From [MariaDB 10.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md), algorithms can be [installed as a plugin](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md). In earlier versions, the set of supported compression algorithms depends on the platform. 
 
-  * On Ubuntu 16.04 (current LTS) it is `<code>Snappy,Zlib,LZ4,LZ4HC</code>` .
-  * On CentOS 7.4 it is `<code>Snappy,Zlib</code>`.
-  * In the bintar tarball it is `<code>Snappy,Zlib</code>`.
-* Percona Server supports: `<code>Zlib, ZSTD, LZ4 (the default), LZ4HC</code>`. Unsupported algorithms: `<code>Snappy, BZip2, XPress</code>`.
+  * On Ubuntu 16.04 (current LTS) it is `Snappy,Zlib,LZ4,LZ4HC` .
+  * On CentOS 7.4 it is `Snappy,Zlib`.
+  * In the bintar tarball it is `Snappy,Zlib`.
+* Percona Server supports: `Zlib, ZSTD, LZ4 (the default), LZ4HC`. Unsupported algorithms: `Snappy, BZip2, XPress`.
 
 
 ## RocksDB Version Information
 
 
-* FB's branch provides the `<code>rocksdb_git_hash</code>` *status* variable.
-* MariaDB provides the `<code>@@rocksdb_git_hash</code>` *system* variable.
+* FB's branch provides the `rocksdb_git_hash` *status* variable.
+* MariaDB provides the `@@rocksdb_git_hash` *system* variable.
 * Percona Server doesn't provide either.
 
 
 ## RocksDB Version
 
 
-* Facebook's branch uses RocksDB 5.10.0 (the version number can be found in `<code>include/rocksdb/version.h</code>`)
+* Facebook's branch uses RocksDB 5.10.0 (the version number can be found in `include/rocksdb/version.h`)
 
 
 ```
@@ -82,13 +82,13 @@ Date:   Fri Sep 29 07:55:22 2017 -0700
 * MariaDB doesn't provide it.
 
 
-One use of that information is to take the output of `<code>myrocks_hotbackup</code>` and make it a new master.
+One use of that information is to take the output of `myrocks_hotbackup` and make it a new master.
 
 
 ## Gap Lock Detector
 
 
-* FB branch has a "Gap Lock Detector" feature. It is at the SQL layer. It can be controlled with `<code>gap_lock_XXX</code>` variables and is disabled by default (gap-lock-raise-error=false, gap-lock-write-lock=false).
+* FB branch has a "Gap Lock Detector" feature. It is at the SQL layer. It can be controlled with `gap_lock_XXX` variables and is disabled by default (gap-lock-raise-error=false, gap-lock-write-lock=false).
 
 
 * Percona Server has gap lock checking ON but doesn't seem to have any way to control it?
@@ -117,7 +117,7 @@ or rewrite to single-table, single-statement transaction.  Query: insert into tb
 ## rpl_skip_tx_api
 
 
-Facebook's branch has a performance feature for replication slaves, `<code>rpl_skip_tx_api</code>`. It is not available in MariaDB or in Percona Server.
+Facebook's branch has a performance feature for replication slaves, `rpl_skip_tx_api`. It is not available in MariaDB or in Percona Server.
 
 
 ## Details

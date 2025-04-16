@@ -19,7 +19,7 @@ MariaDB MaxScale may collect the installed plugins and send the information's ni
 It tries to send data and if there is any failure (timeout, server is down, etc), the next retry is in 1800 seconds (30 minutes).
 
 
-This feature is not enabled by default: MariaDB MaxScale must be configured in `<code>[feedback]</code>` section:
+This feature is not enabled by default: MariaDB MaxScale must be configured in `[feedback]` section:
 
 
 

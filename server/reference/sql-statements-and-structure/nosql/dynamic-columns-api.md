@@ -14,14 +14,14 @@ If you need to read/write dynamic column blobs **on the client** for some reason
 ## Where to get it
 
 
-The API is a part of `<code>libmysql</code>` C client library. In order to use it, one needs to include this header file
+The API is a part of `libmysql` C client library. In order to use it, one needs to include this header file
 
 
 ```
 #include <mysql/ma_dyncol.h>
 ```
 
-and link against `<code>libmysql</code>`.
+and link against `libmysql`.
 
 
 ## Data structures
@@ -30,7 +30,7 @@ and link against `<code>libmysql</code>`.
 ### DYNAMIC_COLUMN
 
 
-`<code>DYNAMIC_COLUMN</code>` represents a packed dynamic column blob. It is essentially a string-with-length and is defined as follows:
+`DYNAMIC_COLUMN` represents a packed dynamic column blob. It is essentially a string-with-length and is defined as follows:
 
 
 ```
@@ -49,7 +49,7 @@ typedef DYNAMIC_STRING DYNAMIC_COLUMN;
 ### DYNAMIC_COLUMN_VALUE
 
 
-Dynamic columns blob stores {name, value} pairs. `<code>DYNAMIC_COLUMN_VALUE</code>` structure is used to represent the value in accessible form.
+Dynamic columns blob stores {name, value} pairs. `DYNAMIC_COLUMN_VALUE` structure is used to represent the value in accessible form.
 
 
 ```
@@ -75,7 +75,7 @@ struct st_dynamic_column_value
 typedef struct st_dynamic_column_value DYNAMIC_COLUMN_VALUE;
 ```
 
-Every value has a type, which is determined by the `<code>type</code>` member.
+Every value has a type, which is determined by the `type` member.
 
 
 
@@ -98,15 +98,15 @@ Every value has a type, which is determined by the `<code>type</code>` member.
 Notes
 
 
-* Values with type `<code>DYN_COL_NULL</code>` do not ever occur in dynamic columns blobs.
-* Type `<code>DYN_COL_DYNCOL</code>` means that the value is a packed dynamic blob. This is how nested dynamic columns are done.
-* Before storing a value to `<code>value.x.decimal.value</code>`, one must call `<code>mariadb_dyncol_prepare_decimal()</code>` to initialize the space for storage.
+* Values with type `DYN_COL_NULL` do not ever occur in dynamic columns blobs.
+* Type `DYN_COL_DYNCOL` means that the value is a packed dynamic blob. This is how nested dynamic columns are done.
+* Before storing a value to `value.x.decimal.value`, one must call `mariadb_dyncol_prepare_decimal()` to initialize the space for storage.
 
 
 ### enum_dyncol_func_result
 
 
-`<code>enum enum_dyncol_func_result</code>` is used as return value.
+`enum enum_dyncol_func_result` is used as return value.
 
 
 
@@ -134,11 +134,11 @@ Result codes that are less than zero represent error conditions.
 Functions come in pairs:
 
 
-* `<code>xxx_num()</code>` operates on the old (pre-MariaDB-10.0.1) dynamic column blob format where columns were identified by numbers.
-* `<code>xxx_named()</code>` can operate on both old or new data format. If it modifies the blob, it will convert it to the new data format.
+* `xxx_num()` operates on the old (pre-MariaDB-10.0.1) dynamic column blob format where columns were identified by numbers.
+* `xxx_named()` can operate on both old or new data format. If it modifies the blob, it will convert it to the new data format.
 
 
-You should use `<code>xxx_named()</code>` functions, unless you need to keep the data compatible with MariaDB versions before 10.0.1.
+You should use `xxx_named()` functions, unless you need to keep the data compatible with MariaDB versions before 10.0.1.
 
 
 ### mariadb_dyncol_init
@@ -202,7 +202,7 @@ where
 ### mariadb_dyncol_update_many (num|named)
 
 
-Add or update columns in a dynamic columns blob. To delete a column, update its value to a "non-value" of type `<code>DYN_COL_NULL</code>`
+Add or update columns in a dynamic columns blob. To delete a column, update its value to a "non-value" of type `DYN_COL_NULL`
 
 
 ```
@@ -413,7 +413,7 @@ mariadb_dyncol_val_double(double *dbl, DYNAMIC_COLUMN_VALUE *val);
 ### mariadb_dyncol_prepare_decimal
 
 
-Initialize `<code>DYNAMIC_COLUMN_VALUE</code>` before value of `<code>value.x.decimal.value</code>` can be set
+Initialize `DYNAMIC_COLUMN_VALUE` before value of `value.x.decimal.value` can be set
 
 
 ```
@@ -425,13 +425,13 @@ void mariadb_dyncol_prepare_decimal(DYNAMIC_COLUMN_VALUE *value);
 | value | OUT | Value of the column |
 
 
-This function links `<code>value.x.decimal.value</code>` to `<code>value.x.decimal.buffer</code>`.
+This function links `value.x.decimal.value` to `value.x.decimal.buffer`.
 
 
 ### mariadb_dyncol_value_init
 
 
-Initialize a `<code>DYNAMIC_COLUMN_VALUE</code>` structure to a safe default.
+Initialize a `DYNAMIC_COLUMN_VALUE` structure to a safe default.
 
 
 ```

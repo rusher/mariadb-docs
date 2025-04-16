@@ -11,7 +11,7 @@ myisamchk is run from the commandline as follows:
 myisamchk [OPTIONS] tables[.MYI]
 ```
 
-The full list of options are listed below. One or more MyISAM tables can be specified. MyISAM tables have an associated .MYI index file, and the table name can either be specified with or without the .MYI extension. Referencing it with the extension allows you to use wildcards, so it's possible to run myisamchk on *all* the MyISAM tables in the database with `<code>*.MYI</code>`.
+The full list of options are listed below. One or more MyISAM tables can be specified. MyISAM tables have an associated .MYI index file, and the table name can either be specified with or without the .MYI extension. Referencing it with the extension allows you to use wildcards, so it's possible to run myisamchk on *all* the MyISAM tables in the database with `*.MYI`.
 
 
 The path to the files must also be specified if they're not in the current directory.

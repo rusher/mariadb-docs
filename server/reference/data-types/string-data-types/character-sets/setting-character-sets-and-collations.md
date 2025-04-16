@@ -1,7 +1,7 @@
 
 # Setting Character Sets and Collations
 
-Prior to [MariaDB 11.6.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-release-notes.md), the default [character set](README.md) is `<code>latin1</code>` and the default collation is `<code>latin1_swedish_ci</code>`. From [MariaDB 11.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-116.md), the default character set is `<code>utf8mb4</code>` and the default collation is `<code>utf8mb4_uca1400_ai_ci</code>`.
+Prior to [MariaDB 11.6.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-release-notes.md), the default [character set](README.md) is `latin1` and the default collation is `latin1_swedish_ci`. From [MariaDB 11.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-116.md), the default character set is `utf8mb4` and the default collation is `utf8mb4_uca1400_ai_ci`.
 This may differ in some distros, see for example [Differences in MariaDB in Debian](../../../../server-management/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md).
 
 
@@ -134,10 +134,10 @@ For [VARCHAR](../varchar.md) or [TEXT](../text.md) columns, CONVERT TO CHARACTER
 For example, an ascii TEXT column requires a single byte per character, so the column can hold up to 65,535 characters. If the column is converted to utf8mb4 (default from [MariaDB 11.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-116.md)), 4 bytes can be required for each character, so the column will be converted to [MEDIUMTEXT](../mediumtext.md) to be able to hold the same number of characters.
 
 
-`<code>CONVERT TO CHARACTER SET binary</code>` will convert [CHAR](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md), [VARCHAR](../varchar.md) and [TEXT](../text.md) columns to [BINARY](../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), [VARBINARY](../varbinary.md) and [BLOB](../blob.md) respectively, and from that point will no longer have a character set, or be affected by future `<code>CONVERT TO CHARACTER SET</code>` statements.
+`CONVERT TO CHARACTER SET binary` will convert [CHAR](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md), [VARCHAR](../varchar.md) and [TEXT](../text.md) columns to [BINARY](../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), [VARBINARY](../varbinary.md) and [BLOB](../blob.md) respectively, and from that point will no longer have a character set, or be affected by future `CONVERT TO CHARACTER SET` statements.
 
 
-To avoid data type changes resulting from `<code>CONVERT TO CHARACTER SET</code>`, use `<code>MODIFY</code>` on the individual columns instead. For example:
+To avoid data type changes resulting from `CONVERT TO CHARACTER SET`, use `MODIFY` on the individual columns instead. For example:
 
 
 ```
@@ -349,7 +349,7 @@ SET @@character_set_client=cp850, @@character_set_connection=utf8;
 CREATE TABLE t2 AS SELECT 'ö';
 ```
 
-It will create a table with a column of the type `<code>VARCHAR(1) CHARACTER SET utf8</code>`.
+It will create a table with a column of the type `VARCHAR(1) CHARACTER SET utf8`.
 
 
 Note, if we rewrite the query like this:
@@ -360,13 +360,13 @@ SET NAMES cp850;
 CREATE TABLE t2 AS SELECT 'ö';
 ```
 
-It will create a table with a column of the type `<code>VARCHAR(1) CHARACTER SET cp850</code>`, which is probably not a good idea.
+It will create a table with a column of the type `VARCHAR(1) CHARACTER SET cp850`, which is probably not a good idea.
 
 
 ### N
 
 
-Also, `<code>N</code>` or `<code>n</code>` can be used as prefix to convert a literal into the National Character set (which in MariaDB is always utf8).
+Also, `N` or `n` can be used as prefix to convert a literal into the National Character set (which in MariaDB is always utf8).
 
 
 For example:
@@ -521,7 +521,7 @@ character-set-server = utf8mb4
 ...
 ```
 
-Note that the `<code>default-character-set</code>` option is a client option, not a server option.
+Note that the `default-character-set` option is a client option, not a server option.
 
 
 ## See Also

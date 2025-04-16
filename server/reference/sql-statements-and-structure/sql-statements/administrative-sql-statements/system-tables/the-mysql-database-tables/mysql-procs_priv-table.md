@@ -5,16 +5,16 @@
 
 
 
-The `<code>mysql.procs_priv</code>` table contains information about [stored procedure](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [stored function](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) privileges. See [CREATE PROCEDURE](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure.md) and [CREATE FUNCTION](../../../data-definition/create/create-function.md) on creating these.
+The `mysql.procs_priv` table contains information about [stored procedure](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [stored function](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) privileges. See [CREATE PROCEDURE](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure.md) and [CREATE FUNCTION](../../../data-definition/create/create-function.md) on creating these.
 
 
-The [INFORMATION_SCHEMA.ROUTINES](../information-schema/information-schema-tables/information-schema-routines-table.md) table derives its contents from `<code>mysql.procs_priv</code>`.
+The [INFORMATION_SCHEMA.ROUTINES](../information-schema/information-schema-tables/information-schema-routines-table.md) table derives its contents from `mysql.procs_priv`.
 
 
 This table uses the [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine.
 
 
-The `<code>mysql.procs_priv</code>` table contains the following fields:
+The `mysql.procs_priv` table contains the following fields:
 
 
 
@@ -32,8 +32,8 @@ The `<code>mysql.procs_priv</code>` table contains the following fields:
 
 
 
-The [Acl_function_grants](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_function_grants) status variable indicates how many rows the `<code>mysql.columns_priv</code>` table contains with the `<code>FUNCTION</code>` routine type.
+The [Acl_function_grants](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_function_grants) status variable indicates how many rows the `mysql.columns_priv` table contains with the `FUNCTION` routine type.
 
 
-The [Acl_procedure_grants](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_procedure_grants) status variable indicates how many rows the `<code>mysql.columns_priv</code>` table contains with the `<code>PROCEDURE</code>` routine type.
+The [Acl_procedure_grants](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_procedure_grants) status variable indicates how many rows the `mysql.columns_priv` table contains with the `PROCEDURE` routine type.
 

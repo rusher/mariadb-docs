@@ -19,7 +19,7 @@ LAST_VALUE(expr) OVER (
 ## Description
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">LAST_VALUE()</code>` evaluates all expressions and returns the last.
+`LAST_VALUE()` evaluates all expressions and returns the last.
 
 
 This is useful together with [setting user variables to a value with @var:=expr](../../../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md), for example when you want to get data of rows updated/deleted without having to do two queries against the table.

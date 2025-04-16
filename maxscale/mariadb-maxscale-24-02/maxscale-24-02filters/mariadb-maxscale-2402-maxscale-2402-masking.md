@@ -163,12 +163,12 @@ SELECT revealed_ssn FROM cheat;
 
 
 
-to get access to the cleartext version of a masked field `<code>ssn</code>`.
+to get access to the cleartext version of a masked field `ssn`.
 
 
 From MaxScale 2.3.5 onwards, the masking filter will, if any of the
-`<code>prevent_function_usage</code>`, `<code>check_user_variables</code>`, `<code>check_unions</code>` or
-`<code>check_subqueries</code>` parameters is set to true, block statements that
+`prevent_function_usage`, `check_user_variables`, `check_unions` or
+`check_subqueries` parameters is set to true, block statements that
 cannot be fully parsed.
 
 
@@ -179,7 +179,7 @@ for how to change the default behaviour.
 
 From MaxScale 2.3.7 onwards, the masking filter will treat any strings
 passed to functions as if they were fields. The reason is that as the
-MaxScale query classifier is not aware of whether `<code>ANSI_QUOTES</code>` is
+MaxScale query classifier is not aware of whether `ANSI_QUOTES` is
 enabled or not, it is possible to bypass the masking by turning that
 option on.
 
@@ -192,12 +192,12 @@ mysql> select concat("ssn") from managers;
 
 
 
-Before this change, the content of the field `<code>ssn</code>` would have been
+Before this change, the content of the field `ssn` would have been
 returned in clear text even if the column should have been masked.
 
 
 Note that this change will mean that there may be false positives
-if `<code>ANSI_QUOTES</code>` is not enabled and a string argument happens to
+if `ANSI_QUOTES` is not enabled and a string argument happens to
 be the same as the name of a field to be masked.
 
 
@@ -210,16 +210,16 @@ for how to change the default behaviour.
 
 
 The masking filter can *only* be used for masking columns of the following
-types: `<code>BINARY</code>`, `<code>VARBINARY</code>`, `<code>CHAR</code>`, `<code>VARCHAR</code>`, `<code>BLOB</code>`, `<code>TINYBLOB</code>`,
-`<code>MEDIUMBLOB</code>`, `<code>LONGBLOB</code>`, `<code>TEXT</code>`, `<code>TINYTEXT</code>`, `<code>MEDIUMTEXT</code>`, `<code>LONGTEXT</code>`,
-`<code>ENUM</code>` and `<code>SET</code>`. If the type of the column is something else, then no
+types: `BINARY`, `VARBINARY`, `CHAR`, `VARCHAR`, `BLOB`, `TINYBLOB`,
+`MEDIUMBLOB`, `LONGBLOB`, `TEXT`, `TINYTEXT`, `MEDIUMTEXT`, `LONGTEXT`,
+`ENUM` and `SET`. If the type of the column is something else, then no
 masking will be performed.
 
 
 Currently, the masking filter can only work on packets whose payload is less
 than 16MB. If the masking filter encounters a packet whose payload is exactly
 that, thus indicating a situation where the payload is delivered in multiple
-packets, the value of the parameter `<code>large_payloads</code>` specifies how the masking
+packets, the value of the parameter `large_payloads` specifies how the masking
 filter should handle the situation.
 
 
@@ -248,10 +248,10 @@ filters=Mask-SSN
 ### Filter Parameters
 
 
-The masking filter has one mandatory parameter - `<code>rules</code>`.
+The masking filter has one mandatory parameter - `rules`.
 
 
-#### `<code>rules</code>`
+#### `rules`
 
 
 * Type: path
@@ -272,14 +272,14 @@ rules=/path/to/rules-file
 
 
 
-#### `<code>warn_type_mismatch</code>`
+#### `warn_type_mismatch`
 
 
 * Type: [enum](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>never</code>`, `<code>always</code>`
-* Default: `<code>never</code>`
+* Values: `never`, `always`
+* Default: `never`
 
 
 With this optional parameter the masking filter can be instructed to log
@@ -294,25 +294,25 @@ warn_type_mismatch=always
 
 
 
-#### `<code>large_payload</code>`
+#### `large_payload`
 
 
 * Type: [enum](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>ignore</code>`, `<code>abort</code>`
-* Default: `<code>abort</code>`
+* Values: `ignore`, `abort`
+* Default: `abort`
 
 
 This optional parameter specifies how the masking filter should treat
-payloads larger than `<code>16MB</code>`, that is, payloads that are delivered in
+payloads larger than `16MB`, that is, payloads that are delivered in
 multiple MySQL protocol packets.
 
 
-The values that can be used are `<code>ignore</code>`, which means that columns in
-such payloads are not masked, and `<code>abort</code>`, which means that if such
+The values that can be used are `ignore`, which means that columns in
+such payloads are not masked, and `abort`, which means that if such
 payloads are encountered, the client connection is closed. The default
-is `<code>abort</code>`.
+is `abort`.
 
 
 Note that the aborting behaviour is applied only to resultsets that
@@ -327,13 +327,13 @@ large_payload=ignore
 
 
 
-#### `<code>prevent_function_usage</code>`
+#### `prevent_function_usage`
 
 
 * Type: [bool](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 This optional parameter specifies how the masking filter should behave
@@ -352,10 +352,10 @@ SELECT CONCAT(masked_column) FROM tbl;
 
 
 
-If the value of `<code>prevent_function_usage</code>` is `<code>true</code>`, then all
+If the value of `prevent_function_usage` is `true`, then all
 statements that contain functions referring to masked columns will
 be rejected. As that means that also queries using potentially
-harmless functions, such as `<code>LENGTH(masked_column)</code>`, are rejected
+harmless functions, such as `LENGTH(masked_column)`, are rejected
 as well, this feature can be turned off. In that case, the firewall
 filter should be setup to allow or reject the use of certain functions.
 
@@ -367,18 +367,18 @@ prevent_function_usage=false
 
 
 
-#### `<code>require_fully_parsed</code>`
+#### `require_fully_parsed`
 
 
 * Type: [bool](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 This optional parameter specifies how the masking filter should
-behave in case any of `<code>prevent_function_usage</code>`, `<code>check_user_variables</code>`,
-`<code>check_unions</code>` or `<code>check_subqueries</code>` is true and it encounters a
+behave in case any of `prevent_function_usage`, `check_user_variables`,
+`check_unions` or `check_subqueries` is true and it encounters a
 statement that cannot be fully parsed,
 
 
@@ -393,25 +393,25 @@ require_fully_parsed=false
 
 
 
-Note that if this parameter is set to false, then `<code>prevent_function_usage</code>`,
-`<code>check_user_variables</code>`, `<code>check_unions</code>` and `<code>check_subqueries</code>` are rendered
+Note that if this parameter is set to false, then `prevent_function_usage`,
+`check_user_variables`, `check_unions` and `check_subqueries` are rendered
 less effective, as it with a statement that cannot be fully parsed may be
 possible to bypass the protection that they are intended to provide.
 
 
-#### `<code>treat_string_arg_as_field</code>`
+#### `treat_string_arg_as_field`
 
 
 * Type: [bool](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 This optional parameter specifies how the masking filter should treat
 strings used as arguments to functions. If true, they will be handled
-as fields, which will cause fields to be masked even if `<code>ANSI_QUOTES</code>` has
-been enabled and `<code>"</code>` is used instead of backtick.
+as fields, which will cause fields to be masked even if `ANSI_QUOTES` has
+been enabled and `"` is used instead of backtick.
 
 
 
@@ -421,13 +421,13 @@ treat_string_arg_as_field=false
 
 
 
-#### `<code>check_user_variables</code>`
+#### `check_user_variables`
 
 
 * Type: [bool](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 This optional parameter specifies how the masking filter should
@@ -441,7 +441,7 @@ set @a = (select ssn from customer where id = 1);
 
 
 
-will be rejected if `<code>ssn</code>` is a column that should be masked.
+will be rejected if `ssn` is a column that should be masked.
 
 
 
@@ -451,13 +451,13 @@ check_user_variables=false
 
 
 
-#### `<code>check_unions</code>`
+#### `check_unions`
 
 
 * Type: [bool](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 This optional parameter specifies how the masking filter should
@@ -471,7 +471,7 @@ SELECT a FROM t1 UNION select b from t2;
 
 
 
-will be rejected if `<code>b</code>` is a column that should be masked.
+will be rejected if `b` is a column that should be masked.
 
 
 
@@ -481,13 +481,13 @@ check_unions=false
 
 
 
-#### `<code>check_subqueries</code>`
+#### `check_subqueries`
 
 
 * Type: [bool](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 This optional parameter specifies how the masking filter should
@@ -501,7 +501,7 @@ SELECT * FROM (SELECT a as b FROM t1) as t2;
 
 
 
-will be rejected if `<code>a</code>` is a column that should be masked.
+will be rejected if `a` is a column that should be masked.
 
 
 
@@ -517,7 +517,7 @@ check_subqueries=false
 The masking rules are expressed as a JSON object.
 
 
-The top-level object is expected to contain a key `<code>rules</code>` whose
+The top-level object is expected to contain a key `rules` whose
 value is an array of rule objects.
 
 
@@ -531,8 +531,8 @@ value is an array of rule objects.
 
 
 Each rule in the rules array is a JSON object, expected to
-contain the keys `<code>replace</code>`, `<code>with</code>`, `<code>applies_to</code>` and
-`<code>exempted</code>`. The two former ones are obligatory and the two
+contain the keys `replace`, `with`, `applies_to` and
+`exempted`. The two former ones are obligatory and the two
 latter ones optional.
 
 
@@ -552,19 +552,19 @@ latter ones optional.
 
 
 
-### `<code>replace</code>`
+### `replace`
 
 
 The value of this key is an object that specifies the column
 whose values should be masked. The object must contain the key
-`<code>column</code>` and may contain the keys `<code>table</code>` and `<code>database</code>`. The
+`column` and may contain the keys `table` and `database`. The
 value of these keys must be a string.
 
 
-If only `<code>column</code>` is specified, then a column with that name
-matches irrespective of the table and database. If `<code>table</code>`
+If only `column` is specified, then a column with that name
+matches irrespective of the table and database. If `table`
 is specified, then the column matches only if it is in a table
-with the specified name, and if `<code>database</code>` is specified when
+with the specified name, and if `database` is specified when
 the column matches only if it is in a database with the
 specified name.
 
@@ -592,7 +592,7 @@ specified name.
 **NOTE** If a rule contains a table/database then if the resultset
 does *not* contain table/database information, it will always be
 considered a match if the column matches. For instance, given the
-rule above, if there is a table `<code>person2</code>`, also containing an `<code>ssn</code>`
+rule above, if there is a table `person2`, also containing an `ssn`
 field, then a query like
 
 
@@ -613,8 +613,8 @@ SELECT ssn FROM person UNION SELECT ssn FROM person2;
 
 
 
-will *only* return masked values, even if the `<code>ssn</code>` values from
-`<code>person2</code>` in principle should not be masked. The same effect is
+will *only* return masked values, even if the `ssn` values from
+`person2` in principle should not be masked. The same effect is
 observed even with a nonsensical query like
 
 
@@ -625,7 +625,7 @@ SELECT ssn FROM person2 UNION SELECT ssn FROM person2;
 
 
 
-even if nothing from `<code>person2</code>` should be masked. The reason is that
+even if nothing from `person2` should be masked. The reason is that
 as the resultset contains no table information, the values must be
 masked if the column name matches, as otherwise the masking could
 easily be circumvented with a query like
@@ -638,10 +638,10 @@ SELECT ssn FROM person UNION SELECT ssn FROM person;
 
 
 
-The optional key `<code>match</code>` makes partial replacement of the original
+The optional key `match` makes partial replacement of the original
 value possible: only the matched part would be replaced
 with the fill character.
-The `<code>match</code>` value must be a valid pcre2 regular expression.
+The `match` value must be a valid pcre2 regular expression.
 
 
 
@@ -657,7 +657,7 @@ The `<code>match</code>` value must be a valid pcre2 regular expression.
 
 
 
-### `<code>obfuscate</code>`
+### `obfuscate`
 
 
 The obfuscate rule allows the obfuscation of the value
@@ -684,7 +684,7 @@ The minimal configuration is:
 
 
 
-Output example for Db field `<code>name</code>` = 'remo'
+Output example for Db field `name` = 'remo'
 
 
 
@@ -700,24 +700,24 @@ SELECT name from db1.tbl1;`
 
 
 
-### `<code>with</code>`
+### `with`
 
 
 The value of this key is an object that specifies what the value of the matched
-column should be replaced with for the `<code>replace</code>` rule. Currently, the object
-is expected to contain either the key `<code>value</code>` or the key `<code>fill</code>`.
+column should be replaced with for the `replace` rule. Currently, the object
+is expected to contain either the key `value` or the key `fill`.
 The value of both must be a string with length greater than zero.
-If both keys are specified, `<code>value</code>` takes precedence.
-If `<code>fill</code>` is not specified, the default `<code>X</code>` is used as its value.
+If both keys are specified, `value` takes precedence.
+If `fill` is not specified, the default `X` is used as its value.
 
 
-If `<code>value</code>` is specified, then its value is used to replace the actual value
+If `value` is specified, then its value is used to replace the actual value
 verbatim and the length of the specified value must match the actual returned
 value (from the server) exactly. If the lengths do not match, the value of
-`<code>fill</code>` is used to mask the actual value.
+`fill` is used to mask the actual value.
 
 
-When the value of `<code>fill</code>` (fill-value) is used for masking the returned value,
+When the value of `fill` (fill-value) is used for masking the returned value,
 the fill-value is used as many times as necessary to match the length of the
 return value. If required, only a part of the fill-value may be used in the end
 of the mask value to get the lengths to match.
@@ -764,12 +764,12 @@ of the mask value to get the lengths to match.
 
 
 
-### `<code>applies_to</code>`
+### `applies_to`
 
 
 With this *optional* key, whose value must be an array of strings,
 it can be specified what users the rule is applied to. Each string
-should be a MariaDB account string, that is, `<code>%</code>` is a wildcard.
+should be a MariaDB account string, that is, `%` is a wildcard.
 
 
 
@@ -789,15 +789,15 @@ should be a MariaDB account string, that is, `<code>%</code>` is a wildcard.
 
 
 If this key is not specified, then the masking is performed for all
-users, except the ones exempted using the key `<code>exempted</code>`.
+users, except the ones exempted using the key `exempted`.
 
 
-### `<code>exempted</code>`
+### `exempted`
 
 
 With this *optional* key, whose value must be an array of strings,
 it can be specified what users the rule is *not* applied to. Each
-string should be a MariaDB account string, that is, `<code>%</code>` is a wildcard.
+string should be a MariaDB account string, that is, `%` is a wildcard.
 
 
 
@@ -826,7 +826,7 @@ about module commands.
 The masking filter supports the following module commands.
 
 
-### `<code>reload</code>`
+### `reload`
 
 
 Reload the rules from the rules file. The new rules are taken into use
@@ -840,7 +840,7 @@ MaxScale> call command masking reload MyMaskingFilter
 
 
 
-`<code>MyMaskingFilter</code>` refers to a particular filter section in the
+`MyMaskingFilter` refers to a particular filter section in the
 MariaDB MaxScale configuration file.
 
 
@@ -850,7 +850,7 @@ MariaDB MaxScale configuration file.
 In the following we configure a masking filter *MyMasking* that should always log a
 warning if a masking rule matches a column that is of a type that cannot be masked,
 and that should abort the client connection if a resultset package is larger than
-16MB. The rules for the masking filter are in the file `<code>masking_rules.json</code>`.
+16MB. The rules for the masking filter are in the file `masking_rules.json`.
 
 
 ### Configuration
@@ -873,10 +873,10 @@ filters=MyMasking
 
 
 
-### `<code>masking_rules.json</code>`
+### `masking_rules.json`
 
 
-The rules specify that the data of a column whose name is `<code>ssn</code>`, should
+The rules specify that the data of a column whose name is `ssn`, should
 be replaced with the string *012345-ABCD*. If the length of the data is
 not exactly the same as the length of the replacement value, then the
 data should be replaced with as many *X* characters as needed.

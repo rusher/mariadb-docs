@@ -60,7 +60,7 @@ MaxScale.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -152,7 +152,7 @@ Get all listeners.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -305,16 +305,16 @@ POST /v1/listeners
 Creates a new listener. The request body must define the following fields.
 
 
-* `<code>data.id</code>`
+* `data.id`
 * Name of the listener
-* `<code>data.type</code>`
-* Type of the object, must be `<code>listeners</code>`
-* `<code>data.attributes.parameters.port</code>` OR `<code>data.attributes.parameters.socket</code>`
+* `data.type`
+* Type of the object, must be `listeners`
+* `data.attributes.parameters.port` OR `data.attributes.parameters.socket`
 * The TCP port or UNIX Domain Socket the listener listens on. Only one of the
  fields can be defined.
-* `<code>data.relationships.services.data</code>`
-* The service relationships data, must define a JSON object with an `<code>id</code>` value
- that defines the service to use and a `<code>type</code>` value set to `<code>services</code>`.
+* `data.relationships.services.data`
+* The service relationships data, must define a JSON object with an `id` value
+ that defines the service to use and a `type` value set to `services`.
 
 
 The following is the minimal required JSON object for defining a new listener.
@@ -354,7 +354,7 @@ a full list of listener parameters.
 Listener is created:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Update a listener
@@ -372,7 +372,7 @@ for the listener.
 
 
 All parameters marked as modifiable at runtime can be modified. Currently, all
-TLS/SSL parameters and the `<code>connection_init_sql_file</code>` and `<code>sql_mode</code>` parameters
+TLS/SSL parameters and the `connection_init_sql_file` and `sql_mode` parameters
 can be modified at runtime.
 
 
@@ -387,7 +387,7 @@ listener.
 Listener is modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Destroy a listener
@@ -410,13 +410,13 @@ network port it listens on is available for reuse.
 Listener is destroyed:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Listener cannot be deleted:
 
 
-`<code>Status: 400 Bad Request</code>`
+`Status: 400 Bad Request`
 
 
 ### Stop a listener
@@ -439,7 +439,7 @@ longer accepted and are queued until the listener is started again.
 This endpoint supports the following parameters:
 
 
-* `<code>force=yes</code>`
+* `force=yes`
 * Close all existing connections that were created through this listener.
 
 
@@ -449,7 +449,7 @@ This endpoint supports the following parameters:
 Listener is stopped:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Start a listener
@@ -471,4 +471,4 @@ Starts a stopped listener.
 Listener is started:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`

@@ -19,7 +19,7 @@ dpkg-scansources  source  /dev/null | gzip -9c > source/Sources.gz
 ## Using the Debian repository you just created
 
 
-One needs to add a new file to the `<code class="fixed" style="white-space:pre-wrap">/etc/apt/sources.list.d/</code>` directory. For instance a new file called `<code class="fixed" style="white-space:pre-wrap">mariadb.list</code>`
+One needs to add a new file to the `/etc/apt/sources.list.d/` directory. For instance a new file called `mariadb.list`
 
 
 ```

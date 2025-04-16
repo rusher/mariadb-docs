@@ -39,7 +39,7 @@ Returns NULL if the argument is NULL.
 This function is very similar to the [Sys Schema](../../administrative-sql-statements/system-tables/sys-schema/sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md) [FORMAT_TIME](../../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_time.md) function, but with the following differences:
 
 
-* Represents minutes as `<code>min</code>` rather than `<code>m</code>`.
+* Represents minutes as `min` rather than `m`.
 * Does not represent weeks.
 
 

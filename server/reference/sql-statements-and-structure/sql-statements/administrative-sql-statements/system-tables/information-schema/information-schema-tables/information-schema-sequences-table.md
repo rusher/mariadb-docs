@@ -3,7 +3,7 @@
 
 
 ##### MariaDB starting with [11.5](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>SEQUENCES</code>` table stores information about [sequences](../../../../../sequences/README.md) on the server. 
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `SEQUENCES` table stores information about [sequences](../../../../../sequences/README.md) on the server. 
 
 
 It contains the following columns. See [CREATE SEQUENCE](../../../../../sequences/create-sequence.md) for details.

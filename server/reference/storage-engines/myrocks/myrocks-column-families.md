@@ -2,7 +2,7 @@
 # MyRocks Column Families
 
 [MyRocks](myrocks-in-mariadb-102-vs-mariadb-103.md) stores data in column families. These are similar to tablespaces.
-By default, the data is stored in the `<code>default</code>` column family.
+By default, the data is stored in the `default` column family.
 
 
 One can specify which column family the data goes to by using index comments:
@@ -12,7 +12,7 @@ One can specify which column family the data goes to by using index comments:
 INDEX index_name(col1, col2, ...) COMMENT 'column_family_name'
 ```
 
-If the column name starts with `<code>rev:</code>`, the column family is reverse-ordered.
+If the column name starts with `rev:`, the column family is reverse-ordered.
 
 
 ## Reasons for Column Families
@@ -64,7 +64,7 @@ Here is an example of how to set option1=value1 and option2=value for column fam
 rocksdb_override_cf_options='cf1={option1=value1;option2=value2};cf2={option3=value3}'
 ```
 
-One can check the contents of `<code>INFORMATION_SCHEMA.ROCKSDB_CF_OPTIONS</code>` to see what options are available.
+One can check the contents of `INFORMATION_SCHEMA.ROCKSDB_CF_OPTIONS` to see what options are available.
 
 
 Options that are frequently configured are:

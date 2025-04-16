@@ -25,7 +25,7 @@ The [innodb_max_dirty_pages_pct_lwm](innodb-system-variables.md#innodb_max_dirty
 * the [buffer pool](innodb-buffer-pool.md) is not running out of space, which could trigger eviction flushing
 
 
-To make flushing more eager, set to a higher value, for example `<code>SET GLOBAL innodb_max_dirty_pages_pct_lwm=0.001;</code>`
+To make flushing more eager, set to a higher value, for example `SET GLOBAL innodb_max_dirty_pages_pct_lwm=0.001;`
 
 
 ### Page Flushing with Multiple InnoDB Page Cleaner Threads
@@ -50,7 +50,7 @@ The system variable can be changed dynamically with [SET GLOBAL](../../../../con
 SET GLOBAL innodb_page_cleaners=8;
 ```
 
-This system variable's default value is either `<code>4</code>` or the configured value of the [innodb_buffer_pool_instances](innodb-system-variables.md#innodb_buffer_pool_instances) system variable, whichever is lower.
+This system variable's default value is either `4` or the configured value of the [innodb_buffer_pool_instances](innodb-system-variables.md#innodb_buffer_pool_instances) system variable, whichever is lower.
 
 
 ### Page Flushing with a Single InnoDB Page Cleaner Thread
@@ -72,7 +72,7 @@ innodb_use_mtflush = ON
 innodb_mtflush_threads = 8
 ```
 
-The [innodb_mtflush_threads](innodb-system-variables.md#innodb_mtflush_threads) system variable's default value is `<code>8</code>`. The maximum value is `<code>64</code>`. In multi-core systems, it is recommended to set its value close to the configured value of the [innodb_buffer_pool_instances](innodb-system-variables.md#innodb_buffer_pool_instances) system variable. However, it is also recommended to use your own benchmarks to find a suitable value for your particular application.
+The [innodb_mtflush_threads](innodb-system-variables.md#innodb_mtflush_threads) system variable's default value is `8`. The maximum value is `64`. In multi-core systems, it is recommended to set its value close to the configured value of the [innodb_buffer_pool_instances](innodb-system-variables.md#innodb_buffer_pool_instances) system variable. However, it is also recommended to use your own benchmarks to find a suitable value for your particular application.
 
 
 
@@ -103,7 +103,7 @@ This system variable can also be set in a server [option group](../../../server-
 innodb_io_capacity=20000
 ```
 
-The maximum amount of I/O capacity available to InnoDB in an emergency defaults to either `<code>2000</code>` or twice [innodb_io_capacity](innodb-system-variables.md#innodb_io_capacity), whichever is higher, or can be directly configured by setting the [innodb_io_capacity_max](innodb-system-variables.md#innodb_io_capacity_max) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+The maximum amount of I/O capacity available to InnoDB in an emergency defaults to either `2000` or twice [innodb_io_capacity](innodb-system-variables.md#innodb_io_capacity), whichever is higher, or can be directly configured by setting the [innodb_io_capacity_max](innodb-system-variables.md#innodb_io_capacity_max) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
 
 
 ```

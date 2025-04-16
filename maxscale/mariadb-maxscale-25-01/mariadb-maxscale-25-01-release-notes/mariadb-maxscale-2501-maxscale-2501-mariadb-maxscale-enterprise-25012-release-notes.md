@@ -45,7 +45,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-5520](https://jira.mariadb.org/browse/MXS-5520) config_sync_password infinitely doubles after maxscale restart & alter command
 * [MXS-5519](https://jira.mariadb.org/browse/MXS-5519) Documentation regarding mixing of cooperative_monitoring_locks and passive is unclear
 * [MXS-5518](https://jira.mariadb.org/browse/MXS-5518) Documentation of switchover-force lacks warnings
-* [MXS-5513](https://jira.mariadb.org/browse/MXS-5513) Config Wizard page is accessible by `<code>basic</code>` user
+* [MXS-5513](https://jira.mariadb.org/browse/MXS-5513) Config Wizard page is accessible by `basic` user
 * [MXS-5511](https://jira.mariadb.org/browse/MXS-5511) The Contact view in the GUI has outdated information
 * [MXS-5510](https://jira.mariadb.org/browse/MXS-5510) Upgrading to 25.01.1 causes systemd service files to be removed
 * [MXS-5509](https://jira.mariadb.org/browse/MXS-5509) WCAR visualization is not included in the package

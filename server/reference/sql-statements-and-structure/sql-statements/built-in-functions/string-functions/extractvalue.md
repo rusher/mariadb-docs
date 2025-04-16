@@ -12,16 +12,16 @@ EXTRACTVALUE(xml_frag, xpath_expr)
 ## Description
 
 
-The `<code>EXTRACTVALUE()</code>` function takes two string arguments: a fragment of XML markup and an XPath expression, (also known as a locator). It returns the text (That is, CDDATA), of the first text node which is a child of the element or elements matching the XPath expression.
+The `EXTRACTVALUE()` function takes two string arguments: a fragment of XML markup and an XPath expression, (also known as a locator). It returns the text (That is, CDDATA), of the first text node which is a child of the element or elements matching the XPath expression.
 
 
-In cases where a valid XPath expression does not match any text nodes in a valid XML fragment, (including the implicit `<code>/text()</code>` expression), the `<code>EXTRACTVALUE()</code>` function returns an empty string.
+In cases where a valid XPath expression does not match any text nodes in a valid XML fragment, (including the implicit `/text()` expression), the `EXTRACTVALUE()` function returns an empty string.
 
 
 ### Invalid Arguments
 
 
-When either the XML fragment or the XPath expression is `<code>NULL</code>`, the `<code>EXTRACTVALUE()</code>` function returns `<code>NULL</code>`. When the XML fragment is invalid, it raises a warning Code 1525:
+When either the XML fragment or the XPath expression is `NULL`, the `EXTRACTVALUE()` function returns `NULL`. When the XML fragment is invalid, it raises a warning Code 1525:
 
 
 ```
@@ -38,7 +38,7 @@ ERROR 1105 (HY000): XPATH syntax error: ')'
 ### Explicit text() Expressions
 
 
-This function is the equivalent of performing a match using the XPath expression after appending `<code>/text()</code>`. In other words:
+This function is the equivalent of performing a match using the XPath expression after appending `/text()`. In other words:
 
 
 ```
@@ -57,10 +57,10 @@ SELECT
 ### Count Matches
 
 
-When `<code>EXTRACTVALUE()</code>` returns multiple matches, it returns the content of the first child text node of each matching element, in the matched order, as a single, space-delimited string.
+When `EXTRACTVALUE()` returns multiple matches, it returns the content of the first child text node of each matching element, in the matched order, as a single, space-delimited string.
 
 
-By design, the `<code>EXTRACTVALUE()</code>` function makes no distinction between a match on an empty element and no match at all. If you need to determine whether no matching element was found in the XML fragment or if an element was found that contained no child text nodes, use the XPath `<code>count()</code>` function.
+By design, the `EXTRACTVALUE()` function makes no distinction between a match on an empty element and no match at all. If you need to determine whether no matching element was found in the XML fragment or if an element was found that contained no child text nodes, use the XPath `count()` function.
 
 
 For instance, when looking for a value that exists, but contains no child text nodes, you would get a count of the number of matching instances:
@@ -79,7 +79,7 @@ SELECT
 +---------------+-----------------+
 ```
 
-Alternatively, when looking for a value that doesn't exist, `<code>count()</code>` returns 0.
+Alternatively, when looking for a value that doesn't exist, `count()` returns 0.
 
 
 ```
@@ -98,7 +98,7 @@ SELECT
 ### Matches
 
 
-**Important**: The `<code>EXTRACTVALUE()</code>` function only returns CDDATA. It does not return tags that the element might contain or the text that these child elements contain.
+**Important**: The `EXTRACTVALUE()` function only returns CDDATA. It does not return tags that the element might contain or the text that these child elements contain.
 
 
 ```
@@ -112,7 +112,7 @@ SELECT
 +--------+
 ```
 
-Note, in the above example, while the XPath expression matches to the parent `<code><case></code>` instance, it does not return the contained `<code><email></code>` tag or its content.
+Note, in the above example, while the XPath expression matches to the parent `<case>` instance, it does not return the contained `<email>` tag or its content.
 
 
 ## Examples

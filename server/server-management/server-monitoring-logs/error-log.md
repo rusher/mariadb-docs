@@ -17,10 +17,10 @@ MariaDB always writes its error log, but the destination is configurable.
 ### Writing the Error Log to a File
 
 
-To configure the error log to be written to a file, you can set the [log_error](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable. You can configure a specific file name. However, if a specific file name is not configured, then the log will be written to the `<code>${hostname}.err</code>` file in the [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory by default.
+To configure the error log to be written to a file, you can set the [log_error](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable. You can configure a specific file name. However, if a specific file name is not configured, then the log will be written to the `${hostname}.err` file in the [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory by default.
 
 
-The [log_error](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable can be set in a server [option group](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example, to write the error log to the default `<code>${hostname}.err</code>` file, you could configure the following:
+The [log_error](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable can be set in a server [option group](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example, to write the error log to the default `${hostname}.err` file, you could configure the following:
 
 
 ```
@@ -29,7 +29,7 @@ The [log_error](../../server-usage/replication-cluster-multi-master/optimization
 log_error
 ```
 
-If you configure a specific file name as the [log_error](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable, and if it is not an absolute path, then it will be relative to the [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory. For example, if you configured the following, then the error log would be written to `<code>mariadb.err</code>` in the [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory:
+If you configure a specific file name as the [log_error](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable, and if it is not an absolute path, then it will be relative to the [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory. For example, if you configured the following, then the error log would be written to `mariadb.err` in the [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory:
 
 
 ```
@@ -50,7 +50,7 @@ However, the [log_error](../../server-usage/replication-cluster-multi-master/opt
 log_error=/var/log/mysql/mariadb.err
 ```
 
-Another way to configure the error log file name is to set the [log-basename](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option, which configures MariaDB to use a common prefix for all log files (e.g. [general query log](general-query-log.md), [slow query log](slow-query-log/slow-query-log-overview.md), error log, [binary logs](../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), etc.). The error log file name will be built by adding a `<code>.err</code>` extension to this prefix. For example, if you configured the following, then the error log would still be written to `<code>mariadb.err</code>` in the [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory:
+Another way to configure the error log file name is to set the [log-basename](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option, which configures MariaDB to use a common prefix for all log files (e.g. [general query log](general-query-log.md), [slow query log](slow-query-log/slow-query-log-overview.md), error log, [binary logs](../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), etc.). The error log file name will be built by adding a `.err` extension to this prefix. For example, if you configured the following, then the error log would still be written to `mariadb.err` in the [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory:
 
 
 ```
@@ -66,10 +66,10 @@ The [log-basename](../getting-installing-and-upgrading-mariadb/starting-and-stop
 ### Writing the Error Log to Stderr on Unix
 
 
-On Unix, if the [log_error](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable is not set, then errors are written to `<code>stderr</code>`, which usually means that the log messages are output to the terminal that started `<code>mariadbd</code>`.
+On Unix, if the [log_error](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable is not set, then errors are written to `stderr`, which usually means that the log messages are output to the terminal that started `mariadbd`.
 
 
-If the [log_error](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable was set in an [option file](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) or on the command-line, then it can still be unset by specifying `<code>--skip-log-error</code>`.
+If the [log_error](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable was set in an [option file](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) or on the command-line, then it can still be unset by specifying `--skip-log-error`.
 
 
 ### Writing the Error Log to Syslog on Unix
@@ -90,7 +90,7 @@ If you [start](https://mariadb.com/kb/en/) MariaDB with [mariadbd-safe](../getti
 If you [start](https://mariadb.com/kb/en/) MariaDB with [systemd](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md), then the error log can also be redirected to the syslog. See [Systemd: Configuring MariaDB to Write the Error Log to Syslog](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md#configuring-mariadb-to-write-the-error-log-to-syslog) for more information.
 
 
-[systemd](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md) also has its own logging system called the `<code>journal</code>`, and some errors may get logged there instead. See [Systemd:Systemd Journal](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md#systemd-journal) for more information.
+[systemd](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md) also has its own logging system called the `journal`, and some errors may get logged there instead. See [Systemd:Systemd Journal](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md#systemd-journal) for more information.
 
 
 ### Writing the Error Log to Console on Windows
@@ -105,7 +105,7 @@ On Windows, if the [console](../getting-installing-and-upgrading-mariadb/startin
 On Windows, error log messages are also written to the Windows Event Viewer. You can find MariaDB's error log messages by browsing **Windows Logs**, and then selecting **Application** or **Application Log**, depending on the Windows version.
 
 
-You can find MariaDB's error log messages by searching for the **Source** `<code>MariaDB</code>` (prior to [MariaDB 10.4](../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this was `<code>MySQL</code>`).
+You can find MariaDB's error log messages by searching for the **Source** `MariaDB` (prior to [MariaDB 10.4](../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this was `MySQL`).
 
 
 ## Finding the Error Log
@@ -138,7 +138,7 @@ If the above don't help, check also if your system is set to [write to syslog](.
 ## Configuring the Error Log Verbosity
 
 
-The default value of the [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) system variable is `<code>2</code>`.
+The default value of the [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) system variable is `2`.
 
 
 The [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) system variable can be used to configure the verbosity of the error log. It can be changed dynamically with [SET GLOBAL](../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
@@ -166,7 +166,7 @@ The [log_warnings](../../server-usage/replication-cluster-multi-master/optimizat
 ### Verbosity Level 0
 
 
-If [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `<code>0</code>`, then many optional warnings will not be logged. However, this does not prevent all warnings from being logged, because there are certain core warnings that will always be written to the error log. For example:
+If [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `0`, then many optional warnings will not be logged. However, this does not prevent all warnings from being logged, because there are certain core warnings that will always be written to the error log. For example:
 
 
 * If [InnoDB strict mode](../../reference/storage-engines/innodb/innodb-strict-mode.md) is disabled, and if DDL is performed on a table that triggers a ["Row size too large" error](../../reference/storage-engines/innodb/innodb-row-formats/troubleshooting-row-size-too-large-errors-with-innodb.md), then InnoDB will log a warning:
@@ -184,7 +184,7 @@ However, if [InnoDB strict mode](../../reference/storage-engines/innodb/innodb-s
 ### Verbosity Level 1
 
 
-Default until [MariaDB 10.2.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md). If [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `<code>1</code>`, then many types of warnings are logged. Some useful warnings are:
+Default until [MariaDB 10.2.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md). If [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `1`, then many types of warnings are logged. Some useful warnings are:
 
 
 * Replication-related messages:
@@ -231,7 +231,7 @@ Frequent warnings about [unsafe statements for statement-based replication](../.
 ### Verbosity Level 2
 
 
-Default from [MariaDB 10.2.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md). If [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `<code>2</code>`, then a couple other different kinds of warnings are printed. For example:
+Default from [MariaDB 10.2.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md). If [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `2`, then a couple other different kinds of warnings are printed. For example:
 
 
 * Messages related to access denied errors:
@@ -270,8 +270,8 @@ Default from [MariaDB 10.2.4](../../../release-notes/mariadb-community-server/re
 
 * Messages related to the files used to [persist replication state](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence):
 
-  * Either the default `<code>master.info</code>` file or the file that is configured by the [master_info_file](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option.
-  * Either the default `<code>relay-log.info</code>` file or the file that is configured by the [relay_log_info_file](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#relay_log_info_file) system variable.
+  * Either the default `master.info` file or the file that is configured by the [master_info_file](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option.
+  * Either the default `relay-log.info` file or the file that is configured by the [relay_log_info_file](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#relay_log_info_file) system variable.
 
 
 ```
@@ -293,7 +293,7 @@ Default from [MariaDB 10.2.4](../../../release-notes/mariadb-community-server/re
 ### Verbosity Level 3
 
 
-If [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `<code>3</code>`, then a couple other different kinds of warnings are printed. For example:
+If [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `3`, then a couple other different kinds of warnings are printed. For example:
 
 
 * Messages related to old-style language options:
@@ -352,7 +352,7 @@ If [log_warnings](../../server-usage/replication-cluster-multi-master/optimizati
 ### Verbosity Level 4
 
 
-If [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `<code>4</code>`, then a couple other different kinds of warnings are printed. For example:
+If [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `4`, then a couple other different kinds of warnings are printed. For example:
 
 
 * Messages related to killed connections:
@@ -371,7 +371,7 @@ If [log_warnings](../../server-usage/replication-cluster-multi-master/optimizati
   'user2' host: '192.168.1.50' (CLOSE_CONNECTION)
 ```
 
-* Messages related to released connections, such as when a transaction is committed and [completion_type](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#completion_type) is set to `<code>RELEASE</code>`:
+* Messages related to released connections, such as when a transaction is committed and [completion_type](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#completion_type) is set to `RELEASE`:
 
 
 ```
@@ -382,7 +382,7 @@ If [log_warnings](../../server-usage/replication-cluster-multi-master/optimizati
 ### Verbosity Level 9
 
 
-If [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `<code>9</code>`, then some **very** verbose warnings are printed. For example:
+If [log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `9`, then some **very** verbose warnings are printed. For example:
 
 
 * Messages about initializing plugins:

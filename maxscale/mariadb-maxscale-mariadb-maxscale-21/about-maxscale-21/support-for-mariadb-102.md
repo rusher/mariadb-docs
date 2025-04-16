@@ -16,7 +16,7 @@ when used together with MaxScale 2.1.
 
 
 The parser of MariaDB MaxScale has not been extended with the window
-function syntax (the `<code>OVER</code>` keyword is not recognized) and hence statements
+function syntax (the `OVER` keyword is not recognized) and hence statements
 using window functions will not be completely parsed.
 
 
@@ -63,7 +63,7 @@ Otherwise the statements will be routed correctly.
 ## [WITH](../../../server/reference/sql-statements-and-structure/geographic-geometric-features/geometry-relations/within.md)
 
 
-The MaxScale parser correctly parses `<code>WITH</code>` statements such as
+The MaxScale parser correctly parses `WITH` statements such as
 
 
 
@@ -108,9 +108,9 @@ SELECT * FROM engineers E1
 
 
 However, the MaxScale parser fails to collect columns and table names
-from the `<code>SELECT</code>` of the `<code>WITH</code>` clause and consequently the database
-firewall filter will **NOT** be able to block `<code>WITH</code>` statements where
-the `<code>SELECT</code>` of the `<code>WITH</code>` clause refers to to forbidden columns.
+from the `SELECT` of the `WITH` clause and consequently the database
+firewall filter will **NOT** be able to block `WITH` statements where
+the `SELECT` of the `WITH` clause refers to to forbidden columns.
 
 
 ## [CHECK CONSTRAINT](../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/constraint.md)
@@ -133,7 +133,7 @@ Parsed and handled correctly.
 ## [EXECUTE IMMEDIATE](../../../server/reference/sql-statements-and-structure/sql-statements/prepared-statements/execute-immediate.md)
 
 
-An `<code>EXECUTE IMMEDIATE</code>` statement will only be partially parsed, which means
+An `EXECUTE IMMEDIATE` statement will only be partially parsed, which means
 that such statements will be blocked by the database firewall filter,
 if it is used.
 

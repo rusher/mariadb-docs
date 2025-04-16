@@ -41,7 +41,7 @@ START TRANSACTION;
 INSERT INTO t SET a=1;
 ```
 
-`<code>t</code>`'s metadata is now locked by connection 1. Connection 2 tries to alter `<code>t</code>`, but has to wait:
+`t`'s metadata is now locked by connection 1. Connection 2 tries to alter `t`, but has to wait:
 
 
 ```

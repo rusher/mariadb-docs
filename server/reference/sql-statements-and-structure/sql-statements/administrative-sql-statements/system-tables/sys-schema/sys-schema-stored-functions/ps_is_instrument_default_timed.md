@@ -11,10 +11,10 @@ sys.ps_is_instrument_default_timed(instrument)
 ## Description
 
 
-`<code>ps_is_instrument_default_timed</code>` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md).
+`ps_is_instrument_default_timed` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md).
 
 
-It returns `<code>YES</code>` if the given Performance Schema *instrument* is timed by default, and `<code>NO</code>` if it is not, does not exist, or is a NULL value.
+It returns `YES` if the given Performance Schema *instrument* is timed by default, and `NO` if it is not, does not exist, or is a NULL value.
 
 
 ## Examples

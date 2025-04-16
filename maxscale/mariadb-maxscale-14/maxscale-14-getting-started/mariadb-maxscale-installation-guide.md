@@ -87,7 +87,7 @@ service maxscale start
 
 
 
-An example configuration file is installed into the `<code>/etc/</code>` folder. This file should be changed according to your needs.
+An example configuration file is installed into the `/etc/` folder. This file should be changed according to your needs.
 
 
 ## Building MaxScale From Source Code
@@ -138,7 +138,7 @@ As well as the four major configuration choices outlined above there are also ot
 ## Encrypting Passwords
 
 
-Passwords stored in the maxscale.cnf file may optionally be encrypted for added security. This is done by creation of an encryption key on installation of MaxScale. Encryption keys may be created manually by executing the maxkeys utility with the argument of the filename to store the key. The default location MaxScale stores the keys is `<code>/var/lib/maxscale</code>`.
+Passwords stored in the maxscale.cnf file may optionally be encrypted for added security. This is done by creation of an encryption key on installation of MaxScale. Encryption keys may be created manually by executing the maxkeys utility with the argument of the filename to store the key. The default location MaxScale stores the keys is `/var/lib/maxscale`.
 
 
 

@@ -672,7 +672,7 @@ This requires HBase installation to run a Thrift server
 * There is an independent re-implementation here: [asynchbase](https://github.com/stumbleupon/asynchbase). It is 10K lines of Java code, which gives an idea about HBase's protocol complexity
 
   * It seems to support only a subset of features? I.e. I was unable to find mention of pushed down conditions support?
-  * Look in `<code>HBaseRpc.java</code>` for `<code>"Unofficial Hadoop / HBase RPC protocol documentation"</code>`
+  * Look in `HBaseRpc.java` for `"Unofficial Hadoop / HBase RPC protocol documentation"`
 
 
 ### 6.3 Use JNI+HBase client protocol

@@ -11,10 +11,10 @@ ASCII(str)
 ## Description
 
 
-Returns the numeric ASCII value of the leftmost character of the string argument. Returns `<code>0</code>` if the given string is empty and `<code>NULL</code>` if it is `<code>NULL</code>`.
+Returns the numeric ASCII value of the leftmost character of the string argument. Returns `0` if the given string is empty and `NULL` if it is `NULL`.
 
 
-`<code>ASCII()</code>` works for 8-bit characters.
+`ASCII()` works for 8-bit characters.
 
 
 ## Examples

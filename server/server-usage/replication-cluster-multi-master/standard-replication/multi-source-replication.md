@@ -29,20 +29,20 @@ be used as a suffix for relay logs and primary info index files.
 The new syntax introduced to handle many connections:
 
 
-* `<code class="highlight fixed" style="white-space:pre-wrap">[CHANGE MASTER ['connection_name'] TO ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md)</code>`. This creates or modifies a connection to a primary.
-* `<code class="highlight fixed" style="white-space:pre-wrap">FLUSH RELAY LOGS ['connection_name']</code>`
-* `<code class="highlight fixed" style="white-space:pre-wrap">[MASTER_POS_WAIT(....,['connection_name'])](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_pos_wait.md)</code>`
-* `<code class="highlight fixed" style="white-space:pre-wrap">[RESET SLAVE ['connection_name'] [ALL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-replica.md)]</code>`. This is used to reset a replica's replication position or to remove a replica permanently.
-* `<code class="highlight fixed" style="white-space:pre-wrap">[SHOW RELAYLOG ['connection_name'] EVENTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-relaylog-events.md)</code>`
-* `<code class="highlight fixed" style="white-space:pre-wrap">[SHOW SLAVE ['connection_name'] STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)</code>`
-* `<code class="highlight fixed" style="white-space:pre-wrap">[SHOW ALL SLAVES STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)</code>`
-* `<code class="highlight fixed" style="white-space:pre-wrap">[START SLAVE ['connection_name'](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md)...]]</code>`
-* `<code class="highlight fixed" style="white-space:pre-wrap">[START ALL SLAVES ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md)</code>`
-* `<code class="highlight fixed" style="white-space:pre-wrap">[STOP SLAVE ['connection_name'] ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md)</code>`
-* `<code class="highlight fixed" style="white-space:pre-wrap">[STOP ALL SLAVES ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md)</code>`
+* `[CHANGE MASTER ['connection_name'] TO ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md)`. This creates or modifies a connection to a primary.
+* `FLUSH RELAY LOGS ['connection_name']`
+* `[MASTER_POS_WAIT(....,['connection_name'])](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_pos_wait.md)`
+* `[RESET SLAVE ['connection_name'] [ALL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-replica.md)]`. This is used to reset a replica's replication position or to remove a replica permanently.
+* `[SHOW RELAYLOG ['connection_name'] EVENTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-relaylog-events.md)`
+* `[SHOW SLAVE ['connection_name'] STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)`
+* `[SHOW ALL SLAVES STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)`
+* `[START SLAVE ['connection_name'](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md)...]]`
+* `[START ALL SLAVES ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md)`
+* `[STOP SLAVE ['connection_name'] ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md)`
+* `[STOP ALL SLAVES ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md)`
 
 
-The original old-style connection is an empty string `<code class="highlight fixed" style="white-space:pre-wrap">''</code>`.
+The original old-style connection is an empty string `''`.
 You don't have to use this connection if you don't want to.
 
 
@@ -55,13 +55,13 @@ You delete the connection permanently with [RESET SLAVE 'connection_name' ALL](.
 
 The new replication variable [default_master_connection](replication-and-binary-log-system-variables.md)
 specifies which connection will be used for commands and variables if you don't
-specify a connection. By default this is `<code class="highlight fixed" style="white-space:pre-wrap">''</code>` (the default
+specify a connection. By default this is `''` (the default
 connection name).
 
 
 The following replication variables are local for the connection. (In other
 words, they show the value for the
-`<code class="highlight fixed" style="white-space:pre-wrap">@@default_master_connection</code>` connection). We are working on
+`@@default_master_connection` connection). We are working on
 making all the important ones local for the connection.
 
 
@@ -85,7 +85,7 @@ making all the important ones local for the connection.
 
 
 You can access all of the above variables with either
-`<code class="highlight fixed" style="white-space:pre-wrap">SESSION</code>` or `<code class="highlight fixed" style="white-space:pre-wrap">GLOBAL</code>`.
+`SESSION` or `GLOBAL`.
 
 
 Note that in contrast to MySQL, all variables always show the correct active
@@ -102,7 +102,7 @@ set @@default_master_connection='other_connection';
 show status like 'Slave_running';
 ```
 
-If `<code class="highlight fixed" style="white-space:pre-wrap">@@default_master_connection</code>` contains a non existing name,
+If `@@default_master_connection` contains a non existing name,
 you will get a warning.
 
 
@@ -128,7 +128,7 @@ New status variables:
 
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">[SHOW ALL SLAVES STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)</code>` has the following new columns:
+`[SHOW ALL SLAVES STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)` has the following new columns:
 
 
 
@@ -150,9 +150,9 @@ New status variables:
 
 The basic principle of the new files used by multi source replication is that
 they have the same name as the original relay log files suffixed with
-`<code class="highlight fixed" style="white-space:pre-wrap">connection_name</code>` before the extension. The main exception is
+`connection_name` before the extension. The main exception is
 the file that holds all connection is named as the normal
-`<code class="highlight fixed" style="white-space:pre-wrap">master-info-file</code>` with a `<code class="highlight fixed" style="white-space:pre-wrap">multi-</code>` prefix.
+`master-info-file` with a `multi-` prefix.
 
 
 When you are using multi source, the following new files are created:
@@ -179,7 +179,7 @@ different systems.
 Hint:
 
 
-Instead of specifying names for `<code class="highlight fixed" style="white-space:pre-wrap">mysqld</code>` with [--relay-log](replication-and-binary-log-system-variables.md#relay_log), [--relay-log-index](replication-and-binary-log-system-variables.md#relay_log_index), [--general-log-file](../optimization-and-tuning/system-variables/server-system-variables.md#general_log_file), [--slow-query-log-file](../optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file),
+Instead of specifying names for `mysqld` with [--relay-log](replication-and-binary-log-system-variables.md#relay_log), [--relay-log-index](replication-and-binary-log-system-variables.md#relay_log_index), [--general-log-file](../optimization-and-tuning/system-variables/server-system-variables.md#general_log_file), [--slow-query-log-file](../optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file),
 [--log-bin](replication-and-binary-log-system-variables.md#log_bin) and [--log-bin-index](replication-and-binary-log-system-variables.md#log_bin_index), you can just
 specify [--log-basename](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) and all the other variables are set
 with this as a prefix.
@@ -188,20 +188,20 @@ with this as a prefix.
 ## Other Things
 
 
-* All error messages from a replica with a connection name, that are written to the error log, are prefixed with `<code class="highlight fixed" style="white-space:pre-wrap">Master 'connection_name':</code>`. This makes it easy to see from where an error originated.
-* Errors `<code class="highlight fixed" style="white-space:pre-wrap">ER_MASTER_INFO</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">WARN_NO_MASTER_INFO</code>` now includes connection_name.
+* All error messages from a replica with a connection name, that are written to the error log, are prefixed with `Master 'connection_name':`. This makes it easy to see from where an error originated.
+* Errors `ER_MASTER_INFO` and `WARN_NO_MASTER_INFO` now includes connection_name.
 * There is no conflict resolution. The assumption is that there are no conflicts in data between the different primaries.
 * All executed commands are stored in the normal binary log (nothing new here).
-* If the server variable `<code class="highlight fixed" style="white-space:pre-wrap">log_warnings</code>` > 1 then you will get some information in the log about how the multi-master-info file is updated (mainly for debugging).
-* The output of [SHOW ALL SLAVES STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) has one more column than `<code>SHOW SLAVE STATUS</code>`, since it includes the `<code class="highlight fixed" style="white-space:pre-wrap">connection_name</code>` column.
-* `<code class="highlight fixed" style="white-space:pre-wrap">[RESET SLAVE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-replica.md)</code>` now deletes all relay-log files.
+* If the server variable `log_warnings` > 1 then you will get some information in the log about how the multi-master-info file is updated (mainly for debugging).
+* The output of [SHOW ALL SLAVES STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) has one more column than `SHOW SLAVE STATUS`, since it includes the `connection_name` column.
+* `[RESET SLAVE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-replica.md)` now deletes all relay-log files.
 
 
 ## replicate-... Variables
 
 
-* One can set the values for the `<code class="highlight fixed" style="white-space:pre-wrap">replicate-...</code>` variables from the command line or in `<code class="highlight fixed" style="white-space:pre-wrap">my.cnf</code>` for a given connection by prefixing the variable with the connection name.
-* If one doesn't use any connection name prefix for a `<code class="highlight fixed" style="white-space:pre-wrap">replicate..</code>` variable, then the value will be used as the default value for all connections that don't have a value set for this variable.
+* One can set the values for the `replicate-...` variables from the command line or in `my.cnf` for a given connection by prefixing the variable with the connection name.
+* If one doesn't use any connection name prefix for a `replicate..` variable, then the value will be used as the default value for all connections that don't have a value set for this variable.
 
 
 Example:
@@ -211,10 +211,10 @@ Example:
 mysqld --main_connection.replicate_do_db=main_database --replicate_do_db=other_database
 ```
 
-The have sets the `<code class="highlight fixed" style="white-space:pre-wrap">replicate_do_db</code>` variable to `<code class="highlight fixed" style="white-space:pre-wrap">main_database</code>` for the connection named `<code class="highlight fixed" style="white-space:pre-wrap">main_connection</code>`. All other connections will use the value `<code class="highlight fixed" style="white-space:pre-wrap">other_database</code>`.
+The have sets the `replicate_do_db` variable to `main_database` for the connection named `main_connection`. All other connections will use the value `other_database`.
 
 
-One can also use this syntax to set `<code class="highlight fixed" style="white-space:pre-wrap">replicate-rewrite-db</code>` for a given connection.
+One can also use this syntax to set `replicate-rewrite-db` for a given connection.
 
 
 ## Typical Use Cases
@@ -222,15 +222,15 @@ One can also use this syntax to set `<code class="highlight fixed" style="white-
 
 * You are partitioning your data over many primaries and would like to get it all together on one machine to do analytical queries on all data.
 * You have many databases spread over many MariaDB/MySQL servers and would like to have all of them on one machine as an extra backup.
-* In a Galera cluster the default replication filter rules like `<code class="highlight fixed" style="white-space:pre-wrap">replicate-do-db</code>` do not apply to replication connections, but also to Galera write set applier threads. By using a named multi-primary replication connection instead, even when replicating from just one primary into the cluster, the primary-replica replication rules can be kept separate from the Galera intra-node replication traffic.
+* In a Galera cluster the default replication filter rules like `replicate-do-db` do not apply to replication connections, but also to Galera write set applier threads. By using a named multi-primary replication connection instead, even when replicating from just one primary into the cluster, the primary-replica replication rules can be kept separate from the Galera intra-node replication traffic.
 
 
 ## Limitations
 
 
 * Each active connection will create 2 threads (as is normal for MariaDB replication).
-* You should ensure that all primaries have different `<code class="highlight fixed" style="white-space:pre-wrap">server-id</code>`'s. If you don't do this, you will get into trouble if you try to replicate from the multi-source replica back to your primaries.
-* One can change [max_relay_log_size](replication-and-binary-log-system-variables.md) for any active connection, but new connections will always use the server startup value for `<code class="highlight fixed" style="white-space:pre-wrap">max_relay_log_size</code>`, which can't be changed at runtime.
+* You should ensure that all primaries have different `server-id`'s. If you don't do this, you will get into trouble if you try to replicate from the multi-source replica back to your primaries.
+* One can change [max_relay_log_size](replication-and-binary-log-system-variables.md) for any active connection, but new connections will always use the server startup value for `max_relay_log_size`, which can't be changed at runtime.
 * Option [innodb-recovery-update-relay-log](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_recovery_update_relay_log) (xtradb feature to store and restore relay log position for replicas) only works for the default connection ''. As this option is not really safe and can easily cause loss of data if you use storage engines other than InnoDB, we don't recommend this option be used.
 * [slave_net_timeout](replication-and-binary-log-system-variables.md) affects all connections. We don't check anymore if it's less than [Slave_heartbeat_period](replication-and-binary-log-status-variables.md), as this doesn't make sense in a multi-source setup.
 
@@ -238,13 +238,13 @@ One can also use this syntax to set `<code class="highlight fixed" style="white-
 ## Incompatibilities with MariaDB/MySQL 5.5
 
 
-* [max_relay_log_size](replication-and-binary-log-system-variables.md) is now (almost) a normal variable and not automatically changed if [max_binlog_size](replication-and-binary-log-system-variables.md) is changed. To keep things compatible with old config files, we set it to `<code class="highlight fixed" style="white-space:pre-wrap">max_binlog_size</code>` at startup if its value is 0.
-* You can now access replication variables that depend on the active connection with either `<code class="highlight fixed" style="white-space:pre-wrap">GLOBAL</code>` or `<code class="highlight fixed" style="white-space:pre-wrap">SESSION</code>`.
+* [max_relay_log_size](replication-and-binary-log-system-variables.md) is now (almost) a normal variable and not automatically changed if [max_binlog_size](replication-and-binary-log-system-variables.md) is changed. To keep things compatible with old config files, we set it to `max_binlog_size` at startup if its value is 0.
+* You can now access replication variables that depend on the active connection with either `GLOBAL` or `SESSION`.
 * We only write information about relay log positions for recovery if [innodb-recovery-update-relay-log](../../../reference/storage-engines/innodb/innodb-system-variables.md) is set.
 * [Slave_retried_transactions](replication-and-binary-log-status-variables.md#slave_retried_transactions) now shows the total count of retried transactions over all replicas.
-* The status variable `<code class="highlight fixed" style="white-space:pre-wrap">Com_slave_start</code>` is replaced with [Com_start_slave](replication-and-binary-log-status-variables.md#com_start_slave).
-* The status variable `<code class="highlight fixed" style="white-space:pre-wrap">Com_slave_stop</code>` is replaced with [Com_stop_slave](replication-and-binary-log-status-variables.md#com_stop_slave).
-* `<code class="highlight fixed" style="white-space:pre-wrap">FLUSH RELAY LOGS</code>` are not replicated anymore. This is not safe as connection names may be different on the replica.
+* The status variable `Com_slave_start` is replaced with [Com_start_slave](replication-and-binary-log-status-variables.md#com_start_slave).
+* The status variable `Com_slave_stop` is replaced with [Com_stop_slave](replication-and-binary-log-status-variables.md#com_stop_slave).
+* `FLUSH RELAY LOGS` are not replicated anymore. This is not safe as connection names may be different on the replica.
 
 
 ## See Also

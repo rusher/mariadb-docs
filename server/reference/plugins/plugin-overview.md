@@ -14,7 +14,7 @@ There are a number of ways to see which plugins are currently active.
 A server almost always has a large number of active plugins, because the server contains a large number of built-in plugins, which are active by default and cannot be uninstalled.
 
 
-### Querying Plugin Information with `<code>SHOW PLUGINS</code>`
+### Querying Plugin Information with `SHOW PLUGINS`
 
 
 The [SHOW PLUGINS](../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-plugins-soname.md) statement can be used to query information about all active plugins.
@@ -46,7 +46,7 @@ License: GPL
 ...
 ```
 
-If a plugin's `<code>Library</code>` column has a `<code>NULL</code>` value, then the plugin is built-in, and it cannot be uninstalled.
+If a plugin's `Library` column has a `NULL` value, then the plugin is built-in, and it cannot be uninstalled.
 
 
 ### Querying Plugin Information with information_schema.PLUGINS
@@ -106,10 +106,10 @@ PLUGIN_LIBRARY_VERSION: NULL
 ...
 ```
 
-If a plugin's `<code>PLUGIN_LIBRARY</code>` column has the `<code>NULL</code>` value, then the plugin is built-in, and it cannot be uninstalled.
+If a plugin's `PLUGIN_LIBRARY` column has the `NULL` value, then the plugin is built-in, and it cannot be uninstalled.
 
 
-### Querying Plugin Information with `<code>mysql.plugin</code>`
+### Querying Plugin Information with `mysql.plugin`
 
 
 The [mysql.plugin](../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table can be queried to get information about installed plugins.
@@ -174,26 +174,26 @@ A plugin can be installed dynamically by executing either the [INSTALL SONAME](.
 If a plugin is installed with one of these statements, then a record will be added to the [mysql.plugins](../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table for the plugin. This means that the plugin will automatically be loaded every time the server restarts, unless specifically uninstalled or deactivated.
 
 
-#### Installing a Plugin with `<code>INSTALL SONAME</code>`
+#### Installing a Plugin with `INSTALL SONAME`
 
 
 You can install a plugin dynamically by executing the [INSTALL SONAME](../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) statement. [INSTALL SONAME](../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) installs all plugins from the given plugin library. This could be required for some plugin libraries.
 
 
-For example, to install all plugins in the `<code>server_audit</code>` plugin library (which is currently only the [server_audit](mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md) audit plugin), you could execute the following:
+For example, to install all plugins in the `server_audit` plugin library (which is currently only the [server_audit](mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md) audit plugin), you could execute the following:
 
 
 ```
 INSTALL SONAME 'server_audit';
 ```
 
-#### Installing a Plugin with `<code>INSTALL PLUGIN</code>`
+#### Installing a Plugin with `INSTALL PLUGIN`
 
 
 You can install a plugin dynamically by executing the [INSTALL PLUGIN](../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) statement. [INSTALL PLUGIN](../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) installs a single plugin from the given plugin library.
 
 
-For example, to install the [server_audit](mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md) audit plugin from the `<code>server_audit</code>` plugin library, you could execute the following:
+For example, to install the [server_audit](mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md) audit plugin from the `server_audit` plugin library, you could execute the following:
 
 
 ```
@@ -209,7 +209,7 @@ A plugin can be installed with a [mariadbd](../../server-management/getting-inst
 If a plugin is installed with one of these options, then a record will **not** be added to the [mysql.plugins](../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table for the plugin. This means that if the server is restarted without the same option set, then the plugin will **not** automatically be loaded.
 
 
-#### Installing a Plugin with `<code>--plugin-load-add</code>`
+#### Installing a Plugin with `--plugin-load-add`
 
 
 You can install a plugin with the [--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add) option by specifying the option as a command-line argument to [mariadbd](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or by specifying the option in a relevant server [option group](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md).
@@ -218,12 +218,12 @@ You can install a plugin with the [--plugin-load-add](../../server-management/ge
 The [--plugin-load-add](https://mariadb.com/kb/en/-options/#-plugin-load-add) option uses the following format:
 
 
-* Plugins can be specified in the format `<code>name=library</code>`, where `<code>name</code>` is the plugin name and `<code>library</code>` is the plugin library. This format installs a single plugin from the given plugin library.
-* Plugins can also be specified in the format `<code>library</code>`, where `<code>library</code>` is the plugin library. This format installs all plugins from the given plugin library.
+* Plugins can be specified in the format `name=library`, where `name` is the plugin name and `library` is the plugin library. This format installs a single plugin from the given plugin library.
+* Plugins can also be specified in the format `library`, where `library` is the plugin library. This format installs all plugins from the given plugin library.
 * Multiple plugins can be specified by separating them with semicolons.
 
 
-For example, to install all plugins in the `<code>server_audit</code>` plugin library (which is currently only the `<code>[server_audit](mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)</code>` audit plugin) and also the `<code>[ed25519](authentication-plugins/authentication-plugin-ed25519.md)</code>` authentication plugin from the `<code>auth_ed25519</code>` plugin library, you could set the option to the following values on the command-line:
+For example, to install all plugins in the `server_audit` plugin library (which is currently only the `[server_audit](mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)` audit plugin) and also the `[ed25519](authentication-plugins/authentication-plugin-ed25519.md)` authentication plugin from the `auth_ed25519` plugin library, you could set the option to the following values on the command-line:
 
 
 ```
@@ -243,7 +243,7 @@ plugin_load_add = ed25519=auth_ed25519
 Special care must be taken when specifying both the [--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load) option and the [--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add) option together. The [--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load) option resets the plugin load list, and this can cause unexpected problems if you are not aware. The [--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add) option does **not** reset the plugin load list, so it is much safer to use. See [Specifying Multiple Plugin Load Options](#specifying-multiple-plugin-load-options) for more information.
 
 
-#### Installing a Plugin with `<code>--plugin-load</code>`
+#### Installing a Plugin with `--plugin-load`
 
 
 You can install a plugin with the [--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load) option by specifying the option as a command-line argument to [mariadbd](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or by specifying the option in a relevant server [option group](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md).
@@ -252,12 +252,12 @@ You can install a plugin with the [--plugin-load](../../server-management/gettin
 The [--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load) option uses the following format:
 
 
-* Plugins can be specified in the format `<code>name=library</code>`, where `<code>name</code>` is the plugin name and `<code>library</code>` is the plugin library. This format installs a single plugin from the given plugin library.
-* Plugins can also be specified in the format `<code>library</code>`, where `<code>library</code>` is the plugin library. This format installs all plugins from the given plugin library.
+* Plugins can be specified in the format `name=library`, where `name` is the plugin name and `library` is the plugin library. This format installs a single plugin from the given plugin library.
+* Plugins can also be specified in the format `library`, where `library` is the plugin library. This format installs all plugins from the given plugin library.
 * Multiple plugins can be specified by separating them with semicolons.
 
 
-For example, to install all plugins in the `<code>server_audit</code>` plugin library (which is currently only the `<code>[server_audit](mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)</code>` audit plugin) and also the `<code>[ed25519](authentication-plugins/authentication-plugin-ed25519.md)</code>` authentication plugin from the `<code>auth_ed25519</code>` plugin library, you could set the option to the following values on the command-line:
+For example, to install all plugins in the `server_audit` plugin library (which is currently only the `[server_audit](mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)` audit plugin) and also the `[ed25519](authentication-plugins/authentication-plugin-ed25519.md)` authentication plugin from the `auth_ed25519` plugin library, you could set the option to the following values on the command-line:
 
 
 ```
@@ -273,19 +273,19 @@ You could also set the option to the same values in an [option file](../../serve
 plugin_load = server_audit;ed25519=auth_ed25519
 ```
 
-Special care must be taken when specifying the `<code>[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)</code>` option multiple times, or when specifying both the `<code>[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)</code>` option and the `<code>[--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add)</code>` option together. The `<code>[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)</code>` option resets the plugin load list, and this can cause unexpected problems if you are not aware. The `<code>[--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add)</code>` option does **not** reset the plugin load list, so it is much safer to use. See [Specifying Multiple Plugin Load Options](#specifying-multiple-plugin-load-options) for more information.
+Special care must be taken when specifying the `[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)` option multiple times, or when specifying both the `[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)` option and the `[--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add)` option together. The `[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)` option resets the plugin load list, and this can cause unexpected problems if you are not aware. The `[--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add)` option does **not** reset the plugin load list, so it is much safer to use. See [Specifying Multiple Plugin Load Options](#specifying-multiple-plugin-load-options) for more information.
 
 
 #### Specifying Multiple Plugin Load Options
 
 
-Special care must be taken when specifying the `<code>[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)</code>` option multiple times, or when specifying both the `<code>[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)</code>` option and the `<code>[--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add)</code>` option. The `<code>[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)</code>` option resets the plugin load list, and this can cause unexpected problems if you are not aware. The `<code>[--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add)</code>` option does **not** reset the plugin load list, so it is much safer to use.
+Special care must be taken when specifying the `[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)` option multiple times, or when specifying both the `[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)` option and the `[--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add)` option. The `[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)` option resets the plugin load list, and this can cause unexpected problems if you are not aware. The `[--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add)` option does **not** reset the plugin load list, so it is much safer to use.
 
 
 This can have the following consequences:
 
 
-* If the `<code>[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)</code>` option is specified multiple times, then only the last instance will have any effect. For example, in the following case, the first instance of the option is reset:
+* If the `[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)` option is specified multiple times, then only the last instance will have any effect. For example, in the following case, the first instance of the option is reset:
 
 
 ```
@@ -295,7 +295,7 @@ plugin_load = server_audit
 plugin_load = ed25519=auth_ed25519
 ```
 
-* If the `<code>[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)</code>` option is specified after the `<code>[--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add)</code>` option, then it will also reset the changes made by that option. For example, in the following case, the `<code>[--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add)</code>` option does not do anything, because the subsequent `<code>[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)</code>` option resets the plugin load list:
+* If the `[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)` option is specified after the `[--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add)` option, then it will also reset the changes made by that option. For example, in the following case, the `[--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add)` option does not do anything, because the subsequent `[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)` option resets the plugin load list:
 
 
 ```
@@ -305,7 +305,7 @@ plugin_load_add = server_audit
 plugin_load = ed25519=auth_ed25519
 ```
 
-* In contrast, if the `<code>[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)</code>` option is specified before the `<code>[--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add)</code>` option, then it will work fine, because the `<code>[--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add)</code>` option does not reset the plugin load list. For example, in the following case, both plugins are properly loaded:
+* In contrast, if the `[--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load)` option is specified before the `[--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add)` option, then it will work fine, because the `[--plugin-load-add](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add)` option does not reset the plugin load list. For example, in the following case, both plugins are properly loaded:
 
 
 ```
@@ -341,7 +341,7 @@ If a plugin is installed with this utility, then a record will be added to the [
 ### Configuring the Plugin Directory
 
 
-When a plugin is being installed, the server looks for the plugin's library in the server's plugin directory. This directory is configured by the `<code>[plugin_dir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir)</code>` system variable. This can be specified as a command-line argument to `<code>[mariadbd](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` or it can be specified in a relevant server [option group](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+When a plugin is being installed, the server looks for the plugin's library in the server's plugin directory. This directory is configured by the `[plugin_dir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir)` system variable. This can be specified as a command-line argument to `[mariadbd](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or it can be specified in a relevant server [option group](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 
 ```
@@ -353,7 +353,7 @@ plugin_dir = /usr/lib64/mysql/plugin
 ### Configuring the Minimum Plugin Maturity
 
 
-When a plugin is being installed, the server compares the plugin's maturity level against the server's minimum allowed plugin maturity. This can help prevent users from using unstable plugins on production servers. This minimum plugin maturity is configured by the `<code>[plugin_maturity](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_maturity)</code>` system variable. This can be specified as a command-line argument to `<code>[mariadbd](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)</code>` or it can be specified in a relevant server [option group](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
+When a plugin is being installed, the server compares the plugin's maturity level against the server's minimum allowed plugin maturity. This can help prevent users from using unstable plugins on production servers. This minimum plugin maturity is configured by the `[plugin_maturity](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_maturity)` system variable. This can be specified as a command-line argument to `[mariadbd](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or it can be specified in a relevant server [option group](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 
 ```
@@ -375,7 +375,7 @@ A plugin will be loaded by default when the server starts if:
 * The server is configured to load the plugin with the [--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load) option.
 
 
-This behavior can be changed with special options that take the form `<code>--plugin-name</code>`. For example, for the `<code>[server_audit](mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)</code>` audit plugin, the special option is called [--server-audit](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md).
+This behavior can be changed with special options that take the form `--plugin-name`. For example, for the `[server_audit](mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)` audit plugin, the special option is called [--server-audit](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md).
 
 
 The possible values for these special options are:
@@ -392,7 +392,7 @@ The possible values for these special options are:
 
 
 
-A plugin's status can be found by looking at the `<code>PLUGIN_STATUS</code>` column of the [information_schema.PLUGINS](../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table.
+A plugin's status can be found by looking at the `PLUGIN_STATUS` column of the [information_schema.PLUGINS](../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table.
 
 
 ## Uninstalling Plugins
@@ -405,7 +405,7 @@ Plugins that are found in the mysql.plugin table, that is those that were instal
 * With [mariadb-plugin](../../clients-and-utilities/mariadb-plugin.md) while the server is offline.
 
 
-Plugins that were enabled as a `<code>--plugin-load</code>` option do not need to be uninstalled. If `<code>--plugin-load</code>` is omitted the next time the server starts, or the plugin is not listed as one of the `<code>--plugin-load</code>` entries, the plugin will not be loaded.
+Plugins that were enabled as a `--plugin-load` option do not need to be uninstalled. If `--plugin-load` is omitted the next time the server starts, or the plugin is not listed as one of the `--plugin-load` entries, the plugin will not be loaded.
 
 
 [UNINSTALL PLUGIN](../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) uninstalls a single installed plugin, while [UNINSTALL SONAME](../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) uninstalls all plugins belonging to a given library.

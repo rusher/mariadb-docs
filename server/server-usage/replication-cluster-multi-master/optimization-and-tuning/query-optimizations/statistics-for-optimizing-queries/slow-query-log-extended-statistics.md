@@ -26,21 +26,21 @@ You can set the verbosity of what's logged to the slow query log by setting the
 the [log_slow_verbosity](../../system-variables/server-system-variables.md#log_slow_verbosity) variable to a combination of the following values:
 
 
-* `<code class="highlight fixed" style="white-space:pre-wrap">All</code>` (From [MariaDB 10.6.16](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes.md))
+* `All` (From [MariaDB 10.6.16](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes.md))
 
   * Enable all verbosity options.
-* `<code class="highlight fixed" style="white-space:pre-wrap">Query_plan</code>`
+* `Query_plan`
 
   * For select queries, log information about the query plan. This includes
  "Full_scan", "Full_join", "Tmp_table", "Tmp_table_on_disk", "Filesort",
  "Filesort_on_disk" and number of "Merge_passes during sorting"
-* `<code class="highlight fixed" style="white-space:pre-wrap">explain</code>`
+* `explain`
 
   * EXPLAIN output is logged in the slow query log. See [explain-in-the-slow-query-log](../../../../../server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log.md) for details.
-* `<code class="highlight fixed" style="white-space:pre-wrap">Innodb</code>` (From [MariaDB 10.6.15](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-15-release-notes.md). Before that this option did nothing)
+* `Innodb` (From [MariaDB 10.6.15](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-15-release-notes.md). Before that this option did nothing)
 
-  * Kept for compatibility. Same as `<code>engine</code>`.
-* `<code class="highlight fixed" style="white-space:pre-wrap">engine</code>` (From [MariaDB 10.6.15](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-15-release-notes.md))
+  * Kept for compatibility. Same as `engine`.
+* `engine` (From [MariaDB 10.6.15](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-15-release-notes.md))
 
   * Writes statistics from the storage engine. This includes:
 
@@ -57,25 +57,25 @@ the [log_slow_verbosity](../../system-variables/server-system-variables.md#log_s
 
 
 
-* `<code class="highlight fixed" style="white-space:pre-wrap">Warnings</code>` (From [MariaDB 10.6.16](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes.md))
+* `Warnings` (From [MariaDB 10.6.16](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes.md))
 
-  * Print all errors, warnings and notes related to statement, up to `<code>log_slow_max_warnings</code>` lines.
-* `<code class="highlight fixed" style="white-space:pre-wrap">full</code>`.
+  * Print all errors, warnings and notes related to statement, up to `log_slow_max_warnings` lines.
+* `full`.
 
   * Old shortcut to enable all the verbosity options
 
 
-The default value for `<code>log_slow_verbosity</code>` is ' ', to be compatible with MySQL 5.1.
+The default value for `log_slow_verbosity` is ' ', to be compatible with MySQL 5.1.
 
 
-The possible values for `<code>log_slow_verbosity are </code>`innodb,query_plan,explain,engine,warnings`<code>.
-Multiple options are separated by ','. </code>`
+The possible values for `log_slow_verbosity are `innodb,query_plan,explain,engine,warnings`.
+Multiple options are separated by ','. `
 
 
 log_slow_verbosity is not supported when log_output='TABLE'.
 
 
-In the future we will add more `<code>engine</code>` statistics and also support for other engines.
+In the future we will add more `engine` statistics and also support for other engines.
 
 
 ### log_slow_filter
@@ -85,48 +85,48 @@ You can define which queries to log to the slow query log by setting the
 variable [log_slow_filter](../../system-variables/server-system-variables.md#log_slow_filter) to a combination of the following values:
 
 
-* `<code class="highlight fixed" style="white-space:pre-wrap">All</code>` (From [MariaDB 10.6.16](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes.md))
+* `All` (From [MariaDB 10.6.16](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes.md))
 
-  * Enable all filter options. `<code>log_slow_filter</code>` will be shown as having all options set.
-* `<code class="highlight fixed" style="white-space:pre-wrap">admin</code>`
+  * Enable all filter options. `log_slow_filter` will be shown as having all options set.
+* `admin`
 
   * Log administrative statements (create, optimize, drop etc...)
   * [log_slow_admin_statements](../../system-variables/server-system-variables.md#log_slow_admin_statements) maps to this option.
-* `<code class="highlight fixed" style="white-space:pre-wrap">filesort</code>`
+* `filesort`
 
   * Log statement if it uses filesort
-* `<code class="highlight fixed" style="white-space:pre-wrap">filesort_on_disk</code>`
+* `filesort_on_disk`
 
   * Log statement if it uses filesort that needs temporary tables on disk
-* `<code class="highlight fixed" style="white-space:pre-wrap">filesort_priority_queue</code>` (from [MariaDB 10.3.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md)) 
+* `filesort_priority_queue` (from [MariaDB 10.3.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md)) 
 
   * Log statement if it uses filesort with priority_queue (filesort can either use disk or priority queue).
-* `<code class="highlight fixed" style="white-space:pre-wrap">full_join</code>`
+* `full_join`
 
   * Log statements that doesn't uses indexes to join tables
-* `<code class="highlight fixed" style="white-space:pre-wrap">full_scan</code>`
+* `full_scan`
 
   * Log statements that uses full table scans
-* `<code class="highlight fixed" style="white-space:pre-wrap">not_using_index</code>` (From [MariaDB 10.3.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md))
+* `not_using_index` (From [MariaDB 10.3.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md))
 
   * Logs queries that don't use an index, or that perform a full index scan where the index doesn't limit the number of rows
   * Disregards long_query_time, unlike other options!
   * [log_queries_not_using_indexes](../../system-variables/server-system-variables.md#log_queries_not_using_indexes) maps to this option
-* `<code class="highlight fixed" style="white-space:pre-wrap">query_cache</code>`
+* `query_cache`
 
   * Log statements that are resolved by the query cache
-* `<code class="highlight fixed" style="white-space:pre-wrap">query_cache_miss</code>`
+* `query_cache_miss`
 
   * Log statements that are not resolved by the query cache
-* `<code class="highlight fixed" style="white-space:pre-wrap">tmp_table</code>`
+* `tmp_table`
 
   * Log statements that uses in memory temporary tables
-* `<code class="highlight fixed" style="white-space:pre-wrap">tmp_table_on_disk</code>`
+* `tmp_table_on_disk`
 
   * Log statements that uses temporary tables on disk
 
 
-Multiple options are separated by ','. If you don't specify any options everything will be logged (same as setting the value to `<code>All</code>`
+Multiple options are separated by ','. If you don't specify any options everything will be logged (same as setting the value to `All`
 
 
 ### log_slow_rate_limit
@@ -146,8 +146,8 @@ Note that in any case, only queries that takes longer than **log_slow_time** or
 
 
 ##### MariaDB starting with [10.6.16](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes.md)
-If one enables the warning option for `<code>log_slow_verbosity</code>`, all notes and warnings for a slow query will also be added to the slow query log. This is very usable when one has enabled warnings for [Notes when an index cannot be used](../../../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used.md).
-`<code>log_slow_max_warnings</code>` limits the number of warnings printed to the slow query log per query. The default value is 10.
+If one enables the warning option for `log_slow_verbosity`, all notes and warnings for a slow query will also be added to the slow query log. This is very usable when one has enabled warnings for [Notes when an index cannot be used](../../../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used.md).
+`log_slow_max_warnings` limits the number of warnings printed to the slow query log per query. The default value is 10.
 
 
 ## Credits

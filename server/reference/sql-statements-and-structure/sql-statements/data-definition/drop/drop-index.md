@@ -13,8 +13,8 @@ DROP INDEX [IF EXISTS] index_name ON tbl_name
 ## Description
 
 
-`<code>DROP INDEX</code>` drops the [index](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/README.md) named `<code>index_name</code>` from the table `<code>tbl_name</code>`.
-This statement is mapped to an `<code>ALTER TABLE</code>` statement to drop the
+`DROP INDEX` drops the [index](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/README.md) named `index_name` from the table `tbl_name`.
+This statement is mapped to an `ALTER TABLE` statement to drop the
 index.
 
 
@@ -27,13 +27,13 @@ See [ALTER TABLE](../alter/alter-tablespace.md).
 Another shortcut, [CREATE INDEX](../create/create-index.md), allows the creation of an index.
 
 
-To remove the primary key, `<code>`PRIMARY`</code>` must be specified as index_name. Note that [the quotes](../../../sql-language-structure/identifier-qualifiers.md) are necessary, because `<code>PRIMARY</code>` is a keyword.
+To remove the primary key, ``PRIMARY`` must be specified as index_name. Note that [the quotes](../../../sql-language-structure/identifier-qualifiers.md) are necessary, because `PRIMARY` is a keyword.
 
 
 ## Privileges
 
 
-Executing the `<code>DROP INDEX</code>` statement requires the `<code>[INDEX](../../account-management-sql-commands/grant.md#table-privileges)</code>` privilege for the table or the database.
+Executing the `DROP INDEX` statement requires the `[INDEX](../../account-management-sql-commands/grant.md#table-privileges)` privilege for the table or the database.
 
 
 ## Online DDL
@@ -48,7 +48,7 @@ See [InnoDB Online DDL Overview](../../../../storage-engines/innodb/innodb-onlin
 ## DROP INDEX IF EXISTS ...
 
 
-If the `<code>IF EXISTS</code>` clause is used, then MariaDB will return a warning instead of an error if the index does not exist.
+If the `IF EXISTS` clause is used, then MariaDB will return a warning instead of an error if the index does not exist.
 
 
 ## WAIT/NOWAIT
@@ -60,7 +60,7 @@ Sets the lock wait timeout. See [WAIT and NOWAIT](../../transactions/wait-and-no
 ## Progress Reporting
 
 
-MariaDB provides progress reporting for `<code>DROP INDEX</code>` statement for clients
+MariaDB provides progress reporting for `DROP INDEX` statement for clients
 that support the new progress reporting protocol. For example, if you were using the [mariadb](../../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) client, then the progress report might look like this::
 
 

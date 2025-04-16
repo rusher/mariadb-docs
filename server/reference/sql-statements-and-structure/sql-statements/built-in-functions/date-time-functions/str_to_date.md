@@ -13,15 +13,15 @@ STR_TO_DATE(str,format)
 
 
 This is the inverse of the [DATE_FORMAT](date_format.md)() function. It takes
-a string `<code>str</code>` and a format string `<code>format</code>`. `<code>STR_TO_DATE()</code>` returns a
-`<code>DATETIME</code>` value if the format string contains both date and time parts, or a
-`<code>DATE</code>` or `<code>TIME</code>` value if the string contains only date or time parts.
+a string `str` and a format string `format`. `STR_TO_DATE()` returns a
+`DATETIME` value if the format string contains both date and time parts, or a
+`DATE` or `TIME` value if the string contains only date or time parts.
 
 
-The date, time, or datetime values contained in `<code>str</code>` should be given in the format indicated by format. If str contains an illegal date, time, or datetime value, `<code>STR_TO_DATE()</code>` returns `<code>NULL</code>`. An illegal value also produces a warning.
+The date, time, or datetime values contained in `str` should be given in the format indicated by format. If str contains an illegal date, time, or datetime value, `STR_TO_DATE()` returns `NULL`. An illegal value also produces a warning.
 
 
-Under specific [SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) settings an error may also be generated if the `<code>str</code>` isn't a valid date:
+Under specific [SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) settings an error may also be generated if the `str` isn't a valid date:
 
 
 * [ALLOW_INVALID_DATES](../../../../../server-management/variables-and-modes/sql-mode.md#allow_invalid_dates)

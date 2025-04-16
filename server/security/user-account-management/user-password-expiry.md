@@ -8,7 +8,7 @@ Password expiry permits administrators to expire user passwords, either manually
 ## System Variables
 
 
-There are two system variables which affect password expiry: [default_password_lifetime](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_password_lifetime), which determines the amount of time between requiring the user to change their password. `<code>0</code>`, the default, means automatic password expiry is not active.
+There are two system variables which affect password expiry: [default_password_lifetime](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_password_lifetime), which determines the amount of time between requiring the user to change their password. `0`, the default, means automatic password expiry is not active.
 
 
 The second variable, [disconnect_on_expired_password](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#disconnect_on_expired_password) determines whether a client is permitted to connect if their password has expired, or whether they are permitted to connect in sandbox mode, able to perform a limited subset of queries related to resetting the password, in particular [SET PASSWORD](../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md) and [SET](../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md).
@@ -28,7 +28,7 @@ CREATE USER 'monty'@'localhost' PASSWORD EXPIRE INTERVAL 120 DAY;
 ALTER USER 'monty'@'localhost' PASSWORD EXPIRE INTERVAL 120 DAY;
 ```
 
-Limits can be disabled by use of the `<code>NEVER</code>` keyword, for example:
+Limits can be disabled by use of the `NEVER` keyword, for example:
 
 
 ```
@@ -39,7 +39,7 @@ CREATE USER 'monty'@'localhost' PASSWORD EXPIRE NEVER;
 ALTER USER 'monty'@'localhost' PASSWORD EXPIRE NEVER;
 ```
 
-A manually set limit can be restored the system default by use of `<code>DEFAULT</code>`, for example:
+A manually set limit can be restored the system default by use of `DEFAULT`, for example:
 
 
 ```
@@ -50,8 +50,8 @@ CREATE USER 'monty'@'localhost' PASSWORD EXPIRE DEFAULT;
 ALTER USER 'monty'@'localhost' PASSWORD EXPIRE DEFAULT;
 ```
 
-Note that the limit is defined as the number of days since the last password change. And the last password change is the value of `<code>CURRENT_TIMESTAMP</code>` when the password was changed last. If the `<code>@@secure_timestamp</code>` variable is set to NO (which is its default value) any user can modify the session timestamp arbitrarily, in particular, they can pretend that the password was changed at some point in time far in the future, effectively disabling any password expiration limit.
-To prevent it you need to make sure the `<code>@@secure_timestamp</code>` is set or to audit password expiration limits regularly.
+Note that the limit is defined as the number of days since the last password change. And the last password change is the value of `CURRENT_TIMESTAMP` when the password was changed last. If the `@@secure_timestamp` variable is set to NO (which is its default value) any user can modify the session timestamp arbitrarily, in particular, they can pretend that the password was changed at some point in time far in the future, effectively disabling any password expiration limit.
+To prevent it you need to make sure the `@@secure_timestamp` is set or to audit password expiration limits regularly.
 
 
 ## SHOW CREATE USER
@@ -132,7 +132,7 @@ SELECT pei.User, pei.Host,
 ## --connect-expired-password Client Option
 
 
-The [mariadb client](../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) `<code>--connect-expired-password</code>` option notifies the server that the client is prepared to handle expired password sandbox mode (even if the `<code>--batch</code>` option was specified).
+The [mariadb client](../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) `--connect-expired-password` option notifies the server that the client is prepared to handle expired password sandbox mode (even if the `--batch` option was specified).
 
 
 ## See Also

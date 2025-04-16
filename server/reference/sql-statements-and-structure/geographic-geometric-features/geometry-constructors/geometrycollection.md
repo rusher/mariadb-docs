@@ -11,7 +11,7 @@ GeometryCollection(g1,g2,...)
 ## Description
 
 
-Constructs a [WKB](../wkb/wkb-polyfromwkb.md) GeometryCollection. If any argument is not a well-formed WKB representation of a geometry, the return value is `<code>NULL</code>`.
+Constructs a [WKB](../wkb/wkb-polyfromwkb.md) GeometryCollection. If any argument is not a well-formed WKB representation of a geometry, the return value is `NULL`.
 
 
 ## Examples

@@ -5,7 +5,7 @@
 Prior to [MariaDB 11.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), by default, MariaDB transmits data between the server and clients without encrypting it. This is generally acceptable when the server and client run on the same host or in networks where security is guaranteed through other means. However, in cases where the server and client exist on separate networks or they are in a high-risk network, the lack of encryption does introduce security concerns as a malicious actor could potentially eavesdrop on the traffic as it is sent over the network between them.
 
 
-To mitigate this concern, MariaDB allows you to encrypt data in transit between the server and clients using the Transport Layer Security (TLS) protocol. TLS was formerly known as Secure Socket Layer (SSL), but strictly speaking the SSL protocol is a predecessor to TLS and, that version of the protocol is now considered insecure. The documentation still uses the term SSL often and for compatibility reasons TLS-related server system and status variables still use the prefix `<code>ssl_</code>`, but internally, MariaDB only supports its secure successors.
+To mitigate this concern, MariaDB allows you to encrypt data in transit between the server and clients using the Transport Layer Security (TLS) protocol. TLS was formerly known as Secure Socket Layer (SSL), but strictly speaking the SSL protocol is a predecessor to TLS and, that version of the protocol is now considered insecure. The documentation still uses the term SSL often and for compatibility reasons TLS-related server system and status variables still use the prefix `ssl_`, but internally, MariaDB only supports its secure successors.
 
 
 ## Checking MariaDB Server for TLS Support
@@ -14,7 +14,7 @@ To mitigate this concern, MariaDB allows you to encrypt data in transit between 
 In order for MariaDB Server to use TLS, it needs to be compiled with TLS support. All MariaDB packages distributed by MariaDB Foundation and MariaDB Corporation are compiled with TLS support.
 
 
-If you aren't sure whether your MariaDB Server binary was compiled with TLS support, then you can check the value of the `<code>[have_ssl](ssltls-system-variables.md)</code>` system variable. For example:
+If you aren't sure whether your MariaDB Server binary was compiled with TLS support, then you can check the value of the `[have_ssl](ssltls-system-variables.md)` system variable. For example:
 
 
 ```
@@ -29,9 +29,9 @@ SHOW GLOBAL VARIABLES LIKE 'have_ssl';
 The possible values are:
 
 
-* If it is `<code>DISABLED</code>`, then the server was compiled with TLS support, but TLS is not enabled.
-* If it is `<code>YES</code>`, then the server was compiled with TLS support, and TLS is enabled.
-* If it is `<code>NO</code>`, then the server was not compiled with TLS support.
+* If it is `DISABLED`, then the server was compiled with TLS support, but TLS is not enabled.
+* If it is `YES`, then the server was compiled with TLS support, and TLS is enabled.
+* If it is `NO`, then the server was not compiled with TLS support.
 
 
 ## TLS Libraries
@@ -49,10 +49,10 @@ See [TLS and Cryptography Libraries Used by MariaDB](../tls-and-cryptography-lib
 There are 4 versions of the TLS protocol:
 
 
-* `<code>TLSv1.0</code>`
-* `<code>TLSv1.1</code>`
-* `<code>TLSv1.2</code>`
-* `<code>TLSv1.3</code>`
+* `TLSv1.0`
+* `TLSv1.1`
+* `TLSv1.2`
+* `TLSv1.3`
 
 
 ### Enabling Specific TLS Protocol Versions
@@ -80,7 +80,7 @@ You can check which TLS protocol versions are enabled on a server by executing [
 SHOW GLOBAL VARIABLES LIKE 'tls_version';
 ```
 
-On the **client** side, users can enable specific TLS protocol versions by setting the `<code>--tls-version</code>` option. This option accepts a comma-separated list of TLS protocol versions. A TLS protocol version will only be enabled if it is present in this list. All other TLS protocol versions will not be permitted. For example, to specify this option in a relevant client [option group](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), you could set the following:
+On the **client** side, users can enable specific TLS protocol versions by setting the `--tls-version` option. This option accepts a comma-separated list of TLS protocol versions. A TLS protocol version will only be enabled if it is present in this list. All other TLS protocol versions will not be permitted. For example, to specify this option in a relevant client [option group](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), you could set the following:
 
 
 ```
@@ -128,10 +128,10 @@ MariaDB binaries built with the [OpenSSL](https://www.openssl.org/) library ([Op
 MariaDB binaries built with the [OpenSSL](https://www.openssl.org/) library ([OpenSSL 1.1.1](https://www.openssl.org/news/changelog.html) or later) support TLSv1.3 since [MariaDB 10.2.16](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10216-release-notes.md) and [MariaDB 10.3.8](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1038-release-notes.md).
 
 
-If your MariaDB Server binary is built with [OpenSSL](https://www.openssl.org/), then you can set the `<code>[ssl_cipher](ssltls-system-variables.md)</code>` system variable to values like `<code>SSLv3</code>` or `<code>TLSv1.2</code>` to allow all SSLv3.0 or all TLSv1.2 ciphers. However, this does not necessarily limit the protocol version to TLSv1.2. See [MDEV-14101](https://jira.mariadb.org/browse/MDEV-14101) for more information about that.
+If your MariaDB Server binary is built with [OpenSSL](https://www.openssl.org/), then you can set the `[ssl_cipher](ssltls-system-variables.md)` system variable to values like `SSLv3` or `TLSv1.2` to allow all SSLv3.0 or all TLSv1.2 ciphers. However, this does not necessarily limit the protocol version to TLSv1.2. See [MDEV-14101](https://jira.mariadb.org/browse/MDEV-14101) for more information about that.
 
 
-Note that the `<code>TLSv1.3</code>` ciphers cannot be excluded when using [OpenSSL](https://www.openssl.org/), even by using the `<code>[ssl_cipher](ssltls-system-variables.md)</code>` system variable. See [Using TLSv1.3](using-tlsv13.md) for details.
+Note that the `TLSv1.3` ciphers cannot be excluded when using [OpenSSL](https://www.openssl.org/), even by using the `[ssl_cipher](ssltls-system-variables.md)` system variable. See [Using TLSv1.3](using-tlsv13.md) for details.
 
 
 SSLv3.0 is known to be vulnerable to the [POODLE attack](https://en.wikipedia.org/wiki/POODLE), so it should not be used. SSLv2.0 and SSLv3.0 are disabled for MariaDB Server binaries linked with [OpenSSL](https://www.openssl.org/) since [MariaDB 5.5.41](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5541-release-notes.md), [MariaDB 10.0.15](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes.md), and [MariaDB 10.1.4](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes.md). If you are using a MariaDB version older than that and you cannot upgrade, then please see the section titled "SSL 3.0 Fallback protection" in [OpenSSL Security Advisory - 15 Oct 2014](https://www.openssl.org/news/secadv/20141015.txt).
@@ -188,19 +188,19 @@ Certificate verification is how TLS authenticates its connections by verifying t
 Certificate Authorities (CAs) are entities that you trust to sign TLS certificates. Your organization might have its own internal CA, or it might use trusted third-party CAs.
 
 
-CAs are specified on the server and client by using the `<code>[ssl_ca](ssltls-system-variables.md#ssl_ca)</code>` and `<code>[ssl_capath](ssltls-system-variables.md#ssl_capath)</code>` options.
+CAs are specified on the server and client by using the `[ssl_ca](ssltls-system-variables.md#ssl_ca)` and `[ssl_capath](ssltls-system-variables.md#ssl_capath)` options.
 
 
-The `<code>[ssl_ca](ssltls-system-variables.md#ssl_ca)</code>` option defines a path to a PEM file that should contain one or more X509 certificates for trusted Certificate Authorities (CAs). This option requires that you use the absolute path, not a relative path.
+The `[ssl_ca](ssltls-system-variables.md#ssl_ca)` option defines a path to a PEM file that should contain one or more X509 certificates for trusted Certificate Authorities (CAs). This option requires that you use the absolute path, not a relative path.
 
 
-The `<code>[ssl_capath](ssltls-system-variables.md#ssl_capath)</code>` option defines a path to a directory that contains one or more PEM files that should each contain one X509 certificate for a trusted Certificate Authority (CA). This option requires that you use the absolute path, not a relative path. The `<code>[ssl_capath](ssltls-system-variables.md#ssl_capath)</code>` option is only supported if the server or client was built with [OpenSSL](https://www.openssl.org/), [wolfSSL](https://www.wolfssl.com/products/wolfssl/), or [yaSSL](https://www.wolfssl.com/products/yassl/). If the client was built with [GnuTLS](https://www.gnutls.org/) or [Schannel](https://docs.microsoft.com/en-us/windows/desktop/secauthn/secure-channel), then the `<code>[ssl_capath](ssltls-system-variables.md#ssl_capath)</code>` option is not supported.
+The `[ssl_capath](ssltls-system-variables.md#ssl_capath)` option defines a path to a directory that contains one or more PEM files that should each contain one X509 certificate for a trusted Certificate Authority (CA). This option requires that you use the absolute path, not a relative path. The `[ssl_capath](ssltls-system-variables.md#ssl_capath)` option is only supported if the server or client was built with [OpenSSL](https://www.openssl.org/), [wolfSSL](https://www.wolfssl.com/products/wolfssl/), or [yaSSL](https://www.wolfssl.com/products/yassl/). If the client was built with [GnuTLS](https://www.gnutls.org/) or [Schannel](https://docs.microsoft.com/en-us/windows/desktop/secauthn/secure-channel), then the `[ssl_capath](ssltls-system-variables.md#ssl_capath)` option is not supported.
 
 
 See [TLS and Cryptography Libraries Used by MariaDB](../tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms.
 
 
-The directory specified by `<code>[ssl_capath](ssltls-system-variables.md#ssl_capath)</code>` needs to be run through the `<code>[openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html)</code>` command. For example, if the following is configured:
+The directory specified by `[ssl_capath](ssltls-system-variables.md#ssl_capath)` needs to be run through the `[openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html)` command. For example, if the following is configured:
 
 
 ```
@@ -217,7 +217,7 @@ openssl rehash /etc/my.cnf.d/certificates/ca/
 #### Requiring a Specific Certificate Authority (CA)
 
 
-The server can require a specific Certificate Authority (CA) for a client if the client's user account has been defined with `<code>REQUIRE ISSUER</code>`. See [Securing Connections for Client and Server: Requiring TLS](securing-connections-for-client-and-server.md#requiring-tls) for more information.
+The server can require a specific Certificate Authority (CA) for a client if the client's user account has been defined with `REQUIRE ISSUER`. See [Securing Connections for Client and Server: Requiring TLS](securing-connections-for-client-and-server.md#requiring-tls) for more information.
 
 
 ### Certificate Revocation Lists (CRLs)
@@ -226,19 +226,19 @@ The server can require a specific Certificate Authority (CA) for a client if the
 Certificate Revocation Lists (CRLs) are lists of certificates that have been revoked by the Certificate Authority (CA) before they were due to expire.
 
 
-CRLs are specified on the server and client by using the `<code>[ssl_crl](ssltls-system-variables.md#ssl_crl)</code>` and `<code>[ssl_crlpath](ssltls-system-variables.md#ssl_crlpath)</code>` options.
+CRLs are specified on the server and client by using the `[ssl_crl](ssltls-system-variables.md#ssl_crl)` and `[ssl_crlpath](ssltls-system-variables.md#ssl_crlpath)` options.
 
 
-The `<code>[ssl_crl](ssltls-system-variables.md#ssl_crl)</code>` option defines a path to a PEM file that should contain one or more X509 revoked certificates. This option requires that you use the absolute path, not a relative path. For servers, the `<code>[ssl_crl](ssltls-system-variables.md#ssl_crl)</code>` option is only valid if the server was built with OpenSSL. If the server was built with [wolfSSL](https://www.wolfssl.com/products/wolfssl/) or [yaSSL](https://www.wolfssl.com/products/yassl/), then the `<code>[ssl_crl](ssltls-system-variables.md#ssl_crl)</code>` option is not supported. For clients, the `<code>[ssl_crl](ssltls-system-variables.md#ssl_crl)</code>` option is only valid if the client was built with [OpenSSL](https://www.openssl.org/) or [Schannel](https://docs.microsoft.com/en-us/windows/desktop/secauthn/secure-channel). Likewise, if the client was built with [GnuTLS](https://www.gnutls.org/), [wolfSSL](https://www.wolfssl.com/products/wolfssl/) or [yaSSL](https://www.wolfssl.com/products/yassl/), then the `<code>[ssl_crl](ssltls-system-variables.md#ssl_crl)</code>` option is not supported.
+The `[ssl_crl](ssltls-system-variables.md#ssl_crl)` option defines a path to a PEM file that should contain one or more X509 revoked certificates. This option requires that you use the absolute path, not a relative path. For servers, the `[ssl_crl](ssltls-system-variables.md#ssl_crl)` option is only valid if the server was built with OpenSSL. If the server was built with [wolfSSL](https://www.wolfssl.com/products/wolfssl/) or [yaSSL](https://www.wolfssl.com/products/yassl/), then the `[ssl_crl](ssltls-system-variables.md#ssl_crl)` option is not supported. For clients, the `[ssl_crl](ssltls-system-variables.md#ssl_crl)` option is only valid if the client was built with [OpenSSL](https://www.openssl.org/) or [Schannel](https://docs.microsoft.com/en-us/windows/desktop/secauthn/secure-channel). Likewise, if the client was built with [GnuTLS](https://www.gnutls.org/), [wolfSSL](https://www.wolfssl.com/products/wolfssl/) or [yaSSL](https://www.wolfssl.com/products/yassl/), then the `[ssl_crl](ssltls-system-variables.md#ssl_crl)` option is not supported.
 
 
-The `<code>[ssl_crlpath](ssltls-system-variables.md#ssl_crlpath)</code>` option defines a path to a directory that contains one or more PEM files that should each contain one revoked X509 certificate. This option requires that you use the absolute path, not a relative path. The `<code>[ssl_crlpath](ssltls-system-variables.md#ssl_crlpath)</code>` option is only supported if the server or client was built with [OpenSSL](https://www.openssl.org/). If the server was built with [wolfSSL](https://www.wolfssl.com/products/wolfssl/) or [yaSSL](https://www.wolfssl.com/products/yassl/), then the `<code>[ssl_crlpath](ssltls-system-variables.md#ssl_crlpath)</code>` option is not supported. Likewise, if the client was built with [GnuTLS](https://www.gnutls.org/), [Schannel](https://docs.microsoft.com/en-us/windows/desktop/secauthn/secure-channel), [wolfSSL](https://www.wolfssl.com/products/wolfssl/), or [yaSSL](https://www.wolfssl.com/products/yassl/), then the `<code>[ssl_crlpath](ssltls-system-variables.md#ssl_crlpath)</code>` option is not supported.
+The `[ssl_crlpath](ssltls-system-variables.md#ssl_crlpath)` option defines a path to a directory that contains one or more PEM files that should each contain one revoked X509 certificate. This option requires that you use the absolute path, not a relative path. The `[ssl_crlpath](ssltls-system-variables.md#ssl_crlpath)` option is only supported if the server or client was built with [OpenSSL](https://www.openssl.org/). If the server was built with [wolfSSL](https://www.wolfssl.com/products/wolfssl/) or [yaSSL](https://www.wolfssl.com/products/yassl/), then the `[ssl_crlpath](ssltls-system-variables.md#ssl_crlpath)` option is not supported. Likewise, if the client was built with [GnuTLS](https://www.gnutls.org/), [Schannel](https://docs.microsoft.com/en-us/windows/desktop/secauthn/secure-channel), [wolfSSL](https://www.wolfssl.com/products/wolfssl/), or [yaSSL](https://www.wolfssl.com/products/yassl/), then the `[ssl_crlpath](ssltls-system-variables.md#ssl_crlpath)` option is not supported.
 
 
 See [TLS and Cryptography Libraries Used by MariaDB](../tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms.
 
 
-The directory specified by `<code>[ssl_crlpath](ssltls-system-variables.md#ssl_crlpath)</code>` needs to be run through the `<code>[openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html)</code>` command. For example, if the following is configured:
+The directory specified by `[ssl_crlpath](ssltls-system-variables.md#ssl_crlpath)` needs to be run through the `[openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html)` command. For example, if the following is configured:
 
 
 ```
@@ -258,7 +258,7 @@ openssl rehash /etc/my.cnf.d/certificates/crl/
 Normally the TLS implementation performs numerous checks to verify whether the certificate is valid. It should be within its validity period, not revoked, signed by a trusted certificate authority, belong to the host that uses it.
 
 
-[Clients and utilities](/kb/en/clients-utilities/) enable all these checks by default. Last two checks can be disabled with an option, such as `<code>disable-ssl-verify-server-cert</code>`. Before [MariaDB 11.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-113.md), all server certificate verification checks were disabled by default, and could be enabled with the `<code>ssl-verify-server-cert</code>` option.
+[Clients and utilities](/kb/en/clients-utilities/) enable all these checks by default. Last two checks can be disabled with an option, such as `disable-ssl-verify-server-cert`. Before [MariaDB 11.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-113.md), all server certificate verification checks were disabled by default, and could be enabled with the `ssl-verify-server-cert` option.
 
 
 To verify whether the server's certificate belong to server's host, [clients and utilities](/kb/en/clients-utilities/) will check the **Common Name (CN)** attribute located in the **[Subject](https://tools.ietf.org/html/rfc5280#section-4.1.2.6)** field of the certificate against the server's host name and IP address. If the **Common Name (CN)** matches either of those, then the certificate is verified.
@@ -285,7 +285,7 @@ For [clients and utilities](/kb/en/clients-utilities/) built with [OpenSSL](http
 For [clients and utilities](/kb/en/clients-utilities/) built with [OpenSSL](https://www.openssl.org/) ([OpenSSL 1.0.2](https://www.openssl.org/news/changelog.html) or later), support for server certificate verification with **subjectAltName** fields that contain the server's **IP address** was added in [MariaDB 10.1.39](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes.md), [MariaDB 10.2.24](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10224-release-notes.md), [MariaDB 10.3.15](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10315-release-notes.md), and [MariaDB 10.4.5](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1045-release-notes.md). See [MDEV-18131](https://jira.mariadb.org/browse/MDEV-18131) for more information.
 
 
-This support also applies to other TLS libraries that use OpenSSL's API. In OpenSSL's API, server certificate verification with **subjectAltName** fields depends on the `<code>[X509_check_host](https://www.openssl.org/docs/man1.1.1/man3/X509_check_host.html)</code>` and `<code>[X509_check_ip](https://www.openssl.org/docs/man1.1.1/man3/X509_check_host.html)</code>` functions. These functions are supported in the following TLS libraries:
+This support also applies to other TLS libraries that use OpenSSL's API. In OpenSSL's API, server certificate verification with **subjectAltName** fields depends on the `[X509_check_host](https://www.openssl.org/docs/man1.1.1/man3/X509_check_host.html)` and `[X509_check_ip](https://www.openssl.org/docs/man1.1.1/man3/X509_check_host.html)` functions. These functions are supported in the following TLS libraries:
 
 
 * [OpenSSL](https://www.openssl.org/) 1.0.2 or later
@@ -316,7 +316,7 @@ For [clients and utilities](/kb/en/clients-utilities/) linked with GnuTLS, suppo
 ### Client Certificate Verification
 
 
-The server verifies a client certificate by checking the client's known `<code>SUBJECT</code>` against the **Subject** attribute in the client's certificate. This is only done for user accounts that have been defined with `<code>REQUIRE SUBJECT</code>`. See [Securing Connections for Client and Server: Requiring TLS](securing-connections-for-client-and-server.md#requiring-tls) for more information.
+The server verifies a client certificate by checking the client's known `SUBJECT` against the **Subject** attribute in the client's certificate. This is only done for user accounts that have been defined with `REQUIRE SUBJECT`. See [Securing Connections for Client and Server: Requiring TLS](securing-connections-for-client-and-server.md#requiring-tls) for more information.
 
 
 ## See Also

@@ -20,26 +20,26 @@ A normal-size (double-precision) floating-point number (see [FLOAT](float.md) fo
 Allowable values are:
 
 
-* `<code>-1.7976931348623157E+308</code>` to `<code>-2.2250738585072014E-308</code>`
-* `<code>0</code>`
-* `<code>2.2250738585072014E-308</code>` to `<code>1.7976931348623157E+308</code>`
+* `-1.7976931348623157E+308` to `-2.2250738585072014E-308`
+* `0`
+* `2.2250738585072014E-308` to `1.7976931348623157E+308`
 
 
 These are the theoretical limits, based on the IEEE standard. The actual range
 might be slightly smaller depending on your hardware or operating system.
 
 
-`<code>M</code>` is the total number of digits and `<code>D</code>` is the number of digits
-following the decimal point. If `<code>M</code>` and `<code>D</code>` are omitted, values are stored
+`M` is the total number of digits and `D` is the number of digits
+following the decimal point. If `M` and `D` are omitted, values are stored
 to the limits allowed by the hardware. A double-precision
 floating-point number is accurate to approximately 15 decimal places.
 
 
-`<code>UNSIGNED</code>`, if specified, disallows negative values.
+`UNSIGNED`, if specified, disallows negative values.
 
 
-`<code>ZEROFILL</code>`, if specified, pads the number with zeros, up to the total number
-of digits specified by `<code>M</code>`.
+`ZEROFILL`, if specified, pads the number with zeros, up to the total number
+of digits specified by `M`.
 
 
 REAL and DOUBLE PRECISION are synonyms, unless the REAL_AS_FLOAT [SQL mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) is enabled, in which case REAL is a synonym for [FLOAT](float.md) rather than DOUBLE.

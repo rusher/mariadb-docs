@@ -57,7 +57,7 @@ There are two kind of buffers in MariaDB:
  ([myisam_sort_buffer_size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size), [aria_sort_buffer_size).](../../../reference/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size)
   * Internal buffers for storing blobs.
 
-    * Some storage engine will keep a temporary cache to store the largest blob seen so far when scanning a table. This will be freed at end of query. Note that temporary blob storage is not included in the memory information in [information_schema.processlist](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) but only in the total memory used (`<code class="fixed" style="white-space:pre-wrap">show global status like "memory_used"</code>`).
+    * Some storage engine will keep a temporary cache to store the largest blob seen so far when scanning a table. This will be freed at end of query. Note that temporary blob storage is not included in the memory information in [information_schema.processlist](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) but only in the total memory used (`show global status like "memory_used"`).
   * Buffers and caches used during query execution:
 
 
@@ -165,7 +165,7 @@ SELECT  ENGINE,
 
 
 There are two variables that dictates how memory are allocated by MariaDB while parsing and executing a query.
-[query_prealloc_size](system-variables/server-system-variables.md#query_prealloc_size) defines the standard buffer for memory used for query execution and [query_alloc_block_size](system-variables/server-system-variables.md#query_alloc_block_size) that is size of memory blocks if `<code>query_prealloc_size</code>` was not big enough. Getting these variables right will reduce memory fragmentation in the server.
+[query_prealloc_size](system-variables/server-system-variables.md#query_prealloc_size) defines the standard buffer for memory used for query execution and [query_alloc_block_size](system-variables/server-system-variables.md#query_alloc_block_size) that is size of memory blocks if `query_prealloc_size` was not big enough. Getting these variables right will reduce memory fragmentation in the server.
 
 
 ## Mutex Bottleneck
@@ -204,7 +204,7 @@ max memory size (kbytes, -m) 524288
 So, once you have determined how much RAM is available to mysqld, then apply the 20%/70%, but round down some.
 
 
-If you get an error like `<code>[ERROR] /usr/libexec/mysqld: Out of memory (Needed xxx bytes)</code>`, it probably means that MySQL exceeded what the OS is willing to give it. Decrease the cache settings.
+If you get an error like `[ERROR] /usr/libexec/mysqld: Out of memory (Needed xxx bytes)`, it probably means that MySQL exceeded what the OS is willing to give it. Decrease the cache settings.
 
 
 ## 64-bit OS with 32-bit MariaDB

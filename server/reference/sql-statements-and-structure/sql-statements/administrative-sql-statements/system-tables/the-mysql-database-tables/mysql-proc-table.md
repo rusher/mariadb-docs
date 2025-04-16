@@ -1,13 +1,13 @@
 
 # mysql.proc Table
 
-The `<code>mysql.proc</code>` table contains information about [stored procedures](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [stored functions](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md). It contains similar information to that stored in the [INFORMATION SCHEMA.ROUTINES](../information-schema/information-schema-tables/information-schema-routines-table.md) table.
+The `mysql.proc` table contains information about [stored procedures](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [stored functions](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md). It contains similar information to that stored in the [INFORMATION SCHEMA.ROUTINES](../information-schema/information-schema-tables/information-schema-routines-table.md) table.
 
 
 This table uses the [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine.
 
 
-The `<code>mysql.proc</code>` table contains the following fields:
+The `mysql.proc` table contains the following fields:
 
 
 

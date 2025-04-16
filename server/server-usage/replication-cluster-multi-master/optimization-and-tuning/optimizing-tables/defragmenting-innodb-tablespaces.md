@@ -11,11 +11,11 @@ When rows are deleted from an [InnoDB](../../../../../general-resources/learning
 The purge thread will physically delete index keys and rows, but the free space introduced is still not returned to operating system. This can lead to gaps in the pages. If you have variable length rows, new rows may be larger than old rows and cannot make use of the available space.
 
 
-You can run [OPTIMIZE TABLE](optimize-table.md) or [ALTER TABLE <table> ENGINE=InnoDB](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) to reconstruct the table. Unfortunately running `<code>OPTIMIZE TABLE</code>` against an InnoDB table stored in the shared table-space file `<code>ibdata1</code>` does two things:
+You can run [OPTIMIZE TABLE](optimize-table.md) or [ALTER TABLE <table> ENGINE=InnoDB](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) to reconstruct the table. Unfortunately running `OPTIMIZE TABLE` against an InnoDB table stored in the shared table-space file `ibdata1` does two things:
 
 
-* Makes the table’s data and indexes contiguous inside `<code>ibdata1</code>`.
-* Increases the size of `<code>ibdata1</code>` because the contiguous data and index pages are appended to `<code>ibdata1</code>`.
+* Makes the table’s data and indexes contiguous inside `ibdata1`.
+* Increases the size of `ibdata1` because the contiguous data and index pages are appended to `ibdata1`.
 
 
 ## InnoDB Defragmentation
@@ -27,7 +27,7 @@ The feature described below has been deprecated in [MariaDB 11.0](../../../../..
 [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) merged Facebook's defragmentation code prepared for MariaDB by Matt, Seong Uck Lee from Kakao. The only major difference to Facebook's code and Matt’s patch is that MariaDB does not introduce new literals to SQL and makes no changes to the server code. Instead, [OPTIMIZE TABLE](optimize-table.md) is used and all code changes are inside the InnoDB/XtraDB storage engines.
 
 
-The behaviour of `<code>OPTIMIZE TABLE</code>` is unchanged by default, and to enable this new feature, you need to set the [innodb_defragment](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment) system variable to `<code>1</code>`.
+The behaviour of `OPTIMIZE TABLE` is unchanged by default, and to enable this new feature, you need to set the [innodb_defragment](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment) system variable to `1`.
 
 
 ```
@@ -36,7 +36,7 @@ The behaviour of `<code>OPTIMIZE TABLE</code>` is unchanged by default, and to e
 innodb-defragment=1
 ```
 
-No new tables are created and there is no need to copy data from old tables to new tables. Instead, this feature loads `<code>n</code>` pages (determined by [innodb-defragment-n-pages](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages)) and tries to move records so that pages would be full of records and then frees pages that are fully empty after the operation.
+No new tables are created and there is no need to copy data from old tables to new tables. Instead, this feature loads `n` pages (determined by [innodb-defragment-n-pages](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages)) and tries to move records so that pages would be full of records and then frees pages that are fully empty after the operation.
 
 
 Note that tablespace files (including ibdata1) will not shrink as the result of defragmentation, but one will get better memory utilization in the InnoDB buffer pool as there are fewer data pages in use.

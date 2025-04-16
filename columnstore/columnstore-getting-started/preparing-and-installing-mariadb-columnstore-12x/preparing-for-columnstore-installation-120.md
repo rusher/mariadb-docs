@@ -671,10 +671,10 @@ Note: The packages will be installed into /usr/local. This is required for root 
 **Download the package mariadb-columnstore-release#.x86_64.tar.gz (RHEL5 64-BIT) to the server where you are installing MariaDB ColumnStore and place in the /root directory.** Unpack the tarball, which will generate multiple RPMs that will reside in the
 /root/ directory. 
 
-`<code class="fixed" style="white-space:pre-wrap">tar -zxf mariadb-columnstore-release#.x86_64.tar</code>`
+`tar -zxf mariadb-columnstore-release#.x86_64.tar`
 
 **Install the RPMs. The MariaDB ColumnStore software will be installed in /usr/local/. 
-`<code class="fixed" style="white-space:pre-wrap">rpm -ivh mariadb-columnstore*release#*.rpm</code>`**
+`rpm -ivh mariadb-columnstore*release#*.rpm`**
 
 
 #### Initial download/install of MariaDB ColumnStore binary package
@@ -705,7 +705,7 @@ cp /root/mariadb-columnstore-release#.x86_64.bin.tar.gz /usr/local/ mariadb-colu
 ```
 
 * Unpack the tarball, which will generate the /usr/local/ directory. 
-`<code class="fixed" style="white-space:pre-wrap">tar -zxvf mariadb-columnstore-release#.x86_64.bin.tar.gz</code>`
+`tar -zxvf mariadb-columnstore-release#.x86_64.bin.tar.gz`
 
 
 Run the post-install script:
@@ -729,10 +729,10 @@ account just as you would in MariaDB.
 1. Download the package mariadb-columnstore-release#.amd64.deb.tar.gz 
 (DEB 64- BIT) into the /root directory of the server where you are installing MariaDB ColumnStore.
 1. Unpack the tarball, which will generate DEBs. 
-`<code class="fixed" style="white-space:pre-wrap"> tar -zxf mariadb-columnstore-release#.amd64.deb.tar.gz</code>`
+` tar -zxf mariadb-columnstore-release#.amd64.deb.tar.gz`
 1. Install the MariaDB ColumnStore DEBs. The MariaDB ColumnStore software will be installed in /usr/
 local/. 
-`<code class="fixed" style="white-space:pre-wrap"> dpkg -i mariadb-columnstore*release#*.deb</code>`
+` dpkg -i mariadb-columnstore*release#*.deb`
 
 
 ### Non-root user installs
@@ -778,7 +778,7 @@ Linux server package setup and additionally have expect (and all its dependencie
 Group ID is an example, can be different than 1000, but needs to be the same on all servers in the cluster
 
 
-`<code class="fixed" style="white-space:pre-wrap">adduser mysql -u 1000</code>`
+`adduser mysql -u 1000`
 
 
 * create group
@@ -795,13 +795,13 @@ The value for user-id must be the same for all nodes.
 * Assign password to newly created user
 
 
-`<code class="fixed" style="white-space:pre-wrap">passwd mysql</code>`
+`passwd mysql`
 
 
 * Log in as user mysql
 
 
-`<code class="fixed" style="white-space:pre-wrap">su - mysql</code>`
+`su - mysql`
 
 
 * Choose an installation directory in which the non-root user has full read-write access. The
@@ -1026,7 +1026,7 @@ This tool is always run on the Performance Module #1.
 Example uses of this script are shown in the Single and Multi Server Installations Guides.
 
 
-`<code class="unknown_macro"><<<span class="macro_name">code</span><span class="macro_arg_string"></span>>></code>`
+`<<<span class="macro_name">code</span><span class="macro_arg_string"></span>>>`
 
 
 1. /usr/local/mariadb/columnstore/bin/postConfigure -h

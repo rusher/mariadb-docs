@@ -143,7 +143,7 @@ As newer versions occur and improvements happen these instructions may change. L
 ## Running an ASAN Build
 
 
-To run mariadbd with instrumentation you have to set the `<code>ASAN_OPTIONS</code>` environment variable before starting `<code>mariadbd</code>`. Either in your shell or in your [mariadbd_safe](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) script.
+To run mariadbd with instrumentation you have to set the `ASAN_OPTIONS` environment variable before starting `mariadbd`. Either in your shell or in your [mariadbd_safe](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) script.
 
 
 ```

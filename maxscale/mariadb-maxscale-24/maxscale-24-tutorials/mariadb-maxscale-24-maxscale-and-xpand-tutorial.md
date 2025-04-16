@@ -85,7 +85,7 @@ monitor will use that information if the bootstrap servers happen to
 be unavailable.
 
 
-With the configuration above `<code>maxctrl list servers</code>` might output
+With the configuration above `maxctrl list servers` might output
 the following:
 
 
@@ -106,11 +106,11 @@ the following:
 
 
 
-All servers whose name start with `<code>@@</code>` have been detected dynamically.
+All servers whose name start with `@@` have been detected dynamically.
 
 
-Note that the address `<code>10.2.224.101</code>` appears twice; once for
-`<code>Bootstrap-1</code>` and another time for `<code>@@Xpand:node-6</code>`. The Xpand
+Note that the address `10.2.224.101` appears twice; once for
+`Bootstrap-1` and another time for `@@Xpand:node-6`. The Xpand
 monitor will create a dynamic server instance for *all* nodes in the
 Xpand cluster; also for the ones used in bootstrap server sections.
 
@@ -134,20 +134,20 @@ cluster=Xpand
 
 
 Note that the service does *not* list any specific servers, but
-instead refers, using the argument `<code>cluster</code>`, to the Xpand monitor.
+instead refers, using the argument `cluster`, to the Xpand monitor.
 
 
 In practice this means that the service will use the servers of the
-monitor named `<code>Xpand</code>` and in the case of a Xpand monitor those
+monitor named `Xpand` and in the case of a Xpand monitor those
 servers will be the ones that the monitor has detected
 dynamically. That is, when setup like this, the service will
 automatically adjust to any changes taking place in the Xpand
 cluster.
 
 
-**NOTE** There is no need to specify any `<code>router_options</code>`, but the
-default `<code>router_options=running</code>` provides the desired behaviour.
-In particular do **not** specify `<code>router_options=master</code>` as that will
+**NOTE** There is no need to specify any `router_options`, but the
+default `router_options=running` provides the desired behaviour.
+In particular do **not** specify `router_options=master` as that will
 cause only a *single* node to be used.
 
 
@@ -225,7 +225,7 @@ to the *readwritesplit*
 
 
 **NOTE** It is vital to have
-`<code>slave_selection_criteria=LEAST_GLOBAL_CONNECTIONS</code>`, as otherwise
+`slave_selection_criteria=LEAST_GLOBAL_CONNECTIONS`, as otherwise
 connections will **not** be distributed evenly across all Xpand
 nodes.
 

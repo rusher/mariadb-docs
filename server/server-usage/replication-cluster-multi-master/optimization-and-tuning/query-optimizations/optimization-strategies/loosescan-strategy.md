@@ -10,7 +10,7 @@ LooseScan is an execution strategy for [Semi-join subqueries](../subquery-optimi
 ## The idea
 
 
-We will demonstrate the `<code>LooseScan</code>` strategy by example. Suppose, we're looking for countries that have satellites. We can get them using the following query (for the sake of simplicity we ignore satellites that are owned by consortiums of multiple countries):
+We will demonstrate the `LooseScan` strategy by example. Suppose, we're looking for countries that have satellites. We can get them using the following query (for the sake of simplicity we ignore satellites that are owned by consortiums of multiple countries):
 
 
 ```
@@ -19,13 +19,13 @@ where
   Country.code in (select country_code from Satellite)
 ```
 
-Suppose, there is an index on `<code class="fixed" style="white-space:pre-wrap">Satellite.country_code</code>`. If we use that index, we will get satellites in the order of their owner country:
+Suppose, there is an index on `Satellite.country_code`. If we use that index, we will get satellites in the order of their owner country:
 
 
 ![loosescan-satellites-ordered-r2](../../../../../.gitbook/assets/loosescan-strategy/+image/loosescan-satellites-ordered-r2.png "loosescan-satellites-ordered-r2")
 
 
-The `<code>LooseScan</code>` strategy doesn't really need ordering, what it needs is grouping. In the above figure, satellites are grouped by country. For instance, all satellites owned by Australia come together, without being mixed with satellites of other countries. This makes it easy to select just one satellite from each group, which you can join with its country and get a list of countries without duplicates:
+The `LooseScan` strategy doesn't really need ordering, what it needs is grouping. In the above figure, satellites are grouped by country. For instance, all satellites owned by Australia come together, without being mixed with satellites of other countries. This makes it easy to select just one satellite from each group, which you can join with its country and get a list of countries without duplicates:
 
 
 ![loosescan-diagram-no-where](../../../../../.gitbook/assets/loosescan-strategy/+image/loosescan-diagram-no-where.png "loosescan-diagram-no-where")
@@ -34,7 +34,7 @@ The `<code>LooseScan</code>` strategy doesn't really need ordering, what it need
 ## LooseScan in action
 
 
-The `<code>EXPLAIN</code>` output for the above query looks as follows:
+The `EXPLAIN` output for the above query looks as follows:
 
 
 ```
@@ -67,5 +67,5 @@ expr IN (SELECT tbl.keypart2 FROM tbl WHERE tbl.keypart1=const AND ...)
 ```
 
 * LooseScan can handle correlated subqueries
-* LooseScan can be switched off by setting the `<code class="fixed" style="white-space:pre-wrap">loosescan=off</code>` flag in the [optimizer_switch](../../system-variables/server-system-variables.md#optimizer_switch) variable.
+* LooseScan can be switched off by setting the `loosescan=off` flag in the [optimizer_switch](../../system-variables/server-system-variables.md#optimizer_switch) variable.
 

@@ -7,7 +7,7 @@ Contents of the MEMORY storage engine (previously known as HEAP) are stored in m
 It is best-used for read-only caches of data from other tables, or for temporary work areas.
 
 
-Since the data is stored in memory, it is highly vulnerable to power outages or hardware failure, and is unsuitable for permanent data storage. In fact, after a server restart, `<code>MEMORY</code>` tables will be recreated (because the definition file is stored on disk), but they will be empty. It is possible to re-populate them with a query using the `<code>--init-file</code>` server startup option.
+Since the data is stored in memory, it is highly vulnerable to power outages or hardware failure, and is unsuitable for permanent data storage. In fact, after a server restart, `MEMORY` tables will be recreated (because the definition file is stored on disk), but they will be empty. It is possible to re-populate them with a query using the `--init-file` server startup option.
 
 
 Variable-length types like [VARCHAR](../data-types/string-data-types/varchar.md) can be used in MEMORY tables. [BLOB](../data-types/string-data-types/blob.md) or [TEXT](../data-types/string-data-types/text.md) columns are not supported for MEMORY tables.
@@ -16,10 +16,10 @@ Variable-length types like [VARCHAR](../data-types/string-data-types/varchar.md)
 ## Memory Usage
 
 
-The maximum total size of MEMORY tables cannot exceed the [max_heap_table_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_heap_table_size) system server variable. When a table is created this value applies to that table, and when the server is restarted this value applies to existing tables. Changing this value has no effect on existing tables. However, executing a `<code>ALTER TABLE ... ENGINE=MEMORY</code>` statement applies the current value of `<code>max_heap_table_size</code>` to the table. Also, it is possible to change the session value of `<code>max_heap_table_size</code>` before creating a table, to make sure that tables created by other sessions are not affected.
+The maximum total size of MEMORY tables cannot exceed the [max_heap_table_size](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_heap_table_size) system server variable. When a table is created this value applies to that table, and when the server is restarted this value applies to existing tables. Changing this value has no effect on existing tables. However, executing a `ALTER TABLE ... ENGINE=MEMORY` statement applies the current value of `max_heap_table_size` to the table. Also, it is possible to change the session value of `max_heap_table_size` before creating a table, to make sure that tables created by other sessions are not affected.
 
 
-The `<code>MAX_ROWS</code>` table option provides a hint about the number of rows you plan to store in them. This is not a hard limit that cannot be exceeded, and does not allow to exceed `<code>max_heap_table_size</code>`. The storage engine uses max_heap_table_size and MAX_ROWS to calculate the maximum memory that could be allocated for the table.
+The `MAX_ROWS` table option provides a hint about the number of rows you plan to store in them. This is not a hard limit that cannot be exceeded, and does not allow to exceed `max_heap_table_size`. The storage engine uses max_heap_table_size and MAX_ROWS to calculate the maximum memory that could be allocated for the table.
 
 
 Memory allocated to a MEMORY table is freed by running [DROP TABLE](../sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md) or [TRUNCATE TABLE](../sql-statements-and-structure/sql-statements/table-statements/truncate-table.md), or rebuilding with [ALTER TABLE tbl_name ENGINE = MEMORY](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md). When rows are deleted, space is not automatically freed.
@@ -43,7 +43,7 @@ MEMORY tables are lost when a server restarts. In order to achieve this result i
 ## Example
 
 
-The following example shows how to create a `<code>MEMORY</code>` table with a given maximum size, as described above.
+The following example shows how to create a `MEMORY` table with a given maximum size, as described above.
 
 
 ```

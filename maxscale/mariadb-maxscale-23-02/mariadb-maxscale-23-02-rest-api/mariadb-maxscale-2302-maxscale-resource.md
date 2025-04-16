@@ -83,7 +83,7 @@ file locations, configuration options and version information.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -225,9 +225,9 @@ PATCH /v1/maxscale
 
 
 Update MaxScale parameters. The request body must define updated values for the
-`<code>data.attributes.parameters</code>` object. The parameters that can be modified are
-listed in the `<code>/v1/maxscale/modules/maxscale</code>` endpoint and have the `<code>modifiable</code>`
-value set to `<code>true</code>`.
+`data.attributes.parameters` object. The parameters that can be modified are
+listed in the `/v1/maxscale/modules/maxscale` endpoint and have the `modifiable`
+value set to `true`.
 
 
 #### Response
@@ -236,13 +236,13 @@ value set to `<code>true</code>`.
 Parameters modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Invalid JSON body:
 
 
-`<code>Status: 400 Bad Request</code>`
+`Status: 400 Bad Request`
 
 
 ## Get thread information
@@ -257,13 +257,13 @@ GET /v1/maxscale/threads/:id
 
 Get the information and statistics of a particular thread. The *:id* in
 the URI must map to a valid thread number between 0 and the configured
-value of `<code>threads</code>`.
+value of `threads`.
 
 
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -337,7 +337,7 @@ Get the information for all threads. Returns a collection of threads resources.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -500,12 +500,12 @@ location where the log files are stored.
 
 
 **Note:** The parameters in this endpoint are a subset of the parameters in the
- `<code>/v1/maxscale</code>` endpoint. Because of this, the parameters in this endpoint are
+ `/v1/maxscale` endpoint. Because of this, the parameters in this endpoint are
  deprecated as of MaxScale 6.0.
 
 
-**Note:** In MaxScale 2.5 the `<code>log_throttling</code>` and `<code>ms_timestamp</code>` parameters
- were incorrectly named as `<code>throttling</code>` and `<code>highprecision</code>`. In MaxScale 6,
+**Note:** In MaxScale 2.5 the `log_throttling` and `ms_timestamp` parameters
+ were incorrectly named as `throttling` and `highprecision`. In MaxScale 6,
  the parameter names are now correct which means the parameters declared here
  aren't fully backwards compatible.
 
@@ -513,7 +513,7 @@ location where the log files are stored.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -567,8 +567,8 @@ GET /v1/maxscale/logs/data
 Get the contents of the MaxScale logs. This endpoint was added in MaxScale 6.
 
 
-To navigate the log, use the `<code>prev</code>` link to move backwards to older log
-entries. The latest log entries can be read with the `<code>last</code>` link.
+To navigate the log, use the `prev` link to move backwards to older log
+entries. The latest log entries can be read with the `last` link.
 
 
 The entries are sorted in ascending order by the time they were logged. This
@@ -582,30 +582,30 @@ element in the returned array.
 This endpoint supports the following parameters:
 
 
-* `<code>page[size]</code>`
+* `page[size]`
 * Set number of rows of data to read. By default, 50 rows of data are read
  from the log.
-* `<code>page[cursor]</code>`
+* `page[cursor]`
 * Set position from where the log data is retrieved. The default position to
  retrieve the log data is the end of the log.
 This value should not be modified by the user and the values returned in the
-`<code>links</code>` object should be used instead. This way the navigation will provide
+`links` object should be used instead. This way the navigation will provide
 a consistent view of the log that does not overlap.
-Optionally, the `<code>id</code>` values in the returned data can be used as the values
+Optionally, the `id` values in the returned data can be used as the values
 for this parameter to read data from a known point in the file.
-* `<code>priority</code>`
+* `priority`
 * Include messages only from these log levels. The default is to include all
  messages.
 The value given should be a comma-separated list of log priorities. The
-priorities are `<code>alert</code>`, `<code>error</code>`, `<code>warning</code>`, `<code>notice</code>`, `<code>info</code>` and
-`<code>debug</code>`. Note that the `<code>debug</code>` log level is only used in debug builds of
+priorities are `alert`, `error`, `warning`, `notice`, `info` and
+`debug`. Note that the `debug` log level is only used in debug builds of
 MaxScale.
 
 
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -664,7 +664,7 @@ Stream the contents of the MaxScale logs. This endpoint was added in MaxScale 6.
 This endpoint opens a [WebSocket](https://tools.ietf.org/html/rfc6455)
 connection and streams the contents of the log to it. Each WebSocket message
 will contain the JSON representation of the log message. The JSON is formatted
-in the same way as the values in the `<code>log</code>` array of the `<code>/v1/maxscale/logs/data</code>`
+in the same way as the values in the `log` array of the `/v1/maxscale/logs/data`
 endpoint:
 
 
@@ -687,7 +687,7 @@ endpoint:
  an error and the stream is closed.
 * The WebSocket ping and close commands are not yet supported and will be
  treated as errors.
-* When `<code>maxlog</code>` is used as source of log data, any log messages logged after log
+* When `maxlog` is used as source of log data, any log messages logged after log
  rotation will not be sent if the file was moved or truncated. To fetch new
  events after log rotation, reopen the WebSocket connection.
 
@@ -698,18 +698,18 @@ endpoint:
 This endpoint supports the following parameters:
 
 
-* `<code>page[cursor]</code>`
+* `page[cursor]`
 * Set position from where the log data is retrieved. The default position to
  retrieve the log data is the end of the log.
 To stream data from a known point, first read the data via the
-`<code>/v1/maxscale/logs/data</code>` endpoint and then use the `<code>id</code>` value of the newest
-log message (i.e. the first value in the `<code>log</code>` array) to start the stream.
-* `<code>priority</code>`
+`/v1/maxscale/logs/data` endpoint and then use the `id` value of the newest
+log message (i.e. the first value in the `log` array) to start the stream.
+* `priority`
 * Include messages only from these log levels. The default is to include all
  messages.
 The value given should be a comma-separated list of log priorities. The
-priorities are `<code>alert</code>`, `<code>error</code>`, `<code>warning</code>`, `<code>notice</code>`, `<code>info</code>` and
-`<code>debug</code>`. Note that the `<code>debug</code>` log level is only used in debug builds of
+priorities are `alert`, `error`, `warning`, `notice`, `info` and
+`debug`. Note that the `debug` log level is only used in debug builds of
 MaxScale.
 
 
@@ -719,13 +719,13 @@ MaxScale.
 Upgrade started:
 
 
-`<code>Status: 101 Switching Protocols</code>`
+`Status: 101 Switching Protocols`
 
 
 Client didn't request a WebSocket upgrade:
 
 
-`<code>Status: 426 Upgrade Required</code>`
+`Status: 426 Upgrade Required`
 
 
 ## Update logging parameters
@@ -733,12 +733,12 @@ Client didn't request a WebSocket upgrade:
 
 **Note:** The modification of logging parameters via this endpoint has
  deprecated in MaxScale 6.0. The parameters should be modified with the
- `<code>/v1/maxscale</code>` endpoint instead.
+ `/v1/maxscale` endpoint instead.
 
 
 Any PATCH requests done to this endpoint will be redirected to the
- `<code>/v1/maxscale</code>` endpoint. Due to the mispelling of the `<code>ms_timestamp</code>` and
- `<code>log_throttling</code>` parameters, this is not fully backwards compatible.
+ `/v1/maxscale` endpoint. Due to the mispelling of the `ms_timestamp` and
+ `log_throttling` parameters, this is not fully backwards compatible.
 
 
 
@@ -749,7 +749,7 @@ PATCH /v1/maxscale/logs
 
 
 Update logging parameters. The request body must define updated values for the
-`<code>data.attributes.parameters</code>` object. All logging parameters can be altered at runtime.
+`data.attributes.parameters` object. All logging parameters can be altered at runtime.
 
 
 #### Response
@@ -758,13 +758,13 @@ Update logging parameters. The request body must define updated values for the
 Parameters modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Invalid JSON body:
 
 
-`<code>Status: 400 Bad Request</code>`
+`Status: 400 Bad Request`
 
 
 ## Flush and rotate log files
@@ -784,7 +784,7 @@ message is ignored.
 #### Response
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ## Reload TLS certificates
@@ -813,7 +813,7 @@ only reloaded if all other certificate reloads were successful.
 #### Response
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ## Get a loaded module
@@ -827,25 +827,25 @@ GET /v1/maxscale/modules/:name
 
 
 Retrieve information about a loaded module. The *:name* must be the name of a
-valid loaded module or either `<code>maxscale</code>` or `<code>servers</code>`.
+valid loaded module or either `maxscale` or `servers`.
 
 
-The `<code>maxscale</code>` module will display the global configuration options
-(i.e. everything under the `<code>[maxscale]</code>` section) as a module.
+The `maxscale` module will display the global configuration options
+(i.e. everything under the `[maxscale]` section) as a module.
 
 
-The `<code>servers</code>` module displays the server object type and the configuration
+The `servers` module displays the server object type and the configuration
 parameters it accepts as a module.
 
 
-Any parameter with the `<code>modifiable</code>` value set to `<code>true</code>` can be modified
+Any parameter with the `modifiable` value set to `true` can be modified
 at runtime using a PATCH command on the corresponding object endpoint.
 
 
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -1354,15 +1354,15 @@ GET /v1/maxscale/modules
 Retrieve information about all loaded modules.
 
 
-This endpoint supports the `<code>load=all</code>` parameter. When defined, all modules
-located in the MaxScale module directory (`<code>libdir</code>`) will be loaded. This allows
+This endpoint supports the `load=all` parameter. When defined, all modules
+located in the MaxScale module directory (`libdir`) will be loaded. This allows
 one to see the parameters of a module before the object is created.
 
 
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -4511,9 +4511,9 @@ POST /v1/maxscale/modules/:module/:command
 
 
 Modules can expose commands that can be called via the REST API. The module
-resource lists all commands in the `<code>data.attributes.commands</code>` list. Each value
-is a command sub-resource identified by its `<code>id</code>` field and the HTTP method the
-command uses is defined by the `<code>attributes.method</code>` field.
+resource lists all commands in the `data.attributes.commands` list. Each value
+is a command sub-resource identified by its `id` field and the HTTP method the
+command uses is defined by the `attributes.method` field.
 
 
 The *:module* in the URI must be a valid name of a loaded module and *:command*
@@ -4538,7 +4538,7 @@ POST /v1/maxscale/modules/mariadbmon/reset-replication?MariaDB-Monitor&server1
 Command with output:
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -4557,7 +4557,7 @@ Command with output:
 
 
 
-The contents of the `<code>meta</code>` field will contain the output of the module
+The contents of the `meta` field will contain the output of the module
 command. This output depends on the command that is being executed. It can
 contain any valid JSON value.
 
@@ -4565,7 +4565,7 @@ contain any valid JSON value.
 Command with no output:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ## Classify a statement
@@ -4584,7 +4584,7 @@ Classify provided statement and return the result.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 

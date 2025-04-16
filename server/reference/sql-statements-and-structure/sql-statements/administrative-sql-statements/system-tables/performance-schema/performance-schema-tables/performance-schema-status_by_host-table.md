@@ -3,10 +3,10 @@
 
 
 ##### MariaDB starting with [10.5.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
-The `<code>status_by_host</code>` table was added in [MariaDB 10.5.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
+The `status_by_host` table was added in [MariaDB 10.5.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
 
 
-The `<code>status_by_host</code>` table contains status variable information by host. The table does not collect statistics for `<code>Com_xxx</code>` variables.
+The `status_by_host` table contains status variable information by host. The table does not collect statistics for `Com_xxx` variables.
 
 
 The table contains the following columns:

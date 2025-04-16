@@ -1,7 +1,7 @@
 
 # Performance Schema events_waits_history Table
 
-The `<code>events_waits_history</code>` table by default contains the ten most recent completed wait events per thread. This number can be adjusted by setting the [performance_schema_events_waits_history_size](../performance-schema-system-variables.md#performance_schema_events_waits_history_size) system variable when the server starts up.
+The `events_waits_history` table by default contains the ten most recent completed wait events per thread. This number can be adjusted by setting the [performance_schema_events_waits_history_size](../performance-schema-system-variables.md#performance_schema_events_waits_history_size) system variable when the server starts up.
 
 
 The table structure is identical to the [events_waits_current](performance-schema-events_waits_current-table.md) table structure, and contains the following columns:
@@ -33,7 +33,7 @@ The table structure is identical to the [events_waits_current](performance-schem
 
 
 
-It is possible to empty this table with a `<code>TRUNCATE TABLE</code>` statement.
+It is possible to empty this table with a `TRUNCATE TABLE` statement.
 
 
 [events_waits_current](performance-schema-events_waits_current-table.md) and [events_waits_history_long](performance-schema-events_waits_history_long-table.md) are related tables.

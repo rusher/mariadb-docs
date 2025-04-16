@@ -11,7 +11,7 @@ Those are quality-improving rules that everyone with a write access to the Maria
 
   * A feature being in the preview is a necessary, but not a sufficient condition. It needs to be tested (by a dedicated tester, not a developer) and the tester has to say it's good enough
   * Testing might discover bugs, that's normal, they have to be fixed before the feature is pushed (or — at the tester's discretion — they could be fixed after the push, if they're minor)
-  * For tester's sake, develop in a dedicated branch with the version and the issue number in the branch name, for example, `<code>bb-11.1-[MDEV-11111](https://jira.mariadb.org/browse/MDEV-11111)</code>`, and let the release master know when it's ready, so that they could cherry-pick it into a preview.
+  * For tester's sake, develop in a dedicated branch with the version and the issue number in the branch name, for example, `bb-11.1-[MDEV-11111](https://jira.mariadb.org/browse/MDEV-11111)`, and let the release master know when it's ready, so that they could cherry-pick it into a preview.
 * Features must not be pushed directly into the GA release bypassing the above
 
   * Keep an eye on the release schedule ([jira.mariadb.org](https://jira.mariadb.org)) to know when the next release is due

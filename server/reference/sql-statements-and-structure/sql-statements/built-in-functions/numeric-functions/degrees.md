@@ -11,7 +11,7 @@ DEGREES(X)
 ## Description
 
 
-Returns the argument *`<code>X</code>`*, converted from radians to degrees.
+Returns the argument *`X`*, converted from radians to degrees.
 
 
 This is the converse of the [RADIANS()](radians.md) function.

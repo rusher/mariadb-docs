@@ -19,7 +19,7 @@ ST_IsValid(g)
 Given a geometry input, returns 1 if the argument is geometrically valid according to the OGC specifications, 0 if the argument is not geometrically valid.
 
 
-Unlike [ST_Validate](st_validate.md), requires valid GIS data, or `<code>ERROR 3037 (22023): Invalid GIS data provided to function st_isvalid</code>` is returned.
+Unlike [ST_Validate](st_validate.md), requires valid GIS data, or `ERROR 3037 (22023): Invalid GIS data provided to function st_isvalid` is returned.
 
 
 ## Examples

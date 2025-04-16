@@ -14,7 +14,7 @@ expr NOT BETWEEN min AND max
 This is the same as NOT (expr [BETWEEN](between-and.md) min AND max).
 
 
-Note that the meaning of the alternative form `<code class="highlight fixed" style="white-space:pre-wrap">NOT expr BETWEEN min AND max</code>` is affected by the `<code>HIGH_NOT_PRECEDENCE</code>` [SQL_MODE](../../../../server-management/variables-and-modes/sql-mode.md) flag.
+Note that the meaning of the alternative form `NOT expr BETWEEN min AND max` is affected by the `HIGH_NOT_PRECEDENCE` [SQL_MODE](../../../../server-management/variables-and-modes/sql-mode.md) flag.
 
 
 ## Examples

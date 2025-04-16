@@ -14,7 +14,7 @@ shell> replace from to [from to] ... -- file_name [file_name] ...
 shell> replace from to [from to] ... < file_name
 ```
 
-"`<code>from</code>`" represents a string to look for and "`<code>to</code>`" represents its
+"`from`" represents a string to look for and "`to`" represents its
 replacement. There can be one or more pairs of strings.
 
 
@@ -31,14 +31,14 @@ A from-string can contain these special characters:
 
 
 
-Use the `<code>--</code>` option to indicate where the string-replacement
+Use the `--` option to indicate where the string-replacement
 list ends and the file names begin. Any file named on the command line is
 modified in place, so you may want to make a copy of the original before
-converting it. `<code>replace</code>` prints a message indicating which of the input
+converting it. `replace` prints a message indicating which of the input
 files it actually modifies.
 
 
-If the `<code>--</code>` option is not given, replace reads standard
+If the `--` option is not given, replace reads standard
 input and writes to standard output.
 
 
@@ -57,7 +57,7 @@ The replace program is used by [msql2mysql](msql2mysql.md).
 ## Options
 
 
-`<code>replace</code>` supports the following options.
+`replace` supports the following options.
 
 
 

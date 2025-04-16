@@ -1,7 +1,7 @@
 
 # Aggregate Functions as Window Functions
 
-It is possible to use [aggregate functions](aggregate-functions-as-window-functions.md) as window functions. An aggregate function used as a window function must have the `<code>OVER</code>` clause. For example, here's [COUNT()](../../aggregate-functions/count.md) used as a window function:
+It is possible to use [aggregate functions](aggregate-functions-as-window-functions.md) as window functions. An aggregate function used as a window function must have the `OVER` clause. For example, here's [COUNT()](../../aggregate-functions/count.md) used as a window function:
 
 
 ```

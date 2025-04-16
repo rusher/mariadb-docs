@@ -39,7 +39,7 @@ For any problems you encounter, please consider submitting a bug report at
 
 
 The SSL peer certificate verification can now be disabled for servers and
-listeners by adding `<code>ssl_verify_peer_certificate=false</code>` to the respective
+listeners by adding `ssl_verify_peer_certificate=false` to the respective
 definitions.
 
 

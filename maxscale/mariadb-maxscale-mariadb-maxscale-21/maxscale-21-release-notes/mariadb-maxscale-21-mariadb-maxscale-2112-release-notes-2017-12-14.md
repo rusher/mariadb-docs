@@ -39,8 +39,8 @@ For any problems you encounter, please consider submitting a bug report at
 ### Binlogrouter Mandatory Router Options
 
 
-It is no longer necessary to always define the `<code>router_options</code>` parameter for
-the binlogrouter if no `<code>router_options</code>` are needed. This allows configurations
+It is no longer necessary to always define the `router_options` parameter for
+the binlogrouter if no `router_options` are needed. This allows configurations
 where only parameters are used with the binlogrouter.
 
 

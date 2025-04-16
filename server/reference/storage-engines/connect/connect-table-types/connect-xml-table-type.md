@@ -15,7 +15,7 @@ framework, but which does not require GNOME and, on Windows, MS-DOM (DOMDOC), th
 DOMDOC is the default for the Windows version of CONNECT and libxml2 is always
 used on other systems. On Windows the choice can be specified using the XMLSUP
 [CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md) list option, for instance specifying
-`<code>option_list='xmlsup=libxml2'</code>`.
+`option_list='xmlsup=libxml2'`.
 
 
 ## Creating XML tables
@@ -130,10 +130,10 @@ It will be displayed as:
 
 Let us try to understand what happened. By default the column names correspond
 to tag names. Because this file is rather simple, CONNECT was able to default
-the top tag of the table as the root node `<code><BIBLIO></code>` of the file, and the row
-tags as the `<code><BOOK></code>` children of the table tag. In a more complex file, this
+the top tag of the table as the root node `<BIBLIO>` of the file, and the row
+tags as the `<BOOK>` children of the table tag. In a more complex file, this
 should have been specified, as we will see later. Note that we didn't have to worry
-about the sub-tags such as `<code><FIRSTNAME></code>` or `<code><LASTNAME></code>` because CONNECT
+about the sub-tags such as `<FIRSTNAME>` or `<LASTNAME>` because CONNECT
 automatically retrieves the entire text contained in a tag and its
 sub-tags[[2](#_note-1)].
 
@@ -238,10 +238,10 @@ been different from the order in which the nodes appear in the XML file.
 ## Using Xpaths with XML tables
 
 
-Xpath is used by XML to locate and retrieve nodes. The table's main node Xpath is specified by the `<code>tabname</code>` option. If just the node name is given, CONNECT constructs an Xpath such as `<code>‘<em>BIBLIO’</em></code>` in the example above that should retrieve the `<code>BIBLIO</code>` node wherever it is within the XML file.
+Xpath is used by XML to locate and retrieve nodes. The table's main node Xpath is specified by the `tabname` option. If just the node name is given, CONNECT constructs an Xpath such as `‘<em>BIBLIO’</em>` in the example above that should retrieve the `BIBLIO` node wherever it is within the XML file.
 
 
-The row nodes are by default the children of the table node. However, for instance to eliminate some children nodes that are not real row nodes, the row node name can be specified using the `<code>rownode</code>` sub-option of the `<code>option_list</code>` option.
+The row nodes are by default the children of the table node. However, for instance to eliminate some children nodes that are not real row nodes, the row node name can be specified using the `rownode` sub-option of the `option_list` option.
 
 
 The field_format options we used above can be specified to locate more
@@ -303,7 +303,7 @@ This very flexible column parameter serves several purposes:
 This path is always relative to the current context (the column top node) and
 cannot be specified as an absolute path from the document root, therefore a
 leading '/' cannot be used. The path cannot be variable in node names or depth,
-therefore using '`<code>//</code>`' is not allowed.
+therefore using '`//`' is not allowed.
 
 
 The query:
@@ -681,7 +681,7 @@ Now the added book, in the XML file, will have the required structure:
    </BOOK>
 ```
 
-**Note:** We used a column list in the Insert statements when creating the table to avoid generating a `<code><TRANSLATOR></code>`
+**Note:** We used a column list in the Insert statements when creating the table to avoid generating a `<TRANSLATOR>`
 node with sub-nodes, all containing null values (this works on Windows only).
 
 
@@ -717,7 +717,7 @@ tabname='BIBLIO'
 option_list='rownode=BOOK,Expand=1,Mulnode=AUTHOR,Limit=2';
 ```
 
-In this statement, the Limit option specifies the maximum number of values that will be expanded. If not specified, it defaults to `<code>10</code>`. Any values above the limit will be ignored and a warning message issued[[3](#_note-2)]. Now you can enter a query such as:
+In this statement, the Limit option specifies the maximum number of values that will be expanded. If not specified, it defaults to `10`. Any values above the limit will be ignored and a warning message issued[[3](#_note-2)]. Now you can enter a query such as:
 
 
 ```
@@ -980,7 +980,7 @@ features of HTML tables. For instance:
 </Beers>
 ```
 
-Here the different column tags are included in `<code><td></td></code>` tags as for HTML
+Here the different column tags are included in `<td></td>` tags as for HTML
 tables. You cannot just add this tag in the Xpath of the columns, because the
 search is done on the first occurrence of each tag, and this would cause this
 search to fail for all columns except the first one. This case is handled by
@@ -1085,13 +1085,13 @@ able to display the table:
 
 
 
-**Note 1:** We specified '`<code>header=n</code>`' in the create statement to indicate
+**Note 1:** We specified '`header=n`' in the create statement to indicate
 that the first n rows of the table are not data rows and should be skipped.
 
 
 **Note 2:** In this last example, we did not specify the node names using the
 Rownode and Colnode options because when *Coltype* is set to 'HTML' they
-default to '`<code>Rownode=TR</code>`' and '`<code>Colnode=TD</code>`'.
+default to '`Rownode=TR`' and '`Colnode=TD`'.
 
 
 **Note 3:** The *Coltype* option is a word only the first character of which
@@ -1175,7 +1175,7 @@ will generate the following file:
 ```
 
 This file can be used to display the table on a web browser (encoding should be
-`<code>ISO-8859-x</code>`)
+`ISO-8859-x`)
 
 
 

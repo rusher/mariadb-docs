@@ -83,7 +83,7 @@ A special type of file-based CONNECT tables are “inward” tables. They are fi
 Their file will be located in the current database directory and their name
 will default to tablename.type where tablename is the table name and type is the table
 type folded to lower case. When they are created without using a
-`<code>CREATE TABLE ... SELECT ...</code>` statement, an empty file is made at create
+`CREATE TABLE ... SELECT ...` statement, an empty file is made at create
 time and they can be populated by further inserts.
 
 

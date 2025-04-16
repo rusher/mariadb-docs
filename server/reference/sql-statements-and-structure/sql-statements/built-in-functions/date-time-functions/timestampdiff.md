@@ -11,8 +11,8 @@ TIMESTAMPDIFF(unit,datetime_expr1,datetime_expr2)
 ## Description
 
 
-Returns `<code>datetime_expr2</code>` - `<code>datetime_expr1</code>`, where `<code>datetime_expr1</code>` and
-`<code>datetime_expr2</code>` are date or datetime expressions. One expression may be
+Returns `datetime_expr2` - `datetime_expr1`, where `datetime_expr1` and
+`datetime_expr2` are date or datetime expressions. One expression may be
 a date and the other a datetime; a date value is treated as a datetime
 having the time part '00:00:00' where necessary. The unit for the
 result (an integer) is given by the unit argument. The legal values
@@ -20,7 +20,7 @@ for unit are the same as those listed in the description of the
 [TIMESTAMPADD()](timestampadd.md) function, i.e MICROSECOND, SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, QUARTER, or YEAR.
 
 
-`<code>TIMESTAMPDIFF</code>` can also be used to calculate age.
+`TIMESTAMPDIFF` can also be used to calculate age.
 
 
 ## Examples

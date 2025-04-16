@@ -50,7 +50,7 @@ CONCAT(user, '@', host, ' => ', JSON_DETAILED(priv)): edtest2@localhost => {
 }
 ```
 
-The behavior of this function is affected by the value of the [old_passwords](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords) system variable. If this is set to `<code>1</code>` (`<code>0</code>` is default), MariaDB reverts to using the [mysql_old_password authentication plugin](../../../../../plugins/authentication-plugins/authentication-plugin-mysql_old_password.md) by default for newly created users and passwords.
+The behavior of this function is affected by the value of the [old_passwords](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords) system variable. If this is set to `1` (`0` is default), MariaDB reverts to using the [mysql_old_password authentication plugin](../../../../../plugins/authentication-plugins/authentication-plugin-mysql_old_password.md) by default for newly created users and passwords.
 
 
 ## Examples

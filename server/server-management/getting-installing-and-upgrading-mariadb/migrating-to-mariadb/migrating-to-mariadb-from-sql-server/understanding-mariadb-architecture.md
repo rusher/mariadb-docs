@@ -53,7 +53,7 @@ It is worth spending some more words here about [InnoDB](../../../../../general-
 InnoDB primary keys are always the equivalent of SQL Server clustered indexes. In other words, an InnoDB table is always ordered by the primary key.
 
 
-If an InnoDB table doesn't have a user-defined primary key, the first `<code>UNIQUE</code>` index whose columns are all `<code>NOT NULL</code>` is used as a primary key. If there is no such index, the table will have a *clustered index*. The terminology here can be a bit confusing for SQL Server and other DBMS users. A clustered index in InnoDB is a 6 bytes value that is added to the table. This index and its values are completely invisible to the users. It's important to note that clustered indexes are governed by a global mutex that greatly reduces their scalability.
+If an InnoDB table doesn't have a user-defined primary key, the first `UNIQUE` index whose columns are all `NOT NULL` is used as a primary key. If there is no such index, the table will have a *clustered index*. The terminology here can be a bit confusing for SQL Server and other DBMS users. A clustered index in InnoDB is a 6 bytes value that is added to the table. This index and its values are completely invisible to the users. It's important to note that clustered indexes are governed by a global mutex that greatly reduces their scalability.
 
 
 Secondary indexes are ordered by the columns that are part of the index, and contain a reference to each entry's corresponding primary key value.
@@ -62,7 +62,7 @@ Secondary indexes are ordered by the columns that are part of the index, and con
 Some consequences of these design choices are the following:
 
 
-* For performance reasons, a primary key value should be inserted in order. In other words, the last inserted value should be the highest. This order is normally followed when inserting values into an `<code>AUTO_INCREMENT</code>` primary key. The reason is that inserting values in the middle of an ordered data structure is slower, unless they fit into existing holes. If we insert primary key values randomly, InnoDB often has to rearrange pages to make some room for the new data.
+* For performance reasons, a primary key value should be inserted in order. In other words, the last inserted value should be the highest. This order is normally followed when inserting values into an `AUTO_INCREMENT` primary key. The reason is that inserting values in the middle of an ordered data structure is slower, unless they fit into existing holes. If we insert primary key values randomly, InnoDB often has to rearrange pages to make some room for the new data.
 * A big primary keys means that all secondary indexes are also big.
 * A query by primary key will require a single search. A query on a secondary index that also reads columns not contained in the index will require one search on the index, plus one more search for each row that satisfies the index condition.
 * We shouldn't explicitly include the primary key in a secondary index. If we do so, the primary key column will be duplicated in the index.
@@ -79,13 +79,13 @@ For InnoDB, a *tablespace* is a file containing data (not a file group as in SQL
 * [Temporary tablespaces](../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-temporary-tablespaces.md).
 
 
-The system tablespace is stored in the file `<code>ibdata</code>`. It contains information used by InnoDB internally, like rollback segments, as well as some system tables. Historically, the system tablespace also contained all tables created by the user. In modern MariaDB versions, a table is created in the system tablespace only if the [innodb_file_per_table](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) system variable is set to 0 at the moment of the table creation. By default, innodb_file_per_table is 1.
+The system tablespace is stored in the file `ibdata`. It contains information used by InnoDB internally, like rollback segments, as well as some system tables. Historically, the system tablespace also contained all tables created by the user. In modern MariaDB versions, a table is created in the system tablespace only if the [innodb_file_per_table](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) system variable is set to 0 at the moment of the table creation. By default, innodb_file_per_table is 1.
 
 
-Tables created while `<code>innodb_file_per_table=1</code>` are written into their own tablespace. These are `<code>.ibd</code>` files.
+Tables created while `innodb_file_per_table=1` are written into their own tablespace. These are `.ibd` files.
 
 
-Starting from [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), temporary tables are written into temporary tablespaces, which means `<code>ibtmp*</code>` files. Previously, they were created in the system tablespace or in file-per-table tablespaces according to the value of `<code>innodb_file_per_table</code>`, just like regular tables. Temporary tablespaces, if present, are deleted when MariaDB starts.
+Starting from [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), temporary tables are written into temporary tablespaces, which means `ibtmp*` files. Previously, they were created in the system tablespace or in file-per-table tablespaces according to the value of `innodb_file_per_table`, just like regular tables. Temporary tablespaces, if present, are deleted when MariaDB starts.
 
 
 **It is important to remember that tablespaces can never shrink**. If a file-per-table tablespace grows too much, deleting data won't recover space. Instead, a new table must be created and data needs to be copied. Finally, the old table will be deleted. If the system tablespace grows too much, the only solution is to move data into a new MariaDB installation.
@@ -97,7 +97,7 @@ Starting from [MariaDB 10.2](../../../../../release-notes/mariadb-community-serv
 In SQL Server, the transaction log contains both the undo log and the redo log. Usually we have only one transaction log.
 
 
-In MariaDB the undo log and the redo log are stored separately. By default, the [redo log](../../../../reference/storage-engines/innodb/innodb-redo-log.md) is written to two files, called `<code>ib_logfile0</code>` and `<code>ib_logfile1</code>`. The [undo log](../../../../reference/storage-engines/innodb/innodb-undo-log.md) by default is written to the *system tablespace*, which is in the `<code>ibdata1</code>` file. However, it is possible to write it in separate files in a specified directory.
+In MariaDB the undo log and the redo log are stored separately. By default, the [redo log](../../../../reference/storage-engines/innodb/innodb-redo-log.md) is written to two files, called `ib_logfile0` and `ib_logfile1`. The [undo log](../../../../reference/storage-engines/innodb/innodb-undo-log.md) by default is written to the *system tablespace*, which is in the `ibdata1` file. However, it is possible to write it in separate files in a specified directory.
 
 
 MariaDB provides no way to inspect the contents of the transaction logs. However, it is possible to inspect the [binary log](understanding-mariadb-architecture.md#the-binary-log).
@@ -124,7 +124,7 @@ A part of the buffer pool is called the [change buffer](../../../../reference/st
 InnoDB has background threads that take care of flushing dirty pages from the change buffer to the tablespaces. They don't directly affect the latency of queries, but they are very important for performance.
 
 
-[SHOW ENGINE InnoDB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) shows information about them in the `<code>BACKGROUND THREAD</code>` section. They can also be seen using the [threads](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md) table, in the [performance_schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md).
+[SHOW ENGINE InnoDB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) shows information about them in the `BACKGROUND THREAD` section. They can also be seen using the [threads](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md) table, in the [performance_schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md).
 
 
 InnoDB flushing is similar to *lazy writes* and *checkpoints* in SQL Server. It has no equivalent for *eager writing*.
@@ -200,7 +200,7 @@ MariaDB has the following system databases:
 
 
 * [mysql](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) is for internal use only, and should not be read or written directly.
-* [information_schema](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) contains all information that can be found in SQL Server's information_schema and more. However, while SQL Server's `<code>information_schema</code>` is a schema containing information about the local database, MariaDB's `<code>information_schema</code>` is a database that contains information about all databases.
+* [information_schema](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) contains all information that can be found in SQL Server's information_schema and more. However, while SQL Server's `information_schema` is a schema containing information about the local database, MariaDB's `information_schema` is a database that contains information about all databases.
 * [performance_schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md) contains information about MariaDB runtime. It is disabled by default. Enabling it requires setting the [performance_schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) system variable to 1 and restarting MariaDB.
 
 
@@ -243,7 +243,7 @@ MariaDB has the [DATABASE()](../../../../../general-resources/learning-and-train
 SELECT DATABASE();
 ```
 
-Stored procedures and triggers don't inherit a default database from the session, nor by a caller procedure. In that context, the default database is the database which contains the procedure. `<code>USE</code>` can be used to change it. The default database will only be valid for the rest of the procedure.
+Stored procedures and triggers don't inherit a default database from the session, nor by a caller procedure. In that context, the default database is the database which contains the procedure. `USE` can be used to change it. The default database will only be valid for the rest of the procedure.
 
 
 ## The Binary Log
@@ -298,7 +298,7 @@ Storage engines are a special type of [plugin](../../../../../general-resources/
 A plugin may add some server variables and some status variables. Server variables can be used to configure the plugin, and status variables can be used to monitor its activities and status. These variables generally use the plugin's name as a prefix. For example InnoDB has a server variable called innodb_buffer_pool_size to configure the size of its buffer pool, and a status variable called Innodb_pages_read which indicates the number of memory pages read from the buffer pool. The category [system variables](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-11-1.md) of the MariaDB Knowledge Base has specific pages for system and status variables associated with various plugins.
 
 
-Many plugins are installed by default, or available but not installed by default. They can be installed or uninstalled at runtime with SQL statements, like `<code>INSTALL PLUGIN</code>`, `<code>UNINSTALL PLUGIN</code>` and others; see [Plugin SQL Statements](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/README.md). 3rd party plugins can be made available for installation by simply copying them to the [plugin_dir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir).
+Many plugins are installed by default, or available but not installed by default. They can be installed or uninstalled at runtime with SQL statements, like `INSTALL PLUGIN`, `UNINSTALL PLUGIN` and others; see [Plugin SQL Statements](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/README.md). 3rd party plugins can be made available for installation by simply copying them to the [plugin_dir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir).
 
 
 It is important to note that different plugins may have different maturity levels. It is possible to prevent the installation of plugins we don’t consider production-ready by setting the [plugin_maturity](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_maturity) system variable. For plugins that are distributed with MariaDB, the maturity level is determined by the MariaDB team based on the bugs reported and fixed.
@@ -345,13 +345,13 @@ Note that server system variables are not to be confused with [user-defined vari
 MariaDB can use several [configuration files](../../configuring-mariadb-with-option-files.md). Configuration files are searched in several locations, including in the user directory, and if present they all are read and used. They are read in a consistent order. These locations depend on the operating system; see [Default Option File Locations](../../configuring-mariadb-with-option-files.md#default-option-file-locations). It is possible to tell MariaDB which files it should read; see [Global Options Related to Option Files](../../configuring-mariadb-with-option-files.md#global-options-related-to-option-files).
 
 
-On Linux, by default the configuration files are called `<code>my.cnf</code>`. On Windows, by default the configuration files can be called `<code>my.ini</code>` or `<code>my.cnf</code>`. The former is more common.
+On Linux, by default the configuration files are called `my.cnf`. On Windows, by default the configuration files can be called `my.ini` or `my.cnf`. The former is more common.
 
 
 If a variable is mentioned multiple times in different files, the occurrence that is read last will overwrite the others. Similarly, if a variable is mentioned several times in a single file, the occurrence that is read last overwrites the others.
 
 
-The contents of each configuration file are organized by *option groups*. MariaDB Server and client programs read different groups. The read groups also depend on the MariaDB version. See [Option Groups](../../configuring-mariadb-with-option-files.md#option-groups) for the details. Most commonly, the `<code>[server]</code>` or `<code>[mysqld]</code>` groups are used to contain all server configuration. The `<code>[client-server]</code>` group can be used for options that are shared by the server and the clients (like the port to use), to avoid repeating those variables multiple times.
+The contents of each configuration file are organized by *option groups*. MariaDB Server and client programs read different groups. The read groups also depend on the MariaDB version. See [Option Groups](../../configuring-mariadb-with-option-files.md#option-groups) for the details. Most commonly, the `[server]` or `[mysqld]` groups are used to contain all server configuration. The `[client-server]` group can be used for options that are shared by the server and the clients (like the port to use), to avoid repeating those variables multiple times.
 
 
 ### Dynamic and Static Variables
@@ -428,10 +428,10 @@ For further information see:
 System variables can be set at server startup without writing their values into a configuration file. This is useful if we want a value to be set once, until we change it or restart MariaDB. Values passed in this way override values written in the configuration files.
 
 
-The general rule is that every global variable can be passed as an argument of `<code>mysqld</code>` by prefixing its name with `<code>--</code>` and by replacing every occurrence of `<code>_</code>` with `<code>-</code>` in its name.
+The general rule is that every global variable can be passed as an argument of `mysqld` by prefixing its name with `--` and by replacing every occurrence of `_` with `-` in its name.
 
 
-For example, to pass `<code>bind_address</code>` as a startup argument:
+For example, to pass `bind_address` as a startup argument:
 
 
 ```

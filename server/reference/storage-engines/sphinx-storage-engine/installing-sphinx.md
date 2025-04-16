@@ -22,33 +22,33 @@ sudo apt-get install sphinxsearch
 Alternatively, install as follows:
 
 
-* The Sphinx package and daemon are named `<code>sphinxsearch</code>`.
-* `<code>sudo apt-get install unixodbc libpq5 mariadb-client</code>`
-* `<code>sudo dpkg -i sphinxsearch*.deb</code>`
+* The Sphinx package and daemon are named `sphinxsearch`.
+* `sudo apt-get install unixodbc libpq5 mariadb-client`
+* `sudo dpkg -i sphinxsearch*.deb`
 * [Configure Sphinx](configuring-sphinx.md) as required
-* You may need to check `<code>/etc/default/sphinxsearch</code>` to see that `<code>START=yes</code>`
-* Start with `<code>sudo service sphinxsearch start</code>` (and stop with `<code>sudo service sphinxsearch stop</code>`)
+* You may need to check `/etc/default/sphinxsearch` to see that `START=yes`
+* Start with `sudo service sphinxsearch start` (and stop with `sudo service sphinxsearch stop`)
 
 
 ## Red Hat and CentOS
 
 
-* The package name is `<code>sphinx</code>` and the daemon `<code>searchd</code>`.
-* `<code>sudo yum install postgresql-libs unixODBC</code>`
-* `<code>sudo rpm -Uhv sphinx*.rpm</code>`
+* The package name is `sphinx` and the daemon `searchd`.
+* `sudo yum install postgresql-libs unixODBC`
+* `sudo rpm -Uhv sphinx*.rpm`
 * [Configure Sphinx](configuring-sphinx.md) as required
-* `<code>service searchd start</code>`
+* `service searchd start`
 
 
 ## Windows
 
 
 * Unzip and extract the downloaded zip file
-* Move the extracted directory to `<code>C:\Sphinx</code>`
+* Move the extracted directory to `C:\Sphinx`
 * [Configure Sphinx](configuring-sphinx.md) as required
 * Install as a service: 
 
-  * `<code>C:\Sphinx\bin> C:\Sphinx\bin\searchd --install --config C:\Sphinx\sphinx.conf.in --servicename SphinxSearch</code>`
+  * `C:\Sphinx\bin> C:\Sphinx\bin\searchd --install --config C:\Sphinx\sphinx.conf.in --servicename SphinxSearch`
 
 
 Once Sphinx has been installed, it will need to be [configured](configuring-sphinx.md).

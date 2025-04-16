@@ -11,7 +11,7 @@ ST_CONTAINS(g1,g2)
 ## Description
 
 
-Returns `<code>1</code>` or `<code>0</code>` to indicate whether a geometry `<code>g1</code>` completely contains geometry `<code>g2</code>`.
+Returns `1` or `0` to indicate whether a geometry `g1` completely contains geometry `g2`.
 
 
 ST_CONTAINS() uses object shapes, while [CONTAINS()](contains.md), based on the original MySQL implementation, uses object bounding rectangles.

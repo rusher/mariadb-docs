@@ -12,10 +12,10 @@ GeometryN(gc,N)
 ## Description
 
 
-Returns the N-th geometry in the GeometryCollection *`<code>gc</code>`.* Geometries are numbered beginning with 1.
+Returns the N-th geometry in the GeometryCollection *`gc`.* Geometries are numbered beginning with 1.
 
 
-`<code>ST_GeometryN()</code>` and `<code>GeometryN()</code>` are synonyms.
+`ST_GeometryN()` and `GeometryN()` are synonyms.
 
 
 ## Example

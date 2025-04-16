@@ -363,7 +363,7 @@ We have no background search available in MariaDB. It won't be available before 
 We have 4 cores per backend and 2 backends .
 
 
-On `<code>backend1</code>`
+On `backend1`
 
 
 ```
@@ -407,7 +407,7 @@ CREATE TABLE bsbackend4.sbtest (
 EOF
 ```
 
-On `<code>backend2</code>`
+On `backend2`
 
 
 ```
@@ -451,7 +451,7 @@ CREATE TABLE bsbackend8.sbtest (
 EOF
 ```
 
-On `<code>Spider Node</code>`
+On `Spider Node`
 
 
 ```
@@ -647,10 +647,10 @@ SELECT spider_flush_table_mon_cache();
 EOF
 ```
 
-Monitoring should be setup between Spider nodes participating in the cluster. We only have one `<code>Spider Node</code>` and spider_link_mon_servers represent the inter-connection of all Spider nodes in our setup.
+Monitoring should be setup between Spider nodes participating in the cluster. We only have one `Spider Node` and spider_link_mon_servers represent the inter-connection of all Spider nodes in our setup.
 
 
-This simple setup does not bring HA in case the `<code>Spider Node</code>` is not available. In a production setup the number of `<code>Spider Nodes</code>` in the spider_link_mon_servers table should be at least 3 to get a majority consensus.
+This simple setup does not bring HA in case the `Spider Node` is not available. In a production setup the number of `Spider Nodes` in the spider_link_mon_servers table should be at least 3 to get a majority consensus.
 
 
 ```

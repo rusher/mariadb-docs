@@ -15,7 +15,7 @@ JSON_REMOVE(json_doc, path[, path] ...)
 Removes data from a JSON document returning the result, or NULL if any of the arguments are null. If the element does not exist in the document, no changes are made.
 
 
-The function returns NULL and throws a warning if the JSON document is invalid, the path is invalid, contains a range, or contains a `<code>*</code>` or `<code>**</code>` wildcard.
+The function returns NULL and throws a warning if the JSON document is invalid, the path is invalid, contains a range, or contains a `*` or `**` wildcard.
 
 
 Path arguments are evaluated from left to right, with the result from the earlier evaluation being used as the value for the next.

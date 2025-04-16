@@ -61,7 +61,7 @@ show global status like 'open_tables';
 +---------------+-------+
 ```
 
-The open table cache can be emptied with [FLUSH TABLES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) or with the `<code>flush-tables</code>` or `<code>refresh</code>` [mariadb-admin](../../../../clients-and-utilities/mariadb-admin.md) commands.
+The open table cache can be emptied with [FLUSH TABLES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) or with the `flush-tables` or `refresh` [mariadb-admin](../../../../clients-and-utilities/mariadb-admin.md) commands.
 
 
 ## Automatic Creation of New Table Open Cache Instances
@@ -78,7 +78,7 @@ When MariaDB Server creates a new instance, it prints a message like the followi
   table cache instance activated. Number of instances after activation: 2.
 ```
 
-The maximum number of instances is defined by the [table_open_cache_instances](server-system-variables.md#table_open_cache_instances) system variable. The default value of the [table_open_cache_instances](server-system-variables.md#table_open_cache_instances) system variable is `<code>8</code>`, which is expected to handle up to 100 CPU cores. If your system is larger than this, then you may benefit from increasing the value of this system variable.
+The maximum number of instances is defined by the [table_open_cache_instances](server-system-variables.md#table_open_cache_instances) system variable. The default value of the [table_open_cache_instances](server-system-variables.md#table_open_cache_instances) system variable is `8`, which is expected to handle up to 100 CPU cores. If your system is larger than this, then you may benefit from increasing the value of this system variable.
 
 
 Depending on the ratio of actual available file handles, and [table_open_cache](server-system-variables.md#table_open_cache) size, the max. instance count may be auto adjusted to a lower value on server startup.

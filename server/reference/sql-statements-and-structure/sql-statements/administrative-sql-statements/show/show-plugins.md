@@ -12,13 +12,13 @@ SHOW PLUGINS;
 ## Description
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW PLUGINS</code>` displays information about installed [plugins](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md). The `<code>Library</code>` column indicates the plugin library - if it is `<code>NULL</code>`, the plugin is built-in and cannot be uninstalled.
+`SHOW PLUGINS` displays information about installed [plugins](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md). The `Library` column indicates the plugin library - if it is `NULL`, the plugin is built-in and cannot be uninstalled.
 
 
-The `<code>[PLUGINS](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)</code>` table in the `<code>information_schema</code>` database contains more detailed information.
+The `[PLUGINS](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)` table in the `information_schema` database contains more detailed information.
 
 
-For specific information about storage engines (a particular type of plugin), see the `<code>[information_schema.ENGINES](../system-tables/information-schema/information-schema-tables/information-schema-engines-table.md)</code>` table and the `<code>[SHOW ENGINES](show-engines.md)</code>` statement.
+For specific information about storage engines (a particular type of plugin), see the `[information_schema.ENGINES](../system-tables/information-schema/information-schema-tables/information-schema-engines-table.md)` table and the `[SHOW ENGINES](show-engines.md)` statement.
 
 
 ## Examples

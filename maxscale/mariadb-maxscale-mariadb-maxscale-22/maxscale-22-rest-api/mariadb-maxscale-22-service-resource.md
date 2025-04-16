@@ -28,7 +28,7 @@ GET /v1/services/:name
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -118,7 +118,7 @@ GET /v1/services
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -267,7 +267,7 @@ GET /v1/services/:name/listeners
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -312,7 +312,7 @@ GET /v1/services/:name/listeners/:listener
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -409,13 +409,13 @@ service. Both names must have all whitespace replaced with hyphens.
 Listener is destroyed:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Listener cannot be deleted:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ### Update a service
@@ -459,7 +459,7 @@ Refer to the documentation on these parameters for valid values.
 Service is modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Update service relationships
@@ -520,13 +520,13 @@ PATCH /v1/services/my-rw-service/relationships/servers
 Service relationships modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Invalid JSON body:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ### Stop a service
@@ -548,7 +548,7 @@ PUT /v1/services/:name/stop
 Service is stopped:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 ### Start a service
@@ -570,4 +570,4 @@ PUT /v1/services/:name/start
 Service is started:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`

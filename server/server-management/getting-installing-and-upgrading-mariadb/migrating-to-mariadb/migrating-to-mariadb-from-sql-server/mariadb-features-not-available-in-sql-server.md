@@ -28,11 +28,11 @@ This page has a list of MariaDB features that are not supported in SQL Server. T
 * The [CREATE ... IF EXISTS, CREATE OR REPLACE, DROP ... IF NOT EXISTS](syntax-differences-between-mariadb-and-sql-server.md#if-exists-if-not-exists-or-replace) options are supported for most [DDL statements](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/README.md).
 * [SHOW](syntax-differences-between-mariadb-and-sql-server.md#show-statements) statements.
 * [SHOW CREATE](syntax-differences-between-mariadb-and-sql-server.md#show-create-statements) statements.
-* [SHOW PROCESSLIST](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) and [PERFORMANCE_SCHEMA THREAD table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md) provide much richer information, compared to SQL Server `<code>sp_who()</code>` and `<code>sp_who2()</code>` procedures.
+* [SHOW PROCESSLIST](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) and [PERFORMANCE_SCHEMA THREAD table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md) provide much richer information, compared to SQL Server `sp_who()` and `sp_who2()` procedures.
 * [CHECKSUM TABLE](../../../../reference/sql-statements-and-structure/sql-statements/table-statements/checksum-table.md) statement.
 * [PL/SQL support](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) (only for stored procedures and stored functions).
 * Row constructors.
-* `<code>BEFORE</code>` [triggers](../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md).
+* `BEFORE` [triggers](../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md).
 * [HANDLER](../../../../reference/sql-statements-and-structure/nosql/handler/handler-commands.md) statements, to scroll table rows ordered by an index or in their physical order.
 * [DO](../../../../../general-resources/company-and-community/contributing-participating/donate-to-the-foundation.md) statement, to call functions without returning a result set.
 * [BENCHMARK()](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/benchmark-builds.md) function, to measure the speed of an SQL expression.
@@ -45,7 +45,7 @@ See also [Syntax Differences between MariaDB and SQL Server](syntax-differences-
 
 
 * [Character sets and collations](../../../../reference/data-types/string-data-types/character-sets/README.md) don't depend on column type. They can be set globally, or at database, table or column level.
-* Columns may use non-constant expressions as the [DEFAULT](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#default-column-option) value. [TIMESTAMP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) columns may have a `<code>DEFAULT</code>` value.
+* Columns may use non-constant expressions as the [DEFAULT](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#default-column-option) value. [TIMESTAMP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) columns may have a `DEFAULT` value.
 * [UNSIGNED](../../../../reference/data-types/data-types-numeric-data-types/numeric-data-type-overview.md#signed-unsigned-and-zerofill) numeric types.
 * [Dynamic columns](../../../../reference/sql-statements-and-structure/nosql/dynamic-columns-api.md) (note that JSON is usually preferred to this feature).
 
@@ -59,10 +59,10 @@ See also [SQL Server and MariaDB Types Comparison](sql-server-and-mariadb-types-
 For compatibility with some other database systems, MariaDB supports the [JSON](../../../../reference/storage-engines/connect/json-sample-files.md) pseudo-type. However, it is just an alias for:
 
 
-`<code>LONGTEXT CHECK (JSON_VALID(column_name))</code>`
+`LONGTEXT CHECK (JSON_VALID(column_name))`
 
 
-[JSON_VALID()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_valid.md) is the MariaDB equivalent of SQL Server's `<code>ISJSON()</code>`.
+[JSON_VALID()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_valid.md) is the MariaDB equivalent of SQL Server's `ISJSON()`.
 
 
 ## Features

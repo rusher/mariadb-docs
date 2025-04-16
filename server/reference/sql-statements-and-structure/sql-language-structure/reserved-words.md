@@ -8,7 +8,7 @@ The following is a list of all reserved words in MariaDB.
 Reserved words cannot be used as [Identifiers](identifier-names.md), unless they are quoted.
 
 
-The definitive list of reserved words for each version can be found by examining the `<code>sql/lex.h</code>` and `<code>sql/sql_yacc.yy</code>` files.
+The definitive list of reserved words for each version can be found by examining the `sql/lex.h` and `sql/sql_yacc.yy` files.
 
 
 ## Reserved Words
@@ -325,7 +325,7 @@ In [Oracle mode, from MariaDB 10.3](../../../../release-notes/mariadb-community-
 ## Function Names
 
 
-If the `<code>IGNORE_SPACE</code>` [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md) flag is set, function names become reserved words.
+If the `IGNORE_SPACE` [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md) flag is set, function names become reserved words.
 
 
 ## See Also

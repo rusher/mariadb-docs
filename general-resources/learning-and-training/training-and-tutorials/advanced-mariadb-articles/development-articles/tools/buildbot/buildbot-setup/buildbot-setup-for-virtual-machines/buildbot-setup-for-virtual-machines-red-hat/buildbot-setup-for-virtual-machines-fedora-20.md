@@ -184,7 +184,7 @@ Once logged in:
 sudo yum -y update
 ```
 
-Change selinux policy to `<code>permissive</code>`:
+Change selinux policy to `permissive`:
 
 
 ```

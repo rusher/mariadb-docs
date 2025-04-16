@@ -74,7 +74,7 @@ filters=MyLogFilter
 ## Log Rotation
 
 
-The `<code>qlafilter</code>` logs can be rotated by executing the `<code>maxctrl rotate logs</code>`
+The `qlafilter` logs can be rotated by executing the `maxctrl rotate logs`
 command. This will cause the log files to be reopened when the next message is
 written to the file. This applies to both unified and session type logging.
 
@@ -82,11 +82,11 @@ written to the file. This applies to both unified and session type logging.
 ## Filter Parameters
 
 
-The QLA filter has one mandatory parameter, `<code>filebase</code>`, and a number of optional
+The QLA filter has one mandatory parameter, `filebase`, and a number of optional
 parameters. These were introduced in the 1.0 release of MariaDB MaxScale.
 
 
-### `<code>filebase</code>`
+### `filebase`
 
 
 * Type: string
@@ -106,7 +106,7 @@ filebase=/tmp/SqlQueryLog
 
 
 
-### `<code>match</code>`
+### `match`
 
 
 * Type: [regex](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
@@ -118,7 +118,7 @@ filebase=/tmp/SqlQueryLog
 Include queries that match the regex.
 
 
-### `<code>exclude</code>`
+### `exclude`
 
 
 * Type: [regex](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
@@ -130,44 +130,44 @@ Include queries that match the regex.
 Exclude queries that match the regex.
 
 
-### `<code>options</code>`
+### `options`
 
 
 * Type: [enum_mask](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>case</code>`, `<code>ignorecase</code>`, `<code>extended</code>`
-* Default: `<code>case</code>`
+* Values: `case`, `ignorecase`, `extended`
+* Default: `case`
 
 
-The `<code>extended</code>` option enables PCRE2 extended regular expressions.
+The `extended` option enables PCRE2 extended regular expressions.
 
 
-### `<code>user</code>`
+### `user`
 
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 Limit logging to sessions with this user.
 
 
-### `<code>source</code>`
+### `source`
 
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>""</code>`
+* Default: `""`
 
 
 Limit logging to sessions with this client source address.
 
 
-### `<code>user_match</code>`
+### `user_match`
 
 
 * Type: [regex](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
@@ -175,11 +175,11 @@ Limit logging to sessions with this client source address.
 * Dynamic: Yes
 
 
-Only log queries from users that match this pattern. If the `<code>user</code>` parameter is
-used, the value of `<code>user_match</code>` is ignored.
+Only log queries from users that match this pattern. If the `user` parameter is
+used, the value of `user_match` is ignored.
 
 
-Here is an example pattern that matches the users `<code>alice</code>` and `<code>bob</code>`:
+Here is an example pattern that matches the users `alice` and `bob`:
 
 
 
@@ -189,7 +189,7 @@ user_match=/(^alice$)|(^bob$)/
 
 
 
-### `<code>user_exclude</code>`
+### `user_exclude`
 
 
 * Type: [regex](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
@@ -197,11 +197,11 @@ user_match=/(^alice$)|(^bob$)/
 * Dynamic: Yes
 
 
-Exclude all queries from users that match this pattern. If the `<code>user</code>` parameter
-is used, the value of `<code>user_exclude</code>` is ignored.
+Exclude all queries from users that match this pattern. If the `user` parameter
+is used, the value of `user_exclude` is ignored.
 
 
-Here is an example pattern that excludes the users `<code>alice</code>` and `<code>bob</code>`:
+Here is an example pattern that excludes the users `alice` and `bob`:
 
 
 
@@ -211,7 +211,7 @@ user_exclude=/(^alice$)|(^bob$)/
 
 
 
-### `<code>source_match</code>`
+### `source_match`
 
 
 * Type: [regex](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
@@ -219,12 +219,12 @@ user_exclude=/(^alice$)|(^bob$)/
 * Dynamic: Yes
 
 
-Only log queries from hosts that match this pattern. If the `<code>source</code>` parameter
-is used, the value of `<code>source_match</code>` is ignored.
+Only log queries from hosts that match this pattern. If the `source` parameter
+is used, the value of `source_match` is ignored.
 
 
 Here is an example pattern that matches the loopback interface as well as the
-address `<code>192.168.0.109</code>`:
+address `192.168.0.109`:
 
 
 
@@ -234,7 +234,7 @@ source_match=/(^127[.]0[.]0[.]1)|(^192[.]168[.]0[.]109)/
 
 
 
-### `<code>source_exclude</code>`
+### `source_exclude`
 
 
 * Type: [regex](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
@@ -242,12 +242,12 @@ source_match=/(^127[.]0[.]0[.]1)|(^192[.]168[.]0[.]109)/
 * Dynamic: Yes
 
 
-Exclude all queries from hosts that match this pattern. If the `<code>source</code>`
-parameter is used, the value of `<code>source_exclude</code>` is ignored.
+Exclude all queries from hosts that match this pattern. If the `source`
+parameter is used, the value of `source_exclude` is ignored.
 
 
 Here is an example pattern that excludes the loopback interface as well as the
-address `<code>192.168.0.109</code>`:
+address `192.168.0.109`:
 
 
 
@@ -257,14 +257,14 @@ source_exclude=/(^127[.]0[.]0[.]1)|(^192[.]168[.]0[.]109)/
 
 
 
-### `<code>log_type</code>`
+### `log_type`
 
 
 * Type: [enum_mask](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>session</code>`, `<code>unified</code>`, `<code>stdout</code>`
-* Default: `<code>session</code>`
+* Values: `session`, `unified`, `stdout`
+* Default: `session`
 
 
 The type of log file to use.
@@ -278,14 +278,14 @@ The type of log file to use.
 | stdout | Same as unified, but to stdout |
 
 
-### `<code>log_data</code>`
+### `log_data`
 
 
 * Type: [enum_mask](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>service</code>`, `<code>session</code>`, `<code>date</code>`, `<code>user</code>`, `<code>reply_time</code>`, `<code>total_reply_time</code>`, `<code>query</code>`, `<code>default_db</code>`, `<code>num_rows</code>`, `<code>reply_size</code>`, `<code>transaction</code>`, `<code>transaction_time</code>`, `<code>num_warnings</code>`, `<code>error_msg</code>`
-* Default: `<code>date, user, query</code>`
+* Values: `service`, `session`, `date`, `user`, `reply_time`, `total_reply_time`, `query`, `default_db`, `num_rows`, `reply_size`, `transaction`, `transaction_time`, `num_warnings`, `error_msg`
+* Default: `date, user, query`
 
 
 Type of data to log in the log files.
@@ -335,34 +335,34 @@ use near 'password="clear text pwd"' at line 1
 
 
 
-Starting with MaxScale 24.02, the `<code>query</code>` parameter now correctly logs
+Starting with MaxScale 24.02, the `query` parameter now correctly logs
 the execution of binary protocol commands as SQL
 ([MXS-4959](https://jira.mariadb.org/browse/MXS-4959)). The execution of
 batched statements (COM_STMT_BULK_LOAD) used by some connectors is not
 logged.
 
 
-### `<code>duration_unit</code>`
+### `duration_unit`
 
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>milliseconds</code>`
+* Default: `milliseconds`
 
 
-The unit for logging a duration. The unit can be `<code>milliseconds</code>` or `<code>microseconds</code>`.
-The abbreviations `<code>ms</code>` for milliseconds and `<code>us</code>` for microseconds are also valid.
+The unit for logging a duration. The unit can be `milliseconds` or `microseconds`.
+The abbreviations `ms` for milliseconds and `us` for microseconds are also valid.
 This option is available as of MaxScale version 6.2.
 
 
-### `<code>use_canonical_form</code>`
+### `use_canonical_form`
 
 
 * Type: [bool](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 When this option is true the canonical form of the query is logged. In the
@@ -370,50 +370,50 @@ canonical form all user defined constants are replaced with question marks.
 This option is available as of MaxScale version 6.2.
 
 
-### `<code>flush</code>`
+### `flush`
 
 
 * Type: [bool](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 Flush log files after every write.
 
 
-### `<code>append</code>`
+### `append`
 
 
 * Type: [bool](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
-### `<code>separator</code>`
+### `separator`
 
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>","</code>`
+* Default: `","`
 
 
 Defines the separator string between elements of
 log entries. The value should be enclosed in quotes.
 
 
-### `<code>newline_replacement</code>`
+### `newline_replacement`
 
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>" "</code>`
+* Default: `" "`
 
 
-Default value is `<code>" "</code>` (one space). SQL-queries may include line breaks, which, if
+Default value is `" "` (one space). SQL-queries may include line breaks, which, if
 printed directly to the log, may break automatic parsing. This parameter defines
 what should be written in the place of a newline sequence (\r, \n or \r\n). If
 this is set as the empty string, then newlines are not replaced and printed as
@@ -471,8 +471,8 @@ filters=ProductsSelectLogger
 
 The result of using this filter with the service used by the application would
 be a log file of all select queries querying PRODUCTS without using the
-PRODUCT_ID primary key in the predicates of the query. Executing `<code>SELECT * FROM
-PRODUCTS</code>` would log the following into `<code>/var/logs/qla/SelectProducts</code>`:
+PRODUCT_ID primary key in the predicates of the query. Executing `SELECT * FROM
+PRODUCTS` would log the following into `/var/logs/qla/SelectProducts`:
 
 
 

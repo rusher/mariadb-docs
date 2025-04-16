@@ -28,14 +28,14 @@ monitor_interval=2000ms
 
 The mandatory parameters are the object type, the monitor module to use, the
 list of servers to monitor and the username and password to use when connecting
-to the servers. The `<code>monitor_interval</code>` parameter controls for how long
+to the servers. The `monitor_interval` parameter controls for how long
 the monitor waits between each monitoring loop.
 
 
 This monitor module will assign one node within the Galera Cluster as the
 current master and other nodes as slave. Only those nodes that are active
 members of the cluster are considered when making the choice of master node. The
-master node will be the node with the lowest value of `<code>wsrep_local_index</code>`.
+master node will be the node with the lowest value of `wsrep_local_index`.
 
 
 ## Monitor User

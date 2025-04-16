@@ -8,7 +8,7 @@
 REGEXP_INSTR(subject, pattern)
 ```
 
-Returns the position of the first occurrence of the regular expression `<code>pattern</code>` in the string `<code>subject</code>`, or 0 if pattern was not found.
+Returns the position of the first occurrence of the regular expression `pattern` in the string `subject`, or 0 if pattern was not found.
 
 
 The positions start with 1 and are measured in characters (i.e. not in bytes), which is important for multi-byte character sets. You can cast a multi-byte character set to [BINARY](../../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to get offsets in bytes.

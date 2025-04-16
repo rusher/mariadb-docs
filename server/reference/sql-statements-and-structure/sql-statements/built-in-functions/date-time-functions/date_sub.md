@@ -14,11 +14,11 @@ DATE_SUB(date,INTERVAL expr unit)
 Performs date arithmetic. The *date* argument specifies the
 starting date or datetime value. *expr* is an expression specifying the
 interval value to be subtracted from the starting date. *expr* is a
-string; it may start with a "`<code>-</code>`" for negative intervals. *unit* is a
+string; it may start with a "`-`" for negative intervals. *unit* is a
 keyword indicating the units in which the expression should be interpreted. See [Date and Time Units](date-and-time-units.md) for a complete list of permitted units.
 
 
-See also `<code>[DATE_ADD()](date_add.md)</code>`.
+See also `[DATE_ADD()](date_add.md)`.
 
 
 ## Examples

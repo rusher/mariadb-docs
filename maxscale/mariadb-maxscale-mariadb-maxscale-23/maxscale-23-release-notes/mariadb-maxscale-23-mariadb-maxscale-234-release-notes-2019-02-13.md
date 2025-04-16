@@ -28,7 +28,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-2315](https://jira.mariadb.org/browse/MXS-2315) std::regex_error exception on csmon startup
 * [MXS-2311](https://jira.mariadb.org/browse/MXS-2311) connection_keepalive and error : (4852) Unexpected internal state: received response 0x00 from server
 * [MXS-2310](https://jira.mariadb.org/browse/MXS-2310) Cannot create .avsc files if no database connection
-* [MXS-2305](https://jira.mariadb.org/browse/MXS-2305) UNIX users are not shown in `<code>maxctrl list users</code>`
+* [MXS-2305](https://jira.mariadb.org/browse/MXS-2305) UNIX users are not shown in `maxctrl list users`
 * [MXS-2303](https://jira.mariadb.org/browse/MXS-2303) Missing server parameters log wrong error
 * [MXS-2300](https://jira.mariadb.org/browse/MXS-2300) Reconnection requirements are too strict
 * [MXS-2299](https://jira.mariadb.org/browse/MXS-2299) Routing hints are ignored for multi-statement and SP calls
@@ -61,7 +61,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/mariadb-tx/maxsc
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

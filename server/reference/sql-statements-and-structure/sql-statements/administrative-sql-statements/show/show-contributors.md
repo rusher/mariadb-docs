@@ -11,8 +11,8 @@ SHOW CONTRIBUTORS
 ## Description
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">SHOW CONTRIBUTORS</code>` statement displays information about
-the companies and people who financially contribute to MariaDB. For each contributor, it displays `<code>Name</code>`, `<code>Location</code>`, and `<code>Comment</code>` values. All columns are encoded as `<code>latin1</code>`.
+The `SHOW CONTRIBUTORS` statement displays information about
+the companies and people who financially contribute to MariaDB. For each contributor, it displays `Name`, `Location`, and `Comment` values. All columns are encoded as `latin1`.
 
 
 It displays all [members and sponsors of the MariaDB Foundation](https://mariadb.org/en/supporters) as well as other financial contributors.

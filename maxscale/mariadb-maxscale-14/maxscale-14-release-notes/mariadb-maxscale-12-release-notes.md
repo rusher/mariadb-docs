@@ -34,12 +34,12 @@ The 1.2 version of MaxScale now complies to the Filesystem Hierarchy Standard. T
 A quick list of changes in installation directories and file names:
 
 
-* Binaries go into `<code>/usr/bin</code>`
-* Configuration files to `<code>/etc</code>` and the configuration file is now lower case: `<code>maxscale.cnf</code>`
-* Logs to `<code>/var/log/maxscale</code>`
-* The module and library directory have been combined into a single directory in `<code>/usr/lib64/maxscale</code>`. If you have custom modules please make sure they are located there.
-* Data directory is `<code>/var/lib/maxscale</code>`. This is the default location for MaxScale-specific data.
-* PID file can be found at `<code>/var/run/maxscale</code>`
+* Binaries go into `/usr/bin`
+* Configuration files to `/etc` and the configuration file is now lower case: `maxscale.cnf`
+* Logs to `/var/log/maxscale`
+* The module and library directory have been combined into a single directory in `/usr/lib64/maxscale`. If you have custom modules please make sure they are located there.
+* Data directory is `/var/lib/maxscale`. This is the default location for MaxScale-specific data.
+* PID file can be found at `/var/run/maxscale`
 
 
 ### Client side SSL encryption

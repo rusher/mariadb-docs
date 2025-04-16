@@ -12,7 +12,7 @@ GOTO label
 ## Description
 
 
-The `<code>GOTO</code>` statement causes the code to jump to the specified label, and continue operating from there. It is only accepted when in [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md).
+The `GOTO` statement causes the code to jump to the specified label, and continue operating from there. It is only accepted when in [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md).
 
 
 ## Example

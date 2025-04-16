@@ -9,11 +9,11 @@ your computer and then restart the tests when you're ready.
 There are two ways to enable this:
 
 
-1. Command-line: The `<code class="highlight fixed" style="white-space:pre-wrap">--stop-file</code>` and
- `<code class="highlight fixed" style="white-space:pre-wrap">--stop-keep-alive</code>` options.
+1. Command-line: The `--stop-file` and
+ `--stop-keep-alive` options.
 1. Environment Variables: If you are calling mariadb-test-run.pl indirectly
  (i.e from a script or program such as buildbot) you can set
- `<code class="highlight fixed" style="white-space:pre-wrap">MTR_STOP_FILE</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">MTR_STOP_KEEP_ALIVE</code>`.
+ `MTR_STOP_FILE` and `MTR_STOP_KEEP_ALIVE`.
 
 
 ### Keep Alive

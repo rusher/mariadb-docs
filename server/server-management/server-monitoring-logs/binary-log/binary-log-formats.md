@@ -41,7 +41,7 @@ This mode is only recommended where one needs to keep the binary log as small as
 Statements and tables using timestamps or auto_increment are safe to use with statement-based logging.
 
 
-This mode can be enabled by setting the [binlog_format](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) system variable to `<code>STATEMENT</code>`.
+This mode can be enabled by setting the [binlog_format](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) system variable to `STATEMENT`.
 
 
 In certain cases when it would be impossible to execute the statement on the replica, the server will switch to
@@ -86,7 +86,7 @@ When mixed logging is enabled, the server uses a combination of statement-based 
 During one transaction, some statements may be logged with row logging while others are logged with statement-based logging.
 
 
-This mode can be enabled by setting the [binlog_format](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) system variable to `<code>MIXED</code>`.
+This mode can be enabled by setting the [binlog_format](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) system variable to `MIXED`.
 
 
 ### Row-Based Logging
@@ -101,7 +101,7 @@ Row-based logging uses more storage than the other log formats but is the safest
 If one wants to be able to see the original query that was logged, one can enable [annotated rows events](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/replication-protocol/annotate_rows_event.md), that is shown with [mariadb-binlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md), with [--binlog-annotate-row-events](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md). This option is on by default.
 
 
-This mode can be enabled by setting the [binlog_format](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) system variable to `<code>ROW</code>`.
+This mode can be enabled by setting the [binlog_format](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) system variable to `ROW`.
 
 
 #### Things to be aware of with row-based logging
@@ -168,7 +168,7 @@ START SLAVE
 In [MariaDB 10.0.22](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes.md) and later, a replica will apply any events it gets from the primary, regardless of the binary log format. The [binlog_format](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) system variable only applies to normal (not replicated) updates.
 
 
-If you are running MySQL or an older MariaDB than 10.0.22, you should be aware of that if you are running the replica in `<code>binlog_format=STATEMENT</code>` mode, the replica will stop if the primary is used with `<code>binlog_format</code>` set to anything else than `<code>STATEMENT</code>`.
+If you are running MySQL or an older MariaDB than 10.0.22, you should be aware of that if you are running the replica in `binlog_format=STATEMENT` mode, the replica will stop if the primary is used with `binlog_format` set to anything else than `STATEMENT`.
 
 
 The binary log format is upwards-compatible. This means replication should always work if the replica is the same or a newer version of MariaDB than the primary.
@@ -177,16 +177,16 @@ The binary log format is upwards-compatible. This means replication should alway
 ## The mysql Database
 
 
-Statements that affect the `<code>mysql</code>` database can be logged in a different way to that expected.
+Statements that affect the `mysql` database can be logged in a different way to that expected.
 
 
 If the mysql database is edited directly, logging is performed as expected according to the [binlog_format](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md). Statements that directly edit the mysql database include [INSERT](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md), [UPDATE](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md), [DELETE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md), [REPLACE](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md), [DO](../../../../general-resources/company-and-community/contributing-participating/donate-to-the-foundation.md), [LOAD DATA INFILE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md), and [TRUNCATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md).
 
 
-If the `<code>mysql</code>` database is edited indirectly, statement logging is used regardless of [binlog_format](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) setting. Statements editing the `<code>mysql</code>` database indirectly include [GRANT](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md), [REVOKE](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/revoke.md), [SET PASSWORD](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md), [RENAME USER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/rename-user.md), [ALTER](../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/altering-tables-in-mariadb.md), [DROP](../../../reference/sql-statements-and-structure/sequences/drop-sequence.md) and [CREATE](../../../reference/sql-statements-and-structure/sequences/create-sequence.md) (except for the situation described below).
+If the `mysql` database is edited indirectly, statement logging is used regardless of [binlog_format](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) setting. Statements editing the `mysql` database indirectly include [GRANT](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md), [REVOKE](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/revoke.md), [SET PASSWORD](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md), [RENAME USER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/rename-user.md), [ALTER](../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/altering-tables-in-mariadb.md), [DROP](../../../reference/sql-statements-and-structure/sequences/drop-sequence.md) and [CREATE](../../../reference/sql-statements-and-structure/sequences/create-sequence.md) (except for the situation described below).
 
 
-CREATE TABLE ... SELECT can use a combination of logging formats. The [CREATE TABLE](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) portion of the statement is logged using statement-based logging, while the [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) portion is logged according to the value of `<code>binlog_format</code>`.
+CREATE TABLE ... SELECT can use a combination of logging formats. The [CREATE TABLE](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) portion of the statement is logged using statement-based logging, while the [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) portion is logged according to the value of `binlog_format`.
 
 
 ## See Also

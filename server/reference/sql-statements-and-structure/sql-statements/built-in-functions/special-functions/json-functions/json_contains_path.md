@@ -11,14 +11,14 @@ JSON_CONTAINS_PATH(json_doc, return_arg, path[, path] ...)
 ## Description
 
 
-Indicates whether the given JSON document contains data at the specified path or paths. Returns `<code>1</code>` if it does, `<code>0</code>` if not and NULL if any of the arguments are null.
+Indicates whether the given JSON document contains data at the specified path or paths. Returns `1` if it does, `0` if not and NULL if any of the arguments are null.
 
 
-The *return_arg* can be `<code>one</code>` or `<code>all</code>`:
+The *return_arg* can be `one` or `all`:
 
 
-* `<code>one</code>` - Returns `<code>1</code>` if at least one path exists within the JSON document.
-* `<code>all</code>` - Returns `<code>1</code>` only if all paths exist within the JSON document.
+* `one` - Returns `1` if at least one path exists within the JSON document.
+* `all` - Returns `1` only if all paths exist within the JSON document.
 
 
 ## Examples

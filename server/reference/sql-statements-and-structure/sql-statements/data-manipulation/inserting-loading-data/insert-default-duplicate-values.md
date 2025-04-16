@@ -5,23 +5,23 @@
 ## Default Values
 
 
-If the `<code>[SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md)</code>` contains `<code>STRICT_TRANS_TABLES</code>` and you are [inserting](../../built-in-functions/string-functions/insert-function.md) into a transactional table (like InnoDB), or if the SQL_MODE contains `<code>STRICT_ALL_TABLES</code>`, all `<code>NOT NULL</code>` columns which do not have a `<code>DEFAULT</code>` value (and are not [AUTO_INCREMENT](../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md)) must be explicitly referenced in `<code>INSERT</code>` statements. If not, an error like this is produced:
+If the `[SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md)` contains `STRICT_TRANS_TABLES` and you are [inserting](../../built-in-functions/string-functions/insert-function.md) into a transactional table (like InnoDB), or if the SQL_MODE contains `STRICT_ALL_TABLES`, all `NOT NULL` columns which do not have a `DEFAULT` value (and are not [AUTO_INCREMENT](../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md)) must be explicitly referenced in `INSERT` statements. If not, an error like this is produced:
 
 
 ```
 ERROR 1364 (HY000): Field 'col' doesn't have a default value
 ```
 
-In all other cases, if a `<code>NOT NULL</code>` column without a `<code>DEFAULT</code>` value is not referenced, an empty value will be inserted (for example, 0 for `<code>INTEGER</code>` columns and '' for `<code>CHAR</code>` columns). See [NULL Values in MariaDB:Inserting](../../../../data-types/null-values.md) for examples.
+In all other cases, if a `NOT NULL` column without a `DEFAULT` value is not referenced, an empty value will be inserted (for example, 0 for `INTEGER` columns and '' for `CHAR` columns). See [NULL Values in MariaDB:Inserting](../../../../data-types/null-values.md) for examples.
 
 
-If a `<code>NOT NULL</code>` column having a `<code>DEFAULT</code>` value is not referenced, `<code>NULL</code>` will be inserted.
+If a `NOT NULL` column having a `DEFAULT` value is not referenced, `NULL` will be inserted.
 
 
-If a `<code>NULL</code>` column having a `<code>DEFAULT</code>` value is not referenced, its default value will be inserted. It is also possible to explicitly assign the default value using the `<code>DEFAULT</code>` keyword or the `<code>[DEFAULT()](../../built-in-functions/secondary-functions/information-functions/default.md)</code>` function.
+If a `NULL` column having a `DEFAULT` value is not referenced, its default value will be inserted. It is also possible to explicitly assign the default value using the `DEFAULT` keyword or the `[DEFAULT()](../../built-in-functions/secondary-functions/information-functions/default.md)` function.
 
 
-If the `<code>DEFAULT</code>` keyword is used but the column does not have a `<code>DEFAULT</code>` value, an error like this is produced:
+If the `DEFAULT` keyword is used but the column does not have a `DEFAULT` value, an error like this is produced:
 
 
 ```
@@ -31,7 +31,7 @@ ERROR 1364 (HY000): Field 'col' doesn't have a default value
 ## Duplicate Values
 
 
-By default, if you try to insert a duplicate row and there is a `<code>UNIQUE</code>` index, `<code>INSERT</code>` stops and an error like this is produced:
+By default, if you try to insert a duplicate row and there is a `UNIQUE` index, `INSERT` stops and an error like this is produced:
 
 
 ```

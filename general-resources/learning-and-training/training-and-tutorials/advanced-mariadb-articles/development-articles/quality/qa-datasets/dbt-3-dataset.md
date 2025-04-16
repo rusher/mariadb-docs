@@ -32,8 +32,8 @@ make
 ## DDL
 
 
-Substitute `<code class="fixed" style="white-space:pre-wrap"><span class="si">${</span><span class="nv">ENGINE</span><span class="si">}</span>
-</code>` with the storage engine you want to use:
+Substitute `<span class="si">${</span><span class="nv">ENGINE</span><span class="si">}</span>
+` with the storage engine you want to use:
 
 
 ```
@@ -126,8 +126,8 @@ CREATE TABLE time_statistics (
 ## Load data
 
 
-Substitute `<code class="fixed" style="white-space:pre-wrap"><span class="si">${</span><span class="nv">DATA_DIR</span><span class="si">}</span>
-</code>` with the path to your generated data.
+Substitute `<span class="si">${</span><span class="nv">DATA_DIR</span><span class="si">}</span>
+` with the path to your generated data.
 
 
 ```

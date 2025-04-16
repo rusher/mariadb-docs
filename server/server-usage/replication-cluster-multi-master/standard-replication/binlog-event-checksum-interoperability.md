@@ -76,23 +76,23 @@ combination of primary and replica servers and checksum enabled/disabled:
 When using the [mariadb-binlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) client program, there are similar issues.
 
 
-A version of `<code>mariadb-binlog</code>` which understands checksums can read binlog files
+A version of `mariadb-binlog` which understands checksums can read binlog files
 from either old or new servers, with or without checksums enabled.
 
 
-An old version of `<code>mariadb-binlog</code>` can read binlog files produced by a new
+An old version of `mariadb-binlog` can read binlog files produced by a new
 server version **if** checksums were disabled when the log was produced. Old
-versions of `<code>mariadb-binlog</code>` reading a new binlog file containing checksums will
+versions of `mariadb-binlog` reading a new binlog file containing checksums will
 be confused, and output will be garbled, with the added checksums being
 interpreted as extra garbage at the end of query strings and similar entries. No
 error will be reported in this case, just wrong output.
 
 
-A version of `<code>mysqlbinlog</code>` (the MySQL equivalent to mariadb-binlog and the old MariaDB name for the binary) from MySQL >= 5.6.1 will have similar problems as
+A version of `mysqlbinlog` (the MySQL equivalent to mariadb-binlog and the old MariaDB name for the binary) from MySQL >= 5.6.1 will have similar problems as
 a replica until this is fixed in MySQL. When reading a binlog file with checksums
 produced by MariaDB >= 5.3.0 but < 5.6.1, it will not realise that checksums
 are included, and will produce garbled output just like an old version of
-`<code>mysqlbinlog</code>`. The MariaDB version of `<code>mariadb-binlog</code>` can read binlog files
+`mysqlbinlog`. The MariaDB version of `mariadb-binlog` can read binlog files
 produced by either MySQL or MariaDB just fine.
 
 

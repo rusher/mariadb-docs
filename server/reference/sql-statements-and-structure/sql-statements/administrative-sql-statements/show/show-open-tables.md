@@ -12,21 +12,21 @@ SHOW OPEN TABLES [FROM db_name]
 ## Description
 
 
-`<code class="highlight fixed" style="white-space:pre-wrap">SHOW OPEN TABLES</code>` lists the non-`<code class="highlight fixed" style="white-space:pre-wrap">TEMPORARY</code>`
+`SHOW OPEN TABLES` lists the non-`TEMPORARY`
 tables that are currently open in the table cache. See
 [table-cache.html](https://dev.mysql.com/doc/refman/5.1/en/table-cache.html).
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">FROM</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clauses may be used.
+The `FROM` and `LIKE` clauses may be used.
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">FROM</code>`
+The `FROM`
 clause, if present, restricts the tables shown to those present in the
-`<code class="highlight fixed" style="white-space:pre-wrap">db_name</code>` database.
+`db_name` database.
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clause, if
-present on its own, indicates which table names to match. The `<code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">LIKE</code>` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+The `LIKE` clause, if
+present on its own, indicates which table names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 
 The following information is returned:
@@ -43,7 +43,7 @@ The following information is returned:
 
 
 
-Before [MariaDB 5.5](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), each use of, for example, [LOCK TABLE ... WRITE](../../transactions/lock-tables.md) would increment `<code>In_use</code>` for that table. With the implementation of the metadata locking improvements in [MariaDB 5.5](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), `<code>LOCK TABLE... WRITE</code>` acquires a strong MDL lock, and concurrent connections will wait on this MDL lock, so any subsequent `<code>LOCK TABLE... WRITE</code>` will not increment `<code>In_use</code>`.
+Before [MariaDB 5.5](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), each use of, for example, [LOCK TABLE ... WRITE](../../transactions/lock-tables.md) would increment `In_use` for that table. With the implementation of the metadata locking improvements in [MariaDB 5.5](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), `LOCK TABLE... WRITE` acquires a strong MDL lock, and concurrent connections will wait on this MDL lock, so any subsequent `LOCK TABLE... WRITE` will not increment `In_use`.
 
 
 ## Example

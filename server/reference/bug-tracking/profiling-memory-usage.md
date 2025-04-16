@@ -55,16 +55,16 @@ Note that one can also set the [max_session_mem_used](../../server-usage/replica
 ## BPF Compiler Collection (bcc)
 
 
-The [BPF Compiler Collection (bcc)](https://github.com/iovisor/bcc) toolkit comes with the `<code>memleak</code>` program that traces outstanding memory allocations. This is a very convenient way of debugging high memory usage as it'll immediately show where the memory is allocated at.
+The [BPF Compiler Collection (bcc)](https://github.com/iovisor/bcc) toolkit comes with the `memleak` program that traces outstanding memory allocations. This is a very convenient way of debugging high memory usage as it'll immediately show where the memory is allocated at.
 
 
-By default the tool will print output once every five seconds with the stacktraces that have the most open allocations. `<code>Ctrl+C</code>` can be used to interrupt the collection of the traces.
+By default the tool will print output once every five seconds with the stacktraces that have the most open allocations. `Ctrl+C` can be used to interrupt the collection of the traces.
 
 
-The profiling interval and the profiling duration can be passed as arguments to `<code>memleak</code>`. The first argument is how often a sample is taken and the second argument is how long to sample for. To help analyze excessive memory usage, collect the output of the `<code>memleak</code>` program for at least 60 seconds. The longer the profiling can be left on, the more accurate the information will be.
+The profiling interval and the profiling duration can be passed as arguments to `memleak`. The first argument is how often a sample is taken and the second argument is how long to sample for. To help analyze excessive memory usage, collect the output of the `memleak` program for at least 60 seconds. The longer the profiling can be left on, the more accurate the information will be.
 
 
-The overhead of the profiling can be large enough that it affects production workloads negatively. To reduce the overhead, the sampling frequency of memory allocations can be lowered using the `<code>--sample-rate</code>` option:
+The overhead of the profiling can be large enough that it affects production workloads negatively. To reduce the overhead, the sampling frequency of memory allocations can be lowered using the `--sample-rate` option:
 
 
 ```
@@ -72,13 +72,13 @@ The overhead of the profiling can be large enough that it affects production wor
                         sample every N-th allocation to decrease the overhead
 ```
 
-For example, `<code>-s 10</code>` will sample only 10% of memory allocations which may miss out memory leaks from individual allocations but the longer the system is left running, the more likely it is that a leaking memory allocation is sampled. This means that even with a lower sampling rate, the source of the memory leak will eventually be found.
+For example, `-s 10` will sample only 10% of memory allocations which may miss out memory leaks from individual allocations but the longer the system is left running, the more likely it is that a leaking memory allocation is sampled. This means that even with a lower sampling rate, the source of the memory leak will eventually be found.
 
 
 ### RHEL, CentOS, Rocky Linux and Fedora
 
 
-On RHEL based systems, the package is named `<code>bcc-tools</code>`. After installing it, use the following command to profile the memory usage 5 times per second over a window of 60 seconds:
+On RHEL based systems, the package is named `bcc-tools`. After installing it, use the following command to profile the memory usage 5 times per second over a window of 60 seconds:
 
 
 ```
@@ -88,7 +88,7 @@ sudo /usr/share/bcc/tools/memleak -p $(pidof mariadbd) 5 60 | tee memleak.log
 ### Ubuntu and Debian
 
 
-On Ubuntu/Debian the package is named `<code>bpfcc-tools</code>`. After installing it, use the following command to profile the memory usage 5 times per second over a window of 60 seconds:
+On Ubuntu/Debian the package is named `bpfcc-tools`. After installing it, use the following command to profile the memory usage 5 times per second over a window of 60 seconds:
 
 
 ```
@@ -120,7 +120,7 @@ The version of jemalloc that is available in most Red Hat repositories is not co
 ### Configuring Jemalloc for Heap Profiling
 
 
-Once installed, edit the systemd service file with `<code>systemctl edit mariadb.service</code>` and add the following lines into it. The path to the `<code>libjemalloc.so</code>` file is OS-specific so make sure it points to the correct file. The example here is for Ubuntu and Debian environments.
+Once installed, edit the systemd service file with `systemctl edit mariadb.service` and add the following lines into it. The path to the `libjemalloc.so` file is OS-specific so make sure it points to the correct file. The example here is for Ubuntu and Debian environments.
 
 
 ```
@@ -137,10 +137,10 @@ mkdir /var/lib/mysql/jeprof/
 chown mysql:mysql /var/lib/mysql/jeprof/
 ```
 
-And finally restart MariaDB with `<code>systemctl restart mariadb.service</code>`.
+And finally restart MariaDB with `systemctl restart mariadb.service`.
 
 
-The directory in `<code>/var/lib/mysql/jeprof/</code>` will start to be filled by versioned files with a `<code>.heap</code>` suffix. Every time the virtual memory usage reaches a new high, a file will be created. Initially, the files will be created very often but eventually the pace will slow down. Once the problematic memory usage has been identified, the latest `<code>.heap</code>` file can be analyzed with the `<code>jeprof</code>` program.
+The directory in `/var/lib/mysql/jeprof/` will start to be filled by versioned files with a `.heap` suffix. Every time the virtual memory usage reaches a new high, a file will be created. Initially, the files will be created very often but eventually the pace will slow down. Once the problematic memory usage has been identified, the latest `.heap` file can be analyzed with the `jeprof` program.
 
 
 The simplest method is to generate a text report with the following command.
@@ -150,17 +150,17 @@ The simplest method is to generate a text report with the following command.
 jeprof --txt /usr/sbin/mariadbd $(ls -1 /var/lib/mysql/jeprof/*.heap|sort -V|tail -n 1) > heap-report.txt
 ```
 
-A better way to look at the generated heap profile is with the PDF output. However, this requires the installation of extra packages (`<code>apt -y install graphviz ghostscript gv</code>`). To generate the PDF report of the latest heap dump, run the following command:
+A better way to look at the generated heap profile is with the PDF output. However, this requires the installation of extra packages (`apt -y install graphviz ghostscript gv`). To generate the PDF report of the latest heap dump, run the following command:
 
 
 ```
 jeprof --pdf /usr/sbin/mariadbd $(ls -1 /var/lib/mysql/jeprof/*.heap|sort -V|tail -n 1) > heap-report.pdf
 ```
 
-The generated `<code>heap-report.pdf</code>` will contain a breakdown of the memory usage.
+The generated `heap-report.pdf` will contain a breakdown of the memory usage.
 
 
-Note that the report generation with the `<code>jeprof</code>` program must be done on the same system where the profiling was done. If done elsewhere, the binaries do not necessarily match and can cause the report generation to fail.
+Note that the report generation with the `jeprof` program must be done on the same system where the profiling was done. If done elsewhere, the binaries do not necessarily match and can cause the report generation to fail.
 
 
 ## Tcmalloc Heap Profiling
@@ -175,14 +175,14 @@ Similarly to the jemalloc memory allocator, the [tcmalloc](https://github.com/go
 #### RHEL, CentOS and Rocky Linux
 
 
-On RHEL based systems, the `<code>gperftools</code>` package is in the EPEL repositories. These must be first enabled by installing the `<code>epel-release</code>` package.
+On RHEL based systems, the `gperftools` package is in the EPEL repositories. These must be first enabled by installing the `epel-release` package.
 
 
 ```
 sudo dnf -y install epel-release
 ```
 
-After this, the `<code>gperftools</code>` package can be installed.
+After this, the `gperftools` package can be installed.
 
 
 ```
@@ -199,10 +199,10 @@ sudo apt -y install google-perftools
 ### Service file configuration
 
 
-Once tcmalloc is installed, edit the systemd service file with `<code>systemctl edit mariadb.service</code>` and add the following lines into it.
+Once tcmalloc is installed, edit the systemd service file with `systemctl edit mariadb.service` and add the following lines into it.
 
 
-**Note:** Make sure to use the correct **path** and **library name** to the tcmalloc library in `<code>LD_PRELOAD</code>`. The following example uses the Debian location of the library. The file is usually located in `<code>/usr/lib64/libtcmalloc_and_profiler.so.4</code>` on RHEL systems. The version number of the library can also change which might require other adjustments to the library path.
+**Note:** Make sure to use the correct **path** and **library name** to the tcmalloc library in `LD_PRELOAD`. The following example uses the Debian location of the library. The file is usually located in `/usr/lib64/libtcmalloc_and_profiler.so.4` on RHEL systems. The version number of the library can also change which might require other adjustments to the library path.
 
 
 ```
@@ -221,7 +221,7 @@ mkdir /var/lib/mysql/pprof/
 chown mysql:mysql /var/lib/mysql/pprof/
 ```
 
-And finally restart MariaDB with `<code>systemctl restart mariadb.service</code>`.
+And finally restart MariaDB with `systemctl restart mariadb.service`.
 
 
 ### Configuring Heap Dump Frequency
@@ -230,19 +230,19 @@ And finally restart MariaDB with `<code>systemctl restart mariadb.service</code>
 The heap profiling is configured using environment variables. The details can be found in the *Modifying Runtime Behavior* section of the gperftools documentation: [heapprofile.html](https://gperftools.github.io/gperftools/heapprofile.html)
 
 
-By default, tcmalloc dumps the heap profile every time 1GiB of memory has been allocated (`<code>HEAP_PROFILE_ALLOCATION_INTERVAL</code>`) or whenever the high-water memory usage mark increases by 100MiB (`<code>HEAP_PROFILE_INUSE_INTERVAL</code>`). If there's no activity, no memory dumps will be generated.
+By default, tcmalloc dumps the heap profile every time 1GiB of memory has been allocated (`HEAP_PROFILE_ALLOCATION_INTERVAL`) or whenever the high-water memory usage mark increases by 100MiB (`HEAP_PROFILE_INUSE_INTERVAL`). If there's no activity, no memory dumps will be generated.
 
 
-To trigger a memory dump based on a time interval, set the `<code>HEAP_PROFILE_TIME_INTERVAL</code>` environment variable to the number of seconds between each dump. For example, with `<code>Environment=HEAP_PROFILE_TIME_INTERVAL=3600</code>` there will be one heap dump per hour.
+To trigger a memory dump based on a time interval, set the `HEAP_PROFILE_TIME_INTERVAL` environment variable to the number of seconds between each dump. For example, with `Environment=HEAP_PROFILE_TIME_INTERVAL=3600` there will be one heap dump per hour.
 
 
 ### Report generation
 
 
-Depending on which OS you are using, the report generation program is named either `<code>pprof</code>` (RHEL) or `<code>google-pprof</code>` (Debian/Ubuntu).
+Depending on which OS you are using, the report generation program is named either `pprof` (RHEL) or `google-pprof` (Debian/Ubuntu).
 
 
-It is important to pick the latest `<code>.heap</code>` file to analyze. The following command generates the `<code>heap-report.pdf</code>` from the latest heap dump. The file will show the breakdown of the memory usage.
+It is important to pick the latest `.heap` file to analyze. The following command generates the `heap-report.pdf` from the latest heap dump. The file will show the breakdown of the memory usage.
 
 
 ```

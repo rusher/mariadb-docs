@@ -1,10 +1,10 @@
 
 # Specifying Which Plugins to Build
 
-By default all plugins are enabled and built as dynamic `<code>.so</code>` (or `<code>.dll</code>`) modules. If a plugin does not support dynamic builds, it is not built at all.
+By default all plugins are enabled and built as dynamic `.so` (or `.dll`) modules. If a plugin does not support dynamic builds, it is not built at all.
 
 
-Use `<code>PLUGIN_xxx</code>` cmake variables. They can be set on the command line with `<code>-DPLUGIN_xxx=<em>value</em></code>` or in the cmake gui. Supported values are
+Use `PLUGIN_xxx` cmake variables. They can be set on the command line with `-DPLUGIN_xxx=<em>value</em>` or in the cmake gui. Supported values are
 
 
 
@@ -19,14 +19,14 @@ Use `<code>PLUGIN_xxx</code>` cmake variables. They can be set on the command li
 
 
 
-Note that unlike autotools, cmake tries to configure and build incrementally. You can modify one configuration option and cmake will only rebuild the part of the tree affected by it. For example, when you do `<code>cmake -DWITH_EMBEDDED_SERVER=1</code>` in the already-built tree, it will make libmysqld to be built, but no other configuration options will be changed or reset to their default values.
+Note that unlike autotools, cmake tries to configure and build incrementally. You can modify one configuration option and cmake will only rebuild the part of the tree affected by it. For example, when you do `cmake -DWITH_EMBEDDED_SERVER=1` in the already-built tree, it will make libmysqld to be built, but no other configuration options will be changed or reset to their default values.
 
 
 In particular this means that if you have run, for example
-`<code class="fixed" style="white-space:pre-wrap">cmake -DPLUGIN_OQGRAPH=NO</code>`
+`cmake -DPLUGIN_OQGRAPH=NO`
 and later you want to restore the default behavior (with OQGraph being built) in the same build tree, you would need to run
-`<code class="fixed" style="white-space:pre-wrap">cmake -DPLUGIN_OQGRAPH=DYNAMIC</code>`
+`cmake -DPLUGIN_OQGRAPH=DYNAMIC`
 
 
-Alternatively, you might simply delete the `<code>CMakeCache.txt</code>` file — this is the file where cmake stores current build configuration — and rebuild everything from scratch.
+Alternatively, you might simply delete the `CMakeCache.txt` file — this is the file where cmake stores current build configuration — and rebuild everything from scratch.
 

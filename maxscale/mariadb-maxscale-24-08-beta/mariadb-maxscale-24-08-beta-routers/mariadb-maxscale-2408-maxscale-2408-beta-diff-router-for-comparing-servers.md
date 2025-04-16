@@ -59,7 +59,7 @@ request for evaluation with MaxScale 24.02.
 ## Overview
 
 
-The `<code>diff</code>`-router, hereafter referred to as *Diff*, compares the
+The `diff`-router, hereafter referred to as *Diff*, compares the
 behaviour of one MariaDB server version to that of another.
 
 
@@ -88,8 +88,8 @@ the router itself.
 Diff collects latency information separately for each *canonical
 statement*, which simply means a statement where all literals have been
 replaced with question marks. For instance, the canonical statement of
-`<code>SELECT f FROM t WHERE f = 10</code>` and `<code>SELECT f FROM t WHERE f = 20</code>` is
-in both cases `<code>SELECT f FROM t WHERE f = ?</code>`. The latency information
+`SELECT f FROM t WHERE f = 10` and `SELECT f FROM t WHERE f = 20` is
+in both cases `SELECT f FROM t WHERE f = ?`. The latency information
 of both of those statements will be collected under the same canonical
 statement.
 
@@ -151,8 +151,8 @@ Diff produces two kinds of output:
  [here](#discrepancies).
 
 
-When Diff starts it will create a directory `<code>diff</code>` in MaxScale's
-data directory (typically `<code>/var/lib/maxscale</code>`). Under that it
+When Diff starts it will create a directory `diff` in MaxScale's
+data directory (typically `/var/lib/maxscale`). Under that it
 will create a directory whose name is the same as that of the
 service specified in [service](#service). The output files are created
 in that directory.
@@ -185,7 +185,7 @@ servers=MyServer1
 
 
 
-There is a service `<code>MyService</code>` that uses a single server `<code>MyServer1</code>`,
+There is a service `MyService` that uses a single server `MyServer1`,
 which, for this example, is assumed to run MariaDB 10.5.
 
 
@@ -234,16 +234,16 @@ Diff is controlled using a number of module commands.
 #### Create
 
 
-Syntax: `<code>create new-service existing-service used-server new-server</code>`
+Syntax: `create new-service existing-service used-server new-server`
 
 
 Where:
-- `<code>new-service</code>`: The name of the service using the Diff router, to be
+- `new-service`: The name of the service using the Diff router, to be
  created.
-- `<code>existing-service</code>`: The name of an existing service in whose context
+- `existing-service`: The name of an existing service in whose context
  the the new server is to be evaluated.
-- `<code>used-server</code>`: A server used by `<code>existing-service</code>`
-- `<code>new-server</code>`: The server that should be compared to `<code>used-server</code>`.
+- `used-server`: A server used by `existing-service`
+- `new-server`: The server that should be compared to `used-server`.
 
 
 
@@ -256,17 +256,17 @@ maxctrl call command diff create DiffMyService MyService MyServer1 MariaDB_112
 
 
 
-With this command, preparations for comparing the server `<code>MariaDB_112</code>`
-against the server `<code>MyServer1</code>` of the service `<code>MyService</code>` will be made.
+With this command, preparations for comparing the server `MariaDB_112`
+against the server `MyServer1` of the service `MyService` will be made.
 At this point it will be checked in what kind of replication relationship
-`<code>MariaDB_112</code>` is with respect to `<code>MyServer1</code>`. If the steps in
+`MariaDB_112` is with respect to `MyServer1`. If the steps in
 [prerequisites](#prerequisites) were followed, it will be detected that
-`<code>MariaDB_112</code>` replicates from `<code>MyServer1</code>`.
+`MariaDB_112` replicates from `MyServer1`.
 
 
-If everything seems to be in order, the service `<code>DiffMyService</code>` will be
+If everything seems to be in order, the service `DiffMyService` will be
 created. Settings such as *user* and *password* that are needed by the
-service `<code>DiffMyService</code>` will be copied from `<code>MyService</code>`.
+service `DiffMyService` will be copied from `MyService`.
 
 
 Using maxctrl we can check that the service indeed has been created.
@@ -292,11 +292,11 @@ Now the comparison can be started.
 #### Start
 
 
-Syntax: `<code>start diff-service</code>`
+Syntax: `start diff-service`
 
 
 Where:
-- `<code>diff-service: The name of the service created in the</code>`create` step.
+- `diff-service: The name of the service created in the`create` step.
 
 
 
@@ -317,13 +317,13 @@ maxctrl call command diff start DiffMyService
 When Diff is started, it performs the following steps:
 
 
-1. All sessions of `<code>MyService</code>` are suspended.
-1. In the `<code>MyService</code>` service, the server target `<code>MyServer1</code>`
- is replaced with `<code>DiffMyService</code>`.
-1. The replication from `<code>MyServer1</code>` to `<code>MariaDB_112</code>` is stopped.
+1. All sessions of `MyService` are suspended.
+1. In the `MyService` service, the server target `MyServer1`
+ is replaced with `DiffMyService`.
+1. The replication from `MyServer1` to `MariaDB_112` is stopped.
 1. The sessions are restarted, which will cause existing connections
- to `<code>MyServer1</code>` to be closed and new ones to be created, via Diff,
- to both `<code>MyServer1</code>` and `<code>MariaDB_112</code>`.
+ to `MyServer1` to be closed and new ones to be created, via Diff,
+ to both `MyServer1` and `MariaDB_112`.
 1. The sessions are resumed, which means that the client traffic
  will continue.
 
@@ -337,21 +337,21 @@ it is suspended.
 
 
 Once all sessions have been suspended, the service is rewired.
-In the case of `<code>MyService</code>` above, it means that the target
-`<code>MyServer1</code>` is replaced with `<code>DiffMyService</code>`. That is, requests
-that earlier were sent to `<code>MyServer1</code>`, will, once the sessions
-are resumed, be sent to `<code>DiffMyService</code>`, which sends them forward
-to both `<code>MyServer1</code>` and `<code>MariaDB_112</code>`.
+In the case of `MyService` above, it means that the target
+`MyServer1` is replaced with `DiffMyService`. That is, requests
+that earlier were sent to `MyServer1`, will, once the sessions
+are resumed, be sent to `DiffMyService`, which sends them forward
+to both `MyServer1` and `MariaDB_112`.
 
 
 Restarting the sessions means that the direct connections to
-`<code>MyServer1</code>` will be closed and equivalent ones created via the
-service `<code>DiffMyService</code>`, which will also create connections
-to `<code>MariaDB_112</code>`.
+`MyServer1` will be closed and equivalent ones created via the
+service `DiffMyService`, which will also create connections
+to `MariaDB_112`.
 
 
 When the sessions are resumed, client requests will again be
-processed, but they will now be routed via `<code>DiffMyService</code>`.
+processed, but they will now be routed via `DiffMyService`.
 
 
 With maxctrl we can can check that MyServer has been rewired.
@@ -371,11 +371,11 @@ maxctrl list services
 
 
 
-The target of `<code>MyService</code>` is `<code>DiffMyService</code>` instead of `<code>MyServer1</code>`
+The target of `MyService` is `DiffMyService` instead of `MyServer1`
 that it used to be.
 
 
-The output object returned by `<code>create</code>` tells the current state.
+The output object returned by `create` tells the current state.
 
 
 
@@ -392,29 +392,29 @@ The output object returned by `<code>create</code>` tells the current state.
 
 
 
-The `<code>sessions</code>` object shows how many sessions there are in total
+The `sessions` object shows how many sessions there are in total
 and how many that currently are suspended. Since there were no
 existing sessions in this example, they are both 0.
 
 
-The `<code>state</code>` shows what Diff is currently doing. `<code>synchronizing</code>`
-means that it is in the process of changing `<code>MyService</code>` to use
-`<code>DiffMyService</code>`. `<code>sync_state</code>` shows that it is currently in the
+The `state` shows what Diff is currently doing. `synchronizing`
+means that it is in the process of changing `MyService` to use
+`DiffMyService`. `sync_state` shows that it is currently in the
 process of suspending sessions.
 
 
 #### Status
 
 
-Syntax: `<code>status diff-service</code>`
+Syntax: `status diff-service`
 
 
 Where:
-- `<code>diff-service: The name of the service created in the</code>`create` step.
+- `diff-service: The name of the service created in the`create` step.
 
 
 When Diff has been started, its current status can be checked with the
-command `<code>status</code>`. The output is the same as what was returned when
+command `status`. The output is the same as what was returned when
 Diff was started.
 
 
@@ -433,18 +433,18 @@ maxctrl call command diff status DiffMyService
 
 
 
-The state is now `<code>comparing</code>`, which means that everything is ready
+The state is now `comparing`, which means that everything is ready
 and clients can connect in normal fashion.
 
 
 #### Summary
 
 
-Syntax: `<code>summary diff-service</code>`
+Syntax: `summary diff-service`
 
 
 Where:
-- `<code>diff-service: The name of the service created in the</code>`create` step.
+- `diff-service: The name of the service created in the`create` step.
 
 
 While Diff is running, it is possible at any point to request
@@ -462,12 +462,12 @@ OK
 The summary consists of two files, one for the *main* server and
 one for the *other* server. The files are written to a subdirectory
 with the same name as the Diff service, which is created in the
-subdirectory `<code>diff</code>` in the data directory of MaxScale.
+subdirectory `diff` in the data directory of MaxScale.
 
 
-Assuming the data directory is the default `<code>/var/lib/maxscale</code>`,
+Assuming the data directory is the default `/var/lib/maxscale`,
 the directory would in this example be
-`<code>/var/lib/maxscale/diff/DiffMyService</code>`.
+`/var/lib/maxscale/diff/DiffMyService`.
 
 
 The names of the files will be the server name, concatenated with a
@@ -489,14 +489,14 @@ The visualization of the results is done using the
 #### Stop
 
 
-Syntax: `<code>stop diff-service</code>`
+Syntax: `stop diff-service`
 
 
 Where:
-- `<code>diff-service: The name of the service created in the</code>`create` step.
+- `diff-service: The name of the service created in the`create` step.
 
 
-The comparison can stopped with the command `<code>stop</code>`.
+The comparison can stopped with the command `stop`.
 
 
 
@@ -531,14 +531,14 @@ the 'status' command.
 #### Destroy
 
 
-Syntax: `<code>destroy diff-service</code>`
+Syntax: `destroy diff-service`
 
 
 Where:
-- `<code>diff-service: The name of the service created in the</code>`create` step.
+- `diff-service: The name of the service created in the`create` step.
 
 
-As the final step, the command `<code>destroy</code>` can be called to
+As the final step, the command `destroy` can be called to
 destroy the service.
 
 
@@ -553,7 +553,7 @@ OK
 ## Visualizing
 
 
-The visualization of the data is done with the `<code>maxvisualize</code>` program,
+The visualization of the data is done with the `maxvisualize` program,
 which is part of the *Capture* functionality. The visualization will
 open up a browser window to show the visualization.
 
@@ -563,10 +563,10 @@ the command line which by default should be [](https://localhost:8866/).
 
 
 In the case of the example above, the directory where the output files
-are created would be `<code>/var/lib/maxscale/diff/MyService</code>`. And the files
+are created would be `/var/lib/maxscale/diff/MyService`. And the files
 to be used when visualizing would be called something like
-`<code>MyServer1_2024-05-07_140323.json</code>` and
-`<code>MariaDB_112_2024-05-07_140323.json</code>`. The timestamp will be different
+`MyServer1_2024-05-07_140323.json` and
+`MariaDB_112_2024-05-07_140323.json`. The timestamp will be different
 every time [summary](#summary) is executed.
 
 
@@ -584,11 +584,11 @@ second argument the results compared to the baseline.
 ## Continuous Reporting
 
 
-If the value of [report](#report) is something else but `<code>never</code>`, Diff
+If the value of [report](#report) is something else but `never`, Diff
 will continously log results to a file whose name is the concatenation
 for the main and other server followed by a timestamp. In the example
 above, the name would be something like
-`<code>MyServer1_MariaDB_112_2024-02-15_152838.json</code>`.
+`MyServer1_MariaDB_112_2024-02-15_152838.json`.
 
 
 Each line (here expanded for readability) in the file will look like:
@@ -641,11 +641,11 @@ The meaning of the fields are as follows:
 * rows: How many rows were returned.
 * warnings: The number of warnings.
 * duration: The execution duration in nanonseconds.
-* type: What type of result `<code>resultset</code>`, `<code>ok</code>` or `<code>error</code>`.
-* explain: The result of `<code>EXPLAIN FORMAT=JSON statement</code>`.
+* type: What type of result `resultset`, `ok` or `error`.
+* explain: The result of `EXPLAIN FORMAT=JSON statement`.
 
 
-Instead of an `<code>explain</code>` object, there may be an `<code>explained_by</code>` array,
+Instead of an `explain` object, there may be an `explained_by` array,
 containing the ids of similar statements (i.e. their canonical
 statement is the same) that were EXPLAINed.
 
@@ -680,7 +680,7 @@ is anything else, Diff will refuse to start.
 ## Configuration Parameters
 
 
-### `<code>main</code>`
+### `main`
 
 
 * Type: server
@@ -697,7 +697,7 @@ If the connection to the main target cannot be created or is lost
 mid-session, the client connection will be closed.
 
 
-### `<code>service</code>`
+### `service`
 
 
 * Type: service
@@ -708,21 +708,21 @@ mid-session, the client connection will be closed.
 Specifies the service Diff will modify.
 
 
-### `<code>explain</code>`
+### `explain`
 
 
 * Type: [enum](#enumerations)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>none</code>`, `<code>other</code>`, `both'
-* Default: `<code>both</code>`
+* Values: `none`, `other`, `both'
+* Default: `both`
 
 
 Specifies whether a request should be EXPLAINed on only *other*,
 both *other* and *main* or neither.
 
 
-### `<code>explain_entries</code>`
+### `explain_entries`
 
 
 * Type: non-negative integer
@@ -736,7 +736,7 @@ is EXPLAINed during the period specified by
 [explain_period](#explain_period).
 
 
-### `<code>explain_period</code>`
+### `explain_period`
 
 
 * Type: [duration](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -750,7 +750,7 @@ Specifies the length of the period during which at most
 for a statement.
 
 
-### `<code>max_request_lag</code>`
+### `max_request_lag`
 
 
 * Type: non-negative integer
@@ -764,21 +764,21 @@ behind *main* before the execution of SELECTs against *other*
 are skipped to bring it back in line with *main*.
 
 
-### `<code>on_error</code>`
+### `on_error`
 
 
 * Type: [enum](#enumerations)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>close</code>`, `<code>ignore</code>`
-* Default: `<code>ignore</code>`
+* Values: `close`, `ignore`
+* Default: `ignore`
 
 
 Specifies whether an error from *other*, will cause the session to
 be closed. By default it will not.
 
 
-### `<code>percentile</code>`
+### `percentile`
 
 
 * Type: count
@@ -793,7 +793,7 @@ Specifies the percentile of sampels that will be considered when
 calculating the width and number of bins of the histogram.
 
 
-### `<code>qps_window</code>`
+### `qps_window`
 
 
 * Type: [duration](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -807,14 +807,14 @@ and stored. When a [summary](#summary) is requested, the QPS information
 will also be saved.
 
 
-### `<code>report</code>`
+### `report`
 
 
 * Type: [enum](#enumerations)
 * Mandatory: No
 * Dynamic: Yes
-* Values: `<code>always</code>`, `<code>on_discrepancy</code>`, `<code>never</code>`
-* Default: `<code>on_discrepancy</code>`
+* Values: `always`, `on_discrepancy`, `never`
+* Default: `on_discrepancy`
 
 
 Specifies when the results of executing a statement on *other* and *main*
@@ -822,17 +822,17 @@ should be logged; *always*, when there is a significant difference or
 *never*.
 
 
-### `<code>reset_replication</code>`
+### `reset_replication`
 
 
 * Type: [boolean](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
-* Default: `<code>true</code>`
+* Default: `true`
 
 
 If Diff has started in read-write mode and the value of
-`<code>reset_replication</code>` is `<code>true</code>`, when the comparison ends
+`reset_replication` is `true`, when the comparison ends
 it will execute the following on *other*:
 
 
@@ -844,17 +844,17 @@ START SLAVE
 
 
 
-If Diff has started in read-only mode, the value of `<code>reset_replication</code>`
+If Diff has started in read-only mode, the value of `reset_replication`
 will be ignored.
 
 
 Note that since Diff writes updates directly to both *main* and
 *other* there is no guarantee that it will be possible to simply
-start the replication. Especially not if `<code>gtid_strict_mode</code>`
+start the replication. Especially not if `gtid_strict_mode`
 is on.
 
 
-### `<code>retain_faster_statements</code>`
+### `retain_faster_statements`
 
 
 * Type: non-negative integer
@@ -868,7 +868,7 @@ The statements will be saved in the summary when the comparison ends,
 or when Diff is explicitly instructed to do so.
 
 
-### `<code>retain_slower_statements</code>`
+### `retain_slower_statements`
 
 
 * Type: non-negative integer
@@ -877,7 +877,7 @@ or when Diff is explicitly instructed to do so.
 * Default: 5
 
 
-### `<code>samples</code>`
+### `samples`
 
 
 * Type: count

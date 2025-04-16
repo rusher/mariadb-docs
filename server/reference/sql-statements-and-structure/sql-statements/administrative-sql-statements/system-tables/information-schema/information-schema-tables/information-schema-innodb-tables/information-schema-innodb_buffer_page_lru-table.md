@@ -1,10 +1,10 @@
 
 # Information Schema INNODB_BUFFER_PAGE_LRU Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>INNODB_BUFFER_PAGE_LRU</code>` table contains information about pages in the [buffer pool](../../../../../../../storage-engines/innodb/innodb-buffer-pool.md) and how they are ordered for eviction purposes.
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_BUFFER_PAGE_LRU` table contains information about pages in the [buffer pool](../../../../../../../storage-engines/innodb/innodb-buffer-pool.md) and how they are ordered for eviction purposes.
 
 
-The `<code>PROCESS</code>` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
 
 
 It has the following columns:

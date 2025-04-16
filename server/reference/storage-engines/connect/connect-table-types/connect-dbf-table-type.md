@@ -5,24 +5,24 @@
 ## Overview
 
 
-A table of type `<code>DBF</code>` is physically a dBASE III or IV formatted file (used by
+A table of type `DBF` is physically a dBASE III or IV formatted file (used by
 many products like dBASE, Xbase, FoxPro etc.). This format is similar to the
 [FIX](connect-dos-and-fix-table-types.md) type format with in addition a prefix giving the characteristics of the
 file, describing in particular all the fields (columns) of the table.
 
 
-Because `<code>DBF</code>` files have a header that contains Meta data about the file, in
+Because `DBF` files have a header that contains Meta data about the file, in
 particular the column description, it is possible to create a table based on an
-existing `<code>DBF</code>` file without giving the column description, for instance:
+existing `DBF` file without giving the column description, for instance:
 
 
 ```
 create table cust engine=CONNECT table_type=DBF file_name='cust.dbf';
 ```
 
-To see what CONNECT has done, you can use the `<code>DESCRIBE</code>`
-or `<code>SHOW CREATE TABLE</code>` commands, and eventually modify some options with
-the `<code>ALTER TABLE</code>` command.
+To see what CONNECT has done, you can use the `DESCRIBE`
+or `SHOW CREATE TABLE` commands, and eventually modify some options with
+the `ALTER TABLE` command.
 
 
 The case of deleted lines is handled in a specific way for DBF tables. Deleted
@@ -87,7 +87,7 @@ For M, B, and G types, CONNECT just returns the DBT number.
 
 
 It is possible to read these lines by changing the read mode of the table. This
-is specified by an option `<code>READMODE</code>` that can take the values:
+is specified by an option `READMODE` that can take the values:
 
 
 |   |   |

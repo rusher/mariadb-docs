@@ -40,16 +40,16 @@ tool we originally used for code coverage in the early years of MySQL.
 The recommended markers are:
 
 
-`<code class="fixed" style="white-space:pre-wrap"><span class="cm">/* purecov: tested */</span>
-</code>`
+`<span class="cm">/* purecov: tested */</span>
+`
 
 
 * For code lines that are tested by something other than
  mysql-test-run:
 
 
-`<code class="fixed" style="white-space:pre-wrap"><span class="cm">/* purecov: inspected */</span>
-</code>`
+`<span class="cm">/* purecov: inspected */</span>
+`
 
 
 * For code lines that are hard to test but for which one has read the line
@@ -57,8 +57,8 @@ The recommended markers are:
  inspect these lines with care as they have not been properly tested.
 
 
-`<code class="fixed" style="white-space:pre-wrap"><span class="cm">/* purecov: deadcode */</span>
-</code>`
+`<span class="cm">/* purecov: deadcode */</span>
+`
 
 
 * For code lines that one suspects will never be called. Having this marker
@@ -99,9 +99,9 @@ following:
 
 
 1. In the mysql-test directory, run this
- command: `<code class="fixed" style="white-space:pre-wrap">./mysql-test-run -gcov
-</code>`
-1. To see which lines are not yet covered, look at `<code>source_file_name.gcov</code>` in
+ command: `./mysql-test-run -gcov
+`
+1. To see which lines are not yet covered, look at `source_file_name.gcov` in
  the source tree. In [MariaDB 10.1](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) or below it's in the CMakeFiles directory where the object files are stored. In [MariaDB 10.2](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) it's stored together with the source files.
 1. Think hard about a test case which will cover those lines that are not tested, and write one.
 

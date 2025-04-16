@@ -49,17 +49,17 @@ The following is an incomplete list of when one will not be able to use a table 
   * A downgrade to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) or later is only possible if [innodb_change_buffering=none](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering) (the default starting with [MDEV-27734](https://jira.mariadb.org/browse/MDEV-27734)).
 * [MariaDB 10.8](../../../release-notes/mariadb-community-server/what-is-mariadb-108.md) or later
 
-  * The InnoDB redo log file `<code>ib_logfile0</code>` would have to be replaced with a logically equivalent file, or the shutdown LSN has to be written to the `<code>FIL_PAGE_FILE_FLUSH_LSN</code>` field in the system tablespace (see [MDEV-27199](https://jira.mariadb.org/browse/MDEV-27199)), or the data may be accessed read-only when using [innodb_force_recovery=6](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery).
+  * The InnoDB redo log file `ib_logfile0` would have to be replaced with a logically equivalent file, or the shutdown LSN has to be written to the `FIL_PAGE_FILE_FLUSH_LSN` field in the system tablespace (see [MDEV-27199](https://jira.mariadb.org/browse/MDEV-27199)), or the data may be accessed read-only when using [innodb_force_recovery=6](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery).
 * [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) → [MariaDB 10.4](../../../release-notes/mariadb-community-server/what-is-mariadb-104.md)
 
-  * The InnoDB redo log file `<code>ib_logfile0</code>` has to be deleted between a clean shutdown of the newer version and a startup of the older version. This is *not recommended*.
+  * The InnoDB redo log file `ib_logfile0` has to be deleted between a clean shutdown of the newer version and a startup of the older version. This is *not recommended*.
 * [MariaDB 10.4](../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) → [MariaDB 10.3](../../../release-notes/mariadb-community-server/what-is-mariadb-103.md)
 
-  * Any InnoDB table where one has used `<code>ALTER TABLE ALGORITHM=INSTANT DROP COLUMN</code>` while [innodb_instant_alter_column_allowed=add_drop_reorder](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_instant_alter_column_allowed)
+  * Any InnoDB table where one has used `ALTER TABLE ALGORITHM=INSTANT DROP COLUMN` while [innodb_instant_alter_column_allowed=add_drop_reorder](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_instant_alter_column_allowed)
   * Any InnoDB table that was created or rebuilt while [innodb_checksum_algorithm=full_crc32](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm)
   * In [MariaDB 10.4](../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), the MariaDB mysql.user table was replaced by [mysql.global_priv table](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) which may cause problems if ones wants to downgrade to 10.3.
 * [MariaDB 10.3](../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) → [MariaDB 10.2](../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
 
-  * Any InnoDB table where one has used `<code>ALTER TABLE…ADD COLUMN</code>` (unless [innodb_instant_alter_column_allowed=never](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_instant_alter_column_allowed)).
+  * Any InnoDB table where one has used `ALTER TABLE…ADD COLUMN` (unless [innodb_instant_alter_column_allowed=never](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_instant_alter_column_allowed)).
   * A prior shutdown with [innodb_fast_shutdown=0](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) will be needed in order to empty the undo logs whose format changed in [MDEV-12288](https://jira.mariadb.org/browse/MDEV-12288), and even then, you might need to set [innodb_force_recovery=3](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery).
 

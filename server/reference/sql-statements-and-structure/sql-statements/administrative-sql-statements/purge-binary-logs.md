@@ -12,9 +12,9 @@ PURGE { BINARY | MASTER } LOGS
 ## Description
 
 
-The `<code class="fixed" style="white-space:pre-wrap">PURGE BINARY LOGS</code>` statement deletes all the [binary log](../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)
+The `PURGE BINARY LOGS` statement deletes all the [binary log](../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)
 files listed in the log index file prior to the specified log file name or
-date. `<code class="fixed" style="white-space:pre-wrap">BINARY</code>` and `<code class="fixed" style="white-space:pre-wrap">MASTER</code>` are synonyms.
+date. `BINARY` and `MASTER` are synonyms.
 Deleted log files also are removed from the list recorded in the index file, so
 that the given log file becomes the first in the list.
 
@@ -33,7 +33,7 @@ To list the binary log files on the server, use [SHOW BINARY LOGS](show/show-bin
 
 
 To delete all binary log files, use [RESET MASTER](replication-statements/reset-master.md).
-To move to a new log file (for example if you want to remove the current log file), use [FLUSH LOGS](flush-commands/flush-tables-for-export.md) before you execute `<code>PURGE LOGS</code>`.
+To move to a new log file (for example if you want to remove the current log file), use [FLUSH LOGS](flush-commands/flush-tables-for-export.md) before you execute `PURGE LOGS`.
 
 
 If the [expire_logs_days](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#expire_logs_days) server system variable is not set to 0, the server automatically deletes binary log files after the given number of days. From [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), the [binlog_expire_logs_seconds](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_expire_logs_seconds) variable allows more precise control over binlog deletion, and takes precedence if both are non-zero.

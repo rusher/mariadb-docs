@@ -19,9 +19,9 @@ If MySQL/MariaDB is already installed and running, you have two options:
 1. Use test MariaDB servers with a different port & socket.
 
   * In this case you are probably best off creating a specific section for
- MariaDB in your `<code class="highlight fixed" style="white-space:pre-wrap">~/.my.cnf</code>` file.
-1. Stop mysqld with `<code class="highlight fixed" style="white-space:pre-wrap">/etc/rc.d/mysql stop</code>`
- or `<code class="highlight fixed" style="white-space:pre-wrap">mariadb-admin shutdown</code>`.
+ MariaDB in your `~/.my.cnf` file.
+1. Stop mysqld with `/etc/rc.d/mysql stop`
+ or `mariadb-admin shutdown`.
 
 
 Note that you don't have to uninstall or otherwise remove MySQL!
@@ -39,36 +39,36 @@ can skip this section.
 The steps to create a binary tar file are:
 
 
-* Decide where to put the source. A good place is under `<code class="highlight fixed" style="white-space:pre-wrap">/usr/local/src/mariadb-5.#</code>`.
+* Decide where to put the source. A good place is under `/usr/local/src/mariadb-5.#`.
 * [Get the source](../../../clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md)
 * [Compile the source](../compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options.md)
 * [Create the binary tar ball](../compiling-mariadb-from-source/creating-the-mariadb-binary-tarball.md).
 
 
 You will then be left with a tar file named something like:
-`<code class="highlight fixed" style="white-space:pre-wrap">mariadb-11.0.1-MariaDB-linux-x86_64.tar.gz</code>`
+`mariadb-11.0.1-MariaDB-linux-x86_64.tar.gz`
 
 
 ## Creating a directory structure for the different installations
 
 
-Install the binary tar files under `<code class="highlight fixed" style="white-space:pre-wrap">/usr/local/</code>` with
+Install the binary tar files under `/usr/local/` with
 the following directory names (one for each MariaDB version you want to use), for example:
 
 
-* `<code class="highlight fixed" style="white-space:pre-wrap">mariadb-10.5</code>`
-* `<code class="highlight fixed" style="white-space:pre-wrap">mariadb-10.6</code>`
-* `<code class="highlight fixed" style="white-space:pre-wrap">mariadb-10.11</code>`
-* `<code class="highlight fixed" style="white-space:pre-wrap">mariadb-11.0</code>`
-* `<code class="highlight fixed" style="white-space:pre-wrap">mariadb-11.1</code>`
+* `mariadb-10.5`
+* `mariadb-10.6`
+* `mariadb-10.11`
+* `mariadb-11.0`
+* `mariadb-11.1`
 
 
 The above assumes you are just testing major versions of MariaDB. If you are
-testing specific versions, use directory names like `<code>mariadb-11.0.1</code>`
+testing specific versions, use directory names like `mariadb-11.0.1`
 
 
-With the directories in place, create a sym-link named `<code>mariadb</code>` which points
-at the `<code>mariadb-XXX</code>` directory you are currently testing. When you want to
+With the directories in place, create a sym-link named `mariadb` which points
+at the `mariadb-XXX` directory you are currently testing. When you want to
 switch to testing a different version, just update the sym-link.
 
 
@@ -88,7 +88,7 @@ ln -vs mariadb-11.0 mariadb
 When setting up the data directory, you have the option of either using a
 shared database directory or creating a unique database directory for each
 server version. For testing, a common directory is probably easiest. Note that
-you can only have one `<code class="highlight fixed" style="white-space:pre-wrap">mysqld</code>` server running against one data
+you can only have one `mysqld` server running against one data
 directory.
 
 
@@ -98,11 +98,11 @@ directory.
 The steps are:
 
 
-1. Create the `<code>mysql</code>` system user if you don't have it already!
- (On Linux you do it with the `<code>useradd</code>` command).
-1. Create the directory (we call it `<code>mariadb-data</code>` in the example below) or
+1. Create the `mysql` system user if you don't have it already!
+ (On Linux you do it with the `useradd` command).
+1. Create the directory (we call it `mariadb-data` in the example below) or
  add a symlink to a directory which is in some other place.
-1. Create the `<code>mysql</code>` permission tables with [mariadb-install-db](../mariadb-install-db-exe.md)
+1. Create the `mysql` permission tables with [mariadb-install-db](../mariadb-install-db-exe.md)
 
 
 ```
@@ -113,14 +113,14 @@ cd mariadb
 chown -R mysql mariadb-data mariadb-data/*
 ```
 
-The reason to use `<code class="highlight fixed" style="white-space:pre-wrap">--no-defaults</code>` is to ensure that we don't
+The reason to use `--no-defaults` is to ensure that we don't
 inherit incorrect options from some old my.cnf.
 
 
 ### Setting up different data directories
 
 
-To create a different `<code class="highlight fixed" style="white-space:pre-wrap">data</code>` directories for each installation:
+To create a different `data` directories for each installation:
 
 
 ```
@@ -129,7 +129,7 @@ cd mariadb
 chown -R mysql mariadb-data mariadb-data/*
 ```
 
-This will create a directory `<code class="highlight fixed" style="white-space:pre-wrap">data</code>` inside the
+This will create a directory `data` inside the
 current directory.
 
 
@@ -160,7 +160,7 @@ cd mariadb
 
 
 If you are going to start/stop MariaDB a lot of times, you should create
-a `<code class="highlight fixed" style="white-space:pre-wrap">~/.my.cnf</code>` file for the common options you are using.
+a `~/.my.cnf` file for the common options you are using.
 
 
 The following example shows how to use a non-standard TCP-port and socket (to
@@ -181,7 +181,7 @@ datadir=/usr/local/mariadb-data
 # Options for MariaDB 11.1
 ```
 
-If you create an `<code class="highlight fixed" style="white-space:pre-wrap">~/.my.cnf</code>` file, you should start
-`<code class="highlight fixed" style="white-space:pre-wrap">mysqld</code>` with `<code class="highlight fixed" style="white-space:pre-wrap">--defaults-file=~/.my.cnf</code>`
-instead of `<code class="highlight fixed" style="white-space:pre-wrap">--no-defaults</code>` in the examples above.
+If you create an `~/.my.cnf` file, you should start
+`mysqld` with `--defaults-file=~/.my.cnf`
+instead of `--no-defaults` in the examples above.
 

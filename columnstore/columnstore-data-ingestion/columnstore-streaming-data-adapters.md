@@ -147,7 +147,7 @@ Download and install both [MaxScale](https://mariadb.com/downloads/mariadb-tx/ma
 
 
 Copy the Columnstore.xml file from
-`<code class="fixed" style="white-space:pre-wrap">/usr/local/mariadb/columnstore/etc/Columnstore.xml</code>` from one of the ColumnStore UM or PM node to the server where the adapter is installed.
+`/usr/local/mariadb/columnstore/etc/Columnstore.xml` from one of the ColumnStore UM or PM node to the server where the adapter is installed.
 
 
 Configure MaxScale according to the

@@ -32,13 +32,13 @@ object name conversions take place, a warning will be logged.
 
 The execution of monitor scripts has been made synchronous. This means
 that a monitor will wait until the executed script is done or until a
-timeout is exceeded. The timeout is configurable with the `<code>script_timeout</code>`
+timeout is exceeded. The timeout is configurable with the `script_timeout`
 parameter.
 
 
 In addition to this, the output of the script is logged into the MaxScale log
 file. The message is logged on the matching log level if it is prefixed with one
-of `<code>alert:</code>`, `<code>error:</code>`, `<code>warning:</code>`, `<code>notice:</code>`, `<code>info:</code>` or `<code>debug:</code>`. If no prefix
+of `alert:`, `error:`, `warning:`, `notice:`, `info:` or `debug:`. If no prefix
 is provided, the message is logged on the notice level.
 
 
@@ -48,8 +48,8 @@ For more information, refer to the [monitor documentation](../../mariadb-maxscal
 ### Read-only Administrative Users
 
 
-Users that can only perform read-only operations can be created with `<code>add
-readonly-user</code>` and `<code>enable readonly-account</code>` commands. To convert
+Users that can only perform read-only operations can be created with `add
+readonly-user` and `enable readonly-account` commands. To convert
 administrative users to read-only users, delete the old administrative user and
 create it as a read-only user.
 
@@ -65,7 +65,7 @@ administrative users that have full access to all commands.
 ### MaxAdmin
 
 
-The `<code>remove user</code>` command now only expects one parameter, the username.
+The `remove user` command now only expects one parameter, the username.
 
 
 ### Regular Expression Parameters
@@ -79,17 +79,17 @@ within MaxScale. The only module using the new regex parameter type is currently
 
 
 The only action users should take is enclose their regular expressions in
-slashes, e.g. `<code>match=/^select/</code>` defines the pattern `<code>^select</code>`. The slashes allow
+slashes, e.g. `match=/^select/` defines the pattern `^select`. The slashes allow
 whitespace to be read from the ends of the regex string contrary to a normal
 string parameter and are removed before compiling the pattern. For backwards
 compatibility, the slashes are not yet mandatory. Omitting them is, however,
 deprecated and will be rejected in the next release of MaxScale.
 
 
-### `<code>monitor_interval</code>`
+### `monitor_interval`
 
 
-The default value of `<code>monitor_interval</code>` was changed from 10000 milliseconds to
+The default value of `monitor_interval` was changed from 10000 milliseconds to
 2000 milliseconds.
 
 
@@ -104,11 +104,11 @@ details.
 ### Tee Filter
 
 
-The `<code>tee</code>` filter has been rewritten to better suit the way MaxScale now
+The `tee` filter has been rewritten to better suit the way MaxScale now
 functions. The filter requires that the service where the branched session is
 created has at least one network listener. The users must also be able to
 connect from the local MaxScale host. Usually this means that an extra grant for
-the loopback address is required (e.g. `<code>myuser@127.0.0.1</code>`).
+the loopback address is required (e.g. `myuser@127.0.0.1`).
 
 
 In addition to the aforementioned requirements, a failure to create a branched
@@ -116,13 +116,13 @@ session no longer causes the actual client session to be closed. In most cases,
 this is desired behavior.
 
 
-The `<code>match</code>` and `<code>exclude</code>` parameters were changed to use PCRE2 syntax for the
+The `match` and `exclude` parameters were changed to use PCRE2 syntax for the
 regular expressions. The regular expression should be enclosed by slashes
-e.g. `<code>match=/select.*from.*test/</code>`.
+e.g. `match=/select.*from.*test/`.
 
 
-A tee filter instance can be disabled with the new `<code>tee disable [FILTER]</code>` and
-`<code>tee enable [FILTER]</code>` module commands. Refer to the
+A tee filter instance can be disabled with the new `tee disable [FILTER]` and
+`tee enable [FILTER]` module commands. Refer to the
 [module command documentation](../maxscale-22-reference/mariadb-maxscale-22-module-commands.md) for more
 details on module commands and the
 [Tee Filter documentation](../maxscale-22-filters/mariadb-maxscale-22-tee-filter.md) for details on the tee
@@ -132,8 +132,8 @@ filter specific commands.
 ### Dbfwfilter
 
 
-The `<code>function</code>` type rule will now match a query that does not use a function
-when the filter is in whitelist mode (`<code>action=allow</code>`). This means that queries
+The `function` type rule will now match a query that does not use a function
+when the filter is in whitelist mode (`action=allow`). This means that queries
 that don't use functions are allowed though in whitelist mode.
 
 
@@ -144,12 +144,12 @@ Rule names can no longer use punctuation in them and can consist only of
 alphanumeric characters, underscores and hyphens.
 
 
-#### Keywords `<code>deny</code>` and `<code>allow</code>`
+#### Keywords `deny` and `allow`
 
 
-The `<code>deny</code>` and `<code>allow</code>` keywords are deprecated in favor of the more descriptive
-`<code>match</code>` keyword. All instances of `<code>deny</code>` and `<code>allow</code>` can be replaced with
-`<code>match</code>` with no functional changes.
+The `deny` and `allow` keywords are deprecated in favor of the more descriptive
+`match` keyword. All instances of `deny` and `allow` can be replaced with
+`match` with no functional changes.
 
 
 ### Logging
@@ -178,13 +178,13 @@ it will now look like
 
 
 
-where `<code>4711</code>` is the session id.
+where `4711` is the session id.
 
 
 ### Binlogrouter Default Values
 
 
-The *binlogdir* now has a default value of `<code>/var/lib/maxscale/</code>`. Previously the
+The *binlogdir* now has a default value of `/var/lib/maxscale/`. Previously the
 parameter was mandatory even though it was documented to have a default value.
 
 
@@ -201,21 +201,21 @@ allows easier use of the MariaDB 10 series server.
 The following deprecated commands have been removed:
 
 
-* `<code>enable log [debug|trace|message]</code>`
-* `<code>disable log [debug|trace|message]</code>`
-* `<code>enable sessionlog [debug|trace|message]</code>`
-* `<code>disable sessionlog [debug|trace|message]</code>`
+* `enable log [debug|trace|message]`
+* `disable log [debug|trace|message]`
+* `enable sessionlog [debug|trace|message]`
+* `disable sessionlog [debug|trace|message]`
 
 
 The following commands have been deprecated:
 
 
-* `<code>enable sessionlog-priority <session-id> [debug|info|notice|warning]</code>`
-* `<code>disable sessionlog-priority <session-id> [debug|info|notice|warning]</code>`
-* `<code>reload config</code>`
+* `enable sessionlog-priority <session-id> [debug|info|notice|warning]`
+* `disable sessionlog-priority <session-id> [debug|info|notice|warning]`
+* `reload config`
 
 
-The `<code>{ enable | disable } sessionlog-priority</code>` commands can be issued, but they
+The `{ enable | disable } sessionlog-priority` commands can be issued, but they
 have no effect.
 
 
@@ -223,9 +223,9 @@ have no effect.
 
 
 MaxAdmin no longer attempts to interpret additional command line parameters as a
-file name to load commands from (e.g. `<code>maxadmin mycommands.txt</code>`). The shell
-indirection operator `<code><</code>` should be used to achieve the same effect (`<code>maxadmin <
-mycommands.txt</code>`).
+file name to load commands from (e.g. `maxadmin mycommands.txt`). The shell
+indirection operator `<` should be used to achieve the same effect (`maxadmin <
+mycommands.txt`).
 
 
 ## New Features
@@ -244,7 +244,7 @@ refer to the [REST API](../../mariadb-maxscale-21-06/README.md) documentation.
 
 The MaxCtrl is a new command line intended to replace MaxAdmin. This
 client uses the REST API to communicate with MaxScale in a secure way. The
-client is distributed separately in the `<code>maxscale-client</code>` package.
+client is distributed separately in the `maxscale-client` package.
 
 
 For more information, refer to the [MaxCtrl](../../mariadb-maxscale-21-06/README.md)
@@ -282,10 +282,10 @@ that triggered the event.
 For more information, refer to the [monitor documentation](../../mariadb-maxscale-21-06/README.md).
 
 
-### Avrorouter `<code>deflate</code>` compression
+### Avrorouter `deflate` compression
 
 
-The Avrorouter now supports the `<code>deflate</code>` compression method. This allows the
+The Avrorouter now supports the `deflate` compression method. This allows the
 stored Avro format files to be compressed on disk. For more information, refer
 to the [Avrorouter](../maxscale-22-tutorials/mariadb-maxscale-22-avrorouter-tutorial.md) documentation.
 
@@ -301,14 +301,14 @@ to the server. For more information, see the server section in the
 ### KILL command support
 
 
-The MySQL client protocol now supports execution of `<code>KILL</code>` statements through
+The MySQL client protocol now supports execution of `KILL` statements through
 MaxScale. The connection IDs in these queries will be transformed into the
 correct ones by MaxScale.
 
 
-`<code>KILL QUERY ID <query_id></code>` is not supported by MaxScale and it needs to be
+`KILL QUERY ID <query_id>` is not supported by MaxScale and it needs to be
 executed directly on the relevant backend server. In addition to this, there are
-minor limitations to the `<code>KILL</code>` command handling. See
+minor limitations to the `KILL` command handling. See
 [Limitations](../about-maxscale-22/mariadb-maxscale-22-limitations-and-known-issues-within-mariadb-maxscale.md) for more information.
 
 
@@ -324,7 +324,7 @@ of a value should be masked. For more information, please read the
 ### New rules for dbfwfilter
 
 
-The `<code>uses_function</code>` type rule prevents certain columns from being used
+The `uses_function` type rule prevents certain columns from being used
 with functions. It is now also possible to match a function if it is
 used in conjunction with specific columns. For more information about
 the new rules, read the

@@ -16,16 +16,16 @@ Download the MaxScale package from the MariaDB Downloads page:
 Select your operating system and download either the RPM or the DEB package.
 
 
-* For RHEL/CentOS variants, use `<code>yum</code>` to install the downloaded RPM
-* For SLES, use `<code>zypper</code>`
-* For Debian/Ubuntu systems, install the package with `<code>dpkg -i</code>` and run `<code>apt-get install</code>`
+* For RHEL/CentOS variants, use `yum` to install the downloaded RPM
+* For SLES, use `zypper`
+* For Debian/Ubuntu systems, install the package with `dpkg -i` and run `apt-get install`
  after it to install the dependencies
 
 
 You can also use
 [the MariaDB package repository](../../../server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md)
 to install MaxScale by first configuring the repository and then
-installing the `<code>maxscale</code>` package via your package manager.
+installing the `maxscale` package via your package manager.
 
 
 ## Install MariaDB MaxScale Using a Tarball
@@ -71,7 +71,7 @@ configuration file.
 
 
 There are various administration tasks that may be done with MariaDB MaxScale.
-Two command line tools are available, `<code>maxctrl</code>` and `<code>maxadmin</code>`, that will interact with a running
+Two command line tools are available, `maxctrl` and `maxadmin`, that will interact with a running
 MariaDB MaxScale and allow the status of MariaDB MaxScale to be monitored and
 give some control of the MariaDB MaxScale functionality.
 There are a separate reference guides for the [maxctrl](../maxscale-24-reference/mariadb-maxscale-24-maxctrl.md) and [maxadmin](../maxscale-24-reference/mariadb-maxscale-24-maxadmin-admin-interface.md) utilities.

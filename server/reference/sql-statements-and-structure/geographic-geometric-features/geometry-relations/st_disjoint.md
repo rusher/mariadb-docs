@@ -11,8 +11,8 @@ ST_DISJOINT(g1,g2)
 ## Description
 
 
-Returns `<code>1</code>` or `<code>0</code>` to indicate whether geometry *`<code>g1</code>`* is spatially disjoint from
-(does not intersect with) geometry *`<code>g2</code>`*.
+Returns `1` or `0` to indicate whether geometry *`g1`* is spatially disjoint from
+(does not intersect with) geometry *`g2`*.
 
 
 ST_DISJOINT() uses object shapes, while [DISJOINT()](disjoint.md), based on the original MySQL implementation, uses object bounding rectangles.

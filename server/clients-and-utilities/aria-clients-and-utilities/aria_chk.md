@@ -1,7 +1,7 @@
 
 # aria_chk
 
-`<code>aria_chk</code>` is used to check, repair, optimize, sort and get information about [Aria](../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables.
+`aria_chk` is used to check, repair, optimize, sort and get information about [Aria](../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables.
 
 
 With the MariaDB server you can use [CHECK TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md),
@@ -9,7 +9,7 @@ With the MariaDB server you can use [CHECK TABLE](../../reference/sql-statements
 similar things.
 
 
-Note: `<code>aria_chk</code>` should not be used when MariaDB is running. MariaDB
+Note: `aria_chk` should not be used when MariaDB is running. MariaDB
 assumes that no one is changing the tables it's using!
 
 
@@ -20,16 +20,16 @@ Usage:
 aria_chk [OPTIONS] aria_tables[.MAI]
 ```
 
-Aria table information is stored in 2 files: the `<code>.MAI</code>` file contains base
-table information and the index and the `<code>.MAD</code>` file contains the data.
-`<code>aria_chk</code>` takes one or more `<code>.MAI</code>` files as arguments.
+Aria table information is stored in 2 files: the `.MAI` file contains base
+table information and the index and the `.MAD` file contains the data.
+`aria_chk` takes one or more `.MAI` files as arguments.
 
 
 The following groups are read from the my.cnf files:
 
 
-* `<code>[maria_chk]</code>`
-* `<code>[aria_chk]</code>`
+* `[maria_chk]`
+* `[aria_chk]`
 
 
 ## Options and Variables
@@ -159,7 +159,7 @@ argument:
 ## Usage
 
 
-One main usage of `<code>aria_chk</code>` is when you want to do a fast check of all Aria
+One main usage of `aria_chk` is when you want to do a fast check of all Aria
 tables in your system. This is faster than doing it in MariaDB as you can
 allocate all free memory to the buffers.
 
@@ -175,15 +175,15 @@ your tables and repairs only those that have an error:
 aria_chk --check --sort_order --force --sort_buffer_size=1G */*.MAI
 ```
 
-If you want to optimize all your tables: (The `<code class="fixed" style="white-space:pre-wrap">--zerofill</code>` is
-used here to fill up empty space with `<code>\0</code>` which can speed up compressed backups).
+If you want to optimize all your tables: (The `--zerofill` is
+used here to fill up empty space with `\0` which can speed up compressed backups).
 
 
 ```
 aria_chk --analyze --sort-index --page_buffer_size=1G --zerofill */*.MAI
 ```
 
-In case you have a serious problem and have to use `<code class="fixed" style="white-space:pre-wrap">--safe-recover</code>`:
+In case you have a serious problem and have to use `--safe-recover`:
 
 
 ```

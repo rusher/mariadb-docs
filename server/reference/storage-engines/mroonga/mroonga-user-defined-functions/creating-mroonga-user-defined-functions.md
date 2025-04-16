@@ -1,7 +1,7 @@
 
 # Creating Mroonga User-Defined Functions
 
-The [Mroonga storage engine](mroonga_snippet_html.md) includes a number of [user-defined functions](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md) that need to be created before they can be used. If these are not created already during Mroonga setup, you will need to do so yourself. The full list of available functions and the statements to create them are found in `<code>share/mroonga/install.sql</code>`, for example, as of Mroonga 7.07 ([MariaDB 10.2.11](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10211-release-notes.md) and [MariaDB 10.1.29](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10129-release-notes.md)) running on Linux:
+The [Mroonga storage engine](mroonga_snippet_html.md) includes a number of [user-defined functions](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md) that need to be created before they can be used. If these are not created already during Mroonga setup, you will need to do so yourself. The full list of available functions and the statements to create them are found in `share/mroonga/install.sql`, for example, as of Mroonga 7.07 ([MariaDB 10.2.11](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10211-release-notes.md) and [MariaDB 10.1.29](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10129-release-notes.md)) running on Linux:
 
 
 ```

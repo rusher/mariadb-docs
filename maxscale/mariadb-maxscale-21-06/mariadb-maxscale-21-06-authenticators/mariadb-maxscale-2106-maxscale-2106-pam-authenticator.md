@@ -26,7 +26,7 @@
 Pluggable authentication module (PAM) is a general purpose authentication API.
 An application using PAM can authenticate a user without knowledge about the
 underlying authentication implementation. The actual authentication scheme is
-defined in the operating system PAM config (e.g. `<code>/etc/pam.d/</code>`), and can be
+defined in the operating system PAM config (e.g. `/etc/pam.d/`), and can be
 quite elaborate. MaxScale supports a very limited form of the PAM protocol,
 which this document details.
 
@@ -76,13 +76,13 @@ account         required        pam_unix.so
 
 
 
-### `<code>pam_use_cleartext_plugin</code>`
+### `pam_use_cleartext_plugin`
 
 
 * Type: [boolean](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Default: `<code>false</code>`
+* Default: `false`
 
 
 If enabled, MaxScale communicates with the client as if using
@@ -100,19 +100,19 @@ authenticator_options=pam_use_cleartext_plugin=1
 
 
 
-### `<code>pam_mode</code>`
+### `pam_mode`
 
 
 * Type: [enumeration](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>password</code>`, `<code>password_2FA</code>`
-* Default: `<code>password</code>`
+* Values: `password`, `password_2FA`
+* Default: `password`
 
 
 This setting defines the authentication mode used. Two values are supported:
-- `<code>password</code>` Normal password-based authentication
-- `<code>password_2FA</code>` Password + 2FA-code based authentication
+- `password` Normal password-based authentication
+- `password_2FA` Password + 2FA-code based authentication
 
 
 
@@ -132,20 +132,20 @@ for more details. Two-factor mode is incompatible with
 *pam_use_cleartext_plugin*.
 
 
-### `<code>pam_backend_mapping</code>`
+### `pam_backend_mapping`
 
 
 * Type: [enumeration](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
-* Values: `<code>none</code>`, `<code>mariadb</code>`
-* Default: `<code>none</code>`
+* Values: `none`, `mariadb`
+* Default: `none`
 
 
 Defines backend authentication mapping, i.e. switch of authentication method
 between client-to-MaxScale and MaxScale-to-backend. Supported values:
-- `<code>none</code>` No mapping
-- `<code>mariadb</code>` Map users to normal MariaDB accounts
+- `none` No mapping
+- `mariadb` Map users to normal MariaDB accounts
 
 
 
@@ -160,7 +160,7 @@ standard MariaDB authentication. Authentication to MaxScale itself still uses
 PAM. MaxScale asks the local PAM system if the client username was mapped
 to another username during authentication, and use the mapped username when
 logging in to backends. Passwords for the mapped users can be given in a file,
-see `<code>pam_mapped_pw_file</code>` below. If passwords are not given, MaxScale will try to
+see `pam_mapped_pw_file` below. If passwords are not given, MaxScale will try to
 authenticate without a password. Because of this, normal PAM users and mapped
 users cannot be used on the same listener.
 
@@ -181,13 +181,13 @@ users from PAM to MariaDB in MaxScale, then configuring user mapping
 on just the machine running MaxScale is enough.
 
 
-Instead of using `<code>pam_backend_mapping</code>`, consider using the listener setting
+Instead of using `pam_backend_mapping`, consider using the listener setting
 [user_mapping_file](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md),
-as it is easier to configure. `<code>pam_backend_mapping</code>` should only be used when
+as it is easier to configure. `pam_backend_mapping` should only be used when
 the user mapping needs to be defined by pam.
 
 
-### `<code>pam_mapped_pw_file</code>`
+### `pam_mapped_pw_file`
 
 
 * Type: path
@@ -207,7 +207,7 @@ authenticator_options=pam_mapped_pw_file=/home/root/passwords.json,pam_backend_m
 
 
 
-This feature only works together with `<code>pam_backend_mapping=mariadb</code>`. The file is
+This feature only works together with `pam_backend_mapping=mariadb`. The file is
 only read during listener creation (typically MaxScale start) or when a listener
 is modified during runtime. The file should contain passwords for the mapped
 users. When a client is authenticating, MaxScale searches the password data for a
@@ -246,37 +246,37 @@ An example file is below.
 
 
 When backend authenticator mapping is not in use
-(`<code>authenticator_options=pam_backend_mapping=none</code>`), the PAM authenticator
+(`authenticator_options=pam_backend_mapping=none`), the PAM authenticator
 supports a limited version of
 [user mapping](../../../server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam.md).
 It requires less configuration but is also less accurate than proper mapping.
 Anonymous mapping is enabled in MaxScale if the following user exists:
-- Empty username (e.g. `<code>''@'%'</code>` or `<code>''@'myhost.com'</code>`)
-- `<code>plugin = 'pam'</code>`
-- Proxy grant is on (The query `<code>SHOW GRANTS FOR user@host;</code>` returns at least one
-row with `<code>GRANT PROXY ON ...</code>`)
+- Empty username (e.g. `''@'%'` or `''@'myhost.com'`)
+- `plugin = 'pam'`
+- Proxy grant is on (The query `SHOW GRANTS FOR user@host;` returns at least one
+row with `GRANT PROXY ON ...`)
 
 
 When the authenticator detects such users, anonymous account mapping is enabled
 for the hosts of the anonymous users. To verify this, enable the info log
-(`<code>log_info=1</code>` in MaxScale config file). When a client is logging in using the
+(`log_info=1` in MaxScale config file). When a client is logging in using the
 anonymous user account, MaxScale will log a message starting with "Found
 matching anonymous user ...".
 
 
 When mapping is on, the MaxScale PAM authenticator does not require client
-accounts to exist in the `<code>mysql.user</code>`-table received from the backend. MaxScale
+accounts to exist in the `mysql.user`-table received from the backend. MaxScale
 only requires that the hostname of the incoming client matches the host field of
-one of the anonymous users (comparison performed using `<code>LIKE</code>`). If a match is
+one of the anonymous users (comparison performed using `LIKE`). If a match is
 found, MaxScale attempts to authenticate the client to the local machine with
 the username and password supplied. The PAM service used for authentication is
-read from the `<code>authentication_string</code>`-field of the anonymous user. If
+read from the `authentication_string`-field of the anonymous user. If
 authentication was successful, MaxScale then uses the username and password to
 log to the backends.
 
 
 Anonymous mapping is only attempted if the client username is not found in the
-`<code>mysql.user</code>`-table as explained in [Configuration](#configuration). This means,
+`mysql.user`-table as explained in [Configuration](#configuration). This means,
 that if a user is found and the authentication fails, anonymous authentication
 is not attempted even when it could use a different PAM service with a different
 outcome.
@@ -331,7 +331,7 @@ only printed to the info-log.
 
 
 MaxScale supports a limited form of two-factor authentication with the
-`<code>pam_mode=password_2FA</code>`-option. Since MaxScale uses the 2FA-code given by the
+`pam_mode=password_2FA`-option. Since MaxScale uses the 2FA-code given by the
 client to log in to the local PAM api as well as all the backends, the code must
 be reusable. This prevents the use of any kind of centrally checked one-use
 codes. Time-based codes work, assuming the backends are checking the codes

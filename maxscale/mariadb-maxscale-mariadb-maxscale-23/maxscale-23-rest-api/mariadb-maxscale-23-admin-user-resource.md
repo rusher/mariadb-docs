@@ -28,7 +28,7 @@ user name.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -68,7 +68,7 @@ Get all network users.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -111,7 +111,7 @@ UNIX account name that has been enabled.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -151,7 +151,7 @@ Get all enabled UNIX accounts.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -194,7 +194,7 @@ accounts.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -244,19 +244,19 @@ Create a new network user. The request body must define at least the
 following fields.
 
 
-* `<code>data.id</code>`
+* `data.id`
 * The username
-* `<code>data.type</code>`
-* Type of the object, must be `<code>inet</code>`
-* `<code>data.attributes.password</code>`
+* `data.type`
+* Type of the object, must be `inet`
+* `data.attributes.password`
 * The password for this user
-* `<code>data.attributes.account</code>`
-* Set to `<code>admin</code>` for administrative users and `<code>basic</code>` to read-only users
+* `data.attributes.account`
+* Set to `admin` for administrative users and `basic` to read-only users
 
 
 Only admin accounts can perform POST, PUT, DELETE and PATCH requests. If a basic
 account performs one of the aforementioned request, the REST API will respond
-with a `<code>401 Unauthorized</code>` error.
+with a `401 Unauthorized` error.
 
 
 Here is an example request body defining the network user *my-user* with the
@@ -303,12 +303,12 @@ This enables an existing UNIX account on the system for administrative
 operations. The request body must define at least the following fields.
 
 
-* `<code>data.id</code>`
+* `data.id`
 * The username
-* `<code>data.type</code>`
-* Type of the object, must be `<code>unix</code>`
-* `<code>data.attributes.account</code>`
-* Set to `<code>admin</code>` for administrative users and `<code>basic</code>` to read-only users
+* `data.type`
+* Type of the object, must be `unix`
+* `data.attributes.account`
+* Set to `admin` for administrative users and `basic` to read-only users
 
 
 Here is an example request body enabling the UNIX account *jdoe* for read-only operations.

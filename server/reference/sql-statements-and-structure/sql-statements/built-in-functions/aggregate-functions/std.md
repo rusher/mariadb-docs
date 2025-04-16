@@ -11,8 +11,8 @@ STD(expr)
 ## Description
 
 
-Returns the population standard deviation of *`<code>expr</code>`*. This is an extension
-to standard SQL. The standard SQL function `<code>[STDDEV_POP()](stddev_pop.md)</code>` can
+Returns the population standard deviation of *`expr`*. This is an extension
+to standard SQL. The standard SQL function `[STDDEV_POP()](stddev_pop.md)` can
 be used instead.
 
 
@@ -22,7 +22,7 @@ It is an [aggregate function](../special-functions/window-functions/aggregate-fu
 STD() can be used as a [window function](../special-functions/window-functions/window-functions-overview.md).
 
 
-This function returns `<code>NULL</code>` if there were no matching rows.
+This function returns `NULL` if there were no matching rows.
 
 
 ## Examples

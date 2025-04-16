@@ -23,7 +23,7 @@ InnoDB page compression provides a way to compress InnoDB tables.
 * InnoDB page compression performs best when your storage device and file system support atomic writes, since that allows the [InnoDB doublewrite buffer](innodb-doublewrite-buffer.md) to be disabled. See [Atomic Write Support](../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/atomic-write-support.md) for more information.
 
 
-## Comparison with the `<code>COMPRESSED</code>` Row Format
+## Comparison with the `COMPRESSED` Row Format
 
 
 InnoDB page compression is a modern way to compress your InnoDB tables. It is similar to InnoDB's [COMPRESSED](innodb-row-formats/innodb-compressed-row-format.md) row format, but it has many advantages. Some of the differences are:
@@ -201,10 +201,10 @@ See [Compiling MariaDB From Source](../../../server-management/getting-installin
 InnoDB page compression is not enabled by default. However, InnoDB page compression can be enabled for just individual InnoDB tables or it can be enabled for all new InnoDB tables by default.
 
 
-InnoDB page compression is also only supported if the InnoDB table is in a [file per-table](innodb-tablespaces/innodb-file-per-table-tablespaces.md) tablespace. Therefore, the [innodb_file_per_table](innodb-system-variables.md#innodb_file_per_table) system variable must be set to `<code>ON</code>` to use InnoDB page compression.
+InnoDB page compression is also only supported if the InnoDB table is in a [file per-table](innodb-tablespaces/innodb-file-per-table-tablespaces.md) tablespace. Therefore, the [innodb_file_per_table](innodb-system-variables.md#innodb_file_per_table) system variable must be set to `ON` to use InnoDB page compression.
 
 
-InnoDB page compression is only supported if the InnoDB table uses the `<code>Barracuda</code>` [file format](innodb-file-format.md).Therefore, in [MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and before, the [innodb_file_format](innodb-system-variables.md#innodb_file_format) system variable must be set to `<code>Barracuda</code>` to use InnoDB page compression.
+InnoDB page compression is only supported if the InnoDB table uses the `Barracuda` [file format](innodb-file-format.md).Therefore, in [MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and before, the [innodb_file_format](innodb-system-variables.md#innodb_file_format) system variable must be set to `Barracuda` to use InnoDB page compression.
 
 
 InnoDB page compression is also only supported if the InnoDB table's [row format](innodb-row-formats/innodb-row-formats-overview.md) is [COMPACT](innodb-row-formats/innodb-compact-row-format.md) or [DYNAMIC](innodb-row-formats/innodb-dynamic-row-format.md).
@@ -213,7 +213,7 @@ InnoDB page compression is also only supported if the InnoDB table's [row format
 ### Enabling InnoDB Page Compression by Default
 
 
-In [MariaDB 10.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md) and later, InnoDB page compression can be enabled for all new InnoDB tables by default by setting the [innodb_compression_default](innodb-system-variables.md#innodb_compression_default) system variable to `<code>ON</code>`.
+In [MariaDB 10.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md) and later, InnoDB page compression can be enabled for all new InnoDB tables by default by setting the [innodb_compression_default](innodb-system-variables.md#innodb_compression_default) system variable to `ON`.
 
 
 This system variable can be set to one of the following values:
@@ -269,7 +269,7 @@ innodb_compression_default=ON
 ### Enabling InnoDB Page Compression for Individual Tables
 
 
-InnoDB page compression can be enabled for individual tables by setting the [PAGE_COMPRESSED](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#page_compressed) table option to `<code>1</code>`. For example:
+InnoDB page compression can be enabled for individual tables by setting the [PAGE_COMPRESSED](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#page_compressed) table option to `1`. For example:
 
 
 ```
@@ -296,7 +296,7 @@ CREATE TABLE users (
 Some InnoDB page compression algorithms support a compression level option, which configures how the InnoDB page compression algorithm will balance speed and compression.
 
 
-The compression level's supported values range from `<code>1</code>` to `<code>9</code>`. The range goes from the fastest to the most compact, which means that `<code>1</code>` is the fastest and `<code>9</code>` is the most compact.
+The compression level's supported values range from `1` to `9`. The range goes from the fastest to the most compact, which means that `1` is the fastest and `9` is the most compact.
 
 
 Only the following InnoDB page compression algorithms currently support compression levels:
@@ -316,7 +316,7 @@ The default compression level can be configured by setting the
 [innodb_compression_level](innodb-system-variables.md#innodb_compression_level) system variable.
 
 
-This system variable's default value is `<code>6</code>`.
+This system variable's default value is `6`.
 
 
 This system variable can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
@@ -378,10 +378,10 @@ InnoDB page compression's maximum padding can also be configured.
 The failure threshold can be configured by setting the [innodb_compression_failure_threshold_pct](innodb-system-variables.md#innodb_compression_failure_threshold_pct) system variable.
 
 
-This system variable's supported values range from `<code>0</code>` to `<code>100</code>`.
+This system variable's supported values range from `0` to `100`.
 
 
-This system variable's default value is `<code>5</code>`.
+This system variable's default value is `5`.
 
 
 This system variable can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
@@ -406,10 +406,10 @@ innodb_compression_failure_threshold_pct=10
 The maximum padding can be configured by setting the [innodb_compression_pad_pct_max](innodb-system-variables.md#innodb_compression_pad_pct_max) system variable.
 
 
-This system variable's supported values range from `<code>0</code>` to `<code>75</code>`.
+This system variable's supported values range from `0` to `75`.
 
 
-This system variable's default value is `<code>50</code>`.
+This system variable's default value is `50`.
 
 
 This system variable can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
@@ -453,14 +453,14 @@ There are some potential disadvantages to using sparse files:
 On Linux, the following file systems support sparse files:
 
 
-* `<code>ext3</code>`
-* `<code>ext4</code>`
-* `<code>xfs</code>`
-* `<code>btrfs</code>`
-* `<code>nvmfs</code>`
+* `ext3`
+* `ext4`
+* `xfs`
+* `btrfs`
+* `nvmfs`
 
 
-On Linux, file systems need to support the [fallocate()](https://linux.die.net/man/2/fallocate) system call with the `<code>FALLOC_FL_PUNCH_HOLE</code>` and `<code>FALLOC_FL_KEEP_SIZE</code>` flags. For example:
+On Linux, file systems need to support the [fallocate()](https://linux.die.net/man/2/fallocate) system call with the `FALLOC_FL_PUNCH_HOLE` and `FALLOC_FL_KEEP_SIZE` flags. For example:
 
 
 ```
@@ -470,7 +470,7 @@ fallocate(file_handle, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, file_offset, 
 Some Linux utilities may require special options in order to work with sparse files efficiently. For example:
 
 
-* The [ls](https://linux.die.net/man/1/ls) utility will report the non-sparse size of the tablespace file when executed with default behavior, but `<code>[ls -s](https://linux.die.net/man/1/ls)</code>` will report the actual amount of storage allocated for the tablespace file.
+* The [ls](https://linux.die.net/man/1/ls) utility will report the non-sparse size of the tablespace file when executed with default behavior, but `[ls -s](https://linux.die.net/man/1/ls)` will report the actual amount of storage allocated for the tablespace file.
 * The [cp](https://linux.die.net/man/1/cp) utility is pretty good at auto-detecting sparse files, but it also provides the [cp --sparse=always](https://linux.die.net/man/1/cp) and [cp --sparse=never](https://linux.die.net/man/1/cp) options, if the auto-detection is not desired.
 * The [tar](https://linux.die.net/man/1/tar) utility will archive sparse files with their non-sparse size when executed with default behavior, but [tar --sparse](https://linux.die.net/man/1/tar) will auto-detect sparse files, and archive them with their sparse size.
 
@@ -481,7 +481,7 @@ Some Linux utilities may require special options in order to work with sparse fi
 On Windows, the following file systems support sparse files:
 
 
-* `<code>NTFS</code>`
+* `NTFS`
 
 
 On Windows, file systems need to support the [DeviceIoControl()](https://docs.microsoft.com/en-us/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) function with the [FSCTL_SET_SPARSE](https://docs.microsoft.com/en-us/windows/win32/api/winioctl/ni-winioctl-fsctl_set_sparse) and [FSCTL_SET_ZERO_DATA](https://docs.microsoft.com/en-us/windows/win32/api/winioctl/ni-winioctl-fsctl_set_zero_data) control codes. For example:

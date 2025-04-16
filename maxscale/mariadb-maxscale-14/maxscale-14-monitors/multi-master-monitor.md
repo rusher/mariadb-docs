@@ -40,7 +40,7 @@ For a list of optional parameters that all monitors support, read the [Monitor C
 These are optional parameters specific to the Multi-Master Monitor.
 
 
-### `<code>detect_stale_master</code>`
+### `detect_stale_master`
 
 
 Allow previous master to be available even in case of stopped or misconfigured replication. This allows services that depend on master and slave roles to continue functioning as long as the master server is available.

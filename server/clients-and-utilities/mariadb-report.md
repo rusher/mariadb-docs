@@ -1,13 +1,13 @@
 
 # mariadb-report
 
-`<code>mariadb-report</code>` makes a friendly report of important MariaDB status values.
+`mariadb-report` makes a friendly report of important MariaDB status values.
 
 
-Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysqlreport</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqlreport`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
-Actually, `<code>mariadb-report</code>` makes a friendly report of nearly every status value from SHOW STATUS. Unlike SHOW STATUS which simply dumps over 100 values to the screen in one long list, mariadb-report interprets and
+Actually, `mariadb-report` makes a friendly report of nearly every status value from SHOW STATUS. Unlike SHOW STATUS which simply dumps over 100 values to the screen in one long list, mariadb-report interprets and
  formats the values and presents the basic values and many more inferred values in a human-readable format. Numerous example reports
  are available in the archive of the old [hackmysql.com/mysqlreport](https://hackmysql.com/mysqlreport), [archived here](https://github.com/daniel-nichter/hackmysql.com/tree/master/mysqlreport).
 
@@ -30,7 +30,7 @@ mariadb-report [options]
 ## mariadb-report options
 
 
-Technically, command line options are in the form `<code>--option</code>`, but `<code>-option</code>` works too. All options can be abbreviated if the abbreviation is unique. For example, option `<code>--host</code>` can be abbreviated to `<code>--ho</code>` but not `<code>--h</code>` because `<code>--h</code>` is ambiguous: it could mean `<code>--host</code>` or `<code>--help</code>`.
+Technically, command line options are in the form `--option`, but `-option` works too. All options can be abbreviated if the abbreviation is unique. For example, option `--host` can be abbreviated to `--ho` but not `--h` because `--h` is ambiguous: it could mean `--host` or `--help`.
 
 
 

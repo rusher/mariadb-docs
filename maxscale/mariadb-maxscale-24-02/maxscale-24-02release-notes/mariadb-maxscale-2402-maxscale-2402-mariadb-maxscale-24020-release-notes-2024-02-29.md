@@ -22,7 +22,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 
 
 MaxScale now automatically adds *last_gtid* to session-level
-*session_track_system_variables* when `<code>causal_reads</code>` is enabled. The setting is
+*session_track_system_variables* when `causal_reads` is enabled. The setting is
 only modified at the start of a backend connection, so clients should not modify
 it afterwards.
 
@@ -30,7 +30,7 @@ it afterwards.
 ### [MXS-4748](https://jira.mariadb.org/browse/MXS-4748) Support non-default datadir with rebuild-server
 
 
-`<code>async-rebuild-server</code>` and `<code>async-restore-from-backup</code>` now auto-detect server
+`async-rebuild-server` and `async-restore-from-backup` now auto-detect server
 data directory. Alternatively, the data directory can be specified manually when
 launching the operations from command line. Also, Mariabackup memory use and
 thread count can be customized in monitor settings. See
@@ -76,7 +76,7 @@ An option to purging binlogs is now to archive them to another file system or fo
 ### [MXS-4191](https://jira.mariadb.org/browse/MXS-4191) Restrict REST API user authentication to specific IPs
 
 
-Global settings `<code>admin_readwrite_hosts</code>` and `<code>admin_readonly_hosts</code>` limit the
+Global settings `admin_readwrite_hosts` and `admin_readonly_hosts` limit the
 hostnames/IPs from which admin (REST-API) clients can log in from. See
 [admin_readonly_hosts](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) and
 [admin_readwrite_hosts](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)
@@ -86,7 +86,7 @@ for more information.
 ### [MXS-4705](https://jira.mariadb.org/browse/MXS-4705) Support multiple IPs for one server
 
 
-`<code>private_address</code>` is an alternative IP-address or hostname for a server. This is
+`private_address` is an alternative IP-address or hostname for a server. This is
 used by MariaDB Monitor to detect and set up replication. See
 [MariaDB Monitor documentation](../maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)
 for more information.
@@ -96,8 +96,8 @@ for more information.
 
 
 The [gtid](../maxscale-24-02routers/mariadb-maxscale-2402-maxscale-2402-kafkacdc.md) parameter now supports the special
-values `<code>newest</code>` that uses the value of `<code>@@gtid_binlog_pos</code>` and `<code>oldest</code>` that
-scans the output of `<code>SHOW BINLOG EVENTS</code>` for the earliest GTID.
+values `newest` that uses the value of `@@gtid_binlog_pos` and `oldest` that
+scans the output of `SHOW BINLOG EVENTS` for the earliest GTID.
 
 
 ### MaxGUI
@@ -113,7 +113,7 @@ The most notable ones are listed here:
 ### [MXS-3851](https://jira.mariadb.org/browse/MXS-3851) Show more KafkaCDC router statistics on GUI
 
 
-### [MXS-3919](https://jira.mariadb.org/browse/MXS-3919) Add `<code>interactive_timeout</code>` and `<code>wait_timeout</code>` inputs in the Query Editor settings
+### [MXS-3919](https://jira.mariadb.org/browse/MXS-3919) Add `interactive_timeout` and `wait_timeout` inputs in the Query Editor settings
 
 
 ### [MXS-4017](https://jira.mariadb.org/browse/MXS-4017) Query Editor Auto completion for all identifier names of the active schema
@@ -164,7 +164,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platfor
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

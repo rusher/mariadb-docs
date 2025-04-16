@@ -1,10 +1,10 @@
 
 # Information Schema INNODB_CMP and INNODB_CMP_RESET Tables
 
-The `<code>INNODB_CMP</code>` and `<code>INNODB_CMP_RESET</code>` tables contain status information on compression operations related to [compressed XtraDB/InnoDB tables](../../../../../../../storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md).
+The `INNODB_CMP` and `INNODB_CMP_RESET` tables contain status information on compression operations related to [compressed XtraDB/InnoDB tables](../../../../../../../storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md).
 
 
-The `<code>[PROCESS](../../../../../account-management-sql-commands/grant.md#global-privileges)</code>` privilege is required to query this table.
+The `[PROCESS](../../../../../account-management-sql-commands/grant.md#global-privileges)` privilege is required to query this table.
 
 
 These tables contain the following columns:
@@ -23,10 +23,10 @@ These tables contain the following columns:
 
 
 
-These tables can be used to measure the effectiveness of XtraDB/InnoDB table compression. When you have to decide a value for `<code>KEY_BLOCK_SIZE</code>`, you can create more than one version of the table (one for each candidate value) and run a realistic workload on them. Then, these tables can be used to see how the operations performed with different page sizes.
+These tables can be used to measure the effectiveness of XtraDB/InnoDB table compression. When you have to decide a value for `KEY_BLOCK_SIZE`, you can create more than one version of the table (one for each candidate value) and run a realistic workload on them. Then, these tables can be used to see how the operations performed with different page sizes.
 
 
-`<code>INNODB_CMP</code>` and `<code>INNODB_CMP_RESET</code>` have the same columns and always contain the same values, but when `<code>INNODB_CMP_RESET</code>` is queried, both the tables are cleared. `<code>INNODB_CMP_RESET</code>` can be used, for example, if a script periodically logs the performances of compression in the last period of time. `<code>INNODB_CMP</code>` can be used to see the cumulated statistics.
+`INNODB_CMP` and `INNODB_CMP_RESET` have the same columns and always contain the same values, but when `INNODB_CMP_RESET` is queried, both the tables are cleared. `INNODB_CMP_RESET` can be used, for example, if a script periodically logs the performances of compression in the last period of time. `INNODB_CMP` can be used to see the cumulated statistics.
 
 
 ## Examples

@@ -23,7 +23,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 ## Bug fixes
 
 
-* [MXS-4847](https://jira.mariadb.org/browse/MXS-4847) Crash on `<code>maxctrl list sessions</code>`
+* [MXS-4847](https://jira.mariadb.org/browse/MXS-4847) Crash on `maxctrl list sessions`
 
 
 ## Known Issues and Limitations
@@ -47,7 +47,7 @@ Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platfor
 
 The source code of MaxScale is tagged at GitHub with a tag, which is identical
 with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `<code>maxscale-X.Y.Z</code>`. Further, the default branch is always the latest GA version
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
 of MaxScale.
 
 

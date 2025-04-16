@@ -27,14 +27,14 @@ You'll also need to install Git to retrieve the source repository:
 ## Building MariaDB
 
 
-Once you have the base dependencies installed, you can retrieve the source code and start building MariaDB. The source code is available on GitHub. Use the `<code>--branch</code>` option to specify the particular version of MariaDB you want to build.
+Once you have the base dependencies installed, you can retrieve the source code and start building MariaDB. The source code is available on GitHub. Use the `--branch` option to specify the particular version of MariaDB you want to build.
 
 
 ```
 $ git clone --branch 10.3 https://github.com/MariaDB/server.git mariadb-server
 ```
 
-With the source repository cloned onto your system, you can start building MariaDB. Change into the new `<code>mariadb-server/</code>` directory and run CMake to prepare the build.
+With the source repository cloned onto your system, you can start building MariaDB. Change into the new `mariadb-server/` directory and run CMake to prepare the build.
 
 
 ```

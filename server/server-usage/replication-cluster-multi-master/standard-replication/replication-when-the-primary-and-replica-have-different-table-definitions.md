@@ -24,7 +24,7 @@ The conditions differ depending on whether [statement-based](../../../server-man
 ### Statement-Based Replication
 
 
-When using [statement-based replication](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based), generally, if a statement can run successfully on the replica, it will be replicated. If a column definition is the same or a larger type on the replica than on the primary, it can replicate successfully. For example a column defined as `<code>[VARCHAR(10)](../../../reference/data-types/string-data-types/varchar.md)</code>` will successfully be replicated on a replica with a definition of `<code>VARCHAR(12)</code>`.
+When using [statement-based replication](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based), generally, if a statement can run successfully on the replica, it will be replicated. If a column definition is the same or a larger type on the replica than on the primary, it can replicate successfully. For example a column defined as `[VARCHAR(10)](../../../reference/data-types/string-data-types/varchar.md)` will successfully be replicated on a replica with a definition of `VARCHAR(12)`.
 
 
 Replicating to a replica where the column is defined as smaller than on the primary can also work. For example, given the following table definitions:
@@ -63,7 +63,7 @@ the statement
 INSERT INTO r VALUES (6,'hi');
 ```
 
-would successfully replicate because the value inserted into the `<code>v</code>` field can successfully be inserted on both the primary and the smaller replica equivalent.
+would successfully replicate because the value inserted into the `v` field can successfully be inserted on both the primary and the smaller replica equivalent.
 
 
 However, the following statement would fail:
@@ -92,7 +92,7 @@ Last_Error: Error 'Data too long for column 'v' at row 1' on query.
 ### Row-Based Replication
 
 
-When using [row-based replication](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based), the value of the [slave_type_conversions](replication-and-binary-log-system-variables.md) variable is important. The default value of this variable is empty, in which case MariaDB will not perform attribute promotion or demotion. If the column definitions do not match, replication will stop. If set to `<code>ALL_NON_LOSSY</code>`, safe replication is permitted. If set to `<code>ALL_LOSSY</code>` as well, replication will be permitted even if data loss takes place.
+When using [row-based replication](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based), the value of the [slave_type_conversions](replication-and-binary-log-system-variables.md) variable is important. The default value of this variable is empty, in which case MariaDB will not perform attribute promotion or demotion. If the column definitions do not match, replication will stop. If set to `ALL_NON_LOSSY`, safe replication is permitted. If set to `ALL_LOSSY` as well, replication will be permitted even if data loss takes place.
 
 
 For example:

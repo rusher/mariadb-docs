@@ -17,7 +17,7 @@ INET6
 ## Description
 
 
-The `<code>INET6</code>` data type is intended for storage of IPv6 addresses, as well as IPv4 addresses assuming conventional mapping of IPv4 addresses into IPv6 addresses.
+The `INET6` data type is intended for storage of IPv6 addresses, as well as IPv4 addresses assuming conventional mapping of IPv4 addresses into IPv6 addresses.
 
 
 Both short and long IPv6 notation are permitted, according to RFC-5952.
@@ -91,7 +91,7 @@ Mixing INET6 with other data types for [LEAST](../../sql-statements-and-structur
 * [HEX()](../../sql-statements-and-structure/sql-language-structure/hexadecimal-literals.md) with an INET6 argument returns a hexadecimal representation of the underlying 16-byte binary string
 * Arithmetic operators (+,-,*,/,MOD,DIV) are not supported for INET6. This may change in the future.
 * The [INET6_ATON](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton.md) function now understands INET6 values as an argument
-* The prototypes of the [IS_IPV4_COMPAT](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/is_ipv4_compat.md) and I[S_IPV4_MAPPED](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/is_ipv4_mapped.md) functions have changed from `<code>a BINARY(16)</code>` to `<code>a INET6</code>`,
+* The prototypes of the [IS_IPV4_COMPAT](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/is_ipv4_compat.md) and I[S_IPV4_MAPPED](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/is_ipv4_mapped.md) functions have changed from `a BINARY(16)` to `a INET6`,
 * When the argument for these two functions is not INET6, automatic implicit CAST to INET6 is applied. As a consequence, both functions now understand arguments in both text representation and binary(16) representation. Before [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md), these functions understood only binary(16) representation.
 
 
@@ -377,7 +377,7 @@ CREATE OR REPLACE TABLE t1 (a INET6);
     +------------------------+----------------------------------+
 ```
 
-[IS_IPV4_COMPAT](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/is_ipv4_compat.md) and [IS_IPV4_MAPPED](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/is_ipv4_mapped.md) prototype now `<code>a BINARY(16))</code>`:
+[IS_IPV4_COMPAT](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/is_ipv4_compat.md) and [IS_IPV4_MAPPED](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/is_ipv4_mapped.md) prototype now `a BINARY(16))`:
 
 
 ```

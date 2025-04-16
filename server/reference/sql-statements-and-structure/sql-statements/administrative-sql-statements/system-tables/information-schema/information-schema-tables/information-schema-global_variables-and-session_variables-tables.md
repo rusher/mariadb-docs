@@ -1,7 +1,7 @@
 
 # Information Schema GLOBAL_VARIABLES and SESSION_VARIABLES Tables
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>GLOBAL_VARIABLES</code>` and `<code>SESSION_VARIABLES</code>` tables stores a record of all [system variables](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) and their global and session values respectively. This is the same information as displayed by the `<code>[SHOW VARIABLES](../../../show/show-variables.md)</code>` commands `<code>SHOW GLOBAL VARIABLES</code>` and `<code>SHOW SESSION VARIABLES</code>`.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `GLOBAL_VARIABLES` and `SESSION_VARIABLES` tables stores a record of all [system variables](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) and their global and session values respectively. This is the same information as displayed by the `[SHOW VARIABLES](../../../show/show-variables.md)` commands `SHOW GLOBAL VARIABLES` and `SHOW SESSION VARIABLES`.
 
 
 It contains the following columns:

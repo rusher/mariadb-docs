@@ -10,7 +10,7 @@ in the same code path.
 
 
 For every library call that may block on socket I/O, such as
-'`<code class="fixed" style="white-space:pre-wrap">int mysql_real_query(MYSQL, query, query_length)</code>`', two
+'`int mysql_real_query(MYSQL, query, query_length)`', two
 additional non-blocking calls are introduced:
 
 
@@ -20,57 +20,57 @@ int mysql_real_query_cont(&status, MYSQL, wait_status)
 ```
 
 To do non-blocking operation, an application first calls
-`<code>mysql_real_query_start()</code>` instead of `<code>mysql_real_query()</code>`, passing the
+`mysql_real_query_start()` instead of `mysql_real_query()`, passing the
 same parameters.
 
 
-If `<code>mysql_real_query_start()</code>` returns zero, then the operation completed
+If `mysql_real_query_start()` returns zero, then the operation completed
 without blocking, and 'status' is set to the value that would normally be
-returned from `<code>mysql_real_query()</code>`.
+returned from `mysql_real_query()`.
 
 
-Else, the return value from `<code>mysql_real_query_start()</code>` is a bitmask of events
-that the library is waiting on. This can be `<code>MYSQL_WAIT_READ</code>`,
-`<code>MYSQL_WAIT_WRITE</code>`, or `<code>MYSQL_WAIT_EXCEPT</code>`, corresponding to the similar
-flags for `<code>select()</code>` or `<code>poll()</code>`; and it can include `<code>MYSQL_WAIT_TIMEOUT</code>`
+Else, the return value from `mysql_real_query_start()` is a bitmask of events
+that the library is waiting on. This can be `MYSQL_WAIT_READ`,
+`MYSQL_WAIT_WRITE`, or `MYSQL_WAIT_EXCEPT`, corresponding to the similar
+flags for `select()` or `poll()`; and it can include `MYSQL_WAIT_TIMEOUT`
 when waiting for a timeout to occur (e.g. a connection timeout).
 
 
 In this case, the application continues other processing and eventually checks
 for the appropriate condition(s) to occur on the socket (or for timeout). When
 this occurs, the application can resume the operation by calling
-`<code>mysql_real_query_cont()</code>`, passing in 'wait_status' a bitmask of the events
+`mysql_real_query_cont()`, passing in 'wait_status' a bitmask of the events
 which actually occurred.
 
 
-Just like `<code>mysql_real_query_start()</code>`, `<code>mysql_real_query_cont()</code>` returns
+Just like `mysql_real_query_start()`, `mysql_real_query_cont()` returns
 zero when done, or a bitmask of events it needs to wait on. Thus the
-application continues to repeatedly call `<code>mysql_real_query_cont()</code>`,
+application continues to repeatedly call `mysql_real_query_cont()`,
 intermixed with other processing of its choice; until zero is returned, after
 which the result of the operation is stored in 'status'.
 
 
-Some calls, like `<code>mysql_option()</code>`, do not do any socket I/O, and so can never
-block. For these, there are no separate `<code>_start()</code>` or `<code>_cont()</code>` calls. See
+Some calls, like `mysql_option()`, do not do any socket I/O, and so can never
+block. For these, there are no separate `_start()` or `_cont()` calls. See
 the "[Non-blocking API reference](non-blocking-api-reference.md)" page for a full
 list of what functions can and can not block.
 
 
-The checking for events on the socket / timeout can be done with `<code>select()</code>`
-or `<code>poll()</code>` or a similar mechanism. Though often it will be done using a
+The checking for events on the socket / timeout can be done with `select()`
+or `poll()` or a similar mechanism. Though often it will be done using a
 higher-level framework (such as libevent), which supplies facilities for
 registering and acting on such conditions.
 
 
 The descriptor of the socket on which to check for events can be obtained by
-calling `<code>mysql_get_socket()</code>`. The duration of any timeout can be obtained
-from `<code>mysql_get_timeout_value()</code>`.
+calling `mysql_get_socket()`. The duration of any timeout can be obtained
+from `mysql_get_timeout_value()`.
 
 
 Here is a trivial (but full) example of running a query with the non-blocking
 API. The example is found in the MariaDB source tree as
-`<code>client/async_example.c</code>`. (A larger, more realistic example using libevent is
-found as `<code>tests/async_queries.c</code>` in the source):
+`client/async_example.c`. (A larger, more realistic example using libevent is
+found as `tests/async_queries.c` in the source):
 
 
 ```
@@ -154,7 +154,7 @@ static int wait_for_mysql(MYSQL *mysql, int status) {
 
 
 Before using any non-blocking operation, it is necessary to enable it first
-by setting the `<code>MYSQL_OPT_NONBLOCK</code>` option:
+by setting the `MYSQL_OPT_NONBLOCK` option:
 
 
 ```
@@ -162,16 +162,16 @@ mysql_options(&mysql, MYSQL_OPT_NONBLOCK, 0);
 ```
 
 This call can be made at any time — typically it will
-be done at the start, before `<code>mysql_real_connect()</code>`, but it can be done at
+be done at the start, before `mysql_real_connect()`, but it can be done at
 any time to start using non-blocking operations.
 
 
 If a non-blocking operation is attempted without setting the
-`<code>MYSQL_OPT_NONBLOCK</code>` option, the program will typically crash with a `<code>NULL</code>`
+`MYSQL_OPT_NONBLOCK` option, the program will typically crash with a `NULL`
 pointer exception.
 
 
-The argument for `<code>MYSQL_OPT_NONBLOCK</code>` is the size of the stack used to save
+The argument for `MYSQL_OPT_NONBLOCK` is the size of the stack used to save
 the state of a non-blocking operation while it is waiting for I/O and the
 application is doing other processing. Normally, applications will not have to
 change this, and it can be passed as zero to use the default value.
@@ -181,13 +181,13 @@ change this, and it can be passed as zero to use the default value.
 
 
 It is possible to freely mix blocking and non-blocking calls on the same
-`<code>MYSQL</code>` connection.
+`MYSQL` connection.
 
 
-Thus, an application can do a normal blocking `<code>mysql_real_connect()</code>` and
-subsequently do a non-blocking `<code>mysql_real_query_start()</code>`. Or vice versa, do
-a non-blocking `<code>mysql_real_connect_start()</code>`, and later do a blocking
-`<code>mysql_real_query()</code>` on the resulting connection.
+Thus, an application can do a normal blocking `mysql_real_connect()` and
+subsequently do a non-blocking `mysql_real_query_start()`. Or vice versa, do
+a non-blocking `mysql_real_connect_start()`, and later do a blocking
+`mysql_real_query()` on the resulting connection.
 
 
 Mixing can be useful to allow code to use the simpler blocking API in parts of
@@ -204,23 +204,23 @@ next section: "Terminating a non-blocking operation early" below.
 ## Terminating a non-blocking operation early
 
 
-When a non-blocking operation is started with `<code>mysql_real_query_start()</code>` or
-another `<code>_start()</code>` function, it must be allowed to finish before starting a new
-operation. Thus, the application must continue calling `<code>mysql_real_query_cont()</code>`
+When a non-blocking operation is started with `mysql_real_query_start()` or
+another `_start()` function, it must be allowed to finish before starting a new
+operation. Thus, the application must continue calling `mysql_real_query_cont()`
 until zero is returned, indicating that the operation is completed. It is not
 allowed to leave one operation "hanging" in the middle of processing and then
 start a new one on top of it.
 
 
 It is, however, permissible to terminate the connection completely with
-`<code>mysql_close()</code>` in the middle of processing a non-blocking call. A new
-connection must then be initiated with `<code>mysql_real_connect</code>` before new
-queries can be run, either with a new `<code>MYSQL</code>` object or re-using the old one.
+`mysql_close()` in the middle of processing a non-blocking call. A new
+connection must then be initiated with `mysql_real_connect` before new
+queries can be run, either with a new `MYSQL` object or re-using the old one.
 
 
 In the future, we may implement an abort facility to force an on-going
 operation to terminate as quickly as possible (but it will still be necessary
-to call `<code>mysql_real_query_cont()</code>` one last time after abort, allowing it to
+to call `mysql_real_query_cont()` one last time after abort, allowing it to
 clean up the operation and return immediately with an appropriate error code).
 
 
@@ -230,21 +230,21 @@ clean up the operation and return immediately with an appropriate error code).
 ### DNS
 
 
-When `<code>mysql_real_connect_start()</code>` is passed a hostname (as opposed to a local
+When `mysql_real_connect_start()` is passed a hostname (as opposed to a local
 unix socket or an IP address, it may need to look up the hostname in DNS,
 depending on local host configuration (e.g. if the name is not in
-`<code>/etc/hosts</code>` or cached). Such DNS lookups do **not** happen in a non-blocking
-way. This means that `<code>mysql_real_connect_start()</code>` will not return control to
+`/etc/hosts` or cached). Such DNS lookups do **not** happen in a non-blocking
+way. This means that `mysql_real_connect_start()` will not return control to
 the application while waiting for the DNS response. Thus the application may
 "hang" for some time if DNS is slow or non-functional.
 
 
 If this is a problem, the application can pass an IP address to
-`<code>mysql_real_connect_start()</code>` instead of a hostname, which avoids the problem.
+`mysql_real_connect_start()` instead of a hostname, which avoids the problem.
 The IP address can be obtained by the application with whatever non-blocking
 DNS loopup operation is available to it from the operating system or event
 framework used. Alternatively, a simple solution may be to just add the
-hostname to the local host lookup file (`<code>/etc/hosts</code>` on Posix/Unix/Linux
+hostname to the local host lookup file (`/etc/hosts` on Posix/Unix/Linux
 machines).
 
 

@@ -1,7 +1,7 @@
 
 # Performance Schema events_stages_current Table
 
-The `<code>events_stages_current</code>` table contains current stage events, with each row being a record of a thread and its most recent stage event.
+The `events_stages_current` table contains current stage events, with each row being a record of a thread and its most recent stage event.
 
 
 The table contains the following columns:
@@ -24,7 +24,7 @@ The table contains the following columns:
 
 
 
-It is possible to empty this table with a `<code>TRUNCATE TABLE</code>` statement.
+It is possible to empty this table with a `TRUNCATE TABLE` statement.
 
 
 The related tables, [events_stages_history](performance-schema-events_stages_history-table.md) and [events_stages_history_long](performance-schema-events_stages_history_long-table.md) derive their values from the current events.

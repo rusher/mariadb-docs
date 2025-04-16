@@ -1,7 +1,7 @@
 
 # Extended Show
 
-The following `<code>[SHOW](show-procedure-code.md)</code>` statements can be extended by using a `<code>WHERE</code>` clause and a `<code>LIKE</code>` clause to refine the results:
+The following `[SHOW](show-procedure-code.md)` statements can be extended by using a `WHERE` clause and a `LIKE` clause to refine the results:
 
 
 * [SHOW CHARACTER SET](show-character-set.md)
@@ -9,8 +9,8 @@ The following `<code>[SHOW](show-procedure-code.md)</code>` statements can be ex
 * [SHOW COLUMNS](show-columns.md)
 * [SHOW DATABASES](show-databases.md)
 * [SHOW FUNCTION STATUS](show-function-status.md)
-* [SHOW INDEX](show-index.md)`<code>
-</code>`
+* [SHOW INDEX](show-index.md)`
+`
 * [SHOW OPEN TABLES](show-open-tables.md)
 * [SHOW PACKAGE STATUS](show-package-status.md)
 * [SHOW PACKAGE BODY STATUS](show-package-body-status.md)
@@ -23,7 +23,7 @@ The following `<code>[SHOW](show-procedure-code.md)</code>` statements can be ex
 * [SHOW VARIABLES](show-variables.md)
 
 
-As with a regular `<code>[SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)</code>`, the `<code>WHERE</code>` clause can be used for the specific columns returned, and the `<code>[LIKE](../../built-in-functions/string-functions/like.md)</code>` clause with the regular wildcards.
+As with a regular `[SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)`, the `WHERE` clause can be used for the specific columns returned, and the `[LIKE](../../built-in-functions/string-functions/like.md)` clause with the regular wildcards.
 
 
 ## Examples

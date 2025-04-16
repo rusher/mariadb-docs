@@ -58,7 +58,7 @@ From [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-m
 * [innodb_async_reads_total_count](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_total_count) – Total number of read completion tasks that have finished execution.
 * [innodb_async_reads_queue_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_queue_size) – Current size of the queue (see [Queuing Mechanism](#queuing-mechanism)).
 * [innodb_async_reads_wait_slot_sec](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_wait_slot_sec) – Total wait time for a free IO slot (see Waiting for IO Slots).
-* [innodb_async_reads_total_enqueues](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_total_enqueues) – Total number of read operations that were queued (see [Queuing Mechanism](#queuing-mechanism)). Includes those still waiting and making up `<code>innodb_async_reads_queue_size</code>`.
+* [innodb_async_reads_total_enqueues](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_total_enqueues) – Total number of read operations that were queued (see [Queuing Mechanism](#queuing-mechanism)). Includes those still waiting and making up `innodb_async_reads_queue_size`.
 
 
 Similar variables exist for write operations:

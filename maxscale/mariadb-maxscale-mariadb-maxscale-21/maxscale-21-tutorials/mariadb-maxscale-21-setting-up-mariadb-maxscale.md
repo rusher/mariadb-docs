@@ -92,8 +92,8 @@ MariaDB [(none)]> grant SELECT on mysql.user to '*username*'@'*maxscalehost*';
 
 
 
-Additionally, `<code>SELECT</code>` privileges on the `<code>mysql.db</code>` and `<code>mysql.tables_priv</code>` tables
-and `<code>SHOW DATABASES</code>` privileges are required in order to load databases name
+Additionally, `SELECT` privileges on the `mysql.db` and `mysql.tables_priv` tables
+and `SHOW DATABASES` privileges are required in order to load databases name
 and grants suitable for database name authorization.
 
 
@@ -149,21 +149,21 @@ MariaDB MaxScale's hostname. The best way to describe this process is with an
 example.
 
 
-User `<code>'jdoe'@'192.168.0.200</code>` has the following grant on the cluster:
-`<code>GRANT SELECT, INSERT, UPDATE, DELETE ON *.* TO 'jdoe'@'192.168.0.200'</code>`.
+User `'jdoe'@'192.168.0.200` has the following grant on the cluster:
+`GRANT SELECT, INSERT, UPDATE, DELETE ON *.* TO 'jdoe'@'192.168.0.200'`.
 When the user connects directly to the server it will see it as
-`<code>'jdoe'@'192.168.0.200</code>` connecting to the server and it will match
-the grant for `<code>'jdoe'@'192.168.0.200</code>`.
+`'jdoe'@'192.168.0.200` connecting to the server and it will match
+the grant for `'jdoe'@'192.168.0.200`.
 
 
-If MariaDB MaxScale is at the address `<code>192.168.0.101</code>` and the user `<code>jdoe</code>`
+If MariaDB MaxScale is at the address `192.168.0.101` and the user `jdoe`
 connects to this MariaDB MaxScale, the backend server will see the connection as
-`<code>'jdoe'@'192.168.0.101'</code>`. Since the backend server has no grants for
-`<code>'jdoe'@'192.168.0.101'</code>`, the connection from MariaDB MaxScale to the server
+`'jdoe'@'192.168.0.101'`. Since the backend server has no grants for
+`'jdoe'@'192.168.0.101'`, the connection from MariaDB MaxScale to the server
 will be refused.
 
 
-We can fix this by either creating a matching grant for user `<code>jdoe</code>` from
+We can fix this by either creating a matching grant for user `jdoe` from
 the MariaDB MaxScale address or by using a wildcard to cover both addresses.
 
 
@@ -183,7 +183,7 @@ MariaDB [(none)]> SHOW GRANTS FOR 'jdoe'@'192.168.0.200';
 
 
 
-Then creating the user `<code>'jdoe'@'192.168.0.101'</code>` and giving it the same grants:
+Then creating the user `'jdoe'@'192.168.0.101'` and giving it the same grants:
 
 
 

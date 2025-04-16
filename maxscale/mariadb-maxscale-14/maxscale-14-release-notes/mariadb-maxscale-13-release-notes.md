@@ -163,7 +163,7 @@ differs from the POSIX regular expression syntax take a look at the
 **Please note**, that the substitution string follows different rules than
 the traditional substitution strings. The usual way of referring to capture
 groups in the substitution string is with the backslash character followed
-by the capture group reference e.g. `<code>\1</code>` but the PCRE2 library uses the dollar
+by the capture group reference e.g. `\1` but the PCRE2 library uses the dollar
 character followed by the group reference. To quote the PCRE2 native API manual:
 
 
@@ -208,7 +208,7 @@ details, please read the [Monitor Common](../../mariadb-maxscale-21-06/README.md
 * [MXS-480](https://jira.mariadb.org/browse/MXS-480): Readwritesplit defaults cause connection pileup
 * [MXS-479](https://jira.mariadb.org/browse/MXS-479): localtime must not be used in the multi-threaded program.
 * [MXS-472](https://jira.mariadb.org/browse/MXS-472): Monitors update status in multiple steps
-* [MXS-464](https://jira.mariadb.org/browse/MXS-464): Upgrade 1.2.0 to 1.2.1 blocking start of `<code>maxscale</code>` service
+* [MXS-464](https://jira.mariadb.org/browse/MXS-464): Upgrade 1.2.0 to 1.2.1 blocking start of `maxscale` service
 * [MXS-450](https://jira.mariadb.org/browse/MXS-450): Syslog default prefix is MaxScale not maxscale
 * [MXS-447](https://jira.mariadb.org/browse/MXS-447): Monitors are started before they have been fully configured
 * [MXS-436](https://jira.mariadb.org/browse/MXS-436): Invalid threads argument is ignored and MaxScale starts with one thread

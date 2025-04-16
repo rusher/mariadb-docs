@@ -29,7 +29,7 @@ For any problems you encounter, please submit a bug report at
  them. This affects wildcard, columns, on_queries and no_where_clause
  type rules which previously ignored prepared statements.
 * The dbfwfilter now allows COM_PING and other commands though when
- `<code>action=allow</code>`. See [../Filters/Database-Firewall-Filter.md](https://mariadb.com/kb/en/documentation)
+ `action=allow`. See [../Filters/Database-Firewall-Filter.md](https://mariadb.com/kb/en/documentation)
  for more details.
 * The MariaDB Connector-C was upgraded to a preliminary release of version 2.3.3 (fixes MXS-951).
 
@@ -68,8 +68,8 @@ Packages can be downloaded [here](https://mariadb.com/resources/downloads).
 
 
 The source code of MaxScale is tagged at GitHub with a tag, which is derived
-from the version of MaxScale. For instance, the tag of version `<code>X.Y.Z</code>` of MaxScale
-is `<code>maxscale-X.Y.Z</code>`.
+from the version of MaxScale. For instance, the tag of version `X.Y.Z` of MaxScale
+is `maxscale-X.Y.Z`.
 
 
 The source code is available [here](https://github.com/mariadb-corporation/MaxScale).

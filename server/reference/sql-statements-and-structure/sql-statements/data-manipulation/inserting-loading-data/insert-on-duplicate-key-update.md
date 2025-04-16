@@ -44,7 +44,7 @@ INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
 INSERT ... ON DUPLICATE KEY UPDATE is a MariaDB/MySQL extension to the [INSERT](../../built-in-functions/string-functions/insert-function.md) statement that, if it finds a duplicate unique or [primary key](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#primary-key), will instead perform an [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md).
 
 
-The row/s affected value is reported as 1 if a row is inserted, and 2 if a row is updated, unless the API's `<code>CLIENT_FOUND_ROWS</code>` flag is set.
+The row/s affected value is reported as 1 if a row is inserted, and 2 if a row is updated, unless the API's `CLIENT_FOUND_ROWS` flag is set.
 
 
 If more than one unique index is matched, only the first is updated. It is not recommended to use this statement on tables with more than one unique index.
@@ -53,10 +53,10 @@ If more than one unique index is matched, only the first is updated. It is not r
 If the table has an [AUTO_INCREMENT](../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md) [primary key](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#primary-key) and the statement inserts or updates a row, the [LAST_INSERT_ID()](../../built-in-functions/secondary-functions/information-functions/last_insert_id.md) function returns its AUTO_INCREMENT value.
 
 
-The [VALUES()](../../built-in-functions/secondary-functions/miscellaneous-functions/values-value.md) function can only be used in a `<code>ON DUPLICATE KEY UPDATE</code>` clause and has no meaning in any other context. It returns the column values from the `<code>INSERT</code>` portion of the statement. This function is particularly useful for multi-rows inserts.
+The [VALUES()](../../built-in-functions/secondary-functions/miscellaneous-functions/values-value.md) function can only be used in a `ON DUPLICATE KEY UPDATE` clause and has no meaning in any other context. It returns the column values from the `INSERT` portion of the statement. This function is particularly useful for multi-rows inserts.
 
 
-The [IGNORE](ignore.md) and [DELAYED](insert-delayed.md) options are ignored when you use `<code>ON DUPLICATE KEY UPDATE</code>`.
+The [IGNORE](ignore.md) and [DELAYED](insert-delayed.md) options are ignored when you use `ON DUPLICATE KEY UPDATE`.
 
 
 See [Partition Pruning and Selection](../../../../../server-management/partitioning-tables/partition-pruning-and-selection.md) for details on the PARTITION clause.

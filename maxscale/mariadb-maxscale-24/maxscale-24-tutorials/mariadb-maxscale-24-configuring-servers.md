@@ -31,20 +31,20 @@ protocol=MariaDBBackend
 
 
 
-The `<code>address</code>` and `<code>port</code>` parameters tell where the server is located. The
-`<code>protocol</code>` should always be set to `<code>MariaDBBackend</code>`.
+The `address` and `port` parameters tell where the server is located. The
+`protocol` should always be set to `MariaDBBackend`.
 
 
 ## Enabling TLS
 
 
-To enable encryption for the MaxScale-to-MariaDB communication, add `<code>ssl=true</code>`
+To enable encryption for the MaxScale-to-MariaDB communication, add `ssl=true`
 to the server section. To enable server certificate verification, add
-`<code>ssl_verify_peer_certificate=true</code>`.
+`ssl_verify_peer_certificate=true`.
 
 
-The `<code>ssl</code>` and `<code>ssl_verify_peer_certificate</code>` parameters are similar to the
-`<code>--ssl</code>` and `<code>--ssl-verify-server-cert</code>` options of the `<code>mysql</code>` command line
+The `ssl` and `ssl_verify_peer_certificate` parameters are similar to the
+`--ssl` and `--ssl-verify-server-cert` options of the `mysql` command line
 client.
 
 

@@ -31,7 +31,7 @@ With this:
 
 
 * Renaming a table is very slow. This is a problem, because ALTER TABLE assumes table rename is a fast, O(1) operation.
-* DROP TABLE needs to delete every row, it is not possible to do the deletions later in the background. If one wants to run `<code> DROP TABLE t; CREATE TABLE t; ...</code>` then CREATE TABLE will have to wait until DROP has truly finished.
+* DROP TABLE needs to delete every row, it is not possible to do the deletions later in the background. If one wants to run ` DROP TABLE t; CREATE TABLE t; ...` then CREATE TABLE will have to wait until DROP has truly finished.
 * Dropping a table and creating another table with a different DDL causes deleted records of the first table to be compared with DDL of the second. This particular issue (but not others) can be avoided if we switch to keys that are compared with memcmp().
 
 
@@ -45,7 +45,7 @@ LevelDB keys should look like this (for both table records and secondary indexes
 [indexnr] key_data
 ```
 
-where `<code>indexnr</code>` is an index number, which is assigned sequentially, and is not a function of dbname.tablename.
+where `indexnr` is an index number, which is assigned sequentially, and is not a function of dbname.tablename.
 
 
 The "data dictionary" will need to have two mappings:

@@ -9,7 +9,7 @@ For [all practical purposes](../../../../../release-notes/mariadb-community-serv
 * If you are using MySQL 8.0 or above, you have to use [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) to move your database to MariaDB.
 * For upgrading from very old MySQL versions, see [Upgrading to MariaDB from MySQL 5.0 (or older version)](migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-to-mariadb-from-mysql-50-or-older.md).
 * Within the same base version (for example MySQL 5.5 -> [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), MySQL 5.6 -> [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) and MySQL 5.7 -> [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)) you can in most cases just uninstall MySQL and install MariaDB and you are good to go. There is no need to dump and restore databases. As with any upgrade, we recommend making a backup of your data beforehand.
-* You should run [mariadb-upgrade](../../../../clients-and-utilities/mariadb-upgrade.md) (as you would with `<code>mysql_upgrade</code>` in MySQL) to finish the upgrade. This is needed to ensure that your mysql privilege and event tables are updated with the new fields MariaDB uses. Note that if you use a MariaDB package, `<code>mariadb-upgrade</code>` is usually run automatically.
+* You should run [mariadb-upgrade](../../../../clients-and-utilities/mariadb-upgrade.md) (as you would with `mysql_upgrade` in MySQL) to finish the upgrade. This is needed to ensure that your mysql privilege and event tables are updated with the new fields MariaDB uses. Note that if you use a MariaDB package, `mariadb-upgrade` is usually run automatically.
 * All your old clients and connectors (PHP, Perl, Python, Java, etc.) will work
  unchanged (no need to recompile). This works because MariaDB and MySQL use
  the same client protocol and the client libraries are binary compatible. You can also use your old MySQL connector packages with MariaDB if you want.
@@ -121,8 +121,8 @@ create_options like "%comp%";
 
 * Create config files for MariaDB that match the MySQL cluster option files
 * There are some configuration options that differ. See [System Variable Differences between MariaDB and MySQL](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-and-mysql-unmaintained-series/README.md).
-* You can use `<code>[mariadb]</code>` or `<code>[mariadb-x.y.z]</code>` (for the specific version) in the current config files for MariaDB-specific options.
-* You can also place MySQL-specific options inside a `<code>[mysqld-5.7]</code>` section. This includes all options that use mysql-specific directories for logging or replication (on other words, paths with `<code>mysql</code>` as part of the path).
+* You can use `[mariadb]` or `[mariadb-x.y.z]` (for the specific version) in the current config files for MariaDB-specific options.
+* You can also place MySQL-specific options inside a `[mysqld-5.7]` section. This includes all options that use mysql-specific directories for logging or replication (on other words, paths with `mysql` as part of the path).
 * With a combination of these, it's easy to create a config file that will work with both MariaDB and MySQL, no matter what options are present.
 * See also [MDEV-32745](https://jira.mariadb.org/browse/MDEV-32745) for an upcoming tool to automatically detect incompatible options.
 
@@ -141,8 +141,8 @@ create_options like "%comp%";
 * Take a backup.
 * Install the MariaB packages or MariaDB tar distribution.
 * Fix the my.cnf file to work with both MariaDB and MySQL.
-* When MariaDB is installed, you can test your config files with `<code>mariadbd --help --verbose > /tmp/log 2>&1</code>` which will display all unsupported config options. It's also possible to use the script at [MDEV-32745](https://jira.mariadb.org/browse/MDEV-32745) to find all unsupported options.
-* Check the log for `<code>ERROR</code>` and fix the config files if needed.
+* When MariaDB is installed, you can test your config files with `mariadbd --help --verbose > /tmp/log 2>&1` which will display all unsupported config options. It's also possible to use the script at [MDEV-32745](https://jira.mariadb.org/browse/MDEV-32745) to find all unsupported options.
+* Check the log for `ERROR` and fix the config files if needed.
 
 
 ### Sample Steps for Single Instance MySQL Server
@@ -163,7 +163,7 @@ set @@global.innodb_fast_shutdown=0;
 quit
 ```
 
-* Take down the node with `<code>mysqladmin shutdown</code>` or `<code>sudo service mysqld stop</code>`:
+* Take down the node with `mysqladmin shutdown` or `sudo service mysqld stop`:
 
 
 ```
@@ -285,7 +285,7 @@ In case of replication you can either convert one of the existing nodes directly
 On Windows, you should not uninstall MySQL and install MariaDB, this would not work, the existing database will not be found.
 
 
-Thus On Windows, just install MariaDB and use the upgrade wizard which is part of installer package and is launched by MSI installer. Or, in case you prefer command line, use `<code>mysql_upgrade_service <service_name></code>` on the command line.
+Thus On Windows, just install MariaDB and use the upgrade wizard which is part of installer package and is launched by MSI installer. Or, in case you prefer command line, use `mysql_upgrade_service <service_name>` on the command line.
 
 
 ## Upgrading my.cnf
@@ -294,12 +294,12 @@ Thus On Windows, just install MariaDB and use the upgrade wizard which is part o
 All the options in your original MySQL [my.cnf file](../../mariadbd-configuration-files-and-groups.md) should work fine for MariaDB.
 
 
-However as MariaDB has more features than MySQL, there are a few things that you should consider changing in your `<code>my.cnf</code>` file.
+However as MariaDB has more features than MySQL, there are a few things that you should consider changing in your `my.cnf` file.
 
 
-* MariaDB uses the [Aria storage engine](../../../../reference/storage-engines/aria/aria-storage-engine.md) by default for internal temporary files, instead of MyISAM. If you have a lot of temporary files, you should add and set `<code>[aria-pagecache-buffer-size](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size)</code>` to the same value as you have for `<code>[key-buffer-size](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)</code>`.
+* MariaDB uses the [Aria storage engine](../../../../reference/storage-engines/aria/aria-storage-engine.md) by default for internal temporary files, instead of MyISAM. If you have a lot of temporary files, you should add and set `[aria-pagecache-buffer-size](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size)` to the same value as you have for `[key-buffer-size](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)`.
 * If you don't use MyISAM tables, you can set [key-buffer-size](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) to a very low value, like 64K.
-* If you have a LOT of connections (> 100) that mostly run short running queries, you should consider using the [thread pool](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53.md). For example using : [thread_handling=pool-of-threads](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#thread_handling) and [thread_pool_size=128](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#thread_pool_size) could give a notable performance boost in this case. Where the `<code>thread_pool_size</code>` should be about `<code>2 * number of cores on your machine</code>`.
+* If you have a LOT of connections (> 100) that mostly run short running queries, you should consider using the [thread pool](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53.md). For example using : [thread_handling=pool-of-threads](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#thread_handling) and [thread_pool_size=128](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#thread_pool_size) could give a notable performance boost in this case. Where the `thread_pool_size` should be about `2 * number of cores on your machine`.
 
 
 ## Other Things to Think About

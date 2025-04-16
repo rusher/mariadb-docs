@@ -1,7 +1,7 @@
 
 # Information Schema VIEWS Table
 
-The [Information Schema](../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>VIEWS</code>` table contains information about [views](README.md). The `<code>SHOW VIEW</code>` [privilege](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) is required to view the table.
+The [Information Schema](../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `VIEWS` table contains information about [views](README.md). The `SHOW VIEW` [privilege](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) is required to view the table.
 
 
 It has the following columns:

@@ -71,7 +71,7 @@ filters=MyLogFilter
 ## Log Rotation
 
 
-The `<code>qlafilter</code>` logs can be rotated by executing the `<code>maxctrl rotate logs</code>`
+The `qlafilter` logs can be rotated by executing the `maxctrl rotate logs`
 command. This will cause the log files to be reopened when the next message is
 written to the file. This applies to both unified and session type logging.
 
@@ -79,11 +79,11 @@ written to the file. This applies to both unified and session type logging.
 ## Filter Parameters
 
 
-The QLA filter has one mandatory parameter, `<code>filebase</code>`, and a number of optional
+The QLA filter has one mandatory parameter, `filebase`, and a number of optional
 parameters. These were introduced in the 1.0 release of MariaDB MaxScale.
 
 
-### `<code>filebase</code>`
+### `filebase`
 
 
 The basename of the output file created for each session. A session index is
@@ -98,7 +98,7 @@ filebase=/tmp/SqlQueryLog
 
 
 
-### `<code>match</code>`, `<code>exclude</code>` and `<code>options</code>`
+### `match`, `exclude` and `options`
 
 
 These
@@ -115,12 +115,12 @@ options=case,extended
 
 
 
-### `<code>user</code>` and `<code>source</code>`
+### `user` and `source`
 
 
-These optional parameters limit logging on a session level. If `<code>user</code>` is
+These optional parameters limit logging on a session level. If `user` is
 defined, only the sessions with a matching client username are logged. If
-`<code>source</code>` is defined, only sessions with a matching client source address are
+`source` is defined, only sessions with a matching client source address are
 logged.
 
 
@@ -132,7 +132,7 @@ source=127.0.0.1
 
 
 
-### `<code>user_match</code>`
+### `user_match`
 
 
 * Type: [regex](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -140,11 +140,11 @@ source=127.0.0.1
 * Dynamic: Yes
 
 
-Only log queries from users that match this pattern. If the `<code>user</code>` parameter is
-used, the value of `<code>user_match</code>` is ignored.
+Only log queries from users that match this pattern. If the `user` parameter is
+used, the value of `user_match` is ignored.
 
 
-Here is an example pattern that matches the users `<code>alice</code>` and `<code>bob</code>`:
+Here is an example pattern that matches the users `alice` and `bob`:
 
 
 
@@ -154,7 +154,7 @@ user_match=/(^alice$)|(^bob$)/
 
 
 
-### `<code>user_exclude</code>`
+### `user_exclude`
 
 
 * Type: [regex](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -162,11 +162,11 @@ user_match=/(^alice$)|(^bob$)/
 * Dynamic: Yes
 
 
-Exclude all queries from users that match this pattern. If the `<code>user</code>` parameter
-is used, the value of `<code>user_exclude</code>` is ignored.
+Exclude all queries from users that match this pattern. If the `user` parameter
+is used, the value of `user_exclude` is ignored.
 
 
-Here is an example pattern that excludes the users `<code>alice</code>` and `<code>bob</code>`:
+Here is an example pattern that excludes the users `alice` and `bob`:
 
 
 
@@ -176,7 +176,7 @@ user_exclude=/(^alice$)|(^bob$)/
 
 
 
-### `<code>source_match</code>`
+### `source_match`
 
 
 * Type: [regex](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -184,12 +184,12 @@ user_exclude=/(^alice$)|(^bob$)/
 * Dynamic: Yes
 
 
-Only log queries from hosts that match this pattern. If the `<code>source</code>` parameter
-is used, the value of `<code>source_match</code>` is ignored.
+Only log queries from hosts that match this pattern. If the `source` parameter
+is used, the value of `source_match` is ignored.
 
 
 Here is an example pattern that matches the loopback interface as well as the
-address `<code>192.168.0.109</code>`:
+address `192.168.0.109`:
 
 
 
@@ -199,7 +199,7 @@ source_match=/(^127[.]0[.]0[.]1)|(^192[.]168[.]0[.]109)/
 
 
 
-### `<code>source_exclude</code>`
+### `source_exclude`
 
 
 * Type: [regex](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md)
@@ -207,12 +207,12 @@ source_match=/(^127[.]0[.]0[.]1)|(^192[.]168[.]0[.]109)/
 * Dynamic: Yes
 
 
-Exclude all queries from hosts that match this pattern. If the `<code>source</code>`
-parameter is used, the value of `<code>source_exclude</code>` is ignored.
+Exclude all queries from hosts that match this pattern. If the `source`
+parameter is used, the value of `source_exclude` is ignored.
 
 
 Here is an example pattern that excludes the loopback interface as well as the
-address `<code>192.168.0.109</code>`:
+address `192.168.0.109`:
 
 
 
@@ -222,7 +222,7 @@ source_exclude=/(^127[.]0[.]0[.]1)|(^192[.]168[.]0[.]109)/
 
 
 
-### `<code>log_type</code>`
+### `log_type`
 
 
 The type of log file to use. The default value is *session*.
@@ -243,11 +243,11 @@ log_type=session
 
 
 
-The log types can be combined, e.g. setting `<code>log_type=session,stdout</code>`
+The log types can be combined, e.g. setting `log_type=session,stdout`
 will write both session-specific files, and all sessions to stdout.
 
 
-### `<code>log_data</code>`
+### `log_data`
 
 
 Type of data to log in the log files. The parameter value is a comma separated
@@ -306,19 +306,19 @@ use near 'password="clear text pwd"' at line 1
 
 
 
-Starting with MaxScale 24.02, the `<code>query</code>` parameter now correctly logs
+Starting with MaxScale 24.02, the `query` parameter now correctly logs
 the execution of binary protocol commands as SQL
 ([MXS-4959](https://jira.mariadb.org/browse/MXS-4959)). The execution of
 batched statements (COM_STMT_BULK_LOAD) used by some connectors is not
 logged.
 
 
-### `<code>duration_unit</code>`
+### `duration_unit`
 
 
-The unit for logging a duration. The unit can be `<code>milliseconds</code>` or `<code>microseconds</code>`.
-The abbreviations `<code>ms</code>` for milliseconds and `<code>us</code>` for microseconds are also valid.
-The default is `<code>milliseconds</code>`.
+The unit for logging a duration. The unit can be `milliseconds` or `microseconds`.
+The abbreviations `ms` for milliseconds and `us` for microseconds are also valid.
+The default is `milliseconds`.
 This option is available as of MaxScale version 6.2.
 
 
@@ -329,7 +329,7 @@ duration_unit=microseconds
 
 
 
-### `<code>use_canonical_form</code>`
+### `use_canonical_form`
 
 
 When this option is true the canonical form of the query is logged. In the
@@ -345,7 +345,7 @@ use_canonical_form=true
 
 
 
-### `<code>flush</code>`
+### `flush`
 
 
 Flush log files after every write. The default is false.
@@ -358,7 +358,7 @@ flush=true
 
 
 
-### `<code>append</code>`
+### `append`
 
 
 Append new entries to log files instead of overwriting them. The default is
@@ -374,7 +374,7 @@ append=true
 
 
 
-### `<code>separator</code>`
+### `separator`
 
 
 Default value is "," (a comma). Defines the separator string between elements of
@@ -388,7 +388,7 @@ separator=" | "
 
 
 
-### `<code>newline_replacement</code>`
+### `newline_replacement`
 
 
 Default value is " " (one space). SQL-queries may include line breaks, which, if
@@ -449,8 +449,8 @@ filters=ProductsSelectLogger
 
 The result of using this filter with the service used by the application would
 be a log file of all select queries querying PRODUCTS without using the
-PRODUCT_ID primary key in the predicates of the query. Executing `<code>SELECT * FROM
-PRODUCTS</code>` would log the following into `<code>/var/logs/qla/SelectProducts</code>`:
+PRODUCT_ID primary key in the predicates of the query. Executing `SELECT * FROM
+PRODUCTS` would log the following into `/var/logs/qla/SelectProducts`:
 
 
 

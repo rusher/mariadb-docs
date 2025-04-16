@@ -11,7 +11,7 @@ ADDTIME(expr1,expr2)
 ## Description
 
 
-`<code>ADDTIME()</code>` adds *expr2* to *expr1* and returns the result. *expr1* is a time
+`ADDTIME()` adds *expr2* to *expr1* and returns the result. *expr1* is a time
 or datetime expression, and *expr2* is a time expression.
 
 

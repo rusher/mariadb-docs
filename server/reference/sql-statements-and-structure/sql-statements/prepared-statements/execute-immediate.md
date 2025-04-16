@@ -15,7 +15,7 @@ param:
 ## Description
 
 
-`<code>EXECUTE IMMEDIATE</code>` executes a dynamic SQL statement created on the fly, which can reduce performance overhead.
+`EXECUTE IMMEDIATE` executes a dynamic SQL statement created on the fly, which can reduce performance overhead.
 
 
 For example:

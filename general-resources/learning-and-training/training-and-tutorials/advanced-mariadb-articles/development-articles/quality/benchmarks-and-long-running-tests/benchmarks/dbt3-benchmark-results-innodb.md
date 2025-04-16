@@ -7,14 +7,14 @@
 This page shows the results for benchmarking the following configuration:
 
 
-* [MariaDB 5.3.1](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes.md) Beta + XtraDB with all optimizations (optimizater_switch) set to `<code>ON</code>`
+* [MariaDB 5.3.1](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes.md) Beta + XtraDB with all optimizations (optimizater_switch) set to `ON`
 * [MariaDB 5.3.1](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes.md) Beta + XtraDB with Igor's suggested optimizations
 * MySQL 5.5.13 + InnoDB
 * MySQL 5.6.2 + InnoDB
 
 
 The test is performed using the automation script under
-`<code>/mariadb-tools/dbt3_benchmark</code>`.
+`/mariadb-tools/dbt3_benchmark`.
 
 
 Details about this automation script could be found in
@@ -75,7 +75,7 @@ files before the test:
 
 
 **NOTE:** In future versions the scale factor will be passed in as an input
-parameter to `<code>launcher.pl</code>` instead of being test configuration parameter.
+parameter to `launcher.pl` instead of being test configuration parameter.
 
 
 After the environment is prepared, the following command should be executed in

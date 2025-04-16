@@ -41,7 +41,7 @@ ALTER TABLE table_name ENABLE KEYS;
 ```
 
 In many storage engines (at least MyISAM and Aria),
-`<code>ENABLE KEYS</code>` works by scanning through the row data and collecting keys,
+`ENABLE KEYS` works by scanning through the row data and collecting keys,
 sorting them, and then creating the index blocks. This is an order of magnitude
 faster than creating the index one row at a time and it also uses less key
 buffer memory.
@@ -53,7 +53,7 @@ buffer memory.
 afterwards.
 
 
-When inserting big amounts of data, integrity checks are sensibly time-consuming. It is possible to disable the `<code>UNIQUE</code>` indexes and the [foreign keys](../optimization-and-indexes/foreign-keys.md) checks using the [unique_checks](../system-variables/server-system-variables.md#unique_checks) and the [foreign_key_checks](../system-variables/server-system-variables.md#foreign_key_checks) system variables:
+When inserting big amounts of data, integrity checks are sensibly time-consuming. It is possible to disable the `UNIQUE` indexes and the [foreign keys](../optimization-and-indexes/foreign-keys.md) checks using the [unique_checks](../system-variables/server-system-variables.md#unique_checks) and the [foreign_key_checks](../system-variables/server-system-variables.md#foreign_key_checks) system variables:
 
 
 ```
@@ -97,7 +97,7 @@ This is not as fast as reading the file on the server side, but the difference
 is not that big.
 
 
-`<code>LOAD DATA INFILE</code>` is very fast because:
+`LOAD DATA INFILE` is very fast because:
 
 
 1. there is no parsing of SQL.
@@ -113,18 +113,18 @@ is not that big.
 
 Because of the above speed advantages there are many cases, when you need to
 insert **many** rows at a time, where it may be faster to create a file
-locally, add the rows there, and then use `<code>LOAD DATA INFILE</code>` to load them;
-compared to using `<code>INSERT</code>` to insert the rows.
+locally, add the rows there, and then use `LOAD DATA INFILE` to load them;
+compared to using `INSERT` to insert the rows.
 
 
 You will also get [progress reporting](../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for
-`<code>LOAD DATA INFILE</code>`.
+`LOAD DATA INFILE`.
 
 
 ### mariadb-import
 
 
-You can import many files in parallel with [mariadb-import](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (`<code>mysqlimport</code>` before [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)). For example:
+You can import many files in parallel with [mariadb-import](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (`mysqlimport` before [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)). For example:
 
 
 ```
@@ -141,7 +141,7 @@ in the data.
 ### Using Big Transactions
 
 
-When doing many inserts in a row, you should wrap them with `<code>BEGIN / END</code>` to
+When doing many inserts in a row, you should wrap them with `BEGIN / END` to
 avoid doing a full transaction (which includes a disk sync) for every row. For
 example, doing a begin/end every 1000 inserts will speed up your inserts by
 almost 1000 times.
@@ -159,7 +159,7 @@ END;
 ...
 ```
 
-The reason why you may want to have many `<code>BEGIN/END</code>` statements instead of
+The reason why you may want to have many `BEGIN/END` statements instead of
 just one is that the former will use up less transaction log space.
 
 
@@ -190,14 +190,14 @@ INSERT INTO table_name_2 (auto_increment, reference, data) values (NULL, LAST_IN
 ```
 
 [LAST_INSERT_ID()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md) is a function that returns the last
-`<code>auto_increment</code>` value inserted.
+`auto_increment` value inserted.
 
 
-By default, the command line `<code>mariadb</code>` client will send the above as
+By default, the command line `mariadb` client will send the above as
 multiple statements.
 
 
-To test this in the `<code>mariadb</code>` client you have to do:
+To test this in the `mariadb` client you have to do:
 
 
 ```
@@ -207,7 +207,7 @@ delimiter ;
 ```
 
 **Note:** for multi-query statements to work, your client must specify the
-`<code>CLIENT_MULTI_STATEMENTS</code>` flag to `<code>mysql_real_connect()</code>`.
+`CLIENT_MULTI_STATEMENTS` flag to `mysql_real_connect()`.
 
 
 ## Server Variables That Can be Used to Tune Insert Speed

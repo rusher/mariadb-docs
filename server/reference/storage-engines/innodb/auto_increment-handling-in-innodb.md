@@ -14,7 +14,7 @@ The [innodb_autoinc_lock_mode](innodb-system-variables.md#innodb_autoinc_lock_mo
 ### Traditional Lock Mode
 
 
-When [innodb_autoinc_lock_mode](innodb-system-variables.md#innodb_autoinc_lock_mode) is set to `<code>0</code>`, [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) uses the traditional lock mode.
+When [innodb_autoinc_lock_mode](innodb-system-variables.md#innodb_autoinc_lock_mode) is set to `0`, [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) uses the traditional lock mode.
 
 
 In this mode, [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) holds a table-level lock for all [INSERT](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) statements until the statement completes.
@@ -23,7 +23,7 @@ In this mode, [InnoDB](../../../../general-resources/learning-and-training/train
 ### Consecutive Lock Mode
 
 
-When [innodb_autoinc_lock_mode](innodb-system-variables.md#innodb_autoinc_lock_mode) is set to `<code>1</code>`, [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) uses the consecutive lock mode.
+When [innodb_autoinc_lock_mode](innodb-system-variables.md#innodb_autoinc_lock_mode) is set to `1`, [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) uses the consecutive lock mode.
 
 
 In this mode, [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) holds a table-level lock for all bulk [INSERT](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) statements (such as [LOAD DATA](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) or [INSERT ... SELECT](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select.md)) until the end of the statement. For simple [INSERT](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) statements, no table-level lock is held. Instead, a lightweight mutex is used which scales significantly better. This is the default setting.
@@ -32,7 +32,7 @@ In this mode, [InnoDB](../../../../general-resources/learning-and-training/train
 ### Interleaved Lock Mode
 
 
-When [innodb_autoinc_lock_mode](innodb-system-variables.md#innodb_autoinc_lock_mode) is set to `<code>2</code>`, [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) uses the interleaved lock mode.
+When [innodb_autoinc_lock_mode](innodb-system-variables.md#innodb_autoinc_lock_mode) is set to `2`, [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) uses the interleaved lock mode.
 
 
 In this mode, [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) does not hold any table-level locks at all. This is the fastest and most scalable mode, but is not safe for [statement-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based) replication.
@@ -84,7 +84,7 @@ Create Table: CREATE TABLE `t1` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1
 ```
 
-If the server is restarted at this point, then the [AUTO_INCREMENT](auto_increment-handling-in-innodb.md) counter will revert to `<code>101</code>`, which is the persistent value set as part of the failed [INSERT IGNORE](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-ignore.md).
+If the server is restarted at this point, then the [AUTO_INCREMENT](auto_increment-handling-in-innodb.md) counter will revert to `101`, which is the persistent value set as part of the failed [INSERT IGNORE](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-ignore.md).
 
 
 ```

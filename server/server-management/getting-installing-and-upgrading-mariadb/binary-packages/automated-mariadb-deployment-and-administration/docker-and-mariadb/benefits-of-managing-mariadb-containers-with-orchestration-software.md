@@ -37,10 +37,10 @@ In the case of a database, the problem is that data can be large and need to be 
 However, OCI Containers has features called **volumes**. A volume is a directory in the host system mapped to a directory in one or more containers. Volumes are not destroyed when containers are destroyed. They can be used to share data between any number of containers and the host system. Therefore, they are also a good way to persist data.
 
 
-Suppose a MariaDB container called `<code>mariadb-main-01</code>` uses a volume that is mapped to `<code>/var/docker/volumes/mariadb-main</code>`. At some point we want to use a more recent MariaDB version. As explained earlier, the container way to do this is to destroy the container and create a new one that uses a more recent version of the MariaDB image.
+Suppose a MariaDB container called `mariadb-main-01` uses a volume that is mapped to `/var/docker/volumes/mariadb-main`. At some point we want to use a more recent MariaDB version. As explained earlier, the container way to do this is to destroy the container and create a new one that uses a more recent version of the MariaDB image.
 
 
-So, we will destroy `<code>mariadb-main-01</code>`. The volume is still there. Then we create a new container with the same name, but based on a newer image. We make sure to link the volume to the new container too, so it will be able to use `<code>/var/docker/volumes/mariadb-main</code>` again. At this point we may want to run [mariadb-upgrade](../../../../../clients-and-utilities/mariadb-upgrade.md), but apart from that, everything should *just work*.
+So, we will destroy `mariadb-main-01`. The volume is still there. Then we create a new container with the same name, but based on a newer image. We make sure to link the volume to the new container too, so it will be able to use `/var/docker/volumes/mariadb-main` again. At this point we may want to run [mariadb-upgrade](../../../../../clients-and-utilities/mariadb-upgrade.md), but apart from that, everything should *just work*.
 
 
 The container runtime implementations also provide the opportunity to create a volume with an explicit name and this is also persistent. The actual location on the filesystem is managed by the runtime.
@@ -56,7 +56,7 @@ Containers can be deployed in the following ways:
 
 
 * Manually. See [Installing and Using MariaDB via Docker](installing-and-using-mariadb-via-docker.md). This is not recommended for production, or for complex environments. However, it can easily be done for the simplest cases. If we want to make changes to our [custom images](creating-a-custom-container-image.md), we'll need to modify the Dockerfiles, destroy the containers and recreate them.
-* With Docker Compose. See [Setting Up a LAMP Stack with Docker Compose](setting-up-a-lamp-stack-with-docker-compose.md) for a simple example. When we modify a Dockerfile, we'll need to destroy the containers and recreate them, which is usually as simple as running `<code>docker compose down</code>` followed by `<code>docker compose up</code>`. After changing `<code>docker-cmpose.yml</code>` (maybe to add a container or a network) we'll simply need to run `<code>docker compose up</code>` again, because it is idempotent.
+* With Docker Compose. See [Setting Up a LAMP Stack with Docker Compose](setting-up-a-lamp-stack-with-docker-compose.md) for a simple example. When we modify a Dockerfile, we'll need to destroy the containers and recreate them, which is usually as simple as running `docker compose down` followed by `docker compose up`. After changing `docker-cmpose.yml` (maybe to add a container or a network) we'll simply need to run `docker compose up` again, because it is idempotent.
 * Using Ansible, Puppet or other automation software, as mentioned before. We can use Ansible or Puppet to create the containers, and run them again every time we want to apply some change to the containers. This means that the containers are potentially created once and modified any number of times.
 
 

@@ -19,10 +19,10 @@ Sets the [character_set_client](../../../../server-usage/replication-cluster-mul
 This determines which [character set](README.md) the client will use to send statements to the server, and the server will use for sending results back to the client.
 
 
-`<code>ucs2</code>`, `<code>utf16</code>`, `<code>utf16le</code>` and `<code>utf32</code>` are not valid character sets for `<code>SET NAMES</code>`, as they cannot be used as client character sets.
+`ucs2`, `utf16`, `utf16le` and `utf32` are not valid character sets for `SET NAMES`, as they cannot be used as client character sets.
 
 
-The collation clause is optional. If not defined (or if `<code>DEFAULT</code>` is specified), the [default collation for the character set](supported-character-sets-and-collations.md) will be used.
+The collation clause is optional. If not defined (or if `DEFAULT` is specified), the [default collation for the character set](supported-character-sets-and-collations.md) will be used.
 
 
 Quotes are optional for the character set or collation clauses.
@@ -135,7 +135,7 @@ SELECT VARIABLE_NAME, SESSION_VALUE
 +--------------------------+--------------------+
 ```
 
-From [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md), `<code>utf8mb4</code>` became the default for the affected variables:
+From [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md), `utf8mb4` became the default for the affected variables:
 
 
 ```

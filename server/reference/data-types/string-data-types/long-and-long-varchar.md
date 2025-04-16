@@ -1,7 +1,7 @@
 
 # LONG and LONG VARCHAR
 
-`<code>LONG</code>` and `<code>LONG VARCHAR</code>` are synonyms for [MEDIUMTEXT](mediumtext.md).
+`LONG` and `LONG VARCHAR` are synonyms for [MEDIUMTEXT](mediumtext.md).
 
 
 ```

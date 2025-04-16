@@ -1,10 +1,10 @@
 
 # mariadb-embedded
 
-`<code>mariadb-embedded</code>` is a [mariadb client](mariadb-client/mariadb-command-line-client.md) statically linked to libmariadbd, the embedded server.
+`mariadb-embedded` is a [mariadb client](mariadb-client/mariadb-command-line-client.md) statically linked to libmariadbd, the embedded server.
 
 
-Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `<code>mysql_embedded</code>`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysql_embedded`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 Upon execution, an embedded MariaDB server is instantiated and you can execute statements just as you would using the normal mariadb client, using the same options.
@@ -28,7 +28,7 @@ sudo mariadb-embedded -e 'select user, host, password from mysql.user where user
 +------+-----------+-------------------------------------------+
 ```
 
-Sending options with `<code>--server-arg</code>`:
+Sending options with `--server-arg`:
 
 
 ```

@@ -48,7 +48,7 @@ Here is a task example:
     state: present
 ```
 
-"Install Perl" is just a description that will appear on screen when the task is applied. Then we use the `<code>package</code>` module to declare that a package called "perl" should be installed. When we apply the playbook, if Perl is already installed nothing happens. Otherwise, Ansible installs it.
+"Install Perl" is just a description that will appear on screen when the task is applied. Then we use the `package` module to declare that a package called "perl" should be installed. When we apply the playbook, if Perl is already installed nothing happens. Otherwise, Ansible installs it.
 
 
 When we apply a playbook, the last information that appears on the screen is a recap like the following:
@@ -65,7 +65,7 @@ This means that six tasks were already applied (so no action was taken), and two
 As the above example shows, Ansible playbooks are written in YAML.
 
 
-Modules (like `<code>package</code>`) can be written in any language, as long as they are able to process a JSON input and produce a JSON output. However the Ansible community prefers to write them in Python, which is the language Ansible is written in.
+Modules (like `package`) can be written in any language, as long as they are able to process a JSON input and produce a JSON output. However the Ansible community prefers to write them in Python, which is the language Ansible is written in.
 
 
 ## Concepts
@@ -80,7 +80,7 @@ A **task** is the smallest brick of code in a playbook. The name is a bit mislea
 A task uses a single **module**, which is an interface that Ansible uses to interact with a specific system component. In the example, the module is "package".
 
 
-A task also has attributes, that describe what should be done with that module, and how. In the example above, "name" and "state" are both attributes. The `<code>state</code>` attribute exists for every module, by convention (though there may be exceptions). Typically, it has at least the "present" and "absent" state, to indicate if an object should exist or not.
+A task also has attributes, that describe what should be done with that module, and how. In the example above, "name" and "state" are both attributes. The `state` attribute exists for every module, by convention (though there may be exceptions). Typically, it has at least the "present" and "absent" state, to indicate if an object should exist or not.
 
 
 Other important code concepts are:

@@ -1,11 +1,11 @@
 
 # Regular Expressions Overview
 
-Regular Expressions allow MariaDB to perform complex pattern matching on a string. In many cases, the simple pattern matching provided by [LIKE](../like.md) is sufficient. `<code>LIKE</code>` performs two kinds of matches:
+Regular Expressions allow MariaDB to perform complex pattern matching on a string. In many cases, the simple pattern matching provided by [LIKE](../like.md) is sufficient. `LIKE` performs two kinds of matches:
 
 
-* `<code>_</code>` - the underscore, matching a single character
-* `<code>%</code>` - the percentage sign, matching any number of characters.
+* `_` - the underscore, matching a single character
+* `%` - the percentage sign, matching any number of characters.
 
 
 In other cases you may need more control over the returned matches, and will need to use regular expressions.
@@ -14,7 +14,7 @@ In other cases you may need more control over the returned matches, and will nee
 Until [MariaDB 10.0.5](../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes.md), MariaDB used the POSIX 1003.2 compliant regular expression library. The current PCRE library is mostly backwards compatible with what is described below - see the [PCRE Regular Expressions](pcre.md) article for the enhancements made in 10.0.5.
 
 
-Regular expression matches are performed with the [REGEXP](regexp.md) function. `<code>RLIKE</code>` is a synonym for `<code>REGEXP</code>`.
+Regular expression matches are performed with the [REGEXP](regexp.md) function. `RLIKE` is a synonym for `REGEXP`.
 
 
 Comparisons are performed on the byte value, so characters that are treated as equivalent by a collation, but do not have the same byte-value, such as accented characters, could evaluate as unequal.
@@ -68,7 +68,7 @@ SELECT 'Mari' REGEXP 'Maria';
 The first returns true because the pattern "Mari" exists in the expression "Maria". When the order is reversed, the result is false, as the pattern "Maria" does not exist in the expression "Mari"
 
 
-A match can be performed against more than one word with the `<code>|</code>` character. For example:
+A match can be performed against more than one word with the `|` character. For example:
 
 
 ```
@@ -89,7 +89,7 @@ The above examples introduce the syntax, but are not very useful on their own. I
 #### ^
 
 
-`<code>^</code>` matches the beginning of a string (inside square brackets it can also mean NOT - see below):
+`^` matches the beginning of a string (inside square brackets it can also mean NOT - see below):
 
 
 ```
@@ -104,7 +104,7 @@ SELECT 'Maria' REGEXP '^Ma';
 #### $
 
 
-`<code>$</code>` matches the end of a string:
+`$` matches the end of a string:
 
 
 ```
@@ -119,7 +119,7 @@ SELECT 'Maria' REGEXP 'ia$';
 #### .
 
 
-`<code>.</code>` matches any single character:
+`.` matches any single character:
 
 
 ```
@@ -141,7 +141,7 @@ SELECT 'Maria' REGEXP 'Ma..ia';
 #### *
 
 
-`<code>x*</code>` matches zero or more of a character `<code>x</code>`. In the examples below, it's the `<code>r</code>` character.
+`x*` matches zero or more of a character `x`. In the examples below, it's the `r` character.
 
 
 ```
@@ -170,7 +170,7 @@ SELECT 'Marrria' REGEXP 'Mar*ia';
 #### +
 
 
-`<code>x+</code>` matches one or more of a character `<code>x</code>`. In the examples below, it's the `<code>r</code>` character.
+`x+` matches one or more of a character `x`. In the examples below, it's the `r` character.
 
 
 ```
@@ -199,7 +199,7 @@ SELECT 'Marrria' REGEXP 'Mar+ia';
 #### ?
 
 
-`<code>x?</code>` matches zero or one of a character `<code>x</code>`. In the examples below, it's the `<code>r</code>` character.
+`x?` matches zero or one of a character `x`. In the examples below, it's the `r` character.
 
 
 ```
@@ -228,7 +228,7 @@ SELECT 'Marrria' REGEXP 'Mar?ia';
 #### ()
 
 
-`<code>(xyz)</code>` - combine a sequence, for example `<code>(xyz)+</code>` or `<code>(xyz)*</code>`
+`(xyz)` - combine a sequence, for example `(xyz)+` or `(xyz)*`
 
 
 ```
@@ -243,8 +243,8 @@ SELECT 'Maria' REGEXP '(ari)+';
 #### {}
 
 
-`<code>x{n}</code>` and `<code>x{m,n}</code>`
-This notation is used to match many instances of the `<code>x</code>`. In the case of `<code>x{n}</code>` the match must be exactly that many times. In the case of `<code>x{m,n}</code>`, the match can occur from `<code>m</code>` to `<code>n</code>` times. For example, to match zero or one instance of the string `<code>ari</code>` (which is identical to `<code>(ari)?</code>`), the following can be used:
+`x{n}` and `x{m,n}`
+This notation is used to match many instances of the `x`. In the case of `x{n}` the match must be exactly that many times. In the case of `x{m,n}`, the match can occur from `m` to `n` times. For example, to match zero or one instance of the string `ari` (which is identical to `(ari)?`), the following can be used:
 
 
 ```
@@ -259,7 +259,7 @@ SELECT 'Maria' REGEXP '(ari){0,1}';
 #### []
 
 
-`<code>[xy]</code>` groups characters for matching purposes. For example, to match either the `<code>p</code>` or the `<code>r</code>` character:
+`[xy]` groups characters for matching purposes. For example, to match either the `p` or the `r` character:
 
 
 ```
@@ -271,7 +271,7 @@ SELECT 'Maria' REGEXP 'Ma[pr]ia';
 +---------------------------+
 ```
 
-The square brackets also permit a range match, for example, to match any character from a-z, `<code>[a-z]</code>` is used. Numeric ranges are also permitted.
+The square brackets also permit a range match, for example, to match any character from a-z, `[a-z]` is used. Numeric ranges are also permitted.
 
 
 ```
@@ -283,7 +283,7 @@ SELECT 'Maria' REGEXP 'Ma[a-z]ia';
 +----------------------------+
 ```
 
-The following does not match, as `<code>r</code>` falls outside of the range `<code>a-p</code>`.
+The following does not match, as `r` falls outside of the range `a-p`.
 
 
 ```
@@ -298,7 +298,7 @@ SELECT 'Maria' REGEXP 'Ma[a-p]ia';
 ##### ^
 
 
-The `<code>^</code>` character means does `<code>NOT</code>` match, for example:
+The `^` character means does `NOT` match, for example:
 
 
 ```
@@ -317,7 +317,7 @@ SELECT 'Maria' REGEXP 'Ma[^r]ia';
 +---------------------------+
 ```
 
-The `<code>[</code>` and `<code>]</code>` characters on their own can be literally matched inside a `<code>[]</code>` block, without escaping, as long as they immediately match the opening bracket:
+The `[` and `]` characters on their own can be literally matched inside a `[]` block, without escaping, as long as they immediately match the opening bracket:
 
 
 ```
@@ -362,7 +362,7 @@ SELECT ']Maria' REGEXP '[a]]';
 +------------------------+
 ```
 
-The `<code>-</code>` character can also be matched in the same way:
+The `-` character can also be matched in the same way:
 
 
 ```
@@ -384,7 +384,7 @@ SELECT '-Maria' REGEXP '[-1-10]';
 #### Word boundaries
 
 
-The `<code>[:<:](https://mariadb.com/kb/en/%3C%3A)</code>` and `<code>[:>:](https://mariadb.com/kb/en/%3E%3A)</code>` patterns match the beginning and the end of a word respectively. For example:
+The `[:<:](https://mariadb.com/kb/en/%3C%3A)` and `[:>:](https://mariadb.com/kb/en/%3E%3A)` patterns match the beginning and the end of a word respectively. For example:
 
 
 ```
@@ -406,7 +406,7 @@ SELECT 'How do I upgrade MariaDB?' REGEXP '[[:<:]]Maria[[:>:]]';
 #### Character Classes
 
 
-There are a number of shortcuts to match particular preset character classes. These are matched with the `<code>[:character_class:]</code>` pattern (inside a `<code>[]</code>` set). The following character classes exist:
+There are a number of shortcuts to match particular preset character classes. These are matched with the `[:character_class:]` pattern (inside a `[]` set). The following character classes exist:
 
 
 
@@ -462,7 +462,7 @@ SELECT BINARY 'Mari' REGEXP 'Mar[[:upper:]]+';
 #### Character Names
 
 
-There are also number of shortcuts to match particular preset character names. These are matched with the `<code>[.character.]</code>` pattern (inside a `<code>[]</code>` set). The following character classes exist:
+There are also number of shortcuts to match particular preset character names. These are matched with the `[.character.]` pattern (inside a `[]` set). The following character classes exist:
 
 
 
@@ -585,7 +585,7 @@ SELECT '|' REGEXP '[[.vertical-line.]]';
 The true power of regular expressions is unleashed when the above is combined, to form more complex examples. Regular expression's reputation for complexity stems from the seeming complexity of multiple combined regular expressions, when in reality, it's simply a matter of understanding the characters and how they apply:
 
 
-The first example fails to match, as while the `<code>Ma</code>` matches, either `<code>i</code>` or `<code>r</code>` only matches once before the `<code>ia</code>` characters at the end.
+The first example fails to match, as while the `Ma` matches, either `i` or `r` only matches once before the `ia` characters at the end.
 
 
 ```
@@ -597,7 +597,7 @@ SELECT 'Maria' REGEXP 'Ma[ir]{2}ia';
 +------------------------------+
 ```
 
-This example matches, as either `<code>i</code>` or `<code>r</code>` match exactly twice after the `<code>Ma</code>`, in this case one `<code>r</code>` and one `<code>i</code>`.
+This example matches, as either `i` or `r` match exactly twice after the `Ma`, in this case one `r` and one `i`.
 
 
 ```
@@ -612,10 +612,10 @@ SELECT 'Maria' REGEXP 'Ma[ir]{2}';
 ### Escaping
 
 
-With the large number of special characters, care needs to be taken to properly escape characters. Two backslash characters, `<code><br/></code>` (one for the MariaDB parser, one for the regex library), are required to properly escape a character. For example:
+With the large number of special characters, care needs to be taken to properly escape characters. Two backslash characters, `<br/>` (one for the MariaDB parser, one for the regex library), are required to properly escape a character. For example:
 
 
-To match the literal `<code>(Ma</code>`:
+To match the literal `(Ma`:
 
 
 ```
@@ -633,7 +633,7 @@ SELECT '(Maria)' REGEXP '\\(Ma';
 +--------------------------+
 ```
 
-To match `<code>r+</code>`: The first two examples are incorrect, as they match `<code>r</code>` one or more times, not `<code>r+</code>`:
+To match `r+`: The first two examples are incorrect, as they match `r` one or more times, not `r+`:
 
 
 ```

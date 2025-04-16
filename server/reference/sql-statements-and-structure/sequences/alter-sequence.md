@@ -14,22 +14,22 @@ ALTER SEQUENCE [IF EXISTS] sequence_name
 ```
 
 
-`<code>ALTER SEQUENCE</code>` allows one to change any values for a `<code>SEQUENCE</code>` created with [CREATE SEQUENCE](create-sequence.md).
+`ALTER SEQUENCE` allows one to change any values for a `SEQUENCE` created with [CREATE SEQUENCE](create-sequence.md).
 
 
-The options for `<code>ALTER SEQUENCE</code>` can be given in any order.
+The options for `ALTER SEQUENCE` can be given in any order.
 
 
 ## Description
 
 
-`<code>ALTER SEQUENCE</code>` changes the parameters of an existing sequence generator. Any parameters not specifically set in the `<code>ALTER SEQUENCE</code>` command retain their prior settings.
+`ALTER SEQUENCE` changes the parameters of an existing sequence generator. Any parameters not specifically set in the `ALTER SEQUENCE` command retain their prior settings.
 
 
-`<code>ALTER SEQUENCE</code>` requires the [ALTER privilege](../sql-statements/account-management-sql-commands/grant.md).
+`ALTER SEQUENCE` requires the [ALTER privilege](../sql-statements/account-management-sql-commands/grant.md).
 
 
-### Arguments to `<code>ALTER SEQUENCE</code>`
+### Arguments to `ALTER SEQUENCE`
 
 
 The following options may be used:
@@ -51,12 +51,12 @@ The following options may be used:
 
 
 
-The optional clause `<code>RESTART [ WITH restart ]</code>` sets the next value for the sequence. This is equivalent to calling the [SETVAL()](sequence-functions/setval.md) function with the `<code>is_used</code>` argument as 0. The specified value will be returned by the next call of nextval. Using `<code>RESTART</code>` with no restart value is
+The optional clause `RESTART [ WITH restart ]` sets the next value for the sequence. This is equivalent to calling the [SETVAL()](sequence-functions/setval.md) function with the `is_used` argument as 0. The specified value will be returned by the next call of nextval. Using `RESTART` with no restart value is
 equivalent to supplying the start value that was recorded by
-[CREATE SEQUENCE](create-sequence.md) or last set by `<code>ALTER SEQUENCE START WITH</code>`.
+[CREATE SEQUENCE](create-sequence.md) or last set by `ALTER SEQUENCE START WITH`.
 
 
-`<code>ALTER SEQUENCE</code>` will not allow you to change the sequence so that it's inconsistent. For example:
+`ALTER SEQUENCE` will not allow you to change the sequence so that it's inconsistent. For example:
 
 
 ```
@@ -73,7 +73,7 @@ ALTER SEQUENCE s1 MINVALUE 10 START 10 RESTART 10;
 ### INSERT
 
 
-To allow `<code>SEQUENCE</code>` objects to be backed up by old tools, like [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md), one can use `<code>SELECT</code>` to read the current state of a `<code>SEQUENCE</code>` object and use an `<code>INSERT</code>` to update the `<code>SEQUENCE</code>` object. `<code>INSERT</code>` is only allowed if all fields are specified:
+To allow `SEQUENCE` objects to be backed up by old tools, like [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md), one can use `SELECT` to read the current state of a `SEQUENCE` object and use an `INSERT` to update the `SEQUENCE` object. `INSERT` is only allowed if all fields are specified:
 
 
 
@@ -100,11 +100,11 @@ SHOW CREATE SEQUENCE s1;
 ### Notes
 
 
-`<code>ALTER SEQUENCE</code>` will instantly affect all future `<code>SEQUENCE</code>` operations. This is in contrast to some other databases where the changes requested by `<code>ALTER SEQUENCE</code>` will not be seen until the sequence cache has run out.
+`ALTER SEQUENCE` will instantly affect all future `SEQUENCE` operations. This is in contrast to some other databases where the changes requested by `ALTER SEQUENCE` will not be seen until the sequence cache has run out.
 
 
-`<code>ALTER SEQUENCE</code>` will take a full table lock of the sequence object during
-its (brief) operation. This ensures that `<code>ALTER SEQUENCE</code>` is replicated
+`ALTER SEQUENCE` will take a full table lock of the sequence object during
+its (brief) operation. This ensures that `ALTER SEQUENCE` is replicated
 correctly. If you only want to set the next sequence value to a
 higher value than current, then you should use [SETVAL()](sequence-functions/setval.md)
 instead, as this is not blocking.

@@ -129,7 +129,7 @@ key (accountName)
 # Use case 2: sharding by hash
 
 
-See also `<code>[hash-partitioning-type](../../../server-management/partitioning-tables/partitioning-types/hash-partitioning-type.md)</code>`.
+See also `[hash-partitioning-type](../../../server-management/partitioning-tables/partitioning-types/hash-partitioning-type.md)`.
 
 
 In this case a spider table is created to distribute data across backend1 and backend2 by hashing the id column. Since the id column is an incrementing numeric value the hashing will ensure even distribution across the 2 nodes.
@@ -157,7 +157,7 @@ key (accountName)
 # Use case 3: sharding by range
 
 
-See also `<code>[range-partitioning-type](../../../server-management/partitioning-tables/partitioning-types/range-partitioning-type.md)</code>`.
+See also `[range-partitioning-type](../../../server-management/partitioning-tables/partitioning-types/range-partitioning-type.md)`.
 
 
 In this case a spider table is created to distribute data across backend1 and backend2 based on the first letter of the accountName field. All accountNames that start with the letter L and prior will be stored in backend1 and all other values stored in backend2. Note that the accountName column must be added to the primary key which is a requirement of MariaDB partitioning:
@@ -185,7 +185,7 @@ key(accountName)
 # Use case 4: sharding by list
 
 
-See also `<code>[list-partitioning-type](../../../server-management/partitioning-tables/partitioning-types/list-partitioning-type.md)</code>`.
+See also `[list-partitioning-type](../../../server-management/partitioning-tables/partitioning-types/list-partitioning-type.md)`.
 
 
 In this case a spider table is created to distribute data across backend1 and backend2 based on specific values in the owner field. Bill, Bob, and Chris will be stored in backend1 and Maria and Olivier stored in backend2. Note that the owner column must be added to the primary key which is a requirement of MariaDB partitioning:
@@ -217,5 +217,5 @@ With [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-m
 PARTITION partition_name DEFAULT
 ```
 
-For a complete list of partition types, see `<code>[partitioning-types](../../../server-management/partitioning-tables/partitioning-types/partitioning-types-overview.md)</code>`.
+For a complete list of partition types, see `[partitioning-types](../../../server-management/partitioning-tables/partitioning-types/partitioning-types-overview.md)`.
 

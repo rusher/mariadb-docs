@@ -1,7 +1,7 @@
 
 # Does the Password Prompt Appear Before or After Establishing a Connection?
 
-**Question:** When I use the mysql client as in `<code>mysql -u root -p -h <host></code>`, does the password-enter prompt popup before or after the client has established a connection with the server?
+**Question:** When I use the mysql client as in `mysql -u root -p -h <host>`, does the password-enter prompt popup before or after the client has established a connection with the server?
 
 
 **Answer:** Before the client has established a connection to the server.

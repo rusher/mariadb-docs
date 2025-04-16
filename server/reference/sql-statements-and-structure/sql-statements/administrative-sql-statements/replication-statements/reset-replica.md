@@ -30,13 +30,13 @@ likely to exist on a replication replica if you have issued a STOP REPLICA
 statement or if the replica is highly loaded.)
 
 
-Note: `<code class="highlight fixed" style="white-space:pre-wrap">RESET REPLICA</code>` does not reset the global
-`<code class="highlight fixed" style="white-space:pre-wrap">gtid_slave_pos</code>` variable. This means that a replica
-server configured with `<code class="highlight fixed" style="white-space:pre-wrap">CHANGE MASTER TO MASTER_USE_GTID=slave_pos</code>`
+Note: `RESET REPLICA` does not reset the global
+`gtid_slave_pos` variable. This means that a replica
+server configured with `CHANGE MASTER TO MASTER_USE_GTID=slave_pos`
 will not receive events with GTIDs occurring before the state saved in
-`<code class="highlight fixed" style="white-space:pre-wrap">gtid_slave_pos</code>`. If the intent is to reprocess these events,
-`<code class="highlight fixed" style="white-space:pre-wrap">gtid_slave_pos</code>` must be manually reset, e.g. by executing
-`<code class="highlight fixed" style="white-space:pre-wrap">set global gtid_slave_pos=""</code>`.
+`gtid_slave_pos`. If the intent is to reprocess these events,
+`gtid_slave_pos` must be manually reset, e.g. by executing
+`set global gtid_slave_pos=""`.
 
 
 Connection information stored in the master.info file is immediately
@@ -48,22 +48,22 @@ REPLICA is issued, these replicated temporary tables are deleted on the
 replica.
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">ALL</code>` also resets the `<code class="highlight fixed" style="white-space:pre-wrap">PORT</code>`, `<code class="highlight fixed" style="white-space:pre-wrap">HOST</code>`, `<code class="highlight fixed" style="white-space:pre-wrap">USER</code>` and `<code class="highlight fixed" style="white-space:pre-wrap">PASSWORD</code>` parameters for the replica. If you are using a connection name, it will permanently delete it and it will not show up anymore in [SHOW ALL REPLICAS STATUS](../show/show-replica-status.md).
+The `ALL` also resets the `PORT`, `HOST`, `USER` and `PASSWORD` parameters for the replica. If you are using a connection name, it will permanently delete it and it will not show up anymore in [SHOW ALL REPLICAS STATUS](../show/show-replica-status.md).
 
 
 #### connection_name
 
 
-The `<code>connection_name</code>` option is used for [multi-source replication](../../../../../server-usage/replication-cluster-multi-master/standard-replication/multi-source-replication.md).
+The `connection_name` option is used for [multi-source replication](../../../../../server-usage/replication-cluster-multi-master/standard-replication/multi-source-replication.md).
 
 
-If there is only one nameless primary, or the default primary (as specified by the [default_master_connection](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) system variable) is intended, `<code>connection_name</code>` can be omitted. If provided, the `<code>RESET REPLICA</code>` statement will apply to the specified primary. `<code>connection_name</code>` is case-insensitive.
+If there is only one nameless primary, or the default primary (as specified by the [default_master_connection](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) system variable) is intended, `connection_name` can be omitted. If provided, the `RESET REPLICA` statement will apply to the specified primary. `connection_name` is case-insensitive.
 
 
 
 ##### MariaDB starting with [10.7.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md)
-The `<code>FOR CHANNEL</code>` keyword was added for MySQL compatibility. This is identical as
-using the channel_name directly after `<code>RESET REPLICA</code>`.
+The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical as
+using the channel_name directly after `RESET REPLICA`.
 
 
 

@@ -14,7 +14,7 @@ FROM_UNIXTIME(unix_timestamp,format)
 
 
 Converts the number of seconds from the epoch (1970-01-01 00:00:00 UTC) to a
-`<code>TIMESTAMP</code>` value, the opposite of what `<code>[UNIX_TIMESTAMP()](unix_timestamp.md)</code>` is doing. Returns NULL if the result would be outside of the valid range of `<code>TIMESTAMP</code>` values.
+`TIMESTAMP` value, the opposite of what `[UNIX_TIMESTAMP()](unix_timestamp.md)` is doing. Returns NULL if the result would be outside of the valid range of `TIMESTAMP` values.
 
 
 If format is given, the result is exactly equivalent to
@@ -26,8 +26,8 @@ DATE_FORMAT(FROM_UNIXTIME(unix_timestamp), format)
 
 
 ##### MariaDB until [11.7](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md)
-Before [MariaDB 11.7](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md), the one-argument form of `<code>FROM_UNIXTIME()</code>` was returning a
-`<code>DATETIME</code>`. Meaning, it could return values outside of valid `<code>TIMESTAMP</code>` range,
+Before [MariaDB 11.7](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md), the one-argument form of `FROM_UNIXTIME()` was returning a
+`DATETIME`. Meaning, it could return values outside of valid `TIMESTAMP` range,
 in particular 1970-01-01 00:00:00. And it could return the same result for different values of unix_timestamp (around DST changes).
 
 
@@ -85,7 +85,7 @@ The options that can be used by FROM_UNIXTIME(), as well as [DATE_FORMAT()](date
 ## Performance Considerations
 
 
-If your [session time zone](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) is set to `<code>SYSTEM</code>` (the default), `<code>FROM_UNIXTIME()</code>` will call the OS function to convert the data using the system time zone. At least on Linux, the corresponding function (`<code>localtime_r</code>`) uses a global mutex inside glibc that can cause contention under high concurrent load.
+If your [session time zone](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) is set to `SYSTEM` (the default), `FROM_UNIXTIME()` will call the OS function to convert the data using the system time zone. At least on Linux, the corresponding function (`localtime_r`) uses a global mutex inside glibc that can cause contention under high concurrent load.
 
 
 Set your time zone to a named time zone to avoid this issue. See [mysql time zone tables](../../../../data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md#mysql-time-zone-tables) for details on how to do this.

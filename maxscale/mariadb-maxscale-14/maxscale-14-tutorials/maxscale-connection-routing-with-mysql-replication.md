@@ -22,7 +22,7 @@ Once you have MaxScale installed and the database users created, we can create t
 ## Creating Your MaxScale Configuration
 
 
-MaxScale reads its configuration from `<code>/etc/maxscale.cnf</code>`. This is not created as part of the installation process and must be manually created. A template file does exist in the `<code>/usr/share/maxscale</code>` folder that can be use as a basis for your configuration.
+MaxScale reads its configuration from `/etc/maxscale.cnf`. This is not created as part of the installation process and must be manually created. A template file does exist in the `/usr/share/maxscale` folder that can be use as a basis for your configuration.
 
 
 A global, maxscale, section is included within every MaxScale configuration file; this is used to set the values of various MaxScale wide parameters, perhaps the most important of these is the number of threads that MaxScale will use to execute the code that forwards requests and handles responses for clients.

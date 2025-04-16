@@ -8,7 +8,7 @@ We participated in Google Summer of Code 2013. MariaDB and the MariaDB Foundatio
 # Where to start
 
 
-Please join us at `<code class="fixed" style="white-space:pre-wrap">irc.freenode.net</code>` at #maria to mingle with the community. Or subscribe to [maria-developers@lists.launchpad.net](https://launchpad.net/~maria-developers). Or both.
+Please join us at `irc.freenode.net` at #maria to mingle with the community. Or subscribe to [maria-developers@lists.launchpad.net](https://launchpad.net/~maria-developers). Or both.
 
 
 Please keep in mind that in April we travel a lot (conferences, busy time), so if you have a question and nobody on IRC answers — do not feel disappointed, ask in an email to maria-developers@lists.launchpad.net.
@@ -83,7 +83,7 @@ Mentor: Mark Riddoch
 MySQL and MariaDB use an old regex library, it works bytewise, and thus only supports one byte character set. It needs to be replaced by a modern multi-byte character set aware regex library.
 
 
-Additionally a much requested `<code>REGEX_REPLACE</code>` function should be implemented. (See also [mysql-udf-regexp](https://launchpad.net/mysql-udf-regexp) for some UDF code that could be used as a starting point for this)
+Additionally a much requested `REGEX_REPLACE` function should be implemented. (See also [mysql-udf-regexp](https://launchpad.net/mysql-udf-regexp) for some UDF code that could be used as a starting point for this)
 
 
 Detailed task description: [MDEV-4425](https://jira.mariadb.org/browse/MDEV-4425)

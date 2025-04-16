@@ -48,7 +48,7 @@ For details about the standard service parameters, refer to the
 [Configuration Guide](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
 
 
-### `<code>master</code>`
+### `master`
 
 
 * Type: target
@@ -56,7 +56,7 @@ For details about the standard service parameters, refer to the
 * Dynamic: No
 
 
-One of the clusters must be designated as the **`<code>master</code>`**. All writes go to the
+One of the clusters must be designated as the **`master`**. All writes go to the
 primary cluster, which for all practical purposes should be a primary-replica
 ReadWriteSplit. This document does not go into details about setting up
 primary-replica clusters, but suffice to say, that when setting up the ColumnStore
@@ -94,7 +94,7 @@ socket=/tmp/rws-row.sock
 
 
 
-That is, that service can be accessed using the socket `<code>/tmp/rws-row.sock</code>`.
+That is, that service can be accessed using the socket `/tmp/rws-row.sock`.
 
 
 The Analytical service could look like this
@@ -173,7 +173,7 @@ SmartRouter.
 ## Limitations
 
 
-* `<code>LOAD DATA LOCAL INFILE</code>` is not supported.
+* `LOAD DATA LOCAL INFILE` is not supported.
 * The performance data is not persisted. The measurements will be performed
 anew after each startup.
 

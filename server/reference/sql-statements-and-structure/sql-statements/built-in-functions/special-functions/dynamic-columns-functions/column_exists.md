@@ -12,5 +12,5 @@ COLUMN_EXISTS(dyncol_blob, column_name);
 ## Description
 
 
-Checks if a column with name `<code>column_name</code>` exists in `<code>dyncol_blob</code>`. If yes, return `<code>1</code>`, otherwise return `<code>0</code>`. See [dynamic columns](../../../../nosql/dynamic-columns-api.md) for more information.
+Checks if a column with name `column_name` exists in `dyncol_blob`. If yes, return `1`, otherwise return `0`. See [dynamic columns](../../../../nosql/dynamic-columns-api.md) for more information.
 

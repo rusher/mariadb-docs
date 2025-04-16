@@ -12,7 +12,7 @@ VARIANCE(expr)
 ## Description
 
 
-Returns the population standard variance of `<code>expr</code>`. This is an extension to
+Returns the population standard variance of `expr`. This is an extension to
 standard SQL. The standard SQL function [VAR_POP()](var_pop.md) can be used
 instead.
 
@@ -31,7 +31,7 @@ It is an [aggregate function](../special-functions/window-functions/aggregate-fu
 VARIANCE() can be used as a [window function](../special-functions/window-functions/window-functions-overview.md).
 
 
-VARIANCE() returns `<code>NULL</code>` if there were no matching rows.
+VARIANCE() returns `NULL` if there were no matching rows.
 
 
 ## Examples

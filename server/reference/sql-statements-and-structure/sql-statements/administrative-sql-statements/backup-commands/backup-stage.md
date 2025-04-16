@@ -2,7 +2,7 @@
 # BACKUP STAGE
 
 
-The `<code>BACKUP STAGE</code>` commands are a set of commands to make it possible to make an efficient external backup tool.
+The `BACKUP STAGE` commands are a set of commands to make it possible to make an efficient external backup tool.
 
 
 ## Syntax
@@ -20,29 +20,29 @@ In the following text, a transactional table means InnoDB or "InnoDB-like engine
 
 * To be able to do a majority of the backup with the minimum possible server locks. Especially for transactional tables (InnoDB, MyRocks etc) there is only need for a very short block of new commits while copying statistics and log tables.
 * DDL are only needed to be blocked for a very short duration of the backup while [mariabackup](../../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) is copying the tables affected by DDL during the initial part of the backup.
-* Most non transactional tables (those that are not in use) will be copied during `<code>BACKUP STAGE START</code>`. The exceptions are system statistic and log tables that are not blocked during the backup until `<code>BLOCK_COMMIT</code>`.
+* Most non transactional tables (those that are not in use) will be copied during `BACKUP STAGE START`. The exceptions are system statistic and log tables that are not blocked during the backup until `BLOCK_COMMIT`.
 * Should work efficiently with backup tools that use disk snapshots.
 * Should work as efficiently as possible for all table types that store data on the local disks.
 * As little copying as possible under higher level stages/locks. For example, .frm (dictionary) and .trn (trigger) files should be copying while copying the table data.
 
 
-## `<code>BACKUP STAGE</code>` Commands
+## `BACKUP STAGE` Commands
 
 
-### `<code>BACKUP STAGE START</code>`
+### `BACKUP STAGE START`
 
 
-The `<code>START</code>` stage is designed for the following tasks:
+The `START` stage is designed for the following tasks:
 
 
 * Blocks purge of redo files for storage engines that needs this (Aria)
 * Start logging of DDL commands into 'datadir'/ddl.log. This may take a short time as the command has to wait until there are no active DDL commands.
 
 
-### `<code>BACKUP STAGE FLUSH</code>`
+### `BACKUP STAGE FLUSH`
 
 
-The `<code>FLUSH</code>` stage is designed for the following tasks:
+The `FLUSH` stage is designed for the following tasks:
 
 
 * FLUSH all changes for inactive non-transactional tables, except for statistics and log tables.
@@ -53,10 +53,10 @@ The `<code>FLUSH</code>` stage is designed for the following tasks:
 DDLs don't have to be blocked at this stage as they can't cause the table to be in an inconsistent state. This is true also for non-transactional tables.
 
 
-### `<code>BACKUP STAGE BLOCK_DDL</code>`
+### `BACKUP STAGE BLOCK_DDL`
 
 
-The `<code>BLOCK_DDL</code>` stage is designed for the following tasks:
+The `BLOCK_DDL` stage is designed for the following tasks:
 
 
 * Wait for all statements using write locked non-transactional tables to end.
@@ -64,60 +64,60 @@ The `<code>BLOCK_DDL</code>` stage is designed for the following tasks:
 * Blocks also start off a new [ALTER TABLE](../../data-definition/alter/alter-tablespace.md) and the final rename phase of [ALTER TABLE](../../data-definition/alter/alter-tablespace.md). Running ALTER TABLES are not blocked.
 
 
-### `<code>BACKUP STAGE BLOCK_COMMIT</code>`
+### `BACKUP STAGE BLOCK_COMMIT`
 
 
-The `<code>BLOCK_COMMIT</code>` stage is designed for the following tasks:
+The `BLOCK_COMMIT` stage is designed for the following tasks:
 
 
-* Lock the binary log and commit/rollback to ensure that no changes are committed to any tables. If there are active commits or data to be copied to the binary log this will be allowed to finish. Active transactions will not affect `<code>BLOCK_COMMIT</code>`.
+* Lock the binary log and commit/rollback to ensure that no changes are committed to any tables. If there are active commits or data to be copied to the binary log this will be allowed to finish. Active transactions will not affect `BLOCK_COMMIT`.
 * This doesn't lock temporary tables that are not used by replication. However these will be blocked when it's time to write to the binary log.
 * Lock system log tables and statistics tables, flush them and mark them closed.
 
 
-When the `<code>BLOCK_COMMIT</code>`'s stages return, this is the 'backup time'. Everything committed will be in the backup and everything not committed will roll back.
+When the `BLOCK_COMMIT`'s stages return, this is the 'backup time'. Everything committed will be in the backup and everything not committed will roll back.
 
 
-Transactional engines will continue to do changes to the redo log during the `<code>BLOCK COMMIT</code>` stage, but this is not important as all of these will roll back later as the changes will not be committed.
+Transactional engines will continue to do changes to the redo log during the `BLOCK COMMIT` stage, but this is not important as all of these will roll back later as the changes will not be committed.
 
 
-### `<code>BACKUP STAGE END</code>`
+### `BACKUP STAGE END`
 
 
-The `<code>END</code>` stage is designed for the following tasks:
+The `END` stage is designed for the following tasks:
 
 
 * End DDL logging
 * Free resources
 
 
-## Using `<code>BACKUP STAGE</code>` Commands with Backup Tools
+## Using `BACKUP STAGE` Commands with Backup Tools
 
 
-### Using `<code>BACKUP STAGE</code>` Commands with Mariabackup
+### Using `BACKUP STAGE` Commands with Mariabackup
 
 
-The `<code>BACKUP STAGE</code>` commands are a set of commands to make it possible to make an efficient external backup tool. How [Mariabackup](../../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) uses these commands depends on which version you are using. Prior to [MariaDB 10.11.8](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes.md), [MariaDB 11.0.6](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes.md), [MariaDB 11.1.5](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes.md) and [MariaDB 11.2.4](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes.md), this depended on whether you are using the version that is bundled with MariaDB Community Server or the version that is bundled with [MariaDB Enterprise Server](../../../../../../release-notes/mariadb-enterprise-server/mariadb-enterprise-server-10-6/README.md). See [Mariabackup and BACKUP STAGE Commands](../../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) for some examples on how [Mariabackup](../../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) uses these commands. From [MariaDB 10.11.8](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes.md), [MariaDB 11.0.6](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes.md), [MariaDB 11.1.5](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes.md) and [MariaDB 11.2.4](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes.md), these features were ported from MariaDB Enterprise Server ([MDEV-32932](https://jira.mariadb.org/browse/MDEV-32932)).
+The `BACKUP STAGE` commands are a set of commands to make it possible to make an efficient external backup tool. How [Mariabackup](../../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) uses these commands depends on which version you are using. Prior to [MariaDB 10.11.8](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes.md), [MariaDB 11.0.6](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes.md), [MariaDB 11.1.5](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes.md) and [MariaDB 11.2.4](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes.md), this depended on whether you are using the version that is bundled with MariaDB Community Server or the version that is bundled with [MariaDB Enterprise Server](../../../../../../release-notes/mariadb-enterprise-server/mariadb-enterprise-server-10-6/README.md). See [Mariabackup and BACKUP STAGE Commands](../../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) for some examples on how [Mariabackup](../../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) uses these commands. From [MariaDB 10.11.8](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes.md), [MariaDB 11.0.6](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes.md), [MariaDB 11.1.5](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes.md) and [MariaDB 11.2.4](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes.md), these features were ported from MariaDB Enterprise Server ([MDEV-32932](https://jira.mariadb.org/browse/MDEV-32932)).
 
 
-### Using `<code>BACKUP STAGE</code>` Commands with Storage Snapshots
+### Using `BACKUP STAGE` Commands with Storage Snapshots
 
 
-The `<code>BACKUP STAGE</code>` commands are a set of commands to make it possible to make an efficient external backup tool. These commands could even be used by tools that perform backups by taking a snapshot of a file system, SAN, or some other kind of storage device. See [Storage Snapshots and BACKUP STAGE Commands](storage-snapshots-and-backup-stage-commands.md) for some examples on how to use each `<code>BACKUP STAGE</code>` command in an efficient way.
+The `BACKUP STAGE` commands are a set of commands to make it possible to make an efficient external backup tool. These commands could even be used by tools that perform backups by taking a snapshot of a file system, SAN, or some other kind of storage device. See [Storage Snapshots and BACKUP STAGE Commands](storage-snapshots-and-backup-stage-commands.md) for some examples on how to use each `BACKUP STAGE` command in an efficient way.
 
 
 ## Privileges
 
 
-`<code>BACKUP STAGE</code>` requires the [RELOAD](../../account-management-sql-commands/grant.md) privilege.
+`BACKUP STAGE` requires the [RELOAD](../../account-management-sql-commands/grant.md) privilege.
 
 
 ## Notes
 
 
-* Only one connection can run `<code>BACKUP STAGE START</code>`. If a second connection tries, it will wait until the first one has executed `<code>BACKUP STAGE END</code>`.
-* If the user skips a `<code>BACKUP STAGE</code>`, then all intermediate backup stages will automatically be run. This will allow us to add new stages within the `<code>BACKUP STAGE</code>` hierarchy in the future with even more precise locks without causing problems for tools using an earlier version of the `<code>BACKUP STAGE</code>` implementation.
-* One can use the [max_statement_time](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_statement_time) or [lock_wait_timeout](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lock_wait_timeout) system variables to ensure that a `<code>BACKUP STAGE</code>` command doesn't block the server too long.
+* Only one connection can run `BACKUP STAGE START`. If a second connection tries, it will wait until the first one has executed `BACKUP STAGE END`.
+* If the user skips a `BACKUP STAGE`, then all intermediate backup stages will automatically be run. This will allow us to add new stages within the `BACKUP STAGE` hierarchy in the future with even more precise locks without causing problems for tools using an earlier version of the `BACKUP STAGE` implementation.
+* One can use the [max_statement_time](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_statement_time) or [lock_wait_timeout](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lock_wait_timeout) system variables to ensure that a `BACKUP STAGE` command doesn't block the server too long.
 * DDL logging is only be available from [MariaDB 10.11.8](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes.md), [MariaDB 11.0.6](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes.md), [MariaDB 11.1.5](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes.md) and [MariaDB 11.2.4](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes.md), or in [MariaDB Enterprise Server](../../../../../../release-notes/mariadb-enterprise-server/mariadb-enterprise-server-10-6/README.md).
 * A disconnect will automatically release backup stages.
 * There is no easy way to see which is the current stage.

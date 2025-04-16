@@ -1,7 +1,7 @@
 
 # Information Schema SYSTEM_VARIABLES Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>SYSTEM_VARIABLES</code>` table shows current values and various metadata of all [system variables](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md).
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `SYSTEM_VARIABLES` table shows current values and various metadata of all [system variables](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md).
 
 
 It contains the following columns:

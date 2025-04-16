@@ -22,7 +22,7 @@ ST_MultiPointFromText(wkt[,srid])
 Constructs a geometry value of any type using its [WKT](wkt-definition.md) representation and [SRID](../geometry-properties/st_srid.md).
 
 
-`<code>GeomFromText()</code>`, `<code>GeometryFromText()</code>`, `<code>ST_GeomFromText()</code>`, `<code>ST_GeometryFromText()</code>`, `<code>ST_MultiLineStringFromText</code>`, `<code>ST_MLineFromText</code>`, `<code>ST_MultiPolyFromText</code>` and `<code>ST_MPolygonFromText</code>` are all synonyms.
+`GeomFromText()`, `GeometryFromText()`, `ST_GeomFromText()`, `ST_GeometryFromText()`, `ST_MultiLineStringFromText`, `ST_MLineFromText`, `ST_MultiPolyFromText` and `ST_MPolygonFromText` are all synonyms.
 
 
 ## Example

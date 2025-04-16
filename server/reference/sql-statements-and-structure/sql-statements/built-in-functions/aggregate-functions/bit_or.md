@@ -12,13 +12,13 @@ BIT_OR(expr) [over_clause]
 ## Description
 
 
-Returns the bitwise OR of all bits in `<code>expr</code>`. The calculation is performed with 64-bit ([BIGINT](../../../../data-types/data-types-numeric-data-types/bigint.md)) precision. It is an [aggregate function](../special-functions/window-functions/aggregate-functions-as-window-functions.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
+Returns the bitwise OR of all bits in `expr`. The calculation is performed with 64-bit ([BIGINT](../../../../data-types/data-types-numeric-data-types/bigint.md)) precision. It is an [aggregate function](../special-functions/window-functions/aggregate-functions-as-window-functions.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
 
 
-If no rows match, `<code>BIT_OR</code>` will return a value with all bits set to `<code>0</code>`. NULL values have no effect on the result unless all results are NULL, which is treated as no match.
+If no rows match, `BIT_OR` will return a value with all bits set to `0`. NULL values have no effect on the result unless all results are NULL, which is treated as no match.
 
 
-`<code>BIT_OR</code>` can be used as a [window function](../special-functions/window-functions/window-functions-overview.md) with the addition of the *over_clause*.
+`BIT_OR` can be used as a [window function](../special-functions/window-functions/window-functions-overview.md) with the addition of the *over_clause*.
 
 
 ## Examples

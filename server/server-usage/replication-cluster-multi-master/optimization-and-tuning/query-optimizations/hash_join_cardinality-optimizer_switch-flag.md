@@ -23,13 +23,13 @@ where
   customer.id = orders.customer_id and ...
 ```
 
-Suppose, table orders has an index `<code>IDX</code>` on `<code>orders.customer_id</code>`.
+Suppose, table orders has an index `IDX` on `orders.customer_id`.
 
 
-If the query plan is using this index to fetch orders for each customer, the optimizer will use index statistics from `<code>IDX</code>` to estimate the number of rows in the customer-joined-with-orders.
+If the query plan is using this index to fetch orders for each customer, the optimizer will use index statistics from `IDX` to estimate the number of rows in the customer-joined-with-orders.
 
 
-On the other hand, if the optimizer considers a query plan that joins customer with orders without use of indexes, it will ignore the `<code>customer.id = orders.customer_id</code>` equality completely and will compute the 
+On the other hand, if the optimizer considers a query plan that joins customer with orders without use of indexes, it will ignore the `customer.id = orders.customer_id` equality completely and will compute the 
 output cardinality as if customer was cross-joined with orders.
 
 
@@ -42,11 +42,11 @@ MariaDB supports [Block Hash Join](../../../../reference/mariadb-internals/maria
 Before [MDEV-30812](https://jira.mariadb.org/browse/MDEV-30812), Query optimization for Block Hash Join would work as described in the above example: It would assume that the join operation is a cross join.
 
 
-[MDEV-30812](https://jira.mariadb.org/browse/MDEV-30812) introduces a new [optimizer_switch](../system-variables/server-system-variables.md#optimizer_switch) flag, `<code>hash_join_cardinality</code>`. In MariaDB versions before 11.0, it is off by default.
+[MDEV-30812](https://jira.mariadb.org/browse/MDEV-30812) introduces a new [optimizer_switch](../system-variables/server-system-variables.md#optimizer_switch) flag, `hash_join_cardinality`. In MariaDB versions before 11.0, it is off by default.
 
 
 If one sets it to ON, the optimizer will make use of column histograms when computing the cardinality of hash join operation output.
 
 
-One can see the computation in the Optimizer Trace, search for `<code>hash_join_cardinality</code>`.
+One can see the computation in the Optimizer Trace, search for `hash_join_cardinality`.
 

@@ -1,7 +1,7 @@
 
 # UNION
 
-`<code>UNION</code>` is used to combine the results from multiple [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statements into a single result set.
+`UNION` is used to combine the results from multiple [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statements into a single result set.
 
 
 ## Syntax
@@ -19,34 +19,34 @@ UNION [ALL | DISTINCT] SELECT ...
 ## Description
 
 
-`<code>UNION</code>` is used to combine the results from multiple [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statements into a single result set.
+`UNION` is used to combine the results from multiple [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statements into a single result set.
 
 
-The column names from the first `<code class="fixed" style="white-space:pre-wrap">SELECT</code>` statement are used as the column names for the results returned. Selected columns listed in corresponding positions of each SELECT statement should have the same data type. (For example, the first column selected by the first statement should have the same type as the first column selected by the other statements.)
+The column names from the first `SELECT` statement are used as the column names for the results returned. Selected columns listed in corresponding positions of each SELECT statement should have the same data type. (For example, the first column selected by the first statement should have the same type as the first column selected by the other statements.)
 
 
 If they don't, the type and length of the columns in the result take into account the values returned by all of the SELECTs, so there is no need for explicit casting. Note that currently this is not the case for [recursive CTEs](../common-table-expressions/recursive-common-table-expressions-overview.md) - see [MDEV-12325](https://jira.mariadb.org/browse/MDEV-12325).
 
 
-Table names can be specified as `<code>db_name</code>`.`<code>tbl_name</code>`. This permits writing `<code>UNION</code>`s which involve multiple databases. See [Identifier Qualifiers](../../../../sql-language-structure/identifier-qualifiers.md) for syntax details.
+Table names can be specified as `db_name`.`tbl_name`. This permits writing `UNION`s which involve multiple databases. See [Identifier Qualifiers](../../../../sql-language-structure/identifier-qualifiers.md) for syntax details.
 
 
 UNION queries cannot be used with [aggregate functions](../../../built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions.md).
 
 
-`<code>EXCEPT</code>` and `<code>UNION</code>` have the same operation precedence and `<code>INTERSECT</code>` has a higher precedence, unless [running in Oracle mode](../../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), in which case all three have the same precedence.
+`EXCEPT` and `UNION` have the same operation precedence and `INTERSECT` has a higher precedence, unless [running in Oracle mode](../../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), in which case all three have the same precedence.
 
 
 ### ALL/DISTINCT
 
 
-The `<code>ALL</code>` keyword causes duplicate rows to be preserved. The `<code>DISTINCT</code>` keyword (the default if the keyword is omitted) causes duplicate rows to be removed by the results.
+The `ALL` keyword causes duplicate rows to be preserved. The `DISTINCT` keyword (the default if the keyword is omitted) causes duplicate rows to be removed by the results.
 
 
 UNION ALL and UNION DISTINCT can both be present in a query. In this case, UNION DISTINCT will override any UNION ALLs to its left.
 
 
-The server can in most cases execute `<code>UNION ALL</code>` without creating a temporary table (see [MDEV-334](https://jira.mariadb.org/browse/MDEV-334)).
+The server can in most cases execute `UNION ALL` without creating a temporary table (see [MDEV-334](https://jira.mariadb.org/browse/MDEV-334)).
 
 
 ### ORDER BY and LIMIT
@@ -86,7 +86,7 @@ Parentheses can be used to specify precedence. Prior to [MariaDB 10.4](../../../
 ## Examples
 
 
-`<code>UNION</code>` between tables having different column names:
+`UNION` between tables having different column names:
 
 
 ```
@@ -95,7 +95,7 @@ UNION
 (SELECT c_name AS name, email FROM customers);
 ```
 
-Specifying the `<code>UNION</code>`'s global order and limiting total rows:
+Specifying the `UNION`'s global order and limiting total rows:
 
 
 ```
@@ -136,7 +136,7 @@ UNION
 (SELECT 2, c_name AS name, email FROM customers) ORDER BY sort_column;
 ```
 
-Difference between UNION, [EXCEPT](except.md) and [INTERSECT](../../../../geographic-geometric-features/geometry-relations/intersects.md). `<code>INTERSECT ALL</code>` and `<code>EXCEPT ALL</code>` are available from [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md).
+Difference between UNION, [EXCEPT](except.md) and [INTERSECT](../../../../geographic-geometric-features/geometry-relations/intersects.md). `INTERSECT ALL` and `EXCEPT ALL` are available from [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md).
 
 
 ```

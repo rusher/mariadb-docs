@@ -22,7 +22,7 @@ length prefix that indicates the number of bytes in the value.
 ### Oracle Mode
 
 
-In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `<code>BLOB</code>` is a synonym for `<code>LONGBLOB</code>`.
+In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `BLOB` is a synonym for `LONGBLOB`.
 
 
 ## EXAMPLES

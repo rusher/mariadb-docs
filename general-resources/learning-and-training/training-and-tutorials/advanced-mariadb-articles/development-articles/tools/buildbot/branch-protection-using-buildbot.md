@@ -10,7 +10,7 @@ The current protected branches are the main branches **10.X**/**11.X** and relea
 ### Protected Branches Flow
 
 
-1. Rebase your work on top of the latest main branch. `<code>git rebase 10.11</code>`
+1. Rebase your work on top of the latest main branch. `git rebase 10.11`
 1. Push to bb-* branch
 1. Wait for all the checks to run
 1. If all checks are successful you can push to the main branch to be the same as bb-* branch

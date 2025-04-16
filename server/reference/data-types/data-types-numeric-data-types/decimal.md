@@ -12,35 +12,35 @@ DECIMAL[(M[,D])] [SIGNED | UNSIGNED | ZEROFILL]
 ## Description
 
 
-A packed "exact" fixed-point number. `<code>M</code>` is the total number of digits (the
-precision) and `<code>D</code>` is the number of digits after the decimal point (the
+A packed "exact" fixed-point number. `M` is the total number of digits (the
+precision) and `D` is the number of digits after the decimal point (the
 scale).
 
 
 * The decimal point and (for negative numbers) the "-" sign are not
-counted in `<code>M</code>`.
-* If `<code>D</code>` is `<code>0</code>`, values have no decimal point or fractional
-part and on [INSERT](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) the value will be rounded to the nearest `<code>DECIMAL</code>`.
-* The maximum number of digits (`<code>M</code>`) for `<code>DECIMAL</code>` is 65.
-* The maximum number of supported decimals (`<code>D</code>`) is `<code>30</code>` before [MariadB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md) and `<code>38</code>` afterwards.
-* If `<code>D</code>` is omitted, the default is `<code>0</code>`. If `<code>M</code>` is omitted, the default is `<code>10</code>`.
+counted in `M`.
+* If `D` is `0`, values have no decimal point or fractional
+part and on [INSERT](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) the value will be rounded to the nearest `DECIMAL`.
+* The maximum number of digits (`M`) for `DECIMAL` is 65.
+* The maximum number of supported decimals (`D`) is `30` before [MariadB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md) and `38` afterwards.
+* If `D` is omitted, the default is `0`. If `M` is omitted, the default is `10`.
 
 
-`<code>UNSIGNED</code>`, if specified, disallows negative values.
+`UNSIGNED`, if specified, disallows negative values.
 
 
-`<code>ZEROFILL</code>`, if specified, pads the number with zeros, up to the total number
-of digits specified by `<code>M</code>`.
+`ZEROFILL`, if specified, pads the number with zeros, up to the total number
+of digits specified by `M`.
 
 
-All basic calculations (+, -, *, /) with `<code>DECIMAL</code>` columns are done with
+All basic calculations (+, -, *, /) with `DECIMAL` columns are done with
 a precision of 65 digits.
 
 
 For more details on the attributes, see [Numeric Data Type Overview](numeric-data-type-overview.md).
 
 
-`<code>DEC</code>`, `<code>NUMERIC</code>` and `<code>FIXED</code>` are synonyms, as well as `<code>NUMBER</code>` in [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md).
+`DEC`, `NUMERIC` and `FIXED` are synonyms, as well as `NUMBER` in [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md).
 
 
 ## Examples

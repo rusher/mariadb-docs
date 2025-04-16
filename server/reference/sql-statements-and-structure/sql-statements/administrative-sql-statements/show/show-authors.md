@@ -11,7 +11,7 @@ SHOW AUTHORS
 ## Description
 
 
-The `<code class="highlight fixed" style="white-space:pre-wrap">SHOW AUTHORS</code>` statement displays information about the
+The `SHOW AUTHORS` statement displays information about the
 people who work on MariaDB. For each author, it displays Name, Location, and
 Comment values. All columns are encoded as latin1.
 

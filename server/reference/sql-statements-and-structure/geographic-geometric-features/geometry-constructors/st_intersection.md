@@ -11,7 +11,7 @@ ST_INTERSECTION(g1,g2)
 ## Description
 
 
-Returns a geometry that is the intersection, or shared portion, of geometry *`<code>g1</code>`* and geometry *`<code>g2</code>`*.
+Returns a geometry that is the intersection, or shared portion, of geometry *`g1`* and geometry *`g2`*.
 
 
 ## Examples

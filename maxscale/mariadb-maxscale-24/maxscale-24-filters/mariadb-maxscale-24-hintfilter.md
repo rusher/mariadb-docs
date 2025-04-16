@@ -26,23 +26,23 @@ The hintfilter does not support routing hints in prepared statements
 
 
 The client connection will need to have comments enabled. For example the
-`<code>mysql</code>` command line client has comments disabled by default and they need to be
-enabled by passing the `<code>-c</code>` option. Most, if not all, connectors keep all
+`mysql` command line client has comments disabled by default and they need to be
+enabled by passing the `-c` option. Most, if not all, connectors keep all
 comments intact in executed queries.
 
 
-For comment types, use either `<code>--</code>` (notice the whitespace after the double
-hyphen) or `<code>#</code>` after the semicolon or `<code>/* ... */</code>` before the semicolon.
+For comment types, use either `--` (notice the whitespace after the double
+hyphen) or `#` after the semicolon or `/* ... */` before the semicolon.
 
 
-Inline comment blocks, i.e. `<code>/* .. */</code>`, do not require a whitespace character
+Inline comment blocks, i.e. `/* .. */`, do not require a whitespace character
 after the start tag or before the end tag but adding the whitespace is advised.
 
 
 ## Hint body
 
 
-All hints must start with the `<code>maxscale</code>` tag.
+All hints must start with the `maxscale` tag.
 
 
 
@@ -70,10 +70,10 @@ server.
 
 
 
-A `<code>master</code>` value in a routing hint will route the query to a master server. This
+A `master` value in a routing hint will route the query to a master server. This
 can be used to direct read queries to a master server for a up-to-date result
-with no replication lag. A `<code>slave</code>` value will route the query to a slave
-server. A `<code>server</code>` value will route the query to a named server. The value of
+with no replication lag. A `slave` value will route the query to a slave
+server. A `server` value will route the query to a named server. The value of
 *<server name="">* needs to be the same as the server section name in maxscale.cnf.
 
 
@@ -90,7 +90,7 @@ These control the behavior and affect the routing decisions made by the router.
 
 
 
-Currently the only accepted parameter is `<code>max_slave_replication_lag</code>`. This will
+Currently the only accepted parameter is `max_slave_replication_lag`. This will
 route the query to a server with lower replication lag then what is defined in
 the hint value.
 
@@ -156,7 +156,7 @@ they are on the stack:
 # Examples
 
 
-## Routing `<code>SELECT</code>` queries to master
+## Routing `SELECT` queries to master
 
 
 In this example, MariaDB MaxScale is configured with the readwritesplit router

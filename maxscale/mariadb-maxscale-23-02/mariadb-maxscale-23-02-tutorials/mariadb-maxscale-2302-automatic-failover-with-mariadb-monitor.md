@@ -22,8 +22,8 @@ are enabled by default.
 
 
 The following examples have been written with the assumption that there
-are four servers - `<code>server1</code>`, `<code>server2</code>`, `<code>server3</code>` and `<code>server4</code>` - of
-which `<code>server1</code>` is the initial primary and the other servers are replicas.
+are four servers - `server1`, `server2`, `server3` and `server4` - of
+which `server1` is the initial primary and the other servers are replicas.
 In addition there is a monitor called *TheMonitor* that monitors those
 servers.
 
@@ -103,7 +103,7 @@ $ maxctrl list servers
 
 
 
-Note that the status for `<code>server1</code>` is *Down*.
+Note that the status for `server1` is *Down*.
 
 
 Since failover is by default *not* enabled, the failover mechanism must be
@@ -119,10 +119,10 @@ OK
 
 
 There are quite a few arguments, so let's look at each one separately
-*`<code>call command</code>` indicates that it is a module command that is to be
- invoked,* `<code>mariadbmon</code>` indicates the module whose command we want to invoke (that
+*`call command` indicates that it is a module command that is to be
+ invoked,* `mariadbmon` indicates the module whose command we want to invoke (that
 is the MariaDB Monitor),
-*`<code>failover</code>` is the command we want to invoke, and* `<code>TheMonitor</code>` is the first and only argument to that command, the name of
+*`failover` is the command we want to invoke, and* `TheMonitor` is the first and only argument to that command, the name of
 the monitor as specified in the configuration file.
 
 
@@ -153,7 +153,7 @@ $ maxctrl list servers
 
 
 
-If `<code>server1</code>` now reappears, it will not be rejoined to the cluster, as
+If `server1` now reappears, it will not be rejoined to the cluster, as
 shown by the following output:
 
 
@@ -175,8 +175,8 @@ $ maxctrl list servers
 
 
 
-Had `<code>auto_rejoin=true</code>` been specified in the monitor section, then an
-attempt to rejoin `<code>server1</code>` would have been made.
+Had `auto_rejoin=true` been specified in the monitor section, then an
+attempt to rejoin `server1` would have been made.
 
 
 In MaxScale 2.2.1, rejoining cannot be initiated manually, but in a
@@ -186,7 +186,7 @@ subsequent version a command to that effect will be provided.
 # Automatic Failover
 
 
-To enable automatic failover, simply add `<code>auto_failover=true</code>` to the
+To enable automatic failover, simply add `auto_failover=true` to the
 monitor section in the configuration file.
 
 
@@ -223,7 +223,7 @@ $ maxctrl list servers
 
 
 
-If `<code>server1</code>` now goes down, failover will automatically be performed and
+If `server1` now goes down, failover will automatically be performed and
 an existing replica promoted to new primary.
 
 
@@ -246,14 +246,14 @@ $ maxctrl list servers
 
 
 If you are continuously monitoring the server states, you may notice for a
-brief period that the state of `<code>server1</code>` is *Down* and the state of
-`<code>server2</code>` is still *Slave, Running*.
+brief period that the state of `server1` is *Down* and the state of
+`server2` is still *Slave, Running*.
 
 
 # Rejoin
 
 
-To enable automatic rejoin, simply add `<code>auto_rejoin=true</code>` to the
+To enable automatic rejoin, simply add `auto_rejoin=true` to the
 monitor secion in the configuration file.
 
 
@@ -294,8 +294,8 @@ $ maxctrl list servers
 
 
 
-Assuming `<code>auto_failover=true</code>` has been specified in the configuration
-file, when `<code>server1</code>` goes down for some reason, failover will be performed
+Assuming `auto_failover=true` has been specified in the configuration
+file, when `server1` goes down for some reason, failover will be performed
 and we end up with the following cluster state:
 
 
@@ -317,7 +317,7 @@ $ maxctrl list servers
 
 
 
-If `<code>server1</code>` now reappears, the MariaDB Monitor will detect that and
+If `server1` now reappears, the MariaDB Monitor will detect that and
 attempt to rejoin the old primary as a replica.
 
 
@@ -357,7 +357,7 @@ role from one server to another.
 
 
 If we continue from the cluster state at the end of the previous example
-and want to make `<code>server1</code>` primary again, then we must issue the following
+and want to make `server1` primary again, then we must issue the following
 command:
 
 
@@ -370,12 +370,12 @@ OK
 
 
 There are quite a few arguments, so let's look at each one separately
-*`<code>call command</code>` indicates that it is a module command that is to be
- invoked,* `<code>mariadbmon</code>` indicates the module whose command we want to invoke,
-*`<code>switchover</code>` is the command we want to invoke, and* `<code>TheMonitor</code>` is the first argument to the command, the name of the monitor
+*`call command` indicates that it is a module command that is to be
+ invoked,* `mariadbmon` indicates the module whose command we want to invoke,
+*`switchover` is the command we want to invoke, and* `TheMonitor` is the first argument to the command, the name of the monitor
 as specified in the configuration file,
-*`<code>server1</code>` is the second argument to the command, the name of the server we
-want to make into primary, and* `<code>server2</code>` is the third argument to the command, the name of the *current*
+*`server1` is the second argument to the command, the name of the server we
+want to make into primary, and* `server2` is the third argument to the command, the name of the *current*
 *primary*.
 
 

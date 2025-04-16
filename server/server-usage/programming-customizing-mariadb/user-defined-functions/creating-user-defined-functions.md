@@ -122,7 +122,7 @@ Each time the aggregate SQL function *X()* is called:
 ## Examples
 
 
-For an example, see `<code>sql/udf_example.cc</code>` in the source tree. For a collection of existing UDFs see [mysqludf](https://github.com/mysqludf).
+For an example, see `sql/udf_example.cc` in the source tree. For a collection of existing UDFs see [mysqludf](https://github.com/mysqludf).
 
 
 ## See Also

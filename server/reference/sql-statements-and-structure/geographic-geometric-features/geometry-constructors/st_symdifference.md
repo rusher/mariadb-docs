@@ -11,7 +11,7 @@ ST_SYMDIFFERENCE(g1,g2)
 ## Description
 
 
-Returns a geometry that represents the portions of geometry *`<code>g1</code>`* and geometry *`<code>g2</code>`* that don't intersect.
+Returns a geometry that represents the portions of geometry *`g1`* and geometry *`g2`* that don't intersect.
 
 
 ## Examples

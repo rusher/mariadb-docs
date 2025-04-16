@@ -12,10 +12,10 @@ X(p)
 ## Description
 
 
-Returns the X-coordinate value for the point `<code>p</code>` as a double-precision number.
+Returns the X-coordinate value for the point `p` as a double-precision number.
 
 
-`<code>ST_X()</code>` and `<code>X()</code>` are synonyms.
+`ST_X()` and `X()` are synonyms.
 
 
 ## Examples

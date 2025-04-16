@@ -9,10 +9,10 @@ These [Sys Schema](sys-schema-views-host_summary_by_statement_latency-and-xhost_
 ## Description
 
 
-The `<code>memory_by_host_by_current_bytes</code>` and `<code>x$memory_by_host_by_current_bytes</code>` summarize memory use grouped by host. Rows by default are sorted by descending amount of memory used.
+The `memory_by_host_by_current_bytes` and `x$memory_by_host_by_current_bytes` summarize memory use grouped by host. Rows by default are sorted by descending amount of memory used.
 
 
-The `<code>memory_by_host_by_current_bytes</code>` view is intended to be easier for human reading, while the `<code>x$memory_by_host_by_current_bytes</code>` view provides the data in raw form, intended for tools that process the data.
+The `memory_by_host_by_current_bytes` view is intended to be easier for human reading, while the `x$memory_by_host_by_current_bytes` view provides the data in raw form, intended for tools that process the data.
 
 
 They contain the following columns:

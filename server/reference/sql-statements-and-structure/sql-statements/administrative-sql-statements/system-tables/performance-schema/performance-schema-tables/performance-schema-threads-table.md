@@ -1,10 +1,10 @@
 
 # Performance Schema threads Table
 
-Each server thread is represented as a row in the `<code>threads</code>` table.
+Each server thread is represented as a row in the `threads` table.
 
 
-The `<code>threads</code>` table contains the following columns:
+The `threads` table contains the following columns:
 
 
 

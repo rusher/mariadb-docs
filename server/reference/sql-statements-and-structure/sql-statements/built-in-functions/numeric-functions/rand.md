@@ -12,7 +12,7 @@ RAND(), RAND(N)
 ## Description
 
 
-Returns a random `<code>[DOUBLE](../../../../data-types/data-types-numeric-data-types/double.md)</code>` precision floating point value v in the range 0 <= v < 1.0. If
+Returns a random `[DOUBLE](../../../../data-types/data-types-numeric-data-types/double.md)` precision floating point value v in the range 0 <= v < 1.0. If
 a constant integer argument N is specified, it is used as the seed
 value, which produces a repeatable sequence of column values. In the example below, note that the sequences of values produced by
 RAND(3) is the same both places where it occurs.

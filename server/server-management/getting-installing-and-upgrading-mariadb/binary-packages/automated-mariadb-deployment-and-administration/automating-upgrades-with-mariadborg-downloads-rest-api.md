@@ -30,7 +30,7 @@ The script in this example will be extremely simple. We'll do it this way:
 
 
 * Retrieve the JSON object describing all MariaDB versions.
-* For each element of the array, only show the `<code>release_id</code>` and `<code>release_status</code>` properties, and concatenate them.
+* For each element of the array, only show the `release_id` and `release_status` properties, and concatenate them.
 * Apply a filter, so we only select the rows containing 'stable' but not 'old' (so we exclude 'Old Stable').
 * From the remaining rows, only show the first column (the version number).
 
@@ -70,7 +70,7 @@ The only non-standard command here is jq. It is a great way to manipulate JSON d
 ## How to Use the API with a Python Script
 
 
-To use the API with Python, we need a module that is able to send HTTP requests and parse a JSON output. The `<code>requests</code>` module has both these features. It can be installed as follows:
+To use the API with Python, we need a module that is able to send HTTP requests and parse a JSON output. The `requests` module has both these features. It can be installed as follows:
 
 
 ```
@@ -92,7 +92,7 @@ for x in response['major_releases']:
         print(x['release_id'])
 ```
 
-`<code>requests.get()</code>` makes an HTTP call of type GET, and `<code>requests.json()</code>` returns a dictionary representing the previously obtained JSON document.
+`requests.get()` makes an HTTP call of type GET, and `requests.json()` returns a dictionary representing the previously obtained JSON document.
 
 
 

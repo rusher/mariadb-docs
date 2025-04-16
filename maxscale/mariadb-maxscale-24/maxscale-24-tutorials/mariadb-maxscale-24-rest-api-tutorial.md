@@ -6,23 +6,23 @@
 
 This tutorial is a quick overview of what the MaxScale REST API offers, how it
 can be used to inspect the state of MaxScale and how to use it to modify the
-runtime configuration of MaxScale. The tutorial uses the `<code>curl</code>` command line
+runtime configuration of MaxScale. The tutorial uses the `curl` command line
 client to demonstrate how the API is used.
 
 
 ## Configuration and Hardening
 
 
-The MaxScale REST API listens on port 8989 on the local host. The `<code>admin_port</code>`
-and `<code>admin_host</code>` parameters control which port and address the REST API listens
+The MaxScale REST API listens on port 8989 on the local host. The `admin_port`
+and `admin_host` parameters control which port and address the REST API listens
 on. Note that for security reasons the API only listens for local connections
 with the default configuration. It is critical that the default credentials are
 changed and TLS/SSL encryption is configured before exposing the REST API to a
 network.
 
 
-The default user for the REST API is `<code>admin</code>` and the password is `<code>mariadb</code>`. The
-easiest way to secure the REST API is to use the `<code>maxctrl</code>` command line client
+The default user for the REST API is `admin` and the password is `mariadb`. The
+easiest way to secure the REST API is to use the `maxctrl` command line client
 to create a new admin user and delete the default one. To do this, run the
 following commands:
 
@@ -35,14 +35,14 @@ maxctrl destroy user admin
 
 
 
-This will create the user `<code>my_user</code>` with the password `<code>my_password</code>` that is an
-administrative account. After this account is created, the default `<code>admin</code>`
+This will create the user `my_user` with the password `my_password` that is an
+administrative account. After this account is created, the default `admin`
 account is removed with the next command.
 
 
 The next step is to enable TLS encryption. To do this, you need a CA
 certificate, a private key and a public certificate file all in PEM format. Add
-the following three parameters under the `<code>[maxscale]</code>` section of the MaxScale
+the following three parameters under the `[maxscale]` section of the MaxScale
 configuration file and restart MaxScale.
 
 
@@ -55,8 +55,8 @@ admin_ssl_ca_cert=/certs/ca-cert.pem
 
 
 
-Use `<code>maxctrl</code>` to verify that the TLS encryption is enabled. In this tutorial our
-server certificates are self-signed so the `<code>--tls-verify-server-cert=false</code>`
+Use `maxctrl` to verify that the TLS encryption is enabled. In this tutorial our
+server certificates are self-signed so the `--tls-verify-server-cert=false`
 option is required.
 
 
@@ -75,16 +75,16 @@ now secure and can be used across networks.
 
 
 **Note:** For the sake of brevity, the rest of this tutorial will omit the
-TLS/SSL options from the `<code>curl</code>` command line. For more information, refer to the
-`<code>curl</code>` manpage.
+TLS/SSL options from the `curl` command line. For more information, refer to the
+`curl` manpage.
 
 
 The most basic task to do with the REST API is to see whether MaxScale is up and
-running. To do this, we do a HTTP request on the root resource (the `<code>-i</code>` option
+running. To do this, we do a HTTP request on the root resource (the `-i` option
 shows the HTTP headers).
 
 
-`<code>curl -i 127.0.0.1:8989/v1/</code>`
+`curl -i 127.0.0.1:8989/v1/`
 
 
 
@@ -99,13 +99,13 @@ Date: Mon, 04 Mar 19 08:29:41 GMT
 
 
 
-To query a resource collection endpoint, append it to the URL. The `<code>/v1/filters/</code>`
+To query a resource collection endpoint, append it to the URL. The `/v1/filters/`
 endpoint shows the list of filters configured in MaxScale. This is a *resource
 collection* endpoint: it contains the list of all resources of a particular
 type.
 
 
-`<code>curl 127.0.0.1:8989/v1/filters</code>`
+`curl 127.0.0.1:8989/v1/filters`
 
 
 
@@ -181,23 +181,23 @@ type.
 
 
 
-The `<code>data</code>` holds the actual list of resources: the `<code>Hint</code>` and `<code>Logger</code>`
-filters. Each object has the `<code>id</code>` field which is the unique name of that
-object. It is the same as the section name in `<code>maxscale.cnf</code>`.
+The `data` holds the actual list of resources: the `Hint` and `Logger`
+filters. Each object has the `id` field which is the unique name of that
+object. It is the same as the section name in `maxscale.cnf`.
 
 
-Each resource in the list has a `<code>relationships</code>` object. This shows the
-relationship links between resources. In our example, the `<code>Hint</code>` filter is used
-by a service named `<code>RW-Split-Hint-Router</code>` and the `<code>Logger</code>` is not currently in
+Each resource in the list has a `relationships` object. This shows the
+relationship links between resources. In our example, the `Hint` filter is used
+by a service named `RW-Split-Hint-Router` and the `Logger` is not currently in
 use.
 
 
 To request an individual resource, we add the object name to the resource
-collection URL. For example, if we want to get only the `<code>Logger</code>` filter we
+collection URL. For example, if we want to get only the `Logger` filter we
 execute the following command.
 
 
-`<code>curl 127.0.0.1:8989/v1/filters/Logger</code>`
+`curl 127.0.0.1:8989/v1/filters/Logger`
 
 
 
@@ -247,7 +247,7 @@ execute the following command.
 
 
 
-Note that this time the `<code>data</code>` member holds an object instead of an array of
+Note that this time the `data` member holds an object instead of an array of
 objects. All other parts of the response are similar to what was shown in the
 previous example.
 
@@ -261,11 +261,11 @@ created without restarting MaxScale.
 
 
 For example, to create a new server in MaxScale the JSON definition of a server
-must be sent to the REST API at the `<code>/v1/servers/</code>` endpoint. The request body
+must be sent to the REST API at the `/v1/servers/` endpoint. The request body
 defines the server name as well as the parameters for it.
 
 
-To create objects with `<code>curl</code>`, first write the JSON definition into a file.
+To create objects with `curl`, first write the JSON definition into a file.
 
 
 
@@ -296,9 +296,9 @@ curl -X POST -d @new_server.txt 127.0.0.1:8989/v1/servers
 
 
 
-The `<code>-d</code>` option takes a file name prefixed with a `<code>@</code>` as an argument. Here we
-have `<code>@new_server.txt</code>` which is the name of the file where the JSON definition
-was stored. The `<code>-X</code>` option defines the HTTP verb to use and to create a new
+The `-d` option takes a file name prefixed with a `@` as an argument. Here we
+have `@new_server.txt` which is the name of the file where the JSON definition
+was stored. The `-X` option defines the HTTP verb to use and to create a new
 object we must use the POST verb.
 
 
@@ -356,12 +356,12 @@ curl 127.0.0.1:8989/v1/servers/server1
 
 
 To continue with our previous example, we add the updated server to a
-service. To do this, the `<code>relationships</code>` object of the server must be modified
+service. To do this, the `relationships` object of the server must be modified
 to include the service we want to add the server to.
 
 
-To define a relationship between a server and a service, the `<code>data</code>` member must
-have the `<code>relationships</code>` field and it must contain an object with the `<code>services</code>`
+To define a relationship between a server and a service, the `data` member must
+have the `relationships` field and it must contain an object with the `services`
 field (some fields omitted for brevity).
 
 
@@ -388,19 +388,19 @@ field (some fields omitted for brevity).
 
 
 
-The `<code>data.relationships.services.data</code>` field contains a list of objects that
-define the `<code>id</code>` and `<code>type</code>` fields. The id is the name of the object (a service
-or a monitor for servers) and the type tells which type it is. Only `<code>services</code>`
-type objects should be present in the `<code>services</code>` object.
+The `data.relationships.services.data` field contains a list of objects that
+define the `id` and `type` fields. The id is the name of the object (a service
+or a monitor for servers) and the type tells which type it is. Only `services`
+type objects should be present in the `services` object.
 
 
-In our example we are linking the `<code>server1</code>` server to the `<code>RW-Split-Router</code>`
+In our example we are linking the `server1` server to the `RW-Split-Router`
 service. As was seen with the previous example, the easiest way to do this is to
 store the result, edit it and then send it back with a HTTP PATCH.
 
 
 If we want to remove a server from *all* services and monitors, we can set the
-`<code>data</code>` member of the `<code>services</code>` and `<code>monitors</code>` relationships to an empty array:
+`data` member of the `services` and `monitors` relationships to an empty array:
 
 
 
@@ -429,7 +429,7 @@ no relationships to other objects.
 
 
 To delete an object, simply execute a HTTP DELETE request on the resource you
-want to delete. For example, to delete the `<code>server1</code>` server, execute the
+want to delete. For example, to delete the `server1` server, execute the
 following command.
 
 
@@ -451,15 +451,15 @@ The full list of all available endpoints in MaxScale can be found in the
 [REST API documentation](../maxscale-24-rest-api/maxscale-24-rest-api-maxscale-rest-api.md).
 
 
-The `<code>maxctrl</code>` command line client is self-documenting and the `<code>maxctrl help</code>`
+The `maxctrl` command line client is self-documenting and the `maxctrl help`
 command is a good tool for exploring the various commands that are available in
-it. The `<code>maxctrl api get</code>` command can be useful way to explore the REST API as
+it. The `maxctrl api get` command can be useful way to explore the REST API as
 it provides a way to easily extract values out of the JSON data generated by the
 REST API.
 
 
 There is a multitude of REST API clients readily available and most of them are
-far more convenient to use than `<code>curl</code>`. We recommend investigating what you need
+far more convenient to use than `curl`. We recommend investigating what you need
 and how you intend to either integrate or use the MaxScale REST API. Most modern
 languages either have a built-in HTTP library or there exists a de facto
 standard library.

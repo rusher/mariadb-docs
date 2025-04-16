@@ -64,7 +64,7 @@ Get a single server.
 #### Response
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -183,7 +183,7 @@ GET /v1/servers
 Response contains a resource collection with all servers.
 
 
-`<code>Status: 200 OK</code>`
+`Status: 200 OK`
 
 
 
@@ -404,17 +404,17 @@ Create a new server by defining the resource. The posted object must define at
 least the following fields.
 
 
-* `<code>data.id</code>`
+* `data.id`
 * Name of the server
-* `<code>data.type</code>`
-* Type of the object, must be `<code>servers</code>`
-* `<code>data.attributes.parameters.address</code>` OR `<code>data.attributes.parameters.socket</code>`
+* `data.type`
+* Type of the object, must be `servers`
+* `data.attributes.parameters.address` OR `data.attributes.parameters.socket`
 * The [address](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#address) or
  [socket](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#socket) to use. Only
  one of the fields can be defined.
-* `<code>data.attributes.parameters.port</code>`
+* `data.attributes.parameters.port`
 * The [port](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#port) to use. Needs
- to be defined if the `<code>address</code>` field is defined.
+ to be defined if the `address` field is defined.
 
 
 The following is the minimal required JSON object for defining a new server.
@@ -492,13 +492,13 @@ for a full list of server parameters.
 Server created:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Invalid JSON body:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ### Update a server
@@ -534,7 +534,7 @@ Removing a service from a server is analogous to removing the server from the
 service. Both unlink the two objects from each other.
 
 
-Request for `<code>PATCH /v1/servers/server1</code>` that modifies the address of the server:
+Request for `PATCH /v1/servers/server1` that modifies the address of the server:
 
 
 
@@ -552,7 +552,7 @@ Request for `<code>PATCH /v1/servers/server1</code>` that modifies the address o
 
 
 
-Request for `<code>PATCH /v1/servers/server1</code>` that modifies the server relationships:
+Request for `PATCH /v1/servers/server1` that modifies the server relationships:
 
 
 
@@ -577,10 +577,10 @@ Request for `<code>PATCH /v1/servers/server1</code>` that modifies the server re
 
 
 
-If parts of the resource are not defined (e.g. the `<code>attributes</code>` field in the
+If parts of the resource are not defined (e.g. the `attributes` field in the
 above example), those parts of the resource are not modified. All parts that are
 defined are interpreted as the new definition of those part of the resource. In
-the above example, the `<code>relationships</code>` of the resource are completely redefined.
+the above example, the `relationships` of the resource are completely redefined.
 
 
 #### Response
@@ -589,13 +589,13 @@ the above example, the `<code>relationships</code>` of the resource are complete
 Server modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Invalid JSON body:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ### Update server relationships
@@ -656,13 +656,13 @@ PATCH /v1/servers/my-db-server/relationships/services
 Server relationships modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Invalid JSON body:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ### Destroy a server
@@ -679,7 +679,7 @@ A server can only be deleted if it is not used by any services or
 monitors.
 
 
-This endpoint also supports the `<code>force=yes</code>` parameter that will unconditionally
+This endpoint also supports the `force=yes` parameter that will unconditionally
 delete the server by first unlinking it from all services and monitors that use
 it.
 
@@ -690,13 +690,13 @@ it.
 Server is destroyed:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Server is in use:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ### Set server state
@@ -709,8 +709,8 @@ PUT /v1/servers/:name/set
 
 
 
-This endpoint requires that the `<code>state</code>` parameter is passed with the
-request. The value of `<code>state</code>` must be one of the following values.
+This endpoint requires that the `state` parameter is passed with the
+request. The value of `state` must be one of the following values.
 
 
 | Value | State Description |
@@ -735,8 +735,8 @@ PUT /v1/servers/db-server-1/set?state=maintenance
 
 
 
-This endpoint also supports the `<code>force=yes</code>` parameter that will cause all
-connections to the server to be closed if `<code>state=maintenance</code>` is also set. By
+This endpoint also supports the `force=yes` parameter that will cause all
+connections to the server to be closed if `state=maintenance` is also set. By
 default setting a server into maintenance mode will cause connections to be
 closed only after the next request is sent.
 
@@ -758,13 +758,13 @@ PUT /v1/servers/db-server-1/set?state=maintenance&force=yes
 Server state modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Missing or invalid parameter:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`
 
 
 ### Clear server state
@@ -777,8 +777,8 @@ PUT /v1/servers/:name/clear
 
 
 
-This endpoint requires that the `<code>state</code>` parameter is passed with the
-request. The value of `<code>state</code>` must be one of the values defined in the
+This endpoint requires that the `state` parameter is passed with the
+request. The value of `state` must be one of the values defined in the
 *set* endpoint documentation.
 
 
@@ -788,10 +788,10 @@ request. The value of `<code>state</code>` must be one of the values defined in 
 Server state modified:
 
 
-`<code>Status: 204 No Content</code>`
+`Status: 204 No Content`
 
 
 Missing or invalid parameter:
 
 
-`<code>Status: 403 Forbidden</code>`
+`Status: 403 Forbidden`

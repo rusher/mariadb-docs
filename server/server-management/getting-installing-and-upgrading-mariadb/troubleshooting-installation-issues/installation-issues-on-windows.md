@@ -45,7 +45,7 @@ this issue from happening.
 ## Systems with User Account Control
 
 
-Running `<code>mysql_install_db.exe</code>` from a standard command prompt might cause the error:
+Running `mysql_install_db.exe` from a standard command prompt might cause the error:
 
 
 ```

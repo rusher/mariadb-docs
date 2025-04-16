@@ -39,11 +39,11 @@ information on how to write Lua scripts.
 
 The luafilter has two parameters. They control which scripts will be called by
 the filter. Both parameters are optional but at least one should be defined. If
-both `<code>global_script</code>` and `<code>session_script</code>` are defined, the entry points in both
+both `global_script` and `session_script` are defined, the entry points in both
 scripts will be called.
 
 
-### `<code>global_script</code>`
+### `global_script`
 
 
 The global Lua script. The parameter value is a path to a readable Lua script
@@ -54,7 +54,7 @@ This script will always be called with the same global Lua state and it can be
 used to build a global view of the whole service.
 
 
-### `<code>session_script</code>`
+### `session_script`
 
 
 The session level Lua script. The parameter value is a path to a readable Lua
@@ -71,26 +71,26 @@ unique Lua environment. Use this script to do session specific tasks.
 The entry points for the Lua script expect the following signatures:
 
 
-* `<code>nil createInstance(name)</code>` - global script only, called when the script is first loaded
+* `nil createInstance(name)` - global script only, called when the script is first loaded
 
 
   * When the global script is loaded, it first executes on a global level
  before the luafilter calls the createInstance function in the Lua script
  with the filter's name as its argument.
-* `<code>nil newSession(string, string)</code>` - new session is created
+* `nil newSession(string, string)` - new session is created
 
 
   * After the session script is loaded, the newSession function in the Lua
  scripts is called. The first parameter is the username of the client and
  the second parameter is the client's network address.
-* `<code>nil closeSession()</code>` - session is closed
+* `nil closeSession()` - session is closed
 
 
-  * The `<code>closeSession</code>` function in the Lua scripts will be called.
-* `<code>(nil | bool | string) routeQuery()</code>` - query is being routed
+  * The `closeSession` function in the Lua scripts will be called.
+* `(nil | bool | string) routeQuery()` - query is being routed
 
 
-  * The Luafilter calls the `<code>routeQuery</code>` functions of both the session and the
+  * The Luafilter calls the `routeQuery` functions of both the session and the
  global script. The query is passed as a string parameter to the
  routeQuery Lua function and the return values of the session specific
  function, if any were returned, are interpreted. If the first value is
@@ -98,11 +98,11 @@ The entry points for the Lua script expect the following signatures:
  send an error packet to the client. If it is a string, the current query
  is replaced with the return value and the query will be routed. If nil is
  returned, the query is routed normally.
-* `<code>nil clientReply()</code>` - reply to a query is being routed
+* `nil clientReply()` - reply to a query is being routed
 
 
   * This function is called with the name of the server that returned the response.
-* `<code>string diagnostic()</code>` - global script only, print diagnostic information
+* `string diagnostic()` - global script only, print diagnostic information
 
 
   * If the Lua function returns a string that is valid JSON, it will be
@@ -118,8 +118,8 @@ matching entry point is made.
 
 
 Here is a script template that can be used to try out the luafilter. Copy it
-into a file and add `<code>global_script=<path to script></code>` into the filter
-configuration. Make sure the file is readable by the `<code>maxscale</code>` user.
+into a file and add `global_script=<path to script>` into the filter
+configuration. Make sure the file is readable by the `maxscale` user.
 
 
 
@@ -160,33 +160,33 @@ documented after the function signature. If the functions are called outside of
 the correct callback function, they raise a Lua error.
 
 
-* `<code>string mxs_get_sql()</code>` (use: `<code>routeQuery</code>`)
+* `string mxs_get_sql()` (use: `routeQuery`)
 * Returns the SQL of the query being executed. This returns an empty string
  for any query that is not a text protocol query (COM_QUERY). Support for
  prepared statements is not yet implemented.
-* `<code>string mxs_get_type_mask()</code>` (use: `<code>routeQuery</code>`)
+* `string mxs_get_type_mask()` (use: `routeQuery`)
 * Returns the type of the current query being executed as a string. The values
  are the string versions of the query types defined in query_classifier.h
- are separated by vertical bars (`<code>|</code>`).
-This function can only be called from the `<code>routeQuery</code>` entry point.
-* `<code>string mxs_get_operation()</code>` (use: `<code>routeQuery</code>`)
+ are separated by vertical bars (`|`).
+This function can only be called from the `routeQuery` entry point.
+* `string mxs_get_operation()` (use: `routeQuery`)
 * Returns the current operation type as a string. The values are defined in
  query_classifier.h.
-This function can only be called from the `<code>routeQuery</code>` entry point.
-* `<code>string mxs_get_canonical()</code>` (use: `<code>routeQuery</code>`)
+This function can only be called from the `routeQuery` entry point.
+* `string mxs_get_canonical()` (use: `routeQuery`)
 * Returns the canonical version of a query by replacing all user-defined constant values with question marks.
-This function can only be called from the `<code>routeQuery</code>` entry point.
-* `<code>number mxs_get_session_id()</code>` (use: `<code>newSession</code>`, `<code>routeQuery</code>`, `<code>clientReply</code>`, `<code>closeSession</code>`)
+This function can only be called from the `routeQuery` entry point.
+* `number mxs_get_session_id()` (use: `newSession`, `routeQuery`, `clientReply`, `closeSession`)
 * This function returns the session ID of the current session. Inside the
- `<code>createInstance</code>` and `<code>diagnostic</code>` endpoints this function will always return
+ `createInstance` and `diagnostic` endpoints this function will always return
  the value 0.
-* `<code>string mxs_get_db()</code>` (use: `<code>newSession</code>`, `<code>routeQuery</code>`, `<code>clientReply</code>`, `<code>closeSession</code>`)
+* `string mxs_get_db()` (use: `newSession`, `routeQuery`, `clientReply`, `closeSession`)
 * Returns the current default database used by the connection.
-* `<code>string mxs_get_user()</code>` (use: `<code>newSession</code>`, `<code>routeQuery</code>`, `<code>clientReply</code>`, `<code>closeSession</code>`)
+* `string mxs_get_user()` (use: `newSession`, `routeQuery`, `clientReply`, `closeSession`)
 * Returns the username of the client connection.
-* `<code>string mxs_get_host()</code>` (use: `<code>newSession</code>`, `<code>routeQuery</code>`, `<code>clientReply</code>`, `<code>closeSession</code>`)
+* `string mxs_get_host()` (use: `newSession`, `routeQuery`, `clientReply`, `closeSession`)
 * Returns the address of the client connection.
-* `<code>string mxs_get_replier()</code>` (use: `<code>clientReply</code>`)
+* `string mxs_get_replier()` (use: `clientReply`)
 * Returns the target that returned the result to the latest query.
 
 
@@ -206,7 +206,7 @@ global_script=/path/to/script.lua
 
 
 
-And here is a script that opens a file in `<code>/tmp/</code>` and logs output to it.
+And here is a script that opens a file in `/tmp/` and logs output to it.
 
 
 
@@ -244,7 +244,7 @@ end
 ## Limitations
 
 
-* `<code>mxs_get_sql()</code>` and `<code>mxs_get_canonical()</code>` do not work with queries done with
+* `mxs_get_sql()` and `mxs_get_canonical()` do not work with queries done with
  the binary protocol.
 * The Lua code is not restricted in any way which means excessively slow
  execution of it can cause the MaxScale process to become slower or to be

@@ -21,10 +21,10 @@ If a column has been set to ZEROFILL, all values will be prepended by zeros so t
 
 #### Note:
 
-If the `<code>ZEROFILL</code>` attribute has been specified, the column will automatically become `<code>UNSIGNED</code>`.
+If the `ZEROFILL` attribute has been specified, the column will automatically become `UNSIGNED`.
 
 
-`<code>INT2</code>` is a synonym for `<code>SMALLINT</code>`.
+`INT2` is a synonym for `SMALLINT`.
 
 
 For more details on the attributes, see [Numeric Data Type Overview](numeric-data-type-overview.md).

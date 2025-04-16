@@ -9,10 +9,10 @@ These [Sys Schema](sys-schema-views-host_summary_by_statement_latency-and-xhost_
 ## Description
 
 
-The `<code>io_global_by_file_by_bytes</code>` and `<code>x$io_global_by_file_by_bytes</code>` views summarize global I/O consumers showing I/O in bytes, grouped by file. Rows are sorted by descending total I/O (bytes read and written) by default.
+The `io_global_by_file_by_bytes` and `x$io_global_by_file_by_bytes` views summarize global I/O consumers showing I/O in bytes, grouped by file. Rows are sorted by descending total I/O (bytes read and written) by default.
 
 
-The `<code>io_global_by_file_by_bytes</code>` view is intended to be easier for human reading, while the `<code>x$io_global_by_file_by_bytes</code>` view provides the data in raw form, intended for tools that process the data.
+The `io_global_by_file_by_bytes` view is intended to be easier for human reading, while the `x$io_global_by_file_by_bytes` view provides the data in raw form, intended for tools that process the data.
 
 
 They contain the following columns:

@@ -15,7 +15,7 @@ TIMESTAMP [(<microsecond precision)]
 ## Description
 
 
-A timestamp in the format `<code>YYYY-MM-DD HH:MM:SS.ffffff</code>`.
+A timestamp in the format `YYYY-MM-DD HH:MM:SS.ffffff`.
 
 
 The timestamp field is generally used to define at which moment in time a row was added or updated and by default will automatically be assigned the current datetime when a record is inserted or updated. The automatic properties only apply to the first TIMESTAMP in the record; subsequent TIMESTAMP columns will not be changed.
@@ -30,7 +30,7 @@ For more information, see [Internal Format](#internal-format).
 ## Supported Values
 
 
-MariaDB stores values that use the `<code>TIMESTAMP</code>` data type as the number of seconds since '1970-01-01 00:00:00' ([UTC](../string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)). This means that the `<code>TIMESTAMP</code>` data type can hold values between '1970-01-01 00:00:01' ([UTC](../string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)) and '2038-01-19 03:14:07' ([UTC](../string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)) ([MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md) and earlier, 32-bit platforms ) or '2106-02-07 06:28:15 UTC' (from [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md), 64-bit platforms only).
+MariaDB stores values that use the `TIMESTAMP` data type as the number of seconds since '1970-01-01 00:00:00' ([UTC](../string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)). This means that the `TIMESTAMP` data type can hold values between '1970-01-01 00:00:01' ([UTC](../string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)) and '2038-01-19 03:14:07' ([UTC](../string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)) ([MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md) and earlier, 32-bit platforms ) or '2106-02-07 06:28:15 UTC' (from [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md), 64-bit platforms only).
 
 
 MariaDB can also store [microseconds](../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/microseconds-in-mariadb.md) with a precision between 0 and 6. If no microsecond precision is specified, then 0 is used by default.
@@ -39,41 +39,41 @@ MariaDB can also store [microseconds](../../sql-statements-and-structure/sql-sta
 ## Automatic Values
 
 
-MariaDB has special behavior for the first column that uses the `<code>TIMESTAMP</code>` data type in a specific table when the system variable [explicit_defaults_for_timestamp](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#explicit_defaults_for_timestamp) is not set (which is the default until [MariaDB 10.10](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)). For the first column that uses the `<code>TIMESTAMP</code>` data type in a specific table, MariaDB automatically assigns the following properties to the column:
+MariaDB has special behavior for the first column that uses the `TIMESTAMP` data type in a specific table when the system variable [explicit_defaults_for_timestamp](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#explicit_defaults_for_timestamp) is not set (which is the default until [MariaDB 10.10](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)). For the first column that uses the `TIMESTAMP` data type in a specific table, MariaDB automatically assigns the following properties to the column:
 
 
-* `<code>DEFAULT CURRENT_TIMESTAMP</code>`
-* `<code>ON UPDATE CURRENT_TIMESTAMP</code>`
+* `DEFAULT CURRENT_TIMESTAMP`
+* `ON UPDATE CURRENT_TIMESTAMP`
 
 
-This means that if the column is not explicitly assigned a value in an `<code>INSERT</code>` or `<code>UPDATE</code>` query, then MariaDB will automatically initialize the column's value with the current date and time.
+This means that if the column is not explicitly assigned a value in an `INSERT` or `UPDATE` query, then MariaDB will automatically initialize the column's value with the current date and time.
 
 
-This automatic initialization for `<code>INSERT</code>` and `<code>UPDATE</code>` queries can also be **explicitly enabled** for a column that uses the `<code>TIMESTAMP</code>` data type by specifying the `<code>DEFAULT CURRENT_TIMESTAMP</code>` and `<code>ON UPDATE CURRENT_TIMESTAMP</code>` clauses for the column. In these clauses, any synonym of [CURRENT_TIMESTAMP](../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/now.md) is accepted, including `<code>CURRENT_TIMESTAMP()</code>`, `<code>NOW()</code>`, `<code>LOCALTIME</code>`, `<code>LOCALTIME()</code>`, `<code>LOCALTIMESTAMP</code>`, and `<code>LOCALTIMESTAMP()</code>`.
+This automatic initialization for `INSERT` and `UPDATE` queries can also be **explicitly enabled** for a column that uses the `TIMESTAMP` data type by specifying the `DEFAULT CURRENT_TIMESTAMP` and `ON UPDATE CURRENT_TIMESTAMP` clauses for the column. In these clauses, any synonym of [CURRENT_TIMESTAMP](../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/now.md) is accepted, including `CURRENT_TIMESTAMP()`, `NOW()`, `LOCALTIME`, `LOCALTIME()`, `LOCALTIMESTAMP`, and `LOCALTIMESTAMP()`.
 
 
-This automatic initialization for `<code>INSERT</code>` queries can also be **explicitly disabled** for a column that uses the `<code>TIMESTAMP</code>` data type by specifying a constant `<code>DEFAULT</code>` value. For example, `<code>DEFAULT 0</code>`.
+This automatic initialization for `INSERT` queries can also be **explicitly disabled** for a column that uses the `TIMESTAMP` data type by specifying a constant `DEFAULT` value. For example, `DEFAULT 0`.
 
 
-This automatic initialization for `<code>UPDATE</code>` queries can also be **explicitly disabled** for a column that uses the `<code>TIMESTAMP</code>` data type by specifying a `<code>DEFAULT</code>` clause for the column, but no `<code>ON UPDATE</code>` clause. If a `<code>DEFAULT</code>` clause is explicitly specified for a column that uses the `<code>TIMESTAMP</code>` data type, but an `<code>ON UPDATE</code>` clause is not specified for the column, then the timestamp value will not automatically change when an `<code>UPDATE</code>` statement is executed.
+This automatic initialization for `UPDATE` queries can also be **explicitly disabled** for a column that uses the `TIMESTAMP` data type by specifying a `DEFAULT` clause for the column, but no `ON UPDATE` clause. If a `DEFAULT` clause is explicitly specified for a column that uses the `TIMESTAMP` data type, but an `ON UPDATE` clause is not specified for the column, then the timestamp value will not automatically change when an `UPDATE` statement is executed.
 
 
-MariaDB also has special behavior if `<code>NULL</code>` is assigned to column that uses the `<code>TIMESTAMP</code>` data type. If the column is assigned the `<code>NULL</code>` value in an `<code>INSERT</code>` or `<code>UPDATE</code>` query, then MariaDB will automatically initialize the column's value with the current date and time. For details, see [NULL values in MariaDB](../null-values.md).
+MariaDB also has special behavior if `NULL` is assigned to column that uses the `TIMESTAMP` data type. If the column is assigned the `NULL` value in an `INSERT` or `UPDATE` query, then MariaDB will automatically initialize the column's value with the current date and time. For details, see [NULL values in MariaDB](../null-values.md).
 
 
-This automatic initialization for `<code>NULL</code>` values can also be **explicitly disabled** for a column that uses the `<code>TIMESTAMP</code>` data type by specifying the `<code>NULL</code>` attribute for the column. In this case, if the column's value is set to `<code>NULL</code>`, then the column's value will actually be set to `<code>NULL</code>`.
+This automatic initialization for `NULL` values can also be **explicitly disabled** for a column that uses the `TIMESTAMP` data type by specifying the `NULL` attribute for the column. In this case, if the column's value is set to `NULL`, then the column's value will actually be set to `NULL`.
 
 
 ## Time Zones
 
 
-If a column uses the `<code>TIMESTAMP</code>` data type, then any inserted values are converted from the session's time zone to [Coordinated Universal Time (UTC)](../string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md) when stored, and converted back to the session's time zone when retrieved.
+If a column uses the `TIMESTAMP` data type, then any inserted values are converted from the session's time zone to [Coordinated Universal Time (UTC)](../string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md) when stored, and converted back to the session's time zone when retrieved.
 
 
-MariaDB validates `<code>TIMESTAMP</code>` literals against the session's time zone. For example, if a specific time range never occurred in a specific time zone due to daylight savings time, then `<code>TIMESTAMP</code>` values within that range would be invalid for that time zone.
+MariaDB validates `TIMESTAMP` literals against the session's time zone. For example, if a specific time range never occurred in a specific time zone due to daylight savings time, then `TIMESTAMP` values within that range would be invalid for that time zone.
 
 
-MariaDB does not currently store any time zone identifier with the value of the `<code>TIMESTAMP</code>` data type. See [MDEV-10018](https://jira.mariadb.org/browse/MDEV-10018) for more information.
+MariaDB does not currently store any time zone identifier with the value of the `TIMESTAMP` data type. See [MDEV-10018](https://jira.mariadb.org/browse/MDEV-10018) for more information.
 
 
 MariaDB does not currently support time zone literals that contain time zone identifiers. See [MDEV-11829](https://jira.mariadb.org/browse/MDEV-11829) for more information.
@@ -89,22 +89,22 @@ MariaDB does not currently support time zone literals that contain time zone ide
 ## SQL_MODE=MAXDB
 
 
-If the [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md) is set to `<code>MAXDB</code>`, TIMESTAMP fields will be silently converted to [DATETIME](datetime.md).
+If the [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md) is set to `MAXDB`, TIMESTAMP fields will be silently converted to [DATETIME](datetime.md).
 
 
 ## Internal Format
 
 
-In [MariaDB 10.1.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md) a new temporal format was introduced from MySQL 5.6 that alters how the `<code>TIME</code>`, `<code>DATETIME</code>` and `<code>TIMESTAMP</code>` columns operate at lower levels. These changes allow these temporal data types to have fractional parts and negative values. You can disable this feature using the [mysql56_temporal_format](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable.
+In [MariaDB 10.1.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md) a new temporal format was introduced from MySQL 5.6 that alters how the `TIME`, `DATETIME` and `TIMESTAMP` columns operate at lower levels. These changes allow these temporal data types to have fractional parts and negative values. You can disable this feature using the [mysql56_temporal_format](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable.
 
 
-Tables that include `<code>TIMESTAMP</code>` values that were created on an older version of MariaDB or that were created while the [mysql56_temporal_format](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable was disabled continue to store data using the older data type format.
+Tables that include `TIMESTAMP` values that were created on an older version of MariaDB or that were created while the [mysql56_temporal_format](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable was disabled continue to store data using the older data type format.
 
 
-In order to update table columns from the older format to the newer format, execute an [ALTER TABLE... MODIFY COLUMN](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#modify-column) statement that changes the column to the *same* data type. This change may be needed if you want to export the table's tablespace and import it onto a server that has `<code>mysql56_temporal_format=ON</code>` set (see [MDEV-15225](https://jira.mariadb.org/browse/MDEV-15225)).
+In order to update table columns from the older format to the newer format, execute an [ALTER TABLE... MODIFY COLUMN](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#modify-column) statement that changes the column to the *same* data type. This change may be needed if you want to export the table's tablespace and import it onto a server that has `mysql56_temporal_format=ON` set (see [MDEV-15225](https://jira.mariadb.org/browse/MDEV-15225)).
 
 
-For instance, if you have a `<code>TIMESTAMP</code>` column in your table:
+For instance, if you have a `TIMESTAMP` column in your table:
 
 
 ```
@@ -125,7 +125,7 @@ When MariaDB executes the [ALTER TABLE](../../sql-statements-and-structure/sql-s
 In the event that you have several tables and columns using temporal data types that you want to switch over to the new format, make sure the system variable is enabled, then perform a dump and restore using [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md). The columns using relevant temporal data types are restored using the new temporal format.
 
 
-Starting from [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md) columns with old temporal formats are marked with a `<code>/* mariadb-5.3 */</code>` comment in the output of [SHOW CREATE TABLE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md), [SHOW COLUMNS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-columns.md), [DESCRIBE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/describe.md) statements, as well as in the `<code>COLUMN_TYPE</code>` column of the [INFORMATION_SCHEMA.COLUMNS Table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md).
+Starting from [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md) columns with old temporal formats are marked with a `/* mariadb-5.3 */` comment in the output of [SHOW CREATE TABLE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md), [SHOW COLUMNS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-columns.md), [DESCRIBE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/describe.md) statements, as well as in the `COLUMN_TYPE` column of the [INFORMATION_SCHEMA.COLUMNS Table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md).
 
 
 ```

@@ -39,7 +39,7 @@
  of). Could maybe be done as a general Buildbot optional feature for all
  revision control systems supported, or maybe specific for the bzr depending
  on what can work.
-* Get PBXT test suite fixed in `<code class="fixed" style="white-space:pre-wrap">--valgrind</code>`; once that is done
+* Get PBXT test suite fixed in `--valgrind`; once that is done
  include it in the list of main suites so that it is tested on all platforms
  (and remove the special extra pbxt test steps in some Buildbot builds, as
  they will no longer be needed).
@@ -49,10 +49,10 @@
   * Percentage of busy time for available slaves
   * Median/Max response time (How much time do I have to wait after I've pushed
  for test run to complete)
-* Fix that mysql-test-run uses `<code class="fixed" style="white-space:pre-wrap">--skip-ssl</code>` by default.
-* Fix that `<code class="fixed" style="white-space:pre-wrap">mysql-test-run.pl --mem</code>` doesn't properly clean
- up `<code class="fixed" style="white-space:pre-wrap">/dev/shm/var*</code>` (so that we can use `<code class="fixed" style="white-space:pre-wrap">--mem</code>`
- and `<code class="fixed" style="white-space:pre-wrap">--parallel</code>` option to speed up the more powerful
+* Fix that mysql-test-run uses `--skip-ssl` by default.
+* Fix that `mysql-test-run.pl --mem` doesn't properly clean
+ up `/dev/shm/var*` (so that we can use `--mem`
+ and `--parallel` option to speed up the more powerful
  machines).
 * For triggered builds (ie. one builder makes a source tarball which another
  builder consumes), make it so that the pushed changesets are also transfered,
@@ -91,8 +91,8 @@ high.
  hosts that are currently building another branch could also display the name
  of the branch (as a link to waterfall page for that branch) to avoid
  confusion that it is active on the current branch.
-* Run with `<code class="fixed" style="white-space:pre-wrap">--valgrind-mysqld</code>` instead
- of `<code class="fixed" style="white-space:pre-wrap">--valgrind</code>`. Little point in Valgrinding mysqltest when we
+* Run with `--valgrind-mysqld` instead
+ of `--valgrind`. Little point in Valgrinding mysqltest when we
  in any case ignore any errors in that program.
 * Show pending builds for a slave on the 'builders' page,
  eg. [hardy-x86-rtai](https://askmonty.org/buildbot/builders/hardy-x86-rtai)
@@ -101,8 +101,8 @@ high.
  (would be nice if some dates were still shown when javascript is not
  available).
 * Check if InnoDB is fixed sufficiently to have no Valgrind leaks
- with `<code class="fixed" style="white-space:pre-wrap">innodb_use_sys_malloc</code>`; if so remove hack
- in `<code class="fixed" style="white-space:pre-wrap">mysql-test-run.pl</code>` to disable this in valgrind case.
+ with `innodb_use_sys_malloc`; if so remove hack
+ in `mysql-test-run.pl` to disable this in valgrind case.
 * Fix problem that illegal regexp causes build exception (example:
  [err.text](https://buildbot.askmonty.org/buildbot/builders/sol-sparc-32/builds/157/steps/compile/logs/err.text)).
  The problem is that Buildbot grabs regexps from the suppression file in the
@@ -150,5 +150,5 @@ conflict), it will send mail with details.
 
 * Get something working, simple initially.
 * Staging tree per-captain
-* `<code class="fixed" style="white-space:pre-wrap">mysqltest --require</code>` not-staging to speed up Valgrind
+* `mysqltest --require` not-staging to speed up Valgrind
 

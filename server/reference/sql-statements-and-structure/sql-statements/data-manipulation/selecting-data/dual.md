@@ -4,7 +4,7 @@
 ## Description
 
 
-You are allowed to specify `<code class="highlight fixed" style="white-space:pre-wrap">DUAL</code>` as a dummy table name in
+You are allowed to specify `DUAL` as a dummy table name in
 situations where no tables are referenced, such as the following [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement:
 
 
@@ -17,10 +17,10 @@ SELECT 1 + 1 FROM DUAL;
 +-------+
 ```
 
-`<code class="highlight fixed" style="white-space:pre-wrap">DUAL</code>` is purely for the convenience of people who require
- that all `<code class="highlight fixed" style="white-space:pre-wrap">SELECT</code>` statements should have
- `<code class="highlight fixed" style="white-space:pre-wrap">FROM</code>` and possibly other clauses. MariaDB ignores the
- clauses. MariaDB does not require `<code class="highlight fixed" style="white-space:pre-wrap">FROM DUAL</code>` if no tables
+`DUAL` is purely for the convenience of people who require
+ that all `SELECT` statements should have
+ `FROM` and possibly other clauses. MariaDB ignores the
+ clauses. MariaDB does not require `FROM DUAL` if no tables
  are referenced.
 
 

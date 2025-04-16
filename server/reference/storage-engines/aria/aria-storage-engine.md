@@ -22,44 +22,44 @@ Maria.
 The following table options to Aria tables in [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md) and [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md):
 
 
-* `<code>TRANSACTIONAL= 0 <code>|</code> 1</code>` : If the `<code>TRANSACTIONAL</code>` table option is set for an Aria table, then the table will be crash-safe. This is implemented by logging any changes to the table to Aria's transaction log, and syncing those writes at the end of the statement. This will marginally slow down writes and updates. However, the benefit is that if the server dies before the statement ends, all non-durable changes will roll back to the state at the beginning of the statement. This also needs up to 6 bytes more for each row and key to store the transaction id (to allow concurrent insert's and selects).
+* `TRANSACTIONAL= 0 <code>|</code> 1` : If the `TRANSACTIONAL` table option is set for an Aria table, then the table will be crash-safe. This is implemented by logging any changes to the table to Aria's transaction log, and syncing those writes at the end of the statement. This will marginally slow down writes and updates. However, the benefit is that if the server dies before the statement ends, all non-durable changes will roll back to the state at the beginning of the statement. This also needs up to 6 bytes more for each row and key to store the transaction id (to allow concurrent insert's and selects).
 
-  * `<code>TRANSACTIONAL=1</code>` is not supported for partitioned tables.
-  * An Aria table's default value for the `<code>TRANSACTIONAL</code>` table option depends on the table's value for the `<code>ROW_FORMAT</code>` table option. See below for more details.
-  * If the `<code>TRANSACTIONAL</code>` table option is set for an Aria table, the table does not actually support transactions. See [MDEV-21364](https://jira.mariadb.org/browse/MDEV-21364) for more information. In this context, transactional just means crash-safe.
-* `<code>PAGE_CHECKSUM= 0 <code>|</code> 1</code>` : If index and data should use
+  * `TRANSACTIONAL=1` is not supported for partitioned tables.
+  * An Aria table's default value for the `TRANSACTIONAL` table option depends on the table's value for the `ROW_FORMAT` table option. See below for more details.
+  * If the `TRANSACTIONAL` table option is set for an Aria table, the table does not actually support transactions. See [MDEV-21364](https://jira.mariadb.org/browse/MDEV-21364) for more information. In this context, transactional just means crash-safe.
+* `PAGE_CHECKSUM= 0 <code>|</code> 1` : If index and data should use
  page checksums for extra safety.
-* `<code>TABLE_CHECKSUM= 0 <code>|</code> 1</code>` :
- Same as `<code>CHECKSUM</code>` in MySQL 5.1
-* `<code>ROW_FORMAT=PAGE <code>|</code> FIXED <code>|</code> DYNAMIC</code>` : The table's [row format](aria-storage-formats.md).
+* `TABLE_CHECKSUM= 0 <code>|</code> 1` :
+ Same as `CHECKSUM` in MySQL 5.1
+* `ROW_FORMAT=PAGE <code>|</code> FIXED <code>|</code> DYNAMIC` : The table's [row format](aria-storage-formats.md).
 
-  * The default value is `<code>PAGE</code>`.
-  * To emulate MyISAM, set `<code>ROW_FORMAT=FIXED</code>` or `<code>ROW_FORMAT=DYNAMIC</code>`
-
-
-The `<code>TRANSACTIONAL</code>` and `<code>ROW_FORMAT</code>` table options interact as follows:
+  * The default value is `PAGE`.
+  * To emulate MyISAM, set `ROW_FORMAT=FIXED` or `ROW_FORMAT=DYNAMIC`
 
 
-* If `<code>TRANSACTIONAL=1</code>` is set, then the only supported row format is `<code>PAGE</code>`. If `<code>ROW_FORMAT</code>` is set to some other value, then Aria issues a warning, but still forces the row format to be `<code>PAGE</code>`.
-* If `<code>TRANSACTIONAL=0</code>` is set, then the table will be not be crash-safe, and any row format is supported.
-* If `<code>TRANSACTIONAL</code>` is not set to any value, then any row format is supported. If `<code>ROW_FORMAT</code>` is set, then the table will use that row format. Otherwise, the table will use the default `<code>PAGE</code>` row format. In this case, if the table uses the `<code>PAGE</code>` row format, then it will be crash-safe. If it uses some other row format, then it will not be crash-safe.
+The `TRANSACTIONAL` and `ROW_FORMAT` table options interact as follows:
+
+
+* If `TRANSACTIONAL=1` is set, then the only supported row format is `PAGE`. If `ROW_FORMAT` is set to some other value, then Aria issues a warning, but still forces the row format to be `PAGE`.
+* If `TRANSACTIONAL=0` is set, then the table will be not be crash-safe, and any row format is supported.
+* If `TRANSACTIONAL` is not set to any value, then any row format is supported. If `ROW_FORMAT` is set, then the table will use that row format. Otherwise, the table will use the default `PAGE` row format. In this case, if the table uses the `PAGE` row format, then it will be crash-safe. If it uses some other row format, then it will not be crash-safe.
 
 
 Some other improvements are:
 
 
 * [CHECKSUM TABLE](../../sql-statements-and-structure/sql-statements/table-statements/checksum-table.md) now ignores values in NULL fields. This
- makes `<code>CHECKSUM TABLE</code>` faster and fixes some cases where
+ makes `CHECKSUM TABLE` faster and fixes some cases where
  same table definition could give different checksum values depending on [row
  format](aria-storage-formats.md). The disadvantage is that the value is now different compared to other
  MySQL installations. The new checksum calculation is fixed for all table
  engines that uses the default way to calculate and MyISAM which does the
  calculation internally. Note: Old MyISAM tables with internal checksum will
  return the same checksum as before. To fix them to calculate according to new
- rules you have to do an `<code>[ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)</code>`. You can use the old
- ways to calculate checksums by using the option `<code class="fixed" style="white-space:pre-wrap">--old</code>` to mariadbdmysqld or set the
- system variable '`<code>@@old</code>`' to `<code>1</code>` when you
- do `<code>CHECKSUM TABLE ... EXTENDED;</code>`
+ rules you have to do an `[ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)`. You can use the old
+ ways to calculate checksums by using the option `--old` to mariadbdmysqld or set the
+ system variable '`@@old`' to `1` when you
+ do `CHECKSUM TABLE ... EXTENDED;`
 * At startup Aria will check the Aria logs and automatically recover the tables
  from the last checkpoint if the server was not taken down correctly. See [Aria Log Files](#aria-log-files)
 
@@ -86,13 +86,13 @@ In normal operations, the only variables you have to consider are:
  the block before starting a scan. Until this is done and key lookups takes
  too long time even if you are not hitting disk, then you should consider
  making this smaller.
-  * Possible values to try are `<code>2048</code>`, `<code>4096</code>` or `<code>8192</code>`
+  * Possible values to try are `2048`, `4096` or `8192`
   * Note that you can't change this without dumping, deleting old tables and
  deleting all log files and then restoring your Aria tables. (This is the
  only option that requires a dump and load)
 * [aria-log-purge-type](aria-system-variables.md)
 
-  * Set this to "`<code>at_flush</code>`" if you want to keep a copy of the transaction logs
+  * Set this to "`at_flush`" if you want to keep a copy of the transaction logs
  (good as an extra backup). The logs will stay around until you
  execute [FLUSH ENGINE LOGS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md).
 
@@ -100,7 +100,7 @@ In normal operations, the only variables you have to consider are:
 ## Aria Log Files
 
 
-`<code>aria_log_control</code>` file is a very short log file (52 bytes) that contains the current state of all Aria tables related to logging and checkpoints. In particular, it contains the following information:
+`aria_log_control` file is a very short log file (52 bytes) that contains the current state of all Aria tables related to logging and checkpoints. In particular, it contains the following information:
 
 
 ```
@@ -113,18 +113,18 @@ trid: 28
 recovery_failures: 0
 ```
 
-* The `<code>uuid</code>` is a unique identifier per system. All Aria files created will have a copy of this in their .MAI headers. This is mainly used to check if someone has copied an Aria file between MariaDB servers.
-* `<code>last_checkpoint_lsn</code>` and `<code>last_log_number</code>` are information about the current aria_log files.
-* `<code>trid</code>` is the highest transaction number seen so far. Used by recovery.
+* The `uuid` is a unique identifier per system. All Aria files created will have a copy of this in their .MAI headers. This is mainly used to check if someone has copied an Aria file between MariaDB servers.
+* `last_checkpoint_lsn` and `last_log_number` are information about the current aria_log files.
+* `trid` is the highest transaction number seen so far. Used by recovery.
 
 
-`<code>aria_log.*</code>` files contain the log of all operations that change Aria files (including create table, drop table, insert etc..) This is a 'normal' WAL (Write Ahead Log), similar to the InnoDB log file, except that aria_logs contain both redo and undo. Old aria_log files are automatically deleted when they are not needed anymore (Neither the last checkpoint or any running transaction need to refer to the old data anymore).
+`aria_log.*` files contain the log of all operations that change Aria files (including create table, drop table, insert etc..) This is a 'normal' WAL (Write Ahead Log), similar to the InnoDB log file, except that aria_logs contain both redo and undo. Old aria_log files are automatically deleted when they are not needed anymore (Neither the last checkpoint or any running transaction need to refer to the old data anymore).
 
 
 ### Missing valid id
 
 
-The error `<code>Missing valid id at start of file. File is not a valid aria control file</code>` means that something overwrote at least the first 4 bytes in the file. This can happen due to a problem with the file system (hardware or software), or a bug in which a thread inside MariaDB wrote on the wrong file descriptor (in which case you should [report the bug](../../bug-tracking/reporting-bugs.md), attaching a copy of the control file to assist).
+The error `Missing valid id at start of file. File is not a valid aria control file` means that something overwrote at least the first 4 bytes in the file. This can happen due to a problem with the file system (hardware or software), or a bug in which a thread inside MariaDB wrote on the wrong file descriptor (in which case you should [report the bug](../../bug-tracking/reporting-bugs.md), attaching a copy of the control file to assist).
 
 
 In the case of a corrupted log file, with the server shut down, one should be able to fix that by deleting all aria_log files.

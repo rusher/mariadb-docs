@@ -79,13 +79,13 @@ use.
 ### MariaDB 10.2
 
 
-The parser of MaxScale correctly parses `<code>WITH</code>` statements, but fails to
-collect columns, functions and tables used in the `<code>SELECT</code>` defining the
-`<code>WITH</code>` clause.
+The parser of MaxScale correctly parses `WITH` statements, but fails to
+collect columns, functions and tables used in the `SELECT` defining the
+`WITH` clause.
 
 
-Consequently, the database firewall will **not** block `<code>WITH</code>` statements
-where the `<code>SELECT</code>` of the `<code>WITH</code>` clause refers to forbidden columns.
+Consequently, the database firewall will **not** block `WITH` statements
+where the `SELECT` of the `WITH` clause refers to forbidden columns.
 
 
 ## MariaDB Default Values
@@ -95,8 +95,8 @@ MaxScale assumes that certain configuration parameters in MariaDB are set to
 their default values. These include but are not limited to:
 
 
-* `<code>autocommit</code>`: Autocommit is enabled for all new connections.
-* `<code>tx_read_only</code>`: Transactions use `<code>READ WRITE</code>` permissions by default.
+* `autocommit`: Autocommit is enabled for all new connections.
+* `tx_read_only`: Transactions use `READ WRITE` permissions by default.
 
 
 ## Query Classification
@@ -107,28 +107,28 @@ their default values. These include but are not limited to:
 
 If a module in MaxScale requires tracking of transaction boundaries but does not
 require query classification, a custom parser is used to detect them. Currently
-the only situation in which this parser is used is when a `<code>readconnroute</code>`
-service uses the `<code>cache</code>` filter.
+the only situation in which this parser is used is when a `readconnroute`
+service uses the `cache` filter.
 
 
 The custom parser detects a subset of the full SQL syntax used to start
 transactions. This means that more complex statements will not be fully parsed
 and will cause the transaction state to not match the real state on the
-database. For example, `<code>SET @my_var = (SELECT 1), autocommit = 0</code>` is not parsed
+database. For example, `SET @my_var = (SELECT 1), autocommit = 0` is not parsed
 by the custom parser and causes the autocommit modification to not be noticed.
 
 
 ### XA Transactions
 
 
-MaxScale will treat statements executed after `<code>XA START</code>` and before `<code>XA END</code>` as
-if they were executed in a normal read-write transaction started with `<code>START
-TRANSACTION</code>`. This means that only XA transactions in the ACTIVE state will be
-routed as transactions and all statements after `<code>XA END</code>` are routed normally.
+MaxScale will treat statements executed after `XA START` and before `XA END` as
+if they were executed in a normal read-write transaction started with `START
+TRANSACTION`. This means that only XA transactions in the ACTIVE state will be
+routed as transactions and all statements after `XA END` are routed normally.
 
 
 XA transactions and normal transactions are mutually exclusive in MariaDB. This
-means that a `<code>START TRANSACTION</code>` command will fail if the connection already has
+means that a `START TRANSACTION` command will fail if the connection already has
 an open XA transaction. MaxScale currently only inspects the SQL and deduces the
 transaction state from that. If a transaction fails to start due to an open XA
 transaction, the state in MaxScale and in MariaDB can be different and MaxScale
@@ -174,23 +174,23 @@ transaction or change the autocommit mode using a prepared statement.
 
 
 * Compression is not included in the server handshake.
-* If a `<code>KILL [CONNECTION] <ID></code>` statement is executed, MaxScale will intercept
+* If a `KILL [CONNECTION] <ID>` statement is executed, MaxScale will intercept
  it. If the ID matches a MaxScale session ID, it will be closed by sending
- modified `<code>KILL</code>` commands of the same type to all backend server to which the
+ modified `KILL` commands of the same type to all backend server to which the
  session in question is connected to. This results in behavior that is similar
- to how MariaDB does it. If the `<code>KILL CONNECTION USER <user></code>` form is given,
+ to how MariaDB does it. If the `KILL CONNECTION USER <user>` form is given,
  all connections with a matching username will be closed instead.
-* MariaDB MaxScale does not support `<code>KILL QUERY ID <query_id></code>` type
+* MariaDB MaxScale does not support `KILL QUERY ID <query_id>` type
  statements. If a query by a query ID is to be killed, it needs to be done
  directly on the backend databases.
-* Any `<code>KILL</code>` commands executed using a prepared statement are ignored by
+* Any `KILL` commands executed using a prepared statement are ignored by
  MaxScale. If any are executed, it is highly likely that the wrong connection
  ends up being killed.
-* If a `<code>KILL</code>` connection kills a session that is connected to a readwritesplit
- service that has `<code>transaction_replay</code>` or `<code>delayed_retry</code>` enabled, it is
+* If a `KILL` connection kills a session that is connected to a readwritesplit
+ service that has `transaction_replay` or `delayed_retry` enabled, it is
  possible that the query is retried even if the connection is killed. To avoid
- this, use `<code>KILL QUERY</code>` instead.
-* A `<code>KILL</code>` on one service can cause a connection from another service to be
+ this, use `KILL QUERY` instead.
+* A `KILL` on one service can cause a connection from another service to be
  closed even if it uses a different protocol.
 * The change user command (COM_CHANGE_USER) only works with standard
  authentication.
@@ -264,8 +264,8 @@ manifest as crashes or memory leaks. The driver must be installed on the system
 in order for the ETL feature to work.
 
 
-The data loading into MariaDB is done with `<code>autocommit</code>`, `<code>unique_checks</code>` and
-`<code>foreign_key_checks</code>` disabled inside of a single transaction. This is done to
+The data loading into MariaDB is done with `autocommit`, `unique_checks` and
+`foreign_key_checks` disabled inside of a single transaction. This is done to
 leverage the optimizations done for InnoDB that allows faster insertions into
 empty tables. When loading data into MariaDB versions 10.5 or older, this can
 translate into long rollback times in case the ETL operation fails.
@@ -288,8 +288,8 @@ to prevent the driver from consuming too much memory.
  syntax. Incompatibilities must be manually fixed.
 * All indexes specific to PostgreSQL will be converted into normal indexes in
  MariaDB.
-* The `<code>GEOMETRY</code>` type is assumed to be the type provided by PostGIS. It is
- converted into a MariaDB `<code>GEOMETRY</code>` type and is extracted using `<code>ST_AsText</code>`.
+* The `GEOMETRY` type is assumed to be the type provided by PostGIS. It is
+ converted into a MariaDB `GEOMETRY` type and is extracted using `ST_AsText`.
 
 
 ## ETL Limitations with Generic ODBC Targets

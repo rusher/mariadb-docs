@@ -22,8 +22,8 @@ First, before you get started:
 
   1. If you are upgrading from the most recent [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) release to [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), then the versions will be compatible.
   1. See [What is MariaDB Galera Cluster?: Galera wsrep provider Versions](../what-is-mariadb-galera-cluster.md#galera-wsrep-provider-versions) for information on which MariaDB releases uses which Galera wsrep provider versions.
-1. You want to have a large enough gcache to avoid a [State Snapshot Transfer (SST)](../state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) during the rolling upgrade. The gcache size can be configured by setting `<code>[gcache.size](../wsrep_provider_options.md#gcachesize)</code>` For example: 
-`<code class="fixed" style="white-space:pre-wrap">wsrep_provider_options="gcache.size=2G"</code>`
+1. You want to have a large enough gcache to avoid a [State Snapshot Transfer (SST)](../state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) during the rolling upgrade. The gcache size can be configured by setting `[gcache.size](../wsrep_provider_options.md#gcachesize)` For example: 
+`wsrep_provider_options="gcache.size=2G"`
 
 
 Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md).
@@ -43,24 +43,24 @@ Then, for each node, perform the following steps:
 1. Uninstall the old version of MariaDB and the Galera wsrep provider.
 
   * On Debian, Ubuntu, and other similar Linux distributions, execute the following: 
-`<code class="fixed" style="white-space:pre-wrap">sudo apt-get remove mariadb-server galera</code>`
+`sudo apt-get remove mariadb-server galera`
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, execute the following: 
-`<code class="fixed" style="white-space:pre-wrap">sudo yum remove MariaDB-server galera</code>`
+`sudo yum remove MariaDB-server galera`
   * On SLES, OpenSUSE, and other similar Linux distributions, execute the following: 
-`<code class="fixed" style="white-space:pre-wrap">sudo zypper remove MariaDB-server galera</code>`
+`sudo zypper remove MariaDB-server galera`
 1. Install the new version of MariaDB and the Galera wsrep provider.
 
   * On Debian, Ubuntu, and other similar Linux distributions, see [Installing MariaDB Packages with APT](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-packages-with-apt) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md#installing-mariadb-packages-with-yum) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md#installing-mariadb-packages-with-zypp) for more information.
-1. Make any desired changes to configuration options in [option files](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), such as `<code>my.cnf</code>`. This includes removing any system variables or options that are no longer supported.
-1. On Linux distributions that use `<code>systemd</code>` you may need to increase the service startup timeout as the default timeout of 90 seconds may not be sufficient. See [Systemd: Configuring the Systemd Service Timeout](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md#configuring-the-systemd-service-timeout) for more information.
+1. Make any desired changes to configuration options in [option files](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), such as `my.cnf`. This includes removing any system variables or options that are no longer supported.
+1. On Linux distributions that use `systemd` you may need to increase the service startup timeout as the default timeout of 90 seconds may not be sufficient. See [Systemd: Configuring the Systemd Service Timeout](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md#configuring-the-systemd-service-timeout) for more information.
 1. [Start MariaDB](https://mariadb.com/kb/en/).
-1. Run `<code>[mariadb-upgrade](../../../../clients-and-utilities/mariadb-upgrade.md)</code>` with the `<code>--skip-write-binlog</code>` option.
+1. Run `[mariadb-upgrade](../../../../clients-and-utilities/mariadb-upgrade.md)` with the `--skip-write-binlog` option.
 
-  * `<code>mariadb-upgrade</code>` does two things:
+  * `mariadb-upgrade` does two things:
 
-    1. Ensures that the system tables in the `<code>[mysql](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)</code>` database are fully compatible with the new version.
+    1. Ensures that the system tables in the `[mysql](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)` database are fully compatible with the new version.
     1. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 
 

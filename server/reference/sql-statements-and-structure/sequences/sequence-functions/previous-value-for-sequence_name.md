@@ -23,7 +23,7 @@ sequence_name.currval
 ```
 
 
-`<code>PREVIOUS VALUE FOR</code>` is IBM DB2 syntax while `<code>LASTVAL()</code>` is PostgreSQL syntax.
+`PREVIOUS VALUE FOR` is IBM DB2 syntax while `LASTVAL()` is PostgreSQL syntax.
 
 
 ## Description
@@ -32,12 +32,12 @@ sequence_name.currval
 Gets the most recent value in the current connection generated from a sequence.
 
 
-* If the sequence has not yet been used by the connection, `<code>PREVIOUS VALUE FOR</code>` returns `<code>NULL</code>` (the same thing applies with a new connection which doesn't see a last value for an existing sequence).
-* If a `<code>SEQUENCE</code>` has been dropped and re-created then it's treated as a new `<code>SEQUENCE</code>` and `<code>PREVIOUS VALUE FOR</code>` will return `<code>NULL</code>`.
-* Returns `<code>NULL</code>` if the sequence is complete
-* [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) has no effect on `<code>PREVIOUS VALUE FOR</code>`.
+* If the sequence has not yet been used by the connection, `PREVIOUS VALUE FOR` returns `NULL` (the same thing applies with a new connection which doesn't see a last value for an existing sequence).
+* If a `SEQUENCE` has been dropped and re-created then it's treated as a new `SEQUENCE` and `PREVIOUS VALUE FOR` will return `NULL`.
+* Returns `NULL` if the sequence is complete
+* [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) has no effect on `PREVIOUS VALUE FOR`.
 * Previous values for all used sequences are stored per connection until connection ends.
-* `<code>PREVIOUS VALUE FOR</code>` requires the [SELECT privilege](../../sql-statements/account-management-sql-commands/grant.md).
+* `PREVIOUS VALUE FOR` requires the [SELECT privilege](../../sql-statements/account-management-sql-commands/grant.md).
 
 
 ## Examples

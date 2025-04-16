@@ -1,7 +1,7 @@
 
 # Information Schema CHARACTER_SETS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>CHARACTER_SETS</code>` table contains a list of supported [character sets](../../../../../../data-types/string-data-types/character-sets/README.md), their default collations and maximum lengths.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `CHARACTER_SETS` table contains a list of supported [character sets](../../../../../../data-types/string-data-types/character-sets/README.md), their default collations and maximum lengths.
 
 
 It contains the following columns:

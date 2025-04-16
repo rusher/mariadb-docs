@@ -98,7 +98,7 @@ create table t2 (
 );
 ```
 
-Range optimizer will generate a *finite* set of ranges over lexicographical ordering over `<code>(keypart1, keypart2, ...)</code>`.
+Range optimizer will generate a *finite* set of ranges over lexicographical ordering over `(keypart1, keypart2, ...)`.
 
 
 Example:
@@ -142,7 +142,7 @@ this will generate just one bigger range:
                         ...
 ```
 
-which includes for example rows like `<code>(keypart1,keypart2)=(1,zzz)</code>`. One could argue that the optimizer could be able to figure out that for condition `<code>keypart1 between 1 and 3</code>` the only possible values are 1, 2, 3 but this is not implemented.
+which includes for example rows like `(keypart1,keypart2)=(1,zzz)`. One could argue that the optimizer could be able to figure out that for condition `keypart1 between 1 and 3` the only possible values are 1, 2, 3 but this is not implemented.
 
 
 ### Not all comparisons produce ranges
@@ -166,7 +166,7 @@ can use the second keypart:
 "ranges": ["(NULL) < (keypart1,keypart2) < (10,foo)"],
 ```
 
-but the interval will still include rows like `<code>(keypart1, keypart2) = (8, 'zzzz')</code>`
+but the interval will still include rows like `(keypart1, keypart2) = (8, 'zzzz')`
 
 
 Non-inclusive bound on keypart1 prevents any use of keypart2. For
@@ -247,6 +247,6 @@ two IN-lists produce 3*4 =12 ranges:
                         ],
 ```
 
-if one adds `<code>and keypart3 IN (1,2,3,4,5)</code>`, the amount of ranges will be 3*4*5=60 and so forth.
+if one adds `and keypart3 IN (1,2,3,4,5)`, the amount of ranges will be 3*4*5=60 and so forth.
 See [optimizer_max_sel_arg_weight](optimizer_max_sel_arg_weight.md) on how to combat this.
 

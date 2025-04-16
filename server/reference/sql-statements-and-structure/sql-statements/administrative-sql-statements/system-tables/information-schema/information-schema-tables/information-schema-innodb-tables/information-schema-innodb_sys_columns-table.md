@@ -1,10 +1,10 @@
 
 # Information Schema INNODB_SYS_COLUMNS Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>INNODB_SYS_COLUMNS</code>` table contains information about InnoDB fields.
+The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_SYS_COLUMNS` table contains information about InnoDB fields.
 
 
-The `<code>PROCESS</code>` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
 
 
 It has the following columns:
@@ -23,7 +23,7 @@ It has the following columns:
 
 
 
-The column `<code>MTYPE</code>` uses a numeric column type identifier, which has the following values:
+The column `MTYPE` uses a numeric column type identifier, which has the following values:
 
 
 

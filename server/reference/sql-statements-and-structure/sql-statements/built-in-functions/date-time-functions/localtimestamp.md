@@ -12,7 +12,7 @@ LOCALTIMESTAMP([precision])
 ## Description
 
 
-`<code>LOCALTIMESTAMP</code>` and `<code>LOCALTIMESTAMP()</code>` are synonyms for `<code>[NOW()](now.md)</code>`.
+`LOCALTIMESTAMP` and `LOCALTIMESTAMP()` are synonyms for `[NOW()](now.md)`.
 
 
 ## See Also

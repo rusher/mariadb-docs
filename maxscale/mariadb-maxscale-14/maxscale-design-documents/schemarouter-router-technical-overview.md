@@ -10,7 +10,7 @@ This document is designed with a developer's point-of-view in mind. It explains 
 ## Source Files and Data Structures
 
 
-The schemarouter router consists of the schemarouter.h header file located in the `<code>server/modules/include/</code>` directory and the schemarouter.c file located in the `<code>server/modules/routing/schemarouter</code>` directory. This router implements the router interface defined in the router.h file. The entry points and structures this router uses can be found in the header file. The two main structures in use are the router instance and router session structures. The router instance structure is defined in `<code>struct router_instance</code>` and the router session structure in `<code>struct router_client_session</code>`.
+The schemarouter router consists of the schemarouter.h header file located in the `server/modules/include/` directory and the schemarouter.c file located in the `server/modules/routing/schemarouter` directory. This router implements the router interface defined in the router.h file. The entry points and structures this router uses can be found in the header file. The two main structures in use are the router instance and router session structures. The router instance structure is defined in `struct router_instance` and the router session structure in `struct router_client_session`.
 
 
 The definitions of the external functions and all the internal functions of the router can be found in the schemarouter.c file.

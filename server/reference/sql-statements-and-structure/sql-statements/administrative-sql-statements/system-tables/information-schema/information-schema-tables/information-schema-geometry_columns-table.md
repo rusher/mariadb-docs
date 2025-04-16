@@ -4,7 +4,7 @@
 ## Description
 
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>GEOMETRY_COLUMNS</code>` table provides support for Spatial Reference systems for GIS data.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `GEOMETRY_COLUMNS` table provides support for Spatial Reference systems for GIS data.
 
 
 It contains the following columns:
@@ -33,7 +33,7 @@ It contains the following columns:
 ## Storage_type
 
 
-The integers in the `<code>storage_type</code>` field match the geometry types as follows:
+The integers in the `storage_type` field match the geometry types as follows:
 
 
 
@@ -76,5 +76,5 @@ G_GEOMETRY_COLUMN: g
 ## See also
 
 
-* The `<code>[SPATIAL_REF_SYS](information-schema-spatial_ref_sys-table.md)</code>` table.
+* The `[SPATIAL_REF_SYS](information-schema-spatial_ref_sys-table.md)` table.
 

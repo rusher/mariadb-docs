@@ -13,7 +13,7 @@ MaxScale supports client side SSL connections. Enabling is done on a per service
 Here are the options which relate to SSL and certificates.
 Parameter|Values |Description
 ---------|-----------|--------
-ssl | disabled, enabled, required |`<code>disable</code>` disables SSL, `<code>enabled</code>` enables SSL for client connections but still allows non-SSL connections and `<code>required</code>` requires SSL from all client connections. With the `<code>required</code>` option, client connections that do not use SSL will be rejected.
+ssl | disabled, enabled, required |`disable` disables SSL, `enabled` enables SSL for client connections but still allows non-SSL connections and `required` requires SSL from all client connections. With the `required` option, client connections that do not use SSL will be rejected.
 ssl_cert | path to file |Path to server certificate
 ssl_key | path to file |Path to server private key
 ssl_ca_cert | path to file |Path to Certificate Authority file

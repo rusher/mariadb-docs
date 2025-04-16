@@ -12,7 +12,7 @@ SHOW GRANTS [FOR user|role]
 ## Description
 
 
-The `<code>SHOW GRANTS</code>` statement lists privileges granted to a particular user or role.
+The `SHOW GRANTS` statement lists privileges granted to a particular user or role.
 
 
 ### Users
@@ -21,9 +21,9 @@ The `<code>SHOW GRANTS</code>` statement lists privileges granted to a particula
 The statement lists the [GRANT](../../account-management-sql-commands/grant.md) statement or
 statements that must be issued to duplicate the privileges that are granted to
 a MariaDB user account. The account is named using the same format as for the
-`<code class="fixed" style="white-space:pre-wrap">GRANT</code>` statement; for example,
-'`<code class="fixed" style="white-space:pre-wrap">jeffrey'@'localhost</code>`'. If you specify only the user name part
-of the account name, a host name part of '`<code class="fixed" style="white-space:pre-wrap">%</code>`' is used. For
+`GRANT` statement; for example,
+'`jeffrey'@'localhost`'. If you specify only the user name part
+of the account name, a host name part of '`%`' is used. For
 additional information about specifying account names, see
 [GRANT](../../account-management-sql-commands/grant.md).
 
@@ -47,17 +47,17 @@ SHOW GRANTS FOR CURRENT_USER;
 SHOW GRANTS FOR CURRENT_USER();
 ```
 
-If `<code class="highlight fixed" style="white-space:pre-wrap">SHOW GRANTS FOR CURRENT_USER</code>` (or any
-of the equivalent syntaxes) is used in `<code class="highlight fixed" style="white-space:pre-wrap">DEFINER</code>` context (such
+If `SHOW GRANTS FOR CURRENT_USER` (or any
+of the equivalent syntaxes) is used in `DEFINER` context (such
 as within a stored procedure that is defined with 
- `<code class="highlight fixed" style="white-space:pre-wrap">SQL SECURITY DEFINER</code>`), the grants displayed are those of the
+ `SQL SECURITY DEFINER`), the grants displayed are those of the
 definer and not the invoker.
 
 
 ### Roles
 
 
-`<code>SHOW GRANTS</code>` can also be used to view the privileges granted to a [role](../../../../../security/user-account-management/roles/roles_overview.md).
+`SHOW GRANTS` can also be used to view the privileges granted to a [role](../../../../../security/user-account-management/roles/roles_overview.md).
 
 
 #### Example
@@ -78,7 +78,7 @@ SHOW GRANTS FOR journalist;
 
 
 ##### MariaDB starting with [10.11](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md)
-[GRANT ... TO PUBLIC](../../account-management-sql-commands/grant.md#to-public) was introduced in [MariaDB 10.11](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md) to grant privileges to all users. `<code>SHOW GRANTS FOR PUBLIC</code>` shows all these grants.
+[GRANT ... TO PUBLIC](../../account-management-sql-commands/grant.md#to-public) was introduced in [MariaDB 10.11](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md) to grant privileges to all users. `SHOW GRANTS FOR PUBLIC` shows all these grants.
 
 ```
 SHOW GRANTS FOR public;

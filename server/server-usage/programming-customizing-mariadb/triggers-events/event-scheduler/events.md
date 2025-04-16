@@ -28,7 +28,7 @@ CREATE EVENT test_event
 ## Executing Events
 
 
-Events are only executed if the event scheduler is running. This is determined by the value of the [event_scheduler](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#event_scheduler) system variable, which needs to be set to `<code>On</code>` for the event scheduler to be running.
+Events are only executed if the event scheduler is running. This is determined by the value of the [event_scheduler](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#event_scheduler) system variable, which needs to be set to `On` for the event scheduler to be running.
 
 
 You can check if the Event scheduler is running with:
@@ -45,14 +45,14 @@ SHOW PROCESSLIST;
 +----+-----------------+-----------+------+---------+------+-----------------------------+------------------+----------+
 ```
 
-If the event scheduler is not running and `<code>event_scheduler</code>` has been set to `<code>OFF</code>`, use:
+If the event scheduler is not running and `event_scheduler` has been set to `OFF`, use:
 
 
 ```
 SET GLOBAL event_scheduler = ON;
 ```
 
-to activate it. If `<code>event_scheduler</code>` has been set to `<code>Disabled</code>`, you cannot change the value at runtime. Changing the value of the `<code>event_scheduler</code>` variable requires the SUPER privilege.
+to activate it. If `event_scheduler` has been set to `Disabled`, you cannot change the value at runtime. Changing the value of the `event_scheduler` variable requires the SUPER privilege.
 
 
 Since [MariaDB 10.0.22](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes.md), setting the [event_scheduler](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#event_scheduler) system variable will also try to reload the [mysql.event table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-event-table.md) if it was not properly loaded at startup.

@@ -19,7 +19,7 @@ returned.
 If called with two parameters, it returns the logarithm of X to the base B. If B is <= 1 or X <= 0, the function returns NULL.
 
 
-If any argument is `<code>NULL</code>`, the function returns `<code>NULL</code>`.
+If any argument is `NULL`, the function returns `NULL`.
 
 
 The inverse of this function (when called with a single argument) is

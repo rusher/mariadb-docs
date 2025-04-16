@@ -50,13 +50,13 @@ ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 ```
 
-5. Run `<code>docker build . -t ubuntu-17.10-packaging</code>`
+5. Run `docker build . -t ubuntu-17.10-packaging`
 
 
 6. Do git clone of the latest repository:
 
 
-`<code class="fixed" style="white-space:pre-wrap">cd && mkdir debian-packaging && cd debian-packaging && git clone https://salsa.debian.org/mariadb-team/mariadb-10.1.git</code>`
+`cd && mkdir debian-packaging && cd debian-packaging && git clone https://salsa.debian.org/mariadb-team/mariadb-10.1.git`
 
 
 #### Generate, publish and upload PGP key
@@ -65,7 +65,7 @@ ENV LC_ALL C.UTF-8
 7. Generate OpenPGP key with the following command:
 
 
-`<code class="fixed" style="white-space:pre-wrap">$ gpg --gen-key </code>`
+`$ gpg --gen-key `
 
 
 * select (1) RSA and RSA
@@ -78,16 +78,16 @@ ENV LC_ALL C.UTF-8
 * Keep the Key ID and fingerprint text, they are needed in the next step
 
 
-Set generated key as default in `<code>~/.bashrc</code>`
+Set generated key as default in `~/.bashrc`
 
 
-`<code class="fixed" style="white-space:pre-wrap">$ nano ~/.bashrc </code>`
+`$ nano ~/.bashrc `
 
 
 [.. add this ..]
 
 
-`<code class="fixed" style="white-space:pre-wrap">export GPGKEY=<key_id></code>`
+`export GPGKEY=<key_id>`
 
 
 Restart GPG-agent and source '/.bashrc', or restart session
@@ -96,7 +96,7 @@ Restart GPG-agent and source '/.bashrc', or restart session
 8. Publish the key to the key server:
 
 
-`<code class="fixed" style="white-space:pre-wrap">gpg --keyserver keyserver.ubuntu.com --send-keys 12345678</code>` and substitute `<code>12345678</code>` with your key's id
+`gpg --keyserver keyserver.ubuntu.com --send-keys 12345678` and substitute `12345678` with your key's id
 
 
 * If this gives timeout error, keep re-trying after a while
@@ -107,13 +107,13 @@ Upload [ImportingYourPGPKey](https://help.launchpad.net/YourAccount/ImportingYou
 [+editpgpkeys](https://launchpad.net/~rsurve/+editpgpkeys)
 
 
-10. `<code>gpg --export [your-key-id] > ~/debian-packaging/pub.key</code>`
+10. `gpg --export [your-key-id] > ~/debian-packaging/pub.key`
 
 
-11. `<code>gpg --export-secret-key [your-key-id] > ~/debian-packaging/secret.key</code>`
+11. `gpg --export-secret-key [your-key-id] > ~/debian-packaging/secret.key`
 
 
-`<code class="fixed" style="white-space:pre-wrap">gpg -k</code>`
+`gpg -k`
 
 
 ^Should show the key
@@ -123,82 +123,82 @@ Upload [ImportingYourPGPKey](https://help.launchpad.net/YourAccount/ImportingYou
 [How-to-upload-to-Launchpad-PPA-repository-(.deb-packages)](https://github.com/exelearning/iteexe/wiki/How-to-upload-to-Launchpad-PPA-repository-(.deb-packages))
 
 
-13. Open `<code>/etc/devscripts.conf</code>`
+13. Open `/etc/devscripts.conf`
 
 
 And look for this line:
 
 
-`<code class="fixed" style="white-space:pre-wrap">DEBSIGN_MAINT</code>`
+`DEBSIGN_MAINT`
 
 
 Uncomment it and add your name there
 
 
-`<code class="fixed" style="white-space:pre-wrap">export DEBEMAIL=[your-email-id]</code>`
+`export DEBEMAIL=[your-email-id]`
 
 
 #### From inside the container
 
 
-14. `<code>docker run -v ~/debian-packaging/:/repo -it ubuntu-17.10-packaging bash</code>`
+14. `docker run -v ~/debian-packaging/:/repo -it ubuntu-17.10-packaging bash`
 
 
-15. `<code>apt-get install devscripts</code>`
+15. `apt-get install devscripts`
 
 
-16. `<code>gpg --import pub.key</code>`
+16. `gpg --import pub.key`
 
 
-17. `<code>gpg --import secret.key</code>`
+17. `gpg --import secret.key`
 
 
-18. `<code>gpg -k</code>`
+18. `gpg -k`
 
 
-19. `<code>cd /repo/mariadb-10.1 && git fetch && git checkout pristine-tar && git checkout ubuntu-17.10</code>`
+19. `cd /repo/mariadb-10.1 && git fetch && git checkout pristine-tar && git checkout ubuntu-17.10`
 
 
-20. `<code>git clean -dffx && git reset --hard HEAD</code>`
+20. `git clean -dffx && git reset --hard HEAD`
 
 
-21. `<code>export DEB_BUILD_OPTIONS="parallel=10 nocheck"</code>` or `<code>export DEB_BUILD_OPTIONS="parallel=5 nocheck"</code>`
+21. `export DEB_BUILD_OPTIONS="parallel=10 nocheck"` or `export DEB_BUILD_OPTIONS="parallel=5 nocheck"`
 
 
-22. Go to `<code>/repo</code>` folder (Inside docker) and delete all the files except mariadb-10.1 folder:
+22. Go to `/repo` folder (Inside docker) and delete all the files except mariadb-10.1 folder:
 
 
-`<code class="fixed" style="white-space:pre-wrap">rm *</code>`
+`rm *`
 
 
 23.
-`<code class="fixed" style="white-space:pre-wrap">gbp buildpackage </code>`
+`gbp buildpackage `
 
 
 #### For re-running the set up container
 
 
 24. To generate an ID, run:
-`<code class="fixed" style="white-space:pre-wrap">docker commit <container-id></code>` This will generate an ID.
+`docker commit <container-id>` This will generate an ID.
 
 
 For restarting the same container again use this ID:
-`<code class="fixed" style="white-space:pre-wrap">docker run -v ~/debian-packaging/:/repo -it <ID> bash</code>`
+`docker run -v ~/debian-packaging/:/repo -it <ID> bash`
 
 
 25. Last command for uploading package to PPA:
 
 
-`<code class="fixed" style="white-space:pre-wrap">backportpackage -u <your-ppa-address> -d <ubuntu-version-to-backport-to> -S ~<a-version-suffix-name-for-this-package> <the-most-recent-dsc-file></code>`
+`backportpackage -u <your-ppa-address> -d <ubuntu-version-to-backport-to> -S ~<a-version-suffix-name-for-this-package> <the-most-recent-dsc-file>`
 
 
 Example:
 
 
-`<code class="fixed" style="white-space:pre-wrap">backportpackage -u ppa:cvicentiu/mariadb-10.0-dev2 -d bionic -S ~testtry mariadb-10.1_10.1.30-0ubuntu0.17.10.1.dsc</code>`
+`backportpackage -u ppa:cvicentiu/mariadb-10.0-dev2 -d bionic -S ~testtry mariadb-10.1_10.1.30-0ubuntu0.17.10.1.dsc`
 
 
-Run this command in the `<code>/repo</code>` folder, where the `<code>.dsc</code>` file is located
+Run this command in the `/repo` folder, where the `.dsc` file is located
 It should ask for the gpg key password again
 
 

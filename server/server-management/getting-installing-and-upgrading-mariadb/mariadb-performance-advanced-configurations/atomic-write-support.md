@@ -36,7 +36,7 @@ When opening an InnoDB table, there is a check if the tablespace for the table i
 
 
 One can disable atomic write support for all cards by setting the variable
-[innodb-use-atomic-writes](../../../reference/storage-engines/innodb/innodb-system-variables.md) to `<code>OFF</code>` in your my.cnf file. It's `<code>ON</code>` by default.
+[innodb-use-atomic-writes](../../../reference/storage-engines/innodb/innodb-system-variables.md) to `OFF` in your my.cnf file. It's `ON` by default.
 
 
 ## Enabling Atomic Writes in [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) to [MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)
@@ -61,16 +61,16 @@ Note that atomic writes are only supported on [Fusion-io devices that use the NV
 The following happens when atomic writes are enabled
 
 
-* if [innodb_flush_method](../../../reference/storage-engines/innodb/innodb-system-variables.md) is neither `<code>O_DIRECT</code>`, `<code>ALL_O_DIRECT</code>`, or `<code>O_DIRECT_NO_FSYNC</code>`, it is switched to `<code>O_DIRECT</code>`
+* if [innodb_flush_method](../../../reference/storage-engines/innodb/innodb-system-variables.md) is neither `O_DIRECT`, `ALL_O_DIRECT`, or `O_DIRECT_NO_FSYNC`, it is switched to `O_DIRECT`
 
 
-* [innodb_use_fallocate](../../../reference/storage-engines/innodb/innodb-system-variables.md) is switched `<code>ON</code>` (files are extended using `<code>posix_fallocate</code>` rather than writing zeros behind the end of file)
+* [innodb_use_fallocate](../../../reference/storage-engines/innodb/innodb-system-variables.md) is switched `ON` (files are extended using `posix_fallocate` rather than writing zeros behind the end of file)
 
 
-* Whenever an Innodb datafile is opened, a special `<code>ioctl()</code>` is issued to switch on atomic writes. If the call fails, an error is logged and returned to the caller. This means that if the system tablespace is not located on an atomic write capable device or filesystem, InnoDB/XtraDB will refuse to start.
+* Whenever an Innodb datafile is opened, a special `ioctl()` is issued to switch on atomic writes. If the call fails, an error is logged and returned to the caller. This means that if the system tablespace is not located on an atomic write capable device or filesystem, InnoDB/XtraDB will refuse to start.
 
 
-* if [innodb_doublewrite](../../../reference/storage-engines/innodb/innodb-system-variables.md) is set to `<code>ON</code>`, `<code>innodb_doublewrite</code>` will be switched `<code>OFF</code>` and a message written to the error log.
+* if [innodb_doublewrite](../../../reference/storage-engines/innodb/innodb-system-variables.md) is set to `ON`, `innodb_doublewrite` will be switched `OFF` and a message written to the error log.
 
 
 Here is a flowchart showing how atomic writes work inside InnoDB:

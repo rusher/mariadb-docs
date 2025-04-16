@@ -45,37 +45,37 @@ the number of characters.
 
 
 The [INTEGER](../../data-types/data-types-numeric-data-types/integer.md) type contains signed integer numeric 4-byte values (the *int/ of
-the C language) ranging from `<code>–2,147,483,648</code>` to `<code>2,147,483,647</code>` for signed
-type and `<code>0</code>` to `<code>4,294,967,295</code>` for unsigned type.*
+the C language) ranging from `–2,147,483,648` to `2,147,483,647` for signed
+type and `0` to `4,294,967,295` for unsigned type.*
 
 
 ## TYPE_SHORT
 
 
 The SHORT data type contains signed [integer numeric 2-byte](../../data-types/data-types-numeric-data-types/smallint.md) values (the *short
-integer* of the C language) ranging from `<code>–32,768</code>` to `<code>32,767</code>` for signed
-type and `<code>0</code>` to `<code>65,535</code>` for unsigned type.
+integer* of the C language) ranging from `–32,768` to `32,767` for signed
+type and `0` to `65,535` for unsigned type.
 
 
 ## TYPE_TINY
 
 
 The TINY data type contains [integer numeric 1-byte](../../data-types/data-types-numeric-data-types/tinyint.md) values (the *char* of
-the C language) ranging from `<code>–128</code>` to `<code>127</code>` for signed type and `<code>0</code>` to
-`<code>255</code>` for unsigned type. For some table types, TYPE_TINY is used to represent Boolean values (0 is false, anything else is true).
+the C language) ranging from `–128` to `127` for signed type and `0` to
+`255` for unsigned type. For some table types, TYPE_TINY is used to represent Boolean values (0 is false, anything else is true).
 
 
 ## TYPE_BIGINT
 
 
-The [BIGINT](../../data-types/data-types-numeric-data-types/bigint.md) data type contains signed integer 8-byte values (the *long long* of the C language) ranging from `<code>-9,223,372,036,854,775,808</code>` to
-`<code>9,223,372,036,854,775,807</code>` for signed type and from `<code>0</code>` to
-`<code>18,446,744,073,709,551,615</code>` for unsigned type.
+The [BIGINT](../../data-types/data-types-numeric-data-types/bigint.md) data type contains signed integer 8-byte values (the *long long* of the C language) ranging from `-9,223,372,036,854,775,808` to
+`9,223,372,036,854,775,807` for signed type and from `0` to
+`18,446,744,073,709,551,615` for unsigned type.
 
 
 Inside tables, the coding of all integer values depends on the table type. In
 tables represented by text files, the number is written in characters, while in
-tables represented by binary files (`<code>BIN</code>` or `<code>VEC</code>`) the number is directly
+tables represented by binary files (`BIN` or `VEC`) the number is directly
 stored in the binary representation corresponding to the platform.
 
 
@@ -120,7 +120,7 @@ insert into xxx values (-2658.74);
 ```
 
 The internal representation of it will be the character string
-`<code>-2658.740000</code>`. The way it is stored in a file table depends on the table
+`-2658.740000`. The way it is stored in a file table depends on the table
 type. The *length* field specification corresponds to the length of the table
 field in which the value is stored and is calculated by CONNECT from the
  *precision* and the *scale* values. This length is *precision* plus 1 if
@@ -338,7 +338,7 @@ The insert statement will produce a warning saying:
 
 
 
-It is replaced by a pseudo null `<code>0</code>` on the fourth row. Let us see the result:
+It is replaced by a pseudo null `0` on the fourth row. Let us see the result:
 
 
 ```

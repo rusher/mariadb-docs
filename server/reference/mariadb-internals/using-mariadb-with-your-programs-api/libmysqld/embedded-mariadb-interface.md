@@ -1,10 +1,10 @@
 
 # Embedded MariaDB Interface
 
-The embedded MariaDB server, `<code class="highlight fixed" style="white-space:pre-wrap">libmysqld</code>` has the identical interface as the [C client library](../../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md)`<code class="highlight fixed" style="white-space:pre-wrap">libmysqclient</code>`.
+The embedded MariaDB server, `libmysqld` has the identical interface as the [C client library](../../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md)`libmysqclient`.
 
 
-The normal usage of the embedded server is to use the normal `<code class="highlight fixed" style="white-space:pre-wrap">mysql.h</code>` include file in your application and link with `<code class="highlight fixed" style="white-space:pre-wrap">libmysqld</code>` instead of `<code class="highlight fixed" style="white-space:pre-wrap">libmysqlclient</code>`.
+The normal usage of the embedded server is to use the normal `mysql.h` include file in your application and link with `libmysqld` instead of `libmysqlclient`.
 
 
 The intention is that one should be able to move from a server/client version of MariaDB to a single server version of MariaDB by just changing which library you link with.

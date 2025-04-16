@@ -80,10 +80,10 @@ considered experimental. The following changes to the default behaviour
 have also been made:
 
 
-* The default value of `<code>cached_data</code>` is now `<code>thread_specific</code>` (used to be
- `<code>shared</code>`).
-* The default value of `<code>selects</code>` is now `<code>assume_cacheable</code>` (used to be
- `<code>verify_cacheable</code>`).
+* The default value of `cached_data` is now `thread_specific` (used to be
+ `shared`).
+* The default value of `selects` is now `assume_cacheable` (used to be
+ `verify_cacheable`).
 
 
 The cache filter is a simple cache that is capable of caching the result of
@@ -95,20 +95,20 @@ By *default* the cache will be used and populated in the following circumstances
 
 
 * There is no explicit transaction active, that is, autocommit is used,
-* there is an explicitly read-only transaction (that is,`<code>START TRANSACTION
- READ ONLY</code>`) active, or
+* there is an explicitly read-only transaction (that is,`START TRANSACTION
+ READ ONLY`) active, or
 * there is a transaction active and no statement that modifies the database
  has been performed.
 
 
 In practice, the last bullet point basically means that if a transaction has
-been started with `<code>BEGIN</code>`, `<code>START TRANSACTION</code>` or `<code>START TRANSACTION READ
-WRITE</code>`, then the cache will be used and populated until the first `<code>UPDATE</code>`,
-`<code>INSERT</code>` or `<code>DELETE</code>` statement is encountered.
+been started with `BEGIN`, `START TRANSACTION` or `START TRANSACTION READ
+WRITE`, then the cache will be used and populated until the first `UPDATE`,
+`INSERT` or `DELETE` statement is encountered.
 
 
 That is, in default mode the cache effectively causes the system to behave
-as if the *isolation level* would be `<code>READ COMMITTED</code>`, irrespective of what
+as if the *isolation level* would be `READ COMMITTED`, irrespective of what
 the isolation level of the backends actually is.
 
 
@@ -116,8 +116,8 @@ The default behaviour can be altered using the configuration parameter
 [cache_inside_transactions](#cache_inside_transactions).
 
 
-By default it is assumed that all `<code>SELECT</code>` statements are cacheable, which
-means that also statements like `<code>SELECT LOCALTIME</code>` are cached. Please check
+By default it is assumed that all `SELECT` statements are cacheable, which
+means that also statements like `SELECT LOCALTIME` are cached. Please check
 [selects](#selects) for how to change the default behaviour.
 
 
@@ -195,16 +195,16 @@ sharing.
 
 
 The cache filter has no mandatory parameters but a range of optional ones.
-Note that it is advisable to specify `<code>max_size</code>` to prevent the cache from
+Note that it is advisable to specify `max_size` to prevent the cache from
 using up all memory there is, in case there is very litte overlap among the
 queries.
 
 
-#### `<code>storage</code>`
+#### `storage`
 
 
 The name of the module that provides the storage for the cache. That
-module will be loaded and provided with the value of `<code>storage_options</code>` as
+module will be loaded and provided with the value of `storage_options` as
 argument. For instance:
 
 
@@ -215,17 +215,17 @@ storage=storage_inmemory
 
 
 
-The default is `<code>storage_inmemory</code>`.
+The default is `storage_inmemory`.
 
 
 See [Storage](#storage-1) for what storage modules are available.
 
 
-#### `<code>storage_options</code>`
+#### `storage_options`
 
 
 A comma separated list of arguments to be provided to the storage module,
-specified in `<code>storage</code>`, when it is loaded. Note that the needed arguments
+specified in `storage`, when it is loaded. Note that the needed arguments
 depend upon the specific module. For instance,
 
 
@@ -236,12 +236,12 @@ storage_options=storage_specific_option1=value1,storage_specific_option2=value2
 
 
 
-#### `<code>hard_ttl</code>`
+#### `hard_ttl`
 
 
 *Hard time to live*; the maximum amount of time - in seconds - the cached
 result is used before it is discarded and the result is fetched from the
-backend (and cached). See also `<code>soft_ttl</code>` below.
+backend (and cached). See also `soft_ttl` below.
 
 
 
@@ -251,20 +251,20 @@ hard_ttl=60
 
 
 
-The default value is `<code>0</code>`, which means no limit.
+The default value is `0`, which means no limit.
 
 
-#### `<code>soft_ttl</code>`
+#### `soft_ttl`
 
 
 *Soft time to live*; the amount of time - in seconds - the cached result is
-used before it is refreshed from the server. When `<code>soft_ttl</code>` has passed, the
+used before it is refreshed from the server. When `soft_ttl` has passed, the
 result will be refreshed when the *first* client requests the value.
 
 
-However, as long as `<code>hard_ttl</code>` has not passed, *all* other clients requesting
+However, as long as `hard_ttl` has not passed, *all* other clients requesting
 the same value will use the result from the cache while it is being fetched
-from the backend. That is, as long as `<code>soft_ttl</code>` but not `<code>hard_ttl</code>` has passed,
+from the backend. That is, as long as `soft_ttl` but not `hard_ttl` has passed,
 even if several clients request the same value at the same time, there will be
 just one request to the backend.
 
@@ -276,11 +276,11 @@ soft_ttl=60
 
 
 
-The default value is `<code>0</code>`, which means no limit. If the value of `<code>soft_ttl</code>` is
-larger than `<code>hard_ttl</code>` it will be adjusted down to the same value.
+The default value is `0`, which means no limit. If the value of `soft_ttl` is
+larger than `hard_ttl` it will be adjusted down to the same value.
 
 
-#### `<code>max_resultset_rows</code>`
+#### `max_resultset_rows`
 
 
 Specifies the maximum number of rows a resultset can have in order to be
@@ -294,10 +294,10 @@ max_resultset_rows=1000
 
 
 
-The default value is `<code>0</code>`, which means no limit.
+The default value is `0`, which means no limit.
 
 
-#### `<code>max_resultset_size</code>`
+#### `max_resultset_size`
 
 
 Specifies the maximum size of a resultset, for it to be stored in the cache.
@@ -312,24 +312,24 @@ max_resultset_size=128Ki
 
 
 
-The default value is `<code>0</code>`, which means no limit.
+The default value is `0`, which means no limit.
 
 
-Note that the value of `<code>max_resultset_size</code>` should not be larger than the
-value of `<code>max_size</code>`.
+Note that the value of `max_resultset_size` should not be larger than the
+value of `max_size`.
 
 
-#### `<code>max_count</code>`
+#### `max_count`
 
 
 The maximum number of items the cache may contain. If the limit has been
 reached and a new item should be stored, then an older item will be evicted.
 
 
-Note that if `<code>cached_data</code>` is `<code>thread_specific</code>` then this limit will be
+Note that if `cached_data` is `thread_specific` then this limit will be
 applied to each cache *separately*. That is, if a thread specific cache
 is used, then the total number of cached items is #threads * the value
-of `<code>max_count</code>`.
+of `max_count`.
 
 
 
@@ -339,10 +339,10 @@ max_count=1000
 
 
 
-The default value is `<code>0</code>`, which means no limit.
+The default value is `0`, which means no limit.
 
 
-#### `<code>max_size</code>`
+#### `max_size`
 
 
 The maximum size the cache may occupy. If the limit has been reached and a new
@@ -351,9 +351,9 @@ The size can be specified as described
 [here](../../mariadb-maxscale-21-06/README.md).
 
 
-Note that if `<code>cached_data</code>` is `<code>thread_specific</code>` then this limit will be
+Note that if `cached_data` is `thread_specific` then this limit will be
 applied to each cache *separately*. That is, if a thread specific cache
-is used, then the total size is #threads * the value of `<code>max_size</code>`.
+is used, then the total size is #threads * the value of `max_size`.
 
 
 
@@ -363,10 +363,10 @@ max_size=100Mi
 
 
 
-The default value is `<code>0</code>`, which means no limit.
+The default value is `0`, which means no limit.
 
 
-#### `<code>rules</code>`
+#### `rules`
 
 
 Specifies the path of the file where the caching rules are stored. A relative
@@ -380,17 +380,17 @@ rules=/path/to/rules-file
 
 
 
-#### `<code>cached_data</code>`
+#### `cached_data`
 
 
 An enumeration option specifying how data is shared between threads. The
 allowed values are:
 
 
-* `<code>shared</code>`: The cached data is shared between threads. On the one hand
+* `shared`: The cached data is shared between threads. On the one hand
  it implies that there will be synchronization between threads, on
  the other hand that all threads will use data fetched by any thread.
-* `<code>thread_specific</code>`: The cached data is specific to a thread. On the
+* `thread_specific`: The cached data is specific to a thread. On the
  one hand it implies that no synchonization is needed between threads,
  on the other hand that the very same data may be fetched and stored
  multiple times.
@@ -403,20 +403,20 @@ cached_data=shared
 
 
 
-Default is `<code>thread_specific</code>`. See `<code>max_count</code>` and `<code>max_size</code>` what implication
-changing this setting to `<code>shared</code>` has.
+Default is `thread_specific`. See `max_count` and `max_size` what implication
+changing this setting to `shared` has.
 
 
-#### `<code>selects</code>`
+#### `selects`
 
 
 An enumeration option specifying what approach the cache should take with
-respect to `<code>SELECT</code>` statements. The allowed values are:
+respect to `SELECT` statements. The allowed values are:
 
 
-* `<code>assume_cacheable</code>`: The cache can assume that all `<code>SELECT</code>` statements,
+* `assume_cacheable`: The cache can assume that all `SELECT` statements,
  without exceptions, are cacheable.
-* `<code>verify_cacheable</code>`: The cache can not assume that all `<code>SELECT</code>`
+* `verify_cacheable`: The cache can not assume that all `SELECT`
  statements are cacheable, but must verify that.
 
 
@@ -427,53 +427,53 @@ selects=verify_cacheable
 
 
 
-Default is `<code>assume_cacheable</code>`. In this case, all `<code>SELECT</code>` statements are
+Default is `assume_cacheable`. In this case, all `SELECT` statements are
 assumed to be cacheable and will be parsed *only* if some specific rule
 requires that.
 
 
-If `<code>verify_cacheable</code>` is specified, then all `<code>SELECT</code>` statements will be
+If `verify_cacheable` is specified, then all `SELECT` statements will be
 parsed and only those that are safe for caching - e.g. do *not* call any
 non-cacheable functions or access any non-cacheable variables - will be
 subject to caching.
 
 
-If `<code>verify_cacheable</code>` has been specified, the cache will not be used in
+If `verify_cacheable` has been specified, the cache will not be used in
 the following circumstances:
 
 
-* The `<code>SELECT</code>` uses any of the following functions: `<code>BENCHMARK</code>`,
- `<code>CONNECTION_ID</code>`, `<code>CONVERT_TZ</code>`, `<code>CURDATE</code>`, `<code>CURRENT_DATE</code>`, `<code>CURRENT_TIMESTAMP</code>`,
- `<code>CURTIME</code>`, `<code>DATABASE</code>`, `<code>ENCRYPT</code>`, `<code>FOUND_ROWS</code>`, `<code>GET_LOCK</code>`, `<code>IS_FREE_LOCK</code>`,
- `<code>IS_USED_LOCK</code>`, `<code>LAST_INSERT_ID</code>`, `<code>LOAD_FILE</code>`, `<code>LOCALTIME</code>`, `<code>LOCALTIMESTAMP</code>`,
- `<code>MASTER_POS_WAIT</code>`, `<code>NOW</code>`, `<code>RAND</code>`, `<code>RELEASE_LOCK</code>`, `<code>SESSION_USER</code>`, `<code>SLEEP</code>`,
- `<code>SYSDATE</code>`, `<code>SYSTEM_USER</code>`, `<code>UNIX_TIMESTAMP</code>`, `<code>USER</code>`, `<code>UUID</code>`, `<code>UUID_SHORT</code>`.
-* The `<code>SELECT</code>` accesses any of the following fields: `<code>CURRENT_DATE</code>`,
- `<code>CURRENT_TIMESTAMP</code>`, `<code>LOCALTIME</code>`, `<code>LOCALTIMESTAMP</code>`
-* The `<code>SELECT</code>` uses system or user variables.
+* The `SELECT` uses any of the following functions: `BENCHMARK`,
+ `CONNECTION_ID`, `CONVERT_TZ`, `CURDATE`, `CURRENT_DATE`, `CURRENT_TIMESTAMP`,
+ `CURTIME`, `DATABASE`, `ENCRYPT`, `FOUND_ROWS`, `GET_LOCK`, `IS_FREE_LOCK`,
+ `IS_USED_LOCK`, `LAST_INSERT_ID`, `LOAD_FILE`, `LOCALTIME`, `LOCALTIMESTAMP`,
+ `MASTER_POS_WAIT`, `NOW`, `RAND`, `RELEASE_LOCK`, `SESSION_USER`, `SLEEP`,
+ `SYSDATE`, `SYSTEM_USER`, `UNIX_TIMESTAMP`, `USER`, `UUID`, `UUID_SHORT`.
+* The `SELECT` accesses any of the following fields: `CURRENT_DATE`,
+ `CURRENT_TIMESTAMP`, `LOCALTIME`, `LOCALTIMESTAMP`
+* The `SELECT` uses system or user variables.
 
 
-Note that parsing all `<code>SELECT</code>` statements carries a *significant* performance
+Note that parsing all `SELECT` statements carries a *significant* performance
 cost. Please read [performance](#performance) for more details.
 
 
-#### `<code>cache_inside_transactions</code>`
+#### `cache_inside_transactions`
 
 
 An enumeration option specifying how the cache should behave when there
 are active transactions:
 
 
-* `<code>never</code>`: When there is an active transaction, no data will be returned
+* `never`: When there is an active transaction, no data will be returned
  from the cache, but all requests will always be sent to the backend.
  The cache will be populated inside explicitly read-only transactions.
  Inside transactions that are not explicitly read-only, the cache will
  be populated until the first non-SELECT statement.
-* `<code>read_only_transactions</code>`: The cache will be used and populated inside
+* `read_only_transactions`: The cache will be used and populated inside
  explicitly read-only transactions. Inside transactions that are not
  explicitly read-only, the cache will be populated, but not used
  until the first non-SELECT statement.
-* `<code>all_transactions</code>`: The cache will be used and populated inside
+* `all_transactions`: The cache will be used and populated inside
  explicitly read-only transactions. Inside transactions that are not
  explicitly read-only, the cache will be used and populated until the
  first non-SELECT statement.
@@ -486,14 +486,14 @@ cache_inside_transactions=never
 
 
 
-Default is `<code>all_transactions</code>`.
+Default is `all_transactions`.
 
 
-The values `<code>read_only_transactions</code>` and `<code>all_transactions</code>` have roughly the
-same effect as changing the isolation level of the backend to `<code>read_committed</code>`.
+The values `read_only_transactions` and `all_transactions` have roughly the
+same effect as changing the isolation level of the backend to `read_committed`.
 
 
-#### `<code>debug</code>`
+#### `debug`
 
 
 An integer value, using which the level of debug logging made by the cache
@@ -501,15 +501,15 @@ can be controlled. The value is actually a bitfield with different bits
 denoting different logging.
 
 
-* `<code>0</code>` (`<code>0b00000</code>`) No logging is made.
-* `<code>1</code>` (`<code>0b00001</code>`) A matching rule is logged.
-* `<code>2</code>` (`<code>0b00010</code>`) A non-matching rule is logged.
-* `<code>4</code>` (`<code>0b00100</code>`) A decision to use data from the cache is logged.
-* `<code>8</code>` (`<code>0b01000</code>`) A decision not to use data from the cache is logged.
-* `<code>16</code>` (`<code>0b10000</code>`) Higher level decisions are logged.
+* `0` (`0b00000`) No logging is made.
+* `1` (`0b00001`) A matching rule is logged.
+* `2` (`0b00010`) A non-matching rule is logged.
+* `4` (`0b00100`) A decision to use data from the cache is logged.
+* `8` (`0b01000`) A decision not to use data from the cache is logged.
+* `16` (`0b10000`) Higher level decisions are logged.
 
 
-Default is `<code>0</code>`. To log everything, give `<code>debug</code>` a value of `<code>31</code>`.
+Default is `0`. To log everything, give `debug` a value of `31`.
 
 
 
@@ -519,7 +519,7 @@ debug=31
 
 
 
-#### `<code>enabled</code>`
+#### `enabled`
 
 
 Specifies whether the cache is initially enabled or disabled.
@@ -532,7 +532,7 @@ enabled=false
 
 
 
-Default is `<code>true</code>`.
+Default is `true`.
 
 
 The value affects the initial state of the MaxScale user
@@ -545,13 +545,13 @@ for details.
 ### Runtime Configuration
 
 
-#### `<code>@maxscale.cache.populate</code>`
+#### `@maxscale.cache.populate`
 
 
-Using the variable `<code>@maxscale.cache.populate</code>` it is possible to specify at
+Using the variable `@maxscale.cache.populate` it is possible to specify at
 runtime whether the cache should be populated or not. Its initial value is
-the value of the configuration parameter `<code>enabled</code>`. That is, by default the
-value is `<code>true</code>`.
+the value of the configuration parameter `enabled`. That is, by default the
+value is `true`.
 
 
 The purpose of this variable is make it possible for an application to decide
@@ -568,14 +568,14 @@ SELECT a, b FROM tbl;
 
 
 
-In the example above, the first `<code>SELECT</code>` will always be sent to the
+In the example above, the first `SELECT` will always be sent to the
 server and the result will be cached, provided the actual cache rules
-specifies that it should be. The second `<code>SELECT</code>` may be served from the
-cache, depending on the value of `<code>@maxscale.cache.use</code>` (and the cache
+specifies that it should be. The second `SELECT` may be served from the
+cache, depending on the value of `@maxscale.cache.use` (and the cache
 rules).
 
 
-The value of `<code>@maxscale.cache.populate</code>` can be queried
+The value of `@maxscale.cache.populate` can be queried
 
 
 
@@ -588,13 +588,13 @@ SELECT @maxscale.cache.populate;
 but only *after* it has been explicitly set once.
 
 
-#### `<code>@maxscale.cache.use</code>`
+#### `@maxscale.cache.use`
 
 
-Using the variable `<code>@maxscale.cache.use</code>` it is possible to specify at
+Using the variable `@maxscale.cache.use` it is possible to specify at
 runtime whether the cache should be used or not. Its initial value is
-the value of the configuration parameter `<code>enabled</code>`. That is, by default the
-value is `<code>true</code>`.
+the value of the configuration parameter `enabled`. That is, by default the
+value is `true`.
 
 
 The purpose of this variable is make it possible for an application to decide
@@ -611,23 +611,23 @@ SELECT a, b FROM tbl;
 
 
 
-The first `<code>SELECT</code>` will be served from the cache, providing the rules
+The first `SELECT` will be served from the cache, providing the rules
 specify that the statement should be cached, the cache indeed contains
 the result and the date is not stale (as specified by the *TTL*).
 
 
-If the data is stale, the `<code>SELECT</code>` will be sent to the server **and**
+If the data is stale, the `SELECT` will be sent to the server **and**
 the cache entry will be updated, irrespective of the value of
-`<code>@maxscale.cache.populate</code>`.
+`@maxscale.cache.populate`.
 
 
-If `<code>@maxscale.cache.use</code>` is `<code>true</code>` but the result is not found in the
+If `@maxscale.cache.use` is `true` but the result is not found in the
 cache, and the result is subsequently fetched from the server, the
 result will **not** be added to the cache, unless
-`<code>@maxscale.cache.populate</code>` is also `<code>true</code>`.
+`@maxscale.cache.populate` is also `true`.
 
 
-The value of `<code>@maxscale.cache.use</code>` can be queried
+The value of `@maxscale.cache.use` can be queried
 
 
 
@@ -640,12 +640,12 @@ SELECT @maxscale.cache.use;
 but only after it has explicitly been set once.
 
 
-#### `<code>@maxscale.cache.soft_ttl</code>`
+#### `@maxscale.cache.soft_ttl`
 
 
-Using the variable `<code>@maxscale.cache.soft_ttl</code>` it is possible to specify
+Using the variable `@maxscale.cache.soft_ttl` it is possible to specify
 at runtime what *soft ttl* should be applied. Its initial value is the
-value of the configuration parameter `<code>soft_ttl</code>`. That is, by default the
+value of the configuration parameter `soft_ttl`. That is, by default the
 value is 0.
 
 
@@ -663,18 +663,18 @@ SELECT c, d FROM important;
 
 
 
-When data is `<code>SELECT</code>`ed from the unimportant table `<code>unimportant</code>`, the data
+When data is `SELECT`ed from the unimportant table `unimportant`, the data
 will be returned from the cache provided it is no older than 10 minutes,
-but when data is `<code>SELECT</code>`ed from the important table `<code>important</code>`, the
+but when data is `SELECT`ed from the important table `important`, the
 data will be returned from the cache provided it is no older than 1 minute.
 
 
-Note that `<code>@maxscale.cache.hard_ttl</code>` overrules `<code>@maxscale.cache.soft_ttl</code>`
+Note that `@maxscale.cache.hard_ttl` overrules `@maxscale.cache.soft_ttl`
 in the sense that if the former is less that the latter, then *soft ttl*
 will, when used, be adjusted down to the value of *hard ttl*.
 
 
-The value of `<code>@maxscale.cache.soft_ttl</code>` can be queried
+The value of `@maxscale.cache.soft_ttl` can be queried
 
 
 
@@ -687,12 +687,12 @@ SELECT @maxscale.cache.soft_ttl;
 but only after it has explicitly been set once.
 
 
-#### `<code>@maxscale.cache.hard_ttl</code>`
+#### `@maxscale.cache.hard_ttl`
 
 
-Using the variable `<code>@maxscale.cache.hard_ttl</code>` it is possible to specify
+Using the variable `@maxscale.cache.hard_ttl` it is possible to specify
 at runtime what *hard ttl* should be applied. Its initial value is the
-value of the configuration parameter `<code>hard_ttl</code>`. That is, by default the
+value of the configuration parameter `hard_ttl`. That is, by default the
 value is 0.
 
 
@@ -700,7 +700,7 @@ The purpose of this variable is make it possible for an application to decide
 statement by statement what *hard ttl* should be applied.
 
 
-Note that as `<code>@maxscale.cache.hard_ttl</code>` overrules `<code>@maxscale.cache.soft_ttl</code>`,
+Note that as `@maxscale.cache.hard_ttl` overrules `@maxscale.cache.soft_ttl`,
 is is important to ensure that the former is at least as large as the latter
 and for best overall performance that it is larger.
 
@@ -715,7 +715,7 @@ SELECT c, d FROM important;
 
 
 
-The value of `<code>@maxscale.cache.hard_ttl</code>` can be queried
+The value of `@maxscale.cache.hard_ttl` can be queried
 
 
 
@@ -731,11 +731,11 @@ but only after it has explicitly been set once.
 #### Client Driven Caching
 
 
-With `<code>@maxscale.cache.populate</code>` and `<code>@maxscale.cache.use</code>` is it possible
+With `@maxscale.cache.populate` and `@maxscale.cache.use` is it possible
 to make the caching completely client driven.
 
 
-Provide no `<code>rules</code>` file, which means that *all* `<code>SELECT</code>` statements are
+Provide no `rules` file, which means that *all* `SELECT` statements are
 subject to caching and that all users receive data from the cache. Set
 the startup mode of the cache to *disabled*.
 
@@ -751,7 +751,7 @@ enabled=false
 
 
 Now, in order to *mark* statements that should be cached, set
-`<code>@maxscale.cache.populate</code>` to `<code>true</code>`, and perform those `<code>SELECT</code>`s.
+`@maxscale.cache.populate` to `true`, and perform those `SELECT`s.
 
 
 
@@ -765,11 +765,11 @@ SET @maxscale.cache.populate=false;
 
 
 
-Note that those `<code>SELECT</code>`s must return something in order for the
+Note that those `SELECT`s must return something in order for the
 statement to be *marked* for caching.
 
 
-After this, the value of `<code>@maxscale.cache.use</code>` will decide whether
+After this, the value of `@maxscale.cache.use` will decide whether
 or not the cache is considered.
 
 
@@ -782,7 +782,7 @@ SET @maxscale.cache.use=false;
 
 
 
-With `<code>@maxscale.cache.use</code>` being `<code>true</code>`, the cache is considered
+With `@maxscale.cache.use` being `true`, the cache is considered
 and the result returned from there, if not stale. If it is stale,
 the result is fetched from the server and the cached entry is updated.
 
@@ -842,28 +842,28 @@ or, in case an array is used, as
 
 
 
-The `<code>store</code>` field specifies in what circumstances data should be stored to
-the cache and the `<code>use</code>` field specifies in what circumstances the data in
+The `store` field specifies in what circumstances data should be stored to
+the cache and the `use` field specifies in what circumstances the data in
 the cache should be used. In both cases, the value is a JSON array containg
 objects.
 
 
 If an array of rule objects is specified, then, when looking for a rule that
-matches, the `<code>store</code>` field of each object are evaluated in sequential order
-until a match is found. Then, the `<code>use</code>` field of that object is used when
+matches, the `store` field of each object are evaluated in sequential order
+until a match is found. Then, the `use` field of that object is used when
 deciding whether data in the cache should be used.
 
 
 ### When to Store
 
 
-By default, if no rules file have been provided or if the `<code>store</code>` field is
+By default, if no rules file have been provided or if the `store` field is
 missing from the object, the results of all queries will be stored to the
-cache, subject to `<code>max_resultset_rows</code>` and `<code>max_resultset_size</code>` cache filter
+cache, subject to `max_resultset_rows` and `max_resultset_size` cache filter
 parameters.
 
 
-By providing a `<code>store</code>` field in the JSON object, the decision whether to
+By providing a `store` field in the JSON object, the decision whether to
 store the result of a particular query to the cache can be controlled in
 a more detailed manner. The decision to cache the results of a query can
 depend upon
@@ -875,7 +875,7 @@ depend upon
 * the query itself.
 
 
-Each entry in the `<code>store</code>` array is an object containing three fields,
+Each entry in the `store` array is an object containing three fields,
 
 
 
@@ -892,19 +892,19 @@ Each entry in the `<code>store</code>` array is an object containing three field
 where,
 
 
-* the attribute can be `<code>database</code>`, `<code>table</code>`, `<code>column</code>` or `<code>query</code>`,
-* the op can be `<code>=</code>`, `<code>!=</code>`, `<code>like</code>` or `<code>unlike</code>`, and
+* the attribute can be `database`, `table`, `column` or `query`,
+* the op can be `=`, `!=`, `like` or `unlike`, and
 * the value a string.
 
 
-If *op* is `<code>=</code>` or `<code>!=</code>` then *value* is used as a string; if it is `<code>like</code>`
-or `<code>unlike</code>`, then *value* is interpreted as a *pcre2* regular expression.
-Note though that if *attribute* is `<code>database</code>`, `<code>table</code>` or `<code>column</code>`, then
-the string is interpreted as a name, where a dot `<code>.</code>` denotes qualification
+If *op* is `=` or `!=` then *value* is used as a string; if it is `like`
+or `unlike`, then *value* is interpreted as a *pcre2* regular expression.
+Note though that if *attribute* is `database`, `table` or `column`, then
+the string is interpreted as a name, where a dot `.` denotes qualification
 or scoping.
 
 
-The objects in the `<code>store</code>` array are processed in order. If the result
+The objects in the `store` array are processed in order. If the result
 of a comparison is *true*, no further processing will be made and the
 result of the query in question will be stored to the cache.
 
@@ -988,29 +988,29 @@ select b from tbl where a > 5;
 #### Qualified Names
 
 
-When using `<code>=</code>` or `<code>!=</code>` in the rule object in conjunction with `<code>database</code>`,
-`<code>table</code>` and `<code>column</code>`, the provided string is interpreted as a name, that is,
-dot (`<code>.</code>`) denotes qualification or scope.
+When using `=` or `!=` in the rule object in conjunction with `database`,
+`table` and `column`, the provided string is interpreted as a name, that is,
+dot (`.`) denotes qualification or scope.
 
 
-In practice that means that if *attribute* is `<code>database</code>` then *value* may
-not contain a dot, if *attribute* is `<code>table</code>` then *value* may contain one
+In practice that means that if *attribute* is `database` then *value* may
+not contain a dot, if *attribute* is `table` then *value* may contain one
 dot, used for separating the database and table names respectively, and
-if *attribute* is `<code>column</code>` then *value* may contain one or two dots, used
+if *attribute* is `column` then *value* may contain one or two dots, used
 for separating table and column names, or database, table and column names.
 
 
 Note that if a qualified name is used as a *value*, then all parts of the
 name must be available for a match. Currently Maria DB MaxScale may not
 always be capable of deducing in what table a particular column is. If
-that is the case, then a value like `<code>tbl.field</code>` may not necessarily
-be a match even if the field is `<code>field</code>` and the table actually is `<code>tbl</code>`.
+that is the case, then a value like `tbl.field` may not necessarily
+be a match even if the field is `field` and the table actually is `tbl`.
 
 
 #### Implication of the default database
 
 
-If the rules concerns the `<code>database</code>`, then only if the statement refers
+If the rules concerns the `database`, then only if the statement refers
 to *no* specific database, will the default database be considered.
 
 
@@ -1029,7 +1029,7 @@ select fld from tbl;
 
 
 
-the string matched against the regular expression will be `<code>somedb.tbl.fld</code>`.
+the string matched against the regular expression will be `somedb.tbl.fld`.
 
 
 #### Examples
@@ -1116,11 +1116,11 @@ to be cached.
 ### When to Use
 
 
-By default, if no rules file have been provided or if the `<code>use</code>` field is
+By default, if no rules file have been provided or if the `use` field is
 missing from the object, all users may be returned data from the cache.
 
 
-By providing a `<code>use</code>` field in the JSON object, the decision whether to use
+By providing a `use` field in the JSON object, the decision whether to use
 data from the cache can be controlled in a more detailed manner. The decision
 to use data from the cache can depend upon
 
@@ -1128,7 +1128,7 @@ to use data from the cache can depend upon
 * the user.
 
 
-Each entry in the `<code>use</code>` array is an object containing three fields,
+Each entry in the `use` array is an object containing three fields,
 
 
 
@@ -1145,14 +1145,14 @@ Each entry in the `<code>use</code>` array is an object containing three fields,
 where,
 
 
-* the attribute can be `<code>user</code>`,
-* the op can be `<code>=</code>`, `<code>!=</code>`, `<code>like</code>` or `<code>unlike</code>`, and
+* the attribute can be `user`,
+* the op can be `=`, `!=`, `like` or `unlike`, and
 * the value a string.
 
 
-If *op* is `<code>=</code>` or `<code>!=</code>` then *value* is interpreted as a MariaDB account
-string, that is, `<code>%</code>` means indicates wildcard, but if *op* is `<code>like</code>` or
-`<code>unlike</code>` it is simply assumed *value* is a pcre2 regular expression.
+If *op* is `=` or `!=` then *value* is interpreted as a MariaDB account
+string, that is, `%` means indicates wildcard, but if *op* is `like` or
+`unlike` it is simply assumed *value* is a pcre2 regular expression.
 
 
 For instance, the following are equivalent:
@@ -1175,15 +1175,15 @@ For instance, the following are equivalent:
 
 
 
-Note that if *op* is `<code>=</code>` or `<code>!=</code>` then the usual assumptions apply,
-that is, a value of `<code>bob</code>` is equivalent with `<code>'bob'@'%'</code>`. If *like*
+Note that if *op* is `=` or `!=` then the usual assumptions apply,
+that is, a value of `bob` is equivalent with `'bob'@'%'`. If *like*
 or *unlike* is used, then no assumptions apply, but the string is
 used verbatim as a regular expression.
 
 
-The objects in the `<code>use</code>` array are processed in order. If the result
+The objects in the `use` array are processed in order. If the result
 of a comparison is *true*, no further processing will be made and the
-data in the cache will be used, subject to the value of `<code>ttl</code>`.
+data in the cache will be used, subject to the value of `ttl`.
 
 
 If the result of the comparison is *false*, then the next object is
@@ -1191,16 +1191,16 @@ processed. The process continues until the array is exhausted. If there
 is no match, then data in the cache will not be used.
 
 
-Note that `<code>use</code>` is relevant only if the query is subject to caching,
+Note that `use` is relevant only if the query is subject to caching,
 that is, if all queries are cached or if a query matches a particular
-rule in the `<code>store</code>` array.
+rule in the `store` array.
 
 
 #### Examples
 
 
-Use data from the cache for all users except `<code>admin</code>` (actually `<code>'admin'@'%'</code>`),
-regardless of what host the `<code>admin</code>` user comes from.
+Use data from the cache for all users except `admin` (actually `'admin'@'%'`),
+regardless of what host the `admin` user comes from.
 
 
 
@@ -1226,7 +1226,7 @@ configured who the caching should apply to, the presence of the cache
 may provide a user with access to data he should not have access to.
 
 
-Suppose there is a table `<code>access</code>` that the user *alice* has access to,
+Suppose there is a table `access` that the user *alice* has access to,
 but the user *bob* does not. If *bob* tries to access the table, he will
 get an error as reply:
 
@@ -1329,13 +1329,13 @@ should be applied to *alice* only.
 
 
 With these rules in place, *bob* is again denied access, since queries
-targeting the table `<code>access</code>` will in his case not be served from the cache.
+targeting the table `access` will in his case not be served from the cache.
 
 
 ## Storage
 
 
-### `<code>storage_inmemory</code>`
+### `storage_inmemory`
 
 
 This simple storage module uses the standard memory allocator for storing
@@ -1353,10 +1353,10 @@ storage=storage_inmemory
 
 
 In the following we define a cache *MyCache* that uses the cache storage module
-`<code>storage_inmemory</code>` and whose *soft ttl* is `<code>30</code>` seconds and whose *hard ttl* is
-`<code>45</code>` seconds. The cached data is shared between all threads and the maximum size
-of the cached data is `<code>50</code>` mebibytes. The rules for the cache are in the file
-`<code>cache_rules.json</code>`.
+`storage_inmemory` and whose *soft ttl* is `30` seconds and whose *hard ttl* is
+`45` seconds. The cached data is shared between all threads and the maximum size
+of the cached data is `50` mebibytes. The rules for the cache are in the file
+`cache_rules.json`.
 
 
 ### Configuration
@@ -1382,10 +1382,10 @@ filters=MyCache
 
 
 
-### `<code>cache_rules.json</code>`
+### `cache_rules.json`
 
 
-The rules specify that the data of the table `<code>sbtest</code>` should be cached.
+The rules specify that the data of the table `sbtest` should be cached.
 
 
 
@@ -1408,7 +1408,7 @@ The rules specify that the data of the table `<code>sbtest</code>` should be cac
 
 Perhaps the most significant factor affecting the performance of the cache is
 whether the statements need to be parsed or not. By default, all statements are
-parsed in order to exclude `<code>SELECT</code>` statements that use non-cacheable functions,
+parsed in order to exclude `SELECT` statements that use non-cacheable functions,
 access non-cacheable variables or refer to system or user variables.
 
 
@@ -1430,7 +1430,7 @@ With that configuration, the cache itself will not cause the statements to be
 parsed.
 
 
-But note that even with `<code>assume_cacheable</code>` configured, a rule referring
+But note that even with `assume_cacheable` configured, a rule referring
 specifically to a *database*, *table* or *column* will still cause the
 statement to be parsed.
 
@@ -1536,8 +1536,8 @@ high load may be significantly *greater*.
 For maximum performance:
 
 
-* Arrange the situation so that the default `<code>selects=assume_cacheable</code>`
+* Arrange the situation so that the default `selects=assume_cacheable`
  can be used, and use no rules.
-* If `<code>selects=assume_cacheable</code>` is used, use only regexp based rules.
-* If `<code>selects=verify_cacheable</code>` has been configured, non-regex based
+* If `selects=assume_cacheable` is used, use only regexp based rules.
+* If `selects=verify_cacheable` has been configured, non-regex based
  matching can be used.

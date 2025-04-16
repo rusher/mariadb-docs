@@ -785,7 +785,7 @@ Note: The packages will be installed at /usr/local. This is required for root us
 * Download the appropriate ColumnStore package and place in the /root directory.
 * Unpack the tarball, which contains multiple RPMs.
 * Install the RPMs. The MariaDB ColumnStore software will be installed in /usr/local/. 
-`<code class="fixed" style="white-space:pre-wrap">rpm -ivh mariadb-columnstore*release#*.rpm</code>`
+`rpm -ivh mariadb-columnstore*release#*.rpm`
 
 
 #### Initial download & installation of MariaDB ColumnStore binary package
@@ -795,7 +795,7 @@ The MariaDB ColumnStore binary packages can be downloaded from [](https://downlo
 
 
 * Unpack the tarball in /usr/local/ 
-`<code class="fixed" style="white-space:pre-wrap">tar -zxf mariadb-columnstore-release#.x86_64.bin.tar.gz</code>`
+`tar -zxf mariadb-columnstore-release#.x86_64.bin.tar.gz`
 
 
 Run the post-install script:
@@ -810,10 +810,10 @@ Run the post-install script:
 
 1. Download the package mariadb-columnstore-release#.amd64.deb.tar.gz into the /root directory of the server where you are installing MariaDB ColumnStore.
 1. Unpack the tarball, which contains multiple DEBs. 
-`<code class="fixed" style="white-space:pre-wrap"> tar -zxf mariadb-columnstore-release#.amd64.deb.tar.gz</code>`
+` tar -zxf mariadb-columnstore-release#.amd64.deb.tar.gz`
 1. Install the MariaDB ColumnStore DEBs. The MariaDB ColumnStore software will be installed in /usr/
 local/. 
-`<code class="fixed" style="white-space:pre-wrap"> dpkg -i mariadb-columnstore*release#*.deb</code>`
+` dpkg -i mariadb-columnstore*release#*.deb`
 
 
 ### Unprivileged user installation
@@ -855,7 +855,7 @@ for you on every MariaDB Columnstore node. The account name & password must be t
 Group ID is an example, can be different than 1000, but needs to be the same on all servers in the cluster
 
 
-`<code class="fixed" style="white-space:pre-wrap">adduser mysql -u 1000</code>`
+`adduser mysql -u 1000`
 
 
 * create group
@@ -872,13 +872,13 @@ The value for user-id must be the same for all nodes.
 * Assign a password to newly created user
 
 
-`<code class="fixed" style="white-space:pre-wrap">passwd mysql</code>`
+`passwd mysql`
 
 
 * Log in as user mysql
 
 
-`<code class="fixed" style="white-space:pre-wrap">su - mysql</code>`
+`su - mysql`
 
 
 IMPORTANT: It is required that the installation directory will be the home directory of the user account. So it would be '/home/mysql/' in this example. The installation directory must be the same on every node. In the examples below we will use the path '/home/mysql/mariadb/columnstore'.

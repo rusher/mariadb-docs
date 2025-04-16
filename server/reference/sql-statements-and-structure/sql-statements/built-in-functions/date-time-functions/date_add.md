@@ -15,17 +15,17 @@ DATE_ADD(date,INTERVAL expr unit)
 Performs date arithmetic. The *date* argument specifies the
 starting date or datetime value. *expr* is an expression specifying the
 interval value to be added to the starting date. *expr* is a
-string; it may start with a "`<code>-</code>`" for negative intervals. *unit* is a
+string; it may start with a "`-`" for negative intervals. *unit* is a
 keyword indicating the units in which the expression should be interpreted. See [Date and Time Units](date-and-time-units.md) for a complete list of permitted units.
 
 
-The result type of `<code>DATE_ADD()</code>` is determined as follows:
+The result type of `DATE_ADD()` is determined as follows:
 
 
-* if the first argument is of the type `<code>DATETIME</code>`, the function returns `<code>DATETIME</code>`
-* if the first argument is `<code>DATE</code>` and the interval uses `<code>HOUR</code>` or smaller units, the function returns `<code>DATETIME</code>`
-* if the first argument is `<code>DATE</code>` and the interval uses `<code>DAY</code>` or larger units, the function returns `<code>DATE</code>`
-* similarly, if the first argument is `<code>TIME</code>` and the interval uses `<code>DAY</code>` or smaller units the function returns `<code>TIME</code>`, if the interval uses anything larger, the function returns `<code>DATETIME</code>`
+* if the first argument is of the type `DATETIME`, the function returns `DATETIME`
+* if the first argument is `DATE` and the interval uses `HOUR` or smaller units, the function returns `DATETIME`
+* if the first argument is `DATE` and the interval uses `DAY` or larger units, the function returns `DATE`
+* similarly, if the first argument is `TIME` and the interval uses `DAY` or smaller units the function returns `TIME`, if the interval uses anything larger, the function returns `DATETIME`
 * if the first argument isn't a temporal type, the function returns a string
 
 

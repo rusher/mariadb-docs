@@ -3,7 +3,7 @@
 
 
 ##### MariaDB starting with [10.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md)
-`<code>password_reuse_check</code>` is a [password validation](README.md) plugin introduced in [MariaDB 10.7.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md).
+`password_reuse_check` is a [password validation](README.md) plugin introduced in [MariaDB 10.7.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md).
 
 
 
@@ -13,7 +13,7 @@
 The plugin is used to prevent a user from reusing a password, which can be a requirement in some security policies. The [password_reuse_check_interval](password_reuse_check_interval.md) system variable determines the retention period, in days, for a password. By default this is zero, meaning unlimited retention. Old passwords are stored in the [mysql.password_reuse_check_history table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlpassword_reuse_check_history-table.md).
 
 
-Note that passwords can be directly set as a hash, bypassing the password validation, if the [strict_password_validation](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) variable is `<code>OFF</code>` (it is `<code>ON</code>` by default).
+Note that passwords can be directly set as a hash, bypassing the password validation, if the [strict_password_validation](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) variable is `OFF` (it is `ON` by default).
 
 
 ### Installing the Plugin

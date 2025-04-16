@@ -29,7 +29,7 @@ monitor_interval=2000ms
 
 The mandatory parameters are the object type, the monitor module to use, the
 list of servers to monitor and the username and password to use when connecting
-to the servers. The `<code>monitor_interval</code>` parameter controls for how long
+to the servers. The `monitor_interval` parameter controls for how long
 the monitor waits between each monitoring loop.
 
 

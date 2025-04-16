@@ -4,7 +4,7 @@
 ## Description
 
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `<code>ALL_PLUGINS</code>` table contains information about [server plugins](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md), whether installed or not.
+The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `ALL_PLUGINS` table contains information about [server plugins](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md), whether installed or not.
 
 
 It contains the following columns:
@@ -30,7 +30,7 @@ It contains the following columns:
 
 
 
-It provides a superset of the information shown by the `<code>[SHOW PLUGINS SONAME](../../../show/show-plugins-soname.md)</code>` statement, as well as the `<code>[information_schema.PLUGINS](plugins-table-information-schema.md)</code>` table. For specific information about storage engines (a particular type of plugin), see the [Information Schema ENGINES table](information-schema-engines-table.md) and the `<code>[SHOW ENGINES](../../../show/show-engines.md)</code>` statement.
+It provides a superset of the information shown by the `[SHOW PLUGINS SONAME](../../../show/show-plugins-soname.md)` statement, as well as the `[information_schema.PLUGINS](plugins-table-information-schema.md)` table. For specific information about storage engines (a particular type of plugin), see the [Information Schema ENGINES table](information-schema-engines-table.md) and the `[SHOW ENGINES](../../../show/show-engines.md)` statement.
 
 
 The table is not a standard Information Schema table, and is a MariaDB extension.

@@ -38,10 +38,10 @@ and the rest of the certificates on the file are stored in the chain store.
 This change should not cause any changes in MaxScale's behavior.
 
 
-### `<code>root_node_as_master</code>`
+### `root_node_as_master`
 
 
-The galeramon parameter `<code>root_node_as_master</code>` is now disabled by default. The
+The galeramon parameter `root_node_as_master` is now disabled by default. The
 option should be enabled when it is of great importance to know that all
 MaxScale instances treat a shared Galera cluster in the same way.
 
@@ -58,7 +58,7 @@ used in a query.
 
 
 The function type rule will now accept backtick quoted values. This allows
-keywords such as `<code>insert</code>` and `<code>function</code>` to be used as values for a function
+keywords such as `insert` and `function` to be used as values for a function
 rule.
 
 
@@ -73,7 +73,7 @@ resolution of database mapping conflicts (i.e. the database exists on more than
 one backend server).
 
 
-The new `<code>preferred_server</code>` parameter takes a server name as its value. If a
+The new `preferred_server` parameter takes a server name as its value. If a
 database mapping conflict occurs, the server given as the parameter will have
 preference. In practice, this means that databases on a central server can be
 replicated to the shards for doing JOINs but writes to the replicate database

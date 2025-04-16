@@ -67,19 +67,19 @@ There are three formats for the binary log. The default is statement-based loggi
 ## Selectively Logging to the Binary Log
 
 
-By default, all changes to data or data structure are logged. This behavior can be changed by starting the server with the `<code>--binlog-ignore-db=database_name</code>` or `<code>--binlog-do-db=database_name</code>` [options](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
+By default, all changes to data or data structure are logged. This behavior can be changed by starting the server with the `--binlog-ignore-db=database_name` or `--binlog-do-db=database_name` [options](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
 
 
-`<code>--binlog-ignore-db=database_name</code>` specified a database to ignore for logging purposes, while `<code>--binlog-do-db=database_name</code>` will not log any statements unless they apply to the specified database.
+`--binlog-ignore-db=database_name` specified a database to ignore for logging purposes, while `--binlog-do-db=database_name` will not log any statements unless they apply to the specified database.
 
 
 Neither option accepts comma-delimited lists of multiple databases as an option, since a database name can contain a comma. To apply to multiple databases, use the option multiple times.
 
 
-`<code>--binlog-ignore-db=database_name</code>` behaves differently depending on whether statement-based or row-based logging is used. For statement-based logging, the server will not log any statement where the *default database* is database_name. The default database is set with the [USE](../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md) statement.
+`--binlog-ignore-db=database_name` behaves differently depending on whether statement-based or row-based logging is used. For statement-based logging, the server will not log any statement where the *default database* is database_name. The default database is set with the [USE](../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md) statement.
 
 
-Similarly, `<code>--binlog-do-db=database_name</code>` also behaves differently depending on whether statement-based or row-based logging is used.
+Similarly, `--binlog-do-db=database_name` also behaves differently depending on whether statement-based or row-based logging is used.
 
 
 For statement-based logging, the server will only log statement where the *default database* is database_name. The default database is set with the [USE](../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md) statement.
@@ -91,7 +91,7 @@ For row-based logging, the server will log any updates to any tables in the name
 ### Examples
 
 
-Assume the server has started with the option `<code>--binlog-ignore-db=employees</code>`. The following example *is* logged if statement-based logging is used, and *is not* logged with row-based logging.
+Assume the server has started with the option `--binlog-ignore-db=employees`. The following example *is* logged if statement-based logging is used, and *is not* logged with row-based logging.
 
 
 ```
@@ -99,10 +99,10 @@ USE customers;
 UPDATE employees.details SET bonus=bonus*1.2;
 ```
 
-This is because statement-based logging examines the default database, in this case, `<code>customers</code>`. Since `<code>customers</code>` is not specified in the ignore list, the statement will be logged. If row-based logging is used, the example will not be logged as updates are written to the tables in the `<code>employees</code>` database.
+This is because statement-based logging examines the default database, in this case, `customers`. Since `customers` is not specified in the ignore list, the statement will be logged. If row-based logging is used, the example will not be logged as updates are written to the tables in the `employees` database.
 
 
-Assume instead the server started with the option `<code>--binlog-do-db=employees</code>`. The following example *is not* logged if statement-based logging is used, and *is* logged with row-based logging.
+Assume instead the server started with the option `--binlog-do-db=employees`. The following example *is not* logged if statement-based logging is used, and *is* logged with row-based logging.
 
 
 ```
@@ -110,7 +110,7 @@ USE customers;
 UPDATE employees.details SET bonus=bonus*1.2;
 ```
 
-This is again because statement-based logging examines the default database, in this case, `<code>customers</code>`. Since `<code>customers</code>` is not specified in the do list, the statement will not be logged. If row-based logging is used, the example will be logged as updates are written to the tables in the `<code>employees</code>` database.
+This is again because statement-based logging examines the default database, in this case, `customers`. Since `customers` is not specified in the do list, the statement will not be logged. If row-based logging is used, the example will be logged as updates are written to the tables in the `employees` database.
 
 
 ## Effects of Full Disk Errors on Binary Logging

@@ -5,19 +5,19 @@ The terms *master* and *slave* have historically been used in replication, and M
 
 
 
-`<code>Annotate_rows</code>` events accompany `<code>row</code>` events and describe the query which
+`Annotate_rows` events accompany `row` events and describe the query which
 caused the row event.
 
 
-Until [MariaDB 10.2.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md), the binlog event type `<code>Annotate_rows_log_event</code>` was off by default (so as not to change the binary log format and to allow one to replicate [MariaDB 5.3](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) to MySQL/[MariaDB 5.1](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md)). You can enable this with `<code>[--binlog-annotate-row-events](#master-option-binlog-annotate-row-events)</code>`.
+Until [MariaDB 10.2.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md), the binlog event type `Annotate_rows_log_event` was off by default (so as not to change the binary log format and to allow one to replicate [MariaDB 5.3](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) to MySQL/[MariaDB 5.1](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md)). You can enable this with `[--binlog-annotate-row-events](#master-option-binlog-annotate-row-events)`.
 
 
-In the [binary log](../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md), each `<code>Annotate_rows</code>` event precedes the
+In the [binary log](../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md), each `Annotate_rows` event precedes the
 corresponding Table map event or the first of the Table map events, if there
 are more than one (e.g. in a case of multi-delete or insert delayed).
 
 
-## `<code>Annotate_rows</code>` Example
+## `Annotate_rows` Example
 
 
 ```
@@ -74,13 +74,13 @@ master> SHOW BINLOG EVENTS IN 'master-bin.000001';
 
 
 The following options have been added to control the behavior of
-`<code>Annotate_rows_log_event</code>`:
+`Annotate_rows_log_event`:
 
 
-### Master Option: `<code><code>--</code>binlog-annotate-row-events</code>`
+### Master Option: `<code>--</code>binlog-annotate-row-events`
 
 
-This option tells the master to write `<code>Annotate_rows</code>` events to the binary
+This option tells the master to write `Annotate_rows` events to the binary
 log. See [binlog_annotate_row_events](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) for a detailed description of the variable.
 
 
@@ -95,22 +95,22 @@ SET SESSION binlog_annotate_row_events=OFF;
 ... statements not to be annotated ...
 ```
 
-### Slave Option: `<code><code>--</code>replicate-annotate-row-events</code>`
+### Slave Option: `<code>--</code>replicate-annotate-row-events`
 
 
-This option tells the slave to reproduce `<code>Annotate_row</code>` events received from
+This option tells the slave to reproduce `Annotate_row` events received from
 the master in its own binary log (sensible only when used in tandem with the
-`<code>log-slave-updates</code>` option).
+`log-slave-updates` option).
 
 
 See [replicate_annotate_row_events](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) for a detailed description of the variable.
 
 
-### mariadb-binlog Option: `<code><code>--</code>skip-annotate-row-events</code>`
+### mariadb-binlog Option: `<code>--</code>skip-annotate-row-events`
 
 
-This option tells [mariadb-binlog](using-mariadb-binlog.md) to skip all `<code>Annotate_row</code>` events in its
-output (by default, mariadb-binlog prints `<code>Annotate_row</code>` events, if the binary
+This option tells [mariadb-binlog](using-mariadb-binlog.md) to skip all `Annotate_row` events in its
+output (by default, mariadb-binlog prints `Annotate_row` events, if the binary
 log contains them).
 
 

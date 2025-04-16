@@ -13,7 +13,7 @@ Next, [prepare your system to be able to compile the source](build-environment-s
 
 
 If you don't want to run MariaDB as yourself, then you should create a
-`<code>mysql</code>` user. The example below uses this user.
+`mysql` user. The example below uses this user.
 
 
 ## Using cmake
@@ -45,7 +45,7 @@ You can configure your build simply by running *cmake* without any special optio
 cmake ../server
 ```
 
-where `<code>server</code>` is where you installed MariaDB. If you are building in the source directory, just omit `<code>../server</code>`.
+where `server` is where you installed MariaDB. If you are building in the source directory, just omit `../server`.
 
 
 If you want it to be configured exactly as a normal MariaDB server release is built, use
@@ -65,9 +65,9 @@ To do a build suitable for debugging use:
 cmake ../server -DCMAKE_BUILD_TYPE=Debug
 ```
 
-By default, MariaDB is compiled with the `<code>-Werror</code>` flag, which causes compiling to abort
+By default, MariaDB is compiled with the `-Werror` flag, which causes compiling to abort
 if there is a compiler warning. You can disable that by configuring with
-`<code>-DMYSQL_MAINTAINER_MODE=OFF</code>`.
+`-DMYSQL_MAINTAINER_MODE=OFF`.
 
 
 ```
@@ -106,7 +106,7 @@ cpack
 ## Using BUILD Scripts
 
 
-There are also `<code>BUILD</code>` scripts for the most common systems for those that doesn't want to dig into cmake options. These are optimized for in source builds.
+There are also `BUILD` scripts for the most common systems for those that doesn't want to dig into cmake options. These are optimized for in source builds.
 
 
 The scripts are of type 'compile-#cpu#-how_to_build'. Some common scripts-are
@@ -139,7 +139,7 @@ Some common suffixes used for the scripts:
 
 
 
-All `<code>BUILD</code>` scripts support the following options:
+All `BUILD` scripts support the following options:
 
 
 
@@ -165,16 +165,16 @@ A typical compilation used by a developer would be:
 shell> ./BUILD/compile-pentium64-debug
 ```
 
-This configures the source for debugging and runs make. The server binary will be `<code>sql/mariadbd</code>` or `<code>sql/mysqld</code>`.
+This configures the source for debugging and runs make. The server binary will be `sql/mariadbd` or `sql/mysqld`.
 
 
 ## Starting MariaDB for the First Time
 
 
-After installing MariaDB (using `<code>sudo make install</code>`), but prior to starting MariaDB for the first time, one should:
+After installing MariaDB (using `sudo make install`), but prior to starting MariaDB for the first time, one should:
 
 
-1. Ensure the directory where you want MariaDB to store it's data is owned by the `<code>mariadb</code>` user (if the user doesn't exist, you'll need to create it)
+1. Ensure the directory where you want MariaDB to store it's data is owned by the `mariadb` user (if the user doesn't exist, you'll need to create it)
 1. Create a [MariaDB configuration config file](../configuring-mariadb-with-option-files.md) (/.my.cnf or /etc/my.cnf) with the configuration options you desire. A suggested minimum configuration file, to specify where you want your data to be stored, would be:
 
 
@@ -198,7 +198,7 @@ cd /usr/local/mariadb/
 /usr/local/mariadb/bin/mariadb-safe --user=mariadb &
 ```
 
-If needed, you can also use the --datadir=/usr/local/mariadb/data/ options with `<code>mariadbd-install-db</code>` and `<code>mariadbd-safe</code>`
+If needed, you can also use the --datadir=/usr/local/mariadb/data/ options with `mariadbd-install-db` and `mariadbd-safe`
 
 
 ## Testing MariaDB
@@ -221,23 +221,23 @@ Or run mtr tests:
 mysql-test/mysql-test-run --force
 ```
 
-Each of the above are run from the build directory. There is no need to '`<code>make install</code>`/`<code>cmake --install .</code>`' MariaDB prior to running them.
+Each of the above are run from the build directory. There is no need to '`make install`/`cmake --install .`' MariaDB prior to running them.
 
 
-**NOTE:** If you are doing more extensive testing or debugging of MariaDB (like with real application data and workloads) you may want to start and run MariaDB directly from the source directory instead of installing it with '`<code>sudo make install</code>`'. If so, see
+**NOTE:** If you are doing more extensive testing or debugging of MariaDB (like with real application data and workloads) you may want to start and run MariaDB directly from the source directory instead of installing it with '`sudo make install`'. If so, see
 [Running MariaDB from the Source Directory](../starting-and-stopping-mariadb/running-mariadb-from-the-build-directory.md).
 
 
 ## Increasing Version Number or Tagging a Version
 
 
-If you have made code changes and want to increase the version number or tag our version with a specific tag you can do this by editing the `<code>VERSION</code>` file. Tags are shown when running the '`<code>mariadbd --version</code>`' command.
+If you have made code changes and want to increase the version number or tag our version with a specific tag you can do this by editing the `VERSION` file. Tags are shown when running the '`mariadbd --version`' command.
 
 
 ## Non-ascii Symbols
 
 
-MariaDB builds with `<code>readline</code>`; using an alternative such as `<code>Editline</code>` may result in problems with non-ascii symbols.
+MariaDB builds with `readline`; using an alternative such as `Editline` may result in problems with non-ascii symbols.
 
 
 ## Post-install Tasks

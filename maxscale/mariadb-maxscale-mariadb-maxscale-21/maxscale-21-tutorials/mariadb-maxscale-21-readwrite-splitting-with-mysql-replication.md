@@ -30,15 +30,15 @@ configuration file for MariaDB MaxScale can be written.
 ## Creating Your MariaDB MaxScale Configuration
 
 
-MariaDB MaxScale configuration is defined in the file `<code>maxscale.cnf</code>` located in
-the directory `<code>/etc</code>`. If you have installed MaxScale in the default location the
-file path should be `<code>/etc/maxscale.cnf</code>`. This file is not created as part of the
+MariaDB MaxScale configuration is defined in the file `maxscale.cnf` located in
+the directory `/etc`. If you have installed MaxScale in the default location the
+file path should be `/etc/maxscale.cnf`. This file is not created as part of the
 installation process and must be manually created. A template file, which may be
-used as a basis for your configuration, exists within the `<code>/usr/share/maxscale</code>`
+used as a basis for your configuration, exists within the `/usr/share/maxscale`
 directory.
 
 
-A global section, marked `<code>maxscale</code>`, is included within every MariaDB MaxScale
+A global section, marked `maxscale`, is included within every MariaDB MaxScale
 configuration file. The section is used to set the values of various
 process-wide parameters, for example the number of worker threads.
 
@@ -65,7 +65,7 @@ type=service
 
 
 
-The router module needed for this service is named `<code>readwritesplit</code>`. The service
+The router module needed for this service is named `readwritesplit`. The service
 must contain a list of backend server names. The server names are the headers of
 server sections in the configuration file and not the physical hostnames or
 addresses of the servers.
@@ -85,7 +85,7 @@ The final step in the service section is to add the username and password that
 will be used to populate the user data from the database cluster. There are two
 options for representing the password: either plain text or encrypted passwords.
 To use encrypted passwords, a set of keys for encryption/decryption must be
-generated. To generate the keys use the `<code>maxkeys</code>` command and pass the name of
+generated. To generate the keys use the `maxkeys` command and pass the name of
 the secrets file containing the keys.
 
 
@@ -96,7 +96,7 @@ maxkeys /var/lib/maxscale/.secrets
 
 
 
-Once the keys have been created, use the `<code>maxpasswd</code>` command to generate the
+Once the keys have been created, use the `maxpasswd` command to generate the
 encrypted password.
 
 
@@ -127,7 +127,7 @@ passwd=96F99AA1315BDC3604B006F427DD9484
 
 This completes the service definition. To have the service accept network
 connections, a listener must be associated with it. The listener is defined in
-its own section. The type should be `<code>listener</code>` with an entry `<code>service</code>` defining
+its own section. The type should be `listener` with an entry `service` defining
 the name of the service the listener is listening for. A service may have
 multiple listeners.
 
@@ -142,7 +142,7 @@ service=Splitter Service
 
 
 A listener must also define the protocol module it will use for the incoming
-network protocol, currently this should be the `<code>MySQLClient</code>` protocol for all
+network protocol, currently this should be the `MySQLClient` protocol for all
 database listeners. The listener may then supply a network port to listen on
 and/or a socket within the file system.
 
@@ -166,9 +166,9 @@ default behavior is to listen on all network interfaces.
 
 The next stage in the configuration is to define the backend servers. The
 definitions include how to connect to the servers. A section is created for each
-server and it contains: `<code>type</code>` set to `<code>server</code>`, the network address and port,
+server and it contains: `type` set to `server`, the network address and port,
 and the protocol to use. Currently, the protocol module for all database
-connections is `<code>MySQLBackend</code>`.
+connections is `MySQLBackend`.
 
 
 
@@ -196,8 +196,8 @@ protocol=MySQLBackend
 
 For MariaDB MaxScale to monitor the servers using the correct monitoring
 mechanisms a monitor section should be written. This section defines the monitor
-module to use and the monitored servers. The section `<code>type</code>` should be set to
-`<code>monitor</code>`. Parameters added include: the list of servers to monitor and the
+module to use and the monitored servers. The section `type` should be set to
+`monitor`. Parameters added include: the list of servers to monitor and the
 username and password the monitor module should use when connecting.
 
 
@@ -218,7 +218,7 @@ encrypted password may be used.
 
 
 The final stage in the configuration is to add the service which used by the
-`<code>maxadmin</code>` command to connect to MariaDB MaxScale for monitoring and
+`maxadmin` command to connect to MariaDB MaxScale for monitoring and
 administration purposes. The example below shows a service section and a
 listener section.
 
@@ -242,7 +242,7 @@ socket=default
 
 
 Upon completion of the configuration MariaDB MaxScale is ready to be started.
-This may either be done manually by running the `<code>maxscale</code>` command or via the
+This may either be done manually by running the `maxscale` command or via the
 service interface.
 
 

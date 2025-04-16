@@ -93,7 +93,7 @@ In 2.0, MaxAdmin can only connect to MaxScale using a domain socket, thus
 identity. Remote access is no longer supported.
 
 
-When 2.0 has been installed, MaxAdmin can only be used by `<code>root</code>` and
+When 2.0 has been installed, MaxAdmin can only be used by `root` and
 other users must be added anew. Please consult
 [MaxAdmin documentation](../maxscale-20-reference/mariadb-maxscale-20-maxadmin.md) for more details.
 
@@ -126,7 +126,7 @@ For more information, please refer to
 * [MXS-772](https://jira.mariadb.org/browse/MXS-772): RPM installation produces errors
 * [MXS-766](https://jira.mariadb.org/browse/MXS-766): R/W router sends DEALLOCATE PREPARE to ALL instead of MASTER
 * [MXS-739](https://jira.mariadb.org/browse/MXS-739): Maxinfo issuing invalid null's in JSON response
-* [MXS-733](https://jira.mariadb.org/browse/MXS-733): MaxScale `<code>list sessions</code>` can report "Invalid State" for some sessions.
+* [MXS-733](https://jira.mariadb.org/browse/MXS-733): MaxScale `list sessions` can report "Invalid State" for some sessions.
 * [MXS-720](https://jira.mariadb.org/browse/MXS-720): MaxScale fails to start and doesn't log any useful message when there are spurious characters in the config file
 * [MXS-718](https://jira.mariadb.org/browse/MXS-718): qc_mysqlembedded does not report fields for INSERT
 * [MXS-704](https://jira.mariadb.org/browse/MXS-704): start/stop scripts use which in a non-silent manner

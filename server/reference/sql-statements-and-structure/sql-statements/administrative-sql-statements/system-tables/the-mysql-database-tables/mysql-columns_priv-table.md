@@ -1,19 +1,19 @@
 
 # mysql.columns_priv Table
 
-The `<code>mysql.columns_priv</code>` table contains information about column-level privileges. The table can be queried and although it is possible to directly update it, it is best to use [GRANT](../../../account-management-sql-commands/grant.md) for setting privileges.
+The `mysql.columns_priv` table contains information about column-level privileges. The table can be queried and although it is possible to directly update it, it is best to use [GRANT](../../../account-management-sql-commands/grant.md) for setting privileges.
 
 
 Note that the MariaDB privileges occur at many levels. A user may be granted a privilege at the column level, but may still not have permission on a table level, for example. See [privileges](../../../account-management-sql-commands/grant.md) for a more complete view of the MariaDB privilege system.
 
 
-The [INFORMATION_SCHEMA.COLUMN_PRIVILEGES](../information-schema/information-schema-tables/information-schema-column_privileges-table.md) table derives its contents from `<code>mysql.columns_priv</code>`.
+The [INFORMATION_SCHEMA.COLUMN_PRIVILEGES](../information-schema/information-schema-tables/information-schema-column_privileges-table.md) table derives its contents from `mysql.columns_priv`.
 
 
 This table uses the [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine.
 
 
-The `<code>mysql.columns_priv</code>` table contains the following fields:
+The `mysql.columns_priv` table contains the following fields:
 
 
 
@@ -30,5 +30,5 @@ The `<code>mysql.columns_priv</code>` table contains the following fields:
 
 
 
-The [Acl_column_grants](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_column_grants) status variable indicates how many rows the `<code>mysql.columns_priv</code>` table contains.
+The [Acl_column_grants](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_column_grants) status variable indicates how many rows the `mysql.columns_priv` table contains.
 

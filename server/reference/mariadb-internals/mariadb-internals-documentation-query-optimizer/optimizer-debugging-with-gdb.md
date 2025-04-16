@@ -7,10 +7,10 @@ Some useful things for debugging optimizer code.
 ## Useful Print Functions
 
 
-* `<code>dbug_print_item()</code>` prints the contents of an `<code>Item</code>` object into a buffer and returns pointer to it.
-* `<code>dbug_print_sel_arg()</code>` prints an individual `<code>SEL_ARG</code>` object (NOT the whole graph or tree) and returns pointer to the buffer holding the printout.
-* `<code>dbug_print_table_row</code>` prints the current row buffer of the given table.
-* There are more `<code>dbug_print_XX</code>` functions for various data structures
+* `dbug_print_item()` prints the contents of an `Item` object into a buffer and returns pointer to it.
+* `dbug_print_sel_arg()` prints an individual `SEL_ARG` object (NOT the whole graph or tree) and returns pointer to the buffer holding the printout.
+* `dbug_print_table_row` prints the current row buffer of the given table.
+* There are more `dbug_print_XX` functions for various data structures
 
 
 ## Printing the Optimizer Trace
@@ -24,13 +24,13 @@ One can print the contents of the trace collected so far as follows:
 printf "%s\n", thd->opt_trace->current_trace->current_json->output.str.Ptr
 ```
 
-Starting from 11.0, there is `<code>dbug_print_opt_trace()</code>` function which one call from gdb.
+Starting from 11.0, there is `dbug_print_opt_trace()` function which one call from gdb.
 
 
 ## Printing Current Partial Join Prefix
 
 
-`<code>best_access_path()</code>` is a function that adds another table to the join prefix.
+`best_access_path()` is a function that adds another table to the join prefix.
 
 
 When in or around that function, the following can be useful:
@@ -67,14 +67,14 @@ In order to get innodb to have stable statistics, use this in the test:
 --source include/innodb_stable_estimates.inc
 ```
 
-Also consider `<code>set global innodb_max_purge_lag_wait=0;</code>` 
+Also consider `set global innodb_max_purge_lag_wait=0;` 
 (TODO: how these two compare?)
 
 
 ### Coding guidelines
 
 
-Run this to get your patch auto-formatted according to our coding style in `<code>.clang-format</code>` :
+Run this to get your patch auto-formatted according to our coding style in `.clang-format` :
 
 
 ```

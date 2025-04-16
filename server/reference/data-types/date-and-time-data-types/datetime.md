@@ -15,8 +15,8 @@ DATETIME [(microsecond precision)]
 A date and time combination.
 
 
-MariaDB displays `<code>DATETIME</code>` values in '`<code>YYYY-MM-DD HH:MM:SS.ffffff</code>`' format, but
-allows assignment of values to `<code>DATETIME</code>` columns using either strings or
+MariaDB displays `DATETIME` values in '`YYYY-MM-DD HH:MM:SS.ffffff`' format, but
+allows assignment of values to `DATETIME` columns using either strings or
 numbers. For details, see [date and time literals](../../sql-statements-and-structure/sql-language-structure/date-and-time-literals.md).
 
 
@@ -32,34 +32,34 @@ For storage requirements, see [Data Type Storage Requirements](../data-type-stor
 ## Supported Values
 
 
-MariaDB stores values that use the `<code>DATETIME</code>` data type in a format that supports values between `<code>1000-01-01 00:00:00.000000</code>` and `<code>9999-12-31 23:59:59.999999</code>`.
+MariaDB stores values that use the `DATETIME` data type in a format that supports values between `1000-01-01 00:00:00.000000` and `9999-12-31 23:59:59.999999`.
 
 
 MariaDB can also store [microseconds](../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/microseconds-in-mariadb.md) with a precision between 0 and 6. If no microsecond precision is specified, then 0 is used by default.
 
 
-MariaDB also supports '`<code>0000-00-00</code>`' as a special *zero-date* value, unless [NO_ZERO_DATE](../../../server-management/variables-and-modes/sql-mode.md#no_zero_date) is specified in the [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md). Similarly, individual components of a date can be set to `<code>0</code>` (for example: '`<code>2015-00-12</code>`'), unless [NO_ZERO_IN_DATE](../../../server-management/variables-and-modes/sql-mode.md#no_zero_in_date) is specified in the [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md). In many cases, the result of en expression involving a zero-date, or a date with zero-parts, is `<code>NULL</code>`. If the [ALLOW_INVALID_DATES](../../../server-management/variables-and-modes/sql-mode.md#allow_invalid_dates) SQL_MODE is enabled, if the day part is in the range between 1 and 31, the date does not produce any error, even for months that have less than 31 days.
+MariaDB also supports '`0000-00-00`' as a special *zero-date* value, unless [NO_ZERO_DATE](../../../server-management/variables-and-modes/sql-mode.md#no_zero_date) is specified in the [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md). Similarly, individual components of a date can be set to `0` (for example: '`2015-00-12`'), unless [NO_ZERO_IN_DATE](../../../server-management/variables-and-modes/sql-mode.md#no_zero_in_date) is specified in the [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md). In many cases, the result of en expression involving a zero-date, or a date with zero-parts, is `NULL`. If the [ALLOW_INVALID_DATES](../../../server-management/variables-and-modes/sql-mode.md#allow_invalid_dates) SQL_MODE is enabled, if the day part is in the range between 1 and 31, the date does not produce any error, even for months that have less than 31 days.
 
 
 ## Oracle Mode
 
 
-In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `<code>DATE</code>` with a time portion is a synonym for `<code>DATETIME</code>`. See also [mariadb_schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md).
+In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `DATE` with a time portion is a synonym for `DATETIME`. See also [mariadb_schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md).
 
 
 ## Internal Format
 
 
-A new temporal format was introduced from MySQL 5.6 that alters how the `<code>TIME</code>`, `<code>DATETIME</code>` and `<code>TIMESTAMP</code>` columns operate at lower levels. These changes allow these temporal data types to have fractional parts and negative values. You can disable this feature using the [mysql56_temporal_format](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable.
+A new temporal format was introduced from MySQL 5.6 that alters how the `TIME`, `DATETIME` and `TIMESTAMP` columns operate at lower levels. These changes allow these temporal data types to have fractional parts and negative values. You can disable this feature using the [mysql56_temporal_format](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable.
 
 
-Tables that include `<code>TIMESTAMP</code>` values that were created on an older version of MariaDB or that were created while the [mysql56_temporal_format](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable was disabled continue to store data using the older data type format.
+Tables that include `TIMESTAMP` values that were created on an older version of MariaDB or that were created while the [mysql56_temporal_format](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable was disabled continue to store data using the older data type format.
 
 
-In order to update table columns from the older format to the newer format, execute an [ALTER TABLE... MODIFY COLUMN](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#modify-column) statement that changes the column to the *same* data type. This change may be needed if you want to export the table's tablespace and import it onto a server that has `<code>mysql56_temporal_format=ON</code>` set (see [MDEV-15225](https://jira.mariadb.org/browse/MDEV-15225)).
+In order to update table columns from the older format to the newer format, execute an [ALTER TABLE... MODIFY COLUMN](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#modify-column) statement that changes the column to the *same* data type. This change may be needed if you want to export the table's tablespace and import it onto a server that has `mysql56_temporal_format=ON` set (see [MDEV-15225](https://jira.mariadb.org/browse/MDEV-15225)).
 
 
-For instance, if you have a `<code>DATETIME</code>` column in your table:
+For instance, if you have a `DATETIME` column in your table:
 
 
 ```
@@ -77,10 +77,10 @@ ALTER TABLE example_table MODIFY ts_col DATETIME;
 When MariaDB executes the [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement, it converts the data from the older temporal format to the newer one.
 
 
-In the event that you have several tables and columns using temporal data types that you want to switch over to the new format, make sure the system variable is enabled, then perform a dump and restore using `<code>mysqldump</code>`. The columns using relevant temporal data types are restored using the new temporal format.
+In the event that you have several tables and columns using temporal data types that you want to switch over to the new format, make sure the system variable is enabled, then perform a dump and restore using `mysqldump`. The columns using relevant temporal data types are restored using the new temporal format.
 
 
-Starting from [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md) columns with old temporal formats are marked with a `<code>/* mariadb-5.3 */</code>` comment in the output of [SHOW CREATE TABLE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md), [SHOW COLUMNS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-columns.md), [DESCRIBE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/describe.md) statements, as well as in the `<code>COLUMN_TYPE</code>` column of the [INFORMATION_SCHEMA.COLUMNS Table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md).
+Starting from [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md) columns with old temporal formats are marked with a `/* mariadb-5.3 */` comment in the output of [SHOW CREATE TABLE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md), [SHOW COLUMNS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-columns.md), [DESCRIBE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/describe.md) statements, as well as in the `COLUMN_TYPE` column of the [INFORMATION_SCHEMA.COLUMNS Table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md).
 
 
 ```

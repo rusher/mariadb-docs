@@ -1,7 +1,7 @@
 
 # CONNECT XCOL Table Type
 
-`<code>XCOL</code>` tables are based on another table or view, like `<code>[PROXY](connect-proxy-table-type.md)</code>` tables. This type can be
+`XCOL` tables are based on another table or view, like `[PROXY](connect-proxy-table-type.md)` tables. This type can be
 used when the object table has a column that contains a list of values.
 
 
@@ -21,7 +21,7 @@ Suppose we have a *'children'* table that can be displayed as:
 
 
 We can have a different view on these data, where each child will be associated
-with his/her mother by creating an `<code>XCOL</code>` table by:
+with his/her mother by creating an `XCOL` table by:
 
 
 ```
@@ -32,7 +32,7 @@ CREATE TABLE xchild (
 option_list='colname=child';
 ```
 
-The `<code>COLNAME</code>` option specifies the name of the column receiving the list
+The `COLNAME` option specifies the name of the column receiving the list
 items. This will return from:
 
 
@@ -67,7 +67,7 @@ Several things should be noted here:
 * When the original children field is void, what happens depends on the NULL specification of the "multiple" column. If it is nullable, like here, a void string will generate a NULL value. However, if the column is not nullable, no row will be generated at all.
 * Blanks after the separator are ignored.
 * No copy of the original data was done. Both tables use the same source data.
-* Specifying the column definitions in the `<code>CREATE TABLE</code>` statement is optional.
+* Specifying the column definitions in the `CREATE TABLE` statement is optional.
 
 
 The "multiple" column *child* can be used as any other column. For instance:

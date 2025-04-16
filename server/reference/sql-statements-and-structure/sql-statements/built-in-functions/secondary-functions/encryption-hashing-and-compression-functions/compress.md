@@ -13,8 +13,8 @@ COMPRESS(string_to_compress)
 
 Compresses a string and returns the result as a binary string. This
 function requires MariaDB to have been compiled with a compression
-library such as zlib. Otherwise, the return value is always `<code>NULL</code>`. The
-compressed string can be uncompressed with `<code>[UNCOMPRESS()](uncompress.md)</code>`.
+library such as zlib. Otherwise, the return value is always `NULL`. The
+compressed string can be uncompressed with `[UNCOMPRESS()](uncompress.md)`.
 
 
 The [have_compress](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#have_compress) server system variable indicates whether a compression library is present.
