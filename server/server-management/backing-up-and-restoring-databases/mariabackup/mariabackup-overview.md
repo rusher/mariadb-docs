@@ -170,7 +170,7 @@ The `<code>mariabackup</code>` executable is included in [MSI](../../getting-ins
 When using the [Windows MSI installer](../../getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md), `<code>mariabackup</code>` can be installed by selecting *Backup utilities*:
 
 
-![mariadb_backup_windows](../../../../.gitbook/assets/mariabackup-overview/+image/mariadb_backup_windows.png "mariadb_backup_windows")
+![mariadb_backup_windows](../../../.gitbook/assets/mariabackup-overview/+image/mariadb_backup_windows.png "mariadb_backup_windows")
 
 
 ## Using Mariabackup

@@ -70,7 +70,7 @@ Those numbers are for spinning disks. I guess for Fusion-io memory the XFS numbe
 ## Example Configuration
 
 
-![GE-Fusionio-MariaDB](../../../../../.gitbook/assets/fusion-io-introduction/+image/GE-Fusionio-MariaDB.png "GE-Fusionio-MariaDB")
+![GE-Fusionio-MariaDB](../../../../.gitbook/assets/fusion-io-introduction/+image/GE-Fusionio-MariaDB.png "GE-Fusionio-MariaDB")
 
 
 ## Card Models

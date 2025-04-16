@@ -129,31 +129,31 @@ SQLRowCount returns 4
 Start Libreoffice Base from the terminal by running *lobase* (make sure to install the *libreoffice-base* package if needed). The default option is to create a new database, which is *HSQLDB*. In order to connect to a running MariaDB server, choose *“Connect to an existing database”* and choose *“ODBC”* driver as shown below:
 
 
-![librebase_1](../../../.gitbook/assets/libreoffice-base/+image/librebase_1.png "librebase_1")
+![librebase_1](../../.gitbook/assets/libreoffice-base/+image/librebase_1.png "librebase_1")
 
 
 After that, choose DSN (the one that we created in the previous step) and click *“Next”*:
 
 
-![librebase_2](../../../.gitbook/assets/libreoffice-base/+image/librebase_2.png "librebase_2")
+![librebase_2](../../.gitbook/assets/libreoffice-base/+image/librebase_2.png "librebase_2")
 
 
 Provide a user name (and password if needed) and again check the connection (with the *“Test Connection”* button) and click *“Next”*:
 
 
-![librebase_3](../../../.gitbook/assets/libreoffice-base/+image/librebase_3.png "librebase_3")
+![librebase_3](../../.gitbook/assets/libreoffice-base/+image/librebase_3.png "librebase_3")
 
 
 After that, we have options to register the database. Registration in this sense means that the database is viewable by other LibreOffice modules (like *LibreOffice Calc* and *LibreOffice Writer*). So this step is optional. In this example, we will save as *“fosdem21_mariadb.odb”*. See [Using a Registered Database](#using-a-registered-database).
 
 
-![librebase_4](../../../.gitbook/assets/libreoffice-base/+image/librebase_4.png "librebase_4")
+![librebase_4](../../.gitbook/assets/libreoffice-base/+image/librebase_4.png "librebase_4")
 
 
 It opens the following window:
 
 
-![librebase_5](../../../.gitbook/assets/libreoffice-base/+image/librebase_5.png "librebase_5")
+![librebase_5](../../.gitbook/assets/libreoffice-base/+image/librebase_5.png "librebase_5")
 
 
 It consists of three windows/panels:
@@ -193,19 +193,19 @@ CREATE TABLE webposts ENGINE=CONNECT TABLE_TYPE=JSON
 The result in LibreOffice Base will be as shown below:
 
 
-![librebase_6](../../../.gitbook/assets/libreoffice-base/+image/librebase_6.png "librebase_6")
+![librebase_6](../../.gitbook/assets/libreoffice-base/+image/librebase_6.png "librebase_6")
 
 
 Double clicking on the table opens a new window with the data displayed to inspect:
 
 
-![librebase_7](../../../.gitbook/assets/libreoffice-base/+image/librebase_7.png "librebase_7")
+![librebase_7](../../.gitbook/assets/libreoffice-base/+image/librebase_7.png "librebase_7")
 
 
 To create the table from the *“Tasks”* window, use the option *“Create Table in Design View”*, where one can specify specific field names and types as shown:
 
 
-![librebase_8](../../../.gitbook/assets/libreoffice-base/+image/librebase_8.png "librebase_8")
+![librebase_8](../../.gitbook/assets/libreoffice-base/+image/librebase_8.png "librebase_8")
 
 
 From the “Tasks” window one can create a table using the option *“Use Wizard to Create Table”* to create some sample tables.

@@ -5,7 +5,7 @@
 ## About
 
 
-![spider_overview](../../../../.gitbook/assets/spider-storage-engine-overview/+image/spider_overview.png "spider_overview")
+![spider_overview](../../../.gitbook/assets/spider-storage-engine-overview/+image/spider_overview.png "spider_overview")
 
 
 The Spider storage engine is a [storage engine](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/storage-engines-and-plugins-videos.md) with built-in sharding features. It supports partitioning and [xa transactions](../../sql-statements-and-structure/sql-statements/transactions/xa-transactions.md), and allows tables of different MariaDB instances to be handled as if they were on the same instance. It refers to one possible implementation of ISO/IEC 9075-9:2008 SQL/MED.
@@ -206,7 +206,7 @@ EOF
 #### Federation Setup
 
 
-![Spider7](../../../../.gitbook/assets/spider-storage-engine-overview/+image/Spider7.png "Spider7")
+![Spider7](../../../.gitbook/assets/spider-storage-engine-overview/+image/Spider7.png "Spider7")
 
 
 ```
@@ -234,7 +234,7 @@ SELECT * FROM test.sbtest LIMIT 10;
 EOF
 ```
 
-![spbench10](../../../../.gitbook/assets/spider-storage-engine-overview/+image/spbench10.png "spbench10")
+![spbench10](../../../.gitbook/assets/spider-storage-engine-overview/+image/spbench10.png "spbench10")
 
 
 Without connection pool or MariaDB thread pool, HaProxy and Spider have been protecting the tcp socket overflow without specific TCP tuning. In reality with a well tuned TCP stack or thread pool the curve should not decrease so abruptly to 0. Refer to the [MariaDB Thread Pool](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53.md) to explore this feature.
@@ -243,7 +243,7 @@ Without connection pool or MariaDB thread pool, HaProxy and Spider have been pro
 #### Sharding Setup
 
 
-![spider8](../../../../.gitbook/assets/spider-storage-engine-overview/+image/Spider8.png "spider8")
+![spider8](../../../.gitbook/assets/spider-storage-engine-overview/+image/Spider8.png "spider8")
 
 
 Create the spider table on the Spider Node
@@ -351,7 +351,7 @@ This is expected because the query latency is increased from multiple network ro
 We need to increase the concurrency to get better throughput.
 
 
-![spbench11](../../../../.gitbook/assets/spider-storage-engine-overview/+image/spbench11.png "spbench11")
+![spbench11](../../../.gitbook/assets/spider-storage-engine-overview/+image/spbench11.png "spbench11")
 
 
 #### Background Setup
@@ -531,7 +531,7 @@ mysql> select sum(k) from sbtest;
 1 row in set (12,56 sec)
 ```
 
-![spbench8](../../../../.gitbook/assets/spider-storage-engine-overview/+image/spbench8.png "spbench8")
+![spbench8](../../../.gitbook/assets/spider-storage-engine-overview/+image/spbench8.png "spbench8")
 
 
 #### High Availability Setup
@@ -542,7 +542,7 @@ mysql> select sum(k) from sbtest;
 Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) or [galera-cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md).
 
 
-![spider9](../../../../.gitbook/assets/spider-storage-engine-overview/+image/spider9.png "spider9")
+![spider9](../../../.gitbook/assets/spider-storage-engine-overview/+image/spider9.png "spider9")
 
 
 ```
@@ -674,7 +674,7 @@ Checking the state of the nodes:
 +---------+--------------+----------+
 ```
 
-![spiderha](../../../../.gitbook/assets/spider-storage-engine-overview/+image/spiderha.png "spiderha")
+![spiderha](../../../.gitbook/assets/spider-storage-engine-overview/+image/spiderha.png "spiderha")
 
 
 No change has been made to cluster, so let's create a divergence:

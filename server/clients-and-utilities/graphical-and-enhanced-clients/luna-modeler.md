@@ -28,7 +28,7 @@ Draw diagrams, reverse engineer existing database structures and generate SQL co
 * SQL script generation
 
 
-![mariadb-database-design-luna-modeler](../../../.gitbook/assets/luna-modeler/+image/mariadb-database-design-luna-modeler.png "mariadb-database-design-luna-modeler")
+![mariadb-database-design-luna-modeler](../../.gitbook/assets/luna-modeler/+image/mariadb-database-design-luna-modeler.png "mariadb-database-design-luna-modeler")
 
 
 **Supported OS**

@@ -12,7 +12,7 @@ MyRocks has been extended by the MariaDB engineering team to be a pluggable stor
 See more at: [facebook-myrocks-mariadb#sthash.ZlEr7kNq.dpuf](https://mariadb.com/resources/blog/facebook-myrocks-mariadb#sthash.ZlEr7kNq.dpuf)
 
 
-![storage engine options](../../../../.gitbook/assets/about-myrocks-for-mariadb/+image/mariaDBstorageEngineOpt.png "storage engine options")
+![storage engine options](../../../.gitbook/assets/about-myrocks-for-mariadb/+image/mariaDBstorageEngineOpt.png "storage engine options")
 
 
 MyRocks, typically, gives greater performance for web scale type applications. It can be an ideal storage engine solution when you have workloads that require greater compression and IO efficiency. It uses a Log Structured Merge (LSM) architecture, which has advantages over B-Tree algorithms, to provide efficient data ingestion, like read-free replication slaves, or fast bulk data loading.

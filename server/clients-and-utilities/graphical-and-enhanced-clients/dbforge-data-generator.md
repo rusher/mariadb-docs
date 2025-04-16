@@ -1,7 +1,7 @@
 
 # dbForge Data Generator
 
-![dbforge_data_generator_for_mysql_97x97](../../../.gitbook/assets/dbforge-data-generator/+image/dbforge_data_generator_for_mysql_97x97.png "dbforge_data_generator_for_mysql_97x97") [dbForge Data Generator for MariaDB and MySQL](https://www.devart.com/dbforge/mysql/data-generator/) is a powerful solution that helps create massive volumes of meaningful and realistic data. This tool performs various predefined data generators with customizable options.
+![dbforge_data_generator_for_mysql_97x97](../../.gitbook/assets/dbforge-data-generator/+image/dbforge_data_generator_for_mysql_97x97.png "dbforge_data_generator_for_mysql_97x97") [dbForge Data Generator for MariaDB and MySQL](https://www.devart.com/dbforge/mysql/data-generator/) is a powerful solution that helps create massive volumes of meaningful and realistic data. This tool performs various predefined data generators with customizable options.
 
 
 ## Data Generator Key Features:
@@ -13,7 +13,7 @@
 Enjoy the advantage of various data types support
 
 
-![column-data-types](../../../.gitbook/assets/dbforge-data-generator/+image/column-data-types.png "column-data-types")
+![column-data-types](../../.gitbook/assets/dbforge-data-generator/+image/column-data-types.png "column-data-types")
 
 
 ### 2. Multiple generators with unique test data
@@ -22,7 +22,7 @@ Enjoy the advantage of various data types support
 Enjoy multiple customization options with individual generators for every data type supported
 
 
-![custom-options](../../../.gitbook/assets/dbforge-data-generator/+image/custom-options.png "custom-options")
+![custom-options](../../.gitbook/assets/dbforge-data-generator/+image/custom-options.png "custom-options")
 
 
 ### 3. MariaDB data generation and data integrity support
@@ -52,7 +52,7 @@ Generate a data population script, execute it against a MariaDB database, save o
 Populate tables with a great variety of values types, like JSON, Python, XML, etc.
 
 
-![basic-generators-1](../../../.gitbook/assets/dbforge-data-generator/+image/basic-generators-1.png "basic-generators-1")
+![basic-generators-1](../../.gitbook/assets/dbforge-data-generator/+image/basic-generators-1.png "basic-generators-1")
 
 
 ### 7. Meaningful test data generators
@@ -61,7 +61,7 @@ Populate tables with a great variety of values types, like JSON, Python, XML, et
 Select any of 200+ real-world generators and populate tables with realistic data related to various spheres
 
 
-![meaningful-generators-1](../../../.gitbook/assets/dbforge-data-generator/+image/meaningful-generators-1.png "meaningful-generators-1")
+![meaningful-generators-1](../../.gitbook/assets/dbforge-data-generator/+image/meaningful-generators-1.png "meaningful-generators-1")
 
 
 ### 8. User-defined generators

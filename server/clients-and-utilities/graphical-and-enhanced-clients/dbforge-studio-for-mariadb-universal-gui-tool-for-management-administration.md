@@ -1,7 +1,7 @@
 
 # dbForge Studio for MariaDB
 
-![dbForge-Studio-for-MySQL-new](../../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/dbForge-Studio-for-MySQL-new.png "dbForge-Studio-for-MySQL-new") **[dbForge Studio for MariaDB](https://www.devart.com/dbforge/mysql/studio/mariadb-gui-client.html)** is a universal IDE with GUI tools that has all the necessary built-in capabilities to work with MariaDB and MySQL databases for their development, management, and administration. 
+![dbForge-Studio-for-MySQL-new](../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/dbForge-Studio-for-MySQL-new.png "dbForge-Studio-for-MySQL-new") **[dbForge Studio for MariaDB](https://www.devart.com/dbforge/mysql/studio/mariadb-gui-client.html)** is a universal IDE with GUI tools that has all the necessary built-in capabilities to work with MariaDB and MySQL databases for their development, management, and administration. 
 It allows for creating, managing, and editing the data without the need to store them locally.
 
 
@@ -30,7 +30,7 @@ etc.
 * CRUD generation
 
 
-![start-page-1-sql-development](../../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-1-sql-development.png "start-page-1-sql-development")
+![start-page-1-sql-development](../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-1-sql-development.png "start-page-1-sql-development")
 
 
 ### 2. Database Compare and Sync
@@ -41,7 +41,7 @@ etc.
 * Comparison report generation
 
 
-![start-page-3-database-sync](../../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-3-database-sync.png "start-page-3-database-sync")
+![start-page-3-database-sync](../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-3-database-sync.png "start-page-3-database-sync")
 
 
 ### 3. Import/Export Data MariaDB
@@ -53,7 +53,7 @@ etc.
 * Command-line automation for data tasks
 
 
-![start-page-5-data-pump](../../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-5-data-pump.png "start-page-5-data-pump")
+![start-page-5-data-pump](../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-5-data-pump.png "start-page-5-data-pump")
 
 
 ### 4. MariaDB Admin Tools
@@ -65,7 +65,7 @@ etc.
 * Database scripts generation
 
 
-![start-page-4-administration](../../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-4-administration.png "start-page-4-administration")
+![start-page-4-administration](../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-4-administration.png "start-page-4-administration")
 
 
 ### 5. Copy Database
@@ -85,7 +85,7 @@ etc.
 * Foreign key relations between tables
 
 
-![start-page-2-database-design](../../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-2-database-design.png "start-page-2-database-design")
+![start-page-2-database-design](../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-2-database-design.png "start-page-2-database-design")
 
 
 ### 7. Data Generator
@@ -156,7 +156,7 @@ etc.
 * 9 formats for reports' delivery
 
 
-![start-page-6-data-analysis](../../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-6-data-analysis.png "start-page-6-data-analysis")
+![start-page-6-data-analysis](../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-6-data-analysis.png "start-page-6-data-analysis")
 
 
 ### 15. Database Documenter

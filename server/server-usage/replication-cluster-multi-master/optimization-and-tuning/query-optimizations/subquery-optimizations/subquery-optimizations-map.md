@@ -20,7 +20,7 @@ the optimizer strategies available to handle them.
  available in (see legend below)
 
 
-![subquery-map-2013](../../../../../../.gitbook/assets/subquery-optimizations-map/+image/subquery-map-2013.png "subquery-map-2013")
+![subquery-map-2013](../../../../../.gitbook/assets/subquery-optimizations-map/+image/subquery-map-2013.png "subquery-map-2013")
 
 
 Some things are not on the map:

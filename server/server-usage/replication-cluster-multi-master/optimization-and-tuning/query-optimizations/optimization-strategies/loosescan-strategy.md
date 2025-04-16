@@ -22,13 +22,13 @@ where
 Suppose, there is an index on `<code class="fixed" style="white-space:pre-wrap">Satellite.country_code</code>`. If we use that index, we will get satellites in the order of their owner country:
 
 
-![loosescan-satellites-ordered-r2](../../../../../../.gitbook/assets/loosescan-strategy/+image/loosescan-satellites-ordered-r2.png "loosescan-satellites-ordered-r2")
+![loosescan-satellites-ordered-r2](../../../../../.gitbook/assets/loosescan-strategy/+image/loosescan-satellites-ordered-r2.png "loosescan-satellites-ordered-r2")
 
 
 The `<code>LooseScan</code>` strategy doesn't really need ordering, what it needs is grouping. In the above figure, satellites are grouped by country. For instance, all satellites owned by Australia come together, without being mixed with satellites of other countries. This makes it easy to select just one satellite from each group, which you can join with its country and get a list of countries without duplicates:
 
 
-![loosescan-diagram-no-where](../../../../../../.gitbook/assets/loosescan-strategy/+image/loosescan-diagram-no-where.png "loosescan-diagram-no-where")
+![loosescan-diagram-no-where](../../../../../.gitbook/assets/loosescan-strategy/+image/loosescan-diagram-no-where.png "loosescan-diagram-no-where")
 
 
 ## LooseScan in action

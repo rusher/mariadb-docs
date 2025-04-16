@@ -15,13 +15,13 @@ the mariadb-<major>.<minor>.<patch>.msi
 ### Welcome
 
 
-![Welcome dialog](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/WelcomeDialog_New.png "Welcome dialog")
+![Welcome dialog](../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/WelcomeDialog_New.png "Welcome dialog")
 
 
 ### License Agreement
 
 
-![License Agreement](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/LicenseAgreementDialog_New.png "License Agreement")
+![License Agreement](../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/LicenseAgreementDialog_New.png "License Agreement")
 
 
 Click on "I accept the terms"
@@ -30,7 +30,7 @@ Click on "I accept the terms"
 ### Custom Setup
 
 
-![Custom Setup](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/CustomSetupDialog_New.png "Custom Setup")
+![Custom Setup](../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/CustomSetupDialog_New.png "Custom Setup")
 
 
 Here, you can choose what features to install. By default, all features are
@@ -53,7 +53,7 @@ directory location, select "Database instance" in the feature tree, and use the
 ### Database Authentication/Security Related Properties
 
 
-![Database security properties](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/DatabaseProperties_1_New.png "Database security properties")
+![Database security properties](../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/DatabaseProperties_1_New.png "Database security properties")
 
 
 This dialog is shown if you selected the "Database instance" feature. Here, you
@@ -66,7 +66,7 @@ not recommended to change this setting.
 ### Other Database Properties
 
 
-![Other database properties](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/DatabaseProperties_2_New.png "Other database properties")
+![Other database properties](../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/DatabaseProperties_2_New.png "Other database properties")
 
 
 * Install as service
@@ -95,7 +95,7 @@ communication.
 ### Ready to Install
 
 
-![Ready Dialog](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/ReadyDialog_New.png "Ready Dialog")
+![Ready Dialog](../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/ReadyDialog_New.png "Ready Dialog")
 
 
 At this point, all installation settings are collected. Click on the "Install"
@@ -105,7 +105,7 @@ button.
 ### End
 
 
-![Finish](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/FinishDialog_New.png "Finish")
+![Finish](../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/FinishDialog_New.png "Finish")
 
 
 Installation is finished now. If you have upgradable instances of
@@ -124,7 +124,7 @@ already.
 Installation will add some entries in the Start Menu:
 
 
-![Start Menu](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/StartMenu_New.png "Start Menu")
+![Start Menu](../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/StartMenu_New.png "Start Menu")
 
 
 * MariaDB Client - Starts command line client mysql.exe
@@ -157,14 +157,14 @@ older Windows), find the entry for MariaDB, choose Uninstall/Change and click
 on the "Remove" button in the dialog below.
 
 
-![UninstallChangeDialog_New](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/UninstallChangeDialog_New.png "UninstallChangeDialog_New")
+![UninstallChangeDialog_New](../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/UninstallChangeDialog_New.png "UninstallChangeDialog_New")
 
 
 If you installed a database instance, you will need to decide if you want to
 remove or keep the data in the database directory.
 
 
-![KeepOrRemoveDataDialog_New](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/KeepOrRemoveDataDialog_New.png "KeepOrRemoveDataDialog_New")
+![KeepOrRemoveDataDialog_New](../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/KeepOrRemoveDataDialog_New.png "KeepOrRemoveDataDialog_New")
 
 
 ## Silent Installation

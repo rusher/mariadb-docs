@@ -1,7 +1,7 @@
 
 # dbForge Documenter for MariaDB and MySQL
 
-![dbforge_documenter_for_mysql_1](../../../.gitbook/assets/dbforge-documenter-for-mariadb-and-mysql/+image/dbforge_documenter_for_mysql_1.png "dbforge_documenter_for_mysql_1") **[dbForge Documenter](https://www.devart.com/dbforge/mysql/documenter/)** is a useful tool for the MariaDB database that allows for the automatic generation of database documentation in such formats as HTML, PDF, and Markdown. Users can adjust the created documentation with a great variety of options.
+![dbforge_documenter_for_mysql_1](../../.gitbook/assets/dbforge-documenter-for-mariadb-and-mysql/+image/dbforge_documenter_for_mysql_1.png "dbforge_documenter_for_mysql_1") **[dbForge Documenter](https://www.devart.com/dbforge/mysql/documenter/)** is a useful tool for the MariaDB database that allows for the automatic generation of database documentation in such formats as HTML, PDF, and Markdown. Users can adjust the created documentation with a great variety of options.
 
 
 ## dbForge Documenter for MariaDB and MySQL Key Features:
@@ -16,7 +16,7 @@ Get the benefits of the search as you type principle
 View the highlighted matching text after entering the name of a required object in the search field
 
 
-![doc-search](../../../.gitbook/assets/dbforge-documenter-for-mariadb-and-mysql/+image/doc-search.png "doc-search")
+![doc-search](../../.gitbook/assets/dbforge-documenter-for-mariadb-and-mysql/+image/doc-search.png "doc-search")
 
 
 ### 2. Broad compatibility options
@@ -31,7 +31,7 @@ Various cloud services: Amazon RDS, Amazon Aurora, Google Cloud, Oracle MySQL Cl
 Security connections: Secure Socket Layer (SSL), Secure Shell (SSH), HTTP Tunneling, PAM Percona
 
 
-![compatiblity](../../../.gitbook/assets/dbforge-documenter-for-mariadb-and-mysql/+image/compatiblity.png "compatiblity")
+![compatiblity](../../.gitbook/assets/dbforge-documenter-for-mariadb-and-mysql/+image/compatiblity.png "compatiblity")
 
 
 ### 3. Broad picture of database structure
@@ -40,7 +40,7 @@ Security connections: Secure Socket Layer (SSL), Secure Shell (SSH), HTTP Tunnel
 Get the detailed MariaDB database information, such as types, details, and properties of the objects, inter-object dependencies, and DDL codes
 
 
-![database-structure](../../../.gitbook/assets/dbforge-documenter-for-mariadb-and-mysql/+image/database-structure.png "database-structure")
+![database-structure](../../.gitbook/assets/dbforge-documenter-for-mariadb-and-mysql/+image/database-structure.png "database-structure")
 
 
 ### 4. Rich customization of document management
@@ -49,7 +49,7 @@ Get the detailed MariaDB database information, such as types, details, and prope
 Enjoy various style templates allowing for alteration of documentation layout
 
 
-![custom-features](../../../.gitbook/assets/dbforge-documenter-for-mariadb-and-mysql/+image/custom-features.png "custom-features")
+![custom-features](../../.gitbook/assets/dbforge-documenter-for-mariadb-and-mysql/+image/custom-features.png "custom-features")
 
 
 ### 5. Several Document Formats supported:
@@ -61,7 +61,7 @@ Enjoy various style templates allowing for alteration of documentation layout
 * Markdown
 
 
-![formats](../../../.gitbook/assets/dbforge-documenter-for-mariadb-and-mysql/+image/formats.png "formats")
+![formats](../../.gitbook/assets/dbforge-documenter-for-mariadb-and-mysql/+image/formats.png "formats")
 
 
 ### 6. Extended properties support

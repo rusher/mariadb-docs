@@ -51,14 +51,14 @@ MariaDB. The overall architecture is shown in the picture below and is similar
 to that of the NDB cluster storage engine.
 
 
-![cassandra-se-overview](../../../../../.gitbook/assets/cassandra-storage-engine-overview/+image/cassandra-se-overview.png "cassandra-se-overview")
+![cassandra-se-overview](../../../../.gitbook/assets/cassandra-storage-engine-overview/+image/cassandra-se-overview.png "cassandra-se-overview")
 
 
 You can access the same Cassandra cluster from multiple MariaDB instances,
 provided each of them runs the Cassandra Storage Engine:
 
 
-![mariadb-and-cassandra](../../../../../.gitbook/assets/cassandra-storage-engine-overview/+image/mariadb-and-cassandra.png "mariadb-and-cassandra")
+![mariadb-and-cassandra](../../../../.gitbook/assets/cassandra-storage-engine-overview/+image/mariadb-and-cassandra.png "mariadb-and-cassandra")
 
 
 The primary goal of Cassandra SE (Storage Engine) is data integration between

@@ -11,7 +11,7 @@ The most recent release of [MariaDB 11.4](../../../../release-notes/mariadb-comm
 ## About
 
 
-![galera_small](../../../../.gitbook/assets/about-mariadb-galera-cluster/+image/galera_small.png "galera_small")
+![galera_small](../../../.gitbook/assets/about-mariadb-galera-cluster/+image/galera_small.png "galera_small")
 
 
 MariaDB Galera Cluster is a [virtually synchronous](about-galera-replication.md) multi-primary cluster for MariaDB. It is available on Linux only, and only supports the

@@ -34,7 +34,7 @@ The suggested solution is to solve all of the above and thus create a better mul
 
 
 The following picture shows the change:
-![moving-to-catalogs](../../../../.gitbook/assets/catalogs-overview/+image/moving-to-catalogs.png "moving-to-catalogs")
+![moving-to-catalogs](../../../.gitbook/assets/catalogs-overview/+image/moving-to-catalogs.png "moving-to-catalogs")
 
 
 By each user having their own catalog, they will get very close to the same user experience as if they would have the MariaDB server for themselves.

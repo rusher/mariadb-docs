@@ -1,7 +1,7 @@
 
 # ERBuilder Data Modeler
 
-![ERBuilder-logo](../../../.gitbook/assets/erbuilder-data-modeler/+image/ERBuilder-logo.png "ERBuilder-logo")
+![ERBuilder-logo](../../.gitbook/assets/erbuilder-data-modeler/+image/ERBuilder-logo.png "ERBuilder-logo")
 
 
 [ERBuilder Data Modeler](https://soft-builder.com/erbuilder-data-modeler/) is a GUI data modeling tool that allows developers to visualize, design, and model databases by using entity relationship diagrams and automatically generates the most popular SQL databases. Generate and share the data Model documentation with your team. Optimize your data model by using advanced features such as test data generation, schema compare, and schema synchronization
@@ -36,7 +36,7 @@
 * Version management
 
 
-![ERBuilder-main-screen](../../../.gitbook/assets/erbuilder-data-modeler/+image/ERBuilder-main-screen.png "ERBuilder-main-screen")
+![ERBuilder-main-screen](../../.gitbook/assets/erbuilder-data-modeler/+image/ERBuilder-main-screen.png "ERBuilder-main-screen")
 
 
 **Freeware version**

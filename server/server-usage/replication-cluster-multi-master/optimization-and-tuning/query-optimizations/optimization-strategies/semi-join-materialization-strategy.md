@@ -26,7 +26,7 @@ where Country.code IN (select City.Country
 The subquery is uncorrelated, that is, we can run it independently of the upper query. The idea of semi-join materialization is to do just that, and fill a temporary table with possible values of the City.country field of big cities, and then do a join with countries in Europe:
 
 
-![sj-materialization1](../../../../../../.gitbook/assets/semi-join-materialization-strategy/+image/sj-materialization1.png "sj-materialization1")
+![sj-materialization1](../../../../../.gitbook/assets/semi-join-materialization-strategy/+image/sj-materialization1.png "sj-materialization1")
 
 
 The join can be done in two directions:

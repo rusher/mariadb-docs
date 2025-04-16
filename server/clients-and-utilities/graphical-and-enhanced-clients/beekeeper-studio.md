@@ -4,7 +4,7 @@
 [Beekeeper Studio](https://www.beekeeperstudio.io) is an open-source database GUI available for Linux, MacOS, and Windows.
 
 
-![SQL Gui Screenshot](../../../.gitbook/assets/beekeeper-studio/+image/main-dark.png "SQL Gui Screenshot")
+![SQL Gui Screenshot](../../.gitbook/assets/beekeeper-studio/+image/main-dark.png "SQL Gui Screenshot")
 
 
 Beekeeper Studio works with MariaDB, but also works with other databases like Postgres, Redshift, SQL Server.

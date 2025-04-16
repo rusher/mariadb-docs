@@ -41,7 +41,7 @@ We can use an Ubuntu box as a base to build a Vagrant machine with MariaDB. So w
 The following diagram should make the example clear:
 
 
-![vagrant-virtalbox-ansible](../../../../../../.gitbook/assets/vagrant-overview-for-mariadb-users/+image/vagrant-virtalbox-ansible.png "vagrant-virtalbox-ansible")
+![vagrant-virtalbox-ansible](../../../../../.gitbook/assets/vagrant-overview-for-mariadb-users/+image/vagrant-virtalbox-ansible.png "vagrant-virtalbox-ansible")
 
 
 ### Vagrantfiles

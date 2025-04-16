@@ -38,7 +38,7 @@ mysql> EXPLAIN SELECT * FROM (SELECT * FROM City WHERE Population > 1*1000)
 It plans to do the following actions:
 
 
-![derived-inefficent](../../../../../../.gitbook/assets/derived-table-merge-optimization/+image/derived-inefficent.png "derived-inefficent")
+![derived-inefficent](../../../../../.gitbook/assets/derived-table-merge-optimization/+image/derived-inefficent.png "derived-inefficent")
 
 
 From left to right:

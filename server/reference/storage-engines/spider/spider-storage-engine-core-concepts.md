@@ -14,8 +14,8 @@ The `<code>Spider Proxy Nodes</code>` are instances running at least MariaDB 10.
 ## Spider Common Usage
 
 
-![Spider3](../../../../.gitbook/assets/spider-storage-engine-core-concepts/+image/Spider3.png "Spider3")
-![Spider4](../../../../.gitbook/assets/spider-storage-engine-core-concepts/+image/Spider4.png "Spider4")
+![Spider3](../../../.gitbook/assets/spider-storage-engine-core-concepts/+image/Spider3.png "Spider3")
+![Spider4](../../../.gitbook/assets/spider-storage-engine-core-concepts/+image/Spider4.png "Spider4")
 
 
 In the default high availability setup #Spider Nodes
@@ -38,7 +38,7 @@ Preserving atomic operation during execution is used at multiple levels in the a
 Costly queries can be more efficient when it is possible to fully push down part of the execution plan on each backend and reduce the result afterwards. Spider enables such execution with some direct execution shortcuts.
 
 
-![Spider1](../../../../.gitbook/assets/spider-storage-engine-core-concepts/+image/Spider1.png "Spider1")
+![Spider1](../../../.gitbook/assets/spider-storage-engine-core-concepts/+image/Spider1.png "Spider1")
 
 
 ## Spider Threading Model
@@ -47,7 +47,7 @@ Costly queries can be more efficient when it is possible to fully push down part
 Spider uses the per partitions and per table model to concurrently access the remote backend nodes. For memory workload that property can be used to define multiple partitions on a single remote backend node to better adapt the concurrency to available CPUs in the hardware.
 
 
-![Spider2](../../../../.gitbook/assets/spider-storage-engine-core-concepts/+image/Spider2.png "Spider2")
+![Spider2](../../../.gitbook/assets/spider-storage-engine-core-concepts/+image/Spider2.png "Spider2")
 
 
 Spider maintains an internal dictionary of Table and Index statistics based on separated threads. The statistics are pulled per default on a time line basis and refer to `<code>crd</code>` for cardinality and `<code>sts</code>` for table status.

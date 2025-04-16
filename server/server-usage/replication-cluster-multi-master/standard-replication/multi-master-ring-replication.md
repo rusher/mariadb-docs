@@ -18,7 +18,7 @@ The benefit of asynchronous replication compared to [Galera Cluster](../galera-c
 The following picture shows one of the more advanced Multi-Master setups that is resilient against any master going down but can also handle 'human failures', like an accidental drop table, thanks to the addition of [delayed slaves](delayed-replication.md).
 
 
-![](../../../../.gitbook/assets/multi-master-ring-replication/+image/multi-master-ring-replication1.png)
+![](../../../.gitbook/assets/multi-master-ring-replication/+image/multi-master-ring-replication1.png)
 
 
 One should [setup replication](setting-up-replication.md) on each master like one does in [standard MariaDB replication](README.md). The replication setup among the masters should be a ring. In other words, each master should replicate to one other master and each master should only have one other master as a slave.
@@ -147,7 +147,7 @@ An alternative setup to use for Multi-master ring replications is to replicate t
 masters through slaves. The following setup shows how this can be done.
 
 
-![](../../../../.gitbook/assets/multi-master-ring-replication/+image/multi-master-ring-replication2.png)
+![](../../../.gitbook/assets/multi-master-ring-replication/+image/multi-master-ring-replication2.png)
 
 
 ## Benefits of replication through slaves

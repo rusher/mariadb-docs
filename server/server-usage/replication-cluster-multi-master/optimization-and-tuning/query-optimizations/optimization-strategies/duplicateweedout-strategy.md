@@ -28,14 +28,14 @@ where
 First, we run a regular inner join between the `<code>City</code>` and `<code>Country</code>` tables:
 
 
-![duplicate-weedout-inner-join](../../../../../../.gitbook/assets/duplicateweedout-strategy/+image/duplicate-weedout-inner-join.png "duplicate-weedout-inner-join")
+![duplicate-weedout-inner-join](../../../../../.gitbook/assets/duplicateweedout-strategy/+image/duplicate-weedout-inner-join.png "duplicate-weedout-inner-join")
 
 
 The Inner join produces duplicates. We have Germany three times, because it has three big cities.
 Now, lets put `<code>DuplicateWeedout</code>` into the picture:
 
 
-![duplicate-weedout-diagram](../../../../../../.gitbook/assets/duplicateweedout-strategy/+image/duplicate-weedout-diagram.png "duplicate-weedout-diagram")
+![duplicate-weedout-diagram](../../../../../.gitbook/assets/duplicateweedout-strategy/+image/duplicate-weedout-diagram.png "duplicate-weedout-diagram")
 
 
 Here one can see that a temporary table with a primary key was used to avoid producing multiple records with 'Germany'.

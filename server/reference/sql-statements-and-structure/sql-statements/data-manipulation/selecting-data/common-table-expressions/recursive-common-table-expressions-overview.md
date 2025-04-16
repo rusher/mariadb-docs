@@ -14,7 +14,7 @@ There are two kinds of CTEs:
 SQL is generally poor at recursive structures.
 
 
-![trees_and_graphs](../../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/trees_and_graphs.png "trees_and_graphs")
+![trees_and_graphs](../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/trees_and_graphs.png "trees_and_graphs")
 
 
 CTEs permit a query to reference itself. A recursive CTE will repeatedly execute subsets of the data until it obtains the complete result set. This makes it particularly useful for handing hierarchical or tree-structured data. [max_recursive_iterations](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_recursive_iterations) avoids infinite loops.
@@ -26,37 +26,37 @@ CTEs permit a query to reference itself. A recursive CTE will repeatedly execute
 [WITH RECURSIVE](../../../../geographic-geometric-features/geometry-relations/within.md) signifies a recursive CTE. It is given a name, followed by a body (the main query) as follows:
 
 
-![rcte_syntax](../../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_syntax.png "rcte_syntax")
+![rcte_syntax](../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_syntax.png "rcte_syntax")
 
 
-![cte_syntax](../../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/cte_syntax.png "cte_syntax")
+![cte_syntax](../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/cte_syntax.png "cte_syntax")
 
 
 ### Computation
 
 
 Given the following structure:
-![rcte_computation](../../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation.png "rcte_computation")
+![rcte_computation](../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation.png "rcte_computation")
 
 
 First execute the anchor part of the query:
-![rcte1](../../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte1.png "rcte1")
+![rcte1](../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte1.png "rcte1")
 
 
 Next, execute the recursive part of the query:
-![rcte_computation_2](../../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation_2.png "rcte_computation_2")
+![rcte_computation_2](../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation_2.png "rcte_computation_2")
 
 
-![rcte_computation_2b](../../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation_2b.png "rcte_computation_2b")
+![rcte_computation_2b](../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation_2b.png "rcte_computation_2b")
 
 
-![rcte_computation_3](../../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation_3.png "rcte_computation_3")
+![rcte_computation_3](../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation_3.png "rcte_computation_3")
 
 
-![rcte_computation_3b](../../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation_3b.png "rcte_computation_3b")
+![rcte_computation_3b](../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation_3b.png "rcte_computation_3b")
 
 
-![rcte_computation_4](../../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation_4.png "rcte_computation_4")
+![rcte_computation_4](../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation_4.png "rcte_computation_4")
 
 
 ### Summary so far
@@ -92,7 +92,7 @@ As currently implemented by MariaDB and by the SQL Standard, data may be truncat
 Sample data:
 
 
-![tc_1](../../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/tc_1.png "tc_1")
+![tc_1](../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/tc_1.png "tc_1")
 
 
 ```

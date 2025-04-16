@@ -9,7 +9,7 @@ Multi-source replication means that one server has many primaries from which it
 replicates.
 
 
-![multi_source_replication_small](../../../../.gitbook/assets/multi-source-replication/+image/multi_source_replication_small.png "multi_source_replication_small")
+![multi_source_replication_small](../../../.gitbook/assets/multi-source-replication/+image/multi_source_replication_small.png "multi_source_replication_small")
 
 
 ## New Syntax

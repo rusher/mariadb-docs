@@ -5,7 +5,7 @@
 TablePlus supports most of the popular databases such as MySQL, Postgres, SQL Server, SQLite, Microsoft SQL Server, Redis, Redshift, Oracle, and many more.
 
 
-![table](../../../.gitbook/assets/tableplus/+image/table.png "table")
+![table](../../.gitbook/assets/tableplus/+image/table.png "table")
 
 
 TablePlus is compatible with all versions of MariaDB. It is available for macOS, Windows, iOS, and Linux at the moment.

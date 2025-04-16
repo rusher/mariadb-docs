@@ -70,7 +70,7 @@ This number is fine but if your IN-list are thousands then the number of ranges 
 Internally, the Range Optimizer builds this kind of graph:
 
 
-![](../../../../.gitbook/assets/optimizer_max_sel_arg_weight/+image/sel-arg-graph1.png)
+![](../../../.gitbook/assets/optimizer_max_sel_arg_weight/+image/sel-arg-graph1.png)
 
 
 Vertical black lines connect adjacent "intervals" on the same key part.
@@ -98,7 +98,7 @@ we introduce a parameter "weight" which is easy to compute and is roughly propor
 ranges we estimate to produce.
 
 
-![](../../../../.gitbook/assets/optimizer_max_sel_arg_weight/+image/sel-arg-subgraphs.png)
+![](../../../.gitbook/assets/optimizer_max_sel_arg_weight/+image/sel-arg-subgraphs.png)
 
 
 Here is how the weight is computed:

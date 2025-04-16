@@ -34,7 +34,7 @@ Replication is used in a number of common scenarios. Uses include:
 ### Standard Replication
 
 
-![standard_replication](../../../../.gitbook/assets/replication-overview/+image/standard_replication.png "standard_replication")
+![standard_replication](../../../.gitbook/assets/replication-overview/+image/standard_replication.png "standard_replication")
 
 
 * Provides infinite read scale out.
@@ -45,7 +45,7 @@ Replication is used in a number of common scenarios. Uses include:
 ### Ring Replication
 
 
-![ring_replication](../../../../.gitbook/assets/replication-overview/+image/ring_replication.png "ring_replication")
+![ring_replication](../../../.gitbook/assets/replication-overview/+image/ring_replication.png "ring_replication")
 
 
 * Provides read and write scaling.
@@ -57,7 +57,7 @@ Replication is used in a number of common scenarios. Uses include:
 ### Ring Replication with slaves
 
 
-![](../../../../.gitbook/assets/replication-overview/+image/multi-master-ring-replication1.png)
+![](../../../.gitbook/assets/replication-overview/+image/multi-master-ring-replication1.png)
 
 
 * Provides read and write scaling.
@@ -69,7 +69,7 @@ Replication is used in a number of common scenarios. Uses include:
 ### Ring Replication with replication through slaves
 
 
-![](../../../../.gitbook/assets/replication-overview/+image/multi-master-ring-replication2.png)
+![](../../../.gitbook/assets/replication-overview/+image/multi-master-ring-replication2.png)
 
 
 * Provides read and write scaling.
@@ -81,7 +81,7 @@ Replication is used in a number of common scenarios. Uses include:
 ### Star Replication
 
 
-![star_replication](../../../../.gitbook/assets/replication-overview/+image/star_replication.png "star_replication")
+![star_replication](../../../.gitbook/assets/replication-overview/+image/star_replication.png "star_replication")
 
 
 * Provides read and write scaling.
@@ -93,7 +93,7 @@ Replication is used in a number of common scenarios. Uses include:
 ### Multi-Source Replication
 
 
-![multi_source_replication](../../../../.gitbook/assets/replication-overview/+image/multi_source_replication.png "multi_source_replication")
+![multi_source_replication](../../../.gitbook/assets/replication-overview/+image/multi_source_replication.png "multi_source_replication")
 
 
 * Allows you to combine data from different sources.

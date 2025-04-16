@@ -36,13 +36,13 @@ where
 One can execute it "naturally", by starting from countries in Europe and checking if they have populous Cities:
 
 
-![semi-join-outer-to-inner](../../../../../../.gitbook/assets/semi-join-subquery-optimizations/+image/semi-join-outer-to-inner.png "semi-join-outer-to-inner")
+![semi-join-outer-to-inner](../../../../../.gitbook/assets/semi-join-subquery-optimizations/+image/semi-join-outer-to-inner.png "semi-join-outer-to-inner")
 
 
 The semi-join property also allows "backwards" execution: we can start from big cities, and check which countries they are in:
 
 
-![semi-join-inner-to-outer](../../../../../../.gitbook/assets/semi-join-subquery-optimizations/+image/semi-join-inner-to-outer.png "semi-join-inner-to-outer")
+![semi-join-inner-to-outer](../../../../../.gitbook/assets/semi-join-subquery-optimizations/+image/semi-join-inner-to-outer.png "semi-join-inner-to-outer")
 
 
 To contrast, let's change the subquery to be non-semi-join:
@@ -65,7 +65,7 @@ It is still possible to start from countries, and then check
 * if it has a large surface area:
 
 
-![non-semi-join-subquery](../../../../../../.gitbook/assets/semi-join-subquery-optimizations/+image/non-semi-join-subquery.png "non-semi-join-subquery")
+![non-semi-join-subquery](../../../../../.gitbook/assets/semi-join-subquery-optimizations/+image/non-semi-join-subquery.png "non-semi-join-subquery")
 
 
 The opposite, city-to-country way is not possible. This is not a semi-join.

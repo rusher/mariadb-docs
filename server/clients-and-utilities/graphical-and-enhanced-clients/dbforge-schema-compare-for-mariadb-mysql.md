@@ -1,7 +1,7 @@
 
 # dbForge Schema Compare for MariaDB & MySQL
 
-![dbforge_schema_compare_for_mysql](../../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/dbforge_schema_compare_for_mysql.png "dbforge_schema_compare_for_mysql")[dbForge Schema Compare](https://www.devart.com/dbforge/mysql/schemacompare/) is an efficient solution that allows for the comparison of the MariaDB database structure. With this tool, you can easily find the differences in MariaDB database schemas.
+![dbforge_schema_compare_for_mysql](../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/dbforge_schema_compare_for_mysql.png "dbforge_schema_compare_for_mysql")[dbForge Schema Compare](https://www.devart.com/dbforge/mysql/schemacompare/) is an efficient solution that allows for the comparison of the MariaDB database structure. With this tool, you can easily find the differences in MariaDB database schemas.
 
 
 ## Schema Compare Tool Key features:
@@ -25,7 +25,7 @@ Get warnings on possible errors while synchronization
 Sync asynchronous structure
 
 
-![SynchronizationFeatures](../../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/SynchronizationFeatures.png "SynchronizationFeatures")
+![SynchronizationFeatures](../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/SynchronizationFeatures.png "SynchronizationFeatures")
 
 
 ### 2. MariaDB Backup and Restore
@@ -43,7 +43,7 @@ Restore database and schedule backups with a command-line interface
 Support for databases over 2Gb
 
 
-![DatabaseBackup](../../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/DatabaseBackup.png "DatabaseBackup")
+![DatabaseBackup](../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/DatabaseBackup.png "DatabaseBackup")
 
 
 ### 3. Scripts Folder Comparison
@@ -58,7 +58,7 @@ Choose any connection and script folder stored locally with the new Data Compari
 View the comparison process results in a data grid
 
 
-![script-folder-comparison](../../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/script-folder-comparison.png "script-folder-comparison")
+![script-folder-comparison](../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/script-folder-comparison.png "script-folder-comparison")
 
 
 ### 4. Routine Tasks Automation
@@ -73,7 +73,7 @@ Use the Windows Scheduler to automate the sync processes
 Run synchronization and schema comparison tasks with command-line execution files
 
 
-![HowcanIautomatemyroutinetasks](../../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/HowcanIautomatemyroutinetasks.png "HowcanIautomatemyroutinetasks")
+![HowcanIautomatemyroutinetasks](../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/HowcanIautomatemyroutinetasks.png "HowcanIautomatemyroutinetasks")
 
 
 ### 5. Supported Schema Objects
@@ -85,7 +85,7 @@ Packages
 Sequences
 
 
-![SupportedSchemaObjects](../../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/SupportedSchemaObjects.png "SupportedSchemaObjects")
+![SupportedSchemaObjects](../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/SupportedSchemaObjects.png "SupportedSchemaObjects")
 
 
 ### 6. Database Structure Comparison Configuration
@@ -100,7 +100,7 @@ Dismiss particular table options while comparing
 Use the Schema Comparison Wizard for switching between the Target and Source databases
 
 
-![DatabaseStructureComparisonSetup](../../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/DatabaseStructureComparisonSetup.png "DatabaseStructureComparisonSetup")
+![DatabaseStructureComparisonSetup](../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/DatabaseStructureComparisonSetup.png "DatabaseStructureComparisonSetup")
 
 
 ### 7. Comparison Results Analysis
@@ -115,7 +115,7 @@ Get a clear view of MariaDB and MySQL schema diffs in the grid.
 Manage groups of compared objects
 
 
-![HowcanIanalyzecomparisonresults](../../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/HowcanIanalyzecomparisonresults.png "HowcanIanalyzecomparisonresults")
+![HowcanIanalyzecomparisonresults](../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/HowcanIanalyzecomparisonresults.png "HowcanIanalyzecomparisonresults")
 
 
 ### 8. Comparison Results Export
@@ -127,7 +127,7 @@ Generate comparison results reports in HTML, Excel XML, XML for Excel
 Include specifically selected objects in your comparison report
 
 
-![HowcanIexportdatacomparisonresults](../../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/HowcanIexportdatacomparisonresults.png "HowcanIexportdatacomparisonresults")
+![HowcanIexportdatacomparisonresults](../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/HowcanIexportdatacomparisonresults.png "HowcanIexportdatacomparisonresults")
 
 
 ### 9. Broad Compatibility
@@ -145,7 +145,7 @@ Various cloud services: Amazon RDS, Amazon Aurora, Google Cloud, Oracle MySQL Cl
 Security connections: Secure Socket Layer (SSL), Secure Shell (SSH), HTTP Tunneling, PAM Percona
 
 
-![broad-compatibility-new](../../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/broad-compatibility-new.png "broad-compatibility-new")
+![broad-compatibility-new](../../.gitbook/assets/dbforge-schema-compare-for-mariadb-mysql/+image/broad-compatibility-new.png "broad-compatibility-new")
 
 
 Download a free 30-day trial of dbForge MariaDB and MySQL Schema Compare [here](https://www.devart.com/dbforge/mysql/schemacompare/download.html).

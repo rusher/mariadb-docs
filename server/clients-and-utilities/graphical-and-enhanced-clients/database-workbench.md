@@ -27,5 +27,5 @@ It includes numerous other tools, [more screen shots are available](https://www.
 Database Workbench comes in multiple editions and is licensed on a per module basis, so there's always a version that suits you.
 
 
-![dbwoverview](../../../.gitbook/assets/database-workbench/+image/dbwoverview.jpg "dbwoverview")
+![dbwoverview](../../.gitbook/assets/database-workbench/+image/dbwoverview.jpg "dbwoverview")
 

@@ -50,7 +50,7 @@ The principle is to split data by chunks of 16MBytes. When the server receives a
 
 Example max_allowed_packet is set to a value > to 40 Mbytes 
 Sending a 40M bytes packet body :
-![standard_packet](../../../../../.gitbook/assets/0-packet/+image/standard_packet.png "standard_packet")
+![standard_packet](../../../../.gitbook/assets/0-packet/+image/standard_packet.png "standard_packet")
 First packet will be :
 
 
@@ -141,7 +141,7 @@ The server will uncompress data and then must have the same packet than if there
 If data size needs splitting, it's better to separate compress packet.
 
 
-![compress_packet](../../../../../.gitbook/assets/0-packet/+image/compress_packet.png "compress_packet")
+![compress_packet](../../../../.gitbook/assets/0-packet/+image/compress_packet.png "compress_packet")
 
 
 

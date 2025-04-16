@@ -4,7 +4,7 @@
 [SQLPro Studio](https://sqlprostudio.com/) is a fully native database client for macOS [macOS](https://sqlprostudio.com/) and [iOS](https://apps.apple.com/app/sqlpro-studio-database-client/id1273366668). It supports databases such as MySQL, Postgres, Microsoft SQL Server, SQLite, Oracle and more.
 
 
-![SQLPro UI](../../../.gitbook/assets/sqlpro-studio/+image/SQLProUI.png "SQLPro UI")
+![SQLPro UI](../../.gitbook/assets/sqlpro-studio/+image/SQLProUI.png "SQLPro UI")
 
 
 Features include:

@@ -16,19 +16,19 @@ Launch the Studio and go to **Database > Backup and Restore > Backup Database**.
 On the General page, specify the database in question and how to connect to it, then choose where to save the created backup file, and specify its name. There are additional optional settings – you can select to delete old files automatically, zip the output backup file, etc. When done, click **Next**.
 
 
-![b1](../../../.gitbook/assets/backup-and-restore-via-dbforge-studio/+image/b1.png "b1")
+![b1](../../.gitbook/assets/backup-and-restore-via-dbforge-studio/+image/b1.png "b1")
 
 
 On the **Backup content** page, select the objects to back up. Click **Next**.
 
 
-![b2](../../../.gitbook/assets/backup-and-restore-via-dbforge-studio/+image/b2.png "b2")
+![b2](../../.gitbook/assets/backup-and-restore-via-dbforge-studio/+image/b2.png "b2")
 
 
 The **Options** page. Here you can specify the details of the data backing up process. Plenty of available options allow you to configure this task precisely to meet the specific requirements. When done, click **Next**.
 
 
-![b3](../../../.gitbook/assets/backup-and-restore-via-dbforge-studio/+image/b3.png "b3")
+![b3](../../.gitbook/assets/backup-and-restore-via-dbforge-studio/+image/b3.png "b3")
 
 
 The **Errors handling** page. Here you configure how the Studio should handle the errors that might occur during the backing up process. Also, you can set the Studio to write the information about the errors it encountered into the log file.
@@ -43,19 +43,19 @@ The configuration process is complete. Click Backup to launch the data backing u
 Note: It is not obligatory to go through all the pages of the Wizard. The Backup button is available no matter on which page you are. Thus, you can launch the process of backing the data up whenever you have set everything you needed.
 
 
-![b4](../../../.gitbook/assets/backup-and-restore-via-dbforge-studio/+image/b4.png "b4")
+![b4](../../.gitbook/assets/backup-and-restore-via-dbforge-studio/+image/b4.png "b4")
 
 
 After you have clicked **Backup**, dbForge Studio for MySQL starts to create a MariaDB backup.
 
 
-![b5](../../../.gitbook/assets/backup-and-restore-via-dbforge-studio/+image/b5.png "b5")
+![b5](../../.gitbook/assets/backup-and-restore-via-dbforge-studio/+image/b5.png "b5")
 
 
 When this is done, you will see the confirmation message. Click **Finish**.
 
 
-![b6](../../../.gitbook/assets/backup-and-restore-via-dbforge-studio/+image/b6.png "b6")
+![b6](../../.gitbook/assets/backup-and-restore-via-dbforge-studio/+image/b6.png "b6")
 
 
 Backup and restore policies suggest creating regular backups on a daily, weekly, monthly, quarterly, and yearly basis. Besides, to minimize the consequences of possible data loss, it is highly recommended make a backup before making any changes to a database, such as upgrading, modifying data, redesigning the structure, etc. Simply speaking, you always need a fresh backup to restore the most up-to-date database version. 
@@ -73,13 +73,13 @@ Launch dbForge Studio for MySQL and go to **Database > Backup and Restore > Rest
 Specify the database name, its connection parameters, and the path to the backup file you want to restore. Then click **Restore**, and the process will start immediately.
 
 
-![r1](../../../.gitbook/assets/backup-and-restore-via-dbforge-studio/+image/r1.png "r1")
+![r1](../../.gitbook/assets/backup-and-restore-via-dbforge-studio/+image/r1.png "r1")
 
 
 When the process is complete, click **Finish**.
 
 
-![r2](../../../.gitbook/assets/backup-and-restore-via-dbforge-studio/+image/r2.png "r2")
+![r2](../../.gitbook/assets/backup-and-restore-via-dbforge-studio/+image/r2.png "r2")
 
 
 More information about this essential feature is available on the [dedicated backup and restore page](https://www.devart.com/dbforge/mysql/studio/mysql-backup.html) – it explores the routines performed on MySQL, but they fully apply to MariaDB backups. You can use the same IDE and the same workflow.

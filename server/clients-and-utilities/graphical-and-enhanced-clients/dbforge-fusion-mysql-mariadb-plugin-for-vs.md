@@ -1,7 +1,7 @@
 
 # dbForge Fusion: MySQL & MariaDB Plugin for VS
 
-![dbforge_fusion_for_mysql](../../../.gitbook/assets/dbforge-fusion-mysql-mariadb-plugin-for-vs/+image/dbforge_fusion_for_mysql.png "dbforge_fusion_for_mysql") [dbForge Fusion](https://www.devart.com/dbforge/mysql/fusion/) is a powerful add-in for Visual Studio. It provides automatic and simple MariaDB database development and boosts data management capacity. With this tool integrated, it is easy to work with database development and administration tasks from Visual Studio.
+![dbforge_fusion_for_mysql](../../.gitbook/assets/dbforge-fusion-mysql-mariadb-plugin-for-vs/+image/dbforge_fusion_for_mysql.png "dbforge_fusion_for_mysql") [dbForge Fusion](https://www.devart.com/dbforge/mysql/fusion/) is a powerful add-in for Visual Studio. It provides automatic and simple MariaDB database development and boosts data management capacity. With this tool integrated, it is easy to work with database development and administration tasks from Visual Studio.
 
 
 Note: dbForge Fusion will officially be discontinued on the 1st of July 2024. However, you can access the features available in dbForge Fusion for MySQL/MariaDB through [dbForge Studio for MySQL](https://www.devart.com/dbforge/mysql/studio/), which is actively supported and regularly updated.
@@ -40,7 +40,7 @@ Filter the results of a comparison process
 Generate comparison reports
 
 
-![mysql-schema-compare-wizard](../../../.gitbook/assets/dbforge-fusion-mysql-mariadb-plugin-for-vs/+image/mysql-schema-compare-wizard.png "mysql-schema-compare-wizard")
+![mysql-schema-compare-wizard](../../.gitbook/assets/dbforge-fusion-mysql-mariadb-plugin-for-vs/+image/mysql-schema-compare-wizard.png "mysql-schema-compare-wizard")
 
 
 ### 4. Data Comparison
@@ -58,7 +58,7 @@ Generate a schema synchronization script
 Filter objects during data comparison
 
 
-![generatedatacomparisonreport](../../../.gitbook/assets/dbforge-fusion-mysql-mariadb-plugin-for-vs/+image/generatedatacomparisonreport.png "generatedatacomparisonreport")
+![generatedatacomparisonreport](../../.gitbook/assets/dbforge-fusion-mysql-mariadb-plugin-for-vs/+image/generatedatacomparisonreport.png "generatedatacomparisonreport")
 
 
 ### 5. Integration with Devart dotConnect

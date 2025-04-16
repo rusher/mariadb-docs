@@ -80,7 +80,7 @@ The `<code>sort_intersect</code>` strategy has higher overhead than `<code>inter
 able to handle a broader set of `<code>WHERE</code>` conditions.
 
 
-![intersect-vs-sort-intersect](../../../../../.gitbook/assets/index_merge-sort_intersection/+image/intersect-vs-sort-intersect.png "intersect-vs-sort-intersect")
+![intersect-vs-sort-intersect](../../../../.gitbook/assets/index_merge-sort_intersection/+image/intersect-vs-sort-intersect.png "intersect-vs-sort-intersect")
 
 
 ## When to Use

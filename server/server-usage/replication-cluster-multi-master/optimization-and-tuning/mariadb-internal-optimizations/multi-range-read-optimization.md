@@ -15,7 +15,7 @@ Multi Range Read can be used with
 as shown in this diagram:
 
 
-![possible-mrr-uses](../../../../../.gitbook/assets/multi-range-read-optimization/+image/possible-mrr-uses.png "possible-mrr-uses")
+![possible-mrr-uses](../../../../.gitbook/assets/multi-range-read-optimization/+image/possible-mrr-uses.png "possible-mrr-uses")
 
 
 ## The Idea
@@ -39,7 +39,7 @@ explain select * from tbl where tbl.key1 between 1000 and 2000;
 When this query is executed, disk IO access pattern will follow the red line in this figure:
 
 
-![no-mrr-access-pattern](../../../../../.gitbook/assets/multi-range-read-optimization/+image/no-mrr-access-pattern.png "no-mrr-access-pattern")
+![no-mrr-access-pattern](../../../../.gitbook/assets/multi-range-read-optimization/+image/no-mrr-access-pattern.png "no-mrr-access-pattern")
 
 
 Execution will hit the table rows in random places, as marked with the blue line/numbers in the figure.
@@ -70,7 +70,7 @@ explain select * from tbl where tbl.key1 between 1000 and 2000;
 and the execution will proceed as follows:
 
 
-![mrr-access-pattern](../../../../../.gitbook/assets/multi-range-read-optimization/+image/mrr-access-pattern.png "mrr-access-pattern")
+![mrr-access-pattern](../../../../.gitbook/assets/multi-range-read-optimization/+image/mrr-access-pattern.png "mrr-access-pattern")
 
 
 Reading disk data sequentially is generally faster, because
@@ -152,13 +152,13 @@ explain select * from t1,t2 where t2.key1=t1.col1;
 Execution of this query plan will cause random hits to be made into the index `<code>t2.key1</code>`, as shown in this picture:
 
 
-![key-sorting-regular-nl-join](../../../../../.gitbook/assets/multi-range-read-optimization/+image/key-sorting-regular-nl-join.png "key-sorting-regular-nl-join")
+![key-sorting-regular-nl-join](../../../../.gitbook/assets/multi-range-read-optimization/+image/key-sorting-regular-nl-join.png "key-sorting-regular-nl-join")
 
 
 In particular, on step #5 we'll read the same index page that we've read on step #2, and the page we've read on step #4 will be re-read on step#6. If all pages you're accessing are in the cache (in the buffer pool, if you're using InnoDB, and in the key cache, if you're using MyISAM), this is not a problem. However, if your hit ratio is poor and you're going to hit the disk, it makes sense to sort the lookup keys, like shown in this figure:
 
 
-![key-sorting-join](../../../../../.gitbook/assets/multi-range-read-optimization/+image/key-sorting-join.png "key-sorting-join")
+![key-sorting-join](../../../../.gitbook/assets/multi-range-read-optimization/+image/key-sorting-join.png "key-sorting-join")
 
 
 This is roughly what `<code>Key-ordered scan</code>` optimization does. In EXPLAIN, it looks as follows:

@@ -33,13 +33,13 @@ MariaDB [test]> explain select * from tbl where key_col1 between 10 and 11 and k
 In disk-based storage engines, making an index lookup is done in two steps, like shown on the picture:
 
 
-![index-access-2phases](../../../../../.gitbook/assets/index-condition-pushdown/+image/index-access-2phases.png "index-access-2phases")
+![index-access-2phases](../../../../.gitbook/assets/index-condition-pushdown/+image/index-access-2phases.png "index-access-2phases")
 
 
 Index Condition Pushdown optimization tries to cut down the number of full record reads by checking whether index records satisfy part of the WHERE condition that can be checked for them:
 
 
-![index-access-with-icp](../../../../../.gitbook/assets/index-condition-pushdown/+image/index-access-with-icp.png "index-access-with-icp")
+![index-access-with-icp](../../../../.gitbook/assets/index-condition-pushdown/+image/index-access-with-icp.png "index-access-with-icp")
 
 
 How much speed will be gained depends on

@@ -22,23 +22,23 @@ This process shows how to deploy MariaDB in a Docker container running on an GCE
 5. Machine configuration: Choose general-purpose / E2 micro
 
 
-![gcp-e2](../../../../../../.gitbook/assets/docker-and-google-cloud/+image/gcp-e2.png "gcp-e2")
-![gcp-e2-micro](../../../../../../.gitbook/assets/docker-and-google-cloud/+image/gcp-e2-micro.png "gcp-e2-micro")
+![gcp-e2](../../../../../.gitbook/assets/docker-and-google-cloud/+image/gcp-e2.png "gcp-e2")
+![gcp-e2-micro](../../../../../.gitbook/assets/docker-and-google-cloud/+image/gcp-e2-micro.png "gcp-e2-micro")
 
 
 6. Boot Disk > Change
 
 
 Switch the operating system to a modern Ubuntu release x86/64 CPU architecture, or similar free tier offering.
-![gcp-ubuntu](../../../../../../.gitbook/assets/docker-and-google-cloud/+image/gcp-ubuntu.png "gcp-ubuntu")
+![gcp-ubuntu](../../../../../.gitbook/assets/docker-and-google-cloud/+image/gcp-ubuntu.png "gcp-ubuntu")
 
 
 7. [Create a firewall rule](https://console.cloud.google.com/net-security/firewall-manager/firewall-policies/add) in the Firewall Policies section of the console. After naming it, change the targets, add 0.0.0.0/0 as a source IP range, and open TCP port 3306. Then Click create.
-![gcp-firewall](../../../../../../.gitbook/assets/docker-and-google-cloud/+image/gcp-firewall.png "gcp-firewall")
+![gcp-firewall](../../../../../.gitbook/assets/docker-and-google-cloud/+image/gcp-firewall.png "gcp-firewall")
 
 
 8. Connect using Google Cloud’s built in browser SSH. Accept all prompts for authorization.
-![gcp-verify-ssh](../../../../../../.gitbook/assets/docker-and-google-cloud/+image/gcp-verify-ssh.png "gcp-verify-ssh")
+![gcp-verify-ssh](../../../../../.gitbook/assets/docker-and-google-cloud/+image/gcp-verify-ssh.png "gcp-verify-ssh")
 
 
 **Install Docker on the GCE VM**

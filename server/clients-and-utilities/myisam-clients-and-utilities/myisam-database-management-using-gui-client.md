@@ -79,7 +79,7 @@ Speaking of MyISAM tables, it is worth mentioning some basic operations.
 In dbForge Studio for MySQL, you can check the storage engine of the current database in a couple of clicks. Select the database in Database Explorer, right-click the necessary table, and select **Properties** from the shortcut menu. The output will present the information of the database engine among other data.
 
 
-![Check storage engine](../../../.gitbook/assets/myisam-database-management-using-gui-client/+image/checkengine.png "Check storage engine")
+![Check storage engine](../../.gitbook/assets/myisam-database-management-using-gui-client/+image/checkengine.png "Check storage engine")
 
 
 #### Convert a table from InnoDB to MyISAM (and vice versa)
@@ -118,7 +118,7 @@ SHOW TABLE STATUS LIKE table_name;
 This command provides detailed information about the table properties, including the total space occupied by the table and the total unused space (Data_length and Data_free columns, respectively). This helps users pinpoint tables that may be consuming excessive space and may be corrupted.
 
 
-![showtablestatus](../../../.gitbook/assets/myisam-database-management-using-gui-client/+image/showtablestatus.png "showtablestatus")
+![showtablestatus](../../.gitbook/assets/myisam-database-management-using-gui-client/+image/showtablestatus.png "showtablestatus")
 
 
 This way, users can identify those tables that may take up too much space and be corrupted.
@@ -127,13 +127,13 @@ This way, users can identify those tables that may take up too much space and be
 After detecting the MyISAM tables that require maintenance, you can apply the Studio’s integrated table maintenance tool to those tables to fix the issues. To launch it, right-click the necessary table in Database Explorer and select **Table Maintenance**.
 
 
-![Table Maintenance](../../../.gitbook/assets/myisam-database-management-using-gui-client/+image/tablemaintenance.png "Table Maintenance")
+![Table Maintenance](../../.gitbook/assets/myisam-database-management-using-gui-client/+image/tablemaintenance.png "Table Maintenance")
 
 
 The table maintenance module offers the following options:
 
 
-![tablemaintenancewindow](../../../.gitbook/assets/myisam-database-management-using-gui-client/+image/tablemaintenancewindow.png "tablemaintenancewindow")
+![tablemaintenancewindow](../../.gitbook/assets/myisam-database-management-using-gui-client/+image/tablemaintenancewindow.png "tablemaintenancewindow")
 
 
 * Analyze the table: This tool examines the key statistics of the table, helping to create more efficient query plans for optimal performance.

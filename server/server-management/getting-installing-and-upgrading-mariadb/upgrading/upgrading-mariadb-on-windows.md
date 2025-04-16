@@ -76,7 +76,7 @@ installation if upgradable services are found. The UI allows you to select
 instances you want to upgrade.
 
 
-![UpgradeWizard](../../../../.gitbook/assets/upgrading-mariadb-on-windows/+image/UpgradeWizard.png "UpgradeWizard")
+![UpgradeWizard](../../../.gitbook/assets/upgrading-mariadb-on-windows/+image/UpgradeWizard.png "UpgradeWizard")
 
 
 ## mysql_upgrade_service

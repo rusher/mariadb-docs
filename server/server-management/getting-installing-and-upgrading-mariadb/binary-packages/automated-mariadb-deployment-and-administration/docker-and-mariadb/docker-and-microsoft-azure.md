@@ -16,23 +16,23 @@ This process shows how to deploy MariaDB in a Docker container running on an Azu
 3. [Create VM](https://portal.azure.com/#create/Microsoft.VirtualMachine-ARM). Give the VM a name (e.g. mrdb-ubuntu-docker-use1), and create new or use an existing resource group. Selection region and availability zone, and choose Ubuntu 22.04 LTS x64 (free services eligible).
 
 
-![azure-create-vm](../../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-create-vm.png "azure-create-vm")
+![azure-create-vm](../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-create-vm.png "azure-create-vm")
 
 
 4. Choose the VM instance size, like a B1s or similar free tier. Note that Azure free works on a credit based system for new accounts
 
 
-![azure-create-vm-size](../../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-create-vm-size.png "azure-create-vm-size")
+![azure-create-vm-size](../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-create-vm-size.png "azure-create-vm-size")
 
 
 5. Configure an administrator account and generate a new key pair, and give the key pair a name.
 
 
-![azure-create-vm-ssh](../../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-create-vm-ssh.png "azure-create-vm-ssh")
+![azure-create-vm-ssh](../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-create-vm-ssh.png "azure-create-vm-ssh")
 
 
 6. Click "Review + Create" at the very bottom of the "create virtual machine" page to create the VM.
-![azure-deployment-create](../../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-deployment-create.png "azure-deployment-create")
+![azure-deployment-create](../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-deployment-create.png "azure-deployment-create")
 
 
 7. Download the SSH keys and them in a safe place, you will need them later. For this example, let's name the key file mrdb-docker-pk.pem.
@@ -41,27 +41,27 @@ This process shows how to deploy MariaDB in a Docker container running on an Azu
 If your local machine is Linux or you are using WSL on Windows, open a terminal window and:
 $ mv /mnt/c/<your-private-key> /.ssh/
 $ chmod 400 /.ssh/<your-private-key>
-![azure-create-vm-ssh-key](../../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-create-vm-ssh-key.png "azure-create-vm-ssh-key")
+![azure-create-vm-ssh-key](../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-create-vm-ssh-key.png "azure-create-vm-ssh-key")
 
 
 8. Once the VM is deployed, "click to resource" to get back to the virtual machine's overview page.
-![azure-deployment](../../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-deployment.png "azure-deployment")
+![azure-deployment](../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-deployment.png "azure-deployment")
 
 
 9. From the overview page, the left-hand navigation, choose settings > networking. 
-![azure-nav-networking](../../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-nav-networking.png "azure-nav-networking")
+![azure-nav-networking](../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-nav-networking.png "azure-nav-networking")
 
 
 10. Click "add inbound port rule" 
-![azure-firewall-rule](../../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-firewall-rule.png "azure-firewall-rule")
+![azure-firewall-rule](../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-firewall-rule.png "azure-firewall-rule")
 
 
 11. Configure the port rule to allow port TCP 3306 inbound (mySQL) so that you can make external connections from your local Maria DB command line client, to the dockerized Maria DB instance in your Azure Linux VM.
-![azure-firewall-rule-3306](../../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-firewall-rule-3306.png "azure-firewall-rule-3306")
+![azure-firewall-rule-3306](../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-firewall-rule-3306.png "azure-firewall-rule-3306")
 
 
 12. Navigate back to the virtual machine's overview page. Then copy the public IP address to the clipboard.
-![azure-get-ip](../../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-get-ip.png "azure-get-ip")
+![azure-get-ip](../../../../../.gitbook/assets/docker-and-microsoft-azure/+image/azure-get-ip.png "azure-get-ip")
 
 
 **Install Docker on the Azure VM**

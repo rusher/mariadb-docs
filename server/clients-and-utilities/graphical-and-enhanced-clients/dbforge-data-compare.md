@@ -16,7 +16,7 @@
 * Get warning messages on errors during synchronization
 
 
-![synchronization-features](../../../.gitbook/assets/dbforge-data-compare/+image/synchronization-features.png "synchronization-features")
+![synchronization-features](../../.gitbook/assets/dbforge-data-compare/+image/synchronization-features.png "synchronization-features")
 
 
 ### 2. MySQL & MariaDB Task Automation
@@ -27,7 +27,7 @@
 * Support for PowerShell compatibility
 
 
-![automate-routine-task](../../../.gitbook/assets/dbforge-data-compare/+image/automate-routine-task.png "automate-routine-task")
+![automate-routine-task](../../.gitbook/assets/dbforge-data-compare/+image/automate-routine-task.png "automate-routine-task")
 
 
 ### 3. Script for Folder Data Comparison
@@ -38,7 +38,7 @@
 * See the data comparison results in a data result grid
 
 
-![script-folder-comparison](../../../.gitbook/assets/dbforge-data-compare/+image/script-folder-comparison.png "script-folder-comparison")
+![script-folder-comparison](../../.gitbook/assets/dbforge-data-compare/+image/script-folder-comparison.png "script-folder-comparison")
 
 
 ### 4. Rich configurations for data comparison
@@ -49,7 +49,7 @@
 * Compare custom keys
 
 
-![data-comparsion-setup](../../../.gitbook/assets/dbforge-data-compare/+image/data-comparsion-setup.png "data-comparsion-setup")
+![data-comparsion-setup](../../.gitbook/assets/dbforge-data-compare/+image/data-comparsion-setup.png "data-comparsion-setup")
 
 
 ### 5. Supported Data

@@ -20,8 +20,8 @@ A brief list of basic features can be found below:
 DBeaver is actively developed and maintained. Usability is the main goal of this project, so program UI is carefully designed and implemented. Every user can send bug report and feature request on the [GitHub page](https://github.com/serge-rider/dbeaver).
 
 
-![screen1](../../../.gitbook/assets/graphical-and-enhanced-clients-dbeaver/+image/screen1.png "screen1")
+![screen1](../../.gitbook/assets/graphical-and-enhanced-clients-dbeaver/+image/screen1.png "screen1")
 
 
-![screen2](../../../.gitbook/assets/graphical-and-enhanced-clients-dbeaver/+image/screen2.png "screen2")
+![screen2](../../.gitbook/assets/graphical-and-enhanced-clients-dbeaver/+image/screen2.png "screen2")
 

@@ -28,7 +28,7 @@
 * Support version control to manage different iterations of your model.
 
 
-![mariadb-dezign-for-databases](../../../.gitbook/assets/dezign-for-databases/+image/mariadb-dezign-for-databases.png "mariadb-dezign-for-databases")
+![mariadb-dezign-for-databases](../../.gitbook/assets/dezign-for-databases/+image/mariadb-dezign-for-databases.png "mariadb-dezign-for-databases")
 
 
 **Supported OS**

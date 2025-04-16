@@ -76,7 +76,7 @@ The following happens when atomic writes are enabled
 Here is a flowchart showing how atomic writes work inside InnoDB:
 
 
-![Atomic write support flow inside InnoDB](../../../../.gitbook/assets/atomic-write-support/+image/atomic_support_internals.png "Atomic write support flow inside InnoDB")
+![Atomic write support flow inside InnoDB](../../../.gitbook/assets/atomic-write-support/+image/atomic_support_internals.png "Atomic write support flow inside InnoDB")
 
 
 ## Devices that Support Atomic Writes with MariaDB

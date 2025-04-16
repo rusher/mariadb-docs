@@ -23,7 +23,7 @@ All the following Dockerfile directives are compiled into a new Docker image, id
 The following diagram shows the relationship between Dockerfiles, images and containers:
 
 
-![dockerfiles-images-containers](../../../../../../.gitbook/assets/creating-a-custom-container-image/+image/dockerfiles-images-containers.png "dockerfiles-images-containers")
+![dockerfiles-images-containers](../../../../../.gitbook/assets/creating-a-custom-container-image/+image/dockerfiles-images-containers.png "dockerfiles-images-containers")
 
 
 ## Dockerfile Syntax
