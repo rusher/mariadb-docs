@@ -3,30 +3,22 @@
 
 Downgrading MariaDB is not officially supported between major versions.
 
-
 For minor versions, upgrade is supported to an earlier [gamma/RC/GA](../../../release-notes/mariadb-release-criteria.md) version as we do not change the storage format after [Alpha](../../../release-notes/mariadb-release-criteria.md) and very rarely during [Beta](../../../release-notes/mariadb-release-criteria.md) (it has to be a very critical bug to require such a change).
 There are a few very rare cases when incompatible changes happen on a GA version, for example [MariaDB 10.1.21](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10121-release-notes.md) fixed a file format incompatibility bug that prevents a downgrade to earlier [MariaDB 10.1](../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) releases. After [MariaDB 10.1.21](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10121-release-notes.md) this has not happened in a GA release.
 
-
 The main reason why downgrades between major versions do not work are:
-
 
 * Changes in the privilege/status tables in the [mysql schema](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md). These changes happen between most major versions as we are continuously improving the privilege system.
 * Changes that affect how data is stored on disk. This happens more rarely and is usually table specific. For example, if one has used [Instant add column](../../reference/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb.md) on a table in [MariaDB 10.3](../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), that table cannot be opened in [MariaDB 10.2](../../../release-notes/mariadb-community-server/what-is-mariadb-102.md).
 * Between major releases there are often substantial changes, even if none of the new features are used. For example, both [MariaDB 10.2](../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and [MariaDB 10.3](../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) introduce new versions of the redo log.
 
-
 The only reliable way to downgrade is to [restore from a full backup](../backing-up-and-restoring-databases/README.md) made before upgrading, and start the old version of MariaDB. At least one should take a backup of the [mysql](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) schema as most upgrade changes happens in this directory. This may be of help if one needs to downgrade to an earlier MariaDB version. More about this later.
-
 
 Some people have reported successfully downgrading, but there are many possible things that can go wrong, and downgrading between two major versions is not tested in any way by the MariaDB developers.
 
-
 In general, one can downgrade a major version to an earlier version if one has not yet run [mariadb-upgrade](../../clients-and-utilities/mariadb-upgrade.md) on the new version. Note however that it's recommended that one always uses [mariadb-upgrade](../../clients-and-utilities/mariadb-upgrade.md) after upgrading to a new major version as otherwise some security features in the new server may not work and tables that have indexes using a character collation that has changed may not work properly.
 
-
 Assuming one **must** downgrade to an earlier major version, here is a list of things one has to do:
-
 
 * MariaDB must be shut down cleanly. This means that:
 
@@ -36,12 +28,9 @@ Assuming one **must** downgrade to an earlier major version, here is a list of t
 * Use ALTER TABLE to restore the [mysql schema tables](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) to their original definition or drop and recreate the mysql tables. One can find the old definition by using [mariadb-install-db](mariadb-install-db-exe.md) to create a separate temporary data directory. Starting the MariaDB server on the temporary directory will allow you to use [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) to find the old definition.
 * Execute [FLUSH PRIVILEGES](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) to reload the old tables.
 
-
 The cases when the above will not work are when the table format has changed in an incompatible manner. In this case the affected tables may not be usable in the earlier version.
 
-
 The following is an incomplete list of when one will not be able to use a table in an earlier major version:
-
 
 * [MariaDB 11.0](../../../release-notes/mariadb-community-server/what-is-mariadb-110.md) or later
 
