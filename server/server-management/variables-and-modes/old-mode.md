@@ -68,43 +68,43 @@ From [MariaDB 11.2](../../../release-notes/mariadb-community-server/what-is-mari
 ### NO_DUP_KEY_WARNINGS_WITH_IGNORE
 
 
-Don't print duplicate key warnings when using INSERT [IGNORE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/ignore.md).
+Don't print duplicate key warnings when using INSERT [IGNORE](../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/ignore.md).
 
 
 ### NO_NULL_COLLATION_IDS
 
 
-A compatibility setting to support connectors (in particular MySQL Connector/NET) that give an exception when collation ids returned by [SHOW COLLATION](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-collation.md) are NULL. It is automatically set when a MySQL Connector/NET connection is determined. From [MariaDB 10.11.7](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-7-release-notes.md), [MariaDB 11.0.5](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-5-release-notes.md), [MariaDB 11.1.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-4-release-notes.md), [MariaDB 11.2.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-3-release-notes.md).
+A compatibility setting to support connectors (in particular MySQL Connector/NET) that give an exception when collation ids returned by [SHOW COLLATION](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-collation.md) are NULL. It is automatically set when a MySQL Connector/NET connection is determined. From [MariaDB 10.11.7](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-7-release-notes.md), [MariaDB 11.0.5](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-5-release-notes.md), [MariaDB 11.1.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-4-release-notes.md), [MariaDB 11.2.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-3-release-notes.md).
 
 
 ### NO_PROGRESS_INFO
 
 
-Don't show progress information in [SHOW PROCESSLIST](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md).
+Don't show progress information in [SHOW PROCESSLIST](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md).
 
 
 ### OLD_FLUSH_STATUS
 
 
-From [MariaDB 11.5](../../../release-notes/mariadb-community-server/what-is-mariadb-115.md), restores the pre-[MariaDB 11.5](../../../release-notes/mariadb-community-server/what-is-mariadb-115.md) behavior of [FLUSH STATUS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md#flush-status).
+From [MariaDB 11.5](../../../release-notes/mariadb-community-server/what-is-mariadb-115.md), restores the pre-[MariaDB 11.5](../../../release-notes/mariadb-community-server/what-is-mariadb-115.md) behavior of [FLUSH STATUS](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md#flush-status).
 
 
 ### SESSION_USER_IS_USER
 
 
-From [MariaDB 11.7](../../../release-notes/mariadb-community-server/what-is-mariadb-117.md), restores the pre-[MariaDB 11.7](../../../release-notes/mariadb-community-server/what-is-mariadb-117.md) behavior of [SESSION_USER](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/session_user.md).
+From [MariaDB 11.7](../../../release-notes/mariadb-community-server/what-is-mariadb-117.md), restores the pre-[MariaDB 11.7](../../../release-notes/mariadb-community-server/what-is-mariadb-117.md) behavior of [SESSION_USER](../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/session_user.md).
 
 
 ### UTF8_IS_UTF8MB3
 
 
-From [MariaDB 10.6.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), the main name of the previous 3 byte `utf` [character set](../../reference/data-types/string-data-types/character-sets/README.md) has been changed to `utf8mb3`. If set, the default, `utf8` is an alias for `utf8mb3`. If not set, `utf8` would be an alias for `utf8mb4`.
+From [MariaDB 10.6.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), the main name of the previous 3 byte `utf` [character set](../../ref/data-types/string-data-types/character-sets/README.md) has been changed to `utf8mb3`. If set, the default, `utf8` is an alias for `utf8mb3`. If not set, `utf8` would be an alias for `utf8mb4`.
 
 
 ### ZERO_DATE_TIME_CAST
 
 
-When a [TIME](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) value is cast to a [DATETIME](../../reference/data-types/date-and-time-data-types/datetime.md), the date part will be `0000-00-00`, not [CURRENT_DATE](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/curdate.md) (as dictated by the SQL standard).
+When a [TIME](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) value is cast to a [DATETIME](../../ref/data-types/date-and-time-data-types/datetime.md), the date part will be `0000-00-00`, not [CURRENT_DATE](../../ref/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/curdate.md) (as dictated by the SQL standard).
 
 
 ## OLD_MODE and Stored Programs

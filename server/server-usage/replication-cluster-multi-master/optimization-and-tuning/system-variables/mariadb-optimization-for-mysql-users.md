@@ -13,7 +13,7 @@ to, when making the switch.
 aria-pagecache-buffer-size=##
 ```
 
-If you are using a log of on-disk temporary tables, increase the above to as much as you can afford. See [Aria Storage Engine](../../../../reference/storage-engines/aria/aria-storage-engine.md) for more details.
+If you are using a log of on-disk temporary tables, increase the above to as much as you can afford. See [Aria Storage Engine](../../../../ref/storage-engines/aria/aria-storage-engine.md) for more details.
 
 
 ```

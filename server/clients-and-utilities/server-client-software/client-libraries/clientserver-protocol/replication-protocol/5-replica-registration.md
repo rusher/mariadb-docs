@@ -1,7 +1,7 @@
 
 # 5-Replica Registration
 
-The replica server, when properly configured with CHANGE MASTER TO ... can start MariaDB replication with the [START REPLICA](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) command.
+The replica server, when properly configured with CHANGE MASTER TO ... can start MariaDB replication with the [START REPLICA](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) command.
 
 
 After authentication, some [COM_QUERY](../2-text-protocol/com_query.md) packets are exchanged before sending [COM_REGISTER_SLAVE](com_register_slave.md) and [COM_BINLOG_DUMP](com_binlog_dump.md)

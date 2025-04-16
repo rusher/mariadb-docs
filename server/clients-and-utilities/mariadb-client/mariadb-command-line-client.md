@@ -122,7 +122,7 @@ By default, ASCII '\0' is disallowed and '\r\n' is translated to '\n'. This swit
 #### `--character-sets-dir=name`
 
 
-Directory for [character set](../../reference/data-types/string-data-types/character-sets/README.md) files.
+Directory for [character set](../../ref/data-types/string-data-types/character-sets/README.md) files.
 
 
 #### `--column-names`
@@ -196,7 +196,7 @@ Default authentication client-side plugin to use.
 #### `--default-character-set=name`
 
 
-Set the default [character set](../../reference/data-types/string-data-types/character-sets/README.md). A common issue that can occur when the operating system uses utf8 or another multibyte character set is that output from the mariadb client is formatted incorrectly, due to the fact that the MariaDB client uses the latin1 character set by default. You can usually fix such issues by using this option to force the client to use the system character set instead. If set to `auto` the character set is taken from the client environment (`LC_CTYPE` on Unix).
+Set the default [character set](../../ref/data-types/string-data-types/character-sets/README.md). A common issue that can occur when the operating system uses utf8 or another multibyte character set is that output from the mariadb client is formatted incorrectly, due to the fact that the MariaDB client uses the latin1 character set by default. You can usually fix such issues by using this option to force the client to use the system character set instead. If set to `auto` the character set is taken from the client environment (`LC_CTYPE` on Unix).
 
 
 #### `--defaults-extra-file=file`
@@ -280,7 +280,7 @@ Write line numbers for errors. (Defaults to on; use `--skip-line-numbers` to dis
 #### `--local-infile`
 
 
-Enable or disable LOCAL capability for [LOAD DATA INFILE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md). With no value, the option enables LOCAL. The option may be given as`--local-infile=0` or `--local-infile=1` to explicitly disable or enable LOCAL. Enabling LOCAL has no effect if the server does not also support it.
+Enable or disable LOCAL capability for [LOAD DATA INFILE](../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md). With no value, the option enables LOCAL. The option may be given as`--local-infile=0` or `--local-infile=1` to explicitly disable or enable LOCAL. Enabling LOCAL has no effect if the server does not also support it.
 
 
 #### `--max-allowed-packet=num`
@@ -358,7 +358,7 @@ Print the program argument list and exit. Must be given as the first option.
 #### `--progress-reports`
 
 
-Get [progress reports](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for long running commands (such as [ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)). (Defaults to on; use `--skip-progress-reports` to disable.)
+Get [progress reports](../../ref/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for long running commands (such as [ALTER TABLE](../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)). (Defaults to on; use `--skip-progress-reports` to disable.)
 
 
 #### `--prompt=name`
@@ -400,7 +400,7 @@ Reconnect if the connection is lost. This option is enabled by default. Disable 
 #### `-U, --safe-updates`
 
 
-Allow only those [UPDATE](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) and [DELETE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements that specify which rows to modify by using key values. If you have set this option in an option file, you can override it by using `--safe-updates` on the command line. See [using the --safe-updates option](#using-the-safe-updates-option) for more.
+Allow only those [UPDATE](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) and [DELETE](../../ref/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements that specify which rows to modify by using key values. If you have set this option in an option file, you can override it by using `--safe-updates` on the command line. See [using the --safe-updates option](#using-the-safe-updates-option) for more.
 
 
 #### `--sandbox`
@@ -484,7 +484,7 @@ Don't write line number for errors. See `--line-numbers`.
 #### `--skip-progress-reports`
 
 
-Disables getting [progress reports](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for long running commands. See `--progress-reports`.
+Disables getting [progress reports](../../ref/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for long running commands. See `--progress-reports`.
 
 
 #### `--skip-reconnect`
@@ -910,7 +910,7 @@ SET sql_safe_updates=1, sql_select_limit=1000, sql_max_join_size=1000000;
 The [SET](../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) statement has the following effects:
 
 
-* You are not allowed to execute an [UPDATE](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [DELETE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statement unless you
+* You are not allowed to execute an [UPDATE](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [DELETE](../../ref/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statement unless you
  specify a key constraint in the WHERE clause or provide a LIMIT clause (or
  both). For example:
 

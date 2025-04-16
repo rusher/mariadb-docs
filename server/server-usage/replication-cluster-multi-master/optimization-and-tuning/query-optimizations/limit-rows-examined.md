@@ -35,7 +35,7 @@ only during query execution. Thus the clause is ignored in the following cases:
 * During auxiliary operations such as writing to system tables (e.g. logs).
 
 
-The clause is not applicable to `[DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)` or `[UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)`
+The clause is not applicable to `[DELETE](../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)` or `[UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)`
 statements, and if used in those statements produces a syntax error.
 
 

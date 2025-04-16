@@ -361,7 +361,7 @@ The ed25519 plugin uses the Elliptic Curve Digital Signature Algorithm to secure
 It has been Implemented in the server since [MariaDB 10.1.22](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10122-release-notes.md).
 
 
-See [plugin description](../../../../../reference/plugins/authentication-plugins/authentication-plugin-ed25519.md).
+See [plugin description](../../../../../ref/plugins/authentication-plugins/authentication-plugin-ed25519.md).
 
 
 The server sends a random nonce that the client signs.

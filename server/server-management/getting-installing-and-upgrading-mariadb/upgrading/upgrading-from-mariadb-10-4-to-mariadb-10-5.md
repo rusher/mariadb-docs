@@ -43,7 +43,7 @@ The suggested upgrade procedure is:
 
   * `mysql_upgrade` does two things:
 
-    1. Ensures that the system tables in the [mysql](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database are fully compatible with the new version.
+    1. Ensures that the system tables in the [mysql](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database are fully compatible with the new version.
     1. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 
 
@@ -84,16 +84,16 @@ A number of statements changed the privileges that they require. The old privile
 | Option | Old default value | New default value |
 | --- | --- | --- |
 | Option | Old default value | New default value |
-| [innodb_adaptive_hash_index](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) | ON | OFF |
-| [innodb_checksum_algorithm](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) | crc32 | full_crc32 |
-| [innodb_log_optimize_ddl](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl) | ON | OFF |
+| [innodb_adaptive_hash_index](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) | ON | OFF |
+| [innodb_checksum_algorithm](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) | crc32 | full_crc32 |
+| [innodb_log_optimize_ddl](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl) | ON | OFF |
 | [slave_parallel_mode](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#slave_parallel_mode) | conservative | optimistic |
-| [performance_schema_max_cond_classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_classes) | 80 | 90 |
-| [performance_schema_max_file_classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_classes) | 50 | 80 |
-| [performance_schema_max_mutex_classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_classes) | 200 | 210 |
-| [performance_schema_max_rwlock_classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_classes) | 40 | 50 |
-| [performance_schema_setup_actors_size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_actors_size) | 100 | -1 |
-| [performance_schema_setup_objects_size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_objects_size) | 100 | -1 |
+| [performance_schema_max_cond_classes](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_classes) | 80 | 90 |
+| [performance_schema_max_file_classes](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_classes) | 50 | 80 |
+| [performance_schema_max_mutex_classes](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_classes) | 200 | 210 |
+| [performance_schema_max_rwlock_classes](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_classes) | 40 | 50 |
+| [performance_schema_setup_actors_size](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_actors_size) | 100 | -1 |
+| [performance_schema_setup_objects_size](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_objects_size) | 100 | -1 |
 
 
 
@@ -107,11 +107,11 @@ The following options should be removed or renamed if you use them in your [opti
 | Option | Reason |
 | --- | --- |
 | Option | Reason |
-| [innodb_checksums](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksums) | Deprecated and functionality replaced by [innodb_checksum_algorithms](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). |
-| [innodb_idle_flush_pct](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_idle_flush_pct) | Has had no effect since merging InnoDB 5.7 from mysql-5.7.9 ([MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md)). |
-| [innodb_locks_unsafe_for_binlog](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_locks_unsafe_for_binlog) | Deprecated in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). Use [READ COMMITTED transaction isolation level](../../../reference/sql-statements-and-structure/sql-statements/transactions/set-transaction.md#read-committed) instead. |
-| [innodb_rollback_segments](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_segments) | Deprecated and replaced by [innodb_undo_logs](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs) in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). |
-| [innodb_stats_sample_pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_sample_pages) | Deprecated in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). Use [innodb_stats_transient_sample_pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_transient_sample_pages) instead. |
+| [innodb_checksums](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_checksums) | Deprecated and functionality replaced by [innodb_checksum_algorithms](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). |
+| [innodb_idle_flush_pct](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_idle_flush_pct) | Has had no effect since merging InnoDB 5.7 from mysql-5.7.9 ([MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md)). |
+| [innodb_locks_unsafe_for_binlog](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_locks_unsafe_for_binlog) | Deprecated in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). Use [READ COMMITTED transaction isolation level](../../../ref/sql-statements-and-structure/sql-statements/transactions/set-transaction.md#read-committed) instead. |
+| [innodb_rollback_segments](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_segments) | Deprecated and replaced by [innodb_undo_logs](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs) in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). |
+| [innodb_stats_sample_pages](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_sample_pages) | Deprecated in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). Use [innodb_stats_transient_sample_pages](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_stats_transient_sample_pages) instead. |
 | [max_long_data_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_long_data_size) | Deprecated and replaced by [max_allowed_packet](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_allowed_packet) in [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md). |
 | [multi_range_count](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#multi_range_count) | Deprecated and has had no effect since [MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md). |
 | [thread_concurrency](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#thread_concurrency) | Deprecated and has had no effect since [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md). |
@@ -129,23 +129,23 @@ The following options have been deprecated. They have not yet been removed, but 
 | Option | Reason |
 | --- | --- |
 | Option | Reason |
-| [innodb_adaptive_max_sleep_delay](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay) | No need for thread throttling any more. |
-| [innodb_background_scrub_data_check_interval](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_check_interval) | Problematic ‘background scrubbing’ code removed. |
-| [innodb_background_scrub_data_interval](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_interval) | Problematic ‘background scrubbing’ code removed. |
-| [innodb_background_scrub_data_compressed](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_compressed) | Problematic ‘background scrubbing’ code removed. |
-| [innodb_background_scrub_data_uncompressed](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_uncompressed) | Problematic ‘background scrubbing’ code removed. |
-| [innodb_buffer_pool_instances](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances) | Having more than one buffer pool is no longer necessary. |
-| [innodb_commit_concurrency](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_commit_concurrency) | No need for thread throttling any more. |
-| [innodb_concurrency_tickets](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_concurrency_tickets) | No need for thread throttling any more. |
-| [innodb_log_files_in_group](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_files_in_group) | Redo log was unnecessarily split into multiple files. Limited to 1 from [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md). |
-| [innodb_log_optimize_ddl](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl) | Prohibited optimizations. |
-| [innodb_page_cleaners](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_cleaners) | Having more than one page cleaner task no longer necessary. |
-| [innodb_replication_delay](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_replication_delay) | No need for thread throttling any more. |
-| [innodb_scrub_log](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log) | Never really worked as intended, redo log format is being redone. |
-| [innodb_scrub_log_speed](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_speed) | Never really worked as intended, redo log format is being redone. |
-| [innodb_thread_concurrency](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency) | No need for thread throttling any more. |
-| [innodb_thread_sleep_delay](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_thread_sleep_delay) | No need for thread throttling any more. |
-| [innodb_undo_logs](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs) | It always makes sense to use the maximum number of rollback segments. |
+| [innodb_adaptive_max_sleep_delay](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay) | No need for thread throttling any more. |
+| [innodb_background_scrub_data_check_interval](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_check_interval) | Problematic ‘background scrubbing’ code removed. |
+| [innodb_background_scrub_data_interval](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_interval) | Problematic ‘background scrubbing’ code removed. |
+| [innodb_background_scrub_data_compressed](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_compressed) | Problematic ‘background scrubbing’ code removed. |
+| [innodb_background_scrub_data_uncompressed](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_uncompressed) | Problematic ‘background scrubbing’ code removed. |
+| [innodb_buffer_pool_instances](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances) | Having more than one buffer pool is no longer necessary. |
+| [innodb_commit_concurrency](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_commit_concurrency) | No need for thread throttling any more. |
+| [innodb_concurrency_tickets](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_concurrency_tickets) | No need for thread throttling any more. |
+| [innodb_log_files_in_group](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_files_in_group) | Redo log was unnecessarily split into multiple files. Limited to 1 from [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md). |
+| [innodb_log_optimize_ddl](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl) | Prohibited optimizations. |
+| [innodb_page_cleaners](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_page_cleaners) | Having more than one page cleaner task no longer necessary. |
+| [innodb_replication_delay](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_replication_delay) | No need for thread throttling any more. |
+| [innodb_scrub_log](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log) | Never really worked as intended, redo log format is being redone. |
+| [innodb_scrub_log_speed](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_speed) | Never really worked as intended, redo log format is being redone. |
+| [innodb_thread_concurrency](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency) | No need for thread throttling any more. |
+| [innodb_thread_sleep_delay](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_thread_sleep_delay) | No need for thread throttling any more. |
+| [innodb_undo_logs](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs) | It always makes sense to use the maximum number of rollback segments. |
 | [large_page_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#large_page_size) | Unused since multiple page size support was added. |
 
 
@@ -156,7 +156,7 @@ The following options have been deprecated. They have not yet been removed, but 
 You might consider using the following major new features in [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md):
 
 
-* The [S3 storage engine](../../../reference/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md) allows one to archive MariaDB tables in Amazon S3, or any third-party public or private cloud that implements S3 API.
+* The [S3 storage engine](../../../ref/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md) allows one to archive MariaDB tables in Amazon S3, or any third-party public or private cloud that implements S3 API.
 * [ColumnStore](../../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md) columnar storage engine.
 * See also [System Variables Added in MariaDB 10.5](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-10-5.md).
 

@@ -26,7 +26,7 @@ First one needs to take down the original primary in such a way that the replica
 has all information on the primary.
 
 
-If you are using [Semisynchronous Replication](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md) you can just stop the server with the [SHUTDOWN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md) command as the replicas should be automatically up to date.
+If you are using [Semisynchronous Replication](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md) you can just stop the server with the [SHUTDOWN](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md) command as the replicas should be automatically up to date.
 
 
 If you are using [MariaDB MaxScale proxy](../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md), then you [can use MaxScale](https://mariadb.com/resources/blog/mariadb-maxscale-2-2-introducing-failover-switchover-and-automatic-rejoin) to handle the whole process of taking down the primary and replacing it with one of the replicas.
@@ -92,7 +92,7 @@ primaries. What is important is that all the sequences that are on the
 primary is also on the replica.
 
 
-When replica is up to date, you can then take the **PRIMARY** down. This should be on the same connection where you executed [FLUSH TABLES WITH READ LOCK](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md).
+When replica is up to date, you can then take the **PRIMARY** down. This should be on the same connection where you executed [FLUSH TABLES WITH READ LOCK](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md).
 
 
 ```
@@ -104,7 +104,7 @@ SHUTDOWN;
 
 Stop all old connections to the old primary(s) and reset **read only
 mode**, if you had it enabled. You also want to save the values of
-[SHOW MASTER STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md) and `gtid_binlog_pos`, as
+[SHOW MASTER STATUS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md) and `gtid_binlog_pos`, as
 you may need these to setup new replicas.
 
 
@@ -177,7 +177,7 @@ to the new primary.
 ### See Also
 
 
-* [CHANGE MASTER TO](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command
+* [CHANGE MASTER TO](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command
 * [MaxScale Blog about using Switchover to swap a primary and replica](https://mariadb.com/resources/blog/mariadb-maxscale-2-2-introducing-failover-switchover-and-automatic-rejoin)
 * [Percona blog about how to upgrade replica to primary](https://www.percona.com/blog/2015/12/01/upgrade-master-server-minimal-downtime)
 

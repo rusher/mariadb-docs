@@ -354,7 +354,7 @@ The process to install MariaDB Galera Cluster with the MariaDB `apt-get` reposit
 Galera Cluster support is included in the standard MariaDB Server packages, so you will need to install the `mariadb-server` package, as you normally would.
 
 
-You also need to install the `galera-4` package to obtain the [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 wsrep provider library.
+You also need to install the `galera-4` package to obtain the [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 wsrep provider library.
 
 
 To install MariaDB Galera Cluster, first you would have to update the package cache by executing the following command:
@@ -384,7 +384,7 @@ sudo apt-get install galera-arbitrator-4
 <</product>>
 
 
-See [MariaDB Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) for more information on MariaDB Galera Cluster.
+See [MariaDB Galera Cluster](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) for more information on MariaDB Galera Cluster.
 
 
 #### Installing MariaDB Clients and Client Libraries with APT
@@ -430,7 +430,7 @@ sudo apt-get install mariadb-backup
 Some [plugins](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md) may also need to be installed.
 
 
-For example, to install the `[cracklib_password_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md)` password validation plugin, first you would have to update the package cache by executing the following command:
+For example, to install the `[cracklib_password_check](../../../ref/plugins/password-validation-plugins/cracklib-password-check-plugin.md)` password validation plugin, first you would have to update the package cache by executing the following command:
 
 
 ```
@@ -509,7 +509,7 @@ sudo dpkg --install ./mariadb-server*.deb \
 After the installation is complete, you can [start MariaDB](https://mariadb.com/kb/en/).
 
 
-If you are using [MariaDB Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), then keep in mind that the first node will have to be [bootstrapped](../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster).
+If you are using [MariaDB Galera Cluster](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), then keep in mind that the first node will have to be [bootstrapped](../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster).
 
 
 ## Available DEB Packages
@@ -528,7 +528,7 @@ For MariaDB, the following DEBs are available:
 | Package Name | Description |
 | --- | --- |
 | Package Name | Description |
-| galera-4 | The WSREP provider for [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4. |
+| galera-4 | The WSREP provider for [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4. |
 | libmariadb3 | Dynamic client libraries. |
 | libmariadb-dev | Development headers and static libraries. |
 | libmariadbclient18 | Virtual package to satisfy external depends |
@@ -538,12 +538,12 @@ For MariaDB, the following DEBs are available:
 | mariadb-client-core | Core client tools |
 | mariadb-common | Character set files and /etc/my.cnf |
 | mariadb-plugin-connect | The [CONNECT](../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) storage engine. |
-| mariadb-plugin-cracklib-password-check | The [cracklib_password_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin. |
-| mariadb-plugin-gssapi-client | The client-side component of the [gssapi](../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md) authentication plugin. |
-| mariadb-plugin-gssapi-server | The server-side component of the [gssapi](../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md) authentication plugin. |
-| mariadb-plugin-rocksdb | The [MyRocks](../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) storage engine. |
-| mariadb-plugin-spider | The [SPIDER](../../../reference/storage-engines/spider/spider-functions/spider_copy_tables.md) storage engine. |
-| mariadb-plugin-tokudb | The [TokuDB](../../../reference/storage-engines/tokudb/tokudb-resources.md) storage engine. |
+| mariadb-plugin-cracklib-password-check | The [cracklib_password_check](../../../ref/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin. |
+| mariadb-plugin-gssapi-client | The client-side component of the [gssapi](../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md) authentication plugin. |
+| mariadb-plugin-gssapi-server | The server-side component of the [gssapi](../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md) authentication plugin. |
+| mariadb-plugin-rocksdb | The [MyRocks](../../../ref/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) storage engine. |
+| mariadb-plugin-spider | The [SPIDER](../../../ref/storage-engines/spider/spider-functions/spider_copy_tables.md) storage engine. |
+| mariadb-plugin-tokudb | The [TokuDB](../../../ref/storage-engines/tokudb/tokudb-resources.md) storage engine. |
 | mariadb-server | The server and server tools, like [myisamchk](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) and [mariadb-hotcopy](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-hotcopy.md) are here. |
 | mariadb-server-core | The core server. |
 | mariadb-test | mysql-client-test executable, and mysql-test framework with the tests. |

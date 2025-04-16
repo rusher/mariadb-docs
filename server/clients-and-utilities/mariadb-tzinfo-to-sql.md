@@ -1,7 +1,7 @@
 
 # mariadb-tzinfo-to-sql
 
-`mariadb-tzinfo-to-sql` is a utility used to load [time zones](../reference/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md) on systems that have a zoneinfo database to load the time zone tables ([time_zone](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone-table.md), [time_zone_leap_second](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_leap_second-table.md), [time_zone_name](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_name-table.md), [time_zone_transition](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_transition-table.md) and [time_zone_transition_type](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_transition_type-table.md)) into the mysql database.
+`mariadb-tzinfo-to-sql` is a utility used to load [time zones](../ref/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md) on systems that have a zoneinfo database to load the time zone tables ([time_zone](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone-table.md), [time_zone_leap_second](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_leap_second-table.md), [time_zone_name](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_name-table.md), [time_zone_transition](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_transition-table.md) and [time_zone_transition_type](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_transition_type-table.md)) into the mysql database.
 
 
 Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysql_tzinfo_to_sql`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
@@ -36,7 +36,7 @@ truncate table mysql.time_zone_transition_type;
 truncate table mysql.time_zone_leap_second;
 ```
 
-The old timezone values will be in effect until the server is [restarted](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md).
+The old timezone values will be in effect until the server is [restarted](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md).
 
 
 ## Examples

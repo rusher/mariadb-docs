@@ -14,24 +14,24 @@ During the backup, any server options relevant to Mariabackup are written to the
 ## `ib_logfile0`
 
 
-In [MariaDB 10.2.10](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10210-release-notes.md) and later, Mariabackup creates an empty [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) file called `ib_logfile0` as part of the `[--prepare](mariabackup-options.md#-prepare)` stage. This file has 3 roles:
+In [MariaDB 10.2.10](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10210-release-notes.md) and later, Mariabackup creates an empty [InnoDB redo log](../../../ref/storage-engines/innodb/innodb-redo-log.md) file called `ib_logfile0` as part of the `[--prepare](mariabackup-options.md#-prepare)` stage. This file has 3 roles:
 
 
-1. In the source server, `ib_logfile0` is the first (and possibly the only) [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) file.
-1. In the non-prepared backup, `ib_logfile0` contains all of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) copied during the backup. Previous versions of Mariabackup would use a file called `[xtrabackup_logfile](#xtrabackup_logfile)` for this.
-1. During the `[--prepare](mariabackup-options.md#-prepare)` stage, `ib_logfile0` would previously be deleted. Now during the `--prepare` stage, `ib_logfile0` is initialized as an empty [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) file. That way, if the backup is manually restored, any pre-existing [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) files would get overwritten by the empty one. This helps to prevent certain kinds of known issues. For example, see [Mariabackup Overview: Manual Restore with Pre-existing InnoDB Redo Log files](mariabackup-overview.md#manual-restore-with-pre-existing-innodb-redo-log-files).
+1. In the source server, `ib_logfile0` is the first (and possibly the only) [InnoDB redo log](../../../ref/storage-engines/innodb/innodb-redo-log.md) file.
+1. In the non-prepared backup, `ib_logfile0` contains all of the [InnoDB redo log](../../../ref/storage-engines/innodb/innodb-redo-log.md) copied during the backup. Previous versions of Mariabackup would use a file called `[xtrabackup_logfile](#xtrabackup_logfile)` for this.
+1. During the `[--prepare](mariabackup-options.md#-prepare)` stage, `ib_logfile0` would previously be deleted. Now during the `--prepare` stage, `ib_logfile0` is initialized as an empty [InnoDB redo log](../../../ref/storage-engines/innodb/innodb-redo-log.md) file. That way, if the backup is manually restored, any pre-existing [InnoDB redo log](../../../ref/storage-engines/innodb/innodb-redo-log.md) files would get overwritten by the empty one. This helps to prevent certain kinds of known issues. For example, see [Mariabackup Overview: Manual Restore with Pre-existing InnoDB Redo Log files](mariabackup-overview.md#manual-restore-with-pre-existing-innodb-redo-log-files).
 
 
 ## `xtrabackup_logfile`
 
 
-In [MariaDB 10.2.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1029-release-notes.md) and before, Mariabackup creates `xtrabackup_logfile` to store the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md), In later versions, `[ib_logfile0](#ib_logfile0)` is created instead.
+In [MariaDB 10.2.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1029-release-notes.md) and before, Mariabackup creates `xtrabackup_logfile` to store the [InnoDB redo log](../../../ref/storage-engines/innodb/innodb-redo-log.md), In later versions, `[ib_logfile0](#ib_logfile0)` is created instead.
 
 
 ## `xtrabackup_binlog_info`
 
 
-This file stores the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file name and position that corresponds to the backup.
+This file stores the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file name and position that corresponds to the backup.
 
 
 This file also stores the value of the `[gtid_current_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_current_pos)` system variable that correspond to the backup.
@@ -100,7 +100,7 @@ If the backup has already been prepared, then `backup_type` is set to `log-appli
 If `backup_type` is `full-backuped`, then `from_lsn` has the value of `0`.
 
 
-If `backup_type` is `incremental`, then `from_lsn` has the value of the [log sequence number (LSN)](../../../reference/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) at which the backup started reading from the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md). This is internally used by Mariabackup when preparing incremental backups.
+If `backup_type` is `incremental`, then `from_lsn` has the value of the [log sequence number (LSN)](../../../ref/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) at which the backup started reading from the [InnoDB redo log](../../../ref/storage-engines/innodb/innodb-redo-log.md). This is internally used by Mariabackup when preparing incremental backups.
 
 
 This value can be manually set during an [incremental backup](incremental-backup-and-restore-with-mariabackup.md) with the `[--incremental-lsn](mariabackup-options.md#-incremental-lsn)` option. However, it is generally better to let Mariabackup figure out the `from_lsn` automatically by specifying a parent backup with the `[--incremental-basedir](mariabackup-options.md#-incremental-basedir)` option.
@@ -109,13 +109,13 @@ This value can be manually set during an [incremental backup](incremental-backup
 ### `to_lsn`
 
 
-`to_lsn` has the value of the [log sequence number (LSN)](../../../reference/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) of the last checkpoint in the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md). This is internally used by Mariabackup when preparing incremental backups.
+`to_lsn` has the value of the [log sequence number (LSN)](../../../ref/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) of the last checkpoint in the [InnoDB redo log](../../../ref/storage-engines/innodb/innodb-redo-log.md). This is internally used by Mariabackup when preparing incremental backups.
 
 
 ### `last_lsn`
 
 
-`last_lsn` has the value of the last [log sequence number (LSN)](../../../reference/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) read from the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md). This is internally used by Mariabackup when preparing incremental backups.
+`last_lsn` has the value of the last [log sequence number (LSN)](../../../ref/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) read from the [InnoDB redo log](../../../ref/storage-engines/innodb/innodb-redo-log.md). This is internally used by Mariabackup when preparing incremental backups.
 
 
 ## `xtrabackup_info`
@@ -190,7 +190,7 @@ The amount of time that Mariabackup held its locks.
 ### `binlog_pos`
 
 
-This field stores the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file name and position that corresponds to the backup.
+This field stores the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file name and position that corresponds to the backup.
 
 
 This field also stores the value of the `[gtid_current_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_current_pos)` system variable that correspond to the backup.
@@ -208,7 +208,7 @@ This is identical to `from_lsn` in `[xtrabackup_checkpoints](#xtrabackup_checkpo
 If the backup is a [full backup](full-backup-and-restore-with-mariabackup.md), then `innodb_from_lsn` has the value of `0`.
 
 
-If the backup is an [incremental backup](incremental-backup-and-restore-with-mariabackup.md), then `innodb_from_lsn` has the value of the [log sequence number (LSN)](../../../reference/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) at which the backup started reading from the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md).
+If the backup is an [incremental backup](incremental-backup-and-restore-with-mariabackup.md), then `innodb_from_lsn` has the value of the [log sequence number (LSN)](../../../ref/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) at which the backup started reading from the [InnoDB redo log](../../../ref/storage-engines/innodb/innodb-redo-log.md).
 
 
 ### `innodb_to_lsn`
@@ -217,7 +217,7 @@ If the backup is an [incremental backup](incremental-backup-and-restore-with-mar
 This is identical to `to_lsn` in `[xtrabackup_checkpoints](#xtrabackup_checkpoints)`.
 
 
-`innodb_to_lsn` has the value of the [log sequence number (LSN)](../../../reference/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) of the last checkpoint in the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md).
+`innodb_to_lsn` has the value of the [log sequence number (LSN)](../../../ref/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) of the last checkpoint in the [InnoDB redo log](../../../ref/storage-engines/innodb/innodb-redo-log.md).
 
 
 ### `partial`
@@ -262,16 +262,16 @@ Otherwise, this value will be `N`.
 ## `xtrabackup_slave_info`
 
 
-If the `[--slave-info](mariabackup-options.md#-slave-info)` option is provided, then this file contains the `[CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md)` command that can be used to set up a new server as a slave of the original server's master after the backup has been restored.
+If the `[--slave-info](mariabackup-options.md#-slave-info)` option is provided, then this file contains the `[CHANGE MASTER](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md)` command that can be used to set up a new server as a slave of the original server's master after the backup has been restored.
 
 
-Mariabackup does **not** check if [GTIDs](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) are being used in replication. It takes a shortcut and assumes that if the `[gtid_slave_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_slave_pos)` system variable is non-empty, then it writes the `[CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md)` command with the `[MASTER_USE_GTID](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid)` option set to `slave_pos`. Otherwise, it writes the `[CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md)` command with the `[MASTER_LOG_FILE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_file)` and `[MASTER_LOG_POS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_pos)` options using the master's [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position. See [MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264) for more information.
+Mariabackup does **not** check if [GTIDs](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) are being used in replication. It takes a shortcut and assumes that if the `[gtid_slave_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_slave_pos)` system variable is non-empty, then it writes the `[CHANGE MASTER](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md)` command with the `[MASTER_USE_GTID](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid)` option set to `slave_pos`. Otherwise, it writes the `[CHANGE MASTER](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md)` command with the `[MASTER_LOG_FILE](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_file)` and `[MASTER_LOG_POS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_pos)` options using the master's [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position. See [MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264) for more information.
 
 
 ## `xtrabackup_galera_info`
 
 
-If the `[--galera-info](mariabackup-options.md#-galera-info)` option is provided, then this file contains information about a [Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) node's state.
+If the `[--galera-info](mariabackup-options.md#-galera-info)` option is provided, then this file contains information about a [Galera Cluster](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) node's state.
 
 
 The file contains the values of the `[wsrep_local_state_uuid](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_local_state_uuid)` and `[wsrep_last_committed](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_last_committed)` status variables.
@@ -306,13 +306,13 @@ If the backup is an [incremental backup](incremental-backup-and-restore-with-mar
 ### `page_size`
 
 
-This field contains either the value of `[innodb_page_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_size)` or the value of the `[KEY_BLOCK_SIZE](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#key_block_size)` table option for the table if the `[ROW_FORMAT](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format)` table option for the table is set to `[COMPRESSED](../../../reference/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md)`.
+This field contains either the value of `[innodb_page_size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_page_size)` or the value of the `[KEY_BLOCK_SIZE](../../../ref/sql-statements-and-structure/vectors/create-table-with-vectors.md#key_block_size)` table option for the table if the `[ROW_FORMAT](../../../ref/sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format)` table option for the table is set to `[COMPRESSED](../../../ref/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md)`.
 
 
 ### `zip_size`
 
 
-If the `[ROW_FORMAT](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format)` table option for this table is set to `[COMPRESSED](../../../reference/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md)`, then this field contains the value of the compressed page size.
+If the `[ROW_FORMAT](../../../ref/sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format)` table option for this table is set to `[COMPRESSED](../../../ref/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md)`, then this field contains the value of the compressed page size.
 
 
 ### `space_id`

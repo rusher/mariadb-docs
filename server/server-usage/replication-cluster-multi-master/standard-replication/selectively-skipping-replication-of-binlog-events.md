@@ -6,7 +6,7 @@ The terms *master* and *slave* have historically been used in replication, and M
 
 
 
-Normally, all changes that are logged as events in the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) are also
+Normally, all changes that are logged as events in the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) are also
 replicated to all replicas (though still subject to filtering by
 [replicate-do-db](replication-and-binary-log-system-variables.md#replicate_do_db), [replicate-ignore-db](replication-and-binary-log-system-variables.md#replicate_ignore_db),
 and similar options). However, sometimes it may be desirable to have certain
@@ -26,7 +26,7 @@ This is possible with the following [system variables](../optimization-and-tunin
 ## Primary Session Variable: skip_replication
 
 
-When the [skip_replication](replication-and-binary-log-system-variables.md) variable is set to true, changes are logged into the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) with the flag `@@skip_replication` set. Such events will not be replicated by replicas that run with
+When the [skip_replication](replication-and-binary-log-system-variables.md) variable is set to true, changes are logged into the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) with the flag `@@skip_replication` set. Such events will not be replicated by replicas that run with
 `--replicate-events-marked-for-skip` set different from its default of `REPLICATE`.
 
 
@@ -41,7 +41,7 @@ When the [skip_replication](replication-and-binary-log-system-variables.md) vari
 
 
 
-The `skip_replication` option only has effect if [binary logging](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is enabled
+The `skip_replication` option only has effect if [binary logging](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is enabled
 and [sql_log_bin](replication-and-binary-log-system-variables.md) is true.
 
 
@@ -112,7 +112,7 @@ replicated.
 ## skip_replication and sql_log_bin
 
 
-`[@@sql_log_bin](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md)` and `@@skip_replication` are somewhat
+`[@@sql_log_bin](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md)` and `@@skip_replication` are somewhat
 related, as they can both be used to prevent a change on the primary from being
 replicated to the replica. The difference is that with `@@skip_replication`,
 changes are still written into the binlog, and replication of the events is
@@ -139,5 +139,5 @@ preserve the flag in the events logged into the binlog on the replica.
 ## See Also
 
 
-* [Using SQL_SLAVE_SKIP_COUNTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/set-global-sql_slave_skip_counter.md) - How to skip a number of events on the replica
+* [Using SQL_SLAVE_SKIP_COUNTER](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/set-global-sql_slave_skip_counter.md) - How to skip a number of events on the replica
 

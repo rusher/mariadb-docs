@@ -9,7 +9,7 @@ This is a list of [system variables](../../server-system-variables.md) that have
 | --- | --- |
 | Variable | Added |
 | [binlog_alter_two_phase](../../../../standard-replication/replication-and-binary-log-system-variables.md#binlog_alter_two_phase) | [MariaDB 10.8.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1081-release-notes.md) |
-| [innodb_log_file_buffering](../../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_buffering) | [MariaDB 10.8.4](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1084-release-notes.md) |
+| [innodb_log_file_buffering](../../../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_buffering) | [MariaDB 10.8.4](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1084-release-notes.md) |
 
 
 

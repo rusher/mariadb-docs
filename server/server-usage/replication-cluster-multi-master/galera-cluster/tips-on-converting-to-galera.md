@@ -224,7 +224,7 @@ Fast DDL operations can usually be executed in TOI mode:
 * DDL operations that only support the `COPY` algorithm are usually very slow.
 
 
-For a list of which operations support which algorithms, see [InnoDB Online DDL](../../../reference/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md).
+For a list of which operations support which algorithms, see [InnoDB Online DDL](../../../ref/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md).
 
 
 If you need to use RSU mode, then do the following separately for each node:
@@ -264,8 +264,8 @@ You can 'simulate' Master + Slaves by having clients write only to one node.
 * [binlog-do](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)/[ignore-db](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) - Do not use.
 * [binlog_format](../standard-replication/replication-and-binary-log-system-variables.md) - ROW is required for Galera.
 * [innodb_autoinc_lock_mode](../standard-replication/replication-and-binary-log-system-variables.md) - 2
-* [innodb_doublewrite](../../../reference/storage-engines/innodb/innodb-system-variables.md) - ON: When an IST occurs, want there to be no torn pages? (With FusionIO or other drives that guarantee atomicity, OFF is better.)
-* [innodb_flush_log_at_trx_commit](../../../reference/storage-engines/innodb/innodb-system-variables.md) - 2 or 0. IST or SST will recover from loss if you have 1.
+* [innodb_doublewrite](../../../ref/storage-engines/innodb/innodb-system-variables.md) - ON: When an IST occurs, want there to be no torn pages? (With FusionIO or other drives that guarantee atomicity, OFF is better.)
+* [innodb_flush_log_at_trx_commit](../../../ref/storage-engines/innodb/innodb-system-variables.md) - 2 or 0. IST or SST will recover from loss if you have 1.
 * [query_cache_size](../optimization-and-tuning/system-variables/server-system-variables.md#query_cache_size) - 0
 * [query_cache_type](../optimization-and-tuning/system-variables/server-system-variables.md#query_cache_type) - 0: The Query cache cannot be used in a Galera context.
 * [wsrep_auto_increment_control](galera-cluster-system-variables.md#wsrep_auto_increment_control) - Normally want ON

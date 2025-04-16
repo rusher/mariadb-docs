@@ -1,10 +1,10 @@
 
 # ROTATE_EVENT
 
-When a [binary log](../../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file exceeds the configured size limit, a ROTATE_EVENT is written at the end of the file, pointing to the next file in the sequence.
+When a [binary log](../../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file exceeds the configured size limit, a ROTATE_EVENT is written at the end of the file, pointing to the next file in the sequence.
 
 
-ROTATE_EVENT is generated locally and written to the binary log on the master and it's also written when a [FLUSH LOGS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement occurs on the master server.
+ROTATE_EVENT is generated locally and written to the binary log on the master and it's also written when a [FLUSH LOGS](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement occurs on the master server.
 
 
 The ROTATE_EVENT is sent to the connected slave servers.

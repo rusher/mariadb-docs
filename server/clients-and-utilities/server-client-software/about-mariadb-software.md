@@ -1,7 +1,7 @@
 
 # About MariaDB Software
 
-[MariaDB](../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md) is an open-source, multi-threaded, relational database management system, released under the [GNU Public License](../../reference/faq/licensing-questions/mariadb-licenses.md) (GPL). MariaDB's lead developer is Michael "Monty" Widenius, who is one of the founders of MySQL AB.
+[MariaDB](../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md) is an open-source, multi-threaded, relational database management system, released under the [GNU Public License](../../ref/faq/licensing-questions/mariadb-licenses.md) (GPL). MariaDB's lead developer is Michael "Monty" Widenius, who is one of the founders of MySQL AB.
 
 
 There are millions of installations of MariaDB worldwide, and thousands of downloads a day of MariaDB installation software. The success of MariaDB as a leading database is due not only to open source, but also its reliability, performance, and features.
@@ -79,5 +79,5 @@ It's highly likely that, for any job to which you apply or take as a database de
 * [MariaDB versus MySQL - Features](../../../release-notes/mariadb-community-server/compatibility-and-differences/mariadb-vs-mysql-features.md)
 * [MariaDB versus MySQL - Compatibility](../../../release-notes/mariadb-community-server/compatibility-and-differences/mariadb-vs-mysql-compatibility.md)
 * [What is in the different MariaDB releases](/kb/en/what-is-in-the-different-mariadb-releases/)
-* [MariaDB Release Notes](../../reference/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/README.md)
+* [MariaDB Release Notes](../../ref/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/README.md)
 

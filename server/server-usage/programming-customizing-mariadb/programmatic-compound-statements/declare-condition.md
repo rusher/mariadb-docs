@@ -34,5 +34,5 @@ ERROR 1407 (42000): Bad SQLSTATE: '00000'
 ```
 
 For a list of SQLSTATE values and MariaDB error
-codes, see [MariaDB Error Codes](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md).
+codes, see [MariaDB Error Codes](../../../ref/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md).
 

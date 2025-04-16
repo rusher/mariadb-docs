@@ -26,7 +26,7 @@ END CASE
 ## Description
 
 
-The text on this page describes the `CASE` statement for [stored programs](../stored-routines/README.md). See the [CASE OPERATOR](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/case-operator.md) for details on the CASE operator outside of [stored programs](../stored-routines/README.md).
+The text on this page describes the `CASE` statement for [stored programs](../stored-routines/README.md). See the [CASE OPERATOR](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/case-operator.md) for details on the CASE operator outside of [stored programs](../stored-routines/README.md).
 
 
 The `CASE` statement for [stored programs](../stored-routines/README.md) implements a complex conditional
@@ -75,7 +75,7 @@ and is not otherwise significant. See [Delimiters in the mariadb client](../../.
 
 **Note:** The syntax of the `CASE` statement used inside stored programs
 differs slightly from that of the SQL CASE expression described in
-[CASE OPERATOR](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/case-operator.md).
+[CASE OPERATOR](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/case-operator.md).
 The `CASE` statement cannot have an `ELSE NULL` clause, and it is
 terminated with `END CASE` instead of `END`.
 
@@ -83,6 +83,6 @@ terminated with `END CASE` instead of `END`.
 ## See Also
 
 
-* The [CASE operator](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/case-operator.md), which differs from the CASE statement described above.
-* The [IF statement](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/ifnull.md).
+* The [CASE operator](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/case-operator.md), which differs from the CASE statement described above.
+* The [IF statement](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/ifnull.md).
 

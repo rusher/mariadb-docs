@@ -17,8 +17,8 @@ This page has a list of SQL Server features that are not supported in MariaDB. T
 * In MariaDB, indexes are always ascending. Defining them as `ASC` or `DESC` has no effect.
 
   * For single-column indexes, the performance difference between an `ORDER BY ... ASC` and `DESC` is negligible.
-  * For multiple-column indexes, an index may be unusable for certain queries because `DESC` is not supported. In some cases, a [generated column](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) can be used to invert the order of an index (for example, the expression `0 - price` can be indexed to index the prices in a descending order).
-* The [WITH](../../../../reference/sql-statements-and-structure/geographic-geometric-features/geometry-relations/within.md) syntax is currently only supported for the `SELECT` statement.
+  * For multiple-column indexes, an index may be unusable for certain queries because `DESC` is not supported. In some cases, a [generated column](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) can be used to invert the order of an index (for example, the expression `0 - price` can be indexed to index the prices in a descending order).
+* The [WITH](../../../../ref/sql-statements-and-structure/geographic-geometric-features/geometry-relations/within.md) syntax is currently only supported for the `SELECT` statement.
 * Filtered indexes (`CREATE INDEX ... WHERE`).
 * Autonomous transactions.
 * User-defined types.
@@ -51,7 +51,7 @@ This page has a list of SQL Server features that are not supported in MariaDB. T
 
 
 * Native data masking
-* PolyBase (however, [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) supports accessing Amazon S3 via the [S3 storage engine](../../../../reference/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md) and several DBMSs via [CONNECT](../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md))
+* PolyBase (however, [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) supports accessing Amazon S3 via the [S3 storage engine](../../../../ref/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md) and several DBMSs via [CONNECT](../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md))
 * R and Python services
 * ColumnStore indexes. MariaDB has a storage engine called [ColumnStore](../../../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md), but this is a completely different feature.
 

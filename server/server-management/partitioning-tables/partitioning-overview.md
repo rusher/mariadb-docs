@@ -42,13 +42,13 @@ MariaDB supports the following partitioning types:
 * [LINEAR HASH](partitioning-types/linear-hash-partitioning-type.md)
 * [KEY](partitioning-types/key-partitioning-type.md)
 * [LINEAR KEY](partitioning-types/linear-key-partitioning-type.md)
-* [SYSTEM_TIME](../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md)
+* [SYSTEM_TIME](../../ref/sql-statements-and-structure/temporal-tables/system-versioned-tables.md)
 
 
 ## Enabling Partitioning
 
 
-By default, MariaDB permits partitioning. You can determine this by using the [SHOW PLUGINS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-plugins-soname.md) statement, for example:
+By default, MariaDB permits partitioning. You can determine this by using the [SHOW PLUGINS](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-plugins-soname.md) statement, for example:
 
 
 ```
@@ -83,10 +83,10 @@ and you will not be able to create partitions.
 ## Using Partitions
 
 
-It is possible to create a new partitioned table using [CREATE TABLE](../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md).
+It is possible to create a new partitioned table using [CREATE TABLE](../../ref/sql-statements-and-structure/vectors/create-table-with-vectors.md).
 
 
-[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) allows one to:
+[ALTER TABLE](../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) allows one to:
 
 
 * Partition an existing table;
@@ -103,7 +103,7 @@ It is possible to create a new partitioned table using [CREATE TABLE](../../refe
 ADD PARTITION [IF NOT EXISTS] (partition_definition)
 ```
 
-`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... ADD PARTITION` can be used to add partitions to an existing table:
+`[ALTER TABLE](../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... ADD PARTITION` can be used to add partitions to an existing table:
 
 
 ```
@@ -145,7 +145,7 @@ You can work around this by using REORGANIZE PARTITION to split the partition in
 COALESCE PARTITION number
 ```
 
-`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... COALESCE PARTITION` is used to reduce the number of HASH or KEY partitions by the specified number. For example, given the following table with 5 partitions:
+`[ALTER TABLE](../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... COALESCE PARTITION` is used to reduce the number of HASH or KEY partitions by the specified number. For example, given the following table with 5 partitions:
 
 
 ```
@@ -171,7 +171,7 @@ ALTER TABLE t1 COALESCE PARTITION 2;
 CONVERT PARTITION partition_name TO TABLE tbl_name
 CONVERT TABLE normal_table TO partition_definition
 ```
-`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... CONVERT PARTITION` can, from [MariaDB 10.7](../../../release-notes/mariadb-community-server/what-is-mariadb-107.md), be used to convert partitions in an existing table to a standalone table:
+`[ALTER TABLE](../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... CONVERT PARTITION` can, from [MariaDB 10.7](../../../release-notes/mariadb-community-server/what-is-mariadb-107.md), be used to convert partitions in an existing table to a standalone table:
 
 ```
 CREATE OR REPLACE TABLE t1 (
@@ -278,7 +278,7 @@ CONVERT TABLE normal_table TO partition_definition [{WITH | WITHOUT} VALIDATION]
 `WITH VALIDATION` will result in the validation being performed, and is the default behaviour.
 
 
-An alternative (and the only method prior to [MariaDB 10.7](../../../release-notes/mariadb-community-server/what-is-mariadb-107.md)) to convert partitions to tables is to use `[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... EXCHANGE PARTITION`. This requires having to manually do the following steps:
+An alternative (and the only method prior to [MariaDB 10.7](../../../release-notes/mariadb-community-server/what-is-mariadb-107.md)) to convert partitions to tables is to use `[ALTER TABLE](../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... EXCHANGE PARTITION`. This requires having to manually do the following steps:
 
 
 * create an empty table with the same structure as the partition
@@ -355,7 +355,7 @@ Create Table: CREATE TABLE `t2` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci
 ```
 
-Similarly, to do the reverse and convert a table into a partition `[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... EXCHANGE PARTITION` can also be used, with the following manual steps required:
+Similarly, to do the reverse and convert a table into a partition `[ALTER TABLE](../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... EXCHANGE PARTITION` can also be used, with the following manual steps required:
 
 
 * create the partition
@@ -402,7 +402,7 @@ Create Table: CREATE TABLE `t1` (
 DROP PARTITION [IF EXISTS] partition_names
 ```
 
-`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... DROP PARTITION` can be used to drop specific partitions (and discard all data within the specified partitions) for [RANGE](partitioning-types/range-partitioning-type.md) and [LIST](partitioning-types/list-partitioning-type.md) partitions. It cannot be used on [HASH](partitioning-types/hash-partitioning-type.md) or [KEY](partitioning-types/key-partitioning-type.md) partitions. To rather remove all partitioning, while leaving the data unaffected, see [Removing Partitioning](#removing-partitioning).
+`[ALTER TABLE](../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... DROP PARTITION` can be used to drop specific partitions (and discard all data within the specified partitions) for [RANGE](partitioning-types/range-partitioning-type.md) and [LIST](partitioning-types/list-partitioning-type.md) partitions. It cannot be used on [HASH](partitioning-types/hash-partitioning-type.md) or [KEY](partitioning-types/key-partitioning-type.md) partitions. To rather remove all partitioning, while leaving the data unaffected, see [Removing Partitioning](#removing-partitioning).
 
 
 ```
@@ -449,7 +449,7 @@ EXCHANGE PARTITION partition_name WITH TABLE tbl_name
 EXCHANGE PARTITION partition_name WITH TABLE tbl_name [{WITH | WITHOUT} VALIDATION]
 ```
 
-`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) t1 EXCHANGE PARTITION p1 WITH TABLE t2` permits one to exchange a partition or subpartition with another table.
+`[ALTER TABLE](../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) t1 EXCHANGE PARTITION p1 WITH TABLE t2` permits one to exchange a partition or subpartition with another table.
 
 
 ```
@@ -564,7 +564,7 @@ Query OK, 0 rows affected (0.048 sec)
 REMOVE PARTITIONING
 ```
 
-`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... REMOVE PARTITIONING` will remove all partitioning from the table, while leaving the data unaffected. To rather drop a particular partition (and discard all of its data), see [Dropping Partitions](#dropping-partitions).
+`[ALTER TABLE](../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... REMOVE PARTITIONING` will remove all partitioning from the table, while leaving the data unaffected. To rather drop a particular partition (and discard all of its data), see [Dropping Partitions](#dropping-partitions).
 
 
 ```
@@ -712,7 +712,7 @@ ALTER TABLE t1 REORGANIZE PARTITION p3 INTO (
 TRUNCATE PARTITION partition_names
 ```
 
-`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... TRUNCATE PARTITION` will remove all data from the specified partition/s, leaving the table and partition structure unchanged. Partitions don't need to be contiguous.
+`[ALTER TABLE](../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... TRUNCATE PARTITION` will remove all data from the specified partition/s, leaving the table and partition structure unchanged. Partitions don't need to be contiguous.
 
 
 ```
@@ -754,7 +754,7 @@ SELECT * FROM t1;
 ### Analyzing Partitions
 
 
-Similar to [ANALYZE TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md), key distributions for specific partitions can also be analyzed and stored, for example:
+Similar to [ANALYZE TABLE](../../ref/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md), key distributions for specific partitions can also be analyzed and stored, for example:
 
 
 ```
@@ -773,7 +773,7 @@ ALTER TABLE t1 ANALYZE PARTITION p0,p1,p3;
 CHECK PARTITION {ALL | partition [,partition2 ...]}
 ```
 
-Similar to [CHECK TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md), specific partitions can be checked for errors, for example:
+Similar to [CHECK TABLE](../../ref/sql-statements-and-structure/sql-statements/table-statements/check-table.md), specific partitions can be checked for errors, for example:
 
 
 ```
@@ -795,7 +795,7 @@ The `ALL` keyword can be used in place of the list of partition names, and the c
 REPAIR PARTITION {ALL | partition [,partition2 ...]} [QUICK] [EXTENDED]
 ```
 
-Similar to [REPAIR TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md), specific partitions can be repaired, for example:
+Similar to [REPAIR TABLE](../../ref/sql-statements-and-structure/sql-statements/table-statements/repair-table.md), specific partitions can be repaired, for example:
 
 
 ```
@@ -807,7 +807,7 @@ ALTER TABLE t1 REPAIR PARTITION p0,p3;
 +---------+--------+----------+----------+
 ```
 
-As with [REPAIR TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md), the `QUICK` and `EXTENDED` options are available. However, the `USE_FRM` option cannot be used with this statement on a partitioned table.
+As with [REPAIR TABLE](../../ref/sql-statements-and-structure/sql-statements/table-statements/repair-table.md), the `QUICK` and `EXTENDED` options are available. However, the `USE_FRM` option cannot be used with this statement on a partitioned table.
 
 
 `REPAIR PARTITION` will fail if there are duplicate key errors. `ALTER IGNORE TABLE ... REPAIR PARTITION` can be used in this case.
@@ -847,14 +847,14 @@ The `ALL` keyword can be used in place of the list of partition names, and the o
 Some MariaDB [storage engines](../../../general-resources/learning-and-training/video-presentations-and-screencasts/storage-engines-and-plugins-videos.md) allow more interesting uses for partitioning.
 
 
-The [MERGE](../../reference/storage-engines/merge.md) storage engine allows one to:
+The [MERGE](../../ref/storage-engines/merge.md) storage engine allows one to:
 
 
-* Treat a set of identical defined [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables as one.
+* Treat a set of identical defined [MyISAM](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables as one.
 * A MyISAM table can be in many different MERGE sets and also used separately.
 
 
-[SPIDER](../../reference/storage-engines/spider/spider-functions/spider_copy_tables.md) allows one to:
+[SPIDER](../../ref/storage-engines/spider/spider-functions/spider_copy_tables.md) allows one to:
 
 
 * Move partitions of the same table on different servers. In this way, the workload can be distributed on more physical or virtual machines (data sharding).
@@ -868,13 +868,13 @@ The [MERGE](../../reference/storage-engines/merge.md) storage engine allows one 
 * Build an indexable, writeable table on several data files. These files can be in different formats.
 
 
-See also: [Using CONNECT - Partitioning and Sharding](../../reference/storage-engines/connect/using-connect/using-connect-partitioning-and-sharding.md)
+See also: [Using CONNECT - Partitioning and Sharding](../../ref/storage-engines/connect/using-connect/using-connect-partitioning-and-sharding.md)
 
 
 ## See Also
 
 
-* [ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)
-* [INFORMATION_SCHEMA.PARTITIONS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) contains information about existing partitions.
+* [ALTER TABLE](../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)
+* [INFORMATION_SCHEMA.PARTITIONS](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) contains information about existing partitions.
 * [Partition Maintenance](partition-maintenance.md) for suggestions on using partitions
 

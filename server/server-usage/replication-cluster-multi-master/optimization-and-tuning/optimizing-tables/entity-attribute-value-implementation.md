@@ -35,7 +35,7 @@ It goes by various names
 
 * The SELECTs get messy -- multiple JOINs
 * Datatype issues -- It's clumsy to be putting numbers into strings
-* Numbers stored in [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md) do not compare 'correctly', especially for range tests.
+* Numbers stored in [VARCHAR](../../../../ref/data-types/string-data-types/varchar.md) do not compare 'correctly', especially for range tests.
 * Bulky.
 * Dedupping the values is clumsy.
 
@@ -46,7 +46,7 @@ It goes by various names
 Decide which columns need to be searched/sorted by SQL queries. No, you don't need all the columns to be searchable or sortable. Certain columns are frequently used for selection; identify these. You probably won't use all of them in all queries, but you will use some of them in every query.
 
 
-The solution uses one table for all the EAV stuff. The columns include the searchable fields plus one [BLOB](../../../../reference/data-types/string-data-types/blob.md). Searchable fields are declared appropriately ([INT](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md), [TIMESTAMP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md), etc). The BLOB contains JSON-encoding of all the extra fields.
+The solution uses one table for all the EAV stuff. The columns include the searchable fields plus one [BLOB](../../../../ref/data-types/string-data-types/blob.md). Searchable fields are declared appropriately ([INT](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md), [TIMESTAMP](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md), etc). The BLOB contains JSON-encoding of all the extra fields.
 
 
 The table should be [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), hence it should have a PRIMARY KEY. The entitity_id is the 'natural' PK. Add a small number of other indexes (often 'composite') on the searchable fields. [PARTITIONing](../../../../server-management/partitioning-tables/README.md) is unlikely to be of any use, unless the Entities should purged after some time. (Example: News Articles)
@@ -74,9 +74,9 @@ You have included the most important fields to search on -- date, category, etc.
 ## Details on the BLOB/JSON
 
 
-* Build the extra (or all) key-value pairs in a hash (associative array) in your application. Encode it. COMPRESS it. Insert that string into the [BLOB](../../../../reference/data-types/string-data-types/blob.md).
+* Build the extra (or all) key-value pairs in a hash (associative array) in your application. Encode it. COMPRESS it. Insert that string into the [BLOB](../../../../ref/data-types/string-data-types/blob.md).
 * JSON is recommended, but not mandatory; it is simpler than XML. Other serializations (eg, YAML) could be used.
-* COMPRESS the JSON and put it into a [BLOB](../../../../reference/data-types/string-data-types/blob.md) (or [MEDIUMBLOB](../../../../reference/data-types/string-data-types/mediumblob.md)) instead of a [TEXT](../../../../reference/data-types/string-data-types/text.md) field. Compression gives about 3x shrinkage.
+* COMPRESS the JSON and put it into a [BLOB](../../../../ref/data-types/string-data-types/blob.md) (or [MEDIUMBLOB](../../../../ref/data-types/string-data-types/mediumblob.md)) instead of a [TEXT](../../../../ref/data-types/string-data-types/text.md) field. Compression gives about 3x shrinkage.
 * When SELECTing, UNCOMPRESS the blob. Decode the string into a hash. You are now ready to interrogate/display any of the extra fields.
 * If you choose to use the JSON features of MariaDB or 5.7, you will have to forgo the compression feature described.
 * MySQL 5.7.8's JSON native JSON datatype uses a binary format for more efficient access.
@@ -89,7 +89,7 @@ You have included the most important fields to search on -- date, category, etc.
 * Queries are fast (since you have picked 'good' indexes)
 * Expandable (JSON is happy to have new fields)
 * Compatible (No 3rd party products, just supported products)
-* Range tests work (unlike storing [INTs](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) in [VARCHARs](../../../../reference/data-types/string-data-types/varchar.md))
+* Range tests work (unlike storing [INTs](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) in [VARCHARs](../../../../ref/data-types/string-data-types/varchar.md))
 * (Drawback) Cannot use the non-indexed attributes in WHERE or ORDER BY clauses, must deal with that in the app. (MySQL 5.7 partially alleviates this.)
 
 
@@ -99,7 +99,7 @@ You have included the most important fields to search on -- date, category, etc.
 Posted Jan, 2014; Refreshed Feb, 2016.
 
 
-* MariaDB's [Dynamic Columns](../../../../reference/sql-statements-and-structure/nosql/dynamic-columns-api.md)
+* MariaDB's [Dynamic Columns](../../../../ref/sql-statements-and-structure/nosql/dynamic-columns-api.md)
 * [MySQL 5.7's JSON](https://dev.mysql.com/doc/refman/5.7/en/json.html)
 
 

@@ -23,12 +23,12 @@ Note that if you are using [MariaDB Galera Cluster](../../../server-usage/replic
 
 
 * Go through the individual version upgrade notes (listed below) to look for any major changes or configuration options that have changed.
-* Ensure that the target MariaDB version supports the storage engines you are using. For example, in 10.5 [TokuDB](../../../reference/storage-engines/tokudb/tokudb-resources.md) is not supported.
+* Ensure that the target MariaDB version supports the storage engines you are using. For example, in 10.5 [TokuDB](../../../ref/storage-engines/tokudb/tokudb-resources.md) is not supported.
 * Back up the database (just in case). At least, take a copy of the `mysql` system database directory under the data directory with [mariadb-dump --add-drop-table mysql](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (called mysqldump in [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and earlier) as most of the upgrade changes are done there (adding new fields and new system tables etc).
 * Cleanly shutdown the server. This is necessary because even if data files are compatible between versions, recovery logs may not be.
 
-  * Ensure that the [innodb_fast_shutdown](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) variable is not 2 (fast crash shutdown). The default of this variable is 1.
-  * [innodb_force_recovery](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery) must be less than `3`.
+  * Ensure that the [innodb_fast_shutdown](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) variable is not 2 (fast crash shutdown). The default of this variable is 1.
+  * [innodb_force_recovery](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery) must be less than `3`.
 
 
 Note that rpms don't support upgrading between major versions, only minor like 10.4.1 to 10.4.2. If you are using rpms, you should de-install the old MariaDB rpms and install the new MariaDB rpms before running [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md). Note that when installing the new rpms, [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md) may be run automatically. There is no problem with running [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md) many times.
@@ -75,7 +75,7 @@ The common warnings/errors are:
 
 
 * Check the manual for [new features](../../../../columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-10-upgrades/upgrading-mariadb-columnstore-from-103-to-104.md) that have been added since your last MariaDB version.
-* Test that your application works as before. The main difference from before is that because of optimizer improvements your application should work better than before, but in some rare cases the optimizer may get something wrong. In this case, you can try to use [explain](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md), [optimizer trace](../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/README.md) or [optimizer_switch](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/optimizer-switch.md) to fix the queries.
+* Test that your application works as before. The main difference from before is that because of optimizer improvements your application should work better than before, but in some rare cases the optimizer may get something wrong. In this case, you can try to use [explain](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md), [optimizer trace](../../../ref/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/README.md) or [optimizer_switch](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/optimizer-switch.md) to fix the queries.
 
 
 ## If Something Goes Wrong
@@ -83,7 +83,7 @@ The common warnings/errors are:
 
 * First, check the [MariaDB error log](../../server-monitoring-logs/error-log.md) to see if you are using configure options that are not supported anymore.
 * Check the upgrade notices for the MariaDB release that you are upgrading to.
-* File an issue in the [MariaDB bug tracker](../../../reference/bug-tracking/README.md) so that we know about the issue and can provide a fix to make upgrades even better.
+* File an issue in the [MariaDB bug tracker](../../../ref/bug-tracking/README.md) so that we know about the issue and can provide a fix to make upgrades even better.
 * Add a comment to this manual entry for how we can improve it.
 
 
@@ -107,16 +107,16 @@ In the unlikely event something goes wrong, you can try the following:
 ## Downgrading
 
 
-MariaDB server is not designed for downgrading. That said, in most cases, as long as you haven't run any [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) or [CREATE TABLE](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statements and you have a [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) of your old `mysql` database , you should be able to downgrade to your previous version by doing the following:
+MariaDB server is not designed for downgrading. That said, in most cases, as long as you haven't run any [ALTER TABLE](../../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) or [CREATE TABLE](../../../ref/sql-statements-and-structure/vectors/create-table-with-vectors.md) statements and you have a [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) of your old `mysql` database , you should be able to downgrade to your previous version by doing the following:
 
 
-* Do a clean shutdown. For this special case you have to set [innodb_fast_shutdown](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) to 0,before taking down the new MariaDB server, to ensure there are no redo or undo logs that need to be applied on the downgraded server.
+* Do a clean shutdown. For this special case you have to set [innodb_fast_shutdown](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) to 0,before taking down the new MariaDB server, to ensure there are no redo or undo logs that need to be applied on the downgraded server.
 * Delete the tables in the `mysql` database (if you didn't use the option `--add-drop-table` to [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md))
 * Delete the new MariaDB installation
 * Install the old MariaDB version
 * Start the server with [mariadbd --skip-grant-tables](../starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables)
 * Install the old `mysql` database
-* Execute in the [mariadb client](../../../clients-and-utilities/mariadb-client/README.md) [FLUSH PRIVILEGES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
+* Execute in the [mariadb client](../../../clients-and-utilities/mariadb-client/README.md) [FLUSH PRIVILEGES](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
 
 
 ## See Also
@@ -131,5 +131,5 @@ MariaDB server is not designed for downgrading. That said, in most cases, as lon
 
 
 * [Galera upgrading instructions](../../../server-usage/replication-cluster-multi-master/galera-cluster/upgrading-galera-cluster/README.md)
-* [innodb_fast_shutdown](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
+* [innodb_fast_shutdown](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
 

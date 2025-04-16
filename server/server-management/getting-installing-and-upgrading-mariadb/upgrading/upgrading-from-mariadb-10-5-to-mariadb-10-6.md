@@ -43,7 +43,7 @@ The suggested upgrade procedure is:
 
   * `mariadb-upgrade` does two things:
 
-    1. Ensures that the system tables in the [mysql](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database are fully compatible with the new version.
+    1. Ensures that the system tables in the [mysql](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database are fully compatible with the new version.
     1. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 
 
@@ -60,7 +60,7 @@ see ([MDEV-27745](https://jira.mariadb.org/browse/MDEV-27745))
 #### Reserved Word
 
 
-* New [reserved word](../../../reference/sql-statements-and-structure/sql-language-structure/reserved-words.md): OFFSET. This can no longer be used as an [identifier](../../../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md) without being quoted.
+* New [reserved word](../../../ref/sql-statements-and-structure/sql-language-structure/reserved-words.md): OFFSET. This can no longer be used as an [identifier](../../../ref/sql-statements-and-structure/sql-language-structure/identifier-names.md) without being quoted.
 
 
 #### InnoDB COMPRESSED Row Format
@@ -72,13 +72,13 @@ From [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release
 This plan has been scrapped, and from [MariaDB 10.6.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes.md), `COMPRESSED` tables are no longer read-only by default.
 
 
-From [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md) to [MariaDB 10.6.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1065-release-notes.md), set the [innodb_read_only_compressed](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_only_compressed) variable to `OFF` to make the tables writable.
+From [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md) to [MariaDB 10.6.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1065-release-notes.md), set the [innodb_read_only_compressed](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_read_only_compressed) variable to `OFF` to make the tables writable.
 
 
 #### Character Sets
 
 
-From [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), the `utf8` [character set](../../../reference/data-types/string-data-types/character-sets/README.md) (and related collations) is by default an alias for `utf8mb3` rather than the other way around. It can be set to imply `utf8mb4` by changing the value of the [old_mode](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_mode) system variable.
+From [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), the `utf8` [character set](../../../ref/data-types/string-data-types/character-sets/README.md) (and related collations) is by default an alias for `utf8mb3` rather than the other way around. It can be set to imply `utf8mb4` by changing the value of the [old_mode](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_mode) system variable.
 
 
 #### Options That Have Changed Default Values
@@ -92,7 +92,7 @@ From [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-m
 | [character_set_connection](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_connection) | utf8 | utf8mb3 |
 | [character_set_results](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_results) | utf8 | utf8mb3 |
 | [character_set_system](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_system) | utf8 | utf8mb3 |
-| [innodb_flush_method](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_method) | fsync | O_DIRECT |
+| [innodb_flush_method](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_flush_method) | fsync | O_DIRECT |
 | [old_mode](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_mode) | Empty | UTF8_IS_UTF8MB3 |
 
 
@@ -107,30 +107,30 @@ The following options should be removed or renamed if you use them in your [opti
 | Option | Reason |
 | --- | --- |
 | Option | Reason |
-| [innodb_adaptive_max_sleep_delay](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay) |  |
-| [innodb_background_scrub_data_check_interval](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_check_interval) |  |
-| [innodb_background_scrub_data_compressed](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_compressed) |  |
-| [innodb_background_scrub_data_interval](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_interval) |  |
-| [innodb_background_scrub_data_uncompressed](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_uncompressed) |  |
-| [innodb_buffer_pool_instances](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances) |  |
-| [innodb_checksum_algorithm](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) | The variable is still present, but the *innodb and *none options have been removed as the crc32 algorithm only is supported from [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md). |
-| [innodb_commit_concurrency](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_commit_concurrency) |  |
-| [innodb_concurrency_tickets](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_concurrency_tickets) |  |
-| [innodb_file_format](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_format) |  |
-| [innodb_large_prefix](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_large_prefix) |  |
-| [innodb_lock_schedule_algorithm](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_lock_schedule_algorithm) |  |
-| [innodb_log_checksums](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_checksums) |  |
-| [innodb_log_compressed_pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_compressed_pages) |  |
-| [innodb_log_files_in_group](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_files_in_group) |  |
-| [innodb_log_optimize_ddl](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl) |  |
-| [innodb_page_cleaners](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_cleaners) |  |
-| [innodb_replication_delay](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_replication_delay) |  |
-| [innodb_scrub_log](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log) |  |
-| [innodb_scrub_log_speed](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_speed) |  |
-| [innodb_sync_array_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_sync_array_size) |  |
-| [innodb_thread_concurrency](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency) |  |
-| [innodb_thread_sleep_delay](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_thread_sleep_delay) |  |
-| [innodb_undo_logs](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs) |  |
+| [innodb_adaptive_max_sleep_delay](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay) |  |
+| [innodb_background_scrub_data_check_interval](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_check_interval) |  |
+| [innodb_background_scrub_data_compressed](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_compressed) |  |
+| [innodb_background_scrub_data_interval](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_interval) |  |
+| [innodb_background_scrub_data_uncompressed](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_uncompressed) |  |
+| [innodb_buffer_pool_instances](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances) |  |
+| [innodb_checksum_algorithm](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) | The variable is still present, but the *innodb and *none options have been removed as the crc32 algorithm only is supported from [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md). |
+| [innodb_commit_concurrency](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_commit_concurrency) |  |
+| [innodb_concurrency_tickets](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_concurrency_tickets) |  |
+| [innodb_file_format](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_file_format) |  |
+| [innodb_large_prefix](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_large_prefix) |  |
+| [innodb_lock_schedule_algorithm](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_lock_schedule_algorithm) |  |
+| [innodb_log_checksums](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_checksums) |  |
+| [innodb_log_compressed_pages](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_compressed_pages) |  |
+| [innodb_log_files_in_group](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_files_in_group) |  |
+| [innodb_log_optimize_ddl](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl) |  |
+| [innodb_page_cleaners](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_page_cleaners) |  |
+| [innodb_replication_delay](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_replication_delay) |  |
+| [innodb_scrub_log](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log) |  |
+| [innodb_scrub_log_speed](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_speed) |  |
+| [innodb_sync_array_size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_sync_array_size) |  |
+| [innodb_thread_concurrency](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency) |  |
+| [innodb_thread_sleep_delay](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_thread_sleep_delay) |  |
+| [innodb_undo_logs](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs) |  |
 
 
 

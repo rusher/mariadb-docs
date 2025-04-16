@@ -1,7 +1,7 @@
 
 # myisamchk
 
-myisamchk is a commandline tool for checking, repairing and optimizing non-partitioned [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables.
+myisamchk is a commandline tool for checking, repairing and optimizing non-partitioned [MyISAM](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables.
 
 
 myisamchk is run from the commandline as follows:
@@ -65,7 +65,7 @@ The following variables can also be set by using *--var_name=value*, for example
 | key_buffer_size | 1044480 |
 | key_cache_block_size | 1024 |
 | myisam_block_size | 1024 |
-| [myisam_sort_buffer_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size) | 134216704 |
+| [myisam_sort_buffer_size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size) | 134216704 |
 | myisam_sort_key_blocks | 16 |
 | read_buffer_size | 262136 |
 | sort_buffer_size | 134216704 |
@@ -78,7 +78,7 @@ The following variables can also be set by using *--var_name=value*, for example
 ## Checking Tables
 
 
-If no option is provided, myisamchk will perform a check table. It is possible to check [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables without shutting down or restricting access to the server by using [CHECK TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md) instead.
+If no option is provided, myisamchk will perform a check table. It is possible to check [MyISAM](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables without shutting down or restricting access to the server by using [CHECK TABLE](../../ref/sql-statements-and-structure/sql-statements/table-statements/check-table.md) instead.
 
 
 The following check options are available:
@@ -103,7 +103,7 @@ The following check options are available:
 ## Repairing Tables
 
 
-It is also possible to repair [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables by using [REPAIR TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md).
+It is also possible to repair [MyISAM](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables by using [REPAIR TABLE](../../ref/sql-statements-and-structure/sql-statements/table-statements/repair-table.md).
 
 
 The following repair options are available, and are applicable when using '-r' or '-o':
@@ -117,16 +117,16 @@ The following repair options are available, and are applicable when using '-r' o
 | --correct-checksum | Correct the checksum information for table. |
 | -D len, --data-file-length=# | Max length of data file (when recreating data file when it's full). |
 | -e, --extend-check | Try to recover every possible row from the data file. Normally this will also find a lot of garbage rows; Don't use this option if you are not totally desperate. |
-| -f, --force | Overwrite old temporary files. Add another --force to avoid 'myisam_sort_buffer_size is too small' errors. In this case we will attempt to do the repair with the given [myisam_sort_buffer_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size) and dynamically allocate as many management buffers as needed. |
+| -f, --force | Overwrite old temporary files. Add another --force to avoid 'myisam_sort_buffer_size is too small' errors. In this case we will attempt to do the repair with the given [myisam_sort_buffer_size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size) and dynamically allocate as many management buffers as needed. |
 | -k val, --keys-used=# | Specify which keys to update. The value is a bit mask of which keys to use. Each binary bit corresponds to a table index, with the first index being bit 0. 0 disables all index updates, useful for faster inserts. Deactivated indexes can be reactivated by using myisamchk -r. |
 | --create-missing-keys | Create missing keys. This assumes that the data file is correct and that the number of rows stored in the index file is correct. Enables --quick |
 | --max-record-length=# | Skip rows larger than this if myisamchk can't allocate memory to hold them. |
-| -r, --recover | Can fix almost anything except unique keys that aren't unique (a rare occurrence). Usually this is the best option to try first. Increase [myisam_sort_buffer_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size) for better performance. |
+| -r, --recover | Can fix almost anything except unique keys that aren't unique (a rare occurrence). Usually this is the best option to try first. Increase [myisam_sort_buffer_size](../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size) for better performance. |
 | -n, --sort-recover | Forces recovering with sorting even if the temporary file would be very large. |
 | -p, --parallel-recover | Uses the same technique as '-r' and '-n', but creates all the keys in parallel, in different threads. |
 | -o, --safe-recover | Uses old recovery method; Slower than '-r' but uses less disk space and can handle a couple of cases where '-r' reports that it can't fix the data file. Increase key_buffer_size for better performance. |
-| --character-sets-dir=directory_name | Directory where the [character sets](../../reference/data-types/string-data-types/character-sets/README.md) are installed. |
-| --set-collation=name | Change the collation (and by implication, the [character set](../../reference/data-types/string-data-types/character-sets/README.md)) used by the index. |
+| --character-sets-dir=directory_name | Directory where the [character sets](../../ref/data-types/string-data-types/character-sets/README.md) are installed. |
+| --set-collation=name | Change the collation (and by implication, the [character set](../../ref/data-types/string-data-types/character-sets/README.md)) used by the index. |
 | -q, --quick | Faster repair by not modifying the data file. One can give a second '-q' to force myisamchk to modify the original datafile in case of duplicate keys. NOTE: Tables where the data file is corrupted can't be fixed with this option. |
 | -u, --unpack | Unpack file packed with myisampack. |
 
@@ -139,12 +139,12 @@ The following repair options are available, and are applicable when using '-r' o
 | Option | Description |
 | --- | --- |
 | Option | Description |
-| -a, --analyze | Analyze distribution of keys. Will make some joins faster as the join optimizer can better choose the order in which to join the tables and which indexes to use. You can check the calculated distribution by using '--description --verbose table_name' or [SHOW INDEX FROM table_name](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index.md). |
+| -a, --analyze | Analyze distribution of keys. Will make some joins faster as the join optimizer can better choose the order in which to join the tables and which indexes to use. You can check the calculated distribution by using '--description --verbose table_name' or [SHOW INDEX FROM table_name](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index.md). |
 | --stats_method=name | Specifies how index statistics collection code should treat NULLs. Possible values of name are "nulls_unequal" (default), "nulls_equal" (emulate MySQL 4.0 behavior), and "nulls_ignored". |
 | -d, --description | Print some descriptive information about the table. Specifying the --verbose option once or twice produces additional information. |
 | -A [value], --set-auto-increment[=value] | Force auto_increment to start at this or higher value. If no value is given, then sets the next auto_increment value to the highest used value for the auto key + 1. |
 | -S, --sort-index | Sort the index tree blocks in high-low order. This optimizes seeks and makes table scans that use indexes faster. |
-| -R index_num, --sort-records=# | Sort records according to the given index (as specified by the index number). This makes your data much more localized and may speed up range-based SELECTs and ORDER BYs using this index. It may be VERY slow to do a sort the first time! To see the index numbers, [SHOW INDEX](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index.md) displays table indexes in the same order that myisamchk sees them. The first index is 1. |
+| -R index_num, --sort-records=# | Sort records according to the given index (as specified by the index number). This makes your data much more localized and may speed up range-based SELECTs and ORDER BYs using this index. It may be VERY slow to do a sort the first time! To see the index numbers, [SHOW INDEX](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index.md) displays table indexes in the same order that myisamchk sees them. The first index is 1. |
 | -b offset, --block-search=offset | Find the record to which a block at the given offset belongs. |
 
 

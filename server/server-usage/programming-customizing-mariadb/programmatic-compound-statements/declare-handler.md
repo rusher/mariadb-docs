@@ -55,7 +55,7 @@ values:
 code (a number). You should not use `SQLSTATE` value '00000' or MariaDB
 error code 0, because those indicate sucess rather than an error
 condition. For a list of `SQLSTATE` values and MariaDB error codes, see
-[MariaDB Error Codes](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md).
+[MariaDB Error Codes](../../../ref/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md).
 * A condition name previously specified with `DECLARE ... CONDITION`. It must be in the same stored program. See [DECLARE CONDITION](declare-condition.md).
 * `SQLWARNING` is shorthand for the class of SQLSTATE values that begin
 with '01'.
@@ -64,7 +64,7 @@ with '02'. This is relevant only the context of cursors and is used to
 control what happens when a cursor reaches the end of a data set. If
 no more rows are available, a No Data condition occurs with `SQLSTATE`
 value 02000. To detect this condition, you can set up a handler for it
-(or for a `NOT FOUND` condition). An example is shown in [Cursor Overview](programmatic-compound-statements-cursors/cursor-overview.md). This condition also occurs for [SELECT ... INTO](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile.md) var_list statements that retrieve no
+(or for a `NOT FOUND` condition). An example is shown in [Cursor Overview](programmatic-compound-statements-cursors/cursor-overview.md). This condition also occurs for [SELECT ... INTO](../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile.md) var_list statements that retrieve no
 rows.
 * SQLEXCEPTION is shorthand for the class of SQLSTATE values that do
 not begin with '00', '01', or '02'.

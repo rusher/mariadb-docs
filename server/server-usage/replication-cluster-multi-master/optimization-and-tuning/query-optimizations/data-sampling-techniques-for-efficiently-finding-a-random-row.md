@@ -65,7 +65,7 @@ SELECT *
 ### Case: Consecutive AUTO_INCREMENT without gaps, 1 row returned
 
 
-* Requirement: [AUTO_INCREMENT](../../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) id
+* Requirement: [AUTO_INCREMENT](../../../../ref/storage-engines/innodb/auto_increment-handling-in-innodb.md) id
 * Requirement: No gaps in id
 
 

@@ -26,7 +26,7 @@ For more information, see [File Key Management Plugin](file-key-management-encry
 ### AWS Key Management Plugin
 
 
-The AWS Key Management plugin is a key management and encryption plugin that uses the Amazon Web Services (AWS) Key Management Service (KMS). The AWS Key Management plugin depends on the [AWS SDK for C++](https://github.com/aws/aws-sdk-cpp), which uses the [Apache License, Version 2.0](https://github.com/aws/aws-sdk-cpp/blob/master/LICENSE). This license is not compatible with MariaDB Server's [GPL 2.0 license](../../../../../reference/faq/licensing-questions/mariadb-licenses.md), so we are not able to distribute packages that contain the AWS Key Management plugin. Therefore, the only way to currently obtain the plugin is to install it from source.
+The AWS Key Management plugin is a key management and encryption plugin that uses the Amazon Web Services (AWS) Key Management Service (KMS). The AWS Key Management plugin depends on the [AWS SDK for C++](https://github.com/aws/aws-sdk-cpp), which uses the [Apache License, Version 2.0](https://github.com/aws/aws-sdk-cpp/blob/master/LICENSE). This license is not compatible with MariaDB Server's [GPL 2.0 license](../../../../../ref/faq/licensing-questions/mariadb-licenses.md), so we are not able to distribute packages that contain the AWS Key Management plugin. Therefore, the only way to currently obtain the plugin is to install it from source.
 
 
 For more information, see [AWS Key Management Plugin](aws-key-management-encryption-plugin-setup-guide.md).
@@ -75,7 +75,7 @@ Key rotation allows users to improve data security in the following ways:
 The [InnoDB storage engine](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) has [background encryption threads](../innodb-encryption/innodb-background-encryption-threads.md) that can [automatically re-encrypt pages when key rotations occur](../innodb-encryption/innodb-background-encryption-threads.md#background-operations).
 
 
-The [Aria storage engine](../../../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) does [not currently have a similar mechanism to re-encrypt pages in the background when key rotations occur](../aria-encryption/aria-encryption-keys.md#key-rotation).
+The [Aria storage engine](../../../../../ref/storage-engines/s3-storage-engine/aria_s3_copy.md) does [not currently have a similar mechanism to re-encrypt pages in the background when key rotations occur](../aria-encryption/aria-encryption-keys.md#key-rotation).
 
 
 ### Support for Key Rotation in Encryption Plugins
@@ -99,5 +99,5 @@ The [Aria storage engine](../../../../../reference/storage-engines/s3-storage-en
 ## Encryption Plugin API
 
 
-New key management and encryption plugins can be developed using the [encryption plugin API](../../../../../reference/mariadb-internals/encryption-plugin-api.md).
+New key management and encryption plugins can be developed using the [encryption plugin API](../../../../../ref/mariadb-internals/encryption-plugin-api.md).
 

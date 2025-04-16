@@ -15,7 +15,7 @@ mroonga_command (command)
 `mroonga_command` is a [user-defined function](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md) (UDF) included with the [Mroonga storage engine](mroonga_snippet_html.md). It passes a command to Groonga for execution. See [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md) for details on creating this UDF if required.
 
 
-* `command` - string, required parameter specifying the command to pass that will be executed by Groonga. See [the Groonga reference](https://groonga.org/docs/reference/command.html) for a list of commands.
+* `command` - string, required parameter specifying the command to pass that will be executed by Groonga. See [the Groonga reference](https://groonga.org/docs/ref/command.html) for a list of commands.
 
 
 Returns the result of the Groonga command.

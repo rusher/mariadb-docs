@@ -2,7 +2,7 @@
 # Copying Tables Between Different MariaDB Databases and MariaDB Servers
 
 With MariaDB it's very easy to copy tables between different MariaDB databases
-and different MariaDB servers. This works for tables created with the [Archive](../reference/storage-engines/archive/README.md), [Aria](../reference/storage-engines/s3-storage-engine/aria_s3_copy.md), [CSV](../reference/storage-engines/csv/csv-overview.md), [InnoDB](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), [MyISAM](../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [MERGE](../reference/storage-engines/merge.md), and [XtraDB](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) engines.
+and different MariaDB servers. This works for tables created with the [Archive](../ref/storage-engines/archive/README.md), [Aria](../ref/storage-engines/s3-storage-engine/aria_s3_copy.md), [CSV](../ref/storage-engines/csv/csv-overview.md), [InnoDB](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), [MyISAM](../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md), [MERGE](../ref/storage-engines/merge.md), and [XtraDB](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) engines.
 
 
 The normal procedures to copy a table is:
@@ -43,11 +43,11 @@ The following storage engines support export without `FLUSH TABLES ... FOR EXPOR
 | Engine | Comment |
 | --- | --- |
 | Engine | Comment |
-| [Archive](../reference/storage-engines/archive/README.md) |  |
-| [Aria](../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) | Requires clean shutdown. Table will automatically be fixed on the receiving server if aria_chk --zerofill was not run. If aria_chk --zerofill is run, then the table is immediately usable without any delays |
-| [CSV](../reference/storage-engines/csv/csv-overview.md) |  |
-| [MyISAM](../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) |  |
-| [MERGE](../reference/storage-engines/merge.md) | .MRG files can be copied even while server is running as the file only contains a list of tables that are part of merge. |
+| [Archive](../ref/storage-engines/archive/README.md) |  |
+| [Aria](../ref/storage-engines/s3-storage-engine/aria_s3_copy.md) | Requires clean shutdown. Table will automatically be fixed on the receiving server if aria_chk --zerofill was not run. If aria_chk --zerofill is run, then the table is immediately usable without any delays |
+| [CSV](../ref/storage-engines/csv/csv-overview.md) |  |
+| [MyISAM](../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) |  |
+| [MERGE](../ref/storage-engines/merge.md) | .MRG files can be copied even while server is running as the file only contains a list of tables that are part of merge. |
 
 
 
@@ -61,7 +61,7 @@ For all of the above storage engines (Archive, Aria, CSV, MyISAM and MERGE), one
 * The server is not accessing the tables during the copy process.
 
 
-The advantage of [FLUSH TABLES table_name FOR EXPORT](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) is that the table is read locked until [UNLOCK TABLES](../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md) is executed.
+The advantage of [FLUSH TABLES table_name FOR EXPORT](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) is that the table is read locked until [UNLOCK TABLES](../ref/sql-statements-and-structure/sql-statements/transactions/lock-tables.md) is executed.
 
 
 **Warning**: If you do the above live copy, you are doing this on **your own risk** as if you do something wrong, the copied table is very likely to be corrupted. The original table will of course be fine.
@@ -126,7 +126,7 @@ The procedure for MyISAM tables is identical, except that
 ## Copying InnoDB's Transportable Tablespaces
 
 
-InnoDB's file-per-table tablespaces are transportable, which means that you can copy a file-per-table tablespace from one MariaDB Server to another server. See [Copying Transportable Tablespaces](../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) for more information.
+InnoDB's file-per-table tablespaces are transportable, which means that you can copy a file-per-table tablespace from one MariaDB Server to another server. See [Copying Transportable Tablespaces](../ref/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) for more information.
 
 
 ## Importing Tables
@@ -135,14 +135,14 @@ InnoDB's file-per-table tablespaces are transportable, which means that you can 
 Tables that use most storage engines are immediately usable when their files are copied to the new `[datadir](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`.
 
 
-However, this is not true for tables that use [InnoDB](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md). InnoDB tables have to be imported with [ALTER TABLE ... IMPORT TABLESPACE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#import-tablespace). See [Copying Transportable Tablespaces](../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) for more information.
+However, this is not true for tables that use [InnoDB](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md). InnoDB tables have to be imported with [ALTER TABLE ... IMPORT TABLESPACE](../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#import-tablespace). See [Copying Transportable Tablespaces](../ref/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) for more information.
 
 
 ## See Also
 
 
-* [FLUSH TABLES FOR EXPORT](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
-* [FLUSH TABLES](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
+* [FLUSH TABLES FOR EXPORT](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
+* [FLUSH TABLES](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
 * [myisampack](../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) - Compressing the MyISAM data file for easier distribution.
 * [aria_pack](../clients-and-utilities/aria-clients-and-utilities/aria_pack.md) - Compressing the Aria data file for easier distribution
 * [mariadb-dump](../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) - Copying tables to other SQL servers. You can use the `--tab` to create a CSV file of your table content.

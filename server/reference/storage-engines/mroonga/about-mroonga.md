@@ -82,7 +82,7 @@ CREATE FUNCTION last_insert_grn_id RETURNS INTEGER SONAME 'ha_mroonga.so';
 Note that the maximum sizes are not hard limits, and may vary according to circumstance.
 
 
-For more details, see [limitations.html](https://mroonga.org/docs/reference/limitations.html).
+For more details, see [limitations.html](https://mroonga.org/docs/ref/limitations.html).
 
 
 ## Available Character Sets

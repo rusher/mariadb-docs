@@ -5,7 +5,7 @@
 ## Understanding Accounts and Users
 
 
-MariaDB authorizes access and check permissions on accounts, rather than users. Even if MariaDB supports standard SQL commands like [CREATE USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) and [DROP USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/drop-user.md), it is important to remember that it actually works with accounts.
+MariaDB authorizes access and check permissions on accounts, rather than users. Even if MariaDB supports standard SQL commands like [CREATE USER](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) and [DROP USER](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/drop-user.md), it is important to remember that it actually works with accounts.
 
 
 An account is specified in the format `'user'@'host'`. The quotes are optional and allow one to include special characters, like dots. The host part can actually be a pattern, which follows the same syntax used in `LIKE` comparisons. Patterns are often convenient because they can match several hostnames.
@@ -28,10 +28,10 @@ However, such accounts may be unable to connect from localhost if an anonymous u
 Accounts are not bound to a specific database. They are global. Once an account is created, it is possible to assign it permissions on any existing or non existing database.
 
 
-The [sql_mode](../../../variables-and-modes/sql-mode.md) system variable has a [NO_AUTO_CREATE_USER](../../../variables-and-modes/sql-mode.md#no_auto_create_user) flag. In recent MariaDB versions it is enabled by default. If it is not enabled, a [GRANT](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) statement specifying privileges for a non-existent account will automatically create that account.
+The [sql_mode](../../../variables-and-modes/sql-mode.md) system variable has a [NO_AUTO_CREATE_USER](../../../variables-and-modes/sql-mode.md#no_auto_create_user) flag. In recent MariaDB versions it is enabled by default. If it is not enabled, a [GRANT](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) statement specifying privileges for a non-existent account will automatically create that account.
 
 
-For more information: [Account Management SQL Commands](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/README.md).
+For more information: [Account Management SQL Commands](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/README.md).
 
 
 ### Setting or Changing Passwords
@@ -43,9 +43,9 @@ Accounts with the same username can have different passwords.
 By default, an account has no password. A password can be set, or changed, in the following way:
 
 
-* By specifying it in [CREATE USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md).
-* By the user, with [SET PASSWORD](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md).
-* By root, with `SET PASSWORD` or [ALTER USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md).
+* By specifying it in [CREATE USER](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md).
+* By the user, with [SET PASSWORD](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md).
+* By root, with `SET PASSWORD` or [ALTER USER](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md).
 
 
 With all these statements (`CREATE USER`, `ALTER USER`, `SET PASSWORD`) it is possible to specify the password in plain or as a hash:
@@ -62,7 +62,7 @@ ALTER USER tom@'%.example.com' IDENTIFIED BY PASSWORD 'secret hash';
 SET PASSWORD = PASSWORD('secret hash');
 ```
 
-The [PASSWORD()](../../../../reference/plugins/password-validation-plugins/password-reuse-check-plugin.md) function uses the same algorithm used internally by MariaDB to generate hashes. Therefore it can be used to get a hash from a plain password. Note that this function should not be used by applications, as its output may depend on MariaDB version and configuration.
+The [PASSWORD()](../../../../ref/plugins/password-validation-plugins/password-reuse-check-plugin.md) function uses the same algorithm used internally by MariaDB to generate hashes. Therefore it can be used to get a hash from a plain password. Note that this function should not be used by applications, as its output may depend on MariaDB version and configuration.
 
 
 `SET PASSWORD` applies to the current account, by default. Superusers can change other accounts passwords in this way:
@@ -102,16 +102,16 @@ See [Account Locking](../../../../security/user-account-management/account-locki
 ## Authentication Plugins
 
 
-MariaDB supports [authentication plugins](../../../../reference/plugins/authentication-plugins/README.md). These plugins implement user's login and authorization before they can use MariaDB.
+MariaDB supports [authentication plugins](../../../../ref/plugins/authentication-plugins/README.md). These plugins implement user's login and authorization before they can use MariaDB.
 
 
-Each user has one or more authentication plugins assigned. The default one is [mysql_native_password](../../../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md). It is the traditional login using the username and password set in MariaDB, as described above.
+Each user has one or more authentication plugins assigned. The default one is [mysql_native_password](../../../../ref/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md). It is the traditional login using the username and password set in MariaDB, as described above.
 
 
-On UNIX systems, root is also assigned the [unix_socket](../../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) plugin, which allows a user logged in the operating system to be recognized by MariaDB.
+On UNIX systems, root is also assigned the [unix_socket](../../../../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md) plugin, which allows a user logged in the operating system to be recognized by MariaDB.
 
 
-Windows users may be interested in the [named pipe](../../../../reference/plugins/authentication-plugins/authentication-plugin-named-pipe.md) and [GSSAPI](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md) plugins. GSSAPI also requires the use of a plugin on the [client side](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#support-in-client-libraries).
+Windows users may be interested in the [named pipe](../../../../ref/plugins/authentication-plugins/authentication-plugin-named-pipe.md) and [GSSAPI](../../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md) plugins. GSSAPI also requires the use of a plugin on the [client side](../../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md#support-in-client-libraries).
 
 
 A plugin can be assigned to a user with `CREATE USER`, `ALTER USER` or `GRANT`, using the `IDENTIFIED VIA` syntax. For example:
@@ -134,7 +134,7 @@ A particular user can be required to use TLS connections. Additional requirement
 * A particular certificate cipher suite can be required.
 
 
-These requirements can be set with `CREATE USER`, `ALTER USER` or `GRANT`. For the syntax, see [CREATE USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#tls-options).
+These requirements can be set with `CREATE USER`, `ALTER USER` or `GRANT`. For the syntax, see [CREATE USER](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#tls-options).
 
 
 MariaDB can be bundled with several cryptography libraries, depending on its version. For more information about the libraries, see [TLS and Cryptography Libraries Used by MariaDB](../../../../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md).
@@ -159,11 +159,11 @@ GRANT USAGE ON *.* TO tom@'%';
 The following permission levels exist in MariaDB:
 
 
-* [Global privileges](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges);
-* [Database privileges](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#database-privileges);
-* [Table privileges](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#table-privileges);
-* [Column privileges](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#column-privileges);
-* [Function](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#function-privileges) and [procedure privileges](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#procedure-privileges).
+* [Global privileges](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges);
+* [Database privileges](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#database-privileges);
+* [Table privileges](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#table-privileges);
+* [Column privileges](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#column-privileges);
+* [Function](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#function-privileges) and [procedure privileges](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#procedure-privileges).
 
 
 Note that database and schema are synonymous in MariaDB.
@@ -172,7 +172,7 @@ Note that database and schema are synonymous in MariaDB.
 Permissions can be granted for non-existent objects that could exist in the future.
 
 
-The list of supported privileges can be found in the [GRANT](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) page. Some highlights can be useful for SQL Server users:
+The list of supported privileges can be found in the [GRANT](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) page. Some highlights can be useful for SQL Server users:
 
 
 * `USAGE` privilege has no effect. The `GRANT` command fails if we don't grant at least one privilege; but sometimes we want to run it for other purposes, for example to require a user to use TLS connections. In such cases, it is useful to grant `USAGE`.

@@ -1,7 +1,7 @@
 
 # 2-Binlog Event Header
 
-All the [binlog events](1-binlog-events.md) stored in a [binary log file](../../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) have a common structure:
+All the [binlog events](1-binlog-events.md) stored in a [binary log file](../../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) have a common structure:
 
 
 * an event header

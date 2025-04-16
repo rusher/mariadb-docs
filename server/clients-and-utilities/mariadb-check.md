@@ -7,7 +7,7 @@
 Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqlcheck`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
-It is essentially a commandline interface to the [CHECK TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md), [REPAIR TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md), [ANALYZE TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) and [OPTIMIZE TABLE](../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) commands, and so, unlike [myisamchk](myisam-clients-and-utilities/myisamchk-table-information.md) and [aria_chk](aria-clients-and-utilities/aria_chk.md), requires the server to be running.
+It is essentially a commandline interface to the [CHECK TABLE](../ref/sql-statements-and-structure/sql-statements/table-statements/check-table.md), [REPAIR TABLE](../ref/sql-statements-and-structure/sql-statements/table-statements/repair-table.md), [ANALYZE TABLE](../ref/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) and [OPTIMIZE TABLE](../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) commands, and so, unlike [myisamchk](myisam-clients-and-utilities/myisamchk-table-information.md) and [aria_chk](aria-clients-and-utilities/aria_chk.md), requires the server to be running.
 
 
 This tool does not work with partitioned tables.
@@ -70,7 +70,7 @@ copying it somewhere with another name, the alternatives are:
 | -1, --all-in-1 | Instead of issuing one query for each table, use one query per database, naming all tables in the database in a comma-separated list. |
 | -a, --analyze | Analyze given tables. |
 | --auto-repair | If a checked table is corrupted, automatically fix it. Repairing will be done after all tables have been checked. |
-| --character-sets-dir=name | Directory where [character set](../reference/data-types/string-data-types/character-sets/README.md) files are installed. |
+| --character-sets-dir=name | Directory where [character set](../ref/data-types/string-data-types/character-sets/README.md) files are installed. |
 | -c, --check | Check table for errors. |
 | -C, --check-only-changed | Check only tables that have changed since last check or haven't been closed properly. |
 | -g, --check-upgrade | Check tables for version-dependent changes. May be used with --auto-repair to correct tables requiring version-dependent updates. Automatically enables the --fix-db-names and --fix-table-names options. Used [when upgrading](../server-management/getting-installing-and-upgrading-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-to-mariadb-from-mysql-50-or-older.md) |
@@ -82,7 +82,7 @@ copying it somewhere with another name, the alternatives are:
 | --debug-check | Check memory and open file usage at exit. |
 | --debug-info | Print some debug info at exit. |
 | --default-auth=plugin | Default authentication client-side plugin to use. |
-| --default-character-set=name | Set the default [character set](../reference/data-types/string-data-types/character-sets/README.md). |
+| --default-character-set=name | Set the default [character set](../ref/data-types/string-data-types/character-sets/README.md). |
 | -e, --extended | If you are using this option with --check, it will ensure that the table is 100 percent consistent, but will take a long time. If you are using this option with --repair, it will force using the old, slow, repair with keycache method, instead of the much faster repair by sorting. |
 | -F, --fast | Check only tables that haven't been closed properly. |
 | --fix-db-names | Convert database names to the format used since MySQL 5.1. Only database names that contain special characters are affected. Used [when upgrading](../server-management/getting-installing-and-upgrading-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-to-mariadb-from-mysql-50-or-older.md) from an old MySQL version. |
@@ -99,7 +99,7 @@ copying it somewhere with another name, the alternatives are:
 | --plugin-dir | Directory for client-side plugins. |
 | -P num, --port=num | Port number to use for connection or 0 for default to, in order of preference, my.cnf, $MYSQL_TCP_PORT, /etc/services, built-in default (3306). |
 | --process-tables | Perform the requested operation (check, repair, analyze, optimize) on tables. Enabled by default. Use --skip-process-tables to disable. |
-| --process-views[=val] | Perform the requested operation (only [CHECK VIEW](../reference/sql-statements-and-structure/sql-statements/table-statements/check-view.md) or [REPAIR VIEW](../reference/sql-statements-and-structure/sql-statements/table-statements/repair-view.md)). Possible values are NO, YES (correct the checksum, if necessary, add the mariadb-version field), UPGRADE_FROM_MYSQL (same as YES and toggle the algorithm MERGE<->TEMPTABLE. |
+| --process-views[=val] | Perform the requested operation (only [CHECK VIEW](../ref/sql-statements-and-structure/sql-statements/table-statements/check-view.md) or [REPAIR VIEW](../ref/sql-statements-and-structure/sql-statements/table-statements/repair-view.md)). Possible values are NO, YES (correct the checksum, if necessary, add the mariadb-version field), UPGRADE_FROM_MYSQL (same as YES and toggle the algorithm MERGE<->TEMPTABLE. |
 | --protocol=name | The connection protocol (tcp, socket, pipe, memory) to use for connecting to the server. Useful when other connection parameters would cause a protocol to be used other than the one you want. |
 | -q, --quick | If you are using this option with CHECK TABLE, it prevents the check from scanning the rows to check for wrong links. This is the fastest check. If you are using this option with REPAIR TABLE, it will try to repair only the index tree. This is the fastest repair method for a table. |
 | -r, --repair | Can fix almost anything except unique keys that aren't unique. |
@@ -121,7 +121,7 @@ copying it somewhere with another name, the alternatives are:
 | -u, --user=name | User for login if not current user. |
 | -v, --verbose | Print info about the various stages. You can give this option several times to get even more information. See [mariadb-check and verbose](#mariadb-check-and-verbose), below. |
 | -V, --version | Output version information and exit. |
-| --write-binlog | Write ANALYZE, OPTIMIZE and REPAIR TABLE commands to the [binary log](../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Enabled by default; use --skip-write-binlog when commands should not be sent to replication slaves. |
+| --write-binlog | Write ANALYZE, OPTIMIZE and REPAIR TABLE commands to the [binary log](../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Enabled by default; use --skip-write-binlog when commands should not be sent to replication slaves. |
 
 
 
@@ -194,7 +194,7 @@ check.
 ### mariadb-check and all-databases
 
 
-`mariadb-check --all-databases` will ignore the internal log tables [general_log](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) and [slow_log](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) as these can't be checked, repaired or optimized.
+`mariadb-check --all-databases` will ignore the internal log tables [general_log](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) and [slow_log](../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) as these can't be checked, repaired or optimized.
 
 
 ### mariadb-check and verbose
@@ -206,5 +206,5 @@ Using one `--verbose` option will give you more information about what mariadb-c
 Using two `--verbose` options will also give you connection information.
 
 
-If you use three `--verbose` options you will also get, on stdout, all [ALTER](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), [RENAME](../reference/sql-statements-and-structure/sql-statements/data-definition/rename-table.md), and [CHECK](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md) commands that mariadb-check executes.
+If you use three `--verbose` options you will also get, on stdout, all [ALTER](../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), [RENAME](../ref/sql-statements-and-structure/sql-statements/data-definition/rename-table.md), and [CHECK](../ref/sql-statements-and-structure/sql-statements/table-statements/check-table.md) commands that mariadb-check executes.
 

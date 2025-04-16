@@ -5,7 +5,7 @@
 ## Viewing Galera Cluster Status Variables
 
 
-Galera status variables can be viewed with the [SHOW STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md) statement.
+Galera status variables can be viewed with the [SHOW STATUS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md) statement.
 
 
 ```

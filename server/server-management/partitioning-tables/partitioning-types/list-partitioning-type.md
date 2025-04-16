@@ -10,7 +10,7 @@ A variant of this partitioning method, [LIST COLUMNS](range-columns-and-list-col
 ## Syntax
 
 
-The last part of a [CREATE TABLE](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statement can be the definition of the new table's partitions. In the case of LIST partitioning, the syntax is the following:
+The last part of a [CREATE TABLE](../../../ref/sql-statements-and-structure/vectors/create-table-with-vectors.md) statement can be the definition of the new table's partitions. In the case of LIST partitioning, the syntax is the following:
 
 
 ```

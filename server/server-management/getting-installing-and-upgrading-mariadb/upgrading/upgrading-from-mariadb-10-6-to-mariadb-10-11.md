@@ -43,7 +43,7 @@ The suggested upgrade procedure is:
 
   * `mariadb-upgrade` does two things:
 
-    1. Ensures that the system tables in the [mysql](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database are fully compatible with the new version.
+    1. Ensures that the system tables in the [mysql](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database are fully compatible with the new version.
     1. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 
 
@@ -56,7 +56,7 @@ On most servers upgrading from 10.6 should be painless. However, there are some 
 #### Compression
 
 
-If a non-zlib compression algorithm was used in [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) or [Mroonga](../../../reference/storage-engines/mroonga/mroonga-user-defined-functions/mroonga_snippet_html.md) before upgrading to 10.11, those tables will be unreadable until the appropriate compression library is installed. See [Compression Plugins#Upgrading](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md#upgrading).
+If a non-zlib compression algorithm was used in [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) or [Mroonga](../../../ref/storage-engines/mroonga/mroonga-user-defined-functions/mroonga_snippet_html.md) before upgrading to 10.11, those tables will be unreadable until the appropriate compression library is installed. See [Compression Plugins#Upgrading](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md#upgrading).
 
 
 #### Options That Have Changed Default Values
@@ -66,54 +66,54 @@ If a non-zlib compression algorithm was used in [InnoDB](../../../../general-res
 | Option | Old default | New default |
 | --- | --- | --- |
 | Option | Old default | New default |
-| [innodb_buffer_pool_chunk_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_chunk_size) | 134217728 | Autosized |
-| [spider_auto_increment_mode](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
-| [spider_bgs_first_read](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 2 |
-| [spider_bgs_mode](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
-| [spider_bgs_second_read](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 100 |
-| [spider_bka_mode](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
-| [spider_bka_table_name_type](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
-| [spider_buffer_size](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 16000 |
-| [spider_bulk_size](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 16000 |
-| [spider_bulk_update_mode](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
-| [spider_bulk_update_size](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 16000 |
-| [spider_casual_read](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
-| [spider_connect_timeout](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 6 |
-| [spider_crd_bg_mode](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 2 |
-| [spider_crd_interval](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 51 |
-| [spider_crd_mode](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
-| [spider_crd_sync](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
-| [spider_crd_type](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 2 |
-| [spider_crd_weight](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 2 |
-| [spider_delete_all_rows_type](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
-| [spider_direct_dup_insert](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
-| [spider_direct_order_limit](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 9223372036854775807 |
-| [spider_error_read_mode](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
-| [spider_error_write_mode](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
-| [spider_first_read](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
-| [spider_init_sql_alloc_size](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 1024 |
-| [spider_internal_limit](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 9223372036854775807 |
-| [spider_internal_offset](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
-| [spider_internal_optimize](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
-| [spider_internal_optimize_local](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
-| [spider_load_crd_at_startup](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
-| [spider_load_sts_at_startup](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
-| [spider_low_mem_read](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
-| [spider_max_order](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 32767 |
-| [spider_multi_split_read](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 100 |
-| [spider_net_read_timeout](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 600 |
-| [spider_net_write_timeout](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 600 |
-| [spider_quick_mode](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 3 |
-| [spider_quick_page_byte](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 10485760 |
-| [spider_quick_page_size](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 1024 |
-| [spider_read_only_mode](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
-| [spider_reset_sql_alloc](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
-| [spider_second_read](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
-| [spider_selupd_lock_mode](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
-| [spider_semi_split_read](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 2 |
-| [spider_semi_split_read_limit](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
-| [spider_semi_table_lock_connection](../../../reference/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
-| [spider_semi_table_lock](../../../reference/storage-engines/spider/spider-system-variables.md) | 1 | 0 |
+| [innodb_buffer_pool_chunk_size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_chunk_size) | 134217728 | Autosized |
+| [spider_auto_increment_mode](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
+| [spider_bgs_first_read](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 2 |
+| [spider_bgs_mode](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
+| [spider_bgs_second_read](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 100 |
+| [spider_bka_mode](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
+| [spider_bka_table_name_type](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
+| [spider_buffer_size](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 16000 |
+| [spider_bulk_size](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 16000 |
+| [spider_bulk_update_mode](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
+| [spider_bulk_update_size](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 16000 |
+| [spider_casual_read](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
+| [spider_connect_timeout](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 6 |
+| [spider_crd_bg_mode](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 2 |
+| [spider_crd_interval](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 51 |
+| [spider_crd_mode](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
+| [spider_crd_sync](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
+| [spider_crd_type](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 2 |
+| [spider_crd_weight](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 2 |
+| [spider_delete_all_rows_type](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
+| [spider_direct_dup_insert](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
+| [spider_direct_order_limit](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 9223372036854775807 |
+| [spider_error_read_mode](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
+| [spider_error_write_mode](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
+| [spider_first_read](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
+| [spider_init_sql_alloc_size](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 1024 |
+| [spider_internal_limit](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 9223372036854775807 |
+| [spider_internal_offset](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
+| [spider_internal_optimize](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
+| [spider_internal_optimize_local](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
+| [spider_load_crd_at_startup](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
+| [spider_load_sts_at_startup](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
+| [spider_low_mem_read](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
+| [spider_max_order](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 32767 |
+| [spider_multi_split_read](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 100 |
+| [spider_net_read_timeout](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 600 |
+| [spider_net_write_timeout](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 600 |
+| [spider_quick_mode](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 3 |
+| [spider_quick_page_byte](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 10485760 |
+| [spider_quick_page_size](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 1024 |
+| [spider_read_only_mode](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
+| [spider_reset_sql_alloc](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
+| [spider_second_read](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 0 |
+| [spider_selupd_lock_mode](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
+| [spider_semi_split_read](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 2 |
+| [spider_semi_split_read_limit](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
+| [spider_semi_table_lock_connection](../../../ref/storage-engines/spider/spider-system-variables.md) | -1 | 1 |
+| [spider_semi_table_lock](../../../ref/storage-engines/spider/spider-system-variables.md) | 1 | 0 |
 
 
 
@@ -127,8 +127,8 @@ The following options should be removed or renamed if you use them in your [opti
 | Option | Reason |
 | --- | --- |
 | Option | Reason |
-| [innodb_log_write_ahead_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_write_ahead_size) | On Linux and Windows, the physical block size of the underlying storage is instead detected and used. |
-| [innodb_version](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_version) | Redundant |
+| [innodb_log_write_ahead_size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_log_write_ahead_size) | On Linux and Windows, the physical block size of the underlying storage is instead detected and used. |
+| [innodb_version](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_version) | Redundant |
 | [wsrep_replicate_myisam](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_replicate_myisam) | Use [wsrep_mode](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_mode) instead. |
 | [wsrep_strict_ddl](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_strict_ddl) | Use [wsrep_mode](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_mode) instead. |
 

@@ -7,13 +7,13 @@ The most recent release of [MariaDB 10.11](../../../../release-notes/mariadb-com
 
 
 
-The current [versions](what-is-mariadb-galera-cluster.md#galera-versions) of the Galera wsrep provider library are 26.4.21 for [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4.
+The current [versions](what-is-mariadb-galera-cluster.md#galera-versions) of the Galera wsrep provider library are 26.4.21 for [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4.
 *For convenience, packages containing these libraries are included in the MariaDB [YUM and APT repositories](https://downloads.mariadb.org/mariadb/repositories/).*
 
 
 
 Currently, MariaDB Galera Cluster only supports the [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) storage engine (although there is
-experimental support for [MyISAM](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) and, from [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), [Aria](../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md)).
+experimental support for [MyISAM](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) and, from [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), [Aria](../../../ref/storage-engines/s3-storage-engine/aria_s3_copy.md)).
 
 
 A great resource for Galera users is the mailing list run by the developers at Codership. It can be found at [Codership on Google Groups](https://groups.google.com/forum/?fromgroups#!forum/codership-team). If you use Galera, then it is recommended you subscribe.
@@ -31,16 +31,16 @@ MariaDB Galera Cluster is powered by:
 * The [Galera wsrep provider library](https://github.com/codership/galera/).
 
 
-The [MySQL-wsrep](https://github.com/codership/mysql-wsrep) patch has been merged into MariaDB Server. This means that the functionality of MariaDB Galera Cluster can be obtained by installing the standard MariaDB Server packages and the [Galera wsrep provider library](https://github.com/codership/galera/) package. The following [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) version corresponds to each MariaDB Server version:
+The [MySQL-wsrep](https://github.com/codership/mysql-wsrep) patch has been merged into MariaDB Server. This means that the functionality of MariaDB Galera Cluster can be obtained by installing the standard MariaDB Server packages and the [Galera wsrep provider library](https://github.com/codership/galera/) package. The following [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) version corresponds to each MariaDB Server version:
 
 
-* MariaDB Galera Cluster uses [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4. This means that the [MySQL-wsrep](https://github.com/codership/mysql-wsrep) patch is version 26 and the [Galera wsrep provider library](https://github.com/codership/galera/) is version 4.
+* MariaDB Galera Cluster uses [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4. This means that the [MySQL-wsrep](https://github.com/codership/mysql-wsrep) patch is version 26 and the [Galera wsrep provider library](https://github.com/codership/galera/) is version 4.
 
 
 See [Deciphering Galera Version Numbers](https://mariadb.com/resources/blog/deciphering-galera-version-numbers/) for more information about how to interpret these version numbers.
 
 
-See [What is MariaDB Galera Cluster?: Galera Versions](what-is-mariadb-galera-cluster.md#galera-versions) for more information about which specific [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) version is included in each release of MariaDB Server.
+See [What is MariaDB Galera Cluster?: Galera Versions](what-is-mariadb-galera-cluster.md#galera-versions) for more information about which specific [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) version is included in each release of MariaDB Server.
 
 
 In supported builds, Galera Cluster functionality can be enabled by setting some configuration options that are mentioned below. Galera Cluster functionality is not enabled in a standard MariaDB Server installation unless explicitly enabled with these configuration options.
@@ -320,7 +320,7 @@ Some data still cannot be encrypted:
 ### Status Variables
 
 
-[Galera Cluster's status variables](galera-cluster-status-variables.md) can be queried with the standard `[SHOW STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md)` command. For example:
+[Galera Cluster's status variables](galera-cluster-status-variables.md) can be queried with the standard `[SHOW STATUS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md)` command. For example:
 
 
 ```

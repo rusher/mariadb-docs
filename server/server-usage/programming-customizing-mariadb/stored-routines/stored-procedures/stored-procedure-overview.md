@@ -1,7 +1,7 @@
 
 # Stored Procedure Overview
 
-A Stored Procedure is a routine invoked with a [CALL](../../../../reference/sql-statements-and-structure/sql-statements/stored-routine-statements/call.md) statement. It may have input parameters, output parameters and parameters that are both input parameters and output parameters.
+A Stored Procedure is a routine invoked with a [CALL](../../../../ref/sql-statements-and-structure/sql-statements/stored-routine-statements/call.md) statement. It may have input parameters, output parameters and parameters that are both input parameters and output parameters.
 
 
 ## Creating a Stored Procedure
@@ -78,7 +78,7 @@ Security is a key reason. Banks commonly use stored procedures so that applicati
 ## Stored Procedure listings and definitions
 
 
-To find which stored functions are running on the server, use [SHOW PROCEDURE STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-procedure-status.md).
+To find which stored functions are running on the server, use [SHOW PROCEDURE STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-procedure-status.md).
 
 
 ```
@@ -97,7 +97,7 @@ collation_connection: utf8_general_ci
   Database Collation: latin1_swedish_ci
 ```
 
-or query the [routines table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION_SCHEMA database directly:
+or query the [routines table](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION_SCHEMA database directly:
 
 
 ```
@@ -110,7 +110,7 @@ SELECT ROUTINE_NAME FROM INFORMATION_SCHEMA.ROUTINES
 +--------------------+
 ```
 
-To find out what the stored procedure does, use [SHOW CREATE PROCEDURE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-procedure.md).
+To find out what the stored procedure does, use [SHOW CREATE PROCEDURE](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-procedure.md).
 
 
 ```

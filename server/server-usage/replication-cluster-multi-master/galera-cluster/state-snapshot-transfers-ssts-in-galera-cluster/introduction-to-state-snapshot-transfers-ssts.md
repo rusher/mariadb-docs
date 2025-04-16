@@ -20,7 +20,7 @@ The only SST method of this type is the `mysqldump` SST method, which actually u
 1. Physical
 
 
-SST methods of this type physically copy the data files from the donor node to the joiner node. This requires that the joiner node is initialized after the transfer. The `[mariabackup](mariabackup-sst-method.md)` SST method and a few other SST methods fall into this category. These SST methods are much faster than the `mysqldump` SST method, but they have certain limitations. For example, they can be used only on server startup and the joiner node must be configured very similarly to the donor node (e.g. [innodb_file_per_table](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) should be the same and so on). Some of the SST methods in this category are non-blocking on the donor node, meaning that the donor node is still able to process queries while donating the SST (e.g. the `[mariabackup](mariabackup-sst-method.md)` SST method is non-blocking).
+SST methods of this type physically copy the data files from the donor node to the joiner node. This requires that the joiner node is initialized after the transfer. The `[mariabackup](mariabackup-sst-method.md)` SST method and a few other SST methods fall into this category. These SST methods are much faster than the `mysqldump` SST method, but they have certain limitations. For example, they can be used only on server startup and the joiner node must be configured very similarly to the donor node (e.g. [innodb_file_per_table](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) should be the same and so on). Some of the SST methods in this category are non-blocking on the donor node, meaning that the donor node is still able to process queries while donating the SST (e.g. the `[mariabackup](mariabackup-sst-method.md)` SST method is non-blocking).
 
 
 ## SST Methods
@@ -87,11 +87,11 @@ This SST method supports [GTID](../../standard-replication/gtid.md).
 This SST method supports [Data at Rest Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 
 
-The rsync SST method does not support tables created with the [DATA DIRECTORY or INDEX DIRECTORY](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#data-directoryindex-directory) clause. Use the [mariabackup](mariabackup-sst-method.md) SST method as an alternative to support this feature.
+The rsync SST method does not support tables created with the [DATA DIRECTORY or INDEX DIRECTORY](../../../../ref/sql-statements-and-structure/vectors/create-table-with-vectors.md#data-directoryindex-directory) clause. Use the [mariabackup](mariabackup-sst-method.md) SST method as an alternative to support this feature.
 
 
 Use of this SST method **could result in data corruption** when using 
-[innodb_use_native_aio](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_native_aio) (the default) if the donor is older than [MariaDB 10.3.35](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10335-release-notes.md), [MariaDB 10.4.25](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10425-release-notes.md), [MariaDB 10.5.16](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10516-release-notes.md), [MariaDB 10.6.8](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1068-release-notes.md), or [MariaDB 10.7.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1074-release-notes.md); see [MDEV-25975](https://jira.mariadb.org/browse/MDEV-25975). Starting with those donor versions, `wsrep_sst_method=rsync` is a reliable way to upgrade the cluster to a newer major version.
+[innodb_use_native_aio](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_use_native_aio) (the default) if the donor is older than [MariaDB 10.3.35](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10335-release-notes.md), [MariaDB 10.4.25](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10425-release-notes.md), [MariaDB 10.5.16](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10516-release-notes.md), [MariaDB 10.6.8](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1068-release-notes.md), or [MariaDB 10.7.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1074-release-notes.md); see [MDEV-25975](https://jira.mariadb.org/browse/MDEV-25975). Starting with those donor versions, `wsrep_sst_method=rsync` is a reliable way to upgrade the cluster to a newer major version.
 
 
 As of [MariaDB 10.1.36](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10136-release-notes.md), [MariaDB 10.2.18](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10218-release-notes.md), and [MariaDB 10.3.10](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10310-release-notes.md), `[stunnel](https://www.stunnel.org)` can be used to encrypt data over the wire. Be sure to have `stunnel` installed. You will also need to generate certificates and keys. See [the stunnel documentation](https://www.stunnel.org/howto.html) for information on how to do that. Once you have the keys, you will need to add the `tkey` and `tcert` options to the `[sst]` option group in your MariaDB configuration file, such as:
@@ -177,7 +177,7 @@ It can also be set in a server [option group](../../../../server-management/gett
 wsrep_sst_auth = mariabackup:password
 ```
 
-Some [authentication plugins](../../../../reference/plugins/authentication-plugins/README.md) do not require a password. For example, the `[unix_socket](../../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md)` and `[gssapi](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugins do not require a password. If you are using a user account that does not require a password in order to log in, then you can just leave the password component of `[wsrep_sst_auth](../galera-cluster-system-variables.md#wsrep_sst_auth)` empty. For example:
+Some [authentication plugins](../../../../ref/plugins/authentication-plugins/README.md) do not require a password. For example, the `[unix_socket](../../../../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md)` and `[gssapi](../../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md)` authentication plugins do not require a password. If you are using a user account that does not require a password in order to log in, then you can just leave the password component of `[wsrep_sst_auth](../galera-cluster-system-variables.md#wsrep_sst_auth)` empty. For example:
 
 
 ```
@@ -186,7 +186,7 @@ Some [authentication plugins](../../../../reference/plugins/authentication-plugi
 wsrep_sst_auth = mariabackup:
 ```
 
-See the relevant description or page for each SST method to find out what privileges need to be [granted](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) to the user and whether the privileges are needed on the donor node or joiner node for that method.
+See the relevant description or page for each SST method to find out what privileges need to be [granted](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) to the user and whether the privileges are needed on the donor node or joiner node for that method.
 
 
 ## SSTs and Systemd

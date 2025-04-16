@@ -5,7 +5,7 @@ The terms *master* and *slave* have historically been used in replication, and M
 
 
 
-Getting [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) working involves steps on both the master server/s and steps on the replica server/s.
+Getting [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) working involves steps on both the master server/s and steps on the replica server/s.
 
 
 ## Setting up a Replication Replica with MariaDB-Backup
@@ -44,7 +44,7 @@ binlog-format=mixed
 ```
 
 The server id is a unique number for each MariaDB/MySQL server in your network.
-[binlog-format](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) specifies how your statements are logged. This mainly affects the size of the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) that is sent between the Master and the Replicas.
+[binlog-format](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) specifies how your statements are logged. This mainly affects the size of the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) that is sent between the Master and the Replicas.
 
 
 Then execute the following SQL with the [mysql](../../../clients-and-utilities/mariadb-client/mysql-command-line-client.md) command line client:
@@ -93,7 +93,7 @@ Now you need prevent any changes to the data while you view the binary log posit
 
 
 * On the master, flush and lock all tables by running `FLUSH TABLES WITH READ LOCK`. Keep this session running - exiting it will release the lock.
-* Get the current position in the binary log by running `[SHOW MASTER STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md)`:
+* Get the current position in the binary log by running `[SHOW MASTER STATUS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md)`:
 
 
 ```
@@ -108,7 +108,7 @@ SHOW MASTER STATUS;
 * Record the File and Position details. If binary logging has just been enabled, these will be blank.
 * Now, with the lock still in place, copy the data from the master to the slave. See [Backup, Restore and Import](../../../clients-and-utilities/backup-restore-and-import-clients/backup-restore-and-import-clients-backuprestore-data-exportimport-via-dbfor.md) for details on how to do this.
 * Note for live databases: You just need to make a local copy of the data, you don't need to keep the master locked until the slave has imported the data.
-* Once the data has been copied, you can release the lock on the master by running [UNLOCK TABLES](../../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md).
+* Once the data has been copied, you can release the lock on the master by running [UNLOCK TABLES](../../../ref/sql-statements-and-structure/sql-statements/transactions/lock-tables.md).
 
 
 ```
@@ -118,7 +118,7 @@ UNLOCK TABLES;
 ## Start the Slave
 
 
-* Once the data has been imported, you are ready to start replicating. Begin by running a [CHANGE MASTER TO](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md), making sure that MASTER_LOG_FILE matches the file and MASTER_LOG_POS the position returned by the earlier SHOW MASTER STATUS. For example:
+* Once the data has been imported, you are ready to start replicating. Begin by running a [CHANGE MASTER TO](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md), making sure that MASTER_LOG_FILE matches the file and MASTER_LOG_POS the position returned by the earlier SHOW MASTER STATUS. For example:
 
 
 ```
@@ -149,14 +149,14 @@ See [Global Transaction ID](gtid.md) for a full description.
 <</product>>
 
 
-* Now start the slave with the [START SLAVE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) command:
+* Now start the slave with the [START SLAVE](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) command:
 
 
 ```
 START SLAVE;
 ```
 
-* Check that the replication is working by executing the [SHOW SLAVE STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) command:
+* Check that the replication is working by executing the [SHOW SLAVE STATUS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) command:
 
 
 ```

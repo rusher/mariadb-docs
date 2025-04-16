@@ -28,10 +28,10 @@ The PARTITION clause is supported for all DML statements:
 
 
 * [SELECT](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
-* [INSERT](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md)
+* [INSERT](../../ref/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md)
 * [UPDATE](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)
-* [DELETE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)
-* [REPLACE](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md)
+* [DELETE](../../ref/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)
+* [REPLACE](../../ref/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md)
 
 
 ## Partition Pruning and Triggers

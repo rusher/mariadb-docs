@@ -26,10 +26,10 @@ MySQL was probably the first database system to support a [pluggable storage eng
 One of the first plugins developed by third parties was [InnoDB](understanding-mariadb-architecture.md#innodb). It is very fast, and it adds two important features that are not otherwise supported: transactions and [foreign keys](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/foreign-keys.md).
 
 
-Note that when MariaDB asks a storage engine to write or read a row, the storage engine could theoretically do anything. This led to the creation of very interesting alternative engines, like [BLACKHOLE](../../../../reference/storage-engines/blackhole.md) (which doesn’t write or read any data, acting like the /dev/null file in Linux), or [CONNECT](../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) (which can read and write to files written in many different formats, or remote DBMSs, or some other special data sources).
+Note that when MariaDB asks a storage engine to write or read a row, the storage engine could theoretically do anything. This led to the creation of very interesting alternative engines, like [BLACKHOLE](../../../../ref/storage-engines/blackhole.md) (which doesn’t write or read any data, acting like the /dev/null file in Linux), or [CONNECT](../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) (which can read and write to files written in many different formats, or remote DBMSs, or some other special data sources).
 
 
-Nowadays InnoDB is the default MariaDB storage engine, and it is the best choice for most use cases. But for particular needs, sometimes using a different storage engine is desirable. In case of doubts about the best storage engine to use for a specific case, check the [Choosing the Right Storage Engine](../../../../reference/storage-engines/choosing-the-right-storage-engine.md) page.
+Nowadays InnoDB is the default MariaDB storage engine, and it is the best choice for most use cases. But for particular needs, sometimes using a different storage engine is desirable. In case of doubts about the best storage engine to use for a specific case, check the [Choosing the Right Storage Engine](../../../../ref/storage-engines/choosing-the-right-storage-engine.md) page.
 
 
 When we create a table, we specify its storage engine or use the default one. It is possible to convert an existing table to another storage engine, though this is a blocking operation which requires a complete table copy. Third-party storage engines can also be installed while MariaDB is running.
@@ -38,7 +38,7 @@ When we create a table, we specify its storage engine or use the default one. It
 Note that it is perfectly possible to use tables with different storage engines in the same transaction (even if some engines are not transactional). It is even possible to use different engines in the same query, for example with JOINs and subqueries.
 
 
-The default storage engine can be changed by changing the [default_storage_engine](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) variable. A different default can be specified for temporary tables by setting [default_tmp_storage_engine](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_tmp_storage_engine). MariaDB uses [Aria](../../../../reference/storage-engines/aria/aria-storage-engine.md) for system tables and temporary tables created internally to store the intermediate results of a query.
+The default storage engine can be changed by changing the [default_storage_engine](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) variable. A different default can be specified for temporary tables by setting [default_tmp_storage_engine](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_tmp_storage_engine). MariaDB uses [Aria](../../../../ref/storage-engines/aria/aria-storage-engine.md) for system tables and temporary tables created internally to store the intermediate results of a query.
 
 
 ### InnoDB
@@ -74,12 +74,12 @@ Some consequences of these design choices are the following:
 For InnoDB, a *tablespace* is a file containing data (not a file group as in SQL Server). The types of tablespaces are:
 
 
-* [System tablespace](../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md).
-* [File-per-table tablespaces](../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md).
-* [Temporary tablespaces](../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-temporary-tablespaces.md).
+* [System tablespace](../../../../ref/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md).
+* [File-per-table tablespaces](../../../../ref/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md).
+* [Temporary tablespaces](../../../../ref/storage-engines/innodb/innodb-tablespaces/innodb-temporary-tablespaces.md).
 
 
-The system tablespace is stored in the file `ibdata`. It contains information used by InnoDB internally, like rollback segments, as well as some system tables. Historically, the system tablespace also contained all tables created by the user. In modern MariaDB versions, a table is created in the system tablespace only if the [innodb_file_per_table](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) system variable is set to 0 at the moment of the table creation. By default, innodb_file_per_table is 1.
+The system tablespace is stored in the file `ibdata`. It contains information used by InnoDB internally, like rollback segments, as well as some system tables. Historically, the system tablespace also contained all tables created by the user. In modern MariaDB versions, a table is created in the system tablespace only if the [innodb_file_per_table](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) system variable is set to 0 at the moment of the table creation. By default, innodb_file_per_table is 1.
 
 
 Tables created while `innodb_file_per_table=1` are written into their own tablespace. These are `.ibd` files.
@@ -97,7 +97,7 @@ Starting from [MariaDB 10.2](../../../../../release-notes/mariadb-community-serv
 In SQL Server, the transaction log contains both the undo log and the redo log. Usually we have only one transaction log.
 
 
-In MariaDB the undo log and the redo log are stored separately. By default, the [redo log](../../../../reference/storage-engines/innodb/innodb-redo-log.md) is written to two files, called `ib_logfile0` and `ib_logfile1`. The [undo log](../../../../reference/storage-engines/innodb/innodb-undo-log.md) by default is written to the *system tablespace*, which is in the `ibdata1` file. However, it is possible to write it in separate files in a specified directory.
+In MariaDB the undo log and the redo log are stored separately. By default, the [redo log](../../../../ref/storage-engines/innodb/innodb-redo-log.md) is written to two files, called `ib_logfile0` and `ib_logfile1`. The [undo log](../../../../ref/storage-engines/innodb/innodb-undo-log.md) by default is written to the *system tablespace*, which is in the `ibdata1` file. However, it is possible to write it in separate files in a specified directory.
 
 
 MariaDB provides no way to inspect the contents of the transaction logs. However, it is possible to inspect the [binary log](understanding-mariadb-architecture.md#the-binary-log).
@@ -109,13 +109,13 @@ InnoDB transaction logs are written in a circular fashion: their size is normall
 #### InnoDB Buffer Pool
 
 
-MariaDB doesn't have a central buffer pool. Each storage engine may or may not have a buffer pool. The [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) is typically assigned a big amount of memory. See [MariaDB Memory Allocation](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/mariadb-memory-allocation.md).
+MariaDB doesn't have a central buffer pool. Each storage engine may or may not have a buffer pool. The [InnoDB buffer pool](../../../../ref/storage-engines/innodb/innodb-buffer-pool.md) is typically assigned a big amount of memory. See [MariaDB Memory Allocation](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/mariadb-memory-allocation.md).
 
 
 MariaDB has no extension like the SQL Server buffer pool extension.
 
 
-A part of the buffer pool is called the [change buffer](../../../../reference/storage-engines/innodb/innodb-change-buffering.md). It contains dirty pages that have been modified in memory and not yet flushed.
+A part of the buffer pool is called the [change buffer](../../../../ref/storage-engines/innodb/innodb-change-buffering.md). It contains dirty pages that have been modified in memory and not yet flushed.
 
 
 #### InnoDB Background Threads
@@ -124,19 +124,19 @@ A part of the buffer pool is called the [change buffer](../../../../reference/st
 InnoDB has background threads that take care of flushing dirty pages from the change buffer to the tablespaces. They don't directly affect the latency of queries, but they are very important for performance.
 
 
-[SHOW ENGINE InnoDB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) shows information about them in the `BACKGROUND THREAD` section. They can also be seen using the [threads](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md) table, in the [performance_schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md).
+[SHOW ENGINE InnoDB STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) shows information about them in the `BACKGROUND THREAD` section. They can also be seen using the [threads](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md) table, in the [performance_schema](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md).
 
 
 InnoDB flushing is similar to *lazy writes* and *checkpoints* in SQL Server. It has no equivalent for *eager writing*.
 
 
-For more information, see [InnoDB Page Flushing](../../../../reference/storage-engines/innodb/innodb-page-flushing.md) and [InnoDB Purge](../../../../reference/storage-engines/innodb/innodb-purge.md).
+For more information, see [InnoDB Page Flushing](../../../../ref/storage-engines/innodb/innodb-page-flushing.md) and [InnoDB Purge](../../../../ref/storage-engines/innodb/innodb-purge.md).
 
 
 #### Checksums and Doublewrite Buffer
 
 
-InnoDB pages have checksums. After writing pages to disk, InnoDB verifies that the checksums match. The checksum algorithm is determined by [innodb_checksum_algorithm](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm). Check the variable documentation for its consequences on performance, backward compatibility and encryption.
+InnoDB pages have checksums. After writing pages to disk, InnoDB verifies that the checksums match. The checksum algorithm is determined by [innodb_checksum_algorithm](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm). Check the variable documentation for its consequences on performance, backward compatibility and encryption.
 
 
 In case of a system crash, hardware failure or power outage, a page could be half-written on disk. For some pages, this causes a disaster. Therefore, InnoDB writes essential pages to disk twice. A backup copy of the new page version is written first. Then, the old page is overwritten. The backup copies are written into a file called the *doublewrite buffer*.
@@ -146,7 +146,7 @@ In case of a system crash, hardware failure or power outage, a page could be hal
 * If an event prevents the old page from being completely overwritten by its new version, the page can still be recovered using the doublewrite buffer.
 
 
-The doublewrite buffer can disabled using the [innodb_doublewrite](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite) variable, but this usually doesn't bring big performance benefits. The doublewrite buffer location can be changed with [innodb_doublewrite_file](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite_file).
+The doublewrite buffer can disabled using the [innodb_doublewrite](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite) variable, but this usually doesn't bring big performance benefits. The doublewrite buffer location can be changed with [innodb_doublewrite_file](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite_file).
 
 
 ### Aria
@@ -165,13 +165,13 @@ Aria is a non-transactional storage engine. By default it is crash-safe, meaning
 Aria caches indexes into the pagecache. Data are not directly cached by Aria, so it's important that the underlying filesystem caches reads and writes.
 
 
-The pagecache size is determined by the [aria_pagecache_buffer_size](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size) system variable. To know if it is big enough we can check the proportion of free pages (the ratio between [Aria_pagecache_blocks_used](../../../../reference/storage-engines/aria/aria-status-variables.md#aria_pagecache_blocks_used) and [Aria_pagecache_blocks_unused](../../../../reference/storage-engines/aria/aria-status-variables.md#aria_pagecache_blocks_unused)) and the proportion of cache misses (the ratio between [Aria_pagecache_read_requests](../../../../reference/storage-engines/aria/aria-status-variables.md#aria_pagecache_read_requests) and [Aria_pagecache_reads](../../../../reference/storage-engines/aria/aria-status-variables.md#aria_pagecache_reads).
+The pagecache size is determined by the [aria_pagecache_buffer_size](../../../../ref/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size) system variable. To know if it is big enough we can check the proportion of free pages (the ratio between [Aria_pagecache_blocks_used](../../../../ref/storage-engines/aria/aria-status-variables.md#aria_pagecache_blocks_used) and [Aria_pagecache_blocks_unused](../../../../ref/storage-engines/aria/aria-status-variables.md#aria_pagecache_blocks_unused)) and the proportion of cache misses (the ratio between [Aria_pagecache_read_requests](../../../../ref/storage-engines/aria/aria-status-variables.md#aria_pagecache_read_requests) and [Aria_pagecache_reads](../../../../ref/storage-engines/aria/aria-status-variables.md#aria_pagecache_reads).
 
 
-The proportion of dirty pages is the ratio between [Aria_pagecache_blocks_used](../../../../reference/storage-engines/aria/aria-status-variables.md#aria_pagecache_blocks_used) and [Aria_pagecache_blocks_not_flushed](../../../../reference/storage-engines/aria/aria-status-variables.md#aria_pagecache_blocks_not_flushed) tells us if the log file is big enough.
+The proportion of dirty pages is the ratio between [Aria_pagecache_blocks_used](../../../../ref/storage-engines/aria/aria-status-variables.md#aria_pagecache_blocks_used) and [Aria_pagecache_blocks_not_flushed](../../../../ref/storage-engines/aria/aria-status-variables.md#aria_pagecache_blocks_not_flushed) tells us if the log file is big enough.
 
 
-The size of Aria log is determined by [aria_log_file_size](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size).
+The size of Aria log is determined by [aria_log_file_size](../../../../ref/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size).
 
 
 ## Databases
@@ -188,7 +188,7 @@ A database is a container for database objects like tables and views. A database
 
 * A database is a namespace.
 * A database is a logical container to separate objects.
-* A database has a default [character set](../../../../reference/data-types/string-data-types/character-sets/README.md) and collation, which are inherited by their tables.
+* A database has a default [character set](../../../../ref/data-types/string-data-types/character-sets/README.md) and collation, which are inherited by their tables.
 * Permissions can be assigned on a whole database, to make permission maintenance simpler.
 * Physical data files are stored in a directory which has the same name as the database to which they belong.
 
@@ -199,9 +199,9 @@ A database is a container for database objects like tables and views. A database
 MariaDB has the following system databases:
 
 
-* [mysql](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) is for internal use only, and should not be read or written directly.
-* [information_schema](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) contains all information that can be found in SQL Server's information_schema and more. However, while SQL Server's `information_schema` is a schema containing information about the local database, MariaDB's `information_schema` is a database that contains information about all databases.
-* [performance_schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md) contains information about MariaDB runtime. It is disabled by default. Enabling it requires setting the [performance_schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) system variable to 1 and restarting MariaDB.
+* [mysql](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) is for internal use only, and should not be read or written directly.
+* [information_schema](../../../../ref/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) contains all information that can be found in SQL Server's information_schema and more. However, while SQL Server's `information_schema` is a schema containing information about the local database, MariaDB's `information_schema` is a database that contains information about all databases.
+* [performance_schema](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md) contains information about MariaDB runtime. It is disabled by default. Enabling it requires setting the [performance_schema](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) system variable to 1 and restarting MariaDB.
 
 
 ### Default Database
@@ -252,7 +252,7 @@ Stored procedures and triggers don't inherit a default database from the session
 Different tables can be built using different storage engines. It is important to note that not all engines are transactional, and that different engines implement the transaction logs in different ways. For this reason, MariaDB cannot replicate data from a primary to a replica using an equivalent of SQL Server transactional replication.
 
 
-Instead, it needs a global mechanism to log the changes that are applied to data. This mechanism is the [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), often abbreviated to binlog.
+Instead, it needs a global mechanism to log the changes that are applied to data. This mechanism is the [binary log](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), often abbreviated to binlog.
 
 
 The binary log can be written in the following formats:
@@ -298,7 +298,7 @@ Storage engines are a special type of [plugin](../../../../../general-resources/
 A plugin may add some server variables and some status variables. Server variables can be used to configure the plugin, and status variables can be used to monitor its activities and status. These variables generally use the plugin's name as a prefix. For example InnoDB has a server variable called innodb_buffer_pool_size to configure the size of its buffer pool, and a status variable called Innodb_pages_read which indicates the number of memory pages read from the buffer pool. The category [system variables](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-11-1.md) of the MariaDB Knowledge Base has specific pages for system and status variables associated with various plugins.
 
 
-Many plugins are installed by default, or available but not installed by default. They can be installed or uninstalled at runtime with SQL statements, like `INSTALL PLUGIN`, `UNINSTALL PLUGIN` and others; see [Plugin SQL Statements](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/README.md). 3rd party plugins can be made available for installation by simply copying them to the [plugin_dir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir).
+Many plugins are installed by default, or available but not installed by default. They can be installed or uninstalled at runtime with SQL statements, like `INSTALL PLUGIN`, `UNINSTALL PLUGIN` and others; see [Plugin SQL Statements](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/README.md). 3rd party plugins can be made available for installation by simply copying them to the [plugin_dir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir).
 
 
 It is important to note that different plugins may have different maturity levels. It is possible to prevent the installation of plugins we don’t consider production-ready by setting the [plugin_maturity](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_maturity) system variable. For plugins that are distributed with MariaDB, the maturity level is determined by the MariaDB team based on the bugs reported and fixed.
@@ -307,10 +307,10 @@ It is important to note that different plugins may have different maturity level
 Some plugins are developed by 3rd parties. Even some 3rd party plugins are included in MariaDB official distributions - the ones available on mariadb.org.
 
 
-In MariaDB every authorization method (including the default one) is provided by an [authentication plugin](../../../../reference/plugins/authentication-plugins/README.md). A user can be required to use a certain authentication plugin. This gives us much flexibility and control. Windows users may be interested in [gsapi](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md) (which supports Windows authentication, Kerberos and NTLM) and [named_pipe](../../../../reference/plugins/authentication-plugins/authentication-plugin-named-pipe.md) (which uses named pipe impersonation).
+In MariaDB every authorization method (including the default one) is provided by an [authentication plugin](../../../../ref/plugins/authentication-plugins/README.md). A user can be required to use a certain authentication plugin. This gives us much flexibility and control. Windows users may be interested in [gsapi](../../../../ref/plugins/authentication-plugins/authentication-plugin-gssapi.md) (which supports Windows authentication, Kerberos and NTLM) and [named_pipe](../../../../ref/plugins/authentication-plugins/authentication-plugin-named-pipe.md) (which uses named pipe impersonation).
 
 
-Other plugins that can be very useful include [userstat](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md), which includes statistics about resources and table usage, and [METADATA_LOCK_INFO](../../../../reference/plugins/other-plugins/metadata-lock-info-plugin.md), which provides information about metadata locks.
+Other plugins that can be very useful include [userstat](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md), which includes statistics about resources and table usage, and [METADATA_LOCK_INFO](../../../../ref/plugins/other-plugins/metadata-lock-info-plugin.md), which provides information about metadata locks.
 
 
 ## Thread Pool
@@ -336,7 +336,7 @@ control the server behavior. These can be set up when starting mysqld ([mysqld o
 * Global, session, or both.
 
 
-Note that server system variables are not to be confused with [user-defined variables](../../../../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md). The latter are not used for MariaDB configuration.
+Note that server system variables are not to be confused with [user-defined variables](../../../../ref/sql-statements-and-structure/sql-language-structure/user-defined-variables.md). The latter are not used for MariaDB configuration.
 
 
 ### Configuration Files
@@ -366,7 +366,7 @@ The [Server System Variables](../../../../server-usage/replication-cluster-multi
 ### Scope
 
 
-A global system variable is one that affects the general behavior of MariaDB. For example [innodb_buffer_pool_size](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) determines the size of the InnoDB buffer pool, which is used by read and write operations, no matter which user issued them. A session system variable is one that affects MariaDB behavior for the current connection; changing it will not affect other connected users, or future connections from the current user.
+A global system variable is one that affects the general behavior of MariaDB. For example [innodb_buffer_pool_size](../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) determines the size of the InnoDB buffer pool, which is used by read and write operations, no matter which user issued them. A session system variable is one that affects MariaDB behavior for the current connection; changing it will not affect other connected users, or future connections from the current user.
 
 
 A variable could exist in both the global and session scopes. In this case, the session value is what affects the current connection. When a user connects, the current global value is copied to the session scope. Changing the global value afterward will not change existing connections.
@@ -375,7 +375,7 @@ A variable could exist in both the global and session scopes. In this case, the 
 The [Server System Variables](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) page states the scope of each variable.
 
 
-Global variables and some session variables can only be modified by a user with the [SUPER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege (typically root).
+Global variables and some session variables can only be modified by a user with the [SUPER](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege (typically root).
 
 
 ### Syntax
@@ -393,7 +393,7 @@ SELECT @@session.variable_name;
 SELECT @@variable_name;
 ```
 
-A longer syntax, which is mostly useful to get multiple variables, makes use of the same pattern syntax that is used by the [LIKE](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md) operator:
+A longer syntax, which is mostly useful to get multiple variables, makes use of the same pattern syntax that is used by the [LIKE](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md) operator:
 
 
 ```
@@ -419,7 +419,7 @@ For further information see:
 
 
 * The [SET](../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) statement.
-* The [SHOW VARIABLES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md) statement.
+* The [SHOW VARIABLES](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md) statement.
 
 
 ### Setting System Variables with Startup Parameters
@@ -470,7 +470,7 @@ Many status variables exist in both scopes. For example,[Cpu_time](../../../../s
 The status variables created by a plugin, usually, use the plugin name as a prefix.
 
 
-The [SHOW STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md) statement prints the values of the status variables that match a certain pattern.
+The [SHOW STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md) statement prints the values of the status variables that match a certain pattern.
 
 
 ```
@@ -483,7 +483,7 @@ SHOW STATUS LIKE 'innodb%';
 SHOW GLOBAL STATUS LIKE '%size%';
 ```
 
-Some status variables values are reset when [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md#flush-status) is executed. A possible use:
+Some status variables values are reset when [FLUSH STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md#flush-status) is executed. A possible use:
 
 
 ```

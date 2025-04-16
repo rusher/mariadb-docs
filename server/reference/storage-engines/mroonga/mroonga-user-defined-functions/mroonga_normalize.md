@@ -18,7 +18,7 @@ mroonga_normalize(string[, normalizer_name])
 Given a string, returns the normalized text.
 
 
-See the [Groonga Normalizer Reference](https://groonga.org/docs/reference/normalizers.html) for details on the Groonga normalizers. The default if no normalizer is provided is `NormalizerAuto`.
+See the [Groonga Normalizer Reference](https://groonga.org/docs/ref/normalizers.html) for details on the Groonga normalizers. The default if no normalizer is provided is `NormalizerAuto`.
 
 
 ## Examples

@@ -286,7 +286,7 @@ sudo semanage permissive -d mysqld_t
 sudo setmodule -B
 ```
 
-The same procedure can be used if MariaDB starts but SELinux prevents it from functioning correctly. For example, SELinux may prevent [PAM plugin](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) from authenticating users. The solution is the same — enable auditing, switch to permissive, do, whatever SELinux didn't allow you to, create a policy from the audit log.
+The same procedure can be used if MariaDB starts but SELinux prevents it from functioning correctly. For example, SELinux may prevent [PAM plugin](../../ref/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) from authenticating users. The solution is the same — enable auditing, switch to permissive, do, whatever SELinux didn't allow you to, create a policy from the audit log.
 
 
 When you discover any needed SELinux permissions, please report the needed permissions to your operating system bug tracking so all users can benefit from your work (e.g. Red Hat Bugzilla [](https://bugzilla.redhat.com/)).

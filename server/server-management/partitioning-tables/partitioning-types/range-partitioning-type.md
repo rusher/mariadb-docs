@@ -10,7 +10,7 @@ A variant of this partitioning method, [RANGE COLUMNS](range-columns-and-list-co
 ## Syntax
 
 
-The last part of a [CREATE TABLE](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statement can be definition of the new table's partitions. In the case of RANGE partitioning, the syntax is the following:
+The last part of a [CREATE TABLE](../../../ref/sql-statements-and-structure/vectors/create-table-with-vectors.md) statement can be definition of the new table's partitions. In the case of RANGE partitioning, the syntax is the following:
 
 
 ```
@@ -31,7 +31,7 @@ The `partitioning_expression` is an SQL expression that returns a value from eac
 `partition_name` is the name of a partition.
 
 
-`value` indicates the upper bound for that partition. The values must be ascending. For the first partition, the lower limit is NULL. When trying to insert a row, if its value is higher than the upper limit of the last partition, the row will be rejected (with an error, if the [IGNORE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/ignore.md) keyword is not used).
+`value` indicates the upper bound for that partition. The values must be ascending. For the first partition, the lower limit is NULL. When trying to insert a row, if its value is higher than the upper limit of the last partition, the row will be rejected (with an error, if the [IGNORE](../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/ignore.md) keyword is not used).
 
 
 As a catchall, MAXVALUE can be specified as a value for the last partition. Note however that in order to append a new partition, it is not possible to use [ADD PARTITION](../partitioning-overview.md#adding-partitions); rather [REORGANIZE PARTITION](../partitioning-overview.md#splitting-partitions) must be used.
@@ -43,7 +43,7 @@ As a catchall, MAXVALUE can be specified as a value for the last partition. Note
 A typical use case is when we want to partition a table whose rows refer to a moment or period in time; for example commercial transactions, blog posts, or events of some kind. We can partition the table by year, to keep all recent data in one partition and distribute historical data in big partitions that are stored on slower disks. Or, if our queries always read rows which refer to the same month or week, we can partition the table by month or year week (in this case, historical data and recent data will be stored together).
 
 
-[AUTO_INCREMENT](../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) values also represent a chronological order. So, these values can be used to store old data in separate partitions. However, partitioning by id is not the best choice if we usually query a table by date.
+[AUTO_INCREMENT](../../../ref/storage-engines/innodb/auto_increment-handling-in-innodb.md) values also represent a chronological order. So, these values can be used to store old data in separate partitions. However, partitioning by id is not the best choice if we usually query a table by date.
 
 
 ## Examples
@@ -91,7 +91,7 @@ PARTITION BY RANGE (UNIX_TIMESTAMP(ts))
 );
 ```
 
-As you can see, we used the [UNIX_TIMESTAMP](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/unix_timestamp.md) function to accomplish the purpose. Also, the first two partitions cover longer periods of time (probably because the logged activities were less intensive).
+As you can see, we used the [UNIX_TIMESTAMP](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/unix_timestamp.md) function to accomplish the purpose. Also, the first two partitions cover longer periods of time (probably because the logged activities were less intensive).
 
 
 In both cases, when our tables become huge and we don't need to store all historical data any more, we can drop the oldest partitions in this way:

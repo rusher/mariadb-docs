@@ -5,7 +5,7 @@ The terms *master* and *slave* have historically been used in replication, and M
 
 
 The introduction of [checksums on binlog events](binlog-event-checksums.md) changes the format that events
-are stored in [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) files and sent over the network to replicas. This raises the question on what happens when replicating between different versions of the
+are stored in [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) files and sent over the network to replicas. This raises the question on what happens when replicating between different versions of the
 server, where one server is a newer version that has the binlog checksum
 feature implemented, while the other server is an older version that does not
 know about binlog checksums.

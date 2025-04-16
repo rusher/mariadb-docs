@@ -17,7 +17,7 @@ MariaDB has the following types of backups:
 A *dump*, also called a *logical backup*, consists of the SQL statements needed to recreate MariaDB databases and their data into another server. A dump is the slowest form of backup to restore, because it implies executing all the SQL statements needed to recreate data. However it is also the most flexible, because restoring will work on any MariaDB version, because the SQL syntax is usually compatible. It is even possible to restore a dump into an older version, though the incompatible syntax (new features) will be ignored. Under certain conditions, MariaDB dumps may also be restored on other DBMSs, including SQL Server.
 
 
-The compatibility between different versions and technologies is achieved by using [executable comments](../../../../reference/sql-statements-and-structure/sql-statements/comment-syntax.md), but we should be aware of how they work. If we use a feature introduced in version 11.1, for example, it will be included in the dump inside an executable comment. If we restore that backup on a server with [MariaDB 10.11](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), the 11.1 feature will be ignored. This is the only way to restore backups in older MariaDB versions.
+The compatibility between different versions and technologies is achieved by using [executable comments](../../../../ref/sql-statements-and-structure/sql-statements/comment-syntax.md), but we should be aware of how they work. If we use a feature introduced in version 11.1, for example, it will be included in the dump inside an executable comment. If we restore that backup on a server with [MariaDB 10.11](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), the 11.1 feature will be ignored. This is the only way to restore backups in older MariaDB versions.
 
 
 ### mariadb-dump
@@ -35,7 +35,7 @@ For consistency reasons, when using the default storage engine [InnoDB](understa
 The `--master-data` option adds the statements to setup a slave to the dump.
 
 
-MariaDB also supports statements which make easy to write applications to obtain custom types of dumps. For most `CREATE <object_type>` statement, a corresponding `SHOW CREATE <object_type>` exists. For example, [SHOW CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) returns the `CREATE TABLE` statement that can be used to recreate a certain table, without data.
+MariaDB also supports statements which make easy to write applications to obtain custom types of dumps. For most `CREATE <object_type>` statement, a corresponding `SHOW CREATE <object_type>` exists. For example, [SHOW CREATE TABLE](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) returns the `CREATE TABLE` statement that can be used to recreate a certain table, without data.
 
 
 ### mydumper
@@ -50,7 +50,7 @@ Since is it a 3rd party tool, it could be incompatible with some present or futu
 ## Hot Backups (mariabackup)
 
 
-Mariabackup is a tool for taking a backup of MariaDB files while MariaDB is working. A lock is only held for a small amount of time, so it is suitable to backup a server without causing disruptions. It works by taking corrupted backups and then bringing them to a consistent state by using the [InnoDB undo log](../../../../reference/storage-engines/innodb/innodb-undo-log.md). Mariabackup also properly backups [MyRocks](../../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) tables and non-transactional storage engines.
+Mariabackup is a tool for taking a backup of MariaDB files while MariaDB is working. A lock is only held for a small amount of time, so it is suitable to backup a server without causing disruptions. It works by taking corrupted backups and then bringing them to a consistent state by using the [InnoDB undo log](../../../../ref/storage-engines/innodb/innodb-undo-log.md). Mariabackup also properly backups [MyRocks](../../../../ref/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) tables and non-transactional storage engines.
 
 
 ## Cold Backups and Snapshots
@@ -83,7 +83,7 @@ For more information about snapshots, check your filesystem, LVM or virtual mach
 The term incremental backup in MariaDB indicates what SQL Server calls a *[differential backup](https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/differential-backups-sql-server)*. An important difference is that in SQL Server such backups are based on the [transaction log](https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/transaction-log-backups-sql-server), which wouldn't be possible in MariaDB because transaction logs are handled at storage engine level.
 
 
-As mentioned [here](understanding-mariadb-architecture.md#the-binary-log), MariaDB can use the [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) instead for backup purposes. Such incremental backups can be done manually. This means that:
+As mentioned [here](understanding-mariadb-architecture.md#the-binary-log), MariaDB can use the [binary log](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) instead for backup purposes. Such incremental backups can be done manually. This means that:
 
 
 * The binary log files are copied just like any other regular file.
@@ -127,16 +127,16 @@ Mariabackup can run on both Linux and Windows systems.
 It is entirely possible to restore a single table from a physical backup, or to copy the table to another server.
 
 
-With the [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) storage engine it was very easy to move tables between different servers, as long as the MySQL or MariaDB version was the same.
+With the [MyISAM](../../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) storage engine it was very easy to move tables between different servers, as long as the MySQL or MariaDB version was the same.
 
 
 [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) is nowadays the default storage engine, and it is more complex, as it supports transactions for example. It still supports restoring a table from a physical file, this feature is called *transportable tablespaces*. There is a particular procedure to follow, and some limitations. This is basically the MariaDB equivalent of detaching and re-attaching tables in SQL Server.
 
 
-For more information, see [InnoDB File-Per-Table Tablespaces](../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md).
+For more information, see [InnoDB File-Per-Table Tablespaces](../../../../ref/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md).
 
 
-By default. all table files are located in the *data directory*, which is defined by the system variable [datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir). There may be exceptions, because a table's files can be located elsewhere using the [DATA DIRECTORY and INDEX DIRECTORY](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#data-directoryindex-directory) options in `CREATE TABLE`.
+By default. all table files are located in the *data directory*, which is defined by the system variable [datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir). There may be exceptions, because a table's files can be located elsewhere using the [DATA DIRECTORY and INDEX DIRECTORY](../../../../ref/sql-statements-and-structure/vectors/create-table-with-vectors.md#data-directoryindex-directory) options in `CREATE TABLE`.
 
 
 Regardless of the storage engine used, each table's structure is generally stored in a file with the `.frm` extension.

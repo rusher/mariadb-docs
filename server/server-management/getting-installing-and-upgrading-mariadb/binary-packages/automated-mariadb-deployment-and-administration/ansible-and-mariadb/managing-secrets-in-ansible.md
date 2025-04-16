@@ -29,10 +29,10 @@ As a general rule, any configuration that implies communicating sensible informa
 Once Ansible is able to connect remote hosts, it can also be used to install the public keys of some users to grant them access. Sharing these keys implies no risk. Sharing private keys is never necessary, and must be avoided.
 
 
-MariaDB has a [UNIX_SOCKET](../../../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) plugin that can be used to let some users avoid entering a password, as far as they're logged in the operating system. This authentication method is used by default for the root user. This is a good way to avoid having one more password and possibly writing to a `.my.cnf` file so that the user doesn't have to type it.
+MariaDB has a [UNIX_SOCKET](../../../../../ref/plugins/authentication-plugins/authentication-plugin-unix-socket.md) plugin that can be used to let some users avoid entering a password, as far as they're logged in the operating system. This authentication method is used by default for the root user. This is a good way to avoid having one more password and possibly writing to a `.my.cnf` file so that the user doesn't have to type it.
 
 
-Even for users who connect remotely, it is normally not necessary to insert passwords in an Ansible file. When we create a user with a password, a hash of the original password is stored in MariaDB. That hash can be found in the [mysql.user table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md). To know the hash of a password without even creating a user, we can use the [PASSWORD()](../../../../../reference/plugins/password-validation-plugins/password-reuse-check-plugin.md) function:
+Even for users who connect remotely, it is normally not necessary to insert passwords in an Ansible file. When we create a user with a password, a hash of the original password is stored in MariaDB. That hash can be found in the [mysql.user table](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md). To know the hash of a password without even creating a user, we can use the [PASSWORD()](../../../../../ref/plugins/password-validation-plugins/password-reuse-check-plugin.md) function:
 
 
 ```

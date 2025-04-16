@@ -1,7 +1,7 @@
 
 # aria_pack
 
-aria_pack is a tool for compressing [Aria](../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables. The resulting table are read-only, and usually about 40% to 70% smaller.
+aria_pack is a tool for compressing [Aria](../../ref/storage-engines/s3-storage-engine/aria_s3_copy.md) tables. The resulting table are read-only, and usually about 40% to 70% smaller.
 
 
 aria_pack is run as follows
@@ -80,6 +80,6 @@ State updated
 ## See Also
 
 
-* [FLUSH TABLES FOR EXPORT](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
+* [FLUSH TABLES FOR EXPORT](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
 * [myisamchk](../myisam-clients-and-utilities/myisamchk-table-information.md)
 

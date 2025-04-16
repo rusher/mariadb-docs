@@ -1,7 +1,7 @@
 
 # STOP_EVENT
 
-The master server writes the event to the [binary log](../../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) when it shuts down or when resuming after a mysqld process crash.
+The master server writes the event to the [binary log](../../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) when it shuts down or when resuming after a mysqld process crash.
 
 
 A new binary log file is always created but there is no ROTATE_EVENT.

@@ -12,7 +12,7 @@ Catalog support is planned for 12.0.
 
 
 [mariadb-install-db](../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md) initializes the MariaDB data directory and creates the
-[system tables](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) in the [mysql](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database.
+[system tables](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) in the [mysql](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database.
 
 
 When used with the `--catalog` options it will initialize MariaDB server to use catalogs.

@@ -10,10 +10,10 @@ A trigger, as its name suggests, is a set of statements that run, or are trigger
 The event can be an INSERT, an UPDATE or a DELETE. The trigger can be executed BEFORE or AFTER the event. Until [MariaDB 10.2.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md), a table could have only one trigger defined for each event/timing combination: for example, a table could only have one BEFORE INSERT trigger.
 
 
-The [LOAD DATA INFILE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) and [LOAD XML](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-xml.md) statements invoke INSERT triggers for each row that is being inserted.
+The [LOAD DATA INFILE](../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) and [LOAD XML](../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-xml.md) statements invoke INSERT triggers for each row that is being inserted.
 
 
-The [REPLACE](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md) statement is executed with the following workflow:
+The [REPLACE](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md) statement is executed with the following workflow:
 
 
 * BEFORE INSERT;
@@ -22,7 +22,7 @@ The [REPLACE](../../../../reference/sql-statements-and-structure/sql-statements/
 * AFTER INSERT.
 
 
-The [INSERT ... ON DUPLICATE KEY UPDATE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md) statement, when a row already exists, follows the following workflow:
+The [INSERT ... ON DUPLICATE KEY UPDATE](../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md) statement, when a row already exists, follows the following workflow:
 
 
 * BEFORE INSERT;
@@ -33,7 +33,7 @@ The [INSERT ... ON DUPLICATE KEY UPDATE](../../../../reference/sql-statements-an
 Otherwise, it works like a normal INSERT statement.
 
 
-Note that [TRUNCATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md) does not activate any triggers.
+Note that [TRUNCATE TABLE](../../../../ref/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md) does not activate any triggers.
 
 
 ## Triggers and Errors
@@ -119,7 +119,7 @@ For more details on the syntax, see [CREATE TRIGGER](create-trigger.md).
 ## Dropping Triggers
 
 
-To drop a trigger, use the [DROP TRIGGER](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-trigger.md) statement. Triggers are also dropped if the table with which they are associated is also dropped.
+To drop a trigger, use the [DROP TRIGGER](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/drop/drop-trigger.md) statement. Triggers are also dropped if the table with which they are associated is also dropped.
 
 
 ```
@@ -129,13 +129,13 @@ DROP TRIGGER increment_animal;
 ## Triggers Metadata
 
 
-The [Information Schema TRIGGERS Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md) stores information about triggers.
+The [Information Schema TRIGGERS Table](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md) stores information about triggers.
 
 
-The [SHOW TRIGGERS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-triggers.md) statement returns similar information.
+The [SHOW TRIGGERS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-triggers.md) statement returns similar information.
 
 
-The [SHOW CREATE TRIGGER](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-trigger.md) statement returns a CREATE TRIGGER statement that creates the given trigger.
+The [SHOW CREATE TRIGGER](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-trigger.md) statement returns a CREATE TRIGGER statement that creates the given trigger.
 
 
 ## More Complex Triggers
@@ -193,7 +193,7 @@ SELECT * FROM animal_count;
 If a trigger contains an error and the engine is transactional, or it is a BEFORE trigger, the trigger will not run, and will prevent the original statement from running as well. If the engine is non-transactional, and it is an AFTER trigger, the trigger will not run, but the original statement will.
 
 
-Here, we'll drop the above examples, and then recreate the trigger with an error, a field that doesn't exist, first using the default [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), a transactional engine, and then again using [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), a non-transactional engine.
+Here, we'll drop the above examples, and then recreate the trigger with an error, a field that doesn't exist, first using the default [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), a transactional engine, and then again using [MyISAM](../../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md), a non-transactional engine.
 
 
 ```
@@ -277,10 +277,10 @@ Empty set (0.00 sec)
 
 
 * [CREATE TRIGGER](create-trigger.md)
-* [DROP TRIGGER](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-trigger.md)
-* [Information Schema TRIGGERS Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)
-* [SHOW TRIGGERS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-triggers.md)
-* [SHOW CREATE TRIGGER](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-trigger.md)
+* [DROP TRIGGER](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/drop/drop-trigger.md)
+* [Information Schema TRIGGERS Table](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)
+* [SHOW TRIGGERS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-triggers.md)
+* [SHOW CREATE TRIGGER](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-trigger.md)
 * [Trigger Limitations](trigger-limitations.md)
 * [Creative uses of triggers: Things you people wouldn't believe](https://www.youtube.com/watch?v=-O2up6Fr9M0) (video)
 

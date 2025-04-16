@@ -8,7 +8,7 @@
 GUIDs/UUIDs (Globally/Universally Unique Identifiers) are very random. Therefore, INSERTing into an index means jumping around a lot. Once the index is too big to be cached, most INSERTs involve a disk hit. Even on a beefy system, this limits you to a few hundred INSERTs per second.
 
 
-[MariaDB's UUID function](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid.md).
+[MariaDB's UUID function](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid.md).
 
 
 This blog is mostly eliminated in MySQL 8.0 with the advent of the following function:
@@ -33,13 +33,13 @@ Some math... If the index is small enough to be cached in RAM, each insert into 
 36 characters is bulky. If you are using that as a PRIMARY KEY in InnoDB and you have secondary keys, remember that each secondary key has an implicit copy of the PK, thereby making it bulky.
 
 
-It is tempting to declare the UUID [VARCHAR(36)](../../../../reference/data-types/string-data-types/varchar.md). And, since you probably are thinking globally, so you have [CHARACTER SET](../../../../reference/data-types/string-data-types/character-sets/README.md) utf8 (or utf8mb4). For utf8:
+It is tempting to declare the UUID [VARCHAR(36)](../../../../ref/data-types/string-data-types/varchar.md). And, since you probably are thinking globally, so you have [CHARACTER SET](../../../../ref/data-types/string-data-types/character-sets/README.md) utf8 (or utf8mb4). For utf8:
 
 
 * 2 - Overhead for VAR
 * 36 - chars
 * 3 (or 4) bytes per character for utf8 (or utf8mb4)
-So, max length = 2+3*36 = 110 (or 146) bytes. For temp tables 108 (or 144) is actually used if a [MEMORY](../../../../reference/storage-engines/memory-storage-engine.md) table is used.
+So, max length = 2+3*36 = 110 (or 146) bytes. For temp tables 108 (or 144) is actually used if a [MEMORY](../../../../ref/storage-engines/memory-storage-engine.md) table is used.
 
 
 To compress
@@ -47,8 +47,8 @@ To compress
 
 * utf8 is unnecessary (ascii would do); but this is obviated by the next two steps
 * Toss dashes
-* [UNHEX](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/unhex.md)
-Now it will fit in 16 bytes: [BINARY(16)](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)
+* [UNHEX](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/unhex.md)
+Now it will fit in 16 bytes: [BINARY(16)](../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)
 
 
 ## Combining the problems and crafting a solution
@@ -140,11 +140,11 @@ WHERE UuidFromBin(uuid) = '1026-baba-6ccd780c-9564-0040f4311e29' -- NO
 ## TokuDB
 
 
-TokuDB has been deprecated by its upstream maintainer. It is disabled from [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) and has been been removed in [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) - [MDEV-19780](https://jira.mariadb.org/browse/MDEV-19780). We recommend [MyRocks](../../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) as a long-term migration path.
+TokuDB has been deprecated by its upstream maintainer. It is disabled from [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) and has been been removed in [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) - [MDEV-19780](https://jira.mariadb.org/browse/MDEV-19780). We recommend [MyRocks](../../../../ref/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) as a long-term migration path.
 
 
 
-[TokuDB](../../../../reference/storage-engines/tokudb/tokudb-resources.md) is a viable engine if you must have UUIDs (even non-type-1) in a huge table. TokuDB is available in MariaDB as a 'standard' engine, making the barrier to entry very low. There are a small number of differences between [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) and TokuDB; I will not go into them here.
+[TokuDB](../../../../ref/storage-engines/tokudb/tokudb-resources.md) is a viable engine if you must have UUIDs (even non-type-1) in a huge table. TokuDB is available in MariaDB as a 'standard' engine, making the barrier to entry very low. There are a small number of differences between [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) and TokuDB; I will not go into them here.
 
 
 Tokudb, with its “fractal” indexing strategy builds the indexes in stages. In contrast, InnoDB inserts index entries “immediately” — actually that indexing is buffered by most of the size of the buffer_pool. To elaborate…
@@ -215,7 +215,7 @@ Written Oct, 2012. Added TokuDB, Jan, 2015.
 ## See Also
 
 
-* [UUID data type](../../../../reference/data-types/string-data-types/uuid-data-type.md)
+* [UUID data type](../../../../ref/data-types/string-data-types/uuid-data-type.md)
 * [Detailed discussion of UUID indexing](https://stackoverflow.com/questions/28084901/how-does-mysql-determine-if-an-insert-is-unique/28547410#28547410)
 * [Graphical display of the random nature of UUID on PRIMARY KEY](https://www.percona.com/blog/2015/04/03/illustrating-primary-key-models-in-innodb-and-their-impact-on-disk-usage/)
 * [Benchmarks, etc, by Karthik Appigatla](https://www.percona.com/blog/2014/12/19/store-uuid-optimized-way/)

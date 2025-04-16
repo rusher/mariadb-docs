@@ -51,7 +51,7 @@ CREATE OR REPLACE TABLE t1 (c1 INT, c2 DATETIME)
   PARTITIONS 5;
 ```
 
-Using the [Information Schema PARTITIONS Table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) for more information:
+Using the [Information Schema PARTITIONS Table](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) for more information:
 
 
 ```

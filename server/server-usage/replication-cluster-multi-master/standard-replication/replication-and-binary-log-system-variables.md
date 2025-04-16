@@ -5,7 +5,7 @@ The terms *master* and *slave* have historically been used in replication, and M
 
 
 
-This page lists system variables that are related to [binary logging](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md).
+This page lists system variables that are related to [binary logging](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md).
 
 
 See [Server System Variables](../optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them, as well as [System variables for global transaction ID](gtid.md#system-variables-for-global-transaction-id).
@@ -20,7 +20,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `auto_increment_increment`
 
 
-* Description: The increment for all [AUTO_INCREMENT](../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) values on the server, by default `1`. Intended for use in primary-to-primary [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md).
+* Description: The increment for all [AUTO_INCREMENT](../../../ref/storage-engines/innodb/auto_increment-handling-in-innodb.md) values on the server, by default `1`. Intended for use in primary-to-primary [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md).
 * Commandline: `--auto-increment-increment[=#]`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -33,7 +33,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `auto_increment_offset`
 
 
-* Description: The offset for all [AUTO_INCREMENT](../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) values on the server, by default `1`. Intended for use in primary-to-primary [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md). Should be not be larger than [auto_increment_increment](#auto_increment_increment). See [AUTO_INCREMENT#Replication](../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md#replication).
+* Description: The offset for all [AUTO_INCREMENT](../../../ref/storage-engines/innodb/auto_increment-handling-in-innodb.md) values on the server, by default `1`. Intended for use in primary-to-primary [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md). Should be not be larger than [auto_increment_increment](#auto_increment_increment). See [AUTO_INCREMENT#Replication](../../../ref/storage-engines/innodb/auto_increment-handling-in-innodb.md#replication).
 * Commandline: `--auto-increment-offset[=#]`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -74,7 +74,7 @@ it could start on replica before its actual execution on primary.
 #### `binlog_cache_size`
 
 
-* Description: If the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is active, this variable determines the size in bytes, per-connection, of the cache holding a record of binary log changes during a transaction. A separate variable, [binlog_stmt_cache_size](#binlog_stmt_cache_size), sets the upper limit for the statement cache. The [binlog_cache_disk_use](../optimization-and-tuning/system-variables/server-status-variables.md#binlog_cache_disk_use) and [binlog_cache_use](../optimization-and-tuning/system-variables/server-status-variables.md#binlog_cache_use) [server status variables](../optimization-and-tuning/system-variables/server-status-variables.md) will indicate whether this variable needs to be increased (you want a low ratio of binlog_cache_disk_use to binlog_cache_use).
+* Description: If the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is active, this variable determines the size in bytes, per-connection, of the cache holding a record of binary log changes during a transaction. A separate variable, [binlog_stmt_cache_size](#binlog_stmt_cache_size), sets the upper limit for the statement cache. The [binlog_cache_disk_use](../optimization-and-tuning/system-variables/server-status-variables.md#binlog_cache_disk_use) and [binlog_cache_use](../optimization-and-tuning/system-variables/server-status-variables.md#binlog_cache_use) [server status variables](../optimization-and-tuning/system-variables/server-status-variables.md) will indicate whether this variable needs to be increased (you want a low ratio of binlog_cache_disk_use to binlog_cache_use).
 * Commandline: `--binlog-cache-size=#`
 * Scope: Global
 * Dynamic: Yes
@@ -88,7 +88,7 @@ it could start on replica before its actual execution on primary.
 #### `binlog_checksum`
 
 
-* Description: Specifies the type of BINLOG_CHECKSUM_ALG for log events in the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md).
+* Description: Specifies the type of BINLOG_CHECKSUM_ALG for log events in the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md).
 * Commandline: 
 
   * `--binlog-checksum=name`
@@ -108,7 +108,7 @@ it could start on replica before its actual execution on primary.
 
 
 * Description: Configures the behavior of [group commit for the binary log](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md), which can help increase transaction throughput and is used to enable [conservative mode of in-order parallel replication](parallel-replication.md#conservative-mode-of-in-order-parallel-replication).
-With [group commit for the binary log](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md), the server can delay flushing a committed transaction into [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) until the given number of transactions are ready to be flushed as a group. The delay will however not be longer
+With [group commit for the binary log](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md), the server can delay flushing a committed transaction into [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) until the given number of transactions are ready to be flushed as a group. The delay will however not be longer
 than the value set by [binlog_commit_wait_usec](#binlog_commit_wait_usec).
 The default value of 0 means that no delay is introduced.
 Setting this value can reduce I/O on the binary log and give an increased opportunity for parallel apply on the replica when [conservative mode of in-order parallel replication](parallel-replication.md#conservative-mode-of-in-order-parallel-replication) is enabled, but too high a value will decrease the transaction throughput. By monitoring the status variable [binlog_group_commit_trigger_count](replication-and-binary-log-status-variables.md#binlog_group_commit_trigger_count) (>=[MariaDB 10.1.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes.md)) it is possible to see how often this is occurring.
@@ -133,7 +133,7 @@ throughput on a replica with [conservative mode of in-order parallel replication
 
 
 * Description: Configures the behavior of [group commit for the binary log](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md), which can help increase transaction throughput and is used to enable [conservative mode of in-order parallel replication](parallel-replication.md#conservative-mode-of-in-order-parallel-replication).
-With [group commit for the binary log](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md), the server can delay flushing a committed transaction into [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) until the transaction has waited the configured number of microseconds. By monitoring the status variable [binlog_group_commit_trigger_timeout](replication-and-binary-log-status-variables.md#binlog_group_commit_trigger_timeout) (>=[MariaDB 10.1.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes.md)) it is possible to see how often group commits are made due to `binlog_commit_wait_usec`. As soon as the number of pending commits reaches [binlog_commit_wait_count](#binlog_commit_wait_count), the wait will be terminated, though. Thus, this setting only takes effect if `binlog_commit_wait_count` is non-zero.
+With [group commit for the binary log](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md), the server can delay flushing a committed transaction into [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) until the transaction has waited the configured number of microseconds. By monitoring the status variable [binlog_group_commit_trigger_timeout](replication-and-binary-log-status-variables.md#binlog_group_commit_trigger_timeout) (>=[MariaDB 10.1.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes.md)) it is possible to see how often group commits are made due to `binlog_commit_wait_usec`. As soon as the number of pending commits reaches [binlog_commit_wait_count](#binlog_commit_wait_count), the wait will be terminated, though. Thus, this setting only takes effect if `binlog_commit_wait_count` is non-zero.
 * Commandline: `--binlog-commit-wait-usec#`
 * Scope: Global
 * Dynamic: Yes
@@ -146,7 +146,7 @@ With [group commit for the binary log](../../../server-management/server-monitor
 #### `binlog_direct_non_transactional_updates`
 
 
-* Description: [Replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) inconsistencies can occur due when a transaction updates both transactional and non-transactional tables and the updates to the non-transactional tables are visible before being written to the binary log. This is because, to preserve causality, the non-transactional statements are written to the transaction cache, which is only flushed on commit. Setting binlog_direct_non_transactional_updates to 1 (0 is default) will cause non-transactional tables to be written straight to the binary log, rather than the transaction cache. This setting has no effect when row-based binary logging is used, as it requires statement-based logging. See [binlog_format](#binlog_format). Use with care, and only in situations where no dependencies exist between the non-transactional and transactional tables, for example INSERTing into a non-transactional table based upon the results of a SELECT from a transactional table.
+* Description: [Replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) inconsistencies can occur due when a transaction updates both transactional and non-transactional tables and the updates to the non-transactional tables are visible before being written to the binary log. This is because, to preserve causality, the non-transactional statements are written to the transaction cache, which is only flushed on commit. Setting binlog_direct_non_transactional_updates to 1 (0 is default) will cause non-transactional tables to be written straight to the binary log, rather than the transaction cache. This setting has no effect when row-based binary logging is used, as it requires statement-based logging. See [binlog_format](#binlog_format). Use with care, and only in situations where no dependencies exist between the non-transactional and transactional tables, for example INSERTing into a non-transactional table based upon the results of a SELECT from a transactional table.
 * Commandline: `--binlog-direct-non-transactional-updates[=value]`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -158,7 +158,7 @@ With [group commit for the binary log](../../../server-management/server-monitor
 #### `binlog_do_db`
 
 
-* Description: This option allows you to configure a [replication primary](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to write statements and transactions affecting databases that match a specified name into its [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Since the filtered statements or transactions will not be present in the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), its replicas will not be able to replicate them.
+* Description: This option allows you to configure a [replication primary](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to write statements and transactions affecting databases that match a specified name into its [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Since the filtered statements or transactions will not be present in the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), its replicas will not be able to replicate them.
 
   * This option will not work with cross-database updates with [statement-based logging](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
   * Until [MariaDB 11.2.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md), only available as an option, not a system variable. This option can not be set dynamically.
@@ -190,7 +190,7 @@ With [group commit for the binary log](../../../server-management/server-monitor
 #### `binlog_file_cache_size`
 
 
-* Description: Size of in-memory cache that is allocated when reading [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) files.
+* Description: Size of in-memory cache that is allocated when reading [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) files.
 * Commandline: `--binlog-file-cache-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -204,7 +204,7 @@ With [group commit for the binary log](../../../server-management/server-monitor
 #### `binlog_format`
 
 
-* Description: Determines whether [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) is row-based, statement-based or mixed. Statement-based was the default until [MariaDB 10.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md). Be careful of changing the binary log format when a replication environment is already running. See [Binary Log Formats](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md). Starting from [MariaDB 10.0.22](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes.md) a replica will apply any events it gets from the primary, regardless of the binary log format. `binlog_format` only applies to normal (not replicated) updates.
+* Description: Determines whether [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) is row-based, statement-based or mixed. Statement-based was the default until [MariaDB 10.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md). Be careful of changing the binary log format when a replication environment is already running. See [Binary Log Formats](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md). Starting from [MariaDB 10.0.22](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes.md) a replica will apply any events it gets from the primary, regardless of the binary log format. `binlog_format` only applies to normal (not replicated) updates.
 * Commandline: `--binlog-format=format`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -261,7 +261,7 @@ With [group commit for the binary log](../../../server-management/server-monitor
 #### `binlog_ignore_db`
 
 
-* Description: This option allows you to configure a [replication primary](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to not write statements and transactions affecting databases that match a specified name into its [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Since the filtered statements or transactions will not be present in the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), its replicas will not be able to replicate them.
+* Description: This option allows you to configure a [replication primary](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to not write statements and transactions affecting databases that match a specified name into its [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Since the filtered statements or transactions will not be present in the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), its replicas will not be able to replicate them.
 
   * This option will not work with cross-database updates with [statement-based logging](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
   * Until [MariaDB 11.2.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md), only available as an option, not a system variable. This option can not be set dynamically.
@@ -320,7 +320,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `binlog_row_event_max_size`
 
 
-* Description: The maximum size of a row-based [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) event in bytes. Rows will be grouped into events smaller than this size if possible. The value has to be a multiple of 256. Until [MariaDB 11.2.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md), only available as an option, not a system variable.
+* Description: The maximum size of a row-based [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) event in bytes. Rows will be grouped into events smaller than this size if possible. The value has to be a multiple of 256. Until [MariaDB 11.2.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md), only available as an option, not a system variable.
 * Commandline: `--binlog-row-event-max-size=val`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -334,7 +334,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `binlog_row_image`
 
 
-* Description: Controls the logging format in [row-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based) [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md). In row-based replication (the variable has no effect with [statement-based replication](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based)), each row change event contains an image for matching against when choosing the row to be updated, and another image containing the changes. Before the introduction of this variable, all columns were logged for both of these images. In certain circumstances, this is not necessary, and memory, disk and network resources can be saved by partial logging. Note that to safely change this setting from the default, the table being replicated to must contain identical primary key definitions, and columns must be present, in the same order, and use the same data types as the original table. If these conditions are not met, matches may not be correctly determined and updates and deletes may diverge on the replica, with no warnings or errors returned.
+* Description: Controls the logging format in [row-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based) [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md). In row-based replication (the variable has no effect with [statement-based replication](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based)), each row change event contains an image for matching against when choosing the row to be updated, and another image containing the changes. Before the introduction of this variable, all columns were logged for both of these images. In certain circumstances, this is not necessary, and memory, disk and network resources can be saved by partial logging. Note that to safely change this setting from the default, the table being replicated to must contain identical primary key definitions, and columns must be present, in the same order, and use the same data types as the original table. If these conditions are not met, matches may not be correctly determined and updates and deletes may diverge on the replica, with no warnings or errors returned.
 
   * `FULL`: All columns in the before and after image are logged. This is the default, and the only behavior in earlier versions.
   * `NOBLOB`: mariadbd avoids logging blob and text columns whenever possible (eg, blob column was not changed or is not part of primary key).
@@ -381,7 +381,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `binlog_stmt_cache_size`
 
 
-* Description: If the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is active, this variable determines the size in bytes of the cache holding a record of binary log changes outside of a transaction. The variable [binlog_cache_size](#binlog_cache_size), determines the cache size for binary log statements inside a transaction. The [binlog_stmt_cache_disk_use](../optimization-and-tuning/system-variables/server-status-variables.md#binlog_stmt_cache_disk_use) and [binlog_stmt_cache_use](../optimization-and-tuning/system-variables/server-status-variables.md#binlog_stmt_cache_use) [server status variables](../optimization-and-tuning/system-variables/server-status-variables.md) will indicate whether this variable needs to be increased (you want a low ratio of binlog_stmt_cache_disk_use to binlog_stmt_cache_use).
+* Description: If the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is active, this variable determines the size in bytes of the cache holding a record of binary log changes outside of a transaction. The variable [binlog_cache_size](#binlog_cache_size), determines the cache size for binary log statements inside a transaction. The [binlog_stmt_cache_disk_use](../optimization-and-tuning/system-variables/server-status-variables.md#binlog_stmt_cache_disk_use) and [binlog_stmt_cache_use](../optimization-and-tuning/system-variables/server-status-variables.md#binlog_stmt_cache_use) [server status variables](../optimization-and-tuning/system-variables/server-status-variables.md) will indicate whether this variable needs to be increased (you want a low ratio of binlog_stmt_cache_disk_use to binlog_stmt_cache_use).
 * Commandline: `--binlog-stmt-cache-size=#`
 * Scope: Global
 * Dynamic: Yes
@@ -407,7 +407,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `encrypt_binlog`
 
 
-* Description: Encrypt [binary logs](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) (including [relay logs](../../../server-management/server-monitoring-logs/binary-log/relay-log.md)). See [Data at Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [Encrypting Binary Logs](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/encrypting-binary-logs.md).
+* Description: Encrypt [binary logs](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) (including [relay logs](../../../server-management/server-monitoring-logs/binary-log/relay-log.md)). See [Data at Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [Encrypting Binary Logs](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/encrypting-binary-logs.md).
 * Commandline: `--encrypt-binlog[={0|1}]`
 * Scope: Global
 * Dynamic: No
@@ -419,7 +419,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `expire_logs_days`
 
 
-* Description: Number of days after which the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) can be automatically removed. By default 0, or no automatic removal. When using [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md), should always be set higher than the maximum lag by any replica. Removals take place when the server starts up, when the binary log is flushed, when the next binary log is created after the previous one reaches the maximum size, or when running [PURGE BINARY LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md). Units are whole days (integer) until [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md), or 1/1000000 precision (double) from [MariaDB 10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md).Starting from [MariaDB 10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), `expire_logs_days` and [binlog_expire_logs_seconds](#binlog_expire_logs_seconds) are forms of aliases, such that changes to one automatically reflect in the other.
+* Description: Number of days after which the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) can be automatically removed. By default 0, or no automatic removal. When using [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md), should always be set higher than the maximum lag by any replica. Removals take place when the server starts up, when the binary log is flushed, when the next binary log is created after the previous one reaches the maximum size, or when running [PURGE BINARY LOGS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md). Units are whole days (integer) until [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md), or 1/1000000 precision (double) from [MariaDB 10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md).Starting from [MariaDB 10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), `expire_logs_days` and [binlog_expire_logs_seconds](#binlog_expire_logs_seconds) are forms of aliases, such that changes to one automatically reflect in the other.
 * Commandline: `--expire-logs-days=#`
 * Scope: Global
 * Dynamic: Yes
@@ -432,7 +432,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `init_slave`
 
 
-* Description: Similar to [init_connect](../optimization-and-tuning/system-variables/server-system-variables.md#init_connect), but the string contains one or more SQL statements, separated by semicolons, that will be executed by a replica server each time the SQL thread starts. These statements are only executed after the acknowledgement is sent to the replica and [START SLAVE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) completes.
+* Description: Similar to [init_connect](../optimization-and-tuning/system-variables/server-system-variables.md#init_connect), but the string contains one or more SQL statements, separated by semicolons, that will be executed by a replica server each time the SQL thread starts. These statements are only executed after the acknowledgement is sent to the replica and [START SLAVE](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) completes.
 * Commandline: `--init-slave=name`
 * Scope: Global
 * Dynamic: Yes
@@ -444,7 +444,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `log_bin`
 
 
-* Description: Whether [binary logging](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is enabled or not. If the --log-bin [option](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) is used, log_bin will be set to ON, otherwise it will be OFF. If no `name` option is given for `--log-bin`, `datadir/'log-basename'-bin` or `'datadir'/mysql-bin` will be used (the latter if [--log-basename](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-log-basename) is not specified). We strongly recommend you use either `--log-basename` or specify a filename to ensure that [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) doesn't stop if the real hostname of the computer changes. The name option can optionally include an absolute path. If no path is specified, the log will be written to the [data directory](../optimization-and-tuning/system-variables/server-system-variables.md#datadir). The name can optionally include the file extension; it will be stripped and only the file basename will be used.
+* Description: Whether [binary logging](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is enabled or not. If the --log-bin [option](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) is used, log_bin will be set to ON, otherwise it will be OFF. If no `name` option is given for `--log-bin`, `datadir/'log-basename'-bin` or `'datadir'/mysql-bin` will be used (the latter if [--log-basename](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-log-basename) is not specified). We strongly recommend you use either `--log-basename` or specify a filename to ensure that [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) doesn't stop if the real hostname of the computer changes. The name option can optionally include an absolute path. If no path is specified, the log will be written to the [data directory](../optimization-and-tuning/system-variables/server-system-variables.md#datadir). The name can optionally include the file extension; it will be stripped and only the file basename will be used.
 * Commandline: `--log-bin[=name]`
 * Scope: Global
 * Dynamic: No
@@ -507,16 +507,16 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `log_bin_trust_function_creators`
 
 
-* Description: Functions and triggers can be dangerous when used with [replication](README.md). Certain types of functions and triggers may have unintended consequences when the statements are applied on a replica. For that reason, there are some restrictions on the creation of functions and triggers when the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is enabled by default, such as:
+* Description: Functions and triggers can be dangerous when used with [replication](README.md). Certain types of functions and triggers may have unintended consequences when the statements are applied on a replica. For that reason, there are some restrictions on the creation of functions and triggers when the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is enabled by default, such as:
 
-  * When `log_bin_trust_function_creators` is `OFF` and `[log_bin](#log_bin)` is `ON`, `[CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)` and `[ALTER FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md)` statements will trigger an error if the function is defined with any of the `NOT DETERMINISTIC`, `CONTAINS SQL` or `MODIFIES SQL DATA` characteristics.
-  * This means that when `log_bin_trust_function_creators` is `OFF` and `[log_bin](#log_bin)` is `ON`, `[CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)` and `[ALTER FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md)` statements will only succeed if the function is defined with any of the `DETERMINISTIC`, `NO SQL`, or `READS SQL DATA` characteristics.
-  * When `log_bin_trust_function_creators` is `OFF` and `[log_bin](#log_bin)` is `ON`, the `[SUPER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges)` privilege is also required to execute the following statements:
+  * When `log_bin_trust_function_creators` is `OFF` and `[log_bin](#log_bin)` is `ON`, `[CREATE FUNCTION](../../../ref/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)` and `[ALTER FUNCTION](../../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md)` statements will trigger an error if the function is defined with any of the `NOT DETERMINISTIC`, `CONTAINS SQL` or `MODIFIES SQL DATA` characteristics.
+  * This means that when `log_bin_trust_function_creators` is `OFF` and `[log_bin](#log_bin)` is `ON`, `[CREATE FUNCTION](../../../ref/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)` and `[ALTER FUNCTION](../../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md)` statements will only succeed if the function is defined with any of the `DETERMINISTIC`, `NO SQL`, or `READS SQL DATA` characteristics.
+  * When `log_bin_trust_function_creators` is `OFF` and `[log_bin](#log_bin)` is `ON`, the `[SUPER](../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges)` privilege is also required to execute the following statements:
 
-    * `[CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)`
+    * `[CREATE FUNCTION](../../../ref/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)`
     * `[CREATE TRIGGER](../../programming-customizing-mariadb/triggers-events/triggers/create-trigger.md)`
-    * `[DROP TRIGGER](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-trigger.md)`
-  * Setting `log_bin_trust_function_creators` to `ON` removes these requirements around functions characteristics and the `[SUPER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges)` privileges.
+    * `[DROP TRIGGER](../../../ref/sql-statements-and-structure/sql-statements/data-definition/drop/drop-trigger.md)`
+  * Setting `log_bin_trust_function_creators` to `ON` removes these requirements around functions characteristics and the `[SUPER](../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges)` privileges.
   * See [Binary Logging of Stored Routines](../../programming-customizing-mariadb/stored-routines/binary-logging-of-stored-routines.md) for more information.
 * Commandline: `--log-bin-trust-function-creators[={0|1}]`
 * Scope: Global
@@ -544,7 +544,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `log_slave_updates`
 
 
-* Description: If set to `0`, the default, updates on a replica received from a primary during [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) are not logged in the replica's binary log. If set to `1`, they are. The replica's binary log needs to be enabled for this to have an effect. Set to `1` if you want to daisy-chain the replicas.
+* Description: If set to `0`, the default, updates on a replica received from a primary during [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) are not logged in the replica's binary log. If set to `1`, they are. The replica's binary log needs to be enabled for this to have an effect. Set to `1` if you want to daisy-chain the replicas.
 * Commandline: `--log-slave-updates`
 * Scope: Global
 * Dynamic: No
@@ -581,7 +581,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `max_binlog_size`
 
 
-* Description: If the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) exceeds this size in bytes after a write, the server rotates it by closing it and opening a new binary log. Single transactions will always be stored in the same binary log, so the server will wait for open transactions to complete before rotating. This figure also applies to the size of [relay logs](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) if [max_relay_log_size](#max_relay_log_size) is set to zero.
+* Description: If the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) exceeds this size in bytes after a write, the server rotates it by closing it and opening a new binary log. Single transactions will always be stored in the same binary log, so the server will wait for open transactions to complete before rotating. This figure also applies to the size of [relay logs](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) if [max_relay_log_size](#max_relay_log_size) is set to zero.
 * Commandline: `--max-binlog-size=#`
 * Scope: Global
 * Dynamic: Yes
@@ -607,7 +607,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `max_binlog_total_size`
 
 
-* Description: Maximum space in bytes to use for all [binary logs](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Extra logs are deleted on server start, log rotation, FLUSH LOGS or when writing to binlog. Default is 0, which means no size restrictions. See also [slave_connections_needed_for_purge](#slave_connections_needed_for_purge).
+* Description: Maximum space in bytes to use for all [binary logs](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Extra logs are deleted on server start, log rotation, FLUSH LOGS or when writing to binlog. Default is 0, which means no size restrictions. See also [slave_connections_needed_for_purge](#slave_connections_needed_for_purge).
 * Commandline: `--max-binlog-size=#`
 * Scope: Global
 * Dynamic: Yes
@@ -634,7 +634,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `read_binlog_speed_limit`
 
 
-* Description: Used to restrict the speed at which a [replica](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) can read the binlog from the primary. This can be used to reduce the load on a primary if many replicas need to download large amounts of old binlog files at the same time. The network traffic will be restricted to the specified number of kilobytes per second.
+* Description: Used to restrict the speed at which a [replica](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) can read the binlog from the primary. This can be used to reduce the load on a primary if many replicas need to download large amounts of old binlog files at the same time. The network traffic will be restricted to the specified number of kilobytes per second.
 * Commandline: `--read-binlog-speed-limit=#`
 * Scope: Global
 * Dynamic: Yes
@@ -684,9 +684,9 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `relay_log_info_file`
 
 
-* Description: Name and location of the file where the `RELAY_LOG_FILE` and `RELAY_LOG_POS` options (i.e. the [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) position) for the [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement are written. The [replica's SQL thread](replication-threads.md#slave-sql-thread) keeps this [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) position updated as it applies events.
+* Description: Name and location of the file where the `RELAY_LOG_FILE` and `RELAY_LOG_POS` options (i.e. the [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) position) for the [CHANGE MASTER](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement are written. The [replica's SQL thread](replication-threads.md#slave-sql-thread) keeps this [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) position updated as it applies events.
 
-  * See [CHANGE MASTER TO: Option Persistence](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence) for more information.
+  * See [CHANGE MASTER TO: Option Persistence](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence) for more information.
 * Commandline: `--relay-log-info-file=file_name`
 * Scope: Global
 * Dynamic: No
@@ -704,7 +704,7 @@ from performing the binlog write for all transactions that are a part of the gro
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `ON`
-* Note: In MySQL and in MariaDB before version 10.0.8 this variable was silently changed if you did [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md).
+* Note: In MySQL and in MariaDB before version 10.0.8 this variable was silently changed if you did [CHANGE MASTER](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md).
 
 
 
@@ -752,7 +752,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `replicate_do_db`
 
 
-* Description: This system variable allows you to configure a [replica](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to apply statements and transactions affecting databases that match a specified name.
+* Description: This system variable allows you to configure a [replica](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to apply statements and transactions affecting databases that match a specified name.
 
   * This system variable will not work with cross-database updates with [statement-based logging](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
   * When setting it dynamically with `[SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)`, the system variable accepts a comma-separated list of filters.
@@ -769,7 +769,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `replicate_do_table`
 
 
-* Description: This system variable allows you to configure a [replica](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to apply statements and transactions that affect tables that match a specified name. The table name is specified in the format: `dbname.tablename`.
+* Description: This system variable allows you to configure a [replica](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to apply statements and transactions that affect tables that match a specified name. The table name is specified in the format: `dbname.tablename`.
 
   * This system variable will not work with cross-database updates with [statement-based logging](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
   * When setting it dynamically with `[SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)`, the system variable accepts a comma-separated list of filters.
@@ -786,7 +786,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `replicate_events_marked_for_skip`
 
 
-* Description: Tells the replica whether to [replicate](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) events that are marked with the `@@skip_replication` flag. See [Selectively skipping replication of binlog events](selectively-skipping-replication-of-binlog-events.md) for more information.
+* Description: Tells the replica whether to [replicate](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) events that are marked with the `@@skip_replication` flag. See [Selectively skipping replication of binlog events](selectively-skipping-replication-of-binlog-events.md) for more information.
 * Commandline: `--replicate-events-marked-for-skip`
 * Scope: Global
 * Dynamic: Yes
@@ -799,7 +799,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `replicate_ignore_db`
 
 
-* Description: This system variable allows you to configure a [replica](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to ignore statements and transactions affecting databases that match a specified name.
+* Description: This system variable allows you to configure a [replica](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to ignore statements and transactions affecting databases that match a specified name.
 
   * This system variable will not work with cross-database updates with [statement-based logging](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
   * When setting it dynamically with `[SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)`, the system variable accepts a comma-separated list of filters.
@@ -816,7 +816,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `replicate_ignore_table`
 
 
-* Description: This system variable allows you to configure a [replica](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to ignore statements and transactions that affect tables that match a specified name. The table name is specified in the format: `dbname.tablename`.
+* Description: This system variable allows you to configure a [replica](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to ignore statements and transactions that affect tables that match a specified name. The table name is specified in the format: `dbname.tablename`.
 
   * This system variable will not work with cross-database updates with [statement-based logging](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
   * When setting it dynamically with `[SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)`, the system variable accepts a comma-separated list of filters.
@@ -833,10 +833,10 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `replicate_rewrite_db`
 
 
-* Description: This option allows you to configure a [replica](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to rewrite database names. It uses the format `primary_database->replica_database`. If a replica encounters a [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) event in which the default database (i.e. the one selected by the `[USE](../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md)` statement) is `primary_database`, then the replica will apply the event in `replica_database` instead.
+* Description: This option allows you to configure a [replica](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to rewrite database names. It uses the format `primary_database->replica_database`. If a replica encounters a [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) event in which the default database (i.e. the one selected by the `[USE](../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md)` statement) is `primary_database`, then the replica will apply the event in `replica_database` instead.
 
   * This option will not work with cross-database updates with [statement-based logging](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
-  * This option only affects statements that involve tables. This option does not affect statements involving the database itself, such as [CREATE DATABASE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md), [ALTER DATABASE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-database.md), and [DROP DATABASE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-database.md).
+  * This option only affects statements that involve tables. This option does not affect statements involving the database itself, such as [CREATE DATABASE](../../../ref/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md), [ALTER DATABASE](../../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-database.md), and [DROP DATABASE](../../../ref/sql-statements-and-structure/sql-statements/data-definition/drop/drop-database.md).
   * When setting it on the command-line or in a server [option group](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
   * See [Replication Filters](replication-filters.md) for more information.
   * Before [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), `replicate_rewrite_db` was not available as a system variable, only as a mariadbd option, and could not be set dynamically. From [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md) it is available as a dynamic system variable
@@ -852,7 +852,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `replicate_wild_do_table`
 
 
-* Description: This system variable allows you to configure a [replica](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to apply statements and transactions that affect tables that match a specified wildcard pattern. The wildcard pattern uses the same semantics as the `[LIKE](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md)` operator.
+* Description: This system variable allows you to configure a [replica](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to apply statements and transactions that affect tables that match a specified wildcard pattern. The wildcard pattern uses the same semantics as the `[LIKE](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md)` operator.
 
   * This system variable will work with cross-database updates with [statement-based logging](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
   * When setting it dynamically with `[SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)`, the system variable accepts a comma-separated list of filters.
@@ -869,7 +869,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `replicate_wild_ignore_table`
 
 
-* Description: This system variable allows you to configure a [replica](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to ignore statements and transactions that affect tables that match a specified wildcard pattern. The wildcard pattern uses the same semantics as the [LIKE](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md) operator. 
+* Description: This system variable allows you to configure a [replica](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to ignore statements and transactions that affect tables that match a specified wildcard pattern. The wildcard pattern uses the same semantics as the [LIKE](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md) operator. 
 
   * This system variable will work with cross-database updates with [statement-based logging](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
   * When setting it dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session), the system variable accepts a comma-separated list of filters.
@@ -886,7 +886,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `report_host`
 
 
-* Description: The host name or IP address the replica reports to the primary when it registers. If left unset, the replica will not register itself. Reported by [SHOW SLAVE HOSTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-hosts.md). Note that it is not sufficient for the primary to simply read the IP of the replica from the socket once the replica connects. Due to NAT and other routing issues, that IP may not be valid for connecting to the replica from the primary or other hosts.
+* Description: The host name or IP address the replica reports to the primary when it registers. If left unset, the replica will not register itself. Reported by [SHOW SLAVE HOSTS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-hosts.md). Note that it is not sufficient for the primary to simply read the IP of the replica from the socket once the replica connects. Due to NAT and other routing issues, that IP may not be valid for connecting to the replica from the primary or other hosts.
 * Commandline: `--report-host=host_name`
 * Scope: Global
 * Dynamic: No
@@ -897,7 +897,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `report_password`
 
 
-* Description: Replica password reported to the primary when it registers. Reported by [SHOW SLAVE HOSTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) if `--show-slave-auth-info` is set. This password has no connection with user privileges or with the [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) user account password.
+* Description: Replica password reported to the primary when it registers. Reported by [SHOW SLAVE HOSTS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) if `--show-slave-auth-info` is set. This password has no connection with user privileges or with the [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) user account password.
 * Commandline: `--report-password=password`
 * Scope: Global
 * Dynamic: No
@@ -908,7 +908,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `report_port`
 
 
-* Description: The commandline option sets the TCP/IP port for connecting to the replica that will be reported to the [replicating](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) primary during the replica's registration. Viewing the variable will show this value.
+* Description: The commandline option sets the TCP/IP port for connecting to the replica that will be reported to the [replicating](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) primary during the replica's registration. Viewing the variable will show this value.
 * Commandline: `--report-port=#`
 * Scope: Global
 * Dynamic: No
@@ -921,7 +921,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `report_user`
 
 
-* Description: Replica's account user name reported to the primary when it registers. Reported by [SHOW SLAVE HOSTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) if `--show-slave-auth-info` is set. This username has no connection with user privileges or with the [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) user account.
+* Description: Replica's account user name reported to the primary when it registers. Reported by [SHOW SLAVE HOSTS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) if `--show-slave-auth-info` is set. This username has no connection with user privileges or with the [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) user account.
 * Commandline: `--report-user=name`
 * Scope: Global
 * Dynamic: No
@@ -932,10 +932,10 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `server_id`
 
 
-* Description: This system variable is used with [MariaDB replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to identify unique primary and replica servers in a topology. This system variable is also used with the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to determine which server a specific transaction originated on.
+* Description: This system variable is used with [MariaDB replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to identify unique primary and replica servers in a topology. This system variable is also used with the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to determine which server a specific transaction originated on.
 
-  * When [MariaDB replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) is used with standalone MariaDB Server, each server in the replication topology must have a unique `server_id` value.
-  * When [MariaDB replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) is used with [MariaDB Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), see [Using MariaDB Replication with MariaDB Galera Cluster: Setting server_id on Cluster Nodes](../galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica.md#setting-server_id-on-cluster-nodes) for more information on how to set the `server_id` values.
+  * When [MariaDB replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) is used with standalone MariaDB Server, each server in the replication topology must have a unique `server_id` value.
+  * When [MariaDB replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) is used with [MariaDB Galera Cluster](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), see [Using MariaDB Replication with MariaDB Galera Cluster: Setting server_id on Cluster Nodes](../galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica.md#setting-server_id-on-cluster-nodes) for more information on how to set the `server_id` values.
   * In [MariaDB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md) and below, the default `server_id` value is `0`. If a replica's `server_id` value is `0`, then all primary's will refuse its connection attempts. If a primary's `server_id` value is `0`, then it will refuse all replica connection attempts.
 * Commandline: `--server-id =#`
 * Scope: Global, Session
@@ -961,7 +961,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `skip_replication`
 
 
-* Description: Changes are logged into the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) with the @@skip_replication flag set. Such events will not be [replicated](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) by replica that run with `--replicate-events-marked-for-skip` set different from its default of `REPLICATE`. See [Selectively skipping replication of binlog events](selectively-skipping-replication-of-binlog-events.md) for more information.
+* Description: Changes are logged into the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) with the @@skip_replication flag set. Such events will not be [replicated](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) by replica that run with `--replicate-events-marked-for-skip` set different from its default of `REPLICATE`. See [Selectively skipping replication of binlog events](selectively-skipping-replication-of-binlog-events.md) for more information.
 * Commandline: None
 * Scope: Session
 * Dynamic: Yes
@@ -999,7 +999,7 @@ from performing the binlog write for all transactions that are a part of the gro
 #### `slave_connections_needed_for_purge`
 
 
-* Description: Minimum number of connected replicas required for automatic [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) purge with [max_binlog_total_size](#max_binlog_total_size), [binlog_expire_logs_seconds](#binlog_expire_logs_seconds) or [expire_logs_days](#expire_logs_days).
+* Description: Minimum number of connected replicas required for automatic [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) purge with [max_binlog_total_size](#max_binlog_total_size), [binlog_expire_logs_seconds](#binlog_expire_logs_seconds) or [expire_logs_days](#expire_logs_days).
 Change of the value triggers an attempt to purging, though without binlog rotation, with the purged set of
 files satisfying the above two parameters and the value that is set itself.
 * Commandline: `--slave-connections-needed-for-purge=#`
@@ -1015,7 +1015,7 @@ files satisfying the above two parameters and the value that is set itself.
 #### `slave_ddl_exec_mode`
 
 
-* Description: Modes for how [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) of DDL events should be executed. Legal values are `STRICT` and `IDEMPOTENT` (default). In `IDEMPOTENT` mode, the replica will not stop for failed DDL operations that would not cause a difference between the primary and the replica. In particular [CREATE TABLE](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) is treated as [CREATE OR REPLACE TABLE](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#create-or-replace) and [DROP TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md) is treated as `DROP TABLE IF EXISTS`.
+* Description: Modes for how [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) of DDL events should be executed. Legal values are `STRICT` and `IDEMPOTENT` (default). In `IDEMPOTENT` mode, the replica will not stop for failed DDL operations that would not cause a difference between the primary and the replica. In particular [CREATE TABLE](../../../ref/sql-statements-and-structure/vectors/create-table-with-vectors.md) is treated as [CREATE OR REPLACE TABLE](../../../ref/sql-statements-and-structure/vectors/create-table-with-vectors.md#create-or-replace) and [DROP TABLE](../../../ref/sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md) is treated as `DROP TABLE IF EXISTS`.
 * Commandline: `--slave-ddl-exec-mode=name`
 * Scope: Global
 * Dynamic: Yes
@@ -1028,7 +1028,7 @@ files satisfying the above two parameters and the value that is set itself.
 #### `slave_domain_parallel_threads`
 
 
-* Description: When set to a non-zero value, each [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) domain in one primary connection can reserve at most that many worker threads at any one time, leaving the rest (up to the value of
+* Description: When set to a non-zero value, each [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) domain in one primary connection can reserve at most that many worker threads at any one time, leaving the rest (up to the value of
 [slave_parallel_threads](#slave_parallel_threads)) free for other primary connections
 or replication domains to use in parallel. See [Parallel Replication](parallel-replication.md#configuration-variable-slave_domain_parallel_threads) for details.
 * Commandline: `--slave-domain-parallel-threads=#`
@@ -1043,7 +1043,7 @@ or replication domains to use in parallel. See [Parallel Replication](parallel-r
 #### `slave_exec_mode`
 
 
-* Description: Determines the mode used for [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) error checking and conflict resolution. STRICT mode is the default, and catches all errors and conflicts. IDEMPOTENT mode suppresses duplicate key or no key errors, which can be useful in certain replication scenarios, such as when there are multiple primaries, or circular replication.
+* Description: Determines the mode used for [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) error checking and conflict resolution. STRICT mode is the default, and catches all errors and conflicts. IDEMPOTENT mode suppresses duplicate key or no key errors, which can be useful in certain replication scenarios, such as when there are multiple primaries, or circular replication.
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `enumeration`
@@ -1055,7 +1055,7 @@ or replication domains to use in parallel. See [Parallel Replication](parallel-r
 #### `slave_load_tmpdir`
 
 
-* Description: Directory where the replica stores temporary files for [replicating](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) [LOAD DATA INFILE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statements. If not set, the replica will use [tmpdir](../optimization-and-tuning/system-variables/server-system-variables.md#tmpdir). Should be set to a disk-based directory that will survive restarts, or else replication may fail.
+* Description: Directory where the replica stores temporary files for [replicating](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) [LOAD DATA INFILE](../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statements. If not set, the replica will use [tmpdir](../optimization-and-tuning/system-variables/server-system-variables.md#tmpdir). Should be set to a disk-based directory that will survive restarts, or else replication may fail.
 * Commandline: `--slave-load-tmpdir=path`
 * Scope: Global
 * Dynamic: No
@@ -1067,7 +1067,7 @@ or replication domains to use in parallel. See [Parallel Replication](parallel-r
 #### `slave_max_allowed_packet`
 
 
-* Description: Maximum packet size in bytes for replica SQL and I/O threads. This value overrides [max_allowed_packet](#max_allowed_packet) for [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) purposes. Set in multiples of 1024 (the minimum) up to 1GB
+* Description: Maximum packet size in bytes for replica SQL and I/O threads. This value overrides [max_allowed_packet](#max_allowed_packet) for [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) purposes. Set in multiples of 1024 (the minimum) up to 1GB
 * Commandline: `--slave-max-allowed-packet=#`
 * Scope: Global
 * Dynamic: Yes
@@ -1094,7 +1094,7 @@ or replication domains to use in parallel. See [Parallel Replication](parallel-r
 #### `slave_net_timeout`
 
 
-* Description: Time in seconds for the replica to wait for more data from the primary before considering the connection broken, after which it will abort the read and attempt to reconnect. The retry interval is determined by the MASTER_CONNECT_RETRY open for the [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement, while the maximum number of reconnection attempts is set by the [master-retry-count](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-master-retry-count) option. The first reconnect attempt takes place immediately.
+* Description: Time in seconds for the replica to wait for more data from the primary before considering the connection broken, after which it will abort the read and attempt to reconnect. The retry interval is determined by the MASTER_CONNECT_RETRY open for the [CHANGE MASTER](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement, while the maximum number of reconnection attempts is set by the [master-retry-count](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-master-retry-count) option. The first reconnect attempt takes place immediately.
 * Commandline: `--slave-net-timeout=#`
 * Scope: Global
 * Dynamic: Yes
@@ -1151,9 +1151,9 @@ replication is configured (i.e. when `[slave_parallel_threads](replication-and-b
 
 * Description: This system variable is used to configure [parallel replication](parallel-replication.md).
 
-  * If this system variable is set to a value greater than `0`, then its value will determine how many replica [worker threads](replication-threads.md#worker-threads) will be created to apply [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) events in parallel.
-  * If this system variable is set to `0` (which is the default value), then no replica [worker threads](replication-threads.md#worker-threads) will be created. Instead, when replication is enabled, [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) events are applied by the replica's [SQL thread](replication-threads.md#slave-sql-thread).
-  * The [replica threads](replication-threads.md#threads-on-the-slave) must be [stopped](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) in order to change this option's value dynamically.
+  * If this system variable is set to a value greater than `0`, then its value will determine how many replica [worker threads](replication-threads.md#worker-threads) will be created to apply [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) events in parallel.
+  * If this system variable is set to `0` (which is the default value), then no replica [worker threads](replication-threads.md#worker-threads) will be created. Instead, when replication is enabled, [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) events are applied by the replica's [SQL thread](replication-threads.md#slave-sql-thread).
+  * The [replica threads](replication-threads.md#threads-on-the-slave) must be [stopped](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) in order to change this option's value dynamically.
   * Events that were logged with [GTIDs](gtid.md) with different `[gtid_domain_id](gtid.md#gtid_domain_id)` values can be applied in parallel in an [out-of-order](parallel-replication.md#out-of-order-parallel-replication) manner. Each `[gtid_domain_id](gtid.md#gtid_domain_id)` can use the number of threads configured by `[slave_domain_parallel_threads](#slave_domain_parallel_threads)`.
   * Events that were [group-committed](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) on the primary can be applied in parallel in an [in-order](parallel-replication.md#what-can-be-run-in-parallel) manner, and the specific behavior can be configured by setting `[slave_parallel_mode](#slave_parallel_mode)`.
 * Commandline: `--slave-parallel-threads=#`
@@ -1189,7 +1189,7 @@ replication is configured (i.e. when `[slave_parallel_threads](replication-and-b
 #### `slave_skip_errors`
 
 
-* Description: When an error occurs on the replica, [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) usually halts. This option permits a list of [error codes](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md) to ignore, and for which replication will continue. This option should never be needed in normal use, and careless use could lead to replica that are out of sync with primary's. Error codes are in the format of the number from the replica error log. Using `all` as an option permits the replica the keep replicating no matter what error it encounters, an option you would never normally need in production and which could rapidly lead to data inconsistencies. A count of these is kept in [slave_skipped_errors](replication-and-binary-log-status-variables.md#slave_skipped_errors).
+* Description: When an error occurs on the replica, [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) usually halts. This option permits a list of [error codes](../../../ref/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md) to ignore, and for which replication will continue. This option should never be needed in normal use, and careless use could lead to replica that are out of sync with primary's. Error codes are in the format of the number from the replica error log. Using `all` as an option permits the replica the keep replicating no matter what error it encounters, an option you would never normally need in production and which could rapidly lead to data inconsistencies. A count of these is kept in [slave_skipped_errors](replication-and-binary-log-status-variables.md#slave_skipped_errors).
 * Commandline: `--slave-skip-errors=[error_code1,error_code2,...|all|ddl_exist_errors]`
 * Scope: Global
 * Dynamic: No
@@ -1214,7 +1214,7 @@ replication is configured (i.e. when `[slave_parallel_threads](replication-and-b
 #### `slave_transaction_retries`
 
 
-* Description: Number of times a [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) replica retries to execute an SQL thread after it fails due to InnDB deadlock or by exceeding the transaction execution time limit. If after this number of tries the SQL thread has still failed to execute, the replica will stop with an error. See also the [innodb_lock_wait_timeout](../../../reference/storage-engines/innodb/innodb-system-variables.md) system variable.
+* Description: Number of times a [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) replica retries to execute an SQL thread after it fails due to InnDB deadlock or by exceeding the transaction execution time limit. If after this number of tries the SQL thread has still failed to execute, the replica will stop with an error. See also the [innodb_lock_wait_timeout](../../../ref/storage-engines/innodb/innodb-system-variables.md) system variable.
 * Commandline: `--slave-transaction-retries=#`
 * Scope: Global
 * Dynamic: Yes
@@ -1228,7 +1228,7 @@ replication is configured (i.e. when `[slave_parallel_threads](replication-and-b
 #### `slave_transaction_retry_errors`
 
 
-* Description: When an error occurs during a transaction on the replica, [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) usually halts. By default, transactions that caused a deadlock or elapsed lock wait timeout will be retried. One can add other errors to the the list of errors that should be retried by adding a comma-separated list of [error numbers](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md) to this variable. This is particularly useful in some [Spider](../../../reference/storage-engines/spider/spider-functions/spider_copy_tables.md) setups. Some recommended errors to retry for Spider are 1020, 1158, 1159, 1160, 1161, 1429, 2013, 12701 (these are in the default value in recent versions).
+* Description: When an error occurs during a transaction on the replica, [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) usually halts. By default, transactions that caused a deadlock or elapsed lock wait timeout will be retried. One can add other errors to the the list of errors that should be retried by adding a comma-separated list of [error numbers](../../../ref/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md) to this variable. This is particularly useful in some [Spider](../../../ref/storage-engines/spider/spider-functions/spider_copy_tables.md) setups. Some recommended errors to retry for Spider are 1020, 1158, 1159, 1160, 1161, 1429, 2013, 12701 (these are in the default value in recent versions).
 * Commandline: `--slave-transaction_retry-errors=[error_code1,error_code2,...]`
 * Scope: Global
 * Dynamic: No
@@ -1259,7 +1259,7 @@ replication is configured (i.e. when `[slave_parallel_threads](replication-and-b
 #### `slave_type_conversions`
 
 
-* Description: Determines the type conversion mode on the replica when using [row-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based) [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md), including replications in MariaDB Galera cluster. Multiple options can be set, delimited by commas. If left empty, the default, type conversions are disallowed. The variable is dynamic and a change in its value takes effect immediately. This variable tells the server what to do if the table definition is different between the primary and replica (for example a column is 'int' on the primary and 'bigint' on the replica). 
+* Description: Determines the type conversion mode on the replica when using [row-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based) [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md), including replications in MariaDB Galera cluster. Multiple options can be set, delimited by commas. If left empty, the default, type conversions are disallowed. The variable is dynamic and a change in its value takes effect immediately. This variable tells the server what to do if the table definition is different between the primary and replica (for example a column is 'int' on the primary and 'bigint' on the replica). 
 
   * `ALL_NON_LOSSY` means that all safe conversions (no data loss) are allowed.
   * `ALL_LOSSY` means that all lossy conversions are allowed (for example 'bigint' to 'int'). This, however, does not imply that safe conversions (non-lossy) are allowed as well. In order to allow all conversions, one needs to allow both lossy as well as non-lossy conversions by setting this variable to ALL_NON_LOSSY,ALL_LOSSY.
@@ -1276,7 +1276,7 @@ replication is configured (i.e. when `[slave_parallel_threads](replication-and-b
 #### `sql_log_bin`
 
 
-* Description: If set to 0 (1 is the default), no logging to the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is done for the client. Only clients with the SUPER privilege can update this variable. Does not affect the replication of events in a Galera cluster. Note that `sql_log_bin` has no effect if `[log_bin](replication-and-binary-log-system-variables.md#log_bin)` is not set.
+* Description: If set to 0 (1 is the default), no logging to the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is done for the client. Only clients with the SUPER privilege can update this variable. Does not affect the replication of events in a Galera cluster. Note that `sql_log_bin` has no effect if `[log_bin](replication-and-binary-log-system-variables.md#log_bin)` is not set.
 * Scope: Session
 * Dynamic: Yes
 * Data Type: `boolean`
@@ -1288,7 +1288,7 @@ replication is configured (i.e. when `[slave_parallel_threads](replication-and-b
 #### `sql_slave_skip_counter`
 
 
-* Description: Number of events that a replica skips from the primary. If this would cause the replica to begin in the middle of an event group, the replica will instead begin from the beginning of the next event group. See [SET GLOBAL sql_slave_skip_counter](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/set-global-sql_slave_skip_counter.md).
+* Description: Number of events that a replica skips from the primary. If this would cause the replica to begin in the middle of an event group, the replica will instead begin from the beginning of the next event group. See [SET GLOBAL sql_slave_skip_counter](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/set-global-sql_slave_skip_counter.md).
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -1312,7 +1312,7 @@ replication is configured (i.e. when `[slave_parallel_threads](replication-and-b
 #### `sync_master_info`
 
 
-* Description: A [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) replica will synchronize its master.info file to disk after this many events. If set to 0, the operating system handles flushing the file to disk.
+* Description: A [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) replica will synchronize its master.info file to disk after this many events. If set to 0, the operating system handles flushing the file to disk.
 * Commandline: `--sync-master-info=#`
 * Scope: Global
 * Dynamic: Yes
@@ -1336,7 +1336,7 @@ replication is configured (i.e. when `[slave_parallel_threads](replication-and-b
 #### `sync_relay_log_info`
 
 
-* Description: A [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) replica will synchronize its relay-log.info file to disk after this many transactions. The default until [MariaDB 10.1.7](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes.md) was 0, in which case the operating system handles flushing the file to disk. 1 is the most secure choice, because at most one event could be lost in the event of a crash, but it's also the slowest.
+* Description: A [replication](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) replica will synchronize its relay-log.info file to disk after this many transactions. The default until [MariaDB 10.1.7](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes.md) was 0, in which case the operating system handles flushing the file to disk. 1 is the most secure choice, because at most one event could be lost in the event of a crash, but it's also the slowest.
 * Commandline: `--sync-relay-log-info=#`
 * Scope: Global,
 * Dynamic: Yes

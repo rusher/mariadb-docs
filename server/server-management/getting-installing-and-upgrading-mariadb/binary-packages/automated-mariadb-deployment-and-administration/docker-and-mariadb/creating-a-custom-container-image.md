@@ -224,8 +224,8 @@ As mentioned, a Dockerfile is built by creating a new image for each directive t
 More details can be found in the Docker documentation:
 
 
-* [Dockerfile reference](https://docs.docker.com/engine/reference/builder/).
-* [docker build](https://docs.docker.com/engine/reference/commandline/build/).
+* [Dockerfile reference](https://docs.docker.com/engine/ref/builder/).
+* [docker build](https://docs.docker.com/engine/ref/commandline/build/).
 * [Repositories](https://docs.docker.com/docker-hub/repos/).
 * [Deploy a registry server](https://docs.docker.com/registry/deploying/).
 * [Content trust in Docker](https://docs.docker.com/engine/security/trust/).

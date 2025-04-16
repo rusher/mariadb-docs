@@ -188,8 +188,8 @@ Further information about the concepts explained in this page can be found in Do
 
 
 * [Environment variables in Compose](https://docs.docker.com/compose/environment-variables/).
-* [Overview of docker-compose CLI](https://docs.docker.com/compose/reference/overview/).
-* [Compose command-line reference](https://docs.docker.com/compose/reference/).
+* [Overview of docker-compose CLI](https://docs.docker.com/compose/ref/overview/).
+* [Compose command-line reference](https://docs.docker.com/compose/ref/).
 
 
 

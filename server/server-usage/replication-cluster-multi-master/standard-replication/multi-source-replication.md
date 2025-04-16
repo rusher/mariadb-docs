@@ -29,25 +29,25 @@ be used as a suffix for relay logs and primary info index files.
 The new syntax introduced to handle many connections:
 
 
-* `[CHANGE MASTER ['connection_name'] TO ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md)`. This creates or modifies a connection to a primary.
+* `[CHANGE MASTER ['connection_name'] TO ...](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md)`. This creates or modifies a connection to a primary.
 * `FLUSH RELAY LOGS ['connection_name']`
-* `[MASTER_POS_WAIT(....,['connection_name'])](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_pos_wait.md)`
-* `[RESET SLAVE ['connection_name'] [ALL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-replica.md)]`. This is used to reset a replica's replication position or to remove a replica permanently.
-* `[SHOW RELAYLOG ['connection_name'] EVENTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-relaylog-events.md)`
-* `[SHOW SLAVE ['connection_name'] STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)`
-* `[SHOW ALL SLAVES STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)`
-* `[START SLAVE ['connection_name'](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md)...]]`
-* `[START ALL SLAVES ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md)`
-* `[STOP SLAVE ['connection_name'] ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md)`
-* `[STOP ALL SLAVES ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md)`
+* `[MASTER_POS_WAIT(....,['connection_name'])](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_pos_wait.md)`
+* `[RESET SLAVE ['connection_name'] [ALL](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-replica.md)]`. This is used to reset a replica's replication position or to remove a replica permanently.
+* `[SHOW RELAYLOG ['connection_name'] EVENTS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-relaylog-events.md)`
+* `[SHOW SLAVE ['connection_name'] STATUS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)`
+* `[SHOW ALL SLAVES STATUS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)`
+* `[START SLAVE ['connection_name'](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md)...]]`
+* `[START ALL SLAVES ...](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md)`
+* `[STOP SLAVE ['connection_name'] ...](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md)`
+* `[STOP ALL SLAVES ...](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md)`
 
 
 The original old-style connection is an empty string `''`.
 You don't have to use this connection if you don't want to.
 
 
-You create new primary connections with [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md).
-You delete the connection permanently with [RESET SLAVE 'connection_name' ALL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-replica.md).
+You create new primary connections with [CHANGE MASTER](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md).
+You delete the connection permanently with [RESET SLAVE 'connection_name' ALL](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-replica.md).
 
 
 ## Replication Variables for Multi-Source
@@ -128,7 +128,7 @@ New status variables:
 
 
 
-`[SHOW ALL SLAVES STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)` has the following new columns:
+`[SHOW ALL SLAVES STATUS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)` has the following new columns:
 
 
 
@@ -193,8 +193,8 @@ with this as a prefix.
 * There is no conflict resolution. The assumption is that there are no conflicts in data between the different primaries.
 * All executed commands are stored in the normal binary log (nothing new here).
 * If the server variable `log_warnings` > 1 then you will get some information in the log about how the multi-master-info file is updated (mainly for debugging).
-* The output of [SHOW ALL SLAVES STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) has one more column than `SHOW SLAVE STATUS`, since it includes the `connection_name` column.
-* `[RESET SLAVE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-replica.md)` now deletes all relay-log files.
+* The output of [SHOW ALL SLAVES STATUS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) has one more column than `SHOW SLAVE STATUS`, since it includes the `connection_name` column.
+* `[RESET SLAVE](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-replica.md)` now deletes all relay-log files.
 
 
 ## replicate-... Variables
@@ -231,7 +231,7 @@ One can also use this syntax to set `replicate-rewrite-db` for a given connectio
 * Each active connection will create 2 threads (as is normal for MariaDB replication).
 * You should ensure that all primaries have different `server-id`'s. If you don't do this, you will get into trouble if you try to replicate from the multi-source replica back to your primaries.
 * One can change [max_relay_log_size](replication-and-binary-log-system-variables.md) for any active connection, but new connections will always use the server startup value for `max_relay_log_size`, which can't be changed at runtime.
-* Option [innodb-recovery-update-relay-log](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_recovery_update_relay_log) (xtradb feature to store and restore relay log position for replicas) only works for the default connection ''. As this option is not really safe and can easily cause loss of data if you use storage engines other than InnoDB, we don't recommend this option be used.
+* Option [innodb-recovery-update-relay-log](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_recovery_update_relay_log) (xtradb feature to store and restore relay log position for replicas) only works for the default connection ''. As this option is not really safe and can easily cause loss of data if you use storage engines other than InnoDB, we don't recommend this option be used.
 * [slave_net_timeout](replication-and-binary-log-system-variables.md) affects all connections. We don't check anymore if it's less than [Slave_heartbeat_period](replication-and-binary-log-status-variables.md), as this doesn't make sense in a multi-source setup.
 
 
@@ -240,7 +240,7 @@ One can also use this syntax to set `replicate-rewrite-db` for a given connectio
 
 * [max_relay_log_size](replication-and-binary-log-system-variables.md) is now (almost) a normal variable and not automatically changed if [max_binlog_size](replication-and-binary-log-system-variables.md) is changed. To keep things compatible with old config files, we set it to `max_binlog_size` at startup if its value is 0.
 * You can now access replication variables that depend on the active connection with either `GLOBAL` or `SESSION`.
-* We only write information about relay log positions for recovery if [innodb-recovery-update-relay-log](../../../reference/storage-engines/innodb/innodb-system-variables.md) is set.
+* We only write information about relay log positions for recovery if [innodb-recovery-update-relay-log](../../../ref/storage-engines/innodb/innodb-system-variables.md) is set.
 * [Slave_retried_transactions](replication-and-binary-log-status-variables.md#slave_retried_transactions) now shows the total count of retried transactions over all replicas.
 * The status variable `Com_slave_start` is replaced with [Com_start_slave](replication-and-binary-log-status-variables.md#com_start_slave).
 * The status variable `Com_slave_stop` is replaced with [Com_stop_slave](replication-and-binary-log-status-variables.md#com_stop_slave).

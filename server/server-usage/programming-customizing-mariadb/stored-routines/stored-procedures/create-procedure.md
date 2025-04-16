@@ -45,7 +45,7 @@ stored routines are disallowed.
 
 
 When a stored procedure has been created, you invoke it by
-using the `CALL` statement (see [CALL](../../../../reference/sql-statements-and-structure/sql-statements/stored-routine-statements/call.md)).
+using the `CALL` statement (see [CALL](../../../../ref/sql-statements-and-structure/sql-statements/stored-routine-statements/call.md)).
 
 
 To execute the `CREATE PROCEDURE` statement, it is
@@ -56,7 +56,7 @@ routine creator. See also [Stored Routine Privileges](../stored-functions/stored
 
 The `DEFINER` and SQL SECURITY clauses specify the security context to
 be used when checking access privileges at routine execution time, as
-described [here](../stored-functions/stored-routine-privileges.md). Requires the [SUPER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), the [SET USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#set-user) privilege.
+described [here](../stored-functions/stored-routine-privileges.md). Requires the [SUPER](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), the [SET USER](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#set-user) privilege.
 
 
 If the routine name is the same as the name of a built-in SQL
@@ -81,7 +81,7 @@ Each parameter can be declared to use any valid data type, except that
 the COLLATE attribute cannot be used.
 
 
-For valid identifiers to use as procedure names, see [Identifier Names](../../../../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md).
+For valid identifiers to use as procedure names, see [Identifier Names](../../../../ref/sql-statements-and-structure/sql-language-structure/identifier-names.md).
 
 
 ### Things to be Aware of With CREATE OR REPLACE
@@ -133,7 +133,7 @@ parameter.
 `CONTAINS SQL`, `NO SQL`, `READS SQL DATA`, and `MODIFIES SQL DATA` are informative clauses that tell the server what the function does. MariaDB does not check in any way whether the specified clause is correct. If none of these clauses are specified, `CONTAINS SQL` is used by default.
 
 
-`MODIFIES SQL DATA` means that the function contains statements that may modify data stored in databases. This happens if the function contains statements like [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md), [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md), [INSERT](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md), [REPLACE](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md) or DDL.
+`MODIFIES SQL DATA` means that the function contains statements that may modify data stored in databases. This happens if the function contains statements like [DELETE](../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md), [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md), [INSERT](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md), [REPLACE](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md) or DDL.
 
 
 `READS SQL DATA` means that the function reads data stored in databases, but does not modify any data. This happens if [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statements are used, but there no write operations are executed.
@@ -146,7 +146,7 @@ parameter.
 
 
 The routine_body consists of a valid SQL procedure statement. This can
-be a simple statement such as [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) or [INSERT](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md), or it can be a
+be a simple statement such as [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) or [INSERT](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md), or it can be a
 compound statement written using [BEGIN and END](../../programmatic-compound-statements/begin-end.md). Compound statements
 can contain declarations, loops, and other control structure
 statements. See [Programmatic and Compound Statements](../../programmatic-compound-statements/programmatic-compound-statements-cursors/README.md) for syntax details.
@@ -164,7 +164,7 @@ stored routines, see [Stored Routine Limitations](../stored-routine-limitations.
 ### Invoking stored procedure from within programs
 
 
-For information about invoking [stored procedures](README.md) from within programs written in a language that has a MariaDB/MySQL interface, see [CALL](../../../../reference/sql-statements-and-structure/sql-statements/stored-routine-statements/call.md).
+For information about invoking [stored procedures](README.md) from within programs written in a language that has a MariaDB/MySQL interface, see [CALL](../../../../ref/sql-statements-and-structure/sql-statements/stored-routine-statements/call.md).
 
 
 ### OR REPLACE
@@ -279,12 +279,12 @@ Query OK, 0 rows affected (0.03 sec)
 ## See Also
 
 
-* [Identifier Names](../../../../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md)
+* [Identifier Names](../../../../ref/sql-statements-and-structure/sql-language-structure/identifier-names.md)
 * [Stored Procedure Overview](stored-procedure-overview.md)
 * [ALTER PROCEDURE](alter-procedure.md)
 * [DROP PROCEDURE](drop-procedure.md)
-* [SHOW CREATE PROCEDURE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-procedure.md)
-* [SHOW PROCEDURE STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-procedure-status.md)
+* [SHOW CREATE PROCEDURE](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-procedure.md)
+* [SHOW PROCEDURE STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-procedure-status.md)
 * [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md)
-* [Information Schema ROUTINES Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
+* [Information Schema ROUTINES Table](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 

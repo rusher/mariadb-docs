@@ -47,7 +47,7 @@ When a new client connection is created, its thread group is determined using th
 thread_group_id = connection_id %  thread_pool_size
 ```
 
-The `connection_id` value in the above calculation is the same monotonically increasing number that you can use to identify connections in `[SHOW PROCESSLIST](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md)` output or the `[information_schema.PROCESSLIST](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md)` table.
+The `connection_id` value in the above calculation is the same monotonically increasing number that you can use to identify connections in `[SHOW PROCESSLIST](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md)` output or the `[information_schema.PROCESSLIST](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md)` table.
 
 
 This calculation should assign client connections to each thread group in a round-robin manner. In general, this should result in an even distribution of client connections among thread groups.
@@ -115,7 +115,7 @@ A thread group's **worker thread** can create a new **worker thread** when the t
 A thread group's **worker thread** creates a new thread if all of the following conditions are met:
 
 
-* The worker thread has to wait on some request. For example, it might be waiting on disk I/O, or it might be waiting on a lock, or it might just be waiting for a query that called the `[SLEEP()](../../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/sleep.md)` function to finish.
+* The worker thread has to wait on some request. For example, it might be waiting on disk I/O, or it might be waiting on a lock, or it might just be waiting for a query that called the `[SLEEP()](../../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/sleep.md)` function to finish.
 * There are no active worker threads in the thread group.
 * There are no sleeping worker threads in the thread group that the worker thread can wake up.
 * And one of the following conditions is also met:

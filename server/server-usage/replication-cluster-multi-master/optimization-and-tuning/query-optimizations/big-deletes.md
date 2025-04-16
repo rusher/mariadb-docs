@@ -5,7 +5,7 @@
 ## The problem
 
 
-How to [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) lots of rows from a large table? Here is an example of purging items older than 30 days:
+How to [DELETE](../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) lots of rows from a large table? Here is an example of purging items older than 30 days:
 
 
 ```
@@ -22,10 +22,10 @@ Any suggestions on how to speed this up?
 ## Why it is a problem
 
 
-* [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) will lock the table during the entire operation, thereby nothing else can be done with the table.
+* [MyISAM](../../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) will lock the table during the entire operation, thereby nothing else can be done with the table.
 * [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) won't lock the table, but it will chew up a lot of resources, leading to sluggishness.
 * InnoDB has to write the undo information to its transaction logs; this significantly increases the I/O required.
-* [Replication](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md), being asynchronous, will effectively be delayed (on Slaves) while the DELETE is running.
+* [Replication](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md), being asynchronous, will effectively be delayed (on Slaves) while the DELETE is running.
 
 
 ## InnoDB and undo
@@ -54,7 +54,7 @@ Solutions
 ## PARTITION
 
 
-The idea here is to have a sliding window of [partitions](../../../../server-management/partitioning-tables/README.md). Let's say you need to purge news articles after 30 days. The "partition key" would be the [datetime](../../../../reference/data-types/date-and-time-data-types/datetime.md) (or [timestamp](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md)) that is to be used for purging, and the PARTITIONs would be "range". Every night, a cron job would come along and build a new partition for the next day, and drop the oldest partition.
+The idea here is to have a sliding window of [partitions](../../../../server-management/partitioning-tables/README.md). Let's say you need to purge news articles after 30 days. The "partition key" would be the [datetime](../../../../ref/data-types/date-and-time-data-types/datetime.md) (or [timestamp](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md)) that is to be used for purging, and the PARTITIONs would be "range". Every night, a cron job would come along and build a new partition for the next day, and drop the oldest partition.
 
 
 Dropping a partition is essentially instantaneous, much faster than deleting that many rows. However, you must design the table so that the entire partition can be dropped. That is, you cannot have some items living longer than others.
@@ -178,7 +178,7 @@ This technique is NOT recommended because the LIMIT leads to a warning on replic
 ## InnoDB chunking recommendation
 
 
-* Have a 'reasonable' size for [innodb_log_file_size](../../../../reference/storage-engines/innodb/innodb-system-variables.md).
+* Have a 'reasonable' size for [innodb_log_file_size](../../../../ref/storage-engines/innodb/innodb-system-variables.md).
 * Use AUTOCOMMIT=1 for the session doing the deletions.
 * Pick about 1000 rows for the chunk size.
 * Adjust the row count down if asynchronous replication (Statement Based) causes too much delay on the Slaves or hogs the table too much.
@@ -223,13 +223,13 @@ This is costly. (Switch to the PARTITION solution if practical.)
 MyISAM leaves gaps in the table (.MYD file); [OPTIMIZE TABLE](../optimizing-tables/optimize-table.md) will reclaim the freed space after a big delete. But it may take a long time and lock the table.
 
 
-InnoDB is block-structured, organized in a BTree on the PRIMARY KEY. An isolated deleted row leaves a block less full. A lot of deleted rows can lead to coalescing of adjacent blocks. (Blocks are normally 16KB - see [innodb_page_size](../../../../reference/storage-engines/innodb/innodb-system-variables.md).)
+InnoDB is block-structured, organized in a BTree on the PRIMARY KEY. An isolated deleted row leaves a block less full. A lot of deleted rows can lead to coalescing of adjacent blocks. (Blocks are normally 16KB - see [innodb_page_size](../../../../ref/storage-engines/innodb/innodb-system-variables.md).)
 
 
 In InnoDB, there is no practical way to reclaim the freed space from ibdata1, other than to reuse the freed blocks eventually.
 
 
-The only option with [innodb_file_per_table = 0](../../../../reference/storage-engines/innodb/innodb-system-variables.md) is to dump ALL tables, remove ibdata*, restart, and reload. That is rarely worth the effort and time.
+The only option with [innodb_file_per_table = 0](../../../../ref/storage-engines/innodb/innodb-system-variables.md) is to dump ALL tables, remove ibdata*, restart, and reload. That is rarely worth the effort and time.
 
 
 InnoDB, even with innodb_file_per_table = 1, won't give space back to the OS, but at least it is only one table to rebuild with. In this case, something like this should work:
@@ -253,7 +253,7 @@ The following technique can be used for any combination of
 
 * Deleting a large portion of the table more efficiently
 * Add PARTITIONing
-* Converting to [innodb_file_per_table = ON](../../../../reference/storage-engines/innodb/innodb-system-variables.md)
+* Converting to [innodb_file_per_table = ON](../../../../ref/storage-engines/innodb/innodb-system-variables.md)
 * Defragmenting
 
 
@@ -333,7 +333,7 @@ SET GLOBAL SQL_SLAVE_SKIP_COUNTER = 1;
 Then (presumably) re-executing the DELETE will finish the aborted task.
 
 
-(That is yet another reason to move all your tables [from MyISAM to InnoDB](../../../../reference/storage-engines/converting-tables-from-myisam-to-innodb.md).)
+(That is yet another reason to move all your tables [from MyISAM to InnoDB](../../../../ref/storage-engines/converting-tables-from-myisam-to-innodb.md).)
 
 
 ## SBR vs RBR; Galera

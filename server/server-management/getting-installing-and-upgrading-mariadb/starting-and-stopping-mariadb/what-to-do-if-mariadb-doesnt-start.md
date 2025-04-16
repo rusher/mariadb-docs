@@ -93,13 +93,13 @@ System error 1067 has occurred.
 Fatal error: Can't open privilege tables: Table 'mysql.host' doesn't exist
 ```
 
-If errors like this occur, then critical [system tables](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) are either missing or are in the wrong location. The above error is quite common after an upgrade if the [option files](../configuring-mariadb-with-option-files.md) set the `[basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir)` or `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` to a non-standard location, but the new server is using the default location. Therefore, make sure that the `[basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir)` and `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` variables are correctly set.
+If errors like this occur, then critical [system tables](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) are either missing or are in the wrong location. The above error is quite common after an upgrade if the [option files](../configuring-mariadb-with-option-files.md) set the `[basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir)` or `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` to a non-standard location, but the new server is using the default location. Therefore, make sure that the `[basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir)` and `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` variables are correctly set.
 
 
 If you're unsure where the option file is located, see [Configuring MariaDB with Option Files: Default Option File Locations](../configuring-mariadb-with-option-files.md#default-option-file-locations) for information on the default locations.
 
 
-If the [system tables](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) really do not exist, then you may need to create them with [mariadb-install-db](../mariadb-install-db-exe.md). See [Installing System Tables (mariadb-install-db)](../installing-system-tables-mariadb-install-db.md) for more information.
+If the [system tables](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) really do not exist, then you may need to create them with [mariadb-install-db](../mariadb-install-db-exe.md). See [Installing System Tables (mariadb-install-db)](../installing-system-tables-mariadb-install-db.md) for more information.
 
 
 ## Can't Create Test File
@@ -160,14 +160,14 @@ Like the above, this is an indication that a second MariaDB instance is already 
 ### Cannot Allocate Memory for the InnoDB Buffer Pool
 
 
-In a typical installation on a dedicated server, at least 70% of your memory should be assigned to [InnoDB buffer pool](../../../reference/storage-engines/innodb/innodb-buffer-pool.md); sometimes it can even reach 85%. But be very careful: don't assign to the buffer pool more memory than it can allocate. If it cannot allocate memory, InnoDB will use the disk's swap area, which is very bad for performance. If swapping is disabled or the swap area is not big enough, InnoDB will crash. In this case, MariaDB will probably try to restart several times, and each time it will log a message like this:
+In a typical installation on a dedicated server, at least 70% of your memory should be assigned to [InnoDB buffer pool](../../../ref/storage-engines/innodb/innodb-buffer-pool.md); sometimes it can even reach 85%. But be very careful: don't assign to the buffer pool more memory than it can allocate. If it cannot allocate memory, InnoDB will use the disk's swap area, which is very bad for performance. If swapping is disabled or the swap area is not big enough, InnoDB will crash. In this case, MariaDB will probably try to restart several times, and each time it will log a message like this:
 
 
 ```
 140124 17:29:01 InnoDB: Fatal error: cannot allocate memory for the buffer pool
 ```
 
-In that case, you will need to add more memory to your server/VM or decrease the value of the [innodb_buffer_pool_size](../../../reference/storage-engines/innodb/innodb-system-variables.md) variables.
+In that case, you will need to add more memory to your server/VM or decrease the value of the [innodb_buffer_pool_size](../../../ref/storage-engines/innodb/innodb-system-variables.md) variables.
 
 
 Remember that the buffer pool will slightly exceed that limit. Also, remember that MariaDB also needs allocate memory for other storage engines and several per-connection buffers. The operating system also needs memory.
@@ -176,7 +176,7 @@ Remember that the buffer pool will slightly exceed that limit. Also, remember th
 ### InnoDB Table Corruption
 
 
-By default, InnoDB deliberately crashes the server when it detects table corruption. The reason for this behavior is preventing corruption propagation. However, in some situations, server availability is more important than data integrity. For this reason, we can avoid these crashes by changing the value of [innodb_corrupt_table_action](../../../reference/storage-engines/innodb/innodb-system-variables.md) to 'warn'.
+By default, InnoDB deliberately crashes the server when it detects table corruption. The reason for this behavior is preventing corruption propagation. However, in some situations, server availability is more important than data integrity. For this reason, we can avoid these crashes by changing the value of [innodb_corrupt_table_action](../../../ref/storage-engines/innodb/innodb-system-variables.md) to 'warn'.
 
 
 If InnoDB crashes the server after detecting data corruption, it writes a detailed message in the error log. The first lines are similar to the following:
@@ -188,16 +188,16 @@ InnoDB: file read of page 7.
 InnoDB: You may have to recover from a backup.
 ```
 
-Generally, it is still possible to recover most of the corrupted data. To do so, restart the server in [InnoDB recovery mode](../../../reference/storage-engines/innodb/innodb-troubleshooting/innodb-recovery-modes.md) and try to extract the data that you want to backup. You can save them in a CSV file or in a non-InnoDB table. Then, restart the server in normal mode and restore the data.
+Generally, it is still possible to recover most of the corrupted data. To do so, restart the server in [InnoDB recovery mode](../../../ref/storage-engines/innodb/innodb-troubleshooting/innodb-recovery-modes.md) and try to extract the data that you want to backup. You can save them in a CSV file or in a non-InnoDB table. Then, restart the server in normal mode and restore the data.
 
 
 ## MyISAM
 
 
-Most tables in the [mysql](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database are MyISAM tables. These tables are necessary for MariaDB to properly work, or even start.
+Most tables in the [mysql](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database are MyISAM tables. These tables are necessary for MariaDB to properly work, or even start.
 
 
-A MariaDB crash could cause system tables corruption. With the default settings, MariaDB will simply not start if the system tables are corrupted. With [myisam_recover_options](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options), we can force MyISAM to repair damaged tables.
+A MariaDB crash could cause system tables corruption. With the default settings, MariaDB will simply not start if the system tables are corrupted. With [myisam_recover_options](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options), we can force MyISAM to repair damaged tables.
 
 
 ## systemd

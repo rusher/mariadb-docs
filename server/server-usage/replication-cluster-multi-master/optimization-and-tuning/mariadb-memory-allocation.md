@@ -5,19 +5,19 @@
 ## Allocating RAM for MariaDB - The Short Answer
 
 
-If only using [MyISAM](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), set [key_buffer_size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) to 20% of **available** RAM. (Plus [innodb_buffer_pool_size=0](../../../reference/storage-engines/innodb/innodb-system-variables.md))
+If only using [MyISAM](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md), set [key_buffer_size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) to 20% of **available** RAM. (Plus [innodb_buffer_pool_size=0](../../../ref/storage-engines/innodb/innodb-system-variables.md))
 
 
-If only using InnoDB, set [innodb_buffer_pool_size](../../../reference/storage-engines/innodb/innodb-system-variables.md) to 70% of **available** RAM. (Plus [key_buffer_size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) = 10M, small, but not zero.)
+If only using InnoDB, set [innodb_buffer_pool_size](../../../ref/storage-engines/innodb/innodb-system-variables.md) to 70% of **available** RAM. (Plus [key_buffer_size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) = 10M, small, but not zero.)
 
 
 Rule of thumb for tuning:
 
 
 * Start with released copy of my.cnf / my.ini.
-* Change [key_buffer_size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) and [innodb_buffer_pool_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) according to engine usage and RAM.
+* Change [key_buffer_size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) and [innodb_buffer_pool_size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) according to engine usage and RAM.
 * Slow queries can usually be 'fixed' via indexes, schema changes, or SELECT changes, not by tuning.
-* Don't get carried away with the [query cache](../../../reference/plugins/other-plugins/query-cache-information-plugin.md) until you understand what it can and cannot do.
+* Don't get carried away with the [query cache](../../../ref/plugins/other-plugins/query-cache-information-plugin.md) until you understand what it can and cannot do.
 * Don't change anything else unless you run into trouble (eg, max connections).
 * Be sure the changes are under the [mysqld] section, not some other section.
 
@@ -39,7 +39,7 @@ There are two kind of buffers in MariaDB:
 
 * Global ones that are only allocated once during the lifetime of the server:
 
-  * Storage engine buffers ([innodb_buffer_pool_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size), [key_buffer_size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size), [aria_pagecache_buffer_size](../../../reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size), etc)
+  * Storage engine buffers ([innodb_buffer_pool_size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size), [key_buffer_size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size), [aria_pagecache_buffer_size](../../../ref/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size), etc)
   * Query cache [query_cache_size](system-variables/server-system-variables.md#query_cache_size).
 
 
@@ -54,10 +54,10 @@ There are two kind of buffers in MariaDB:
 * Local buffers that are allocated on demand whenever needed
 
   * Internal ones used during engine index creation
- ([myisam_sort_buffer_size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size), [aria_sort_buffer_size).](../../../reference/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size)
+ ([myisam_sort_buffer_size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size), [aria_sort_buffer_size).](../../../ref/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size)
   * Internal buffers for storing blobs.
 
-    * Some storage engine will keep a temporary cache to store the largest blob seen so far when scanning a table. This will be freed at end of query. Note that temporary blob storage is not included in the memory information in [information_schema.processlist](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) but only in the total memory used (`show global status like "memory_used"`).
+    * Some storage engine will keep a temporary cache to store the largest blob seen so far when scanning a table. This will be freed at end of query. Note that temporary blob storage is not included in the memory information in [information_schema.processlist](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) but only in the total memory used (`show global status like "memory_used"`).
   * Buffers and caches used during query execution:
 
 
@@ -102,7 +102,7 @@ system_variables.default_value <> 0
 ## What is the Key Buffer?
 
 
-[MyISAM](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) does two different things for caching.
+[MyISAM](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) does two different things for caching.
 
 
 * Index blocks (1KB each, BTree structured, from .MYI file) live in the "key buffer".
@@ -114,13 +114,13 @@ Caveat: Some flavors of OS always claim to be using over 90%, even when there is
 SHOW GLOBAL STATUS LIKE 'Key%';
 ```
 
-then calculate [Key_read_requests](system-variables/server-status-variables.md#key_read_requests) / [Key_reads](system-variables/server-status-variables.md#key_reads). If it is high (say, over 10), then the key buffer is big enough, otherwise you should adjust the [key_buffer_size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) value.
+then calculate [Key_read_requests](system-variables/server-status-variables.md#key_read_requests) / [Key_reads](system-variables/server-status-variables.md#key_reads). If it is high (say, over 10), then the key buffer is big enough, otherwise you should adjust the [key_buffer_size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) value.
 
 
 ## What is the Buffer Pool?
 
 
-InnoDB does all its caching in a the [buffer pool](../../../reference/storage-engines/innodb/innodb-buffer-pool.md), whose size is controlled by [innodb_buffer_pool_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size). By default it contains 16KB data and index blocks from the open tables (see [innodb_page_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_size)), plus some maintenance overhead.
+InnoDB does all its caching in a the [buffer pool](../../../ref/storage-engines/innodb/innodb-buffer-pool.md), whose size is controlled by [innodb_buffer_pool_size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size). By default it contains 16KB data and index blocks from the open tables (see [innodb_page_size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_page_size)), plus some maintenance overhead.
 
 
 From [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), multiple buffer pools are permitted; this can help because there is one mutex per pool, thereby relieving some of the mutex bottleneck.
@@ -135,13 +135,13 @@ From [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releas
 This will set the main cache settings to the minimum; it could be important to systems with lots of other processes and/or RAM is 2GB or smaller.
 
 
-Do [SHOW TABLE STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-status.md) for all the tables in all the databases.
+Do [SHOW TABLE STATUS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-status.md) for all the tables in all the databases.
 
 
-Add up Index_length for all the MyISAM tables. Set [key_buffer_size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) no larger than that size.
+Add up Index_length for all the MyISAM tables. Set [key_buffer_size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) no larger than that size.
 
 
-Add up Data_length + Index_length for all the InnoDB tables. Set [innodb_buffer_pool_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) to no more than 110% of that total.
+Add up Data_length + Index_length for all the InnoDB tables. Set [innodb_buffer_pool_size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) to no more than 110% of that total.
 
 
 If that leads to swapping, cut both settings back. Suggest cutting them down proportionately.
@@ -216,8 +216,8 @@ The OS is not limited by 4GB, but MariaDB is.
 If you have at least 4GB of RAM, then maybe these would be good:
 
 
-* [key_buffer_size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) = 20% of _all_ of RAM, but not more than 3G
-* [innodb_buffer_pool_size](../../../reference/storage-engines/innodb/innodb-system-variables.md) = 3G
+* [key_buffer_size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) = 20% of _all_ of RAM, but not more than 3G
+* [innodb_buffer_pool_size](../../../ref/storage-engines/innodb/innodb-system-variables.md) = 3G
 
 
 You should probably upgrade MariaDB to 64-bit.
@@ -226,13 +226,13 @@ You should probably upgrade MariaDB to 64-bit.
 ## 64-bit OS and MariaDB
 
 
-MyISAM only: [key_buffer_size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size): Use about 20% of RAM. Set (in my.cnf / my.ini) [innodb_buffer_pool_size=0](../../../reference/storage-engines/innodb/innodb-system-variables.md) = 0.
+MyISAM only: [key_buffer_size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size): Use about 20% of RAM. Set (in my.cnf / my.ini) [innodb_buffer_pool_size=0](../../../ref/storage-engines/innodb/innodb-system-variables.md) = 0.
 
 
-InnoDB only: [innodb_buffer_pool_size=0](../../../reference/storage-engines/innodb/innodb-system-variables.md) = 70% of RAM. If you have lots of RAM and are using 5.5 (or later), then consider having multiple pools. Recommend 1-16 [innodb_buffer_pool_instances](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances), such that each one is no smaller than 1GB. (Sorry, no metric on how much this will help; probably not a lot.)
+InnoDB only: [innodb_buffer_pool_size=0](../../../ref/storage-engines/innodb/innodb-system-variables.md) = 70% of RAM. If you have lots of RAM and are using 5.5 (or later), then consider having multiple pools. Recommend 1-16 [innodb_buffer_pool_instances](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances), such that each one is no smaller than 1GB. (Sorry, no metric on how much this will help; probably not a lot.)
 
 
-Meanwhile, set [key_buffer_size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) = 20M (tiny, but non-zero)
+Meanwhile, set [key_buffer_size](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) = 20M (tiny, but non-zero)
 
 
 If you have a mixture of engines, lower both numbers.
@@ -266,7 +266,7 @@ In *nix, ulimit tells you what the file limit is. The maximum value is in the te
 (This paragraph is in disputed.) On the other side, the table cache is (was) inefficiently implemented -- lookups were done with a linear scan. Hence, setting table_cache in the thousands could actually slow down mysql. (Benchmarks have shown this.)
 
 
-You can see how well your system is performing via [SHOW GLOBAL STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md); and computing the opens/second via [Opened_files](system-variables/server-status-variables.md#opened_files) / [Uptime](system-variables/server-status-variables.md#uptime) If this is more than, say, 5, [table_open_cache](system-variables/server-system-variables.md#table_open_cache) should be increased. If it is less than, say, 1, you might get improvement by decreasing [table_open_cache](system-variables/server-system-variables.md#table_open_cache).
+You can see how well your system is performing via [SHOW GLOBAL STATUS](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md); and computing the opens/second via [Opened_files](system-variables/server-status-variables.md#opened_files) / [Uptime](system-variables/server-status-variables.md#uptime) If this is more than, say, 5, [table_open_cache](system-variables/server-system-variables.md#table_open_cache) should be increased. If it is less than, say, 1, you might get improvement by decreasing [table_open_cache](system-variables/server-system-variables.md#table_open_cache).
 
 
 From [MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), [table_open_cache](system-variables/server-system-variables.md#table_open_cache) defaults to 2000.
@@ -278,7 +278,7 @@ From [MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-m
 Short answer: [query_cache_type](system-variables/server-system-variables.md#query_cache_type) = OFF and [query_cache_size](system-variables/server-system-variables.md#query_cache_size) = 0
 
 
-The [Query Cache](../../../reference/plugins/other-plugins/query-cache-information-plugin.md) (QC) is effectively a hash mapping SELECT statements to resultsets.
+The [Query Cache](../../../ref/plugins/other-plugins/query-cache-information-plugin.md) (QC) is effectively a hash mapping SELECT statements to resultsets.
 
 
 Long answer... There are many aspects of the "Query cache"; many are negative.
@@ -309,7 +309,7 @@ If you decide the QC is right for you, then I recommend
 
 * [query_cache_size](system-variables/server-system-variables.md#query_cache_size) = no more than 50M
 * [query_cache_type](system-variables/server-system-variables.md#query_cache_type) = DEMAND
-* [SQL_CACHE or SQL_NO_CACHE](../../../reference/plugins/other-plugins/query-cache-information-plugin.md#sql_no_cache-and-sql_cache) in all SELECTs, based on which queries are likely to benefit from caching.
+* [SQL_CACHE or SQL_NO_CACHE](../../../ref/plugins/other-plugins/query-cache-information-plugin.md#sql_no_cache-and-sql_cache) in all SELECTs, based on which queries are likely to benefit from caching.
 
 
 * [Why to turn off the QC](https://dba.stackexchange.com/a/136814/1876)
@@ -328,7 +328,7 @@ It is the number of extra processes to hang onto. It does not restrict the numbe
 ## Binary Logs
 
 
-If you have turned on [binary logging](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) (via [log_bin](../standard-replication/replication-and-binary-log-system-variables.md#log_bin)) for replication and/or point-in-time recovery, the system will create binary logs forever. That is, they can slowly fill up the disk. Suggest setting [expire_logs_days](../standard-replication/replication-and-binary-log-system-variables.md#expire_logs_days) = 14 to keep only 14 days' worth of logs.
+If you have turned on [binary logging](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) (via [log_bin](../standard-replication/replication-and-binary-log-system-variables.md#log_bin)) for replication and/or point-in-time recovery, the system will create binary logs forever. That is, they can slowly fill up the disk. Suggest setting [expire_logs_days](../standard-replication/replication-and-binary-log-system-variables.md#expire_logs_days) = 14 to keep only 14 days' worth of logs.
 
 
 ## Swappiness
@@ -379,7 +379,7 @@ dmesg | grep -i numa
 # to see if you have numa
 
 
-Probable solution: Configure the BIOS to "interleave" the RAM allocations. This should prevent the premature swapping, at the cost of off-CPU RAM accesses half the time. Well, you have the costly accesses anyway, since you really want to use all of RAM. Older MySQL versions: numactl --interleave=all. Or: [innodb_numa_interleave](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_numa_interleave)=1
+Probable solution: Configure the BIOS to "interleave" the RAM allocations. This should prevent the premature swapping, at the cost of off-CPU RAM accesses half the time. Well, you have the costly accesses anyway, since you really want to use all of RAM. Older MySQL versions: numactl --interleave=all. Or: [innodb_numa_interleave](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_numa_interleave)=1
 
 
 Another possible solution: Turn numa off (if the OS has a way of doing that)
@@ -412,7 +412,7 @@ For example, 128GB of RAM broken 4KB pages means 32M page-table entries. This is
 With the help of both the hardware and the OS, it is possible to have some of RAM in huge pages, of say 4MB (instead of 4KB). This leads to far fewer TLB entries, but it means the unit of paging is 4MB for such parts of RAM. Hence, huge pages tend to be non-pagable.
 
 
-Now RAM is broken into pagable and non pagable parts; what parts can reasonably be non pagable? In MariaDB, the [Innodb Buffer Pool](../../../reference/storage-engines/innodb/innodb-buffer-pool.md) is a perfect candidate. So, by correctly configuring these, InnoDB can run a little faster:
+Now RAM is broken into pagable and non pagable parts; what parts can reasonably be non pagable? In MariaDB, the [Innodb Buffer Pool](../../../ref/storage-engines/innodb/innodb-buffer-pool.md) is a perfect candidate. So, by correctly configuring these, InnoDB can run a little faster:
 
 
 * Huge pages enabled
@@ -435,7 +435,7 @@ Jumbo Pages? Turn off.
 ## ENGINE=MEMORY
 
 
-The [Memory Storage Engine](../../../reference/storage-engines/memory-storage-engine.md) is a little-used alternative to [MyISAM](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md). The data is not persistent, so it has limited uses. The size of a MEMORY table is limited to [max_heap_table_size](system-variables/server-system-variables.md#max_heap_table_size), which defaults to 16MB. I mention it in case you have changed the value to something huge; this would stealing from other possible uses of RAM.
+The [Memory Storage Engine](../../../ref/storage-engines/memory-storage-engine.md) is a little-used alternative to [MyISAM](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md). The data is not persistent, so it has limited uses. The size of a MEMORY table is limited to [max_heap_table_size](system-variables/server-system-variables.md#max_heap_table_size), which defaults to 16MB. I mention it in case you have changed the value to something huge; this would stealing from other possible uses of RAM.
 
 
 ## How to Set Variables
@@ -444,7 +444,7 @@ The [Memory Storage Engine](../../../reference/storage-engines/memory-storage-en
 In the text file my.cnf (my.ini on Windows), add or modify a line to say something like
 
 
-[innodb_buffer_pool_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) = 5G
+[innodb_buffer_pool_size](../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) = 5G
 
 
 That is, VARIABLE name, "=", and a value. Some abbreviations are allowed, such as M for million (1048576), G for billion.

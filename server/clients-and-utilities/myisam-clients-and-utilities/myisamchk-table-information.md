@@ -28,8 +28,8 @@ The following table describes the output from the running myisamchk with the *-d
 | --- | --- |
 | Heading | Description |
 | MyISAM file | Name and path of the MyISAM index file (without the extension) |
-| Record format | [Storage format](../../reference/storage-engines/myisam-storage-engine/myisam-storage-formats.md). One of packed (dynamic), fixed or compressed. |
-| Chararacter set | Default [character set](../../reference/data-types/string-data-types/character-sets/README.md) for the table. |
+| Record format | [Storage format](../../ref/storage-engines/myisam-storage-engine/myisam-storage-formats.md). One of packed (dynamic), fixed or compressed. |
+| Chararacter set | Default [character set](../../ref/data-types/string-data-types/character-sets/README.md) for the table. |
 | File-version | Always 1. |
 | Creation time | Time the data file was created |
 | Recover time | Most recent time the file was reconstructed. |
@@ -38,7 +38,7 @@ The following table describes the output from the running myisamchk with the *-d
 | Last value | Most recently generated auto-increment value. Not shown if no auto-increment column exists. |
 | Data records | Number of records in the table. |
 | Deleted blocks | Number of deleted blocks that are still reserving space. Use [OPTIMIZE TABLE](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) to defragment. |
-| Datafile parts | For [dynamic tables](../../reference/storage-engines/myisam-storage-engine/myisam-storage-formats.md), the number of data blocks. If the table is optimized, this will match the number of data records. |
+| Datafile parts | For [dynamic tables](../../ref/storage-engines/myisam-storage-engine/myisam-storage-formats.md), the number of data blocks. If the table is optimized, this will match the number of data records. |
 | Deleted data | Number of bytes of unreclaimed deleted data, Use [OPTIMIZE TABLE](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) to reclaim the space. |
 | Datafile pointer | Size in bytes of the data file pointer. The size of the data file pointer, in bytes. |
 | Keyfile pointer | Size in bytes of the index file pointer. |
@@ -73,7 +73,7 @@ The following table describes the output from the running myisamchk with the *-d
 | no endspace | No endspace is stored. |
 | no endspace, not_always | No endspace is stored, and endspace compression is not always performed for all values. |
 | no endspace, no empty | No endspace is stored, no empty values are stored. |
-| table-lookup | Column was converted to an [ENUM](../../reference/data-types/string-data-types/enum.md). |
+| table-lookup | Column was converted to an [ENUM](../../ref/data-types/string-data-types/enum.md). |
 | zerofill(N) | Most significant N bytes of the value are not stored, as they are always zero. |
 | no zeros | Zeros are not stored. |
 | always zero | Zero values are stored with one bit. |

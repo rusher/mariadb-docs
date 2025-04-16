@@ -30,7 +30,7 @@ The suggested upgrade procedure is:
   * On Debian, Ubuntu, and other similar Linux distributions, see [Updating the MariaDB APT repository to a New Major Release](../../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#updating-the-mariadb-apt-repository-to-a-new-major-release) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Updating the MariaDB YUM repository to a New Major Release](../../binary-packages/rpm/yum.md#updating-the-mariadb-yum-repository-to-a-new-major-release) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Updating the MariaDB ZYpp repository to a New Major Release](../../binary-packages/rpm/installing-mariadb-with-zypper.md#updating-the-mariadb-zypp-repository-to-a-new-major-release) for more information.
-1. Set `[innodb_fast_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md)` to `0`. It can be changed dynamically with `[SET GLOBAL](../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)`. For example: 
+1. Set `[innodb_fast_shutdown](../../../../ref/storage-engines/innodb/innodb-system-variables.md)` to `0`. It can be changed dynamically with `[SET GLOBAL](../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)`. For example: 
 `SET GLOBAL innodb_fast_shutdown=0;`
 1. [Stop MariaDB](../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md).
 1. Uninstall the old version of MariaDB.
@@ -52,7 +52,7 @@ The suggested upgrade procedure is:
 
   * `mysql_upgrade` does two things:
 
-    1. Ensures that the system tables in the `[mysq](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)l` database are fully compatible with the new version.
+    1. Ensures that the system tables in the `[mysq](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)l` database are fully compatible with the new version.
     1. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 
 
@@ -66,8 +66,8 @@ However, there are some things that have changed which could affect an upgrade:
 #### Storage Engines
 
 
-* The [ARCHIVE](../../../../reference/storage-engines/archive/README.md) storage engine is no longer enabled by default, and the plugin needs to be specifically enabled.
-* The [BLACKHOLE](../../../../reference/storage-engines/blackhole.md) storage engine is no longer enabled by default, and the plugin needs to be specifically enabled.
+* The [ARCHIVE](../../../../ref/storage-engines/archive/README.md) storage engine is no longer enabled by default, and the plugin needs to be specifically enabled.
+* The [BLACKHOLE](../../../../ref/storage-engines/blackhole.md) storage engine is no longer enabled by default, and the plugin needs to be specifically enabled.
 
 
 #### Replication
@@ -86,7 +86,7 @@ Most of the following options have increased in value to give better performance
 | Option | Old default value | New default value |
 | --- | --- | --- |
 | Option | Old default value | New default value |
-| [innodb_log_compressed_pages](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | ON | OFF |
+| [innodb_log_compressed_pages](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | ON | OFF |
 | [join_buffer_size](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size) | 128K | 256K |
 | [max_allowed_packet](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_allowed_packet) | 1M | 4M |
 | [query_alloc_block_size](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#query_alloc_block_size) | 8192 | 16384 |
@@ -130,7 +130,7 @@ Note that explicit or implicit casts from MAX(string) to INT, DOUBLE or DECIMAL 
 You might consider using the following major new features in [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md):
 
 
-* [Galera Cluster](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) is now included by default.
+* [Galera Cluster](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) is now included by default.
 * [Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md)
 * [InnoDB/XtraDB Page Compression](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md)
 

@@ -1,7 +1,7 @@
 
 # Galera Cluster System Variables
 
-This page documents system variables related to [Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md). For options that are not system variables, see [Galera Options](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
+This page documents system variables related to [Galera Cluster](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md). For options that are not system variables, see [Galera Options](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
 
 
 See [Server System Variables](../optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
@@ -26,7 +26,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `wsrep_auto_increment_control`
 
 
-* Description: If set to `1` (the default), will automatically adjust the [auto_increment_increment](../standard-replication/replication-and-binary-log-system-variables.md) and [auto_increment_offset](../standard-replication/replication-and-binary-log-system-variables.md) variables according to the size of the cluster, and when the cluster size changes. This avoids replication conflicts due to [auto_increment](../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md). In a primary-replica environment, can be set to `OFF`.
+* Description: If set to `1` (the default), will automatically adjust the [auto_increment_increment](../standard-replication/replication-and-binary-log-system-variables.md) and [auto_increment_offset](../standard-replication/replication-and-binary-log-system-variables.md) variables according to the size of the cluster, and when the cluster size changes. This avoids replication conflicts due to [auto_increment](../../../ref/storage-engines/innodb/auto_increment-handling-in-innodb.md). In a primary-replica environment, can be set to `OFF`.
 * Commandline: `--wsrep-auto-increment-control[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -38,7 +38,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `wsrep_causal_reads`
 
 
-* Description: If set to `ON` (`OFF` is default), enforces [read-committed](../../../reference/sql-statements-and-structure/sql-statements/transactions/set-transaction.md#read-committed) characteristics across the cluster. In the case that a primary applies an event more quickly than a replica, the two could briefly be out-of-sync. With this variable set to `ON`, the replica will wait for the event to be applied before processing further queries. Setting to `ON` also results in larger read latencies. Deprecated by [wsrep_sync_wait=1](#wsrep_sync_wait).
+* Description: If set to `ON` (`OFF` is default), enforces [read-committed](../../../ref/sql-statements-and-structure/sql-statements/transactions/set-transaction.md#read-committed) characteristics across the cluster. In the case that a primary applies an event more quickly than a replica, the two could briefly be out-of-sync. With this variable set to `ON`, the replica will wait for the event to be applied before processing further queries. Setting to `ON` also results in larger read latencies. Deprecated by [wsrep_sync_wait=1](#wsrep_sync_wait).
 * Commandline: `--wsrep-causal-reads[={0|1}]`
 * Scope: Session
 * Dynamic: Yes
@@ -114,7 +114,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `wsrep_convert_LOCK_to_trx`
 
 
-* Description: Converts [LOCK/UNLOCK TABLES](../../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md) statements to [BEGIN](../../../reference/sql-statements-and-structure/sql-statements/transactions/start-transaction.md) and [COMMIT](../../../reference/sql-statements-and-structure/sql-statements/transactions/commit.md). Used mainly for getting older applications to work with a multi-primary setup, use carefully, as can result in extremely large writesets.
+* Description: Converts [LOCK/UNLOCK TABLES](../../../ref/sql-statements-and-structure/sql-statements/transactions/lock-tables.md) statements to [BEGIN](../../../ref/sql-statements-and-structure/sql-statements/transactions/start-transaction.md) and [COMMIT](../../../ref/sql-statements-and-structure/sql-statements/transactions/commit.md). Used mainly for getting older applications to work with a multi-primary setup, use carefully, as can result in extremely large writesets.
 * Commandline: `--wsrep-convert-LOCK-to-trx[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -202,7 +202,7 @@ It is an enum. Valid values are:
 #### `wsrep_drupal_282555_workaround`
 
 
-* Description: If set to `ON`, a workaround for [Drupal/MySQL/InnoDB bug #282555](https://www.drupal.org/node/282555) is enabled. This is a bug where, in some cases, when inserting a `DEFAULT` value into an [AUTO_INCREMENT](../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) column, a duplicate key error may be returned.
+* Description: If set to `ON`, a workaround for [Drupal/MySQL/InnoDB bug #282555](https://www.drupal.org/node/282555) is enabled. This is a bug where, in some cases, when inserting a `DEFAULT` value into an [AUTO_INCREMENT](../../../ref/storage-engines/innodb/auto_increment-handling-in-innodb.md) column, a duplicate key error may be returned.
 * Commandline: `--wsrep-drupal-282555-workaround[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -292,7 +292,7 @@ It is an enum. Valid values are:
 #### `wsrep_load_data_splitting`
 
 
-* Description: If set to `ON`, [LOAD DATA INFILE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) supports big data files by introducing transaction splitting. The setting has been deprecated in Galera 4, and defaults to `OFF`
+* Description: If set to `ON`, [LOAD DATA INFILE](../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) supports big data files by introducing transaction splitting. The setting has been deprecated in Galera 4, and defaults to `OFF`
 * Commandline: `--wsrep-load-data-splitting[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -356,8 +356,8 @@ It is an enum. Valid values are:
     * A DDL statement is executed with wsrep_OSU_method=RSU set.
     * A DML statement writes to a non-InnoDB table.
     * A DML statement writes to an InnoDB table with wsrep_on=OFF set.
-  * REPLICATE_ARIA: Whether or not DML updates for [Aria](../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
-  * REPLICATE_MYISAM: Whether or not DML updates for [MyISAM](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
+  * REPLICATE_ARIA: Whether or not DML updates for [Aria](../../../ref/storage-engines/s3-storage-engine/aria_s3_copy.md) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
+  * REPLICATE_MYISAM: Whether or not DML updates for [MyISAM](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
   * REQUIRED_PRIMARY_KEY: Table should have PRIMARY KEY defined.
   * STRICT_REPLICATION: Same as the old [wsrep_strict_ddl](#wsrep_strict_ddl) setting.
 * Commandline: `--wsrep-mode=value`
@@ -542,7 +542,7 @@ It is an enum. Valid values are:
 #### `wsrep_replicate_myisam`
 
 
-* Description: Whether or not DML updates for [MyISAM](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables will be replicated. This functionality is still experimental and should not be relied upon in production systems. Deprecated in [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), and removed in [MariaDB 10.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md), use [wsrep_mode](#wsrep_mode) instead.
+* Description: Whether or not DML updates for [MyISAM](../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables will be replicated. This functionality is still experimental and should not be relied upon in production systems. Deprecated in [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), and removed in [MariaDB 10.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md), use [wsrep_mode](#wsrep_mode) instead.
 * Commandline: `--wsrep-replicate-myisam[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -633,7 +633,7 @@ It is an enum. Valid values are:
 #### `wsrep_sst_auth`
 
 
-* Description: Username and password of the user to use for replication. Unused if [wsrep_sst_method](#wsrep_sst_method) is set to `rsync`, while for other methods it should be in the format `<user>:<password>`. The contents are masked in logs and when querying the value with [SHOW VARIABLES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md). See [Introduction to State Snapshot Transfers (SSTs)](state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) for more information.
+* Description: Username and password of the user to use for replication. Unused if [wsrep_sst_method](#wsrep_sst_method) is set to `rsync`, while for other methods it should be in the format `<user>:<password>`. The contents are masked in logs and when querying the value with [SHOW VARIABLES](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md). See [Introduction to State Snapshot Transfers (SSTs)](state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) for more information.
 * Commandline: `--wsrep-sst-auth=value`
 * Scope: Global
 * Dynamic: Yes
@@ -721,15 +721,15 @@ It is an enum. Valid values are:
 
 
 * Description: If set, reject DDL statements on affected tables not supporting Galera replication. This is done by checking if the table is InnoDB, which is the only table currently fully supporting Galera replication. MyISAM tables will not trigger the error if the experimental [wsrep_replicate_myisam](#wsrep_replicate_myisam) setting is `ON`. If set, should be set on all tables in the cluster. Affected DDL statements include:
-[CREATE TABLE](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) (e.g. CREATE TABLE t1(a int) engine=Aria)
-[ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)
-[TRUNCATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md)
+[CREATE TABLE](../../../ref/sql-statements-and-structure/vectors/create-table-with-vectors.md) (e.g. CREATE TABLE t1(a int) engine=Aria)
+[ALTER TABLE](../../../ref/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)
+[TRUNCATE TABLE](../../../ref/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md)
 [CREATE VIEW](../../programming-customizing-mariadb/views/create-view.md)
 [CREATE TRIGGER](../../programming-customizing-mariadb/triggers-events/triggers/create-trigger.md)
-[CREATE INDEX](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md)
-[DROP INDEX](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-index.md)
-[RENAME TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/rename-table.md)
-[DROP TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md)
+[CREATE INDEX](../../../ref/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md)
+[DROP INDEX](../../../ref/sql-statements-and-structure/sql-statements/data-definition/drop/drop-index.md)
+[RENAME TABLE](../../../ref/sql-statements-and-structure/sql-statements/data-definition/rename-table.md)
+[DROP TABLE](../../../ref/sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md)
 Statements in [procedures](../../programming-customizing-mariadb/stored-routines/stored-procedures/README.md), [events](../../programming-customizing-mariadb/triggers-events/event-scheduler/README.md), and [functions](../../programming-customizing-mariadb/stored-routines/stored-functions/README.md) are permitted as the affected
 tables are only known at execution. Furthermore, the various USER, ROLE, SERVER and 
 DATABASE statements are also allowed as they do not have an affected table. Deprecated in [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md) and removed in [MariaDB 10.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md). Use [wsrep_mode=STRICT_REPLICATION](#wsrep_mode) instead.

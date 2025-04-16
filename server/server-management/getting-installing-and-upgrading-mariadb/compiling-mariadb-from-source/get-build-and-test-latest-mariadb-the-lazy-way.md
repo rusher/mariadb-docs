@@ -44,7 +44,7 @@ The following command builds a server the same way that is used for building rel
 cmake . -DBUILD_CONFIG=mysql_release && cmake --build . --parallel=8
 ```
 
-## [Check the Server (If You Want To)](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md)
+## [Check the Server (If You Want To)](../../../ref/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md)
 
 
 ```

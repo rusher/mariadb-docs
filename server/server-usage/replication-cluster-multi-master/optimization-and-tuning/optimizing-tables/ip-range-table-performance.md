@@ -119,7 +119,7 @@ Notes on the [Reference implementation for IPv4](https://mysql.rjweb.org/doc.php
 
 
 * Externally, the user may use the dotted quad notation (11.22.33.44), but needs to convert to INT UNSIGNED for calling the Stored Procs.
-* The user is responsible for converting to/from the calling datatype (INT UNSIGNED) when accessing the stored routine; suggest [INET_ATON](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_aton.md)/[INET_NTOA](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_ntoa.md).
+* The user is responsible for converting to/from the calling datatype (INT UNSIGNED) when accessing the stored routine; suggest [INET_ATON](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_aton.md)/[INET_NTOA](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_ntoa.md).
 * The internal datatype for addresses is the same as the calling datatype (INT UNSIGNED).
 * Adding and subtracting 1 (simple arithmetic).
 * The datatype of an 'owner' (MEDIUMINT UNSIGNED: 0..16M) -- adjust if needed.
@@ -141,7 +141,7 @@ Notes on the [reference implementation for IPv6](https://mysql.rjweb.org/doc.php
 
 
 * Externally, IPv6 has a complex string, VARCHAR(39) CHARACTER SET ASCII. The Stored Procedure IpStr2Hex() is provided.
-* The user is responsible for converting to/from the calling datatype (BINARY(16)) when accessing the stored routine; suggest [INET6_ATON](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton.md)/[INET6_NTOA](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet6_ntoa.md).
+* The user is responsible for converting to/from the calling datatype (BINARY(16)) when accessing the stored routine; suggest [INET6_ATON](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton.md)/[INET6_NTOA](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet6_ntoa.md).
 * The internal datatype for addresses is the same as the calling datatype (BINARY(16)).
 * Communication with the Stored routines is via 32-char hex strings.
 * Inside the Procedures, and in the Ips table, an address is stored as BINARY(16) for efficiency. HEX() and UNHEX() are used at the boundaries.

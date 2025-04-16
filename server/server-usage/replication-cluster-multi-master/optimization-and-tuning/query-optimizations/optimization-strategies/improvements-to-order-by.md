@@ -10,13 +10,13 @@
 ## Older optimizations
 
 
-MariaDB brought several improvements to the [ORDER BY](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) optimizer.
+MariaDB brought several improvements to the [ORDER BY](../../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) optimizer.
 
 
 The fixes were made as a response to complaints by MariaDB customers, so they fix real-world optimization problems. The fixes are a bit hard to describe (as the `ORDER BY` optimizer is complicated), but here's a short description:
 
 
-The [ORDER BY](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) optimizer:
+The [ORDER BY](../../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) optimizer:
 
 
 * Doesn’t make stupid choices when several multi-part keys and potential range accesses are present ([MDEV-6402](https://jira.mariadb.org/browse/MDEV-6402)).
@@ -32,7 +32,7 @@ The [ORDER BY](../../../../../reference/sql-statements-and-structure/sql-stateme
 ## Extra optimizations
 
 
-* The [ORDER BY](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) optimizer takes multiple-equalities into account ([MDEV-8989](https://jira.mariadb.org/browse/MDEV-8989)). This optimization is enabled by default.
+* The [ORDER BY](../../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) optimizer takes multiple-equalities into account ([MDEV-8989](https://jira.mariadb.org/browse/MDEV-8989)). This optimization is enabled by default.
 
 
 ## Comparison with MySQL 5.7

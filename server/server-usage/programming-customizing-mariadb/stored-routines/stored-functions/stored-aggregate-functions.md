@@ -2,10 +2,10 @@
 # Stored Aggregate Functions
 
 
-[Aggregate functions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions.md) are functions that are computed over a sequence of rows and return one result for the sequence of rows.
+[Aggregate functions](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions.md) are functions that are computed over a sequence of rows and return one result for the sequence of rows.
 
 
-Creating a custom aggregate function is done using the [CREATE FUNCTION](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) statement with two main differences:
+Creating a custom aggregate function is done using the [CREATE FUNCTION](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) statement with two main differences:
 
 
 * The addition of the AGGREGATE keyword, so `CREATE AGGREGATE FUNCTION`
@@ -152,10 +152,10 @@ SELECT aggregate_count(stud_id) FROM marks;
 
 
 * [Stored Function Overview](stored-function-overview.md)
-* [CREATE FUNCTION](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)
-* [SHOW CREATE FUNCTION](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-function.md)
+* [CREATE FUNCTION](../../../../ref/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)
+* [SHOW CREATE FUNCTION](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-function.md)
 * [DROP FUNCTION](drop-function.md)
 * [Stored Routine Privileges](stored-routine-privileges.md)
-* [SHOW FUNCTION STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-function-status.md)
-* [Information Schema ROUTINES Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
+* [SHOW FUNCTION STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-function-status.md)
+* [Information Schema ROUTINES Table](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 

@@ -1,7 +1,7 @@
 
 # Compressing Events to Reduce Size of the Binary Log
 
-Selected events in the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) can be optionally compressed, to save space in the binary log on disk and in network transfers.
+Selected events in the [binary log](../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) can be optionally compressed, to save space in the binary log on disk and in network transfers.
 
 
 The events that can be compressed are the events that normally can be of a significant size: Query events (for DDL and DML in [statement-based](binary-log-formats.md#statement-based) [replication](../../../server-usage/replication-cluster-multi-master/standard-replication/README.md)), and row events (for DML in [row-based](binary-log-formats.md#row-based) [replication](../../../server-usage/replication-cluster-multi-master/standard-replication/README.md)).

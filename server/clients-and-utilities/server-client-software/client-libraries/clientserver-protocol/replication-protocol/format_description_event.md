@@ -1,7 +1,7 @@
 
 # FORMAT_DESCRIPTION_EVENT
 
-This is a descriptor event that is written to the beginning of a [binary log](../../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file, at position 4 (after the 4 magic number bytes)
+This is a descriptor event that is written to the beginning of a [binary log](../../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file, at position 4 (after the 4 magic number bytes)
 
 
 The whole event written to disk is [byte<19>](../protocol-data-types.md#fixed-length-bytes) event header + data fields

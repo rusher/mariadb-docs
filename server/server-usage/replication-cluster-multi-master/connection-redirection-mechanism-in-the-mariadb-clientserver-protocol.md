@@ -44,7 +44,7 @@ This variable is appended to the default value of the [session_track_system_vari
   * specify this script in the --init-connect server parameter
 * dynamically redirect from the primary to one of the replicas
 
-  * same as above, but use [INFORMATION_SCHEMA.PROCESSLIST](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) to get the list of active replicas.
+  * same as above, but use [INFORMATION_SCHEMA.PROCESSLIST](../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) to get the list of active replicas.
 
 
 ## Example

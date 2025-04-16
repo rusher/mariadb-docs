@@ -265,7 +265,7 @@ For "read scaling", backup, and failover, use master-slave replication or someth
 ## Sharding
 
 
-"Sharding" is the splitting of data across multiple servers. (In contrast, [replication](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) and [Galera](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) have the same data on all servers, requiring all data to be written to all servers.)
+"Sharding" is the splitting of data across multiple servers. (In contrast, [replication](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) and [Galera](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) have the same data on all servers, requiring all data to be written to all servers.)
 
 
 With the non-sharding techniques described here, terabyte(s) of data can be handled by a single machine. Tens of terabytes probably requires sharding.

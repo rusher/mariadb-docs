@@ -26,7 +26,7 @@ Engine-independent table statistics lift these limitations.
 [Histogram-based statistics](histogram-based-statistics.md) are a subset of engine-independent table statistics that can improve the query plan chosen by the optimizer in certain situations.
 
 
-Statistics are stored in three tables, [mysql.table_stats](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-table_stats-table.md), [mysql.column_stats](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-column_stats-table.md) and [mysql.index_stats](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-index_stats-table.md).
+Statistics are stored in three tables, [mysql.table_stats](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-table_stats-table.md), [mysql.column_stats](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-column_stats-table.md) and [mysql.index_stats](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-index_stats-table.md).
 
 
 Use or update of data from these tables is controlled by [use_stat_tables](../../system-variables/server-system-variables.md#use_stat_tables) variable. Possible values are listed below:
@@ -39,8 +39,8 @@ Use or update of data from these tables is controlled by [use_stat_tables](../..
 | 'never' | The optimizer doesn't use data from statistics tables. |
 | 'complementary' | The optimizer uses data from statistics tables if the same kind of data is not provided by the storage engine. |
 | 'preferably' | Prefer the data from statistics tables, if it's not available there, use the data from the storage engine. |
-| 'complementary_for_queries' | Same as complementary, but for queries only (to avoid needlessly collecting for [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md)). |
-| 'preferably_for_queries' | Same as preferably, but for queries only (to avoid needlessly collecting for [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md)). Default. |
+| 'complementary_for_queries' | Same as complementary, but for queries only (to avoid needlessly collecting for [ANALYZE TABLE](../../../../../ref/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md)). |
+| 'preferably_for_queries' | Same as preferably, but for queries only (to avoid needlessly collecting for [ANALYZE TABLE](../../../../../ref/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md)). Default. |
 
 
 
@@ -50,20 +50,20 @@ Use or update of data from these tables is controlled by [use_stat_tables](../..
 Engine-independent statistics are collected by doing full table and full index scans, and this process can be quite expensive.
 
 
-The [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement can be used to collect table statistics. However, simply running `ANALYZE TABLE table_name` does not collect engine-independent (or histogram) statistics by default.
+The [ANALYZE TABLE](../../../../../ref/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement can be used to collect table statistics. However, simply running `ANALYZE TABLE table_name` does not collect engine-independent (or histogram) statistics by default.
 
 
-When the [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement is executed, MariaDB makes a call to the table's storage engine, and the storage engine collects its own statistics for the table. The specific behavior depends on the storage engine. For the default [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) storage engine, see [InnoDB Persistent Statistics](innodb-persistent-statistics.md) for more information.
+When the [ANALYZE TABLE](../../../../../ref/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement is executed, MariaDB makes a call to the table's storage engine, and the storage engine collects its own statistics for the table. The specific behavior depends on the storage engine. For the default [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) storage engine, see [InnoDB Persistent Statistics](innodb-persistent-statistics.md) for more information.
 
 
-[ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) may also collect engine-independent statistics for the table. The specific behavior depends on the value of the [use_stat_tables](../../system-variables/server-system-variables.md#use_stat_tables) system variable. Engine-independent statistics will only be collected if one of the following is true:
+[ANALYZE TABLE](../../../../../ref/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) may also collect engine-independent statistics for the table. The specific behavior depends on the value of the [use_stat_tables](../../system-variables/server-system-variables.md#use_stat_tables) system variable. Engine-independent statistics will only be collected if one of the following is true:
 
 
 * The [use_stat_tables](../../system-variables/server-system-variables.md#use_stat_tables) system variable is set to `complementary` or `preferably`.
-* The [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement includes the `PERSISTENT FOR` clause.
+* The [ANALYZE TABLE](../../../../../ref/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement includes the `PERSISTENT FOR` clause.
 
 
-The [use_stat_tables](../../system-variables/server-system-variables.md#use_stat_tables) system variable is set to `preferably_for_queries` by default. With this value, engine-independent statistics are used by default if available, but they are not collected by default. If you want to use engine-independent statistics with the default configuration, then you will have to collect them by executing the [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement and by specifying the `PERSISTENT FOR` clause. It is recommended to collect engine-independent statistics on as-needed basis, so typically one will not have engine-independent statistics for all indexes/all columns.
+The [use_stat_tables](../../system-variables/server-system-variables.md#use_stat_tables) system variable is set to `preferably_for_queries` by default. With this value, engine-independent statistics are used by default if available, but they are not collected by default. If you want to use engine-independent statistics with the default configuration, then you will have to collect them by executing the [ANALYZE TABLE](../../../../../ref/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement and by specifying the `PERSISTENT FOR` clause. It is recommended to collect engine-independent statistics on as-needed basis, so typically one will not have engine-independent statistics for all indexes/all columns.
 
 
 When to collect statistics is very dependent on the dataset. If data changes frequently it may be necessary to collect statistics more frequently, and the benefits may be very noticeable (see [This one trick can make MariaDB 30x faster!](https://mariadb.org/mariadb-30x-faster/)). If the data distribution is relatively static, the costs of collecting may outweigh any benefits.
@@ -72,14 +72,14 @@ When to collect statistics is very dependent on the dataset. If data changes fre
 ### Collecting Statistics for Specific Columns or Indexes
 
 
-The syntax for the [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement has been extended with the `PERSISTENT FOR` clause. This clause allows one to collect engine-independent statistics only for particular columns or indexes. This clause also allows one to collect engine-independent statistics, regardless of the value of the [use_stat_tables](../../system-variables/server-system-variables.md#use_stat_tables) system variable. For example:
+The syntax for the [ANALYZE TABLE](../../../../../ref/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement has been extended with the `PERSISTENT FOR` clause. This clause allows one to collect engine-independent statistics only for particular columns or indexes. This clause also allows one to collect engine-independent statistics, regardless of the value of the [use_stat_tables](../../system-variables/server-system-variables.md#use_stat_tables) system variable. For example:
 
 
 ```
 ANALYZE TABLE table_name PERSISTENT FOR ALL;
 ```
 
-Statistics for columns using the [BLOB](../../../../../reference/data-types/string-data-types/blob.md) and [TEXT](../../../../../reference/data-types/string-data-types/text.md) data types are not collected. If a column using one of these types is explicitly specified, then a warning is returned.
+Statistics for columns using the [BLOB](../../../../../ref/data-types/string-data-types/blob.md) and [TEXT](../../../../../ref/data-types/string-data-types/text.md) data types are not collected. If a column using one of these types is explicitly specified, then a warning is returned.
 
 
 ### Examples of Statistics Collection
@@ -108,16 +108,16 @@ ANALYZE TABLE tbl;
 ## Manual Updates to Statistics Tables
 
 
-Statistics are stored in three tables, [mysql.table_stats](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-table_stats-table.md), [mysql.column_stats](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-column_stats-table.md) and [mysql.index_stats](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-index_stats-table.md).
+Statistics are stored in three tables, [mysql.table_stats](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-table_stats-table.md), [mysql.column_stats](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-column_stats-table.md) and [mysql.index_stats](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-index_stats-table.md).
 
 
-It is possible to update statistics tables manually. One should modify the table(s) with regular [INSERT](../../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md)/[UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)/[DELETE](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements. Statistics data will be re-read when the tables are re-opened. One way to force all tables to be re-opened is to issue [FLUSH TABLES](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) command.
+It is possible to update statistics tables manually. One should modify the table(s) with regular [INSERT](../../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md)/[UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)/[DELETE](../../../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements. Statistics data will be re-read when the tables are re-opened. One way to force all tables to be re-opened is to issue [FLUSH TABLES](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) command.
 
 
 A few scenarios where one might need to update statistics tables manually:
 
 
-* Deleting the statistics. Currently, the [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) command will collect the statistics, but there is no special command to delete statistics.
+* Deleting the statistics. Currently, the [ANALYZE TABLE](../../../../../ref/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) command will collect the statistics, but there is no special command to delete statistics.
 * Running ANALYZE on a different server. To collect engine-independent statistics ANALYZE TABLE does a full table scan, which can put too much load on the server. It is possible to run ANALYZE on the slave, and then take the data from statistics tables on the slave and apply it on the master.
 * In some cases, knowledge of the database allows one to compute statistics manually in a more efficient way than ANALYZE does. One can compute the statistics manually and put it into the database.
 

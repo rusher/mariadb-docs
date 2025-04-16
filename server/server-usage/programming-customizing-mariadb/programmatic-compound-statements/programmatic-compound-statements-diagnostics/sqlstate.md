@@ -22,7 +22,7 @@ For example, if you try to [SELECT](../../../../../general-resources/learning-an
 The standard SQL specification says that classes beginning with 0, 1, 2, 3, 4, A, B, C, D, E, F and G are reserved for standard-defined classes, while other classes are vendor-specific. It also says that, when the class is standard-defined, subclasses starting with those characters (except for '000') are standard-defined subclasses, while other subclasses are vendor-defined. However, MariaDB and MySQL do not strictly obey this rule.
 
 
-To read the SQLSTATE of a particular condition which is in the [diagnostics area](diagnostics-area.md), the [GET DIAGNOSTICS](get-diagnostics.md) statement can be used: the property is called RETURNED_SQLSTATE. For user-defined conditions ([SIGNAL](../signal.md) and [RESIGNAL](../resignal.md) statements), a SQLSTATE value must be set via the SQLSTATE clause. However, [SHOW WARNINGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md) and [SHOW ERRORS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-errors.md) do not display the SQLSTATE.
+To read the SQLSTATE of a particular condition which is in the [diagnostics area](diagnostics-area.md), the [GET DIAGNOSTICS](get-diagnostics.md) statement can be used: the property is called RETURNED_SQLSTATE. For user-defined conditions ([SIGNAL](../signal.md) and [RESIGNAL](../resignal.md) statements), a SQLSTATE value must be set via the SQLSTATE clause. However, [SHOW WARNINGS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md) and [SHOW ERRORS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-errors.md) do not display the SQLSTATE.
 
 
 For user-defined conditions, MariaDB and MySQL recommend the '45000' SQLSTATE class.
@@ -31,5 +31,5 @@ For user-defined conditions, MariaDB and MySQL recommend the '45000' SQLSTATE cl
 'HY000' is called the "general error": it is the class used for builtin conditions which do not have a specific SQLSTATE class.
 
 
-A partial list of error codes and matching SQLSTATE values can be found in the page [MariaDB Error Codes](../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md).
+A partial list of error codes and matching SQLSTATE values can be found in the page [MariaDB Error Codes](../../../../ref/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md).
 

@@ -1,13 +1,13 @@
 
 # Installing MinIO for Usage With mariadb-test-run
 
-When testing the S3 storage engine with the s3 test suite, [mariadb-test-run](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) needs access to Amazon S3 compatible storage.
+When testing the S3 storage engine with the s3 test suite, [mariadb-test-run](../../ref/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) needs access to Amazon S3 compatible storage.
 
 
 The easiest way to achieve this is to install [MinIO](https://min.io), an open source S3 compatible storage.
 
 
-Here is a shell script that you can use to install MinIO with the right credentials for [mariadb-test-run](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md).
+Here is a shell script that you can use to install MinIO with the right credentials for [mariadb-test-run](../../ref/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md).
 This should work on most Linux systems as the binaries are statically linked.
 You can alternatively download MinIO binaries directly from [here](https://min.io/download).
 

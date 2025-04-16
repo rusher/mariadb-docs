@@ -1,7 +1,7 @@
 
 # Galera Cluster Address
 
-URL's in [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) take a particular format:
+URL's in [Galera](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) take a particular format:
 
 
 ```

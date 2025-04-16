@@ -47,8 +47,8 @@ However, there are some things that have changed which could affect an upgrade:
 | Option | Old value | New value |
 | --- | --- | --- |
 | Option | Old value | New value |
-| [innodb_change_buffering](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | inserts | all |
-| [innodb_flush_neighbor_pages](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | 1 | area |
+| [innodb_change_buffering](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | inserts | all |
+| [innodb_flush_neighbor_pages](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | 1 | area |
 
 
 
@@ -58,23 +58,23 @@ However, there are some things that have changed which could affect an upgrade:
 Percona, the provider of [XtraDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), does not provide all earlier XtraDB features in the 5.5 code base. Because of that, [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) can't provide them either. The following options are not supported by XtraDB 5.5. If you are using them in any of your my.cnf files, you should remove them before upgrading to 5.5.
 
 
-* [innodb_adaptive_checkpoint](../../../../reference/storage-engines/innodb/innodb-system-variables.md); Use
- [innodb_adaptive_flushing_method](../../../../reference/storage-engines/innodb/innodb-system-variables.md) instead.
-* [innodb_auto_lru_dump](../../../../reference/storage-engines/innodb/innodb-system-variables.md); Use [innodb_buffer_pool_restore_at_startup](../../../../reference/storage-engines/innodb/innodb-system-variables.md) instead (and [innodb_buffer_pool_load_at_startup](../../../../reference/storage-engines/innodb/innodb-system-variables.md) in [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)).
-* [innodb_blocking_lru_restore](../../../../reference/storage-engines/innodb/innodb-system-variables.md); Use
- [innodb_blocking_buffer_pool_restore](../../../../reference/storage-engines/innodb/innodb-system-variables.md) instead.
-* [innodb_enable_unsafe_group_commit](../../../../reference/storage-engines/innodb/innodb-system-variables.md)
-* [innodb_expand_import](../../../../reference/storage-engines/innodb/innodb-system-variables.md); Use
- [innodb_import_table_from_xtrabackup](../../../../reference/storage-engines/innodb/innodb-system-variables.md) instead.
-* [innodb_extra_rsegments](../../../../reference/storage-engines/innodb/innodb-system-variables.md); Use [innodb_rollback_segments](../../../../reference/storage-engines/innodb/innodb-system-variables.md) instead.
-* [innodb_extra_undoslots](../../../../reference/storage-engines/innodb/innodb-system-variables.md)
-* [innodb_fast_recovery](../../../../reference/storage-engines/innodb/innodb-system-variables.md)
-* [innodb_flush_log_at_trx_commit_session](../../../../reference/storage-engines/innodb/innodb-system-variables.md)
-* [innodb_overwrite_relay_log_info](../../../../reference/storage-engines/innodb/innodb-system-variables.md)
-* [innodb_pass_corrupt_table](../../../../reference/storage-engines/innodb/innodb-system-variables.md); Use
- [innodb_corrupt_table_action](../../../../reference/storage-engines/innodb/innodb-system-variables.md) instead.
-* [innodb_use_purge_thread](../../../../reference/storage-engines/innodb/innodb-system-variables.md)
-* [xtradb_enhancements](../../../../reference/storage-engines/innodb/innodb-system-variables.md)
+* [innodb_adaptive_checkpoint](../../../../ref/storage-engines/innodb/innodb-system-variables.md); Use
+ [innodb_adaptive_flushing_method](../../../../ref/storage-engines/innodb/innodb-system-variables.md) instead.
+* [innodb_auto_lru_dump](../../../../ref/storage-engines/innodb/innodb-system-variables.md); Use [innodb_buffer_pool_restore_at_startup](../../../../ref/storage-engines/innodb/innodb-system-variables.md) instead (and [innodb_buffer_pool_load_at_startup](../../../../ref/storage-engines/innodb/innodb-system-variables.md) in [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)).
+* [innodb_blocking_lru_restore](../../../../ref/storage-engines/innodb/innodb-system-variables.md); Use
+ [innodb_blocking_buffer_pool_restore](../../../../ref/storage-engines/innodb/innodb-system-variables.md) instead.
+* [innodb_enable_unsafe_group_commit](../../../../ref/storage-engines/innodb/innodb-system-variables.md)
+* [innodb_expand_import](../../../../ref/storage-engines/innodb/innodb-system-variables.md); Use
+ [innodb_import_table_from_xtrabackup](../../../../ref/storage-engines/innodb/innodb-system-variables.md) instead.
+* [innodb_extra_rsegments](../../../../ref/storage-engines/innodb/innodb-system-variables.md); Use [innodb_rollback_segments](../../../../ref/storage-engines/innodb/innodb-system-variables.md) instead.
+* [innodb_extra_undoslots](../../../../ref/storage-engines/innodb/innodb-system-variables.md)
+* [innodb_fast_recovery](../../../../ref/storage-engines/innodb/innodb-system-variables.md)
+* [innodb_flush_log_at_trx_commit_session](../../../../ref/storage-engines/innodb/innodb-system-variables.md)
+* [innodb_overwrite_relay_log_info](../../../../ref/storage-engines/innodb/innodb-system-variables.md)
+* [innodb_pass_corrupt_table](../../../../ref/storage-engines/innodb/innodb-system-variables.md); Use
+ [innodb_corrupt_table_action](../../../../ref/storage-engines/innodb/innodb-system-variables.md) instead.
+* [innodb_use_purge_thread](../../../../ref/storage-engines/innodb/innodb-system-variables.md)
+* [xtradb_enhancements](../../../../ref/storage-engines/innodb/innodb-system-variables.md)
 
 
 ## Notes

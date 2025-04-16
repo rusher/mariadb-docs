@@ -16,7 +16,7 @@ You might have tried
 * Sometimes you ended up with a full table scan -- Yuck.
 
 
-WHERE [SQRT(...)](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/sqrt.md)< ... -- No chance of using any index.
+WHERE [SQRT(...)](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/sqrt.md)< ... -- No chance of using any index.
 
 
 WHERE lat BETWEEN ... AND lng BETWEEN... -- This has some chance of using such indexes.
@@ -45,7 +45,7 @@ How many PARTITIONs? It does not matter a lot. Some thoughts:
 * Don't have more than 100 partitions, there are inefficiencies in the partition implementation.
 
 
-How to PARTITION? Well, MariaDB and MySQL are very picky. So [FLOAT](../../../../reference/data-types/data-types-numeric-data-types/float.md)/[DOUBLE](../../../../reference/data-types/data-types-numeric-data-types/double.md) are out. [DECIMAL](../../../../reference/data-types/data-types-numeric-data-types/decimal.md) is out. So, we are stuck with some kludge. Essentially, we need to convert Lat/Lng to some size of [INT](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) and use PARTITION BY RANGE.
+How to PARTITION? Well, MariaDB and MySQL are very picky. So [FLOAT](../../../../ref/data-types/data-types-numeric-data-types/float.md)/[DOUBLE](../../../../ref/data-types/data-types-numeric-data-types/double.md) are out. [DECIMAL](../../../../ref/data-types/data-types-numeric-data-types/decimal.md) is out. So, we are stuck with some kludge. Essentially, we need to convert Lat/Lng to some size of [INT](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) and use PARTITION BY RANGE.
 
 
 ## Representation choices
@@ -75,22 +75,22 @@ Datatype           Bytes       resolution
 What these mean...
 
 
-Deg*100 ([SMALLINT](../../../../reference/data-types/data-types-numeric-data-types/smallint.md)) -- you take the lat/lng, multiply by 100, round, and store into a SMALLINT. That will take 2 bytes for each dimension, for a total of 4 bytes. Two items might be 1570 meters apart, but register as having the same latitude and longitude.
+Deg*100 ([SMALLINT](../../../../ref/data-types/data-types-numeric-data-types/smallint.md)) -- you take the lat/lng, multiply by 100, round, and store into a SMALLINT. That will take 2 bytes for each dimension, for a total of 4 bytes. Two items might be 1570 meters apart, but register as having the same latitude and longitude.
 
 
-[DECIMAL(4,2)](../../../../reference/data-types/data-types-numeric-data-types/decimal.md) for latitude and DECIMAL(5,2) for longitude will take 2+3 bytes and have no better resolution than Deg*100.
+[DECIMAL(4,2)](../../../../ref/data-types/data-types-numeric-data-types/decimal.md) for latitude and DECIMAL(5,2) for longitude will take 2+3 bytes and have no better resolution than Deg*100.
 
 
 SMALLINT scaled -- Convert latitude into a SMALLINT SIGNED by doing (degrees / 90 * 32767) and rounding; longitude by (degrees / 180 * 32767).
 
 
-[FLOAT](../../../../reference/data-types/data-types-numeric-data-types/float.md) has 24 significant bits; [DOUBLE](../../../../reference/data-types/data-types-numeric-data-types/double.md) has 53. (They don't work with PARTITIONing but are included for completeness. Often people use DOUBLE without realizing how much an overkill it is, and how much space it takes.)
+[FLOAT](../../../../ref/data-types/data-types-numeric-data-types/float.md) has 24 significant bits; [DOUBLE](../../../../ref/data-types/data-types-numeric-data-types/double.md) has 53. (They don't work with PARTITIONing but are included for completeness. Often people use DOUBLE without realizing how much an overkill it is, and how much space it takes.)
 
 
 Sure, you could do DEG*1000 and other "in between" cases, but there is no advantage. DEG*1000 takes as much space as DEG*10000, but has less resolution.
 
 
-So, go down the list to see how much resolution you need, then pick an encoding you are comfortable with. However, since we are about to use latitude as a "partition key", it must be limited to one of the INTs. For the sample code, I will use Deg*10000 ([MEDIUMINT](../../../../reference/data-types/data-types-numeric-data-types/mediumint.md)).
+So, go down the list to see how much resolution you need, then pick an encoding you are comfortable with. However, since we are about to use latitude as a "partition key", it must be limited to one of the INTs. For the sample code, I will use Deg*10000 ([MEDIUMINT](../../../../ref/data-types/data-types-numeric-data-types/mediumint.md)).
 
 
 ## GCDist -- compute "great circle distance"
@@ -136,7 +136,7 @@ Fields and indexes
 * lon -- scaled longitude
 * PRIMARY KEY(lon, lat, ...) -- lon must be first; something must be added to make it UNIQUE
 * id -- (optional) you may need to identify the rows for your purposes; AUTO_INCREMENT if you like
-* INDEX(id) -- if `id` is [AUTO_INCREMENT](../../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md), then this plain INDEX (not UNIQUE, not PRIMARY KEY) is necessary
+* INDEX(id) -- if `id` is [AUTO_INCREMENT](../../../../ref/storage-engines/innodb/auto_increment-handling-in-innodb.md), then this plain INDEX (not UNIQUE, not PRIMARY KEY) is necessary
 * ENGINE=[InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) -- so the PRIMARY KEY will be "clustered"
 * Other indexes -- keep to a minimum (this is a general performance rule for large tables)
 

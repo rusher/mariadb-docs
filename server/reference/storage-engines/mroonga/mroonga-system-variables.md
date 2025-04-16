@@ -30,7 +30,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Flags to customize syntax in BOOLEAN MODE searches. Available flags: 
 
   * `DEFAULT`: (=SYNTAX_QUERY,ALLOW_LEADING_NOT)
-  * `ALLOW_COLUMN`: Allows `COLUMN:...` syntax in query syntax, an incompatible change to the regular BOOLEAN MODE syntax. Permits multiple indexes in one `MATCH () AGAINST ()`. Can be used in other operations besides full-text search, such as equal, and prefix search. See [Groonga query syntax](https://groonga.org/docs/reference/grn_expr/query_syntax.html) for more details.
+  * `ALLOW_COLUMN`: Allows `COLUMN:...` syntax in query syntax, an incompatible change to the regular BOOLEAN MODE syntax. Permits multiple indexes in one `MATCH () AGAINST ()`. Can be used in other operations besides full-text search, such as equal, and prefix search. See [Groonga query syntax](https://groonga.org/docs/ref/grn_expr/query_syntax.html) for more details.
   * `ALLOW_LEADING_NOT` Permits using the `NOT_INCLUDED_KEYWORD` syntax in the query syntax.
   * `ALLOW_UPDATE`: Permits updating values with the `COLUMN:=NEW_VALUE` syntax in the query syntax.
   * `SYNTAX_QUERY`: Mroonga will use Groonga's query syntax, compatible with MariaDB's BOOLEAN MODE syntax. Unless `SYNTAX_SCRIPT` is specified, this mode is always in use.

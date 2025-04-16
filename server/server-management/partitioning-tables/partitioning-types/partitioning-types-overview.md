@@ -17,7 +17,7 @@ MariaDB supports the following partitioning types:
 * [LINEAR HASH](linear-hash-partitioning-type.md)
 * [KEY](key-partitioning-type.md)
 * [LINEAR KEY](linear-key-partitioning-type.md)
-* [SYSTEM_TIME](../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md)
+* [SYSTEM_TIME](../../../ref/sql-statements-and-structure/temporal-tables/system-versioned-tables.md)
 
 
 ### See Also

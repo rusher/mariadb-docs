@@ -33,7 +33,7 @@ statement.) select_statement can select from base tables or other views.
 The view definition is "frozen" at creation time, so changes to the underlying
 tables afterwards do not affect the view definition. For example, if a view is
 defined as SELECT * on a table, new columns added to the table later do not
-become part of the view. A [SHOW CREATE VIEW](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-view.md) shows that
+become part of the view. A [SHOW CREATE VIEW](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-view.md) shows that
 such queries are rewritten and column names are included in the view
 definition.
 
@@ -41,7 +41,7 @@ definition.
 The view definition must be a query that does not return errors at view
 creation times. However, the base tables used by the views might be altered
 later and the query may not be valid anymore. In this case, querying the view
-will result in an error. [CHECK TABLE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md) helps in finding this kind
+will result in an error. [CHECK TABLE](../../../ref/sql-statements-and-structure/sql-statements/table-statements/check-table.md) helps in finding this kind
 of problems.
 
 
@@ -126,7 +126,7 @@ A view definition is subject to the following restrictions:
 * The definition cannot refer to a TEMPORARY table, and you cannot create a TEMPORARY view.
 * Any tables named in the view definition must exist at definition time.
 * You cannot associate a trigger with a view.
-* For valid identifiers to use as view names, see [Identifier Names](../../../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md).
+* For valid identifiers to use as view names, see [Identifier Names](../../../ref/sql-statements-and-structure/sql-language-structure/identifier-names.md).
 
 
 ORDER BY is allowed in a view definition, but it is ignored if you
@@ -195,8 +195,8 @@ If you specify the DEFINER clause, these rules determine the legal
 DEFINER user values:
 
 
-* If you do not have the [SUPER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), the [SET USER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#set-user) privilege, the only legal user value is your own account, either specified literally or by using CURRENT_USER. You cannot set the definer to some other account.
-* If you have the [SUPER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), the [SET USER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#set-user) privilege, you can specify any syntactically legal account name. If the account does not actually exist, a warning is generated.
+* If you do not have the [SUPER](../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), the [SET USER](../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#set-user) privilege, the only legal user value is your own account, either specified literally or by using CURRENT_USER. You cannot set the definer to some other account.
+* If you have the [SUPER](../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), the [SET USER](../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#set-user) privilege, you can specify any syntactically legal account name. If the account does not actually exist, a warning is generated.
 * If the SQL SECURITY value is DEFINER but the definer account does not exist when the view is referenced, an error occurs.
 
 
@@ -306,7 +306,7 @@ When the IF NOT EXISTS clause is used, MariaDB will return a warning instead of 
 
 
 ##### MariaDB starting with [10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md)
-[MariaDB 10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) supports [Atomic DDL](../../../reference/sql-statements-and-structure/sql-statements/data-definition/atomic-ddl.md) and `CREATE VIEW` is atomic.
+[MariaDB 10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) supports [Atomic DDL](../../../ref/sql-statements-and-structure/sql-statements/data-definition/atomic-ddl.md) and `CREATE VIEW` is atomic.
 
 
 ## Examples
@@ -353,7 +353,7 @@ SHOW WARNINGS;
 ## See Also
 
 
-* [Identifier Names](../../../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md)
+* [Identifier Names](../../../ref/sql-statements-and-structure/sql-language-structure/identifier-names.md)
 * [ALTER VIEW](alter-view.md)
 * [DROP VIEW](drop-view.md)
 * [SHOW CREATE VIEWS](show-create-views)

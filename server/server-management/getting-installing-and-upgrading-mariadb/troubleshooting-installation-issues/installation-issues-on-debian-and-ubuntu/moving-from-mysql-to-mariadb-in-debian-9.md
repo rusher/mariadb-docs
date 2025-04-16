@@ -49,20 +49,20 @@ use a bit more disk space.[[1](#_note-0)]
 | Option | Old default value | New default value |
 | --- | --- | --- |
 | Option | Old default value | New default value |
-| [aria-sort-buffer-size](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size) | 128M | 256M |
+| [aria-sort-buffer-size](../../../../ref/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size) | 128M | 256M |
 | [back_log](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#back_log) | 50 | 150 |
-| [innodb-concurrency-tickets](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | 500 | 5000 |
-| [innodb-log-file-size](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | 5M | 48M |
-| [innodb_log_compressed_pages](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | ON | OFF |
-| [innodb-old-blocks-time](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | 0 | 1000 |
-| [innodb-open-files](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | 300 | 400 [[2]](#_note-1) |
-| [innodb-purge-batch-size](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | 20 | 300 |
-| [innodb-undo-logs](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | ON | 20 |
+| [innodb-concurrency-tickets](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | 500 | 5000 |
+| [innodb-log-file-size](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | 5M | 48M |
+| [innodb_log_compressed_pages](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | ON | OFF |
+| [innodb-old-blocks-time](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | 0 | 1000 |
+| [innodb-open-files](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | 300 | 400 [[2]](#_note-1) |
+| [innodb-purge-batch-size](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | 20 | 300 |
+| [innodb-undo-logs](../../../../ref/storage-engines/innodb/innodb-system-variables.md) | ON | 20 |
 | [join_buffer_size](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size) | 128K | 256K |
 | [max_allowed_packet](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_allowed_packet) | 1M | 4M |
 | [max-connect-errors](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_connect_errors) | 10 | 100 |
 | [max-relay-log-size](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_relay_log_size) | 0 | 1024M |
-| [myisam-sort-buffer-size](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) | 8M | 128M |
+| [myisam-sort-buffer-size](../../../../ref/storage-engines/myisam-storage-engine/myisam-system-variables.md) | 8M | 128M |
 | [optimizer-switch](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_switch) | ... | Added extended_keys=on, exists_to_in=on |
 | [query_alloc_block_size](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#query_alloc_block_size) | 8192 | 16384 |
 | [query_cache_size](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_size) | 0 | 1M |
@@ -103,8 +103,8 @@ config files:
 | innodb-checkpoint-age-target | Removed by [XtraDB](../../../../server-usage/replication-cluster-multi-master/standard-replication/obsolete-replication-information/xtradb-option-innodb-release-locks-early.md) |
 | innodb-dict-size-limit | Removed by [XtraDB](../../../../server-usage/replication-cluster-multi-master/standard-replication/obsolete-replication-information/xtradb-option-innodb-release-locks-early.md) |
 | innodb-doublewrite-file | Removed by [XtraDB](../../../../server-usage/replication-cluster-multi-master/standard-replication/obsolete-replication-information/xtradb-option-innodb-release-locks-early.md) |
-| innodb-fast-checksum | Renamed to [innodb-checksum-algorithm](../../../../reference/storage-engines/innodb/innodb-system-variables.md) |
-| innodb-flush-neighbor-pages | Renamed to [innodb-flush-neighbors](../../../../reference/storage-engines/innodb/innodb-system-variables.md) |
+| innodb-fast-checksum | Renamed to [innodb-checksum-algorithm](../../../../ref/storage-engines/innodb/innodb-system-variables.md) |
+| innodb-flush-neighbor-pages | Renamed to [innodb-flush-neighbors](../../../../ref/storage-engines/innodb/innodb-system-variables.md) |
 | innodb-ibuf-accel-rate | Removed by [XtraDB](../../../../server-usage/replication-cluster-multi-master/standard-replication/obsolete-replication-information/xtradb-option-innodb-release-locks-early.md) |
 | innodb-ibuf-active-contract | Removed by [XtraDB](../../../../server-usage/replication-cluster-multi-master/standard-replication/obsolete-replication-information/xtradb-option-innodb-release-locks-early.md) |
 | innodb-ibuf-max-size | Removed by [XtraDB](../../../../server-usage/replication-cluster-multi-master/standard-replication/obsolete-replication-information/xtradb-option-innodb-release-locks-early.md) |
@@ -148,7 +148,7 @@ If you need help with upgrading or setting up replication, you can always [conta
 The suggested upgrade procedure is:
 
 
-1. Set [innodb_fast_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md) to `0`. This is to ensure that if you make a backup as part of the upgrade, all data is written to the InnoDB data files, which simplifies any restore in the future.
+1. Set [innodb_fast_shutdown](../../../../ref/storage-engines/innodb/innodb-system-variables.md) to `0`. This is to ensure that if you make a backup as part of the upgrade, all data is written to the InnoDB data files, which simplifies any restore in the future.
 1. Shutdown MySQL 5.5
 1. Take a [backup](../../../backing-up-and-restoring-databases/backup-and-restore-overview.md)
 
@@ -187,7 +187,7 @@ You should always perform a compete backup of your data prior to performing any 
 ## MariaDB Galera Cluster
 
 
-If you have been using MariaDB Galera Cluster 5.5 or 10.0 on Debian 8 "Jessie" it is worth mentioning that [Galera Cluster](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) is included by default in [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), there is no longer a need to install a separate `mariadb-galera-server` package.
+If you have been using MariaDB Galera Cluster 5.5 or 10.0 on Debian 8 "Jessie" it is worth mentioning that [Galera Cluster](../../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) is included by default in [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), there is no longer a need to install a separate `mariadb-galera-server` package.
 
 
 ## Configuration options for advanced database users
@@ -204,7 +204,7 @@ aria_pagecache_buffer_size=128M
 key_buffer_size=64K
 ```
 
-The reason for the above change is that MariaDB is using the newer [Aria](../../../../reference/storage-engines/aria/aria-storage-engine.md) storage engine for disk based temporary files instead of MyISAM. The main benefit of Aria is that it can cache both indexes and rows and thus gives better performance than MyISAM for large queries.
+The reason for the above change is that MariaDB is using the newer [Aria](../../../../ref/storage-engines/aria/aria-storage-engine.md) storage engine for disk based temporary files instead of MyISAM. The main benefit of Aria is that it can cache both indexes and rows and thus gives better performance than MyISAM for large queries.
 
 
 ## Secure passwordless root accounts only on new installs

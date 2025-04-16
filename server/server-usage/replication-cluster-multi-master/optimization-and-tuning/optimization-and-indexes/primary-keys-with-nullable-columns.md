@@ -15,7 +15,7 @@ CREATE TABLE t1(
 );
 ```
 
-Column c2 is part of a primary key, and thus it cannot be [NULL](../../../../reference/data-types/null-values.md).
+Column c2 is part of a primary key, and thus it cannot be [NULL](../../../../ref/data-types/null-values.md).
 
 
 Before [MariaDB 10.1.7](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes.md), MariaDB (as well as versions of MySQL before MySQL 5.7) would silently convert it into a NOT NULL column with a default value of *0*.

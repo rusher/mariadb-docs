@@ -32,7 +32,7 @@ mariadb-stress-test.pl [options]
 | --cleanup | Force cleanup of the working directory. |
 | --log-error-details | Log error details in the global [error log](../server-management/server-monitoring-logs/error-log.md) file. |
 | --loop-count=N | In sequential test mode, the number of loops to execute before exiting. |
-| --mysqltest=path | The path name to the [mysqltest](../reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) program. |
+| --mysqltest=path | The path name to the [mysqltest](../ref/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) program. |
 | --server-database=db_name | The database to use for the tests. The default is test. |
 | --server-host=host_name | he host name of the local host to use for making a TCP/IP connection to the local server. By default, the connection is made to localhost using a Unix socket file. |
 | --server-logs-dir=path | This option is required. path is the directory where all client session logs will be stored. Usually this is the shared directory that is associated with the server used for testing. |

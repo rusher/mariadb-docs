@@ -1,7 +1,7 @@
 
 # 1-Binlog Events
 
-Binary log events, or binlog events, are information about data modification made to a MariaDB server instance stored in the [binary log](../../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) files.
+Binary log events, or binlog events, are information about data modification made to a MariaDB server instance stored in the [binary log](../../../../../ref/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) files.
 
 
 ### Log File Structure

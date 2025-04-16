@@ -1,7 +1,7 @@
 
 # New Features for mysqltest in MariaDB
 
-Note that not all MariaDB-enhancements are listed on this page. See [mariadb-test and mariadb-test-embedded](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) for a full set of options.
+Note that not all MariaDB-enhancements are listed on this page. See [mariadb-test and mariadb-test-embedded](../../ref/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) for a full set of options.
 
 
 ## Startup Option --connect-timeout

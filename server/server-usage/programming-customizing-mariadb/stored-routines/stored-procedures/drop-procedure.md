@@ -13,12 +13,12 @@ DROP PROCEDURE [IF EXISTS] sp_name
 
 
 This statement is used to drop a [stored procedure](README.md). That is, the
-specified routine is removed from the server along with all privileges specific to the [procedure](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md). You must have the `ALTER ROUTINE` privilege for the routine. If the `[automatic_sp_privileges](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges)` server system variable is set, that privilege and `EXECUTE` are granted automatically to the routine creator - see [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md).
+specified routine is removed from the server along with all privileges specific to the [procedure](../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md). You must have the `ALTER ROUTINE` privilege for the routine. If the `[automatic_sp_privileges](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges)` server system variable is set, that privilege and `EXECUTE` are granted automatically to the routine creator - see [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md).
 
 
 The `IF EXISTS` clause is a MySQL/MariaDB extension. It
 prevents an error from occurring if the procedure or function does not exist. A
-`NOTE` is produced that can be viewed with `[SHOW WARNINGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md)`.
+`NOTE` is produced that can be viewed with `[SHOW WARNINGS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md)`.
 
 
 While this statement takes effect immediately, threads which are executing a procedure can continue execution.
@@ -56,7 +56,7 @@ SHOW WARNINGS;
 * [Stored Procedure Overview](stored-procedure-overview.md)
 * [CREATE PROCEDURE](create-procedure.md)
 * [ALTER PROCEDURE](drop-procedure.md)
-* [SHOW CREATE PROCEDURE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-procedure.md)
-* [SHOW PROCEDURE STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-procedure-status.md)
-* [Information Schema ROUTINES Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
+* [SHOW CREATE PROCEDURE](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-procedure.md)
+* [SHOW PROCEDURE STATUS](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-procedure-status.md)
+* [Information Schema ROUTINES Table](../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 

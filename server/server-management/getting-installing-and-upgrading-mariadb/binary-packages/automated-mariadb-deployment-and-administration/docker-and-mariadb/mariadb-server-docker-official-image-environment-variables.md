@@ -55,16 +55,16 @@ Do not use this mechanism to create the root superuser, that user gets created b
 Set MARIADB_MYSQL_LOCALHOST_USER to a non-empty value to create the mysql@locahost database user. This user is especially useful for a variety of health checks and backup scripts.
 
 
-The mysql@localhost user gets `[USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#usage)` privileges by default. If more access is required, additional global privileges in the form of a comma separated list can be provided. If you are sharing a volume containing MariaDB's unix socket (/var/run/mysqld by default), privileges beyond `[USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#usage)` can result in confidentiality, integrity and availability risks, so use a minimal set. Its also possible to use for [Mariadb-backup](../../../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md). The [healthcheck.sh](using-healthcheck-sh.md) script also documents the required privileges for each health check test.
+The mysql@localhost user gets `[USAGE](../../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#usage)` privileges by default. If more access is required, additional global privileges in the form of a comma separated list can be provided. If you are sharing a volume containing MariaDB's unix socket (/var/run/mysqld by default), privileges beyond `[USAGE](../../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#usage)` can result in confidentiality, integrity and availability risks, so use a minimal set. Its also possible to use for [Mariadb-backup](../../../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md). The [healthcheck.sh](using-healthcheck-sh.md) script also documents the required privileges for each health check test.
 
 
 ### MARIADB_HEALTHCHECK_GRANTS
 
 
-Set MARIADB_HEALTHCHECK_GRANTS to the grants required to be given to the `healthcheck@localhost`, `healthcheck@127.0.0.1`, `healthcheck@::1`, users. When not specified the default grant is `[USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#usage)`.
+Set MARIADB_HEALTHCHECK_GRANTS to the grants required to be given to the `healthcheck@localhost`, `healthcheck@127.0.0.1`, `healthcheck@::1`, users. When not specified the default grant is `[USAGE](../../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#usage)`.
 
 
-The main value used here will be `[REPLICA MONITOR](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replica-monitor) for the [healthcheck --replication](using-healthcheck-sh.md) test.`
+The main value used here will be `[REPLICA MONITOR](../../../../../ref/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replica-monitor) for the [healthcheck --replication](using-healthcheck-sh.md) test.`
 
 
 ### MARIADB_INITDB_SKIP_TZINFO / MYSQL_INITDB_SKIP_TZINFO

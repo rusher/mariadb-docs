@@ -24,7 +24,7 @@ The File Key Management plugin is the easiest [key management and encryption plu
 * It supports two different algorithms for encrypting data.
 
 
-It can also serve as an example and as a starting point when developing a key management and encryption plugin with the [encryption plugin API](../../../../../reference/mariadb-internals/encryption-plugin-api.md).
+It can also serve as an example and as a starting point when developing a key management and encryption plugin with the [encryption plugin API](../../../../../ref/mariadb-internals/encryption-plugin-api.md).
 
 
 ## Installing the File Key Management Plugin's Package
@@ -51,7 +51,7 @@ plugin_load_add = file_key_management
 Before you uninstall the plugin, you should ensure that [data-at-rest encryption](../data-at-rest-encryption-overview.md) is completely disabled, and that MariaDB no longer needs the plugin to decrypt tables or other files.
 
 
-You can uninstall the plugin dynamically by executing `[UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)`. For example:
+You can uninstall the plugin dynamically by executing `[UNINSTALL SONAME](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)`. For example:
 
 
 ```
@@ -107,7 +107,7 @@ The new key file would look something like the following after this step:
 100;8db1ee74580e7e93ab8cf157f02656d356c2f437d548d5bf16bf2a56932954a3
 ```
 
-The key identifiers give you a way to reference the encryption keys from MariaDB. In the example above, you could reference these encryption keys using the key identifiers `1`, `2` or `100` with the `[ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id)` table option or with system variables such as `[innodb_default_encryption_key_id](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id)`. You do not necessarily need multiple encryption keys--the encryption key with the key identifier `1` is the only mandatory encryption key.
+The key identifiers give you a way to reference the encryption keys from MariaDB. In the example above, you could reference these encryption keys using the key identifiers `1`, `2` or `100` with the `[ENCRYPTION_KEY_ID](../../../../../ref/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id)` table option or with system variables such as `[innodb_default_encryption_key_id](../../../../../ref/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id)`. You do not necessarily need multiple encryption keys--the encryption key with the key identifier `1` is the only mandatory encryption key.
 
 
 ### Configuring the Path to an Unencrypted Key File
@@ -182,7 +182,7 @@ If the key file is encrypted, then the File Key Management plugin requires both 
 The `[file_key_management_filekey](#file_key_management_filekey)` system variable can be provided in two forms:
 
 
-* It can be the actual plain-text encryption password. This is not recommended, since the plain-text encryption password would be visible in the output of the `[SHOW VARIABLES](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md)` statement.
+* It can be the actual plain-text encryption password. This is not recommended, since the plain-text encryption password would be visible in the output of the `[SHOW VARIABLES](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md)` statement.
 * If it is prefixed with `FILE:`, then it can be a path to a file that contains the plain-text encryption password.
 
 
@@ -350,11 +350,11 @@ The File Key Management plugin does not currently support [key rotation](encrypt
 
   * Valid values are:
 
-    * `OFF` - Disables the plugin without removing it from the `[mysql.plugins](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md)` table.
+    * `OFF` - Disables the plugin without removing it from the `[mysql.plugins](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md)` table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with `[UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)` while the server is running.
-  * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../../../../reference/plugins/plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with `[UNINSTALL SONAME](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)` while the server is running.
+  * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../../../../ref/plugins/plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
 * Commandline: `--file-key-management=value`
 * Data Type: `enumerated`
 * Default Value: `ON`

@@ -4,7 +4,7 @@
 The `mariadbd-safe` startup script is in MariaDB distributions on Linux and Unix. It is a wrapper that starts `mariadbd` with some extra safety features. For example, if `mariadbd-safe` notices that `mariadbd` has crashed, then `mariadbd-safe` will automatically restart `mariadbd`.
 
 
-`mariadbd-safe` is the recommended way to start `mariadbd` on Linux and Unix distributions that do not support `[systemd](systemd.md)`. Additionally, the [mysql.server](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) init script used by [sysVinit](sysvinit.md) starts `mariadbd` with `mariadbd-safe` by default.
+`mariadbd-safe` is the recommended way to start `mariadbd` on Linux and Unix distributions that do not support `[systemd](systemd.md)`. Additionally, the [mysql.server](../../../ref/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) init script used by [sysVinit](sysvinit.md) starts `mariadbd` with `mariadbd-safe` by default.
 
 
 Prior to [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client used to be called `mysqld_safe`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
@@ -65,7 +65,7 @@ options supported by `[mariadbd](mariadbd-options.md)`. If an unknown option is 
 | --socket=path | The Unix socket file that the server should use when listening for local connections. |
 | --syslog, --skip-syslog | --syslog causes error messages to be sent to syslog on systems that support the logger program. --skip-syslog suppresses the use of syslog; messages are written to an error log file. |
 | --syslog-tag=tag | For logging to syslog, messages from mariadbd-safe and mariadbd are written with a tag of mariadbd-safe and mariadbd, respectively. To specify a suffix for the tag, use --syslog-tag=tag, which modifies the tags to be mariadbd-safe-tag and mariadbd-tag. |
-| --timezone=timezone | Set the TZ time zone [environment variable](../mariadb-environment-variables.md) to the given option value. Consult your operating system documentation for legal time zone specification formats. Also see [Time Zones](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md). |
+| --timezone=timezone | Set the TZ time zone [environment variable](../mariadb-environment-variables.md) to the given option value. Consult your operating system documentation for legal time zone specification formats. Also see [Time Zones](../../../ref/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md). |
 | --user={user_name or user_id} | Run the mariadbd server as the user having the name user_name or the numeric user ID user_id. (“User” in this context refers to a system login account, not a MariaDB user listed in the grant tables.) |
 
 

@@ -33,9 +33,9 @@ A view cannot be of type ALGORITHM=MERGE if it uses any of the following:
 * [LIMIT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#limit)
 * [GROUP BY](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#group-by)
 * [DISTINCT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#distinct)
-* [UNION](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md)
-* [UNION ALL](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md)
-* An aggregate function, such as [MAX()](../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md), [MIN()](../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md), [SUM()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum.md) or [COUNT()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count.md)
+* [UNION](../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md)
+* [UNION ALL](../../../ref/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md)
+* An aggregate function, such as [MAX()](../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md), [MIN()](../../../ref/mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md), [SUM()](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum.md) or [COUNT()](../../../ref/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count.md)
 * subquery in the SELECT list
 * if it has no underlying table because it refers only to literal values
 
