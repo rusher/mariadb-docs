@@ -152,7 +152,7 @@ More information on ColumnStore Cross Engine Joins can be found here:
 In a standard Multi-Node configuration install with more than 1 User Module, the query request are scaled-out across all User Modules using an automatic round-robin distribution functionality. This means that the MariaDB server process will distribute the query requests to all User Modules (ExeMgrs) in the MariaDB ColumnStore system. The ExeMgr will handle the processing of the query request and pass back the resulting data to the initial MariaDB server process, which will in turn provide that result set to the calling client. This round-robin distribution is handled on a session by sessions basis.
 
 
-![um-roundrobin-msg](../../../.gitbook/assets/columnstore-multiple-user-module-guide/+image/um-roundrobin-msg.jpg "um-roundrobin-msg")
+![um-roundrobin-msg](../../.gitbook/assets/columnstore-multiple-user-module-guide/+image/um-roundrobin-msg.jpg "um-roundrobin-msg")
 
 
 ### Localized query distribution
@@ -184,7 +184,7 @@ NOTE: To go from a Localized query distribution back to a query round-robin dist
 Or do a shutdown and run postConfigure again from pm1.
 
 
-![um-local-msg](../../../.gitbook/assets/columnstore-multiple-user-module-guide/+image/um-local-msg.jpg "um-local-msg")
+![um-local-msg](../../.gitbook/assets/columnstore-multiple-user-module-guide/+image/um-local-msg.jpg "um-local-msg")
 
 
 ## ColumnStore local performance module query
@@ -199,7 +199,7 @@ More information on ColumnStore Local Performance Module Query can be found here
 [configuring-columnstore-local-pm-query-mode.md](../managing-columnstore-database-environment/configuring-columnstore-local-pm-query-mode.md)
 
 
-![pm-local-query](../../../.gitbook/assets/columnstore-multiple-user-module-guide/+image/pm-local-query.jpg "pm-local-query")
+![pm-local-query](../../.gitbook/assets/columnstore-multiple-user-module-guide/+image/pm-local-query.jpg "pm-local-query")
 
 
 ## ColumnStore user module replication

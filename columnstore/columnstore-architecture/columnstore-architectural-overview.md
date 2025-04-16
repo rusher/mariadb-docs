@@ -5,7 +5,7 @@
 MariaDB ColumnStore is a columnar storage engine designed for distributed massively parallel processing (MPP), such as for big data analysis. Deployments are composed of several MariaDB servers, operating as modules, working together to provide linear scalability and exceptional performance with real-time response to analytical queries. These modules include [User](#user-module), [Performance](#performance-module) and [Storage](#storage).
 
 
-![columnstore-arch-diagram](../../.gitbook/assets/columnstore-architectural-overview/+image/columnstore-arch-diagram.png "columnstore-arch-diagram")
+![columnstore-arch-diagram](../.gitbook/assets/columnstore-architectural-overview/+image/columnstore-arch-diagram.png "columnstore-arch-diagram")
 
 
 ### User Module

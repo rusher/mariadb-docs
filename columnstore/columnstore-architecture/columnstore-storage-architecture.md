@@ -8,7 +8,7 @@ When you create a table on MariaDB ColumnStore, the system creates at least one 
 ColumnStore writes the table schema locally to /usr/local/mariadb/columnstore/mysql/db with all the other non-ColumnStore tables. The data you write to the ColumnStore table is stored across the Performance Modules in DB Roots, which are located in /usr/local/mariadb/columnstore/datax.
 
 
-![datastorage-diagram](../../.gitbook/assets/columnstore-storage-architecture/+image/datastorage-diagram.jpg "datastorage-diagram")
+![datastorage-diagram](../.gitbook/assets/columnstore-storage-architecture/+image/datastorage-diagram.jpg "datastorage-diagram")
 
 
 ## Extents
@@ -44,7 +44,7 @@ The primary Performance Module has a master copy of the Extent Map. On system st
 Using the Extent Map, ColumnStore can perform logical range partitioning and only retrieve the blocks needed to satisfy the query. This is done through Extent Elimination, the process of eliminating Extents from the results that don't meet the given join and filter conditions of the query, which reduces the overall I/O operations.
 
 
-![extent-elimination](../../.gitbook/assets/columnstore-storage-architecture/+image/extent-elimination.jpg "extent-elimination")
+![extent-elimination](../.gitbook/assets/columnstore-storage-architecture/+image/extent-elimination.jpg "extent-elimination")
 
 
 In Extent Elimination, ColumnStore scans the columns in join and filter conditions. It then extracts the logical horizontal partitioning information of each extent along with the minimum and maximum values for the column to further eliminate Extents. To eliminate an Extent when a column scan involves a filter, that filter is compared to the minimum and maximum values stored in each extent for the column. If the filter value is outside the Extents minimum and maximum value range, ColumnStore eliminates the Extent.
