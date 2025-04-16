@@ -82,19 +82,19 @@ For each instance of entity A, many instances of entity B can exist, and vice ve
 There are numerous ways of showing these relationships. The image below shows *student* and *course* entities. In this case, each student must have registered for at least one course, but a course does not necessarily have to have students registered. The student-to-course relationship is mandatory, and the course-to-student relationship is optional.
 
 
-![many-to-many](../../../../../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/many-to-many.png "many-to-many")
+![many-to-many](../../../../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/many-to-many.png "many-to-many")
 
 
 The image below shows *invoice_line* and *product* entities. Each invoice line must have at least one product (but no more than one); however each product can appear on many invoice lines, or none at all. The *invoice_line-to-product* relationship is mandatory, while the *product-to-invoice_line* relationship is optional.
 
 
-![one_to_many](../../../../../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/one_to_many.png "one_to_many")
+![one_to_many](../../../../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/one_to_many.png "one_to_many")
 
 
 The figure below shows husband and wife entities. In this system (others are of course possible), each husband must have one and only one wife, and each wife must have one, and only one, husband. Both relationships are mandatory.
 
 
-![one-to-one](../../../../../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/one-to-one.png "one-to-one")
+![one-to-one](../../../../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/one-to-one.png "one-to-one")
 
 
 An entity can also have a relationship with itself. Such an entity is called a *recursive entity*. Take a *person* entity. If you're interested in storing data about which people are brothers, you wlll have an "is brother to" relationship. In this case, the relationship is an M:N relationship.
@@ -127,11 +127,11 @@ It is important to remember that there is no one right or wrong answer. The more
 Once the diagram has been approved, the next stage is to replace many-to-many relationships with two one-to-many relationships. A DBMS cannot directly implement many-to-many relationships, so they are decomposed into two smaller relationships. To achieve this, you have to create an *intersection*, or *composite* entity type. Because intersection entities are less "real-world" than ordinary entities, they are sometimes difficult to name. In this case, you can name them according to the two entities being intersected. For example, you can intersect the many-to-many relationship between *student* and *course* by a *student-course* entity.
 
 
-![student-course](../../../../../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/student-course.png "student-course")
+![student-course](../../../../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/student-course.png "student-course")
 
 
 The same applies even if the entity is recursive. The person entity that has an M:N relationship "is brother to" also needs an intersection entity. You can come up with a good name for the intersection entity in this case: *brother*. This entity would contain two fields, one for each person of the brother relationship — in other words, the primary key of the first brother and the primary key of the other brother.
 
 
-![brother-intersection](../../../../../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/brother-intersection.png "brother-intersection")
+![brother-intersection](../../../../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/brother-intersection.png "brother-intersection")
 

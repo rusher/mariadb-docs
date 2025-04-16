@@ -64,7 +64,7 @@ Buildbot should be used by each MariaDB developer to ensure that the new changes
 ## How does the Buildbot work?
 
 
-![Buildbot overview](../../../../../../../.gitbook/assets/about-buildbot/+image/buildbot_schematic.png "Buildbot overview")
+![Buildbot overview](../../../../../../.gitbook/assets/about-buildbot/+image/buildbot_schematic.png "Buildbot overview")
 
 
 As it comes to the Buildbot Master, we use a multi-master configuration. This means that we have multiple running master processes. So, we have a dedicated master for the user interface and several other that deal with looking for changes and scheduling builds.

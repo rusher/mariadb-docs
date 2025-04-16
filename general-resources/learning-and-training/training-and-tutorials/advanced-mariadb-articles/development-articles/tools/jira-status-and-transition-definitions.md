@@ -4,7 +4,7 @@
 Here is the MariaDB Server (MDEV) [Jira](jira.md) project workflow.
 
 
-![status_transition_jira](../../../../../../.gitbook/assets/jira-status-and-transition-definitions/+image/status_transition_jira.png "status_transition_jira")
+![status_transition_jira](../../../../../.gitbook/assets/jira-status-and-transition-definitions/+image/status_transition_jira.png "status_transition_jira")
 
 
 **OPEN**

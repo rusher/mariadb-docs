@@ -224,7 +224,7 @@ Here is the graphics of the results:
 (Smaller bars are better)
 
 
-![dbt3-myisam-s30-hdd](../../../../../../../../.gitbook/assets/dbt3-benchmark-results-myisam/+image/dbt3-myisam-s30-hdd.png "dbt3-myisam-s30-hdd")
+![dbt3-myisam-s30-hdd](../../../../../../../.gitbook/assets/dbt3-benchmark-results-myisam/+image/dbt3-myisam-s30-hdd.png "dbt3-myisam-s30-hdd")
 
 
 **NOTE:** Queries that are cut off by the graphics have timed out the period of 2 hours.
@@ -433,7 +433,7 @@ Here is the graphics of the results of the benchmarked q20:
 (Smaller bars are better)
 
 
-![dbt3-q20-myisam-s30-hdd](../../../../../../../../.gitbook/assets/dbt3-benchmark-results-myisam/+image/dbt3-q20-myisam-s30-hdd.png "dbt3-q20-myisam-s30-hdd")
+![dbt3-q20-myisam-s30-hdd](../../../../../../../.gitbook/assets/dbt3-benchmark-results-myisam/+image/dbt3-q20-myisam-s30-hdd.png "dbt3-q20-myisam-s30-hdd")
 
 
 **NOTE:** Queries that are cut off by the graphics have timed out the period of

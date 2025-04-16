@@ -4,7 +4,7 @@
 You already know that a relationship between two tables is created by assigning a common field to the two tables (see [Relational Databases: Table Keys](relational-databases-table-keys.md)). This common field must be a primary key to one table. Consider a relationship between a *customer* table and a *sale* table. The relationship is not much good if instead of using the primary key, *customer_code*, in the *sale* table, you use another field that is not unique, such as the customer's first name. You would be unlikely to know for sure which customer made the sale in that case. So, in the table below, *customer_code* is called the *foreign_key* in the *sale* table; in other words, it is the primary key in a foreign table.
 
 
-![setting_foreign_keys](../../../../../.gitbook/assets/relational-databases-foreign-keys/+image/setting_foreign_keys.png "setting_foreign_keys")
+![setting_foreign_keys](../../../../.gitbook/assets/relational-databases-foreign-keys/+image/setting_foreign_keys.png "setting_foreign_keys")
 
 
 Foreign keys allow for something called *referential integrity*. What this means is that if a foreign key contains a value, this value refers to an existing record in the related table. For example, take a look at the tables below:

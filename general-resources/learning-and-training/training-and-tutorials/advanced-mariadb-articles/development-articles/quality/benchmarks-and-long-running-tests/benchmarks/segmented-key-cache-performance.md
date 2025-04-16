@@ -29,7 +29,7 @@ We see up to 250% performance gain depending on the amount of concurrent users.
 #### On pitbull with --random-points=10
 
 
-![pitbull_rp10](../../../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/pitbull_rp10.png "pitbull_rp10")
+![pitbull_rp10](../../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/pitbull_rp10.png "pitbull_rp10")
 
 
 In relative numbers:
@@ -46,7 +46,7 @@ select_random_points.lua --random-points=10
 #### On pitbull with --random-points=50
 
 
-![pitbull_rp50](../../../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/pitbull_rp50.png "pitbull_rp50")
+![pitbull_rp50](../../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/pitbull_rp50.png "pitbull_rp50")
 
 
 In relative numbers:
@@ -63,7 +63,7 @@ select_random_points.lua --random-points=50
 #### On pitbull with --random-points=100
 
 
-![pitbull_rp100](../../../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/pitbull_rp100.png "pitbull_rp100")
+![pitbull_rp100](../../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/pitbull_rp100.png "pitbull_rp100")
 
 
 In relative numbers:
@@ -89,7 +89,7 @@ You can find the absolute and relative numbers in our OpenOffice.org spread shee
 #### On perro with --random-points=10
 
 
-![perro_rp10](../../../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/perro_rp10.png "perro_rp10")
+![perro_rp10](../../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/perro_rp10.png "perro_rp10")
 
 
 In relative numbers:
@@ -106,7 +106,7 @@ select_random_points.lua --random-points=10
 #### On perro with --random-points=50
 
 
-![perro_rp50](../../../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/perro_rp50.png "perro_rp50")
+![perro_rp50](../../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/perro_rp50.png "perro_rp50")
 
 
 In relative numbers:
@@ -123,7 +123,7 @@ select_random_points.lua --random-points=50
 #### On perro with --random-points=100
 
 
-![perro_rp100](../../../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/perro_rp100.png "perro_rp100")
+![perro_rp100](../../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/perro_rp100.png "perro_rp100")
 
 
 In relative numbers:

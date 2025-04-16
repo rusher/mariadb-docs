@@ -42,13 +42,13 @@ You can identify the following attributes:
 Based on these entities and relationships, you can construct the entity-relationship diagram shown below:
 
 
-![poets-circle-erd1](../../../../../../.gitbook/assets/database-design-example-phase-2-design/+image/poets-circle-erd1.png "poets-circle-erd1")
+![poets-circle-erd1](../../../../../.gitbook/assets/database-design-example-phase-2-design/+image/poets-circle-erd1.png "poets-circle-erd1")
 
 
 There are two many-to-many relationships in the figure above. These need to be converted into one-to-many relationships before you can implement them in a DBMS. After doing so, the intersection entities *poem-publication* and *sale-publication* are created.
 
 
-![poets-circle-erd2](../../../../../../.gitbook/assets/database-design-example-phase-2-design/+image/poets-circle-erd2.png "poets-circle-erd2")
+![poets-circle-erd2](../../../../../.gitbook/assets/database-design-example-phase-2-design/+image/poets-circle-erd2.png "poets-circle-erd2")
 
 
 Now, to begin the logical and physical design, you need to add attributes that can create the relationship between the entities and specify primary keys. You do what's usually best, and create new, unique, primary keys. The following tables show the structures for the tables created from each of the entities:

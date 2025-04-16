@@ -58,7 +58,7 @@ Some notes on how the benchmarks were run:
 
 
 
-![oltp-ro-facebook-maria1](../../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp-ro-facebook-maria1.png "oltp-ro-facebook-maria1")
+![oltp-ro-facebook-maria1](../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp-ro-facebook-maria1.png "oltp-ro-facebook-maria1")
 
 
 ### OLTP_RO pitbull
@@ -73,7 +73,7 @@ Some notes on how the benchmarks were run:
 
 
 
-![oltp_ro-pitbull](../../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp_ro-pitbull.png "oltp_ro-pitbull")
+![oltp_ro-pitbull](../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp_ro-pitbull.png "oltp_ro-pitbull")
 
 
 ### OLTP_RO Windows
@@ -88,7 +88,7 @@ Some notes on how the benchmarks were run:
 
 
 
-![oltp_ro-windows](../../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp_ro-windows.png "oltp_ro-windows")
+![oltp_ro-windows](../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp_ro-windows.png "oltp_ro-windows")
 
 
 ## OLTP_RW
@@ -106,7 +106,7 @@ Some notes on how the benchmarks were run:
 
 
 
-![oltp_rw-facebook-maria1](../../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp_rw-facebook-maria1.png "oltp_rw-facebook-maria1")
+![oltp_rw-facebook-maria1](../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp_rw-facebook-maria1.png "oltp_rw-facebook-maria1")
 
 
 ### OLTP_RW pitbull
@@ -121,7 +121,7 @@ Some notes on how the benchmarks were run:
 
 
 
-![oltp_rw-pitbull](../../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp_rw-pitbull.png "oltp_rw-pitbull")
+![oltp_rw-pitbull](../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp_rw-pitbull.png "oltp_rw-pitbull")
 
 
 ### OLTP_RW Windows
@@ -136,7 +136,7 @@ Some notes on how the benchmarks were run:
 
 
 
-![oltp_rw-windows](../../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp_rw-windows.png "oltp_rw-windows")
+![oltp_rw-windows](../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp_rw-windows.png "oltp_rw-windows")
 
 
 ## POINT_SELECT
@@ -154,7 +154,7 @@ Some notes on how the benchmarks were run:
 
 
 
-![point_select-facebook-maria1](../../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/point_select-facebook-maria1.png "point_select-facebook-maria1")
+![point_select-facebook-maria1](../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/point_select-facebook-maria1.png "point_select-facebook-maria1")
 
 
 ### POINT_SELECT pitbull
@@ -169,7 +169,7 @@ Some notes on how the benchmarks were run:
 
 
 
-![point_select-pitbull](../../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/point_select-pitbull.png "point_select-pitbull")
+![point_select-pitbull](../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/point_select-pitbull.png "point_select-pitbull")
 
 
 ### POINT_SELECT Windows
@@ -184,7 +184,7 @@ Some notes on how the benchmarks were run:
 
 
 
-![point_select-windows](../../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/point_select-windows.png "point_select-windows")
+![point_select-windows](../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/point_select-windows.png "point_select-windows")
 
 
 ## UPDATE_NOKEY
@@ -202,7 +202,7 @@ Some notes on how the benchmarks were run:
 
 
 
-![update_nokey-facebook-maria1](../../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/update_nokey-facebook-maria1.png "update_nokey-facebook-maria1")
+![update_nokey-facebook-maria1](../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/update_nokey-facebook-maria1.png "update_nokey-facebook-maria1")
 
 
 ### UPDATE_NOKEY pitbull
@@ -217,7 +217,7 @@ Some notes on how the benchmarks were run:
 
 
 
-![update_nokey-pitbull](../../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/update_nokey-pitbull.png "update_nokey-pitbull")
+![update_nokey-pitbull](../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/update_nokey-pitbull.png "update_nokey-pitbull")
 
 
 ### UPDATE_NOKEY Windows
@@ -232,5 +232,5 @@ Some notes on how the benchmarks were run:
 
 
 
-![update_nokey-windows](../../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/update_nokey-windows.png "update_nokey-windows")
+![update_nokey-windows](../../../../../../../.gitbook/assets/threadpool-benchmarks/+image/update_nokey-windows.png "update_nokey-windows")
 
